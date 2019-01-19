@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4C341062052745500403432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C341052052745500403432 /* AppDelegate.swift */; };
+		E4C341082052745500403432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C341072052745500403432 /* ViewController.swift */; };
+		E4C3410A2052745500403432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C341092052745500403432 /* Assets.xcassets */; };
+		E4C3410D2052745500403432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C3410B2052745500403432 /* Main.storyboard */; };
+		E4C341192052745600403432 /* ReplicatorDemo_Mac_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C341182052745600403432 /* ReplicatorDemo_Mac_SwiftTests.swift */; };
+		E4C341242052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C341232052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.swift */; };
+		E4C341322052747C00403432 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C341312052747C00403432 /* AppController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4C341152052745600403432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4C340FA2052745500403432 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4C341012052745500403432;
+			remoteInfo = ReplicatorDemo_Mac_Swift;
+		};
+		E4C341202052745600403432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4C340FA2052745500403432 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4C341012052745500403432;
+			remoteInfo = ReplicatorDemo_Mac_Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4C341022052745500403432 /* ReplicatorDemo_Mac_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReplicatorDemo_Mac_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C341052052745500403432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4C341072052745500403432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4C341092052745500403432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4C3410C2052745500403432 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4C3410E2052745500403432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C3410F2052745500403432 /* ReplicatorDemo_Mac_Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReplicatorDemo_Mac_Swift.entitlements; sourceTree = "<group>"; };
+		E4C341142052745600403432 /* ReplicatorDemo_Mac_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReplicatorDemo_Mac_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C341182052745600403432 /* ReplicatorDemo_Mac_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicatorDemo_Mac_SwiftTests.swift; sourceTree = "<group>"; };
+		E4C3411A2052745600403432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C3411F2052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReplicatorDemo_Mac_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C341232052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplicatorDemo_Mac_SwiftUITests.swift; sourceTree = "<group>"; };
+		E4C341252052745600403432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C341312052747C00403432 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4C340FF2052745500403432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C341112052745600403432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C3411C2052745600403432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4C340F92052745500403432 = {
+			isa = PBXGroup;
+			children = (
+				E4C341042052745500403432 /* ReplicatorDemo_Mac_Swift */,
+				E4C341172052745600403432 /* ReplicatorDemo_Mac_SwiftTests */,
+				E4C341222052745600403432 /* ReplicatorDemo_Mac_SwiftUITests */,
+				E4C341032052745500403432 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4C341032052745500403432 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4C341022052745500403432 /* ReplicatorDemo_Mac_Swift.app */,
+				E4C341142052745600403432 /* ReplicatorDemo_Mac_SwiftTests.xctest */,
+				E4C3411F2052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4C341042052745500403432 /* ReplicatorDemo_Mac_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E4C341052052745500403432 /* AppDelegate.swift */,
+				E4C341072052745500403432 /* ViewController.swift */,
+				E4C341312052747C00403432 /* AppController.swift */,
+				E4C341092052745500403432 /* Assets.xcassets */,
+				E4C3410B2052745500403432 /* Main.storyboard */,
+				E4C3410E2052745500403432 /* Info.plist */,
+				E4C3410F2052745500403432 /* ReplicatorDemo_Mac_Swift.entitlements */,
+			);
+			path = ReplicatorDemo_Mac_Swift;
+			sourceTree = "<group>";
+		};
+		E4C341172052745600403432 /* ReplicatorDemo_Mac_SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4C341182052745600403432 /* ReplicatorDemo_Mac_SwiftTests.swift */,
+				E4C3411A2052745600403432 /* Info.plist */,
+			);
+			path = ReplicatorDemo_Mac_SwiftTests;
+			sourceTree = "<group>";
+		};
+		E4C341222052745600403432 /* ReplicatorDemo_Mac_SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4C341232052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.swift */,
+				E4C341252052745600403432 /* Info.plist */,
+			);
+			path = ReplicatorDemo_Mac_SwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4C341012052745500403432 /* ReplicatorDemo_Mac_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C341282052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_Swift" */;
+			buildPhases = (
+				E4C340FE2052745500403432 /* Sources */,
+				E4C340FF2052745500403432 /* Frameworks */,
+				E4C341002052745500403432 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReplicatorDemo_Mac_Swift;
+			productName = ReplicatorDemo_Mac_Swift;
+			productReference = E4C341022052745500403432 /* ReplicatorDemo_Mac_Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4C341132052745600403432 /* ReplicatorDemo_Mac_SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C3412B2052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_SwiftTests" */;
+			buildPhases = (
+				E4C341102052745600403432 /* Sources */,
+				E4C341112052745600403432 /* Frameworks */,
+				E4C341122052745600403432 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4C341162052745600403432 /* PBXTargetDependency */,
+			);
+			name = ReplicatorDemo_Mac_SwiftTests;
+			productName = ReplicatorDemo_Mac_SwiftTests;
+			productReference = E4C341142052745600403432 /* ReplicatorDemo_Mac_SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4C3411E2052745600403432 /* ReplicatorDemo_Mac_SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C3412E2052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_SwiftUITests" */;
+			buildPhases = (
+				E4C3411B2052745600403432 /* Sources */,
+				E4C3411C2052745600403432 /* Frameworks */,
+				E4C3411D2052745600403432 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4C341212052745600403432 /* PBXTargetDependency */,
+			);
+			name = ReplicatorDemo_Mac_SwiftUITests;
+			productName = ReplicatorDemo_Mac_SwiftUITests;
+			productReference = E4C3411F2052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4C340FA2052745500403432 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Seyed Samad Gholamzadeh";
+				TargetAttributes = {
+					E4C341012052745500403432 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E4C341132052745600403432 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E4C341012052745500403432;
+					};
+					E4C3411E2052745600403432 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E4C341012052745500403432;
+					};
+				};
+			};
+			buildConfigurationList = E4C340FD2052745500403432 /* Build configuration list for PBXProject "ReplicatorDemo_Mac_Swift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4C340F92052745500403432;
+			productRefGroup = E4C341032052745500403432 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4C341012052745500403432 /* ReplicatorDemo_Mac_Swift */,
+				E4C341132052745600403432 /* ReplicatorDemo_Mac_SwiftTests */,
+				E4C3411E2052745600403432 /* ReplicatorDemo_Mac_SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4C341002052745500403432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C3410A2052745500403432 /* Assets.xcassets in Resources */,
+				E4C3410D2052745500403432 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C341122052745600403432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C3411D2052745600403432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4C340FE2052745500403432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C341082052745500403432 /* ViewController.swift in Sources */,
+				E4C341062052745500403432 /* AppDelegate.swift in Sources */,
+				E4C341322052747C00403432 /* AppController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C341102052745600403432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C341192052745600403432 /* ReplicatorDemo_Mac_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C3411B2052745600403432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C341242052745600403432 /* ReplicatorDemo_Mac_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4C341162052745600403432 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4C341012052745500403432 /* ReplicatorDemo_Mac_Swift */;
+			targetProxy = E4C341152052745600403432 /* PBXContainerItemProxy */;
+		};
+		E4C341212052745600403432 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4C341012052745500403432 /* ReplicatorDemo_Mac_Swift */;
+			targetProxy = E4C341202052745600403432 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4C3410B2052745500403432 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C3410C2052745500403432 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4C341262052745600403432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4C341272052745600403432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		E4C341292052745600403432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReplicatorDemo_Mac_Swift/ReplicatorDemo_Mac_Swift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_Swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E4C3412A2052745600403432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ReplicatorDemo_Mac_Swift/ReplicatorDemo_Mac_Swift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_Swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E4C3412C2052745600403432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReplicatorDemo_Mac_Swift.app/Contents/MacOS/ReplicatorDemo_Mac_Swift";
+			};
+			name = Debug;
+		};
+		E4C3412D2052745600403432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReplicatorDemo_Mac_Swift.app/Contents/MacOS/ReplicatorDemo_Mac_Swift";
+			};
+			name = Release;
+		};
+		E4C3412F2052745600403432 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_SwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = ReplicatorDemo_Mac_Swift;
+			};
+			name = Debug;
+		};
+		E4C341302052745600403432 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				INFOPLIST_FILE = ReplicatorDemo_Mac_SwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.ReplicatorDemo-Mac-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = ReplicatorDemo_Mac_Swift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4C340FD2052745500403432 /* Build configuration list for PBXProject "ReplicatorDemo_Mac_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C341262052745600403432 /* Debug */,
+				E4C341272052745600403432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C341282052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C341292052745600403432 /* Debug */,
+				E4C3412A2052745600403432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C3412B2052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C3412C2052745600403432 /* Debug */,
+				E4C3412D2052745600403432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C3412E2052745600403432 /* Build configuration list for PBXNativeTarget "ReplicatorDemo_Mac_SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C3412F2052745600403432 /* Debug */,
+				E4C341302052745600403432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4C340FA2052745500403432 /* Project object */;
+}
