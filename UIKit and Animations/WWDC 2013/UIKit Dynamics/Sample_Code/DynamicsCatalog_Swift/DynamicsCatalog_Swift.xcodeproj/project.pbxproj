@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4040FFF20E741430069CCD2 /* APLPendulumBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4040FFE20E741430069CCD2 /* APLPendulumBehavior.swift */; };
+		E404100120E749800069CCD2 /* APLCompositeBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404100020E749800069CCD2 /* APLCompositeBehaviorViewController.swift */; };
+		E404100320E74D730069CCD2 /* APLPositionToBoundsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404100220E74D730069CCD2 /* APLPositionToBoundsMapping.swift */; };
+		E404100520E74F5B0069CCD2 /* APLCustomDynamicItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404100420E74F5B0069CCD2 /* APLCustomDynamicItemViewController.swift */; };
+		E404100720E7637F0069CCD2 /* APLItemPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E404100620E7637F0069CCD2 /* APLItemPropertiesViewController.swift */; };
+		E4B4509E20E37C2100567065 /* APLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4509D20E37C2100567065 /* APLAppDelegate.swift */; };
+		E4B450A020E37C2100567065 /* APLGravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B4509F20E37C2100567065 /* APLGravityViewController.swift */; };
+		E4B450A320E37C2100567065 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B450A120E37C2100567065 /* Main.storyboard */; };
+		E4B450A520E37C2300567065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B450A420E37C2300567065 /* Assets.xcassets */; };
+		E4B450A820E37C2300567065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B450A620E37C2300567065 /* LaunchScreen.storyboard */; };
+		E4B450B320E37C2300567065 /* DynamicsCatalog_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B450B220E37C2300567065 /* DynamicsCatalog_SwiftTests.swift */; };
+		E4B450BE20E37C2300567065 /* DynamicsCatalog_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B450BD20E37C2300567065 /* DynamicsCatalog_SwiftUITests.swift */; };
+		E4B450CC20E37F3F00567065 /* APLCollisionGravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B450CB20E37F3F00567065 /* APLCollisionGravityViewController.swift */; };
+		E4B450CE20E3E9DC00567065 /* APLAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B450CD20E3E9DC00567065 /* APLAttachmentsViewController.swift */; };
+		E4B450D020E3EC7200567065 /* APLDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B450CF20E3EC7200567065 /* APLDecorationView.swift */; };
+		E4D56AE520E54C16007BB5F8 /* APLCollisionsGravitySpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D56AE420E54C16007BB5F8 /* APLCollisionsGravitySpringViewController.swift */; };
+		E4D56AE720E56B3D007BB5F8 /* APLSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D56AE620E56B3D007BB5F8 /* APLSnapViewController.swift */; };
+		E4D56AE920E658F3007BB5F8 /* APLInstantaneousPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D56AE820E658F3007BB5F8 /* APLInstantaneousPushViewController.swift */; };
+		E4D56B2720E67D91007BB5F8 /* APLContinuousPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D56B2620E67D91007BB5F8 /* APLContinuousPushViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4B450AF20E37C2300567065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B4509220E37C2100567065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B4509920E37C2100567065;
+			remoteInfo = DynamicsCatalog_Swift;
+		};
+		E4B450BA20E37C2300567065 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B4509220E37C2100567065 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B4509920E37C2100567065;
+			remoteInfo = DynamicsCatalog_Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4040FFE20E741430069CCD2 /* APLPendulumBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLPendulumBehavior.swift; sourceTree = "<group>"; };
+		E404100020E749800069CCD2 /* APLCompositeBehaviorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLCompositeBehaviorViewController.swift; sourceTree = "<group>"; };
+		E404100220E74D730069CCD2 /* APLPositionToBoundsMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLPositionToBoundsMapping.swift; sourceTree = "<group>"; };
+		E404100420E74F5B0069CCD2 /* APLCustomDynamicItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLCustomDynamicItemViewController.swift; sourceTree = "<group>"; };
+		E404100620E7637F0069CCD2 /* APLItemPropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLItemPropertiesViewController.swift; sourceTree = "<group>"; };
+		E4B4509A20E37C2100567065 /* DynamicsCatalog_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicsCatalog_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B4509D20E37C2100567065 /* APLAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLAppDelegate.swift; sourceTree = "<group>"; };
+		E4B4509F20E37C2100567065 /* APLGravityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLGravityViewController.swift; sourceTree = "<group>"; };
+		E4B450A220E37C2100567065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4B450A420E37C2300567065 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4B450A720E37C2300567065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4B450A920E37C2300567065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4B450AE20E37C2300567065 /* DynamicsCatalog_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicsCatalog_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B450B220E37C2300567065 /* DynamicsCatalog_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsCatalog_SwiftTests.swift; sourceTree = "<group>"; };
+		E4B450B420E37C2300567065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4B450B920E37C2300567065 /* DynamicsCatalog_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicsCatalog_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B450BD20E37C2300567065 /* DynamicsCatalog_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsCatalog_SwiftUITests.swift; sourceTree = "<group>"; };
+		E4B450BF20E37C2300567065 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4B450CB20E37F3F00567065 /* APLCollisionGravityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLCollisionGravityViewController.swift; sourceTree = "<group>"; };
+		E4B450CD20E3E9DC00567065 /* APLAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLAttachmentsViewController.swift; sourceTree = "<group>"; };
+		E4B450CF20E3EC7200567065 /* APLDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLDecorationView.swift; sourceTree = "<group>"; };
+		E4D56AE420E54C16007BB5F8 /* APLCollisionsGravitySpringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLCollisionsGravitySpringViewController.swift; sourceTree = "<group>"; };
+		E4D56AE620E56B3D007BB5F8 /* APLSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLSnapViewController.swift; sourceTree = "<group>"; };
+		E4D56AE820E658F3007BB5F8 /* APLInstantaneousPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLInstantaneousPushViewController.swift; sourceTree = "<group>"; };
+		E4D56B2620E67D91007BB5F8 /* APLContinuousPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APLContinuousPushViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B4509720E37C2100567065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450AB20E37C2300567065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450B620E37C2300567065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4B4509120E37C2100567065 = {
+			isa = PBXGroup;
+			children = (
+				E4B4509C20E37C2100567065 /* DynamicsCatalog_Swift */,
+				E4B450B120E37C2300567065 /* DynamicsCatalog_SwiftTests */,
+				E4B450BC20E37C2300567065 /* DynamicsCatalog_SwiftUITests */,
+				E4B4509B20E37C2100567065 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B4509B20E37C2100567065 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4B4509A20E37C2100567065 /* DynamicsCatalog_Swift.app */,
+				E4B450AE20E37C2300567065 /* DynamicsCatalog_SwiftTests.xctest */,
+				E4B450B920E37C2300567065 /* DynamicsCatalog_SwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B4509C20E37C2100567065 /* DynamicsCatalog_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				E4B4509D20E37C2100567065 /* APLAppDelegate.swift */,
+				E4B4509F20E37C2100567065 /* APLGravityViewController.swift */,
+				E4B450CB20E37F3F00567065 /* APLCollisionGravityViewController.swift */,
+				E4B450CD20E3E9DC00567065 /* APLAttachmentsViewController.swift */,
+				E4D56AE420E54C16007BB5F8 /* APLCollisionsGravitySpringViewController.swift */,
+				E4D56AE620E56B3D007BB5F8 /* APLSnapViewController.swift */,
+				E4D56AE820E658F3007BB5F8 /* APLInstantaneousPushViewController.swift */,
+				E4D56B2620E67D91007BB5F8 /* APLContinuousPushViewController.swift */,
+				E404100620E7637F0069CCD2 /* APLItemPropertiesViewController.swift */,
+				E404100020E749800069CCD2 /* APLCompositeBehaviorViewController.swift */,
+				E4040FFE20E741430069CCD2 /* APLPendulumBehavior.swift */,
+				E404100420E74F5B0069CCD2 /* APLCustomDynamicItemViewController.swift */,
+				E404100220E74D730069CCD2 /* APLPositionToBoundsMapping.swift */,
+				E4B450CF20E3EC7200567065 /* APLDecorationView.swift */,
+				E4B450A120E37C2100567065 /* Main.storyboard */,
+				E4B450A420E37C2300567065 /* Assets.xcassets */,
+				E4B450A620E37C2300567065 /* LaunchScreen.storyboard */,
+				E4B450A920E37C2300567065 /* Info.plist */,
+			);
+			path = DynamicsCatalog_Swift;
+			sourceTree = "<group>";
+		};
+		E4B450B120E37C2300567065 /* DynamicsCatalog_SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4B450B220E37C2300567065 /* DynamicsCatalog_SwiftTests.swift */,
+				E4B450B420E37C2300567065 /* Info.plist */,
+			);
+			path = DynamicsCatalog_SwiftTests;
+			sourceTree = "<group>";
+		};
+		E4B450BC20E37C2300567065 /* DynamicsCatalog_SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4B450BD20E37C2300567065 /* DynamicsCatalog_SwiftUITests.swift */,
+				E4B450BF20E37C2300567065 /* Info.plist */,
+			);
+			path = DynamicsCatalog_SwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B4509920E37C2100567065 /* DynamicsCatalog_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B450C220E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_Swift" */;
+			buildPhases = (
+				E4B4509620E37C2100567065 /* Sources */,
+				E4B4509720E37C2100567065 /* Frameworks */,
+				E4B4509820E37C2100567065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicsCatalog_Swift;
+			productName = DynamicsCatalog_Swift;
+			productReference = E4B4509A20E37C2100567065 /* DynamicsCatalog_Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4B450AD20E37C2300567065 /* DynamicsCatalog_SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B450C520E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_SwiftTests" */;
+			buildPhases = (
+				E4B450AA20E37C2300567065 /* Sources */,
+				E4B450AB20E37C2300567065 /* Frameworks */,
+				E4B450AC20E37C2300567065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4B450B020E37C2300567065 /* PBXTargetDependency */,
+			);
+			name = DynamicsCatalog_SwiftTests;
+			productName = DynamicsCatalog_SwiftTests;
+			productReference = E4B450AE20E37C2300567065 /* DynamicsCatalog_SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4B450B820E37C2300567065 /* DynamicsCatalog_SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B450C820E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_SwiftUITests" */;
+			buildPhases = (
+				E4B450B520E37C2300567065 /* Sources */,
+				E4B450B620E37C2300567065 /* Frameworks */,
+				E4B450B720E37C2300567065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4B450BB20E37C2300567065 /* PBXTargetDependency */,
+			);
+			name = DynamicsCatalog_SwiftUITests;
+			productName = DynamicsCatalog_SwiftUITests;
+			productReference = E4B450B920E37C2300567065 /* DynamicsCatalog_SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B4509220E37C2100567065 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Seyed Samad Gholamzadeh";
+				TargetAttributes = {
+					E4B4509920E37C2100567065 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					E4B450AD20E37C2300567065 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E4B4509920E37C2100567065;
+					};
+					E4B450B820E37C2300567065 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = E4B4509920E37C2100567065;
+					};
+				};
+			};
+			buildConfigurationList = E4B4509520E37C2100567065 /* Build configuration list for PBXProject "DynamicsCatalog_Swift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4B4509120E37C2100567065;
+			productRefGroup = E4B4509B20E37C2100567065 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4B4509920E37C2100567065 /* DynamicsCatalog_Swift */,
+				E4B450AD20E37C2300567065 /* DynamicsCatalog_SwiftTests */,
+				E4B450B820E37C2300567065 /* DynamicsCatalog_SwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4B4509820E37C2100567065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B450A820E37C2300567065 /* LaunchScreen.storyboard in Resources */,
+				E4B450A520E37C2300567065 /* Assets.xcassets in Resources */,
+				E4B450A320E37C2100567065 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450AC20E37C2300567065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450B720E37C2300567065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B4509620E37C2100567065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B450CC20E37F3F00567065 /* APLCollisionGravityViewController.swift in Sources */,
+				E404100520E74F5B0069CCD2 /* APLCustomDynamicItemViewController.swift in Sources */,
+				E4D56AE520E54C16007BB5F8 /* APLCollisionsGravitySpringViewController.swift in Sources */,
+				E4D56B2720E67D91007BB5F8 /* APLContinuousPushViewController.swift in Sources */,
+				E4040FFF20E741430069CCD2 /* APLPendulumBehavior.swift in Sources */,
+				E4D56AE720E56B3D007BB5F8 /* APLSnapViewController.swift in Sources */,
+				E4D56AE920E658F3007BB5F8 /* APLInstantaneousPushViewController.swift in Sources */,
+				E404100320E74D730069CCD2 /* APLPositionToBoundsMapping.swift in Sources */,
+				E4B450CE20E3E9DC00567065 /* APLAttachmentsViewController.swift in Sources */,
+				E404100120E749800069CCD2 /* APLCompositeBehaviorViewController.swift in Sources */,
+				E4B450A020E37C2100567065 /* APLGravityViewController.swift in Sources */,
+				E4B450D020E3EC7200567065 /* APLDecorationView.swift in Sources */,
+				E404100720E7637F0069CCD2 /* APLItemPropertiesViewController.swift in Sources */,
+				E4B4509E20E37C2100567065 /* APLAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450AA20E37C2300567065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B450B320E37C2300567065 /* DynamicsCatalog_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4B450B520E37C2300567065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B450BE20E37C2300567065 /* DynamicsCatalog_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4B450B020E37C2300567065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4B4509920E37C2100567065 /* DynamicsCatalog_Swift */;
+			targetProxy = E4B450AF20E37C2300567065 /* PBXContainerItemProxy */;
+		};
+		E4B450BB20E37C2300567065 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4B4509920E37C2100567065 /* DynamicsCatalog_Swift */;
+			targetProxy = E4B450BA20E37C2300567065 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4B450A120E37C2100567065 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4B450A220E37C2100567065 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4B450A620E37C2300567065 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4B450A720E37C2300567065 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4B450C020E37C2300567065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4B450C120E37C2300567065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4B450C320E37C2300567065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_Swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4B450C420E37C2300567065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_Swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E4B450C620E37C2300567065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicsCatalog_Swift.app/DynamicsCatalog_Swift";
+			};
+			name = Debug;
+		};
+		E4B450C720E37C2300567065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_SwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicsCatalog_Swift.app/DynamicsCatalog_Swift";
+			};
+			name = Release;
+		};
+		E4B450C920E37C2300567065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_SwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DynamicsCatalog_Swift;
+			};
+			name = Debug;
+		};
+		E4B450CA20E37C2300567065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXYY78VT8K;
+				INFOPLIST_FILE = DynamicsCatalog_SwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samad.DynamicsCatalog-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DynamicsCatalog_Swift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B4509520E37C2100567065 /* Build configuration list for PBXProject "DynamicsCatalog_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B450C020E37C2300567065 /* Debug */,
+				E4B450C120E37C2300567065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B450C220E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B450C320E37C2300567065 /* Debug */,
+				E4B450C420E37C2300567065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B450C520E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B450C620E37C2300567065 /* Debug */,
+				E4B450C720E37C2300567065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B450C820E37C2300567065 /* Build configuration list for PBXNativeTarget "DynamicsCatalog_SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B450C920E37C2300567065 /* Debug */,
+				E4B450CA20E37C2300567065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B4509220E37C2100567065 /* Project object */;
+}
