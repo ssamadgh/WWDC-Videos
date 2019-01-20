@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B13CB506175EBE83002E8AE4 /* PresentPhotoAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B13CB505175EBE83002E8AE4 /* PresentPhotoAnimator.m */; };
+		B15B15C5175E6E3A009E3F17 /* InterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B15B15C4175E6E3A009E3F17 /* InterfaceManager.m */; };
+		B15B15C7175E76F0009E3F17 /* check_template.png in Resources */ = {isa = PBXBuildFile; fileRef = B15B15C6175E76F0009E3F17 /* check_template.png */; };
+		B15B15CA175E7EC8009E3F17 /* default_button.png in Resources */ = {isa = PBXBuildFile; fileRef = B15B15C9175E7EC8009E3F17 /* default_button.png */; };
+		B15B15CD175E82E4009E3F17 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B15B15CC175E82E4009E3F17 /* UIImage+ImageEffects.m */; };
+		B1776EF41764571100514C0D /* spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1776EF31764571100514C0D /* spotlight@2x.png */; };
+		B17770B7173F57090038BAEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17770B6173F57090038BAEC /* UIKit.framework */; };
+		B17770B9173F57090038BAEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17770B8173F57090038BAEC /* Foundation.framework */; };
+		B17770BB173F57090038BAEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17770BA173F57090038BAEC /* CoreGraphics.framework */; };
+		B17770C1173F57090038BAEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B17770BF173F57090038BAEC /* InfoPlist.strings */; };
+		B17770C3173F57090038BAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770C2173F57090038BAEC /* main.m */; };
+		B17770C7173F57090038BAEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770C6173F57090038BAEC /* AppDelegate.m */; };
+		B17770C9173F57090038BAEC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B17770C8173F57090038BAEC /* Default.png */; };
+		B17770CB173F57090038BAEC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17770CA173F57090038BAEC /* Default@2x.png */; };
+		B17770CD173F57090038BAEC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17770CC173F57090038BAEC /* Default-568h@2x.png */; };
+		B17770E0173F58A10038BAEC /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770DE173F58A10038BAEC /* LaunchViewController.m */; };
+		B17770E1173F58A10038BAEC /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770DF173F58A10038BAEC /* LaunchViewController.xib */; };
+		B17770E5173F59D50038BAEC /* NewRunSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770E3173F59D50038BAEC /* NewRunSetupViewController.m */; };
+		B17770E6173F59D50038BAEC /* NewRunSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770E4173F59D50038BAEC /* NewRunSetupViewController.xib */; };
+		B17770EA173F5B3E0038BAEC /* PreviousRunPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770E8173F5B3E0038BAEC /* PreviousRunPickerViewController.m */; };
+		B17770EB173F5B3E0038BAEC /* PreviousRunPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770E9173F5B3E0038BAEC /* PreviousRunPickerViewController.xib */; };
+		B17770EF173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770ED173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.m */; };
+		B17770F0173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770EE173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.xib */; };
+		B17770F4173F5C470038BAEC /* FlipbookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770F2173F5C470038BAEC /* FlipbookViewController.m */; };
+		B17770F5173F5C470038BAEC /* FlipbookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770F3173F5C470038BAEC /* FlipbookViewController.xib */; };
+		B17770F9173F5C7B0038BAEC /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17770F7173F5C7B0038BAEC /* PhotoEditorViewController.m */; };
+		B17770FA173F5C7B0038BAEC /* PhotoEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17770F8173F5C7B0038BAEC /* PhotoEditorViewController.xib */; };
+		B1777105173F60A90038BAEC /* RunManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B1777104173F60A80038BAEC /* RunManager.m */; };
+		B1777109173F61250038BAEC /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = B1777108173F61250038BAEC /* Run.m */; };
+		B19C552D174212FF006A227A /* CameraCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B19C552B174212FF006A227A /* CameraCaptureViewController.m */; };
+		B19C552E174212FF006A227A /* CameraCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B19C552C174212FF006A227A /* CameraCaptureViewController.xib */; };
+		B19C55301742149C006A227A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19C552F1742149C006A227A /* AVFoundation.framework */; };
+		B19C5532174214A4006A227A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19C5531174214A4006A227A /* CoreMotion.framework */; };
+		B1B4DAFA174F2F570035300F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B4DAF9174F2F570035300F /* MediaPlayer.framework */; };
+		B1D138DD175C0658000304F4 /* DeletePhotoAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D138DC175C0658000304F4 /* DeletePhotoAnimator.m */; };
+		B1D138DF175C0910000304F4 /* scanline.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D138DE175C0910000304F4 /* scanline.png */; };
+		B1D138E3175C11B2000304F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D138E2175C11B2000304F4 /* ImageIO.framework */; };
+		B1DA2266174C85F900CF3184 /* EditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DA2264174C85F900CF3184 /* EditPhotoViewController.m */; };
+		B1DA2267174C85F900CF3184 /* EditPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1DA2265174C85F900CF3184 /* EditPhotoViewController.xib */; };
+		B1E98C601761D1FE0090B65D /* LensFlareView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E98C5F1761D1FE0090B65D /* LensFlareView.m */; };
+		B1FEA93F175C7D8500FF0074 /* lightpool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1FEA93E175C7D8500FF0074 /* lightpool@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28B4EB38176A4D240008631E /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		B13CB504175EBE83002E8AE4 /* PresentPhotoAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentPhotoAnimator.h; sourceTree = "<group>"; };
+		B13CB505175EBE83002E8AE4 /* PresentPhotoAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentPhotoAnimator.m; sourceTree = "<group>"; };
+		B15B15C3175E6E3A009E3F17 /* InterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceManager.h; sourceTree = "<group>"; };
+		B15B15C4175E6E3A009E3F17 /* InterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceManager.m; sourceTree = "<group>"; };
+		B15B15C6175E76F0009E3F17 /* check_template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_template.png; sourceTree = "<group>"; };
+		B15B15C9175E7EC8009E3F17 /* default_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_button.png; sourceTree = "<group>"; };
+		B15B15CB175E82E4009E3F17 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		B15B15CC175E82E4009E3F17 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		B1776EF31764571100514C0D /* spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight@2x.png"; sourceTree = "<group>"; };
+		B17770B3173F57090038BAEC /* Running with a Snap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Running with a Snap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B17770B6173F57090038BAEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B17770B8173F57090038BAEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B17770BA173F57090038BAEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B17770BE173F57090038BAEC /* Running with a Snap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Running with a Snap-Info.plist"; sourceTree = "<group>"; };
+		B17770C0173F57090038BAEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B17770C2173F57090038BAEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B17770C4173F57090038BAEC /* Running with a Snap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Running with a Snap-Prefix.pch"; sourceTree = "<group>"; };
+		B17770C5173F57090038BAEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B17770C6173F57090038BAEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B17770C8173F57090038BAEC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B17770CA173F57090038BAEC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B17770CC173F57090038BAEC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B17770DD173F58A10038BAEC /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		B17770DE173F58A10038BAEC /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		B17770DF173F58A10038BAEC /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		B17770E2173F59D50038BAEC /* NewRunSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunSetupViewController.h; sourceTree = "<group>"; };
+		B17770E3173F59D50038BAEC /* NewRunSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunSetupViewController.m; sourceTree = "<group>"; };
+		B17770E4173F59D50038BAEC /* NewRunSetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewRunSetupViewController.xib; sourceTree = "<group>"; };
+		B17770E7173F5B3E0038BAEC /* PreviousRunPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousRunPickerViewController.h; sourceTree = "<group>"; };
+		B17770E8173F5B3E0038BAEC /* PreviousRunPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousRunPickerViewController.m; sourceTree = "<group>"; };
+		B17770E9173F5B3E0038BAEC /* PreviousRunPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousRunPickerViewController.xib; sourceTree = "<group>"; };
+		B17770EC173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousRunEditorMenuViewController.h; sourceTree = "<group>"; };
+		B17770ED173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousRunEditorMenuViewController.m; sourceTree = "<group>"; };
+		B17770EE173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviousRunEditorMenuViewController.xib; sourceTree = "<group>"; };
+		B17770F1173F5C470038BAEC /* FlipbookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipbookViewController.h; sourceTree = "<group>"; };
+		B17770F2173F5C470038BAEC /* FlipbookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipbookViewController.m; sourceTree = "<group>"; };
+		B17770F3173F5C470038BAEC /* FlipbookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlipbookViewController.xib; sourceTree = "<group>"; };
+		B17770F6173F5C7B0038BAEC /* PhotoEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorViewController.h; sourceTree = "<group>"; };
+		B17770F7173F5C7B0038BAEC /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
+		B17770F8173F5C7B0038BAEC /* PhotoEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoEditorViewController.xib; sourceTree = "<group>"; };
+		B1777103173F60A80038BAEC /* RunManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunManager.h; sourceTree = "<group>"; };
+		B1777104173F60A80038BAEC /* RunManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunManager.m; sourceTree = "<group>"; };
+		B1777107173F61250038BAEC /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
+		B1777108173F61250038BAEC /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
+		B19C552A174212FF006A227A /* CameraCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCaptureViewController.h; sourceTree = "<group>"; };
+		B19C552B174212FF006A227A /* CameraCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCaptureViewController.m; sourceTree = "<group>"; };
+		B19C552C174212FF006A227A /* CameraCaptureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraCaptureViewController.xib; sourceTree = "<group>"; };
+		B19C552F1742149C006A227A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B19C5531174214A4006A227A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B1B4DAF9174F2F570035300F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.Internal.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		B1D138DB175C0658000304F4 /* DeletePhotoAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeletePhotoAnimator.h; sourceTree = "<group>"; };
+		B1D138DC175C0658000304F4 /* DeletePhotoAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeletePhotoAnimator.m; sourceTree = "<group>"; };
+		B1D138DE175C0910000304F4 /* scanline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanline.png; sourceTree = "<group>"; };
+		B1D138E0175C1122000304F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.Internal.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		B1D138E2175C11B2000304F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.Internal.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		B1DA2263174C85F900CF3184 /* EditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPhotoViewController.h; sourceTree = "<group>"; };
+		B1DA2264174C85F900CF3184 /* EditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPhotoViewController.m; sourceTree = "<group>"; };
+		B1DA2265174C85F900CF3184 /* EditPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditPhotoViewController.xib; sourceTree = "<group>"; };
+		B1E98C5E1761D1FE0090B65D /* LensFlareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LensFlareView.h; sourceTree = "<group>"; };
+		B1E98C5F1761D1FE0090B65D /* LensFlareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LensFlareView.m; sourceTree = "<group>"; };
+		B1FEA93E175C7D8500FF0074 /* lightpool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightpool@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B17770B0173F57090038BAEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D138E3175C11B2000304F4 /* ImageIO.framework in Frameworks */,
+				B1B4DAFA174F2F570035300F /* MediaPlayer.framework in Frameworks */,
+				B19C5532174214A4006A227A /* CoreMotion.framework in Frameworks */,
+				B19C55301742149C006A227A /* AVFoundation.framework in Frameworks */,
+				B17770BB173F57090038BAEC /* CoreGraphics.framework in Frameworks */,
+				B17770B7173F57090038BAEC /* UIKit.framework in Frameworks */,
+				B17770B9173F57090038BAEC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B10BAC451760665D003BC7B9 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				B1D138DB175C0658000304F4 /* DeletePhotoAnimator.h */,
+				B1D138DC175C0658000304F4 /* DeletePhotoAnimator.m */,
+				B13CB504175EBE83002E8AE4 /* PresentPhotoAnimator.h */,
+				B13CB505175EBE83002E8AE4 /* PresentPhotoAnimator.m */,
+			);
+			name = Animators;
+			sourceTree = "<group>";
+		};
+		B15B15C8175E770E009E3F17 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B1776EF31764571100514C0D /* spotlight@2x.png */,
+				B15B15C9175E7EC8009E3F17 /* default_button.png */,
+				B15B15C6175E76F0009E3F17 /* check_template.png */,
+				B1FEA93E175C7D8500FF0074 /* lightpool@2x.png */,
+				B1D138DE175C0910000304F4 /* scanline.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		B15B15CE175E82F1009E3F17 /* Image Effects */ = {
+			isa = PBXGroup;
+			children = (
+				B15B15CB175E82E4009E3F17 /* UIImage+ImageEffects.h */,
+				B15B15CC175E82E4009E3F17 /* UIImage+ImageEffects.m */,
+			);
+			name = "Image Effects";
+			sourceTree = "<group>";
+		};
+		B17770AA173F57090038BAEC = {
+			isa = PBXGroup;
+			children = (
+				28B4EB38176A4D240008631E /* ReadMe.txt */,
+				B17770BC173F57090038BAEC /* Running with a Snap */,
+				B17770B5173F57090038BAEC /* Frameworks */,
+				B17770B4173F57090038BAEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B17770B4173F57090038BAEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B17770B3173F57090038BAEC /* Running with a Snap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B17770B5173F57090038BAEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1D138E2175C11B2000304F4 /* ImageIO.framework */,
+				B1D138E0175C1122000304F4 /* CoreGraphics.framework */,
+				B1B4DAF9174F2F570035300F /* MediaPlayer.framework */,
+				B19C5531174214A4006A227A /* CoreMotion.framework */,
+				B19C552F1742149C006A227A /* AVFoundation.framework */,
+				B17770B6173F57090038BAEC /* UIKit.framework */,
+				B17770B8173F57090038BAEC /* Foundation.framework */,
+				B17770BA173F57090038BAEC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B17770BC173F57090038BAEC /* Running with a Snap */ = {
+			isa = PBXGroup;
+			children = (
+				B17770DC173F587A0038BAEC /* View Controllers */,
+				B15B15CE175E82F1009E3F17 /* Image Effects */,
+				B1777106173F60AE0038BAEC /* Model Bits */,
+				B17770C5173F57090038BAEC /* AppDelegate.h */,
+				B17770C6173F57090038BAEC /* AppDelegate.m */,
+				B17770BD173F57090038BAEC /* Supporting Files */,
+			);
+			path = "Running with a Snap";
+			sourceTree = "<group>";
+		};
+		B17770BD173F57090038BAEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B15B15C8175E770E009E3F17 /* Images */,
+				B17770BE173F57090038BAEC /* Running with a Snap-Info.plist */,
+				B17770BF173F57090038BAEC /* InfoPlist.strings */,
+				B17770C2173F57090038BAEC /* main.m */,
+				B17770C4173F57090038BAEC /* Running with a Snap-Prefix.pch */,
+				B17770C8173F57090038BAEC /* Default.png */,
+				B17770CA173F57090038BAEC /* Default@2x.png */,
+				B17770CC173F57090038BAEC /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B17770DC173F587A0038BAEC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1E98C611761D2070090B65D /* Launch Screen */,
+				B17770FC173F5CE40038BAEC /* New Run */,
+				B17770FB173F5CD70038BAEC /* Previous Run */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B17770FB173F5CD70038BAEC /* Previous Run */ = {
+			isa = PBXGroup;
+			children = (
+				B17770E7173F5B3E0038BAEC /* PreviousRunPickerViewController.h */,
+				B17770E8173F5B3E0038BAEC /* PreviousRunPickerViewController.m */,
+				B17770E9173F5B3E0038BAEC /* PreviousRunPickerViewController.xib */,
+				B17770EC173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.h */,
+				B17770ED173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.m */,
+				B17770EE173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.xib */,
+				B17770F1173F5C470038BAEC /* FlipbookViewController.h */,
+				B17770F2173F5C470038BAEC /* FlipbookViewController.m */,
+				B17770F3173F5C470038BAEC /* FlipbookViewController.xib */,
+				B17770F6173F5C7B0038BAEC /* PhotoEditorViewController.h */,
+				B17770F7173F5C7B0038BAEC /* PhotoEditorViewController.m */,
+				B17770F8173F5C7B0038BAEC /* PhotoEditorViewController.xib */,
+				B1DA2263174C85F900CF3184 /* EditPhotoViewController.h */,
+				B1DA2264174C85F900CF3184 /* EditPhotoViewController.m */,
+				B1DA2265174C85F900CF3184 /* EditPhotoViewController.xib */,
+				B10BAC451760665D003BC7B9 /* Animators */,
+			);
+			name = "Previous Run";
+			sourceTree = "<group>";
+		};
+		B17770FC173F5CE40038BAEC /* New Run */ = {
+			isa = PBXGroup;
+			children = (
+				B17770E2173F59D50038BAEC /* NewRunSetupViewController.h */,
+				B17770E3173F59D50038BAEC /* NewRunSetupViewController.m */,
+				B17770E4173F59D50038BAEC /* NewRunSetupViewController.xib */,
+				B19C552A174212FF006A227A /* CameraCaptureViewController.h */,
+				B19C552B174212FF006A227A /* CameraCaptureViewController.m */,
+				B19C552C174212FF006A227A /* CameraCaptureViewController.xib */,
+			);
+			name = "New Run";
+			sourceTree = "<group>";
+		};
+		B1777106173F60AE0038BAEC /* Model Bits */ = {
+			isa = PBXGroup;
+			children = (
+				B1777103173F60A80038BAEC /* RunManager.h */,
+				B1777104173F60A80038BAEC /* RunManager.m */,
+				B1777107173F61250038BAEC /* Run.h */,
+				B1777108173F61250038BAEC /* Run.m */,
+				B15B15C3175E6E3A009E3F17 /* InterfaceManager.h */,
+				B15B15C4175E6E3A009E3F17 /* InterfaceManager.m */,
+			);
+			name = "Model Bits";
+			sourceTree = "<group>";
+		};
+		B1E98C611761D2070090B65D /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B17770DD173F58A10038BAEC /* LaunchViewController.h */,
+				B17770DE173F58A10038BAEC /* LaunchViewController.m */,
+				B17770DF173F58A10038BAEC /* LaunchViewController.xib */,
+				B1E98C5E1761D1FE0090B65D /* LensFlareView.h */,
+				B1E98C5F1761D1FE0090B65D /* LensFlareView.m */,
+			);
+			name = "Launch Screen";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B17770B2173F57090038BAEC /* Running with a Snap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B17770D6173F57090038BAEC /* Build configuration list for PBXNativeTarget "Running with a Snap" */;
+			buildPhases = (
+				B17770AF173F57090038BAEC /* Sources */,
+				B17770B0173F57090038BAEC /* Frameworks */,
+				B17770B1173F57090038BAEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Running with a Snap";
+			productName = "Running with a Snap";
+			productReference = B17770B3173F57090038BAEC /* Running with a Snap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B17770AB173F57090038BAEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Apple Inc.";
+				TargetAttributes = {
+					B17770B2173F57090038BAEC = {
+						DevelopmentTeam = 2T492Q3SC8;
+					};
+				};
+			};
+			buildConfigurationList = B17770AE173F57090038BAEC /* Build configuration list for PBXProject "Running with a Snap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B17770AA173F57090038BAEC;
+			productRefGroup = B17770B4173F57090038BAEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B17770B2173F57090038BAEC /* Running with a Snap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B17770B1173F57090038BAEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1DA2267174C85F900CF3184 /* EditPhotoViewController.xib in Resources */,
+				B1FEA93F175C7D8500FF0074 /* lightpool@2x.png in Resources */,
+				B17770FA173F5C7B0038BAEC /* PhotoEditorViewController.xib in Resources */,
+				B17770CB173F57090038BAEC /* Default@2x.png in Resources */,
+				B17770E6173F59D50038BAEC /* NewRunSetupViewController.xib in Resources */,
+				B17770CD173F57090038BAEC /* Default-568h@2x.png in Resources */,
+				B15B15CA175E7EC8009E3F17 /* default_button.png in Resources */,
+				B19C552E174212FF006A227A /* CameraCaptureViewController.xib in Resources */,
+				B17770E1173F58A10038BAEC /* LaunchViewController.xib in Resources */,
+				B17770C1173F57090038BAEC /* InfoPlist.strings in Resources */,
+				B15B15C7175E76F0009E3F17 /* check_template.png in Resources */,
+				B17770F5173F5C470038BAEC /* FlipbookViewController.xib in Resources */,
+				B1D138DF175C0910000304F4 /* scanline.png in Resources */,
+				B17770F0173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.xib in Resources */,
+				B17770EB173F5B3E0038BAEC /* PreviousRunPickerViewController.xib in Resources */,
+				B1776EF41764571100514C0D /* spotlight@2x.png in Resources */,
+				B17770C9173F57090038BAEC /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B17770AF173F57090038BAEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B15B15CD175E82E4009E3F17 /* UIImage+ImageEffects.m in Sources */,
+				B19C552D174212FF006A227A /* CameraCaptureViewController.m in Sources */,
+				B1777109173F61250038BAEC /* Run.m in Sources */,
+				B17770C7173F57090038BAEC /* AppDelegate.m in Sources */,
+				B17770E5173F59D50038BAEC /* NewRunSetupViewController.m in Sources */,
+				B1DA2266174C85F900CF3184 /* EditPhotoViewController.m in Sources */,
+				B17770EA173F5B3E0038BAEC /* PreviousRunPickerViewController.m in Sources */,
+				B1D138DD175C0658000304F4 /* DeletePhotoAnimator.m in Sources */,
+				B13CB506175EBE83002E8AE4 /* PresentPhotoAnimator.m in Sources */,
+				B1777105173F60A90038BAEC /* RunManager.m in Sources */,
+				B17770C3173F57090038BAEC /* main.m in Sources */,
+				B1E98C601761D1FE0090B65D /* LensFlareView.m in Sources */,
+				B17770F4173F5C470038BAEC /* FlipbookViewController.m in Sources */,
+				B17770E0173F58A10038BAEC /* LaunchViewController.m in Sources */,
+				B15B15C5175E6E3A009E3F17 /* InterfaceManager.m in Sources */,
+				B17770F9173F5C7B0038BAEC /* PhotoEditorViewController.m in Sources */,
+				B17770EF173F5BEA0038BAEC /* PreviousRunEditorMenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B17770BF173F57090038BAEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B17770C0173F57090038BAEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B17770D4173F57090038BAEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B17770D5173F57090038BAEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B17770D7173F57090038BAEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Running with a Snap/Running with a Snap-Prefix.pch";
+				INFOPLIST_FILE = "Running with a Snap/Running with a Snap-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Running-with-a-SnapD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B17770D8173F57090038BAEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 2T492Q3SC8;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Running with a Snap/Running with a Snap-Prefix.pch";
+				INFOPLIST_FILE = "Running with a Snap/Running with a Snap-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Running-with-a-SnapD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B17770AE173F57090038BAEC /* Build configuration list for PBXProject "Running with a Snap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17770D4173F57090038BAEC /* Debug */,
+				B17770D5173F57090038BAEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B17770D6173F57090038BAEC /* Build configuration list for PBXNativeTarget "Running with a Snap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B17770D7173F57090038BAEC /* Debug */,
+				B17770D8173F57090038BAEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B17770AB173F57090038BAEC /* Project object */;
+}

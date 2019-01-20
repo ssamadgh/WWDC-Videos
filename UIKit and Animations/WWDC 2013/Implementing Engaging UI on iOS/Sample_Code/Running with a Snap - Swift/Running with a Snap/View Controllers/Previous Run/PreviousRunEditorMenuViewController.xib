@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreviousRunEditorMenuViewController" customModule="Running_with_a_Snap___Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="1gH-AU-SkK" id="8nA-rd-QOs"/>
+                <outlet property="editButton" destination="OID-2C-5iF" id="wkZ-0R-c4g"/>
+                <outlet property="flipbookButton" destination="fX0-k2-wmN" id="CZb-vb-QZN"/>
+                <outlet property="runWhenIsLabel" destination="tUa-or-O7J" id="8V7-Ua-DiV"/>
+                <outlet property="runWhereIsLabel" destination="3pA-GS-hI5" id="QJd-se-Lx0"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gH-AU-SkK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-k2-wmN">
+                    <rect key="frame" x="132" y="226" width="110" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="UL2-m4-yef"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="Z9U-9k-PTS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <state key="normal" title="Flipbook">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showFlipboard:" destination="-1" eventType="touchUpInside" id="Vti-yH-vYQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OID-2C-5iF">
+                    <rect key="frame" x="132" y="299" width="110" height="42"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <state key="normal" title="Edit">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="editPhotos:" destination="-1" eventType="touchUpInside" id="LGw-nw-4qJ"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lF-wp-Unk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="run title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pA-GS-hI5">
+                            <rect key="frame" x="10" y="8" width="350" height="21"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="run date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUa-or-O7J">
+                            <rect key="frame" x="10" y="8" width="350" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OID-2C-5iF" firstAttribute="width" secondItem="fX0-k2-wmN" secondAttribute="width" id="2SR-Eb-suO"/>
+                <constraint firstItem="fX0-k2-wmN" firstAttribute="top" secondItem="1" secondAttribute="top" constant="226" id="Ju9-eu-s34"/>
+                <constraint firstItem="OID-2C-5iF" firstAttribute="centerX" secondItem="fX0-k2-wmN" secondAttribute="centerX" id="WHU-uP-8CX"/>
+                <constraint firstItem="OID-2C-5iF" firstAttribute="height" secondItem="fX0-k2-wmN" secondAttribute="height" id="h4k-dM-B5X"/>
+                <constraint firstItem="fX0-k2-wmN" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="nv4-0p-zZo"/>
+                <constraint firstItem="OID-2C-5iF" firstAttribute="top" secondItem="fX0-k2-wmN" secondAttribute="bottom" constant="31" id="wO0-Z7-N7S"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+        </view>
+    </objects>
+</document>

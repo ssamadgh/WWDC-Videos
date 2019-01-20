@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <development version="5000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlipbookViewController">
+            <connections>
+                <outlet property="contentView" destination="61" id="73"/>
+                <outlet property="lightpoolView" destination="51" id="76"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" image="lightpool.png" translatesAutoresizingMaskIntoConstraints="NO" id="51">
+                    <rect key="frame" x="0.0" y="399" width="320" height="77"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="77" id="60"/>
+                    </constraints>
+                </imageView>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="51" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="54"/>
+                <constraint firstAttribute="bottom" secondItem="51" secondAttribute="bottom" constant="92" id="58"/>
+                <constraint firstItem="61" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="67"/>
+                <constraint firstItem="61" firstAttribute="top" secondItem="1" secondAttribute="top" id="68"/>
+                <constraint firstItem="61" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="70"/>
+                <constraint firstItem="61" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="71"/>
+                <constraint firstItem="51" firstAttribute="trailing" secondItem="61" secondAttribute="trailing" id="80"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="lightpool.png" width="320" height="44"/>
+    </resources>
+    <classes>
+        <class className="FlipbookViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlipbookViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contentView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lightpoolView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+</document>
