@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ifN-Gv-xNx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Toggle_Bird" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bird" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-o2-tQX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="T1i-JB-ezP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This text goes below the prespective bird." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU8-0w-HE5">
+                                <rect key="frame" x="27.5" y="72" width="320" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sU8-0w-HE5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AZb-rL-4xf"/>
+                            <constraint firstItem="CbI-o2-tQX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ByS-MU-s1j"/>
+                            <constraint firstItem="CbI-o2-tQX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UDi-Sp-96y"/>
+                            <constraint firstItem="CbI-o2-tQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="coG-hz-HlG"/>
+                            <constraint firstItem="sU8-0w-HE5" firstAttribute="top" secondItem="CbI-o2-tQX" secondAttribute="bottom" constant="8" id="op0-2B-0bm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XCA-jd-qDD">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="veI-4E-6YJ">
+                            <rect key="frame" x="148.5" y="7" width="78" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Toggle Bird"/>
+                            <connections>
+                                <action selector="toggleBirdAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2U-oT-NNh"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="heightConstraint" destination="T1i-JB-ezP" id="AEh-Jk-M7l"/>
+                        <outlet property="toggleBird" destination="veI-4E-6YJ" id="o2C-9d-VlP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.60000000000002" y="-564.46776611694156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ioa-de-74m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ifN-Gv-xNx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aFN-dA-cL8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="F88-rr-uio"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ak-EV-I69" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bird" width="577" height="527"/>
+    </resources>
+</document>
