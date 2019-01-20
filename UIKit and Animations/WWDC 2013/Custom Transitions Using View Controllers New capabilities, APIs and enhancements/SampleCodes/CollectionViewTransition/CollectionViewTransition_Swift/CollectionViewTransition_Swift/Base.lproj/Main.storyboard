@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wTf-e0-dtl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="LK8-Rg-9v2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wTf-e0-dtl" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TLE-AN-QKA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Md3-2r-d9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-423" y="-43"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Yls-uY-lcx">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="rF1-Hf-6fn" customClass="APLDetailViewController" customModule="CollectionViewTransition_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zdD-Kw-7iM"/>
+                        <viewControllerLayoutGuide type="bottom" id="TF0-oF-mmJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D4i-v9-NL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vl4-Cn-Equ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vl4-Cn-Equ" firstAttribute="trailing" secondItem="D4i-v9-NL0" secondAttribute="trailing" id="JE5-ui-Diz"/>
+                            <constraint firstItem="vl4-Cn-Equ" firstAttribute="top" secondItem="D4i-v9-NL0" secondAttribute="top" id="owc-fv-Hv6"/>
+                            <constraint firstItem="vl4-Cn-Equ" firstAttribute="bottom" secondItem="D4i-v9-NL0" secondAttribute="bottom" id="ucE-gi-jCF"/>
+                            <constraint firstItem="vl4-Cn-Equ" firstAttribute="leading" secondItem="D4i-v9-NL0" secondAttribute="leading" id="wov-bR-NwK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IGY-hf-7WU"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="vl4-Cn-Equ" id="U1D-nk-1S8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzf-vi-Ff6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="-42"/>
+        </scene>
+    </scenes>
+</document>

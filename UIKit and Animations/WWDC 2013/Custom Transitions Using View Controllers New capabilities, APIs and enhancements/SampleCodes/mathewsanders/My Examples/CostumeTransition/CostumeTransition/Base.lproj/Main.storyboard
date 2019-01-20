@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CostumeTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRZ-7w-hFw">
+                                <rect key="frame" x="184" y="617" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="gde-Wm-3xU" kind="presentation" identifier="" id="Cj8-V1-QRG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sRZ-7w-hFw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mXR-vK-QjF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sRZ-7w-hFw" secondAttribute="bottom" constant="89" id="oYm-kq-Tq0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mIF-Tp-Z2V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="1021"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="etZ-A0-Tu1">
+            <objects>
+                <viewController id="gde-Wm-3xU" customClass="ViewController2" customModule="CostumeTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rua-Wg-dgc"/>
+                        <viewControllerLayoutGuide type="bottom" id="PEf-Fx-ebd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gba-Br-3Ai">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27p-aQ-mVq">
+                                <rect key="frame" x="192" y="640" width="30" height="30"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" red="1" green="1" blue="0.92924182050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6LU-v9-DJz" kind="unwind" unwindAction="Exit:" id="8xv-Lc-HLI"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="kFf-jk-Bai">
+                                <rect key="frame" x="105.66666666666669" y="146" width="203" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIv-Xp-mIQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
+                                        <state key="normal" title="microsoft">
+                                            <color key="titleColor" red="1" green="1" blue="0.92924182050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBE-XB-tZK">
+                                        <rect key="frame" x="165" y="0.0" width="38" height="30"/>
+                                        <state key="normal" title="apple">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="27p-aQ-mVq" firstAttribute="centerX" secondItem="Gba-Br-3Ai" secondAttribute="centerX" id="1EV-ui-6Na"/>
+                            <constraint firstItem="kFf-jk-Bai" firstAttribute="top" secondItem="Rua-Wg-dgc" secondAttribute="bottom" constant="126" id="gTv-Te-zle"/>
+                            <constraint firstItem="PEf-Fx-ebd" firstAttribute="top" secondItem="27p-aQ-mVq" secondAttribute="bottom" constant="66" id="juL-f4-zs7"/>
+                            <constraint firstItem="kFf-jk-Bai" firstAttribute="centerX" secondItem="Gba-Br-3Ai" secondAttribute="centerX" id="pde-pn-ssW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appleButton" destination="XBE-XB-tZK" id="KYs-a8-WSp"/>
+                        <outlet property="microsoftButton" destination="pIv-Xp-mIQ" id="fRN-Kb-Ied"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Is-UC-Ept" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6LU-v9-DJz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="1021"/>
+        </scene>
+    </scenes>
+</document>
