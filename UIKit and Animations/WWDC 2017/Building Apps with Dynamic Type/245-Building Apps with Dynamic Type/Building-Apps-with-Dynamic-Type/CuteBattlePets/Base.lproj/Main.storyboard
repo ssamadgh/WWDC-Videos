@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.13"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pet-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="PetViewController" customModule="CuteBattlePets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides/>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-E8-e0U">
+                                <rect key="frame" x="0.0" y="52" width="375" height="707"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-Wd-ps8">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oVt-AH-uO7" userLabel="Pet Image">
+                                                <rect key="frame" x="38" y="34" width="300" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oVt-AH-uO7" secondAttribute="height" multiplier="1:1" id="SfB-ek-wFb"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" ambiguous="YES" text="PET NAME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkA-Rh-GxE" userLabel="Pet Name">
+                                                <rect key="frame" x="122" y="352" width="132.5" height="34"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Pet name" label="Pet Name"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Add leading and trailing constraints" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUY-X0-MTZ" userLabel="Pet Likes">
+                                                <rect key="frame" x="28" y="394" width="319" height="21"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Avoid constants for baseline constraints" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9q4-ad-btD" userLabel="Pet Dislikes">
+                                                <rect key="frame" x="28" y="423" width="319" height="21"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Set number of lines to 0 to wrap text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKx-vZ-FQs" userLabel="Pet Special Powers">
+                                                <rect key="frame" x="28" y="452" width="319" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="bUY-X0-MTZ" firstAttribute="trailing" secondItem="fZX-Wd-ps8" secondAttribute="trailingMargin" constant="-20" id="2SO-HL-BNJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZKx-vZ-FQs" secondAttribute="bottom" constant="20" symbolic="YES" id="G4y-Ov-vmR"/>
+                                            <constraint firstItem="GkA-Rh-GxE" firstAttribute="top" secondItem="oVt-AH-uO7" secondAttribute="bottom" constant="11.5" id="ITI-ma-w1A"/>
+                                            <constraint firstItem="ZKx-vZ-FQs" firstAttribute="firstBaseline" secondItem="9q4-ad-btD" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="MVs-Hd-HWN"/>
+                                            <constraint firstItem="9q4-ad-btD" firstAttribute="firstBaseline" secondItem="bUY-X0-MTZ" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="PQ0-Ps-GHK"/>
+                                            <constraint firstItem="bUY-X0-MTZ" firstAttribute="leading" secondItem="fZX-Wd-ps8" secondAttribute="leadingMargin" constant="20" id="eh5-bi-OBm"/>
+                                            <constraint firstItem="oVt-AH-uO7" firstAttribute="leading" secondItem="fZX-Wd-ps8" secondAttribute="leading" constant="38" id="gCC-Jg-jHf"/>
+                                            <constraint firstItem="oVt-AH-uO7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fZX-Wd-ps8" secondAttribute="top" constant="10" id="iF7-5g-Pnj"/>
+                                            <constraint firstItem="bUY-X0-MTZ" firstAttribute="firstBaseline" secondItem="GkA-Rh-GxE" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="jjC-MB-UG0"/>
+                                            <constraint firstItem="9q4-ad-btD" firstAttribute="leading" secondItem="fZX-Wd-ps8" secondAttribute="leadingMargin" constant="20" id="m7D-iJ-ojh"/>
+                                            <constraint firstAttribute="trailing" secondItem="oVt-AH-uO7" secondAttribute="trailing" constant="37" id="q4d-Bp-ruI"/>
+                                            <constraint firstItem="9q4-ad-btD" firstAttribute="trailing" secondItem="fZX-Wd-ps8" secondAttribute="trailingMargin" constant="-20" id="uV8-WP-QwN"/>
+                                            <constraint firstItem="ZKx-vZ-FQs" firstAttribute="leading" secondItem="fZX-Wd-ps8" secondAttribute="leadingMargin" constant="20" id="xRH-Iv-JXU"/>
+                                            <constraint firstItem="GkA-Rh-GxE" firstAttribute="centerX" secondItem="fZX-Wd-ps8" secondAttribute="centerX" id="xwl-0f-a5g"/>
+                                            <constraint firstItem="ZKx-vZ-FQs" firstAttribute="trailing" secondItem="fZX-Wd-ps8" secondAttribute="trailingMargin" constant="-20" id="yPb-aO-Kbr"/>
+                                            <constraint firstItem="oVt-AH-uO7" firstAttribute="centerX" secondItem="fZX-Wd-ps8" secondAttribute="centerX" id="z4d-gV-52c"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="fZX-Wd-ps8" secondAttribute="bottom" id="23N-Bn-CCz"/>
+                                    <constraint firstItem="fZX-Wd-ps8" firstAttribute="top" secondItem="mEh-E8-e0U" secondAttribute="top" id="L7d-Go-SiA"/>
+                                    <constraint firstItem="fZX-Wd-ps8" firstAttribute="leading" secondItem="mEh-E8-e0U" secondAttribute="leading" id="Yoy-np-1zJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZX-Wd-ps8" secondAttribute="trailing" id="ZQz-aq-tUu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mEh-E8-e0U" firstAttribute="bottom" secondItem="Rvf-M1-tPQ" secondAttribute="bottom" id="7gR-bc-Adx"/>
+                            <constraint firstItem="mEh-E8-e0U" firstAttribute="trailing" secondItem="Rvf-M1-tPQ" secondAttribute="trailing" id="UHf-Nn-OoP"/>
+                            <constraint firstItem="fZX-Wd-ps8" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="wbH-tv-Equ"/>
+                            <constraint firstItem="mEh-E8-e0U" firstAttribute="top" secondItem="Rvf-M1-tPQ" secondAttribute="top" id="x0T-ui-bX0"/>
+                            <constraint firstItem="mEh-E8-e0U" firstAttribute="leading" secondItem="Rvf-M1-tPQ" secondAttribute="leading" id="zH6-7T-y1s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rvf-M1-tPQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pet" id="IzL-fz-bdV" userLabel="My Pet"/>
+                    <connections>
+                        <outlet property="petDislikes" destination="9q4-ad-btD" id="gox-Nk-Ilf"/>
+                        <outlet property="petImage" destination="oVt-AH-uO7" id="rjP-p0-Mzf"/>
+                        <outlet property="petLikes" destination="bUY-X0-MTZ" id="0U8-if-UrE"/>
+                        <outlet property="petName" destination="GkA-Rh-GxE" id="I0Y-Xb-UDI"/>
+                        <outlet property="petSpecialPowers" destination="ZKx-vZ-FQs" id="fmE-wI-km3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6F2-rO-LDm" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="FFy-b9-l4c" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Oxh-Za-a3O" kind="relationship" relationship="viewControllers" id="zjo-oR-l8V"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Pet Navigation View Controller-->
+        <scene sceneID="3f9-m7-8ru">
+            <objects>
+                <navigationController title="Pet Navigation View Controller" automaticallyAdjustsScrollViewInsets="NO" id="6F2-rO-LDm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pet" image="myPet" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Uhm-O8-bSY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="edk-9V-ova"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mc9-EA-ib5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Opponents Navigation View Controller-->
+        <scene sceneID="kAm-mo-GLN">
+            <objects>
+                <navigationController title="Opponents Navigation View Controller" automaticallyAdjustsScrollViewInsets="NO" id="FFy-b9-l4c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Opponents" image="battle" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1PY-5F-T60">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XuN-M9-DTq" kind="relationship" relationship="rootViewController" id="JwE-M0-Rhb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5L-gR-NlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+        </scene>
+        <!--Opponents-->
+        <scene sceneID="0gc-Ft-iO0">
+            <objects>
+                <tableViewController id="XuN-M9-DTq" customClass="BattleViewController" customModule="CuteBattlePets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gRr-wB-VmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="battle" id="6Ni-3g-GXJ" customClass="BattleCell" customModule="CuteBattlePets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Ni-3g-GXJ" id="mF2-e4-akM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XuN-M9-DTq" id="M6b-cq-5t6"/>
+                            <outlet property="delegate" destination="XuN-M9-DTq" id="I5d-yR-tUU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Opponents" id="XLe-vb-b6c"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="show" identifier="showPetSegue" id="Wmg-R7-5g0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgA-2A-09S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="374"/>
+        </scene>
+        <!--Score Card View Controller-->
+        <scene sceneID="sQL-xa-aXw">
+            <objects>
+                <viewController storyboardIdentifier="ScoreCardID" id="TsM-NO-cD7" customClass="ScoreCardViewController" customModule="CuteBattlePets" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides/>
+                    <view key="view" contentMode="scaleToFill" id="JNi-uL-hqz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="7Zq-97-fLb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhg-aI-XbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3337" y="360"/>
+        </scene>
+        <!--Achievements Navigation View Controller-->
+        <scene sceneID="kgb-P8-Fg3">
+            <objects>
+                <navigationController title="Achievements Navigation View Controller" automaticallyAdjustsScrollViewInsets="NO" id="Oxh-Za-a3O" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Achievements" image="achievements" id="9VM-XL-uMm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="oa8-aR-x1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IOc-Ni-WDw" kind="relationship" relationship="rootViewController" id="F1O-Nq-2ss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpq-DD-Ivm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="1049.3253373313344"/>
+        </scene>
+        <!--Achievements-->
+        <scene sceneID="zbT-BA-axP">
+            <objects>
+                <tableViewController id="IOc-Ni-WDw" customClass="AchievementsViewController" customModule="CuteBattlePets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lk2-XQ-s44">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="achievements" id="sGS-dP-J8L" customClass="AchievementsCell" customModule="CuteBattlePets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sGS-dP-J8L" id="lNI-29-u4h">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IOc-Ni-WDw" id="voS-a8-zZv"/>
+                            <outlet property="delegate" destination="IOc-Ni-WDw" id="zcD-Ac-Pj2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Achievements" id="pjO-iW-na0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17Z-ZP-h6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1690" y="1048"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="achievements" width="28" height="25"/>
+        <image name="battle" width="14" height="24"/>
+        <image name="myPet" width="18" height="20"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="edk-9V-ova"/>
+    </inferredMetricsTieBreakers>
+</document>

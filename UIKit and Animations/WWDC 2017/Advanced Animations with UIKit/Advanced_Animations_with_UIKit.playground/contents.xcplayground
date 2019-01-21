@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
+    <pages>
+        <page name='Interactive_Animation'/>
+        <page name='Interruptible_Animation'/>
+        <page name='None_linear_Scrubing'/>
+        <page name='addAnimationAfterStartingIt'/>
+    </pages>
+</playground>
