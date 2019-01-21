@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' executeOnSourceChanges='false'>
+    <pages>
+        <page name='PreviousUIKitAnimationMethods'/>
+        <page name='NewUIKitAnimation-Basic'/>
+        <page name='NewUIKitAnimation-PausingAndScrubing'/>
+        <page name='NewUIKitAnimation-Reverse'/>
+        <page name='NewUIKitAnimation-TimingProvider-UICubic'/>
+        <page name='NewUIKitAnimation-TimingProvider-UICubic2'/>
+        <page name='NewUIKitAnimation-TimingProvider-UISpring'/>
+        <page name='NewUIKitAnimation-TimingProvider-UISpring2'/>
+        <page name='NewUIKitAnimation-TimingProvider-UISpring3'/>
+    </pages>
+</playground>
