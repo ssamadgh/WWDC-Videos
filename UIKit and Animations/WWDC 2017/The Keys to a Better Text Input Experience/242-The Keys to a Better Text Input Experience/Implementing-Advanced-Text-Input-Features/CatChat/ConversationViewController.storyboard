@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13110.5" systemVersion="16E137" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Fj-a1-KqP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13091.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conversation View Controller-->
+        <scene sceneID="C14-eC-43u">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="6Fj-a1-KqP" customClass="ConversationViewController" customModule="CatChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="trn-Jg-Lso">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="100" id="HHe-Jr-p2G" customClass="ChatItemTableViewCell" customModule="CatChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHe-Jr-p2G" id="o57-uV-uNb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w08-V7-Jl7" userLabel="flippableView">
+                                            <rect key="frame" x="0.0" y="10" width="375" height="90"/>
+                                            <subviews>
+                                                <view verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jG5-Z3-Uxr" userLabel="backgroundView" customClass="UIImageView">
+                                                    <rect key="frame" x="4" y="0.0" width="356.5" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpK-PJ-rQq">
+                                                    <rect key="frame" x="26" y="0.0" width="326.5" height="85"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="jG5-Z3-Uxr" firstAttribute="trailing" secondItem="lpK-PJ-rQq" secondAttribute="trailing" constant="8" id="0kb-UY-HgE"/>
+                                                <constraint firstAttribute="bottom" secondItem="jG5-Z3-Uxr" secondAttribute="bottom" id="3ma-TP-8AY"/>
+                                                <constraint firstItem="lpK-PJ-rQq" firstAttribute="top" secondItem="w08-V7-Jl7" secondAttribute="top" id="Ygp-8G-sUv"/>
+                                                <constraint firstItem="jG5-Z3-Uxr" firstAttribute="top" secondItem="w08-V7-Jl7" secondAttribute="top" id="am4-1B-iFN"/>
+                                                <constraint firstAttribute="bottom" secondItem="lpK-PJ-rQq" secondAttribute="bottom" constant="5" id="db2-Vy-hdm"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lpK-PJ-rQq" secondAttribute="trailing" constant="18" id="g0T-aG-iC8"/>
+                                                <constraint firstItem="jG5-Z3-Uxr" firstAttribute="leading" secondItem="lpK-PJ-rQq" secondAttribute="leading" constant="-22" id="lJf-Qz-wgD"/>
+                                                <constraint firstItem="lpK-PJ-rQq" firstAttribute="leading" secondItem="w08-V7-Jl7" secondAttribute="leading" constant="26" id="llW-Y2-VqF"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="w08-V7-Jl7" secondAttribute="trailing" id="HQV-fd-alJ"/>
+                                        <constraint firstItem="w08-V7-Jl7" firstAttribute="top" secondItem="o57-uV-uNb" secondAttribute="top" constant="10" id="MZr-fv-a2b"/>
+                                        <constraint firstAttribute="bottom" secondItem="w08-V7-Jl7" secondAttribute="bottom" id="ToP-Te-Ol5"/>
+                                        <constraint firstItem="w08-V7-Jl7" firstAttribute="leading" secondItem="o57-uV-uNb" secondAttribute="leading" id="hgP-jm-9L8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bubbleImageView" destination="jG5-Z3-Uxr" id="TYp-Oz-GsS"/>
+                                    <outlet property="flippableView" destination="w08-V7-Jl7" id="UyY-Xr-VU6"/>
+                                    <outlet property="textView" destination="lpK-PJ-rQq" id="HWy-3Z-Nmh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLW-gW-Ul0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="-286"/>
+        </scene>
+    </scenes>
+</document>

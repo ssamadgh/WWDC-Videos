@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  CatChat
+ 
+  Copyright © 2017 Apple, Inc. All rights reserved.
+*/
+
+/* Send button for the input accessory view */
+"SEND" = "Send";
+
+/* Title of the conversation list */
+"CAT_CHAT" = "CatChat";
+
+/* Discoverable titles for key commands */
+"GO_TO_NEXT_CONVERSATION" = "Go to next conversation";
+"GO_TO_PREV_CONVERSATION" = "Go to previous conversation";
+
+/* Cat keyboard english equivalents */
+"FOOD" = "Food";
+"OUTSIDE" = "Outside";
+"STOP" = "Stop!";

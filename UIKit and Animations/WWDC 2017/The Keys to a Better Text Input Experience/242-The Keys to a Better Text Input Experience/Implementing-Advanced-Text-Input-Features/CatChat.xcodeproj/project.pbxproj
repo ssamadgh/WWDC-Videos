@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A795F941ED3C34F00928D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A795F931ED3C34F00928D76 /* AppDelegate.swift */; };
+		1A8422D31EC10AAE009EFBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422D21EC10AAE009EFBDB /* Assets.xcassets */; };
+		1A8422D61EC10AAE009EFBDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422D41EC10AAE009EFBDB /* LaunchScreen.storyboard */; };
+		1A8422DF1EC133E7009EFBDB /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422DE1EC133E7009EFBDB /* ConversationListViewController.swift */; };
+		1A8422E11EC1378B009EFBDB /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422E01EC1378B009EFBDB /* ChatDataSource.swift */; };
+		1A8422E31EC13867009EFBDB /* Chats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422E21EC13867009EFBDB /* Chats.plist */; };
+		1A8422E61EC1443D009EFBDB /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422E41EC1443D009EFBDB /* ConversationViewController.swift */; };
+		1A8422EA1EC1448E009EFBDB /* ConversationListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422E91EC1448E009EFBDB /* ConversationListViewController.storyboard */; };
+		1A8422ED1EC16BF6009EFBDB /* ConversationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422EC1EC16BF6009EFBDB /* ConversationViewController.storyboard */; };
+		1A8422F01EC17467009EFBDB /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422EF1EC17467009EFBDB /* ChatInputAccessoryView.swift */; };
+		1A8422F21EC194F9009EFBDB /* AnimalInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422F11EC194F9009EFBDB /* AnimalInputViewController.swift */; };
+		1AA598D91ED2B24C00C305F9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1AA598D81ED2B24C00C305F9 /* Settings.bundle */; };
+		1AAAA45F1ED381C8000DD04D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AAAA45E1ED381C8000DD04D /* Localizable.strings */; };
+		1AC8E4001EDE1D3500DBE240 /* AnimalKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1AC8E3F91EDE1D3500DBE240 /* AnimalKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1AC8E4041EDE1D7200DBE240 /* AnimalInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8422F11EC194F9009EFBDB /* AnimalInputViewController.swift */; };
+		1AC8E4051EDE1D8300DBE240 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AAAA45E1ED381C8000DD04D /* Localizable.strings */; };
+		1AC8E4061EDE1D8600DBE240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8422D21EC10AAE009EFBDB /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AC8E3FE1EDE1D3500DBE240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A8422C01EC10AAD009EFBDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC8E3F81EDE1D3500DBE240;
+			remoteInfo = AnimalKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1AA598E91ED2B3C700C305F9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1AC8E4001EDE1D3500DBE240 /* AnimalKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A795F931ED3C34F00928D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A8422C81EC10AAE009EFBDB /* CatChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8422D21EC10AAE009EFBDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A8422D51EC10AAE009EFBDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A8422D71EC10AAE009EFBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8422DE1EC133E7009EFBDB /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
+		1A8422E01EC1378B009EFBDB /* ChatDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		1A8422E21EC13867009EFBDB /* Chats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Chats.plist; sourceTree = "<group>"; };
+		1A8422E41EC1443D009EFBDB /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		1A8422E91EC1448E009EFBDB /* ConversationListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConversationListViewController.storyboard; sourceTree = "<group>"; };
+		1A8422EC1EC16BF6009EFBDB /* ConversationViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ConversationViewController.storyboard; sourceTree = "<group>"; };
+		1A8422EF1EC17467009EFBDB /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
+		1A8422F11EC194F9009EFBDB /* AnimalInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalInputViewController.swift; sourceTree = "<group>"; };
+		1A9122E71ED90532005BECA9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1AA598D81ED2B24C00C305F9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		1AAAA45E1ED381C8000DD04D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1AC8E3F91EDE1D3500DBE240 /* AnimalKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AnimalKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC8E3FD1EDE1D3500DBE240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		549085B2822A8E5E8A9A4020 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A8422C51EC10AAD009EFBDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC8E3F61EDE1D3500DBE240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A8422BF1EC10AAD009EFBDB = {
+			isa = PBXGroup;
+			children = (
+				1A9122E71ED90532005BECA9 /* README.md */,
+				1A8422CA1EC10AAE009EFBDB /* CatChat */,
+				1AC8E3FA1EDE1D3500DBE240 /* AnimalKeyboard */,
+				1A8422C91EC10AAE009EFBDB /* Products */,
+				75CB3C81B3489B7CED381415 /* Configuration */,
+				7E137F1357240F03369EA9E9 /* LICENSE */,
+			);
+			sourceTree = "<group>";
+		};
+		1A8422C91EC10AAE009EFBDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A8422C81EC10AAE009EFBDB /* CatChat.app */,
+				1AC8E3F91EDE1D3500DBE240 /* AnimalKeyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A8422CA1EC10AAE009EFBDB /* CatChat */ = {
+			isa = PBXGroup;
+			children = (
+				1A795F931ED3C34F00928D76 /* AppDelegate.swift */,
+				1A8422EB1EC164F6009EFBDB /* Models */,
+				1A8422EE1EC17444009EFBDB /* Views */,
+				1A8422E81EC14449009EFBDB /* VIew Controllers */,
+				1A8422DD1EC10ACE009EFBDB /* Resources */,
+			);
+			path = CatChat;
+			sourceTree = "<group>";
+		};
+		1A8422DD1EC10ACE009EFBDB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1AAAA45E1ED381C8000DD04D /* Localizable.strings */,
+				1A8422D21EC10AAE009EFBDB /* Assets.xcassets */,
+				1A8422D41EC10AAE009EFBDB /* LaunchScreen.storyboard */,
+				1A8422D71EC10AAE009EFBDB /* Info.plist */,
+				1A8422E21EC13867009EFBDB /* Chats.plist */,
+				1AA598D81ED2B24C00C305F9 /* Settings.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1A8422E81EC14449009EFBDB /* VIew Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A8422F11EC194F9009EFBDB /* AnimalInputViewController.swift */,
+				1A8422DE1EC133E7009EFBDB /* ConversationListViewController.swift */,
+				1A8422E91EC1448E009EFBDB /* ConversationListViewController.storyboard */,
+				1A8422E41EC1443D009EFBDB /* ConversationViewController.swift */,
+				1A8422EC1EC16BF6009EFBDB /* ConversationViewController.storyboard */,
+			);
+			name = "VIew Controllers";
+			sourceTree = "<group>";
+		};
+		1A8422EB1EC164F6009EFBDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A8422E01EC1378B009EFBDB /* ChatDataSource.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1A8422EE1EC17444009EFBDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A8422EF1EC17467009EFBDB /* ChatInputAccessoryView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1AC8E3FA1EDE1D3500DBE240 /* AnimalKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1AC8E3FD1EDE1D3500DBE240 /* Info.plist */,
+			);
+			path = AnimalKeyboard;
+			sourceTree = "<group>";
+		};
+		75CB3C81B3489B7CED381415 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		7E137F1357240F03369EA9E9 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				549085B2822A8E5E8A9A4020 /* LICENSE.txt */,
+			);
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A8422C71EC10AAD009EFBDB /* CatChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A8422DA1EC10AAE009EFBDB /* Build configuration list for PBXNativeTarget "CatChat" */;
+			buildPhases = (
+				1A8422C41EC10AAD009EFBDB /* Sources */,
+				1A8422C51EC10AAD009EFBDB /* Frameworks */,
+				1A8422C61EC10AAD009EFBDB /* Resources */,
+				1AA598E91ED2B3C700C305F9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AC8E3FF1EDE1D3500DBE240 /* PBXTargetDependency */,
+			);
+			name = CatChat;
+			productName = CatChat;
+			productReference = 1A8422C81EC10AAE009EFBDB /* CatChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AC8E3F81EDE1D3500DBE240 /* AnimalKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AC8E4011EDE1D3500DBE240 /* Build configuration list for PBXNativeTarget "AnimalKeyboard" */;
+			buildPhases = (
+				1AC8E3F51EDE1D3500DBE240 /* Sources */,
+				1AC8E3F61EDE1D3500DBE240 /* Frameworks */,
+				1AC8E3F71EDE1D3500DBE240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnimalKeyboard;
+			productName = AnimalKeyboard;
+			productReference = 1AC8E3F91EDE1D3500DBE240 /* AnimalKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A8422C01EC10AAD009EFBDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					1A8422C71EC10AAD009EFBDB = {
+						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					1AC8E3F81EDE1D3500DBE240 = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = 1A8422C31EC10AAD009EFBDB /* Build configuration list for PBXProject "CatChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A8422BF1EC10AAD009EFBDB;
+			productRefGroup = 1A8422C91EC10AAE009EFBDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A8422C71EC10AAD009EFBDB /* CatChat */,
+				1AC8E3F81EDE1D3500DBE240 /* AnimalKeyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A8422C61EC10AAD009EFBDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A8422ED1EC16BF6009EFBDB /* ConversationViewController.storyboard in Resources */,
+				1A8422E31EC13867009EFBDB /* Chats.plist in Resources */,
+				1A8422D61EC10AAE009EFBDB /* LaunchScreen.storyboard in Resources */,
+				1AAAA45F1ED381C8000DD04D /* Localizable.strings in Resources */,
+				1A8422D31EC10AAE009EFBDB /* Assets.xcassets in Resources */,
+				1AA598D91ED2B24C00C305F9 /* Settings.bundle in Resources */,
+				1A8422EA1EC1448E009EFBDB /* ConversationListViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC8E3F71EDE1D3500DBE240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC8E4061EDE1D8600DBE240 /* Assets.xcassets in Resources */,
+				1AC8E4051EDE1D8300DBE240 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A8422C41EC10AAD009EFBDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A795F941ED3C34F00928D76 /* AppDelegate.swift in Sources */,
+				1A8422DF1EC133E7009EFBDB /* ConversationListViewController.swift in Sources */,
+				1A8422E61EC1443D009EFBDB /* ConversationViewController.swift in Sources */,
+				1A8422E11EC1378B009EFBDB /* ChatDataSource.swift in Sources */,
+				1A8422F21EC194F9009EFBDB /* AnimalInputViewController.swift in Sources */,
+				1A8422F01EC17467009EFBDB /* ChatInputAccessoryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC8E3F51EDE1D3500DBE240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC8E4041EDE1D7200DBE240 /* AnimalInputViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AC8E3FF1EDE1D3500DBE240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AC8E3F81EDE1D3500DBE240 /* AnimalKeyboard */;
+			targetProxy = 1AC8E3FE1EDE1D3500DBE240 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A8422D41EC10AAE009EFBDB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A8422D51EC10AAE009EFBDB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A8422D81EC10AAE009EFBDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A8422D91EC10AAE009EFBDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A8422DB1EC10AAE009EFBDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CatChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CatChat${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		1A8422DC1EC10AAE009EFBDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CatChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CatChat${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		1AC8E4021EDE1D3500DBE240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AnimalKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CatChat${SAMPLE_CODE_DISAMBIGUATOR}.AnimalKeyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AC8E4031EDE1D3500DBE240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EE6844CEC56FE2E8335932 /* SampleCode.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AnimalKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.CatChat${SAMPLE_CODE_DISAMBIGUATOR}.AnimalKeyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A8422C31EC10AAD009EFBDB /* Build configuration list for PBXProject "CatChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8422D81EC10AAE009EFBDB /* Debug */,
+				1A8422D91EC10AAE009EFBDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A8422DA1EC10AAE009EFBDB /* Build configuration list for PBXNativeTarget "CatChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A8422DB1EC10AAE009EFBDB /* Debug */,
+				1A8422DC1EC10AAE009EFBDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AC8E4011EDE1D3500DBE240 /* Build configuration list for PBXNativeTarget "AnimalKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC8E4021EDE1D3500DBE240 /* Debug */,
+				1AC8E4031EDE1D3500DBE240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A8422C01EC10AAD009EFBDB /* Project object */;
+}

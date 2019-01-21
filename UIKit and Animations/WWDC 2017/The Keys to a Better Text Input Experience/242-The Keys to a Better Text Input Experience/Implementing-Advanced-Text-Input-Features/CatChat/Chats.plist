@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>sender</key>
+			<string>Bear</string>
+			<key>text</key>
+			<string>Running late! I promise I&apos;ll feed you soon!</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>sender</key>
+			<string>Poochie</string>
+			<key>text</key>
+			<string>Food!</string>
+		</dict>
+		<dict>
+			<key>sender</key>
+			<string>me</string>
+			<key>text</key>
+			<string>Okay I&apos;ll be home in a bit. Please don&apos;t eat the furniture!</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>sender</key>
+			<string>Yuichi</string>
+			<key>text</key>
+			<string>What kind of food does Camellia like?</string>
+		</dict>
+		<dict>
+			<key>text</key>
+			<string>Anything is fine. No sweets!</string>
+			<key>sender</key>
+			<string>me</string>
+		</dict>
+	</array>
+</array>
+</plist>
