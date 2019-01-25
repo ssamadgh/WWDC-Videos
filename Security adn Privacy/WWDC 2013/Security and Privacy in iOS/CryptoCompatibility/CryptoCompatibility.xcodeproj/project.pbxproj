@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E405DE9317130883007165B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE9217130883007165B9 /* main.m */; };
+		E405DE97171308CF007165B9 /* QCCBase64Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE96171308CF007165B9 /* QCCBase64Encode.m */; };
+		E405DE9A17130AFB007165B9 /* QCCBase64Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE9917130AFB007165B9 /* QCCBase64Decode.m */; };
+		E405DE9F171320D6007165B9 /* QToolCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE9E171320D6007165B9 /* QToolCommand.m */; };
+		E405DEA217136950007165B9 /* QHex.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DEA117136950007165B9 /* QHex.m */; };
+		E4159A0B174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4159A0A174E64BC00B42FC8 /* QCCAESPadBigCryptor.m */; };
+		E4159A0C174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4159A0A174E64BC00B42FC8 /* QCCAESPadBigCryptor.m */; };
+		E4159A0D174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4159A0A174E64BC00B42FC8 /* QCCAESPadBigCryptor.m */; };
+		E4637B441D6F83ED0035DED8 /* private.pem in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EF1716329A00EDED41 /* private.pem */; };
+		E4637B451D6F83ED0035DED8 /* public.pem in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F01716329A00EDED41 /* public.pem */; };
+		E4DD0E2217A28B5700849975 /* RSAOperationsTestsCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD0E2117A28B5700849975 /* RSAOperationsTestsCompat.m */; };
+		E4E494FD1714809300EDED41 /* Base64Commands.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E494FC1714809300EDED41 /* Base64Commands.m */; };
+		E4E495001714812900EDED41 /* DigestCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E494FF1714812900EDED41 /* DigestCommands.m */; };
+		E4E495061714876800EDED41 /* QCCHMACSHAAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495051714876700EDED41 /* QCCHMACSHAAuthentication.m */; };
+		E4E4950917148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950817148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m */; };
+		E4E4950C1714BC1100EDED41 /* KeyDerivationCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950B1714BC1000EDED41 /* KeyDerivationCommands.m */; };
+		E4E4950F1714C6F000EDED41 /* QCCAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950E1714C6F000EDED41 /* QCCAESCryptor.m */; };
+		E4E495121714CB7800EDED41 /* CryptorCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495111714CB7700EDED41 /* CryptorCommands.m */; };
+		E4E495151715588A00EDED41 /* QCCAESPadCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495141715588A00EDED41 /* QCCAESPadCryptor.m */; };
+		E4E4955D17161A4000EDED41 /* RSACommands.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4955C17161A4000EDED41 /* RSACommands.m */; };
+		E4E495A117162FBA00EDED41 /* QCCRSASHASignatureCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E49562171624C100EDED41 /* QCCRSASHASignatureCompat.m */; };
+		E4E4966F1718705100EDED41 /* KeyDerivationOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4966E1718705100EDED41 /* KeyDerivationOperationsTests.m */; };
+		E4E49674171872AC00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950817148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m */; };
+		E4E4968B1718773700EDED41 /* KeyDerivationOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4966E1718705100EDED41 /* KeyDerivationOperationsTests.m */; };
+		E4E4968C171877DA00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950817148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m */; };
+		E4E496901719627E00EDED41 /* RSAOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4968E1719627E00EDED41 /* RSAOperationsTests.m */; };
+		E4E49691171963CE00EDED41 /* private.p12 in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EE1716329A00EDED41 /* private.p12 */; };
+		E4E49692171963D800EDED41 /* test.cer in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F21716329A00EDED41 /* test.cer */; };
+		E4E49694171963F500EDED41 /* test-corrupted.cer in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F11716329A00EDED41 /* test-corrupted.cer */; };
+		E4E496951719660500EDED41 /* QCCRSASHASignature.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495571716159600EDED41 /* QCCRSASHASignature.m */; };
+		E4E496971719660A00EDED41 /* QCCRSASHASignatureCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E49562171624C100EDED41 /* QCCRSASHASignatureCompat.m */; };
+		E4E4969E1719680E00EDED41 /* test-corrupted.cer in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F11716329A00EDED41 /* test-corrupted.cer */; };
+		E4E4969F1719680E00EDED41 /* test.cer in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F21716329A00EDED41 /* test.cer */; };
+		E4E496A1171969E600EDED41 /* QCCBase64Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE96171308CF007165B9 /* QCCBase64Encode.m */; };
+		E4E496A2171969E600EDED41 /* QCCBase64Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE9917130AFB007165B9 /* QCCBase64Decode.m */; };
+		E4E496A5171969E600EDED41 /* QCCHMACSHAAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495051714876700EDED41 /* QCCHMACSHAAuthentication.m */; };
+		E4E496A6171969E600EDED41 /* QCCAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950E1714C6F000EDED41 /* QCCAESCryptor.m */; };
+		E4E496A7171969E600EDED41 /* QCCAESPadCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495141715588A00EDED41 /* QCCAESPadCryptor.m */; };
+		E4E496A8171969E800EDED41 /* QCCBase64Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE96171308CF007165B9 /* QCCBase64Encode.m */; };
+		E4E496A9171969E800EDED41 /* QCCBase64Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DE9917130AFB007165B9 /* QCCBase64Decode.m */; };
+		E4E496AC171969E800EDED41 /* QCCHMACSHAAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495051714876700EDED41 /* QCCHMACSHAAuthentication.m */; };
+		E4E496AD171969E800EDED41 /* QCCAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4950E1714C6F000EDED41 /* QCCAESCryptor.m */; };
+		E4E496AE171969E800EDED41 /* QCCAESPadCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495141715588A00EDED41 /* QCCAESPadCryptor.m */; };
+		E4E496B317196B2800EDED41 /* ToolCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496B217196B2800EDED41 /* ToolCommon.m */; };
+		E4E496B417196B7600EDED41 /* ToolCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496B217196B2800EDED41 /* ToolCommon.m */; };
+		E4E496B517196B7900EDED41 /* ToolCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496B217196B2800EDED41 /* ToolCommon.m */; };
+		E4E496B617196EB100EDED41 /* plaintext-0.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E4964317185BBB00EDED41 /* plaintext-0.dat */; };
+		E4E496B717196EB100EDED41 /* plaintext-0.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E4964317185BBB00EDED41 /* plaintext-0.dat */; };
+		E4E496B817196EB600EDED41 /* test.pem in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F41716329A00EDED41 /* test.pem */; };
+		E4E496B917196EB700EDED41 /* test.pem in Resources */ = {isa = PBXBuildFile; fileRef = E4E495F41716329A00EDED41 /* test.pem */; };
+		E4E496BC17196ED000EDED41 /* Base64OperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496BB17196ECF00EDED41 /* Base64OperationsTests.m */; };
+		E4E496BD17196ED400EDED41 /* Base64OperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496BB17196ECF00EDED41 /* Base64OperationsTests.m */; };
+		E4E496C0171AB17500EDED41 /* DigestOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496BF171AB17400EDED41 /* DigestOperationsTests.m */; };
+		E4E496C1171AB17500EDED41 /* DigestOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496BF171AB17400EDED41 /* DigestOperationsTests.m */; };
+		E4E496C2171AB23700EDED41 /* QHex.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DEA117136950007165B9 /* QHex.m */; };
+		E4E496C3171AB23800EDED41 /* QHex.m in Sources */ = {isa = PBXBuildFile; fileRef = E405DEA117136950007165B9 /* QHex.m */; };
+		E4E496C6171AB41800EDED41 /* CryptorOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496C5171AB41800EDED41 /* CryptorOperationsTests.m */; };
+		E4E496C7171AB41800EDED41 /* CryptorOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496C5171AB41800EDED41 /* CryptorOperationsTests.m */; };
+		E4E496C8171AB56600EDED41 /* plaintext-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EC1716329A00EDED41 /* plaintext-332.dat */; };
+		E4E496C9171AB56600EDED41 /* plaintext-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495ED1716329A00EDED41 /* plaintext-336.dat */; };
+		E4E496CA171AB56700EDED41 /* plaintext-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EC1716329A00EDED41 /* plaintext-332.dat */; };
+		E4E496CB171AB56700EDED41 /* plaintext-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495ED1716329A00EDED41 /* plaintext-336.dat */; };
+		E4E496CC171AB56A00EDED41 /* cyphertext-aes-128-cbc-0.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E4964217185BAE00EDED41 /* cyphertext-aes-128-cbc-0.dat */; };
+		E4E496CD171AB56A00EDED41 /* cyphertext-aes-128-cbc-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E61716329A00EDED41 /* cyphertext-aes-128-cbc-332.dat */; };
+		E4E496CE171AB56A00EDED41 /* cyphertext-aes-128-cbc-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E71716329A00EDED41 /* cyphertext-aes-128-cbc-336.dat */; };
+		E4E496CF171AB56A00EDED41 /* cyphertext-aes-128-ecb-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E81716329A00EDED41 /* cyphertext-aes-128-ecb-336.dat */; };
+		E4E496D0171AB56A00EDED41 /* cyphertext-aes-256-cbc-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E91716329A00EDED41 /* cyphertext-aes-256-cbc-332.dat */; };
+		E4E496D1171AB56A00EDED41 /* cyphertext-aes-256-cbc-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EA1716329A00EDED41 /* cyphertext-aes-256-cbc-336.dat */; };
+		E4E496D2171AB56A00EDED41 /* cyphertext-aes-256-ecb-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EB1716329A00EDED41 /* cyphertext-aes-256-ecb-336.dat */; };
+		E4E496D3171AB56B00EDED41 /* cyphertext-aes-128-cbc-0.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E4964217185BAE00EDED41 /* cyphertext-aes-128-cbc-0.dat */; };
+		E4E496D4171AB56B00EDED41 /* cyphertext-aes-128-cbc-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E61716329A00EDED41 /* cyphertext-aes-128-cbc-332.dat */; };
+		E4E496D5171AB56B00EDED41 /* cyphertext-aes-128-cbc-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E71716329A00EDED41 /* cyphertext-aes-128-cbc-336.dat */; };
+		E4E496D6171AB56B00EDED41 /* cyphertext-aes-128-ecb-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E81716329A00EDED41 /* cyphertext-aes-128-ecb-336.dat */; };
+		E4E496D7171AB56B00EDED41 /* cyphertext-aes-256-cbc-332.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495E91716329A00EDED41 /* cyphertext-aes-256-cbc-332.dat */; };
+		E4E496D8171AB56B00EDED41 /* cyphertext-aes-256-cbc-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EA1716329A00EDED41 /* cyphertext-aes-256-cbc-336.dat */; };
+		E4E496D9171AB56B00EDED41 /* cyphertext-aes-256-ecb-336.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E495EB1716329A00EDED41 /* cyphertext-aes-256-ecb-336.dat */; };
+		E4E496FF171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496FE171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m */; };
+		E4E49700171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496FE171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m */; };
+		E4E49703171CBAA700EDED41 /* QCCRSASmallCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E49702171CBAA500EDED41 /* QCCRSASmallCryptor.m */; };
+		E4E49706171CBC8F00EDED41 /* plaintext-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49704171CBC8E00EDED41 /* plaintext-32.dat */; };
+		E4E49707171CBC8F00EDED41 /* plaintext-256.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49705171CBC8E00EDED41 /* plaintext-256.dat */; };
+		E4E49708171CBC9D00EDED41 /* plaintext-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49704171CBC8E00EDED41 /* plaintext-32.dat */; };
+		E4E49709171CBC9D00EDED41 /* plaintext-256.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49705171CBC8E00EDED41 /* plaintext-256.dat */; };
+		E4E49725171DF26E00EDED41 /* cyphertext-rsa-pkcs1-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49724171DF21D00EDED41 /* cyphertext-rsa-pkcs1-32.dat */; };
+		E4E49726171DF26E00EDED41 /* cyphertext-rsa-pkcs1-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4E49724171DF21D00EDED41 /* cyphertext-rsa-pkcs1-32.dat */; };
+		E4EE94061D79A38D00F5866E /* cyphertext-rsa-oaep-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4C746B31D79A23E0041440A /* cyphertext-rsa-oaep-32.dat */; };
+		E4EE94071D79A38D00F5866E /* cyphertext-rsa-oaep-32.dat in Resources */ = {isa = PBXBuildFile; fileRef = E4C746B31D79A23E0041440A /* cyphertext-rsa-oaep-32.dat */; };
+		E4F4F57E1D67690F00D2548D /* RSAOperationsTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4F57D1D67690F00D2548D /* RSAOperationsTestsBase.m */; };
+		E4F4F57F1D67690F00D2548D /* RSAOperationsTestsBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F4F57D1D67690F00D2548D /* RSAOperationsTestsBase.m */; };
+		E4F4F5801D67715F00D2548D /* QCCRSASHASignatureCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E49562171624C100EDED41 /* QCCRSASHASignatureCompat.m */; };
+		E4F4F5811D67717500D2548D /* QCCRSASHASignature.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E495571716159600EDED41 /* QCCRSASHASignature.m */; };
+		E4F4F5891D686E8100D2548D /* test.cer-sha1.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5841D686E8100D2548D /* test.cer-sha1.sig */; };
+		E4F4F58A1D686E8100D2548D /* test.cer-sha1.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5841D686E8100D2548D /* test.cer-sha1.sig */; };
+		E4F4F58B1D686E8200D2548D /* test.cer-sha2-224.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5851D686E8100D2548D /* test.cer-sha2-224.sig */; };
+		E4F4F58C1D686E8200D2548D /* test.cer-sha2-224.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5851D686E8100D2548D /* test.cer-sha2-224.sig */; };
+		E4F4F58D1D686E8200D2548D /* test.cer-sha2-256.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5861D686E8100D2548D /* test.cer-sha2-256.sig */; };
+		E4F4F58E1D686E8200D2548D /* test.cer-sha2-256.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5861D686E8100D2548D /* test.cer-sha2-256.sig */; };
+		E4F4F58F1D686E8200D2548D /* test.cer-sha2-384.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5871D686E8100D2548D /* test.cer-sha2-384.sig */; };
+		E4F4F5901D686E8200D2548D /* test.cer-sha2-384.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5871D686E8100D2548D /* test.cer-sha2-384.sig */; };
+		E4F4F5911D686E8200D2548D /* test.cer-sha2-512.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5881D686E8100D2548D /* test.cer-sha2-512.sig */; };
+		E4F4F5921D686E8200D2548D /* test.cer-sha2-512.sig in Resources */ = {isa = PBXBuildFile; fileRef = E4F4F5881D686E8100D2548D /* test.cer-sha2-512.sig */; };
+		E4FD356B1D664C2B001C159A /* QCCSHADigest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FD356A1D664B20001C159A /* QCCSHADigest.m */; };
+		E4FD356C1D664C2B001C159A /* QCCSHADigest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FD356A1D664B20001C159A /* QCCSHADigest.m */; };
+		E4FD356D1D664C2C001C159A /* QCCSHADigest.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FD356A1D664B20001C159A /* QCCSHADigest.m */; };
+		E4FD356E1D66605F001C159A /* QCCRSASmallCryptorCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E496FE171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m */; };
+		E4FD356F1D666062001C159A /* QCCRSASmallCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E49702171CBAA500EDED41 /* QCCRSASmallCryptor.m */; };
+		E4FD35701D666084001C159A /* RSAOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E4968E1719627E00EDED41 /* RSAOperationsTests.m */; };
+		E4FD35711D666085001C159A /* RSAOperationsTestsCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DD0E2117A28B5700849975 /* RSAOperationsTestsCompat.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E405DE841713084C007165B9 /* CryptoCompatibility */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CryptoCompatibility; sourceTree = BUILT_PRODUCTS_DIR; };
+		E405DE9217130883007165B9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E405DE95171308CF007165B9 /* QCCBase64Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCBase64Encode.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E405DE96171308CF007165B9 /* QCCBase64Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QCCBase64Encode.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E405DE9817130AFB007165B9 /* QCCBase64Decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCBase64Decode.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E405DE9917130AFB007165B9 /* QCCBase64Decode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCBase64Decode.m; sourceTree = "<group>"; };
+		E405DE9D171320D6007165B9 /* QToolCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QToolCommand.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E405DE9E171320D6007165B9 /* QToolCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QToolCommand.m; sourceTree = "<group>"; };
+		E405DEA017136950007165B9 /* QHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QHex.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E405DEA117136950007165B9 /* QHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHex.m; sourceTree = "<group>"; };
+		E4159A09174E64BC00B42FC8 /* QCCAESPadBigCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCAESPadBigCryptor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4159A0A174E64BC00B42FC8 /* QCCAESPadBigCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCAESPadBigCryptor.m; sourceTree = "<group>"; };
+		E42873F01D6D00F400B07A2D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E4971F90173AD46B00FC643E /* ATestAgainstJava.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = ATestAgainstJava.java; sourceTree = "<group>"; };
+		E4971FDE173C4E3D00FC643E /* ATestAgainstPHP.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; path = ATestAgainstPHP.php; sourceTree = "<group>"; };
+		E4C746B31D79A23E0041440A /* cyphertext-rsa-oaep-32.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-rsa-oaep-32.dat"; sourceTree = "<group>"; };
+		E4DD0E2117A28B5700849975 /* RSAOperationsTestsCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RSAOperationsTestsCompat.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E494FB1714809300EDED41 /* Base64Commands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Commands.h; sourceTree = "<group>"; };
+		E4E494FC1714809300EDED41 /* Base64Commands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Commands.m; sourceTree = "<group>"; };
+		E4E494FE1714812900EDED41 /* DigestCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigestCommands.h; sourceTree = "<group>"; };
+		E4E494FF1714812900EDED41 /* DigestCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigestCommands.m; sourceTree = "<group>"; };
+		E4E495041714876700EDED41 /* QCCHMACSHAAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCHMACSHAAuthentication.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E495051714876700EDED41 /* QCCHMACSHAAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCHMACSHAAuthentication.m; sourceTree = "<group>"; };
+		E4E4950717148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCPBKDF2SHAKeyDerivation.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E4950817148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCPBKDF2SHAKeyDerivation.m; sourceTree = "<group>"; };
+		E4E4950A1714BC1000EDED41 /* KeyDerivationCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyDerivationCommands.h; sourceTree = "<group>"; };
+		E4E4950B1714BC1000EDED41 /* KeyDerivationCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDerivationCommands.m; sourceTree = "<group>"; };
+		E4E4950D1714C6F000EDED41 /* QCCAESCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCAESCryptor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E4950E1714C6F000EDED41 /* QCCAESCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCAESCryptor.m; sourceTree = "<group>"; };
+		E4E495101714CB7700EDED41 /* CryptorCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptorCommands.h; sourceTree = "<group>"; };
+		E4E495111714CB7700EDED41 /* CryptorCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptorCommands.m; sourceTree = "<group>"; };
+		E4E495131715588900EDED41 /* QCCAESPadCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCAESPadCryptor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E495141715588A00EDED41 /* QCCAESPadCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCAESPadCryptor.m; sourceTree = "<group>"; };
+		E4E495561716159600EDED41 /* QCCRSASHASignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCRSASHASignature.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E495571716159600EDED41 /* QCCRSASHASignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCRSASHASignature.m; sourceTree = "<group>"; };
+		E4E4955B17161A4000EDED41 /* RSACommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACommands.h; sourceTree = "<group>"; };
+		E4E4955C17161A4000EDED41 /* RSACommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACommands.m; sourceTree = "<group>"; };
+		E4E49562171624C100EDED41 /* QCCRSASHASignatureCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCRSASHASignatureCompat.m; sourceTree = "<group>"; };
+		E4E495E61716329A00EDED41 /* cyphertext-aes-128-cbc-332.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-aes-128-cbc-332.dat"; sourceTree = "<group>"; };
+		E4E495E71716329A00EDED41 /* cyphertext-aes-128-cbc-336.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-aes-128-cbc-336.dat"; sourceTree = "<group>"; };
+		E4E495E81716329A00EDED41 /* cyphertext-aes-128-ecb-336.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-aes-128-ecb-336.dat"; sourceTree = "<group>"; };
+		E4E495E91716329A00EDED41 /* cyphertext-aes-256-cbc-332.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-aes-256-cbc-332.dat"; sourceTree = "<group>"; };
+		E4E495EA1716329A00EDED41 /* cyphertext-aes-256-cbc-336.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-aes-256-cbc-336.dat"; sourceTree = "<group>"; };
+		E4E495EB1716329A00EDED41 /* cyphertext-aes-256-ecb-336.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cyphertext-aes-256-ecb-336.dat"; sourceTree = "<group>"; };
+		E4E495EC1716329A00EDED41 /* plaintext-332.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = "plaintext-332.dat"; sourceTree = "<group>"; };
+		E4E495ED1716329A00EDED41 /* plaintext-336.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = "plaintext-336.dat"; sourceTree = "<group>"; };
+		E4E495EE1716329A00EDED41 /* private.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private.p12; sourceTree = "<group>"; };
+		E4E495EF1716329A00EDED41 /* private.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = private.pem; sourceTree = "<group>"; };
+		E4E495F01716329A00EDED41 /* public.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = public.pem; sourceTree = "<group>"; };
+		E4E495F11716329A00EDED41 /* test-corrupted.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test-corrupted.cer"; sourceTree = "<group>"; };
+		E4E495F21716329A00EDED41 /* test.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.cer; sourceTree = "<group>"; };
+		E4E495F41716329A00EDED41 /* test.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.pem; sourceTree = "<group>"; };
+		E4E4963F1717344400EDED41 /* test-corrupted.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = "test-corrupted.pem"; sourceTree = "<group>"; };
+		E4E4964117185A5F00EDED41 /* QCCRSASHASignatureCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCRSASHASignatureCompat.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E4964217185BAE00EDED41 /* cyphertext-aes-128-cbc-0.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = "cyphertext-aes-128-cbc-0.dat"; sourceTree = "<group>"; };
+		E4E4964317185BBB00EDED41 /* plaintext-0.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "plaintext-0.dat"; sourceTree = "<group>"; };
+		E4E4964417185BBB00EDED41 /* plaintext-0.dat.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "plaintext-0.dat.sig"; sourceTree = "<group>"; };
+		E4E4965F1718704F00EDED41 /* UnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E496691718705100EDED41 /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
+		E4E4966E1718705100EDED41 /* KeyDerivationOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = KeyDerivationOperationsTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E4967A1718761600EDED41 /* iOS UnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS UnitTest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E496801718761800EDED41 /* iOS UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS UnitTest-Info.plist"; sourceTree = "<group>"; };
+		E4E4968E1719627E00EDED41 /* RSAOperationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RSAOperationsTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E496B117196B2800EDED41 /* ToolCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ToolCommon.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E496B217196B2800EDED41 /* ToolCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCommon.m; sourceTree = "<group>"; };
+		E4E496BB17196ECF00EDED41 /* Base64OperationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Base64OperationsTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E496BF171AB17400EDED41 /* DigestOperationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigestOperationsTests.m; sourceTree = "<group>"; };
+		E4E496C5171AB41800EDED41 /* CryptorOperationsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CryptorOperationsTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E496F8171CAD3800EDED41 /* ATestAgainstOpenSSL.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = ATestAgainstOpenSSL.py; sourceTree = "<group>"; };
+		E4E496FD171CB11D00EDED41 /* QCCRSASmallCryptorCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCRSASmallCryptorCompat.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E496FE171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCRSASmallCryptorCompat.m; sourceTree = "<group>"; };
+		E4E49701171CBAA500EDED41 /* QCCRSASmallCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = QCCRSASmallCryptor.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E4E49702171CBAA500EDED41 /* QCCRSASmallCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = QCCRSASmallCryptor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E4E49704171CBC8E00EDED41 /* plaintext-32.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "plaintext-32.dat"; sourceTree = "<group>"; };
+		E4E49705171CBC8E00EDED41 /* plaintext-256.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "plaintext-256.dat"; sourceTree = "<group>"; };
+		E4E49724171DF21D00EDED41 /* cyphertext-rsa-pkcs1-32.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cyphertext-rsa-pkcs1-32.dat"; sourceTree = "<group>"; };
+		E4F4F57C1D67690F00D2548D /* RSAOperationsTestsBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAOperationsTestsBase.h; sourceTree = "<group>"; };
+		E4F4F57D1D67690F00D2548D /* RSAOperationsTestsBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAOperationsTestsBase.m; sourceTree = "<group>"; };
+		E4F4F5841D686E8100D2548D /* test.cer-sha1.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test.cer-sha1.sig"; sourceTree = "<group>"; };
+		E4F4F5851D686E8100D2548D /* test.cer-sha2-224.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test.cer-sha2-224.sig"; sourceTree = "<group>"; };
+		E4F4F5861D686E8100D2548D /* test.cer-sha2-256.sig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "test.cer-sha2-256.sig"; sourceTree = "<group>"; };
+		E4F4F5871D686E8100D2548D /* test.cer-sha2-384.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test.cer-sha2-384.sig"; sourceTree = "<group>"; };
+		E4F4F5881D686E8100D2548D /* test.cer-sha2-512.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test.cer-sha2-512.sig"; sourceTree = "<group>"; };
+		E4FD35691D664B20001C159A /* QCCSHADigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCCSHADigest.h; sourceTree = "<group>"; };
+		E4FD356A1D664B20001C159A /* QCCSHADigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCCSHADigest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E405DE821713084C007165B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E4965B1718704F00EDED41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E496761718761600EDED41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E405DE7C1713084C007165B9 = {
+			isa = PBXGroup;
+			children = (
+				E42873F01D6D00F400B07A2D /* README.md */,
+				E405DE94171308A1007165B9 /* Operations */,
+				E405DE9117130883007165B9 /* Tool */,
+				E4E495E51716329A00EDED41 /* TestData */,
+				E4E496671718704F00EDED41 /* UnitTest */,
+				E405DE851713084C007165B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E405DE851713084C007165B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E405DE841713084C007165B9 /* CryptoCompatibility */,
+				E4E4965F1718704F00EDED41 /* UnitTest.xctest */,
+				E4E4967A1718761600EDED41 /* iOS UnitTest.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E405DE9117130883007165B9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E405DE9217130883007165B9 /* main.m */,
+				E4E496B117196B2800EDED41 /* ToolCommon.h */,
+				E4E496B217196B2800EDED41 /* ToolCommon.m */,
+				E4E494FB1714809300EDED41 /* Base64Commands.h */,
+				E4E494FC1714809300EDED41 /* Base64Commands.m */,
+				E4E494FE1714812900EDED41 /* DigestCommands.h */,
+				E4E494FF1714812900EDED41 /* DigestCommands.m */,
+				E4E4950A1714BC1000EDED41 /* KeyDerivationCommands.h */,
+				E4E4950B1714BC1000EDED41 /* KeyDerivationCommands.m */,
+				E4E495101714CB7700EDED41 /* CryptorCommands.h */,
+				E4E495111714CB7700EDED41 /* CryptorCommands.m */,
+				E4E4955B17161A4000EDED41 /* RSACommands.h */,
+				E4E4955C17161A4000EDED41 /* RSACommands.m */,
+				E405DE9D171320D6007165B9 /* QToolCommand.h */,
+				E405DE9E171320D6007165B9 /* QToolCommand.m */,
+				E405DEA017136950007165B9 /* QHex.h */,
+				E405DEA117136950007165B9 /* QHex.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		E405DE94171308A1007165B9 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E405DE95171308CF007165B9 /* QCCBase64Encode.h */,
+				E405DE96171308CF007165B9 /* QCCBase64Encode.m */,
+				E405DE9817130AFB007165B9 /* QCCBase64Decode.h */,
+				E405DE9917130AFB007165B9 /* QCCBase64Decode.m */,
+				E4FD35691D664B20001C159A /* QCCSHADigest.h */,
+				E4FD356A1D664B20001C159A /* QCCSHADigest.m */,
+				E4E495041714876700EDED41 /* QCCHMACSHAAuthentication.h */,
+				E4E495051714876700EDED41 /* QCCHMACSHAAuthentication.m */,
+				E4E4950717148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.h */,
+				E4E4950817148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m */,
+				E4E4950D1714C6F000EDED41 /* QCCAESCryptor.h */,
+				E4E4950E1714C6F000EDED41 /* QCCAESCryptor.m */,
+				E4E495131715588900EDED41 /* QCCAESPadCryptor.h */,
+				E4E495141715588A00EDED41 /* QCCAESPadCryptor.m */,
+				E4159A09174E64BC00B42FC8 /* QCCAESPadBigCryptor.h */,
+				E4159A0A174E64BC00B42FC8 /* QCCAESPadBigCryptor.m */,
+				E4E495561716159600EDED41 /* QCCRSASHASignature.h */,
+				E4E495571716159600EDED41 /* QCCRSASHASignature.m */,
+				E4E4964117185A5F00EDED41 /* QCCRSASHASignatureCompat.h */,
+				E4E49562171624C100EDED41 /* QCCRSASHASignatureCompat.m */,
+				E4E49701171CBAA500EDED41 /* QCCRSASmallCryptor.h */,
+				E4E49702171CBAA500EDED41 /* QCCRSASmallCryptor.m */,
+				E4E496FD171CB11D00EDED41 /* QCCRSASmallCryptorCompat.h */,
+				E4E496FE171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		E4E495E51716329A00EDED41 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				E4E4964217185BAE00EDED41 /* cyphertext-aes-128-cbc-0.dat */,
+				E4E495E61716329A00EDED41 /* cyphertext-aes-128-cbc-332.dat */,
+				E4E495E71716329A00EDED41 /* cyphertext-aes-128-cbc-336.dat */,
+				E4E495E81716329A00EDED41 /* cyphertext-aes-128-ecb-336.dat */,
+				E4E495E91716329A00EDED41 /* cyphertext-aes-256-cbc-332.dat */,
+				E4E495EA1716329A00EDED41 /* cyphertext-aes-256-cbc-336.dat */,
+				E4E495EB1716329A00EDED41 /* cyphertext-aes-256-ecb-336.dat */,
+				E4E49724171DF21D00EDED41 /* cyphertext-rsa-pkcs1-32.dat */,
+				E4C746B31D79A23E0041440A /* cyphertext-rsa-oaep-32.dat */,
+				E4E4964317185BBB00EDED41 /* plaintext-0.dat */,
+				E4E4964417185BBB00EDED41 /* plaintext-0.dat.sig */,
+				E4E49704171CBC8E00EDED41 /* plaintext-32.dat */,
+				E4E49705171CBC8E00EDED41 /* plaintext-256.dat */,
+				E4E495EC1716329A00EDED41 /* plaintext-332.dat */,
+				E4E495ED1716329A00EDED41 /* plaintext-336.dat */,
+				E4E495EE1716329A00EDED41 /* private.p12 */,
+				E4E495EF1716329A00EDED41 /* private.pem */,
+				E4E495F01716329A00EDED41 /* public.pem */,
+				E4E495F11716329A00EDED41 /* test-corrupted.cer */,
+				E4E4963F1717344400EDED41 /* test-corrupted.pem */,
+				E4E495F21716329A00EDED41 /* test.cer */,
+				E4F4F5841D686E8100D2548D /* test.cer-sha1.sig */,
+				E4F4F5851D686E8100D2548D /* test.cer-sha2-224.sig */,
+				E4F4F5861D686E8100D2548D /* test.cer-sha2-256.sig */,
+				E4F4F5871D686E8100D2548D /* test.cer-sha2-384.sig */,
+				E4F4F5881D686E8100D2548D /* test.cer-sha2-512.sig */,
+				E4E495F41716329A00EDED41 /* test.pem */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		E4E496671718704F00EDED41 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				E4E496F8171CAD3800EDED41 /* ATestAgainstOpenSSL.py */,
+				E4971F90173AD46B00FC643E /* ATestAgainstJava.java */,
+				E4971FDE173C4E3D00FC643E /* ATestAgainstPHP.php */,
+				E4E496BB17196ECF00EDED41 /* Base64OperationsTests.m */,
+				E4E496BF171AB17400EDED41 /* DigestOperationsTests.m */,
+				E4E4966E1718705100EDED41 /* KeyDerivationOperationsTests.m */,
+				E4E496C5171AB41800EDED41 /* CryptorOperationsTests.m */,
+				E4F4F57C1D67690F00D2548D /* RSAOperationsTestsBase.h */,
+				E4F4F57D1D67690F00D2548D /* RSAOperationsTestsBase.m */,
+				E4E4968E1719627E00EDED41 /* RSAOperationsTests.m */,
+				E4DD0E2117A28B5700849975 /* RSAOperationsTestsCompat.m */,
+				E4E496691718705100EDED41 /* UnitTest-Info.plist */,
+				E4E496801718761800EDED41 /* iOS UnitTest-Info.plist */,
+			);
+			path = UnitTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E405DE831713084C007165B9 /* Tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E405DE8E1713084D007165B9 /* Build configuration list for PBXNativeTarget "Tool" */;
+			buildPhases = (
+				E405DE811713084C007165B9 /* Sources */,
+				E405DE821713084C007165B9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tool;
+			productName = CryptoCompatibility;
+			productReference = E405DE841713084C007165B9 /* CryptoCompatibility */;
+			productType = "com.apple.product-type.tool";
+		};
+		E4E4965E1718704F00EDED41 /* UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4E496711718705100EDED41 /* Build configuration list for PBXNativeTarget "UnitTest" */;
+			buildPhases = (
+				E4E4965A1718704F00EDED41 /* Sources */,
+				E4E4965B1718704F00EDED41 /* Frameworks */,
+				E4E4965C1718704F00EDED41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTest;
+			productName = UnitTest;
+			productReference = E4E4965F1718704F00EDED41 /* UnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4E496791718761600EDED41 /* iOS UnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4E496881718761800EDED41 /* Build configuration list for PBXNativeTarget "iOS UnitTest" */;
+			buildPhases = (
+				E4E496751718761600EDED41 /* Sources */,
+				E4E496761718761600EDED41 /* Frameworks */,
+				E4E496771718761600EDED41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS UnitTest";
+			productName = "iOS UnitTest";
+			productReference = E4E4967A1718761600EDED41 /* iOS UnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E405DE7D1713084C007165B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastTestingUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					E4E496791718761600EDED41 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = E405DE801713084C007165B9 /* Build configuration list for PBXProject "CryptoCompatibility" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E405DE7C1713084C007165B9;
+			productRefGroup = E405DE851713084C007165B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E405DE831713084C007165B9 /* Tool */,
+				E4E4965E1718704F00EDED41 /* UnitTest */,
+				E4E496791718761600EDED41 /* iOS UnitTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4E4965C1718704F00EDED41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E4969E1719680E00EDED41 /* test-corrupted.cer in Resources */,
+				E4E4969F1719680E00EDED41 /* test.cer in Resources */,
+				E4E496B617196EB100EDED41 /* plaintext-0.dat in Resources */,
+				E4E496B817196EB600EDED41 /* test.pem in Resources */,
+				E4E496CA171AB56700EDED41 /* plaintext-332.dat in Resources */,
+				E4F4F58D1D686E8200D2548D /* test.cer-sha2-256.sig in Resources */,
+				E4E496CB171AB56700EDED41 /* plaintext-336.dat in Resources */,
+				E4E496D3171AB56B00EDED41 /* cyphertext-aes-128-cbc-0.dat in Resources */,
+				E4E496D4171AB56B00EDED41 /* cyphertext-aes-128-cbc-332.dat in Resources */,
+				E4637B451D6F83ED0035DED8 /* public.pem in Resources */,
+				E4E496D5171AB56B00EDED41 /* cyphertext-aes-128-cbc-336.dat in Resources */,
+				E4E496D6171AB56B00EDED41 /* cyphertext-aes-128-ecb-336.dat in Resources */,
+				E4E496D7171AB56B00EDED41 /* cyphertext-aes-256-cbc-332.dat in Resources */,
+				E4F4F5891D686E8100D2548D /* test.cer-sha1.sig in Resources */,
+				E4E496D8171AB56B00EDED41 /* cyphertext-aes-256-cbc-336.dat in Resources */,
+				E4F4F58B1D686E8200D2548D /* test.cer-sha2-224.sig in Resources */,
+				E4EE94061D79A38D00F5866E /* cyphertext-rsa-oaep-32.dat in Resources */,
+				E4E496D9171AB56B00EDED41 /* cyphertext-aes-256-ecb-336.dat in Resources */,
+				E4F4F5911D686E8200D2548D /* test.cer-sha2-512.sig in Resources */,
+				E4637B441D6F83ED0035DED8 /* private.pem in Resources */,
+				E4E49708171CBC9D00EDED41 /* plaintext-32.dat in Resources */,
+				E4E49709171CBC9D00EDED41 /* plaintext-256.dat in Resources */,
+				E4F4F58F1D686E8200D2548D /* test.cer-sha2-384.sig in Resources */,
+				E4E49725171DF26E00EDED41 /* cyphertext-rsa-pkcs1-32.dat in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E496771718761600EDED41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E49691171963CE00EDED41 /* private.p12 in Resources */,
+				E4E49692171963D800EDED41 /* test.cer in Resources */,
+				E4E49694171963F500EDED41 /* test-corrupted.cer in Resources */,
+				E4F4F58A1D686E8100D2548D /* test.cer-sha1.sig in Resources */,
+				E4F4F58E1D686E8200D2548D /* test.cer-sha2-256.sig in Resources */,
+				E4E496B717196EB100EDED41 /* plaintext-0.dat in Resources */,
+				E4E496B917196EB700EDED41 /* test.pem in Resources */,
+				E4E496C8171AB56600EDED41 /* plaintext-332.dat in Resources */,
+				E4E496C9171AB56600EDED41 /* plaintext-336.dat in Resources */,
+				E4F4F58C1D686E8200D2548D /* test.cer-sha2-224.sig in Resources */,
+				E4E496CC171AB56A00EDED41 /* cyphertext-aes-128-cbc-0.dat in Resources */,
+				E4E496CD171AB56A00EDED41 /* cyphertext-aes-128-cbc-332.dat in Resources */,
+				E4E496CE171AB56A00EDED41 /* cyphertext-aes-128-cbc-336.dat in Resources */,
+				E4E496CF171AB56A00EDED41 /* cyphertext-aes-128-ecb-336.dat in Resources */,
+				E4E496D0171AB56A00EDED41 /* cyphertext-aes-256-cbc-332.dat in Resources */,
+				E4E496D1171AB56A00EDED41 /* cyphertext-aes-256-cbc-336.dat in Resources */,
+				E4EE94071D79A38D00F5866E /* cyphertext-rsa-oaep-32.dat in Resources */,
+				E4F4F5901D686E8200D2548D /* test.cer-sha2-384.sig in Resources */,
+				E4E496D2171AB56A00EDED41 /* cyphertext-aes-256-ecb-336.dat in Resources */,
+				E4E49706171CBC8F00EDED41 /* plaintext-32.dat in Resources */,
+				E4E49707171CBC8F00EDED41 /* plaintext-256.dat in Resources */,
+				E4E49726171DF26E00EDED41 /* cyphertext-rsa-pkcs1-32.dat in Resources */,
+				E4F4F5921D686E8200D2548D /* test.cer-sha2-512.sig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E405DE811713084C007165B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E405DE9317130883007165B9 /* main.m in Sources */,
+				E405DE9F171320D6007165B9 /* QToolCommand.m in Sources */,
+				E4159A0B174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */,
+				E405DEA217136950007165B9 /* QHex.m in Sources */,
+				E4E494FD1714809300EDED41 /* Base64Commands.m in Sources */,
+				E405DE97171308CF007165B9 /* QCCBase64Encode.m in Sources */,
+				E405DE9A17130AFB007165B9 /* QCCBase64Decode.m in Sources */,
+				E4FD356B1D664C2B001C159A /* QCCSHADigest.m in Sources */,
+				E4E495001714812900EDED41 /* DigestCommands.m in Sources */,
+				E4E495061714876800EDED41 /* QCCHMACSHAAuthentication.m in Sources */,
+				E4E4950C1714BC1100EDED41 /* KeyDerivationCommands.m in Sources */,
+				E4E4950917148E5A00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */,
+				E4E495121714CB7800EDED41 /* CryptorCommands.m in Sources */,
+				E4E4950F1714C6F000EDED41 /* QCCAESCryptor.m in Sources */,
+				E4E495151715588A00EDED41 /* QCCAESPadCryptor.m in Sources */,
+				E4E4955D17161A4000EDED41 /* RSACommands.m in Sources */,
+				E4E495A117162FBA00EDED41 /* QCCRSASHASignatureCompat.m in Sources */,
+				E4E496B317196B2800EDED41 /* ToolCommon.m in Sources */,
+				E4E496FF171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E4965A1718704F00EDED41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E4966F1718705100EDED41 /* KeyDerivationOperationsTests.m in Sources */,
+				E4E49674171872AC00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */,
+				E4E496971719660A00EDED41 /* QCCRSASHASignatureCompat.m in Sources */,
+				E4FD356F1D666062001C159A /* QCCRSASmallCryptor.m in Sources */,
+				E4F4F57E1D67690F00D2548D /* RSAOperationsTestsBase.m in Sources */,
+				E4E496A8171969E800EDED41 /* QCCBase64Encode.m in Sources */,
+				E4FD356C1D664C2B001C159A /* QCCSHADigest.m in Sources */,
+				E4159A0C174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */,
+				E4E496A9171969E800EDED41 /* QCCBase64Decode.m in Sources */,
+				E4FD35701D666084001C159A /* RSAOperationsTests.m in Sources */,
+				E4E496AC171969E800EDED41 /* QCCHMACSHAAuthentication.m in Sources */,
+				E4E496AD171969E800EDED41 /* QCCAESCryptor.m in Sources */,
+				E4E496AE171969E800EDED41 /* QCCAESPadCryptor.m in Sources */,
+				E4E496B417196B7600EDED41 /* ToolCommon.m in Sources */,
+				E4E496BC17196ED000EDED41 /* Base64OperationsTests.m in Sources */,
+				E4E496C0171AB17500EDED41 /* DigestOperationsTests.m in Sources */,
+				E4E496C3171AB23800EDED41 /* QHex.m in Sources */,
+				E4F4F5811D67717500D2548D /* QCCRSASHASignature.m in Sources */,
+				E4E496C6171AB41800EDED41 /* CryptorOperationsTests.m in Sources */,
+				E4E49700171CB11D00EDED41 /* QCCRSASmallCryptorCompat.m in Sources */,
+				E4DD0E2217A28B5700849975 /* RSAOperationsTestsCompat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E496751718761600EDED41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E4968B1718773700EDED41 /* KeyDerivationOperationsTests.m in Sources */,
+				E4E4968C171877DA00EDED41 /* QCCPBKDF2SHAKeyDerivation.m in Sources */,
+				E4E496901719627E00EDED41 /* RSAOperationsTests.m in Sources */,
+				E4E496951719660500EDED41 /* QCCRSASHASignature.m in Sources */,
+				E4F4F57F1D67690F00D2548D /* RSAOperationsTestsBase.m in Sources */,
+				E4E496A1171969E600EDED41 /* QCCBase64Encode.m in Sources */,
+				E4159A0D174E64BC00B42FC8 /* QCCAESPadBigCryptor.m in Sources */,
+				E4E496A2171969E600EDED41 /* QCCBase64Decode.m in Sources */,
+				E4E496A5171969E600EDED41 /* QCCHMACSHAAuthentication.m in Sources */,
+				E4E496A6171969E600EDED41 /* QCCAESCryptor.m in Sources */,
+				E4FD35711D666085001C159A /* RSAOperationsTestsCompat.m in Sources */,
+				E4E496A7171969E600EDED41 /* QCCAESPadCryptor.m in Sources */,
+				E4E496B517196B7900EDED41 /* ToolCommon.m in Sources */,
+				E4E496BD17196ED400EDED41 /* Base64OperationsTests.m in Sources */,
+				E4E496C1171AB17500EDED41 /* DigestOperationsTests.m in Sources */,
+				E4E496C2171AB23700EDED41 /* QHex.m in Sources */,
+				E4E496C7171AB41800EDED41 /* CryptorOperationsTests.m in Sources */,
+				E4E49703171CBAA700EDED41 /* QCCRSASmallCryptor.m in Sources */,
+				E4FD356D1D664C2C001C159A /* QCCSHADigest.m in Sources */,
+				E4F4F5801D67715F00D2548D /* QCCRSASHASignatureCompat.m in Sources */,
+				E4FD356E1D66605F001C159A /* QCCRSASmallCryptorCompat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E405DE8C1713084D007165B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E405DE8D1713084D007165B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E405DE8F1713084D007165B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = CryptoCompatibility;
+			};
+			name = Debug;
+		};
+		E405DE901713084D007165B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = CryptoCompatibility;
+			};
+			name = Release;
+		};
+		E4E496721718705100EDED41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UnitTest/UnitTest-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.examle.apple-samplecode.CryptoCompatibility.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4E496731718705100EDED41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UnitTest/UnitTest-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.examle.apple-samplecode.CryptoCompatibility.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4E496891718761800EDED41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "UnitTest/iOS UnitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.examle.apple-samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "iOS UnitTest";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4E4968A1718761800EDED41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "UnitTest/iOS UnitTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.examle.apple-samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "iOS UnitTest";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E405DE801713084C007165B9 /* Build configuration list for PBXProject "CryptoCompatibility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E405DE8C1713084D007165B9 /* Debug */,
+				E405DE8D1713084D007165B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E405DE8E1713084D007165B9 /* Build configuration list for PBXNativeTarget "Tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E405DE8F1713084D007165B9 /* Debug */,
+				E405DE901713084D007165B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4E496711718705100EDED41 /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4E496721718705100EDED41 /* Debug */,
+				E4E496731718705100EDED41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4E496881718761800EDED41 /* Build configuration list for PBXNativeTarget "iOS UnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4E496891718761800EDED41 /* Debug */,
+				E4E4968A1718761800EDED41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E405DE7D1713084C007165B9 /* Project object */;
+}
