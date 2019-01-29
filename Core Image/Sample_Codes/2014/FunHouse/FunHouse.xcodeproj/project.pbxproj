@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C68AA4907C2979500ACC072 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C68AA4807C2979500ACC072 /* OpenGL.framework */; };
+		3CEC0084077243E5003DDDC6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEC0083077243E5003DDDC6 /* QuartzCore.framework */; };
+		6803ADA90770AFC800AAFF76 /* document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6803ADA80770AFC800AAFF76 /* document.icns */; };
+		6807919C0767823B00873D85 /* EffectStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807919B0767823B00873D85 /* EffectStack.m */; };
+		6807985C0767B3BE00873D85 /* EffectStackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6807985B0767B3BE00873D85 /* EffectStackController.m */; };
+		680798940767BBEC00873D85 /* FunHouseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 680798930767BBEC00873D85 /* FunHouseWindowController.m */; };
+		680799030767C28E00873D85 /* FunHouseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 680799020767C28E00873D85 /* FunHouseAppDelegate.m */; };
+		6812A5D4077B6B7900A10E6B /* FunHouseApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6812A5D3077B6B7900A10E6B /* FunHouseApplication.m */; };
+		681F439207C27483004C53AB /* SampleCIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 681F439107C27483004C53AB /* SampleCIView.m */; };
+		682F97E8077243900080871A /* NSApplicationIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 682F97E7077243900080871A /* NSApplicationIcon.icns */; };
+		68488CE007774D1A000C118A /* playbutton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68488CDF07774D1A000C118A /* playbutton.tiff */; };
+		688957030768C53C007F6B31 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 688957020768C53C007F6B31 /* FilterView.m */; };
+		6889570A0768C550007F6B31 /* ParameterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 688957090768C550007F6B31 /* ParameterView.m */; };
+		68895825076905D2007F6B31 /* minusbutton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68895823076905D2007F6B31 /* minusbutton.tiff */; };
+		68895826076905D2007F6B31 /* plusbutton.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68895824076905D2007F6B31 /* plusbutton.tiff */; };
+		68952755077767D600B3EAFE /* smoothtexture.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68952754077767D600B3EAFE /* smoothtexture.tiff */; };
+		689527BF0777694D00B3EAFE /* lightball.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 689527BE0777694D00B3EAFE /* lightball.tiff */; };
+		68952C45077777EF00B3EAFE /* restrictedshine.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68952C44077777EF00B3EAFE /* restrictedshine.tiff */; };
+		68952C6807777B7200B3EAFE /* colormap.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68952C6707777B7200B3EAFE /* colormap.tiff */; };
+		68D08A3A0766773F005C971D /* CoreImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D08A390766773F005C971D /* CoreImageView.m */; };
+		68D2DD4E077B7FA30008F86A /* mask.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 68D2DD4D077B7FA30008F86A /* mask.tiff */; };
+		68FCAB160770E25F0004DA32 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 68FCAB140770E25F0004DA32 /* Images */; };
+		8D15AC310486D014006FF6A4 /* FunHouseDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* FunHouseDocument.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		AF90B80A18FC96640066FC6D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AF90B7FC18FC96640066FC6D /* Credits.rtf */; };
+		AF90B80B18FC96640066FC6D /* EffectStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90B7FE18FC96640066FC6D /* EffectStack.xib */; };
+		AF90B80C18FC96640066FC6D /* FilterPalette.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90B80018FC96640066FC6D /* FilterPalette.xib */; };
+		AF90B80D18FC96640066FC6D /* FunHouseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90B80218FC96640066FC6D /* FunHouseWindow.xib */; };
+		AF90B80E18FC96640066FC6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF90B80418FC96640066FC6D /* InfoPlist.strings */; };
+		AF90B80F18FC96640066FC6D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90B80618FC96640066FC6D /* MainMenu.xib */; };
+		AF90B81018FC96640066FC6D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF90B80818FC96640066FC6D /* Preferences.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		2A37F4ACFDCFA73011CA2CEA /* FunHouseDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunHouseDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* FunHouseDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunHouseDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32DBCF750370BD2300C91783 /* FunHouse_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunHouse_Prefix.pch; sourceTree = "<group>"; };
+		3C68AA4807C2979500ACC072 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		3CEC0083077243E5003DDDC6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		6803ADA80770AFC800AAFF76 /* document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = document.icns; sourceTree = "<group>"; };
+		6807919B0767823B00873D85 /* EffectStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectStack.m; sourceTree = "<group>"; };
+		680791A10767824800873D85 /* EffectStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectStack.h; sourceTree = "<group>"; };
+		6807985B0767B3BE00873D85 /* EffectStackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectStackController.m; sourceTree = "<group>"; };
+		6807985F0767B3DA00873D85 /* EffectStackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectStackController.h; sourceTree = "<group>"; };
+		680798900767BBE500873D85 /* FunHouseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunHouseWindowController.h; sourceTree = "<group>"; };
+		680798930767BBEC00873D85 /* FunHouseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunHouseWindowController.m; sourceTree = "<group>"; };
+		680799020767C28E00873D85 /* FunHouseAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunHouseAppDelegate.m; sourceTree = "<group>"; };
+		680799060767C29300873D85 /* FunHouseAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunHouseAppDelegate.h; sourceTree = "<group>"; };
+		6812A5D3077B6B7900A10E6B /* FunHouseApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunHouseApplication.m; sourceTree = "<group>"; };
+		6812A5D9077B6BB000A10E6B /* FunHouseApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunHouseApplication.h; sourceTree = "<group>"; };
+		681F439007C27483004C53AB /* SampleCIView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SampleCIView.h; sourceTree = "<group>"; };
+		681F439107C27483004C53AB /* SampleCIView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SampleCIView.m; sourceTree = "<group>"; };
+		682F97E7077243900080871A /* NSApplicationIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NSApplicationIcon.icns; sourceTree = "<group>"; };
+		68488CDF07774D1A000C118A /* playbutton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = playbutton.tiff; sourceTree = "<group>"; };
+		688957020768C53C007F6B31 /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		688957060768C547007F6B31 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		688957090768C550007F6B31 /* ParameterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterView.m; sourceTree = "<group>"; };
+		6889570D0768C555007F6B31 /* ParameterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterView.h; sourceTree = "<group>"; };
+		68895823076905D2007F6B31 /* minusbutton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = minusbutton.tiff; sourceTree = "<group>"; };
+		68895824076905D2007F6B31 /* plusbutton.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = plusbutton.tiff; sourceTree = "<group>"; };
+		68952754077767D600B3EAFE /* smoothtexture.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = smoothtexture.tiff; sourceTree = "<group>"; };
+		689527BE0777694D00B3EAFE /* lightball.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = lightball.tiff; sourceTree = "<group>"; };
+		68952C44077777EF00B3EAFE /* restrictedshine.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restrictedshine.tiff; sourceTree = "<group>"; };
+		68952C6707777B7200B3EAFE /* colormap.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = colormap.tiff; sourceTree = "<group>"; };
+		68D08A390766773F005C971D /* CoreImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreImageView.m; sourceTree = "<group>"; };
+		68D08A3D07667749005C971D /* CoreImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreImageView.h; sourceTree = "<group>"; };
+		68D2DD4D077B7FA30008F86A /* mask.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = mask.tiff; sourceTree = "<group>"; };
+		68FCAB140770E25F0004DA32 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC370486D014006FF6A4 /* Core Image Fun House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Core Image Fun House.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF90B7FD18FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AF90B7FF18FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/EffectStack.xib; sourceTree = "<group>"; };
+		AF90B80118FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/FilterPalette.xib; sourceTree = "<group>"; };
+		AF90B80318FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/FunHouseWindow.xib; sourceTree = "<group>"; };
+		AF90B80518FC96640066FC6D /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF90B80718FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AF90B80918FC96640066FC6D /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D15AC330486D014006FF6A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
+				3CEC0084077243E5003DDDC6 /* QuartzCore.framework in Frameworks */,
+				3C68AA4907C2979500ACC072 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C68AA4807C2979500ACC072 /* OpenGL.framework */,
+				3CEC0083077243E5003DDDC6 /* QuartzCore.framework */,
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A8FEA54F5311CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D15AC370486D014006FF6A4 /* Core Image Fun House.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* FunHouse */ = {
+			isa = PBXGroup;
+			children = (
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				2A37F4B8FDCFA73011CA2CEA /* Resources */,
+				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = FunHouse;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				681F439007C27483004C53AB /* SampleCIView.h */,
+				681F439107C27483004C53AB /* SampleCIView.m */,
+				6812A5D9077B6BB000A10E6B /* FunHouseApplication.h */,
+				6812A5D3077B6B7900A10E6B /* FunHouseApplication.m */,
+				6889570D0768C555007F6B31 /* ParameterView.h */,
+				688957090768C550007F6B31 /* ParameterView.m */,
+				688957060768C547007F6B31 /* FilterView.h */,
+				688957020768C53C007F6B31 /* FilterView.m */,
+				680799060767C29300873D85 /* FunHouseAppDelegate.h */,
+				680799020767C28E00873D85 /* FunHouseAppDelegate.m */,
+				680798900767BBE500873D85 /* FunHouseWindowController.h */,
+				680798930767BBEC00873D85 /* FunHouseWindowController.m */,
+				6807985F0767B3DA00873D85 /* EffectStackController.h */,
+				6807985B0767B3BE00873D85 /* EffectStackController.m */,
+				680791A10767824800873D85 /* EffectStack.h */,
+				6807919B0767823B00873D85 /* EffectStack.m */,
+				68D08A3D07667749005C971D /* CoreImageView.h */,
+				68D08A390766773F005C971D /* CoreImageView.m */,
+				2A37F4AEFDCFA73011CA2CEA /* FunHouseDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* FunHouseDocument.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* FunHouse_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF90B7FC18FC96640066FC6D /* Credits.rtf */,
+				AF90B80418FC96640066FC6D /* InfoPlist.strings */,
+				AF90B7FE18FC96640066FC6D /* EffectStack.xib */,
+				AF90B80018FC96640066FC6D /* FilterPalette.xib */,
+				AF90B80218FC96640066FC6D /* FunHouseWindow.xib */,
+				AF90B80618FC96640066FC6D /* MainMenu.xib */,
+				AF90B80818FC96640066FC6D /* Preferences.xib */,
+				68FCAB140770E25F0004DA32 /* Images */,
+				68895823076905D2007F6B31 /* minusbutton.tiff */,
+				68952754077767D600B3EAFE /* smoothtexture.tiff */,
+				689527BE0777694D00B3EAFE /* lightball.tiff */,
+				68952C44077777EF00B3EAFE /* restrictedshine.tiff */,
+				68952C6707777B7200B3EAFE /* colormap.tiff */,
+				68D2DD4D077B7FA30008F86A /* mask.tiff */,
+				6803ADA80770AFC800AAFF76 /* document.icns */,
+				682F97E7077243900080871A /* NSApplicationIcon.icns */,
+				68895824076905D2007F6B31 /* plusbutton.tiff */,
+				68488CDF07774D1A000C118A /* playbutton.tiff */,
+				8D15AC360486D014006FF6A4 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A37F4C3FDCFA73011CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
+				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D15AC270486D014006FF6A4 /* Fun House */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01E2153009ED8E0C00E66AF8 /* Build configuration list for PBXNativeTarget "Fun House" */;
+			buildPhases = (
+				8D15AC2B0486D014006FF6A4 /* Resources */,
+				8D15AC300486D014006FF6A4 /* Sources */,
+				8D15AC330486D014006FF6A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fun House";
+			productInstallPath = "$(HOME)/Applications";
+			productName = FunHouse;
+			productReference = 8D15AC370486D014006FF6A4 /* Core Image Fun House.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+			};
+			buildConfigurationList = 01E2153409ED8E0C00E66AF8 /* Build configuration list for PBXProject "FunHouse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* FunHouse */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D15AC270486D014006FF6A4 /* Fun House */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D15AC2B0486D014006FF6A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68895825076905D2007F6B31 /* minusbutton.tiff in Resources */,
+				AF90B80E18FC96640066FC6D /* InfoPlist.strings in Resources */,
+				68895826076905D2007F6B31 /* plusbutton.tiff in Resources */,
+				AF90B80F18FC96640066FC6D /* MainMenu.xib in Resources */,
+				6803ADA90770AFC800AAFF76 /* document.icns in Resources */,
+				AF90B80B18FC96640066FC6D /* EffectStack.xib in Resources */,
+				68FCAB160770E25F0004DA32 /* Images in Resources */,
+				682F97E8077243900080871A /* NSApplicationIcon.icns in Resources */,
+				68488CE007774D1A000C118A /* playbutton.tiff in Resources */,
+				68952755077767D600B3EAFE /* smoothtexture.tiff in Resources */,
+				AF90B80A18FC96640066FC6D /* Credits.rtf in Resources */,
+				689527BF0777694D00B3EAFE /* lightball.tiff in Resources */,
+				68952C45077777EF00B3EAFE /* restrictedshine.tiff in Resources */,
+				68952C6807777B7200B3EAFE /* colormap.tiff in Resources */,
+				68D2DD4E077B7FA30008F86A /* mask.tiff in Resources */,
+				AF90B80C18FC96640066FC6D /* FilterPalette.xib in Resources */,
+				AF90B81018FC96640066FC6D /* Preferences.xib in Resources */,
+				AF90B80D18FC96640066FC6D /* FunHouseWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D15AC300486D014006FF6A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D15AC310486D014006FF6A4 /* FunHouseDocument.m in Sources */,
+				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				68D08A3A0766773F005C971D /* CoreImageView.m in Sources */,
+				6807919C0767823B00873D85 /* EffectStack.m in Sources */,
+				6807985C0767B3BE00873D85 /* EffectStackController.m in Sources */,
+				680798940767BBEC00873D85 /* FunHouseWindowController.m in Sources */,
+				680799030767C28E00873D85 /* FunHouseAppDelegate.m in Sources */,
+				688957030768C53C007F6B31 /* FilterView.m in Sources */,
+				6889570A0768C550007F6B31 /* ParameterView.m in Sources */,
+				6812A5D4077B6B7900A10E6B /* FunHouseApplication.m in Sources */,
+				681F439207C27483004C53AB /* SampleCIView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AF90B7FC18FC96640066FC6D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B7FD18FC96640066FC6D /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AF90B7FE18FC96640066FC6D /* EffectStack.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B7FF18FC96640066FC6D /* English */,
+			);
+			name = EffectStack.xib;
+			sourceTree = "<group>";
+		};
+		AF90B80018FC96640066FC6D /* FilterPalette.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B80118FC96640066FC6D /* English */,
+			);
+			name = FilterPalette.xib;
+			sourceTree = "<group>";
+		};
+		AF90B80218FC96640066FC6D /* FunHouseWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B80318FC96640066FC6D /* English */,
+			);
+			name = FunHouseWindow.xib;
+			sourceTree = "<group>";
+		};
+		AF90B80418FC96640066FC6D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B80518FC96640066FC6D /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF90B80618FC96640066FC6D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B80718FC96640066FC6D /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		AF90B80818FC96640066FC6D /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF90B80918FC96640066FC6D /* English */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01E2153109ED8E0C00E66AF8 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FunHouse_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Developer/Applications/Graphics Tools";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Core Image Fun House";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Development;
+		};
+		01E2153209ED8E0C00E66AF8 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FunHouse_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "/Developer/Applications/Graphics Tools";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "Core Image Fun House";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Deployment;
+		};
+		01E2153509ED8E0C00E66AF8 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Development;
+		};
+		01E2153609ED8E0C00E66AF8 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Deployment;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01E2153009ED8E0C00E66AF8 /* Build configuration list for PBXNativeTarget "Fun House" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01E2153109ED8E0C00E66AF8 /* Development */,
+				01E2153209ED8E0C00E66AF8 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		01E2153409ED8E0C00E66AF8 /* Build configuration list for PBXProject "FunHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01E2153509ED8E0C00E66AF8 /* Development */,
+				01E2153609ED8E0C00E66AF8 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

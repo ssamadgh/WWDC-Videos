@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="drH-TD-59p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Afu-Tw-Fqe">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="drH-TD-59p" customClass="FHViewController" customModule="CIFunHouseSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E2t-Ua-uLc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="u4w-6b-l35">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem title="Record" id="rou-v9-N7H">
+                                        <connections>
+                                            <action selector="recordStopAction:" destination="drH-TD-59p" id="B62-Wu-a32"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BYL-j6-1wP"/>
+                                    <barButtonItem title="Framerate" style="plain" id="BCj-Ko-DeS">
+                                        <attributedString key="userComments">
+                                            <fragment content="gdf">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="toolTip"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ccd-SN-o8Q"/>
+                                    <barButtonItem title="Settings" id="bSp-MM-qg8">
+                                        <connections>
+                                            <action selector="settingsAction:" destination="drH-TD-59p" id="EG2-sD-Fxi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Filters" id="MbA-vu-801">
+                                        <connections>
+                                            <action selector="filtersAction:" destination="drH-TD-59p" id="8v0-l2-WWW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="u4w-6b-l35" firstAttribute="trailing" secondItem="jcI-BD-mwn" secondAttribute="trailing" id="1pT-ZW-kBF"/>
+                            <constraint firstItem="u4w-6b-l35" firstAttribute="leading" secondItem="jcI-BD-mwn" secondAttribute="leading" id="HPZ-u9-HLZ"/>
+                            <constraint firstItem="u4w-6b-l35" firstAttribute="bottom" secondItem="jcI-BD-mwn" secondAttribute="bottom" id="pKK-zo-MXm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jcI-BD-mwn"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="filtersButton" destination="MbA-vu-801" id="fHH-hM-1EM"/>
+                        <outlet property="fpsLabel" destination="BCj-Ko-DeS" id="wNi-Rk-G7H"/>
+                        <outlet property="recordStopButton" destination="rou-v9-N7H" id="8pt-x8-7iC"/>
+                        <outlet property="settingsButton" destination="bSp-MM-qg8" id="JJu-49-lkR"/>
+                        <outlet property="toolbar" destination="u4w-6b-l35" id="ysR-2y-BIN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CoQ-XU-3HW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="-17"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="D3E-ei-Npl">
+            <objects>
+                <viewController id="TNm-YY-jKc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kzm-hQ-rWn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-yg-miH">
+                                <rect key="frame" x="0.0" y="548" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Jmo-K7-sg3"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yai-3V-ZgA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBh-tt-yXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="67"/>
+        </scene>
+    </scenes>
+</document>
