@@ -1,0 +1,753 @@
+1
+00:00:01,034 --> 00:00:04,003
+With the introduction
+of the revolutionary iPhone X
+
+
+2
+00:00:04,003 --> 00:00:06,139
+and Apple TV 4K,
+
+
+3
+00:00:06,139 --> 00:00:08,642
+the video experience
+is taken to a whole new level
+
+
+4
+00:00:08,642 --> 00:00:11,645
+with the addition of support
+for high dynamic range video.
+
+
+5
+00:00:13,080 --> 00:00:16,850
+With HD, you only see
+16 million colors.
+
+
+6
+00:00:16,850 --> 00:00:20,320
+But with HDR,
+you see one billion colors.
+
+
+7
+00:00:20,320 --> 00:00:22,122
+HDR allows content creators
+
+
+8
+00:00:22,122 --> 00:00:24,725
+to use a much richer
+and vibrant color palette,
+
+
+9
+00:00:24,725 --> 00:00:28,028
+which results in unbelievable
+and stunning image quality.
+
+
+10
+00:00:30,964 --> 00:00:33,467
+To better understand
+how HDR works,
+
+
+11
+00:00:33,467 --> 00:00:34,534
+let's first take a look
+
+
+12
+00:00:34,534 --> 00:00:37,304
+at the evolution
+in color capabilities.
+
+
+13
+00:00:37,304 --> 00:00:40,641
+Here is a representation
+of the visible color spectrum.
+
+
+14
+00:00:40,641 --> 00:00:43,343
+With the introduction
+of HD in 1990,
+
+
+15
+00:00:43,343 --> 00:00:46,747
+the color space was defined in
+ITU Rec 709
+
+
+16
+00:00:46,747 --> 00:00:51,518
+and covered about 36 percent
+of the visible spectrum.
+
+
+17
+00:00:51,518 --> 00:00:54,588
+But, a lot has changed
+since 1990,
+
+
+18
+00:00:54,588 --> 00:00:58,292
+and since then, the P3
+color space was introduced.
+
+
+19
+00:00:58,292 --> 00:01:01,395
+This color space is widely
+supported across our platforms
+
+
+20
+00:01:01,395 --> 00:01:04,298
+for all types of app content.
+
+
+21
+00:01:04,298 --> 00:01:07,567
+Then in 2012,
+Recommendation 2020
+
+
+22
+00:01:07,567 --> 00:01:09,503
+was introduced
+to define the color space
+
+
+23
+00:01:09,503 --> 00:01:12,039
+for Ultra High-Definition
+television,
+
+
+24
+00:01:12,039 --> 00:01:14,241
+which offers a much wider
+color space
+
+
+25
+00:01:14,241 --> 00:01:18,812
+that covers more than 75 percent
+of the visible spectrum.
+
+
+26
+00:01:18,812 --> 00:01:21,648
+Video content can now be
+delivered to supported devices
+
+
+27
+00:01:21,648 --> 00:01:24,017
+in any of these
+three color spaces,
+
+
+28
+00:01:24,017 --> 00:01:27,521
+enabling far more realistic
+and rich color reproduction.
+
+
+29
+00:01:29,523 --> 00:01:32,693
+But, the color space itself
+isn't the whole story.
+
+
+30
+00:01:32,693 --> 00:01:35,429
+The luminance range and settings
+of the target display
+
+
+31
+00:01:35,429 --> 00:01:37,631
+is also extremely important
+
+
+32
+00:01:37,631 --> 00:01:41,435
+and impacts how a given color
+is going to be perceived.
+
+
+33
+00:01:41,435 --> 00:01:44,137
+This combination of color space
+and luminance range
+
+
+34
+00:01:44,137 --> 00:01:46,673
+is often described
+as the color volume,
+
+
+35
+00:01:46,673 --> 00:01:50,377
+with the luminance values
+on a logarithmic scale.
+
+
+36
+00:01:50,377 --> 00:01:52,212
+With standard
+dynamic range content,
+
+
+37
+00:01:52,212 --> 00:01:53,613
+it is assumed that displays
+
+
+38
+00:01:53,613 --> 00:01:56,183
+offer a peak luminance
+of 100 nits,
+
+
+39
+00:01:56,183 --> 00:02:00,921
+yielding a relatively modest
+color volume.
+
+
+40
+00:02:00,921 --> 00:02:04,291
+However, HDR formats
+are designed to support displays
+
+
+41
+00:02:04,291 --> 00:02:07,728
+capable of up to 10,000 nits of
+peak luminance,
+
+
+42
+00:02:07,728 --> 00:02:09,529
+yielding a much richer
+color volume
+
+
+43
+00:02:09,529 --> 00:02:11,431
+for content creators
+to work with.
+
+
+44
+00:02:13,266 --> 00:02:15,569
+To further understand
+the impact of luminance,
+
+
+45
+00:02:15,569 --> 00:02:18,672
+let's take a look
+at a 100 percent red square
+
+
+46
+00:02:18,672 --> 00:02:21,274
+in the P3 color space.
+
+
+47
+00:02:21,274 --> 00:02:24,745
+If the brightness setting of the
+display is at about 50 percent,
+
+
+48
+00:02:24,745 --> 00:02:28,115
+the red square
+might look something like this.
+
+
+49
+00:02:28,115 --> 00:02:31,418
+However, if the brightness
+of the display is turned up,
+
+
+50
+00:02:31,418 --> 00:02:34,454
+the very same RGB value
+looks quite different
+
+
+51
+00:02:34,454 --> 00:02:36,223
+and more intense.
+
+
+52
+00:02:36,223 --> 00:02:38,692
+Similarly, if the brightness
+is turned down,
+
+
+53
+00:02:38,692 --> 00:02:41,795
+it looks much more dull.
+
+
+54
+00:02:41,795 --> 00:02:44,164
+As you can see
+in this illustration,
+
+
+55
+00:02:44,164 --> 00:02:47,534
+simply utilizing the RGB values
+without having control
+
+
+56
+00:02:47,534 --> 00:02:49,936
+or context of the luminance
+of the display
+
+
+57
+00:02:49,936 --> 00:02:54,007
+leads to vastly different
+color perception by the viewer.
+
+
+58
+00:02:54,007 --> 00:02:55,876
+This also doesn't
+take into account
+
+
+59
+00:02:55,876 --> 00:02:59,079
+other influencing factors
+such as the ambient light level
+
+
+60
+00:02:59,079 --> 00:03:02,816
+or the color temperature
+of the ambient light.
+
+
+61
+00:03:02,816 --> 00:03:05,585
+Another key goal of HDR
+is to help improve
+
+
+62
+00:03:05,585 --> 00:03:09,156
+consistency in playback
+across different displays.
+
+
+63
+00:03:09,156 --> 00:03:12,592
+In SDR video, the target display
+is assumed to be capable
+
+
+64
+00:03:12,592 --> 00:03:16,263
+of up to approximately
+100 nits of peak brightness.
+
+
+65
+00:03:16,263 --> 00:03:19,533
+However, the actual capabilities
+of modern displays
+
+
+66
+00:03:19,533 --> 00:03:21,635
+far exceeds this value,
+
+
+67
+00:03:21,635 --> 00:03:23,537
+and so each display
+then attempts
+
+
+68
+00:03:23,537 --> 00:03:25,739
+to interpolate the appropriate
+brightness levels
+
+
+69
+00:03:25,739 --> 00:03:28,675
+to match its own
+luminance range.
+
+
+70
+00:03:28,675 --> 00:03:30,610
+This leads to
+all kinds of variance
+
+
+71
+00:03:30,610 --> 00:03:31,945
+in the appearance
+of a given video
+
+
+72
+00:03:31,945 --> 00:03:34,815
+across different displays,
+and in many cases,
+
+
+73
+00:03:34,815 --> 00:03:38,452
+a very loose interpretation
+of the original artistic intent.
+
+
+74
+00:03:40,954 --> 00:03:42,756
+Now that you have
+a basic understanding
+
+
+75
+00:03:42,756 --> 00:03:45,125
+of the key elements
+of color and luminance,
+
+
+76
+00:03:45,125 --> 00:03:47,427
+and some of the goals of HDR,
+
+
+77
+00:03:47,427 --> 00:03:51,498
+let's dig into the types
+of HDR video that we support.
+
+
+78
+00:03:51,498 --> 00:03:56,169
+We support two HDR standards:
+Dolby Vision and HDR10.
+
+
+79
+00:03:56,169 --> 00:03:58,605
+These two formats share
+some common principles,
+
+
+80
+00:03:58,605 --> 00:04:00,640
+but also differ in many ways.
+
+
+81
+00:04:02,109 --> 00:04:04,478
+One of the commonalities
+between the formats
+
+
+82
+00:04:04,478 --> 00:04:06,947
+is how the luminance values
+are encoded.
+
+
+83
+00:04:06,947 --> 00:04:08,882
+Because the human eye
+is more sensitive
+
+
+84
+00:04:08,882 --> 00:04:10,917
+in dark ranges
+than light ranges,
+
+
+85
+00:04:10,917 --> 00:04:13,386
+the luminance values
+are encoded on a curve,
+
+
+86
+00:04:13,386 --> 00:04:15,255
+so that greater detail in darks
+
+
+87
+00:04:15,255 --> 00:04:18,892
+can be encoded using
+the limited bits available.
+
+
+88
+00:04:18,892 --> 00:04:22,062
+In SDR, the gamma curve
+was relatively shallow,
+
+
+89
+00:04:22,062 --> 00:04:23,263
+but this was sufficient
+
+
+90
+00:04:23,263 --> 00:04:27,434
+for the assumed peak target
+display luminance of 100 nits.
+
+
+91
+00:04:27,434 --> 00:04:29,936
+For HDR, a new
+luminance encoding curve
+
+
+92
+00:04:29,936 --> 00:04:31,204
+has been introduced.
+
+
+93
+00:04:31,204 --> 00:04:33,340
+Known as
+the Perceptual Quantizer,
+
+
+94
+00:04:33,340 --> 00:04:36,042
+it can better map these
+perceptible luminance changes
+
+
+95
+00:04:36,042 --> 00:04:39,312
+across the broader,
+10,000 nit range.
+
+
+96
+00:04:39,312 --> 00:04:42,949
+This curve,
+described in SMPTE ST 2084,
+
+
+97
+00:04:42,949 --> 00:04:44,818
+allows for even
+smoother gradation
+
+
+98
+00:04:44,818 --> 00:04:46,620
+of dark luminance values,
+
+
+99
+00:04:46,620 --> 00:04:49,256
+yielding a far better experience
+for the viewer.
+
+
+100
+00:04:49,256 --> 00:04:53,026
+This curve is utilized
+by both Dolby Vision and HDR10.
+
+
+101
+00:04:55,962 --> 00:04:58,298
+In HDR10,
+a static set of metadata
+
+
+102
+00:04:58,298 --> 00:05:00,300
+is included in the video stream.
+
+
+103
+00:05:02,102 --> 00:05:04,738
+This metadata includes
+information about the display
+
+
+104
+00:05:04,738 --> 00:05:06,907
+on which the content
+was originally mastered,
+
+
+105
+00:05:06,907 --> 00:05:11,645
+such as its effective
+color gamut, white point,
+
+
+106
+00:05:11,645 --> 00:05:13,313
+and luminance range.
+
+
+107
+00:05:15,515 --> 00:05:18,418
+It also includes information
+about the content itself,
+
+
+108
+00:05:18,418 --> 00:05:21,588
+namely the peak
+and average luminance levels.
+
+
+109
+00:05:21,588 --> 00:05:24,658
+This metadata can then
+be used by the target display
+
+
+110
+00:05:24,658 --> 00:05:27,394
+to tone map the content
+to the output capabilities
+
+
+111
+00:05:27,394 --> 00:05:28,662
+of the display.
+
+
+112
+00:05:30,931 --> 00:05:33,433
+With HDR10,
+the metadata is applied
+
+
+113
+00:05:33,433 --> 00:05:36,203
+to the entire length
+of the program.
+
+
+114
+00:05:36,203 --> 00:05:38,805
+Dolby Vision gives you
+even more control,
+
+
+115
+00:05:38,805 --> 00:05:41,341
+allowing for metadata to
+be conveyed dynamically
+
+
+116
+00:05:41,341 --> 00:05:44,744
+on a scene-by-scene,
+or even frame-by-frame basis.
+
+
+117
+00:05:44,744 --> 00:05:48,048
+This way, the available
+luminance range of the display
+
+
+118
+00:05:48,048 --> 00:05:50,016
+can be optimized
+throughout a program
+
+
+119
+00:05:50,016 --> 00:05:53,853
+that might include both very
+dark and very bright scenes.
+
+
+120
+00:05:57,357 --> 00:06:00,393
+The format also carries
+a much broader metadata set,
+
+
+121
+00:06:00,393 --> 00:06:02,295
+further enabling
+the target display
+
+
+122
+00:06:02,295 --> 00:06:04,364
+to perform much more detailed
+tone mapping
+
+
+123
+00:06:04,364 --> 00:06:06,199
+and detail management.
+
+
+124
+00:06:09,669 --> 00:06:12,606
+Finally, Dolby operates
+a certification program
+
+
+125
+00:06:12,606 --> 00:06:16,209
+to ensure that each Dolby Vision
+capable display is consistent,
+
+
+126
+00:06:16,209 --> 00:06:19,379
+so content will always
+be displayed as intended.
+
+
+127
+00:06:23,083 --> 00:06:25,919
+For more information
+on authoring your HDR content
+
+
+128
+00:06:25,919 --> 00:06:28,121
+for delivery
+to supported devices,
+
+
+129
+00:06:28,121 --> 00:06:31,391
+please visit our HTTP
+Live Streaming developer page
+

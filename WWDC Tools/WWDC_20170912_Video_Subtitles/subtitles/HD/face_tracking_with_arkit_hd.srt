@@ -1,0 +1,944 @@
+1
+00:00:00,934 --> 00:00:03,670
+iOS 11 introduced ARKit:
+
+
+2
+00:00:03,670 --> 00:00:06,306
+a new framework for creating
+augmented reality apps
+
+
+3
+00:00:06,306 --> 00:00:08,007
+for iPhone and iPad.
+
+
+4
+00:00:08,909 --> 00:00:10,978
+ARKit takes apps
+beyond the screen
+
+
+5
+00:00:10,978 --> 00:00:14,348
+by placing digital objects
+into the environment around you,
+
+
+6
+00:00:14,348 --> 00:00:16,683
+enabling you to interact
+with the real world
+
+
+7
+00:00:16,683 --> 00:00:20,153
+in entirely new ways.
+
+
+8
+00:00:20,153 --> 00:00:23,023
+At WWDC we introduced
+three primary capabilities
+
+
+9
+00:00:23,023 --> 00:00:24,591
+for ARKit.
+
+
+10
+00:00:24,591 --> 00:00:27,661
+Positional tracking
+detects the pose of your device,
+
+
+11
+00:00:27,661 --> 00:00:29,329
+letting you use
+your iPhone or iPad
+
+
+12
+00:00:29,329 --> 00:00:33,233
+as a window into a digital world
+all around you.
+
+
+13
+00:00:33,233 --> 00:00:35,736
+Scene understanding
+detects horizontal surfaces
+
+
+14
+00:00:35,736 --> 00:00:38,939
+like tabletops,
+finds stable anchor points,
+
+
+15
+00:00:38,939 --> 00:00:42,843
+and provides an estimate
+of ambient lighting conditions,
+
+
+16
+00:00:42,843 --> 00:00:46,213
+and integration with rendering
+technologies like SpriteKit,
+
+
+17
+00:00:46,213 --> 00:00:49,850
+SceneKit, and Metal, as well as
+with popular game engines
+
+
+18
+00:00:49,850 --> 00:00:53,020
+such as Unity and Unreal.
+
+
+19
+00:00:53,020 --> 00:00:56,556
+Now with iPhone X,
+ARKit turns its focus to you,
+
+
+20
+00:00:56,556 --> 00:01:00,460
+providing face tracking
+using the front-facing camera.
+
+
+21
+00:01:00,460 --> 00:01:03,530
+This new ability
+enables robust face detection
+
+
+22
+00:01:03,530 --> 00:01:07,267
+and positional tracking
+in six degrees of freedom.
+
+
+23
+00:01:07,267 --> 00:01:10,771
+Facial expressions are also
+tracked in real-time,
+
+
+24
+00:01:10,771 --> 00:01:13,607
+and your apps provided
+with a fitted triangle mesh
+
+
+25
+00:01:13,607 --> 00:01:15,709
+and weighted parameters
+representing
+
+
+26
+00:01:15,709 --> 00:01:20,347
+over 50 specific muscle
+movements of the detected face.
+
+
+27
+00:01:20,347 --> 00:01:21,515
+For AR, we provide
+
+
+28
+00:01:21,515 --> 00:01:24,184
+the front-facing color image
+from the camera,
+
+
+29
+00:01:24,184 --> 00:01:27,154
+as well as a front-depth image.
+
+
+30
+00:01:27,154 --> 00:01:31,058
+And ARKit uses your face
+as a light probe to estimate
+
+
+31
+00:01:31,058 --> 00:01:32,292
+lighting conditions,
+
+
+32
+00:01:32,292 --> 00:01:34,494
+and generates
+spherical harmonics coefficients
+
+
+33
+00:01:34,494 --> 00:01:36,997
+that you can apply
+to your rendering.
+
+
+34
+00:01:36,997 --> 00:01:38,131
+And as I mentioned,
+
+
+35
+00:01:38,131 --> 00:01:42,502
+all of this is exclusively
+supported on iPhone X.
+
+
+36
+00:01:42,502 --> 00:01:44,371
+There's some really fun things
+that you can do
+
+
+37
+00:01:44,371 --> 00:01:45,605
+with Face Tracking.
+
+
+38
+00:01:45,605 --> 00:01:47,641
+The first is selfie effects,
+
+
+39
+00:01:47,641 --> 00:01:50,110
+where you're rendering
+a semitransparent texture
+
+
+40
+00:01:50,110 --> 00:01:53,747
+onto the face mesh for effects
+like a virtual tattoo,
+
+
+41
+00:01:53,747 --> 00:01:56,049
+or face paint,
+or to apply makeup,
+
+
+42
+00:01:56,049 --> 00:01:59,519
+growing a beard or a mustache,
+or overlaying the mesh
+
+
+43
+00:01:59,519 --> 00:02:04,024
+with jewelry, masks, hats,
+and glasses.
+
+
+44
+00:02:04,024 --> 00:02:06,827
+The second is face capture,
+where you are capturing
+
+
+45
+00:02:06,827 --> 00:02:09,329
+the facial expression
+in real time
+
+
+46
+00:02:09,329 --> 00:02:11,999
+and using that as rigging
+to project expressions
+
+
+47
+00:02:11,999 --> 00:02:16,036
+onto an avatar,
+or for a character in a game.
+
+
+48
+00:02:16,036 --> 00:02:17,971
+So let's dive into the details
+
+
+49
+00:02:17,971 --> 00:02:20,941
+and see how to get started
+with face tracking.
+
+
+50
+00:02:20,941 --> 00:02:24,778
+The first thing you'll need
+to do is to create an ARSession.
+
+
+51
+00:02:24,778 --> 00:02:26,713
+ARSession is the object
+that handles
+
+
+52
+00:02:26,713 --> 00:02:29,316
+all the processing
+done for ARKit,
+
+
+53
+00:02:29,316 --> 00:02:31,184
+everything from
+configuring the device
+
+
+54
+00:02:31,184 --> 00:02:33,320
+to running
+different AR techniques.
+
+
+55
+00:02:33,320 --> 00:02:35,689
+To run a session,
+we first need to describe
+
+
+56
+00:02:35,689 --> 00:02:38,558
+what kind of tracking
+we want for this app.
+
+
+57
+00:02:38,558 --> 00:02:41,528
+So to do this, you'll create
+a particular ARConfiguration
+
+
+58
+00:02:41,528 --> 00:02:44,564
+for face tracking and set it up.
+
+
+59
+00:02:44,564 --> 00:02:46,400
+Now to begin processing,
+
+
+60
+00:02:46,400 --> 00:02:48,468
+you simply call the "run" method
+on the session
+
+
+61
+00:02:48,468 --> 00:02:51,371
+and provide the configuration
+you want to run.
+
+
+62
+00:02:51,371 --> 00:02:54,674
+Internally, ARKit will configure
+an AVCaptureSession
+
+
+63
+00:02:54,674 --> 00:02:57,577
+and CMMotionManager to begin
+receiving camera images
+
+
+64
+00:02:57,577 --> 00:02:59,813
+and the sensor data.
+
+
+65
+00:02:59,813 --> 00:03:03,817
+And after processing, results
+will be outputted as ARFrames.
+
+
+66
+00:03:03,817 --> 00:03:05,786
+Each ARFrame
+is a snapshot in time,
+
+
+67
+00:03:05,786 --> 00:03:08,255
+providing camera images,
+tracking data,
+
+
+68
+00:03:08,255 --> 00:03:10,724
+and anchor points -- basically
+everything that's needed
+
+
+69
+00:03:10,724 --> 00:03:12,459
+to render your scene.
+
+
+70
+00:03:12,459 --> 00:03:14,961
+Now let's take a closer look
+at the ARConfiguration
+
+
+71
+00:03:14,961 --> 00:03:16,363
+for face tracking.
+
+
+72
+00:03:16,363 --> 00:03:17,998
+We've added a new subclass
+
+
+73
+00:03:17,998 --> 00:03:21,001
+called
+ARFaceTrackingConfiguration.
+
+
+74
+00:03:21,001 --> 00:03:23,370
+This is a simple
+configuration subclass
+
+
+75
+00:03:23,370 --> 00:03:26,239
+that tells the ARSession
+to enable face tracking
+
+
+76
+00:03:26,239 --> 00:03:28,275
+through the front-facing camera.
+
+
+77
+00:03:28,275 --> 00:03:31,745
+There's a few basic properties
+to check for the availability
+
+
+78
+00:03:31,745 --> 00:03:33,680
+of face tracking on your device,
+
+
+79
+00:03:33,680 --> 00:03:36,516
+and whether or not
+to enable lighting estimation.
+
+
+80
+00:03:36,516 --> 00:03:37,984
+Then once you call "run,"
+
+
+81
+00:03:37,984 --> 00:03:41,888
+you'll start the tracking and
+begin receiving ARFrames.
+
+
+82
+00:03:41,888 --> 00:03:43,123
+Once a face is detected,
+
+
+83
+00:03:43,123 --> 00:03:45,659
+the session will generate
+an ARFaceAnchor.
+
+
+84
+00:03:45,659 --> 00:03:48,161
+This represents
+the primary face --
+
+
+85
+00:03:48,161 --> 00:03:52,399
+the single biggest, closest face
+in view of the camera.
+
+
+86
+00:03:52,399 --> 00:03:53,767
+An ARFaceAnchor
+
+
+87
+00:03:53,767 --> 00:03:56,703
+provides you with the face pose
+in world coordinates,
+
+
+88
+00:03:56,703 --> 00:03:59,806
+through the transform property
+of its superclass.
+
+
+89
+00:03:59,806 --> 00:04:03,777
+It also provides
+the 3D topology and parameters
+
+
+90
+00:04:03,777 --> 00:04:05,946
+of the current
+facial expression.
+
+
+91
+00:04:05,946 --> 00:04:07,814
+And as you can see,
+it's all tracked,
+
+
+92
+00:04:07,814 --> 00:04:09,649
+and the mesh
+and parameters updated,
+
+
+93
+00:04:09,649 --> 00:04:12,419
+in real time,
+60 times per second.
+
+
+94
+00:04:12,419 --> 00:04:15,956
+Now, focusing in
+on the topology,
+
+
+95
+00:04:15,956 --> 00:04:20,160
+ARKit provides you with
+a detailed 3D mesh of the face
+
+
+96
+00:04:20,160 --> 00:04:22,729
+fitted in real time
+to the dimensions, the shape,
+
+
+97
+00:04:22,729 --> 00:04:26,466
+and matching the facial
+expression of the user.
+
+
+98
+00:04:26,466 --> 00:04:28,502
+This data is available in
+a couple different forms;
+
+
+99
+00:04:28,502 --> 00:04:32,172
+the first is
+the ARFaceGeometry class.
+
+
+100
+00:04:32,172 --> 00:04:33,807
+This is essentially
+a triangle mesh,
+
+
+101
+00:04:33,807 --> 00:04:36,476
+so an array of vertices,
+triangle indices,
+
+
+102
+00:04:36,476 --> 00:04:38,111
+and texture coordinates,
+
+
+103
+00:04:38,111 --> 00:04:41,181
+which you can take
+to visualize in your renderer.
+
+
+104
+00:04:41,181 --> 00:04:43,917
+ARKit also provides
+an easy way to visualize
+
+
+105
+00:04:43,917 --> 00:04:48,855
+the mesh in SceneKit through
+the ARSCNFaceGeometry class,
+
+
+106
+00:04:48,855 --> 00:04:51,124
+which defines a geometry object
+that can be attached
+
+
+107
+00:04:51,124 --> 00:04:53,393
+to any SceneKit node.
+
+
+108
+00:04:53,393 --> 00:04:54,895
+Now aside from
+the geometry mesh,
+
+
+109
+00:04:54,895 --> 00:04:57,964
+we also have something
+that we call blend shapes.
+
+
+110
+00:04:57,964 --> 00:05:00,400
+Blend shapes provide
+a high-level model
+
+
+111
+00:05:00,400 --> 00:05:02,235
+of the current
+facial expression.
+
+
+112
+00:05:02,235 --> 00:05:04,204
+They're a dictionary
+of named coefficients
+
+
+113
+00:05:04,204 --> 00:05:07,507
+representing the pose
+of specific features --
+
+
+114
+00:05:07,507 --> 00:05:10,510
+your eyelids, eyebrows, jaw,
+nose, etcetera --
+
+
+115
+00:05:10,510 --> 00:05:13,180
+all relative
+to their neutral position.
+
+
+116
+00:05:13,180 --> 00:05:15,081
+They're expressed
+as floating point values
+
+
+117
+00:05:15,081 --> 00:05:18,318
+from zero to one,
+and they're all updated live.
+
+
+118
+00:05:18,318 --> 00:05:20,487
+So you can use these
+blend shape coefficients
+
+
+119
+00:05:20,487 --> 00:05:24,024
+to animate or rig,
+a 2D or 3D character
+
+
+120
+00:05:24,024 --> 00:05:28,094
+in a way that directly mirrors
+the user's facial movements.
+
+
+121
+00:05:28,094 --> 00:05:29,763
+Just to give you an idea
+of what's available,
+
+
+122
+00:05:29,763 --> 00:05:32,265
+here's the list
+of blend shape coefficients.
+
+
+123
+00:05:32,265 --> 00:05:35,902
+So each of these is tracked
+and updated independently --
+
+
+124
+00:05:35,902 --> 00:05:38,838
+the right and left eyebrows,
+the position of your eyes,
+
+
+125
+00:05:38,838 --> 00:05:41,975
+your jaw, the shape
+of your smile, etcetera.
+
+
+126
+00:05:43,043 --> 00:05:44,411
+Something that goes
+hand-in-hand
+
+
+127
+00:05:44,411 --> 00:05:48,215
+with rendering the face geometry
+or animating a 3D character
+
+
+128
+00:05:48,215 --> 00:05:50,483
+is realistic lighting.
+
+
+129
+00:05:50,483 --> 00:05:53,119
+And by using your face
+as a light probe,
+
+
+130
+00:05:53,119 --> 00:05:55,255
+an ARSession
+that's running face detection
+
+
+131
+00:05:55,255 --> 00:05:58,525
+can provide you with
+a directional light estimate,
+
+
+132
+00:05:58,525 --> 00:06:00,060
+representing the light intensity
+
+
+133
+00:06:00,060 --> 00:06:02,529
+and its direction
+in world space.
+
+
+134
+00:06:02,529 --> 00:06:04,664
+For most apps,
+this lighting vector
+
+
+135
+00:06:04,664 --> 00:06:06,700
+and intensity
+are more than enough.
+
+
+136
+00:06:06,700 --> 00:06:08,568
+But ARKit also provides
+
+
+137
+00:06:08,568 --> 00:06:11,671
+second-degree spherical
+harmonics coefficients,
+
+
+138
+00:06:11,671 --> 00:06:14,874
+representing the intensity
+of light detected in the scene.
+
+
+139
+00:06:14,874 --> 00:06:16,876
+So for apps with more
+advanced requirements,
+
+
+140
+00:06:16,876 --> 00:06:19,446
+you can take advantage
+of this as well.
+
+
+141
+00:06:19,446 --> 00:06:21,381
+And a couple more features
+to mention.
+
+
+142
+00:06:21,381 --> 00:06:24,884
+In addition to the front-facing
+camera image with color data,
+
+
+143
+00:06:24,884 --> 00:06:26,953
+ARKit can also
+provide your app with
+
+
+144
+00:06:26,953 --> 00:06:29,656
+the front-facing depth image
+as well.
+
+
+145
+00:06:29,656 --> 00:06:31,658
+And I'm showing this here
+as a greyscale image.
+
+
+146
+00:06:31,658 --> 00:06:35,962
+The data itself is provided
+as an AVDepthData object,
+
+
+147
+00:06:35,962 --> 00:06:37,464
+along with a timestamp.
+
+
+148
+00:06:37,464 --> 00:06:41,468
+But it's important to note,
+this is being captured at 15Hz,
+
+
+149
+00:06:41,468 --> 00:06:43,637
+which is a lower frequency
+than the color image
+
+
+150
+00:06:43,637 --> 00:06:46,439
+which ARKit captures at 60Hz.
+
+
+151
+00:06:47,440 --> 00:06:50,443
+And finally, a feature that can
+be used with any ARKit session,
+
+
+152
+00:06:50,443 --> 00:06:54,247
+but is particularly interesting
+with face tracking is:
+
+
+153
+00:06:54,247 --> 00:06:55,882
+Audio Capture.
+
+
+154
+00:06:55,882 --> 00:06:58,618
+Now it's disabled by default,
+but if enabled,
+
+
+155
+00:06:58,618 --> 00:07:00,220
+then while your ARSession
+is running,
+
+
+156
+00:07:00,220 --> 00:07:03,056
+it will capture audio samples
+from the microphone,
+
+
+157
+00:07:03,056 --> 00:07:06,726
+and deliver a sequence
+of CMSampleBuffers to your app.
+
+
+158
+00:07:06,726 --> 00:07:08,495
+So this is useful
+if you want to capture
+
+
+159
+00:07:08,495 --> 00:07:12,232
+the user's face and their voice
+at the same time.
+
+
+160
+00:07:12,465 --> 00:07:14,167
+For more information
+about face tracking,
+
+
+161
+00:07:14,167 --> 00:07:15,969
+and links to the sample code,
+
+
+162
+00:07:15,969 --> 00:07:17,637
+please visit
+our Developer website
+
+
+163
+00:07:17,637 --> 00:07:20,774
+at developer.apple.com/arkit.
+

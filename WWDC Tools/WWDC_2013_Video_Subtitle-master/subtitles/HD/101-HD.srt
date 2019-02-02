@@ -1,0 +1,11474 @@
+1
+00:00:00,506 --> 00:00:08,516
+[ Silence ]
+
+
+2
+00:00:09,016 --> 00:01:38,000
+[ Music & Background Noise ]
+
+
+3
+00:01:38,516 --> 00:01:44,536
+[ Applause ]
+
+
+4
+00:01:45,036 --> 00:01:47,186
+>> Ladies and gentlemen,
+
+
+5
+00:01:47,186 --> 00:01:51,236
+please welcome Senior Director
+OS X Platform Experience Andreas
+
+
+6
+00:01:51,236 --> 00:01:51,706
+Venter [assumed spelling].
+
+
+7
+00:01:52,516 --> 00:01:56,926
+[ Applause ]
+
+
+8
+00:01:57,426 --> 00:01:59,076
+>> Good afternoon.
+
+
+9
+00:01:59,236 --> 00:02:00,936
+Welcome to WWDC 2013.
+
+
+10
+00:02:03,416 --> 00:02:07,576
+The epic ecosystem continues to
+thrive for hundreds of millions
+
+
+11
+00:02:07,576 --> 00:02:11,106
+of users enjoying their
+iPhones, iPads and Macs.
+
+
+12
+00:02:12,606 --> 00:02:14,966
+This morning, we had
+several great announcements
+
+
+13
+00:02:15,226 --> 00:02:16,696
+that will make our
+users even happier.
+
+
+14
+00:02:17,276 --> 00:02:21,506
+Starting of course with
+iOS 7, the big theme
+
+
+15
+00:02:21,506 --> 00:02:23,936
+of iOS 7 is its beautiful
+new look.
+
+
+16
+00:02:24,436 --> 00:02:27,116
+And it also contains
+features like control center
+
+
+17
+00:02:27,736 --> 00:02:29,916
+and multi-tasking
+UI and AirDrop.
+
+
+18
+00:02:30,536 --> 00:02:35,156
+OS X Mavericks is a
+very compelling mix
+
+
+19
+00:02:35,156 --> 00:02:38,196
+of infrastructure improvements
+that lower power consumption,
+
+
+20
+00:02:38,196 --> 00:02:39,396
+increase responsiveness.
+
+
+21
+00:02:40,276 --> 00:02:42,106
+Together, let's [inaudible]
+user features
+
+
+22
+00:02:42,106 --> 00:02:44,616
+like margin monitor
+support and file tagging
+
+
+23
+00:02:44,656 --> 00:02:47,386
+and of course our new maps
+and iBooks applications.
+
+
+24
+00:02:47,386 --> 00:02:50,826
+Now, what we didn't
+tell you this morning is
+
+
+25
+00:02:50,826 --> 00:02:53,216
+that we also have big news
+on our developer tools.
+
+
+26
+00:02:54,096 --> 00:02:55,656
+In addition to our
+operating systems,
+
+
+27
+00:02:55,846 --> 00:02:57,646
+we're also announcing
+a major new version
+
+
+28
+00:02:57,646 --> 00:02:59,976
+of Xcode today, version 5.
+
+
+29
+00:03:00,016 --> 00:03:01,106
+[ Applause ]
+
+
+30
+00:03:01,106 --> 00:03:01,376
+Yeah.
+
+
+31
+00:03:03,016 --> 00:03:04,696
+[ Applause ]
+
+
+32
+00:03:04,696 --> 00:03:04,763
+Yeah.
+
+
+33
+00:03:05,516 --> 00:03:07,886
+[ Applause ]
+
+
+34
+00:03:08,386 --> 00:03:10,756
+The most important purpose
+of Xcode 5 is of course
+
+
+35
+00:03:10,756 --> 00:03:14,516
+to let you take advantage
+of all the new APIs in iOS 7
+
+
+36
+00:03:14,636 --> 00:03:16,776
+and OS X Mavericks, so
+that you can get the most
+
+
+37
+00:03:16,776 --> 00:03:17,976
+out of these operating systems.
+
+
+38
+00:03:18,746 --> 00:03:20,966
+But it also contains
+features that will allow you
+
+
+39
+00:03:20,966 --> 00:03:24,026
+to create higher quality apps
+with a really strong-focus
+
+
+40
+00:03:24,166 --> 00:03:25,366
+on testing and debugging.
+
+
+41
+00:03:26,346 --> 00:03:28,596
+And all of this gets
+surfaced in a fresh new look
+
+
+42
+00:03:28,596 --> 00:03:30,506
+that simplifies the
+Xcode experience.
+
+
+43
+00:03:31,356 --> 00:03:32,586
+This is the new Xcode 5.
+
+
+44
+00:03:33,576 --> 00:03:35,516
+Everything is more
+compact and clear.
+
+
+45
+00:03:35,856 --> 00:03:39,736
+With fewer distractions from
+your source code, you're going
+
+
+46
+00:03:39,736 --> 00:03:42,326
+to see quite a bit about the new
+Xcode 5 throughout this session.
+
+
+47
+00:03:42,596 --> 00:03:45,036
+But for now, I'm going to focus
+a little more on our agenda
+
+
+48
+00:03:45,036 --> 00:03:46,276
+with platform ecosystem.
+
+
+49
+00:03:48,616 --> 00:03:50,046
+One of the major forces
+
+
+50
+00:03:50,046 --> 00:03:52,656
+that prepares our
+platforms is the continued
+
+
+51
+00:03:52,656 --> 00:03:56,266
+and growing success
+of our app stores.
+
+
+52
+00:03:56,446 --> 00:03:58,946
+Just recently, we
+crossed this amazing mark
+
+
+53
+00:03:58,946 --> 00:04:01,016
+of over 50 billion
+app downloads.
+
+
+54
+00:04:01,836 --> 00:04:03,976
+And the rate of downloads
+start accelerating
+
+
+55
+00:04:04,086 --> 00:04:05,406
+because they're constantly
+working
+
+
+56
+00:04:05,406 --> 00:04:07,226
+on improving our app
+store experience.
+
+
+57
+00:04:09,046 --> 00:04:11,026
+This year, we're making
+it easier for users
+
+
+58
+00:04:11,136 --> 00:04:13,756
+to discover new apps through
+our apps [inaudible] feature
+
+
+59
+00:04:14,136 --> 00:04:16,636
+which crowd-sources relevant
+apps that you might want
+
+
+60
+00:04:16,636 --> 00:04:18,065
+to use based on your location.
+
+
+61
+00:04:18,805 --> 00:04:21,156
+So for example, you can
+find apps that's specific
+
+
+62
+00:04:21,156 --> 00:04:22,466
+to a shopping mall
+you're entering,
+
+
+63
+00:04:22,846 --> 00:04:25,086
+or a sports event you're
+attending or an area
+
+
+64
+00:04:25,086 --> 00:04:25,976
+that you're visiting
+as a tourist.
+
+
+65
+00:04:28,676 --> 00:04:31,526
+You're also significantly
+improving our volume purchase
+
+
+66
+00:04:31,526 --> 00:04:33,936
+program which allows
+companies and schools
+
+
+67
+00:04:34,166 --> 00:04:37,646
+to initiate mass purchases
+of app licenses for both iOS
+
+
+68
+00:04:37,646 --> 00:04:40,796
+and Mac and to distribute
+those licenses to their users
+
+
+69
+00:04:40,896 --> 00:04:42,496
+with the help of MDM service.
+
+
+70
+00:04:42,736 --> 00:04:46,716
+And for you developers, we're
+improving our purchase receipts.
+
+
+71
+00:04:46,716 --> 00:04:50,136
+We're now encrypting through
+receipts on both platforms,
+
+
+72
+00:04:50,526 --> 00:04:53,256
+and via extending the data, you
+can access from these receipts.
+
+
+73
+00:04:53,886 --> 00:04:56,806
+The concrete example that is
+really useful is if you're
+
+
+74
+00:04:56,806 --> 00:04:58,336
+in the process of
+moving your app
+
+
+75
+00:04:58,526 --> 00:05:00,666
+from a paid app to be a premium.
+
+
+76
+00:05:01,126 --> 00:05:03,106
+In which case, you can
+validate with the receipts
+
+
+77
+00:05:03,266 --> 00:05:05,486
+which users have already
+paid in full for these apps
+
+
+78
+00:05:05,796 --> 00:05:08,156
+and credit them [inaudible]
+app purchases you might want
+
+
+79
+00:05:08,156 --> 00:05:08,926
+to offer for free.
+
+
+80
+00:05:09,516 --> 00:05:16,826
+[ Applause ]
+
+
+81
+00:05:17,326 --> 00:05:19,686
+So taking it all together,
+they are making improvements
+
+
+82
+00:05:19,686 --> 00:05:21,696
+for our end users
+for enterprises
+
+
+83
+00:05:21,696 --> 00:05:23,386
+and schools and for developers.
+
+
+84
+00:05:23,776 --> 00:05:25,516
+And all these features
+work together
+
+
+85
+00:05:25,516 --> 00:05:27,696
+to make the app store
+experience even more compelling
+
+
+86
+00:05:28,186 --> 00:05:28,786
+that we're adding
+
+
+87
+00:05:28,786 --> 00:05:30,906
+to the business opportunities
+they offer to you
+
+
+88
+00:05:30,906 --> 00:05:31,966
+as third-party developers.
+
+
+89
+00:05:33,806 --> 00:05:36,956
+I'd also like to give you a
+very brief update on iCloud.
+
+
+90
+00:05:37,606 --> 00:05:39,316
+iCloud provides a
+set of services
+
+
+91
+00:05:39,776 --> 00:05:41,896
+that integrate seamlessly
+with applications
+
+
+92
+00:05:41,896 --> 00:05:45,366
+so that users can access
+their documents, their media,
+
+
+93
+00:05:45,366 --> 00:05:48,106
+and their app data from any
+device they choose to work on.
+
+
+94
+00:05:48,726 --> 00:05:52,106
+And it's a huge success
+for hundreds
+
+
+95
+00:05:52,106 --> 00:05:53,536
+of millions of users worldwide.
+
+
+96
+00:05:55,086 --> 00:05:57,896
+iCloud also offers a
+set of developer APIs
+
+
+97
+00:05:57,896 --> 00:06:01,346
+that users can use to integrate
+these services with your apps.
+
+
+98
+00:06:02,396 --> 00:06:04,916
+Now, we understand that there
+is one specific area that many
+
+
+99
+00:06:04,916 --> 00:06:06,976
+of you have struggled
+to get to work right.
+
+
+100
+00:06:06,976 --> 00:06:10,636
+And that is our documents in
+the Cloud API with core data.
+
+
+101
+00:06:11,536 --> 00:06:14,166
+So this is an area
+that we have decided
+
+
+102
+00:06:14,166 --> 00:06:17,036
+to not implement any new
+features this year but instead
+
+
+103
+00:06:17,036 --> 00:06:19,636
+to focus on reliability
+and quality.
+
+
+104
+00:06:19,826 --> 00:06:21,956
+We have fixed a ton of
+perks in this space.
+
+
+105
+00:06:22,516 --> 00:06:28,536
+[ Applause ]
+
+
+106
+00:06:29,036 --> 00:06:30,516
+We've also made it
+easier for you
+
+
+107
+00:06:30,516 --> 00:06:32,736
+to interact with
+this technology.
+
+
+108
+00:06:32,966 --> 00:06:36,266
+We're adding specific iCloud
+debugging tools to Xcode 5.
+
+
+109
+00:06:37,516 --> 00:06:41,826
+[ Applause ]
+
+
+110
+00:06:42,326 --> 00:06:44,226
+You'll be able to use
+the key-value store
+
+
+111
+00:06:44,226 --> 00:06:47,486
+and the Document API from the
+simulator for better testing.
+
+
+112
+00:06:48,416 --> 00:06:52,136
+And in case your users -- in
+case if users ever need a way
+
+
+113
+00:06:52,136 --> 00:06:54,736
+to reset their Cloud data, we
+would give them a way to do just
+
+
+114
+00:06:54,806 --> 00:06:57,066
+that later this year
+on icloud.com.
+
+
+115
+00:06:57,146 --> 00:07:00,226
+So, that's just a
+brief update on iCloud.
+
+
+116
+00:07:00,796 --> 00:07:02,906
+We're working very hard to
+getting this right this time,
+
+
+117
+00:07:03,636 --> 00:07:04,596
+please try that one more time.
+
+
+118
+00:07:05,516 --> 00:07:10,966
+[ Applause ]
+
+
+119
+00:07:11,466 --> 00:07:13,556
+All right, for the
+remainder of this session,
+
+
+120
+00:07:13,856 --> 00:07:14,586
+we're going to take a look
+
+
+121
+00:07:14,586 --> 00:07:17,466
+at how our new products
+impact your apps.
+
+
+122
+00:07:18,106 --> 00:07:19,766
+You already got a good
+idea for what they bring
+
+
+123
+00:07:19,766 --> 00:07:23,066
+to the table this morning
+in the keynote for end users
+
+
+124
+00:07:23,196 --> 00:07:25,266
+and at this session, they're
+going to focus on what they --
+
+
+125
+00:07:25,496 --> 00:07:27,116
+what this all means
+for you as developers.
+
+
+126
+00:07:27,696 --> 00:07:29,916
+We're going to start
+with iOS 7, and for that,
+
+
+127
+00:07:29,916 --> 00:07:31,656
+I'm going to bring Toby
+Paterson up on stage.
+
+
+128
+00:07:32,516 --> 00:07:38,686
+[ Applause ]
+
+
+129
+00:07:39,186 --> 00:07:39,856
+>> Good afternoon.
+
+
+130
+00:07:41,006 --> 00:07:43,476
+We've been working for
+quite a while on iOS 7
+
+
+131
+00:07:43,686 --> 00:07:46,316
+and I'm really excited to
+tell you a bit about it today.
+
+
+132
+00:07:46,316 --> 00:07:49,006
+We've got a lot of new
+things for you here.
+
+
+133
+00:07:49,696 --> 00:07:51,906
+Just for fun, we took a
+look and counted the number
+
+
+134
+00:07:51,906 --> 00:07:54,356
+of new symbols in our
+public frameworks.
+
+
+135
+00:07:54,916 --> 00:08:00,936
+We've got 114 new
+classes, 679 new methods
+
+
+136
+00:08:01,016 --> 00:08:04,076
+and 917 new properties.
+
+
+137
+00:08:04,746 --> 00:08:07,096
+Wow! All right, we'll take
+that for what it's worth.
+
+
+138
+00:08:07,206 --> 00:08:08,966
+But the bottom-line here
+is that we've got a lot
+
+
+139
+00:08:08,966 --> 00:08:12,406
+of new things for
+you to dig into.
+
+
+140
+00:08:12,566 --> 00:08:16,806
+Right now though, I want to
+talk about just one thing.
+
+
+141
+00:08:17,656 --> 00:08:21,446
+The new user interface,
+the visual changes
+
+
+142
+00:08:21,446 --> 00:08:23,916
+that we've made are of course
+the most obvious difference.
+
+
+143
+00:08:24,546 --> 00:08:25,906
+But it goes much
+deeper than that.
+
+
+144
+00:08:26,076 --> 00:08:27,616
+This is not just a facelift.
+
+
+145
+00:08:28,466 --> 00:08:30,646
+We broke down all
+of our applications
+
+
+146
+00:08:30,946 --> 00:08:34,166
+and reassembled them,
+focusing first on the content
+
+
+147
+00:08:34,456 --> 00:08:36,346
+and then building the
+chrome around that.
+
+
+148
+00:08:37,456 --> 00:08:40,626
+The result is a fundamental
+change to our user experience
+
+
+149
+00:08:41,025 --> 00:08:43,265
+that will affect
+all applications.
+
+
+150
+00:08:44,436 --> 00:08:47,126
+This is not something
+that we undertook lightly.
+
+
+151
+00:08:47,546 --> 00:08:50,036
+We took a very serious and
+measured approach to this.
+
+
+152
+00:08:50,446 --> 00:08:53,796
+And there are three big ideas at
+the heart of our redesigned UI.
+
+
+153
+00:08:54,556 --> 00:08:57,776
+The first of these,
+clarity is all
+
+
+154
+00:08:57,776 --> 00:08:59,346
+about showing what's relevant.
+
+
+155
+00:09:00,096 --> 00:09:03,256
+It means presenting data to
+users in a way that makes sense.
+
+
+156
+00:09:03,846 --> 00:09:06,936
+Providing features which
+are self-explanatory
+
+
+157
+00:09:06,936 --> 00:09:09,796
+and discoverable and
+providing a consistent
+
+
+158
+00:09:09,906 --> 00:09:13,566
+and cohesive user experience
+across your applications.
+
+
+159
+00:09:13,926 --> 00:09:17,916
+Deference can be
+summed up simply
+
+
+160
+00:09:18,256 --> 00:09:20,166
+as getting the chrome
+out of the way.
+
+
+161
+00:09:21,286 --> 00:09:24,046
+Your users care about their
+content, their videos,
+
+
+162
+00:09:24,046 --> 00:09:25,606
+their messages, their music.
+
+
+163
+00:09:26,176 --> 00:09:27,776
+The user interface
+should not compete
+
+
+164
+00:09:27,776 --> 00:09:29,246
+with that for their attention.
+
+
+165
+00:09:30,116 --> 00:09:31,986
+This is perhaps the
+most radical change
+
+
+166
+00:09:32,256 --> 00:09:33,366
+that we've made in the new UI.
+
+
+167
+00:09:33,366 --> 00:09:36,336
+And I think that
+new understated look
+
+
+168
+00:09:36,336 --> 00:09:39,886
+of iOS 7 will really allow the
+personality of your applications
+
+
+169
+00:09:40,256 --> 00:09:42,656
+to shine through far
+more than ever before.
+
+
+170
+00:09:43,326 --> 00:09:47,676
+Now, although we've
+simplified the user interface,
+
+
+171
+00:09:47,896 --> 00:09:50,286
+that doesn't mean
+that it's static.
+
+
+172
+00:09:50,286 --> 00:09:52,666
+iOS 7 has tremendous vitality
+
+
+173
+00:09:53,186 --> 00:09:55,096
+through the use of
+depth and motion.
+
+
+174
+00:09:56,056 --> 00:09:59,866
+Parallax blurs and translucency
+take the place of gradients
+
+
+175
+00:09:59,866 --> 00:10:02,946
+and shadows and cut-lines in
+defining your content areas.
+
+
+176
+00:10:03,486 --> 00:10:06,296
+And sophisticated animations
+make this perhaps the most
+
+
+177
+00:10:06,296 --> 00:10:09,216
+lifelike of the any
+iOS release yet.
+
+
+178
+00:10:09,786 --> 00:10:12,426
+Take a look at the
+use of Parallax
+
+
+179
+00:10:12,426 --> 00:10:13,476
+on the home screen here.
+
+
+180
+00:10:14,156 --> 00:10:16,906
+Notice how the background
+appears behind the application
+
+
+181
+00:10:16,906 --> 00:10:20,286
+icons and the badge
+appears to float above it.
+
+
+182
+00:10:21,296 --> 00:10:23,166
+So what does this mean for you?
+
+
+183
+00:10:24,076 --> 00:10:26,696
+There are four things that
+you need to pay attention to.
+
+
+184
+00:10:27,706 --> 00:10:29,456
+The first of these are changes
+
+
+185
+00:10:29,526 --> 00:10:31,236
+to the way your content
+is laid out.
+
+
+186
+00:10:32,106 --> 00:10:36,036
+We have some new metrics on
+our system controls and buttons
+
+
+187
+00:10:36,036 --> 00:10:39,146
+and pickers have a new look
+and a new behavior about them.
+
+
+188
+00:10:39,236 --> 00:10:41,636
+I'd like to give you
+a quick demo now.
+
+
+189
+00:10:42,296 --> 00:10:44,196
+I'm going to walk through
+some of the applications
+
+
+190
+00:10:44,236 --> 00:10:46,596
+that Craig showed you this
+morning, and just point
+
+
+191
+00:10:46,596 --> 00:10:48,976
+out some things that we think
+you should pay attention to.
+
+
+192
+00:10:56,656 --> 00:10:58,986
+Let's go into photos here.
+
+
+193
+00:10:59,726 --> 00:11:02,936
+And right away, you can
+see some differences.
+
+
+194
+00:11:04,026 --> 00:11:11,316
+Let's try this one
+and there we go.
+
+
+195
+00:11:12,586 --> 00:11:15,226
+Okay, let's go into photos here.
+
+
+196
+00:11:15,776 --> 00:11:18,146
+Right away, you can see
+some big differences.
+
+
+197
+00:11:18,616 --> 00:11:20,616
+Take a look at the bars
+at the top and the bottom.
+
+
+198
+00:11:21,176 --> 00:11:22,856
+Gone are the gradients
+and the shadows
+
+
+199
+00:11:22,856 --> 00:11:25,986
+and we've got a much more
+muted understated look.
+
+
+200
+00:11:26,886 --> 00:11:29,666
+If I drill into some content
+here and start scrolling,
+
+
+201
+00:11:30,166 --> 00:11:32,996
+take a look closely at the
+bars at the top and the bottom.
+
+
+202
+00:11:33,756 --> 00:11:36,346
+You can see some of your
+content just sort of hinting
+
+
+203
+00:11:36,396 --> 00:11:37,276
+through the bar there.
+
+
+204
+00:11:38,256 --> 00:11:40,106
+The bars are partially
+translucent
+
+
+205
+00:11:40,106 --> 00:11:43,726
+and we put a heavy blur on them
+so that the text on the buttons
+
+
+206
+00:11:43,726 --> 00:11:45,606
+on your bars remain legible.
+
+
+207
+00:11:46,506 --> 00:11:48,816
+If you take a look at the
+buttons in the navigation bar,
+
+
+208
+00:11:48,816 --> 00:11:51,336
+the Back button on the left and
+the Select button on the right,
+
+
+209
+00:11:51,836 --> 00:11:54,596
+you'll notice also that they
+don't have any borders anymore.
+
+
+210
+00:11:54,596 --> 00:11:58,166
+Let me select a couple of
+photos here and have a look
+
+
+211
+00:11:58,166 --> 00:11:59,166
+at the buttons at the bottom.
+
+
+212
+00:11:59,696 --> 00:12:01,266
+They too have no boarders.
+
+
+213
+00:12:01,406 --> 00:12:03,826
+And in fact, you'll notice
+that we're starting to use text
+
+
+214
+00:12:03,826 --> 00:12:06,836
+in place of icons in some
+place for greater clarity.
+
+
+215
+00:12:07,716 --> 00:12:09,566
+Now this is not something
+special to photos.
+
+
+216
+00:12:09,566 --> 00:12:11,976
+We actually made this change
+throughout the system.
+
+
+217
+00:12:12,586 --> 00:12:15,836
+Let's go into mail now, and
+we'll see here a message
+
+
+218
+00:12:15,836 --> 00:12:16,856
+that I was reading earlier.
+
+
+219
+00:12:17,526 --> 00:12:20,096
+As I scroll up, you can
+see the content showing
+
+
+220
+00:12:20,096 --> 00:12:21,116
+through the bars as well.
+
+
+221
+00:12:21,936 --> 00:12:23,726
+And here too the
+buttons have no borders.
+
+
+222
+00:12:24,366 --> 00:12:27,136
+Now, this begs a very important
+question, how is the user meant
+
+
+223
+00:12:27,136 --> 00:12:27,906
+to know what to tap on?
+
+
+224
+00:12:27,936 --> 00:12:31,946
+Well, we're using color in place
+of borders to indicate things
+
+
+225
+00:12:31,946 --> 00:12:34,746
+that are tappable or can
+otherwise be interacted with.
+
+
+226
+00:12:35,366 --> 00:12:37,666
+In the case of mail
+here, the color is blue
+
+
+227
+00:12:37,666 --> 00:12:40,176
+but every application
+has its own personality.
+
+
+228
+00:12:40,526 --> 00:12:42,216
+And so you can tailor
+the tint color
+
+
+229
+00:12:42,216 --> 00:12:43,906
+to your application's theme.
+
+
+230
+00:12:45,016 --> 00:12:46,396
+Let's go back up to
+the message list.
+
+
+231
+00:12:46,396 --> 00:12:48,056
+There's one more thing
+I want to show you here.
+
+
+232
+00:12:48,056 --> 00:12:51,506
+I'm going to swipe on a message
+and tap the More button to bring
+
+
+233
+00:12:51,506 --> 00:12:53,966
+up the action sheet, and
+take a look at the buttons
+
+
+234
+00:12:53,966 --> 00:12:55,446
+up in the navigation bar now.
+
+
+235
+00:12:55,896 --> 00:12:57,546
+You'll notice that
+they've lost their color
+
+
+236
+00:12:58,246 --> 00:12:59,876
+because of course
+I can't tap on them
+
+
+237
+00:12:59,876 --> 00:13:01,116
+because the action sheet is up.
+
+
+238
+00:13:01,796 --> 00:13:04,526
+If I just missed the action
+sheet, the color goes away.
+
+
+239
+00:13:05,086 --> 00:13:07,666
+And this is not just a
+simple dimming effect.
+
+
+240
+00:13:07,666 --> 00:13:10,996
+We're actually desaturating the
+tint color of the control there.
+
+
+241
+00:13:11,546 --> 00:13:12,856
+What's happening
+under the covers is
+
+
+242
+00:13:12,856 --> 00:13:16,136
+that UIKit is changing the tint
+color on the inactive controls
+
+
+243
+00:13:16,136 --> 00:13:17,906
+and posting a notification.
+
+
+244
+00:13:18,436 --> 00:13:20,526
+You can listen for that
+notification in your app
+
+
+245
+00:13:20,526 --> 00:13:23,526
+so that you can update the color
+of your controls accordingly.
+
+
+246
+00:13:23,526 --> 00:13:26,706
+And I have a small
+confession to make.
+
+
+247
+00:13:26,706 --> 00:13:28,776
+My eyes aren't what they used
+to be and I'm having a bit
+
+
+248
+00:13:28,776 --> 00:13:31,456
+of trouble reading
+the text in mail here.
+
+
+249
+00:13:32,166 --> 00:13:34,336
+So, I want to show you a
+new text-sizing feature
+
+
+250
+00:13:34,506 --> 00:13:35,896
+that we've added to iOS 7.
+
+
+251
+00:13:35,896 --> 00:13:38,346
+I'm going to switch
+into settings here
+
+
+252
+00:13:38,976 --> 00:13:40,166
+and you can see right here.
+
+
+253
+00:13:40,166 --> 00:13:43,096
+This is a great example of the
+new group style Table View.
+
+
+254
+00:13:43,256 --> 00:13:46,106
+This is the case where we've
+changed some of the metrics.
+
+
+255
+00:13:46,106 --> 00:13:49,156
+You'll notice the cells are
+now going edge-to-edge instead
+
+
+256
+00:13:49,156 --> 00:13:51,346
+of being inset into
+rounded racks.
+
+
+257
+00:13:52,496 --> 00:13:55,386
+Let's drill into general
+and text size and you'll see
+
+
+258
+00:13:55,386 --> 00:13:56,566
+that I've got a slider here.
+
+
+259
+00:13:56,736 --> 00:14:00,466
+I can drag it to the left to
+make text smaller or drag it
+
+
+260
+00:14:00,506 --> 00:14:03,006
+to the right to make text
+larger in applications
+
+
+261
+00:14:03,006 --> 00:14:04,256
+which adopted this feature.
+
+
+262
+00:14:04,606 --> 00:14:07,066
+I'm going to leave it on the
+right in the largest setting
+
+
+263
+00:14:07,576 --> 00:14:09,566
+and switch back through
+multi-tasking to mail.
+
+
+264
+00:14:10,416 --> 00:14:13,176
+And you can see that mail is
+now using a much larger font
+
+
+265
+00:14:13,526 --> 00:14:15,936
+and it's also adapted to
+the layout of the cells
+
+
+266
+00:14:16,186 --> 00:14:17,886
+to accommodate the larger text.
+
+
+267
+00:14:18,506 --> 00:14:20,856
+This is a place where I think
+Auto Layout Constraints are
+
+
+268
+00:14:20,856 --> 00:14:23,886
+really going to help you in your
+application with this feature.
+
+
+269
+00:14:24,936 --> 00:14:26,976
+Now, I'm having so
+much fun up here
+
+
+270
+00:14:26,976 --> 00:14:29,256
+that I worry the session
+may go a little bit late.
+
+
+271
+00:14:29,696 --> 00:14:31,556
+Let's check the calendar
+and see if that's going
+
+
+272
+00:14:31,556 --> 00:14:32,756
+to cause any problems.
+
+
+273
+00:14:33,606 --> 00:14:35,886
+Sure enough, we've got the
+Apple Design Awards coming
+
+
+274
+00:14:35,886 --> 00:14:36,776
+up a little bit later.
+
+
+275
+00:14:37,216 --> 00:14:38,646
+We better do something
+about that.
+
+
+276
+00:14:39,636 --> 00:14:43,556
+I'm going to tap into the awards
+event and edit it and I'm going
+
+
+277
+00:14:43,556 --> 00:14:46,036
+to tap on the start time here
+to push it back a little.
+
+
+278
+00:14:46,696 --> 00:14:48,386
+Notice how the picker slides
+
+
+279
+00:14:48,386 --> 00:14:50,466
+or notice how the
+Table View slides open
+
+
+280
+00:14:50,466 --> 00:14:51,686
+to reveal the new picker.
+
+
+281
+00:14:52,576 --> 00:14:55,306
+Once I've changed the time to
+push it back or we don't need
+
+
+282
+00:14:55,306 --> 00:14:57,146
+to go to 6, I think
+5 will be fine.
+
+
+283
+00:14:57,746 --> 00:15:01,736
+I'm going to tap the Start
+Time to accept my action
+
+
+284
+00:15:01,736 --> 00:15:04,466
+and the Table View slides
+closed to hide the picker.
+
+
+285
+00:15:05,116 --> 00:15:07,566
+This is a new way of using
+pickers which will take a bit
+
+
+286
+00:15:07,566 --> 00:15:09,286
+of work in your code to adopt it
+
+
+287
+00:15:09,706 --> 00:15:11,896
+but I think the result
+is a much lighter weight,
+
+
+288
+00:15:12,316 --> 00:15:13,556
+easier to use control.
+
+
+289
+00:15:14,716 --> 00:15:16,296
+Okay, let's go back
+to the slides now.
+
+
+290
+00:15:16,446 --> 00:15:18,946
+I want to recap briefly some
+
+
+291
+00:15:18,946 --> 00:15:20,226
+of the things we've
+just talked about.
+
+
+292
+00:15:24,136 --> 00:15:27,586
+So first, your content
+needs to go full screen now.
+
+
+293
+00:15:28,376 --> 00:15:30,736
+We've always had
+translucent bars in UIKit.
+
+
+294
+00:15:31,036 --> 00:15:34,606
+The difference now is that
+all bars are translucent all
+
+
+295
+00:15:34,606 --> 00:15:34,996
+the time.
+
+
+296
+00:15:36,076 --> 00:15:39,566
+If your content is in the scroll
+view, we can dynamically resize
+
+
+297
+00:15:39,596 --> 00:15:43,336
+that and set the content
+insets appropriately for you.
+
+
+298
+00:15:43,826 --> 00:15:45,626
+If your content isn't
+in a scroll view,
+
+
+299
+00:15:46,246 --> 00:15:47,836
+you'll have to do a
+little bit of work
+
+
+300
+00:15:47,876 --> 00:15:49,286
+to adopt for the new layout.
+
+
+301
+00:15:51,076 --> 00:15:55,106
+Buttons have no borders anymore
+whether you're using a UI button
+
+
+302
+00:15:55,166 --> 00:15:58,056
+with a now horribly misnamed
+bordered bar button item.
+
+
+303
+00:15:58,476 --> 00:15:59,446
+The borders are gone.
+
+
+304
+00:16:00,016 --> 00:16:01,206
+[ Laughter ]
+
+
+305
+00:16:01,206 --> 00:16:05,556
+And we're using tint
+color to indicate things
+
+
+306
+00:16:05,556 --> 00:16:07,836
+that can now be interacted
+with or tapped on.
+
+
+307
+00:16:08,356 --> 00:16:12,596
+Group style Table Views and
+some of our new controls or some
+
+
+308
+00:16:12,596 --> 00:16:14,256
+of our controls have
+new metrics.
+
+
+309
+00:16:14,826 --> 00:16:17,926
+Now, we tried very hard to
+minimize the number of places
+
+
+310
+00:16:17,926 --> 00:16:19,866
+where we did this because
+we're fully cognizant
+
+
+311
+00:16:19,866 --> 00:16:22,996
+of the impact this will have in
+the layout of our application.
+
+
+312
+00:16:23,596 --> 00:16:25,026
+Those places where we did do it,
+
+
+313
+00:16:25,026 --> 00:16:26,526
+we felt were absolutely
+essential
+
+
+314
+00:16:26,526 --> 00:16:28,626
+to the goals of the
+redesigned UI.
+
+
+315
+00:16:29,346 --> 00:16:33,696
+And finally, a new way
+of using pickers in line.
+
+
+316
+00:16:34,406 --> 00:16:38,926
+So those are some of the things
+that have change in UIKit.
+
+
+317
+00:16:39,586 --> 00:16:41,736
+The thing to bear in
+mind is the vast majority
+
+
+318
+00:16:41,736 --> 00:16:43,096
+of the kit remains the same.
+
+
+319
+00:16:43,846 --> 00:16:46,566
+I'd like to talk a little
+bit now about some new things
+
+
+320
+00:16:46,566 --> 00:16:48,276
+that we've added to help you
+
+
+321
+00:16:48,276 --> 00:16:51,396
+in your applications adopt
+the new principles of design.
+
+
+322
+00:16:51,946 --> 00:16:54,716
+Let's start with typography.
+
+
+323
+00:16:55,716 --> 00:16:59,676
+Retina devices permit this
+incredible quality of text.
+
+
+324
+00:17:00,116 --> 00:17:02,806
+What's been missing are some
+of the more advanced ideas
+
+
+325
+00:17:02,806 --> 00:17:06,816
+in typography that come from
+the printed publishing world.
+
+
+326
+00:17:07,976 --> 00:17:11,215
+The first of these are kerning
+and ligatures which we turned
+
+
+327
+00:17:11,215 --> 00:17:15,136
+on by default in text throughout
+the system whether using UIKit
+
+
+328
+00:17:15,226 --> 00:17:16,326
+or WebKit.
+
+
+329
+00:17:17,546 --> 00:17:21,116
+Now, for those of you wondering
+what kerning and ligatures mean,
+
+
+330
+00:17:21,606 --> 00:17:25,455
+kerning is when two letters
+overlap each other such as the T
+
+
+331
+00:17:25,455 --> 00:17:27,136
+and the R at the
+start of truffle.
+
+
+332
+00:17:27,876 --> 00:17:31,296
+And ligatures tie letters
+together such as the F, F,
+
+
+333
+00:17:31,296 --> 00:17:32,776
+and L at the end of the word.
+
+
+334
+00:17:33,776 --> 00:17:36,846
+This might strike some of you
+as a rather esoteric point.
+
+
+335
+00:17:37,366 --> 00:17:39,006
+But it's one of those
+little details that we
+
+
+336
+00:17:39,006 --> 00:17:40,636
+at Apple find so important.
+
+
+337
+00:17:41,216 --> 00:17:44,306
+I think the result is text
+that's much more legible
+
+
+338
+00:17:44,606 --> 00:17:46,306
+and frankly more beautiful.
+
+
+339
+00:17:47,356 --> 00:17:49,636
+We even support some of
+the more extreme cases
+
+
+340
+00:17:49,636 --> 00:17:51,636
+out there such as Zapfino.
+
+
+341
+00:17:52,186 --> 00:17:55,646
+Another thing that
+we've added is a new way
+
+
+342
+00:17:55,646 --> 00:17:57,106
+of working with the system font.
+
+
+343
+00:17:57,706 --> 00:18:00,846
+Instead of a single
+one-type-fits-all system font,
+
+
+344
+00:18:01,176 --> 00:18:03,866
+we've introduced a family of
+fonts that are being chosen
+
+
+345
+00:18:03,866 --> 00:18:06,166
+by our designers to work
+well with each other.
+
+
+346
+00:18:07,036 --> 00:18:09,616
+We looked at text across
+all of our applications
+
+
+347
+00:18:09,906 --> 00:18:11,836
+and classified them
+into a series
+
+
+348
+00:18:11,836 --> 00:18:14,376
+of usage categories or styles.
+
+
+349
+00:18:14,936 --> 00:18:17,866
+And for each of those styles,
+we chose a specific font
+
+
+350
+00:18:17,866 --> 00:18:21,256
+and size relative to each other.
+
+
+351
+00:18:21,496 --> 00:18:24,266
+Now typically, if you wanted
+to present more information
+
+
+352
+00:18:24,266 --> 00:18:26,216
+on the line or make
+text more readable,
+
+
+353
+00:18:26,436 --> 00:18:28,106
+you would just scale
+the font down
+
+
+354
+00:18:28,106 --> 00:18:29,686
+or scale it up appropriately.
+
+
+355
+00:18:30,366 --> 00:18:33,716
+The problem with that is that it
+can leave text very hard to read
+
+
+356
+00:18:33,716 --> 00:18:36,526
+at the smaller sizes or
+your letters can be big
+
+
+357
+00:18:36,526 --> 00:18:38,466
+and blocky at the larger sizes.
+
+
+358
+00:18:38,816 --> 00:18:41,446
+So, we're introducing a
+new way of sizing text.
+
+
+359
+00:18:41,446 --> 00:18:43,886
+You saw me demonstrate
+this in mail just now.
+
+
+360
+00:18:44,646 --> 00:18:47,526
+We actually changed the
+stroke width and the character
+
+
+361
+00:18:47,526 --> 00:18:51,286
+in the line spacing of text
+at each of the relative sizes.
+
+
+362
+00:18:51,756 --> 00:18:55,776
+There's a new API on UIKit
+that were turned use --
+
+
+363
+00:18:55,776 --> 00:18:59,496
+the specific font to use
+for a given size and style.
+
+
+364
+00:18:59,496 --> 00:19:01,636
+And WebKit makes
+this available to you
+
+
+365
+00:19:01,636 --> 00:19:03,746
+through the use of
+CSS font values.
+
+
+366
+00:19:05,416 --> 00:19:06,966
+We're calling this dynamic type.
+
+
+367
+00:19:07,316 --> 00:19:10,996
+It's a very -- we think it's
+a very advanced typography,
+
+
+368
+00:19:11,186 --> 00:19:13,186
+set of typography features
+that we're giving to you
+
+
+369
+00:19:13,186 --> 00:19:14,636
+in a mobile operating system.
+
+
+370
+00:19:14,996 --> 00:19:16,006
+We think it's pretty cool.
+
+
+371
+00:19:16,526 --> 00:19:20,256
+Another thing that
+we've added is Text Kit.
+
+
+372
+00:19:21,336 --> 00:19:24,836
+Text Kit is an advanced text
+and layout rendering engine.
+
+
+373
+00:19:25,706 --> 00:19:28,556
+It's a great compliment
+to WebKit for those times
+
+
+374
+00:19:28,556 --> 00:19:32,156
+where you want to use code to
+control the layout of your text.
+
+
+375
+00:19:32,946 --> 00:19:35,896
+We took the Cocoa Text
+technology from OS X
+
+
+376
+00:19:35,896 --> 00:19:39,666
+and brought it to iOS in the
+form of a new set of APIs.
+
+
+377
+00:19:40,396 --> 00:19:41,516
+Those of you who are familiar
+
+
+378
+00:19:41,516 --> 00:19:44,796
+with Cocoa Text will have
+no problem using these APIs.
+
+
+379
+00:19:44,796 --> 00:19:46,996
+For the most part,
+they're the same.
+
+
+380
+00:19:47,586 --> 00:19:50,016
+And that's it for text.
+
+
+381
+00:19:50,726 --> 00:19:53,206
+Let's talk about animations now.
+
+
+382
+00:19:53,576 --> 00:19:56,906
+There are generally three ways
+that we sort of group animations
+
+
+383
+00:19:56,906 --> 00:19:57,916
+when we talk about them.
+
+
+384
+00:19:58,536 --> 00:20:00,376
+Transitions are canned
+animations
+
+
+385
+00:20:00,376 --> 00:20:02,376
+between your view
+controllers, for example.
+
+
+386
+00:20:03,156 --> 00:20:07,406
+Motion effects tie animations
+to the movement of the device.
+
+
+387
+00:20:07,836 --> 00:20:11,306
+And dynamics are animations
+that interact with the user.
+
+
+388
+00:20:12,176 --> 00:20:13,276
+Let's dig into these a little.
+
+
+389
+00:20:14,706 --> 00:20:17,206
+So out of the box, we
+write a standard set
+
+
+390
+00:20:17,206 --> 00:20:18,856
+of view controller transitions.
+
+
+391
+00:20:18,856 --> 00:20:20,346
+Your view slide up
+from the bottom
+
+
+392
+00:20:20,346 --> 00:20:23,126
+when you present them
+modally or from right to left
+
+
+393
+00:20:23,126 --> 00:20:25,206
+when you push them on to
+a navigation controller.
+
+
+394
+00:20:25,506 --> 00:20:27,426
+Well, we're opening
+that up to you now
+
+
+395
+00:20:27,556 --> 00:20:30,646
+so that you can define your own
+animations for a transition.
+
+
+396
+00:20:30,646 --> 00:20:33,286
+If you want to flip your
+view around when you push it
+
+
+397
+00:20:33,286 --> 00:20:35,486
+on to a navigation
+controller, for example.
+
+
+398
+00:20:35,886 --> 00:20:39,196
+We're also making it easy for
+you to tie your animations
+
+
+399
+00:20:39,496 --> 00:20:43,406
+to the system transition so that
+you can animate alongside one
+
+
+400
+00:20:43,406 --> 00:20:45,776
+of the system transitions
+or kick off a set
+
+
+401
+00:20:45,776 --> 00:20:49,726
+of animations at the end.
+
+
+402
+00:20:51,076 --> 00:20:52,346
+UI motion effects.
+
+
+403
+00:20:53,676 --> 00:20:56,836
+So as I said before,
+motion effects tie movement
+
+
+404
+00:20:56,936 --> 00:21:00,086
+of the device to
+changes in your UI.
+
+
+405
+00:21:00,266 --> 00:21:01,726
+You're familiar with
+core motion.
+
+
+406
+00:21:01,726 --> 00:21:05,026
+Well we took that and packaged
+it up in an easy to use API,
+
+
+407
+00:21:05,026 --> 00:21:07,346
+that we're calling
+UIMotionEffects.
+
+
+408
+00:21:07,896 --> 00:21:10,056
+We take the event
+string from core motion
+
+
+409
+00:21:10,056 --> 00:21:12,956
+and we crunch the numbers and
+convert that into a series
+
+
+410
+00:21:12,956 --> 00:21:14,286
+of perspective changes.
+
+
+411
+00:21:14,746 --> 00:21:16,826
+We then feature those
+perspective changes
+
+
+412
+00:21:17,016 --> 00:21:19,226
+so that you can adapt
+your UI accordingly.
+
+
+413
+00:21:19,776 --> 00:21:21,726
+This is how we implement
+the Parallax effect
+
+
+414
+00:21:21,816 --> 00:21:25,056
+on the Home screen and
+the new tab UI in Safari.
+
+
+415
+00:21:25,806 --> 00:21:31,226
+And finally, I'd like to talk
+a bit about UIKit dynamics.
+
+
+416
+00:21:31,576 --> 00:21:35,236
+I asked one of my engineers for
+a succinct description of this,
+
+
+417
+00:21:35,336 --> 00:21:37,196
+and he's a smart guy, a doctor.
+
+
+418
+00:21:37,236 --> 00:21:38,386
+And this is what he told me.
+
+
+419
+00:21:39,306 --> 00:21:41,106
+I had to think about this
+one for a little bit.
+
+
+420
+00:21:41,106 --> 00:21:43,476
+And I think I can sum it up
+a little more simply for you.
+
+
+421
+00:21:44,196 --> 00:21:46,396
+We built a physics
+engine into UIKit.
+
+
+422
+00:21:48,856 --> 00:21:51,976
+So the idea is that the
+physics engine deals in terms
+
+
+423
+00:21:51,976 --> 00:21:55,166
+of real world type behaviors
+-- collisions, gravity,
+
+
+424
+00:21:55,266 --> 00:21:57,346
+forces, that kind of thing.
+
+
+425
+00:21:57,586 --> 00:22:00,886
+You associate a set of behaviors
+with using your hierarchy.
+
+
+426
+00:22:01,216 --> 00:22:04,216
+And as the physics engine
+runs, it updates properties
+
+
+427
+00:22:04,216 --> 00:22:06,906
+on your views and changing
+that frame orientation.
+
+
+428
+00:22:07,546 --> 00:22:10,546
+Conversely, if you change
+properties on your view, say,
+
+
+429
+00:22:10,546 --> 00:22:13,436
+in response to the user
+swiping across the screen,
+
+
+430
+00:22:13,976 --> 00:22:16,996
+we feed those back into the
+physics engine and it runs
+
+
+431
+00:22:17,306 --> 00:22:19,416
+until -- I'm sorry, it runs
+
+
+432
+00:22:19,416 --> 00:22:21,046
+until it come back
+to an equilibrium.
+
+
+433
+00:22:21,866 --> 00:22:24,546
+This is a super powerful
+system that lets you --
+
+
+434
+00:22:24,546 --> 00:22:27,986
+makes it very easy to compose
+sophisticated interactions
+
+
+435
+00:22:28,016 --> 00:22:28,716
+with users.
+
+
+436
+00:22:29,166 --> 00:22:31,056
+That's what we call
+UIKitDynamics.
+
+
+437
+00:22:31,616 --> 00:22:35,546
+Let's talk about
+images a little bit.
+
+
+438
+00:22:36,356 --> 00:22:37,776
+In the beginning, it
+was really simple.
+
+
+439
+00:22:38,106 --> 00:22:41,916
+You created your image, you gave
+it a name, and you looked it up.
+
+
+440
+00:22:43,356 --> 00:22:46,186
+Well then we added iPad
+and we needed a way
+
+
+441
+00:22:46,186 --> 00:22:49,106
+of differentiating your iPad
+art from your iPhone art.
+
+
+442
+00:22:49,106 --> 00:22:52,396
+And so we came up with a clever
+way of mangling the filename.
+
+
+443
+00:22:54,086 --> 00:22:56,886
+Well then we added Retina
+iPhones and we need a new way
+
+
+444
+00:22:56,886 --> 00:23:01,246
+of differentiating your iPhone
+high-res art from your 1x art.
+
+
+445
+00:23:01,246 --> 00:23:04,126
+And then we added
+Retina iPad, so frankly,
+
+
+446
+00:23:04,126 --> 00:23:05,756
+it all just start
+getting out of control.
+
+
+447
+00:23:05,756 --> 00:23:08,666
+We were running out of ways
+of mangling your filenames.
+
+
+448
+00:23:09,446 --> 00:23:12,226
+With iOS 7, we are
+ending the insanity.
+
+
+449
+00:23:13,516 --> 00:23:20,066
+[ Applause ]
+
+
+450
+00:23:20,566 --> 00:23:23,916
+We've got a great new UI in
+Xcode that makes it really easy
+
+
+451
+00:23:23,916 --> 00:23:24,966
+to manage your images.
+
+
+452
+00:23:24,966 --> 00:23:28,106
+You can tell at a glance if
+you're missing some Retina art,
+
+
+453
+00:23:28,186 --> 00:23:30,946
+and we've integrated
+this tightly with UIKit.
+
+
+454
+00:23:31,256 --> 00:23:33,356
+You still look up your
+images the same way
+
+
+455
+00:23:33,356 --> 00:23:34,816
+that you've been
+doing it for years,
+
+
+456
+00:23:34,816 --> 00:23:36,676
+and it's a little
+bit faster to boot.
+
+
+457
+00:23:36,926 --> 00:23:40,316
+I'd like to invite Max Drukman
+on stage now to give you a demo
+
+
+458
+00:23:40,316 --> 00:23:42,936
+of this and some other cool
+new features in Xcode 5.
+
+
+459
+00:23:44,516 --> 00:23:46,926
+[ Applause ]
+
+
+460
+00:23:47,426 --> 00:23:47,976
+>> Thank you Toby.
+
+
+461
+00:23:47,976 --> 00:23:51,246
+Can we switch to the
+demo machine please?
+
+
+462
+00:23:53,436 --> 00:23:54,766
+Welcome to Xcode 5.
+
+
+463
+00:23:55,746 --> 00:23:59,156
+Now as Andreas told you, Xcode
+5 is much cleaner and lighter
+
+
+464
+00:23:59,506 --> 00:24:00,826
+and does a really good job
+
+
+465
+00:24:00,826 --> 00:24:02,806
+of keeping your content
+front and center.
+
+
+466
+00:24:03,266 --> 00:24:05,436
+You'll see a lot more of
+Xcode 5 in this session,
+
+
+467
+00:24:05,436 --> 00:24:07,436
+but for right now, I'm
+going to talk to you
+
+
+468
+00:24:07,436 --> 00:24:11,506
+about two new features, Asset
+Catalogs, that's the feature
+
+
+469
+00:24:11,506 --> 00:24:13,776
+that gets rid of that
+naming convention for you,
+
+
+470
+00:24:14,426 --> 00:24:17,406
+and the totally revamped
+Auto Layout.
+
+
+471
+00:24:18,496 --> 00:24:19,146
+Let's have a look.
+
+
+472
+00:24:20,106 --> 00:24:21,626
+Here's a game project
+I'm working on.
+
+
+473
+00:24:22,626 --> 00:24:26,376
+I'm going to dive right
+in to the intro screen.
+
+
+474
+00:24:27,136 --> 00:24:28,346
+Here I have a couple of buttons
+
+
+475
+00:24:28,346 --> 00:24:31,126
+and it's fairly typical
+in a game project.
+
+
+476
+00:24:31,416 --> 00:24:35,186
+I'm using UIKit buttons but I'm
+styling them with custom art.
+
+
+477
+00:24:36,196 --> 00:24:37,996
+Since there are only two
+buttons on this screen,
+
+
+478
+00:24:38,326 --> 00:24:40,186
+I think I'll make
+them as big as I can.
+
+
+479
+00:24:40,186 --> 00:24:42,996
+And I'm going to push
+them over to the side
+
+
+480
+00:24:42,996 --> 00:24:45,696
+and I'll make this one
+really, really wide.
+
+
+481
+00:24:47,106 --> 00:24:51,936
+And here we see that's one of
+the pitfalls of using custom art
+
+
+482
+00:24:51,936 --> 00:24:53,076
+with a scalable button.
+
+
+483
+00:24:53,806 --> 00:24:57,816
+I made my button big but my
+artwork got all distorted.
+
+
+484
+00:24:58,756 --> 00:25:02,136
+Now, I know what most of you are
+already saying to yourselves,
+
+
+485
+00:25:02,136 --> 00:25:03,476
+I know how to fix that problem.
+
+
+486
+00:25:03,896 --> 00:25:06,576
+You need to get art that's
+sliced into three parts.
+
+
+487
+00:25:07,396 --> 00:25:11,536
+Well, you're absolutely right
+and I appreciate you bringing
+
+
+488
+00:25:11,536 --> 00:25:14,756
+that up because it gives me
+just the segue way I need
+
+
+489
+00:25:14,876 --> 00:25:16,986
+to start talking
+about Asset Catalogs.
+
+
+490
+00:25:18,786 --> 00:25:21,936
+I'm going to navigate to the
+Asset Catalog in my project.
+
+
+491
+00:25:22,696 --> 00:25:23,476
+And here we are.
+
+
+492
+00:25:24,286 --> 00:25:27,566
+On the left is an outline
+with all of the visual assets
+
+
+493
+00:25:27,936 --> 00:25:31,366
+of my project and on the
+right, there's a thumbnail view
+
+
+494
+00:25:31,936 --> 00:25:35,436
+that keeps all of my assets
+and their variants organized.
+
+
+495
+00:25:35,946 --> 00:25:40,696
+Here we can see the background
+of the screen I was just on,
+
+
+496
+00:25:40,836 --> 00:25:44,426
+that sort of lime color, with
+both the 1x and 2x variants.
+
+
+497
+00:25:45,696 --> 00:25:49,466
+The next screen over, the sort
+of stone color, also 1x and 2x.
+
+
+498
+00:25:50,186 --> 00:25:52,806
+And even my app icon
+and launch images
+
+
+499
+00:25:53,146 --> 00:25:56,216
+with their five representations.
+
+
+500
+00:25:56,916 --> 00:25:57,406
+That's right.
+
+
+501
+00:25:57,756 --> 00:26:02,856
+As Toby told you, gone
+are the days of the -427K
+
+
+502
+00:26:02,856 --> 00:26:06,206
+at 1x twiddle i something.
+
+
+503
+00:26:06,696 --> 00:26:09,846
+Naming convention, now we
+can all go back to the foo,
+
+
+504
+00:26:09,846 --> 00:26:12,886
+bar and baz convention
+that we all love so well,
+
+
+505
+00:26:14,286 --> 00:26:18,466
+or no convention at all because
+the Asset Catalog keeps your
+
+
+506
+00:26:18,466 --> 00:26:20,596
+image reps organized for you,
+
+
+507
+00:26:20,766 --> 00:26:23,346
+it doesn't really matter what
+you name your images anymore.
+
+
+508
+00:26:23,906 --> 00:26:26,556
+Let's go back to
+my orange buttons.
+
+
+509
+00:26:27,016 --> 00:26:29,606
+Now as we know, we need
+these in three parts.
+
+
+510
+00:26:30,176 --> 00:26:33,616
+Well, one of the features
+of the asset catalog editor
+
+
+511
+00:26:33,616 --> 00:26:37,946
+in Xcode 5 is that you can
+now do slicing right in Xcode.
+
+
+512
+00:26:38,516 --> 00:26:42,206
+[ Applause ]
+
+
+513
+00:26:42,706 --> 00:26:43,186
+That's right.
+
+
+514
+00:26:45,286 --> 00:26:47,736
+I'm going to click the Show
+Slicing button down here
+
+
+515
+00:26:47,736 --> 00:26:48,726
+in the bottom of the editor.
+
+
+516
+00:26:49,566 --> 00:26:53,946
+And here we see the
+slicing UI with the 1x
+
+
+517
+00:26:53,946 --> 00:26:57,986
+and 2x representations of my art
+blown up so we can see pixels.
+
+
+518
+00:26:58,846 --> 00:27:00,536
+I can even zoom in
+a little more.
+
+
+519
+00:27:01,286 --> 00:27:04,376
+Now, all I need to do is
+click the Start Slicing button
+
+
+520
+00:27:04,886 --> 00:27:06,356
+and I'm given three choices.
+
+
+521
+00:27:07,016 --> 00:27:08,366
+I can slice in three parts
+
+
+522
+00:27:08,366 --> 00:27:12,816
+so that my image can scale
+horizontally, or in three parts
+
+
+523
+00:27:12,816 --> 00:27:17,956
+so it can scale vertically,
+or of course in nine parts
+
+
+524
+00:27:18,256 --> 00:27:20,876
+so that it can scale both
+horizontally and vertically.
+
+
+525
+00:27:21,196 --> 00:27:22,566
+Somebody out there wins a prize.
+
+
+526
+00:27:23,516 --> 00:27:26,026
+I only need mine to
+scale horizontally,
+
+
+527
+00:27:26,026 --> 00:27:27,246
+so I'm going to choose that.
+
+
+528
+00:27:27,766 --> 00:27:32,816
+Now, Xcode analyzed my image
+and found the best place
+
+
+529
+00:27:32,966 --> 00:27:34,716
+to put the slice points.
+
+
+530
+00:27:35,516 --> 00:27:39,926
+[ Applause ]
+
+
+531
+00:27:40,426 --> 00:27:45,786
+So I have a left cap, a right
+cap, and one pixel of stretch.
+
+
+532
+00:27:46,356 --> 00:27:47,936
+The grayed out area
+won't be used.
+
+
+533
+00:27:48,616 --> 00:27:50,296
+Now, of course, you can
+make your own decisions
+
+
+534
+00:27:50,296 --> 00:27:52,326
+and change the width of
+the caps if you want.
+
+
+535
+00:27:53,346 --> 00:27:55,786
+You can even change the
+width of the center portion
+
+
+536
+00:27:55,786 --> 00:27:58,736
+and it will repeat
+rather than stretch.
+
+
+537
+00:27:59,746 --> 00:28:03,976
+But I like what Xcode gave me,
+so I'm going to slice the 1x
+
+
+538
+00:28:03,976 --> 00:28:05,226
+in exactly the same way.
+
+
+539
+00:28:05,886 --> 00:28:09,436
+And now, when I use the back
+button to go to my story board,
+
+
+540
+00:28:10,076 --> 00:28:12,166
+my art is doing the right thing.
+
+
+541
+00:28:13,516 --> 00:28:20,306
+[ Applause ]
+
+
+542
+00:28:20,806 --> 00:28:23,146
+And now, even when I
+scale the other one,
+
+
+543
+00:28:23,146 --> 00:28:24,746
+everything is looking great.
+
+
+544
+00:28:25,726 --> 00:28:27,896
+Now, let's talk about
+Auto Layout.
+
+
+545
+00:28:29,116 --> 00:28:31,116
+Obviously, I'm designing
+my interface
+
+
+546
+00:28:31,166 --> 00:28:32,536
+in the landscape orientation.
+
+
+547
+00:28:32,796 --> 00:28:36,446
+But what happens when my
+user rotates her device
+
+
+548
+00:28:36,866 --> 00:28:38,956
+to see it in portrait?
+
+
+549
+00:28:39,766 --> 00:28:41,596
+I need to know what
+my interface is going
+
+
+550
+00:28:41,596 --> 00:28:43,006
+to do when that happens.
+
+
+551
+00:28:43,496 --> 00:28:46,906
+Now, of course, I can
+run my app in a simulator
+
+
+552
+00:28:46,906 --> 00:28:48,416
+or run a device if
+I have one handy.
+
+
+553
+00:28:49,206 --> 00:28:51,766
+But we've made it
+even easier in Xcode 5
+
+
+554
+00:28:52,486 --> 00:28:55,056
+because we've added
+a preview assistant.
+
+
+555
+00:28:56,506 --> 00:28:59,746
+The preview assistant allows
+you to look at your story boards
+
+
+556
+00:29:00,026 --> 00:29:02,486
+under different visual
+conditions.
+
+
+557
+00:29:03,486 --> 00:29:06,056
+So here, I'm designing
+in landscape,
+
+
+558
+00:29:06,596 --> 00:29:08,276
+but previewing in portrait.
+
+
+559
+00:29:08,896 --> 00:29:12,156
+I can essentially design in
+two orientations at once now.
+
+
+560
+00:29:13,476 --> 00:29:17,186
+And you can see that I have
+an Auto Layout problem.
+
+
+561
+00:29:17,186 --> 00:29:22,046
+Of course, these demos always
+start with a problem, right?
+
+
+562
+00:29:22,836 --> 00:29:26,386
+Now, notice that my buttons are
+clipped off and they're kind
+
+
+563
+00:29:26,386 --> 00:29:27,816
+of floating in the
+center somewhere.
+
+
+564
+00:29:28,416 --> 00:29:33,406
+But my background and
+the logo of my game,
+
+
+565
+00:29:33,816 --> 00:29:35,216
+they're actually
+doing the right thing.
+
+
+566
+00:29:35,996 --> 00:29:37,936
+That's because of a
+big change we've made
+
+
+567
+00:29:37,936 --> 00:29:39,516
+to Auto Layout in Xcode 5.
+
+
+568
+00:29:39,996 --> 00:29:42,216
+Now while you're working
+with your interfaces,
+
+
+569
+00:29:42,546 --> 00:29:45,946
+you no longer need to have
+every object constrained.
+
+
+570
+00:29:46,491 --> 00:29:48,491
+[ Applause ]
+
+
+571
+00:29:48,966 --> 00:29:50,436
+Yeah, that's got to
+be worth something.
+
+
+572
+00:29:52,416 --> 00:29:54,896
+It makes it really easy
+to work iteratively
+
+
+573
+00:29:54,896 --> 00:29:57,006
+through your interfaces
+without Auto Layout,
+
+
+574
+00:29:57,076 --> 00:29:58,146
+well, getting in your way.
+
+
+575
+00:29:59,846 --> 00:30:05,186
+Yeah. Now, we didn't
+stop there though.
+
+
+576
+00:30:05,186 --> 00:30:07,296
+We've also added a lot
+
+
+577
+00:30:07,296 --> 00:30:09,546
+of different ways
+to make constraints.
+
+
+578
+00:30:09,816 --> 00:30:11,026
+Let me show you my favorite.
+
+
+579
+00:30:11,526 --> 00:30:12,406
+Control drag.
+
+
+580
+00:30:13,136 --> 00:30:16,136
+I'm going to constraint this
+button by control dragging
+
+
+581
+00:30:16,256 --> 00:30:19,206
+from it to its superview.
+
+
+582
+00:30:20,091 --> 00:30:22,091
+[ Applause ]
+
+
+583
+00:30:22,166 --> 00:30:23,536
+Well, wait.
+
+
+584
+00:30:24,486 --> 00:30:27,166
+I can even make more than
+one constraint at a time.
+
+
+585
+00:30:28,306 --> 00:30:31,866
+And now the preview assistant
+updates, so I see that I'm
+
+
+586
+00:30:31,866 --> 00:30:34,416
+on the right track and
+I know that I only need
+
+
+587
+00:30:34,416 --> 00:30:36,356
+to make one more constraint,
+
+
+588
+00:30:36,886 --> 00:30:38,886
+and now my button is
+doing the right thing
+
+
+589
+00:30:38,886 --> 00:30:39,876
+in both orientations.
+
+
+590
+00:30:40,516 --> 00:30:45,986
+[ Applause ]
+
+
+591
+00:30:46,486 --> 00:30:47,466
+There's one more thing.
+
+
+592
+00:30:47,466 --> 00:30:50,496
+Now, doing the other
+button is even easier.
+
+
+593
+00:30:50,866 --> 00:30:54,196
+I can control drag to
+the other button and set
+
+
+594
+00:30:54,196 --> 00:30:57,256
+up all three constraints
+at once.
+
+
+595
+00:30:57,686 --> 00:30:59,546
+In one gesture, and
+that's pretty simple.
+
+
+596
+00:31:01,026 --> 00:31:01,236
+Now --
+
+
+597
+00:31:03,786 --> 00:31:05,436
+-- let's look at
+this next view over.
+
+
+598
+00:31:05,786 --> 00:31:08,446
+It's obviously having
+some layout difficulties.
+
+
+599
+00:31:08,486 --> 00:31:10,826
+That's because there are no
+constraints in this view at all.
+
+
+600
+00:31:11,786 --> 00:31:15,566
+Now, control drag is great for
+setting up one, two, three,
+
+
+601
+00:31:15,566 --> 00:31:18,756
+a handful of constraints, but
+of course, you can do things
+
+
+602
+00:31:18,756 --> 00:31:23,236
+like select all of the objects
+in this view and add all
+
+
+603
+00:31:23,236 --> 00:31:24,446
+of the constraints at once.
+
+
+604
+00:31:25,426 --> 00:31:28,206
+And you get immediate
+feedback that it worked.
+
+
+605
+00:31:29,686 --> 00:31:30,516
+That's pretty good.
+
+
+606
+00:31:31,516 --> 00:31:36,736
+[ Applause ]
+
+
+607
+00:31:37,236 --> 00:31:40,026
+Now let's look at one of
+these tab views I have
+
+
+608
+00:31:40,026 --> 00:31:43,556
+over here featuring the great
+new iOS 7 look and feel.
+
+
+609
+00:31:44,596 --> 00:31:47,966
+Now as I said, you
+can have the assistant
+
+
+610
+00:31:48,166 --> 00:31:51,406
+in a different orientation
+like, you know, I can go back
+
+
+611
+00:31:51,406 --> 00:31:53,516
+and forth between
+landscape and portrait.
+
+
+612
+00:31:54,096 --> 00:31:57,396
+I can have different
+device sizes so I can --
+
+
+613
+00:31:57,516 --> 00:32:00,166
+here I'm switching between the
+three and a half and four inch.
+
+
+614
+00:32:01,096 --> 00:32:05,736
+I can even go back and
+look at iOS 6.1 style UI.
+
+
+615
+00:32:07,516 --> 00:32:09,966
+[ Applause ]
+
+
+616
+00:32:10,466 --> 00:32:14,106
+And we see that my constraints
+are doing the right thing.
+
+
+617
+00:32:14,936 --> 00:32:17,236
+They're -- it's --
+they're reacting perfectly
+
+
+618
+00:32:17,436 --> 00:32:22,436
+to orientation change, device
+sizes, and even iOS versions.
+
+
+619
+00:32:22,866 --> 00:32:27,236
+And I get to see immediately,
+thanks to the assistant,
+
+
+620
+00:32:27,686 --> 00:32:28,866
+that I'm doing the right thing.
+
+
+621
+00:32:29,886 --> 00:32:30,226
+Thank you.
+
+
+622
+00:32:30,806 --> 00:32:31,396
+Back to you Toby.
+
+
+623
+00:32:32,516 --> 00:32:41,016
+[ Applause ]
+
+
+624
+00:32:41,516 --> 00:32:44,386
+>> So there really
+is so much more
+
+
+625
+00:32:44,826 --> 00:32:47,346
+in iOS 7 than just one thing.
+
+
+626
+00:32:48,076 --> 00:32:51,006
+The new multitasking
+interface, for example.
+
+
+627
+00:32:51,186 --> 00:32:54,406
+It really shows off the
+user's running applications.
+
+
+628
+00:32:55,016 --> 00:32:57,336
+This makes it all the more
+important than your app --
+
+
+629
+00:32:57,336 --> 00:33:00,796
+that your app's content is as
+up to date as you can make it.
+
+
+630
+00:33:01,536 --> 00:33:04,656
+To help you out, we're
+adding three ways for you
+
+
+631
+00:33:04,656 --> 00:33:07,746
+to update your application's
+content in the background.
+
+
+632
+00:33:09,736 --> 00:33:12,286
+With background fetch, we
+will run your application
+
+
+633
+00:33:12,286 --> 00:33:15,456
+periodically so that you
+can pull new data down
+
+
+634
+00:33:15,816 --> 00:33:17,436
+and update your UI accordingly.
+
+
+635
+00:33:19,586 --> 00:33:20,346
+If your server --
+
+
+636
+00:33:21,016 --> 00:33:22,686
+[ Applause ]
+
+
+637
+00:33:22,686 --> 00:33:24,676
+-- if your server
+has a minimum time
+
+
+638
+00:33:24,676 --> 00:33:28,236
+between connection attempts,
+you can use this API to tell us
+
+
+639
+00:33:28,316 --> 00:33:30,716
+when it would be
+inappropriate to run you.
+
+
+640
+00:33:31,416 --> 00:33:35,276
+With remote notifications, we'll
+run your application in response
+
+
+641
+00:33:35,276 --> 00:33:38,746
+to a push notification so that
+you can update your content
+
+
+642
+00:33:38,746 --> 00:33:40,656
+on demand versus having to pull.
+
+
+643
+00:33:41,516 --> 00:33:46,566
+[ Applause ]
+
+
+644
+00:33:47,066 --> 00:33:49,746
+And with background transfers,
+we make it easy for you
+
+
+645
+00:33:49,746 --> 00:33:52,936
+to upload or download your
+data in the background even
+
+
+646
+00:33:52,936 --> 00:33:54,476
+if your application
+isn't running.
+
+
+647
+00:33:55,266 --> 00:33:58,586
+You simply create an NSURL
+session and we take care
+
+
+648
+00:33:58,586 --> 00:33:59,906
+of transferring the
+data for you.
+
+
+649
+00:33:59,906 --> 00:34:06,066
+Now, I've been told I'm
+not actually allowed
+
+
+650
+00:34:06,066 --> 00:34:08,846
+to push back the start time
+of the Apple Design Awards,
+
+
+651
+00:34:09,136 --> 00:34:11,815
+and there's really too much for
+me to cover up on stage here.
+
+
+652
+00:34:12,416 --> 00:34:14,436
+We have a lot of sessions
+and labs this week
+
+
+653
+00:34:14,436 --> 00:34:16,576
+and I know a number
+of my engineers are
+
+
+654
+00:34:16,576 --> 00:34:17,826
+up here to talk with you.
+
+
+655
+00:34:18,426 --> 00:34:21,386
+So how should you get
+started with this?
+
+
+656
+00:34:21,886 --> 00:34:25,416
+Well, first of course, download
+the SDK, build your application,
+
+
+657
+00:34:25,866 --> 00:34:28,315
+and boom, you've got
+the new user interface.
+
+
+658
+00:34:29,025 --> 00:34:31,985
+You may need to update
+your UI to accommodate some
+
+
+659
+00:34:31,985 --> 00:34:33,576
+of the changes that
+we've talked about,
+
+
+660
+00:34:33,786 --> 00:34:37,295
+but we really encourage you to
+actually take a deeper rethink
+
+
+661
+00:34:37,716 --> 00:34:41,315
+on the design of your
+UI along the lines
+
+
+662
+00:34:41,315 --> 00:34:43,156
+of what we've done in iOS 7.
+
+
+663
+00:34:44,545 --> 00:34:46,835
+Let's take a look at these
+numbers again from this morning,
+
+
+664
+00:34:47,556 --> 00:34:51,436
+93 percent of our users are
+running the latest iOS release.
+
+
+665
+00:34:52,016 --> 00:34:53,016
+That's pretty incredible.
+
+
+666
+00:34:53,755 --> 00:34:55,116
+We think it won't be very long
+
+
+667
+00:34:55,116 --> 00:34:57,216
+after all before
+the vast majority
+
+
+668
+00:34:57,216 --> 00:34:59,586
+of your users are running iOS 7.
+
+
+669
+00:35:01,336 --> 00:35:03,956
+We've got some great
+documentation on the web,
+
+
+670
+00:35:03,956 --> 00:35:08,076
+and I encourage you to download
+the iOS 7 UI Transition Guide
+
+
+671
+00:35:08,576 --> 00:35:10,796
+available at this URL here.
+
+
+672
+00:35:13,816 --> 00:35:15,206
+If you can type that
+one quickly.
+
+
+673
+00:35:17,866 --> 00:35:19,376
+And that's it for iOS 7.
+
+
+674
+00:35:20,596 --> 00:35:24,226
+Now, games are a very important
+category of application.
+
+
+675
+00:35:24,566 --> 00:35:26,566
+And to talk about some
+exciting new stuff,
+
+
+676
+00:35:26,566 --> 00:35:28,016
+I'd like to hand
+off to Jeff Stone.
+
+
+677
+00:35:28,506 --> 00:35:28,836
+Jeff?
+
+
+678
+00:35:29,516 --> 00:35:32,556
+[ Applause ]
+
+
+679
+00:35:33,056 --> 00:35:33,576
+>> Thanks Toby.
+
+
+680
+00:35:35,956 --> 00:35:38,186
+So we have some really great
+new game technology to talk
+
+
+681
+00:35:38,186 --> 00:35:41,966
+about today, first let's do an
+update -- update on Game Center.
+
+
+682
+00:35:42,566 --> 00:35:46,996
+Apple's social gaming network,
+we introduced it three years ago
+
+
+683
+00:35:46,996 --> 00:35:52,446
+and it's doing amazingly well
+with 240 million players.
+
+
+684
+00:35:53,016 --> 00:35:56,456
+Of course, Game Center supports
+things like leaderboards
+
+
+685
+00:35:56,826 --> 00:35:59,886
+and multiplayer challenges
+and friends.
+
+
+686
+00:35:59,886 --> 00:36:02,816
+And we're going to
+continue to enhance it.
+
+
+687
+00:36:03,416 --> 00:36:05,776
+Now leaderboards, you can
+have over 500 leaderboards,
+
+
+688
+00:36:05,826 --> 00:36:07,556
+you can have up to
+500 leaderboards.
+
+
+689
+00:36:07,836 --> 00:36:10,986
+We have modal challenges that
+allow you to tie a challenge
+
+
+690
+00:36:10,986 --> 00:36:12,786
+to a specific mode of your game.
+
+
+691
+00:36:13,566 --> 00:36:15,826
+And we have -- we have turn --
+
+
+692
+00:36:15,826 --> 00:36:19,086
+you can add to turn-based
+applications either auctions
+
+
+693
+00:36:19,246 --> 00:36:21,276
+or in-game trading
+among other things.
+
+
+694
+00:36:23,066 --> 00:36:25,666
+But the big news today is
+we have two new technologies
+
+
+695
+00:36:26,156 --> 00:36:29,166
+to introduce that makes
+game development easier
+
+
+696
+00:36:29,166 --> 00:36:29,956
+and better than ever.
+
+
+697
+00:36:30,646 --> 00:36:35,326
+First, I want to
+introduce Sprite Kit.
+
+
+698
+00:36:35,526 --> 00:36:38,526
+So if you're building a game
+like one of our iconic games
+
+
+699
+00:36:38,526 --> 00:36:42,706
+on the platform, Cut the
+Rope, Where's My Water,
+
+
+700
+00:36:43,406 --> 00:36:45,286
+or Jetpack Joyride, you need
+
+
+701
+00:36:45,286 --> 00:36:48,566
+to spend time building
+a good game engine.
+
+
+702
+00:36:48,686 --> 00:36:50,926
+And to build a good game
+engine, it takes a lot
+
+
+703
+00:36:50,926 --> 00:36:52,386
+of knowledge to do that.
+
+
+704
+00:36:52,386 --> 00:36:54,256
+So we thought, what can we do
+
+
+705
+00:36:54,256 --> 00:36:58,166
+to help you game developers
+make your life easier?
+
+
+706
+00:36:59,096 --> 00:37:00,426
+So that's why we
+created Sprite Kit.
+
+
+707
+00:37:00,426 --> 00:37:02,646
+It has everything you
+expect in a game engine.
+
+
+708
+00:37:02,646 --> 00:37:06,916
+It has a great animation
+system, particles, physics,
+
+
+709
+00:37:07,246 --> 00:37:11,756
+image effects, video tie-in,
+and all that and more.
+
+
+710
+00:37:11,836 --> 00:37:13,806
+It's high performance with --
+
+
+711
+00:37:13,806 --> 00:37:17,346
+at its core is a
+high-performance rendering
+
+
+712
+00:37:17,346 --> 00:37:18,386
+engine built by people
+
+
+713
+00:37:18,386 --> 00:37:21,936
+who really know GPU
+development inside and out.
+
+
+714
+00:37:23,086 --> 00:37:26,626
+We have integrated tools in
+Xcode and it's easy to learn,
+
+
+715
+00:37:26,766 --> 00:37:28,286
+which means you have
+less code to write.
+
+
+716
+00:37:28,576 --> 00:37:31,296
+Let us do the heavy lifting for
+you and so you can concentrate
+
+
+717
+00:37:31,296 --> 00:37:32,606
+on building a great game.
+
+
+718
+00:37:32,606 --> 00:37:37,306
+And of course, it's available
+for both iOS and OS X,
+
+
+719
+00:37:37,396 --> 00:37:40,856
+which means the code you write
+can be used on both platforms.
+
+
+720
+00:37:41,366 --> 00:37:42,406
+So let's take a look at a demo.
+
+
+721
+00:37:43,516 --> 00:37:53,796
+[ Applause ]
+
+
+722
+00:37:54,296 --> 00:37:56,956
+So here's a little tour of some
+of the features of Sprite Kit.
+
+
+723
+00:37:57,316 --> 00:37:59,106
+First, obviously, is
+an animation system.
+
+
+724
+00:37:59,466 --> 00:38:01,826
+The animation system has all
+the things you would expect --
+
+
+725
+00:38:02,166 --> 00:38:06,256
+translation, rotation,
+scaling, fade in, fade out,
+
+
+726
+00:38:06,626 --> 00:38:11,156
+and these actions can
+be chained together --
+
+
+727
+00:38:11,156 --> 00:38:13,756
+chained together or combined
+and run in parallel in groups.
+
+
+728
+00:38:15,446 --> 00:38:18,506
+Oops, let's try that again.
+
+
+729
+00:38:19,526 --> 00:38:21,236
+This is also optimized
+for both --
+
+
+730
+00:38:21,876 --> 00:38:26,626
+for OS X and iOS hardware
+with the added benefit
+
+
+731
+00:38:26,626 --> 00:38:28,446
+that it makes it really
+battery-efficient.
+
+
+732
+00:38:32,996 --> 00:38:34,596
+So that -- so that's
+the animation system.
+
+
+733
+00:38:34,936 --> 00:38:35,736
+Next is physics.
+
+
+734
+00:38:36,076 --> 00:38:37,716
+We obviously -- we have
+integrated physics.
+
+
+735
+00:38:37,716 --> 00:38:41,516
+But this is not just, we provide
+physics alongside of Sprite Kit,
+
+
+736
+00:38:41,516 --> 00:38:43,786
+we actually have
+integrated physics.
+
+
+737
+00:38:43,786 --> 00:38:45,646
+Putting physics into your
+application is as simple
+
+
+738
+00:38:45,646 --> 00:38:47,946
+as one API call for
+setting the physics body.
+
+
+739
+00:38:48,246 --> 00:38:50,796
+So we can -- we can kind
+of lean one direction
+
+
+740
+00:38:51,236 --> 00:38:53,336
+or we can go back the other way,
+
+
+741
+00:38:54,326 --> 00:38:57,016
+and also we can obviously
+put some touch events
+
+
+742
+00:38:57,016 --> 00:38:59,516
+in to add some impulses
+to our physics engine.
+
+
+743
+00:39:00,846 --> 00:39:04,126
+Really efficient physics
+engine built into Sprite Kit.
+
+
+744
+00:39:04,676 --> 00:39:06,396
+The -- next, particles.
+
+
+745
+00:39:06,396 --> 00:39:09,286
+We have full particle system
+in there, 37 properties
+
+
+746
+00:39:09,286 --> 00:39:12,736
+of these particles, and the key
+here is you can either modify
+
+
+747
+00:39:12,776 --> 00:39:14,876
+these with your code
+or you can --
+
+
+748
+00:39:14,876 --> 00:39:16,086
+or you can modify the data
+
+
+749
+00:39:16,266 --> 00:39:18,566
+which means you can
+build particles offline
+
+
+750
+00:39:18,566 --> 00:39:20,516
+and archive them for
+use by your application.
+
+
+751
+00:39:21,586 --> 00:39:24,196
+We also have an interpolated
+spawning [phonetic] system
+
+
+752
+00:39:24,476 --> 00:39:26,806
+which we think of this as
+an anti-clumping technology.
+
+
+753
+00:39:27,146 --> 00:39:29,446
+As I move this around, you
+see the particles are evenly
+
+
+754
+00:39:29,446 --> 00:39:30,646
+distributed in the trail.
+
+
+755
+00:39:31,486 --> 00:39:34,056
+Everything like that, all of
+this 60 frames per second,
+
+
+756
+00:39:34,226 --> 00:39:35,666
+I can even write with it.
+
+
+757
+00:39:37,396 --> 00:39:37,956
+Here you go.
+
+
+758
+00:39:38,966 --> 00:39:40,416
+We've also integrated Sprite Kit
+
+
+759
+00:39:40,416 --> 00:39:43,526
+into our existing graphics
+technology core image.
+
+
+760
+00:39:44,326 --> 00:39:47,936
+So you can apply CI filters
+to your application here.
+
+
+761
+00:39:47,936 --> 00:39:49,766
+And once we toss
+a filter on here,
+
+
+762
+00:39:49,766 --> 00:39:54,466
+so you can have this great,
+yeah, this great pinch effect
+
+
+763
+00:39:54,466 --> 00:39:57,586
+on there as the physics
+simulation continues to run.
+
+
+764
+00:39:59,696 --> 00:40:02,046
+We have a pixelate filter
+on top of the system.
+
+
+765
+00:40:02,046 --> 00:40:05,016
+And these filters can be applied
+to all or part Sprite tree
+
+
+766
+00:40:05,306 --> 00:40:07,326
+and finally a really,
+really cool --
+
+
+767
+00:40:09,076 --> 00:40:10,196
+-- twirl effect.
+
+
+768
+00:40:10,246 --> 00:40:13,306
+So you can apply CI filters
+right on top of your scene.
+
+
+769
+00:40:14,806 --> 00:40:15,476
+Finally, the video.
+
+
+770
+00:40:16,596 --> 00:40:18,686
+We've taken our great
+media technologies
+
+
+771
+00:40:18,686 --> 00:40:20,296
+and integrated video
+in the Sprite Kit.
+
+
+772
+00:40:20,476 --> 00:40:22,116
+This means you can
+mass the video
+
+
+773
+00:40:22,116 --> 00:40:23,896
+and I can manipulate the
+mass on top of the video.
+
+
+774
+00:40:24,046 --> 00:40:26,096
+And you can combine
+this into your scene
+
+
+775
+00:40:26,426 --> 00:40:29,556
+such the video is not just for
+cut scenes and transitions.
+
+
+776
+00:40:29,556 --> 00:40:31,326
+I can add sprites in here.
+
+
+777
+00:40:31,326 --> 00:40:34,396
+And you see the sprites fly
+in front and behind the video.
+
+
+778
+00:40:34,396 --> 00:40:36,936
+Video is a first class
+citizen in Sprite Kit.
+
+
+779
+00:40:38,356 --> 00:40:39,736
+So that's a quick
+tour of Sprite Kit.
+
+
+780
+00:40:40,516 --> 00:40:48,156
+[ Applause ]
+
+
+781
+00:40:48,656 --> 00:40:50,686
+I thought of making the
+game development easier
+
+
+782
+00:40:50,766 --> 00:40:51,256
+for all of you.
+
+
+783
+00:40:51,656 --> 00:40:52,726
+How else I'm going to do that?
+
+
+784
+00:40:53,116 --> 00:40:57,326
+Well, we're going to introduce
+comprehensive, full-featured,
+
+
+785
+00:40:57,326 --> 00:41:00,266
+production quality game
+sample code for you guys.
+
+
+786
+00:41:00,766 --> 00:41:03,966
+So let me jump in here
+and show you what we have.
+
+
+787
+00:41:06,416 --> 00:41:07,806
+So this is our adventure game.
+
+
+788
+00:41:08,076 --> 00:41:11,066
+It is a Multiplayer
+Dungeon Crawler
+
+
+789
+00:41:11,066 --> 00:41:12,376
+with all the features
+you would expect.
+
+
+790
+00:41:16,126 --> 00:41:20,166
+So it has a multi-directional
+scrolling, parallax effects,
+
+
+791
+00:41:20,406 --> 00:41:22,356
+we have part of this falling
+leaves particle effects
+
+
+792
+00:41:22,356 --> 00:41:25,316
+that the enemies have AI,
+with high quality art work.
+
+
+793
+00:41:25,316 --> 00:41:30,876
+All of this was production
+quality code which allows you
+
+
+794
+00:41:30,986 --> 00:41:33,726
+to just grab it, and either
+start your next game project
+
+
+795
+00:41:33,756 --> 00:41:37,476
+with it, or adapt the two, or
+pull some technologies out of it
+
+
+796
+00:41:37,476 --> 00:41:39,646
+to adapt it to your
+current game.
+
+
+797
+00:41:41,016 --> 00:41:41,446
+There you go.
+
+
+798
+00:41:41,496 --> 00:41:44,546
+So let's jump back in the
+Xcode and take a look.
+
+
+799
+00:41:45,006 --> 00:41:49,066
+So these samples are made
+for both OS X and iOS
+
+
+800
+00:41:49,196 --> 00:41:51,976
+which means the vast majority
+of the source files are shared,
+
+
+801
+00:41:51,976 --> 00:41:54,476
+so you can use them to support
+either operating system.
+
+
+802
+00:41:54,936 --> 00:41:57,116
+We have over 1,700 art
+files in this sample.
+
+
+803
+00:41:57,116 --> 00:41:58,586
+And if we go look at the part --
+
+
+804
+00:41:58,586 --> 00:41:59,856
+one of the particle
+effects here,
+
+
+805
+00:42:00,466 --> 00:42:01,886
+this is a leaf particle effect,
+
+
+806
+00:42:02,286 --> 00:42:04,746
+what you'll notice is we
+build a particle editor right
+
+
+807
+00:42:04,746 --> 00:42:05,536
+in the Xcode.
+
+
+808
+00:42:06,516 --> 00:42:11,986
+[ Applause ]
+
+
+809
+00:42:12,486 --> 00:42:14,686
+So I can change the generation
+rate on the particles here.
+
+
+810
+00:42:14,686 --> 00:42:16,876
+We take a lot more of leaves --
+
+
+811
+00:42:16,876 --> 00:42:18,796
+that that's felt
+better for the game.
+
+
+812
+00:42:19,116 --> 00:42:21,726
+And, you know, leaves fall in
+the fall not when they're green
+
+
+813
+00:42:21,726 --> 00:42:23,776
+so we want to change one
+of our key colors here.
+
+
+814
+00:42:24,546 --> 00:42:26,426
+And we'll make that red.
+
+
+815
+00:42:26,426 --> 00:42:27,906
+And we've changed
+the particle effect.
+
+
+816
+00:42:28,236 --> 00:42:29,796
+Again, this is editing
+the particle data
+
+
+817
+00:42:30,016 --> 00:42:31,566
+so when you build your
+application again,
+
+
+818
+00:42:31,566 --> 00:42:33,416
+when you build your game,
+it's picked right up
+
+
+819
+00:42:33,416 --> 00:42:34,816
+and your game will
+have this effect in it.
+
+
+820
+00:42:36,336 --> 00:42:39,766
+So that's a quick tour of
+one of our new game samples.
+
+
+821
+00:42:41,516 --> 00:42:47,186
+[ Applause ]
+
+
+822
+00:42:47,686 --> 00:42:49,516
+The next big technology we have
+
+
+823
+00:42:49,576 --> 00:42:52,246
+to announce today
+is Game Controllers.
+
+
+824
+00:42:53,516 --> 00:42:58,736
+[ Applause ]
+
+
+825
+00:42:59,236 --> 00:43:01,936
+We're taking the gaming
+experience to a new level
+
+
+826
+00:43:01,936 --> 00:43:03,716
+by defining the standard --
+
+
+827
+00:43:04,046 --> 00:43:07,086
+a common standard for game
+controllers that allow high --
+
+
+828
+00:43:07,126 --> 00:43:09,556
+that allow all users to have
+high quality game controllers.
+
+
+829
+00:43:09,556 --> 00:43:10,356
+So how are we doing this?
+
+
+830
+00:43:10,826 --> 00:43:12,916
+We are providing the users --
+
+
+831
+00:43:12,916 --> 00:43:15,656
+users can pick whatever
+third-party controller
+
+
+832
+00:43:15,656 --> 00:43:16,386
+they prefer.
+
+
+833
+00:43:16,716 --> 00:43:20,526
+Software developers can build a
+single software interface rather
+
+
+834
+00:43:20,526 --> 00:43:21,656
+than having to support
+a multitude
+
+
+835
+00:43:21,656 --> 00:43:24,786
+of software interfaces,
+thus as game developers,
+
+
+836
+00:43:25,116 --> 00:43:26,746
+you can concentrate
+in building your game
+
+
+837
+00:43:26,976 --> 00:43:29,116
+versus supporting a whole bunch
+of different game controllers.
+
+
+838
+00:43:29,626 --> 00:43:31,716
+This comes into two parts.
+
+
+839
+00:43:31,756 --> 00:43:35,516
+First, a hardware standard,
+this is part of our MFi program.
+
+
+840
+00:43:35,946 --> 00:43:40,406
+And secondly, a software
+interface
+
+
+841
+00:43:40,626 --> 00:43:42,836
+which allows software
+developers to build --
+
+
+842
+00:43:43,416 --> 00:43:45,576
+which allows you to build
+to a common interface.
+
+
+843
+00:43:45,706 --> 00:43:47,076
+Let's first talk
+about the hardware.
+
+
+844
+00:43:48,176 --> 00:43:49,546
+The hardware comes
+into two types,
+
+
+845
+00:43:49,936 --> 00:43:52,276
+either form-fitting
+snapping controls,
+
+
+846
+00:43:52,276 --> 00:43:53,936
+or your stand-alone controllers.
+
+
+847
+00:43:54,196 --> 00:43:55,656
+There's also two configurations.
+
+
+848
+00:43:56,006 --> 00:43:59,216
+The standard configuration
+has a d-pad, four buttons,
+
+
+849
+00:43:59,516 --> 00:44:00,546
+and some shoulder buttons.
+
+
+850
+00:44:01,666 --> 00:44:04,976
+The hands configuration adds two
+thumb sticks and two triggers.
+
+
+851
+00:44:08,036 --> 00:44:09,606
+All inputs are
+pressure-sensitive.
+
+
+852
+00:44:09,606 --> 00:44:11,786
+And we talked about
+high quality.
+
+
+853
+00:44:11,786 --> 00:44:13,816
+We want to ensure there are
+high quality controllers
+
+
+854
+00:44:13,816 --> 00:44:15,806
+to give your users
+a great experience,
+
+
+855
+00:44:15,886 --> 00:44:18,076
+we do these by requiring
+no calibration,
+
+
+856
+00:44:18,076 --> 00:44:20,546
+the inputs can't drift,
+and all the buttons have
+
+
+857
+00:44:20,546 --> 00:44:21,556
+to have the same feel.
+
+
+858
+00:44:22,196 --> 00:44:24,606
+Of course there's a
+software piece of this.
+
+
+859
+00:44:25,196 --> 00:44:27,796
+So you can -- so your software
+can communicate directly
+
+
+860
+00:44:27,796 --> 00:44:28,516
+with controllers.
+
+
+861
+00:44:28,516 --> 00:44:31,486
+And this is, the truth be told,
+this is really easy to adopt
+
+
+862
+00:44:31,806 --> 00:44:33,796
+with both polling and
+callback types of inputs.
+
+
+863
+00:44:34,036 --> 00:44:35,096
+We've also designed it
+
+
+864
+00:44:35,166 --> 00:44:37,986
+so you can actually use
+the Multi-Touch interface
+
+
+865
+00:44:37,986 --> 00:44:40,266
+or the gyro in conjunction
+with your controller
+
+
+866
+00:44:40,516 --> 00:44:44,516
+so you can make a great a hybrid
+experience for your users.
+
+
+867
+00:44:44,916 --> 00:44:50,026
+And of course this is both
+on iOS 7 and OS X Mavericks.
+
+
+868
+00:44:50,736 --> 00:44:52,616
+So I think the best way
+to show what you can do
+
+
+869
+00:44:52,616 --> 00:44:54,346
+with controllers
+is to do a demo.
+
+
+870
+00:44:54,346 --> 00:44:56,366
+I like to invite Thomas
+Schegloff [assumed spelling]
+
+
+871
+00:44:56,366 --> 00:44:59,226
+on stage to show
+what they've built.
+
+
+872
+00:45:00,016 --> 00:45:00,606
+So we do --
+
+
+873
+00:45:01,516 --> 00:45:05,876
+[ Applause ]
+
+
+874
+00:45:06,376 --> 00:45:09,126
+Last week, we reached out
+to Crytek, they're working
+
+
+875
+00:45:09,126 --> 00:45:14,496
+on their new iOS application
+collectibles and they came in
+
+
+876
+00:45:15,456 --> 00:45:18,316
+and integrated game controllers
+into their application.
+
+
+877
+00:45:18,316 --> 00:45:20,136
+Within a day, they had a
+standard controller working.
+
+
+878
+00:45:20,746 --> 00:45:25,386
+What you have here is a tactical
+action game and this is running
+
+
+879
+00:45:25,386 --> 00:45:29,456
+on the iPhone and you can use
+the controller using the D-pad
+
+
+880
+00:45:29,586 --> 00:45:31,686
+for relative movements
+to avoid those explosions
+
+
+881
+00:45:32,896 --> 00:45:35,356
+and advance his squad,
+as he advances his squad,
+
+
+882
+00:45:35,776 --> 00:45:36,786
+he get -- comes under fire.
+
+
+883
+00:45:36,786 --> 00:45:38,076
+What he now can do
+is hit a button
+
+
+884
+00:45:38,276 --> 00:45:39,366
+to move the squad to cover.
+
+
+885
+00:45:40,396 --> 00:45:41,276
+He finds that he wants
+
+
+886
+00:45:41,276 --> 00:45:43,516
+to directly manipulate
+some of his troops.
+
+
+887
+00:45:43,516 --> 00:45:46,596
+What he can do is he can use
+at the touch interface to touch
+
+
+888
+00:45:46,596 --> 00:45:48,686
+on a troop and he can
+drag it specifically
+
+
+889
+00:45:48,686 --> 00:45:50,076
+to a point he wants
+deploy them at.
+
+
+890
+00:45:50,436 --> 00:45:53,966
+But this allows a great hybrid
+mix of the game controller
+
+
+891
+00:45:54,196 --> 00:45:55,426
+and the Direct-Touch interface.
+
+
+892
+00:45:57,256 --> 00:45:59,216
+He finds his squad
+gets in a little --
+
+
+893
+00:46:00,516 --> 00:46:02,936
+[ Applause ]
+
+
+894
+00:46:03,436 --> 00:46:04,566
+He finds -- he gets
+in a little trouble,
+
+
+895
+00:46:04,566 --> 00:46:06,856
+he can hit the shoulder button,
+calling some air support,
+
+
+896
+00:46:06,856 --> 00:46:10,036
+now the D-pad switches over to
+controlling his air support.
+
+
+897
+00:46:12,276 --> 00:46:16,316
+Beautiful job, very little time
+integrating controller setup
+
+
+898
+00:46:16,646 --> 00:46:18,476
+into this game, brilliant
+graphics.
+
+
+899
+00:46:18,896 --> 00:46:20,076
+Tremendous job by Crytek
+
+
+900
+00:46:20,076 --> 00:46:23,196
+and then you can go,
+thank you, Thomas.
+
+
+901
+00:46:24,516 --> 00:46:31,756
+[ Applause ]
+
+
+902
+00:46:32,256 --> 00:46:33,566
+So we want to make you --
+
+
+903
+00:46:33,566 --> 00:46:36,146
+get you guys jump-started
+on working with controllers.
+
+
+904
+00:46:36,146 --> 00:46:37,386
+We've worked with Logitech,
+
+
+905
+00:46:37,816 --> 00:46:39,636
+put some standard
+snapping controllers
+
+
+906
+00:46:39,816 --> 00:46:41,816
+in the labs this week
+and they'll be --
+
+
+907
+00:46:41,816 --> 00:46:44,506
+so tomorrow, you can head down
+to the labs with your code
+
+
+908
+00:46:44,786 --> 00:46:46,276
+and get a jump-start
+on developing
+
+
+909
+00:46:46,276 --> 00:46:49,256
+for controllers integrating
+them to your application.
+
+
+910
+00:46:52,556 --> 00:46:55,386
+So we've talked about a lot
+of things in game development,
+
+
+911
+00:46:55,526 --> 00:46:58,466
+two new APIs, Sprite Kit
+and game controllers.
+
+
+912
+00:46:58,826 --> 00:47:01,346
+Tools built in the
+Xcode, particle editor,
+
+
+913
+00:47:01,386 --> 00:47:02,966
+and a text [inaudible]
+generator.
+
+
+914
+00:47:03,366 --> 00:47:04,636
+We have new game samples.
+
+
+915
+00:47:04,766 --> 00:47:05,926
+We showed you one
+of them, adventure,
+
+
+916
+00:47:05,926 --> 00:47:08,056
+we also have a turn
+based puzzle game.
+
+
+917
+00:47:08,436 --> 00:47:10,176
+These samples are
+production quality code,
+
+
+918
+00:47:10,176 --> 00:47:11,606
+they're fully documented
+
+
+919
+00:47:11,836 --> 00:47:14,036
+and a code displaying cell
+documentation allow you --
+
+
+920
+00:47:14,396 --> 00:47:15,586
+allowing you to grab that,
+
+
+921
+00:47:16,116 --> 00:47:18,206
+use it to start your next
+application or take a piece
+
+
+922
+00:47:18,206 --> 00:47:21,076
+of technology out of it and add
+it to your current application.
+
+
+923
+00:47:22,386 --> 00:47:23,336
+So I can't wait to see --
+
+
+924
+00:47:23,536 --> 00:47:25,736
+I can't wait to see
+what you guys build
+
+
+925
+00:47:25,736 --> 00:47:29,276
+with our new game technology
+and I'd like to hand it back
+
+
+926
+00:47:29,276 --> 00:47:32,536
+over to Andreas to talk
+about OS X Mavericks.
+
+
+927
+00:47:33,516 --> 00:47:38,886
+[ Applause ]
+
+
+928
+00:47:39,386 --> 00:47:39,916
+>> Thank you Jeff.
+
+
+929
+00:47:41,416 --> 00:47:44,096
+Our gaming technologies have we,
+come a long way just last year
+
+
+930
+00:47:44,096 --> 00:47:46,556
+and I'm already looking forward
+to wasting even more of my time
+
+
+931
+00:47:46,556 --> 00:47:49,186
+with the new creations
+you come up with.
+
+
+932
+00:47:49,186 --> 00:47:49,476
+All right.
+
+
+933
+00:47:49,476 --> 00:47:50,936
+Let's talk about OS X Mavericks.
+
+
+934
+00:47:51,916 --> 00:47:55,336
+So Mavericks, the big
+architectural focus area is
+
+
+935
+00:47:55,446 --> 00:47:56,836
+optimizing power consumption.
+
+
+936
+00:47:57,246 --> 00:48:00,656
+All of us here are already
+used to optimizing our apps
+
+
+937
+00:48:00,656 --> 00:48:03,446
+for low memory use and
+low CPU utilization.
+
+
+938
+00:48:04,116 --> 00:48:06,776
+But the majority of computers
+used nowadays are laptops
+
+
+939
+00:48:06,946 --> 00:48:10,846
+and mobile users really also
+care about long battery life.
+
+
+940
+00:48:11,756 --> 00:48:14,966
+These added several features to
+Mavericks that allows end users
+
+
+941
+00:48:14,966 --> 00:48:16,776
+to understand the
+power consumption
+
+
+942
+00:48:16,776 --> 00:48:18,076
+of the apps they're
+using better.
+
+
+943
+00:48:18,326 --> 00:48:20,946
+For example, by listing
+how are hungry apps
+
+
+944
+00:48:20,946 --> 00:48:23,336
+in the battery menu extra
+and in activity monitor.
+
+
+945
+00:48:24,086 --> 00:48:25,946
+And you probably don't want
+your apps to show up there.
+
+
+946
+00:48:26,221 --> 00:48:28,221
+[ Laughter ]
+
+
+947
+00:48:28,426 --> 00:48:30,396
+The good news is
+that the following --
+
+
+948
+00:48:30,396 --> 00:48:33,836
+a few very straightforward
+rules like not using unnecessary
+
+
+949
+00:48:34,126 --> 00:48:37,236
+or too frequent timers, you can
+often achieve great results.
+
+
+950
+00:48:38,016 --> 00:48:40,216
+This slide here shows
+a comparison of OS X,
+
+
+951
+00:48:40,316 --> 00:48:43,336
+10.8 and 10.9 running
+on the same hardware.
+
+
+952
+00:48:43,956 --> 00:48:46,586
+As you can see, just two
+software changes, we were able
+
+
+953
+00:48:46,586 --> 00:48:49,236
+to squeeze out significant
+improvements to battery life
+
+
+954
+00:48:49,236 --> 00:48:53,396
+and so can you in your own apps.
+
+
+955
+00:48:53,646 --> 00:48:56,386
+Another big focus area
+for us was responsiveness
+
+
+956
+00:48:56,686 --> 00:48:59,686
+such as the scroll speed of
+table use and the smoothness
+
+
+957
+00:48:59,686 --> 00:49:00,936
+of animations and switching
+
+
+958
+00:49:00,936 --> 00:49:02,356
+between different
+application states.
+
+
+959
+00:49:02,886 --> 00:49:05,626
+You saw this morning in the key
+note how nicely made [inaudible]
+
+
+960
+00:49:05,626 --> 00:49:08,756
+and Safari, now react
+to user events.
+
+
+961
+00:49:09,306 --> 00:49:13,006
+Now one problem is that
+optimizing power consumption
+
+
+962
+00:49:13,496 --> 00:49:16,986
+and preparing an app for great
+responsiveness can sometimes
+
+
+963
+00:49:17,046 --> 00:49:17,976
+trade often each other.
+
+
+964
+00:49:18,526 --> 00:49:20,416
+So the trick is to
+find the right balance,
+
+
+965
+00:49:20,516 --> 00:49:23,066
+the right intersection between
+power and responsiveness.
+
+
+966
+00:49:24,166 --> 00:49:26,096
+Let's take a look at a few
+things within the Mavericks
+
+
+967
+00:49:26,156 --> 00:49:27,986
+that you believe
+represent the right choices.
+
+
+968
+00:49:29,356 --> 00:49:30,716
+We implemented new mechanisms
+
+
+969
+00:49:30,816 --> 00:49:32,766
+that vastly improved
+memory management.
+
+
+970
+00:49:33,546 --> 00:49:36,026
+We introduced in our scrolling
+architecture in App Kit
+
+
+971
+00:49:36,506 --> 00:49:40,976
+and of course we added the new
+App Net feature which started,
+
+
+972
+00:49:40,976 --> 00:49:44,796
+it's the power consumption
+of background with apps.
+
+
+973
+00:49:45,066 --> 00:49:48,176
+For memory, we've now
+centralized all our management
+
+
+974
+00:49:48,176 --> 00:49:51,326
+policies which makes the OS more
+efficient and more predictable.
+
+
+975
+00:49:53,006 --> 00:49:55,816
+For several releases
+already, we have notified apps
+
+
+976
+00:49:55,876 --> 00:49:58,416
+if you needed their help
+because memory pressure
+
+
+977
+00:49:58,416 --> 00:49:59,686
+in the system had
+reached the level --
+
+
+978
+00:49:59,686 --> 00:50:01,416
+that we needed to free
+some extra memory.
+
+
+979
+00:50:02,366 --> 00:50:05,176
+But they only notified once we
+had already reached a very high
+
+
+980
+00:50:05,176 --> 00:50:06,106
+level of memory pressure.
+
+
+981
+00:50:06,496 --> 00:50:08,846
+So in general, apps didn't
+really know what was going
+
+
+982
+00:50:08,846 --> 00:50:11,246
+on around them and
+then it was okay again
+
+
+983
+00:50:11,246 --> 00:50:12,296
+to become more aggressive.
+
+
+984
+00:50:12,556 --> 00:50:13,566
+That's using more memory.
+
+
+985
+00:50:14,286 --> 00:50:16,086
+So we're improving this in
+two ways and [inaudible].
+
+
+986
+00:50:16,636 --> 00:50:17,856
+First of all, they're going
+
+
+987
+00:50:17,906 --> 00:50:20,516
+to send you two notifications
+why the memory pressure
+
+
+988
+00:50:20,516 --> 00:50:21,106
+is increasing.
+
+
+989
+00:50:22,096 --> 00:50:25,616
+An early warning and also a
+critical level notification.
+
+
+990
+00:50:25,616 --> 00:50:29,016
+And then we're also going to
+send you an all clear signal
+
+
+991
+00:50:29,016 --> 00:50:32,426
+if the memory drops back down
+to normal levels then it's okay
+
+
+992
+00:50:32,426 --> 00:50:35,076
+for you for example to create
+larger in-memory caches again.
+
+
+993
+00:50:35,936 --> 00:50:37,916
+So by listening to all
+this notifications,
+
+
+994
+00:50:38,146 --> 00:50:40,306
+apps can now make much
+more informed decisions
+
+
+995
+00:50:40,306 --> 00:50:42,106
+about their memory use.
+
+
+996
+00:50:43,416 --> 00:50:46,646
+We've also improved all
+purgeable memory handling
+
+
+997
+00:50:46,646 --> 00:50:48,206
+and made it actually
+predictable.
+
+
+998
+00:50:49,086 --> 00:50:52,166
+Instead of purging memory based
+on age, you now purge based
+
+
+999
+00:50:52,166 --> 00:50:53,876
+on the memory pressure
+in the system.
+
+
+1000
+00:50:54,856 --> 00:50:55,976
+And they're allowing apps
+
+
+1001
+00:50:56,066 --> 00:50:59,116
+to specify more fine-grained
+priorities to indicate
+
+
+1002
+00:50:59,116 --> 00:51:01,256
+which regions are best
+to take down first.
+
+
+1003
+00:51:02,516 --> 00:51:05,816
+Unlike low memory notifications,
+purgeable memory is designed
+
+
+1004
+00:51:05,816 --> 00:51:07,416
+so that the system
+can free memory
+
+
+1005
+00:51:07,416 --> 00:51:09,076
+without unvoiding any apps.
+
+
+1006
+00:51:09,406 --> 00:51:10,776
+So it's quicker and
+it's cheaper.
+
+
+1007
+00:51:10,776 --> 00:51:14,686
+And with the new behavior,
+it is a lot more useful now.
+
+
+1008
+00:51:14,756 --> 00:51:18,146
+The easiest way for you to
+leverage purgeable memory is
+
+
+1009
+00:51:18,146 --> 00:51:23,146
+through our Libcache
+and NSCache APIs.
+
+
+1010
+00:51:23,356 --> 00:51:24,806
+We've also added a compressor
+
+
+1011
+00:51:24,806 --> 00:51:26,736
+to the memory management
+techniques you now use
+
+
+1012
+00:51:26,736 --> 00:51:27,246
+in Mavericks.
+
+
+1013
+00:51:28,026 --> 00:51:30,386
+Instead of swapping out
+memory directly to disc,
+
+
+1014
+00:51:30,846 --> 00:51:33,076
+you're now freeing pages
+by compressing them
+
+
+1015
+00:51:33,136 --> 00:51:34,476
+in an intermediate stage,
+
+
+1016
+00:51:35,186 --> 00:51:37,286
+which dramatically
+improves responsiveness
+
+
+1017
+00:51:37,386 --> 00:51:42,136
+to memory regress, because
+there is no I/O needed.
+
+
+1018
+00:51:43,176 --> 00:51:45,186
+And if you do have to
+swap out to disc later,
+
+
+1019
+00:51:45,186 --> 00:51:48,226
+we can do so in an asynchronous
+fashion that's larger,
+
+
+1020
+00:51:48,346 --> 00:51:49,776
+more uniformed chunks of memory.
+
+
+1021
+00:51:50,316 --> 00:51:52,536
+It also has a really nice
+side effect of swap --
+
+
+1022
+00:51:52,936 --> 00:51:55,416
+side effect of swapped
+files staying smaller
+
+
+1023
+00:51:55,486 --> 00:51:56,516
+and less fragmented.
+
+
+1024
+00:51:57,816 --> 00:52:00,796
+So all this memory management
+techniques now work together
+
+
+1025
+00:52:00,796 --> 00:52:04,326
+in Mavericks to give us the
+most efficient memory management
+
+
+1026
+00:52:04,326 --> 00:52:08,876
+system you've ever had in OS X.
+
+
+1027
+00:52:09,116 --> 00:52:11,146
+Next, our scrolling
+architecture.
+
+
+1028
+00:52:11,796 --> 00:52:13,866
+To improve responsiveness
+of scroll views,
+
+
+1029
+00:52:14,246 --> 00:52:16,696
+you've completely reinvent
+all the scrolling architecture
+
+
+1030
+00:52:16,696 --> 00:52:17,236
+in AppKit.
+
+
+1031
+00:52:18,426 --> 00:52:20,916
+To maybe achieve the smooth
+scrolling you observed this
+
+
+1032
+00:52:20,916 --> 00:52:22,986
+morning and in [inaudible]
+calendar is
+
+
+1033
+00:52:22,986 --> 00:52:24,506
+that you're now pregenerating
+
+
+1034
+00:52:24,506 --> 00:52:27,776
+and buffering additional review
+content beyond the visible view
+
+
+1035
+00:52:27,776 --> 00:52:30,746
+areas and just scrolling
+that content with the help
+
+
+1036
+00:52:30,746 --> 00:52:33,376
+of core animation just makes
+it hardware accelerated.
+
+
+1037
+00:52:34,706 --> 00:52:36,326
+So let's say we have
+a scroll view
+
+
+1038
+00:52:36,326 --> 00:52:38,596
+that shows a portion
+of a larger document.
+
+
+1039
+00:52:39,556 --> 00:52:41,286
+AppKit will now ask
+the application
+
+
+1040
+00:52:41,286 --> 00:52:44,166
+to render extra content
+in small chunks
+
+
+1041
+00:52:44,376 --> 00:52:46,016
+when the system is
+otherwise idle?
+
+
+1042
+00:52:46,746 --> 00:52:51,996
+Notice that we are not
+changing the threading model
+
+
+1043
+00:52:51,996 --> 00:52:53,256
+of AppKit in any way.
+
+
+1044
+00:52:53,256 --> 00:52:54,966
+All the rendering
+still takes place
+
+
+1045
+00:52:54,966 --> 00:52:56,716
+on the main thread as usual.
+
+
+1046
+00:52:57,596 --> 00:52:59,646
+But since this happens
+in small chunks as long
+
+
+1047
+00:52:59,646 --> 00:53:02,056
+as your application can render
+that content quickly enough
+
+
+1048
+00:53:02,506 --> 00:53:04,786
+if we never block them in main
+thread for long and interfere
+
+
+1049
+00:53:04,786 --> 00:53:05,746
+with the user in any way.
+
+
+1050
+00:53:06,906 --> 00:53:09,676
+Also, so that we can easily give
+the memory back to the system
+
+
+1051
+00:53:09,676 --> 00:53:11,316
+in case we get in the
+high memory pressure,
+
+
+1052
+00:53:11,936 --> 00:53:14,776
+they're storing this overdraw
+of content in purgeable memory.
+
+
+1053
+00:53:15,486 --> 00:53:20,386
+Now, when the user
+initiates a scored event,
+
+
+1054
+00:53:20,476 --> 00:53:23,026
+AppKit can respond
+immediately [inaudible]
+
+
+1055
+00:53:23,026 --> 00:53:24,286
+of the available overdraw.
+
+
+1056
+00:53:25,026 --> 00:53:27,436
+So AppKit will stop
+at the attempt scoring
+
+
+1057
+00:53:27,436 --> 00:53:29,936
+with a perfect 60
+frames a second as long
+
+
+1058
+00:53:29,936 --> 00:53:31,766
+as there are sufficient
+overdraw available,
+
+
+1059
+00:53:32,206 --> 00:53:34,286
+but at the same time
+right from the beginning
+
+
+1060
+00:53:34,286 --> 00:53:36,876
+of the event working with your
+app to draw even more content
+
+
+1061
+00:53:36,876 --> 00:53:37,976
+for the download document.
+
+
+1062
+00:53:38,376 --> 00:53:40,936
+So chances are that by the time
+the scored event has reached
+
+
+1063
+00:53:40,936 --> 00:53:43,556
+these new areas, the
+application is already had time
+
+
+1064
+00:53:43,556 --> 00:53:45,216
+to finish rendering
+those as well.
+
+
+1065
+00:53:45,666 --> 00:53:48,076
+And the net result is
+that became as long
+
+
+1066
+00:53:48,076 --> 00:53:49,376
+as your application can render
+
+
+1067
+00:53:49,376 --> 00:53:52,066
+that content quickly
+enough often achieve better,
+
+
+1068
+00:53:52,066 --> 00:53:55,726
+smooth 60 frames a second
+for the entire scroll event.
+
+
+1069
+00:53:58,716 --> 00:54:01,286
+Responsive scrolling
+takes effect automatically
+
+
+1070
+00:54:01,666 --> 00:54:04,456
+for most applications linked
+against our latest tested case.
+
+
+1071
+00:54:04,456 --> 00:54:06,806
+There is no special
+adoption required,
+
+
+1072
+00:54:07,316 --> 00:54:09,106
+but they did add a few
+methods to end this view
+
+
+1073
+00:54:09,106 --> 00:54:10,796
+and in the scroll
+view that allow you
+
+
+1074
+00:54:10,796 --> 00:54:11,966
+to customize the behavior
+
+
+1075
+00:54:11,966 --> 00:54:13,846
+in case your application
+has special needs.
+
+
+1076
+00:54:16,536 --> 00:54:18,066
+Next, let's talk about App Nap.
+
+
+1077
+00:54:19,166 --> 00:54:21,056
+The perhaps most
+effective way we found
+
+
+1078
+00:54:21,466 --> 00:54:22,646
+to lower power consumption
+
+
+1079
+00:54:22,646 --> 00:54:24,996
+of the overall system is
+the new App Nap feature.
+
+
+1080
+00:54:25,906 --> 00:54:28,356
+It focuses system
+resources on the user --
+
+
+1081
+00:54:28,356 --> 00:54:30,786
+on the work that made us the
+most to the user right now,
+
+
+1082
+00:54:31,396 --> 00:54:34,096
+while at the same time
+drastically scaling back the
+
+
+1083
+00:54:34,096 --> 00:54:37,196
+resources being offered to
+applications that aren't
+
+
+1084
+00:54:37,196 --> 00:54:40,676
+as critical to the user
+at this point in time.
+
+
+1085
+00:54:40,856 --> 00:54:43,076
+App Nap takes effect
+after a short delay,
+
+
+1086
+00:54:43,546 --> 00:54:47,346
+but once an application naps if
+it see a reduction in priority
+
+
+1087
+00:54:47,486 --> 00:54:50,946
+for I/O and CPU --
+for I/O and CPU time.
+
+
+1088
+00:54:51,846 --> 00:54:54,586
+And also, maybe most
+importantly, if it see any time
+
+
+1089
+00:54:54,586 --> 00:54:56,676
+as it sets up being
+rate limited.
+
+
+1090
+00:54:58,176 --> 00:55:01,866
+We found that unnecessary, in
+two frequent timers and one
+
+
+1091
+00:55:01,866 --> 00:55:03,006
+of the largest sources
+
+
+1092
+00:55:03,136 --> 00:55:05,186
+of unnecessary power
+drain in the system.
+
+
+1093
+00:55:05,606 --> 00:55:09,246
+So we are quite aggressive with
+our RAID limiting, napping apps,
+
+
+1094
+00:55:09,246 --> 00:55:12,426
+received events, time events,
+only every 10 seconds or so.
+
+
+1095
+00:55:13,046 --> 00:55:15,586
+And the -- even aligning the
+time as of all the napping apps
+
+
+1096
+00:55:15,616 --> 00:55:18,336
+so that don't end up breaking
+up the CPU individually,
+
+
+1097
+00:55:18,486 --> 00:55:20,976
+but instead perform their work
+together at the same time.
+
+
+1098
+00:55:22,846 --> 00:55:24,756
+To decide whether an
+application can nap,
+
+
+1099
+00:55:25,016 --> 00:55:26,506
+we take a look at manufactures.
+
+
+1100
+00:55:26,966 --> 00:55:28,536
+The decision is fairly
+easy if a user
+
+
+1101
+00:55:28,536 --> 00:55:30,086
+for example hides
+an application.
+
+
+1102
+00:55:30,656 --> 00:55:32,096
+But the -- even monitoring
+things
+
+
+1103
+00:55:32,096 --> 00:55:34,226
+like drawing activity
+of backgrounded apps.
+
+
+1104
+00:55:34,776 --> 00:55:35,756
+So that applications that are
+
+
+1105
+00:55:35,756 --> 00:55:37,756
+in the background may
+be possibly occluded
+
+
+1106
+00:55:37,756 --> 00:55:40,536
+by other windows to
+-- for you to App Nap
+
+
+1107
+00:55:40,756 --> 00:55:44,926
+if they don't update the
+UI in any visible way.
+
+
+1108
+00:55:45,446 --> 00:55:46,356
+Another factor we take
+
+
+1109
+00:55:46,356 --> 00:55:48,846
+into consideration is whether
+applications have declared
+
+
+1110
+00:55:48,846 --> 00:55:49,826
+in power assertions.
+
+
+1111
+00:55:50,516 --> 00:55:53,066
+This is an area that is going to
+be more important going forward.
+
+
+1112
+00:55:53,066 --> 00:55:55,116
+Applications need
+to tell the system
+
+
+1113
+00:55:55,516 --> 00:55:58,256
+if they are performing any work
+that the user still expects
+
+
+1114
+00:55:58,256 --> 00:55:59,746
+to finish quickly even
+
+
+1115
+00:55:59,746 --> 00:56:01,466
+if the application is
+being backgrounded.
+
+
+1116
+00:56:01,826 --> 00:56:03,576
+For example, a long
+running file export.
+
+
+1117
+00:56:03,576 --> 00:56:05,936
+And the easiest way
+to do that as
+
+
+1118
+00:56:05,996 --> 00:56:09,476
+to the new NSProcessInfo API
+was listed here on the slide.
+
+
+1119
+00:56:10,166 --> 00:56:13,626
+Now, to show you a little bit
+more about how App Nap works,
+
+
+1120
+00:56:13,796 --> 00:56:15,346
+I'm going to ask
+Max Drukman to come
+
+
+1121
+00:56:15,346 --> 00:56:16,906
+up on stage again
+for another demo.
+
+
+1122
+00:56:18,516 --> 00:56:22,496
+[ Applause ]
+
+
+1123
+00:56:22,996 --> 00:56:25,096
+>> Thank you [inaudible].
+
+
+1124
+00:56:25,096 --> 00:56:28,156
+Can we switch to the
+demo machine, please?
+
+
+1125
+00:56:28,156 --> 00:56:28,396
+All right.
+
+
+1126
+00:56:29,036 --> 00:56:31,976
+Here is the Mac version of the
+game I was working on earlier
+
+
+1127
+00:56:31,976 --> 00:56:35,046
+and now we can all thrill as
+I implement power assertions.
+
+
+1128
+00:56:35,786 --> 00:56:37,266
+Now, just kidding.
+
+
+1129
+00:56:37,726 --> 00:56:41,196
+I'm going to show you App Nap
+in action and some features
+
+
+1130
+00:56:41,196 --> 00:56:45,576
+in Xcode 5 of course that
+can help you spot performance
+
+
+1131
+00:56:45,576 --> 00:56:47,436
+problems you might not
+have known you had.
+
+
+1132
+00:56:48,436 --> 00:56:50,606
+We're going to run my app.
+
+
+1133
+00:56:51,536 --> 00:56:52,576
+Here it is.
+
+
+1134
+00:56:52,606 --> 00:56:55,856
+But before we look at the
+app, let's look at Xcode
+
+
+1135
+00:56:56,056 --> 00:56:57,496
+and see what it's showing us.
+
+
+1136
+00:56:58,176 --> 00:57:01,496
+I'm going to zoom in
+so we get a good look.
+
+
+1137
+00:57:01,696 --> 00:57:03,626
+Now, in the debug navigator,
+
+
+1138
+00:57:04,016 --> 00:57:06,676
+we showed you what we
+were calling debug gauges.
+
+
+1139
+00:57:07,186 --> 00:57:10,626
+There is one each for CPU,
+memory and energy impact.
+
+
+1140
+00:57:11,596 --> 00:57:14,076
+There's super low
+overhead and they're great
+
+
+1141
+00:57:14,076 --> 00:57:16,706
+for spotting problems
+with your app.
+
+
+1142
+00:57:17,016 --> 00:57:21,606
+Here we can see that my app
+is taking, well, zero CPU,
+
+
+1143
+00:57:21,886 --> 00:57:26,276
+the memory is stable and the
+energy impact is low to zero.
+
+
+1144
+00:57:26,786 --> 00:57:29,236
+That means this view in
+this app is doing great.
+
+
+1145
+00:57:29,236 --> 00:57:30,366
+It's a good citizen.
+
+
+1146
+00:57:30,856 --> 00:57:32,546
+Nothing much to see
+here, move along.
+
+
+1147
+00:57:33,126 --> 00:57:36,266
+But now let me show
+you a problem scenario
+
+
+1148
+00:57:36,726 --> 00:57:38,726
+that in the past was
+kind of hard to spot.
+
+
+1149
+00:57:39,746 --> 00:57:42,366
+I'm implementing a new
+feature behind this map button.
+
+
+1150
+00:57:42,926 --> 00:57:46,496
+And what that does is it allows
+my users to bring up a level map
+
+
+1151
+00:57:46,496 --> 00:57:50,136
+in the game and see where they
+are as represented by this pin
+
+
+1152
+00:57:50,136 --> 00:57:54,416
+in the center as well as
+other players around the world
+
+
+1153
+00:57:54,526 --> 00:57:56,116
+who were playing
+on the same level.
+
+
+1154
+00:57:56,606 --> 00:58:02,206
+Now, the position of the other
+players is provided by a server.
+
+
+1155
+00:58:02,776 --> 00:58:04,426
+There are obviously
+aren't any players yet,
+
+
+1156
+00:58:04,426 --> 00:58:07,386
+I'm still developing here,
+but the codes in place
+
+
+1157
+00:58:07,386 --> 00:58:08,536
+to provide that information.
+
+
+1158
+00:58:09,656 --> 00:58:13,026
+But if we look back
+in Xcode we can see
+
+
+1159
+00:58:13,026 --> 00:58:13,866
+that there is some trouble.
+
+
+1160
+00:58:14,766 --> 00:58:19,456
+My CPU and energy impact
+gauges have spiked up
+
+
+1161
+00:58:19,946 --> 00:58:21,546
+and kind of stayed there.
+
+
+1162
+00:58:22,036 --> 00:58:23,726
+Let's have a closer look.
+
+
+1163
+00:58:24,376 --> 00:58:26,926
+When you select a
+debug gauge in Xcode,
+
+
+1164
+00:58:27,246 --> 00:58:29,886
+you see its report
+in the editor area.
+
+
+1165
+00:58:30,796 --> 00:58:34,966
+The report gives you the
+current status as well as a view
+
+
+1166
+00:58:34,966 --> 00:58:39,486
+over time and a button that
+even allows you to dive directly
+
+
+1167
+00:58:39,486 --> 00:58:42,436
+into instruments right away
+if there's a problem you spot
+
+
+1168
+00:58:42,796 --> 00:58:44,406
+and wants to deeply analyze.
+
+
+1169
+00:58:46,996 --> 00:58:49,256
+The memory report is similar
+
+
+1170
+00:58:49,336 --> 00:58:51,526
+with the current
+and overtime views.
+
+
+1171
+00:58:52,376 --> 00:58:57,226
+Energy impact provides that data
+as well as your App Nap status
+
+
+1172
+00:58:57,856 --> 00:59:01,996
+and various aspects
+of power usage.
+
+
+1173
+00:59:02,456 --> 00:59:05,996
+Each of which has a button
+that allows you to analyze
+
+
+1174
+00:59:06,106 --> 00:59:08,316
+that aspect in the instruments.
+
+
+1175
+00:59:09,446 --> 00:59:12,546
+Now, let's start with CPU here.
+
+
+1176
+00:59:12,906 --> 00:59:17,576
+High CPU usage is often
+associated with drawing,
+
+
+1177
+00:59:17,576 --> 00:59:20,626
+but it sure doesn't look like
+my app is doing any drawing.
+
+
+1178
+00:59:21,446 --> 00:59:23,956
+Luckily, Xcode 5 has
+given us something
+
+
+1179
+00:59:23,956 --> 00:59:25,086
+that can help us with that.
+
+
+1180
+00:59:26,046 --> 00:59:30,736
+We've added Cocoa view debugging
+support so I can do something
+
+
+1181
+00:59:30,736 --> 00:59:32,386
+like turn on view drawing.
+
+
+1182
+00:59:33,646 --> 00:59:37,836
+And now, every time a view
+redraws, I get a highlight.
+
+
+1183
+00:59:38,516 --> 00:59:42,866
+[ Applause ]
+
+
+1184
+00:59:43,366 --> 00:59:45,716
+Oh, well, you may be thrilled
+by that but of course,
+
+
+1185
+00:59:45,986 --> 00:59:48,886
+what this tells me is that I
+didn't do a very clever thing.
+
+
+1186
+00:59:48,886 --> 00:59:51,956
+My map pin is redrawing itself
+all the time even though it
+
+
+1187
+00:59:51,956 --> 00:59:52,586
+isn't moving.
+
+
+1188
+00:59:53,376 --> 00:59:56,486
+The one clever thing I did do,
+however, is add a debug menu
+
+
+1189
+00:59:57,316 --> 00:59:58,936
+so I can turn off draw updating.
+
+
+1190
+00:59:59,506 --> 01:00:01,416
+There, problem solved.
+
+
+1191
+01:00:02,091 --> 01:00:04,091
+[ Laughter ]
+
+
+1192
+01:00:04,166 --> 01:00:05,946
+Now, my CPU is looking good
+
+
+1193
+01:00:05,946 --> 01:00:08,376
+but my energy impact
+is still kind of high.
+
+
+1194
+01:00:09,046 --> 01:00:11,026
+Let's see if App Nap
+helps us with that.
+
+
+1195
+01:00:13,086 --> 01:00:19,296
+I'm going to maximize Xcode
+so that my app is behind
+
+
+1196
+01:00:19,576 --> 01:00:22,056
+and would -- should
+get App Nap to kick in.
+
+
+1197
+01:00:22,696 --> 01:00:25,586
+Now, on this machine, I've
+set App Nap to kick in quicker
+
+
+1198
+01:00:25,586 --> 01:00:29,036
+than normal and hopefully we're
+going to see it any second now.
+
+
+1199
+01:00:29,606 --> 01:00:32,976
+And, there it goes.
+
+
+1200
+01:00:33,626 --> 01:00:39,296
+Now, App Nap has done its
+thing and my app is now driven
+
+
+1201
+01:00:39,366 --> 01:00:43,466
+to zero energy usage or almost.
+
+
+1202
+01:00:44,346 --> 01:00:48,626
+Notice that I'm getting
+little blips on the graph.
+
+
+1203
+01:00:49,166 --> 01:00:50,856
+Now, as Andreas told us earlier,
+
+
+1204
+01:00:51,156 --> 01:00:52,976
+that's indicative
+of a timer firing.
+
+
+1205
+01:00:53,586 --> 01:00:55,896
+And sure enough, I've
+got a timer firing.
+
+
+1206
+01:00:56,156 --> 01:00:57,436
+Yet another bad pattern.
+
+
+1207
+01:00:57,436 --> 01:01:01,596
+I've gone with here is that
+my app is pulling the server
+
+
+1208
+01:01:02,046 --> 01:01:06,846
+for user updates instead of
+waiting for a notification.
+
+
+1209
+01:01:07,396 --> 01:01:08,876
+That's not a great
+design pattern
+
+
+1210
+01:01:09,176 --> 01:01:12,476
+but it's one who's impact was
+kind of tough to spot before.
+
+
+1211
+01:01:12,896 --> 01:01:15,846
+After all, I wasn't seeing
+poor graphics performance
+
+
+1212
+01:01:16,216 --> 01:01:19,196
+or beach balling
+or my fan spinning.
+
+
+1213
+01:01:19,956 --> 01:01:22,826
+But that doesn't mean there
+wasn't a significant energy
+
+
+1214
+01:01:22,826 --> 01:01:23,956
+impact going on.
+
+
+1215
+01:01:25,436 --> 01:01:29,566
+So, even though App Nap does
+the right thing for your users,
+
+
+1216
+01:01:29,936 --> 01:01:32,296
+it really pays to
+do the extra work
+
+
+1217
+01:01:32,756 --> 01:01:37,226
+to make your app also a good
+energy citizen whether it's
+
+
+1218
+01:01:37,226 --> 01:01:39,196
+active or it's napping.
+
+
+1219
+01:01:39,636 --> 01:01:41,616
+And Xcode 5 gives
+you the tools to make
+
+
+1220
+01:01:41,616 --> 01:01:43,496
+that possible and easy to do.
+
+
+1221
+01:01:44,886 --> 01:01:45,546
+Back to you, Andreas.
+
+
+1222
+01:01:46,516 --> 01:01:52,626
+[ Applause ]
+
+
+1223
+01:01:53,126 --> 01:01:53,626
+Thank you, Max.
+
+
+1224
+01:01:54,976 --> 01:01:57,176
+There's a few more
+APIs and behaviors I'd
+
+
+1225
+01:01:57,176 --> 01:02:00,756
+like to cover starting with
+our new margin monitor support
+
+
+1226
+01:02:01,226 --> 01:02:04,486
+which makes using [inaudible]
+displays even more powerful
+
+
+1227
+01:02:04,486 --> 01:02:05,276
+and flexible.
+
+
+1228
+01:02:05,276 --> 01:02:07,676
+Do you think this is going
+to work especially great
+
+
+1229
+01:02:07,676 --> 01:02:09,626
+for all pro-users who often work
+
+
+1230
+01:02:09,626 --> 01:02:11,386
+with multiple apps
+at the same time?
+
+
+1231
+01:02:11,846 --> 01:02:13,636
+And by the way, it also
+works well to the Xcode
+
+
+1232
+01:02:13,636 --> 01:02:15,176
+that you can run
+Xcode on one screen
+
+
+1233
+01:02:15,266 --> 01:02:17,136
+and the back end application
+on the other screen.
+
+
+1234
+01:02:18,916 --> 01:02:21,356
+Now, we also believe
+that the new behavior
+
+
+1235
+01:02:21,356 --> 01:02:23,796
+to make it more likely that
+users will choose to go
+
+
+1236
+01:02:23,796 --> 01:02:24,886
+into full screen modes.
+
+
+1237
+01:02:25,466 --> 01:02:27,936
+So now more than ever it's
+worth spending the extra time
+
+
+1238
+01:02:27,936 --> 01:02:29,946
+on implementing a great
+full screen experience
+
+
+1239
+01:02:30,026 --> 01:02:33,076
+in your own apps.
+
+
+1240
+01:02:33,326 --> 01:02:36,016
+Now, there's a few behaviors you
+might have felt like in the past
+
+
+1241
+01:02:36,286 --> 01:02:37,396
+that don't hold through anymore.
+
+
+1242
+01:02:37,976 --> 01:02:41,096
+Most importantly, there's no
+distinction between primary
+
+
+1243
+01:02:41,136 --> 01:02:42,236
+and secondary displays.
+
+
+1244
+01:02:43,036 --> 01:02:44,466
+So, an app cannot assume anymore
+
+
+1245
+01:02:44,466 --> 01:02:46,706
+that it has the entire
+screen available to itself
+
+
+1246
+01:02:46,706 --> 01:02:48,856
+on another display
+because now the doc
+
+
+1247
+01:02:48,856 --> 01:02:50,766
+and the Menu bar show
+up there as well.
+
+
+1248
+01:02:50,766 --> 01:02:53,886
+You might want to validate
+that your apps behave properly
+
+
+1249
+01:02:53,886 --> 01:02:56,226
+under these new conditions
+before we ship Mavericks later
+
+
+1250
+01:02:56,226 --> 01:02:56,786
+this year.
+
+
+1251
+01:02:57,246 --> 01:03:01,866
+Another exciting change in
+Mavericks is the TVs can now act
+
+
+1252
+01:03:01,866 --> 01:03:04,066
+as fully independent
+displays via AirPlay.
+
+
+1253
+01:03:04,066 --> 01:03:05,606
+AirPlay is not limited
+
+
+1254
+01:03:05,606 --> 01:03:07,366
+to mirroring the
+primary screen anymore.
+
+
+1255
+01:03:08,016 --> 01:03:09,886
+That opens up whole new
+ways for you to innovate.
+
+
+1256
+01:03:10,666 --> 01:03:13,456
+If your apps would benefit from
+the special presenter display,
+
+
+1257
+01:03:14,026 --> 01:03:16,016
+AirPlay is now an even
+more attractive option.
+
+
+1258
+01:03:16,366 --> 01:03:17,426
+We're looking very much forward
+
+
+1259
+01:03:17,426 --> 01:03:19,376
+to the new ideas you guys
+are going to come up with
+
+
+1260
+01:03:19,566 --> 01:03:21,006
+to leverage this new capability.
+
+
+1261
+01:03:21,506 --> 01:03:24,176
+Next is Map Kit.
+
+
+1262
+01:03:24,426 --> 01:03:27,616
+If you brought Map
+Kit over to the Mac,
+
+
+1263
+01:03:27,616 --> 01:03:30,476
+that's practically the
+identical API that many
+
+
+1264
+01:03:30,476 --> 01:03:32,556
+of you are already
+familiar with from iOS.
+
+
+1265
+01:03:32,586 --> 01:03:35,496
+So you can now have beautiful
+fast vector-based maps
+
+
+1266
+01:03:35,646 --> 01:03:37,466
+integrated with your
+Mac apps as well.
+
+
+1267
+01:03:38,566 --> 01:03:40,786
+In addition to creating the
+actual maps application,
+
+
+1268
+01:03:41,116 --> 01:03:43,066
+they started using this
+new API [inaudible]
+
+
+1269
+01:03:43,066 --> 01:03:44,416
+in Mavericks in various ways.
+
+
+1270
+01:03:44,976 --> 01:03:46,796
+For example, by adding
+a new data detector,
+
+
+1271
+01:03:47,136 --> 01:03:49,596
+all by supporting map
+locations in the calendar app.
+
+
+1272
+01:03:50,196 --> 01:03:54,426
+Map Kit is a really fantastic
+edition to the OS X API.
+
+
+1273
+01:03:54,426 --> 01:03:57,966
+And just like with our other
+cloud services based APIs,
+
+
+1274
+01:03:58,386 --> 01:04:00,826
+it's available to apps shipping
+through the Mac App Store
+
+
+1275
+01:04:00,936 --> 01:04:03,206
+that declare the use of
+Map Kit as a capability.
+
+
+1276
+01:04:03,826 --> 01:04:08,376
+Now, there's numerous
+more APIs in Mavericks
+
+
+1277
+01:04:08,456 --> 01:04:10,156
+that I do not have time
+to cover in this session.
+
+
+1278
+01:04:10,916 --> 01:04:12,866
+AppKit has a fantastic
+new stack view.
+
+
+1279
+01:04:13,156 --> 01:04:15,106
+They even added things
+like vec notifications.
+
+
+1280
+01:04:15,486 --> 01:04:18,286
+But you'll also push
+notifications to a Mac even
+
+
+1281
+01:04:18,286 --> 01:04:20,026
+if you don't have a
+native application for it.
+
+
+1282
+01:04:21,056 --> 01:04:22,966
+You can learn about
+many of these APIs here
+
+
+1283
+01:04:22,966 --> 01:04:24,266
+in later sessions
+at the conference.
+
+
+1284
+01:04:24,846 --> 01:04:27,156
+But for now, I'm going to
+hand over to Matthew Firlik
+
+
+1285
+01:04:27,236 --> 01:04:28,676
+to tell you more about Xcode 5.
+
+
+1286
+01:04:29,516 --> 01:04:36,716
+[ Applause ]
+
+
+1287
+01:04:37,216 --> 01:04:38,526
+>> Thank you, Andreas.
+
+
+1288
+01:04:39,696 --> 01:04:42,176
+Xcode 5 is our latest
+tools release
+
+
+1289
+01:04:42,506 --> 01:04:44,846
+for iOS 7 and OS X Mavericks.
+
+
+1290
+01:04:45,056 --> 01:04:47,916
+And it is packed with features
+I think you guys are going
+
+
+1291
+01:04:48,616 --> 01:04:49,416
+to love.
+
+
+1292
+01:04:49,636 --> 01:04:53,016
+From the earlier demonstrations
+you've seen Xcode's new clean
+
+
+1293
+01:04:53,116 --> 01:04:54,076
+interface design.
+
+
+1294
+01:04:55,106 --> 01:04:58,706
+This design surfaces Xcode's
+familiar workflows and features.
+
+
+1295
+01:04:58,706 --> 01:05:01,716
+It works to minimize clatter
+and really put the focus
+
+
+1296
+01:05:01,756 --> 01:05:04,606
+on the controls and
+your content.
+
+
+1297
+01:05:05,276 --> 01:05:06,756
+To highlight your content,
+
+
+1298
+01:05:06,946 --> 01:05:09,406
+we'd worked to reduce
+the application chrome.
+
+
+1299
+01:05:10,006 --> 01:05:11,356
+Compared with the
+previous release,
+
+
+1300
+01:05:11,586 --> 01:05:13,756
+our toolbar is 30
+percent smaller.
+
+
+1301
+01:05:14,236 --> 01:05:16,236
+And its work is great
+on small displays.
+
+
+1302
+01:05:18,276 --> 01:05:20,526
+We've also focused on
+improving the activity view.
+
+
+1303
+01:05:20,946 --> 01:05:24,116
+You now see more details for
+your activities, bigger icons
+
+
+1304
+01:05:24,116 --> 01:05:27,766
+for issues, and overall
+progress is much easier to see.
+
+
+1305
+01:05:28,296 --> 01:05:31,896
+And throughout the interface,
+you'll see our design focuses
+
+
+1306
+01:05:31,896 --> 01:05:36,066
+on removing borders, simplifying
+items, and through this use
+
+
+1307
+01:05:36,066 --> 01:05:38,246
+of a simple blue highlight
+presenting a feeling
+
+
+1308
+01:05:38,246 --> 01:05:40,886
+of seamlessness and
+fluidity throughout the ID.
+
+
+1309
+01:05:42,076 --> 01:05:45,316
+Now, a focus on simplicity
+does not mean a lost
+
+
+1310
+01:05:45,316 --> 01:05:47,636
+in functionality, actually
+quite to the contrary.
+
+
+1311
+01:05:48,096 --> 01:05:49,566
+In most cases, we were able
+
+
+1312
+01:05:49,566 --> 01:05:52,356
+to put more functionality
+in a smaller space.
+
+
+1313
+01:05:53,246 --> 01:05:54,466
+The UI for looking
+
+
+1314
+01:05:54,466 --> 01:05:56,776
+at project-wide finds is
+a really good example.
+
+
+1315
+01:05:57,486 --> 01:06:00,576
+Comparing a new UI to the
+previous release seen here
+
+
+1316
+01:06:00,576 --> 01:06:02,686
+on the left, you can
+see that we were able
+
+
+1317
+01:06:02,686 --> 01:06:05,976
+to put the same functionality
+in less than half of the space.
+
+
+1318
+01:06:06,716 --> 01:06:09,446
+And in a way that is
+far easier to use.
+
+
+1319
+01:06:10,706 --> 01:06:12,866
+Now, with the additional real
+estate, we wanted to bring
+
+
+1320
+01:06:12,866 --> 01:06:15,276
+to the surface even
+more of your content.
+
+
+1321
+01:06:16,306 --> 01:06:18,886
+In the previous Xcode release,
+search results were shown
+
+
+1322
+01:06:19,096 --> 01:06:20,836
+at a single line displace.
+
+
+1323
+01:06:21,636 --> 01:06:23,516
+Xcode 5, we're bringing
+in wrapping.
+
+
+1324
+01:06:23,926 --> 01:06:26,946
+So, now, you can see even more
+context for your search results.
+
+
+1325
+01:06:27,516 --> 01:06:32,406
+[ Applause ]
+
+
+1326
+01:06:32,906 --> 01:06:33,706
+And if that wasn't enough
+
+
+1327
+01:06:33,706 --> 01:06:36,176
+for bringing the same
+display to issues as well.
+
+
+1328
+01:06:36,486 --> 01:06:37,596
+So for errors and warnings --
+
+
+1329
+01:06:38,516 --> 01:06:43,176
+[ Applause ]
+
+
+1330
+01:06:43,676 --> 01:06:45,886
+-- not that that you have
+issues, but for all the errors
+
+
+1331
+01:06:45,886 --> 01:06:48,146
+and warnings that might come
+up for all the other guys,
+
+
+1332
+01:06:48,396 --> 01:06:49,706
+you can see all of the details.
+
+
+1333
+01:06:51,356 --> 01:06:54,936
+Now, another area of focus
+for us is documentation.
+
+
+1334
+01:06:55,026 --> 01:06:57,226
+And we have a brand
+new interface for you.
+
+
+1335
+01:06:58,076 --> 01:07:01,406
+Documentation is now its own
+separate window using all
+
+
+1336
+01:07:01,406 --> 01:07:02,396
+of the new design elements.
+
+
+1337
+01:07:03,316 --> 01:07:05,676
+Now, on top of some great
+documentation content,
+
+
+1338
+01:07:05,916 --> 01:07:08,206
+you now have better
+and faster searching,
+
+
+1339
+01:07:08,616 --> 01:07:11,756
+scrollable search results,
+tab based browsing,
+
+
+1340
+01:07:12,186 --> 01:07:14,376
+and a great book marking
+system so you can work
+
+
+1341
+01:07:14,376 --> 01:07:16,436
+with multiple documents
+really easily.
+
+
+1342
+01:07:17,516 --> 01:07:22,496
+[ Applause ]
+
+
+1343
+01:07:22,996 --> 01:07:25,056
+And if that wasn't enough,
+once you find a document
+
+
+1344
+01:07:25,056 --> 01:07:27,006
+that you like, the
+new integrated table
+
+
+1345
+01:07:27,006 --> 01:07:29,076
+of contents makes it
+really easy to browse
+
+
+1346
+01:07:29,116 --> 01:07:29,926
+and navigate the content.
+
+
+1347
+01:07:30,516 --> 01:07:34,466
+[ Applause ]
+
+
+1348
+01:07:34,966 --> 01:07:38,196
+You'll see elements of a new
+design throughout our interface,
+
+
+1349
+01:07:38,396 --> 01:07:41,656
+and it really focuses
+on surfacing the value
+
+
+1350
+01:07:41,656 --> 01:07:44,876
+of the technologies that are
+underneath because the same time
+
+
+1351
+01:07:44,876 --> 01:07:47,516
+that we are changing things
+you can see on the front end.
+
+
+1352
+01:07:47,866 --> 01:07:50,946
+We were doing a lot of work
+on the back ends too in ways
+
+
+1353
+01:07:50,946 --> 01:07:54,056
+that you won't be able to see
+but you will definitely feel.
+
+
+1354
+01:07:55,286 --> 01:07:56,696
+Xcode 5 has been converted
+
+
+1355
+01:07:56,696 --> 01:07:59,056
+over to Automatic
+Reference Counting or ARC.
+
+
+1356
+01:07:59,796 --> 01:08:01,036
+And as part of this transition,
+
+
+1357
+01:08:01,316 --> 01:08:03,786
+we have some awesome performance
+wins to share with you.
+
+
+1358
+01:08:04,866 --> 01:08:08,436
+Many of the tasks, new perform
+every day, are much faster
+
+
+1359
+01:08:08,436 --> 01:08:10,676
+in Xcode 5, things
+like searching
+
+
+1360
+01:08:10,676 --> 01:08:13,196
+and incremental builds
+are up to twice as fast.
+
+
+1361
+01:08:14,186 --> 01:08:16,095
+And working with tabs, devices,
+
+
+1362
+01:08:16,156 --> 01:08:18,395
+and project editor
+is quicker than ever.
+
+
+1363
+01:08:19,515 --> 01:08:24,166
+[ Applause ]
+
+
+1364
+01:08:24,666 --> 01:08:27,676
+Inside and out, Xcode
+5 really sings.
+
+
+1365
+01:08:28,926 --> 01:08:31,466
+So on top of the new UI
+and its great foundation
+
+
+1366
+01:08:31,466 --> 01:08:34,805
+of faster technologies, we've
+built some amazing new features.
+
+
+1367
+01:08:35,076 --> 01:08:37,206
+And it starts with
+interface design.
+
+
+1368
+01:08:38,506 --> 01:08:42,026
+Xcode 5 provides access to
+the latest views and controls
+
+
+1369
+01:08:42,185 --> 01:08:44,296
+for iOS 7 and OS X Mavericks.
+
+
+1370
+01:08:44,685 --> 01:08:47,725
+So, you can get started today
+using all of these new UIs
+
+
+1371
+01:08:47,786 --> 01:08:49,616
+and features in your
+application.
+
+
+1372
+01:08:50,696 --> 01:08:54,206
+And, Max demonstrated three new
+editions to our design tools.
+
+
+1373
+01:08:54,606 --> 01:08:57,636
+The new workflow for Auto
+Layout, the Asset Catalog,
+
+
+1374
+01:08:58,006 --> 01:08:59,826
+and the new Preview
+Assistant for iOS.
+
+
+1375
+01:09:00,935 --> 01:09:03,196
+These features in concert
+with other editions
+
+
+1376
+01:09:03,196 --> 01:09:05,416
+to interface builder,
+make it easy for you
+
+
+1377
+01:09:05,416 --> 01:09:08,316
+to design applications
+that look and feel great
+
+
+1378
+01:09:08,716 --> 01:09:09,746
+for all of your users.
+
+
+1379
+01:09:09,746 --> 01:09:12,805
+Now, Mac still a little
+bit of the Thunder 2
+
+
+1380
+01:09:12,805 --> 01:09:15,076
+and showed you another
+great addition to Xcode 5
+
+
+1381
+01:09:15,386 --> 01:09:17,236
+in the form of debug gauges.
+
+
+1382
+01:09:18,326 --> 01:09:20,046
+The debug gauges
+provide a way for you
+
+
+1383
+01:09:20,046 --> 01:09:23,756
+to ensure your application is
+behaving exactly as you expect.
+
+
+1384
+01:09:24,706 --> 01:09:27,866
+You now have CPU memory and
+other information available
+
+
+1385
+01:09:27,866 --> 01:09:32,015
+to you at a glance and in a way
+that is really easy to track.
+
+
+1386
+01:09:33,606 --> 01:09:36,446
+The integrative reports
+provide even more detail
+
+
+1387
+01:09:36,676 --> 01:09:38,106
+on the performance
+of your application.
+
+
+1388
+01:09:38,636 --> 01:09:40,416
+So you can dig in
+when issues arise.
+
+
+1389
+01:09:42,046 --> 01:09:45,886
+Now, as Max noted, the gauges
+perform high level profiling
+
+
+1390
+01:09:45,996 --> 01:09:48,856
+in a super efficient manner
+so as not to interrupt
+
+
+1391
+01:09:49,086 --> 01:09:50,746
+with your own applications
+performance.
+
+
+1392
+01:09:51,356 --> 01:09:52,776
+But when you need
+more information,
+
+
+1393
+01:09:52,776 --> 01:09:55,556
+the power of instruments
+is just a click away.
+
+
+1394
+01:09:56,086 --> 01:09:58,586
+We'll launch a session
+automatically configured
+
+
+1395
+01:09:58,616 --> 01:10:01,406
+to your application and
+you'll get all the information
+
+
+1396
+01:10:01,596 --> 01:10:02,606
+you need.
+
+
+1397
+01:10:03,376 --> 01:10:09,066
+Now we have gauges for CPU,
+memory and energy and two others
+
+
+1398
+01:10:09,066 --> 01:10:11,356
+in the form of iCloud
+and OpenGL ES.
+
+
+1399
+01:10:11,356 --> 01:10:14,936
+And these gauges present
+themselves automatically
+
+
+1400
+01:10:15,206 --> 01:10:16,676
+when you start using
+these technologies.
+
+
+1401
+01:10:17,756 --> 01:10:20,076
+So we think debug gauges are
+going to be a great way for you
+
+
+1402
+01:10:20,076 --> 01:10:23,726
+to monitor, maintain, and
+improve the performance
+
+
+1403
+01:10:23,956 --> 01:10:24,846
+for your applications.
+
+
+1404
+01:10:26,176 --> 01:10:28,446
+But we didn't stop there
+because we have some other great
+
+
+1405
+01:10:28,446 --> 01:10:30,836
+additions to the
+debugging technologies.
+
+
+1406
+01:10:31,316 --> 01:10:34,346
+First up, our debugging
+services.
+
+
+1407
+01:10:35,416 --> 01:10:38,356
+Xcode provides new functionality
+to help you during development.
+
+
+1408
+01:10:39,006 --> 01:10:41,576
+For example, we can
+simulate a backgroundd fetch
+
+
+1409
+01:10:41,776 --> 01:10:44,996
+for iOS 7 making it really easy
+for you to adapt to the new API.
+
+
+1410
+01:10:46,506 --> 01:10:50,016
+We can also simulate location
+changes for iOS and OS X
+
+
+1411
+01:10:50,676 --> 01:10:54,136
+which are great to use with
+colocation and with maps.
+
+
+1412
+01:10:54,956 --> 01:10:56,066
+And a cocoa view debugging
+
+
+1413
+01:10:56,066 --> 01:10:58,926
+that Max demonstrated before
+is a great way for you
+
+
+1414
+01:10:58,926 --> 01:11:00,526
+to be interactive
+with your application
+
+
+1415
+01:11:00,946 --> 01:11:04,976
+and see things you might
+not been able to before.
+
+
+1416
+01:11:05,346 --> 01:11:08,676
+Another area of focus for us was
+on presentation of variables.
+
+
+1417
+01:11:09,756 --> 01:11:13,016
+A new variables view is
+simple, clean, and compact.
+
+
+1418
+01:11:13,836 --> 01:11:16,406
+And the improvements of the data
+formatters really highlight the
+
+
+1419
+01:11:16,406 --> 01:11:17,506
+essential information.
+
+
+1420
+01:11:18,816 --> 01:11:21,786
+But, we know that not all
+objects present themselves well
+
+
+1421
+01:11:21,786 --> 01:11:23,816
+in summary or in textural form.
+
+
+1422
+01:11:24,426 --> 01:11:26,656
+So for this release we've
+integrated a technology
+
+
+1423
+01:11:26,786 --> 01:11:29,476
+that should be very familiar
+to you right in the debugger
+
+
+1424
+01:11:29,956 --> 01:11:32,366
+in the form of Quick Look.
+
+
+1425
+01:11:32,926 --> 01:11:36,006
+Now, in the variables
+view and in the editor
+
+
+1426
+01:11:36,866 --> 01:11:39,156
+across every variable, you
+will see a Quick Look button.
+
+
+1427
+01:11:39,746 --> 01:11:41,156
+And in this case, a poke
+
+
+1428
+01:11:41,156 --> 01:11:43,066
+in the eye is actually
+a really good thing.
+
+
+1429
+01:11:44,616 --> 01:11:47,726
+We now have Quick Look support
+for common geometric types
+
+
+1430
+01:11:47,726 --> 01:11:50,906
+like points, rects,
+sizes, and bezier paths.
+
+
+1431
+01:11:51,516 --> 01:11:59,596
+[ Applause ]
+
+
+1432
+01:12:00,096 --> 01:12:02,796
+Working with plain or
+rich text, super easy.
+
+
+1433
+01:12:03,956 --> 01:12:07,246
+Media types like images present
+themselves really naturally.
+
+
+1434
+01:12:08,646 --> 01:12:11,886
+Object types like Pads
+and URLs actually resolve
+
+
+1435
+01:12:11,886 --> 01:12:13,996
+to their remote content
+whether it's a website
+
+
+1436
+01:12:14,216 --> 01:12:15,526
+or a local document.
+
+
+1437
+01:12:16,516 --> 01:12:19,996
+[ Applause ]
+
+
+1438
+01:12:20,496 --> 01:12:22,146
+And when running
+on OS X Mavericks,
+
+
+1439
+01:12:22,146 --> 01:12:25,226
+locations present themselves
+using the gorgeous new map view.
+
+
+1440
+01:12:28,286 --> 01:12:29,606
+These are just a few
+
+
+1441
+01:12:29,606 --> 01:12:31,906
+of the Quick Look support
+we've innovated in the debugger
+
+
+1442
+01:12:32,086 --> 01:12:34,456
+and I'm absolutely certain you
+guys are going to love this.
+
+
+1443
+01:12:35,896 --> 01:12:39,466
+So the combination of debug
+gauges, debug services,
+
+
+1444
+01:12:39,666 --> 01:12:42,486
+and the Quick Look for
+variables, all great ways
+
+
+1445
+01:12:42,486 --> 01:12:44,066
+for you guys to get
+more information
+
+
+1446
+01:12:44,376 --> 01:12:45,326
+about your applications.
+
+
+1447
+01:12:46,696 --> 01:12:48,196
+Now, debugging is generally
+
+
+1448
+01:12:48,196 --> 01:12:50,586
+about getting your application
+into a working state.
+
+
+1449
+01:12:51,246 --> 01:12:54,616
+In contrast, unit testing is
+about keeping it in that state.
+
+
+1450
+01:12:55,856 --> 01:12:58,456
+We feel that testing is a
+really essential component
+
+
+1451
+01:12:58,606 --> 01:12:59,976
+to writing a great application.
+
+
+1452
+01:13:00,406 --> 01:13:01,176
+And for this release,
+
+
+1453
+01:13:01,176 --> 01:13:03,546
+we're providing some new
+powerful testing tools
+
+
+1454
+01:13:03,806 --> 01:13:04,506
+for you to use.
+
+
+1455
+01:13:05,246 --> 01:13:06,216
+And to show you a
+little bit more,
+
+
+1456
+01:13:06,216 --> 01:13:07,486
+I'm going to give
+you demonstration.
+
+
+1457
+01:13:08,516 --> 01:13:13,516
+[ Applause ]
+
+
+1458
+01:13:14,016 --> 01:13:18,266
+So here we have the
+Adventure project that Max
+
+
+1459
+01:13:18,266 --> 01:13:19,206
+and I have been working on.
+
+
+1460
+01:13:19,816 --> 01:13:22,006
+Max has been adding some of
+the configuration screens.
+
+
+1461
+01:13:22,056 --> 01:13:25,086
+I've been working on adding
+some new villainous characters
+
+
+1462
+01:13:25,086 --> 01:13:26,646
+and some additional
+game play options.
+
+
+1463
+01:13:27,586 --> 01:13:29,926
+Now along the way, Max and I
+have been writing unit tests
+
+
+1464
+01:13:30,466 --> 01:13:32,276
+to make sure that
+we're staying on track
+
+
+1465
+01:13:32,276 --> 01:13:33,336
+and then we're not regressing.
+
+
+1466
+01:13:33,936 --> 01:13:34,666
+And we've been using some
+
+
+1467
+01:13:34,666 --> 01:13:36,606
+of the new features
+of Xcode 5 with that.
+
+
+1468
+01:13:38,196 --> 01:13:40,516
+One of the new features
+I've been using is the new
+
+
+1469
+01:13:40,626 --> 01:13:41,576
+test navigator.
+
+
+1470
+01:13:42,496 --> 01:13:43,886
+When I select here on
+the left hand side,
+
+
+1471
+01:13:43,886 --> 01:13:46,446
+the test navigator now
+shows you all of the tests
+
+
+1472
+01:13:46,656 --> 01:13:50,026
+for your project organized by
+test class and by test case,
+
+
+1473
+01:13:50,336 --> 01:13:53,236
+making it really easy for you
+to navigate and select an item.
+
+
+1474
+01:13:54,416 --> 01:13:57,376
+The navigator can show you all
+of your tests or just the ones
+
+
+1475
+01:13:57,606 --> 01:13:59,136
+that are configured for
+your current scheme.
+
+
+1476
+01:14:00,716 --> 01:14:02,606
+Now as you might expect,
+I made some changes
+
+
+1477
+01:14:02,606 --> 01:14:04,496
+to my project right
+before coming up on stage.
+
+
+1478
+01:14:04,826 --> 01:14:07,046
+And I like to see how I'm doing.
+
+
+1479
+01:14:07,896 --> 01:14:10,436
+So we'll go ahead and
+perform the test command here
+
+
+1480
+01:14:10,876 --> 01:14:11,646
+and see the results.
+
+
+1481
+01:14:12,396 --> 01:14:14,446
+And you can see that
+the status for all
+
+
+1482
+01:14:14,446 --> 01:14:17,016
+of my tests is now displayed
+in the test navigator.
+
+
+1483
+01:14:17,916 --> 01:14:19,566
+All of the passing
+tests are in green
+
+
+1484
+01:14:19,776 --> 01:14:21,366
+and the failing tests
+are in red.
+
+
+1485
+01:14:22,116 --> 01:14:24,836
+We can see I have a couple red
+icons here so we know that --
+
+
+1486
+01:14:24,836 --> 01:14:26,906
+I probably shouldn't check
+this code in quite yet.
+
+
+1487
+01:14:28,356 --> 01:14:31,376
+Let's select one of
+the failing tests.
+
+
+1488
+01:14:31,436 --> 01:14:35,086
+This test is testing that
+the chase radius for one
+
+
+1489
+01:14:35,086 --> 01:14:37,076
+of my anime characters
+is actually larger
+
+
+1490
+01:14:37,076 --> 01:14:39,226
+than the character himself,
+seems to make sense.
+
+
+1491
+01:14:40,126 --> 01:14:41,776
+I'd like to actually
+debug this test
+
+
+1492
+01:14:41,776 --> 01:14:43,046
+to figure out why it's failing.
+
+
+1493
+01:14:43,576 --> 01:14:46,326
+And to do that, I'm going to
+use a new feature of Xcode 5.
+
+
+1494
+01:14:47,076 --> 01:14:48,386
+I'll put a breakpoint
+in my test.
+
+
+1495
+01:14:48,986 --> 01:14:50,876
+But in order to just
+work on this one test,
+
+
+1496
+01:14:51,726 --> 01:14:53,156
+I'll hover over this indicator.
+
+
+1497
+01:14:53,156 --> 01:14:54,666
+And you'll see it turns
+into a play button.
+
+
+1498
+01:14:55,446 --> 01:14:58,116
+This gives me the ability
+to run just this one test.
+
+
+1499
+01:14:59,516 --> 01:15:05,646
+[ Applause ]
+
+
+1500
+01:15:06,146 --> 01:15:07,466
+Actually, this feature
+is even cooler.
+
+
+1501
+01:15:07,996 --> 01:15:10,076
+Anywhere you see this
+status icons you get the
+
+
+1502
+01:15:10,076 --> 01:15:11,066
+same functionality.
+
+
+1503
+01:15:11,416 --> 01:15:12,506
+So if I clicked on the icon
+
+
+1504
+01:15:12,506 --> 01:15:14,846
+at the class level it
+would perform all the tests
+
+
+1505
+01:15:14,846 --> 01:15:17,586
+in the class at the
+bundle level, all the tests
+
+
+1506
+01:15:17,586 --> 01:15:18,756
+with a bundle and so forth.
+
+
+1507
+01:15:19,606 --> 01:15:21,346
+For this case, I just
+want to run this one test.
+
+
+1508
+01:15:22,076 --> 01:15:24,296
+So I click here, and
+it's going to build
+
+
+1509
+01:15:24,296 --> 01:15:25,886
+and now I'm stopped
+here right into my test.
+
+
+1510
+01:15:27,746 --> 01:15:30,456
+To debug this a little further,
+I want to get some information
+
+
+1511
+01:15:30,456 --> 01:15:33,036
+on the variables to make sure
+that the values are as I expect.
+
+
+1512
+01:15:33,876 --> 01:15:35,756
+I'll hover over the
+chase radius here
+
+
+1513
+01:15:35,756 --> 01:15:38,186
+and if you can look really
+closely, a little tool that pop
+
+
+1514
+01:15:38,186 --> 01:15:40,816
+up showing that that the value
+is 8,000, that's correct,
+
+
+1515
+01:15:40,816 --> 01:15:42,226
+that's what I expected to be.
+
+
+1516
+01:15:43,216 --> 01:15:44,996
+Let's take a look
+at this next piece.
+
+
+1517
+01:15:44,996 --> 01:15:46,546
+I have an image for
+the character.
+
+
+1518
+01:15:46,546 --> 01:15:48,206
+I want to make sure
+that it's the right one.
+
+
+1519
+01:15:48,826 --> 01:15:51,676
+I'll hover over it and click
+the little Quick Look icon
+
+
+1520
+01:15:52,016 --> 01:15:52,576
+and there we go.
+
+
+1521
+01:15:52,756 --> 01:15:53,976
+There is a picture of my boss.
+
+
+1522
+01:15:54,516 --> 01:15:58,726
+[ Applause ]
+
+
+1523
+01:15:59,226 --> 01:16:00,416
+Actually, I want to
+clarify a second.
+
+
+1524
+01:16:00,496 --> 01:16:01,856
+I said that's a picture
+of my boss.
+
+
+1525
+01:16:02,126 --> 01:16:04,136
+It's not actually a picture
+of my boss, it's picture
+
+
+1526
+01:16:04,136 --> 01:16:06,506
+of the character in the game.
+
+
+1527
+01:16:06,596 --> 01:16:06,956
+All right.
+
+
+1528
+01:16:07,226 --> 01:16:07,906
+Let's move on.
+
+
+1529
+01:16:08,576 --> 01:16:10,456
+I can also check the size
+
+
+1530
+01:16:10,456 --> 01:16:12,856
+of the character is correct
+and that looks right.
+
+
+1531
+01:16:12,856 --> 01:16:14,296
+You know what?
+
+
+1532
+01:16:14,296 --> 01:16:15,166
+I see the problem here.
+
+
+1533
+01:16:15,206 --> 01:16:16,536
+It's actually just
+a logic error.
+
+
+1534
+01:16:16,946 --> 01:16:18,766
+I use greater than
+instead of less than.
+
+
+1535
+01:16:19,296 --> 01:16:22,516
+So let me fix that and
+remove my breakpoint.
+
+
+1536
+01:16:22,976 --> 01:16:24,676
+And let's run the test
+again to make sure
+
+
+1537
+01:16:24,676 --> 01:16:27,286
+that that fix is correct.
+
+
+1538
+01:16:27,436 --> 01:16:29,316
+And sure enough,
+my test succeeds,
+
+
+1539
+01:16:29,396 --> 01:16:32,056
+the indication is updated and
+now I know that I can move on.
+
+
+1540
+01:16:32,716 --> 01:16:35,126
+So just like that I was able
+to use the navigator to get
+
+
+1541
+01:16:35,126 --> 01:16:37,766
+to my tests that are failing,
+used the status indication
+
+
+1542
+01:16:37,766 --> 01:16:40,256
+in your workflows to
+focus on this one test.
+
+
+1543
+01:16:41,966 --> 01:16:44,386
+Now, we've seen the navigator,
+I have some other failing tests.
+
+
+1544
+01:16:44,906 --> 01:16:47,066
+They're little bit strewn
+out across my project.
+
+
+1545
+01:16:47,066 --> 01:16:49,406
+I'm going to turn on
+the filter at the bottom
+
+
+1546
+01:16:49,406 --> 01:16:51,856
+of the test navigator to show
+me only the failing tests.
+
+
+1547
+01:16:53,506 --> 01:16:55,826
+Now, I see here that I
+have three or four tests
+
+
+1548
+01:16:55,916 --> 01:16:59,766
+that look all the same and
+are failing in a similar way.
+
+
+1549
+01:17:00,156 --> 01:17:02,416
+Earlier, I added some new
+functionality to the game,
+
+
+1550
+01:17:02,536 --> 01:17:04,446
+a new way for anime characters
+
+
+1551
+01:17:04,496 --> 01:17:05,846
+to meet their maker,
+so to speak.
+
+
+1552
+01:17:06,196 --> 01:17:07,986
+It's affectionately known
+as splort [phonetic].
+
+
+1553
+01:17:08,296 --> 01:17:10,796
+You can imagine what it does.
+
+
+1554
+01:17:10,796 --> 01:17:13,896
+To test for this, I first
+look for the characters health
+
+
+1555
+01:17:14,006 --> 01:17:17,816
+to be non-zero beforehand,
+tell them to splort
+
+
+1556
+01:17:17,906 --> 01:17:20,466
+and then test afterwards
+to see that is zero.
+
+
+1557
+01:17:21,236 --> 01:17:22,206
+This test is failing.
+
+
+1558
+01:17:22,936 --> 01:17:24,816
+Now the test itself
+is relatively simple,
+
+
+1559
+01:17:25,116 --> 01:17:26,686
+so it's probably
+somewhere in my AppLogic.
+
+
+1560
+01:17:27,606 --> 01:17:29,166
+That's okay, we can take a look.
+
+
+1561
+01:17:30,226 --> 01:17:32,906
+I'll command click on the
+API to jump right to it.
+
+
+1562
+01:17:33,696 --> 01:17:35,996
+And this kind of highlights
+are really interesting scenario
+
+
+1563
+01:17:36,066 --> 01:17:37,986
+where sometimes you'll
+be working on your tests
+
+
+1564
+01:17:38,586 --> 01:17:40,056
+and sometimes you'll
+be working on your API.
+
+
+1565
+01:17:40,996 --> 01:17:42,696
+But often you want to
+correlate between the two.
+
+
+1566
+01:17:42,696 --> 01:17:44,926
+To make sure you're
+making decisions correctly
+
+
+1567
+01:17:45,176 --> 01:17:45,916
+on both sides.
+
+
+1568
+01:17:46,996 --> 01:17:49,086
+Xcode 5 provides a really
+great way to do this.
+
+
+1569
+01:17:50,296 --> 01:17:51,326
+Let's collapse the navigator
+
+
+1570
+01:17:51,326 --> 01:17:52,556
+to give ourselves
+a little more room.
+
+
+1571
+01:17:53,886 --> 01:17:56,506
+With -- my focus inside of
+this method, I'm going to click
+
+
+1572
+01:17:56,506 --> 01:17:59,286
+on the related files
+pop-up here and we'll see
+
+
+1573
+01:17:59,286 --> 01:18:00,636
+that there are two
+new categories.
+
+
+1574
+01:18:01,066 --> 01:18:03,446
+Test classes and test colors.
+
+
+1575
+01:18:04,366 --> 01:18:06,936
+I'm going to hold on the Option
+key and select the test colors,
+
+
+1576
+01:18:07,116 --> 01:18:08,706
+and have it opened up
+in the assistant editor.
+
+
+1577
+01:18:09,546 --> 01:18:10,476
+Now, what is this showing me?
+
+
+1578
+01:18:11,036 --> 01:18:13,406
+It's showing me on the
+left hand side my API.
+
+
+1579
+01:18:13,516 --> 01:18:15,556
+And the right hand side,
+it's showing the tests
+
+
+1580
+01:18:15,756 --> 01:18:17,316
+that directly call that API.
+
+
+1581
+01:18:17,976 --> 01:18:19,576
+Making it really easier
+for me to correlate.
+
+
+1582
+01:18:21,356 --> 01:18:23,016
+And actually, this is
+really helpful in this case
+
+
+1583
+01:18:23,096 --> 01:18:25,646
+because I see that my test
+is testing for health,
+
+
+1584
+01:18:26,146 --> 01:18:27,966
+but I don't actually
+use that value any
+
+
+1585
+01:18:27,966 --> 01:18:29,296
+over here in my actual method.
+
+
+1586
+01:18:29,776 --> 01:18:31,706
+And it turns out
+that's my fault.
+
+
+1587
+01:18:31,966 --> 01:18:33,696
+What I forgot to do
+was to call super,
+
+
+1588
+01:18:33,696 --> 01:18:35,346
+when I implemented this method.
+
+
+1589
+01:18:36,146 --> 01:18:37,456
+So let's go ahead and fix that.
+
+
+1590
+01:18:38,026 --> 01:18:39,726
+And while I'm still
+in the assistant here,
+
+
+1591
+01:18:39,916 --> 01:18:41,366
+I'll just run my other tests.
+
+
+1592
+01:18:42,526 --> 01:18:43,786
+Sure enough, that was the fix.
+
+
+1593
+01:18:44,186 --> 01:18:46,026
+We'll use the power of this
+system here to just flip
+
+
+1594
+01:18:46,026 --> 01:18:49,276
+to the next one and make sure
+that that one is fixed too and,
+
+
+1595
+01:18:49,276 --> 01:18:50,266
+yep that was my problem.
+
+
+1596
+01:18:51,066 --> 01:18:54,046
+So just like that, I was able
+to correlate my API and my tests
+
+
+1597
+01:18:54,636 --> 01:18:56,796
+and work with them
+together to fix my problem.
+
+
+1598
+01:18:57,316 --> 01:18:59,356
+So that was just a
+quick view of some
+
+
+1599
+01:18:59,356 --> 01:19:01,526
+of the great new testing
+features in Xcode 5.
+
+
+1600
+01:19:02,246 --> 01:19:02,946
+Let's go back to slides.
+
+
+1601
+01:19:03,516 --> 01:19:12,156
+[ Applause ]
+
+
+1602
+01:19:12,656 --> 01:19:17,186
+So the new unit testing features
+of Xcode, the test navigator,
+
+
+1603
+01:19:17,446 --> 01:19:19,916
+the assistant editor, and the
+new workflow integrations,
+
+
+1604
+01:19:20,396 --> 01:19:23,626
+all great ways for you to
+make testing a seamless part
+
+
+1605
+01:19:23,626 --> 01:19:24,876
+of your development workflow.
+
+
+1606
+01:19:25,566 --> 01:19:30,566
+Now, another investment for
+us in the area of testing was
+
+
+1607
+01:19:30,566 --> 01:19:31,966
+in the test framework itself.
+
+
+1608
+01:19:32,696 --> 01:19:33,446
+And for this release,
+
+
+1609
+01:19:33,446 --> 01:19:35,716
+we are announcing a
+new framework XC test.
+
+
+1610
+01:19:37,086 --> 01:19:39,016
+XC test is derived from OCUnit.
+
+
+1611
+01:19:39,726 --> 01:19:42,036
+And for this release we've
+made some minor enhancements.
+
+
+1612
+01:19:42,816 --> 01:19:45,196
+Going forward, XC test
+will be our vehicle
+
+
+1613
+01:19:45,196 --> 01:19:47,586
+for providing great
+testing features for you.
+
+
+1614
+01:19:48,476 --> 01:19:50,686
+Now Xcode 5 continues
+to include OC unit
+
+
+1615
+01:19:51,116 --> 01:19:53,636
+and it includes a powerful
+migration utility for you
+
+
+1616
+01:19:53,636 --> 01:19:56,156
+to convert over whenever
+you're ready.
+
+
+1617
+01:19:57,356 --> 01:19:59,666
+Now, from all the
+feedback you've provided,
+
+
+1618
+01:19:59,716 --> 01:20:02,486
+the number one request
+you've had in the area
+
+
+1619
+01:20:02,486 --> 01:20:05,066
+of testing is better
+ways to integrate it
+
+
+1620
+01:20:05,206 --> 01:20:06,416
+into your automation systems.
+
+
+1621
+01:20:07,146 --> 01:20:09,786
+And with Xcode 5, we have
+a great new option for you
+
+
+1622
+01:20:10,056 --> 01:20:11,906
+in the form of command
+line testing.
+
+
+1623
+01:20:12,516 --> 01:20:17,896
+[ Applause ]
+
+
+1624
+01:20:18,396 --> 01:20:20,296
+I didn't know a terminal
+window is so exciting.
+
+
+1625
+01:20:22,036 --> 01:20:25,086
+The test command is now fully
+supported from the command line.
+
+
+1626
+01:20:25,796 --> 01:20:28,906
+And this command mirrors the
+test action inside of the IDE.
+
+
+1627
+01:20:29,456 --> 01:20:31,346
+So, your investment in
+setting up your schemes
+
+
+1628
+01:20:31,346 --> 01:20:34,746
+and your test plans now pay
+off beautifully inside the IDE
+
+
+1629
+01:20:35,326 --> 01:20:35,726
+and out.
+
+
+1630
+01:20:36,946 --> 01:20:37,736
+The command allows you
+
+
+1631
+01:20:37,736 --> 01:20:39,696
+to specify the destination
+you'd like.
+
+
+1632
+01:20:40,046 --> 01:20:42,456
+So, for example, you can
+target one of the simulators.
+
+
+1633
+01:20:43,306 --> 01:20:46,136
+As you might expect, you can
+also target a connected device.
+
+
+1634
+01:20:47,266 --> 01:20:48,746
+And, as a little
+gift to you guys,
+
+
+1635
+01:20:48,746 --> 01:20:51,006
+you can also specify
+multiple destinations
+
+
+1636
+01:20:51,266 --> 01:20:52,416
+in a single invocation.
+
+
+1637
+01:20:53,516 --> 01:20:57,156
+[ Applause ]
+
+
+1638
+01:20:57,656 --> 01:20:59,306
+So we think this is going
+to be a great addition
+
+
+1639
+01:20:59,436 --> 01:21:02,826
+for all of your workflows.
+
+
+1640
+01:21:02,826 --> 01:21:03,106
+Apple IDs.
+
+
+1641
+01:21:04,326 --> 01:21:07,726
+Your Apple ID is your
+identity, but it's also your key
+
+
+1642
+01:21:07,726 --> 01:21:08,816
+to communicating with Apple.
+
+
+1643
+01:21:09,456 --> 01:21:11,906
+And for this release we've
+made Apple IDs simple
+
+
+1644
+01:21:12,266 --> 01:21:14,326
+and more powerful to use.
+
+
+1645
+01:21:14,896 --> 01:21:19,306
+Xcode 5 now includes a new
+Accounts pane to manage all
+
+
+1646
+01:21:19,306 --> 01:21:21,126
+of the Accounts that
+the ID will use.
+
+
+1647
+01:21:22,276 --> 01:21:24,876
+Entering your Apple ID
+gives you access to all
+
+
+1648
+01:21:24,876 --> 01:21:27,376
+of the assets necessary
+for App Store development.
+
+
+1649
+01:21:28,246 --> 01:21:30,716
+And for those amongst you
+who have multiple Apple IDs,
+
+
+1650
+01:21:30,966 --> 01:21:33,176
+you can enter them all into
+the panel here and select
+
+
+1651
+01:21:33,226 --> 01:21:34,296
+which one you want to use
+
+
+1652
+01:21:34,646 --> 01:21:37,956
+at anytime including
+specifying them per project.
+
+
+1653
+01:21:38,516 --> 01:21:45,146
+[ Applause ]
+
+
+1654
+01:21:45,646 --> 01:21:46,876
+And to take things
+a step further,
+
+
+1655
+01:21:46,876 --> 01:21:48,936
+we've built some great
+functionality on top of this
+
+
+1656
+01:21:49,336 --> 01:21:52,086
+in the form of Automatic
+Project Configuration.
+
+
+1657
+01:21:52,586 --> 01:21:55,316
+Wrong button there.
+
+
+1658
+01:21:55,316 --> 01:21:59,336
+Automatic Project Configuration.
+
+
+1659
+01:21:59,616 --> 01:22:02,126
+So, with each platform release,
+
+
+1660
+01:22:02,806 --> 01:22:05,486
+we give you guys amazing new
+features and capabilities,
+
+
+1661
+01:22:05,916 --> 01:22:08,716
+each with their own options and
+also with some requirements.
+
+
+1662
+01:22:09,166 --> 01:22:11,006
+And we wanted to make it
+really easy for you guys
+
+
+1663
+01:22:11,036 --> 01:22:12,466
+to get started with
+these features.
+
+
+1664
+01:22:12,976 --> 01:22:13,976
+So, we've built a section
+
+
+1665
+01:22:13,976 --> 01:22:16,816
+of the Project Editor
+dedicated directly to each
+
+
+1666
+01:22:16,816 --> 01:22:19,716
+of these capabilities with
+all the necessary requirements
+
+
+1667
+01:22:19,716 --> 01:22:21,266
+and options in one place.
+
+
+1668
+01:22:22,266 --> 01:22:24,956
+And getting started with
+the feature is really easy.
+
+
+1669
+01:22:25,476 --> 01:22:27,856
+It's a simple matter
+of flipping a switch.
+
+
+1670
+01:22:28,746 --> 01:22:31,876
+Doing so, let's extra -- make
+all of the necessary changes
+
+
+1671
+01:22:32,076 --> 01:22:33,496
+to set up your machine
+for development.
+
+
+1672
+01:22:33,996 --> 01:22:36,956
+That includes changing project
+settings, adding frameworks,
+
+
+1673
+01:22:37,226 --> 01:22:40,256
+setting entitlements, and
+making all of the requests
+
+
+1674
+01:22:40,256 --> 01:22:42,606
+and downloads necessary
+for App IDs,
+
+
+1675
+01:22:42,936 --> 01:22:44,926
+provisioning profiles,
+and certificates.
+
+
+1676
+01:22:45,516 --> 01:22:53,686
+[ Applause ]
+
+
+1677
+01:22:54,186 --> 01:22:58,416
+From start to finish, you
+can stay in Xcode and focus
+
+
+1678
+01:22:58,416 --> 01:22:59,596
+on the work you want to do
+
+
+1679
+01:22:59,866 --> 01:23:03,136
+and frankly let Xcode do
+all of this work for you.
+
+
+1680
+01:23:03,696 --> 01:23:08,246
+We wanted to provide also some
+great source control features
+
+
+1681
+01:23:08,246 --> 01:23:09,026
+for you to use.
+
+
+1682
+01:23:09,326 --> 01:23:11,716
+And in order to do
+that, we re-imagined
+
+
+1683
+01:23:11,716 --> 01:23:14,606
+and redesigned our workflows
+to integrate them directly
+
+
+1684
+01:23:14,606 --> 01:23:16,256
+into the project life cycle.
+
+
+1685
+01:23:17,846 --> 01:23:21,176
+In Xcode 5, you will find a new
+top-level Source Control menu
+
+
+1686
+01:23:21,456 --> 01:23:24,456
+with all of the options you
+need and accessible at any time
+
+
+1687
+01:23:24,756 --> 01:23:25,926
+in a really simple manner.
+
+
+1688
+01:23:27,216 --> 01:23:29,276
+When you want to access the
+project for the first time,
+
+
+1689
+01:23:29,356 --> 01:23:31,946
+the new checkout workflow
+makes that really easy.
+
+
+1690
+01:23:32,486 --> 01:23:35,546
+Select the repository, select
+the branch, and Xcode will check
+
+
+1691
+01:23:35,546 --> 01:23:37,256
+out your project
+and open it for you.
+
+
+1692
+01:23:38,456 --> 01:23:39,876
+Now, once you have
+the project open,
+
+
+1693
+01:23:40,096 --> 01:23:42,516
+you'll notice the new working
+copies area of the menu.
+
+
+1694
+01:23:43,166 --> 01:23:45,676
+This provides a list of all the
+working copies you have opened
+
+
+1695
+01:23:45,676 --> 01:23:48,996
+in your project plus their
+current branches, making it easy
+
+
+1696
+01:23:48,996 --> 01:23:50,806
+for you to keep track of
+what you're working on.
+
+
+1697
+01:23:52,136 --> 01:23:54,546
+The Associated Branch
+menu gives you all
+
+
+1698
+01:23:54,546 --> 01:23:56,396
+of the branch management
+functions you need,
+
+
+1699
+01:23:56,476 --> 01:23:59,296
+such as creating new
+branches, switching branches,
+
+
+1700
+01:23:59,586 --> 01:24:02,106
+and merging right from
+inside the project workflow.
+
+
+1701
+01:24:03,436 --> 01:24:06,166
+And when you want more detailed
+information about what's changed
+
+
+1702
+01:24:06,166 --> 01:24:06,956
+in your working copy,
+
+
+1703
+01:24:07,456 --> 01:24:09,736
+the Integrative History
+View provides a browsable
+
+
+1704
+01:24:09,836 --> 01:24:12,626
+and searchable display
+that works across all
+
+
+1705
+01:24:12,626 --> 01:24:13,356
+of your working copies.
+
+
+1706
+01:24:15,466 --> 01:24:17,316
+For this release,
+we've really focused
+
+
+1707
+01:24:17,316 --> 01:24:19,406
+on giving you guys great
+Source Control tools.
+
+
+1708
+01:24:19,826 --> 01:24:21,326
+We've added functionality
+to the editor,
+
+
+1709
+01:24:21,426 --> 01:24:24,826
+giving you the preferences
+and integrated Subversion 1.7.
+
+
+1710
+01:24:25,646 --> 01:24:27,866
+So, for all of you not
+using Source Control today,
+
+
+1711
+01:24:28,026 --> 01:24:33,666
+I highly recommend you guys
+give this new features a try.
+
+
+1712
+01:24:33,876 --> 01:24:34,976
+Continuous integration.
+
+
+1713
+01:24:36,246 --> 01:24:38,016
+For those of you not
+familiar with this term,
+
+
+1714
+01:24:38,216 --> 01:24:41,466
+Continuous integration is the
+practice of taking changes
+
+
+1715
+01:24:41,466 --> 01:24:44,036
+from many developers and
+merging them frequently.
+
+
+1716
+01:24:44,646 --> 01:24:47,136
+Ensuring the code
+builds, your tests pass,
+
+
+1717
+01:24:47,366 --> 01:24:49,706
+and that generally your
+project meets your requirements.
+
+
+1718
+01:24:50,566 --> 01:24:54,326
+By integrating frequently,
+you can minimize the effect
+
+
+1719
+01:24:54,326 --> 01:24:58,466
+of any individual change, often
+known as integration hell.
+
+
+1720
+01:25:01,466 --> 01:25:04,796
+Now integration systems need to
+provide a myriad of features.
+
+
+1721
+01:25:05,056 --> 01:25:07,056
+And they need to fit well
+in your development process.
+
+
+1722
+01:25:08,376 --> 01:25:09,776
+One item that is often missing
+
+
+1723
+01:25:09,776 --> 01:25:12,906
+from these systems is
+tight IDE Integration,
+
+
+1724
+01:25:13,906 --> 01:25:16,056
+which you want are
+continuous integration systems
+
+
+1725
+01:25:16,056 --> 01:25:18,656
+that are an extension of
+your development process.
+
+
+1726
+01:25:19,266 --> 01:25:20,296
+In fact, you want them built
+
+
+1727
+01:25:20,296 --> 01:25:22,216
+on the native concepts
+of your tools.
+
+
+1728
+01:25:23,646 --> 01:25:26,086
+And for Xcode 5, that's
+exactly what we've done
+
+
+1729
+01:25:26,316 --> 01:25:28,136
+in the form of bots.
+
+
+1730
+01:25:29,516 --> 01:25:33,766
+[ Applause ]
+
+
+1731
+01:25:34,266 --> 01:25:36,736
+Cool icon, even cooler
+technology.
+
+
+1732
+01:25:38,816 --> 01:25:41,196
+Bots are continuous
+integration systems that --
+
+
+1733
+01:25:41,696 --> 01:25:44,736
+well, bots are tasks and
+they run on OS X server.
+
+
+1734
+01:25:45,106 --> 01:25:48,746
+And their primary reason for
+being is to do your bidding.
+
+
+1735
+01:25:49,696 --> 01:25:52,076
+So bots use the Xcode
+5 technologies
+
+
+1736
+01:25:52,226 --> 01:25:54,706
+to perform integrations,
+which are sorts of tasks
+
+
+1737
+01:25:55,536 --> 01:25:57,686
+like build, test, and analyze.
+
+
+1738
+01:25:58,526 --> 01:26:00,666
+And to get to what the final
+-- the slide finally says here,
+
+
+1739
+01:26:00,666 --> 01:26:02,976
+I'm going to show you a
+demo of how bots work.
+
+
+1740
+01:26:08,756 --> 01:26:12,546
+So here I have the iOS
+version of a project.
+
+
+1741
+01:26:13,326 --> 01:26:16,446
+Now, behind the scenes here,
+my team has set up a Mac mini
+
+
+1742
+01:26:16,876 --> 01:26:18,636
+and installed the
+latest OS X server.
+
+
+1743
+01:26:19,316 --> 01:26:22,246
+And we've created bots for all
+of the projects that we're going
+
+
+1744
+01:26:22,246 --> 01:26:23,956
+to use throughout WWDC.
+
+
+1745
+01:26:25,186 --> 01:26:26,646
+For me to take advantage
+of the bot,
+
+
+1746
+01:26:26,816 --> 01:26:30,066
+all I need to do is add the
+account to this Xcode instance.
+
+
+1747
+01:26:31,306 --> 01:26:32,626
+So I'll bring up
+my preferences here
+
+
+1748
+01:26:32,986 --> 01:26:34,336
+and we see the new
+Accounts pane.
+
+
+1749
+01:26:35,786 --> 01:26:37,746
+I'll click the plus
+sign and say Add Server.
+
+
+1750
+01:26:37,746 --> 01:26:42,556
+Now we see that on my Mac mini
+is broadcasting over Bonjour.
+
+
+1751
+01:26:42,906 --> 01:26:47,296
+I can select that and I'll enter
+my extremely secure credentials.
+
+
+1752
+01:26:48,506 --> 01:26:52,426
+Now, when I click Add,
+I want you to watch
+
+
+1753
+01:26:52,426 --> 01:26:54,706
+in the left hand side in
+the project navigator.
+
+
+1754
+01:26:55,286 --> 01:26:57,496
+You see when I click
+Add, a new item appears.
+
+
+1755
+01:26:58,066 --> 01:26:59,386
+That's my bot.
+
+
+1756
+01:27:00,956 --> 01:27:02,946
+What we're seeing here
+is the log navigator
+
+
+1757
+01:27:03,006 --> 01:27:05,296
+which normally presents
+all of your local actions.
+
+
+1758
+01:27:06,056 --> 01:27:08,326
+We wanted to integrate the
+bot into the log navigator
+
+
+1759
+01:27:08,326 --> 01:27:10,506
+so you could correlate what
+the bot is doing for you
+
+
+1760
+01:27:10,776 --> 01:27:12,146
+with all the work
+you see locally.
+
+
+1761
+01:27:13,746 --> 01:27:16,466
+Selecting the bot is going to
+show me the integration summary.
+
+
+1762
+01:27:17,056 --> 01:27:17,676
+And here it is.
+
+
+1763
+01:27:18,216 --> 01:27:19,976
+And there's a lot of
+information going on here.
+
+
+1764
+01:27:20,516 --> 01:27:24,216
+[ Applause ]
+
+
+1765
+01:27:24,716 --> 01:27:27,076
+Across the top, you're seeing
+the integration results.
+
+
+1766
+01:27:27,516 --> 01:27:29,806
+These are the kind of
+statistics of the last run --
+
+
+1767
+01:27:30,276 --> 01:27:32,546
+errors, warnings,
+analyses, and tests.
+
+
+1768
+01:27:33,596 --> 01:27:34,756
+We see I have zero errors,
+
+
+1769
+01:27:34,796 --> 01:27:36,626
+so my product is
+building successfully,
+
+
+1770
+01:27:36,976 --> 01:27:39,256
+but I still have some issues I
+should probably be resolving.
+
+
+1771
+01:27:40,616 --> 01:27:42,326
+Across the middle of our charts
+
+
+1772
+01:27:42,376 --> 01:27:45,646
+that display the relative
+recent history of my bot,
+
+
+1773
+01:27:45,986 --> 01:27:47,496
+for things like builds
+and tests.
+
+
+1774
+01:27:48,776 --> 01:27:51,856
+We can see that I've had some
+warnings happen for a while.
+
+
+1775
+01:27:52,756 --> 01:27:54,256
+We can see this integration
+here right in the middle
+
+
+1776
+01:27:54,256 --> 01:27:56,356
+with the red bar, that's
+one that actually failed.
+
+
+1777
+01:27:57,076 --> 01:27:58,646
+On tests I'm not
+doing too badly.
+
+
+1778
+01:27:58,956 --> 01:28:00,986
+The green are all the
+tests that passed.
+
+
+1779
+01:28:00,986 --> 01:28:03,106
+But it looks like we had some
+failures introduced recently.
+
+
+1780
+01:28:03,586 --> 01:28:06,006
+I should probably look at that.
+
+
+1781
+01:28:06,226 --> 01:28:08,286
+Across the bottom are
+the integration details.
+
+
+1782
+01:28:08,446 --> 01:28:11,726
+These are the specifics of what
+happens during this integration.
+
+
+1783
+01:28:12,656 --> 01:28:14,946
+They might look kind of
+familiar, it's very similar
+
+
+1784
+01:28:14,946 --> 01:28:16,816
+to the style we present
+them in the bill blogs.
+
+
+1785
+01:28:17,316 --> 01:28:18,976
+And in fact they
+work very similarly.
+
+
+1786
+01:28:20,196 --> 01:28:22,116
+I'll double-click on our
+olm here and it's going
+
+
+1787
+01:28:22,116 --> 01:28:24,796
+to take me right to that
+place in my source code.
+
+
+1788
+01:28:25,456 --> 01:28:27,036
+Now I want to point
+out what this is doing.
+
+
+1789
+01:28:27,476 --> 01:28:29,396
+It's taking information
+the bot gave me
+
+
+1790
+01:28:29,556 --> 01:28:31,586
+and presenting it right
+inside of my project.
+
+
+1791
+01:28:31,976 --> 01:28:34,316
+So now I can change the
+source code, integrate it,
+
+
+1792
+01:28:34,476 --> 01:28:35,576
+and push those changes out.
+
+
+1793
+01:28:36,276 --> 01:28:37,486
+So it's a really
+great integration
+
+
+1794
+01:28:37,486 --> 01:28:40,426
+between the two systems.
+
+
+1795
+01:28:40,426 --> 01:28:42,556
+We'll go back to the
+summary here and look
+
+
+1796
+01:28:42,556 --> 01:28:43,716
+at some more information.
+
+
+1797
+01:28:43,716 --> 01:28:46,936
+One of the really
+valuable things
+
+
+1798
+01:28:46,936 --> 01:28:49,176
+about the bot is doing
+for me is testing.
+
+
+1799
+01:28:49,886 --> 01:28:51,796
+And if I select the
+Test tab across the top,
+
+
+1800
+01:28:52,096 --> 01:28:54,906
+we'll see the test history
+for all the integrations
+
+
+1801
+01:28:54,906 --> 01:28:55,776
+that have happened recently.
+
+
+1802
+01:28:56,796 --> 01:29:00,106
+Across the top is a timeline
+that shows me my test history.
+
+
+1803
+01:29:00,666 --> 01:29:03,026
+You can see my tests have
+been building up over time,
+
+
+1804
+01:29:03,426 --> 01:29:06,936
+but recently, it looks like we
+had some tests not get performed
+
+
+1805
+01:29:06,936 --> 01:29:08,386
+but it looks like
+we're back on track.
+
+
+1806
+01:29:08,386 --> 01:29:11,996
+I could actually grab this
+loop and move it anywhere back
+
+
+1807
+01:29:11,996 --> 01:29:15,316
+in time and look at the test
+history to get more information
+
+
+1808
+01:29:15,386 --> 01:29:16,256
+on a particular issue.
+
+
+1809
+01:29:16,796 --> 01:29:21,146
+The bottom section is
+showing me a combination
+
+
+1810
+01:29:21,256 --> 01:29:22,306
+of pieces of information.
+
+
+1811
+01:29:22,916 --> 01:29:25,456
+The rows are all of the
+tests in my project.
+
+
+1812
+01:29:26,046 --> 01:29:27,566
+The columns are the integrations
+
+
+1813
+01:29:27,856 --> 01:29:29,496
+or the actions the
+bot are performing.
+
+
+1814
+01:29:30,376 --> 01:29:32,036
+So we can see here,
+this is when some
+
+
+1815
+01:29:32,036 --> 01:29:34,296
+of the tests were created
+the first time they were run.
+
+
+1816
+01:29:35,056 --> 01:29:36,546
+We can also see where
+tests failed.
+
+
+1817
+01:29:37,296 --> 01:29:39,876
+This column right here, this
+is the integration that failed
+
+
+1818
+01:29:40,026 --> 01:29:41,226
+and none of my tests ran.
+
+
+1819
+01:29:42,046 --> 01:29:44,256
+So it gives me a great way to
+kind of see how the evolution
+
+
+1820
+01:29:44,256 --> 01:29:45,376
+of my project has gone.
+
+
+1821
+01:29:46,856 --> 01:29:47,466
+Let's say we wanted
+
+
+1822
+01:29:47,466 --> 01:29:49,576
+to investigate this
+particular test issue,
+
+
+1823
+01:29:50,436 --> 01:29:51,336
+well I have a couple options.
+
+
+1824
+01:29:52,076 --> 01:29:54,256
+One would be to double-click
+on it and navigate
+
+
+1825
+01:29:54,256 --> 01:29:56,486
+to the source code like
+I did before and try
+
+
+1826
+01:29:56,486 --> 01:29:57,546
+to fix the problem myself.
+
+
+1827
+01:29:59,116 --> 01:30:02,286
+Another option though would
+be to look at the integration
+
+
+1828
+01:30:02,316 --> 01:30:05,006
+and see who made the changes
+and get them to fix it.
+
+
+1829
+01:30:07,486 --> 01:30:08,456
+Well, I'll do that
+one right now.
+
+
+1830
+01:30:09,496 --> 01:30:11,946
+So to do that, I'm going to
+double-click on the Integration,
+
+
+1831
+01:30:12,596 --> 01:30:14,046
+and jump to the Integration
+Details.
+
+
+1832
+01:30:14,736 --> 01:30:16,256
+This is similar to what
+I was saying before,
+
+
+1833
+01:30:16,396 --> 01:30:17,556
+it's showing me the results
+
+
+1834
+01:30:17,736 --> 01:30:19,816
+and it's showing me the
+specific details below.
+
+
+1835
+01:30:19,816 --> 01:30:22,256
+But there are some other
+tabs across the top
+
+
+1836
+01:30:22,256 --> 01:30:23,976
+that will provide
+additional information.
+
+
+1837
+01:30:25,196 --> 01:30:26,636
+I'll select the Tests tab
+
+
+1838
+01:30:27,096 --> 01:30:29,156
+and we'll now see here are
+the results from my tests.
+
+
+1839
+01:30:30,906 --> 01:30:33,266
+Important thing to note here is
+it's also showing me the devices
+
+
+1840
+01:30:33,266 --> 01:30:35,976
+it was running on, this bot
+is running all of my tests
+
+
+1841
+01:30:36,266 --> 01:30:39,756
+on three separate devices,
+an iPad and two iPods.
+
+
+1842
+01:30:40,886 --> 01:30:43,556
+Now, my test is failing
+uniformly across all of them
+
+
+1843
+01:30:43,646 --> 01:30:44,946
+so it's probably
+a logic failure,
+
+
+1844
+01:30:45,696 --> 01:30:47,786
+but this would be a really great
+way for me to be able to test
+
+
+1845
+01:30:48,256 --> 01:30:51,776
+if different devices
+cause problems for my app
+
+
+1846
+01:30:51,776 --> 01:30:56,756
+or even devices running
+different OS's how my tests do.
+
+
+1847
+01:30:56,966 --> 01:30:59,856
+I'll select the Commits tab
+across the top and look to see
+
+
+1848
+01:30:59,856 --> 01:31:02,126
+who made the change
+and up it was Max
+
+
+1849
+01:31:02,126 --> 01:31:05,036
+who made this change,
+so we can blame him.
+
+
+1850
+01:31:06,196 --> 01:31:08,246
+Actually this is probably
+difficult for you guys
+
+
+1851
+01:31:08,246 --> 01:31:11,046
+in the back to read, but if I
+read the commit message it says,
+
+
+1852
+01:31:11,406 --> 01:31:13,896
+"Re-enable tests that should
+have never been disabled."
+
+
+1853
+01:31:14,056 --> 01:31:18,166
+If I wanted to figure out more
+about what Max means by that,
+
+
+1854
+01:31:18,166 --> 01:31:21,006
+I can just click on the Show
+Modified Files, and it's going
+
+
+1855
+01:31:21,006 --> 01:31:24,646
+to show me that very familiar
+comparison view of the changes
+
+
+1856
+01:31:24,646 --> 01:31:27,616
+for this integration and sure
+enough looks like Max took
+
+
+1857
+01:31:27,616 --> 01:31:29,096
+out some comments
+for some tests.
+
+
+1858
+01:31:29,836 --> 01:31:30,856
+We should probably
+go and fix that.
+
+
+1859
+01:31:32,126 --> 01:31:34,426
+But right here you can see the
+bot is doing a bunch of work
+
+
+1860
+01:31:34,426 --> 01:31:37,446
+for me, building, analyze,
+testing and I can get
+
+
+1861
+01:31:37,446 --> 01:31:39,236
+that information
+right here inside
+
+
+1862
+01:31:39,236 --> 01:31:41,286
+of the IDE quickly and easily.
+
+
+1863
+01:31:41,866 --> 01:31:44,946
+So, this is just a little
+bit of the power of bots.
+
+
+1864
+01:31:45,356 --> 01:31:48,196
+What I'd like to show you next
+is how easy it is to create one.
+
+
+1865
+01:31:49,416 --> 01:31:51,516
+We already have one from
+my iOS project here.
+
+
+1866
+01:31:51,756 --> 01:31:54,556
+So, let's bring up the
+OS X project I had before
+
+
+1867
+01:31:54,816 --> 01:31:56,026
+and create a bot for this.
+
+
+1868
+01:31:57,406 --> 01:31:59,786
+Creating a bot is as simple as
+going under the Product menu
+
+
+1869
+01:32:00,036 --> 01:32:02,286
+and selecting Create bot.
+
+
+1870
+01:32:03,936 --> 01:32:06,296
+The first question it's going
+to ask is what I want to build.
+
+
+1871
+01:32:06,296 --> 01:32:08,216
+And this is going to
+be a very familiar list
+
+
+1872
+01:32:08,216 --> 01:32:10,316
+of all the schemes
+in my project.
+
+
+1873
+01:32:11,476 --> 01:32:12,276
+I'll select this one,
+
+
+1874
+01:32:12,276 --> 01:32:13,726
+the project I want
+or the item I want.
+
+
+1875
+01:32:14,406 --> 01:32:16,516
+My servers are already
+selected, and I'm going
+
+
+1876
+01:32:16,516 --> 01:32:19,136
+to leave this box checked to
+say integrate immediately,
+
+
+1877
+01:32:19,466 --> 01:32:21,146
+we wanted to kick off and
+start doing this work.
+
+
+1878
+01:32:22,736 --> 01:32:23,606
+I'll select Next.
+
+
+1879
+01:32:23,966 --> 01:32:25,606
+And I now have some
+options for when
+
+
+1880
+01:32:25,846 --> 01:32:27,196
+and what the bot does for me.
+
+
+1881
+01:32:27,966 --> 01:32:30,886
+I can set the schedule to go on
+periodically at a certain time,
+
+
+1882
+01:32:31,496 --> 01:32:34,006
+manually at my request
+or uncommit.
+
+
+1883
+01:32:34,886 --> 01:32:37,036
+I'm going to select uncommit
+because I want the bot
+
+
+1884
+01:32:37,036 --> 01:32:39,136
+to do this work every time
+someone makes a change.
+
+
+1885
+01:32:40,736 --> 01:32:44,076
+I'll leave the default actions
+checked, I wanted to analyze,
+
+
+1886
+01:32:44,146 --> 01:32:48,406
+test and create an archive
+of my project when it's done.
+
+
+1887
+01:32:48,596 --> 01:32:49,406
+I'll select Next.
+
+
+1888
+01:32:50,276 --> 01:32:52,936
+And the bot now provides
+me access to send
+
+
+1889
+01:32:52,936 --> 01:32:54,316
+out email notifications
+
+
+1890
+01:32:54,316 --> 01:32:56,686
+when integration is
+successful or when it fails.
+
+
+1891
+01:32:56,686 --> 01:32:59,416
+I definitely want people to
+know when they break something,
+
+
+1892
+01:32:59,536 --> 01:33:00,866
+so I leave this check
+box enabled
+
+
+1893
+01:33:01,996 --> 01:33:04,426
+and we'll click Create Bot.
+
+
+1894
+01:33:04,636 --> 01:33:08,106
+That's it, Xcode and the
+server have not communicated
+
+
+1895
+01:33:08,106 --> 01:33:09,786
+to create a bot for
+this project.
+
+
+1896
+01:33:10,276 --> 01:33:12,096
+And here it is it shows
+out in my navigator.
+
+
+1897
+01:33:13,086 --> 01:33:15,316
+So, just like that I
+was able to make use
+
+
+1898
+01:33:15,316 --> 01:33:16,726
+of the continuous
+integration system
+
+
+1899
+01:33:16,986 --> 01:33:18,206
+to start tracking my project.
+
+
+1900
+01:33:19,306 --> 01:33:21,846
+Now, it's going to take a second
+here to perform the integration.
+
+
+1901
+01:33:22,306 --> 01:33:23,796
+So, in the meantime what I want
+
+
+1902
+01:33:23,796 --> 01:33:28,366
+to do is show you some other
+features we have in the system.
+
+
+1903
+01:33:28,516 --> 01:33:31,236
+In order to keep track of all of
+the projects you might be using,
+
+
+1904
+01:33:31,496 --> 01:33:32,836
+we have an integrated web view.
+
+
+1905
+01:33:33,356 --> 01:33:35,836
+You can see here a list of
+all the projects that I have,
+
+
+1906
+01:33:36,276 --> 01:33:39,246
+their current status and the
+ability to interact with them.
+
+
+1907
+01:33:39,906 --> 01:33:42,286
+In fact I can go ahead and
+click on anyone of these
+
+
+1908
+01:33:42,616 --> 01:33:43,746
+to create an integration
+
+
+1909
+01:33:44,026 --> 01:33:46,396
+or download the product
+of any of these bots.
+
+
+1910
+01:33:47,146 --> 01:33:49,276
+So, this is a great way
+for engineering, QA,
+
+
+1911
+01:33:49,276 --> 01:33:52,286
+and other groups to leverage
+the value and the power
+
+
+1912
+01:33:52,286 --> 01:33:53,716
+of the continuous
+integration system.
+
+
+1913
+01:33:55,036 --> 01:33:57,626
+But to keep everybody kind
+of on a level playing field
+
+
+1914
+01:33:57,626 --> 01:33:59,536
+with how things are
+working, we also want
+
+
+1915
+01:33:59,536 --> 01:34:02,986
+to provide a really interactive
+and fun display and we've done
+
+
+1916
+01:34:02,986 --> 01:34:05,076
+that in the form of Scoreboard.
+
+
+1917
+01:34:06,516 --> 01:34:12,686
+[ Applause ]
+
+
+1918
+01:34:13,186 --> 01:34:15,516
+The Scoreboard presents
+a view of all of the bots
+
+
+1919
+01:34:15,586 --> 01:34:16,656
+that are running on my server.
+
+
+1920
+01:34:16,656 --> 01:34:19,256
+On the left hand side
+you can see the projects
+
+
+1921
+01:34:19,256 --> 01:34:20,286
+and their current status;
+
+
+1922
+01:34:20,846 --> 01:34:22,736
+on the right hand side
+you can see the details.
+
+
+1923
+01:34:23,116 --> 01:34:25,856
+Integration results the
+commit logs and devices
+
+
+1924
+01:34:25,856 --> 01:34:26,606
+that it was running on.
+
+
+1925
+01:34:27,616 --> 01:34:28,606
+And you'll see that it cycles
+
+
+1926
+01:34:28,606 --> 01:34:32,196
+through each one giving me the
+details, it happens to hang
+
+
+1927
+01:34:32,196 --> 01:34:34,606
+out a little bit longer on
+failed ones which is not good
+
+
+1928
+01:34:34,606 --> 01:34:36,716
+for me right now, but you'll see
+
+
+1929
+01:34:36,716 --> 01:34:38,696
+when it actually switches
+it will give you the details
+
+
+1930
+01:34:38,696 --> 01:34:40,796
+about each including
+who made the changes.
+
+
+1931
+01:34:41,686 --> 01:34:44,896
+So, this is a great way whether
+it's running on TVs or monitors
+
+
+1932
+01:34:44,896 --> 01:34:47,356
+around your office, or just
+running on your desktop
+
+
+1933
+01:34:47,356 --> 01:34:48,616
+for you guys to keep track
+
+
+1934
+01:34:48,616 --> 01:34:50,776
+of how the continuous
+integration system is working,
+
+
+1935
+01:34:51,186 --> 01:34:54,306
+the status of your projects,
+and frankly who the heroes
+
+
+1936
+01:34:54,306 --> 01:34:55,976
+and the villains are
+in your own office.
+
+
+1937
+01:34:57,836 --> 01:35:00,136
+And that's Continuous
+Integration with Xcode 5.
+
+
+1938
+01:35:01,516 --> 01:35:10,256
+[ Applause ]
+
+
+1939
+01:35:10,756 --> 01:35:12,336
+So, bots and Continuous
+Integration.
+
+
+1940
+01:35:13,046 --> 01:35:16,426
+At the heart of this
+solution is OS X server.
+
+
+1941
+01:35:17,486 --> 01:35:21,426
+OS X server continuous deliver
+powerful services such as mail,
+
+
+1942
+01:35:21,716 --> 01:35:25,306
+calendaring, and wiki, and the
+Xcode service now joins them
+
+
+1943
+01:35:25,336 --> 01:35:27,186
+to deliver continuous
+integration.
+
+
+1944
+01:35:28,206 --> 01:35:31,236
+And running OS X server
+is easier than ever.
+
+
+1945
+01:35:32,686 --> 01:35:35,286
+The set of experience has
+been redesigned and simplified
+
+
+1946
+01:35:35,626 --> 01:35:38,226
+and in literally just a few
+minutes you can have the server
+
+
+1947
+01:35:38,226 --> 01:35:39,636
+up and running on your network.
+
+
+1948
+01:35:41,256 --> 01:35:44,206
+Now the Xcode service leverages
+many of the functionalities
+
+
+1949
+01:35:44,206 --> 01:35:47,456
+and features of Xcode 5
+including the Apple ID
+
+
+1950
+01:35:47,456 --> 01:35:50,996
+integration, unit testing,
+and source control features.
+
+
+1951
+01:35:51,446 --> 01:35:54,366
+And layers on top elements
+like Bonjour discovery,
+
+
+1952
+01:35:54,556 --> 01:35:57,976
+repository hosting, and the
+new web client, and Scoreboard.
+
+
+1953
+01:35:59,046 --> 01:36:01,136
+The combination of these
+features is a continuous
+
+
+1954
+01:36:01,136 --> 01:36:03,896
+integration system
+that you, your team,
+
+
+1955
+01:36:04,046 --> 01:36:07,446
+and your entire company can
+use to deliver great iOS
+
+
+1956
+01:36:07,966 --> 01:36:09,176
+and OS X applications.
+
+
+1957
+01:36:11,816 --> 01:36:16,696
+Xcode 5, we have a ton of great
+features for you in this release
+
+
+1958
+01:36:17,026 --> 01:36:18,746
+and I'm pretty sure you
+guys are going to love them.
+
+
+1959
+01:36:19,426 --> 01:36:22,536
+With Xcode 5 you should be able
+to build applications better,
+
+
+1960
+01:36:23,166 --> 01:36:26,486
+faster, and easier than ever,
+and we're really excited
+
+
+1961
+01:36:26,486 --> 01:36:27,206
+to see what you do with it.
+
+
+1962
+01:36:27,826 --> 01:36:28,096
+Thank you.
+
+
+1963
+01:36:29,516 --> 01:36:36,976
+[ Applause ]
+
+
+1964
+01:36:37,476 --> 01:36:38,126
+>> Thank you, Matthew.
+
+
+1965
+01:36:38,846 --> 01:36:39,176
+All right.
+
+
+1966
+01:36:39,546 --> 01:36:43,586
+So we announced three major new
+products to you today, iOS 7,
+
+
+1967
+01:36:44,716 --> 01:36:47,426
+OS X Mavericks, and
+also Xcode 5.
+
+
+1968
+01:36:48,636 --> 01:36:51,146
+They contained fantastic
+new features for end users
+
+
+1969
+01:36:51,216 --> 01:36:54,306
+and developers and we recommend
+that you use the next few months
+
+
+1970
+01:36:54,346 --> 01:36:56,966
+to get ready for us launching
+these products later this year.
+
+
+1971
+01:36:57,846 --> 01:37:00,406
+To get you started, you're
+going to make developer previews
+
+
+1972
+01:37:00,406 --> 01:37:02,696
+of all these products
+available for you today.
+
+
+1973
+01:37:02,866 --> 01:37:04,436
+So, you'll be able to go
+
+
+1974
+01:37:04,436 --> 01:37:06,606
+to the WWDC attendee
+website later this evening
+
+
+1975
+01:37:06,606 --> 01:37:09,406
+and download previews of
+iOS 7 for your iPhones,
+
+
+1976
+01:37:09,656 --> 01:37:12,716
+iPads will come a little
+later, OS X Mavericks,
+
+
+1977
+01:37:13,096 --> 01:37:16,066
+Xcode 5 with the SDKs
+for both of this new OS's
+
+
+1978
+01:37:16,066 --> 01:37:19,466
+and even the new server app for
+Mavericks which allows to try
+
+
+1979
+01:37:19,466 --> 01:37:21,206
+out a new continuous
+integration features
+
+
+1980
+01:37:21,416 --> 01:37:22,316
+that Matt just showed you.
+
+
+1981
+01:37:23,646 --> 01:37:25,256
+There will be numerous
+opportunities here
+
+
+1982
+01:37:25,256 --> 01:37:27,446
+at the conference to learn
+more about these products,
+
+
+1983
+01:37:27,676 --> 01:37:29,906
+we have done more than 100
+sessions where you can learn
+
+
+1984
+01:37:29,906 --> 01:37:33,416
+about what's new and different,
+and many labs we have organized,
+
+
+1985
+01:37:33,446 --> 01:37:35,876
+excellent opportunities for you
+to meet within many [inaudible],
+
+
+1986
+01:37:35,876 --> 01:37:38,866
+see you on site to get your
+questions answered right here.
+
+
+1987
+01:37:40,446 --> 01:37:43,066
+A few sessions that you might
+find particularly interesting,
+
+
+1988
+01:37:43,536 --> 01:37:44,926
+tomorrow we're going
+to start the day
+
+
+1989
+01:37:44,926 --> 01:37:47,666
+with the developer tools kick
+off, and another session I'd
+
+
+1990
+01:37:47,666 --> 01:37:50,196
+like to point out is the
+maximizing battery life session
+
+
+1991
+01:37:50,236 --> 01:37:53,206
+with [inaudible] tomorrow
+who would tell you about more
+
+
+1992
+01:37:53,206 --> 01:37:54,566
+about power consumption on OS X.
+
+
+1993
+01:37:54,566 --> 01:37:57,146
+And with that I hope
+you enjoyed the session,
+
+
+1994
+01:37:57,146 --> 01:37:57,976
+I'd see you around this week.
+
+
+1995
+01:37:58,016 --> 01:38:00,016
+[ Applause ]
+
+
+1996
+01:38:00,016 --> 01:38:09,716
+[ Silence ]
+

@@ -1,0 +1,4860 @@
+1
+00:00:00,506 --> 00:00:10,596
+[ Silence ]
+
+
+2
+00:00:11,096 --> 00:00:13,286
+>> My name is Troy
+and I'm an engineer
+
+
+3
+00:00:13,286 --> 00:00:15,096
+on the debugger UI
+team for Xcode.
+
+
+4
+00:00:15,746 --> 00:00:18,066
+And I'm glad to see so
+many people here today
+
+
+5
+00:00:18,066 --> 00:00:20,736
+because we all know that
+debugging is really important.
+
+
+6
+00:00:21,376 --> 00:00:24,756
+And you know that debugging
+is what sets your app apart
+
+
+7
+00:00:24,756 --> 00:00:26,836
+from the app on the App
+Store that gets one star
+
+
+8
+00:00:26,986 --> 00:00:28,496
+because it crashes on launch.
+
+
+9
+00:00:29,336 --> 00:00:32,286
+And debugging is what sets
+your app apart from the app
+
+
+10
+00:00:32,286 --> 00:00:35,936
+on our iOS devices that use all
+the memory and evict other apps
+
+
+11
+00:00:36,286 --> 00:00:38,596
+when our users are trying
+to do some multitasking.
+
+
+12
+00:00:39,066 --> 00:00:42,056
+And debugging is what sets
+your app apart from the apps
+
+
+13
+00:00:42,316 --> 00:00:45,306
+on our Mac and iOS portables
+that use all of battery life
+
+
+14
+00:00:45,636 --> 00:00:48,776
+in just a few hours making it a
+worst experience for everyone.
+
+
+15
+00:00:49,286 --> 00:00:51,686
+But you guys know that already.
+
+
+16
+00:00:52,976 --> 00:00:54,886
+You're here because
+debugging is hard.
+
+
+17
+00:00:55,116 --> 00:00:58,586
+I like this quote from
+Brian Kernighan and it says,
+
+
+18
+00:00:58,586 --> 00:01:00,906
+"Everybody knows that
+debugging is twice as hard
+
+
+19
+00:01:01,256 --> 00:01:02,816
+as writing a program
+in the first place.
+
+
+20
+00:01:03,446 --> 00:01:06,196
+So if you're as clever as you
+can be when you're writing it
+
+
+21
+00:01:06,246 --> 00:01:09,226
+in the first place, how are
+you ever going to debug it?"
+
+
+22
+00:01:10,116 --> 00:01:13,106
+Well, the answer is better
+tools and specifically,
+
+
+23
+00:01:14,096 --> 00:01:16,216
+the new debugging
+tools in Xcode 5.
+
+
+24
+00:01:16,836 --> 00:01:20,186
+We have a lot of new
+things to cover today.
+
+
+25
+00:01:20,706 --> 00:01:22,636
+But first, let's go
+on a tour of the UI
+
+
+26
+00:01:22,966 --> 00:01:25,236
+so we have a common
+vocabulary when we know--
+
+
+27
+00:01:25,236 --> 00:01:26,436
+when we're talking
+about these things.
+
+
+28
+00:01:27,486 --> 00:01:30,546
+So here is the brand
+new, Xcode 5 UI.
+
+
+29
+00:01:31,366 --> 00:01:32,286
+And the first thing you're going
+
+
+30
+00:01:32,286 --> 00:01:35,276
+to notice is we've moved the
+breakpoints activation button
+
+
+31
+00:01:35,466 --> 00:01:39,606
+from the toolbar down
+into the debug bar
+
+
+32
+00:01:40,616 --> 00:01:42,966
+because it's right there next
+to the other tools that you need
+
+
+33
+00:01:42,966 --> 00:01:45,946
+when you're debugging such as
+Continue, Step Over, Step Into.
+
+
+34
+00:01:46,026 --> 00:01:48,476
+And it's just a much
+more natural place
+
+
+35
+00:01:48,946 --> 00:01:51,806
+to disable all your breakpoints
+if you need to do that
+
+
+36
+00:01:51,806 --> 00:01:52,686
+and then hit Continue.
+
+
+37
+00:01:53,866 --> 00:01:57,816
+If you need to enable or
+disable breakpoints one by one,
+
+
+38
+00:01:57,816 --> 00:02:00,096
+of course, we go to the
+breakpoints navigator.
+
+
+39
+00:02:00,096 --> 00:02:06,616
+And here you see a list of all
+of the breakpoints separated
+
+
+40
+00:02:06,616 --> 00:02:08,946
+by filename and line number.
+
+
+41
+00:02:09,576 --> 00:02:13,556
+And you can edit or disable,
+enable breakpoints right here.
+
+
+42
+00:02:14,406 --> 00:02:18,446
+But not all breakpoints have
+filenames and file numbers.
+
+
+43
+00:02:19,426 --> 00:02:20,966
+There are some special
+breakpoints.
+
+
+44
+00:02:22,086 --> 00:02:26,706
+And we create those down
+at the bottom of the window
+
+
+45
+00:02:26,736 --> 00:02:28,716
+where you can create
+symbolic breakpoints
+
+
+46
+00:02:28,716 --> 00:02:29,976
+or the exception breakpoints
+
+
+47
+00:02:30,396 --> 00:02:32,736
+that are more special
+breakpoints.
+
+
+48
+00:02:33,216 --> 00:02:35,296
+And we got a two new
+breakpoint types that are
+
+
+49
+00:02:35,296 --> 00:02:36,526
+like the exception breakpoints.
+
+
+50
+00:02:37,306 --> 00:02:40,986
+And that's the OpenGL
+ES error breakpoint
+
+
+51
+00:02:41,416 --> 00:02:43,136
+and the unit test
+failure breakpoint.
+
+
+52
+00:02:44,226 --> 00:02:45,356
+Both of these breakpoints
+are kind
+
+
+53
+00:02:45,356 --> 00:02:46,866
+of like the exception
+breakpoints
+
+
+54
+00:02:47,046 --> 00:02:48,826
+where you can set it once
+and just kind of forget
+
+
+55
+00:02:48,826 --> 00:02:49,766
+about it in your project.
+
+
+56
+00:02:49,846 --> 00:02:53,456
+And then when you have an
+error, Xcode is going to pause
+
+
+57
+00:02:53,456 --> 00:02:55,586
+in your applications
+code instead
+
+
+58
+00:02:55,586 --> 00:02:58,466
+of some error handler later on.
+
+
+59
+00:02:58,636 --> 00:03:02,146
+So that's a really great way to
+catch those errors in unit tests
+
+
+60
+00:03:02,146 --> 00:03:06,286
+and in your OpenGL
+ES games on iOS.
+
+
+61
+00:03:06,716 --> 00:03:12,466
+Let's move on to the-- there's
+another navigator that's really
+
+
+62
+00:03:12,466 --> 00:03:15,256
+important of course and
+that's the debug navigator.
+
+
+63
+00:03:15,836 --> 00:03:18,686
+And the first thing
+you're going to notice
+
+
+64
+00:03:18,686 --> 00:03:23,006
+in the debug navigator is
+this brand new debug gauges.
+
+
+65
+00:03:23,216 --> 00:03:24,696
+And we're going to talk
+a lot about that later.
+
+
+66
+00:03:24,696 --> 00:03:26,026
+So let's skip it for now.
+
+
+67
+00:03:26,626 --> 00:03:30,366
+I do want to draw your
+attention to this icon here.
+
+
+68
+00:03:30,366 --> 00:03:32,656
+This is the spool of
+thread icon and this means
+
+
+69
+00:03:32,656 --> 00:03:36,936
+that your debug navigator
+is in threads mode.
+
+
+70
+00:03:36,936 --> 00:03:40,216
+And so, down here, you
+get a list of your threads
+
+
+71
+00:03:40,886 --> 00:03:42,866
+and a stack trace where
+you're paused in the debugger.
+
+
+72
+00:03:42,866 --> 00:03:46,096
+And this is a really great
+place 'cause you can navigate
+
+
+73
+00:03:46,096 --> 00:03:49,106
+through that stack trace and
+jump through the files that led
+
+
+74
+00:03:49,106 --> 00:03:52,226
+up to where you are in your
+paused application code.
+
+
+75
+00:03:53,086 --> 00:03:56,066
+And you can even check out
+the parameters that went
+
+
+76
+00:03:56,066 --> 00:03:58,136
+into the calculations that
+got you to this point.
+
+
+77
+00:03:58,646 --> 00:04:01,306
+And so, you can figure out
+why you got to this point
+
+
+78
+00:04:01,306 --> 00:04:03,866
+and why maybe you need
+to go somewhere else.
+
+
+79
+00:04:04,976 --> 00:04:07,266
+But let's return back to
+that spool of thread icon
+
+
+80
+00:04:07,266 --> 00:04:09,366
+because you can change that and
+a lot of people don't know that.
+
+
+81
+00:04:10,046 --> 00:04:13,976
+If you're using grand central
+dispatch, it's more natural
+
+
+82
+00:04:13,976 --> 00:04:16,555
+to organize your threads by cue.
+
+
+83
+00:04:17,226 --> 00:04:19,546
+And so, this is exactly
+what this spool--
+
+
+84
+00:04:19,546 --> 00:04:23,286
+this grand central dispatch
+stoplight icon indicates
+
+
+85
+00:04:23,286 --> 00:04:25,006
+that we're grouping
+your threads by cue.
+
+
+86
+00:04:26,646 --> 00:04:30,326
+Now, let's move on to
+the variables view.
+
+
+87
+00:04:32,876 --> 00:04:37,066
+The variables view is where when
+you stopped at a breakpoint,
+
+
+88
+00:04:37,066 --> 00:04:39,736
+it will show you the
+most important variables
+
+
+89
+00:04:40,226 --> 00:04:43,016
+for that line of code and
+that might be local variables,
+
+
+90
+00:04:43,096 --> 00:04:47,116
+it might be instance variables
+or parameters to the method
+
+
+91
+00:04:47,116 --> 00:04:48,876
+and Xcode does a
+really great job
+
+
+92
+00:04:48,876 --> 00:04:50,596
+of choosing those
+variables for you.
+
+
+93
+00:04:51,206 --> 00:04:53,676
+But in some situations,
+you need to find
+
+
+94
+00:04:53,676 --> 00:04:55,146
+out a little bit
+more information.
+
+
+95
+00:04:55,706 --> 00:04:58,236
+Maybe, you need to find out
+a global variable state,
+
+
+96
+00:04:58,236 --> 00:05:00,486
+or you need to find out
+some register states.
+
+
+97
+00:05:01,156 --> 00:05:09,406
+And so, you can click on this
+toggle down here and change auto
+
+
+98
+00:05:09,536 --> 00:05:13,146
+to all and that will give
+you a more expansive view
+
+
+99
+00:05:13,146 --> 00:05:13,976
+of your variables.
+
+
+100
+00:05:14,506 --> 00:05:20,436
+Let's move on to
+the debug console.
+
+
+101
+00:05:21,896 --> 00:05:25,746
+The debug console is where
+you receive the output
+
+
+102
+00:05:25,746 --> 00:05:28,416
+from your application whether
+that's NSLogs, printfs,
+
+
+103
+00:05:28,696 --> 00:05:30,016
+or maybe the system frameworks
+
+
+104
+00:05:30,016 --> 00:05:32,436
+that you're using are showing
+you some warnings or errors
+
+
+105
+00:05:32,436 --> 00:05:34,116
+that you need to be aware
+of and they're going
+
+
+106
+00:05:34,116 --> 00:05:35,296
+to come out right here.
+
+
+107
+00:05:36,226 --> 00:05:38,526
+Of course, when you're paused
+in the debugger, this is also
+
+
+108
+00:05:38,616 --> 00:05:42,056
+where you have a direct
+conduit to the LLDB debugger
+
+
+109
+00:05:42,586 --> 00:05:44,846
+which is a state of the art
+debugger that powers so many
+
+
+110
+00:05:44,846 --> 00:05:46,806
+of the features in Xcode,
+and we're going to talk more
+
+
+111
+00:05:46,806 --> 00:05:48,416
+about that and how
+it's integrated
+
+
+112
+00:05:48,416 --> 00:05:50,076
+with Xcode more a little later.
+
+
+113
+00:05:50,826 --> 00:05:53,526
+And so, that's basically
+the main aspects
+
+
+114
+00:05:53,566 --> 00:05:55,286
+of the debugging in Xcode.
+
+
+115
+00:05:55,596 --> 00:05:57,846
+And of course, we've added new
+things which we're going to talk
+
+
+116
+00:05:57,846 --> 00:06:01,346
+about today including
+the new debugging gauges
+
+
+117
+00:06:01,496 --> 00:06:03,746
+which we saw briefly.
+
+
+118
+00:06:04,666 --> 00:06:08,856
+We're going to see a new way to
+debug, a new debugging workflow.
+
+
+119
+00:06:09,056 --> 00:06:11,836
+And then we're going to look at
+a specific debugging workflow
+
+
+120
+00:06:12,096 --> 00:06:14,296
+which is really great
+now with XPC services.
+
+
+121
+00:06:14,876 --> 00:06:18,326
+So let's talk about performance.
+
+
+122
+00:06:19,196 --> 00:06:21,466
+We all know that performance
+is extremely important.
+
+
+123
+00:06:21,466 --> 00:06:23,546
+Nobody likes to see stutters
+in their application.
+
+
+124
+00:06:23,986 --> 00:06:26,456
+Nobody wants to see scrolling
+stuff for any reason.
+
+
+125
+00:06:28,426 --> 00:06:32,096
+But you've ever hung on
+the Apple developer forums,
+
+
+126
+00:06:32,096 --> 00:06:34,486
+you may have heard,
+"Don't pre-optimize."
+
+
+127
+00:06:35,456 --> 00:06:38,206
+And you may even get this quote
+from Donald Knuth that says,
+
+
+128
+00:06:38,796 --> 00:06:42,206
+"Essentially, pre-optimization
+is the root of all evil."
+
+
+129
+00:06:42,846 --> 00:06:45,926
+I think we can agree
+
+
+130
+00:06:45,926 --> 00:06:47,666
+that there's a little
+bit of hyperbole here.
+
+
+131
+00:06:48,186 --> 00:06:50,776
+But we can also agree
+that if you think
+
+
+132
+00:06:50,776 --> 00:06:53,106
+about performance before you
+think about code correctness,
+
+
+133
+00:06:53,106 --> 00:06:54,856
+you end up with code
+that's harder to read,
+
+
+134
+00:06:55,196 --> 00:06:57,656
+code that's harder to
+maintain, and ultimately,
+
+
+135
+00:06:57,946 --> 00:07:00,446
+code that may not even be
+correct in the first place.
+
+
+136
+00:07:00,446 --> 00:07:06,006
+So if performance is
+such an important aspect
+
+
+137
+00:07:06,006 --> 00:07:08,486
+of your application, but we
+don't want to pre-optimize
+
+
+138
+00:07:08,986 --> 00:07:10,986
+when are we supposed to
+optimize our programs?
+
+
+139
+00:07:11,256 --> 00:07:14,866
+We should optimize when
+we measure a problem.
+
+
+140
+00:07:16,056 --> 00:07:19,036
+This is the only time that
+we know what's going wrong
+
+
+141
+00:07:19,036 --> 00:07:20,366
+so we can fix that instead
+
+
+142
+00:07:20,366 --> 00:07:21,846
+of what we think
+might be going wrong.
+
+
+143
+00:07:22,416 --> 00:07:25,676
+And Instruments is
+the best place to go
+
+
+144
+00:07:25,766 --> 00:07:26,856
+and optimize your code.
+
+
+145
+00:07:27,556 --> 00:07:30,706
+There are sessions this week and
+there's videos from prior years
+
+
+146
+00:07:30,706 --> 00:07:32,166
+to tell you how to
+use Instruments.
+
+
+147
+00:07:32,816 --> 00:07:37,166
+But the good news is now in
+Xcode 5, Xcode is measuring
+
+
+148
+00:07:37,166 --> 00:07:40,526
+for you all of the time, and
+that's the new debug gauges.
+
+
+149
+00:07:41,126 --> 00:07:45,426
+Debug gauges show up
+in the debug navigator,
+
+
+150
+00:07:45,606 --> 00:07:47,006
+right there where you
+can always see them.
+
+
+151
+00:07:47,006 --> 00:07:48,936
+And this is really
+great a place for them
+
+
+152
+00:07:48,936 --> 00:07:50,586
+because when you just
+pause, it switches to that.
+
+
+153
+00:07:51,146 --> 00:07:52,006
+It's right there, you just need
+
+
+154
+00:07:52,006 --> 00:07:54,846
+to peak behind your current
+application or if you're
+
+
+155
+00:07:54,846 --> 00:07:58,016
+on a device, it's right
+there on your Mac.
+
+
+156
+00:07:58,246 --> 00:08:00,586
+There's a bunch of
+debugging gauges
+
+
+157
+00:08:00,586 --> 00:08:03,426
+to show you the performance
+and the characteristics
+
+
+158
+00:08:03,426 --> 00:08:04,866
+of all sorts of technologies.
+
+
+159
+00:08:05,536 --> 00:08:08,146
+There are two debugging gauges
+
+
+160
+00:08:08,396 --> 00:08:10,536
+that are universal no matter
+what kind of app you're writing,
+
+
+161
+00:08:10,536 --> 00:08:13,556
+what platform you're
+targeting, and that's the CPU
+
+
+162
+00:08:13,656 --> 00:08:15,166
+and the memory debugging gauges.
+
+
+163
+00:08:16,066 --> 00:08:17,896
+And so, since those
+are universal,
+
+
+164
+00:08:18,376 --> 00:08:21,446
+we're going to take a look
+at them more closely today.
+
+
+165
+00:08:21,496 --> 00:08:25,536
+So first step, the CPU gauge.
+
+
+166
+00:08:26,116 --> 00:08:28,816
+We show you a chart
+of the recent history
+
+
+167
+00:08:28,816 --> 00:08:32,775
+of a CPU utilization which
+is your first indication
+
+
+168
+00:08:32,775 --> 00:08:34,716
+that something may be going
+wrong in your application.
+
+
+169
+00:08:34,716 --> 00:08:36,666
+If you see a spike
+that you didn't expect,
+
+
+170
+00:08:37,006 --> 00:08:39,756
+or if you see a pegged on a
+processor and you don't know
+
+
+171
+00:08:39,756 --> 00:08:42,486
+that that's happening,
+you want to take a look
+
+
+172
+00:08:42,486 --> 00:08:43,785
+at that, take a deeper look.
+
+
+173
+00:08:43,785 --> 00:08:48,026
+And to do that, you click on
+the CPU gauge and it brings
+
+
+174
+00:08:48,026 --> 00:08:50,656
+up the beautiful CPU
+debugging report.
+
+
+175
+00:08:50,656 --> 00:08:53,856
+Some of the characteristics
+of these reports
+
+
+176
+00:08:53,856 --> 00:08:56,536
+that are common among all of the
+reports, so let's take a look
+
+
+177
+00:08:56,536 --> 00:08:58,546
+through some of the aspects.
+
+
+178
+00:08:59,146 --> 00:09:01,886
+First we have this view here
+which is the meter view.
+
+
+179
+00:09:02,696 --> 00:09:04,966
+The meter view shows you a
+snapshot of what's happening
+
+
+180
+00:09:04,966 --> 00:09:09,236
+in your code right now in your
+application to give you an idea
+
+
+181
+00:09:10,076 --> 00:09:11,266
+of what's going on right now.
+
+
+182
+00:09:11,876 --> 00:09:16,266
+As you can see here,
+we're using 97 percent
+
+
+183
+00:09:16,386 --> 00:09:17,656
+of the CPU utilization.
+
+
+184
+00:09:18,416 --> 00:09:19,996
+And that puts the
+needle about halfway
+
+
+185
+00:09:19,996 --> 00:09:25,056
+because this iOS device has
+a two core processor and so,
+
+
+186
+00:09:25,056 --> 00:09:27,206
+it's out of a total
+of 200 percent.
+
+
+187
+00:09:27,566 --> 00:09:30,206
+We don't know whether that's
+50 percent of each core
+
+
+188
+00:09:30,206 --> 00:09:32,436
+and we don't know if that's
+100 percent of 1 core,
+
+
+189
+00:09:32,436 --> 00:09:33,246
+and zero percent of the other.
+
+
+190
+00:09:33,246 --> 00:09:34,956
+But we know that approximately,
+
+
+191
+00:09:35,246 --> 00:09:38,356
+half the CPU utilization is
+going to our application.
+
+
+192
+00:09:39,226 --> 00:09:40,526
+I also want to draw
+your attention
+
+
+193
+00:09:40,526 --> 00:09:43,656
+to the small inner blue
+arc because that's a range
+
+
+194
+00:09:43,656 --> 00:09:46,216
+of the last few minutes
+of CPU utilization.
+
+
+195
+00:09:46,216 --> 00:09:49,266
+So you know whether things
+have been wildly swinging back
+
+
+196
+00:09:49,266 --> 00:09:53,316
+and forth or if it's just
+been pegged at a narrow range
+
+
+197
+00:09:53,316 --> 00:09:56,376
+such as it is here between
+about 60 and 100 percent.
+
+
+198
+00:09:57,316 --> 00:10:00,756
+The next area is the utilization
+across the whole system
+
+
+199
+00:10:00,756 --> 00:10:03,346
+because all know that our
+applications do not run
+
+
+200
+00:10:03,346 --> 00:10:04,076
+in isolation.
+
+
+201
+00:10:04,466 --> 00:10:07,316
+Other applications affect
+how our application runs.
+
+
+202
+00:10:08,326 --> 00:10:10,676
+And so here, you can see
+in purple that we are using
+
+
+203
+00:10:10,676 --> 00:10:14,356
+about half of the total
+CPU utilization potential.
+
+
+204
+00:10:15,386 --> 00:10:17,636
+The orange area is all
+the other applications
+
+
+205
+00:10:18,026 --> 00:10:19,446
+which on iOS is very
+well-behaved.
+
+
+206
+00:10:19,446 --> 00:10:21,426
+So it's a tiny little
+15 percent slither.
+
+
+207
+00:10:22,266 --> 00:10:25,566
+And then of course, the
+free area is the gray area.
+
+
+208
+00:10:26,366 --> 00:10:29,796
+And as we've been stressing all
+week, if you have work to do,
+
+
+209
+00:10:30,146 --> 00:10:32,436
+you really do want to
+use all the CPU can
+
+
+210
+00:10:32,436 --> 00:10:33,706
+and then let it go to sleep.
+
+
+211
+00:10:34,116 --> 00:10:38,506
+Let the computer-- the machinery
+underneath your application go
+
+
+212
+00:10:38,506 --> 00:10:40,536
+to rest for better
+performance and power.
+
+
+213
+00:10:42,566 --> 00:10:44,496
+Now, we have the main
+section of the report.
+
+
+214
+00:10:45,216 --> 00:10:47,356
+This is where we have some
+graph showing you with history,
+
+
+215
+00:10:47,506 --> 00:10:50,196
+basically, the history
+of that needle up above.
+
+
+216
+00:10:50,286 --> 00:10:51,656
+And the first one
+is a large graph
+
+
+217
+00:10:51,706 --> 00:10:53,296
+because that's showing
+an aggregate
+
+
+218
+00:10:53,296 --> 00:10:56,216
+across all your threads at
+the CPU utilization over time.
+
+
+219
+00:10:57,816 --> 00:10:59,896
+Below that, we split
+it out by the threads.
+
+
+220
+00:11:00,726 --> 00:11:01,996
+And here, we only
+have two threads.
+
+
+221
+00:11:02,466 --> 00:11:05,136
+But these-- as your threads
+come and go, we will add
+
+
+222
+00:11:05,136 --> 00:11:06,366
+or remove graphs down here.
+
+
+223
+00:11:07,316 --> 00:11:09,856
+In this case, we can
+see that thread 1,
+
+
+224
+00:11:09,856 --> 00:11:12,866
+the main thread is getting a
+lot of activity and whatever
+
+
+225
+00:11:12,866 --> 00:11:15,146
+that second thread is
+basically doing nothing.
+
+
+226
+00:11:15,206 --> 00:11:16,636
+So this might be
+a good opportunity
+
+
+227
+00:11:16,946 --> 00:11:19,266
+to profile our application
+and see if we can move any
+
+
+228
+00:11:19,266 --> 00:11:20,326
+of that off the main thread.
+
+
+229
+00:11:21,156 --> 00:11:23,646
+And of course, as I said,
+the best place to do
+
+
+230
+00:11:23,646 --> 00:11:25,286
+that is in Instruments.
+
+
+231
+00:11:25,286 --> 00:11:29,766
+So the most important part
+of this report is the Profile
+
+
+232
+00:11:29,766 --> 00:11:30,576
+and Instruments button.
+
+
+233
+00:11:30,576 --> 00:11:31,926
+And this will launch
+Instruments,
+
+
+234
+00:11:32,246 --> 00:11:35,656
+open up the time profiler
+template, and gets you started
+
+
+235
+00:11:36,286 --> 00:11:37,896
+down the path to
+fixing this problem.
+
+
+236
+00:11:39,096 --> 00:11:40,856
+Let's move on to
+the memory report.
+
+
+237
+00:11:42,076 --> 00:11:45,106
+The memory gauge sets in
+the debugging navigator just
+
+
+238
+00:11:45,106 --> 00:11:48,306
+like the CPU gauge and it shows
+you a chart of what's going
+
+
+239
+00:11:48,306 --> 00:11:51,276
+on giving you a first indication
+that something maybe going wrong
+
+
+240
+00:11:51,666 --> 00:11:54,486
+or maybe, an indication that
+everything is just fine.
+
+
+241
+00:11:55,316 --> 00:11:58,096
+If we click on this gauge,
+we get the memory report.
+
+
+242
+00:11:58,716 --> 00:12:06,586
+And like the CPU report,
+it has similar sections
+
+
+243
+00:12:06,636 --> 00:12:08,366
+and the first section
+is the meter view.
+
+
+244
+00:12:09,696 --> 00:12:13,706
+The meter view in this case is
+showing 153 megabytes being used
+
+
+245
+00:12:14,226 --> 00:12:18,116
+which is about a third of this
+iOS' devices total memory.
+
+
+246
+00:12:19,106 --> 00:12:22,596
+It also has that inner blue
+arc which shows you the range
+
+
+247
+00:12:23,026 --> 00:12:27,326
+and since I've been measuring
+quickly after the start
+
+
+248
+00:12:27,326 --> 00:12:30,346
+of this application, the range
+goes from zero to where we are,
+
+
+249
+00:12:30,346 --> 00:12:34,516
+153, because hardly,
+any time is elapsed.
+
+
+250
+00:12:35,166 --> 00:12:38,036
+If we go over to the total
+system utilization area,
+
+
+251
+00:12:38,086 --> 00:12:40,606
+we can again see in this
+pie charts that we're using
+
+
+252
+00:12:40,606 --> 00:12:42,616
+about a third of the
+total system's memory.
+
+
+253
+00:12:43,546 --> 00:12:45,186
+And that the other applications
+
+
+254
+00:12:45,186 --> 00:12:48,036
+on the system are not using
+very much but you can imagine
+
+
+255
+00:12:48,036 --> 00:12:51,086
+that other applications might
+be affecting our application.
+
+
+256
+00:12:51,086 --> 00:12:52,216
+We might be getting
+memory warnings
+
+
+257
+00:12:52,246 --> 00:12:55,406
+because of our app
+or other apps.
+
+
+258
+00:12:55,556 --> 00:12:57,476
+And finally, we have
+the main gauge area.
+
+
+259
+00:12:57,476 --> 00:13:00,176
+And this is where you
+can see at a glance
+
+
+260
+00:13:00,216 --> 00:13:02,706
+that something might be going
+wrong with this application
+
+
+261
+00:13:02,706 --> 00:13:05,766
+because we seemed to be doing
+a repeatable set of steps
+
+
+262
+00:13:06,196 --> 00:13:09,186
+and memory usage is just
+monotonously climbing up,
+
+
+263
+00:13:09,186 --> 00:13:10,006
+and up, and up.
+
+
+264
+00:13:10,236 --> 00:13:14,646
+And so, this would be a
+great opportunity to profile
+
+
+265
+00:13:14,646 --> 00:13:17,836
+in Instruments or
+as my colleague,
+
+
+266
+00:13:17,916 --> 00:13:20,836
+Han Ming [phonetic] is going
+to show in a real life example,
+
+
+267
+00:13:21,186 --> 00:13:24,626
+how we can solve these problems
+by looking at these reports.
+
+
+268
+00:13:27,516 --> 00:13:33,776
+[ Applause ]
+
+
+269
+00:13:34,276 --> 00:13:35,166
+>> Thank you Troy.
+
+
+270
+00:13:35,166 --> 00:13:38,496
+So I'd like to show you
+how to make use of the CPU
+
+
+271
+00:13:38,616 --> 00:13:42,996
+and memory gauges to detect
+performance issues even while
+
+
+272
+00:13:42,996 --> 00:13:44,726
+you're actively developing
+your application.
+
+
+273
+00:13:45,226 --> 00:13:45,826
+So let's get to it.
+
+
+274
+00:13:46,516 --> 00:13:52,336
+[ Pause ]
+
+
+275
+00:13:52,836 --> 00:13:55,706
+So the app I'm using
+is a Mac application.
+
+
+276
+00:13:56,036 --> 00:13:59,006
+But everything I say here
+today applies completely
+
+
+277
+00:13:59,006 --> 00:13:59,976
+to your iOS apps.
+
+
+278
+00:14:01,396 --> 00:14:05,866
+So to set the stage, imagine
+I have an award-winning
+
+
+279
+00:14:05,866 --> 00:14:07,486
+application on the
+Mac App Store.
+
+
+280
+00:14:08,576 --> 00:14:12,796
+People love it because it does
+one and one thing really well.
+
+
+281
+00:14:13,746 --> 00:14:15,426
+It shows you exactly
+one picture.
+
+
+282
+00:14:15,986 --> 00:14:20,676
+Now because of this
+unsurpassed simplicity,
+
+
+283
+00:14:20,676 --> 00:14:23,046
+it has been downloaded
+many times
+
+
+284
+00:14:23,236 --> 00:14:24,466
+over the last couple of years.
+
+
+285
+00:14:25,066 --> 00:14:27,296
+But my users are
+clamoring for more features.
+
+
+286
+00:14:28,116 --> 00:14:31,486
+So in the next release, I'm
+adding two new features.
+
+
+287
+00:14:32,176 --> 00:14:35,096
+The ability to add
+filters to the image
+
+
+288
+00:14:35,096 --> 00:14:37,786
+and the ability to do rotation.
+
+
+289
+00:14:38,926 --> 00:14:39,676
+Let's try them out.
+
+
+290
+00:14:40,516 --> 00:14:44,176
+[ Pause ]
+
+
+291
+00:14:44,676 --> 00:14:47,796
+So you can see, I
+have four filters.
+
+
+292
+00:14:47,796 --> 00:14:49,756
+Let's try the rotation--
+
+
+293
+00:14:51,046 --> 00:14:53,896
+distortion, I'm sorry,
+sepia tone.
+
+
+294
+00:14:54,456 --> 00:14:58,316
+I notice a little bit of a
+lag, maybe a tenth of a second,
+
+
+295
+00:14:58,316 --> 00:15:00,606
+or a quarter of a second every
+time I change the filter.
+
+
+296
+00:15:00,606 --> 00:15:04,896
+I'm going to assume that Apple
+has done an incredible job
+
+
+297
+00:15:04,896 --> 00:15:07,326
+of optimizing those
+core image filters.
+
+
+298
+00:15:08,496 --> 00:15:11,576
+So my next idea is to
+add a cache so that
+
+
+299
+00:15:11,576 --> 00:15:13,966
+if my user reselects
+the same filter,
+
+
+300
+00:15:13,966 --> 00:15:15,256
+it would be lightning fast.
+
+
+301
+00:15:15,776 --> 00:15:19,386
+So I'm going to do that.
+
+
+302
+00:15:22,876 --> 00:15:30,096
+So this is where I create
+a cache, scrolling down,
+
+
+303
+00:15:32,296 --> 00:15:33,756
+this is where after the cache,
+
+
+304
+00:15:33,756 --> 00:15:36,406
+I'm going to put a breakpoint
+here so that when it breaks,
+
+
+305
+00:15:36,406 --> 00:15:39,486
+I can validate that I have
+successfully added to the cache.
+
+
+306
+00:15:40,866 --> 00:15:47,256
+And this is where I make use
+of it, I'm going to recompile
+
+
+307
+00:15:47,256 --> 00:15:51,266
+and run so I hit the
+breakpoint, that C.
+
+
+308
+00:15:51,266 --> 00:15:57,886
+I'm going to make use of our
+variable view, zooming in here.
+
+
+309
+00:15:59,126 --> 00:16:02,076
+And oops, so one key value pair.
+
+
+310
+00:16:02,076 --> 00:16:02,816
+So that's good.
+
+
+311
+00:16:04,766 --> 00:16:06,366
+So remove breakpoint
+and continue.
+
+
+312
+00:16:10,226 --> 00:16:13,206
+Now, the debugger team would
+like you to build up a habit
+
+
+313
+00:16:13,206 --> 00:16:16,686
+of whenever you add a new
+feature, a new enhancement
+
+
+314
+00:16:17,006 --> 00:16:22,896
+to cleanse over to the debug
+gauges, just to make sure
+
+
+315
+00:16:22,896 --> 00:16:24,366
+that now everything
+is behaving OK.
+
+
+316
+00:16:24,366 --> 00:16:27,516
+So please keep your eyes
+peeled in this particular case
+
+
+317
+00:16:27,516 --> 00:16:32,546
+to the CPU and the memory gauge
+while I try out my new cache.
+
+
+318
+00:16:33,076 --> 00:16:38,266
+With distortion, CPU is
+behaving pretty well.
+
+
+319
+00:16:38,616 --> 00:16:39,736
+Memory went up a little bit
+
+
+320
+00:16:39,736 --> 00:16:42,576
+because I just added
+a new filtered image.
+
+
+321
+00:16:43,706 --> 00:16:45,866
+Sepia tone, same logic.
+
+
+322
+00:16:46,206 --> 00:16:52,916
+Now, let's try out our new cache
+by reselecting back distortion.
+
+
+323
+00:16:53,476 --> 00:16:56,866
+Oops, memory went
+up a little bit.
+
+
+324
+00:16:56,866 --> 00:17:01,476
+Now, just to reconfirm
+what I saw, yup!
+
+
+325
+00:17:01,986 --> 00:17:04,685
+So now, we don't want
+you to get paranoid
+
+
+326
+00:17:04,685 --> 00:17:06,836
+over every single
+bump on the chart.
+
+
+327
+00:17:07,386 --> 00:17:09,695
+But if you see a monotonous
+growth pattern like this,
+
+
+328
+00:17:09,695 --> 00:17:11,715
+it should pick your interest.
+
+
+329
+00:17:11,976 --> 00:17:12,866
+And it does for me.
+
+
+330
+00:17:12,915 --> 00:17:17,746
+So I want to get
+more detail about it.
+
+
+331
+00:17:18,006 --> 00:17:21,836
+So I can do that like Troy
+said, I can select the gauge
+
+
+332
+00:17:21,836 --> 00:17:24,675
+on the navigator and it
+will show me a report of it.
+
+
+333
+00:17:25,276 --> 00:17:28,726
+The top section is a
+snapshot but what really jumps
+
+
+334
+00:17:28,726 --> 00:17:30,526
+out at me is the graph.
+
+
+335
+00:17:31,326 --> 00:17:32,446
+This pattern here.
+
+
+336
+00:17:32,676 --> 00:17:34,356
+So something is definitely
+cuckoo here.
+
+
+337
+00:17:35,076 --> 00:17:39,386
+Now, I can select, I
+can click on the profile
+
+
+338
+00:17:39,386 --> 00:17:42,106
+and instruments button to get
+more detail but sometimes,
+
+
+339
+00:17:42,106 --> 00:17:43,846
+because this is your own
+source code, you have reached
+
+
+340
+00:17:43,846 --> 00:17:45,246
+in for last couple of years.
+
+
+341
+00:17:45,246 --> 00:17:48,266
+And I just added some more new
+lines so we can reflect on it
+
+
+342
+00:17:48,266 --> 00:17:49,546
+and see what you just did.
+
+
+343
+00:17:50,276 --> 00:17:52,526
+So let's look at that.
+
+
+344
+00:17:57,266 --> 00:18:01,276
+So here is where the cache is
+created, nothing is wrong here.
+
+
+345
+00:18:01,276 --> 00:18:07,366
+Here is what I make use
+of it, seems-- looks OK.
+
+
+346
+00:18:10,776 --> 00:18:13,486
+So this line right
+here, now, those of you
+
+
+347
+00:18:13,486 --> 00:18:16,106
+with eagle eyes would
+have noticed
+
+
+348
+00:18:16,106 --> 00:18:17,886
+that I've made the
+classic rookie mistake
+
+
+349
+00:18:17,886 --> 00:18:19,836
+of confusing the
+key and the value.
+
+
+350
+00:18:20,576 --> 00:18:23,306
+So, you know, obviously,
+that's not going to work.
+
+
+351
+00:18:23,506 --> 00:18:25,766
+Even though when I've checked
+it early on, it was in the,
+
+
+352
+00:18:25,896 --> 00:18:27,076
+you know, I added one key value.
+
+
+353
+00:18:28,036 --> 00:18:30,626
+So let's switch them,
+switch the order.
+
+
+354
+00:18:31,516 --> 00:18:36,956
+[ Pause ]
+
+
+355
+00:18:37,456 --> 00:18:38,686
+I'm going to recompile and run.
+
+
+356
+00:18:38,776 --> 00:18:44,476
+And I'm going to
+try them out again.
+
+
+357
+00:18:46,476 --> 00:18:51,786
+Distortion, sepia tone,
+this is the important part.
+
+
+358
+00:18:52,286 --> 00:18:53,626
+Let's go back to distortion.
+
+
+359
+00:18:54,006 --> 00:18:56,216
+And you can see that
+we are staying
+
+
+360
+00:18:56,216 --> 00:18:57,616
+at for about 39 megabytes.
+
+
+361
+00:18:58,276 --> 00:18:58,996
+Let's try it again.
+
+
+362
+00:18:58,996 --> 00:19:02,386
+So that the debug gauge,
+
+
+363
+00:19:02,386 --> 00:19:05,046
+the memory gauge validates
+what I think is happening,
+
+
+364
+00:19:05,226 --> 00:19:06,016
+the correctness of it.
+
+
+365
+00:19:06,016 --> 00:19:09,776
+I just want to expand a little
+on what goes hand in hand
+
+
+366
+00:19:10,116 --> 00:19:11,566
+with the memory gauge.
+
+
+367
+00:19:12,206 --> 00:19:13,756
+Some of you may have had used
+
+
+368
+00:19:13,756 --> 00:19:16,816
+that usually involves
+a repeatable pattern,
+
+
+369
+00:19:17,276 --> 00:19:19,036
+a repeatable user gesture.
+
+
+370
+00:19:19,036 --> 00:19:22,576
+You know, you do X and then
+you do Y to make X go away.
+
+
+371
+00:19:22,696 --> 00:19:23,986
+Sometimes, you have
+to do X again.
+
+
+372
+00:19:24,076 --> 00:19:29,846
+A concrete example would be on
+the iOS, you put up a picture,
+
+
+373
+00:19:30,066 --> 00:19:32,086
+you flick it away,
+then you flick it back.
+
+
+374
+00:19:32,086 --> 00:19:36,986
+On your Mac, you may open a, you
+know, NSDocument-based document
+
+
+375
+00:19:37,336 --> 00:19:40,876
+and then close it
+so you get the idea.
+
+
+376
+00:19:41,086 --> 00:19:42,316
+So I'm pretty happy
+with the cache,
+
+
+377
+00:19:42,486 --> 00:19:43,636
+let's move on to the slider.
+
+
+378
+00:19:44,516 --> 00:19:47,956
+[ Pause ]
+
+
+379
+00:19:48,456 --> 00:19:50,786
+All right, let's try it out.
+
+
+380
+00:19:50,786 --> 00:19:53,306
+OK, it looks like it does
+what it says and now rotating.
+
+
+381
+00:19:54,516 --> 00:19:57,576
+Again, I'm going to
+glance over to my CPU
+
+
+382
+00:19:57,576 --> 00:20:00,026
+and memory gauge and try it out.
+
+
+383
+00:20:02,376 --> 00:20:03,796
+So memory seems pretty stable,
+
+
+384
+00:20:04,276 --> 00:20:06,746
+but there's something
+interesting about the CPU.
+
+
+385
+00:20:07,306 --> 00:20:11,666
+You cannot see here but even
+after I've released the button,
+
+
+386
+00:20:11,926 --> 00:20:13,336
+there seems to be
+some activities,
+
+
+387
+00:20:13,336 --> 00:20:14,846
+CPU activity going on.
+
+
+388
+00:20:16,036 --> 00:20:17,786
+Again, I'm interested in it.
+
+
+389
+00:20:20,296 --> 00:20:21,636
+So let's select it.
+
+
+390
+00:20:23,046 --> 00:20:24,866
+The top section is the snapshot,
+
+
+391
+00:20:24,866 --> 00:20:27,316
+the middle section is
+the utilization overtime
+
+
+392
+00:20:27,606 --> 00:20:31,386
+which is the accumulation
+over the usage on the threats,
+
+
+393
+00:20:31,856 --> 00:20:34,526
+and the last section
+at the bottom,
+
+
+394
+00:20:34,856 --> 00:20:36,766
+the threat activities
+on each threat.
+
+
+395
+00:20:37,256 --> 00:20:42,566
+You can see that, well, I know
+that when I did the rotation,
+
+
+396
+00:20:42,566 --> 00:20:44,866
+I'm using set bounce
+rotation on NSView.
+
+
+397
+00:20:45,186 --> 00:20:46,696
+And what's surprising for me is
+
+
+398
+00:20:46,696 --> 00:20:51,026
+that I'm seeing activities
+on many threats.
+
+
+399
+00:20:51,846 --> 00:20:54,526
+So I'm going to leave the
+report right there and try
+
+
+400
+00:20:54,526 --> 00:20:58,156
+out my slider again to see if
+I see anything interesting.
+
+
+401
+00:20:59,146 --> 00:21:02,876
+So I can see that a whole
+slew of threats just came on.
+
+
+402
+00:21:03,616 --> 00:21:05,386
+Now this-- that's
+weird too, you know,
+
+
+403
+00:21:05,386 --> 00:21:08,586
+I'm and I think I just wrote
+the set Rotation method,
+
+
+404
+00:21:08,586 --> 00:21:10,816
+I'm going to go back
+and take a look at it.
+
+
+405
+00:21:17,236 --> 00:21:20,926
+So here's where I noticed the
+rotation changes or I cut it
+
+
+406
+00:21:20,926 --> 00:21:25,286
+down and I set a flag,
+this method right here.
+
+
+407
+00:21:25,606 --> 00:21:30,026
+So when I wrote the method,
+it was necessary for me
+
+
+408
+00:21:30,026 --> 00:21:32,596
+to call this method to get--
+
+
+409
+00:21:32,656 --> 00:21:34,666
+fill that image so
+that I can rotate it.
+
+
+410
+00:21:35,376 --> 00:21:37,966
+This method that uses a dispatch
+cue so that work is done
+
+
+411
+00:21:37,966 --> 00:21:41,116
+on a different threat; they'll
+by explaining why we saw a lot
+
+
+412
+00:21:41,116 --> 00:21:44,546
+of activities on threats,
+but we have a better way now,
+
+
+413
+00:21:44,696 --> 00:21:49,296
+we're keeping-- I'm
+keeping instance variable
+
+
+414
+00:21:49,296 --> 00:21:50,166
+to filtered image.
+
+
+415
+00:21:50,666 --> 00:21:54,166
+So this method is not necessary,
+now I must have missed it
+
+
+416
+00:21:54,166 --> 00:21:55,756
+in my refactoring early on.
+
+
+417
+00:21:55,756 --> 00:21:58,046
+So let's get rid
+of it, recompile.
+
+
+418
+00:21:58,046 --> 00:22:05,636
+And I'm going to bring up the
+report, scroll to the bottom,
+
+
+419
+00:22:06,216 --> 00:22:08,836
+try the rotation again.
+
+
+420
+00:22:08,836 --> 00:22:11,276
+And this time you see that,
+
+
+421
+00:22:11,276 --> 00:22:14,236
+there are no new
+threats coming in.
+
+
+422
+00:22:15,206 --> 00:22:16,516
+So I'm pretty happy
+with that as well.
+
+
+423
+00:22:17,776 --> 00:22:20,676
+CPU like what Troy says
+or what you have heard
+
+
+424
+00:22:20,676 --> 00:22:22,466
+over the last few days.
+
+
+425
+00:22:23,136 --> 00:22:26,476
+Now we want you to do use
+as much CPU as possible
+
+
+426
+00:22:26,476 --> 00:22:28,716
+to get the work done in
+the shortest possible time,
+
+
+427
+00:22:29,056 --> 00:22:31,836
+so that the rest of the
+course can go to rest,
+
+
+428
+00:22:32,586 --> 00:22:34,306
+thereby saving you
+battery power.
+
+
+429
+00:22:35,366 --> 00:22:38,656
+So do not be afraid to
+make used of the CPU
+
+
+430
+00:22:38,656 --> 00:22:39,676
+to get real work done.
+
+
+431
+00:22:40,856 --> 00:22:43,506
+So that concludes about my
+demo and I have this one thing,
+
+
+432
+00:22:43,506 --> 00:22:47,246
+I want you to take out from
+here is that, whenever you--
+
+
+433
+00:22:47,246 --> 00:22:49,286
+a new feature, a new
+enhancement and you're--
+
+
+434
+00:22:49,286 --> 00:22:51,626
+in the process of testing
+it, please remember
+
+
+435
+00:22:51,626 --> 00:22:54,556
+to consult the performers,
+the debug edges
+
+
+436
+00:22:54,556 --> 00:22:57,496
+to make sure you don't add
+any performance regressions
+
+
+437
+00:22:57,746 --> 00:22:58,836
+to your application, thank you.
+
+
+438
+00:22:59,516 --> 00:23:07,216
+[ Applause ]
+
+
+439
+00:23:07,716 --> 00:23:08,756
+>> Thank you, Han Ming.
+
+
+440
+00:23:10,106 --> 00:23:13,556
+As you can see these debugging
+reports give a great high level
+
+
+441
+00:23:13,556 --> 00:23:15,326
+overview on what's going
+on in your application.
+
+
+442
+00:23:16,306 --> 00:23:17,676
+But as debuggers, we--
+
+
+443
+00:23:17,746 --> 00:23:20,256
+they can't always rely
+on a high level overview.
+
+
+444
+00:23:20,256 --> 00:23:23,146
+Sometimes, we need to go down
+deep, sometimes we need to look
+
+
+445
+00:23:23,396 --> 00:23:25,866
+at the specific state
+of our application
+
+
+446
+00:23:26,166 --> 00:23:29,726
+in a specific instance variables
+that make up our application.
+
+
+447
+00:23:30,406 --> 00:23:34,116
+And so for that, I'd like to
+talk about the new data tips
+
+
+448
+00:23:34,166 --> 00:23:35,126
+and Quick Look features.
+
+
+449
+00:23:35,816 --> 00:23:39,096
+If you're gone programming
+for a while,
+
+
+450
+00:23:39,146 --> 00:23:40,446
+you know that you're
+getting into the cycle,
+
+
+451
+00:23:40,756 --> 00:23:42,946
+you write a little bit
+a code, you hit run,
+
+
+452
+00:23:42,946 --> 00:23:45,066
+and you do some debugging,
+and then you go back
+
+
+453
+00:23:45,066 --> 00:23:46,116
+and do some more coding.
+
+
+454
+00:23:47,306 --> 00:23:49,876
+And in Xcode, it's
+going to look like this.
+
+
+455
+00:23:49,906 --> 00:23:52,506
+You have your big code editor
+and you're writing code.
+
+
+456
+00:23:52,506 --> 00:23:56,146
+And when you hit a breakpoint
+that debug area comes
+
+
+457
+00:23:56,146 --> 00:23:57,676
+up showing you useful
+information.
+
+
+458
+00:23:58,336 --> 00:24:01,426
+But a lot of times, we get
+all of the context we need
+
+
+459
+00:24:01,666 --> 00:24:03,726
+from our code and so it
+would be great to be able
+
+
+460
+00:24:03,726 --> 00:24:06,746
+to see the whole method that
+we're working on and just hide
+
+
+461
+00:24:06,746 --> 00:24:09,586
+that debug area for
+when we really need it.
+
+
+462
+00:24:10,706 --> 00:24:12,566
+And so then, we'd have
+a debugging experience
+
+
+463
+00:24:12,566 --> 00:24:13,496
+that looks more like this
+
+
+464
+00:24:14,456 --> 00:24:18,296
+and so that's exactly what
+we have done in Xcode 5.
+
+
+465
+00:24:19,576 --> 00:24:22,176
+The first thing we did
+was we improve data tips
+
+
+466
+00:24:22,686 --> 00:24:24,306
+and how do we improve them,
+
+
+467
+00:24:24,526 --> 00:24:26,716
+we strip away all the
+extraneous information.
+
+
+468
+00:24:27,106 --> 00:24:28,566
+You already have the
+variable name there,
+
+
+469
+00:24:29,486 --> 00:24:31,896
+I assumed you also know that
+this is a size variable,
+
+
+470
+00:24:31,896 --> 00:24:33,446
+so you don't need the
+type and the name.
+
+
+471
+00:24:33,696 --> 00:24:37,196
+All you care about is the width
+and height of this size variable
+
+
+472
+00:24:37,196 --> 00:24:38,516
+and so that's what we show you.
+
+
+473
+00:24:39,106 --> 00:24:43,636
+But you'll notice we added two
+more things to this data tip.
+
+
+474
+00:24:44,586 --> 00:24:48,726
+And the first one is the Info
+button and if you press that,
+
+
+475
+00:24:48,726 --> 00:24:52,716
+you get the results as if you
+typeed in the LODB console,
+
+
+476
+00:24:52,906 --> 00:24:54,846
+PO or print that object.
+
+
+477
+00:24:56,826 --> 00:25:01,126
+[applause] It's really
+handy because right there
+
+
+478
+00:25:01,126 --> 00:25:03,136
+in your code, right
+where you need it,
+
+
+479
+00:25:03,716 --> 00:25:04,866
+but we didn't stop there.
+
+
+480
+00:25:06,266 --> 00:25:10,926
+Variables, even simple ones
+like size has visualization
+
+
+481
+00:25:10,926 --> 00:25:13,096
+about them that you would
+like to see, maybe you want
+
+
+482
+00:25:13,096 --> 00:25:14,116
+to see the aspect ratio.
+
+
+483
+00:25:14,486 --> 00:25:17,006
+So you can click on this
+Quick Look button and see
+
+
+484
+00:25:17,006 --> 00:25:19,976
+that size variable
+right there in the code
+
+
+485
+00:25:20,156 --> 00:25:21,366
+in a visual representation.
+
+
+486
+00:25:21,916 --> 00:25:26,956
+[applause] And this
+is super helpful.
+
+
+487
+00:25:27,366 --> 00:25:30,296
+So to show you a demo of
+how this works in practice,
+
+
+488
+00:25:30,606 --> 00:25:31,976
+I'd like to invite
+Christopher Friesen.
+
+
+489
+00:25:33,336 --> 00:25:35,846
+>> So our users loved the new
+features, the Han Ming about it.
+
+
+490
+00:25:36,356 --> 00:25:39,456
+The filters are great, even my
+mom is sending motion blurred
+
+
+491
+00:25:39,456 --> 00:25:40,996
+cap-- pictures already,
+so, you we know,
+
+
+492
+00:25:40,996 --> 00:25:42,176
+that made a great success.
+
+
+493
+00:25:43,876 --> 00:25:46,176
+Now there's another
+feature they want, you know,
+
+
+494
+00:25:46,346 --> 00:25:49,436
+rectangular boarders around
+your pictures are, oh,
+
+
+495
+00:25:49,436 --> 00:25:50,236
+they're pretty normal,
+
+
+496
+00:25:50,236 --> 00:25:52,406
+but they're also kind
+of not that exciting.
+
+
+497
+00:25:52,776 --> 00:25:54,286
+Our users want something
+little more edgy.
+
+
+498
+00:25:54,286 --> 00:25:56,526
+So I've been working
+on another feature
+
+
+499
+00:25:56,966 --> 00:25:58,256
+and let's take a look at that.
+
+
+500
+00:25:59,516 --> 00:26:05,926
+[ Pause ]
+
+
+501
+00:26:06,426 --> 00:26:08,186
+So we'll run our
+application here
+
+
+502
+00:26:14,386 --> 00:26:16,476
+and I've added the
+Mask button down here.
+
+
+503
+00:26:20,476 --> 00:26:24,956
+So this is creating a mask
+for the image which is--
+
+
+504
+00:26:25,386 --> 00:26:26,546
+what our users have asked for.
+
+
+505
+00:26:26,926 --> 00:26:30,326
+However, what they really wanted
+is they want a star shape.
+
+
+506
+00:26:30,326 --> 00:26:34,176
+So I'm in the middle of
+running this feature and I want
+
+
+507
+00:26:34,176 --> 00:26:35,936
+to use the data steps
+in Quick Looks to figure
+
+
+508
+00:26:35,936 --> 00:26:38,206
+out what's gone wrong
+with my implementation.
+
+
+509
+00:26:38,206 --> 00:26:47,096
+So I'll go back here and
+I'll use the button down here
+
+
+510
+00:26:47,096 --> 00:26:50,366
+at the bottom of the Debug bar
+to activate our breakpoints
+
+
+511
+00:26:51,076 --> 00:26:52,706
+and then we'll exercise
+our application
+
+
+512
+00:26:53,466 --> 00:26:56,036
+to hit our breakpoint.
+
+
+513
+00:26:56,606 --> 00:27:00,356
+So here we are, we're
+creating a Bezier path
+
+
+514
+00:27:00,356 --> 00:27:02,166
+that will become our mask
+
+
+515
+00:27:03,096 --> 00:27:05,996
+but we don't know exactly
+what's wrong with the shape.
+
+
+516
+00:27:07,156 --> 00:27:10,026
+We can use our data
+tips to hover over it.
+
+
+517
+00:27:10,576 --> 00:27:14,506
+We can click the Info button
+to get a description of it.
+
+
+518
+00:27:15,256 --> 00:27:18,186
+Well that's all the
+stroke information,
+
+
+519
+00:27:18,566 --> 00:27:20,906
+I can breakout some graph
+paper and plotted out
+
+
+520
+00:27:20,956 --> 00:27:23,226
+or I can click Quick Look.
+
+
+521
+00:27:23,916 --> 00:27:29,966
+And here we get our
+wonderful image Bezier path
+
+
+522
+00:27:29,966 --> 00:27:31,846
+that we're using
+to mask or image.
+
+
+523
+00:27:32,816 --> 00:27:34,826
+That's not what we want.
+
+
+524
+00:27:35,886 --> 00:27:39,266
+Let's take a look
+at our method here.
+
+
+525
+00:27:39,266 --> 00:27:44,276
+So our method is lazily
+initializing the Bezier path.
+
+
+526
+00:27:44,716 --> 00:27:47,086
+So as you can see, since,
+we already have a mask,
+
+
+527
+00:27:48,546 --> 00:27:49,976
+it's going to return
+out of this function.
+
+
+528
+00:27:50,896 --> 00:27:53,256
+We can use our data tips
+to actually edit the value.
+
+
+529
+00:27:53,256 --> 00:27:55,996
+I can double click
+on my address here,
+
+
+530
+00:27:56,736 --> 00:28:01,186
+I can enter zero
+to nil that out.
+
+
+531
+00:28:01,536 --> 00:28:04,296
+And now as we step over
+this code, we won't return
+
+
+532
+00:28:04,296 --> 00:28:06,366
+out of the method
+early and we'll go,
+
+
+533
+00:28:06,366 --> 00:28:09,126
+get into the code that's
+going to setup the Bezier path
+
+
+534
+00:28:09,126 --> 00:28:11,026
+and we can start debugging that.
+
+
+535
+00:28:12,206 --> 00:28:15,376
+So I'll continue here
+and now we're on the
+
+
+536
+00:28:15,376 --> 00:28:17,496
+for loop that's going to
+go through and it's going
+
+
+537
+00:28:17,496 --> 00:28:18,426
+to construct the shape.
+
+
+538
+00:28:19,506 --> 00:28:22,086
+Let's click continue
+about three times
+
+
+539
+00:28:23,456 --> 00:28:26,236
+and then we'll see how our
+Bezier path is coming along.
+
+
+540
+00:28:26,756 --> 00:28:31,856
+We can hover over any
+reference to mask in this method
+
+
+541
+00:28:31,856 --> 00:28:34,186
+and we'll see what
+the current value is.
+
+
+542
+00:28:35,296 --> 00:28:37,736
+Again, we'll use Quick
+Look and we can see
+
+
+543
+00:28:37,736 --> 00:28:38,976
+that it's starting
+to draw the shape.
+
+
+544
+00:28:40,696 --> 00:28:42,176
+Now in order to draw
+a star shape,
+
+
+545
+00:28:42,816 --> 00:28:46,276
+we need the drawing points
+at alternating radiuses.
+
+
+546
+00:28:48,296 --> 00:28:52,836
+If you look at our radius,
+we see that every other time
+
+
+547
+00:28:52,836 --> 00:28:55,506
+through the loop, it should
+be using a different radius.
+
+
+548
+00:28:57,256 --> 00:28:59,806
+So let's look at R2.
+
+
+549
+00:28:59,946 --> 00:29:04,196
+We see that's 200, R1 is 100.
+
+
+550
+00:29:04,246 --> 00:29:05,146
+So they're both the same,
+
+
+551
+00:29:05,146 --> 00:29:07,166
+so that's why we're not getting
+the shape that we wanted.
+
+
+552
+00:29:08,636 --> 00:29:13,086
+Again, I can use data tips,
+double click on the value
+
+
+553
+00:29:13,656 --> 00:29:18,846
+and turn new value and now
+that value has been changed
+
+
+554
+00:29:18,846 --> 00:29:19,896
+in our running program.
+
+
+555
+00:29:20,686 --> 00:29:22,386
+We'll continue several
+more times
+
+
+556
+00:29:22,386 --> 00:29:24,576
+and then we'll check
+on the drawing.
+
+
+557
+00:29:28,016 --> 00:29:30,326
+Click on Quick Look
+and here we go.
+
+
+558
+00:29:30,456 --> 00:29:33,166
+So we're starting to get
+our star shape, great.
+
+
+559
+00:29:33,436 --> 00:29:35,546
+We figured out where
+the problem is.
+
+
+560
+00:29:38,086 --> 00:29:40,286
+And we'll go ahead and continue.
+
+
+561
+00:29:40,956 --> 00:29:44,356
+And here we are in
+a drawRect method.
+
+
+562
+00:29:45,136 --> 00:29:49,236
+So it will-- we have
+completed our Bezier shape,
+
+
+563
+00:29:49,236 --> 00:29:52,496
+our Bezier path and here
+we see the complete shape,
+
+
+564
+00:29:53,436 --> 00:29:56,596
+and as we continue over
+in our application,
+
+
+565
+00:29:56,776 --> 00:29:58,506
+we've got the distortion
+filters been applied
+
+
+566
+00:29:58,506 --> 00:29:59,556
+as well as our mask.
+
+
+567
+00:29:59,706 --> 00:30:01,436
+So we're nearly there.
+
+
+568
+00:30:02,806 --> 00:30:05,446
+Now another thing you can
+do with the data tips is
+
+
+569
+00:30:05,776 --> 00:30:08,816
+that you can go ahead
+and inspect the values,
+
+
+570
+00:30:09,316 --> 00:30:10,566
+you can crawl in
+to the variables,
+
+
+571
+00:30:11,586 --> 00:30:13,416
+and dive into them will say.
+
+
+572
+00:30:14,196 --> 00:30:15,856
+So let's set our
+breakpoint again,
+
+
+573
+00:30:16,146 --> 00:30:19,236
+exercising our application,
+and we can hover
+
+
+574
+00:30:19,236 --> 00:30:20,366
+over self for instance.
+
+
+575
+00:30:21,806 --> 00:30:24,216
+And here we see that self
+doesn't have a nice concise
+
+
+576
+00:30:24,216 --> 00:30:28,196
+summary so we show you the
+type as well as the address.
+
+
+577
+00:30:30,076 --> 00:30:33,106
+So over here on the left,
+we can turn it open,
+
+
+578
+00:30:33,836 --> 00:30:35,796
+we start seeing the instance
+variables and properties,
+
+
+579
+00:30:36,656 --> 00:30:39,306
+and we can see the same
+for the super class.
+
+
+580
+00:30:41,056 --> 00:30:45,016
+Here's a frame, again, Quick
+Looks are also available
+
+
+581
+00:30:45,106 --> 00:30:46,806
+as you drill down
+into these variables.
+
+
+582
+00:30:49,236 --> 00:30:50,896
+Here's another URL.
+
+
+583
+00:30:51,516 --> 00:30:55,086
+We can do a peel of it.
+
+
+584
+00:30:55,166 --> 00:30:57,266
+Again, this is a textual
+description of what it is,
+
+
+585
+00:30:58,166 --> 00:31:01,266
+not many people know, you
+know, can picture the latitude
+
+
+586
+00:31:01,266 --> 00:31:04,026
+and longitude of that, but we
+can use our visual Quick Looks
+
+
+587
+00:31:04,256 --> 00:31:08,046
+to see exactly where
+this is, we'll do that
+
+
+588
+00:31:09,396 --> 00:31:10,926
+and here we are, we can zoom-in.
+
+
+589
+00:31:11,516 --> 00:31:17,556
+[applause]
+
+
+590
+00:31:18,056 --> 00:31:22,366
+And it sure looks like
+it's near where we are
+
+
+591
+00:31:22,546 --> 00:31:23,886
+and there might some
+event happening
+
+
+592
+00:31:23,886 --> 00:31:25,466
+in the Yerba Buena Park.
+
+
+593
+00:31:25,606 --> 00:31:28,956
+So that's data tips for you.
+
+
+594
+00:31:29,636 --> 00:31:32,666
+They now provide concise
+data for you as well
+
+
+595
+00:31:32,666 --> 00:31:34,146
+as these great visual data tips
+
+
+596
+00:31:34,656 --> 00:31:36,656
+and we hope this will hope
+keep you in your source code
+
+
+597
+00:31:36,656 --> 00:31:38,566
+as you do your debugging,
+thank you.
+
+
+598
+00:31:39,516 --> 00:31:46,056
+[ Applause ]
+
+
+599
+00:31:46,556 --> 00:31:47,616
+>> Thank you, Christopher.
+
+
+600
+00:31:49,596 --> 00:31:52,466
+Now that showed a couple of a
+data types available and I'd
+
+
+601
+00:31:52,466 --> 00:31:53,466
+like to run through some more.
+
+
+602
+00:31:53,466 --> 00:31:55,776
+But let's talk a little
+bit about how this works
+
+
+603
+00:31:55,816 --> 00:31:57,956
+because this is a developer
+conference and I trust you guys
+
+
+604
+00:31:57,956 --> 00:32:01,246
+with the information about how
+these things are put together
+
+
+605
+00:32:01,246 --> 00:32:02,306
+because it's really interesting.
+
+
+606
+00:32:02,876 --> 00:32:06,846
+LODB powers, many of these
+simple ones like NSIs
+
+
+607
+00:32:07,076 --> 00:32:09,446
+because it has data
+formatters that returns
+
+
+608
+00:32:09,446 --> 00:32:11,186
+to us the within the height.
+
+
+609
+00:32:12,276 --> 00:32:15,896
+But we also support more
+complex types like images,
+
+
+610
+00:32:16,016 --> 00:32:19,026
+we support UI image in
+iOS, NS image on Mac OS.
+
+
+611
+00:32:19,576 --> 00:32:21,486
+But also CGImageRef and CIImage.
+
+
+612
+00:32:22,296 --> 00:32:26,126
+And CGImageRef as you well
+know has a bunch of functions
+
+
+613
+00:32:26,426 --> 00:32:27,936
+that get information out of it.
+
+
+614
+00:32:28,716 --> 00:32:32,056
+So if we want to get a
+CGImageRef off your iOS device,
+
+
+615
+00:32:33,036 --> 00:32:34,756
+in Xcode, we construct
+the expressions,
+
+
+616
+00:32:35,166 --> 00:32:38,086
+and we send those using LODB
+to your running application
+
+
+617
+00:32:38,226 --> 00:32:41,746
+and we say, CGImageGetWidth,
+we do the same with the height,
+
+
+618
+00:32:42,246 --> 00:32:44,926
+and the color space, and
+even the bytes of the image
+
+
+619
+00:32:45,216 --> 00:32:47,896
+that get shipped over
+the wire back to Xcode
+
+
+620
+00:32:47,896 --> 00:32:49,396
+where we can reconstruct
+the image
+
+
+621
+00:32:49,466 --> 00:32:50,706
+and show you right inside Xcode.
+
+
+622
+00:32:50,706 --> 00:32:53,916
+And believe me that's much
+easier than any debugging method
+
+
+623
+00:32:54,166 --> 00:32:56,606
+for seeing an in-progress image
+
+
+624
+00:32:56,916 --> 00:33:00,096
+that you may have had
+to use in the past.
+
+
+625
+00:33:00,256 --> 00:33:03,916
+We also support NSString and
+we support NSAttributedString,
+
+
+626
+00:33:03,916 --> 00:33:06,296
+so you can see your fonts and
+colors right inside Xcode,
+
+
+627
+00:33:06,566 --> 00:33:10,216
+instead of the plain text view
+that might be in the console.
+
+
+628
+00:33:10,886 --> 00:33:12,916
+And it's really great for
+long strings because it--
+
+
+629
+00:33:12,916 --> 00:33:14,906
+of course, it doesn't fit
+there in the data tip.
+
+
+630
+00:33:15,116 --> 00:33:17,146
+So you can scroll
+through the whole string
+
+
+631
+00:33:17,146 --> 00:33:19,036
+and see it large right
+up in your screen.
+
+
+632
+00:33:19,596 --> 00:33:25,356
+We support NSPoint, we support
+NSData, and this one is great
+
+
+633
+00:33:25,356 --> 00:33:28,696
+because data has bytes and we
+format the bytes nicely, NSView.
+
+
+634
+00:33:29,166 --> 00:33:33,606
+But data also has, as we all
+know, it often comes from files
+
+
+635
+00:33:33,606 --> 00:33:36,106
+of streams and that's
+usually character data.
+
+
+636
+00:33:36,716 --> 00:33:37,996
+And so right next to the bytes,
+
+
+637
+00:33:38,316 --> 00:33:40,196
+we show what those
+bytes would be
+
+
+638
+00:33:40,536 --> 00:33:41,676
+if they were ASCII characters.
+
+
+639
+00:33:41,786 --> 00:33:42,706
+And so you can see here
+
+
+640
+00:33:42,706 --> 00:33:50,016
+that this is probably a Plist
+that's been loaded from disk.
+
+
+641
+00:33:50,016 --> 00:33:53,366
+We support Core Location and
+if you know, Core Location,
+
+
+642
+00:33:53,366 --> 00:33:55,626
+it's basically a
+pretty bare bones object
+
+
+643
+00:33:55,626 --> 00:33:57,016
+that has latitude, longitude.
+
+
+644
+00:33:58,176 --> 00:34:01,456
+And so recognizing what that
+latitude and longitude is,
+
+
+645
+00:34:01,636 --> 00:34:04,236
+is very difficult unless
+you have the map right there
+
+
+646
+00:34:04,236 --> 00:34:04,686
+in Xcode.
+
+
+647
+00:34:05,176 --> 00:34:06,156
+So this is very powerful.
+
+
+648
+00:34:07,886 --> 00:34:10,976
+Similar to Core Location,
+we have, we support colors.
+
+
+649
+00:34:11,166 --> 00:34:13,235
+And so, rather than
+looking at that triplet
+
+
+650
+00:34:13,235 --> 00:34:16,856
+of RGB values plus alpha, we
+show you the color right there.
+
+
+651
+00:34:17,406 --> 00:34:21,636
+We support Bezier paths,
+both on iOS and Mac OS
+
+
+652
+00:34:21,636 --> 00:34:23,335
+as Christopher showed
+in his demo.
+
+
+653
+00:34:23,956 --> 00:34:25,826
+And we support URLs.
+
+
+654
+00:34:25,826 --> 00:34:29,606
+And it's important to
+realize that URLs have a path,
+
+
+655
+00:34:29,786 --> 00:34:32,326
+that's a string representation,
+and we show you
+
+
+656
+00:34:32,326 --> 00:34:35,536
+that in the data tip, but we
+also show you the contents
+
+
+657
+00:34:35,536 --> 00:34:38,436
+of that URL because that's
+just as important to you
+
+
+658
+00:34:38,686 --> 00:34:41,016
+who is trying to understand
+how your code is working.
+
+
+659
+00:34:41,706 --> 00:34:44,516
+So we'll render web
+pages from the internet
+
+
+660
+00:34:44,516 --> 00:34:48,786
+and put those right there
+in Xcode or we'll load files
+
+
+661
+00:34:48,786 --> 00:34:51,366
+from your local disk
+and show those as well.
+
+
+662
+00:34:51,835 --> 00:34:55,686
+In this example, I'm
+running a program
+
+
+663
+00:34:55,686 --> 00:34:58,276
+that has URL that's
+referencing a keynote document.
+
+
+664
+00:34:58,466 --> 00:35:00,036
+In fact, it's this
+keynote document
+
+
+665
+00:35:00,036 --> 00:35:03,186
+and I can see it right inside
+Xcode which is really powerful.
+
+
+666
+00:35:03,736 --> 00:35:08,966
+And so Quick Look is
+a new powerful way
+
+
+667
+00:35:09,526 --> 00:35:13,456
+to debug your applications that
+makes it a whole lot easier
+
+
+668
+00:35:13,456 --> 00:35:14,416
+and a whole lot more fun
+
+
+669
+00:35:14,786 --> 00:35:16,706
+to see what your
+value-- the values are.
+
+
+670
+00:35:19,456 --> 00:35:22,446
+Visualizing data type is not the
+only thing we need to visualize,
+
+
+671
+00:35:22,446 --> 00:35:25,506
+especially, if like me,
+you work on UI things.
+
+
+672
+00:35:26,286 --> 00:35:29,396
+And especially, in your Mac Apps
+because your windows have many,
+
+
+673
+00:35:29,396 --> 00:35:31,556
+many views and you
+want to visualize,
+
+
+674
+00:35:31,556 --> 00:35:32,926
+let's say the bounce
+of each view.
+
+
+675
+00:35:33,526 --> 00:35:37,496
+And so when I would like to
+highlight is the Show View
+
+
+676
+00:35:37,556 --> 00:35:40,546
+Frames which will
+put a colorful rec--
+
+
+677
+00:35:40,926 --> 00:35:44,896
+rectangle around every
+view in your application.
+
+
+678
+00:35:45,436 --> 00:35:48,756
+I actually used this recently
+because I had a toolbar
+
+
+679
+00:35:48,756 --> 00:35:50,336
+which I needed to make
+a little bit smaller.
+
+
+680
+00:35:51,136 --> 00:35:52,676
+And it has-- as you know,
+
+
+681
+00:35:52,676 --> 00:35:56,656
+the toolbar will take the
+tallest toolbar item in it
+
+
+682
+00:35:57,116 --> 00:35:59,196
+to represent the full height.
+
+
+683
+00:35:59,856 --> 00:36:02,396
+And I had one icon that
+had invisible background
+
+
+684
+00:36:02,516 --> 00:36:04,526
+that was bigger and I didn't
+know which one it was.
+
+
+685
+00:36:05,056 --> 00:36:07,946
+So I turn on this option and
+it was easy to pinpoint exactly
+
+
+686
+00:36:07,946 --> 00:36:12,106
+which toolbar item it was and
+I could change the, our asset,
+
+
+687
+00:36:12,106 --> 00:36:17,626
+debug it, make that item smaller
+and fix my bug, it was green.
+
+
+688
+00:36:18,546 --> 00:36:23,146
+Now if you're on iOS, we also
+have some solutions for you.
+
+
+689
+00:36:23,146 --> 00:36:27,456
+Many people don't realize
+that LODB accepts expressions
+
+
+690
+00:36:27,456 --> 00:36:30,686
+which are fully qualified
+Objective-C statements.
+
+
+691
+00:36:31,446 --> 00:36:33,196
+And so if you have a method,
+
+
+692
+00:36:33,196 --> 00:36:35,826
+let's say the UIViews
+recursive description,
+
+
+693
+00:36:36,456 --> 00:36:39,286
+you can send a message
+to that object,
+
+
+694
+00:36:39,556 --> 00:36:43,526
+telling it to return the string
+for that recursive description
+
+
+695
+00:36:43,526 --> 00:36:45,796
+and print it to the console.
+
+
+696
+00:36:46,046 --> 00:36:48,296
+And this allows you to
+see what the child views
+
+
+697
+00:36:48,296 --> 00:36:49,086
+of that view are.
+
+
+698
+00:36:49,086 --> 00:36:51,066
+And many of the properties
+that you might need
+
+
+699
+00:36:51,066 --> 00:36:53,546
+to debug what's going
+wrong with your UIViews.
+
+
+700
+00:36:54,186 --> 00:36:58,836
+And so these workflows
+are very powerful.
+
+
+701
+00:36:58,836 --> 00:37:00,166
+And now I'd like to
+switch gears and talk
+
+
+702
+00:37:00,166 --> 00:37:02,106
+about the specific
+debugging workflow
+
+
+703
+00:37:02,106 --> 00:37:05,126
+that we've made really great
+and that's XPC Services.
+
+
+704
+00:37:05,756 --> 00:37:10,026
+But first, let's talk a little
+bit about what XPC Services are.
+
+
+705
+00:37:10,416 --> 00:37:13,726
+XPC Services are really
+powerful bits of functionality
+
+
+706
+00:37:13,726 --> 00:37:15,916
+that you separate from
+your main code in order
+
+
+707
+00:37:15,916 --> 00:37:19,066
+to have stability
+or maybe security.
+
+
+708
+00:37:19,786 --> 00:37:22,786
+And Xcode provides a template
+if you're writing a Mac App
+
+
+709
+00:37:22,786 --> 00:37:25,176
+that will allow you to
+create one of these surfaces
+
+
+710
+00:37:25,586 --> 00:37:29,016
+which makes a bundle
+inside your application
+
+
+711
+00:37:29,306 --> 00:37:31,566
+which is a separate process
+that gets launched by the system
+
+
+712
+00:37:31,846 --> 00:37:35,426
+when you call the
+APIs that call it up.
+
+
+713
+00:37:35,686 --> 00:37:38,556
+And this bundle can
+be communicated too,
+
+
+714
+00:37:38,766 --> 00:37:43,546
+you can ask request things
+from the bundle and when
+
+
+715
+00:37:43,546 --> 00:37:46,396
+that operation is completed,
+it will send the message back
+
+
+716
+00:37:46,636 --> 00:37:49,836
+with the results
+of that procedure.
+
+
+717
+00:37:52,786 --> 00:37:55,466
+This is possible to
+do in Xcode 4 to--
+
+
+718
+00:37:55,466 --> 00:37:59,106
+it is possible to modify
+your scheme to wait
+
+
+719
+00:37:59,146 --> 00:38:02,226
+for these XPC services
+to come up.
+
+
+720
+00:38:02,226 --> 00:38:04,246
+And when they do, your
+Xcode will attach to it.
+
+
+721
+00:38:04,766 --> 00:38:07,386
+And what does that mean
+to attach to XPC Service?
+
+
+722
+00:38:07,386 --> 00:38:10,366
+That means it gets its own entry
+
+
+723
+00:38:10,366 --> 00:38:12,656
+in the debug navigator
+complete with its own gauges.
+
+
+724
+00:38:13,326 --> 00:38:17,056
+And if you said breakpoints in
+the XPC Service, they'll stop
+
+
+725
+00:38:17,056 --> 00:38:19,706
+in those breakpoints
+just alongside your Mac
+
+
+726
+00:38:19,706 --> 00:38:20,746
+Application breakpoints.
+
+
+727
+00:38:21,166 --> 00:38:23,906
+So it's easy to be able
+to step through each
+
+
+728
+00:38:23,906 --> 00:38:26,866
+of them concurrently just
+by switching back and forth
+
+
+729
+00:38:26,866 --> 00:38:28,656
+between the process and
+the debug navigator.
+
+
+730
+00:38:29,446 --> 00:38:33,046
+But the difficult part is that
+when this communication ends
+
+
+731
+00:38:33,046 --> 00:38:35,666
+with your service, the
+system is allowed to wreak
+
+
+732
+00:38:35,756 --> 00:38:39,286
+that XPC Service to free up
+system resources for other apps.
+
+
+733
+00:38:39,766 --> 00:38:43,566
+And so to make that even better,
+
+
+734
+00:38:43,916 --> 00:38:46,156
+we've improved the
+situation in Xcode 5.
+
+
+735
+00:38:47,156 --> 00:38:50,026
+When Xcode debugs your
+application, it starts listening
+
+
+736
+00:38:50,256 --> 00:38:52,286
+for any services in
+your application bundle.
+
+
+737
+00:38:53,906 --> 00:38:57,676
+And when those services come
+up, Xcode automatically attaches
+
+
+738
+00:38:57,676 --> 00:38:59,716
+to it, meaning, you can set
+breakpoints, you can see it
+
+
+739
+00:38:59,716 --> 00:39:02,106
+in the debug navigator,
+you can check out the CPU
+
+
+740
+00:39:02,106 --> 00:39:04,236
+and memory reports for those.
+
+
+741
+00:39:04,916 --> 00:39:07,856
+And when it goes away, Xcode
+automatically detaches.
+
+
+742
+00:39:08,496 --> 00:39:12,836
+But Xcode is waiting once again
+for that service to come back
+
+
+743
+00:39:13,366 --> 00:39:16,716
+and we'll attach to it again,
+providing a seamless experience
+
+
+744
+00:39:16,756 --> 00:39:18,616
+for you XPC Service debugging.
+
+
+745
+00:39:22,336 --> 00:39:24,146
+This works great
+in practice and I'd
+
+
+746
+00:39:24,146 --> 00:39:25,496
+like to invite Christopher
+Friesen
+
+
+747
+00:39:25,496 --> 00:39:27,626
+up one more time to
+give a final demo.
+
+
+748
+00:39:28,686 --> 00:39:31,116
+>> So yet again our users
+want another feature.
+
+
+749
+00:39:31,116 --> 00:39:34,526
+They want to be able to look
+at any image of the internet.
+
+
+750
+00:39:35,926 --> 00:39:38,326
+Now this might be kind
+of dangerous to do.
+
+
+751
+00:39:38,326 --> 00:39:41,406
+So we're going to put this
+functionality in an XPC Service
+
+
+752
+00:39:41,406 --> 00:39:43,766
+so that it's partition
+from our main application.
+
+
+753
+00:39:44,116 --> 00:39:46,906
+So we've changed the
+input to be a URL
+
+
+754
+00:39:47,446 --> 00:39:49,126
+and we put this on our service.
+
+
+755
+00:39:49,416 --> 00:39:51,386
+So let's take a look
+and see what Xcode does
+
+
+756
+00:39:51,386 --> 00:39:52,856
+as we debug this application.
+
+
+757
+00:39:58,476 --> 00:40:00,976
+So I'll click the run here,
+our application starting up.
+
+
+758
+00:40:01,176 --> 00:40:05,426
+Now we've hit a breakpoint where
+the main app is now setting
+
+
+759
+00:40:05,426 --> 00:40:07,836
+up an XPC connection
+to talk to our service.
+
+
+760
+00:40:09,526 --> 00:40:11,476
+You'll notice that in
+the debug navigator,
+
+
+761
+00:40:11,916 --> 00:40:14,176
+we currently have just
+a single application.
+
+
+762
+00:40:14,656 --> 00:40:17,396
+Our debug gauges and
+threads and stacks.
+
+
+763
+00:40:19,176 --> 00:40:23,566
+Now as I continue, watch
+this area and you'll see
+
+
+764
+00:40:23,566 --> 00:40:25,816
+that we automatically
+attached to the XPC process.
+
+
+765
+00:40:26,366 --> 00:40:31,006
+And there it just showed up.
+
+
+766
+00:40:32,376 --> 00:40:33,936
+You'll note that it
+has a different icon
+
+
+767
+00:40:33,936 --> 00:40:34,946
+in your main application.
+
+
+768
+00:40:35,086 --> 00:40:36,996
+It's a black and white
+screwdriver and a wrench.
+
+
+769
+00:40:37,586 --> 00:40:39,866
+And again, it has
+the same debug gauges
+
+
+770
+00:40:40,136 --> 00:40:43,646
+and the same capabilities
+in this debug area.
+
+
+771
+00:40:44,246 --> 00:40:48,946
+As you see in our application,
+we've fetched the image
+
+
+772
+00:40:48,946 --> 00:40:50,546
+and we're displaying it.
+
+
+773
+00:40:52,276 --> 00:40:57,566
+Now in order to debug in your
+XPC Service, you simply need
+
+
+774
+00:40:57,566 --> 00:40:58,696
+to go set your breakpoints.
+
+
+775
+00:41:00,076 --> 00:41:02,316
+So we'll go to our breakpoint
+that we've already created.
+
+
+776
+00:41:02,916 --> 00:41:05,366
+I'll set it in our service
+and then I'll go back
+
+
+777
+00:41:05,366 --> 00:41:06,896
+and exercise our application.
+
+
+778
+00:41:07,476 --> 00:41:10,656
+Here we are.
+
+
+779
+00:41:11,436 --> 00:41:12,776
+It's now in the debug navigator,
+
+
+780
+00:41:12,776 --> 00:41:15,146
+you can see that we've
+got our main application
+
+
+781
+00:41:15,146 --> 00:41:19,326
+which is still running, the
+gauges are still whirling away,
+
+
+782
+00:41:19,326 --> 00:41:24,126
+the UI is still responsive, but
+the XPC Service has been paused.
+
+
+783
+00:41:25,646 --> 00:41:27,196
+And here you see
+that we're stopped
+
+
+784
+00:41:27,196 --> 00:41:29,636
+in thread 16 on stack
+frame zero.
+
+
+785
+00:41:34,076 --> 00:41:35,986
+And we can continue
+our application.
+
+
+786
+00:41:36,656 --> 00:41:40,396
+And we see that we've
+returned back from the service,
+
+
+787
+00:41:40,396 --> 00:41:45,276
+applied the filter and
+display it in the UI.
+
+
+788
+00:41:45,426 --> 00:41:46,726
+Now another thing to note is
+
+
+789
+00:41:47,216 --> 00:41:48,546
+that the Stop button
+doesn't show
+
+
+790
+00:41:48,546 --> 00:41:50,006
+that multiple processes
+are running.
+
+
+791
+00:41:51,396 --> 00:41:53,196
+This is because we
+grouped them together
+
+
+792
+00:41:54,836 --> 00:41:57,876
+so that whenever you click stop,
+we'll stop your main application
+
+
+793
+00:41:58,186 --> 00:42:01,136
+as well as your-- any XPC
+processes that you have running,
+
+
+794
+00:42:01,136 --> 00:42:05,206
+this is so that you can go
+back, change your source code
+
+
+795
+00:42:05,206 --> 00:42:07,916
+and then next time you
+run, we'll use that--
+
+
+796
+00:42:07,916 --> 00:42:10,596
+those changes in
+your XPC Services.
+
+
+797
+00:42:11,906 --> 00:42:16,326
+So let's watch that debug
+area as I click Stop.
+
+
+798
+00:42:16,476 --> 00:42:19,396
+I know, it's exciting
+when it just works.
+
+
+799
+00:42:20,486 --> 00:42:27,956
+So there, so this is, so as we
+said, XPC debugging is automatic
+
+
+800
+00:42:27,956 --> 00:42:31,466
+and enabled by default, but
+there's also a toggle for it.
+
+
+801
+00:42:31,466 --> 00:42:35,026
+So let's go to the scheme popup
+and we'll choose edit scheme.
+
+
+802
+00:42:36,506 --> 00:42:38,106
+Here we see that we're
+on the run action.
+
+
+803
+00:42:39,396 --> 00:42:40,806
+Currently, we have
+the info tab selected.
+
+
+804
+00:42:40,806 --> 00:42:45,226
+If we go to the options
+tab, we see that the option
+
+
+805
+00:42:45,226 --> 00:42:47,976
+to toggle our debugging
+XPC services is right here.
+
+
+806
+00:42:48,166 --> 00:42:49,496
+So here, you can
+just toggle it on
+
+
+807
+00:42:49,496 --> 00:42:52,876
+and off should you ever need
+to, most likely you won't.
+
+
+808
+00:42:54,196 --> 00:43:00,636
+And we hope that the
+XPC integration in Xcode
+
+
+809
+00:43:02,026 --> 00:43:05,806
+for debugging your XPC
+Services will entice you to look
+
+
+810
+00:43:05,806 --> 00:43:11,466
+at the powerful XPC subsystem
+in Mac iOS X and add it
+
+
+811
+00:43:11,466 --> 00:43:12,976
+to your application, thank you.
+
+
+812
+00:43:13,516 --> 00:43:19,236
+[ Applause ]
+
+
+813
+00:43:19,736 --> 00:43:22,056
+>> So today, we've talked
+about a lot of new things.
+
+
+814
+00:43:22,596 --> 00:43:24,576
+We talked about the
+new debugging gauges
+
+
+815
+00:43:24,576 --> 00:43:26,336
+and the associated
+debug reports.
+
+
+816
+00:43:27,216 --> 00:43:28,836
+We talked about data tips
+
+
+817
+00:43:29,226 --> 00:43:31,986
+and the improvements they
+allow access to Quick Looks
+
+
+818
+00:43:31,986 --> 00:43:33,696
+which are also available
+in the variable view.
+
+
+819
+00:43:34,146 --> 00:43:37,246
+We talked about some
+drawing diagnostics
+
+
+820
+00:43:37,246 --> 00:43:38,166
+that you have access to.
+
+
+821
+00:43:38,696 --> 00:43:40,666
+And we talked about XPC Services
+
+
+822
+00:43:40,716 --> 00:43:42,576
+and the debug capabilities
+in Xcode.
+
+
+823
+00:43:43,106 --> 00:43:46,626
+I know many of you; perhaps
+all of you have new features
+
+
+824
+00:43:46,626 --> 00:43:48,546
+or new applications that
+you're working on right now.
+
+
+825
+00:43:49,626 --> 00:43:52,836
+And I really hope that you
+use the new features in Xcode,
+
+
+826
+00:43:53,196 --> 00:43:56,066
+maybe you take a look
+at that debug gauge
+
+
+827
+00:43:56,066 --> 00:43:58,426
+and see what your
+memory profile is like.
+
+
+828
+00:43:58,716 --> 00:44:02,976
+Maybe you look at the CPU,
+maybe use the new Quick Looks
+
+
+829
+00:44:03,056 --> 00:44:05,036
+to solve the problem
+in your application
+
+
+830
+00:44:05,946 --> 00:44:08,116
+because Xcode is
+trying really hard
+
+
+831
+00:44:08,336 --> 00:44:10,306
+to make sure you ship great Apps
+
+
+832
+00:44:11,366 --> 00:44:13,666
+and I hope that's
+what you get to do.
+
+
+833
+00:44:14,486 --> 00:44:16,696
+We have, of course, if
+you have any questions
+
+
+834
+00:44:16,696 --> 00:44:19,526
+after the conference, you
+can talk to Dave DeLong
+
+
+835
+00:44:19,596 --> 00:44:21,056
+or visit the developer forums.
+
+
+836
+00:44:21,056 --> 00:44:22,656
+There are some really
+great people there.
+
+
+837
+00:44:23,756 --> 00:44:26,326
+I've referenced some
+related sessions.
+
+
+838
+00:44:27,596 --> 00:44:29,806
+Thank you very much
+for attending Debugging
+
+
+839
+00:44:29,806 --> 00:44:31,706
+in Xcode 5, have a great week.
+
+
+840
+00:44:32,516 --> 00:44:36,050
+[ Applause ]
+

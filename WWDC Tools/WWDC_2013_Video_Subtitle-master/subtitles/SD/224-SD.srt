@@ -1,0 +1,7596 @@
+1
+00:00:00,506 --> 00:00:09,636
+[ Silence ]
+
+
+2
+00:00:10,136 --> 00:00:11,066
+>> Good morning and welcome.
+
+
+3
+00:00:11,396 --> 00:00:12,396
+Thank you.
+
+
+4
+00:00:12,396 --> 00:00:12,463
+[ Applause ]
+
+
+5
+00:00:12,463 --> 00:00:16,536
+Thank you.
+
+
+6
+00:00:17,146 --> 00:00:19,736
+My name is Quinn Taylor, I'm an
+Internal Applications Engineer
+
+
+7
+00:00:19,736 --> 00:00:21,666
+at Apple, and I'm excited
+to be talking today
+
+
+8
+00:00:21,666 --> 00:00:23,846
+about Designing Code
+for Performance.
+
+
+9
+00:00:23,916 --> 00:00:26,086
+It's great to see such a
+big crowd here, obviously,
+
+
+10
+00:00:26,086 --> 00:00:27,156
+you're all interested
+in performance
+
+
+11
+00:00:27,156 --> 00:00:28,556
+as well and that's fantastic.
+
+
+12
+00:00:28,866 --> 00:00:30,706
+So, to start off, I want
+to give you a little bit
+
+
+13
+00:00:30,706 --> 00:00:31,806
+of introduction, the motivation
+
+
+14
+00:00:31,806 --> 00:00:33,876
+for this talk, why
+it came to be.
+
+
+15
+00:00:33,876 --> 00:00:38,006
+It's no secret that the raging
+success of the App Store has led
+
+
+16
+00:00:38,006 --> 00:00:40,466
+to a huge influx of new
+developers to the platform.
+
+
+17
+00:00:41,056 --> 00:00:42,386
+As you've heard Tim
+say on Tues--
+
+
+18
+00:00:42,386 --> 00:00:46,216
+on Monday, about two-thirds of
+you are here at this conference
+
+
+19
+00:00:46,216 --> 00:00:47,636
+for the first time,
+that's fantastic.
+
+
+20
+00:00:47,886 --> 00:00:50,976
+Many of you are in fact new to
+programming in the recent past.
+
+
+21
+00:00:51,016 --> 00:00:53,556
+You come from a diverse
+array of backgrounds
+
+
+22
+00:00:53,556 --> 00:00:55,526
+and experience levels,
+and that's great.
+
+
+23
+00:00:55,526 --> 00:00:58,046
+You have a lot of different
+kinds of wonderful apps
+
+
+24
+00:00:58,046 --> 00:00:59,286
+that you can contribute
+for our customers
+
+
+25
+00:00:59,286 --> 00:01:00,236
+in the App Store that they love.
+
+
+26
+00:01:01,206 --> 00:01:03,196
+However, across all these
+domains and different types
+
+
+27
+00:01:03,196 --> 00:01:05,316
+of applications, one
+thing that's constant is
+
+
+28
+00:01:05,316 --> 00:01:07,636
+that everyone uses data
+structures and it's common
+
+
+29
+00:01:07,636 --> 00:01:08,756
+to have performance issues.
+
+
+30
+00:01:09,096 --> 00:01:11,166
+No matter what your app does,
+you're going to be using arrays
+
+
+31
+00:01:11,166 --> 00:01:13,586
+and dictionaries and so on, and
+it's important to understand how
+
+
+32
+00:01:13,586 --> 00:01:15,086
+that can affect your
+application.
+
+
+33
+00:01:15,356 --> 00:01:16,496
+When you have issues like this,
+
+
+34
+00:01:16,496 --> 00:01:19,716
+often they're puzzling unless
+you have some knowledge
+
+
+35
+00:01:19,716 --> 00:01:22,396
+of what's going on under the
+hood and what's happening
+
+
+36
+00:01:22,556 --> 00:01:24,916
+so you can evaluate
+your app and improve.
+
+
+37
+00:01:25,596 --> 00:01:29,486
+So, the goal of this session is
+really to teach you how to fish.
+
+
+38
+00:01:29,486 --> 00:01:31,036
+I'm not here to give
+you a one-off tip
+
+
+39
+00:01:31,036 --> 00:01:33,746
+about how you can fix a specific
+problem, but really to look
+
+
+40
+00:01:33,746 --> 00:01:36,106
+at the grand scheme of things,
+understand when it comes
+
+
+41
+00:01:36,106 --> 00:01:38,706
+to data structures, how can
+I make my app perform the
+
+
+42
+00:01:38,706 --> 00:01:39,406
+best possible.
+
+
+43
+00:01:40,186 --> 00:01:42,846
+So the things we're going
+to cover today: first off,
+
+
+44
+00:01:42,846 --> 00:01:46,726
+when to focus on performance,
+how to evaluate what we call
+
+
+45
+00:01:46,726 --> 00:01:49,526
+"computational complexity",
+how to choose
+
+
+46
+00:01:49,526 --> 00:01:52,286
+and use data structures in
+your application, and last,
+
+
+47
+00:01:52,286 --> 00:01:53,826
+how to design your
+code for performance.
+
+
+48
+00:01:53,826 --> 00:01:54,956
+We'll give some concrete
+examples.
+
+
+49
+00:01:55,146 --> 00:01:58,186
+So to start off, when
+to focus on performance.
+
+
+50
+00:01:58,186 --> 00:01:59,776
+Now you may think: "This
+is a trick question,
+
+
+51
+00:01:59,776 --> 00:02:01,146
+the answer is 'always', right?"
+
+
+52
+00:02:01,146 --> 00:02:03,366
+That's true to a certain extent,
+
+
+53
+00:02:03,586 --> 00:02:04,906
+and we'll talk about
+that in detail.
+
+
+54
+00:02:05,036 --> 00:02:06,686
+To start off with a quote,
+I have this on my wall,
+
+
+55
+00:02:06,686 --> 00:02:09,216
+this is from Steve Jobs,
+"We don't get a chance to do
+
+
+56
+00:02:09,216 --> 00:02:12,066
+that many things, and every
+one should be really excellent.
+
+
+57
+00:02:12,416 --> 00:02:14,206
+We've all chosen to do
+this with our lives.
+
+
+58
+00:02:14,436 --> 00:02:15,786
+So it better be damn good.
+
+
+59
+00:02:15,946 --> 00:02:17,016
+It better be worth it."
+
+
+60
+00:02:17,576 --> 00:02:19,106
+I love this quote
+because it motivates me
+
+
+61
+00:02:19,106 --> 00:02:21,596
+to make my applications the
+best that I possibly can,
+
+
+62
+00:02:21,596 --> 00:02:23,466
+and try to eke performance
+out of every angle.
+
+
+63
+00:02:24,046 --> 00:02:24,976
+However, you notice
+that he says,
+
+
+64
+00:02:24,976 --> 00:02:26,596
+"Every one should be
+really excellent,"
+
+
+65
+00:02:26,806 --> 00:02:28,106
+that's not necessarily perfect.
+
+
+66
+00:02:28,106 --> 00:02:30,856
+We as developers know that
+our applications have flaws.
+
+
+67
+00:02:30,856 --> 00:02:33,566
+We do the best that we can
+to make them as polished
+
+
+68
+00:02:33,566 --> 00:02:35,096
+as possible before
+we hand them over,
+
+
+69
+00:02:35,356 --> 00:02:36,846
+but we have a limited
+amount of time.
+
+
+70
+00:02:37,236 --> 00:02:39,156
+Steve also said, "You
+have to pick carefully.
+
+
+71
+00:02:39,486 --> 00:02:41,896
+Innovation is saying
+no to 1,000 things."
+
+
+72
+00:02:41,986 --> 00:02:43,616
+So how do we strike
+the balance here
+
+
+73
+00:02:43,616 --> 00:02:45,416
+when it comes to performance?
+
+
+74
+00:02:45,496 --> 00:02:47,096
+You may have seen a
+quote from Donald Knuth,
+
+
+75
+00:02:47,096 --> 00:02:49,026
+a famous computer
+scientist, where he says,
+
+
+76
+00:02:49,026 --> 00:02:51,136
+"Premature optimization
+is the root of all evil."
+
+
+77
+00:02:51,486 --> 00:02:53,416
+People tend to throw this
+around at developer forums
+
+
+78
+00:02:53,846 --> 00:02:55,746
+and some people will use
+this almost an excuse to say,
+
+
+79
+00:02:55,746 --> 00:02:57,686
+"You don't need to worry about
+performance at all, right?
+
+
+80
+00:02:57,686 --> 00:02:58,786
+It's not going to
+be a big deal."
+
+
+81
+00:02:59,176 --> 00:03:00,346
+Sometimes that's the case.
+
+
+82
+00:03:00,756 --> 00:03:03,236
+But unfortunately, we usually
+only see this middle sentence
+
+
+83
+00:03:03,236 --> 00:03:03,616
+of the quote.
+
+
+84
+00:03:03,826 --> 00:03:05,806
+But he said a lot more,
+he said, "We should forget
+
+
+85
+00:03:05,806 --> 00:03:09,216
+about small efficiencies
+about 97 percent of the time.
+
+
+86
+00:03:09,666 --> 00:03:11,976
+Yet we should not pass
+up our opportunities
+
+
+87
+00:03:11,976 --> 00:03:13,386
+in that critical 3 percent."
+
+
+88
+00:03:13,806 --> 00:03:15,296
+So there comes a
+time when focusing
+
+
+89
+00:03:15,296 --> 00:03:17,656
+on performance is really
+important for your application.
+
+
+90
+00:03:18,326 --> 00:03:20,776
+I like to summarize this by
+saying, "Optimize performance
+
+
+91
+00:03:20,956 --> 00:03:22,726
+when it will make a
+meaningful difference."
+
+
+92
+00:03:22,756 --> 00:03:24,326
+That's what we're going
+to be talking about today,
+
+
+93
+00:03:24,536 --> 00:03:26,266
+is how I can choose to see--
+
+
+94
+00:03:26,266 --> 00:03:28,156
+is this going to make a
+difference for my application?
+
+
+95
+00:03:28,786 --> 00:03:32,206
+So, to talk about that, there's
+a principle called Amdahl's Law
+
+
+96
+00:03:32,206 --> 00:03:34,266
+which is really about
+helping you pick your battles
+
+
+97
+00:03:34,266 --> 00:03:35,296
+in performance.
+
+
+98
+00:03:35,436 --> 00:03:38,156
+So this law was proposed
+by Gene Amdahl,
+
+
+99
+00:03:38,156 --> 00:03:40,626
+a very famous computer
+architect, and basically,
+
+
+100
+00:03:40,626 --> 00:03:43,116
+it has to do with predicting
+the maximum improvement
+
+
+101
+00:03:43,116 --> 00:03:45,546
+that you can expect by speeding
+up some portion of your code.
+
+
+102
+00:03:46,196 --> 00:03:48,336
+This depends obviously on
+what percentage of time
+
+
+103
+00:03:48,336 --> 00:03:50,916
+that code is taking to
+begin with, to see what kind
+
+
+104
+00:03:50,916 --> 00:03:51,886
+of speedup you can achieve.
+
+
+105
+00:03:52,236 --> 00:03:54,976
+And the payoff is much larger
+for the dominant piece of code,
+
+
+106
+00:03:54,976 --> 00:03:56,126
+the thing that's
+taking the most time;
+
+
+107
+00:03:56,486 --> 00:03:57,746
+these appear fairly obvious.
+
+
+108
+00:03:58,406 --> 00:04:00,036
+So the question is,
+will the payoff
+
+
+109
+00:04:00,236 --> 00:04:01,886
+of improving the
+performance of this piece
+
+
+110
+00:04:01,936 --> 00:04:03,996
+of the code be worth the
+effort, the time that it's going
+
+
+111
+00:04:03,996 --> 00:04:04,726
+to take me to do that?
+
+
+112
+00:04:04,726 --> 00:04:07,066
+And this applies
+directly to concurrency.
+
+
+113
+00:04:07,066 --> 00:04:09,726
+In fact, as this law was
+originally stated, it had to do
+
+
+114
+00:04:09,726 --> 00:04:12,116
+with multi-core processing
+and breaking your code
+
+
+115
+00:04:12,116 --> 00:04:15,126
+up into multiple pieces, and
+that has great tie-ins as well
+
+
+116
+00:04:15,126 --> 00:04:17,106
+to Grand Central
+Dispatch and using blocks.
+
+
+117
+00:04:17,216 --> 00:04:19,625
+So let me give you an
+example of Amdahl's Law.
+
+
+118
+00:04:19,625 --> 00:04:22,936
+Say that you have a process
+that has two segments, A and B,
+
+
+119
+00:04:23,106 --> 00:04:25,776
+and one takes 80 seconds
+and one takes 20 seconds.
+
+
+120
+00:04:26,006 --> 00:04:28,466
+So we have a certain
+amount of time.
+
+
+121
+00:04:28,496 --> 00:04:32,186
+Now, if you can spend a
+bit of time and optimize
+
+
+122
+00:04:32,186 --> 00:04:36,136
+and cut the time spent by
+process B-- segment B in half,
+
+
+123
+00:04:36,136 --> 00:04:36,936
+then you have a great win.
+
+
+124
+00:04:36,936 --> 00:04:38,976
+Now you're at 90 percent of
+your previous performance.
+
+
+125
+00:04:39,276 --> 00:04:41,976
+However, if you can apply
+the same effort to speed
+
+
+126
+00:04:41,976 --> 00:04:43,776
+up process A and cut
+that time in half,
+
+
+127
+00:04:43,776 --> 00:04:44,976
+now you've gone to 60 percent.
+
+
+128
+00:04:45,256 --> 00:04:47,586
+This is a much bigger win,
+and this is what we talk
+
+
+129
+00:04:47,586 --> 00:04:49,306
+about when we say
+"identifying bottlenecks",
+
+
+130
+00:04:49,306 --> 00:04:51,286
+looking at the actual
+problems in your code.
+
+
+131
+00:04:51,676 --> 00:04:53,646
+So that's where you really
+want to focus on performance.
+
+
+132
+00:04:53,936 --> 00:04:56,686
+You know, it's great to have a
+performance win in segment B,
+
+
+133
+00:04:56,926 --> 00:04:58,696
+but everyone has things that
+they have to do, so you've got
+
+
+134
+00:04:58,696 --> 00:04:59,936
+to choose wisely
+what you work on.
+
+
+135
+00:05:00,416 --> 00:05:01,756
+So back to Donald Knuth,
+
+
+136
+00:05:01,756 --> 00:05:03,406
+he talked about premature
+optimization.
+
+
+137
+00:05:04,076 --> 00:05:06,796
+Now, premature optimization
+generally leads
+
+
+138
+00:05:07,096 --> 00:05:09,446
+to unnecessary complexity
+in your code.
+
+
+139
+00:05:09,736 --> 00:05:11,446
+You take something
+that's simple and to try
+
+
+140
+00:05:11,446 --> 00:05:14,256
+to get more performance out of
+it, you change and tweak things
+
+
+141
+00:05:14,256 --> 00:05:15,836
+and make it more
+complex and clever.
+
+
+142
+00:05:16,166 --> 00:05:17,106
+Sometimes that's great.
+
+
+143
+00:05:17,376 --> 00:05:19,156
+But, "if it ain't
+broke, don't fix it".
+
+
+144
+00:05:19,156 --> 00:05:21,836
+You don't have to fix something
+that's not necessarily a problem
+
+
+145
+00:05:21,836 --> 00:05:22,366
+for your code.
+
+
+146
+00:05:22,606 --> 00:05:24,876
+You have a ton of features
+that you need to implement
+
+
+147
+00:05:24,876 --> 00:05:27,436
+for your app, and polishing it
+to make it great for your users.
+
+
+148
+00:05:27,536 --> 00:05:29,716
+So I'd like to focus
+on something I call
+
+
+149
+00:05:29,716 --> 00:05:32,346
+"informed design" which leads
+to elegant and efficient code.
+
+
+150
+00:05:32,996 --> 00:05:34,796
+Informed design is all
+
+
+151
+00:05:34,796 --> 00:05:36,936
+about considering your
+performance early on,
+
+
+152
+00:05:37,306 --> 00:05:38,526
+even during the design phase.
+
+
+153
+00:05:38,526 --> 00:05:41,086
+You can do that before you
+even write a line of code.
+
+
+154
+00:05:41,496 --> 00:05:44,096
+And it helps you to
+intelligently avoid problems
+
+
+155
+00:05:44,096 --> 00:05:45,706
+that you can actually
+face in the real world,
+
+
+156
+00:05:45,736 --> 00:05:47,216
+rather than premature
+optimization
+
+
+157
+00:05:47,216 --> 00:05:48,966
+and fixing a problem
+that may not be
+
+
+158
+00:05:48,966 --> 00:05:50,126
+such a big problem after all.
+
+
+159
+00:05:51,156 --> 00:05:53,796
+And this is useful because it
+can help you avoid designing
+
+
+160
+00:05:53,796 --> 00:05:56,246
+slowness into your application,
+only to fix it later.
+
+
+161
+00:05:56,586 --> 00:05:58,676
+So if you can think about
+it up front, it's a big win.
+
+
+162
+00:05:58,676 --> 00:06:01,326
+OK. So now let's move
+to talking about how
+
+
+163
+00:06:01,326 --> 00:06:02,446
+to design for performance.
+
+
+164
+00:06:02,666 --> 00:06:04,606
+If you have a performance
+issue that you've identified
+
+
+165
+00:06:04,606 --> 00:06:07,076
+in your code, there's
+three broad ways
+
+
+166
+00:06:07,076 --> 00:06:08,436
+that you can resolve that.
+
+
+167
+00:06:08,436 --> 00:06:10,176
+The first is, don't do it.
+
+
+168
+00:06:10,556 --> 00:06:11,666
+If there's unnecessary work,
+
+
+169
+00:06:11,666 --> 00:06:12,706
+then you can completely
+cut it out.
+
+
+170
+00:06:12,706 --> 00:06:15,946
+The second is do it as rarely as
+possible, and the third is do it
+
+
+171
+00:06:15,946 --> 00:06:17,126
+as efficiently as possible.
+
+
+172
+00:06:17,916 --> 00:06:20,366
+Now, these are generally in
+increasing order of difficulty.
+
+
+173
+00:06:20,366 --> 00:06:23,046
+It's very easy to just remove
+code that you no longer need,
+
+
+174
+00:06:23,046 --> 00:06:24,656
+but getting something to
+be more efficient can be
+
+
+175
+00:06:24,656 --> 00:06:25,356
+really difficult.
+
+
+176
+00:06:25,786 --> 00:06:27,316
+In order to answer these
+questions and choose
+
+
+177
+00:06:27,316 --> 00:06:28,946
+which approach works
+for your scenario,
+
+
+178
+00:06:29,296 --> 00:06:30,586
+you really have to
+have some context.
+
+
+179
+00:06:30,866 --> 00:06:31,986
+Is the work necessary?
+
+
+180
+00:06:32,046 --> 00:06:33,826
+If not, I may be
+able to remove it.
+
+
+181
+00:06:34,036 --> 00:06:35,776
+Is redundant work being done?
+
+
+182
+00:06:35,876 --> 00:06:37,216
+Doing the same thing
+over and over again,
+
+
+183
+00:06:37,216 --> 00:06:38,616
+I may be able to
+reuse that work.
+
+
+184
+00:06:38,926 --> 00:06:40,366
+Or, is there a more
+efficient way?
+
+
+185
+00:06:40,756 --> 00:06:42,556
+And that last question is
+really the most tricky.
+
+
+186
+00:06:43,046 --> 00:06:46,166
+How do I know if I can do better
+than what I'm doing right now?
+
+
+187
+00:06:47,046 --> 00:06:49,606
+So, to answer that question,
+we'll go into the next portion
+
+
+188
+00:06:49,606 --> 00:06:50,206
+of the talk, where we talk
+
+
+189
+00:06:50,206 --> 00:06:52,996
+about computational
+complexity and cost.
+
+
+190
+00:06:52,996 --> 00:06:55,036
+Now, these are some big words
+so I'll explain out for you
+
+
+191
+00:06:55,616 --> 00:06:57,406
+in kind of broad terms.
+
+
+192
+00:06:57,406 --> 00:06:59,786
+So we're talking about the
+cost of code, and by this,
+
+
+193
+00:06:59,786 --> 00:07:01,976
+I don't mean how much you
+pay for an app in the store
+
+
+194
+00:07:02,216 --> 00:07:05,576
+or how much it cost you
+to have people develop it.
+
+
+195
+00:07:05,686 --> 00:07:08,476
+Every piece of code takes
+some amount of time to run
+
+
+196
+00:07:08,476 --> 00:07:10,726
+because there's work being
+done, and it's obvious
+
+
+197
+00:07:10,726 --> 00:07:12,376
+that more work takes more time.
+
+
+198
+00:07:13,166 --> 00:07:14,606
+However, it's not
+necessarily obvious
+
+
+199
+00:07:14,606 --> 00:07:16,456
+that sometimes you can
+have really short code
+
+
+200
+00:07:16,456 --> 00:07:19,156
+that does a lot of work and
+it can hide some complexity.
+
+
+201
+00:07:19,416 --> 00:07:22,136
+There's a cost associated
+with a particular code,
+
+
+202
+00:07:22,416 --> 00:07:24,636
+perhaps an API call or so on,
+or you're using a library.
+
+
+203
+00:07:25,176 --> 00:07:29,316
+Now, the effects of data
+growth can vary quite a bit
+
+
+204
+00:07:29,316 --> 00:07:31,236
+when you're choosing
+an algorithm,
+
+
+205
+00:07:31,346 --> 00:07:33,486
+and it can really impact your
+performance, particularly
+
+
+206
+00:07:33,486 --> 00:07:34,746
+as your data size grows.
+
+
+207
+00:07:35,346 --> 00:07:37,346
+It may be disproportional,
+in fact, to the number
+
+
+208
+00:07:37,346 --> 00:07:38,606
+of objects that you add.
+
+
+209
+00:07:39,066 --> 00:07:41,036
+And consequently, small
+tests often won't turn
+
+
+210
+00:07:41,036 --> 00:07:42,096
+up this kind of problems.
+
+
+211
+00:07:42,386 --> 00:07:45,226
+We try to do as much testing as
+we can before we send our app
+
+
+212
+00:07:45,226 --> 00:07:47,566
+out into the world, but you've
+probably all experienced
+
+
+213
+00:07:47,566 --> 00:07:50,036
+that your customers will use
+your app in new and exciting
+
+
+214
+00:07:50,036 --> 00:07:52,816
+and sometimes terrifying ways,
+and throw a lot of data at it
+
+
+215
+00:07:52,816 --> 00:07:54,196
+in ways that you
+didn't anticipate.
+
+
+216
+00:07:54,546 --> 00:07:56,326
+And sometimes these
+performance issues will crop
+
+
+217
+00:07:56,326 --> 00:07:59,546
+up where you least want them to.
+
+
+218
+00:08:00,266 --> 00:08:02,926
+Fortunately, this kind of
+complexity can often be analyzed
+
+
+219
+00:08:03,086 --> 00:08:04,106
+without even running the code,
+
+
+220
+00:08:04,106 --> 00:08:05,996
+much like the Xcode
+static analyzer can do.
+
+
+221
+00:08:05,996 --> 00:08:09,086
+And the key to this is
+understanding the complexity
+
+
+222
+00:08:09,086 --> 00:08:11,076
+of the code that you're running
+and how much work is being done.
+
+
+223
+00:08:11,356 --> 00:08:14,486
+Now, Computer Science has
+entire semester courses devoted
+
+
+224
+00:08:14,486 --> 00:08:17,266
+to this, that leaves sophomore
+students really puzzled.
+
+
+225
+00:08:17,556 --> 00:08:19,556
+We don't the have time to
+get into an entire semester,
+
+
+226
+00:08:19,556 --> 00:08:21,376
+but I'm going to give you
+kind of a crash course
+
+
+227
+00:08:21,586 --> 00:08:24,226
+and help you have a framework
+for understanding complexity
+
+
+228
+00:08:24,386 --> 00:08:25,276
+and analyzing your code.
+
+
+229
+00:08:25,276 --> 00:08:27,256
+So, in Computer Science, we talk
+
+
+230
+00:08:27,256 --> 00:08:29,166
+about something called
+"Big O" notation.
+
+
+231
+00:08:29,166 --> 00:08:32,486
+So this is a way of ranking
+algorithms by efficiency,
+
+
+232
+00:08:32,486 --> 00:08:34,155
+generally, by their
+time efficiency,
+
+
+233
+00:08:34,155 --> 00:08:35,616
+or memory efficiency, or so on.
+
+
+234
+00:08:35,616 --> 00:08:38,645
+And the letter O stands for
+the order, the order of growth
+
+
+235
+00:08:38,645 --> 00:08:40,046
+of this, and we'll talk
+about this in detail.
+
+
+236
+00:08:40,596 --> 00:08:43,655
+And it really relates to how the
+performance changes as the scale
+
+
+237
+00:08:43,856 --> 00:08:46,706
+of the work that you're doing--
+when you increase the number
+
+
+238
+00:08:46,706 --> 00:08:48,186
+of objects you're
+working with, for example.
+
+
+239
+00:08:48,736 --> 00:08:53,266
+So, with Big O notation,
+what we're really seeking
+
+
+240
+00:08:53,266 --> 00:08:55,896
+to do is approximate the worst
+case behavior for an algorithm,
+
+
+241
+00:08:56,156 --> 00:08:57,976
+the most work that you
+might ever have to do.
+
+
+242
+00:08:58,226 --> 00:09:00,766
+Ideally with an algorithm, you
+may be able to skip out early
+
+
+243
+00:09:01,026 --> 00:09:03,476
+and so on if you're doing
+searches and that type of thing.
+
+
+244
+00:09:03,696 --> 00:09:07,036
+But Big O is concerned with "how
+bad could this possibly be"?
+
+
+245
+00:09:07,036 --> 00:09:09,636
+So then that's my absolute
+worst case of performance.
+
+
+246
+00:09:09,726 --> 00:09:11,676
+And in general, we
+ignore coefficients
+
+
+247
+00:09:11,676 --> 00:09:13,636
+and lower order terms
+and logarithmic bases
+
+
+248
+00:09:13,636 --> 00:09:15,706
+because what we really
+care about is the order,
+
+
+249
+00:09:15,706 --> 00:09:17,526
+whether it's N or N squared,
+
+
+250
+00:09:17,526 --> 00:09:18,776
+as we'll go into
+detail in just a moment.
+
+
+251
+00:09:19,806 --> 00:09:21,936
+Now, for any given task,
+it's important to realize
+
+
+252
+00:09:21,936 --> 00:09:23,276
+that there are inherent limits.
+
+
+253
+00:09:23,716 --> 00:09:25,336
+There are some things
+that just take time.
+
+
+254
+00:09:25,336 --> 00:09:26,736
+We'd like to do everything
+instantly
+
+
+255
+00:09:26,736 --> 00:09:28,076
+but that's not always possible.
+
+
+256
+00:09:28,426 --> 00:09:30,186
+A perfect example of
+this, Fred Brooks,
+
+
+257
+00:09:30,216 --> 00:09:31,566
+famous software engineer:
+
+
+258
+00:09:32,026 --> 00:09:34,576
+"Nine women can't make
+a baby in one month."
+
+
+259
+00:09:34,576 --> 00:09:35,666
+As many women as
+you assign to it,
+
+
+260
+00:09:35,666 --> 00:09:36,866
+you'd like to do
+it concurrently,
+
+
+261
+00:09:36,866 --> 00:09:38,286
+it would be much more
+convenient for them,
+
+
+262
+00:09:38,546 --> 00:09:39,766
+but it's simply not possible.
+
+
+263
+00:09:39,766 --> 00:09:41,006
+There's a hard limit
+on this, right?
+
+
+264
+00:09:41,086 --> 00:09:43,656
+So we're going to talk
+about Big O complexity,
+
+
+265
+00:09:43,656 --> 00:09:45,446
+and I want to identify
+for you a few key
+
+
+266
+00:09:45,506 --> 00:09:46,866
+and common order functions.
+
+
+267
+00:09:46,866 --> 00:09:49,496
+So I have a table here, in
+the first column, notation,
+
+
+268
+00:09:49,496 --> 00:09:52,866
+you'll see how you might see it
+written and these are pronounced
+
+
+269
+00:09:52,866 --> 00:09:54,416
+"Big O of 1" or "order 1",
+
+
+270
+00:09:54,606 --> 00:09:57,416
+"order log N", "order
+N", and so on.
+
+
+271
+00:09:57,496 --> 00:10:00,336
+You might also hear it referred
+to by the name "constant time",
+
+
+272
+00:10:00,336 --> 00:10:02,466
+"logarithmic time", "linear
+time", "quadratic time",
+
+
+273
+00:10:02,466 --> 00:10:03,976
+and so on, these
+are interchangeable.
+
+
+274
+00:10:04,306 --> 00:10:06,506
+And then provided in the
+third column some examples
+
+
+275
+00:10:06,506 --> 00:10:08,636
+of common algorithms
+or tasks that fall
+
+
+276
+00:10:08,636 --> 00:10:09,756
+into these different categories.
+
+
+277
+00:10:10,076 --> 00:10:12,066
+I won't go into them in
+detail here on this slide,
+
+
+278
+00:10:12,366 --> 00:10:14,986
+but this is great for
+reference to come back and see
+
+
+279
+00:10:14,986 --> 00:10:16,796
+where does my task actually fit?
+
+
+280
+00:10:16,796 --> 00:10:19,516
+And we'll talk a little bit
+more in detail about identifying
+
+
+281
+00:10:19,516 --> 00:10:20,946
+which of these your
+task belongs to.
+
+
+282
+00:10:20,946 --> 00:10:22,976
+Now, a few of these
+are most common.
+
+
+283
+00:10:22,976 --> 00:10:25,636
+You'll see this all over the
+place and they're very common
+
+
+284
+00:10:25,636 --> 00:10:27,296
+for algorithms that
+you'll be working with.
+
+
+285
+00:10:27,426 --> 00:10:28,656
+So I'll talk about
+these in detail.
+
+
+286
+00:10:30,836 --> 00:10:34,226
+So the first-- before I get
+into some specific details,
+
+
+287
+00:10:34,226 --> 00:10:36,186
+let me show you a comparison
+of these order functions.
+
+
+288
+00:10:36,186 --> 00:10:37,666
+So it's easy to see
+them in a table,
+
+
+289
+00:10:37,906 --> 00:10:39,756
+but maybe it doesn't hit
+home why this is important.
+
+
+290
+00:10:39,756 --> 00:10:43,166
+First off, this is what order N
+squared complexity looks like,
+
+
+291
+00:10:43,486 --> 00:10:49,186
+like a parabola, order N
+log N, order N, order log N,
+
+
+292
+00:10:50,056 --> 00:10:51,376
+and order 1 or constant time.
+
+
+293
+00:10:51,906 --> 00:10:53,966
+Now, the first thing that
+you can see is these diverge
+
+
+294
+00:10:54,146 --> 00:10:55,056
+really rapidly.
+
+
+295
+00:10:55,336 --> 00:10:57,216
+When you get to a
+large number of items
+
+
+296
+00:10:57,216 --> 00:10:59,956
+across the bottom scale,
+you have some of these
+
+
+297
+00:10:59,956 --> 00:11:01,276
+that it gets really complex
+
+
+298
+00:11:01,276 --> 00:11:02,506
+and shoots its way
+up towards the top.
+
+
+299
+00:11:02,506 --> 00:11:04,546
+That means your performance is
+going to be bad, you're doing
+
+
+300
+00:11:04,546 --> 00:11:05,876
+that much more work, right?
+
+
+301
+00:11:06,146 --> 00:11:07,336
+The other thing to
+notice is that down
+
+
+302
+00:11:07,336 --> 00:11:09,786
+at the bottom left corner,
+they're really close together.
+
+
+303
+00:11:09,936 --> 00:11:12,476
+So for small scale, it
+may not be necessary
+
+
+304
+00:11:12,476 --> 00:11:14,136
+to find a really
+optimal algorithm.
+
+
+305
+00:11:14,316 --> 00:11:15,706
+This would be a range
+where you want to watch
+
+
+306
+00:11:15,706 --> 00:11:17,166
+out for premature optimization.
+
+
+307
+00:11:17,396 --> 00:11:18,586
+Am I really going to
+have an issue here,
+
+
+308
+00:11:18,586 --> 00:11:20,756
+because they're all
+pretty close together.
+
+
+309
+00:11:20,756 --> 00:11:22,266
+So those are some
+things to be aware off.
+
+
+310
+00:11:22,976 --> 00:11:27,836
+So, I'm going to go through some
+examples of a few sample pieces
+
+
+311
+00:11:27,836 --> 00:11:31,236
+of code that have some
+of these complexities.
+
+
+312
+00:11:31,236 --> 00:11:33,286
+And remember, the key for this
+is, is that we want to look
+
+
+313
+00:11:33,286 --> 00:11:36,136
+of the growth-- at the growth of
+the amount of work as the size
+
+
+314
+00:11:36,136 --> 00:11:37,036
+of our input increases.
+
+
+315
+00:11:37,106 --> 00:11:38,646
+So first is a very simple one.
+
+
+316
+00:11:38,646 --> 00:11:40,236
+Let's say that we have
+an array of integers
+
+
+317
+00:11:40,436 --> 00:11:42,596
+and I have a function where
+I pass in an integer value
+
+
+318
+00:11:42,756 --> 00:11:44,506
+and an index, and I
+simply want to know:
+
+
+319
+00:11:44,846 --> 00:11:46,926
+does this value appear
+at that index?
+
+
+320
+00:11:46,926 --> 00:11:49,426
+Now you can see we're only doing
+one operation, and you may know
+
+
+321
+00:11:49,426 --> 00:11:52,106
+that indexing into an
+array is extremely fast.
+
+
+322
+00:11:52,356 --> 00:11:54,176
+So, in this case, it's order 1;
+
+
+323
+00:11:54,516 --> 00:11:56,076
+regardless of what
+index I choose,
+
+
+324
+00:11:56,076 --> 00:11:57,486
+it's going to return
+nearly instantly.
+
+
+325
+00:11:57,586 --> 00:11:59,226
+So if we have a sample array,
+
+
+326
+00:11:59,356 --> 00:12:01,546
+you can see I may
+query one index and say
+
+
+327
+00:12:01,546 --> 00:12:02,806
+that that value is not there,
+
+
+328
+00:12:03,096 --> 00:12:04,816
+here I found it,
+and there I've not.
+
+
+329
+00:12:05,046 --> 00:12:06,436
+So I don't have to
+look at anything else
+
+
+330
+00:12:06,436 --> 00:12:07,646
+in the array, just one spot.
+
+
+331
+00:12:07,816 --> 00:12:09,046
+So that makes this order 1.
+
+
+332
+00:12:09,696 --> 00:12:11,806
+If we change this
+up just slightly,
+
+
+333
+00:12:12,836 --> 00:12:14,276
+now we have an order
+N algorithm.
+
+
+334
+00:12:14,566 --> 00:12:16,326
+So, now I'm interested in seeing
+
+
+335
+00:12:16,496 --> 00:12:18,876
+if a particular value
+appears anywhere in an array,
+
+
+336
+00:12:19,016 --> 00:12:20,486
+not just at a given index.
+
+
+337
+00:12:20,486 --> 00:12:22,166
+In order to do that,
+because I don't know
+
+
+338
+00:12:22,166 --> 00:12:24,496
+where it would appear, if it's
+there at all, I have to look
+
+
+339
+00:12:24,496 --> 00:12:25,736
+through each index in the array.
+
+
+340
+00:12:26,076 --> 00:12:27,916
+So we have a for loop when
+we start at the beginning
+
+
+341
+00:12:27,916 --> 00:12:28,666
+and we go towards the end,
+
+
+342
+00:12:28,666 --> 00:12:30,386
+and then we test to
+see if it's there.
+
+
+343
+00:12:30,386 --> 00:12:32,476
+If at any point I
+find it, I return yes.
+
+
+344
+00:12:32,676 --> 00:12:35,896
+But, the worst case is that it's
+not there in the array at all,
+
+
+345
+00:12:35,896 --> 00:12:37,946
+and I have to check
+thought every single index
+
+
+346
+00:12:37,946 --> 00:12:38,966
+in order to determine that.
+
+
+347
+00:12:38,966 --> 00:12:41,976
+So, you could see here, I
+have to march one by one
+
+
+348
+00:12:42,116 --> 00:12:43,896
+down the array until
+I find the object,
+
+
+349
+00:12:44,386 --> 00:12:45,436
+or determine that
+it's not there.
+
+
+350
+00:12:45,946 --> 00:12:47,296
+So in worst case, order N.
+
+
+351
+00:12:47,496 --> 00:12:51,276
+For order N squared, let's
+say we have a similar array,
+
+
+352
+00:12:51,356 --> 00:12:53,936
+I give it a value and I want
+to say, does this value appear
+
+
+353
+00:12:53,936 --> 00:12:55,646
+at least twice anywhere
+in the array?
+
+
+354
+00:12:55,646 --> 00:12:57,656
+In order to do that, I have
+
+
+355
+00:12:57,656 --> 00:13:01,086
+to compare every two possible
+pairings of indexes in the array
+
+
+356
+00:13:01,086 --> 00:13:01,966
+to see if they're equal.
+
+
+357
+00:13:02,376 --> 00:13:04,176
+So what that means is that
+I have to do two for loops.
+
+
+358
+00:13:04,176 --> 00:13:06,326
+I have an outer for loop
+and an inner for loop,
+
+
+359
+00:13:06,326 --> 00:13:09,766
+and each of these is
+an order N algorithm.
+
+
+360
+00:13:10,936 --> 00:13:13,616
+And inside this for loop once
+I get to comparing two indexes,
+
+
+361
+00:13:13,886 --> 00:13:16,846
+you see, I compare each of these
+two to see if they're equal
+
+
+362
+00:13:16,846 --> 00:13:20,986
+and if at any point I find them,
+I can bail out and say yes.
+
+
+363
+00:13:21,036 --> 00:13:22,806
+And you can see that we're
+doing a lot more work here;
+
+
+364
+00:13:22,806 --> 00:13:26,296
+j is moving back and forth like
+a madman, and i is just trying
+
+
+365
+00:13:26,296 --> 00:13:28,046
+to keep up, and finally
+here at the end,
+
+
+366
+00:13:28,166 --> 00:13:30,006
+we find those two
+matching values.
+
+
+367
+00:13:30,286 --> 00:13:32,486
+Now in the worst case, there
+may be no values at all--
+
+
+368
+00:13:32,486 --> 00:13:34,676
+these two values may not
+be present in the array,
+
+
+369
+00:13:34,996 --> 00:13:37,226
+or the value may not be
+present twice in the array,
+
+
+370
+00:13:37,226 --> 00:13:40,116
+but we have to go to the
+very end to find that out.
+
+
+371
+00:13:40,116 --> 00:13:41,116
+Now, some of you
+may look at this
+
+
+372
+00:13:41,116 --> 00:13:43,116
+and realize this is a
+rather naive implementation.
+
+
+373
+00:13:43,356 --> 00:13:45,286
+I'm starting the j loop
+at zero every time.
+
+
+374
+00:13:45,726 --> 00:13:49,016
+So, for example, when i gets
+to the very end of the array
+
+
+375
+00:13:49,016 --> 00:13:51,166
+and j starts at the
+beginning, I've already compared
+
+
+376
+00:13:51,166 --> 00:13:53,556
+that when i was at the
+beginning and j was at the end.
+
+
+377
+00:13:53,946 --> 00:13:55,656
+So that's kind of silly
+to have to do that.
+
+
+378
+00:13:55,836 --> 00:13:58,256
+So instead you could choose
+to start the inner for loop
+
+
+379
+00:13:58,436 --> 00:14:00,816
+at i plus 1 for example,
+and you eliminate half
+
+
+380
+00:14:00,816 --> 00:14:01,676
+of your comparisons.
+
+
+381
+00:14:01,916 --> 00:14:02,856
+That's great, that's
+a great win.
+
+
+382
+00:14:02,856 --> 00:14:04,536
+So now we're to N
+squared over 2,
+
+
+383
+00:14:05,146 --> 00:14:06,306
+but it's still N squared growth.
+
+
+384
+00:14:06,306 --> 00:14:09,186
+So the key to this is
+although it's now much faster
+
+
+385
+00:14:09,336 --> 00:14:11,176
+for a given input
+size, it's still going
+
+
+386
+00:14:11,176 --> 00:14:12,716
+to have the same
+growth properties:
+
+
+387
+00:14:12,716 --> 00:14:15,506
+as you add one more object,
+or one more item to the array,
+
+
+388
+00:14:15,796 --> 00:14:17,416
+you're going to add
+N comparisons.
+
+
+389
+00:14:17,736 --> 00:14:19,636
+That's the important thing
+from this, so order N squared.
+
+
+390
+00:14:20,336 --> 00:14:22,596
+OK. So, calculating complexity.
+
+
+391
+00:14:23,006 --> 00:14:25,276
+We've seen that you can
+combine these order functions.
+
+
+392
+00:14:25,276 --> 00:14:28,156
+For the N squared example I just
+showed, we have two for loops
+
+
+393
+00:14:28,326 --> 00:14:30,926
+and each of those is order N,
+and we have nested complexities,
+
+
+394
+00:14:30,926 --> 00:14:33,336
+we multiply those together,
+N times N, we get N squared.
+
+
+395
+00:14:33,726 --> 00:14:35,256
+When you have sequential
+complexities,
+
+
+396
+00:14:35,256 --> 00:14:37,736
+we add those together and
+then we take the largest term.
+
+
+397
+00:14:37,736 --> 00:14:40,306
+So for example, this function
+would reduce to N squared.
+
+
+398
+00:14:40,656 --> 00:14:42,626
+We have one N squared
+call, and two N,
+
+
+399
+00:14:42,836 --> 00:14:45,056
+and three that are constant
+time, but all we care
+
+
+400
+00:14:45,056 --> 00:14:46,856
+about it the N squared,
+nothing else,
+
+
+401
+00:14:46,856 --> 00:14:48,296
+because that's the
+growth of this function.
+
+
+402
+00:14:48,486 --> 00:14:50,526
+OK. So we've seen
+that with source code.
+
+
+403
+00:14:50,846 --> 00:14:53,066
+However, sometimes you may not
+have access to the source code,
+
+
+404
+00:14:53,066 --> 00:14:56,536
+or not be aware of what work
+it's doing, and in such cases,
+
+
+405
+00:14:56,536 --> 00:14:57,526
+you can often estimate.
+
+
+406
+00:14:58,096 --> 00:14:59,796
+You can consider what the
+code would have to do,
+
+
+407
+00:14:59,796 --> 00:15:01,426
+what kind of work it's
+trying to accomplish,
+
+
+408
+00:15:01,656 --> 00:15:03,176
+and another complementary
+alternative is
+
+
+409
+00:15:03,176 --> 00:15:04,686
+to profile with Instruments.
+
+
+410
+00:15:04,786 --> 00:15:07,586
+This can be a great way to find
+performance issues in your code.
+
+
+411
+00:15:07,586 --> 00:15:09,126
+There are many sessions
+from previous years
+
+
+412
+00:15:09,126 --> 00:15:11,106
+about using Instruments,
+and in fact,
+
+
+413
+00:15:11,106 --> 00:15:15,336
+Xcode 5 as you saw earlier this
+week introduces new debug gauges
+
+
+414
+00:15:15,336 --> 00:15:17,376
+including memory and CPU
+use that can help you
+
+
+415
+00:15:17,596 --> 00:15:18,936
+with identifying
+these kind of issues.
+
+
+416
+00:15:19,956 --> 00:15:22,376
+Now, some APIs may
+appear to be very similar
+
+
+417
+00:15:22,666 --> 00:15:23,976
+but it's important
+not to confuse them
+
+
+418
+00:15:23,976 --> 00:15:25,706
+when you're estimating, just
+look at the name and say, "Oh,
+
+
+419
+00:15:25,706 --> 00:15:27,146
+I know what that is"
+because of the name.
+
+
+420
+00:15:27,146 --> 00:15:29,496
+For example, we have
+a containsObject API
+
+
+421
+00:15:29,496 --> 00:15:31,216
+on both NSArray and NSSet.
+
+
+422
+00:15:31,576 --> 00:15:33,626
+But it would be folly to
+assume that they're the same.
+
+
+423
+00:15:33,706 --> 00:15:35,836
+So let's look at NSArray first.
+
+
+424
+00:15:35,836 --> 00:15:37,406
+It's containsObject,
+we want to see
+
+
+425
+00:15:37,406 --> 00:15:39,346
+if a given object appears
+anywhere in the array.
+
+
+426
+00:15:39,996 --> 00:15:40,866
+What work does it do?
+
+
+427
+00:15:41,376 --> 00:15:42,186
+Well, in this case,
+
+
+428
+00:15:42,186 --> 00:15:44,316
+the documentation actually
+tells us explicitly
+
+
+429
+00:15:44,586 --> 00:15:47,316
+that it sends the isEqual
+message to each object
+
+
+430
+00:15:47,316 --> 00:15:49,496
+in the array until one
+of them returns true,
+
+
+431
+00:15:49,496 --> 00:15:51,076
+or it reaches the
+end of the array.
+
+
+432
+00:15:51,546 --> 00:15:52,816
+OK, so it goes through
+each object.
+
+
+433
+00:15:52,816 --> 00:15:54,766
+That certainly sounds
+like order N complexity,
+
+
+434
+00:15:54,956 --> 00:15:56,436
+and that's certainly
+a valid assumption,
+
+
+435
+00:15:56,436 --> 00:15:57,926
+I think that that's
+pretty reasonable.
+
+
+436
+00:15:58,446 --> 00:15:59,976
+Now, we may think, well, what
+
+
+437
+00:15:59,976 --> 00:16:01,776
+if I can enumerate
+these concurrently
+
+
+438
+00:16:01,776 --> 00:16:02,676
+and compare the objects?
+
+
+439
+00:16:02,676 --> 00:16:04,106
+That would be sort of a win.
+
+
+440
+00:16:04,416 --> 00:16:07,146
+And it would, it would reduce
+it by a constant factor
+
+
+441
+00:16:07,146 --> 00:16:09,306
+but it would still
+be a linear operation
+
+
+442
+00:16:09,466 --> 00:16:10,196
+with the size of the array.
+
+
+443
+00:16:10,986 --> 00:16:13,166
+OK. So let's see NSSet.
+
+
+444
+00:16:13,766 --> 00:16:16,486
+NSSet also has a containsObject,
+it has the same name.
+
+
+445
+00:16:16,486 --> 00:16:17,996
+I give it an object,
+it does the same thing:
+
+
+446
+00:16:17,996 --> 00:16:19,576
+it tells me whether it's
+in the collection or not.
+
+
+447
+00:16:20,276 --> 00:16:22,356
+It looks just like the one
+that we just saw in NSArray.
+
+
+448
+00:16:22,356 --> 00:16:23,886
+Is it also order N?
+
+
+449
+00:16:24,046 --> 00:16:24,996
+You might assume
+that it would be.
+
+
+450
+00:16:25,656 --> 00:16:28,246
+However, it's actually
+order 1, it's constant time.
+
+
+451
+00:16:28,326 --> 00:16:29,696
+Regardless of the
+size of the set,
+
+
+452
+00:16:29,696 --> 00:16:32,806
+containsObject is always
+really fast, that's great.
+
+
+453
+00:16:33,636 --> 00:16:35,966
+There's a caveat, please don't
+go start replacing NSArray
+
+
+454
+00:16:35,966 --> 00:16:38,286
+with NSSet everywhere in
+your code because it's fast.
+
+
+455
+00:16:38,476 --> 00:16:40,256
+There's context to
+understand about why this is
+
+
+456
+00:16:40,256 --> 00:16:41,266
+and if it will work for you.
+
+
+457
+00:16:41,266 --> 00:16:45,316
+So, the reason that it's faster
+is it must be doing less work.
+
+
+458
+00:16:45,666 --> 00:16:48,336
+It's doing the same amount
+of work, roughly speaking,
+
+
+459
+00:16:48,336 --> 00:16:50,046
+regardless of how
+large my collection is.
+
+
+460
+00:16:50,046 --> 00:16:51,136
+So we'll talk about that.
+
+
+461
+00:16:51,406 --> 00:16:53,426
+The reason that this is is
+something called hashing.
+
+
+462
+00:16:53,516 --> 00:16:55,606
+We'll talk about
+hash-based organization.
+
+
+463
+00:16:55,706 --> 00:17:00,816
+So, NSSet uses a hash table for
+storage, as does NSDictionary.
+
+
+464
+00:17:02,156 --> 00:17:04,665
+Every object has a
+deterministic hash value.
+
+
+465
+00:17:04,665 --> 00:17:06,326
+You may have seen
+the hash method.
+
+
+466
+00:17:06,326 --> 00:17:08,726
+This is defined on NSObject--
+we'll talk about in detail--
+
+
+467
+00:17:09,406 --> 00:17:12,156
+and it returns an unsigned
+integer value that you can use
+
+
+468
+00:17:12,226 --> 00:17:13,746
+to store this object
+in a hash table.
+
+
+469
+00:17:14,376 --> 00:17:16,715
+And equal objects should
+always have the same hash;
+
+
+470
+00:17:16,796 --> 00:17:20,316
+we'll talk about this in more
+detail and give examples.
+
+
+471
+00:17:20,316 --> 00:17:23,006
+When in a hash table, objects
+are grouped into "buckets",
+
+
+472
+00:17:23,175 --> 00:17:26,965
+parts of the array based on
+the hash that they provide.
+
+
+473
+00:17:27,326 --> 00:17:30,666
+And the structure has a hash
+function that takes a hash
+
+
+474
+00:17:30,666 --> 00:17:31,946
+and maps it to a given bucket.
+
+
+475
+00:17:32,126 --> 00:17:34,646
+It can decide that this range of
+hashes goes in the first bucket,
+
+
+476
+00:17:34,646 --> 00:17:36,626
+and this one, and so on,
+and it can divide those up.
+
+
+477
+00:17:36,626 --> 00:17:38,396
+And the goal of this
+hash function is
+
+
+478
+00:17:38,396 --> 00:17:40,776
+to achieve uniform
+distribution, so that you have
+
+
+479
+00:17:40,776 --> 00:17:42,116
+about the same number of objects
+
+
+480
+00:17:42,116 --> 00:17:43,466
+in all the buckets
+in the hash table.
+
+
+481
+00:17:44,666 --> 00:17:48,156
+When you achieve this, lookup
+in a hash table really only has
+
+
+482
+00:17:48,196 --> 00:17:50,146
+to consider the objects that
+are in a particular bucket.
+
+
+483
+00:17:50,146 --> 00:17:52,306
+It knows if an object is
+going to be there it will be
+
+
+484
+00:17:52,306 --> 00:17:55,586
+in this bucket, and it can check
+isEqual on only a few objects,
+
+
+485
+00:17:55,636 --> 00:17:57,046
+or none at all if there's
+none in the bucket.
+
+
+486
+00:17:57,246 --> 00:17:58,136
+This is an obvious win.
+
+
+487
+00:17:58,136 --> 00:18:00,636
+If you have an array that's a
+thousand objects, you may have
+
+
+488
+00:18:00,636 --> 00:18:03,336
+to check up to a thousand items
+in order to see if it's there.
+
+
+489
+00:18:03,336 --> 00:18:05,616
+But with a set, you may have
+to check only a handful.
+
+
+490
+00:18:05,836 --> 00:18:06,236
+This is great.
+
+
+491
+00:18:06,386 --> 00:18:09,236
+So let me give you a concrete
+example with an animation here.
+
+
+492
+00:18:09,236 --> 00:18:11,836
+Say we have a hash function and
+we have a hash table we're going
+
+
+493
+00:18:11,836 --> 00:18:12,726
+to store some objects in.
+
+
+494
+00:18:13,126 --> 00:18:15,006
+Let's say that we want
+to store the names
+
+
+495
+00:18:15,006 --> 00:18:17,406
+of all Apple CEOs
+past and present.
+
+
+496
+00:18:17,446 --> 00:18:19,156
+So let's start off
+with Tim Cook.
+
+
+497
+00:18:19,156 --> 00:18:21,566
+We run this through our hash
+function, and it determines
+
+
+498
+00:18:21,766 --> 00:18:23,776
+that Tim Cook by the
+hash belongs in bucket 2.
+
+
+499
+00:18:23,886 --> 00:18:24,686
+Great, so we set him there.
+
+
+500
+00:18:25,386 --> 00:18:27,416
+We add Steve Jobs and
+that gets determined to go
+
+
+501
+00:18:27,416 --> 00:18:29,076
+in bucket 0, great, no problem.
+
+
+502
+00:18:29,126 --> 00:18:31,576
+Now we're going to
+add Gil Amelio,
+
+
+503
+00:18:31,906 --> 00:18:34,056
+and our hash function
+decides that it goes
+
+
+504
+00:18:34,056 --> 00:18:35,376
+in the same bucket
+as Steve Jobs.
+
+
+505
+00:18:35,376 --> 00:18:36,816
+We have a collision
+in our hash table,
+
+
+506
+00:18:37,156 --> 00:18:39,326
+rather unfortunate
+and somewhat awkward.
+
+
+507
+00:18:40,576 --> 00:18:43,346
+[laughter] In order to see if
+we should insert this object,
+
+
+508
+00:18:43,556 --> 00:18:45,656
+we have to compare, so we
+check isEqual, and in fact,
+
+
+509
+00:18:45,946 --> 00:18:47,846
+we see that Steve
+Jobs is not equal
+
+
+510
+00:18:47,846 --> 00:18:49,406
+to Gil Amelio, thank goodness.
+
+
+511
+00:18:50,226 --> 00:18:53,216
+And so what happens
+is we move one aside
+
+
+512
+00:18:53,216 --> 00:18:54,026
+and we chain these together,
+
+
+513
+00:18:54,026 --> 00:18:56,386
+they both occupy the
+same bucket, great.
+
+
+514
+00:18:56,936 --> 00:18:58,046
+Now we add Michael Spindler,
+
+
+515
+00:18:58,166 --> 00:18:59,996
+no collision here,
+goes into bucket 5.
+
+
+516
+00:19:00,326 --> 00:19:02,606
+We add John Sculley, and
+once again we get a hash
+
+
+517
+00:19:02,606 --> 00:19:03,326
+table collision.
+
+
+518
+00:19:03,326 --> 00:19:06,036
+So the hash function decides
+it goes in the same place.
+
+
+519
+00:19:06,036 --> 00:19:07,236
+So once again, we compare each
+
+
+520
+00:19:07,236 --> 00:19:09,096
+of these objects to
+see is this equal.
+
+
+521
+00:19:09,346 --> 00:19:11,806
+They are not equal, so we
+move them aside and we stick
+
+
+522
+00:19:11,806 --> 00:19:12,576
+that in the same bucket.
+
+
+523
+00:19:12,866 --> 00:19:14,816
+So, this is all well and
+good, except you'll notice
+
+
+524
+00:19:14,856 --> 00:19:17,546
+that now the majority of my
+objects are all in one bucket
+
+
+525
+00:19:17,546 --> 00:19:19,316
+in the hash table, and half
+
+
+526
+00:19:19,316 --> 00:19:21,406
+of my hash table is completely
+empty, I'm not using it.
+
+
+527
+00:19:21,646 --> 00:19:23,296
+This is obviously non-optimal.
+
+
+528
+00:19:23,496 --> 00:19:25,526
+If I have some sort of simple
+query to see if someone is
+
+
+529
+00:19:25,526 --> 00:19:28,606
+in the list for example, and my
+hash function happens to map it
+
+
+530
+00:19:28,606 --> 00:19:30,946
+to the same bucket, I now
+have to check through each
+
+
+531
+00:19:30,946 --> 00:19:33,516
+of those objects to see if
+they're equal to Bill Gates
+
+
+532
+00:19:33,516 --> 00:19:34,856
+to determine no, he's
+not in the table.
+
+
+533
+00:19:34,856 --> 00:19:37,186
+All right, so this is
+definitely not optimal.
+
+
+534
+00:19:37,186 --> 00:19:39,766
+Fortunately, something
+like NSSet can choose
+
+
+535
+00:19:39,966 --> 00:19:41,696
+to optimize the hash
+function on the fly.
+
+
+536
+00:19:41,696 --> 00:19:43,756
+If it realizes that your
+performance is not as good
+
+
+537
+00:19:43,756 --> 00:19:46,286
+as you could expect, it
+reserves the right to be able
+
+
+538
+00:19:46,286 --> 00:19:48,936
+to move objects around, to
+change the hash function
+
+
+539
+00:19:48,936 --> 00:19:50,086
+and redistribute them evenly.
+
+
+540
+00:19:50,326 --> 00:19:51,796
+So here we're in a
+much better situation
+
+
+541
+00:19:51,916 --> 00:19:54,166
+and our lookups are restored
+to being really fast.
+
+
+542
+00:19:54,616 --> 00:19:55,686
+OK, great.
+
+
+543
+00:19:56,396 --> 00:19:58,276
+So how can you participate
+in this?
+
+
+544
+00:19:58,336 --> 00:20:01,706
+Defining your identity for your
+object is how you take part
+
+
+545
+00:20:01,706 --> 00:20:03,486
+of this hash-based identity.
+
+
+546
+00:20:03,486 --> 00:20:06,796
+So NSObject, as I mentioned,
+defines an isEqual method
+
+
+547
+00:20:06,796 --> 00:20:09,086
+and a hash method, and
+they're functionally equivalent
+
+
+548
+00:20:09,086 --> 00:20:11,586
+to comparing the pointers,
+the object addresses
+
+
+549
+00:20:11,586 --> 00:20:12,996
+for these two objects,
+
+
+550
+00:20:12,996 --> 00:20:14,766
+and returning just
+the address itself.
+
+
+551
+00:20:15,976 --> 00:20:17,936
+Now, Apple-provided subclasses
+
+
+552
+00:20:17,936 --> 00:20:19,876
+of NSObject will override
+this as necessary.
+
+
+553
+00:20:19,876 --> 00:20:23,076
+For example, NSString has its
+own hash, NSDate, NSNumber
+
+
+554
+00:20:23,076 --> 00:20:26,976
+and so on, there's a variety
+that do this, and in fact,
+
+
+555
+00:20:26,976 --> 00:20:29,926
+arrays, and sets themselves also
+have their own hash and isEqual.
+
+
+556
+00:20:30,676 --> 00:20:33,326
+Custom objects that you
+create should choose
+
+
+557
+00:20:33,326 --> 00:20:34,236
+to override these methods
+
+
+558
+00:20:34,236 --> 00:20:36,626
+if pointer quality is not
+sufficient for your needs.
+
+
+559
+00:20:36,626 --> 00:20:39,096
+For example, say that you
+have two person objects
+
+
+560
+00:20:39,096 --> 00:20:40,536
+and you want them to
+be considered equal
+
+
+561
+00:20:40,536 --> 00:20:43,436
+if the Social Security Number
+is the same for both of them,
+
+
+562
+00:20:43,436 --> 00:20:44,266
+something to that effect.
+
+
+563
+00:20:44,666 --> 00:20:45,836
+And you can learn a
+lot more about this--
+
+
+564
+00:20:45,836 --> 00:20:48,606
+this will be in the slides
+for reference afterward--
+
+
+565
+00:20:48,856 --> 00:20:52,416
+about object comparison and
+implementing these methods.
+
+
+566
+00:20:52,636 --> 00:20:54,336
+There are a few rules of
+the road if you're going
+
+
+567
+00:20:54,336 --> 00:20:55,786
+to implement these
+on your own object.
+
+
+568
+00:20:56,396 --> 00:20:59,346
+If isEqual returns
+true for two objects,
+
+
+569
+00:20:59,586 --> 00:21:02,006
+then the hash must be the
+same for both of these.
+
+
+570
+00:21:02,456 --> 00:21:04,286
+This is critical because
+if you have two objects
+
+
+571
+00:21:04,286 --> 00:21:06,036
+that should be the same
+but have different hashes,
+
+
+572
+00:21:06,306 --> 00:21:08,386
+they could get put in
+different places in a hash table
+
+
+573
+00:21:08,556 --> 00:21:10,096
+and you won't be able to
+find them when you're looking
+
+
+574
+00:21:10,096 --> 00:21:11,846
+for them, you'll get
+incorrect results.
+
+
+575
+00:21:12,136 --> 00:21:14,766
+However, the same hash value
+does not necessarily imply
+
+
+576
+00:21:15,026 --> 00:21:16,166
+that isEqual must be true.
+
+
+577
+00:21:16,706 --> 00:21:18,526
+You can have two objects
+that have the same hash value
+
+
+578
+00:21:18,526 --> 00:21:20,416
+but isEqual will
+be the tie breaker.
+
+
+579
+00:21:21,116 --> 00:21:23,406
+If you decide to
+implement isEqual,
+
+
+580
+00:21:23,726 --> 00:21:26,326
+you really should also define
+hash for this very reason:
+
+
+581
+00:21:26,486 --> 00:21:28,616
+so that you can guarantee
+that they are the same.
+
+
+582
+00:21:28,796 --> 00:21:30,436
+Now, a good hash, as
+you're implementing one,
+
+
+583
+00:21:30,596 --> 00:21:31,876
+should minimize collisions.
+
+
+584
+00:21:32,286 --> 00:21:35,006
+A poor hash will really cause
+your performance to tank.
+
+
+585
+00:21:35,346 --> 00:21:36,626
+All right, for example,
+in the worst case,
+
+
+586
+00:21:36,626 --> 00:21:38,066
+let's say that you're
+like, "I don't know
+
+
+587
+00:21:38,066 --> 00:21:40,056
+about this hash thing,
+I'm just going to return 1
+
+
+588
+00:21:40,056 --> 00:21:41,276
+for all of my objects."
+
+
+589
+00:21:41,646 --> 00:21:43,566
+They all have the same hash
+which means they're all going
+
+
+590
+00:21:43,566 --> 00:21:45,256
+to go to the same
+bucket in a hash table,
+
+
+591
+00:21:45,516 --> 00:21:47,826
+which means you've now turned
+an NSSet into an NSArray
+
+
+592
+00:21:48,086 --> 00:21:49,176
+and killed your performance.
+
+
+593
+00:21:50,366 --> 00:21:51,586
+That's the opposite
+of what we want.
+
+
+594
+00:21:52,156 --> 00:21:54,676
+So we want to be careful
+about that and we'll talk
+
+
+595
+00:21:54,676 --> 00:21:57,076
+about that in just a moment.
+
+
+596
+00:21:57,356 --> 00:22:00,396
+One other key important thing is
+that when you have hash lookup,
+
+
+597
+00:22:00,396 --> 00:22:02,426
+your hashes really should
+be stable and predictable.
+
+
+598
+00:22:02,646 --> 00:22:04,736
+If your hash tends
+to change while it's
+
+
+599
+00:22:04,736 --> 00:22:06,166
+in the collection,
+it's really bad.
+
+
+600
+00:22:06,166 --> 00:22:08,006
+You're not going to
+be able to find it.
+
+
+601
+00:22:08,006 --> 00:22:09,066
+So there are two options really.
+
+
+602
+00:22:09,066 --> 00:22:11,316
+The first is not to modify
+and object in a collection.
+
+
+603
+00:22:11,316 --> 00:22:14,516
+If you have a mutable string and
+you've put it in as the key--
+
+
+604
+00:22:14,516 --> 00:22:17,676
+or an object in a set, for
+example, and you change
+
+
+605
+00:22:17,676 --> 00:22:19,436
+that string, the hash will
+change and you're going
+
+
+606
+00:22:19,436 --> 00:22:21,986
+to have all sorts of hilarity
+and hair-pulling that ensues.
+
+
+607
+00:22:22,436 --> 00:22:25,716
+The second option is to not
+base your hash on mutable state.
+
+
+608
+00:22:25,716 --> 00:22:26,786
+This may be an option for you,
+
+
+609
+00:22:26,786 --> 00:22:28,106
+so that's something
+to consider as well.
+
+
+610
+00:22:28,546 --> 00:22:30,166
+So let me show you a
+sample implementation.
+
+
+611
+00:22:30,456 --> 00:22:32,986
+You all have the WWDC app
+on your phones and iPads,
+
+
+612
+00:22:33,296 --> 00:22:34,646
+and there is a news object,
+
+
+613
+00:22:34,886 --> 00:22:36,716
+as you see in the news
+update throughout the week,
+
+
+614
+00:22:36,716 --> 00:22:38,266
+we have these news
+objects to represent that.
+
+
+615
+00:22:38,266 --> 00:22:39,716
+This is a simplified
+representation.
+
+
+616
+00:22:39,716 --> 00:22:41,856
+Here we're just looking it
+has a title and a time stamp.
+
+
+617
+00:22:41,936 --> 00:22:44,286
+So I want to focus on
+these two implementations.
+
+
+618
+00:22:44,286 --> 00:22:47,096
+Now, for hash, you see that we
+need to return some hash value
+
+
+619
+00:22:47,096 --> 00:22:49,766
+and we're just returning the
+hash that NSString provides us
+
+
+620
+00:22:49,766 --> 00:22:50,646
+from this title property.
+
+
+621
+00:22:51,396 --> 00:22:54,026
+However, if we have
+two news items
+
+
+622
+00:22:54,026 --> 00:22:56,276
+that may have the same title
+and thus have the same hash,
+
+
+623
+00:22:56,516 --> 00:22:58,536
+we can break the tie
+by calling isEqual
+
+
+624
+00:22:58,816 --> 00:23:01,046
+and compare both the
+title and the time stamp,
+
+
+625
+00:23:01,136 --> 00:23:02,786
+and we also check to see
+if it's the same object.
+
+
+626
+00:23:02,876 --> 00:23:05,866
+So, there are a lot more
+examples of things like this
+
+
+627
+00:23:05,916 --> 00:23:07,596
+in the documentation
+that I encourage you
+
+
+628
+00:23:07,866 --> 00:23:08,726
+to check out afterward.
+
+
+629
+00:23:09,486 --> 00:23:14,236
+OK. So next I want
+to talk to you
+
+
+630
+00:23:14,346 --> 00:23:15,806
+about data structures
+performance,
+
+
+631
+00:23:15,866 --> 00:23:16,936
+kind of applying
+what we've learned.
+
+
+632
+00:23:17,146 --> 00:23:18,466
+We've got the math-y
+part out of the way
+
+
+633
+00:23:18,466 --> 00:23:20,506
+about Big O complexity
+and hashes and so on.
+
+
+634
+00:23:20,506 --> 00:23:21,706
+So I'm going to talk
+to you a little
+
+
+635
+00:23:21,706 --> 00:23:23,186
+but about choosing
+data structures
+
+
+636
+00:23:23,186 --> 00:23:25,376
+and the performance
+characteristics about them.
+
+
+637
+00:23:25,376 --> 00:23:26,586
+So let's start with an analogy.
+
+
+638
+00:23:26,586 --> 00:23:28,586
+Say that you have books
+that you need to organize.
+
+
+639
+00:23:29,016 --> 00:23:29,996
+There's a lot of different ways
+
+
+640
+00:23:29,996 --> 00:23:31,526
+that you could choose
+to organize books.
+
+
+641
+00:23:32,476 --> 00:23:34,566
+Say you could sort them
+by topic or author,
+
+
+642
+00:23:34,786 --> 00:23:36,066
+title, even size or color.
+
+
+643
+00:23:36,066 --> 00:23:38,036
+You can choose an arbitrary
+characteristic and choose
+
+
+644
+00:23:38,036 --> 00:23:38,836
+to sort them that way.
+
+
+645
+00:23:39,156 --> 00:23:41,306
+Everyone does this with their
+CD collections, and, well,
+
+
+646
+00:23:41,416 --> 00:23:42,766
+iTunes has solved
+that problem now.
+
+
+647
+00:23:43,356 --> 00:23:44,786
+But everyone has their
+own preferred way
+
+
+648
+00:23:44,956 --> 00:23:46,166
+to sort things and
+organize them.
+
+
+649
+00:23:46,906 --> 00:23:49,516
+However, each of these options
+makes some things really easy
+
+
+650
+00:23:49,836 --> 00:23:50,726
+and others difficult.
+
+
+651
+00:23:50,946 --> 00:23:52,686
+Say that you've chosen to
+organize alphabetically
+
+
+652
+00:23:52,686 --> 00:23:54,406
+by author and then
+later you want
+
+
+653
+00:23:54,406 --> 00:23:56,436
+to find all the New York
+Times' best sellers,
+
+
+654
+00:23:56,636 --> 00:23:58,966
+or you want to find children's
+books, those are scattered all
+
+
+655
+00:23:58,996 --> 00:24:01,396
+over in your collection and
+it's not easy to look them
+
+
+656
+00:24:01,396 --> 00:24:02,406
+up when they're sorted
+by author.
+
+
+657
+00:24:02,456 --> 00:24:03,516
+So this is something
+to be aware of.
+
+
+658
+00:24:03,516 --> 00:24:06,456
+It's also important to plan
+for scale when appropriate
+
+
+659
+00:24:06,456 --> 00:24:07,646
+as you're choosing
+your data structures.
+
+
+660
+00:24:07,646 --> 00:24:10,286
+For example, it's a
+completely different thing
+
+
+661
+00:24:10,286 --> 00:24:12,606
+to organize a small bookshelf
+here where you can say,
+
+
+662
+00:24:12,606 --> 00:24:13,916
+"Go find the small green book"
+
+
+663
+00:24:14,266 --> 00:24:16,096
+and instantly you've all
+found it because it's small,
+
+
+664
+00:24:16,756 --> 00:24:18,766
+versus organizing a
+really large library.
+
+
+665
+00:24:18,986 --> 00:24:21,266
+Things that will work at small
+scale may not necessarily
+
+
+666
+00:24:21,266 --> 00:24:22,806
+when you get to large
+amounts of data.
+
+
+667
+00:24:23,446 --> 00:24:25,416
+You have to have a
+more intelligent way
+
+
+668
+00:24:25,416 --> 00:24:26,186
+to organize things.
+
+
+669
+00:24:26,236 --> 00:24:28,076
+So, choosing a strategy,
+
+
+670
+00:24:28,366 --> 00:24:30,376
+every data structure
+has some tradeoffs.
+
+
+671
+00:24:30,376 --> 00:24:32,256
+It has things that it's best
+at and things that is not
+
+
+672
+00:24:32,256 --> 00:24:34,166
+as well suited for, and
+you want to use the one
+
+
+673
+00:24:34,166 --> 00:24:35,226
+that best fits your needs.
+
+
+674
+00:24:35,656 --> 00:24:37,906
+When you choose a data structure
+that's not the best fit,
+
+
+675
+00:24:37,906 --> 00:24:39,736
+it really hurts your
+performance.
+
+
+676
+00:24:39,736 --> 00:24:41,686
+For example, using a
+hammer to drive in a screw,
+
+
+677
+00:24:41,916 --> 00:24:43,666
+not the ideal tool
+for the situation.
+
+
+678
+00:24:44,026 --> 00:24:45,336
+Even if you have the right tool,
+
+
+679
+00:24:45,536 --> 00:24:46,926
+you may not be using
+it optimally.
+
+
+680
+00:24:47,116 --> 00:24:49,256
+If you have a hammer with
+a nail and you just pressed
+
+
+681
+00:24:49,256 --> 00:24:53,156
+down really hardly-- as hard as
+you can, it's not going to be
+
+
+682
+00:24:53,156 --> 00:24:55,086
+as effective as whacking
+it really hard, right?
+
+
+683
+00:24:55,246 --> 00:24:57,026
+So, it's really important
+to choose the right thing
+
+
+684
+00:24:57,026 --> 00:24:58,716
+for your needs and
+use it correctly.
+
+
+685
+00:24:58,716 --> 00:25:01,306
+And we encourage
+you to always prefer
+
+
+686
+00:25:01,306 --> 00:25:03,306
+to use the built-in
+API whenever possible.
+
+
+687
+00:25:03,636 --> 00:25:04,966
+The collections that
+are available
+
+
+688
+00:25:04,966 --> 00:25:06,996
+in the Foundation framework
+are extensively tested.
+
+
+689
+00:25:06,996 --> 00:25:08,246
+They've been around for years.
+
+
+690
+00:25:08,666 --> 00:25:10,726
+We use them just as much
+as you do, and we want them
+
+
+691
+00:25:10,726 --> 00:25:13,006
+to be really, really fast
+just as much as you do.
+
+
+692
+00:25:13,816 --> 00:25:17,646
+These also-- using the built-in
+frameworks also guarantees
+
+
+693
+00:25:17,856 --> 00:25:20,136
+that in the future when we have
+improvements, such as you'll see
+
+
+694
+00:25:20,136 --> 00:25:21,816
+in OS X Mavericks and in iOS 7,
+
+
+695
+00:25:21,816 --> 00:25:24,886
+that you will also get
+those improvements for free.
+
+
+696
+00:25:25,116 --> 00:25:27,776
+Your apps will suddenly
+become faster, which is great.
+
+
+697
+00:25:28,816 --> 00:25:31,596
+So, getting down to actually
+choosing a data structure,
+
+
+698
+00:25:31,596 --> 00:25:33,676
+there's a few things you
+have to know for context.
+
+
+699
+00:25:33,676 --> 00:25:35,246
+The first is knowing
+what you need.
+
+
+700
+00:25:36,146 --> 00:25:37,946
+Is it important that my
+objects have an order?
+
+
+701
+00:25:38,436 --> 00:25:40,026
+Will I allow duplicates
+in my collection?
+
+
+702
+00:25:40,366 --> 00:25:42,746
+Do I have to be able to add or
+remove objects, have it mutable?
+
+
+703
+00:25:43,346 --> 00:25:44,566
+What operations are
+most critical
+
+
+704
+00:25:44,566 --> 00:25:45,826
+for me to be really fast?
+
+
+705
+00:25:45,826 --> 00:25:47,226
+What am I going to be
+doing with my structure?
+
+
+706
+00:25:47,406 --> 00:25:49,326
+And even where will my
+data come from and go to?
+
+
+707
+00:25:49,706 --> 00:25:51,116
+For example, you may
+choose differently
+
+
+708
+00:25:51,336 --> 00:25:53,036
+if your data will
+come from user input,
+
+
+709
+00:25:53,266 --> 00:25:55,376
+or from a property list
+file, or Core Data,
+
+
+710
+00:25:55,766 --> 00:25:57,236
+or JSON over the web or so on.
+
+
+711
+00:25:57,556 --> 00:25:59,376
+There's certain things that
+may change your decision.
+
+
+712
+00:25:59,376 --> 00:26:01,786
+And the second thing is
+to know what to expect
+
+
+713
+00:26:01,936 --> 00:26:03,686
+from your collection, which
+we'll go into in detail.
+
+
+714
+00:26:03,686 --> 00:26:05,316
+There are certain things
+that are broadly true
+
+
+715
+00:26:05,316 --> 00:26:06,386
+across all of our collections.
+
+
+716
+00:26:06,436 --> 00:26:08,096
+For example, getting
+the count of items
+
+
+717
+00:26:08,096 --> 00:26:10,886
+in a collection is always really
+fast, that's constant time.
+
+
+718
+00:26:10,886 --> 00:26:12,826
+We cache that for you because
+that's a common operation.
+
+
+719
+00:26:13,356 --> 00:26:14,756
+Enumerating through
+all the objects
+
+
+720
+00:26:14,756 --> 00:26:17,416
+in a collection is generally
+linear time, because you have
+
+
+721
+00:26:17,416 --> 00:26:18,816
+to visit each of N objects.
+
+
+722
+00:26:18,966 --> 00:26:21,486
+Even if you have a set or
+dictionary, lookup is fast
+
+
+723
+00:26:21,556 --> 00:26:22,506
+but going through
+each of them is going
+
+
+724
+00:26:22,506 --> 00:26:23,796
+to take the same amount of time.
+
+
+725
+00:26:23,796 --> 00:26:26,076
+And other operations will
+vary by the collection.
+
+
+726
+00:26:26,076 --> 00:26:28,856
+So, before I go over
+individual data structures,
+
+
+727
+00:26:28,856 --> 00:26:30,856
+I want to share just a
+note about mutability.
+
+
+728
+00:26:31,166 --> 00:26:33,236
+The best guideline with
+mutability, we got a lot
+
+
+729
+00:26:33,236 --> 00:26:35,816
+of questions about this, is
+to use it when you need it,
+
+
+730
+00:26:35,886 --> 00:26:37,706
+when it's semantically
+correct, when you're adding
+
+
+731
+00:26:37,706 --> 00:26:39,156
+and removing objects
+from a collection.
+
+
+732
+00:26:39,896 --> 00:26:41,606
+Immutable collections
+do have benefits.
+
+
+733
+00:26:41,666 --> 00:26:44,426
+If you don't need mutability,
+it can be to your benefit
+
+
+734
+00:26:44,426 --> 00:26:47,246
+to use an immutable
+collection instead.
+
+
+735
+00:26:47,246 --> 00:26:50,946
+Foremost among these
+benefits is thread safety.
+
+
+736
+00:26:51,186 --> 00:26:54,316
+If a collection is
+immutable such as an NSArray,
+
+
+737
+00:26:54,316 --> 00:26:56,636
+you know that no other thread
+can add or remove objects,
+
+
+738
+00:26:56,636 --> 00:26:58,766
+and you don't have to worry
+about exceptions or crashes.
+
+
+739
+00:26:59,626 --> 00:27:02,056
+Also, there are memory and speed
+optimizations that are possible
+
+
+740
+00:27:02,216 --> 00:27:03,836
+with immutable collections
+because we know
+
+
+741
+00:27:03,836 --> 00:27:05,026
+that they're not going
+to change in size.
+
+
+742
+00:27:05,256 --> 00:27:07,486
+We can allocate just the
+exact right amount of memory
+
+
+743
+00:27:07,486 --> 00:27:08,956
+for the objects that
+you've provided.
+
+
+744
+00:27:10,516 --> 00:27:14,796
+Now, another option is to make a
+collection immutable afterwards.
+
+
+745
+00:27:15,236 --> 00:27:17,906
+Make a copy of it that you
+can use for quick reference
+
+
+746
+00:27:17,906 --> 00:27:19,906
+and get those benefits,
+but still be able to build
+
+
+747
+00:27:19,906 --> 00:27:21,856
+up your collection
+with add and remove.
+
+
+748
+00:27:22,416 --> 00:27:26,126
+And lastly, if you do use
+mutability, it's often great
+
+
+749
+00:27:26,126 --> 00:27:27,426
+if you can help us to help you.
+
+
+750
+00:27:27,726 --> 00:27:29,516
+You know how your
+collection is being used.
+
+
+751
+00:27:29,696 --> 00:27:32,416
+We design it for a broad
+range of different uses,
+
+
+752
+00:27:32,636 --> 00:27:34,426
+and you know specifically what
+you're going to do with it.
+
+
+753
+00:27:34,566 --> 00:27:35,936
+And there's times that
+you can provide hints
+
+
+754
+00:27:35,936 --> 00:27:37,836
+that help us get you
+the best performance.
+
+
+755
+00:27:37,836 --> 00:27:39,696
+One example is initializing
+a collection
+
+
+756
+00:27:39,696 --> 00:27:40,866
+with initWithCapacity.
+
+
+757
+00:27:41,376 --> 00:27:43,206
+Now, what this does is
+gives us kind of a hint
+
+
+758
+00:27:43,436 --> 00:27:45,526
+about how many objects
+you're likely to store
+
+
+759
+00:27:45,736 --> 00:27:46,576
+in a given collection.
+
+
+760
+00:27:46,716 --> 00:27:49,626
+So for example, if you say "I'm
+only going to store three items
+
+
+761
+00:27:49,626 --> 00:27:51,286
+in this mutable array
+and add and remove them",
+
+
+762
+00:27:51,516 --> 00:27:53,106
+you can provide that
+capacity up front
+
+
+763
+00:27:53,326 --> 00:27:54,576
+and we can optimize accordingly.
+
+
+764
+00:27:54,726 --> 00:27:58,006
+Now, don't-- It's not wise to
+try to outsmart the collections
+
+
+765
+00:27:58,006 --> 00:28:00,076
+and ask for a really
+large capacity.
+
+
+766
+00:28:00,336 --> 00:28:01,906
+The collections are
+really finely tuned
+
+
+767
+00:28:01,906 --> 00:28:03,426
+and optimized to
+take care of that.
+
+
+768
+00:28:03,706 --> 00:28:05,866
+And even if you do provide
+the capacity hint up front,
+
+
+769
+00:28:06,086 --> 00:28:08,036
+the collection can
+dynamically grow and shrink
+
+
+770
+00:28:08,036 --> 00:28:09,636
+as objects are added
+and removed.
+
+
+771
+00:28:09,736 --> 00:28:11,716
+So this just provides us an
+up front way to kind of get
+
+
+772
+00:28:11,716 --> 00:28:12,846
+in the ballpark of
+what you need.
+
+
+773
+00:28:12,846 --> 00:28:16,046
+OK. So I'm going to go
+on a quick tour of some
+
+
+774
+00:28:16,046 --> 00:28:20,176
+of the data structures
+in Foundation,
+
+
+775
+00:28:20,176 --> 00:28:21,396
+some of the most
+valuable players;
+
+
+776
+00:28:21,576 --> 00:28:22,736
+give you a brief
+overview and talk
+
+
+777
+00:28:22,736 --> 00:28:24,826
+about their performance
+characteristics.
+
+
+778
+00:28:24,826 --> 00:28:26,466
+First, NSArray and MutableArray.
+
+
+779
+00:28:26,726 --> 00:28:27,596
+You're all familiar with this.
+
+
+780
+00:28:27,596 --> 00:28:29,576
+It's a workhorse of
+the Cocoa library.
+
+
+781
+00:28:30,516 --> 00:28:33,486
+It's an ordered collection,
+it allows indexed access,
+
+
+782
+00:28:33,486 --> 00:28:35,326
+and you can have duplicate
+objects in an array.
+
+
+783
+00:28:36,436 --> 00:28:38,416
+Operations that are
+really fast are anything
+
+
+784
+00:28:38,416 --> 00:28:40,736
+that includes indexing:
+objectAtIndex,
+
+
+785
+00:28:41,026 --> 00:28:42,466
+firstObject and lastObject.
+
+
+786
+00:28:42,756 --> 00:28:45,076
+Adding and removing
+at either end
+
+
+787
+00:28:45,076 --> 00:28:47,316
+of a mutable array is
+actually really fast as well.
+
+
+788
+00:28:47,506 --> 00:28:48,696
+This may come as a surprise;
+
+
+789
+00:28:49,016 --> 00:28:51,056
+adding at the end would seem
+really fast, but you may think
+
+
+790
+00:28:51,056 --> 00:28:52,116
+that if you add at the
+beginning you'd have
+
+
+791
+00:28:52,116 --> 00:28:53,206
+to shift everything over.
+
+
+792
+00:28:53,516 --> 00:28:56,136
+However, that tends to be
+a common use case for a lot
+
+
+793
+00:28:56,136 --> 00:28:58,236
+of our developers, so
+we've optimized that
+
+
+794
+00:28:58,506 --> 00:29:00,736
+and we've given the guarantee
+that inserting at the front,
+
+
+795
+00:29:00,876 --> 00:29:03,056
+the very front of a mutable
+array is also really fast.
+
+
+796
+00:29:03,116 --> 00:29:04,616
+So that's a great thing
+to be aware of as well,
+
+
+797
+00:29:04,616 --> 00:29:06,576
+to not be afraid to
+insert at the front.
+
+
+798
+00:29:06,616 --> 00:29:09,516
+Slower operations include
+anything that involves search
+
+
+799
+00:29:09,516 --> 00:29:10,966
+and looking through
+any of these indexes
+
+
+800
+00:29:11,026 --> 00:29:12,196
+as we've already
+mentioned before.
+
+
+801
+00:29:12,486 --> 00:29:15,356
+Also, adding and removing at
+an arbitrary index somewhere
+
+
+802
+00:29:15,496 --> 00:29:17,416
+in the middle of the array,
+not at either of the ends,
+
+
+803
+00:29:17,566 --> 00:29:19,486
+would tend to be a
+little bit slower.
+
+
+804
+00:29:19,486 --> 00:29:22,426
+One specialty operation I'd like
+to call out is binary search.
+
+
+805
+00:29:22,646 --> 00:29:23,686
+If you're not familiar
+with this,
+
+
+806
+00:29:23,686 --> 00:29:26,926
+binary search is a quick way
+to narrow down your search.
+
+
+807
+00:29:27,216 --> 00:29:28,266
+There are a couple
+pre-conditions.
+
+
+808
+00:29:28,266 --> 00:29:30,606
+You have to have some
+sorted range of data.
+
+
+809
+00:29:30,606 --> 00:29:33,846
+So if I know that my array is
+already sorted in ascending
+
+
+810
+00:29:33,846 --> 00:29:37,476
+or descending order, I could use
+binary search to quickly narrow
+
+
+811
+00:29:37,476 --> 00:29:40,496
+down and cut out half of
+the objects each time.
+
+
+812
+00:29:40,856 --> 00:29:43,846
+And this is a great win
+because this is an order log N
+
+
+813
+00:29:44,066 --> 00:29:45,556
+operation, as compared
+to order N.
+
+
+814
+00:29:45,556 --> 00:29:48,146
+If you remember from the graph,
+order N was a line that goes
+
+
+815
+00:29:48,146 --> 00:29:49,466
+up at a 45-degree angle
+
+
+816
+00:29:49,576 --> 00:29:52,726
+and order log N stays
+really close to the bottom.
+
+
+817
+00:29:52,726 --> 00:29:56,696
+It's got great performance
+as your objects sizes scale.
+
+
+818
+00:29:57,446 --> 00:29:59,806
+Next is NSSet and NSMutableSet.
+
+
+819
+00:30:00,546 --> 00:30:03,686
+This is an unordered collection,
+it does not allow duplicates,
+
+
+820
+00:30:03,686 --> 00:30:05,996
+and it has hash-based lookup
+as we discussed previously.
+
+
+821
+00:30:07,386 --> 00:30:09,556
+In sets, adding,
+removing and searching
+
+
+822
+00:30:09,556 --> 00:30:10,986
+for objects are really fast,
+
+
+823
+00:30:11,076 --> 00:30:12,586
+precisely because of
+the hash-based lookup.
+
+
+824
+00:30:13,186 --> 00:30:14,566
+Now, there are some
+specialty operations
+
+
+825
+00:30:14,566 --> 00:30:16,076
+that are really convenient
+on NSSet.
+
+
+826
+00:30:16,326 --> 00:30:18,286
+For example, set arithmetic.
+
+
+827
+00:30:18,286 --> 00:30:20,446
+If you think of a Venn diagram
+where you've got two circles
+
+
+828
+00:30:20,446 --> 00:30:22,586
+that overlap, you can find
+the intersection between them,
+
+
+829
+00:30:22,806 --> 00:30:24,356
+you can see if one is
+completely contained
+
+
+830
+00:30:24,356 --> 00:30:25,126
+in the other, and so on.
+
+
+831
+00:30:25,376 --> 00:30:27,596
+And if you have mutable
+sets, you can extend this
+
+
+832
+00:30:27,836 --> 00:30:31,186
+and intersect the set
+and modify one set
+
+
+833
+00:30:31,546 --> 00:30:33,566
+to only contain the objects
+that also appear in another set,
+
+
+834
+00:30:33,726 --> 00:30:35,546
+or minus set, or
+union set and so on.
+
+
+835
+00:30:35,546 --> 00:30:37,006
+This can be really
+convenient for merging
+
+
+836
+00:30:37,006 --> 00:30:39,256
+and separating different
+collections of objects.
+
+
+837
+00:30:39,336 --> 00:30:40,066
+Good thing to be aware of.
+
+
+838
+00:30:40,736 --> 00:30:43,746
+Caveats with NSSet, when
+you convert from an array
+
+
+839
+00:30:43,746 --> 00:30:47,236
+to an NSSet, you can do that
+but you do lose your ordering
+
+
+840
+00:30:47,376 --> 00:30:49,626
+of the array, and you
+lose any duplicates
+
+
+841
+00:30:49,626 --> 00:30:50,826
+that may appear in the array.
+
+
+842
+00:30:50,986 --> 00:30:52,336
+Those will be stripped
+out with a set.
+
+
+843
+00:30:52,516 --> 00:30:55,516
+If you convert back to an array,
+you may get a smaller array,
+
+
+844
+00:30:55,516 --> 00:30:57,626
+and you almost certainly get
+one that's in a different order
+
+
+845
+00:30:57,626 --> 00:30:58,806
+that the one you passed in.
+
+
+846
+00:30:59,616 --> 00:31:02,196
+Related to this is that you
+can't store a set directly
+
+
+847
+00:31:02,196 --> 00:31:04,276
+in a property list or
+in JSON, as we'll talk
+
+
+848
+00:31:04,276 --> 00:31:06,326
+about in a little bit.
+
+
+849
+00:31:06,616 --> 00:31:10,166
+You can convert to an array and
+back as you're reading them out,
+
+
+850
+00:31:10,316 --> 00:31:11,776
+but these are caveats
+to be aware of.
+
+
+851
+00:31:12,286 --> 00:31:14,406
+A brief of note on NSCountedSet.
+
+
+852
+00:31:14,406 --> 00:31:16,526
+This is really a handy one that
+many people are not aware of.
+
+
+853
+00:31:16,936 --> 00:31:18,686
+It's also unordered
+just a like a set,
+
+
+854
+00:31:18,686 --> 00:31:20,046
+no duplicates and hash lookup.
+
+
+855
+00:31:20,546 --> 00:31:22,146
+It's a subclass of NSMutableSet,
+
+
+856
+00:31:22,146 --> 00:31:23,626
+so it has all the
+same operations
+
+
+857
+00:31:23,626 --> 00:31:25,146
+and the same characteristics.
+
+
+858
+00:31:25,146 --> 00:31:28,076
+Its big trick though, is that it
+tracks the net insertion count
+
+
+859
+00:31:28,076 --> 00:31:28,876
+of each object.
+
+
+860
+00:31:29,176 --> 00:31:32,346
+So, objects still only appear
+once in a counted set, however,
+
+
+861
+00:31:32,346 --> 00:31:33,906
+if you insert the
+same object again,
+
+
+862
+00:31:33,906 --> 00:31:36,186
+the count for that object
+will increase to 2 and so on.
+
+
+863
+00:31:36,186 --> 00:31:37,646
+If you remove that
+object, it decreases
+
+
+864
+00:31:37,856 --> 00:31:39,106
+and if it's removed it's at 0.
+
+
+865
+00:31:39,476 --> 00:31:41,306
+This can be really convenient
+if you're trying to count
+
+
+866
+00:31:41,306 --> 00:31:44,876
+up occurrences of a particular
+object, maybe words in text
+
+
+867
+00:31:44,876 --> 00:31:46,216
+or something like that.
+
+
+868
+00:31:46,506 --> 00:31:48,766
+It's kind of a histogram
+binning type of thing,
+
+
+869
+00:31:49,006 --> 00:31:49,926
+so great thing to be aware of.
+
+
+870
+00:31:50,636 --> 00:31:52,646
+Next is NSDictionary
+and NSMutableDictionary.
+
+
+871
+00:31:52,906 --> 00:31:54,166
+This you're also
+very familiar with.
+
+
+872
+00:31:54,546 --> 00:31:57,696
+It's an unordered collection,
+it has key value entries
+
+
+873
+00:31:57,886 --> 00:31:59,246
+to store those associated
+together,
+
+
+874
+00:31:59,726 --> 00:32:01,216
+it has unique key values,
+
+
+875
+00:32:01,296 --> 00:32:03,136
+and it uses hash lookup
+just a like a set.
+
+
+876
+00:32:03,286 --> 00:32:07,576
+So, adding, removing and
+searching are also really fast
+
+
+877
+00:32:07,576 --> 00:32:10,216
+in a dictionary, anything where
+you're looking for an object
+
+
+878
+00:32:10,216 --> 00:32:12,206
+by the key, adding or
+removing and searching.
+
+
+879
+00:32:13,026 --> 00:32:15,586
+Specialty operations, one thing
+that's convenient is it has some
+
+
+880
+00:32:15,796 --> 00:32:17,706
+handy API for reading
+and writing directly
+
+
+881
+00:32:17,706 --> 00:32:18,876
+from a property list file.
+
+
+882
+00:32:19,466 --> 00:32:21,586
+And also one other thing
+that was added in 10.8
+
+
+883
+00:32:21,586 --> 00:32:23,846
+and iOS 6 is really handy.
+
+
+884
+00:32:23,846 --> 00:32:26,386
+If you have a mutable
+array and you know up front
+
+
+885
+00:32:26,386 --> 00:32:29,456
+which keys will ever appear in
+this mutable dictionary, sorry,
+
+
+886
+00:32:29,456 --> 00:32:31,906
+mutable dictionary, you
+can provide a key set,
+
+
+887
+00:32:31,906 --> 00:32:33,466
+an array of those keys up front.
+
+
+888
+00:32:33,776 --> 00:32:35,396
+And there's a class
+method on NSDictionary.
+
+
+889
+00:32:35,616 --> 00:32:36,596
+You give it an array of keys,
+
+
+890
+00:32:36,596 --> 00:32:38,786
+it will give you a
+sharedKeySet object.
+
+
+891
+00:32:39,096 --> 00:32:41,886
+If you provide that when
+creating an NSMutableDictionary,
+
+
+892
+00:32:42,266 --> 00:32:45,046
+it can create a really
+optimal hash algorithm
+
+
+893
+00:32:45,046 --> 00:32:47,696
+for organizing those
+particular keys.
+
+
+894
+00:32:47,696 --> 00:32:49,426
+It knows up front what's
+likely to be there.
+
+
+895
+00:32:49,606 --> 00:32:52,086
+And it can be a great
+situation if you need mutability
+
+
+896
+00:32:52,086 --> 00:32:54,126
+but you want speed and you
+know the keys you're going
+
+
+897
+00:32:54,126 --> 00:32:55,446
+to have up front.
+
+
+898
+00:32:55,446 --> 00:32:58,536
+Caveats of NSDictionary, you're
+probably familiar with the fact
+
+
+899
+00:32:58,536 --> 00:32:59,626
+that any keys that you provide
+
+
+900
+00:32:59,626 --> 00:33:01,996
+to NSDictionary are
+going to be copied in.
+
+
+901
+00:33:02,376 --> 00:33:05,626
+They have to conform to
+the NSCopying protocol.
+
+
+902
+00:33:06,186 --> 00:33:09,086
+And you should never mutate an
+object that is a dictionary key.
+
+
+903
+00:33:09,406 --> 00:33:10,846
+The hash will change
+very likely,
+
+
+904
+00:33:10,946 --> 00:33:12,686
+and you probably won't
+be able to find it
+
+
+905
+00:33:12,686 --> 00:33:13,796
+and you'll get incorrect
+results.
+
+
+906
+00:33:13,796 --> 00:33:16,826
+This is a major thing
+to be aware of.
+
+
+907
+00:33:16,826 --> 00:33:17,666
+NSOrderedSet
+
+
+908
+00:33:17,666 --> 00:33:21,446
+and NSMutableOrderedSet
+are an ordered collection,
+
+
+909
+00:33:21,446 --> 00:33:23,956
+similar to arrays, they don't
+allow duplicates like a set,
+
+
+910
+00:33:23,956 --> 00:33:26,366
+and they support both index
+and hash-based lookup.
+
+
+911
+00:33:26,716 --> 00:33:31,426
+This class was introduced
+in iOS 5 and OS X 10.7.
+
+
+912
+00:33:31,426 --> 00:33:34,526
+And it's effectively across
+between a set and array.
+
+
+913
+00:33:35,006 --> 00:33:36,286
+It's not a subclass
+of either one,
+
+
+914
+00:33:36,286 --> 00:33:39,636
+although you can get an array
+or set representation that--
+
+
+915
+00:33:39,636 --> 00:33:42,136
+one convenient thing about
+these are they're live-updating.
+
+
+916
+00:33:42,386 --> 00:33:44,516
+So as objects are added or
+removed to the mutable set,
+
+
+917
+00:33:44,516 --> 00:33:46,866
+those array and set
+representations will be updated
+
+
+918
+00:33:46,866 --> 00:33:47,256
+as well.
+
+
+919
+00:33:48,046 --> 00:33:49,736
+Now, a caveat of this
+is that you're going
+
+
+920
+00:33:49,736 --> 00:33:50,886
+to have increased memory usage.
+
+
+921
+00:33:50,886 --> 00:33:53,546
+You can't get the best of
+both worlds as a free lunch.
+
+
+922
+00:33:53,826 --> 00:33:55,726
+So because we're
+maintaining ordering,
+
+
+923
+00:33:55,906 --> 00:33:56,946
+we have an array internally.
+
+
+924
+00:33:56,946 --> 00:33:59,626
+And because we're
+guaranteeing uniqueness
+
+
+925
+00:33:59,626 --> 00:34:01,406
+and no duplicate objects,
+we also have a set.
+
+
+926
+00:34:01,656 --> 00:34:03,156
+So roughly double memory usage.
+
+
+927
+00:34:03,496 --> 00:34:06,306
+And also when you-- If you
+want to store an ordered set
+
+
+928
+00:34:06,346 --> 00:34:08,306
+in a property list, you'd
+have to convert it to an array
+
+
+929
+00:34:08,556 --> 00:34:11,656
+and then back as
+you bring it out.
+
+
+930
+00:34:11,656 --> 00:34:13,536
+NSIndexSet and NSMutableIndexSet
+differ
+
+
+931
+00:34:13,536 --> 00:34:15,806
+because they don't store
+objects, they store indexes,
+
+
+932
+00:34:16,166 --> 00:34:19,056
+integer values, so it's a
+collection of unique indexes
+
+
+933
+00:34:19,396 --> 00:34:22,446
+and these are really handy
+for referencing some subset
+
+
+934
+00:34:22,446 --> 00:34:24,025
+of objects in an NSArray.
+
+
+935
+00:34:24,616 --> 00:34:26,186
+And it's really handy especially
+
+
+936
+00:34:26,186 --> 00:34:28,866
+because you can avoid the
+memory overhead of making a copy
+
+
+937
+00:34:28,866 --> 00:34:31,275
+or saying objectsAtIndexes,
+you can give it an index set
+
+
+938
+00:34:31,496 --> 00:34:33,886
+and it gives you a
+new autoreleased array
+
+
+939
+00:34:34,226 --> 00:34:35,246
+with those objects in it.
+
+
+940
+00:34:35,406 --> 00:34:37,996
+If you want to avoid that
+overhead, you can just enumerate
+
+
+941
+00:34:37,996 --> 00:34:39,656
+through the objects
+at particular indexes
+
+
+942
+00:34:39,656 --> 00:34:41,726
+without creating a new array,
+and it's really handy for that.
+
+
+943
+00:34:42,206 --> 00:34:44,116
+Index set has really
+efficient storage
+
+
+944
+00:34:44,116 --> 00:34:45,876
+and coalescing of indexes.
+
+
+945
+00:34:46,065 --> 00:34:48,716
+So if you have a mutable index
+set and you add the indexes 1
+
+
+946
+00:34:48,716 --> 00:34:50,196
+and 3, it will store
+those separately.
+
+
+947
+00:34:50,485 --> 00:34:53,315
+If you add 2 as well, it's
+intelligent enough to coalesce
+
+
+948
+00:34:53,315 --> 00:34:55,146
+and say, "I'm going to
+store the range 1 to 3."
+
+
+949
+00:34:55,446 --> 00:34:57,666
+And if you add more indexes
+that are consecutive,
+
+
+950
+00:34:57,756 --> 00:34:59,006
+it will group those
+all together,
+
+
+951
+00:34:59,006 --> 00:35:00,366
+so it's really efficient
+with storage.
+
+
+952
+00:35:00,936 --> 00:35:03,976
+It also supports set arithmetic
+such as intersection, subset,
+
+
+953
+00:35:03,976 --> 00:35:06,386
+and difference like we
+saw with mutable sets.
+
+
+954
+00:35:06,386 --> 00:35:09,136
+One caveat of this is when
+you're using index set
+
+
+955
+00:35:09,136 --> 00:35:11,016
+and you apply it to
+an NSMutableArray,
+
+
+956
+00:35:11,266 --> 00:35:13,976
+if that array changes after
+you've obtained the index set,
+
+
+957
+00:35:13,976 --> 00:35:15,516
+you can have all
+sorts of bad results.
+
+
+958
+00:35:15,516 --> 00:35:19,276
+For example, you have a mutable
+array, you've gotten a group
+
+
+959
+00:35:19,276 --> 00:35:22,046
+of indexes, and then you
+remove all the objects
+
+
+960
+00:35:22,046 --> 00:35:22,876
+or some of them in the array.
+
+
+961
+00:35:22,906 --> 00:35:24,366
+If you try to get
+objectsAtIndexes,
+
+
+962
+00:35:24,516 --> 00:35:25,726
+you can easily get
+a range exception
+
+
+963
+00:35:25,726 --> 00:35:27,446
+because that index no
+longer exists in array.
+
+
+964
+00:35:27,446 --> 00:35:29,986
+So this is something
+to be aware of.
+
+
+965
+00:35:29,986 --> 00:35:32,016
+NSMapTable and NSHashTable
+are very interesting.
+
+
+966
+00:35:32,186 --> 00:35:32,926
+They are very similar
+
+
+967
+00:35:32,926 --> 00:35:35,226
+to NSMutableDictionary
+and NSMutableSet.
+
+
+968
+00:35:35,976 --> 00:35:38,186
+There's a couple
+of key differences.
+
+
+969
+00:35:38,336 --> 00:35:40,216
+They offer a lot more
+flexibility with some
+
+
+970
+00:35:40,216 --> 00:35:41,396
+of these additional options.
+
+
+971
+00:35:41,596 --> 00:35:43,676
+You can use pointer
+identity rather than choosing
+
+
+972
+00:35:43,676 --> 00:35:45,746
+to use isEqual, as you would
+in these other collections.
+
+
+973
+00:35:46,086 --> 00:35:48,806
+It can contain any kind of
+pointer, not just an object;
+
+
+974
+00:35:48,806 --> 00:35:50,156
+it could be a void or any kind
+
+
+975
+00:35:50,156 --> 00:35:51,356
+of C pointer you
+can store in here.
+
+
+976
+00:35:51,826 --> 00:35:54,276
+You can optionally say that
+you want weak references,
+
+
+977
+00:35:54,276 --> 00:35:56,566
+so that if all the strong
+references to an object stored
+
+
+978
+00:35:56,756 --> 00:35:59,396
+as a key or value in a
+map table, for example,
+
+
+979
+00:35:59,606 --> 00:36:00,516
+if any of those go away then
+
+
+980
+00:36:00,516 --> 00:36:02,296
+that entry would automatically
+be removed for you.
+
+
+981
+00:36:02,506 --> 00:36:05,316
+And this works under ARC as
+well with zeroing references.
+
+
+982
+00:36:05,906 --> 00:36:08,516
+And you can optionally say that
+you don't want to copy on insert
+
+
+983
+00:36:08,746 --> 00:36:12,116
+as you add an object to
+a map table, for example,
+
+
+984
+00:36:12,116 --> 00:36:13,066
+it won't copy the key.
+
+
+985
+00:36:13,906 --> 00:36:14,886
+You can specify that.
+
+
+986
+00:36:15,296 --> 00:36:19,056
+Now, you can't convert a
+map table or a hash table
+
+
+987
+00:36:19,056 --> 00:36:21,256
+that contains these
+raw C pointers directly
+
+
+988
+00:36:21,256 --> 00:36:24,896
+to their counterpart,
+mutable dictionary or so on,
+
+
+989
+00:36:25,176 --> 00:36:28,736
+because they don't translate
+over well, and also a caution
+
+
+990
+00:36:28,736 --> 00:36:30,096
+to be aware of premature
+optimization.
+
+
+991
+00:36:30,096 --> 00:36:31,776
+This is one of those
+situations that where you think,
+
+
+992
+00:36:31,776 --> 00:36:35,376
+this is going to be just what I
+need, but you'll sacrifice some
+
+
+993
+00:36:35,376 --> 00:36:38,846
+of your compatibility with APIs
+that require an NSDictionary,
+
+
+994
+00:36:39,016 --> 00:36:41,296
+and for most cases it's
+probably not necessary.
+
+
+995
+00:36:41,296 --> 00:36:44,266
+It's a great tool to be aware
+of, but it's not something
+
+
+996
+00:36:44,266 --> 00:36:45,136
+that you're generally
+going to use.
+
+
+997
+00:36:45,136 --> 00:36:47,336
+This was also introduced
+in OS X 10.5
+
+
+998
+00:36:47,666 --> 00:36:49,676
+and the corresponding iOS
+release, so you should be able
+
+
+999
+00:36:49,676 --> 00:36:52,046
+to use this broadly
+throughout your applications.
+
+
+1000
+00:36:52,186 --> 00:36:53,046
+And last is NSCache.
+
+
+1001
+00:36:53,436 --> 00:36:55,256
+This is also similar
+to NSMutableDictionary,
+
+
+1002
+00:36:55,526 --> 00:36:57,206
+and it's a great
+tool to have as well.
+
+
+1003
+00:36:57,796 --> 00:37:00,766
+Primarily, there's
+a few big benefits.
+
+
+1004
+00:37:00,826 --> 00:37:03,036
+First and foremost is
+that it's threadsafe,
+
+
+1005
+00:37:03,086 --> 00:37:04,256
+unlike a mutable dictionary.
+
+
+1006
+00:37:04,496 --> 00:37:06,926
+It doesn't copy your keys
+unlike a mutable dictionary,
+
+
+1007
+00:37:07,206 --> 00:37:09,516
+and it supports auto-removal
+under memory pressure.
+
+
+1008
+00:37:09,786 --> 00:37:11,236
+So when the OS needs
+to reclaim memory,
+
+
+1009
+00:37:11,236 --> 00:37:13,986
+it can automatically boot
+out entries from this cache.
+
+
+1010
+00:37:13,986 --> 00:37:16,016
+This is ideal for objects
+that you can regenerate
+
+
+1011
+00:37:16,016 --> 00:37:17,356
+or obtain again easily.
+
+
+1012
+00:37:17,356 --> 00:37:18,596
+For more detail on this,
+
+
+1013
+00:37:18,596 --> 00:37:21,096
+I highly recommend the talk
+Building Efficient OS X Apps.
+
+
+1014
+00:37:21,346 --> 00:37:23,286
+A lot of this also
+applies to iOS as well.
+
+
+1015
+00:37:23,286 --> 00:37:26,826
+It focuses a lot on memory
+usage and disk IO and energy,
+
+
+1016
+00:37:27,036 --> 00:37:29,846
+and it will go into much
+more depth about NSCache
+
+
+1017
+00:37:29,846 --> 00:37:31,996
+and purgeable data, and
+what you can do to work well
+
+
+1018
+00:37:31,996 --> 00:37:34,676
+and be a good citizen when
+memory pressure comes to bear.
+
+
+1019
+00:37:35,536 --> 00:37:37,576
+So, wrapping up these
+data structures,
+
+
+1020
+00:37:37,576 --> 00:37:39,956
+I have just two brief
+asides as it relates
+
+
+1021
+00:37:39,956 --> 00:37:41,466
+to data structures
+and storing them.
+
+
+1022
+00:37:41,816 --> 00:37:42,856
+So first, property lists.
+
+
+1023
+00:37:42,856 --> 00:37:45,466
+You're all familiar with them
+that you can store hierarchies
+
+
+1024
+00:37:45,466 --> 00:37:47,756
+of data, in XML or
+binary format.
+
+
+1025
+00:37:47,896 --> 00:37:50,136
+Each of you at least has an
+Info.plist in your application,
+
+
+1026
+00:37:50,136 --> 00:37:51,686
+and may use them
+in other places.
+
+
+1027
+00:37:52,086 --> 00:37:53,856
+They support property
+list objects.
+
+
+1028
+00:37:53,856 --> 00:37:57,456
+It's a set of six objects in
+Foundation: arrays, data, date,
+
+
+1029
+00:37:57,456 --> 00:37:58,966
+dictionary, number, and string.
+
+
+1030
+00:37:59,516 --> 00:38:02,346
+Any others that you can't, for
+example, convert to a string,
+
+
+1031
+00:38:02,606 --> 00:38:05,216
+you would have to use NSCoding
+and archive it into an NSData
+
+
+1032
+00:38:05,216 --> 00:38:06,816
+and store it in the
+property list.
+
+
+1033
+00:38:07,936 --> 00:38:09,246
+So you do have some
+flexibility there.
+
+
+1034
+00:38:09,496 --> 00:38:10,296
+It's good to be aware, though,
+
+
+1035
+00:38:10,296 --> 00:38:11,696
+that mutability is
+not preserved.
+
+
+1036
+00:38:11,736 --> 00:38:13,916
+If I build up mutable
+dictionaries and arrays
+
+
+1037
+00:38:13,916 --> 00:38:16,656
+in a hierarchy that I like and
+then store it to property list
+
+
+1038
+00:38:16,656 --> 00:38:18,616
+and read it back out,
+they're no longer mutable.
+
+
+1039
+00:38:18,616 --> 00:38:20,266
+I'll get the immutable
+variants of those.
+
+
+1040
+00:38:20,406 --> 00:38:21,226
+That's important to know.
+
+
+1041
+00:38:22,616 --> 00:38:24,746
+Property lists are generally
+not efficient for lots
+
+
+1042
+00:38:24,746 --> 00:38:26,986
+of binary data, like
+encoding things into NSData
+
+
+1043
+00:38:26,986 --> 00:38:29,206
+and sticking them in there,
+or for really large files,
+
+
+1044
+00:38:29,626 --> 00:38:31,736
+particularly if you're
+using an XML format.
+
+
+1045
+00:38:32,176 --> 00:38:34,006
+There may be better
+alternatives to look into.
+
+
+1046
+00:38:34,006 --> 00:38:38,496
+You'll see property lists
+commonly with NSUserDefaults,
+
+
+1047
+00:38:38,496 --> 00:38:40,486
+for storing user preferences
+for your application,
+
+
+1048
+00:38:40,736 --> 00:38:42,756
+it's a common way
+to interact with it.
+
+
+1049
+00:38:42,756 --> 00:38:45,756
+NSPropertyListSerialization is
+also a really handy way to deal
+
+
+1050
+00:38:45,756 --> 00:38:48,836
+with this for input and
+output of property lists.
+
+
+1051
+00:38:50,056 --> 00:38:52,026
+And I encourage you to
+look at NSKeyedArchiver
+
+
+1052
+00:38:52,026 --> 00:38:54,246
+and NSKeyedUnarchiver
+if you have needs
+
+
+1053
+00:38:54,246 --> 00:38:56,356
+to store other data
+in a property list.
+
+
+1054
+00:38:56,466 --> 00:38:57,776
+The second aside is on JSON.
+
+
+1055
+00:38:58,206 --> 00:39:00,626
+This is JavaScript Object
+Notation and originated
+
+
+1056
+00:39:00,626 --> 00:39:01,956
+in JavaScript, but
+it's supported
+
+
+1057
+00:39:01,956 --> 00:39:03,876
+across a broad variety
+of platforms.
+
+
+1058
+00:39:04,366 --> 00:39:06,996
+It's a lightweight data
+interchange format that's human
+
+
+1059
+00:39:06,996 --> 00:39:09,236
+readable and it's really
+handy, and it's commonly used
+
+
+1060
+00:39:09,236 --> 00:39:11,236
+for things like web
+services or sending things
+
+
+1061
+00:39:11,236 --> 00:39:12,356
+between different platforms.
+
+
+1062
+00:39:12,676 --> 00:39:14,746
+And it works with a
+few Foundation classes.
+
+
+1063
+00:39:14,746 --> 00:39:16,096
+Some of them are
+similar to property list.
+
+
+1064
+00:39:16,096 --> 00:39:18,496
+You'll see array,
+dictionary, number and string,
+
+
+1065
+00:39:18,496 --> 00:39:19,676
+but there's also NSNull.
+
+
+1066
+00:39:19,966 --> 00:39:22,146
+If you're not familiar with
+this, this is null placeholder.
+
+
+1067
+00:39:22,386 --> 00:39:25,176
+Collections in Cocoa don't
+allow you to store nil inside
+
+
+1068
+00:39:25,176 --> 00:39:28,016
+of a collection, but JSON
+does allow null objects,
+
+
+1069
+00:39:28,016 --> 00:39:31,116
+and you'll see those transfer
+across as NSNull place holders.
+
+
+1070
+00:39:31,566 --> 00:39:33,736
+And there are also
+some restrictions,
+
+
+1071
+00:39:33,736 --> 00:39:37,226
+such as the top level object in
+JSON needs to be a dictionary,
+
+
+1072
+00:39:37,226 --> 00:39:39,936
+and you can only use strings
+for the keys in your dictionary,
+
+
+1073
+00:39:39,936 --> 00:39:42,696
+you can't use numbers
+or other things.
+
+
+1074
+00:39:43,036 --> 00:39:45,736
+And you should definitely be
+aware of NSJSONSerialization.
+
+
+1075
+00:39:45,736 --> 00:39:47,356
+This was introduced
+a few releases ago,
+
+
+1076
+00:39:47,616 --> 00:39:52,286
+and it's a really convenient
+way to deal with JSON.
+
+
+1077
+00:39:52,286 --> 00:39:54,546
+It supports reading and writing,
+you can even pass an object
+
+
+1078
+00:39:54,546 --> 00:39:56,576
+and see if it will
+form valid JSON.
+
+
+1079
+00:39:56,886 --> 00:39:59,336
+You can also specify
+whether you want mutability
+
+
+1080
+00:39:59,336 --> 00:40:01,276
+when you read objects
+out of JSON,
+
+
+1081
+00:40:01,276 --> 00:40:03,706
+which is different
+from property lists.
+
+
+1082
+00:40:03,706 --> 00:40:08,206
+And this class has been improved
+and iterated a lot over time.
+
+
+1083
+00:40:08,206 --> 00:40:10,196
+It's fast and it's built-in,
+you don't have to link
+
+
+1084
+00:40:10,196 --> 00:40:13,276
+in a static library,
+for example, on iOS.
+
+
+1085
+00:40:13,456 --> 00:40:16,736
+You can count on the
+improvements to efficiency
+
+
+1086
+00:40:16,736 --> 00:40:17,896
+and performance over time.
+
+
+1087
+00:40:18,096 --> 00:40:19,406
+And you'll see even
+more improvements
+
+
+1088
+00:40:19,606 --> 00:40:22,816
+in iOS 7 and in Mavericks.
+
+
+1089
+00:40:22,936 --> 00:40:25,356
+OK. So that wraps up about
+data structure and performance.
+
+
+1090
+00:40:25,716 --> 00:40:26,656
+That's a lot of information.
+
+
+1091
+00:40:26,656 --> 00:40:29,496
+For our final section, I'm going
+to kind of tie this all together
+
+
+1092
+00:40:29,496 --> 00:40:31,156
+and talk about real
+world applications.
+
+
+1093
+00:40:31,156 --> 00:40:33,986
+How we can take all this about
+"Big O" complexity and talking
+
+
+1094
+00:40:33,986 --> 00:40:35,206
+about data structures
+performance
+
+
+1095
+00:40:35,206 --> 00:40:37,916
+and how fast they are, and
+apply that to my actual code.
+
+
+1096
+00:40:37,916 --> 00:40:39,776
+So I'm going to give you
+example again from our code.
+
+
+1097
+00:40:39,776 --> 00:40:42,616
+From the WWDC App, we
+refresh the sessions.
+
+
+1098
+00:40:42,616 --> 00:40:43,866
+You all saw this on Monday.
+
+
+1099
+00:40:44,046 --> 00:40:46,266
+You're anxiously waiting
+for those TBAs to disappear
+
+
+1100
+00:40:46,266 --> 00:40:47,746
+and see what the
+sessions were going to be.
+
+
+1101
+00:40:48,146 --> 00:40:49,996
+And we have this
+functionality to refresh those.
+
+
+1102
+00:40:49,996 --> 00:40:53,526
+So the data is stored in
+Core Data on the application,
+
+
+1103
+00:40:53,566 --> 00:40:55,586
+on your device, and we
+periodically fetch updates
+
+
+1104
+00:40:55,586 --> 00:40:57,556
+from the server to check
+if there's new information.
+
+
+1105
+00:40:58,086 --> 00:40:59,626
+Now, we did notice some
+performances issues
+
+
+1106
+00:40:59,626 --> 00:41:01,066
+in earlier versions
+of the applications.
+
+
+1107
+00:41:01,276 --> 00:41:02,556
+At first we were
+getting great speed,
+
+
+1108
+00:41:02,806 --> 00:41:05,566
+but as the conference
+became more fleshed out
+
+
+1109
+00:41:05,566 --> 00:41:06,516
+and more sessions were added,
+
+
+1110
+00:41:06,696 --> 00:41:10,426
+the speed got progressively
+slower, and noticeably slower,
+
+
+1111
+00:41:10,426 --> 00:41:12,506
+not just a little bit,
+but a lot more over time.
+
+
+1112
+00:41:12,826 --> 00:41:14,016
+And it became kind
+of unbearable.
+
+
+1113
+00:41:14,296 --> 00:41:15,286
+And when we profiled it,
+
+
+1114
+00:41:15,286 --> 00:41:16,546
+we found that there
+was non-linear growth.
+
+
+1115
+00:41:16,546 --> 00:41:17,626
+We obviously had some sort
+
+
+1116
+00:41:17,626 --> 00:41:19,256
+of complexity problem,
+doing too much work.
+
+
+1117
+00:41:19,346 --> 00:41:21,366
+So I'm going to walk you
+through a simple example here.
+
+
+1118
+00:41:21,366 --> 00:41:23,336
+So this is what we did at first.
+
+
+1119
+00:41:23,456 --> 00:41:26,196
+We have an array of sessions
+that we get from the server,
+
+
+1120
+00:41:26,226 --> 00:41:28,776
+we've just fetched, and then we
+iterate through each of those,
+
+
+1121
+00:41:28,776 --> 00:41:31,136
+so we want to handle each
+of these refreshed sessions
+
+
+1122
+00:41:31,136 --> 00:41:33,016
+so we have a for loop,
+that's order N complexity.
+
+
+1123
+00:41:33,476 --> 00:41:34,876
+And then we do a Core Data fetch
+
+
+1124
+00:41:34,876 --> 00:41:37,166
+to see what we have
+locally on our device.
+
+
+1125
+00:41:37,306 --> 00:41:41,116
+We look for a session with that
+particular ID, and then we see,
+
+
+1126
+00:41:41,116 --> 00:41:42,526
+if I had a session with
+that then I'm going
+
+
+1127
+00:41:42,526 --> 00:41:44,156
+to merge them together,
+if this is a new session,
+
+
+1128
+00:41:44,156 --> 00:41:45,336
+I'm going to insert
+it into Core Data.
+
+
+1129
+00:41:45,816 --> 00:41:47,326
+So we were seeing
+non-linear performance.
+
+
+1130
+00:41:47,546 --> 00:41:50,746
+And probably the suspicion
+is this may be N squared.
+
+
+1131
+00:41:51,106 --> 00:41:54,576
+Well, the for loop has to be
+there, and the part at the end
+
+
+1132
+00:41:54,576 --> 00:41:55,976
+about merging sessions
+looks pretty simple.
+
+
+1133
+00:41:55,976 --> 00:41:57,486
+So the work must be
+somewhere in between,
+
+
+1134
+00:41:57,816 --> 00:41:59,026
+right here in the
+Core Data fetch.
+
+
+1135
+00:41:59,226 --> 00:42:01,016
+Now let's think about
+what work it has to do.
+
+
+1136
+00:42:01,746 --> 00:42:04,216
+Well, we're forming a predicate
+to search where we say,
+
+
+1137
+00:42:04,726 --> 00:42:08,146
+"Find me a WWDCSession object
+where the session ID is equal
+
+
+1138
+00:42:08,146 --> 00:42:09,636
+to this session that
+I just gave you".
+
+
+1139
+00:42:10,136 --> 00:42:11,786
+So when I tell Core Data
+to do that, we think,
+
+
+1140
+00:42:11,916 --> 00:42:12,926
+what would it have to do?
+
+
+1141
+00:42:13,486 --> 00:42:16,556
+Well, because it may not have
+ordering on the other side,
+
+
+1142
+00:42:16,556 --> 00:42:18,276
+probably what it's doing
+is it's going through each
+
+
+1143
+00:42:18,276 --> 00:42:20,486
+of the sessions and seeing
+if that session ID matches,
+
+
+1144
+00:42:20,976 --> 00:42:22,486
+which is an order N algorithm.
+
+
+1145
+00:42:22,876 --> 00:42:24,356
+So there we have
+our hidden work.
+
+
+1146
+00:42:24,356 --> 00:42:25,856
+We have an order
+N loop and order N
+
+
+1147
+00:42:25,856 --> 00:42:28,216
+for finding the session,
+this Core Data fetch.
+
+
+1148
+00:42:28,606 --> 00:42:29,456
+That's where our N squared is.
+
+
+1149
+00:42:29,676 --> 00:42:31,286
+So, let's just hoist
+that right out,
+
+
+1150
+00:42:31,286 --> 00:42:32,116
+let's take the Core Data out,
+
+
+1151
+00:42:32,116 --> 00:42:33,816
+we'll optimize that
+a little bit.
+
+
+1152
+00:42:33,816 --> 00:42:35,566
+Let's say that we now
+change it so that instead
+
+
+1153
+00:42:35,566 --> 00:42:38,016
+of fetching one session
+at a time, we get the list
+
+
+1154
+00:42:38,016 --> 00:42:40,426
+of session IDs that we've
+just gotten and we fetch all
+
+
+1155
+00:42:40,426 --> 00:42:41,316
+of those at the same time.
+
+
+1156
+00:42:41,646 --> 00:42:43,766
+Now we have them all in
+one array and that's great.
+
+
+1157
+00:42:43,766 --> 00:42:45,166
+We should see order
+N performance now,
+
+
+1158
+00:42:45,636 --> 00:42:46,376
+except we don't.
+
+
+1159
+00:42:47,106 --> 00:42:47,816
+If you have keen eyes,
+
+
+1160
+00:42:47,816 --> 00:42:49,826
+you'll notice there's still
+some work left inside the loop.
+
+
+1161
+00:42:50,276 --> 00:42:52,736
+Now, although we know
+what session it is
+
+
+1162
+00:42:52,736 --> 00:42:54,346
+and we've just moved
+the session--
+
+
+1163
+00:42:54,346 --> 00:42:56,986
+the problem, all the work
+out of Core Data of finding
+
+
+1164
+00:42:56,986 --> 00:42:58,236
+that session, we've
+moved it into a line
+
+
+1165
+00:42:58,236 --> 00:42:59,976
+where we're calling
+indexOfObject.
+
+
+1166
+00:43:00,086 --> 00:43:01,376
+Now we have an array
+of all these sessions,
+
+
+1167
+00:43:01,376 --> 00:43:02,906
+but we're still doing
+a linear search.
+
+
+1168
+00:43:03,096 --> 00:43:04,716
+We're stepping through each
+of these until we find the one
+
+
+1169
+00:43:04,716 --> 00:43:05,506
+with the right session.
+
+
+1170
+00:43:05,936 --> 00:43:07,526
+So, we haven't really
+eliminated the problem.
+
+
+1171
+00:43:08,216 --> 00:43:09,316
+But there is a great
+way around it.
+
+
+1172
+00:43:09,656 --> 00:43:12,516
+Since we're using session IDs
+that are unique across these,
+
+
+1173
+00:43:13,116 --> 00:43:14,486
+we do a slight modification,
+
+
+1174
+00:43:14,486 --> 00:43:16,196
+and after we've gotten all
+those sessions up front,
+
+
+1175
+00:43:16,196 --> 00:43:18,816
+we create a dictionary where
+the objects are the sessions
+
+
+1176
+00:43:18,816 --> 00:43:20,706
+themselves, and we key
+them by the session ID,
+
+
+1177
+00:43:20,706 --> 00:43:21,856
+'cause these are
+going to be unique.
+
+
+1178
+00:43:22,056 --> 00:43:24,946
+And now, inside the loop, you
+can see that we just have look
+
+
+1179
+00:43:24,946 --> 00:43:26,786
+at that dictionary
+and find the one--
+
+
+1180
+00:43:27,096 --> 00:43:29,006
+the session has that
+particular session ID,
+
+
+1181
+00:43:29,326 --> 00:43:32,306
+and look up in a dictionary is
+order 1, it's no longer order N.
+
+
+1182
+00:43:32,486 --> 00:43:33,466
+So we just solved our problem.
+
+
+1183
+00:43:33,466 --> 00:43:35,966
+We've taken this algorithm from
+order N squared to order N,
+
+
+1184
+00:43:36,156 --> 00:43:39,286
+and now all of you can get your
+session updates really quickly.
+
+
+1185
+00:43:39,286 --> 00:43:41,066
+There's not 5,000 of
+you waiting forever
+
+
+1186
+00:43:41,066 --> 00:43:42,186
+for all those sessions
+to reload.
+
+
+1187
+00:43:42,246 --> 00:43:44,806
+So that's a real world example
+from our own application.
+
+
+1188
+00:43:45,856 --> 00:43:49,226
+So, I want to also
+give a couple of tips
+
+
+1189
+00:43:49,226 --> 00:43:50,516
+about eliminating extra work.
+
+
+1190
+00:43:52,196 --> 00:43:54,376
+Really what you want to
+do is minimize redundancy
+
+
+1191
+00:43:54,436 --> 00:43:56,126
+and in particular
+the expensive code.
+
+
+1192
+00:43:56,436 --> 00:43:58,416
+So what we just saw in the
+previous example was each time
+
+
+1193
+00:43:58,416 --> 00:43:59,566
+to the for loop we
+we're searching
+
+
+1194
+00:43:59,566 --> 00:44:01,826
+through the same array just
+for a different session ID.
+
+
+1195
+00:44:01,826 --> 00:44:05,276
+If there's a way that we can
+get that out of a loop and do
+
+
+1196
+00:44:05,276 --> 00:44:08,236
+that work just once, do it less
+frequently, that's a big win.
+
+
+1197
+00:44:08,906 --> 00:44:11,546
+Also, take advantage of
+faster lookup when possible,
+
+
+1198
+00:44:11,576 --> 00:44:12,846
+like we did with
+the NSDictionary.
+
+
+1199
+00:44:12,926 --> 00:44:15,436
+Sets can also be useful for
+this when that's appropriate.
+
+
+1200
+00:44:16,676 --> 00:44:18,306
+Using mutable collections
+and strings
+
+
+1201
+00:44:18,586 --> 00:44:21,556
+when it makes sense can also
+be a big performance win.
+
+
+1202
+00:44:21,556 --> 00:44:23,826
+And I'll show you an example
+of that in just a moment.
+
+
+1203
+00:44:23,826 --> 00:44:25,976
+And also streamline how
+you access your data.
+
+
+1204
+00:44:26,096 --> 00:44:28,546
+Don't make it hard for yourself
+to get to the data that you need
+
+
+1205
+00:44:28,736 --> 00:44:29,796
+as quickly as possible.
+
+
+1206
+00:44:30,106 --> 00:44:31,666
+You can organize your
+data in such a way
+
+
+1207
+00:44:31,666 --> 00:44:33,176
+that it's structured
+intelligently
+
+
+1208
+00:44:33,176 --> 00:44:34,786
+and your lookup will
+be really fast.
+
+
+1209
+00:44:35,616 --> 00:44:38,206
+And again, try not to
+reinvent the wheel.
+
+
+1210
+00:44:38,316 --> 00:44:39,616
+There's times where you
+need to write your own code
+
+
+1211
+00:44:39,616 --> 00:44:42,876
+but there are situations,
+for example, joining an array
+
+
+1212
+00:44:42,876 --> 00:44:43,826
+of components with strings.
+
+
+1213
+00:44:43,826 --> 00:44:46,036
+You may have a group of strings
+that you want to comma separate.
+
+
+1214
+00:44:46,456 --> 00:44:49,076
+You could write your own code to
+do that and append into a string
+
+
+1215
+00:44:49,076 --> 00:44:50,106
+and so on, but there's
+already API
+
+
+1216
+00:44:50,106 --> 00:44:51,586
+where you can give it
+an array of objects
+
+
+1217
+00:44:51,856 --> 00:44:53,976
+and give it some string that
+you want as the delimiter,
+
+
+1218
+00:44:53,976 --> 00:44:55,146
+and it can join them
+together for you.
+
+
+1219
+00:44:55,226 --> 00:44:58,256
+So wherever possible use
+those, you'll benefit
+
+
+1220
+00:44:59,386 --> 00:45:02,566
+from the optimizations and
+eliminate extra work, you know,
+
+
+1221
+00:45:02,566 --> 00:45:04,096
+that we're doing as fast
+as we can think to do it.
+
+
+1222
+00:45:04,226 --> 00:45:07,246
+So, an example on
+eliminating this extra work,
+
+
+1223
+00:45:07,956 --> 00:45:10,966
+let's say that you have a method
+that takes an array and I want
+
+
+1224
+00:45:10,966 --> 00:45:12,936
+to scan through that and do
+something with these objects,
+
+
+1225
+00:45:12,936 --> 00:45:15,406
+and if the result is not nil,
+I want to add it to a new array
+
+
+1226
+00:45:15,406 --> 00:45:16,346
+and I'm going to
+return that back
+
+
+1227
+00:45:16,346 --> 00:45:17,746
+from this function--
+from this method.
+
+
+1228
+00:45:19,356 --> 00:45:20,806
+The big problem here is really
+
+
+1229
+00:45:20,806 --> 00:45:23,986
+that each time we're creating a
+new immutable copy of an array.
+
+
+1230
+00:45:23,986 --> 00:45:26,516
+This is an obvious no-no
+and we can avoid this.
+
+
+1231
+00:45:26,856 --> 00:45:29,666
+Instead of doing that, you can
+create a mutable array up front
+
+
+1232
+00:45:29,796 --> 00:45:31,536
+and add the objects to
+the array which is going
+
+
+1233
+00:45:31,536 --> 00:45:33,696
+to be really fast, and then
+at the end when we're done,
+
+
+1234
+00:45:33,906 --> 00:45:36,726
+we can call copy which gives
+us back an immutable NSArray
+
+
+1235
+00:45:36,846 --> 00:45:37,716
+and we can return that.
+
+
+1236
+00:45:37,716 --> 00:45:39,586
+So we take a full
+advantage of the mutability
+
+
+1237
+00:45:39,586 --> 00:45:42,066
+when it make sense for us, and
+we still fulfill the contract
+
+
+1238
+00:45:42,066 --> 00:45:44,576
+of our method by saying we'll
+return an actual NSArray.
+
+
+1239
+00:45:44,956 --> 00:45:46,826
+And you could do similar
+things with appending
+
+
+1240
+00:45:47,036 --> 00:45:50,376
+to an NSMutableString or
+NSMutableData and so on.
+
+
+1241
+00:45:51,766 --> 00:45:53,996
+The key takeaway from this
+whole section, I like to say,
+
+
+1242
+00:45:54,046 --> 00:45:55,506
+don't leave performance
+on the table.
+
+
+1243
+00:45:55,866 --> 00:45:58,286
+If there's performance there
+just waiting for you to take it
+
+
+1244
+00:45:58,286 --> 00:46:00,356
+and be faster, don't
+leave it there.
+
+
+1245
+00:46:00,916 --> 00:46:02,036
+Take advantage of it.
+
+
+1246
+00:46:02,036 --> 00:46:04,576
+You know, if I could be using
+an NSDictionary for this rather
+
+
+1247
+00:46:04,576 --> 00:46:07,476
+than an NSArray, I might
+as well do that, you know?
+
+
+1248
+00:46:07,546 --> 00:46:10,246
+You have to weigh the
+benefits, the pros and cons
+
+
+1249
+00:46:10,786 --> 00:46:12,296
+of choosing either way.
+
+
+1250
+00:46:12,856 --> 00:46:15,396
+But I really encourage
+you to think deeply
+
+
+1251
+00:46:15,646 --> 00:46:17,786
+about the performance that
+you're going to expect to see
+
+
+1252
+00:46:17,786 --> 00:46:18,856
+with your data structures.
+
+
+1253
+00:46:19,386 --> 00:46:21,426
+There's a lot more information
+that you can find on this.
+
+
+1254
+00:46:21,426 --> 00:46:23,816
+Dave DeLong is our App
+Frameworks Evangelist,
+
+
+1255
+00:46:23,816 --> 00:46:26,376
+and he'll be a great point
+man for any questions you have
+
+
+1256
+00:46:26,376 --> 00:46:28,896
+on this, and also in the Cocoa
+Labs, the Developer Forums,
+
+
+1257
+00:46:28,896 --> 00:46:30,356
+and then I have three
+documentation links
+
+
+1258
+00:46:30,356 --> 00:46:33,146
+that are really useful for
+more in-depth understanding
+
+
+1259
+00:46:33,146 --> 00:46:35,206
+of collections, property
+lists, and archives
+
+
+1260
+00:46:35,206 --> 00:46:36,016
+and serialization and so on.
+
+
+1261
+00:46:36,376 --> 00:46:37,956
+There's two related
+sessions, I mentioned the one
+
+
+1262
+00:46:37,956 --> 00:46:41,406
+on Building Efficient OS X
+Apps, and Hidden Gems in Cocoa
+
+
+1263
+00:46:41,406 --> 00:46:43,296
+and Cocoa Touch is immediately
+following in this room.
+
+
+1264
+00:46:43,296 --> 00:46:44,836
+This is a great overview
+of a lot
+
+
+1265
+00:46:44,836 --> 00:46:46,736
+of things you may not be
+familiar with or even aware
+
+
+1266
+00:46:46,736 --> 00:46:49,566
+of throughout the Cocoa
+and Cocoa Touch frameworks,
+
+
+1267
+00:46:49,566 --> 00:46:52,246
+also in Xcode and
+different things like that.
+
+
+1268
+00:46:52,276 --> 00:46:54,036
+So just to summarize, I
+have a few key takeaways
+
+
+1269
+00:46:54,036 --> 00:46:55,676
+that I want you to remember if
+nothing else from this session.
+
+
+1270
+00:46:56,066 --> 00:46:59,126
+The first is that complexity
+kills large-scale performance.
+
+
+1271
+00:46:59,476 --> 00:47:02,366
+If you have a lot of work and
+your complexity grows over time,
+
+
+1272
+00:47:02,596 --> 00:47:03,916
+when you get to large
+amounts of data,
+
+
+1273
+00:47:04,156 --> 00:47:05,206
+your performance will tank.
+
+
+1274
+00:47:05,586 --> 00:47:06,466
+You need to be aware of that.
+
+
+1275
+00:47:06,696 --> 00:47:09,926
+Second, know how much
+work your code is doing.
+
+
+1276
+00:47:10,256 --> 00:47:11,866
+Know what it's actually
+trying to accomplish,
+
+
+1277
+00:47:11,866 --> 00:47:13,746
+that's where a lot of the
+hidden complexity lies.
+
+
+1278
+00:47:14,376 --> 00:47:16,636
+Avoid redundancy and
+strive for efficiency,
+
+
+1279
+00:47:16,636 --> 00:47:19,376
+this is those last two points of
+how you can resolve these kind
+
+
+1280
+00:47:19,376 --> 00:47:20,356
+of performance issues.
+
+
+1281
+00:47:20,836 --> 00:47:22,406
+If you're doing something
+over and over again,
+
+
+1282
+00:47:22,666 --> 00:47:24,296
+take it out of a
+loop, do it just once.
+
+
+1283
+00:47:24,576 --> 00:47:26,486
+If you're doing something
+in an inefficient way,
+
+
+1284
+00:47:26,486 --> 00:47:27,646
+try to find a better algorithm.
+
+
+1285
+00:47:28,466 --> 00:47:30,996
+Focus on the biggest
+performance wins first,
+
+
+1286
+00:47:30,996 --> 00:47:32,266
+as we talked about Amdahl's Law.
+
+
+1287
+00:47:32,266 --> 00:47:34,136
+Find the bottlenecks and
+eliminate them first,
+
+
+1288
+00:47:34,136 --> 00:47:35,526
+don't prematurely optimize.
+
+
+1289
+00:47:36,256 --> 00:47:37,706
+Prefer to use the
+built-in collections
+
+
+1290
+00:47:37,706 --> 00:47:41,116
+and API wherever possible so you
+can benefit from optimizations
+
+
+1291
+00:47:41,116 --> 00:47:42,106
+and improvements over time.
+
+
+1292
+00:47:42,866 --> 00:47:45,316
+Design according to
+your particular needs.
+
+
+1293
+00:47:45,646 --> 00:47:49,026
+Choose a data structure that
+fits how you need to access it.
+
+
+1294
+00:47:49,366 --> 00:47:51,746
+Something that will make it
+really fast for the tasks
+
+
+1295
+00:47:51,746 --> 00:47:53,746
+that you need to do, and
+it's going to be convenient.
+
+
+1296
+00:47:54,556 --> 00:47:56,626
+And last, think about
+performance early.
+
+
+1297
+00:47:57,046 --> 00:47:59,206
+There's a difference between
+premature optimization
+
+
+1298
+00:47:59,466 --> 00:48:00,936
+and being-- having common sense
+
+
+1299
+00:48:01,126 --> 00:48:02,756
+about the performance
+of your application.
+
+
+1300
+00:48:03,006 --> 00:48:04,356
+When you use some
+of this knowledge
+
+
+1301
+00:48:04,356 --> 00:48:06,496
+about understanding how
+complexity can affect your
+
+
+1302
+00:48:06,496 --> 00:48:08,586
+performance, it enables you to
+make great decisions up front
+
+
+1303
+00:48:08,876 --> 00:48:12,156
+about how to store your data so
+that you can access it quickly,
+
+
+1304
+00:48:12,486 --> 00:48:14,726
+you'll be happy, and your
+users will be delighted
+
+
+1305
+00:48:14,726 --> 00:48:16,136
+with the performance
+of your application.
+
+
+1306
+00:48:16,356 --> 00:48:21,076
+Thank you.
+
+
+1307
+00:48:21,576 --> 00:48:25,850
+[ Applause ]
+

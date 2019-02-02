@@ -1,0 +1,6860 @@
+1
+00:00:09,956 --> 00:00:10,956
+>> Thank you all for coming
+
+
+2
+00:00:10,956 --> 00:00:12,596
+to on the last sessions
+of this week.
+
+
+3
+00:00:12,596 --> 00:00:14,196
+I hope we've all had
+a great week here.
+
+
+4
+00:00:14,586 --> 00:00:16,106
+Today, in our session,
+we're going to be talking
+
+
+5
+00:00:16,106 --> 00:00:20,236
+about Core Image Effects and
+Techniques on iOS and Mac OS.
+
+
+6
+00:00:21,496 --> 00:00:23,356
+So, Core Image.
+
+
+7
+00:00:24,346 --> 00:00:27,406
+In a nutshell, Core Image is a
+foundational image processing
+
+
+8
+00:00:27,406 --> 00:00:31,176
+framework on both iOS and Mac
+OS and it's used in a variety
+
+
+9
+00:00:31,176 --> 00:00:36,306
+of great applications from Photo
+Booth to iPhoto on both desktop
+
+
+10
+00:00:36,306 --> 00:00:37,266
+and embedded products.
+
+
+11
+00:00:37,646 --> 00:00:40,036
+It's also used in the
+new photos app for some
+
+
+12
+00:00:40,036 --> 00:00:42,536
+of their image effects,
+the new filter effects
+
+
+13
+00:00:42,536 --> 00:00:44,806
+that are available in iOS 7.
+
+
+14
+00:00:44,806 --> 00:00:47,226
+And it's also in a wide variety
+
+
+15
+00:00:47,226 --> 00:00:50,706
+of very successful App
+Store apps as well.
+
+
+16
+00:00:51,096 --> 00:00:52,846
+So, it's a great
+foundational technology.
+
+
+17
+00:00:52,846 --> 00:00:55,126
+You spend a lot of time making
+sure to get the best performance
+
+
+18
+00:00:55,126 --> 00:00:57,156
+out of it and we want to
+tell you all about it today.
+
+
+19
+00:00:58,676 --> 00:01:00,556
+So, the key concepts
+we're going to be talking
+
+
+20
+00:01:00,556 --> 00:01:03,226
+about today are going to be how
+
+
+21
+00:01:03,226 --> 00:01:04,906
+to get started using
+the Core Image API?
+
+
+22
+00:01:05,126 --> 00:01:07,506
+How to leverage the built-in
+filters that we provide?
+
+
+23
+00:01:07,506 --> 00:01:11,106
+How to provide input
+images into these filters?
+
+
+24
+00:01:11,566 --> 00:01:13,506
+How to render the
+output of those effects?
+
+
+25
+00:01:14,026 --> 00:01:18,526
+And lastly, we have a great
+demo of how to bridge Core Image
+
+
+26
+00:01:18,526 --> 00:01:20,156
+in OpenCL technologies together.
+
+
+27
+00:01:20,826 --> 00:01:23,896
+So, the key concepts
+of Core Image.
+
+
+28
+00:01:23,996 --> 00:01:25,526
+It's actually a very
+simple concept
+
+
+29
+00:01:25,526 --> 00:01:26,546
+and it's very simple to code.
+
+
+30
+00:01:27,196 --> 00:01:29,286
+The idea is you have
+filters that allow you
+
+
+31
+00:01:29,286 --> 00:01:31,956
+to perform per pixel
+operations on an image.
+
+
+32
+00:01:32,346 --> 00:01:35,236
+So, in a very simple example,
+we have an input image
+
+
+33
+00:01:35,236 --> 00:01:37,026
+and original image,
+pictures of boats,
+
+
+34
+00:01:37,686 --> 00:01:40,196
+and we want to apply a
+Sepia Tone Filter to that
+
+
+35
+00:01:40,196 --> 00:01:42,836
+and the results after
+that is a new image.
+
+
+36
+00:01:44,066 --> 00:01:46,016
+But we actually have
+lots of filters
+
+
+37
+00:01:46,016 --> 00:01:49,286
+and you can chain them together
+into either chains or graphs.
+
+
+38
+00:01:49,376 --> 00:01:52,486
+And this-- by combining
+these multiple filters,
+
+
+39
+00:01:52,486 --> 00:01:54,136
+you can create very
+complex effects.
+
+
+40
+00:01:54,276 --> 00:01:58,226
+In this slightly more complex
+example, we're taking an image,
+
+
+41
+00:01:58,696 --> 00:02:00,586
+running it through Sepia
+Tone then running it
+
+
+42
+00:02:00,586 --> 00:02:03,716
+to a Hue Adjustment Filter to
+make it into a blue tone image
+
+
+43
+00:02:04,276 --> 00:02:06,086
+and then we're adding
+some contrast
+
+
+44
+00:02:06,086 --> 00:02:08,216
+by using the color
+controls filter.
+
+
+45
+00:02:09,675 --> 00:02:11,386
+Now, while you can
+conceptually think of their--
+
+
+46
+00:02:11,386 --> 00:02:14,926
+being an intermediate image
+between every filter internally
+
+
+47
+00:02:15,106 --> 00:02:16,236
+to improve performance,
+
+
+48
+00:02:16,756 --> 00:02:18,966
+Core Image will concatenate
+these filters
+
+
+49
+00:02:18,966 --> 00:02:22,356
+into a combined program in order
+
+
+50
+00:02:22,356 --> 00:02:25,756
+to get the best possible
+performance and this is achieved
+
+
+51
+00:02:25,756 --> 00:02:28,516
+by eliminating intermediate
+buffers which is a big benefit.
+
+
+52
+00:02:29,036 --> 00:02:33,666
+And then we also do
+additional runtime optimizations
+
+
+53
+00:02:33,666 --> 00:02:34,686
+on the filter graph.
+
+
+54
+00:02:34,766 --> 00:02:37,806
+For example, both the
+hue adjustment an example
+
+
+55
+00:02:37,806 --> 00:02:41,276
+and the contrast or
+both matrix operations
+
+
+56
+00:02:41,596 --> 00:02:43,466
+and if you have sequential
+matrix operations
+
+
+57
+00:02:43,466 --> 00:02:45,696
+in your filter graph then
+Core Image will combine those
+
+
+58
+00:02:45,696 --> 00:02:47,326
+into a combined matrix
+
+
+59
+00:02:47,446 --> 00:02:49,516
+which will actually further
+improve both performance
+
+
+60
+00:02:49,516 --> 00:02:50,116
+and quality.
+
+
+61
+00:02:51,776 --> 00:02:54,256
+So, let me give you
+a real quick example
+
+
+62
+00:02:54,256 --> 00:02:56,036
+of this working in action.
+
+
+63
+00:02:56,446 --> 00:02:59,786
+So, if I bring this up
+here, we have an application
+
+
+64
+00:02:59,976 --> 00:03:04,476
+which we first used a
+little bit last year at WWDC
+
+
+65
+00:03:04,476 --> 00:03:09,616
+and now we actually
+have fully vague version
+
+
+66
+00:03:09,616 --> 00:03:10,356
+of the application.
+
+
+67
+00:03:10,776 --> 00:03:14,616
+So, the idea here is you
+bring up the filters pop-up
+
+
+68
+00:03:15,066 --> 00:03:19,496
+and that's allows you to add
+either input sources or filters
+
+
+69
+00:03:19,496 --> 00:03:21,136
+to your rendering graph.
+
+
+70
+00:03:21,136 --> 00:03:22,936
+In this case, I just want
+to bring in the video
+
+
+71
+00:03:22,936 --> 00:03:25,446
+from the video feed and
+hopefully you can see that OK.
+
+
+72
+00:03:26,226 --> 00:03:28,296
+Once we have that
+effect, we can then add
+
+
+73
+00:03:28,296 --> 00:03:31,136
+on additional adjustments
+like for example we can go
+
+
+74
+00:03:31,136 --> 00:03:38,746
+and find another effect in
+here and with color controls,
+
+
+75
+00:03:38,746 --> 00:03:41,996
+we can increase saturation
+or contrast
+
+
+76
+00:03:42,646 --> 00:03:45,506
+and we can do these
+effects live.
+
+
+77
+00:03:45,506 --> 00:03:46,866
+We can also delete them.
+
+
+78
+00:03:46,866 --> 00:03:49,026
+If you want to do a
+slightly more complex effect,
+
+
+79
+00:03:49,026 --> 00:03:52,296
+we can do a pattern here.
+
+
+80
+00:03:52,296 --> 00:03:53,646
+We can go to dot screen.
+
+
+81
+00:03:54,646 --> 00:03:56,646
+And dot screen, hopefully
+you can see this turns your--
+
+
+82
+00:03:56,966 --> 00:04:02,796
+turns the video into a-- like
+a newsprint type dot pattern,
+
+
+83
+00:04:02,796 --> 00:04:04,476
+we can adjust the
+size of the dot
+
+
+84
+00:04:04,476 --> 00:04:05,806
+and the angle of
+the dot pattern.
+
+
+85
+00:04:06,846 --> 00:04:09,976
+Now, let's say this doesn't
+quite suit our desires
+
+
+86
+00:04:09,976 --> 00:04:10,326
+right now.
+
+
+87
+00:04:10,326 --> 00:04:11,626
+This is a black and
+white pattern.
+
+
+88
+00:04:11,626 --> 00:04:14,866
+We'd like to kind of
+combine this halftone pattern
+
+
+89
+00:04:14,866 --> 00:04:16,386
+with the original
+color of the image.
+
+
+90
+00:04:16,886 --> 00:04:20,125
+We can actually represent graphs
+in this list for you here.
+
+
+91
+00:04:20,255 --> 00:04:23,136
+We can-- what we can do is
+we can add another instance
+
+
+92
+00:04:23,886 --> 00:04:24,946
+of the input video.
+
+
+93
+00:04:25,756 --> 00:04:29,536
+So, now we've got two operations
+on this stack of filters
+
+
+94
+00:04:29,916 --> 00:04:32,466
+and then we can then
+combine those
+
+
+95
+00:04:32,696 --> 00:04:34,466
+with another combining filter.
+
+
+96
+00:04:34,876 --> 00:04:36,286
+Yeah, here we go, [inaudible].
+
+
+97
+00:04:36,666 --> 00:04:38,906
+So, now, hopefully you can
+see it on the projector
+
+
+98
+00:04:38,906 --> 00:04:41,716
+but we've got both the
+halftone pattern and the color
+
+
+99
+00:04:41,716 --> 00:04:45,406
+from the original image
+shining through, all right.
+
+
+100
+00:04:45,986 --> 00:04:49,006
+So, let me pop this off, delete.
+
+
+101
+00:04:49,386 --> 00:04:53,676
+That was the first demo of
+the Funhouse Application.
+
+
+102
+00:04:53,676 --> 00:04:54,806
+Let me go back to my slides
+
+
+103
+00:04:55,126 --> 00:04:57,656
+and the great news
+is the source code
+
+
+104
+00:04:57,656 --> 00:04:59,056
+for this app is now available.
+
+
+105
+00:04:59,306 --> 00:05:01,786
+So, this has been a
+much requested feature.
+
+
+106
+00:05:01,786 --> 00:05:04,716
+We showed this last year a
+little bit and it should--
+
+
+107
+00:05:04,716 --> 00:05:06,096
+[ Applause ]
+
+
+108
+00:05:06,096 --> 00:05:08,526
+really great shape for you guys
+to look at this application
+
+
+109
+00:05:08,526 --> 00:05:11,446
+and see how we did
+all this fun stuff.
+
+
+110
+00:05:11,666 --> 00:05:15,426
+So, once you've look at the
+code, you can see very quickly
+
+
+111
+00:05:15,426 --> 00:05:18,276
+that there's really three
+basic classes that you need
+
+
+112
+00:05:18,486 --> 00:05:19,896
+to understand to use Core Image.
+
+
+113
+00:05:20,706 --> 00:05:24,706
+The first class is the CIFilter
+class and this is mutable object
+
+
+114
+00:05:24,706 --> 00:05:26,536
+that represents an effect
+that you want to apply
+
+
+115
+00:05:27,306 --> 00:05:29,676
+and a filter has
+either an image input
+
+
+116
+00:05:29,676 --> 00:05:31,346
+or numeric input parameters
+
+
+117
+00:05:31,826 --> 00:05:34,826
+and also it has an output
+image parameter as well.
+
+
+118
+00:05:35,346 --> 00:05:38,276
+And at the time you ask for
+the output image parameter,
+
+
+119
+00:05:38,536 --> 00:05:40,126
+it will return in an object
+
+
+120
+00:05:40,126 --> 00:05:41,746
+that represents the
+current state based
+
+
+121
+00:05:41,976 --> 00:05:43,836
+on the current state
+of input parameters.
+
+
+122
+00:05:45,316 --> 00:05:47,266
+The second key object
+type that you need
+
+
+123
+00:05:47,266 --> 00:05:49,746
+to understand is
+the CIImage object
+
+
+124
+00:05:50,036 --> 00:05:51,606
+and this is an immutable object
+
+
+125
+00:05:51,656 --> 00:05:53,816
+that represents the
+recipe for an image.
+
+
+126
+00:05:54,256 --> 00:05:56,216
+And there're basically
+two types of images.
+
+
+127
+00:05:56,216 --> 00:05:59,356
+There's an image that's come
+directly from a file or an input
+
+
+128
+00:05:59,756 --> 00:06:02,996
+of some sort and-- or you can
+also have a CIImage that comes
+
+
+129
+00:06:02,996 --> 00:06:04,316
+from the output of a CIFilter.
+
+
+130
+00:06:04,736 --> 00:06:07,086
+The third key data type
+that you needed to be aware
+
+
+131
+00:06:07,086 --> 00:06:10,346
+of is a CIContext and a
+CIContext is the object
+
+
+132
+00:06:10,346 --> 00:06:12,436
+through which Core Image
+will render its result.
+
+
+133
+00:06:12,906 --> 00:06:16,946
+It can be either based on a
+CPU renderer or GPU renderer
+
+
+134
+00:06:17,306 --> 00:06:19,916
+and that's really important to
+distinguish between those two
+
+
+135
+00:06:19,916 --> 00:06:21,366
+and I'll talk about
+that a little bit later
+
+
+136
+00:06:21,366 --> 00:06:22,116
+in the presentation.
+
+
+137
+00:06:24,336 --> 00:06:27,316
+So, as I mentioned in the intro,
+Core Image is available both
+
+
+138
+00:06:27,316 --> 00:06:30,686
+on iOS and Mac OS and for
+the most part, they're very,
+
+
+139
+00:06:30,686 --> 00:06:32,186
+very similar between
+the two platforms
+
+
+140
+00:06:32,216 --> 00:06:34,686
+but there are a few
+platforms specifics
+
+
+141
+00:06:34,686 --> 00:06:35,806
+that you might want
+to be aware off.
+
+
+142
+00:06:37,046 --> 00:06:38,926
+First of all, in terms
+of built-in filters,
+
+
+143
+00:06:39,536 --> 00:06:43,186
+on iOS Core Image has about over
+a hundred built-in filters now
+
+
+144
+00:06:43,186 --> 00:06:45,156
+and we've added some
+more in iOS 7 as well.
+
+
+145
+00:06:46,036 --> 00:06:50,656
+And on Mac OS X, we have
+over a 150 built-in filters
+
+
+146
+00:06:50,656 --> 00:06:52,586
+and we also have the
+ability for your application
+
+
+147
+00:06:52,586 --> 00:06:54,046
+to provide its own filters.
+
+
+148
+00:06:55,596 --> 00:06:59,886
+The core API is very similar
+between the two platforms.
+
+
+149
+00:07:00,496 --> 00:07:04,106
+The key classes I mentioned
+earlier are CIFilters, CIImage
+
+
+150
+00:07:04,106 --> 00:07:06,896
+and CIContext and
+they're available on both
+
+
+151
+00:07:06,896 --> 00:07:08,506
+and they're largely
+identical APIs.
+
+
+152
+00:07:09,856 --> 00:07:13,016
+On OS X, there are few
+other additional classes
+
+
+153
+00:07:13,016 --> 00:07:15,726
+such as CIKernel and CIFilter
+shape which are useful
+
+
+154
+00:07:15,726 --> 00:07:17,276
+if you're creating your
+own custom filters.
+
+
+155
+00:07:19,336 --> 00:07:23,296
+On both platforms, we have
+render-time optimizations
+
+
+156
+00:07:23,376 --> 00:07:25,786
+and while the optimizations
+are slightly different due
+
+
+157
+00:07:25,786 --> 00:07:28,996
+to the differing natures of the
+platforms, the idea is the same
+
+
+158
+00:07:28,996 --> 00:07:30,196
+and that Core Image
+will take care
+
+
+159
+00:07:30,196 --> 00:07:33,896
+of doing the best render-time
+optimizations that are possible
+
+
+160
+00:07:34,186 --> 00:07:35,866
+to render your requested graph.
+
+
+161
+00:07:36,296 --> 00:07:39,246
+There're a few similarities
+
+
+162
+00:07:39,246 --> 00:07:41,286
+and differences regarding
+color management
+
+
+163
+00:07:41,286 --> 00:07:44,826
+which is also something
+to be aware of.
+
+
+164
+00:07:44,826 --> 00:07:49,496
+On iOS, Core Image
+supports either sRGB content
+
+
+165
+00:07:49,966 --> 00:07:51,806
+or a non-color managed workflow
+
+
+166
+00:07:51,806 --> 00:07:54,706
+if you decide that's what's
+best for your application.
+
+
+167
+00:07:55,466 --> 00:07:58,816
+On OS X, the-- you can either
+have a non-color managed
+
+
+168
+00:07:58,816 --> 00:08:03,836
+workflow or you can support any
+ICC based colored profile using
+
+
+169
+00:08:04,216 --> 00:08:06,076
+the CG color space graph object.
+
+
+170
+00:08:07,196 --> 00:08:11,126
+In both cases, both
+in iOS and Mac OS,
+
+
+171
+00:08:11,126 --> 00:08:13,646
+the internal working
+space that Core Image uses
+
+
+172
+00:08:13,646 --> 00:08:17,686
+for its filters are unclamped
+linear data and this is useful
+
+
+173
+00:08:17,786 --> 00:08:20,726
+to produce high quality
+results and predictable results
+
+
+174
+00:08:20,726 --> 00:08:22,766
+across a variety of
+different color spaces.
+
+
+175
+00:08:24,956 --> 00:08:27,616
+Lastly, there're some
+important differences in terms
+
+
+176
+00:08:27,616 --> 00:08:29,236
+of the rendering
+architecture that's used.
+
+
+177
+00:08:29,906 --> 00:08:33,015
+On iOS, we have a
+CPU rendering path
+
+
+178
+00:08:33,306 --> 00:08:35,926
+and we also have our GPU based
+rendering path that's based
+
+
+179
+00:08:35,926 --> 00:08:37,385
+on OpenGL ES 2.0.
+
+
+180
+00:08:38,515 --> 00:08:42,866
+And on OS X, we have also a CPU
+and a GPU based rendering path.
+
+
+181
+00:08:42,866 --> 00:08:48,186
+Our CPU rendering path is built
+up on top of OpenCL on it's--
+
+
+182
+00:08:48,216 --> 00:08:49,606
+using its CPU rendering.
+
+
+183
+00:08:50,236 --> 00:08:56,186
+And also, new on Mavericks,
+Core Image will also use OpenCL
+
+
+184
+00:08:56,186 --> 00:08:58,046
+in the GPU and I'd like
+to give you a little demo
+
+
+185
+00:08:58,046 --> 00:09:00,066
+of that today 'cause we got
+some great benefits out of that.
+
+
+186
+00:09:00,696 --> 00:09:03,446
+For a wide variety of operations
+in Core Image, we get very,
+
+
+187
+00:09:03,446 --> 00:09:06,566
+very, very high performance
+due to the fact
+
+
+188
+00:09:06,566 --> 00:09:07,636
+that we leverage the GPU.
+
+
+189
+00:09:08,056 --> 00:09:10,976
+For example, we can be
+adjusting the slide or real time
+
+
+190
+00:09:10,976 --> 00:09:16,756
+on this 3K image or I think
+it's 3.5K by something image
+
+
+191
+00:09:17,206 --> 00:09:20,066
+and we're getting very,
+very fluid results
+
+
+192
+00:09:20,066 --> 00:09:21,346
+on the sliderand that's--
+
+
+193
+00:09:21,346 --> 00:09:23,836
+'cause these are
+relatively simple operations.
+
+
+194
+00:09:25,036 --> 00:09:27,286
+One way we like to think
+about this, however,
+
+
+195
+00:09:27,286 --> 00:09:29,546
+is how does this
+performance change as we start
+
+
+196
+00:09:29,546 --> 00:09:33,426
+to do more complex operations
+and how do we make sure
+
+
+197
+00:09:33,426 --> 00:09:35,306
+that the interactive behavior
+
+
+198
+00:09:35,306 --> 00:09:37,246
+of Core Images is
+fluid as possible.
+
+
+199
+00:09:37,966 --> 00:09:41,776
+So, we've been spending a lot
+of time on this in Mavericks
+
+
+200
+00:09:42,056 --> 00:09:44,556
+and we came up with
+this demo application
+
+
+201
+00:09:44,556 --> 00:09:46,226
+to help demonstrate performance.
+
+
+202
+00:09:46,656 --> 00:09:48,496
+One thing that really
+makes it easier
+
+
+203
+00:09:48,496 --> 00:09:50,066
+to see the performance
+instead of trying
+
+
+204
+00:09:50,066 --> 00:09:54,536
+to subjectively judge a slider
+is we have this little test mode
+
+
+205
+00:09:54,956 --> 00:09:57,636
+where it will 50 renders
+in rapid succession
+
+
+206
+00:09:57,636 --> 00:09:58,646
+as quickly as possible.
+
+
+207
+00:09:59,276 --> 00:10:01,596
+And what it will do is it will
+take these filter operations
+
+
+208
+00:10:01,596 --> 00:10:04,316
+that we've done and it
+will prepend to beginning
+
+
+209
+00:10:04,316 --> 00:10:06,426
+of that filter operation
+in exposure adjustment
+
+
+210
+00:10:06,736 --> 00:10:09,656
+and it will adjust that
+exposure and render it 50 times
+
+
+211
+00:10:09,656 --> 00:10:10,956
+with 50 different exposures.
+
+
+212
+00:10:11,216 --> 00:10:13,406
+And that will force Core Image
+to have to render everything
+
+
+213
+00:10:13,406 --> 00:10:14,866
+after it in the filter
+graph again.
+
+
+214
+00:10:15,946 --> 00:10:18,426
+So, if we go through here,
+it will do a quick sweep
+
+
+215
+00:10:18,426 --> 00:10:21,826
+of the image and you can see
+we're getting 0.83 seconds
+
+
+216
+00:10:21,896 --> 00:10:24,006
+and that's an interesting
+number that turns
+
+
+217
+00:10:24,006 --> 00:10:26,806
+out that that's how long it
+takes to render 50 frames
+
+
+218
+00:10:26,806 --> 00:10:30,256
+if you're limited by 60 frames
+per second display time.
+
+
+219
+00:10:30,516 --> 00:10:32,896
+So, that's good, that means
+we're hitting 60 frames per
+
+
+220
+00:10:32,896 --> 00:10:35,006
+second or maybe we're
+actually even faster
+
+
+221
+00:10:35,006 --> 00:10:36,296
+but we're limited
+by the frame, right.
+
+
+222
+00:10:37,296 --> 00:10:38,286
+So, the question is, however,
+
+
+223
+00:10:38,286 --> 00:10:39,816
+what starts to happen
+is we start
+
+
+224
+00:10:39,816 --> 00:10:42,046
+to do more complex
+operations and obviously
+
+
+225
+00:10:42,046 --> 00:10:44,646
+if we start throwing in
+very complex operations
+
+
+226
+00:10:45,116 --> 00:10:46,716
+like highlights and
+shadows adjustments
+
+
+227
+00:10:47,036 --> 00:10:49,156
+and more importantly
+very large blurs.
+
+
+228
+00:10:49,626 --> 00:10:54,136
+This blur is actually even
+more than the 50 pixels,
+
+
+229
+00:10:54,246 --> 00:10:56,726
+50-50 value that you're
+seeing in that slider.
+
+
+230
+00:10:56,976 --> 00:11:00,736
+It's actually hundreds of pixels
+wide but hundred of pixels tall
+
+
+231
+00:11:01,056 --> 00:11:03,866
+and that requires a lot
+of fetching from an image.
+
+
+232
+00:11:04,186 --> 00:11:07,036
+So, obviously in this
+case, when we do a sweep,
+
+
+233
+00:11:07,346 --> 00:11:10,046
+we're getting not quite
+real time performance.
+
+
+234
+00:11:11,896 --> 00:11:14,316
+And while it's, you know,
+impressive, you know,
+
+
+235
+00:11:14,316 --> 00:11:15,756
+we could do better
+and this is one
+
+
+236
+00:11:15,756 --> 00:11:17,116
+of the reasons we
+spend a lot of time
+
+
+237
+00:11:17,446 --> 00:11:20,786
+in Mavericks changing the
+internals of Core Image
+
+
+238
+00:11:21,016 --> 00:11:23,856
+so that it would use OpenCL
+instead and as you see
+
+
+239
+00:11:23,856 --> 00:11:27,866
+as we turn on OpenCL on the
+GPU path, we're now back
+
+
+240
+00:11:27,866 --> 00:11:30,326
+down to 60 frames per second
+
+
+241
+00:11:30,426 --> 00:11:32,236
+on this complex rendering
+operation.
+
+
+242
+00:11:32,586 --> 00:11:34,356
+So, we're really pleased
+with these results.
+
+
+243
+00:11:34,836 --> 00:11:36,626
+The great thing also
+about this performance is
+
+
+244
+00:11:36,626 --> 00:11:40,096
+that it particularly benefits
+operations that were complex.
+
+
+245
+00:11:40,776 --> 00:11:44,116
+We were doing large
+complex render graphs.
+
+
+246
+00:11:44,686 --> 00:11:48,766
+So that was again the
+demonstration of OpenCL
+
+
+247
+00:11:48,766 --> 00:11:54,406
+on the GPU on OS X Mavericks.
+
+
+248
+00:11:54,476 --> 00:11:56,836
+So, as I've talked about
+today, we've had a lot
+
+
+249
+00:11:56,836 --> 00:11:58,016
+of built-in filters and I'd
+
+
+250
+00:11:58,016 --> 00:12:00,316
+like to give you a
+little bit more detail
+
+
+251
+00:12:00,316 --> 00:12:02,416
+on those built-on filters
+and some we've added
+
+
+252
+00:12:02,846 --> 00:12:04,956
+and give you some more
+information on how
+
+
+253
+00:12:04,956 --> 00:12:06,386
+to use filters in
+your application.
+
+
+254
+00:12:07,406 --> 00:12:09,546
+So, we have a ton
+of useful filters
+
+
+255
+00:12:09,976 --> 00:12:11,806
+and it's probably
+barely even readable
+
+
+256
+00:12:11,806 --> 00:12:14,356
+to see them all here so, I just
+want to highlight some today.
+
+
+257
+00:12:15,286 --> 00:12:18,236
+So, first of all the filters
+fall under different categories.
+
+
+258
+00:12:18,236 --> 00:12:20,556
+We have whole bunch of
+filters for doing color effects
+
+
+259
+00:12:20,556 --> 00:12:21,546
+and color adjustments.
+
+
+260
+00:12:22,546 --> 00:12:25,606
+In my slides earlier, I called
+out three as an example,
+
+
+261
+00:12:25,606 --> 00:12:27,986
+color controls, hue
+adjustment, and sepia tone.
+
+
+262
+00:12:28,366 --> 00:12:29,506
+The other ones work similarly.
+
+
+263
+00:12:29,506 --> 00:12:31,306
+They take input image
+and have parameters
+
+
+264
+00:12:31,306 --> 00:12:32,416
+and produce an output image.
+
+
+265
+00:12:33,826 --> 00:12:38,346
+We've also added some new ones
+in both of iOS 7 in Mavericks
+
+
+266
+00:12:38,826 --> 00:12:41,296
+that we think will be
+useful for different--
+
+
+267
+00:12:41,576 --> 00:12:42,726
+a variety of different uses.
+
+
+268
+00:12:43,096 --> 00:12:45,526
+We have, for example,
+color polynomial
+
+
+269
+00:12:45,526 --> 00:12:47,416
+and color cross polynomial
+that allows you
+
+
+270
+00:12:47,416 --> 00:12:49,896
+to do polynomial operations
+that combine the red,
+
+
+271
+00:12:49,946 --> 00:12:51,716
+green and blue channels
+in interesting ways.
+
+
+272
+00:12:51,716 --> 00:12:53,566
+You can actually do some really
+interesting color effects
+
+
+273
+00:12:53,566 --> 00:12:53,916
+with this.
+
+
+274
+00:12:54,186 --> 00:12:57,236
+We also have a class
+of filters which fall
+
+
+275
+00:12:57,236 --> 00:13:00,396
+into either geometry adjustments
+or distortion effects.
+
+
+276
+00:13:01,366 --> 00:13:04,766
+And for example, one of these
+is a fun effect called twirl
+
+
+277
+00:13:04,766 --> 00:13:07,756
+distortion and we can actually
+demo that real quickly here.
+
+
+278
+00:13:09,236 --> 00:13:12,356
+And you can see this
+adjusting a twirl on an image
+
+
+279
+00:13:12,576 --> 00:13:13,776
+and this actually running
+
+
+280
+00:13:13,776 --> 00:13:16,086
+in that presentation right
+now using Core Image.
+
+
+281
+00:13:16,816 --> 00:13:18,476
+It's kind of recorded movie.
+
+
+282
+00:13:19,296 --> 00:13:22,106
+We also have several
+blur and sharpen effects
+
+
+283
+00:13:22,436 --> 00:13:25,366
+and I mentioned blur and sharpen
+because blurs in particular one
+
+
+284
+00:13:25,366 --> 00:13:27,026
+of the most foundational types
+
+
+285
+00:13:27,026 --> 00:13:30,116
+of image processing you
+can perform, Gaussian blur
+
+
+286
+00:13:30,116 --> 00:13:33,156
+for example is used as the
+basis of a whole variety
+
+
+287
+00:13:33,156 --> 00:13:35,046
+of different effects
+such as sharpening
+
+
+288
+00:13:35,046 --> 00:13:36,286
+and edge detection and the like.
+
+
+289
+00:13:37,076 --> 00:13:42,796
+We've also added some new blur
+or convolution effects to iOS 7
+
+
+290
+00:13:42,796 --> 00:13:45,586
+in Mavericks and we've
+picked some that were--
+
+
+291
+00:13:45,676 --> 00:13:48,276
+be particularly general so that
+they can be used in a variety
+
+
+292
+00:13:48,276 --> 00:13:52,296
+of applications, very, very
+common to use either 3X3
+
+
+293
+00:13:52,296 --> 00:13:55,426
+or 5X5 convolutions and
+we've implemented those
+
+
+294
+00:13:55,426 --> 00:13:56,716
+and optimized the
+heck out of them
+
+
+295
+00:13:56,716 --> 00:13:58,236
+so they'll get really
+good performance.
+
+
+296
+00:13:58,856 --> 00:14:02,586
+We've also added a horizontal
+and vertical convolution
+
+
+297
+00:14:02,586 --> 00:14:04,686
+which is useful if your
+convolution is a separable
+
+
+298
+00:14:04,686 --> 00:14:10,416
+operation and, again, we've
+optimized the heck out of these.
+
+
+299
+00:14:10,636 --> 00:14:12,936
+We also have a class of
+filters called generators
+
+
+300
+00:14:12,996 --> 00:14:15,866
+and these are filters that
+don't take an input image
+
+
+301
+00:14:15,926 --> 00:14:19,446
+but will produce an output image
+and these are things for effects
+
+
+302
+00:14:19,446 --> 00:14:21,406
+like starburst and
+random textures
+
+
+303
+00:14:21,406 --> 00:14:25,136
+and checkerboard patterns
+but we've added a new one
+
+
+304
+00:14:25,166 --> 00:14:30,006
+in both iOS 7 in Mavericks
+called QR code generator
+
+
+305
+00:14:30,586 --> 00:14:33,666
+and this is a filter that takes
+a string as an input parameter
+
+
+306
+00:14:34,186 --> 00:14:40,096
+and also a quality setting
+and then also will produce
+
+
+307
+00:14:40,126 --> 00:14:43,546
+as its output a chart
+image, bar chart image.
+
+
+308
+00:14:44,656 --> 00:14:45,806
+So that can be useful on a lot
+
+
+309
+00:14:45,806 --> 00:14:47,176
+of interesting applications
+as well.
+
+
+310
+00:14:48,766 --> 00:14:52,236
+We also, have a class
+called face detector
+
+
+311
+00:14:52,906 --> 00:14:56,086
+and this not exactly a
+filter per se but it's--
+
+
+312
+00:14:56,086 --> 00:14:57,616
+you can think of it as
+a filter in the sense
+
+
+313
+00:14:57,616 --> 00:15:00,026
+that it takes input images
+and produces output image--
+
+
+314
+00:15:00,026 --> 00:15:04,416
+out data and we've had this
+for a couple of releases now.
+
+
+315
+00:15:04,756 --> 00:15:10,946
+The great thing is starting
+now in OS 7 in Mavericks,
+
+
+316
+00:15:10,946 --> 00:15:12,456
+we've made some enhancement
+to that.
+
+
+317
+00:15:12,776 --> 00:15:14,716
+In the past, you
+could take a face
+
+
+318
+00:15:14,716 --> 00:15:16,516
+and it will return
+the bounding informa--
+
+
+319
+00:15:16,516 --> 00:15:18,386
+bounding rect for the face
+
+
+320
+00:15:18,656 --> 00:15:20,266
+and it will also
+return the coordinates
+
+
+321
+00:15:20,266 --> 00:15:21,116
+for the eyes and mouth.
+
+
+322
+00:15:21,666 --> 00:15:25,776
+But starting in Mavericks in iOS
+7, there's a flag you can pass
+
+
+323
+00:15:25,776 --> 00:15:27,876
+in that will also
+return information
+
+
+324
+00:15:27,876 --> 00:15:30,896
+like whether a smile is present
+or whether the eye is blinking,
+
+
+325
+00:15:31,026 --> 00:15:32,566
+so that's another
+nice new enhancement.
+
+
+326
+00:15:32,886 --> 00:15:36,176
+So there's a brief overview
+of our 100 plus filters.
+
+
+327
+00:15:36,736 --> 00:15:39,376
+One question we're commonly
+asked is how do we choose what
+
+
+328
+00:15:39,376 --> 00:15:41,546
+filters we use or can
+we add this filter or--
+
+
+329
+00:15:41,886 --> 00:15:43,446
+and I wanted to just
+talk a moment
+
+
+330
+00:15:43,446 --> 00:15:44,666
+about our process on that.
+
+
+331
+00:15:45,176 --> 00:15:47,516
+So the key thing we
+want to consider,
+
+
+332
+00:15:47,516 --> 00:15:49,576
+these two key criterion,
+
+
+333
+00:15:49,886 --> 00:15:52,226
+one is that a filter
+must be broadly usable.
+
+
+334
+00:15:52,226 --> 00:15:55,746
+We want to make sure that we
+add filters like convolutions
+
+
+335
+00:15:55,746 --> 00:15:57,846
+which are useful on a
+wide variety of usages
+
+
+336
+00:15:58,146 --> 00:16:00,226
+so that we can implement
+them in a robust way
+
+
+337
+00:16:00,446 --> 00:16:03,736
+and have them be useful to a
+wide variety of client needs.
+
+
+338
+00:16:04,356 --> 00:16:06,886
+And also we want to make sure
+we choose a type of operations
+
+
+339
+00:16:06,886 --> 00:16:08,666
+that can be well
+implemented and performant
+
+
+340
+00:16:08,666 --> 00:16:10,006
+on our target platform.
+
+
+341
+00:16:10,496 --> 00:16:15,256
+So, as I mentioned in
+my brief introduction
+
+
+342
+00:16:15,256 --> 00:16:16,556
+at the very beginning
+of the presentation,
+
+
+343
+00:16:16,556 --> 00:16:18,696
+you can chain together
+multiple filters and I wanted
+
+
+344
+00:16:18,696 --> 00:16:21,016
+to give you an idea in code
+of how easy this is to do.
+
+
+345
+00:16:21,016 --> 00:16:22,996
+You start out with
+an input image,
+
+
+346
+00:16:23,376 --> 00:16:25,646
+you create a filter object
+saying, "I'd the filter
+
+
+347
+00:16:25,646 --> 00:16:28,206
+with a name," and you
+specify a filter with the name
+
+
+348
+00:16:28,206 --> 00:16:31,936
+like CISepiaTone and at the same
+time, you specify the parameters
+
+
+349
+00:16:31,936 --> 00:16:34,636
+such as the input image
+and the intensity amount
+
+
+350
+00:16:35,126 --> 00:16:36,436
+and once you have the filter,
+
+
+351
+00:16:36,436 --> 00:16:37,976
+you can ask it for
+its output image.
+
+
+352
+00:16:38,336 --> 00:16:40,246
+And that's basically
+one line of code
+
+
+353
+00:16:40,246 --> 00:16:42,106
+that will apply a
+filter to an image.
+
+
+354
+00:16:42,106 --> 00:16:43,916
+If we want to apply
+a second filter,
+
+
+355
+00:16:43,916 --> 00:16:46,766
+it's just same idea,
+slightly different.
+
+
+356
+00:16:46,766 --> 00:16:48,176
+What we're going to be
+doing here is we're going
+
+
+357
+00:16:48,176 --> 00:16:49,196
+to be picking a different
+filter.
+
+
+358
+00:16:49,196 --> 00:16:50,926
+We'll pick hue adjustment
+in this case.
+
+
+359
+00:16:51,536 --> 00:16:53,976
+And the key difference is the
+input image, in this case,
+
+
+360
+00:16:53,976 --> 00:16:55,746
+is the output image in
+the previous filter.
+
+
+361
+00:16:56,616 --> 00:16:58,576
+So it's very, very
+simple, two lines of code
+
+
+362
+00:16:58,966 --> 00:17:01,056
+and we've applied multiple
+filters to an image.
+
+
+363
+00:17:01,956 --> 00:17:03,766
+The other things that's
+important and great to keep
+
+
+364
+00:17:03,766 --> 00:17:05,226
+in mind is that these--
+
+
+365
+00:17:05,455 --> 00:17:07,856
+at the time you're building
+up the render graph here,
+
+
+366
+00:17:08,205 --> 00:17:11,496
+the filter graph, there's no
+actual work being performed.
+
+
+367
+00:17:11,685 --> 00:17:13,576
+This is all very fast and
+could be done very quickly.
+
+
+368
+00:17:14,236 --> 00:17:17,205
+The actual work of a
+rendering image is deferred
+
+
+369
+00:17:17,205 --> 00:17:20,876
+until we actually get a request
+to render it and at that time
+
+
+370
+00:17:20,876 --> 00:17:23,066
+that we can make out
+render-time optimizations
+
+
+371
+00:17:23,066 --> 00:17:24,945
+to make the best
+possible performance
+
+
+372
+00:17:24,945 --> 00:17:26,766
+on the destination context.
+
+
+373
+00:17:29,436 --> 00:17:32,976
+So another thing is that you can
+create your own custom filters.
+
+
+374
+00:17:33,296 --> 00:17:36,906
+I'm going to actually do some
+of these on both iOS and OS X.
+
+
+375
+00:17:37,646 --> 00:17:41,516
+We have over a hundred
+built-in filters and on iOS 7,
+
+
+376
+00:17:42,266 --> 00:17:44,996
+while you cannot create
+your own custom kernels,
+
+
+377
+00:17:44,996 --> 00:17:48,116
+you can create your own custom
+filters by building up filters
+
+
+378
+00:17:48,116 --> 00:17:49,496
+out of other built-in filters.
+
+
+379
+00:17:50,146 --> 00:17:53,106
+And this is a very
+effective way to create new
+
+
+380
+00:17:53,106 --> 00:17:54,116
+and interesting effects.
+
+
+381
+00:17:54,776 --> 00:17:57,046
+And again, we've chosen some
+of the new filters we've added
+
+
+382
+00:17:57,046 --> 00:18:00,266
+in iOS 7 to be particularly
+useful for this goal.
+
+
+383
+00:18:01,736 --> 00:18:02,536
+So how does this work?
+
+
+384
+00:18:03,236 --> 00:18:07,726
+So the idea is you want to
+create a CIFilter subclass
+
+
+385
+00:18:08,026 --> 00:18:11,896
+and in that filter, you want
+to wrap a set of other filters.
+
+
+386
+00:18:12,396 --> 00:18:14,716
+So there're set of things
+that you need to do.
+
+
+387
+00:18:14,716 --> 00:18:16,336
+One is you need to
+declare properties
+
+
+388
+00:18:16,336 --> 00:18:18,296
+for your filter subclass
+
+
+389
+00:18:18,296 --> 00:18:20,116
+that declares what its
+input parameters is.
+
+
+390
+00:18:20,506 --> 00:18:22,306
+For example, you might
+have an input image
+
+
+391
+00:18:22,306 --> 00:18:23,846
+or other numeric parameters.
+
+
+392
+00:18:24,356 --> 00:18:26,126
+You want to override
+set defaults
+
+
+393
+00:18:26,226 --> 00:18:27,756
+so that the default values are--
+
+
+394
+00:18:28,026 --> 00:18:29,556
+for your filter are
+setup appropriately
+
+
+395
+00:18:29,556 --> 00:18:32,266
+if the calling code doesn't
+specify anything else.
+
+
+396
+00:18:33,256 --> 00:18:35,156
+And lastly and most
+importantly, you're going
+
+
+397
+00:18:35,156 --> 00:18:36,396
+to override output image.
+
+
+398
+00:18:37,136 --> 00:18:39,916
+And it's in this method that you
+will return your filter graph.
+
+
+399
+00:18:40,666 --> 00:18:42,796
+And internally, Core Image
+actually uses this technique
+
+
+400
+00:18:42,796 --> 00:18:44,266
+on some of its own
+built-in filters.
+
+
+401
+00:18:44,836 --> 00:18:48,276
+As an example, there's a
+built-in filter called CIColor
+
+
+402
+00:18:48,276 --> 00:18:50,446
+invert which inverts all
+the colors in an image.
+
+
+403
+00:18:50,766 --> 00:18:51,796
+And if you think
+about it, really,
+
+
+404
+00:18:51,796 --> 00:18:54,896
+that's just a special case
+of a color matrix operation.
+
+
+405
+00:18:55,276 --> 00:18:58,366
+So, if you look at our
+source code for color invert,
+
+
+406
+00:18:58,366 --> 00:19:01,776
+all it does in its output image
+method is create an instance
+
+
+407
+00:19:01,776 --> 00:19:03,776
+of the filter for CIColor matrix
+
+
+408
+00:19:04,166 --> 00:19:07,306
+and passing the appropriate
+parameters for the red, green,
+
+
+409
+00:19:07,306 --> 00:19:09,866
+and blue, and bias vectors.
+
+
+410
+00:19:10,196 --> 00:19:14,376
+You can also do this
+kind of thing to build
+
+
+411
+00:19:14,376 --> 00:19:16,206
+up really other interesting
+image effects.
+
+
+412
+00:19:16,206 --> 00:19:17,396
+For example, let's
+say you wanted
+
+
+413
+00:19:17,396 --> 00:19:20,406
+to do a Sobel Edge Detector
+in your application.
+
+
+414
+00:19:21,036 --> 00:19:24,066
+Well, a Sobel Edge Detector
+is really just a special case
+
+
+415
+00:19:24,066 --> 00:19:25,466
+of a 3X3 convolution.
+
+
+416
+00:19:26,076 --> 00:19:28,636
+In fact, it's very simple
+convolution, all it is,
+
+
+417
+00:19:28,636 --> 00:19:31,456
+is depending on whether you're
+doing a horizontal Sobel
+
+
+418
+00:19:31,456 --> 00:19:34,936
+or a vertical Sobel, you're
+going to have some pattern
+
+
+419
+00:19:34,936 --> 00:19:38,476
+of ones and twos and zeros
+in your 3X3 convolution.
+
+
+420
+00:19:39,546 --> 00:19:42,326
+One thing to keep in mind
+is, especially on iOS,
+
+
+421
+00:19:42,576 --> 00:19:46,466
+because we don't want to add a
+bias term to this convolution.
+
+
+422
+00:19:47,036 --> 00:19:50,196
+And the idea here is that we
+want to produce an output image
+
+
+423
+00:19:50,226 --> 00:19:54,016
+that is grey where the image
+is flat and black and white
+
+
+424
+00:19:54,016 --> 00:19:55,276
+where there are edges.
+
+
+425
+00:19:56,086 --> 00:19:59,166
+And that's particularly
+important, because on iOS,
+
+
+426
+00:19:59,166 --> 00:20:02,636
+our intermediate buffers are
+8-bit buffers for these type
+
+
+427
+00:20:02,636 --> 00:20:04,996
+of operations when they-- and
+they can only represent values
+
+
+428
+00:20:04,996 --> 00:20:07,066
+between black and white.
+
+
+429
+00:20:08,486 --> 00:20:10,436
+One thing to keep
+in mind, however,
+
+
+430
+00:20:10,436 --> 00:20:11,896
+is that by adding a bias,
+
+
+431
+00:20:11,896 --> 00:20:13,546
+you are actually
+producing an infinite image,
+
+
+432
+00:20:13,546 --> 00:20:17,126
+because outside the image where
+the image is flat and clear,
+
+
+433
+00:20:17,816 --> 00:20:20,496
+you're going to have grey as the
+output of this Sobel Detector.
+
+
+434
+00:20:20,496 --> 00:20:25,396
+So let me just give a little
+demo of that in action
+
+
+435
+00:20:25,876 --> 00:20:28,286
+and I've actually-- in
+this particular demo,
+
+
+436
+00:20:28,286 --> 00:20:32,256
+so it's a little bit more
+interesting to look at on stage,
+
+
+437
+00:20:33,026 --> 00:20:35,946
+I'm recoloring the
+image so it looks--
+
+
+438
+00:20:36,206 --> 00:20:39,296
+so the flat areas look black
+and the edges look colorful.
+
+
+439
+00:20:39,766 --> 00:20:43,416
+So again, I've got an input
+video source and I can go
+
+
+440
+00:20:43,416 --> 00:20:47,966
+and add a filter to it and I'm
+going to add a custom filter
+
+
+441
+00:20:49,116 --> 00:20:53,846
+that we've implemented
+called Sobel Edge Detector.
+
+
+442
+00:20:54,596 --> 00:20:56,826
+So as we can see here,
+hopefully that shows
+
+
+443
+00:20:56,826 --> 00:20:57,786
+up on the display, OK.
+
+
+444
+00:20:57,786 --> 00:21:02,696
+You can see my glasses and as I
+tilt my head, you can see the--
+
+
+445
+00:21:02,696 --> 00:21:03,916
+or you can see the
+stripes in my shirt.
+
+
+446
+00:21:04,936 --> 00:21:07,426
+And in this case, the
+images are being recolored
+
+
+447
+00:21:07,726 --> 00:21:09,396
+so that the flat
+areas look black
+
+
+448
+00:21:09,396 --> 00:21:11,636
+and the edges look colorful.
+
+
+449
+00:21:11,636 --> 00:21:15,686
+And one thing you'll see is
+that these circles at the--
+
+
+450
+00:21:15,816 --> 00:21:17,786
+above my head are actually
+colorful and that's
+
+
+451
+00:21:17,786 --> 00:21:19,666
+because the Sobel Edge
+Detector is working
+
+
+452
+00:21:19,666 --> 00:21:21,206
+on each color plane separately.
+
+
+453
+00:21:21,556 --> 00:21:23,666
+And there's-- if there's a
+color fringe in the image,
+
+
+454
+00:21:23,666 --> 00:21:26,356
+it will show up as a colorful
+edge in the Sobel Edge Detector.
+
+
+455
+00:21:26,436 --> 00:21:28,516
+If we wanted to get rid
+of those colorful frames,
+
+
+456
+00:21:28,516 --> 00:21:30,236
+all we have to do is
+append another filter.
+
+
+457
+00:21:30,726 --> 00:21:40,206
+We can add in color controls
+and then we can desaturate that.
+
+
+458
+00:21:40,206 --> 00:21:41,276
+And now we've got [inaudible]
+
+
+459
+00:21:41,276 --> 00:21:46,166
+of monochrome edge
+detector, all right.
+
+
+460
+00:21:47,716 --> 00:21:50,006
+All right, so back to slides.
+
+
+461
+00:21:50,076 --> 00:21:53,086
+And again, as I mentioned
+before, the source code
+
+
+462
+00:21:53,086 --> 00:21:54,546
+for that filter and the--
+
+
+463
+00:21:54,726 --> 00:21:58,016
+is all available in the Core
+Image Fun House application.
+
+
+464
+00:21:58,496 --> 00:22:00,486
+All right, so there's
+another great use
+
+
+465
+00:22:00,486 --> 00:22:03,516
+for creating your own
+CIFilter subclasses and that's
+
+
+466
+00:22:03,556 --> 00:22:06,066
+if you want to use Core
+Image in combination
+
+
+467
+00:22:06,066 --> 00:22:07,286
+with the new Sprite Kit API.
+
+
+468
+00:22:08,126 --> 00:22:10,246
+So it's a great new
+API, the Sprite Kit API,
+
+
+469
+00:22:10,646 --> 00:22:13,076
+and one of the things that
+supports is the ability
+
+
+470
+00:22:13,076 --> 00:22:15,696
+to associate a CIFilter
+with several objects
+
+
+471
+00:22:15,696 --> 00:22:18,606
+in your Sprite Kit application.
+
+
+472
+00:22:18,726 --> 00:22:22,186
+For example, you can set a
+filter on an effect node,
+
+
+473
+00:22:22,186 --> 00:22:23,996
+you can set a filter
+on a texture,
+
+
+474
+00:22:24,646 --> 00:22:26,626
+or you can set a
+filter on a transition.
+
+
+475
+00:22:27,746 --> 00:22:29,296
+And it's a great API but one
+
+
+476
+00:22:29,296 --> 00:22:32,086
+of the caveats is it you only
+can associate one filter.
+
+
+477
+00:22:32,606 --> 00:22:35,166
+So if you actually want to have
+a more complicated render graph
+
+
+478
+00:22:35,286 --> 00:22:38,416
+associated with either a
+transition or an object
+
+
+479
+00:22:38,416 --> 00:22:40,836
+in your Spite Kit world,
+
+
+480
+00:22:41,336 --> 00:22:43,396
+then you can create
+a CIFilter subclass.
+
+
+481
+00:22:44,216 --> 00:22:47,886
+And what you need to do in
+that subclass is you need
+
+
+482
+00:22:47,886 --> 00:22:50,496
+to make sure that your filter
+has an input image parameter
+
+
+483
+00:22:51,276 --> 00:22:53,416
+and you need-- if you're
+running a transition effect,
+
+
+484
+00:22:53,416 --> 00:22:55,276
+you want to make sure it
+has an input time parameter.
+
+
+485
+00:22:56,466 --> 00:23:00,236
+And you can have other inputs
+but you want to specify them
+
+
+486
+00:23:00,716 --> 00:23:06,796
+at setup time before you
+pass it in the Sprite Kit.
+
+
+487
+00:23:07,016 --> 00:23:10,376
+So let me go on to the next
+section in my presentation today
+
+
+488
+00:23:10,376 --> 00:23:11,536
+to talk about input images.
+
+
+489
+00:23:12,736 --> 00:23:16,596
+So, the input in the
+filters is input images
+
+
+490
+00:23:16,596 --> 00:23:18,286
+and we have a wide
+variety of different ways
+
+
+491
+00:23:18,286 --> 00:23:19,846
+of getting images
+into your filters.
+
+
+492
+00:23:20,496 --> 00:23:24,526
+One of the most commonly
+requested is to use images
+
+
+493
+00:23:24,526 --> 00:23:27,146
+from a file and that's very,
+very easy to do, it's one line
+
+
+494
+00:23:27,236 --> 00:23:29,336
+of code, create a
+CIImage from a URL.
+
+
+495
+00:23:30,816 --> 00:23:34,846
+Another common form--
+source is bringing data
+
+
+496
+00:23:34,846 --> 00:23:38,096
+in from your photo
+library and you can do
+
+
+497
+00:23:38,096 --> 00:23:42,166
+that by just asking the
+ALAssetsLibrary class
+
+
+498
+00:23:42,216 --> 00:23:44,426
+for a default representation.
+
+
+499
+00:23:44,686 --> 00:23:45,686
+And then, once you have that,
+
+
+500
+00:23:45,686 --> 00:23:47,056
+you can ask for the
+full screen image
+
+
+501
+00:23:47,056 --> 00:23:50,796
+and that will return a CGImage
+and once you have a CGImage,
+
+
+502
+00:23:50,796 --> 00:23:53,846
+you can create a CIImage
+from that CGImage.
+
+
+503
+00:23:54,996 --> 00:23:58,736
+Another example is bringing in
+data from a live video stream
+
+
+504
+00:23:59,026 --> 00:24:02,106
+and this is the case that
+we use inside the Fun
+
+
+505
+00:24:02,106 --> 00:24:03,136
+House application.
+
+
+506
+00:24:03,936 --> 00:24:06,406
+And in this case, you'll
+get a call back method
+
+
+507
+00:24:06,406 --> 00:24:08,646
+to produce a process
+of frame of video
+
+
+508
+00:24:09,176 --> 00:24:11,306
+and that will give you
+a sample buffer object.
+
+
+509
+00:24:11,816 --> 00:24:13,296
+Once you have the
+sample buffer object,
+
+
+510
+00:24:13,296 --> 00:24:18,446
+you can ask for
+CMSampleBufferGetImageBuffer
+
+
+511
+00:24:18,516 --> 00:24:20,876
+and that will return a
+CVImage buffer object.
+
+
+512
+00:24:21,276 --> 00:24:23,236
+And a CVImage buffer
+object is really--
+
+
+513
+00:24:23,606 --> 00:24:26,316
+it's just a subclass of
+the CVPixel buffer object
+
+
+514
+00:24:26,596 --> 00:24:28,546
+which you can use to
+create a CIImage from.
+
+
+515
+00:24:29,056 --> 00:24:35,166
+At the same time I'm talking
+about creating CIImages,
+
+
+516
+00:24:35,166 --> 00:24:37,316
+we should also talk a little
+bit about image metadata
+
+
+517
+00:24:37,936 --> 00:24:40,366
+which is a very important
+thing about images these days.
+
+
+518
+00:24:40,366 --> 00:24:43,336
+You can ask an image
+for its properties
+
+
+519
+00:24:43,586 --> 00:24:45,406
+and that will return
+a dictionary
+
+
+520
+00:24:45,936 --> 00:24:47,786
+of metadata associated
+with that image.
+
+
+521
+00:24:48,226 --> 00:24:51,016
+And it will turn the dictionary
+containing the same key value
+
+
+522
+00:24:51,016 --> 00:24:52,226
+pairs that would be present
+
+
+523
+00:24:52,226 --> 00:24:55,636
+if you would call the API
+CGImageSourceCopyProperties
+
+
+524
+00:24:55,636 --> 00:24:56,176
+AtIndex.
+
+
+525
+00:24:56,526 --> 00:25:00,196
+It contains, for some image,
+hundreds of properties.
+
+
+526
+00:25:00,646 --> 00:25:01,646
+The one that I want to call
+
+
+527
+00:25:01,646 --> 00:25:04,556
+out today is the
+orientation property,
+
+
+528
+00:25:04,726 --> 00:25:06,686
+kCGImagePropertyOrientation.
+
+
+529
+00:25:07,166 --> 00:25:09,116
+And this really important
+because we all know
+
+
+530
+00:25:09,116 --> 00:25:12,096
+with our cameras
+today, you image--
+
+
+531
+00:25:12,096 --> 00:25:14,786
+the camera can be held in any
+orientation and the images
+
+
+532
+00:25:14,786 --> 00:25:18,106
+that saved into the camera
+roll has metadata associated
+
+
+533
+00:25:18,106 --> 00:25:19,686
+that says what orientation
+it was in.
+
+
+534
+00:25:20,196 --> 00:25:22,906
+So, if you want to present
+that image to your user
+
+
+535
+00:25:22,906 --> 00:25:25,766
+in the correct way, you need to
+read the orientation property
+
+
+536
+00:25:25,966 --> 00:25:27,666
+and apply appropriate
+transform to it.
+
+
+537
+00:25:28,106 --> 00:25:30,026
+The great thing is that
+metadata is all set
+
+
+538
+00:25:30,026 --> 00:25:32,516
+up for you automatically if
+you use the image with URL
+
+
+539
+00:25:32,516 --> 00:25:34,126
+or image with data APIs.
+
+
+540
+00:25:34,396 --> 00:25:37,026
+If you're using other methods
+to instantiate an image,
+
+
+541
+00:25:37,376 --> 00:25:39,766
+you can specify the
+metadata using the
+
+
+542
+00:25:39,766 --> 00:25:41,266
+kCIImageProperties option.
+
+
+543
+00:25:41,686 --> 00:25:45,196
+Another thing we've
+added on both Mavericks
+
+
+544
+00:25:45,196 --> 00:25:49,306
+in iOS 7 is much more robust
+support for YCbCr images.
+
+
+545
+00:25:50,096 --> 00:25:54,306
+A CIImage can be based on
+a bi-planar YCC 420 data
+
+
+546
+00:25:54,796 --> 00:25:57,626
+and this is a great way to get
+good performance out of video.
+
+
+547
+00:25:58,276 --> 00:26:01,806
+On OS X, you want to
+use an IOSurface object
+
+
+548
+00:26:01,806 --> 00:26:04,176
+to represent this
+data and on iOS,
+
+
+549
+00:26:04,176 --> 00:26:06,266
+you want to use a
+CVPixelBuffer to represent this.
+
+
+550
+00:26:06,856 --> 00:26:09,086
+The great thing is Core Image
+takes care of all the hard work
+
+
+551
+00:26:09,086 --> 00:26:12,536
+for you, it will take
+this bi-planar data
+
+
+552
+00:26:12,536 --> 00:26:16,706
+and it will combine the full-res
+Y channel and the subsampled
+
+
+553
+00:26:16,706 --> 00:26:18,446
+to CbCr planes into a full image
+
+
+554
+00:26:18,446 --> 00:26:22,796
+and it will also apply the
+appropriate 3x4 color matrix
+
+
+555
+00:26:22,796 --> 00:26:26,636
+to convert the YCC
+values into RGB values.
+
+
+556
+00:26:27,156 --> 00:26:29,026
+If you are curious about all
+the math involved in this,
+
+
+557
+00:26:29,026 --> 00:26:32,206
+I highly recommend the book
+by Poynton, "Digital Video
+
+
+558
+00:26:32,206 --> 00:26:33,576
+and HD Algorithms" which goes
+
+
+559
+00:26:33,576 --> 00:26:36,646
+over in great detail all the
+matrix math that you need
+
+
+560
+00:26:36,646 --> 00:26:39,766
+to understand to
+correctly process YCC data.
+
+
+561
+00:26:41,036 --> 00:26:43,046
+The other thing you might
+want to keep in mind is
+
+
+562
+00:26:43,046 --> 00:26:46,036
+if you're working on 420
+data, you might be working
+
+
+563
+00:26:46,036 --> 00:26:49,326
+on a video type workflow and
+in that case, you might want
+
+
+564
+00:26:49,326 --> 00:26:53,396
+to tell on Mac OS, you might
+want to talk Core Image
+
+
+565
+00:26:53,396 --> 00:26:57,716
+to use the rec709 linear working
+space rather than its default
+
+
+566
+00:26:57,716 --> 00:27:01,116
+which is generic RGB and this
+can prevent some clipping errors
+
+
+567
+00:27:01,286 --> 00:27:04,106
+to the color matrix operations.
+
+
+568
+00:27:04,536 --> 00:27:05,746
+The third section I want to talk
+
+
+569
+00:27:05,746 --> 00:27:07,446
+about today is rendering
+Core Image output.
+
+
+570
+00:27:08,856 --> 00:27:11,066
+If you have an image and
+you've applied a filter,
+
+
+571
+00:27:11,066 --> 00:27:13,516
+there are several ways to render
+the output using Core Image.
+
+
+572
+00:27:14,076 --> 00:27:16,896
+One of the most common
+is rendering an image
+
+
+573
+00:27:16,896 --> 00:27:17,836
+to your photo library.
+
+
+574
+00:27:19,206 --> 00:27:20,656
+And again this is
+very easy to do.
+
+
+575
+00:27:20,656 --> 00:27:22,306
+There's one thing you
+want to be aware of is
+
+
+576
+00:27:22,306 --> 00:27:24,076
+when you're saving images
+to your phot library,
+
+
+577
+00:27:24,196 --> 00:27:26,016
+you could quite easily
+be working
+
+
+578
+00:27:26,016 --> 00:27:30,226
+on a very high resolution
+image, 5 megapixels for example
+
+
+579
+00:27:30,826 --> 00:27:33,686
+and resolutions of this
+size are actually bigger
+
+
+580
+00:27:33,686 --> 00:27:35,306
+that a GPU limits
+that are supported
+
+
+581
+00:27:35,306 --> 00:27:36,326
+on some of our devices.
+
+
+582
+00:27:37,056 --> 00:27:39,656
+So, in order to render
+this image with Core Image,
+
+
+583
+00:27:39,656 --> 00:27:41,636
+you want to tell Core Image
+to use a software renderer.
+
+
+584
+00:27:42,606 --> 00:27:47,066
+And this also has the advantage
+that if you're doing a bunch
+
+
+585
+00:27:47,066 --> 00:27:48,316
+of exports in the background,
+
+
+586
+00:27:48,756 --> 00:27:51,466
+you can do this while your
+app is suspended rather
+
+
+587
+00:27:51,466 --> 00:27:54,806
+than if you're-- we try
+to use our GPU renderer.
+
+
+588
+00:27:55,946 --> 00:27:57,656
+And once you've created
+the CIContext,
+
+
+589
+00:27:58,096 --> 00:28:02,876
+there's an assets library
+method which we can use
+
+
+590
+00:28:02,876 --> 00:28:06,056
+to write the JPEG into
+that library roll.
+
+
+591
+00:28:06,246 --> 00:28:09,766
+The key image from key API
+to call is for Core Image
+
+
+592
+00:28:10,126 --> 00:28:15,126
+to create a CGImage
+from a CIImage.
+
+
+593
+00:28:15,256 --> 00:28:18,956
+Another common way of rendering
+an image is to render it
+
+
+594
+00:28:18,956 --> 00:28:22,336
+into a UIIimage view
+using a UIImage.
+
+
+595
+00:28:22,766 --> 00:28:25,186
+And this code for this is
+actually very, very simple.
+
+
+596
+00:28:26,076 --> 00:28:29,626
+All you do is you
+UIImage support CIImage
+
+
+597
+00:28:29,626 --> 00:28:32,726
+so you can create a UIImage
+from an output of a filter
+
+
+598
+00:28:32,726 --> 00:28:36,546
+and then you can just tell an
+image view to use that UIImage.
+
+
+599
+00:28:37,056 --> 00:28:40,346
+And this very, very easy to code
+but it's actually not the best
+
+
+600
+00:28:40,766 --> 00:28:41,856
+from a performance perspective
+
+
+601
+00:28:41,936 --> 00:28:43,436
+and let me talk a
+little bit about that.
+
+
+602
+00:28:43,656 --> 00:28:47,056
+Internally, what UIImage is
+doing is asking Core Image
+
+
+603
+00:28:47,056 --> 00:28:52,416
+to render it and turn it into a
+CGImage but what happens here is
+
+
+604
+00:28:52,416 --> 00:28:54,216
+that when Core Image
+is rendering,
+
+
+605
+00:28:55,436 --> 00:28:58,396
+it will upload the
+image to the GPU,
+
+
+606
+00:28:58,836 --> 00:29:01,296
+it will perform the filter
+effect that's desired
+
+
+607
+00:29:01,716 --> 00:29:04,236
+and because the image is being
+read back into a CGImage,
+
+
+608
+00:29:04,236 --> 00:29:05,996
+it's being read back
+into CPU memory.
+
+
+609
+00:29:07,126 --> 00:29:09,036
+And then when it comes
+time to actually display it
+
+
+610
+00:29:09,036 --> 00:29:11,696
+in the UI view, it's then
+going back being rendered
+
+
+611
+00:29:11,696 --> 00:29:13,696
+on the GPU using core animation.
+
+
+612
+00:29:15,126 --> 00:29:16,916
+And while this is
+effective and simple,
+
+
+613
+00:29:17,276 --> 00:29:18,756
+it means that we're
+making several trips
+
+
+614
+00:29:19,206 --> 00:29:21,606
+across the boundary
+between CPU and the GPU
+
+
+615
+00:29:21,676 --> 00:29:24,666
+and that's not ideal, so
+we'd like to avoid that.
+
+
+616
+00:29:25,206 --> 00:29:28,816
+Much better approach is to
+take an image, upload it once
+
+
+617
+00:29:28,816 --> 00:29:34,296
+to the GPU and have CI do
+all the rendering directly
+
+
+618
+00:29:34,296 --> 00:29:34,886
+to the display.
+
+
+619
+00:29:35,316 --> 00:29:37,816
+And that's actually quite
+easy to do in your application
+
+
+620
+00:29:38,206 --> 00:29:42,186
+if you have a CAEAGLLayer
+for example, you can--
+
+
+621
+00:29:42,186 --> 00:29:44,966
+at the time that you're
+instantiating your object,
+
+
+622
+00:29:45,076 --> 00:29:47,686
+you want to creat a
+CIContext at the same time.
+
+
+623
+00:29:48,276 --> 00:29:51,556
+We created an EAGLContext
+with the--
+
+
+624
+00:29:51,586 --> 00:29:56,336
+of type OpenGL ES2 and then
+we tell CI to create a context
+
+
+625
+00:29:57,056 --> 00:29:59,976
+from that EAGLContext.
+
+
+626
+00:30:00,126 --> 00:30:01,956
+Then when it comes time
+to update the display
+
+
+627
+00:30:01,956 --> 00:30:03,286
+in your update screen method,
+
+
+628
+00:30:03,756 --> 00:30:05,116
+we're going to do a
+couple things here.
+
+
+629
+00:30:05,166 --> 00:30:06,676
+We're going to ask the--
+
+
+630
+00:30:06,676 --> 00:30:10,296
+our model object to
+create a CIImage to render.
+
+
+631
+00:30:10,966 --> 00:30:14,656
+We're then going to set up
+the GL blend mode to be--
+
+
+632
+00:30:15,056 --> 00:30:16,556
+let's say in this
+case, source over.
+
+
+633
+00:30:17,096 --> 00:30:18,766
+This is actually a little
+subtle thing to change
+
+
+634
+00:30:18,766 --> 00:30:20,776
+between iOS 6 and iOS 7.
+
+
+635
+00:30:20,936 --> 00:30:24,786
+On iOS 6, we would always blend
+with source over blend mode.
+
+
+636
+00:30:25,136 --> 00:30:27,656
+But there are a lot
+of interesting cases
+
+
+637
+00:30:27,656 --> 00:30:29,036
+where you might want to
+use a different blend mode.
+
+
+638
+00:30:29,436 --> 00:30:33,426
+So now if your app is
+linked on or after iOS 7,
+
+
+639
+00:30:33,846 --> 00:30:36,246
+you have the ability to
+specify your own blend mode.
+
+
+640
+00:30:36,836 --> 00:30:41,756
+And then once we set up the
+blend mode, we tell Core Image
+
+
+641
+00:30:41,756 --> 00:30:44,556
+to draw the image into
+the context which is based
+
+
+642
+00:30:44,556 --> 00:30:46,786
+on the EAGLContext,
+and then lastly
+
+
+643
+00:30:46,786 --> 00:30:49,036
+to actually present
+the images to the user,
+
+
+644
+00:30:49,256 --> 00:30:52,476
+we're going to bind the render
+buffer and present that to the--
+
+
+645
+00:30:52,876 --> 00:30:53,846
+present that render buffer.
+
+
+646
+00:30:53,946 --> 00:30:57,786
+The next thing I'd like
+to talk about is rendering
+
+
+647
+00:30:57,786 --> 00:31:00,116
+to a CVPixelBufferFef, and this
+is another interesting thing
+
+
+648
+00:31:00,116 --> 00:31:03,076
+that we talked about and show
+in the Fun House application
+
+
+649
+00:31:03,366 --> 00:31:06,606
+where you may want to be
+applying a filter to a video
+
+
+650
+00:31:07,046 --> 00:31:08,146
+and saving that to disk.
+
+
+651
+00:31:09,116 --> 00:31:11,196
+Now, if you want to make
+
+
+652
+00:31:11,196 --> 00:31:12,476
+that a little bit more
+interesting a problem,
+
+
+653
+00:31:12,476 --> 00:31:15,566
+you may also-- while you're
+saving the video to disk,
+
+
+654
+00:31:15,566 --> 00:31:19,096
+you may also want to present
+it to the user as a view
+
+
+655
+00:31:19,096 --> 00:31:20,696
+so they can see what's
+being recorded.
+
+
+656
+00:31:21,346 --> 00:31:24,446
+So this is actually an
+interesting example and I want
+
+
+657
+00:31:24,446 --> 00:31:26,766
+to talk a little bit
+about that in a few--
+
+
+658
+00:31:27,246 --> 00:31:28,986
+a little bit of code
+we have here.
+
+
+659
+00:31:29,876 --> 00:31:32,266
+All right, so again all
+this code is available
+
+
+660
+00:31:32,266 --> 00:31:33,406
+in the Core Image Fun House.
+
+
+661
+00:31:33,906 --> 00:31:38,156
+And what we have here is a
+scenario of where we want
+
+
+662
+00:31:38,156 --> 00:31:40,976
+to record video and also display
+it to the user at the same time.
+
+
+663
+00:31:41,696 --> 00:31:43,956
+And in our view object when we--
+
+
+664
+00:31:44,116 --> 00:31:45,826
+when our view object
+gets instantiated
+
+
+665
+00:31:45,826 --> 00:31:46,756
+when the app launches,
+
+
+666
+00:31:47,096 --> 00:31:48,986
+we're going to be
+creating an EAGLContext
+
+
+667
+00:31:49,146 --> 00:31:51,236
+as I demonstrated in the slide.
+
+
+668
+00:31:51,816 --> 00:31:53,896
+And then were going to be
+creating at the same time,
+
+
+669
+00:31:53,896 --> 00:31:56,016
+we'll also create a
+CIContext at that same time
+
+
+670
+00:31:56,116 --> 00:31:57,286
+with that EAGLContext.
+
+
+671
+00:31:58,216 --> 00:32:00,366
+We look later on it-- when
+it comes time to render,
+
+
+672
+00:32:00,626 --> 00:32:02,986
+we have a callback
+method to capture output
+
+
+673
+00:32:03,626 --> 00:32:05,776
+and again were going to be
+given a sample buffer here.
+
+
+674
+00:32:05,966 --> 00:32:08,006
+If we look down further
+in this code,
+
+
+675
+00:32:08,616 --> 00:32:12,466
+we are doing some
+basic rectangle math
+
+
+676
+00:32:12,466 --> 00:32:14,156
+to make sure we render
+it in the correct place.
+
+
+677
+00:32:14,156 --> 00:32:17,976
+We're going to take the
+source image that we get
+
+
+678
+00:32:17,976 --> 00:32:20,826
+from the sample buffer
+and we're going
+
+
+679
+00:32:20,826 --> 00:32:22,016
+to apply our filters to it.
+
+
+680
+00:32:22,806 --> 00:32:25,586
+Now we have this output image
+and we want to render that.
+
+
+681
+00:32:25,586 --> 00:32:27,276
+Now, there're two
+scenarios here.
+
+
+682
+00:32:27,276 --> 00:32:28,606
+One is when the app is running
+
+
+683
+00:32:28,606 --> 00:32:30,476
+and it's just displaying
+live preview.
+
+
+684
+00:32:30,886 --> 00:32:34,066
+In that case in this code here,
+all we're doing is setting
+
+
+685
+00:32:34,066 --> 00:32:38,036
+up our blend mode and rendering
+the filtered image directly
+
+
+686
+00:32:38,036 --> 00:32:41,266
+to the context of the display
+with the appropriate rectangle.
+
+
+687
+00:32:41,756 --> 00:32:44,816
+In the case when
+we're recording,
+
+
+688
+00:32:45,256 --> 00:32:46,406
+we want to do two things.
+
+
+689
+00:32:46,486 --> 00:32:48,826
+First of all, we
+[inaudible] start
+
+
+690
+00:32:48,826 --> 00:32:50,876
+up our video writing object.
+
+
+691
+00:32:51,636 --> 00:32:56,446
+And then we're going to ask
+core video for a pixel buffer
+
+
+692
+00:32:56,446 --> 00:32:59,436
+to render into out of
+it's as-- out of its pool.
+
+
+693
+00:33:00,206 --> 00:33:04,006
+Then we will ask Core Image
+to render the filtered image
+
+
+694
+00:33:04,006 --> 00:33:08,206
+into that buffer and that will
+apply our filters into that.
+
+
+695
+00:33:09,106 --> 00:33:11,236
+Now that we have
+that rendered buffer,
+
+
+696
+00:33:11,236 --> 00:33:13,096
+we're going to do two things
+with it, one is we're going
+
+
+697
+00:33:13,096 --> 00:33:14,926
+to draw that image
+to the display
+
+
+698
+00:33:15,936 --> 00:33:18,536
+with the appropriate rectangle
+and then we're also going
+
+
+699
+00:33:18,536 --> 00:33:21,356
+to tell the writer
+object that we want
+
+
+700
+00:33:21,356 --> 00:33:23,556
+to append this rendered buffer
+
+
+701
+00:33:24,096 --> 00:33:26,176
+with the appropriate time
+stamp into the stream.
+
+
+702
+00:33:27,016 --> 00:33:29,056
+And that's pretty much all there
+is to it and that's how we--
+
+
+703
+00:33:29,196 --> 00:33:32,476
+when I run the application
+to Fun House if you try it
+
+
+704
+00:33:32,476 --> 00:33:34,936
+after the presentation,
+you can both record
+
+
+705
+00:33:34,936 --> 00:33:39,066
+into your camera roll and
+preview at the same time.
+
+
+706
+00:33:39,736 --> 00:33:43,116
+So just a few last minute
+tips for best performance,
+
+
+707
+00:33:43,286 --> 00:33:44,846
+you keep in mind that Core Image
+
+
+708
+00:33:45,426 --> 00:33:49,556
+and filter objects are
+autoreleased objects.
+
+
+709
+00:33:49,556 --> 00:33:51,806
+So if you're not using
+ARC in your application,
+
+
+710
+00:33:51,806 --> 00:33:55,346
+you'll want to use autorelease
+pools to reduce memory pressure.
+
+
+711
+00:33:56,266 --> 00:33:58,476
+Also, it's a very good idea not
+
+
+712
+00:33:58,476 --> 00:34:00,466
+to creat a CIContext
+every time you render it,
+
+
+713
+00:34:00,516 --> 00:34:02,556
+much better to create
+it once and reuse it.
+
+
+714
+00:34:03,356 --> 00:34:05,226
+And also be aware that
+both Core Animation
+
+
+715
+00:34:05,226 --> 00:34:08,556
+and Core Image both make
+extensive use if the GPU.
+
+
+716
+00:34:08,766 --> 00:34:11,766
+So if you want your Core
+Animations to be smooth,
+
+
+717
+00:34:11,966 --> 00:34:15,306
+you want to either stagger
+your Core Image operations
+
+
+718
+00:34:15,306 --> 00:34:20,136
+or use a CPU CIContext so
+that they don't put pressure
+
+
+719
+00:34:20,136 --> 00:34:23,306
+on the GPU at the same time.
+
+
+720
+00:34:23,306 --> 00:34:25,806
+Another couple of other tips
+and practices is to be aware
+
+
+721
+00:34:25,806 --> 00:34:29,835
+that the GPU Context on
+iOS has limited dimensions
+
+
+722
+00:34:30,235 --> 00:34:32,196
+and there's an
+inputMaximumImageSize
+
+
+723
+00:34:32,196 --> 00:34:34,656
+and an outputMaximumImageSize
+and there're APIs
+
+
+724
+00:34:34,656 --> 00:34:36,306
+that you can call to query that.
+
+
+725
+00:34:37,636 --> 00:34:39,766
+It's always a good idea
+from performance effecting
+
+
+726
+00:34:39,766 --> 00:34:41,746
+to use small an image
+as possible.
+
+
+727
+00:34:41,996 --> 00:34:44,065
+The performance of Core
+Image is largely dictated
+
+
+728
+00:34:44,065 --> 00:34:48,246
+by the complexity of your
+filter graph and by the number
+
+
+729
+00:34:48,246 --> 00:34:50,766
+of pixels in your output image,
+so there's some great APIs
+
+
+730
+00:34:50,766 --> 00:34:52,886
+that allow you to
+reduce your image size.
+
+
+731
+00:34:53,216 --> 00:34:57,416
+One that we used in this example
+for Fun House is when you ask
+
+
+732
+00:34:57,416 --> 00:35:01,716
+for a library from your
+asset library, you can say,
+
+
+733
+00:35:01,716 --> 00:35:04,056
+I want a full screen image
+rather than a full size image
+
+
+734
+00:35:05,016 --> 00:35:06,116
+and that will return
+
+
+735
+00:35:06,116 --> 00:35:09,096
+in appropriately sized
+image for your display.
+
+
+736
+00:35:09,676 --> 00:35:15,536
+So, the last section of our talk
+today is Bridging Core Image
+
+
+737
+00:35:15,536 --> 00:35:16,166
+in OpenCL.
+
+
+738
+00:35:16,706 --> 00:35:18,776
+And early on in the
+presentation, I was talking
+
+
+739
+00:35:18,776 --> 00:35:20,886
+about the great performance
+whence we're getting
+
+
+740
+00:35:20,886 --> 00:35:24,216
+out of Core Image on
+Mavericks by using OpenCL.
+
+
+741
+00:35:24,926 --> 00:35:27,466
+And the great thing is we
+get improved performance
+
+
+742
+00:35:27,466 --> 00:35:31,606
+to do advances in the OpenCL
+Compiler, and also the fact
+
+
+743
+00:35:31,606 --> 00:35:33,786
+that OpenCL has less
+state management.
+
+
+744
+00:35:33,786 --> 00:35:35,306
+So, we got some great
+performance whence.
+
+
+745
+00:35:35,806 --> 00:35:36,696
+And the other great thing is
+
+
+746
+00:35:36,696 --> 00:35:38,436
+so there's nothing your
+application needs to do
+
+
+747
+00:35:38,436 --> 00:35:40,256
+to change to accept
+this to reach us,
+
+
+748
+00:35:40,406 --> 00:35:41,546
+to do this automatically.
+
+
+749
+00:35:41,616 --> 00:35:44,376
+And there's actually some great
+technology behind the hood.
+
+
+750
+00:35:44,856 --> 00:35:47,326
+All of the built-in kernels
+and your custom kernels
+
+
+751
+00:35:47,326 --> 00:35:49,806
+that are all written in
+CI's Kernel language are all
+
+
+752
+00:35:49,806 --> 00:35:51,876
+automatically converted
+into OpenCL code.
+
+
+753
+00:35:52,366 --> 00:35:53,966
+So, it's really some
+great stuff that we have
+
+
+754
+00:35:53,966 --> 00:35:55,276
+to make all this work
+behind the scene.
+
+
+755
+00:35:55,836 --> 00:35:59,146
+If we think about
+it a little bit,
+
+
+756
+00:35:59,146 --> 00:36:01,686
+the Core Image kernel
+language has some really great
+
+
+757
+00:36:01,686 --> 00:36:02,796
+advantages though.
+
+
+758
+00:36:03,216 --> 00:36:06,806
+With its CIKernel language,
+you can write kernel once
+
+
+759
+00:36:06,806 --> 00:36:09,376
+and it'll work across
+device, classes and also
+
+
+760
+00:36:09,376 --> 00:36:11,346
+across different image formats.
+
+
+761
+00:36:11,506 --> 00:36:13,406
+And it also automatically
+supports great things
+
+
+762
+00:36:13,406 --> 00:36:17,166
+like tiling of large images and
+concatenation of complex graphs.
+
+
+763
+00:36:17,786 --> 00:36:19,766
+However, there are some very
+interesting image-processing
+
+
+764
+00:36:19,766 --> 00:36:22,176
+operations out there that
+cannot be well-expressed
+
+
+765
+00:36:22,176 --> 00:36:23,956
+in Core Images kernel
+language due
+
+
+766
+00:36:23,956 --> 00:36:25,206
+to the nature of the algorithm.
+
+
+767
+00:36:26,116 --> 00:36:28,066
+But some of those
+algorithms can be represented
+
+
+768
+00:36:28,066 --> 00:36:29,346
+in OpenCL's language.
+
+
+769
+00:36:30,106 --> 00:36:32,396
+And the question is, how
+can you bridge the best
+
+
+770
+00:36:32,396 --> 00:36:33,306
+of both to these together?
+
+
+771
+00:36:33,756 --> 00:36:36,686
+How can you bridge both Core
+Image and OpenCL together
+
+
+772
+00:36:36,726 --> 00:36:40,896
+to get some really great
+image-processing on Mavericks?
+
+
+773
+00:36:41,276 --> 00:36:45,086
+So, to talk about that, I'm
+going to bring up Alexander
+
+
+774
+00:36:45,426 --> 00:36:49,386
+to talk about bridging
+Core Image in OpenCL,
+
+
+775
+00:36:49,386 --> 00:36:52,116
+and have some great
+stuff to talk about.
+
+
+776
+00:36:52,526 --> 00:36:53,126
+>> Thank you, David.
+
+
+777
+00:36:53,576 --> 00:36:54,946
+So, my name is Alexander
+Neiman [phonetic]
+
+
+778
+00:36:54,946 --> 00:36:56,086
+and today I'm going
+talk to you a little bit
+
+
+779
+00:36:56,086 --> 00:36:59,426
+about how we can use both
+Core Image and OpenCL together
+
+
+780
+00:36:59,426 --> 00:37:01,006
+in order to create new
+and interesting effects
+
+
+781
+00:37:01,006 --> 00:37:02,186
+which we wouldn't be able
+
+
+782
+00:37:02,186 --> 00:37:04,576
+to do using just Core
+Image on its own.
+
+
+783
+00:37:05,786 --> 00:37:09,596
+So, we're going to start with
+an image that's pretty hazy
+
+
+784
+00:37:09,596 --> 00:37:11,746
+that David took a little
+bit more than a year ago
+
+
+785
+00:37:12,046 --> 00:37:15,096
+from an airship, and he
+said, "This picture suck,
+
+
+786
+00:37:15,096 --> 00:37:15,936
+how can we make them better?
+
+
+787
+00:37:15,936 --> 00:37:16,786
+Can we get rid of the haze?"
+
+
+788
+00:37:17,076 --> 00:37:18,676
+And for the sake of
+the demo, we did.
+
+
+789
+00:37:19,136 --> 00:37:22,836
+So, if we look closely
+here, we're just going
+
+
+790
+00:37:22,836 --> 00:37:25,506
+to get a little animation of
+the desired result we're going
+
+
+791
+00:37:25,506 --> 00:37:27,316
+to try to get here is
+we're literally going
+
+
+792
+00:37:27,316 --> 00:37:28,756
+to peal the haze off this image.
+
+
+793
+00:37:30,346 --> 00:37:31,896
+So, how are we going to do this?
+
+
+794
+00:37:32,996 --> 00:37:35,476
+Well, the basic idea is
+that haze is accumulated
+
+
+795
+00:37:35,476 --> 00:37:36,406
+as a function of distance.
+
+
+796
+00:37:36,626 --> 00:37:38,486
+And further away, you get
+the more haze there is.
+
+
+797
+00:37:38,936 --> 00:37:41,466
+But if we were to look at
+any part of this image,
+
+
+798
+00:37:41,466 --> 00:37:43,136
+so if we zoom in this
+little section here,
+
+
+799
+00:37:44,636 --> 00:37:47,796
+there should be something that's
+blocking this image which is
+
+
+800
+00:37:47,796 --> 00:37:52,136
+to say that if we were to look
+at this area under the arches,
+
+
+801
+00:37:52,176 --> 00:37:54,406
+there should be either
+an object that's black
+
+
+802
+00:37:54,406 --> 00:37:56,226
+or a really dark shadow.
+
+
+803
+00:37:56,666 --> 00:37:59,086
+But because of the atmospheric
+haze that's accumulated,
+
+
+804
+00:37:59,956 --> 00:38:00,846
+it's no longer black.
+
+
+805
+00:38:00,846 --> 00:38:02,106
+It has-- it's colorful.
+
+
+806
+00:38:02,196 --> 00:38:04,406
+And what we want to do is we
+want to remove that color.
+
+
+807
+00:38:04,736 --> 00:38:07,656
+So, the question is, how are we
+going to find out what's black
+
+
+808
+00:38:07,846 --> 00:38:09,956
+and apply that to a greater area
+
+
+809
+00:38:10,126 --> 00:38:13,396
+so that we can eventually
+get a dehazed image.
+
+
+810
+00:38:13,396 --> 00:38:16,946
+So, if we were to look at the
+pixel somewhere in the middle
+
+
+811
+00:38:16,946 --> 00:38:21,116
+of this little area, and then
+search for a certain area in X,
+
+
+812
+00:38:21,206 --> 00:38:25,646
+and other area in Y, we
+get a search rectangle.
+
+
+813
+00:38:27,006 --> 00:38:28,576
+Now, if we look at
+the search rectangle,
+
+
+814
+00:38:29,106 --> 00:38:30,126
+we can see that there is going
+
+
+815
+00:38:30,126 --> 00:38:32,376
+to be a local minimum
+that we can use.
+
+
+816
+00:38:32,376 --> 00:38:34,756
+And once we know that that
+should have been black,
+
+
+817
+00:38:34,986 --> 00:38:38,956
+we can apply that amount of--
+
+
+818
+00:38:39,176 --> 00:38:42,516
+we know that how much haze has
+been applied because we know
+
+
+819
+00:38:42,516 --> 00:38:44,796
+that that should have been black
+originally, and that amount
+
+
+820
+00:38:44,796 --> 00:38:46,786
+of haze is probably
+going to be uniformed
+
+
+821
+00:38:46,786 --> 00:38:48,816
+over the entire rectangle.
+
+
+822
+00:38:50,216 --> 00:38:51,476
+So, if we look at this visually,
+
+
+823
+00:38:51,476 --> 00:38:54,376
+we're going to compute a
+morphological mean operation
+
+
+824
+00:38:54,376 --> 00:38:55,566
+in the X direction first.
+
+
+825
+00:38:55,566 --> 00:38:56,856
+So, we're going to have our--
+
+
+826
+00:38:56,856 --> 00:38:59,486
+we're going to search for the
+small value in the X direction,
+
+
+827
+00:38:59,486 --> 00:39:01,366
+and then we're going to
+do the exact same thing
+
+
+828
+00:39:01,396 --> 00:39:02,256
+in the Y direction.
+
+
+829
+00:39:02,256 --> 00:39:04,936
+And then we get this
+kind of blacky pattern.
+
+
+830
+00:39:05,276 --> 00:39:08,296
+We're going to blur this
+result to some degree,
+
+
+831
+00:39:09,246 --> 00:39:11,156
+and now we have a really
+good representation
+
+
+832
+00:39:11,156 --> 00:39:14,126
+of how much haze there is,
+and we can subtract this
+
+
+833
+00:39:14,126 --> 00:39:16,326
+from our original image using
+a Difference Blend Mode.
+
+
+834
+00:39:16,576 --> 00:39:19,346
+And if we do that, we get a
+beautifully dehazed image.
+
+
+835
+00:39:19,896 --> 00:39:21,336
+In terms of workflow,
+the way we're going
+
+
+836
+00:39:21,336 --> 00:39:23,456
+to do this is we're going to
+start with our input image,
+
+
+837
+00:39:24,516 --> 00:39:28,346
+and we're going to perform a
+morphological mean operation
+
+
+838
+00:39:28,636 --> 00:39:32,256
+in the X direction first where
+we search for a minimum value,
+
+
+839
+00:39:32,696 --> 00:39:34,366
+and the values just
+kind of come together.
+
+
+840
+00:39:35,606 --> 00:39:37,336
+The next thing we're
+going to do is we're going
+
+
+841
+00:39:37,336 --> 00:39:40,306
+to perform a morphological mean
+operation in the Y direction,
+
+
+842
+00:39:40,306 --> 00:39:43,176
+and these, they're
+exaggerated a little bit
+
+
+843
+00:39:43,176 --> 00:39:45,396
+like your search is a little bit
+larger than we would actually do
+
+
+844
+00:39:45,396 --> 00:39:47,336
+in real life to get this
+effect but just for the--
+
+
+845
+00:39:47,386 --> 00:39:48,426
+so you can actually
+see something
+
+
+846
+00:39:48,426 --> 00:39:50,436
+on these slides where,
+exaggerated it.
+
+
+847
+00:39:50,526 --> 00:39:52,686
+Once we've got a morphological
+mean operation performed,
+
+
+848
+00:39:52,936 --> 00:39:54,306
+we're then going to
+blur that result,
+
+
+849
+00:39:55,056 --> 00:39:58,586
+and then we get a nice
+gradient which we can then use
+
+
+850
+00:39:59,176 --> 00:40:00,856
+to subtract from
+our original image,
+
+
+851
+00:40:00,916 --> 00:40:03,596
+and we'll get our dehazed image.
+
+
+852
+00:40:03,596 --> 00:40:06,846
+So if we take our input image
+and our Gaussian blur image,
+
+
+853
+00:40:08,226 --> 00:40:11,916
+and perform Difference Blending,
+we'll get our desired result.
+
+
+854
+00:40:12,286 --> 00:40:13,776
+The generation of
+the input image
+
+
+855
+00:40:13,776 --> 00:40:16,336
+and the Gaussian blur can
+be done using Core Image.
+
+
+856
+00:40:16,886 --> 00:40:21,436
+But we want to use OpenCL to
+perform the morphological mean
+
+
+857
+00:40:21,436 --> 00:40:23,956
+in X and Y operations
+because those are operations
+
+
+858
+00:40:23,956 --> 00:40:25,656
+which would be traditionally
+difficult to do
+
+
+859
+00:40:26,036 --> 00:40:28,386
+in Core Image's kernel language.
+
+
+860
+00:40:29,226 --> 00:40:33,506
+The problem is that Core Image
+doesn't know about clMemObject
+
+
+861
+00:40:34,276 --> 00:40:38,466
+and OpenCL doesn't
+know about CIImages.
+
+
+862
+00:40:38,806 --> 00:40:39,696
+So, how are we going to do this?
+
+
+863
+00:40:40,046 --> 00:40:41,806
+Well we're going
+to use IOSurface.
+
+
+864
+00:40:41,986 --> 00:40:45,046
+And in OS X Mavericks,
+we've done a lot of work
+
+
+865
+00:40:45,046 --> 00:40:49,376
+to improve how we use IOSurface
+and make sure that we stay
+
+
+866
+00:40:49,376 --> 00:40:50,756
+on the GPU the whole time.
+
+
+867
+00:40:51,226 --> 00:40:54,646
+And so we're going to go
+through all the steps today
+
+
+868
+00:40:54,646 --> 00:40:57,656
+to show how we can do this
+and get maximum performance
+
+
+869
+00:40:57,656 --> 00:40:59,376
+and combine all these
+APIs together.
+
+
+870
+00:41:00,016 --> 00:41:03,196
+So, let's take a look at our
+workflow to process this image.
+
+
+871
+00:41:04,006 --> 00:41:07,446
+So, we're going to start
+by asking Core Image
+
+
+872
+00:41:07,446 --> 00:41:10,246
+to down-sample the image
+because we don't need--
+
+
+873
+00:41:10,386 --> 00:41:11,816
+in order to generate a
+gradient which we're going
+
+
+874
+00:41:11,816 --> 00:41:14,166
+to be then using to perform
+the subtraction, we don't need
+
+
+875
+00:41:14,476 --> 00:41:15,536
+to run at full resolution.
+
+
+876
+00:41:15,536 --> 00:41:19,636
+The next thing we're going to do
+is we're going to ask Core Image
+
+
+877
+00:41:19,636 --> 00:41:20,746
+to render into an IOSurface.
+
+
+878
+00:41:20,746 --> 00:41:24,656
+Traditionally speaking, most of
+the time you render to a buffer
+
+
+879
+00:41:24,656 --> 00:41:27,426
+as in like writing the file
+to disk or directly displaying
+
+
+880
+00:41:27,426 --> 00:41:29,076
+on screen, but you can
+also render to IOSurface
+
+
+881
+00:41:29,076 --> 00:41:31,276
+which as I mentioned
+something we've really improved
+
+
+882
+00:41:31,276 --> 00:41:32,446
+in Mavericks.
+
+
+883
+00:41:32,856 --> 00:41:35,026
+We're then going to use OpenCL
+
+
+884
+00:41:35,096 --> 00:41:36,976
+to compute the minimum
+using some kernels
+
+
+885
+00:41:36,976 --> 00:41:38,046
+that we're going to
+go over in detail.
+
+
+886
+00:41:39,746 --> 00:41:42,576
+Once we've got the output from
+OpenCL, we're then going to take
+
+
+887
+00:41:42,576 --> 00:41:46,656
+that IOSurface that was tied to
+the clMemObject, and we're going
+
+
+888
+00:41:46,656 --> 00:41:47,756
+to create a new CIImage.
+
+
+889
+00:41:48,496 --> 00:41:51,556
+We're going to blur that result,
+perform a Difference Blending,
+
+
+890
+00:41:52,336 --> 00:41:54,296
+and then we just
+render and we're done.
+
+
+891
+00:41:55,156 --> 00:41:56,366
+So, let's take a look
+at all these steps
+
+
+892
+00:41:56,366 --> 00:41:57,056
+in little more detail.
+
+
+893
+00:41:58,556 --> 00:42:00,446
+So, first thing is first,
+we're going to import an image
+
+
+894
+00:42:00,446 --> 00:42:03,476
+with the URL, so we just create,
+
+
+895
+00:42:03,476 --> 00:42:05,866
+we just call CIImage,
+image with URL.
+
+
+896
+00:42:05,866 --> 00:42:08,236
+We then are going
+to down-sample it
+
+
+897
+00:42:08,236 --> 00:42:09,876
+so that we have fewer
+pixels to process.
+
+
+898
+00:42:09,876 --> 00:42:11,666
+Again, in order to compute this
+gradient as I mentioned earlier,
+
+
+899
+00:42:11,666 --> 00:42:13,036
+we don't need the
+full resolution.
+
+
+900
+00:42:14,016 --> 00:42:16,996
+And then we're going to inset
+our rectangle a little bit
+
+
+901
+00:42:16,996 --> 00:42:19,636
+such that if we were to
+have generated an image
+
+
+902
+00:42:19,916 --> 00:42:24,686
+that wasn't integral,
+we would end up with--
+
+
+903
+00:42:24,686 --> 00:42:27,346
+on the boarder of the image, we
+might end up with some pixels
+
+
+904
+00:42:27,346 --> 00:42:28,456
+that have a little
+bit of alpha value.
+
+
+905
+00:42:28,456 --> 00:42:30,556
+And we don't want to make
+our kernel more complicated
+
+
+906
+00:42:30,556 --> 00:42:32,276
+than it needs to be so
+we're just going to get rid
+
+
+907
+00:42:32,276 --> 00:42:33,186
+of one pixel on the EDGE.
+
+
+908
+00:42:33,826 --> 00:42:38,736
+And then we're going to down--
+and then we're going to crop
+
+
+909
+00:42:38,736 --> 00:42:41,306
+that image to get rid of
+that one pixel of boarder.
+
+
+910
+00:42:41,566 --> 00:42:44,126
+Also, I should mention before
+I forget that the sample code
+
+
+911
+00:42:44,126 --> 00:42:47,356
+for this be also
+available for download
+
+
+912
+00:42:47,356 --> 00:42:49,846
+on the Session Breakout page
+at some point later on today.
+
+
+913
+00:42:50,226 --> 00:42:52,826
+So, don't worry if you don't
+follow everything here.
+
+
+914
+00:42:53,976 --> 00:42:55,696
+But let's get to the next
+step of this process.
+
+
+915
+00:42:55,696 --> 00:42:57,636
+First thing we're going
+to do is we're going
+
+
+916
+00:42:57,636 --> 00:42:58,906
+to create an IOSurface.
+
+
+917
+00:43:00,066 --> 00:43:02,176
+So in order to that, we're
+going to specify a bunch
+
+
+918
+00:43:02,176 --> 00:43:04,506
+of properties including the,
+you know, bytes per row,
+
+
+919
+00:43:04,666 --> 00:43:07,816
+bytes per element, width, height
+and whatever pixel OS type,
+
+
+920
+00:43:07,876 --> 00:43:10,106
+the pixel format that we'll be
+using for our input surface.
+
+
+921
+00:43:10,636 --> 00:43:13,376
+We then create an IOSurface
+using IOSurface Create.
+
+
+922
+00:43:14,646 --> 00:43:16,026
+Once we've done that,
+we're going to want
+
+
+923
+00:43:16,026 --> 00:43:17,956
+to create a CIContext
+which again as mentioned--
+
+
+924
+00:43:17,956 --> 00:43:20,716
+as David mentioned earlier,
+we're going to want to hold
+
+
+925
+00:43:20,716 --> 00:43:23,036
+on to 'cause if we perform
+this effect multiple times,
+
+
+926
+00:43:23,846 --> 00:43:25,866
+it's good to hold on to
+all the resources tied
+
+
+927
+00:43:25,866 --> 00:43:26,546
+with that context.
+
+
+928
+00:43:27,486 --> 00:43:30,016
+And we're going to
+make sure that we use--
+
+
+929
+00:43:30,016 --> 00:43:32,576
+that we initialize our CIContext
+with the OpenGL context
+
+
+930
+00:43:32,576 --> 00:43:33,796
+that we eventually
+planned on rendering with.
+
+
+931
+00:43:34,326 --> 00:43:37,476
+And then we're going to
+actually ask Core Image
+
+
+932
+00:43:37,476 --> 00:43:40,106
+to render our scaled image
+down into the IOSurface,
+
+
+933
+00:43:40,656 --> 00:43:42,286
+and we're going to
+make sure that we--
+
+
+934
+00:43:42,286 --> 00:43:45,616
+our output color space is
+equal to the input color space
+
+
+935
+00:43:45,616 --> 00:43:46,416
+of our original image.
+
+
+936
+00:43:49,076 --> 00:43:51,126
+So now, let's get
+into the nitty-gritty
+
+
+937
+00:43:51,126 --> 00:43:52,466
+of what we'll be
+doing with OpenCL.
+
+
+938
+00:43:53,316 --> 00:43:56,326
+So, first things first,
+we're going to want
+
+
+939
+00:43:56,326 --> 00:43:59,536
+to create a CL context
+which is going to be able
+
+
+940
+00:43:59,536 --> 00:44:02,566
+to share all the data
+from the IOSurfaces
+
+
+941
+00:44:02,566 --> 00:44:06,466
+that we created with OpenGL.
+
+
+942
+00:44:06,886 --> 00:44:09,336
+In order to do that, we're
+going to get a shared group
+
+
+943
+00:44:09,336 --> 00:44:11,766
+for the GL context that we
+plan on using and we're going
+
+
+944
+00:44:11,766 --> 00:44:15,666
+to create a context
+using that shared group.
+
+
+945
+00:44:16,016 --> 00:44:17,316
+Once we've done that,
+we're then going
+
+
+946
+00:44:17,376 --> 00:44:21,526
+to use a function called CL
+Create Image from IOSurface
+
+
+947
+00:44:21,576 --> 00:44:25,726
+to the Apple which allows
+us to take in IOSurface
+
+
+948
+00:44:25,806 --> 00:44:27,106
+and create a clMemObject.
+
+
+949
+00:44:28,426 --> 00:44:30,526
+Now, this is going to
+correspond to our input image
+
+
+950
+00:44:31,036 --> 00:44:33,866
+which was the result from what
+we generated that we asked CI
+
+
+951
+00:44:33,896 --> 00:44:36,546
+to render in initially,
+the down-sampled image.
+
+
+952
+00:44:36,886 --> 00:44:39,646
+But we also need an
+image to write out to,
+
+
+953
+00:44:40,156 --> 00:44:42,796
+and our algorithm is going
+to be a 2-pass approach,
+
+
+954
+00:44:42,796 --> 00:44:43,706
+a separable approach,
+
+
+955
+00:44:43,706 --> 00:44:45,596
+we're going to perform
+our morphological mean
+
+
+956
+00:44:45,596 --> 00:44:48,116
+in the X direction and
+morphological mean Y direction.
+
+
+957
+00:44:48,166 --> 00:44:48,876
+So, for the first pass,
+
+
+958
+00:44:48,876 --> 00:44:51,106
+we're going to create
+an intermediate image
+
+
+959
+00:44:51,106 --> 00:44:53,606
+which is the output of the first
+kernel which will then be using
+
+
+960
+00:44:53,606 --> 00:44:55,106
+as the input for
+the second kernel.
+
+
+961
+00:44:55,456 --> 00:44:56,986
+So, we've got our
+intermediate image here.
+
+
+962
+00:44:56,986 --> 00:45:00,556
+And then we're going to need
+one more IOSurface based
+
+
+963
+00:45:00,946 --> 00:45:03,526
+ClMemObjectfor our final output
+which is what we're going
+
+
+964
+00:45:03,526 --> 00:45:05,826
+to hand back to Core Image
+to do the final rendering.
+
+
+965
+00:45:06,886 --> 00:45:08,266
+Let's take a little
+bit, let's take a look
+
+
+966
+00:45:08,266 --> 00:45:09,746
+at like conceptually
+what we want to do.
+
+
+967
+00:45:09,746 --> 00:45:14,136
+So, we've got zoomed in area
+of an image, and we're going
+
+
+968
+00:45:14,136 --> 00:45:16,436
+to take a look at how the
+search is going to happen,
+
+
+969
+00:45:16,436 --> 00:45:18,066
+and then eventually, we're
+going to go over each line
+
+
+970
+00:45:18,066 --> 00:45:19,866
+of code that's involved
+in doing this.
+
+
+971
+00:45:20,856 --> 00:45:24,136
+So, basically we're looking for
+a minimum value, and we're going
+
+
+972
+00:45:24,136 --> 00:45:28,076
+to initialize it to a very large
+value which is to say 1,1,1,1,
+
+
+973
+00:45:28,256 --> 00:45:29,736
+so all white and opaque.
+
+
+974
+00:45:31,086 --> 00:45:32,486
+And we're going to look
+for a minimum value,
+
+
+975
+00:45:32,486 --> 00:45:35,826
+and we're basically just going
+to start searching from our left
+
+
+976
+00:45:35,826 --> 00:45:39,016
+and go to our right, and we're
+going to keep updating the value
+
+
+977
+00:45:39,346 --> 00:45:42,116
+of that mean V until we
+get the lowest value.
+
+
+978
+00:45:42,836 --> 00:45:46,096
+And right now, we're looking
+at how this would work
+
+
+979
+00:45:46,266 --> 00:45:48,256
+if we were operating
+in the X direction,
+
+
+980
+00:45:48,796 --> 00:45:51,076
+and eventually we would
+do the exact same thing
+
+
+981
+00:45:51,676 --> 00:45:53,746
+in the Y direction, and that's
+going to keep animating,
+
+
+982
+00:45:53,746 --> 00:45:54,836
+and I'm going to start
+talking a little bit
+
+
+983
+00:45:54,836 --> 00:45:57,226
+about the source code.
+
+
+984
+00:45:57,356 --> 00:46:00,846
+So, that's the entire
+source code for the filter
+
+
+985
+00:46:00,846 --> 00:46:01,966
+that we're going
+to want to create,
+
+
+986
+00:46:01,966 --> 00:46:03,666
+it does the morphological
+mean operation.
+
+
+987
+00:46:04,456 --> 00:46:05,546
+So first things first,
+
+
+988
+00:46:05,546 --> 00:46:07,056
+we're going to have three
+parameters to this function.
+
+
+989
+00:46:07,056 --> 00:46:09,236
+The first parameter is
+going to be our input image,
+
+
+990
+00:46:10,136 --> 00:46:11,886
+second parameter is going
+to be our output image,
+
+
+991
+00:46:13,226 --> 00:46:14,146
+and the third parameter is going
+
+
+992
+00:46:14,146 --> 00:46:15,676
+to tell us how far
+we need to search.
+
+
+993
+00:46:16,236 --> 00:46:20,056
+We're then going to create
+a sampler, and we're going
+
+
+994
+00:46:20,056 --> 00:46:24,236
+to use unnormalized
+coordinates, and clamp to EDGE
+
+
+995
+00:46:24,266 --> 00:46:26,096
+because the way this
+algorithm is designed,
+
+
+996
+00:46:26,096 --> 00:46:28,176
+we will eventually search
+outside of the bounds
+
+
+997
+00:46:28,176 --> 00:46:29,516
+of the image, and
+we want to make sure
+
+
+998
+00:46:29,516 --> 00:46:32,256
+that we don't read black,
+but that we reach the value
+
+
+999
+00:46:32,256 --> 00:46:33,566
+of the pixel on the
+EDGE of the image
+
+
+1000
+00:46:33,566 --> 00:46:35,416
+such that are we
+don't bleed in black
+
+
+1001
+00:46:35,416 --> 00:46:37,646
+and then get an incorrect
+results.
+
+
+1002
+00:46:38,016 --> 00:46:39,926
+The next thing we're going to
+do is we're going to ask CL
+
+
+1003
+00:46:39,926 --> 00:46:43,176
+for the global ID in zero
+and one, and that's going
+
+
+1004
+00:46:43,176 --> 00:46:45,166
+to tell us basically
+effectively where we want
+
+
+1005
+00:46:45,166 --> 00:46:49,476
+to write our result out to and
+we're also going to use this
+
+
+1006
+00:46:49,506 --> 00:46:51,796
+to determine where we should be
+reading from in our input image.
+
+
+1007
+00:46:52,366 --> 00:46:58,276
+So, the next thing we do is we
+initialize our minimum value
+
+
+1008
+00:46:58,276 --> 00:47:02,986
+to opaque white, and then
+we perform our For loop
+
+
+1009
+00:47:02,986 --> 00:47:04,466
+which searches in this
+case from left to right.
+
+
+1010
+00:47:05,446 --> 00:47:07,526
+So, if we're going
+to compute our new--
+
+
+1011
+00:47:08,036 --> 00:47:10,496
+the new location where
+we're reading from for,
+
+
+1012
+00:47:10,496 --> 00:47:11,756
+and we're going to do
+this for, you know,
+
+
+1013
+00:47:12,116 --> 00:47:15,526
+span [phonetic] times
+2, and so we are going
+
+
+1014
+00:47:15,596 --> 00:47:18,706
+to offsite all these,
+the location by 0.5.5
+
+
+1015
+00:47:18,706 --> 00:47:20,146
+such that we're reading from
+the center of the pixel.
+
+
+1016
+00:47:20,446 --> 00:47:22,286
+And we're also going to
+offsite the X location
+
+
+1017
+00:47:22,576 --> 00:47:23,586
+by the value of I.
+
+
+1018
+00:47:23,616 --> 00:47:27,316
+And if we do that and then read
+from the image of that location,
+
+
+1019
+00:47:28,146 --> 00:47:30,366
+we'll get a new value,
+and we can compare
+
+
+1020
+00:47:30,366 --> 00:47:31,956
+that with our current minimum.
+
+
+1021
+00:47:32,196 --> 00:47:34,676
+And we just keep updating
+that, and when we're done,
+
+
+1022
+00:47:35,156 --> 00:47:39,566
+we write that value out to our
+output image, and we're done.
+
+
+1023
+00:47:39,566 --> 00:47:40,956
+And this is going to
+get ran on every kernel
+
+
+1024
+00:47:40,996 --> 00:47:42,636
+in a very similar
+fashion that you would do
+
+
+1025
+00:47:42,636 --> 00:47:45,046
+if you're writing a CIKernel.
+
+
+1026
+00:47:45,426 --> 00:47:48,646
+And although this may look like
+a relatively naive approach due
+
+
+1027
+00:47:48,646 --> 00:47:55,466
+to texture caching on GPUs, this
+is about its optimal as it gets.
+
+
+1028
+00:47:55,556 --> 00:47:58,066
+So, you can actually perform
+this at really high speed.
+
+
+1029
+00:47:58,876 --> 00:48:00,886
+And we've tried a bunch of
+other approaches, and this ended
+
+
+1030
+00:48:00,886 --> 00:48:02,276
+up being as fast it gets.
+
+
+1031
+00:48:02,756 --> 00:48:03,816
+And if you were going
+to do this,
+
+
+1032
+00:48:04,206 --> 00:48:06,296
+you would also create a kernel
+that was very similar to this
+
+
+1033
+00:48:06,626 --> 00:48:08,836
+for the Y direction, and
+all you need to do is
+
+
+1034
+00:48:08,836 --> 00:48:10,996
+to change the relocation.
+
+
+1035
+00:48:10,996 --> 00:48:14,006
+Instead of incrementing I for
+X, you would increment I for Y,
+
+
+1036
+00:48:14,796 --> 00:48:17,166
+and the rest would
+remain the same.
+
+
+1037
+00:48:17,276 --> 00:48:19,146
+So let's take a look
+at what we need to do
+
+
+1038
+00:48:19,486 --> 00:48:22,296
+to actually run the CIKernels,
+I'm sorry, CL kernels.
+
+
+1039
+00:48:23,396 --> 00:48:25,266
+First things first, we're going
+to give it a character string
+
+
+1040
+00:48:25,266 --> 00:48:26,646
+with our code that
+we looked at earlier.
+
+
+1041
+00:48:27,216 --> 00:48:32,096
+We're then going to create
+a CL program from that code
+
+
+1042
+00:48:33,006 --> 00:48:34,866
+with the context that we
+have-- we created earlier.
+
+
+1043
+00:48:35,966 --> 00:48:37,256
+We're then going to
+build that program
+
+
+1044
+00:48:37,396 --> 00:48:38,716
+for some number of devices.
+
+
+1045
+00:48:39,286 --> 00:48:43,176
+And then we're going to
+create 2 kernels by looking
+
+
+1046
+00:48:43,176 --> 00:48:45,546
+into that program
+and asking for--
+
+
+1047
+00:48:45,546 --> 00:48:47,936
+to look up the morphological
+mean X
+
+
+1048
+00:48:47,936 --> 00:48:52,406
+and morphological
+mean Y kernels.
+
+
+1049
+00:48:52,836 --> 00:48:55,686
+Once we have that, we're
+pretty much ready to go.
+
+
+1050
+00:48:55,686 --> 00:48:58,286
+All we need to do now is
+set up some parameters,
+
+
+1051
+00:48:58,286 --> 00:49:00,916
+and ask OpenCL to run.
+
+
+1052
+00:49:01,416 --> 00:49:02,656
+So, as we saw earlier,
+
+
+1053
+00:49:02,656 --> 00:49:06,346
+the CL kernel took 3
+parameters to the function.
+
+
+1054
+00:49:06,796 --> 00:49:08,846
+The first parameter
+is the input image.
+
+
+1055
+00:49:09,576 --> 00:49:11,356
+The second parameter
+is our output image.
+
+
+1056
+00:49:11,356 --> 00:49:13,956
+In this case, when we're doing
+the morphological mean operation
+
+
+1057
+00:49:13,956 --> 00:49:16,576
+in the X direction, it's going
+to be the intermediate image.
+
+
+1058
+00:49:17,156 --> 00:49:18,966
+And our third parameter
+is going to be the value
+
+
+1059
+00:49:18,966 --> 00:49:20,486
+of how far we want to
+search in the X direction.
+
+
+1060
+00:49:22,116 --> 00:49:24,416
+Once we've done that, all
+we need to do is ask OpenCL
+
+
+1061
+00:49:24,456 --> 00:49:26,846
+to enqueue that kernel and run.
+
+
+1062
+00:49:26,926 --> 00:49:30,016
+And so here, we're gong to
+say, run the minimum X kernel,
+
+
+1063
+00:49:30,016 --> 00:49:31,876
+and we're going to give
+it some workgroup sizes,
+
+
+1064
+00:49:32,206 --> 00:49:35,826
+and the map for figuring out how
+the optimal workgroup size is
+
+
+1065
+00:49:35,826 --> 00:49:40,586
+on the source code that will
+be available later on today.
+
+
+1066
+00:49:40,746 --> 00:49:42,256
+So once we've done our
+pass in the X direction,
+
+
+1067
+00:49:42,256 --> 00:49:43,526
+we're going to do
+the exact same thing.
+
+
+1068
+00:49:44,036 --> 00:49:45,836
+But instead of searching in
+X, we're going to search in Y
+
+
+1069
+00:49:46,916 --> 00:49:48,996
+and we're going to run that,
+and we just need to set our--
+
+
+1070
+00:49:48,996 --> 00:49:51,216
+our input image is going to
+be the intermediate image
+
+
+1071
+00:49:51,216 --> 00:49:53,596
+and the output image is going to
+be the output image and we need
+
+
+1072
+00:49:53,596 --> 00:49:57,666
+to get a new span Y, we call
+clEnqueueNDRange once again
+
+
+1073
+00:49:57,816 --> 00:49:59,946
+with the minimum Y
+kernel and we're done.
+
+
+1074
+00:50:00,996 --> 00:50:03,686
+The last thing we need to do
+before we hand this off back
+
+
+1075
+00:50:03,736 --> 00:50:06,836
+to Core Image is we
+need to call clFlush,
+
+
+1076
+00:50:06,836 --> 00:50:09,116
+and the reason we do this
+is because we want to make
+
+
+1077
+00:50:09,116 --> 00:50:11,506
+that all the work from OpenCL
+has been submitted to the GPU
+
+
+1078
+00:50:11,506 --> 00:50:14,166
+with no additional work
+get submitted such that
+
+
+1079
+00:50:14,166 --> 00:50:15,816
+when we start using
+the IOSurface inside
+
+
+1080
+00:50:15,816 --> 00:50:17,616
+of Core Image, the
+data is valid.
+
+
+1081
+00:50:18,846 --> 00:50:20,036
+And so this is a
+really important step,
+
+
+1082
+00:50:20,036 --> 00:50:21,656
+otherwise you're going
+to see image corruption.
+
+
+1083
+00:50:22,826 --> 00:50:25,556
+And that's all we need
+to do with OpenCL.
+
+
+1084
+00:50:26,996 --> 00:50:28,346
+The next thing we're
+going to do is
+
+
+1085
+00:50:28,346 --> 00:50:31,086
+when we've got our input
+image from OpenCL that was--
+
+
+1086
+00:50:31,276 --> 00:50:33,316
+that corresponds
+to an IOSurface,
+
+
+1087
+00:50:33,896 --> 00:50:38,026
+we then create a new
+CIImage from that IOSurface,
+
+
+1088
+00:50:38,446 --> 00:50:41,136
+and we specify the color
+space which is identical
+
+
+1089
+00:50:41,136 --> 00:50:45,406
+to the color space that we used
+at the very beginning to ask CI
+
+
+1090
+00:50:45,506 --> 00:50:47,946
+to render that down-sampled
+image.
+
+
+1091
+00:50:48,376 --> 00:50:49,296
+So, we're almost done.
+
+
+1092
+00:50:50,886 --> 00:50:52,036
+The next thing we're
+going to do is we're going
+
+
+1093
+00:50:52,036 --> 00:50:54,896
+to blur the image, and in
+order to blur the image,
+
+
+1094
+00:50:54,896 --> 00:50:56,786
+the first thing we're going to
+do is we're going to perform
+
+
+1095
+00:50:56,786 --> 00:50:58,336
+and to find clamp which is going
+
+
+1096
+00:50:58,336 --> 00:51:01,606
+to basically give us a very
+similar effect to what we did
+
+
+1097
+00:51:01,606 --> 00:51:03,996
+when we asked for clamp to
+edge 'cause we don't want
+
+
+1098
+00:51:03,996 --> 00:51:06,526
+to be reading in black pixels
+when we perform our blur.
+
+
+1099
+00:51:06,636 --> 00:51:09,986
+So, we're going to do and to
+find clamp, we're then going
+
+
+1100
+00:51:09,986 --> 00:51:14,156
+to call CI Gaussian blur,
+specify a radius and ask
+
+
+1101
+00:51:14,406 --> 00:51:18,466
+for the output image, and then
+we're going to crop that back
+
+
+1102
+00:51:18,466 --> 00:51:21,356
+to the original size of
+what the scaled image was.
+
+
+1103
+00:51:21,486 --> 00:51:24,066
+So now we have the blurred
+image that we were looking
+
+
+1104
+00:51:24,066 --> 00:51:26,846
+for which we can then use to
+the final Difference Blending.
+
+
+1105
+00:51:27,496 --> 00:51:31,216
+So, in order to do the
+Difference Blending,
+
+
+1106
+00:51:31,666 --> 00:51:32,546
+it's very simple.
+
+
+1107
+00:51:32,546 --> 00:51:35,146
+We just create a filter called
+CI Difference Blend Mode.
+
+
+1108
+00:51:36,256 --> 00:51:38,396
+We set the input image to
+our original input image
+
+
+1109
+00:51:38,396 --> 00:51:42,096
+which was scaled
+down in this case.
+
+
+1110
+00:51:42,296 --> 00:51:45,226
+We use the blurred image that we
+just created from the IOSurface
+
+
+1111
+00:51:45,286 --> 00:51:47,236
+as our background
+image, and in order
+
+
+1112
+00:51:47,236 --> 00:51:50,496
+to generate the final image,
+we just call value for key
+
+
+1113
+00:51:50,766 --> 00:51:51,796
+and ask for the output image.
+
+
+1114
+00:51:52,276 --> 00:51:56,506
+Once we've done that,
+the next thing we need
+
+
+1115
+00:51:56,506 --> 00:52:00,646
+to do is call context
+or CIContext draw image,
+
+
+1116
+00:52:00,646 --> 00:52:04,346
+our final image at a certain
+location and give it the balance
+
+
+1117
+00:52:04,346 --> 00:52:05,986
+of what we would like
+to render which is then
+
+
+1118
+00:52:05,986 --> 00:52:08,406
+in this case be equal
+to final image extent.
+
+
+1119
+00:52:08,836 --> 00:52:11,016
+Now, this can get
+kind of complicated
+
+
+1120
+00:52:11,016 --> 00:52:15,286
+when you start generating a
+lot of effects, and in Xcode 5
+
+
+1121
+00:52:15,416 --> 00:52:19,956
+and on Mavericks, you can now
+hover over things in Xcode
+
+
+1122
+00:52:19,956 --> 00:52:20,876
+and get a description.
+
+
+1123
+00:52:21,166 --> 00:52:23,926
+And so in this case, you can see
+as I'm hovering over an image,
+
+
+1124
+00:52:23,926 --> 00:52:28,926
+I can see the IO-- the CIImage
+is based on an IOSurface
+
+
+1125
+00:52:29,136 --> 00:52:30,416
+and that it's got
+a certain size.
+
+
+1126
+00:52:31,776 --> 00:52:37,466
+But we've also added something
+now on OS X Mavericks,
+
+
+1127
+00:52:37,716 --> 00:52:40,076
+such that if you were to
+click on the Quick Looks,
+
+
+1128
+00:52:40,466 --> 00:52:42,846
+you'll actually get a preview
+of what your CIImage looks like,
+
+
+1129
+00:52:43,256 --> 00:52:45,376
+and we're hoping to
+have this for iOS 7
+
+
+1130
+00:52:45,376 --> 00:52:46,286
+as well in the near future.
+
+
+1131
+00:52:46,756 --> 00:52:49,986
+So, this can really help when
+you're debugging your apps.
+
+
+1132
+00:52:51,076 --> 00:52:54,376
+So, let's take a look
+at the effect once more
+
+
+1133
+00:52:54,376 --> 00:52:57,186
+in action 'cause it was
+a lot of blood and sweat.
+
+
+1134
+00:52:57,186 --> 00:52:59,146
+So, it's worth one
+more animation I think.
+
+
+1135
+00:53:00,736 --> 00:53:02,246
+And in the meanwhile,
+we're going to talk
+
+
+1136
+00:53:02,246 --> 00:53:03,846
+about a few little caveats.
+
+
+1137
+00:53:03,846 --> 00:53:05,266
+One thing worth noting is
+
+
+1138
+00:53:05,676 --> 00:53:07,186
+that this algorithm
+performs really well
+
+
+1139
+00:53:07,186 --> 00:53:08,916
+in removing atmospheric
+haze to the extent
+
+
+1140
+00:53:08,916 --> 00:53:12,086
+where if you were actually
+to run this on an image
+
+
+1141
+00:53:12,086 --> 00:53:14,516
+that had a lot of sky and
+didn't have any dark data
+
+
+1142
+00:53:14,516 --> 00:53:16,326
+or anything black, no
+shadows, no nothing.
+
+
+1143
+00:53:16,746 --> 00:53:18,546
+It would actually
+get rid of the sky.
+
+
+1144
+00:53:19,126 --> 00:53:22,696
+So, it would look black and
+that's not terribly interesting.
+
+
+1145
+00:53:22,696 --> 00:53:23,716
+So, you don't want
+
+
+1146
+00:53:23,716 --> 00:53:25,496
+to necessarily use
+this one wholesale
+
+
+1147
+00:53:25,966 --> 00:53:28,216
+but is a fair amount
+literature out there
+
+
+1148
+00:53:28,216 --> 00:53:29,926
+about how this is implemented
+
+
+1149
+00:53:29,926 --> 00:53:31,176
+and ours is actually
+pretty quick.
+
+
+1150
+00:53:31,246 --> 00:53:33,106
+You can get really
+good frame rates
+
+
+1151
+00:53:33,106 --> 00:53:34,476
+and were quite pleased
+with the results.
+
+
+1152
+00:53:34,646 --> 00:53:36,216
+The other thing is
+you can also--
+
+
+1153
+00:53:36,676 --> 00:53:37,776
+because this is a function,
+
+
+1154
+00:53:37,856 --> 00:53:40,876
+atmosphere case basically
+accumulates exponentially,
+
+
+1155
+00:53:41,106 --> 00:53:43,216
+if you take the logarithm
+of those values,
+
+
+1156
+00:53:44,506 --> 00:53:46,906
+you get effectively what
+corresponds to a depth map.
+
+
+1157
+00:53:47,286 --> 00:53:48,786
+So once you have the depth map,
+
+
+1158
+00:53:48,786 --> 00:53:50,596
+you could do really
+interesting effects
+
+
+1159
+00:53:51,116 --> 00:53:53,466
+such as refocusing an image
+afterwards which is the kind
+
+
+1160
+00:53:53,466 --> 00:53:56,546
+of thing where you can do like
+a fake tilt shift effects,
+
+
+1161
+00:53:56,546 --> 00:53:59,826
+et cetera, and we talked about
+that in WWDC a few years ago
+
+
+1162
+00:53:59,826 --> 00:54:01,166
+about how you could do that
+with Core Image as well.
+
+
+1163
+00:54:02,666 --> 00:54:06,156
+So, some additional information,
+Allan Schaffer is our graphics
+
+
+1164
+00:54:06,156 --> 00:54:07,956
+and game technology's
+evangelist,
+
+
+1165
+00:54:07,956 --> 00:54:09,636
+and you could reach him
+at aschaffer@apple.com.
+
+
+1166
+00:54:10,166 --> 00:54:12,446
+There's documentation
+at developer.apple.com,
+
+
+1167
+00:54:12,446 --> 00:54:15,756
+and then of course you can
+always go to devforums.apple.com
+
+
+1168
+00:54:15,826 --> 00:54:19,786
+to talk to other developers
+and get in touch with us
+
+
+1169
+00:54:19,936 --> 00:54:20,886
+if you have any questions.
+
+
+1170
+00:54:21,296 --> 00:54:24,026
+Related sessions and labs, there
+are few additional sessions
+
+
+1171
+00:54:24,026 --> 00:54:26,356
+which you may also want to
+go back and look at later
+
+
+1172
+00:54:26,356 --> 00:54:28,356
+if you have additional--
+
+
+1173
+00:54:28,506 --> 00:54:29,656
+if you're curious
+about the technologies
+
+
+1174
+00:54:29,656 --> 00:54:31,986
+that we talked a little
+bit about-- earlier today.
+
+
+1175
+00:54:32,766 --> 00:54:35,406
+And on that note, I would like
+to thank you all once again
+
+
+1176
+00:54:35,406 --> 00:54:38,386
+for coming, and I hope you
+enjoy the rest of WWDC.
+
+
+1177
+00:54:38,636 --> 00:54:38,916
+Thank you.
+
+
+1178
+00:54:39,576 --> 00:54:42,470
+[ Applause ]
+

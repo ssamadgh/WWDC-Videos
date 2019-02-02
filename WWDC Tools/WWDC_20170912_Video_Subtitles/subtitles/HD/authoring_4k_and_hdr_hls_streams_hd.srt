@@ -1,0 +1,382 @@
+1
+00:00:00,934 --> 00:00:03,770
+With the introduction of
+the revolutionary iPhone X
+
+
+2
+00:00:03,770 --> 00:00:05,572
+and AppleTV 4K,
+
+
+3
+00:00:05,572 --> 00:00:08,542
+the video playback experience
+is taken to a whole new level
+
+
+4
+00:00:08,542 --> 00:00:09,576
+with the addition for support
+
+
+5
+00:00:09,576 --> 00:00:12,846
+for high dynamic range
+and 4K video.
+
+
+6
+00:00:14,648 --> 00:00:19,386
+4K typically refers to
+frame sizes up to 3840 by 2160,
+
+
+7
+00:00:19,386 --> 00:00:21,188
+offering an exceptionally
+detailed
+
+
+8
+00:00:21,188 --> 00:00:24,291
+and high resolution image
+when compared to HD.
+
+
+9
+00:00:26,727 --> 00:00:31,198
+Wide color is supported across
+iOS, macOS, and tvOS,
+
+
+10
+00:00:31,198 --> 00:00:34,835
+and the media frameworks support
+up to the rec 2020 color space,
+
+
+11
+00:00:34,835 --> 00:00:38,205
+which covers about 75 percent of
+the visible spectrum.
+
+
+12
+00:00:39,072 --> 00:00:41,441
+The addition of support for HEVC
+
+
+13
+00:00:41,441 --> 00:00:43,977
+enables the delivery of
+higher quality video
+
+
+14
+00:00:43,977 --> 00:00:48,615
+at about a 40 percent lower
+bit rate compared to H.264.
+
+
+15
+00:00:48,615 --> 00:00:51,752
+HDR video must be
+delivered using HEVC.
+
+
+16
+00:00:54,221 --> 00:00:56,957
+There are two HDR formats
+that we support:
+
+
+17
+00:00:56,957 --> 00:00:59,126
+Dolby Vision and HDR10.
+
+
+18
+00:01:01,862 --> 00:01:04,263
+HDR10 utilizes static metadata
+
+
+19
+00:01:04,263 --> 00:01:06,800
+that is applied to
+the entire program.
+
+
+20
+00:01:06,800 --> 00:01:09,937
+This metadata should be in
+the HEVC configuration box
+
+
+21
+00:01:09,937 --> 00:01:12,873
+and not stored in
+individual sample data.
+
+
+22
+00:01:15,776 --> 00:01:18,745
+For Dolby Vision content,
+we support Profile 5,
+
+
+23
+00:01:18,745 --> 00:01:21,214
+which is single-layer,
+10-bit HEVC,
+
+
+24
+00:01:21,214 --> 00:01:23,984
+and up to level 7.
+
+
+25
+00:01:24,651 --> 00:01:26,119
+For both HDR formats,
+
+
+26
+00:01:26,119 --> 00:01:29,723
+the content must be encoded
+using HEVC.
+
+
+27
+00:01:29,723 --> 00:01:32,893
+You should include HDR variants
+of less than or equal to
+
+
+28
+00:01:32,893 --> 00:01:34,594
+30 frames per second.
+
+
+29
+00:01:34,594 --> 00:01:37,197
+And you must always provide
+SDR variants
+
+
+30
+00:01:37,197 --> 00:01:39,166
+for both your
+primary media content
+
+
+31
+00:01:39,166 --> 00:01:41,568
+as well as your
+I-frame playlists.
+
+
+32
+00:01:43,804 --> 00:01:47,040
+In order to help devices
+select compatible variants,
+
+
+33
+00:01:47,040 --> 00:01:49,142
+we have added
+a new video range tag
+
+
+34
+00:01:49,142 --> 00:01:51,945
+to the HLS specification.
+
+
+35
+00:01:51,945 --> 00:01:54,848
+If you include any
+HDR variants in your playlist,
+
+
+36
+00:01:54,848 --> 00:01:57,617
+you must include this tag.
+
+
+37
+00:01:57,617 --> 00:02:01,221
+Declare SDR for any
+standard dynamic range variants
+
+
+38
+00:02:01,221 --> 00:02:05,692
+and PQ for HDR10
+or Dolby Vision variants.
+
+
+39
+00:02:05,692 --> 00:02:07,694
+This tag is an advisory
+to the client
+
+
+40
+00:02:07,694 --> 00:02:09,795
+so that it will not attempt
+to play streams
+
+
+41
+00:02:09,795 --> 00:02:11,631
+that it cannot support.
+
+
+42
+00:02:14,101 --> 00:02:17,637
+In order to support
+HDCP TYPE-1 content protection,
+
+
+43
+00:02:17,637 --> 00:02:22,309
+the new TYPE-1 value has been
+added to the HDCP level tag.
+
+
+44
+00:02:22,309 --> 00:02:24,411
+This value is typically
+applied to content
+
+
+45
+00:02:24,411 --> 00:02:28,181
+with a resolution of
+greater than 1920 by 1080.
+
+
+46
+00:02:28,181 --> 00:02:30,384
+This tag is also
+advisory in nature
+
+
+47
+00:02:30,384 --> 00:02:33,020
+and prevents the client from
+attempting to playback content
+
+
+48
+00:02:33,020 --> 00:02:37,257
+that can't be supported by
+the currently attached display.
+
+
+49
+00:02:37,257 --> 00:02:40,160
+To finish up, let's take
+a quick look at a few examples
+
+
+50
+00:02:40,160 --> 00:02:43,630
+of how a playlist differentiates
+the different types of content
+
+
+51
+00:02:43,630 --> 00:02:47,234
+and how the tags we just
+discussed are applied.
+
+
+52
+00:02:47,234 --> 00:02:50,971
+This is an example of a standard
+dynamic range HEVC stream
+
+
+53
+00:02:50,971 --> 00:02:54,241
+that does not require HDCP.
+
+
+54
+00:02:54,241 --> 00:02:57,310
+This second example
+describes a 4K HDR stream
+
+
+55
+00:02:57,310 --> 00:03:01,715
+as indicated by the PQ value
+of the "VIDEO-RANGE" tag.
+
+
+56
+00:03:01,715 --> 00:03:05,552
+The "CODECS" tag describes it
+as a Dolby Vision stream,
+
+
+57
+00:03:05,552 --> 00:03:08,522
+and the "HDCP-LEVEL" tag
+indicates that TYPE-1
+
+
+58
+00:03:08,522 --> 00:03:09,823
+will be required in order to
+
+
+59
+00:03:09,823 --> 00:03:13,393
+successfully
+playback the stream.
+
+
+60
+00:03:13,393 --> 00:03:16,163
+This 4K HDR10 example
+only differs from
+
+
+61
+00:03:16,163 --> 00:03:19,299
+the Dolby Vision example
+by the "CODECS" tag.
+
+
+62
+00:03:19,299 --> 00:03:22,936
+The "VIDEO-RANGE" and
+"HDCP-LEVEL" tags are the same.
+
+
+63
+00:03:25,138 --> 00:03:28,375
+For more information on
+HTTP live streaming,
+
+
+64
+00:03:28,375 --> 00:03:31,645
+please visit
+devleoper.apple.com/streaming
+
+
+65
+00:03:31,645 --> 00:03:34,347
+for access to
+the HLS authoring guide,
+
+
+66
+00:03:34,347 --> 00:03:38,351
+HTTP live streaming tools
+including the stream validator,
+

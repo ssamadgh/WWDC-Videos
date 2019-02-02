@@ -1,0 +1,1170 @@
+1
+00:00:02,001 --> 00:00:04,238
+Betsy Langowski: Linking
+against the 12.1 SDK
+
+
+2
+00:00:04,238 --> 00:00:06,006
+will allow your app
+to take advantage
+
+
+3
+00:00:06,006 --> 00:00:09,009
+of the full displays
+on the new iPad Pros.
+
+
+4
+00:00:09,009 --> 00:00:11,411
+Not only does
+the 11-inch iPad Pro
+
+
+5
+00:00:11,411 --> 00:00:14,648
+feature a brand-new screen size
+and a new aspect ratio,
+
+
+6
+00:00:14,648 --> 00:00:16,984
+both devices now have
+rounded corners
+
+
+7
+00:00:16,984 --> 00:00:18,685
+and no Home button.
+
+
+8
+00:00:18,685 --> 00:00:20,687
+You may need to do
+a little bit of work
+
+
+9
+00:00:20,687 --> 00:00:23,490
+to make sure your iPad apps
+look great on these devices,
+
+
+10
+00:00:23,490 --> 00:00:25,859
+but there are
+a lot of resources available.
+
+
+11
+00:00:25,859 --> 00:00:27,761
+And if you've been following
+best practices,
+
+
+12
+00:00:27,761 --> 00:00:30,430
+that work
+should be very minimal.
+
+
+13
+00:00:30,430 --> 00:00:33,533
+If you've adapted an iPhone app
+for iPhone X or later,
+
+
+14
+00:00:33,533 --> 00:00:36,470
+you'll find this process
+very familiar on iPad.
+
+
+15
+00:00:36,470 --> 00:00:38,939
+Adapting safe area insets
+throughout your app,
+
+
+16
+00:00:38,939 --> 00:00:42,643
+as well as making sure to not
+special case per device model,
+
+
+17
+00:00:42,643 --> 00:00:46,813
+is the best way to future proof
+your application.
+
+
+18
+00:00:46,813 --> 00:00:49,316
+For more technical information
+about how to do that,
+
+
+19
+00:00:49,316 --> 00:00:51,218
+as well as information
+about edge cases
+
+
+20
+00:00:51,218 --> 00:00:53,987
+and the times when
+you can't use these techniques,
+
+
+21
+00:00:53,987 --> 00:00:56,390
+see the video
+"Building apps for iPhone X"
+
+
+22
+00:00:56,390 --> 00:00:57,324
+and the video
+
+
+23
+00:00:57,324 --> 00:01:03,630
+"Building apps for iPhone XS,
+iPhone XS Max, and iPhone XR."
+
+
+24
+00:01:03,630 --> 00:01:06,500
+Here are two examples
+of the most common mistakes made
+
+
+25
+00:01:06,500 --> 00:01:09,069
+when running apps
+on the new iPad Pros.
+
+
+26
+00:01:09,069 --> 00:01:11,338
+For much more specific
+design information,
+
+
+27
+00:01:11,338 --> 00:01:12,773
+check out the related video
+
+
+28
+00:01:12,773 --> 00:01:16,576
+"Designing for iPad Pro
+and Apple Pencil."
+
+
+29
+00:01:16,576 --> 00:01:18,879
+Here's a very simple iPad app
+that looks OK
+
+
+30
+00:01:18,879 --> 00:01:21,548
+when built for an iPad
+with a Home button.
+
+
+31
+00:01:21,548 --> 00:01:24,217
+But when I run it
+on a new 11-inch iPad Pro,
+
+
+32
+00:01:24,217 --> 00:01:25,652
+you can see that the tab bar
+
+
+33
+00:01:25,652 --> 00:01:27,955
+interferes with
+the Home indicator.
+
+
+34
+00:01:27,955 --> 00:01:29,456
+A common reason this happens,
+
+
+35
+00:01:29,456 --> 00:01:31,391
+and the reason
+it's happening here,
+
+
+36
+00:01:31,391 --> 00:01:34,061
+is because while this looks like
+a standard tab bar,
+
+
+37
+00:01:34,061 --> 00:01:36,263
+it's actually a custom tab bar.
+
+
+38
+00:01:36,263 --> 00:01:38,665
+Safe area insets
+given by Interface Builder
+
+
+39
+00:01:38,665 --> 00:01:40,667
+have been ignored
+and this custom content
+
+
+40
+00:01:40,667 --> 00:01:43,670
+has instead been aligned
+with the edge of the view.
+
+
+41
+00:01:43,670 --> 00:01:45,205
+Another reason this may happen
+
+
+42
+00:01:45,205 --> 00:01:46,974
+is if you're not using
+storyboards
+
+
+43
+00:01:46,974 --> 00:01:50,243
+and are instead using API
+to identify the screen bounds.
+
+
+44
+00:01:50,243 --> 00:01:52,012
+The absolute best way
+to fix this
+
+
+45
+00:01:52,012 --> 00:01:54,982
+is to simply use storyboards
+and safe area insets,
+
+
+46
+00:01:54,982 --> 00:01:56,984
+as well as native UI elements.
+
+
+47
+00:01:56,984 --> 00:01:58,785
+Your app will look great
+across devices
+
+
+48
+00:01:58,785 --> 00:02:01,254
+and you'll be future proofed.
+
+
+49
+00:02:01,254 --> 00:02:02,823
+Take a look at another app.
+
+
+50
+00:02:02,823 --> 00:02:05,692
+It's a full-screen game
+with custom UI elements.
+
+
+51
+00:02:05,692 --> 00:02:07,928
+It looks great on an iPad
+with a Home button,
+
+
+52
+00:02:07,928 --> 00:02:12,199
+but on the new 11-inch iPad Pro,
+there are a few problems.
+
+
+53
+00:02:12,199 --> 00:02:14,434
+The content at the top
+and bottom is cut off
+
+
+54
+00:02:14,434 --> 00:02:16,269
+and the custom buttons
+feel too close
+
+
+55
+00:02:16,269 --> 00:02:17,971
+to the new rounded corners.
+
+
+56
+00:02:17,971 --> 00:02:20,540
+This can happen
+for a number of reasons.
+
+
+57
+00:02:20,540 --> 00:02:22,476
+In this case,
+that app is assuming
+
+
+58
+00:02:22,476 --> 00:02:24,344
+a four-by-three aspect ratio,
+
+
+59
+00:02:24,344 --> 00:02:26,980
+which is no longer true
+for all iPads.
+
+
+60
+00:02:26,980 --> 00:02:28,281
+if you have a Metal app
+
+
+61
+00:02:28,281 --> 00:02:30,517
+or are using
+API level adjustment,
+
+
+62
+00:02:30,517 --> 00:02:32,152
+you'll need to go back
+to your designer
+
+
+63
+00:02:32,152 --> 00:02:34,654
+and make sure your designs
+are conforming to safe areas
+
+
+64
+00:02:34,654 --> 00:02:37,491
+and being mindful
+of the new rounded corners.
+
+
+65
+00:02:37,491 --> 00:02:40,227
+In games in particular,
+it's also important to ensure
+
+
+66
+00:02:40,227 --> 00:02:43,463
+you didn't have any controls
+or gestures related to game play
+
+
+67
+00:02:43,463 --> 00:02:46,133
+near the Home indicator as well.
+
+
+68
+00:02:46,133 --> 00:02:49,002
+If you don't link against
+the 12.1 SDK,
+
+
+69
+00:02:49,002 --> 00:02:51,138
+your app will be running
+compatibility mode.
+
+
+70
+00:02:51,138 --> 00:02:52,706
+While running
+at the full screen size
+
+
+71
+00:02:52,706 --> 00:02:54,775
+is a much more
+immersive experience,
+
+
+72
+00:02:54,775 --> 00:02:58,612
+linking against the 12.1 SDK
+is important for another reason.
+
+
+73
+00:02:58,612 --> 00:03:01,548
+On iPad,
+apps can run side by side,
+
+
+74
+00:03:01,548 --> 00:03:03,817
+like Maps and Clock, seen here.
+
+
+75
+00:03:03,817 --> 00:03:06,420
+Even if your app
+has been linked against 12.1,
+
+
+76
+00:03:06,420 --> 00:03:08,255
+if people are running it
+side by side
+
+
+77
+00:03:08,255 --> 00:03:10,223
+with an app
+that hasn't been updated,
+
+
+78
+00:03:10,223 --> 00:03:13,860
+both apps run in a new kind
+of compatibility mode.
+
+
+79
+00:03:13,860 --> 00:03:15,796
+Here's a simple test app.
+
+
+80
+00:03:15,796 --> 00:03:18,331
+It's been rebuilt
+with a 12.1 SDK,
+
+
+81
+00:03:18,331 --> 00:03:20,333
+so now it takes advantage
+of the full display
+
+
+82
+00:03:20,333 --> 00:03:23,370
+on the new 11-inch iPad Pro.
+
+
+83
+00:03:23,370 --> 00:03:25,939
+Here it is running
+side by side with Maps,
+
+
+84
+00:03:25,939 --> 00:03:28,008
+another app
+that's linked against 12.1,
+
+
+85
+00:03:28,008 --> 00:03:29,509
+and they both look great.
+
+
+86
+00:03:29,509 --> 00:03:33,046
+Still taking advantage
+of the entire screen.
+
+
+87
+00:03:33,046 --> 00:03:36,550
+But when it's run side by side
+with the WWDC app,
+
+
+88
+00:03:36,550 --> 00:03:39,286
+which hasn't yet been linked
+against 12.1,
+
+
+89
+00:03:39,286 --> 00:03:41,088
+the test app is now forced back
+
+
+90
+00:03:41,088 --> 00:03:45,025
+into a new kind of combability
+mode of common insets.
+
+
+91
+00:03:45,025 --> 00:03:46,960
+By updating your app quickly,
+
+
+92
+00:03:46,960 --> 00:03:49,996
+not only do you get
+the more immersive experience,
+
+
+93
+00:03:49,996 --> 00:03:51,398
+you ensure that the other apps
+
+
+94
+00:03:51,398 --> 00:03:54,267
+that may be running
+side by side with your app
+
+
+95
+00:03:54,267 --> 00:03:56,837
+maintain their
+immersive experience.
+
+
+96
+00:03:56,837 --> 00:03:59,773
+This common inset
+combability mode
+
+
+97
+00:03:59,773 --> 00:04:02,375
+doesn't reflect a real life
+configuration of hardware
+
+
+98
+00:04:02,375 --> 00:04:05,645
+and so your apps haven't
+necessarily been tested in it.
+
+
+99
+00:04:05,645 --> 00:04:08,815
+This is another great reason
+why using safe area insets
+
+
+100
+00:04:08,815 --> 00:04:10,984
+and auto layout is a good idea.
+
+
+101
+00:04:10,984 --> 00:04:13,253
+It's important to design
+your apps and write your code
+
+
+102
+00:04:13,253 --> 00:04:15,655
+in such a way that they can run
+on whatever trait
+
+
+103
+00:04:15,655 --> 00:04:17,724
+or combination of traits
+they detect,
+
+
+104
+00:04:17,724 --> 00:04:19,926
+regardless of hardware.
+
+
+105
+00:04:19,926 --> 00:04:22,095
+By taking some time
+to ensure your iPad apps
+
+
+106
+00:04:22,095 --> 00:04:24,865
+can handle this
+common inset combability mode,
+
+
+107
+00:04:24,865 --> 00:04:27,801
+you'll also be ensuring
+a smooth transition next year
+
+
+108
+00:04:27,801 --> 00:04:31,605
+when you can bring
+UIKit apps to the Mac.
+
+
+109
+00:04:31,605 --> 00:04:35,008
+This year we've introduced
+a brand-new Apple Pencil.
+
+
+110
+00:04:35,008 --> 00:04:38,478
+All of the feature set from the
+original Apple Pencil remains,
+
+
+111
+00:04:38,478 --> 00:04:40,147
+but we've introduced
+a new gesture
+
+
+112
+00:04:40,147 --> 00:04:44,117
+unique to the second-generation
+Apple Pencil: the double tap.
+
+
+113
+00:04:44,117 --> 00:04:46,586
+Double tap enables
+three new actions,
+
+
+114
+00:04:46,586 --> 00:04:49,623
+all configurable
+in the Settings app.
+
+
+115
+00:04:49,623 --> 00:04:52,125
+People can switch between
+the current tool they're using
+
+
+116
+00:04:52,125 --> 00:04:53,293
+and the eraser.
+
+
+117
+00:04:53,293 --> 00:04:55,128
+They can switch between
+the tool they're using
+
+
+118
+00:04:55,128 --> 00:04:56,963
+and the last tool they used,
+
+
+119
+00:04:56,963 --> 00:04:59,099
+or they can show
+the color palette.
+
+
+120
+00:04:59,099 --> 00:05:01,801
+People can also turn off
+double tap entirely.
+
+
+121
+00:05:01,801 --> 00:05:03,637
+If your app supports
+the Apple Pencil,
+
+
+122
+00:05:03,637 --> 00:05:06,206
+but doesn't have
+a drawing or tooling element,
+
+
+123
+00:05:06,206 --> 00:05:07,974
+you can implement
+custom actions.
+
+
+124
+00:05:07,974 --> 00:05:11,244
+However, these should be used
+very judiciously.
+
+
+125
+00:05:11,244 --> 00:05:14,147
+This is what your implementation
+might look like.
+
+
+126
+00:05:14,147 --> 00:05:18,251
+You can find more robust sample
+code in the related resources.
+
+
+127
+00:05:18,251 --> 00:05:20,820
+In your app view,
+you detect the double tap event
+
+
+128
+00:05:20,820 --> 00:05:23,657
+by creating
+UIPencilInteraction object
+
+
+129
+00:05:23,657 --> 00:05:25,859
+and assigning a delegate to it.
+
+
+130
+00:05:25,859 --> 00:05:29,262
+You can also add customization,
+if appropriate for your app.
+
+
+131
+00:05:29,262 --> 00:05:31,665
+Remember, your app will
+continue to be used and loved
+
+
+132
+00:05:31,665 --> 00:05:33,433
+by your customers on iPads
+
+
+133
+00:05:33,433 --> 00:05:35,802
+that pair with
+the original Apple Pencil.
+
+
+134
+00:05:35,802 --> 00:05:37,971
+So it's important
+not to gate functionality
+
+
+135
+00:05:37,971 --> 00:05:40,273
+behind the double tap gesture.
+
+
+136
+00:05:40,273 --> 00:05:43,210
+Your customized interactions
+should never be the default.
+
+
+137
+00:05:43,210 --> 00:05:45,345
+Your app should always reflect
+the system settings
+
+
+138
+00:05:45,345 --> 00:05:50,016
+and then give people an option
+to change to a custom action.
+
+
+139
+00:05:50,016 --> 00:05:52,752
+Reflecting the system gestures
+is as simple as calling
+
+
+140
+00:05:52,752 --> 00:05:56,022
+UIPencilInteraction.
+preferredTapAction
+
+
+141
+00:05:56,022 --> 00:05:57,757
+and handling
+the four built-in cases
+
+
+142
+00:05:57,757 --> 00:06:01,094
+as reflected
+in the Settings app.
+
+
+143
+00:06:01,094 --> 00:06:04,965
+iPad Pro now has
+a high-speed USB-C port.
+
+
+144
+00:06:04,965 --> 00:06:07,467
+This enables dynamic range
+and frame matching,
+
+
+145
+00:06:07,467 --> 00:06:09,769
+which is familiar from Apple TV.
+
+
+146
+00:06:09,769 --> 00:06:14,107
+iPad Pro supports
+HDR 4K up to 60 Hz
+
+
+147
+00:06:14,107 --> 00:06:16,676
+and external displays
+of up to 5K.
+
+
+148
+00:06:16,676 --> 00:06:18,979
+There's no special adaption
+necessary.
+
+
+149
+00:06:18,979 --> 00:06:20,547
+Everything that
+already worked for you
+
+
+150
+00:06:20,547 --> 00:06:23,750
+in your second screen support
+will continue to work.
+
+
+151
+00:06:23,750 --> 00:06:26,219
+USB-C is a high-speed USB port,
+
+
+152
+00:06:26,219 --> 00:06:29,022
+which enables many of the same
+pro-level technologies
+
+
+153
+00:06:29,022 --> 00:06:30,690
+that you have brought
+to your Mac,
+
+
+154
+00:06:30,690 --> 00:06:35,362
+including USB audio,
+USB Ethernet, and USB MIDI.
+
+
+155
+00:06:35,362 --> 00:06:38,064
+And it also allows
+for simultaneous output.
+
+
+156
+00:06:38,064 --> 00:06:39,566
+This facilitates, for example,
+
+
+157
+00:06:39,566 --> 00:06:42,902
+connecting a DSLR camera
+and a 5K display
+
+
+158
+00:06:42,902 --> 00:06:45,472
+to your iPad Pro
+at the same time.
+
+
+159
+00:06:45,472 --> 00:06:47,140
+For more information
+on how to build
+
+
+160
+00:06:47,140 --> 00:06:49,876
+fantastic second screen support
+into your app,
+
+
+161
+00:06:49,876 --> 00:06:53,113
+check out the WWDC 2018 video
+
+
+162
+00:06:53,113 --> 00:06:56,416
+"Adding Delight
+to Your iOS App."
+
+
+163
+00:06:56,416 --> 00:06:59,653
+iPad Pro brings Face ID
+to the iPad.
+
+
+164
+00:06:59,653 --> 00:07:00,987
+Unlike the iPhone X,
+
+
+165
+00:07:00,987 --> 00:07:03,256
+there is no
+TrueDepth camera housing.
+
+
+166
+00:07:03,256 --> 00:07:05,392
+The camera sits
+in-line with the bezel.
+
+
+167
+00:07:05,392 --> 00:07:09,329
+Face ID works in portrait,
+as well as in landscape.
+
+
+168
+00:07:09,329 --> 00:07:12,098
+If your app uses
+Touch ID for authentication,
+
+
+169
+00:07:12,098 --> 00:07:14,734
+you'll automatically get
+the new Face ID behavior
+
+
+170
+00:07:14,734 --> 00:07:17,237
+and your existing code
+will be compatible.
+
+
+171
+00:07:17,237 --> 00:07:20,340
+Just like when you adapted
+your app for iPhone X,
+
+
+172
+00:07:20,340 --> 00:07:21,708
+you'll need to do
+a couple of things
+
+
+173
+00:07:21,708 --> 00:07:25,245
+for proper robust
+Face ID support.
+
+
+174
+00:07:25,245 --> 00:07:29,349
+You'll need to add a localized
+NSFaceIDUsageDescription string
+
+
+175
+00:07:29,349 --> 00:07:32,385
+to your plist so your app
+properly asks for consent
+
+
+176
+00:07:32,385 --> 00:07:34,220
+to use Face ID.
+
+
+177
+00:07:34,220 --> 00:07:37,123
+Make sure you update
+your strings to reflect Face ID.
+
+
+178
+00:07:37,123 --> 00:07:39,559
+You can do this manually,
+or even better,
+
+
+179
+00:07:39,559 --> 00:07:41,961
+you can use the local
+authentication property,
+
+
+180
+00:07:41,961 --> 00:07:44,864
+Biometry type,
+introduced in iOS 11,
+
+
+181
+00:07:44,864 --> 00:07:46,866
+to handle this check for you.
+
+
+182
+00:07:46,866 --> 00:07:49,336
+Consider the order
+of your authentication flow.
+
+
+183
+00:07:49,336 --> 00:07:51,671
+Since Face ID
+is an automatic action,
+
+
+184
+00:07:51,671 --> 00:07:54,774
+avoid authenticating immediately
+upon launch.
+
+
+185
+00:07:54,774 --> 00:07:56,109
+Let your customer choose
+
+
+186
+00:07:56,109 --> 00:07:58,378
+when they'd like to begin
+the authentication flow
+
+
+187
+00:07:58,378 --> 00:08:00,347
+so they're ready.
+
+
+188
+00:08:00,347 --> 00:08:02,749
+For much more information,
+including sample code,
+
+
+189
+00:08:02,749 --> 00:08:07,253
+see the related video
+"Face ID and your Apps."
+
+
+190
+00:08:07,253 --> 00:08:10,390
+The new 11-inch
+and 12.9-inch iPad Pros
+
+
+191
+00:08:10,390 --> 00:08:12,859
+are the most powerful iPads yet.
+
+
+192
+00:08:12,859 --> 00:08:15,128
+Their packed with new
+technologies that will empower
+
+
+193
+00:08:15,128 --> 00:08:18,098
+exciting Core ML
+and machine learning apps,
+
+
+194
+00:08:18,098 --> 00:08:19,899
+enable Metal-based games
+
+
+195
+00:08:19,899 --> 00:08:22,469
+to deliver their most
+beautiful experience yet,
+
+
+196
+00:08:22,469 --> 00:08:26,606
+and drive ARKit 2 and
+the next generation of AR apps.
+
+
+197
+00:08:26,606 --> 00:08:29,209
+But one of the best features
+of iPad Pro
+
+
+198
+00:08:29,209 --> 00:08:30,877
+is how simple it will be for you
+
+
+199
+00:08:30,877 --> 00:08:34,214
+to bring your existing
+applications to these iPads.
+
+
+200
+00:08:34,214 --> 00:08:35,815
+By following existing guidelines
+
+
+201
+00:08:35,815 --> 00:08:38,217
+and staying familiar
+with best practices,
+
+
+202
+00:08:38,217 --> 00:08:42,155
+it's easy to get your app up
+and running for your customers.
+

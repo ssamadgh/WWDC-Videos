@@ -1,0 +1,6831 @@
+1
+00:00:11,446 --> 00:00:15,166
+>> Good morning and welcome to
+Advanced Debugging with LLDB.
+
+
+2
+00:00:15,976 --> 00:00:19,126
+[ Applause ]
+
+
+3
+00:00:19,626 --> 00:00:21,286
+I hope you're having
+a great show so far,
+
+
+4
+00:00:21,326 --> 00:00:23,186
+we've got one last day
+of content for you.
+
+
+5
+00:00:23,186 --> 00:00:25,706
+So let's make the most of
+it by starting with one
+
+
+6
+00:00:25,706 --> 00:00:27,266
+of the more important
+topics when it comes
+
+
+7
+00:00:27,266 --> 00:00:30,486
+to software development, making
+sure that everything is clean
+
+
+8
+00:00:30,486 --> 00:00:32,726
+and polished in your
+application before it goes live.
+
+
+9
+00:00:33,456 --> 00:00:36,216
+My name is Kate Stone I manage
+the team responsible for LLDB.
+
+
+10
+00:00:36,216 --> 00:00:38,366
+I'm going to get things
+going here, but I'm going
+
+
+11
+00:00:38,366 --> 00:00:41,256
+to spend most of the time in
+the session turning things
+
+
+12
+00:00:41,256 --> 00:00:43,666
+over to my engineers who
+walk you through some
+
+
+13
+00:00:43,666 --> 00:00:46,986
+of the exciting things
+that we love about LLDB
+
+
+14
+00:00:46,986 --> 00:00:50,056
+that you deserve
+to know about too.
+
+
+15
+00:00:50,286 --> 00:00:51,716
+So what should you
+expect from this talk?
+
+
+16
+00:00:52,726 --> 00:00:55,456
+Well, the vast majority of
+our time here is spent focused
+
+
+17
+00:00:55,456 --> 00:00:58,516
+on LLDB as the foundation
+for the debugging experience.
+
+
+18
+00:00:59,386 --> 00:01:02,546
+LLDB is essentially a library
+that knows how to do all kinds
+
+
+19
+00:01:02,546 --> 00:01:04,916
+of interesting things with
+the running application.
+
+
+20
+00:01:05,676 --> 00:01:07,006
+It's a command line experience
+
+
+21
+00:01:07,316 --> 00:01:09,366
+but it's also the
+foundation for Xcode.
+
+
+22
+00:01:09,936 --> 00:01:12,396
+So while we'll talk about how
+to use it from a command line,
+
+
+23
+00:01:12,566 --> 00:01:14,226
+we'll talk about
+the Xcode experience
+
+
+24
+00:01:14,616 --> 00:01:17,036
+to really understand
+what Xcode adds on top
+
+
+25
+00:01:17,036 --> 00:01:19,426
+of our debugging
+foundation, you should go back
+
+
+26
+00:01:19,426 --> 00:01:21,906
+and watch the video for the
+debugging with Xcode session,
+
+
+27
+00:01:22,316 --> 00:01:23,916
+which unfortunately, it
+was earlier this week,
+
+
+28
+00:01:23,916 --> 00:01:27,016
+but there's a lot
+of good news there.
+
+
+29
+00:01:27,226 --> 00:01:29,146
+What we're going to
+talk about here are tips
+
+
+30
+00:01:29,196 --> 00:01:30,946
+to streamline your
+debugging experience.
+
+
+31
+00:01:31,366 --> 00:01:34,086
+So you've doubtless know a
+lot about debugging already,
+
+
+32
+00:01:34,446 --> 00:01:36,446
+but if you haven't worked
+with LLDB extensively,
+
+
+33
+00:01:36,446 --> 00:01:38,006
+you may not be aware
+of everything
+
+
+34
+00:01:38,006 --> 00:01:39,116
+that you can do with
+the product.
+
+
+35
+00:01:39,646 --> 00:01:42,426
+And specifically, we're going to
+talk about it not just as a tool
+
+
+36
+00:01:42,426 --> 00:01:43,766
+for finding and fixing bugs.
+
+
+37
+00:01:43,766 --> 00:01:46,356
+But we're going to talk about,
+it is an investigative tool
+
+
+38
+00:01:46,756 --> 00:01:49,516
+for looking at your application,
+understanding what's going on,
+
+
+39
+00:01:49,586 --> 00:01:52,256
+perhaps when you've written a
+new feature to walk through it
+
+
+40
+00:01:52,256 --> 00:01:54,286
+to make sure that it's working
+the way you expect it to.
+
+
+41
+00:01:54,536 --> 00:01:56,196
+It's not always about going in
+
+
+42
+00:01:56,196 --> 00:02:00,016
+and finding a specific
+defect in your code.
+
+
+43
+00:02:00,236 --> 00:02:01,846
+Because our collective
+goal is to make sure
+
+
+44
+00:02:01,846 --> 00:02:04,826
+that your applications
+are as reliable as solid
+
+
+45
+00:02:04,826 --> 00:02:07,976
+as they can possibly be by the
+time they reach your end users.
+
+
+46
+00:02:09,106 --> 00:02:10,656
+So that's our focus
+for the session.
+
+
+47
+00:02:10,916 --> 00:02:12,966
+Let's keep our eye in
+your apps and making sure
+
+
+48
+00:02:12,966 --> 00:02:15,076
+that they can be the
+best apps possible.
+
+
+49
+00:02:15,476 --> 00:02:18,976
+What does LLDB look like today?
+
+
+50
+00:02:19,596 --> 00:02:23,956
+Well, LLDB as you know is our
+ground-up replacement for GDB.
+
+
+51
+00:02:23,956 --> 00:02:27,236
+We both-- from the ground-up
+this tool, this is designed
+
+
+52
+00:02:27,236 --> 00:02:29,506
+to be incredibly
+flexible, this is designed
+
+
+53
+00:02:29,596 --> 00:02:30,696
+to accommodate the needs
+
+
+54
+00:02:30,696 --> 00:02:33,776
+of applications looking
+forward rather than backward.
+
+
+55
+00:02:34,536 --> 00:02:36,886
+So with that in mind, we
+focused on making sure
+
+
+56
+00:02:36,886 --> 00:02:40,366
+that it is absolutely
+rock solid, this release.
+
+
+57
+00:02:41,076 --> 00:02:43,086
+If you have any issues,
+whatsoever,
+
+
+58
+00:02:43,296 --> 00:02:44,766
+make sure that we
+hear about them
+
+
+59
+00:02:44,766 --> 00:02:48,186
+because when Xcode5
+shifts LLDB will be your
+
+
+60
+00:02:48,186 --> 00:02:49,226
+debugging experience.
+
+
+61
+00:02:49,966 --> 00:02:52,506
+What have we done?
+
+
+62
+00:02:53,206 --> 00:02:56,016
+We've put in hundreds of
+improvements this release.
+
+
+63
+00:02:56,216 --> 00:02:59,376
+A lot of them are relatively
+subtle, you'll see a lot
+
+
+64
+00:02:59,376 --> 00:03:02,656
+of the old features working
+faster, more predictably
+
+
+65
+00:03:02,916 --> 00:03:04,726
+with fewer edge cases
+that you need to worry
+
+
+66
+00:03:04,726 --> 00:03:05,766
+about than never before.
+
+
+67
+00:03:06,326 --> 00:03:09,256
+But we've also focused on
+data inspection in particular.
+
+
+68
+00:03:09,916 --> 00:03:12,346
+When you're looking at
+standard system types,
+
+
+69
+00:03:12,556 --> 00:03:14,616
+when you're looking at
+anything from foundation
+
+
+70
+00:03:14,866 --> 00:03:17,546
+or if you're looking for a
+C++ standard library type,
+
+
+71
+00:03:17,766 --> 00:03:20,856
+you should get a more reasonable
+summary now, you should be able
+
+
+72
+00:03:20,856 --> 00:03:23,816
+to get summaries for things
+like NSErrors, for NSSets,
+
+
+73
+00:03:24,406 --> 00:03:27,096
+things that, again, you
+could dig in to before
+
+
+74
+00:03:27,096 --> 00:03:28,716
+but now we'll tell
+you the information
+
+
+75
+00:03:28,716 --> 00:03:30,456
+that you were looking for
+right out of the gate.
+
+
+76
+00:03:30,456 --> 00:03:34,976
+Our expression parser
+is always improving.
+
+
+77
+00:03:35,256 --> 00:03:37,906
+It's not necessarily something
+that my team is responsible for,
+
+
+78
+00:03:38,196 --> 00:03:41,736
+more importantly because my team
+took the idea that we wanted
+
+
+79
+00:03:41,736 --> 00:03:44,366
+to rely on clang as
+our expression parser.
+
+
+80
+00:03:44,826 --> 00:03:48,666
+We have a full compiler built
+into the product, any expression
+
+
+81
+00:03:48,666 --> 00:03:50,416
+that would normally
+parse and run as part
+
+
+82
+00:03:50,416 --> 00:03:53,056
+of your source code will
+work in LLDB as well.
+
+
+83
+00:03:53,516 --> 00:03:56,026
+So we're always up-to-date with
+the latest language features.
+
+
+84
+00:03:56,396 --> 00:03:59,736
+When we added things along
+the lines of the new syntax
+
+
+85
+00:03:59,736 --> 00:04:02,366
+for Objective-C,
+Objective-Constants,
+
+
+86
+00:04:02,956 --> 00:04:06,556
+they just showed up in LLDB and
+that's through going forward
+
+
+87
+00:04:06,556 --> 00:04:09,056
+as well, every new language
+feature should be part
+
+
+88
+00:04:09,056 --> 00:04:09,706
+of our debugger.
+
+
+89
+00:04:10,846 --> 00:04:11,976
+One of the things that's tricky
+
+
+90
+00:04:11,976 --> 00:04:14,686
+about this is while we pass
+the text that you give us
+
+
+91
+00:04:14,686 --> 00:04:16,606
+for an expression
+directly to the compiler,
+
+
+92
+00:04:17,716 --> 00:04:20,606
+the context that we set
+up for, we have to infer
+
+
+93
+00:04:20,886 --> 00:04:22,086
+from looking at that code.
+
+
+94
+00:04:22,346 --> 00:04:24,436
+So as a result, you may
+have found in the past
+
+
+95
+00:04:24,436 --> 00:04:26,286
+that you needed to
+cast the result
+
+
+96
+00:04:26,406 --> 00:04:28,336
+so that we knew what
+the result type was
+
+
+97
+00:04:28,596 --> 00:04:30,206
+and could explore
+it appropriately.
+
+
+98
+00:04:30,626 --> 00:04:33,026
+You'll find that in most
+cases, we can now infer that
+
+
+99
+00:04:33,026 --> 00:04:36,036
+and far fewer explicit
+casts are required
+
+
+100
+00:04:36,036 --> 00:04:37,856
+for the expression evaluator.
+
+
+101
+00:04:38,516 --> 00:04:44,106
+[ Applause ]
+
+
+102
+00:04:44,606 --> 00:04:47,096
+So let's think a little bit
+about the debugging experience.
+
+
+103
+00:04:47,206 --> 00:04:48,076
+What is it that you should do?
+
+
+104
+00:04:48,076 --> 00:04:50,106
+Well, to start with,
+you should go
+
+
+105
+00:04:50,106 --> 00:04:51,856
+into debugging a
+particular problem
+
+
+106
+00:04:51,856 --> 00:04:54,926
+or exploring something
+really well-informed.
+
+
+107
+00:04:55,526 --> 00:04:56,976
+There are a bunch of
+techniques for doing this
+
+
+108
+00:04:56,976 --> 00:04:58,336
+that we'll cover
+in detail later.
+
+
+109
+00:04:58,596 --> 00:05:01,596
+They should be familiar
+ideas, things like assertions
+
+
+110
+00:05:01,596 --> 00:05:04,156
+and logging, static
+analysis, and using some
+
+
+111
+00:05:04,156 --> 00:05:07,526
+of the runtime tools that
+will watch your code for us
+
+
+112
+00:05:07,826 --> 00:05:09,386
+and tell you, here's
+what's going
+
+
+113
+00:05:09,386 --> 00:05:10,906
+on that you might
+need to be aware of.
+
+
+114
+00:05:11,536 --> 00:05:13,716
+But you should also
+focus on unit tests.
+
+
+115
+00:05:14,536 --> 00:05:18,166
+A unit test will tell you that
+this is the narrow situation
+
+
+116
+00:05:18,296 --> 00:05:20,116
+in which your code is
+not behaving the way you
+
+
+117
+00:05:20,116 --> 00:05:20,836
+expected to.
+
+
+118
+00:05:21,166 --> 00:05:23,336
+So if you are already
+writing a lot of unit test,
+
+
+119
+00:05:23,646 --> 00:05:26,746
+make sure you review the
+unit testing in Xcode session
+
+
+120
+00:05:27,026 --> 00:05:31,106
+to get some idea
+what that intends.
+
+
+121
+00:05:31,106 --> 00:05:34,696
+And lastly, we need to trust
+the Xcode debug configuration.
+
+
+122
+00:05:35,056 --> 00:05:38,056
+Out of the box, a new project
+in Xcode will be configured
+
+
+123
+00:05:38,316 --> 00:05:41,566
+to build debug information,
+you need to make sure that,
+
+
+124
+00:05:41,566 --> 00:05:43,336
+that's what you're
+feeding to the debugger
+
+
+125
+00:05:43,466 --> 00:05:44,826
+that you weren't
+stripping that away
+
+
+126
+00:05:44,976 --> 00:05:46,606
+or else you won't be
+able to find symbols.
+
+
+127
+00:05:47,136 --> 00:05:49,256
+You need to make sure that
+optimization is disabled
+
+
+128
+00:05:49,256 --> 00:05:51,536
+which it is by default or
+you'll find that stepping
+
+
+129
+00:05:51,536 --> 00:05:53,446
+through your code and
+leads to surprises.
+
+
+130
+00:05:53,916 --> 00:05:56,766
+If you attach to a running
+application, you may find
+
+
+131
+00:05:56,766 --> 00:06:00,156
+that these have not
+been taken care of,
+
+
+132
+00:06:00,526 --> 00:06:02,306
+that's why you're not getting
+the information you need
+
+
+133
+00:06:02,306 --> 00:06:03,396
+if that's why you're
+not stepping
+
+
+134
+00:06:03,396 --> 00:06:04,906
+through code in a
+logical fashion.
+
+
+135
+00:06:05,216 --> 00:06:07,996
+Going back in building with the
+debug configuration is always a
+
+
+136
+00:06:07,996 --> 00:06:11,416
+good idea for debug session.
+
+
+137
+00:06:11,576 --> 00:06:14,536
+Secondly, we need to avoid
+some of the common mistakes.
+
+
+138
+00:06:14,616 --> 00:06:17,156
+You can go and you can do
+the brute-force debugging.
+
+
+139
+00:06:17,596 --> 00:06:20,676
+Everybody knows how to do
+this, set a breakpoint right
+
+
+140
+00:06:20,676 --> 00:06:22,926
+at the beginning of our
+code and step, step our way
+
+
+141
+00:06:22,926 --> 00:06:24,026
+to where we need to get to.
+
+
+142
+00:06:24,186 --> 00:06:26,736
+But in practice, that's
+not the most efficient way
+
+
+143
+00:06:26,956 --> 00:06:28,506
+to take advantage of LLDB.
+
+
+144
+00:06:28,676 --> 00:06:31,556
+So during the session, we'll
+talk about how to stop exactly
+
+
+145
+00:06:31,556 --> 00:06:35,676
+where you want to, not keep
+running 20 times until you get
+
+
+146
+00:06:35,676 --> 00:06:38,186
+to the right pass,
+how to stop actually
+
+
+147
+00:06:38,186 --> 00:06:39,716
+under the conditions
+you're interested in.
+
+
+148
+00:06:40,836 --> 00:06:43,096
+How to then customize
+what you're seeing
+
+
+149
+00:06:43,276 --> 00:06:45,596
+with custom formatters
+and custom commands
+
+
+150
+00:06:45,906 --> 00:06:47,746
+because we're going to give
+you a reasonable format
+
+
+151
+00:06:47,996 --> 00:06:50,866
+for system types, but we don't
+know about your types yet.
+
+
+152
+00:06:51,226 --> 00:06:52,926
+We'll allow you to
+introduce us to your types
+
+
+153
+00:06:53,176 --> 00:06:54,876
+and tell us what's
+interesting about them.
+
+
+154
+00:06:55,726 --> 00:07:00,146
+And lastly, we want to focus
+on how you can write debug code
+
+
+155
+00:07:00,386 --> 00:07:02,916
+without stopping your
+project altering your source,
+
+
+156
+00:07:02,916 --> 00:07:04,846
+going through rebuild
+cycle and then trying
+
+
+157
+00:07:04,846 --> 00:07:05,956
+to get back to that state.
+
+
+158
+00:07:06,476 --> 00:07:08,596
+Because again, we've got a
+full expression evaluator,
+
+
+159
+00:07:08,816 --> 00:07:11,406
+you can write incredibly
+sophisticated code right there
+
+
+160
+00:07:11,406 --> 00:07:14,376
+in the debugger to alter the way
+your application is executing
+
+
+161
+00:07:14,466 --> 00:07:16,696
+and explore things that
+your source may not
+
+
+162
+00:07:16,696 --> 00:07:20,316
+yet be set up for.
+
+
+163
+00:07:20,536 --> 00:07:23,086
+Along the way though, especially
+when you're taking the advantage
+
+
+164
+00:07:23,086 --> 00:07:25,586
+of the expression evaluator, you
+should watch out for the fact
+
+
+165
+00:07:25,586 --> 00:07:27,596
+that while the debugger
+goes well out of its way
+
+
+166
+00:07:27,596 --> 00:07:28,896
+to avoid side effects.
+
+
+167
+00:07:29,626 --> 00:07:33,366
+If you're telling us explicitly
+to run some code, we are running
+
+
+168
+00:07:33,366 --> 00:07:34,926
+that code in your
+live application,
+
+
+169
+00:07:34,926 --> 00:07:38,596
+it can change the state of
+things that can be a good thing
+
+
+170
+00:07:38,826 --> 00:07:40,466
+if your intent is to try to work
+
+
+171
+00:07:40,466 --> 00:07:43,376
+around an issue during the
+debug session or a bad thing
+
+
+172
+00:07:43,376 --> 00:07:45,566
+if you're trying to see exactly
+what your application is going
+
+
+173
+00:07:45,566 --> 00:07:47,156
+to do without the
+debugger attached.
+
+
+174
+00:07:49,556 --> 00:07:50,886
+So for the rest of this session,
+
+
+175
+00:07:51,296 --> 00:07:53,546
+the focus is this
+canonical process
+
+
+176
+00:07:53,546 --> 00:07:55,816
+of how do I use the
+debugger each and every time
+
+
+177
+00:07:56,046 --> 00:07:57,156
+to catch those tasty bugs?
+
+
+178
+00:07:58,946 --> 00:08:01,986
+The answer is step one we
+need to pick our focus.
+
+
+179
+00:08:02,506 --> 00:08:03,666
+We need to choose what it is
+
+
+180
+00:08:03,696 --> 00:08:04,906
+that we're trying
+to investigate?
+
+
+181
+00:08:04,906 --> 00:08:06,926
+What's the question
+that we have in mind
+
+
+182
+00:08:06,926 --> 00:08:08,146
+that the debugger
+can help answer?
+
+
+183
+00:08:09,386 --> 00:08:13,546
+Step two, how do I stop right
+before the interesting path
+
+
+184
+00:08:14,136 --> 00:08:17,616
+before the problem has
+occurred but not so far from it
+
+
+185
+00:08:17,616 --> 00:08:21,236
+that we're going to be
+stepping endlessly to get there.
+
+
+186
+00:08:21,456 --> 00:08:23,616
+Then we need to step
+through our live code looking
+
+
+187
+00:08:23,616 --> 00:08:25,826
+at the interesting things
+that are going on the path
+
+
+188
+00:08:25,926 --> 00:08:29,436
+that it's following, and
+looking at data along the way.
+
+
+189
+00:08:29,876 --> 00:08:31,666
+So we understand the
+state of our application
+
+
+190
+00:08:31,826 --> 00:08:33,336
+and the changes that
+are being made.
+
+
+191
+00:08:33,796 --> 00:08:37,765
+So our focus here is to help you
+be experts at all of the above.
+
+
+192
+00:08:39,155 --> 00:08:41,666
+To get it started, I'd like
+to invite up Sean Callan,
+
+
+193
+00:08:41,866 --> 00:08:43,716
+one of my engineers
+who will walk you
+
+
+194
+00:08:43,716 --> 00:08:46,866
+through a few incredibly
+helpful tips at the start
+
+
+195
+00:08:46,866 --> 00:08:49,886
+of this process, but you should
+also tackle them in the labs,
+
+
+196
+00:08:49,886 --> 00:08:52,346
+if you have any questions at all
+about the expression evaluator
+
+
+197
+00:08:52,606 --> 00:08:54,186
+because he is our
+expert on the subject.
+
+
+198
+00:08:54,726 --> 00:08:55,226
+Thank you, Sean.
+
+
+199
+00:08:59,186 --> 00:09:00,006
+>> Thank you very much, Kate.
+
+
+200
+00:09:00,756 --> 00:09:04,066
+I'm really excited to show you
+all the great ways you can debug
+
+
+201
+00:09:04,066 --> 00:09:04,906
+with LLDB.
+
+
+202
+00:09:05,496 --> 00:09:07,706
+But I think one of the most
+important things to understand
+
+
+203
+00:09:07,706 --> 00:09:11,466
+when you're debugging is when
+to use LLDB and what sort
+
+
+204
+00:09:11,466 --> 00:09:13,746
+of information can help you
+out when you're debugging.
+
+
+205
+00:09:16,296 --> 00:09:21,876
+So one situation where LLDB
+might not be the first stop
+
+
+206
+00:09:21,876 --> 00:09:25,316
+for you is if you're not sure
+whether your program has a bug
+
+
+207
+00:09:25,316 --> 00:09:27,896
+in the first place.
+
+
+208
+00:09:28,096 --> 00:09:32,566
+One way you can check, whether
+what your assumptions are,
+
+
+209
+00:09:32,716 --> 00:09:34,196
+or actually what's happening
+
+
+210
+00:09:34,196 --> 00:09:36,486
+in your code is by
+using assertions.
+
+
+211
+00:09:37,536 --> 00:09:40,416
+Now what assertions
+let you do is express
+
+
+212
+00:09:40,716 --> 00:09:42,826
+that you make a particular
+assumption
+
+
+213
+00:09:43,046 --> 00:09:45,396
+and you believe this
+is not only unlikely
+
+
+214
+00:09:45,576 --> 00:09:47,006
+but it's actually impossible.
+
+
+215
+00:09:48,026 --> 00:09:51,836
+Now remember, as programmers, we
+want to be using arrow handling
+
+
+216
+00:09:52,066 --> 00:09:53,736
+to count, to handle the cases
+
+
+217
+00:09:53,736 --> 00:09:56,656
+that we actually think are
+possible just, you know,
+
+
+218
+00:09:56,656 --> 00:09:59,396
+that are, that where our
+program won't work correctly.
+
+
+219
+00:09:59,906 --> 00:10:03,966
+So this is really for
+cases where your app is,
+
+
+220
+00:10:04,306 --> 00:10:07,336
+has encountered something
+that just can't be.
+
+
+221
+00:10:08,126 --> 00:10:11,096
+Now another case where
+assertions can be handy is
+
+
+222
+00:10:11,096 --> 00:10:14,576
+if you have internal
+APIs between components
+
+
+223
+00:10:15,196 --> 00:10:18,506
+and they have contract between
+them that shouldn't be violated.
+
+
+224
+00:10:18,506 --> 00:10:21,116
+Now remember, that's
+for internal APIs.
+
+
+225
+00:10:21,116 --> 00:10:23,226
+For external APIs,
+you really want
+
+
+226
+00:10:23,226 --> 00:10:24,816
+to be using correct
+error handling.
+
+
+227
+00:10:25,636 --> 00:10:28,796
+What an assertion will do is
+if this contract is violated,
+
+
+228
+00:10:29,026 --> 00:10:33,056
+your application will
+crash right then and there.
+
+
+229
+00:10:33,276 --> 00:10:37,886
+Now having your application
+crash deliberately isn't exactly
+
+
+230
+00:10:37,886 --> 00:10:39,806
+a recipe for good
+reviews on the App Store.
+
+
+231
+00:10:40,166 --> 00:10:44,226
+So you want to make sure that
+the assertions are disabled
+
+
+232
+00:10:44,226 --> 00:10:45,066
+when you build release.
+
+
+233
+00:10:45,906 --> 00:10:49,126
+Xcode does that for you and
+now default project templates,
+
+
+234
+00:10:49,406 --> 00:10:52,246
+we've disabled assertions
+when you build release.
+
+
+235
+00:10:52,986 --> 00:10:55,046
+Now there's one other thing
+
+
+236
+00:10:55,046 --> 00:10:57,166
+about assertions you
+have to be aware of.
+
+
+237
+00:10:58,076 --> 00:11:00,516
+When you've got an assertion
+compiled into your code,
+
+
+238
+00:11:01,646 --> 00:11:06,046
+the condition is evaluated
+only if the assertion is there.
+
+
+239
+00:11:06,296 --> 00:11:09,416
+So your condition should
+not do useful work otherwise
+
+
+240
+00:11:09,416 --> 00:11:11,946
+when you build release
+that useful work is gone.
+
+
+241
+00:11:11,946 --> 00:11:13,276
+All right.
+
+
+242
+00:11:13,436 --> 00:11:18,506
+Now let's say, you don't have
+a clear red flag that says, OK,
+
+
+243
+00:11:18,506 --> 00:11:19,476
+something's going wrong.
+
+
+244
+00:11:20,576 --> 00:11:26,056
+You more have behaviors in your
+app where over a period of time,
+
+
+245
+00:11:26,246 --> 00:11:30,566
+your app gets, you know, through
+code pass that look reasonable
+
+
+246
+00:11:30,726 --> 00:11:32,566
+but ends up somewhere
+where it shouldn't be.
+
+
+247
+00:11:33,186 --> 00:11:35,426
+This is where logging
+can be really handy.
+
+
+248
+00:11:36,976 --> 00:11:40,596
+Now you all maybe familiar
+with NSLog, but what I'm going
+
+
+249
+00:11:40,596 --> 00:11:43,226
+to tell you about is
+the Apple System Log.
+
+
+250
+00:11:44,506 --> 00:11:47,126
+Logging let's you review
+execution of your code
+
+
+251
+00:11:47,126 --> 00:11:49,766
+after the fact and
+the Apple System Log,
+
+
+252
+00:11:49,766 --> 00:11:55,086
+you can review using the
+console.app utility on your Mac.
+
+
+253
+00:11:55,226 --> 00:11:58,956
+One great feature of the Apple
+System Log is you can indicate
+
+
+254
+00:11:59,076 --> 00:12:02,306
+how severe the log messages
+are that you're sending out.
+
+
+255
+00:12:03,386 --> 00:12:07,236
+You can distinguish between
+absolute emergencies, oh,
+
+
+256
+00:12:07,236 --> 00:12:09,296
+my God, stop now,
+this is terrible.
+
+
+257
+00:12:10,096 --> 00:12:14,126
+And just debug information that
+you want to communicate just
+
+
+258
+00:12:14,126 --> 00:12:17,746
+to let into the program or
+the user know what's going on.
+
+
+259
+00:12:18,566 --> 00:12:21,216
+Now I've shown you two
+levels, the most severe
+
+
+260
+00:12:21,216 --> 00:12:23,366
+and the least severe,
+but there's a gradient
+
+
+261
+00:12:23,366 --> 00:12:24,736
+in between them that
+you can use.
+
+
+262
+00:12:26,306 --> 00:12:28,846
+Now another cool thing you
+can do with logging is,
+
+
+263
+00:12:29,176 --> 00:12:31,576
+you can use hashtags
+kind of like in Twitter.
+
+
+264
+00:12:32,366 --> 00:12:35,676
+Now hastags are not some
+magic, you just search for them
+
+
+265
+00:12:35,676 --> 00:12:38,986
+in console.app and you can find
+all the logs that are relevant
+
+
+266
+00:12:38,986 --> 00:12:40,346
+to that part of your program.
+
+
+267
+00:12:41,756 --> 00:12:44,256
+One other single-- to
+remember with logs is,
+
+
+268
+00:12:44,696 --> 00:12:47,356
+sometimes you get really
+enthusiastic and you're like,
+
+
+269
+00:12:47,356 --> 00:12:48,706
+oh, I love this logging thing,
+
+
+270
+00:12:48,816 --> 00:12:51,506
+I'm going to dump all my data
+structures out to the log just
+
+
+271
+00:12:51,506 --> 00:12:53,546
+to see what could
+might, maybe go wrong.
+
+
+272
+00:12:53,546 --> 00:12:57,166
+Now that's going to mean, your
+program is going to spend time
+
+
+273
+00:12:57,366 --> 00:12:59,376
+in looking through with
+state of structures
+
+
+274
+00:12:59,656 --> 00:13:00,776
+and printing everything.
+
+
+275
+00:13:01,406 --> 00:13:03,416
+Now maybe, you want to
+turn that on and off
+
+
+276
+00:13:03,636 --> 00:13:05,996
+so that your program isn't
+spending all that time
+
+
+277
+00:13:05,996 --> 00:13:07,056
+when you don't care about it.
+
+
+278
+00:13:08,286 --> 00:13:10,926
+Now there are a couple of ways
+doing this and I'm not going
+
+
+279
+00:13:10,926 --> 00:13:13,696
+to tell you anyway this
+app is terribly wrong.
+
+
+280
+00:13:14,246 --> 00:13:17,836
+I've seen people use
+compile-time debug--
+
+
+281
+00:13:17,836 --> 00:13:21,356
+compile-time hash defines to
+enable and disable logging.
+
+
+282
+00:13:21,356 --> 00:13:25,126
+I've also seen people use
+environment variables.
+
+
+283
+00:13:25,846 --> 00:13:27,676
+One of my favorite
+ways of enabling
+
+
+284
+00:13:27,676 --> 00:13:31,056
+and disabling logging is using
+the NSUserDefault subsystem.
+
+
+285
+00:13:31,416 --> 00:13:34,336
+With NSUserDefaults which
+you can look up in man pages,
+
+
+286
+00:13:34,336 --> 00:13:39,436
+you can set a variable and pick
+up from the command line that is
+
+
+287
+00:13:39,496 --> 00:13:41,816
+from your shell and
+just picks that up
+
+
+288
+00:13:41,816 --> 00:13:43,216
+from your app as it's running.
+
+
+289
+00:13:43,216 --> 00:13:45,906
+So it's a great way to
+turn off and on logging.
+
+
+290
+00:13:45,906 --> 00:13:52,296
+Now, I've shown you a couple
+of ways of making your program,
+
+
+291
+00:13:52,586 --> 00:13:55,196
+use your DDbug by
+modifying your source code.
+
+
+292
+00:13:55,676 --> 00:13:59,586
+But we've also provided you with
+some great ways inside Xcode
+
+
+293
+00:14:00,016 --> 00:14:01,736
+to find bugs in your program.
+
+
+294
+00:14:02,786 --> 00:14:05,046
+Double your everything in clang
+
+
+295
+00:14:06,096 --> 00:14:08,866
+and the static analyzer
+are great ways
+
+
+296
+00:14:09,096 --> 00:14:12,736
+to find problems before you
+even start running your program.
+
+
+297
+00:14:14,166 --> 00:14:16,916
+Another couple of tools that you
+can use while your program is
+
+
+298
+00:14:16,946 --> 00:14:20,426
+running are Guard Malloc
+and Zombie Objects.
+
+
+299
+00:14:21,116 --> 00:14:23,676
+Now there are great
+sessions both this year
+
+
+300
+00:14:23,816 --> 00:14:26,986
+and in previous years which
+cover both of these areas.
+
+
+301
+00:14:27,366 --> 00:14:29,086
+So I'm not going to go
+into too much detail,
+
+
+302
+00:14:29,086 --> 00:14:31,166
+but do check those out.
+
+
+303
+00:14:32,176 --> 00:14:33,416
+All right.
+
+
+304
+00:14:33,416 --> 00:14:35,796
+Now we've gone on and off
+about what to do before you get
+
+
+305
+00:14:35,796 --> 00:14:39,246
+into LLDB, I kind of like
+spending time in LLDB,
+
+
+306
+00:14:39,246 --> 00:14:41,326
+so let's get right in there.
+
+
+307
+00:14:41,606 --> 00:14:43,626
+Now in LLDB, there--
+
+
+308
+00:14:43,626 --> 00:14:46,336
+you're going to have two
+general ways of doing things.
+
+
+309
+00:14:47,466 --> 00:14:50,776
+This going to be the way by
+clicking buttons in Xcode
+
+
+310
+00:14:51,126 --> 00:14:53,736
+which is really nice and
+convenient for many cases.
+
+
+311
+00:14:54,506 --> 00:14:57,666
+And we also have a command
+language that you can use
+
+
+312
+00:14:57,716 --> 00:15:00,676
+through the LLDB
+console to achieve many
+
+
+313
+00:15:00,676 --> 00:15:02,366
+of the same things
+and a couple more.
+
+
+314
+00:15:02,366 --> 00:15:06,276
+The reason you might want
+to use the LLDB console even
+
+
+315
+00:15:06,276 --> 00:15:09,056
+when there's an equivalent
+Xcode function is
+
+
+316
+00:15:09,056 --> 00:15:12,526
+that it's a great way of keeping
+a record of what you've done
+
+
+317
+00:15:12,526 --> 00:15:16,476
+in the past and how you got into
+the situation you're in now.
+
+
+318
+00:15:18,016 --> 00:15:21,926
+Now commands in the LLDB
+console have a couple of forms.
+
+
+319
+00:15:22,656 --> 00:15:25,946
+There's the most discoverable
+form, for each command
+
+
+320
+00:15:26,226 --> 00:15:30,086
+that let's you find it easily
+through the help system.
+
+
+321
+00:15:30,546 --> 00:15:35,826
+Also the options in this most
+discoverable form, very verbose
+
+
+322
+00:15:36,106 --> 00:15:39,276
+and you can see exactly what
+this command is trying to do.
+
+
+323
+00:15:39,756 --> 00:15:43,266
+So for example, if you
+want to run an expression,
+
+
+324
+00:15:43,626 --> 00:15:47,076
+get the result of it and pass
+the description method to it,
+
+
+325
+00:15:47,076 --> 00:15:49,196
+assuming it's an
+Objective-C object,
+
+
+326
+00:15:49,636 --> 00:15:52,986
+then you can say
+expression-- object description,
+
+
+327
+00:15:53,466 --> 00:15:56,996
+and then type what
+you want to output.
+
+
+328
+00:15:58,076 --> 00:16:00,916
+Now, after you've used
+that a couple of times,
+
+
+329
+00:16:00,956 --> 00:16:03,066
+you're probably going to say,
+well that's a lot to type.
+
+
+330
+00:16:03,746 --> 00:16:07,016
+And we provided abbreviated
+forms of these for you.
+
+
+331
+00:16:07,356 --> 00:16:08,686
+Now this isn't any magic,
+
+
+332
+00:16:09,006 --> 00:16:11,966
+you just hacked off the
+tail end of expression.
+
+
+333
+00:16:12,256 --> 00:16:14,936
+You shortened object description
+down to a single letter.
+
+
+334
+00:16:15,906 --> 00:16:21,386
+That's a great way of typing
+common things very quickly.
+
+
+335
+00:16:22,706 --> 00:16:25,926
+Another way that we provide,
+when there's a command
+
+
+336
+00:16:25,926 --> 00:16:28,986
+that you use a lot, and
+you use a particular set
+
+
+337
+00:16:28,986 --> 00:16:31,346
+of options with it is aliases.
+
+
+338
+00:16:32,226 --> 00:16:34,726
+Now in this case,
+we have the PO alias
+
+
+339
+00:16:34,726 --> 00:16:36,196
+which probably many of you know.
+
+
+340
+00:16:36,196 --> 00:16:39,576
+But the great thing is,
+we've also provided you ways
+
+
+341
+00:16:39,786 --> 00:16:41,696
+to write your own aliases.
+
+
+342
+00:16:42,136 --> 00:16:44,546
+And while I'm not going to
+go into this these this talk,
+
+
+343
+00:16:45,076 --> 00:16:47,776
+last year's LLDB talk
+shows you how to do that.
+
+
+344
+00:16:48,366 --> 00:16:50,586
+What I'm going to show you
+
+
+345
+00:16:50,586 --> 00:16:53,556
+in this talk is both
+the shortest form
+
+
+346
+00:16:54,076 --> 00:16:57,466
+which maybe an alias and
+the long form if you want
+
+
+347
+00:16:57,466 --> 00:16:58,666
+to explore it on your own.
+
+
+348
+00:16:58,766 --> 00:16:59,366
+All right.
+
+
+349
+00:17:00,696 --> 00:17:05,606
+Now that I've gotten through the
+background, let's show you how
+
+
+350
+00:17:05,606 --> 00:17:07,756
+to stop your program with LLDB.
+
+
+351
+00:17:08,776 --> 00:17:10,236
+One of the most important parts
+
+
+352
+00:17:10,236 --> 00:17:15,366
+of the debugging process is
+stopping before your bug occurs.
+
+
+353
+00:17:15,606 --> 00:17:20,036
+Now here, I have two
+sub classes of UIView
+
+
+354
+00:17:20,205 --> 00:17:22,415
+and both implement
+the drawRect method.
+
+
+355
+00:17:22,415 --> 00:17:26,776
+What I want to see is how
+can I stop at these methods,
+
+
+356
+00:17:26,776 --> 00:17:29,096
+what different ways
+does LLDB provide?.
+
+
+357
+00:17:29,966 --> 00:17:32,366
+Well, the most common
+one is probably stopping
+
+
+358
+00:17:32,366 --> 00:17:34,356
+at a particular line
+in the source code.
+
+
+359
+00:17:34,356 --> 00:17:37,916
+Now this is very easy to
+tell LLDB, I want to stop
+
+
+360
+00:17:37,916 --> 00:17:39,946
+at a particular file
+in the line.
+
+
+361
+00:17:40,956 --> 00:17:44,446
+Now if the same thing
+can be done in Xcode,
+
+
+362
+00:17:44,746 --> 00:17:47,556
+simply by clicking
+next to that line.
+
+
+363
+00:17:47,916 --> 00:17:49,466
+That's a breakpoint right there.
+
+
+364
+00:17:49,976 --> 00:17:51,986
+Now this is something you've
+probably done very often.
+
+
+365
+00:17:52,666 --> 00:17:56,566
+On the other hand, if you don't
+know the filing by line number,
+
+
+366
+00:17:56,956 --> 00:17:59,606
+you can tell LLDB, just
+stop at this method
+
+
+367
+00:18:00,436 --> 00:18:04,376
+and just make sure you include
+the dash and the brackets.
+
+
+368
+00:18:04,876 --> 00:18:06,426
+But LLDB will stop even
+
+
+369
+00:18:06,426 --> 00:18:09,926
+if you don't know what the
+filing by line number are.
+
+
+370
+00:18:10,656 --> 00:18:12,256
+You can do the same
+thing in Xcode
+
+
+371
+00:18:12,506 --> 00:18:15,246
+by clicking the little plus
+sign at the bottom left
+
+
+372
+00:18:15,246 --> 00:18:16,496
+of the breakpoint navigator
+
+
+373
+00:18:16,496 --> 00:18:19,526
+and then clicking add
+symbolic breakpoint.
+
+
+374
+00:18:21,316 --> 00:18:23,916
+In the window that pops up,
+you can type the name, again,
+
+
+375
+00:18:23,916 --> 00:18:25,596
+remembering the dash
+and brackets.
+
+
+376
+00:18:26,796 --> 00:18:30,916
+There's a third way that you
+can do from the LLDB console
+
+
+377
+00:18:32,016 --> 00:18:35,446
+which is stopping whenever
+any object receives a
+
+
+378
+00:18:35,446 --> 00:18:36,466
+particular selector.
+
+
+379
+00:18:37,336 --> 00:18:39,626
+This is great if you've
+gotten multiple objects
+
+
+380
+00:18:39,836 --> 00:18:42,876
+that implement the same
+selector, for example drawRect.
+
+
+381
+00:18:45,556 --> 00:18:46,696
+All right.
+
+
+382
+00:18:46,826 --> 00:18:49,276
+Now you've set your breakpoint,
+but I'm sure you've--
+
+
+383
+00:18:49,276 --> 00:18:53,126
+many of you have encountered
+breakpoints that you hit over
+
+
+384
+00:18:53,126 --> 00:18:56,226
+and over again and constantly,
+you're going back and forth
+
+
+385
+00:18:56,226 --> 00:18:58,606
+between your app triggering
+breakpoints and OK,
+
+
+386
+00:18:58,606 --> 00:19:01,866
+back to Xcode, doing something
+at the console, then going back
+
+
+387
+00:19:01,866 --> 00:19:03,656
+to your app doing some what--
+
+
+388
+00:19:03,656 --> 00:19:05,746
+this hopping back and forth
+can get really frustrating
+
+
+389
+00:19:05,746 --> 00:19:06,246
+over time.
+
+
+390
+00:19:07,466 --> 00:19:09,306
+To help you out in
+those situations,
+
+
+391
+00:19:09,556 --> 00:19:13,106
+we've provided the facility
+of breakpoint commands.
+
+
+392
+00:19:14,726 --> 00:19:17,216
+Breakpoint commands
+are a way to tell LLDB,
+
+
+393
+00:19:17,216 --> 00:19:18,726
+I want you to do this set
+
+
+394
+00:19:18,956 --> 00:19:21,876
+of actions each time
+you hit the breakpoint.
+
+
+395
+00:19:23,226 --> 00:19:26,416
+Now those actions can
+collect some data for you.
+
+
+396
+00:19:26,686 --> 00:19:29,976
+In this case, when you
+need to redisplay a Rect,
+
+
+397
+00:19:30,226 --> 00:19:33,326
+we print the Rect that
+you've been provided with,
+
+
+398
+00:19:34,016 --> 00:19:38,226
+and you can also get a back
+trace of the current thread
+
+
+399
+00:19:38,226 --> 00:19:39,806
+to tell you who told
+you about this.
+
+
+400
+00:19:41,446 --> 00:19:43,406
+Now one other cool
+thing you can do is,
+
+
+401
+00:19:43,756 --> 00:19:45,896
+you can actually just
+continue your process
+
+
+402
+00:19:45,936 --> 00:19:47,396
+after you hit that breakpoint.
+
+
+403
+00:19:48,516 --> 00:19:51,716
+This is really handy because it
+means you can do all your app
+
+
+404
+00:19:51,716 --> 00:19:53,606
+interaction that
+triggers all these events.
+
+
+405
+00:19:53,696 --> 00:19:55,906
+And then go to Xcode afterwards
+
+
+406
+00:19:56,106 --> 00:19:58,506
+and see all the output
+from your commands.
+
+
+407
+00:19:59,136 --> 00:20:02,016
+There's a way to do
+this in Xcode too.
+
+
+408
+00:20:02,726 --> 00:20:05,636
+You select the breakpoint,
+you right-click,
+
+
+409
+00:20:06,906 --> 00:20:12,316
+click Edit Breakpoint, and then
+there's the Add Action button
+
+
+410
+00:20:12,556 --> 00:20:14,376
+in this little window
+that pops up.
+
+
+411
+00:20:14,376 --> 00:20:19,846
+You click Add Action, and
+then, you can click Plus
+
+
+412
+00:20:20,156 --> 00:20:23,306
+to add more commands then
+you type in the commands.
+
+
+413
+00:20:23,936 --> 00:20:26,446
+The only difference between
+the way you do it in LLDB
+
+
+414
+00:20:26,446 --> 00:20:29,006
+and the way you do
+it in Xcode is
+
+
+415
+00:20:29,006 --> 00:20:31,286
+that there's a little
+check box that tells you
+
+
+416
+00:20:31,286 --> 00:20:33,866
+that you can continue
+after evaluating.
+
+
+417
+00:20:34,516 --> 00:20:38,506
+Now in this case, we
+actually want to do that.
+
+
+418
+00:20:38,506 --> 00:20:39,166
+All right.
+
+
+419
+00:20:39,166 --> 00:20:40,556
+So breakpoint commands
+are great.
+
+
+420
+00:20:41,486 --> 00:20:43,756
+But there's another
+type of situation
+
+
+421
+00:20:43,936 --> 00:20:46,176
+in which breakpoints
+are frustrating to use.
+
+
+422
+00:20:47,306 --> 00:20:50,656
+If you have a situation where
+you hit a breakpoint a bunch
+
+
+423
+00:20:50,656 --> 00:20:53,186
+of times but most times
+you actually don't care,
+
+
+424
+00:20:53,186 --> 00:20:56,216
+that's the time when
+you might want
+
+
+425
+00:20:56,216 --> 00:20:57,666
+to use a breakpoint condition.
+
+
+426
+00:20:58,886 --> 00:21:00,496
+So let's look at
+this example here,
+
+
+427
+00:21:00,776 --> 00:21:05,356
+I'm stopped at the Init function
+for a class I wrote and I want
+
+
+428
+00:21:05,506 --> 00:21:09,556
+to see when that class is, when
+that exact object is the alloc.
+
+
+429
+00:21:10,046 --> 00:21:15,266
+Now here's where my favorite
+part because we're going to get
+
+
+430
+00:21:15,266 --> 00:21:17,796
+to use clang to help us out.
+
+
+431
+00:21:18,516 --> 00:21:21,136
+So we're using the
+expression command again
+
+
+432
+00:21:21,716 --> 00:21:23,306
+and inside the expression
+command,
+
+
+433
+00:21:23,306 --> 00:21:24,926
+notice we're doing
+something interesting.
+
+
+434
+00:21:26,426 --> 00:21:30,626
+We are declaring a variable
+and setting it equal to self.
+
+
+435
+00:21:30,626 --> 00:21:35,336
+Now the only thing we have to do
+here that's unusual is we have
+
+
+436
+00:21:35,396 --> 00:21:38,546
+to put a dollar sign
+as the first character
+
+
+437
+00:21:38,546 --> 00:21:39,566
+in the variables name.
+
+
+438
+00:21:40,476 --> 00:21:42,386
+The reason we have
+a dollar sign is
+
+
+439
+00:21:42,386 --> 00:21:45,056
+because that tells LLDB,
+hey, remember this.
+
+
+440
+00:21:46,186 --> 00:21:49,926
+Then later, when we set the
+condition of the breakpoint,
+
+
+441
+00:21:50,196 --> 00:21:52,366
+we can refer back
+to that variable.
+
+
+442
+00:21:52,906 --> 00:21:56,866
+So we can stop it the alloc
+only when self is equal
+
+
+443
+00:21:56,866 --> 00:22:00,626
+to the current value of self.
+
+
+444
+00:22:00,816 --> 00:22:04,906
+That's really handy and you
+can do in the next code too.
+
+
+445
+00:22:05,856 --> 00:22:10,046
+So you have to set the
+variable at the LLDB console
+
+
+446
+00:22:10,046 --> 00:22:11,426
+like I showed you just there.
+
+
+447
+00:22:11,426 --> 00:22:15,556
+And then, you set the condition
+by clicking edit breakpoint
+
+
+448
+00:22:15,956 --> 00:22:18,456
+and putting your
+breakpoint condition
+
+
+449
+00:22:18,456 --> 00:22:19,786
+into the condition field here.
+
+
+450
+00:22:20,426 --> 00:22:25,156
+Now that's going to
+cover probably most
+
+
+451
+00:22:25,156 --> 00:22:26,386
+of the cases you run into.
+
+
+452
+00:22:27,206 --> 00:22:31,186
+But there are rare cases where
+you actually want to look
+
+
+453
+00:22:31,186 --> 00:22:34,826
+at modifications to a very
+specific variable in memory.
+
+
+454
+00:22:36,036 --> 00:22:40,106
+In those cases, you may want to
+use LLDB's watchpoint facility.
+
+
+455
+00:22:41,666 --> 00:22:45,366
+Now watchpoints let you stop
+when a particular location
+
+
+456
+00:22:45,366 --> 00:22:49,966
+in memory is modified and you
+tell LLDB about that location
+
+
+457
+00:22:49,966 --> 00:22:52,166
+in memory by giving it the name
+
+
+458
+00:22:52,166 --> 00:22:54,516
+of a variable that's
+at that location.
+
+
+459
+00:22:55,116 --> 00:23:00,176
+In this case, you use the
+watchpoint set variable command
+
+
+460
+00:23:00,176 --> 00:23:04,846
+to do so and LLDB will stop the
+program whenever it modifies
+
+
+461
+00:23:04,896 --> 00:23:05,556
+that variable.
+
+
+462
+00:23:05,556 --> 00:23:08,516
+Now there is a caveat here.
+
+
+463
+00:23:09,256 --> 00:23:12,036
+We could implement this by
+single-stepping your program
+
+
+464
+00:23:12,156 --> 00:23:13,356
+and constantly looking, oh,
+
+
+465
+00:23:13,356 --> 00:23:15,776
+is this instruction modified
+app location, does this?
+
+
+466
+00:23:16,776 --> 00:23:19,146
+The problem with that
+is it's really slow.
+
+
+467
+00:23:19,556 --> 00:23:24,536
+So we use special CPU support
+to make this a lot faster.
+
+
+468
+00:23:26,066 --> 00:23:29,596
+Intel CPUs provide four
+slots for watchpoints
+
+
+469
+00:23:29,946 --> 00:23:32,276
+and on ARM we support two slots.
+
+
+470
+00:23:32,786 --> 00:23:36,836
+So remember, the number of
+watchpoints you have is limited
+
+
+471
+00:23:36,836 --> 00:23:40,396
+so use them effectively and
+delete them when you're done.
+
+
+472
+00:23:41,616 --> 00:23:44,166
+You can also use
+watchpoints in Xcode.
+
+
+473
+00:23:44,716 --> 00:23:47,876
+If you have the variable
+visible in the variables view,
+
+
+474
+00:23:48,176 --> 00:23:51,566
+you can right-click
+on it, click Watch.
+
+
+475
+00:23:52,466 --> 00:23:58,356
+And then afterwards, if you
+click Continue, you'll stop.
+
+
+476
+00:23:58,416 --> 00:24:00,456
+Now notice here we've
+stopped right
+
+
+477
+00:24:00,456 --> 00:24:03,656
+after we actually set the
+watchpoint because we're--
+
+
+478
+00:24:03,656 --> 00:24:07,396
+we had broken first, we were
+about to set the variable to No.
+
+
+479
+00:24:08,096 --> 00:24:09,796
+That if we click Continue again,
+
+
+480
+00:24:10,286 --> 00:24:12,346
+we stop where it sets
+the variable to yes.
+
+
+481
+00:24:13,786 --> 00:24:16,296
+Now, one thing that I
+was mentioning here,
+
+
+482
+00:24:17,026 --> 00:24:20,006
+this is a little bit different
+from setting a breakpoint
+
+
+483
+00:24:20,006 --> 00:24:24,036
+where it gets set to yes because
+the breakpoint would trigger
+
+
+484
+00:24:24,036 --> 00:24:28,216
+whenever any piece of code
+sets a variable called needs
+
+
+485
+00:24:28,216 --> 00:24:29,566
+synchronization to yes.
+
+
+486
+00:24:31,046 --> 00:24:36,066
+The thing that happens here
+is, you've set your watchpoint
+
+
+487
+00:24:36,296 --> 00:24:40,326
+on that exact copy of the
+need synchronization variable
+
+
+488
+00:24:40,656 --> 00:24:45,846
+so you will only see when
+your code touches that.
+
+
+489
+00:24:46,056 --> 00:24:46,836
+All right.
+
+
+490
+00:24:47,136 --> 00:24:49,946
+So now, I've shown you
+how to stop your program.
+
+
+491
+00:24:50,276 --> 00:24:54,406
+Now, let's see a couple
+of ways to avoid headaches
+
+
+492
+00:24:54,576 --> 00:24:56,866
+when you're actually
+trying to stop your program
+
+
+493
+00:24:57,036 --> 00:24:58,696
+and make it go where you want.
+
+
+494
+00:24:58,696 --> 00:25:04,996
+One of the most annoying things
+that I run into when I'm trying
+
+
+495
+00:25:04,996 --> 00:25:08,726
+to step is I'm at one place
+in my function, I want to get
+
+
+496
+00:25:08,726 --> 00:25:11,206
+to another place and there's
+like a million lines of,
+
+
+497
+00:25:11,426 --> 00:25:15,676
+you know, logging and stuff
+that I don't care about,
+
+
+498
+00:25:15,676 --> 00:25:17,066
+I have to go steps,
+steps, steps, steps.
+
+
+499
+00:25:17,066 --> 00:25:19,346
+And the most frust-- it's
+even more frustrating
+
+
+500
+00:25:19,466 --> 00:25:23,106
+when I can step past
+that line and then I got
+
+
+501
+00:25:23,106 --> 00:25:24,856
+to restart it, it's frustrating.
+
+
+502
+00:25:25,676 --> 00:25:27,526
+So I think, ah I'm
+clever, all right,
+
+
+503
+00:25:27,626 --> 00:25:31,376
+I'm going to set a breakpoint
+at that line and hit continue.
+
+
+504
+00:25:31,376 --> 00:25:35,696
+Well, it turns out that
+line was in an if statement
+
+
+505
+00:25:35,696 --> 00:25:37,296
+and that if didn't get hit.
+
+
+506
+00:25:37,296 --> 00:25:42,116
+So now my programs run away
+on me and it's frustrating.
+
+
+507
+00:25:42,456 --> 00:25:43,746
+That's what cap videos are for.
+
+
+508
+00:25:43,926 --> 00:25:48,936
+I-- now if-- I love cap
+videos, but we've actually gone
+
+
+509
+00:25:48,936 --> 00:25:49,876
+to gone you're one better.
+
+
+510
+00:25:50,646 --> 00:25:53,726
+LLDB has a special
+feature called thread
+
+
+511
+00:25:53,726 --> 00:26:01,036
+until which will stop at the
+line you tell it to or if you're
+
+
+512
+00:26:01,036 --> 00:26:04,086
+about to leave the function
+you're in currently thread
+
+
+513
+00:26:04,086 --> 00:26:06,336
+until you stop you then to.
+
+
+514
+00:26:06,666 --> 00:26:09,906
+So no more steps, steps, steps,
+steps, just trust the LLDB
+
+
+515
+00:26:09,906 --> 00:26:11,596
+to get you where you need to go.
+
+
+516
+00:26:11,846 --> 00:26:16,236
+You can do this in Xcode as
+well, let's say I'm stopped
+
+
+517
+00:26:16,236 --> 00:26:19,966
+for example at the beginning of
+a loop and I don't want to have
+
+
+518
+00:26:19,966 --> 00:26:22,866
+to step overall the
+loop condition code.
+
+
+519
+00:26:23,536 --> 00:26:28,926
+In Xcode I can simply click,
+right-click, click continue
+
+
+520
+00:26:28,926 --> 00:26:35,026
+to hear, and Xcode
+will get me there.
+
+
+521
+00:26:35,236 --> 00:26:38,986
+Now here's one other frustrating
+thing that I think some
+
+
+522
+00:26:38,986 --> 00:26:39,886
+of you have run into,
+
+
+523
+00:26:40,016 --> 00:26:43,476
+that I want to tell you is
+not such a bad situation.
+
+
+524
+00:26:44,966 --> 00:26:47,026
+When you're stepping
+through your code
+
+
+525
+00:26:47,206 --> 00:26:50,956
+and if you have breakpoint set,
+you may step over a function
+
+
+526
+00:26:50,956 --> 00:26:52,116
+that triggers a breakpoint.
+
+
+527
+00:26:52,756 --> 00:26:58,556
+In this situation, don't panic,
+we've actually got a stock
+
+
+528
+00:26:59,186 --> 00:27:01,246
+and we remember what
+you were doing
+
+
+529
+00:27:01,376 --> 00:27:02,676
+when you hit that breakpoint.
+
+
+530
+00:27:03,926 --> 00:27:06,836
+So in this case,
+I'm about to step
+
+
+531
+00:27:06,836 --> 00:27:09,286
+over this function
+called remove duplicates.
+
+
+532
+00:27:09,986 --> 00:27:11,276
+And if you remember
+from earlier,
+
+
+533
+00:27:11,276 --> 00:27:12,726
+I had breakpoint set in there.
+
+
+534
+00:27:13,906 --> 00:27:20,066
+So I step over this and
+then I hit that breakpoint.
+
+
+535
+00:27:20,636 --> 00:27:23,986
+Now some of you might
+say, oh, I just, you know,
+
+
+536
+00:27:23,986 --> 00:27:25,376
+disable your breakpoints
+when you step,
+
+
+537
+00:27:26,066 --> 00:27:27,016
+don't worry about that.
+
+
+538
+00:27:27,466 --> 00:27:31,516
+If you click continue here, LLDB
+remembers that you were stepping
+
+
+539
+00:27:33,886 --> 00:27:36,276
+and gets you back to the
+code that you cared about.
+
+
+540
+00:27:37,516 --> 00:27:43,716
+[ Applause ]
+
+
+541
+00:27:44,216 --> 00:27:48,576
+There's one other cool
+thing that you can do just
+
+
+542
+00:27:48,576 --> 00:27:52,736
+from the LLDB command line and
+that is call your code by hand
+
+
+543
+00:27:53,026 --> 00:27:56,786
+to trigger the breakpoints
+you care about.
+
+
+544
+00:27:56,946 --> 00:28:01,816
+Sometimes you're in situations
+where you're testing your code
+
+
+545
+00:28:02,006 --> 00:28:04,386
+and you're trying to
+cover all your bases,
+
+
+546
+00:28:04,656 --> 00:28:07,486
+but you can't make one
+particular method run.
+
+
+547
+00:28:07,486 --> 00:28:10,776
+Now this can be frustrating
+and you're like trying
+
+
+548
+00:28:10,776 --> 00:28:13,476
+to concoct weird environments.
+
+
+549
+00:28:13,816 --> 00:28:16,666
+This is a great time for unit
+test, but if you're just trying
+
+
+550
+00:28:16,666 --> 00:28:19,876
+to get this one case covered,
+LLDB can help you out.
+
+
+551
+00:28:20,386 --> 00:28:23,136
+Now again, this is a
+part that I really enjoy
+
+
+552
+00:28:23,136 --> 00:28:26,176
+because it uses clang and
+what can be better than clang?
+
+
+553
+00:28:27,086 --> 00:28:32,056
+So the way you do this is you
+use the expression command
+
+
+554
+00:28:32,546 --> 00:28:36,106
+to run the code that
+you want to test.
+
+
+555
+00:28:37,296 --> 00:28:40,776
+In this case, we can call the
+remove duplicates function
+
+
+556
+00:28:40,776 --> 00:28:43,506
+on self just using the
+expression command.
+
+
+557
+00:28:44,216 --> 00:28:48,696
+But that's not all, we can set
+a breakpoint in that function,
+
+
+558
+00:28:49,256 --> 00:28:54,606
+then pass-- ignore breakpoints
+falls to the expression command.
+
+
+559
+00:28:55,416 --> 00:28:58,786
+And then, LLDB will
+actually stop
+
+
+560
+00:28:58,786 --> 00:29:01,196
+when you've entered function
+and you can watch it run.
+
+
+561
+00:29:02,736 --> 00:29:07,356
+Now remember, because we're
+integrated with clang,
+
+
+562
+00:29:08,016 --> 00:29:11,406
+we're actually running
+the code in your program
+
+
+563
+00:29:11,816 --> 00:29:13,356
+that you type after expression.
+
+
+564
+00:29:14,016 --> 00:29:18,106
+What that means is, you actually
+did remove duplicates here,
+
+
+565
+00:29:18,566 --> 00:29:21,236
+your program will run
+differently after you continue.
+
+
+566
+00:29:21,946 --> 00:29:25,016
+So that's something important
+to remember as you go through.
+
+
+567
+00:29:26,196 --> 00:29:27,506
+All right.
+
+
+568
+00:29:27,506 --> 00:29:31,836
+So now you've got your program
+where you want it and you want
+
+
+569
+00:29:31,836 --> 00:29:33,906
+to see its data and
+all it glory.
+
+
+570
+00:29:33,906 --> 00:29:38,206
+Now I'm going to call up Enrico
+Granata who's developed too much
+
+
+571
+00:29:38,206 --> 00:29:39,666
+of the infrastructure
+that we used
+
+
+572
+00:29:39,666 --> 00:29:40,986
+to present that data to you.
+
+
+573
+00:29:41,546 --> 00:29:44,146
+Enrico is a great guy to know
+because not only does he know
+
+
+574
+00:29:44,146 --> 00:29:45,906
+about this stuff,
+but he also knows
+
+
+575
+00:29:45,906 --> 00:29:48,496
+about LLDB's Python
+interface, and he's going
+
+
+576
+00:29:48,496 --> 00:29:51,306
+to give you a little
+bit of introduction now.
+
+
+577
+00:29:55,696 --> 00:29:58,546
+>> Thank you, Sean.
+
+
+578
+00:29:58,716 --> 00:29:59,616
+Hello, everyone.
+
+
+579
+00:29:59,776 --> 00:30:00,796
+I'm Enrico.
+
+
+580
+00:30:00,866 --> 00:30:04,126
+I'm one of the engineers that
+worked on LLDB and we're going
+
+
+581
+00:30:04,126 --> 00:30:06,796
+to be together for the
+next, about 30 minutes,
+
+
+582
+00:30:07,076 --> 00:30:09,726
+and we're going to cover a
+bunch of great LLDB features.
+
+
+583
+00:30:10,336 --> 00:30:11,876
+So let's get right started.
+
+
+584
+00:30:13,156 --> 00:30:15,676
+We're going to talk about
+inspecting your data
+
+
+585
+00:30:15,676 --> 00:30:18,196
+and we're going to
+cover three things.
+
+
+586
+00:30:19,386 --> 00:30:20,666
+We're going to talk about ways
+
+
+587
+00:30:20,666 --> 00:30:23,046
+that you can inspect
+data at LLDB console.
+
+
+588
+00:30:23,616 --> 00:30:26,736
+We're going to talk about the
+LLDB data formatter facility
+
+
+589
+00:30:27,036 --> 00:30:29,546
+and we're going to
+cover a cool technique
+
+
+590
+00:30:29,546 --> 00:30:31,956
+that involves the
+expression parser as a way
+
+
+591
+00:30:31,956 --> 00:30:34,446
+to inspect opaque data.
+
+
+592
+00:30:34,446 --> 00:30:38,176
+So inspecting data
+at a command line.
+
+
+593
+00:30:38,326 --> 00:30:42,306
+Some of you have probably
+used GDB quite a while
+
+
+594
+00:30:42,306 --> 00:30:44,196
+in the last few years
+and you know
+
+
+595
+00:30:44,196 --> 00:30:46,356
+that there are certain commands
+that you can use to get GDB
+
+
+596
+00:30:46,356 --> 00:30:47,506
+to show you your data.
+
+
+597
+00:30:47,906 --> 00:30:51,606
+And now you're transitioning to
+LLDB and there are some commands
+
+
+598
+00:30:51,606 --> 00:30:53,706
+that are the same and
+some that are different
+
+
+599
+00:30:53,706 --> 00:30:56,026
+and you're really
+confused as to what,
+
+
+600
+00:30:56,026 --> 00:30:57,426
+you should be using
+for each case.
+
+
+601
+00:30:58,216 --> 00:31:00,586
+Well, I like to think
+of the LLDB facilities
+
+
+602
+00:31:00,666 --> 00:31:03,186
+to show data as a tool box.
+
+
+603
+00:31:03,306 --> 00:31:05,106
+I had a set of tools and I know
+
+
+604
+00:31:05,106 --> 00:31:07,426
+that each one is good
+for a specific task.
+
+
+605
+00:31:07,956 --> 00:31:10,346
+And once I know that,
+I can open my tool box
+
+
+606
+00:31:10,346 --> 00:31:13,076
+and I can be confident that
+for each task I have at hand,
+
+
+607
+00:31:13,306 --> 00:31:14,526
+I'm going to pick
+the right tool.
+
+
+608
+00:31:14,526 --> 00:31:16,966
+So what we were going to
+do for the next couple
+
+
+609
+00:31:16,966 --> 00:31:19,016
+of minutes is going to
+go through the toolchain
+
+
+610
+00:31:19,436 --> 00:31:20,726
+and see what we have available.
+
+
+611
+00:31:20,726 --> 00:31:25,946
+Our first command
+is friend variable,
+
+
+612
+00:31:26,616 --> 00:31:29,986
+friend variable allows you to
+see all the current arguments
+
+
+613
+00:31:29,986 --> 00:31:31,706
+to your function, all
+the local variables,
+
+
+614
+00:31:31,706 --> 00:31:33,986
+everything that is
+currently in your local scope.
+
+
+615
+00:31:34,636 --> 00:31:38,486
+If you want, you can also pass
+in one or more specific names,
+
+
+616
+00:31:38,626 --> 00:31:41,246
+you can say friend variable
+RC, friend variable RV,
+
+
+617
+00:31:41,246 --> 00:31:44,406
+friend variable flu bar and all
+
+
+618
+00:31:44,406 --> 00:31:46,576
+of those names will be
+shown by the debugger.
+
+
+619
+00:31:48,216 --> 00:31:51,996
+Expression as Sean and Kate
+mentioned before is the entry
+
+
+620
+00:31:51,996 --> 00:31:54,446
+point to our expression
+parser which allows you
+
+
+621
+00:31:54,446 --> 00:31:57,686
+to execute arbitrary chunks of
+data, arbitrary chunks of code.
+
+
+622
+00:31:58,286 --> 00:32:01,126
+We're actually having
+clang right there,
+
+
+623
+00:32:01,196 --> 00:32:03,686
+that means a type
+expression, you're typing code.
+
+
+624
+00:32:03,926 --> 00:32:06,856
+And that opens a local scope
+for your right where you stop
+
+
+625
+00:32:06,856 --> 00:32:09,836
+in your code and what
+every you take is executed
+
+
+626
+00:32:09,836 --> 00:32:13,396
+by the very same compiler that
+has taken in your source code
+
+
+627
+00:32:13,396 --> 00:32:19,796
+from Xcode and made it
+into the app ironic.
+
+
+628
+00:32:19,926 --> 00:32:22,576
+If you're like me though,
+you're not really like to type
+
+
+629
+00:32:22,576 --> 00:32:25,396
+that much on the
+command line expression,
+
+
+630
+00:32:25,656 --> 00:32:27,206
+you're like to be
+quick and efficient.
+
+
+631
+00:32:27,206 --> 00:32:29,286
+So you can use B
+which is an alias
+
+
+632
+00:32:29,286 --> 00:32:30,756
+for expression that we provided.
+
+
+633
+00:32:31,216 --> 00:32:34,816
+And if you're casting with
+GDBs facility for formatting,
+
+
+634
+00:32:35,116 --> 00:32:36,856
+you can also use that Y,
+you can say [inaudible],
+
+
+635
+00:32:36,856 --> 00:32:39,606
+we totally support that.
+
+
+636
+00:32:41,016 --> 00:32:43,306
+And for your Objective-C,
+guys in the audience,
+
+
+637
+00:32:44,046 --> 00:32:46,026
+if you have an Objective-C
+object and you want
+
+
+638
+00:32:46,026 --> 00:32:49,106
+to see something meaningful
+about them, you can say PO.
+
+
+639
+00:32:49,106 --> 00:32:52,356
+PO will run the expression
+whatever thing you pass to it
+
+
+640
+00:32:52,356 --> 00:32:55,566
+and that if the result is an
+Objective-C object is going
+
+
+641
+00:32:55,566 --> 00:32:57,006
+to call the description selector
+
+
+642
+00:32:57,006 --> 00:32:58,436
+and that option show
+you the result.
+
+
+643
+00:32:59,486 --> 00:33:02,756
+Description is the select
+that Apple implemented
+
+
+644
+00:33:02,756 --> 00:33:06,196
+for see some classes, but
+that you can also implement
+
+
+645
+00:33:06,196 --> 00:33:08,086
+on your very own classes
+and then will get picked
+
+
+646
+00:33:08,086 --> 00:33:09,476
+in the same way by debugger.
+
+
+647
+00:33:09,856 --> 00:33:11,726
+You can implement
+description to your objects
+
+
+648
+00:33:11,896 --> 00:33:14,386
+and that you can po them
+at will from the debugger.
+
+
+649
+00:33:17,746 --> 00:33:22,216
+So here are the tools available
+just choose the one you need
+
+
+650
+00:33:22,216 --> 00:33:24,696
+in each case and you look great.
+
+
+651
+00:33:25,436 --> 00:33:30,396
+Let's talk about another
+way to look at data,
+
+
+652
+00:33:30,846 --> 00:33:33,096
+let's talk about the LLDB
+data formatter facility.
+
+
+653
+00:33:33,586 --> 00:33:36,506
+And first of all, let's see
+why we need the data formatter
+
+
+654
+00:33:36,586 --> 00:33:39,846
+facility at all, I could just
+[inaudible] po my objects.
+
+
+655
+00:33:40,576 --> 00:33:43,766
+Well, it turns that
+there's cases where raw data
+
+
+656
+00:33:44,166 --> 00:33:45,236
+which is exactly what is
+
+
+657
+00:33:45,236 --> 00:33:48,776
+in memory is not always the
+easiest thing to make sense of.
+
+
+658
+00:33:49,196 --> 00:33:52,976
+We're all smart guys here, but
+sometimes, it's really just
+
+
+659
+00:33:52,976 --> 00:33:56,406
+so complicated for
+a person to look at
+
+
+660
+00:33:56,406 --> 00:34:00,056
+or maybe it's not our own
+types, maybe we got a library
+
+
+661
+00:34:00,056 --> 00:34:01,506
+and we're trying to
+make sense of it.
+
+
+662
+00:34:02,226 --> 00:34:07,206
+And maybe it is simply too much
+of it and makes sense here,
+
+
+663
+00:34:07,206 --> 00:34:10,045
+what doesn't make sense here
+just don't know I'm lost.
+
+
+664
+00:34:10,176 --> 00:34:13,716
+Let's see an example of what
+exactly I'm talking about.
+
+
+665
+00:34:14,166 --> 00:34:16,906
+Let's all pretend for a
+second that LLDB did not shift
+
+
+666
+00:34:16,906 --> 00:34:18,156
+with any data formatter at all.
+
+
+667
+00:34:18,156 --> 00:34:22,576
+This is what the variables
+view would look like.
+
+
+668
+00:34:23,266 --> 00:34:27,576
+IM MMS array and only tells
+me is its memory location.
+
+
+669
+00:34:28,025 --> 00:34:30,706
+I have an NSString, and
+so it tells me it's the
+
+
+670
+00:34:30,706 --> 00:34:31,795
+memory location.
+
+
+671
+00:34:32,626 --> 00:34:34,386
+I don't think this
+is really helpful.
+
+
+672
+00:34:34,386 --> 00:34:41,266
+Well, this is what you
+actually get in Xcode 5.
+
+
+673
+00:34:42,106 --> 00:34:44,626
+Your MMS array is going to
+tell you many objects it has,
+
+
+674
+00:34:45,065 --> 00:34:46,596
+you're going to see
+each one of those.
+
+
+675
+00:34:48,016 --> 00:34:48,335
+Thank you.
+
+
+676
+00:34:51,616 --> 00:34:52,025
+Thank you.
+
+
+677
+00:34:52,696 --> 00:34:55,186
+And your NSString is going to
+tell you what its content is
+
+
+678
+00:34:55,426 --> 00:34:58,306
+and your class instances
+will tell you what class they
+
+
+679
+00:34:58,306 --> 00:34:59,656
+belong to.
+
+
+680
+00:35:00,396 --> 00:35:04,416
+But that's just a solution with
+the data types of we [inaudible]
+
+
+681
+00:35:04,416 --> 00:35:09,036
+to you, it's not a
+solution with your types.
+
+
+682
+00:35:09,216 --> 00:35:11,466
+We've all been here, we're
+in the variables view,
+
+
+683
+00:35:11,466 --> 00:35:13,256
+we're debugging, we
+have our own objects,
+
+
+684
+00:35:13,256 --> 00:35:14,986
+we have the instances
+of an address class.
+
+
+685
+00:35:15,306 --> 00:35:18,206
+And only tells me, I'm
+in this memory location,
+
+
+686
+00:35:19,046 --> 00:35:22,056
+that's really helpful if I'm the
+computer, but that's not helpful
+
+
+687
+00:35:22,056 --> 00:35:23,016
+if I'm the programmer.
+
+
+688
+00:35:23,606 --> 00:35:26,166
+So now I flip it open,
+open to see something.
+
+
+689
+00:35:27,446 --> 00:35:30,736
+Indeed, I do, but what
+string would I see here?
+
+
+690
+00:35:31,236 --> 00:35:34,216
+I see [inaudible] Enrico
+Granata, California,
+
+
+691
+00:35:34,216 --> 00:35:36,536
+instance loop, what 95014.
+
+
+692
+00:35:36,536 --> 00:35:39,646
+I don't know about any of you
+guys here in the audience,
+
+
+693
+00:35:39,866 --> 00:35:41,976
+but I am usually branded
+and addressed that way
+
+
+694
+00:35:41,976 --> 00:35:44,286
+and I don't think the postal
+service accepts addresses
+
+
+695
+00:35:44,286 --> 00:35:45,036
+written that way.
+
+
+696
+00:35:46,096 --> 00:35:48,576
+I'd really like to see something
+that makes more sense to me,
+
+
+697
+00:35:48,906 --> 00:35:51,486
+I'd like to see something
+like this.
+
+
+698
+00:35:52,146 --> 00:35:54,656
+I see the names of the people.
+
+
+699
+00:35:54,656 --> 00:35:57,006
+I don't see a number
+that means nothing to me.
+
+
+700
+00:35:57,696 --> 00:36:01,386
+And the way to get here is
+with the LLDB data formatters.
+
+
+701
+00:36:02,036 --> 00:36:08,556
+The cool news is, we did all
+the work for system libraries.
+
+
+702
+00:36:09,266 --> 00:36:13,286
+For you C++ people, your
+SDL vectors, your SDL maps,
+
+
+703
+00:36:13,496 --> 00:36:14,646
+they'll show correctly.
+
+
+704
+00:36:18,946 --> 00:36:19,276
+Thank you.
+
+
+705
+00:36:20,376 --> 00:36:22,726
+And for those that actually
+write Objective-C code,
+
+
+706
+00:36:23,066 --> 00:36:25,256
+we did the work for Cocoa
+Foundation and Foundation.
+
+
+707
+00:36:25,986 --> 00:36:29,406
+In the Xcode 5, in addition
+to what we have NSArrays
+
+
+708
+00:36:29,406 --> 00:36:32,436
+and NSDictionaries in
+Xcode 5 NSS also show
+
+
+709
+00:36:32,436 --> 00:36:34,626
+with data formatters.
+
+
+710
+00:36:37,996 --> 00:36:42,196
+Great news is, we just didn't
+build some hard coding notion
+
+
+711
+00:36:42,196 --> 00:36:43,836
+or what our classes look like
+
+
+712
+00:36:44,026 --> 00:36:46,186
+and left you guys
+alone out in the dark.
+
+
+713
+00:36:46,576 --> 00:36:49,916
+We built a data formatter
+subsystem that is pluggable
+
+
+714
+00:36:50,186 --> 00:36:52,756
+and that means that what
+we did for the data types
+
+
+715
+00:36:52,756 --> 00:36:55,136
+that we invent, you
+can do the same thing
+
+
+716
+00:36:55,136 --> 00:36:56,386
+for your own data types.
+
+
+717
+00:37:00,556 --> 00:37:02,946
+So let's see exactly
+what you can do,
+
+
+718
+00:37:02,946 --> 00:37:04,296
+how you can plug
+in into the system.
+
+
+719
+00:37:05,236 --> 00:37:07,206
+There's two main
+types of formatters.
+
+
+720
+00:37:07,856 --> 00:37:08,736
+They're summaries.
+
+
+721
+00:37:09,646 --> 00:37:13,636
+Summaries are a very quick way
+to look at an option at a glance
+
+
+722
+00:37:13,636 --> 00:37:16,136
+and see what's most important
+about it like the number
+
+
+723
+00:37:16,136 --> 00:37:17,106
+of items in the array.
+
+
+724
+00:37:18,086 --> 00:37:21,716
+You can also write this family
+name synthetic children,
+
+
+725
+00:37:22,326 --> 00:37:25,836
+synthetic children allow
+you to give structure,
+
+
+726
+00:37:26,116 --> 00:37:28,046
+aggregate structure,
+the data that isn't.
+
+
+727
+00:37:28,676 --> 00:37:31,846
+I have an NSS array and I
+know that it contains objects
+
+
+728
+00:37:31,846 --> 00:37:34,196
+but its underlying structure
+doesn't show me that.
+
+
+729
+00:37:34,516 --> 00:37:37,636
+With synthetic children, I can
+actually see the items that are
+
+
+730
+00:37:37,636 --> 00:37:40,786
+into the array as if they
+really physically are right
+
+
+731
+00:37:40,786 --> 00:37:41,466
+into the array.
+
+
+732
+00:37:41,796 --> 00:37:46,906
+And here I see my NS
+numbers into there.
+
+
+733
+00:37:47,116 --> 00:37:49,496
+We'll focus on giving
+an example of summaries.
+
+
+734
+00:37:49,496 --> 00:37:51,566
+So let's briefly
+see how they work.
+
+
+735
+00:37:52,216 --> 00:37:56,056
+Summaries worked by matching a
+data type to a Python function
+
+
+736
+00:37:56,056 --> 00:37:57,106
+that implement the summary.
+
+
+737
+00:37:57,986 --> 00:38:02,076
+The base matching is by
+name, you say type name full,
+
+
+738
+00:38:02,076 --> 00:38:04,666
+LLDB call this function
+to summarize the object.
+
+
+739
+00:38:05,336 --> 00:38:07,956
+There's a bunch of other
+rules and you can refer
+
+
+740
+00:38:07,956 --> 00:38:10,166
+to the LLDB website
+for further details.
+
+
+741
+00:38:11,776 --> 00:38:14,106
+Whenever we need to display
+a value of that type,
+
+
+742
+00:38:14,456 --> 00:38:17,576
+we call the function and we
+pass to that function and object
+
+
+743
+00:38:17,576 --> 00:38:18,866
+that we call an SB Value.
+
+
+744
+00:38:19,616 --> 00:38:23,166
+SB Value is part of a
+larger LLDB object model
+
+
+745
+00:38:23,166 --> 00:38:24,846
+that we're going to
+cover in greater detail.
+
+
+746
+00:38:25,596 --> 00:38:27,266
+It is an object that
+represents a variable,
+
+
+747
+00:38:27,266 --> 00:38:28,676
+think of it as a variable.
+
+
+748
+00:38:29,556 --> 00:38:32,556
+And that function can do
+whatever processing it wants
+
+
+749
+00:38:32,556 --> 00:38:34,796
+because it's Python code
+and that the end is going
+
+
+750
+00:38:34,796 --> 00:38:37,656
+to return a string and we're
+going to show that string
+
+
+751
+00:38:37,656 --> 00:38:42,026
+on the screen as the
+summary as the value.
+
+
+752
+00:38:42,666 --> 00:38:44,826
+So with that, it's an option
+that represents a variable.
+
+
+753
+00:38:45,196 --> 00:38:47,126
+So it probably has
+variable-like behaviors.
+
+
+754
+00:38:47,206 --> 00:38:49,706
+That's probably variable-like
+questions that we can ask of it.
+
+
+755
+00:38:50,286 --> 00:38:53,146
+In fact, among the many
+questions that you can ask
+
+
+756
+00:38:53,146 --> 00:38:56,116
+of an SB Value, you can
+ask it, what's your name,
+
+
+757
+00:38:56,636 --> 00:38:58,416
+what's your data type,
+
+
+758
+00:38:59,316 --> 00:39:01,286
+what's your summary
+string if you have any?
+
+
+759
+00:39:01,696 --> 00:39:03,346
+Do you have children?
+
+
+760
+00:39:03,906 --> 00:39:04,866
+How many do you have?
+
+
+761
+00:39:04,946 --> 00:39:06,716
+Can you tell me about
+each one of those?
+
+
+762
+00:39:06,766 --> 00:39:08,906
+And each one of those
+is an SB Value itself,
+
+
+763
+00:39:09,116 --> 00:39:11,266
+the model is total
+recursive in this respect.
+
+
+764
+00:39:11,936 --> 00:39:15,786
+And if it's a scalar like a
+number, integer, floating-point,
+
+
+765
+00:39:15,786 --> 00:39:17,516
+you can also ask
+what's your value
+
+
+766
+00:39:17,856 --> 00:39:18,976
+and it will return
+you the number.
+
+
+767
+00:39:19,936 --> 00:39:23,526
+So let's see our example,
+we have our address class,
+
+
+768
+00:39:23,946 --> 00:39:25,106
+we see the number, we want
+
+
+769
+00:39:25,106 --> 00:39:26,836
+to see the name,
+let's make it happen.
+
+
+770
+00:39:27,606 --> 00:39:30,736
+We start writing the prototype
+or a function and here we see
+
+
+771
+00:39:30,736 --> 00:39:33,806
+that we're passing a value, and
+that value is an SB Value one
+
+
+772
+00:39:33,806 --> 00:39:35,286
+of the objects we
+just talked about.
+
+
+773
+00:39:35,776 --> 00:39:40,986
+We can't extract fields out of
+that variable and here we get
+
+
+774
+00:39:40,986 --> 00:39:44,476
+into first and the last name
+which are again SB Values.
+
+
+775
+00:39:44,966 --> 00:39:47,556
+That means I can iterate
+the reasoning and ask five
+
+
+776
+00:39:47,556 --> 00:39:48,786
+of the questions
+of these objects.
+
+
+777
+00:39:50,086 --> 00:39:52,296
+Since I know these
+are NSStrings,
+
+
+778
+00:39:52,376 --> 00:39:54,326
+I know that LLDB is going
+[inaudible] me a summary
+
+
+779
+00:39:54,326 --> 00:39:56,496
+out for those so I
+ask for the summary
+
+
+780
+00:39:56,716 --> 00:39:58,556
+and now I have two
+Python strings
+
+
+781
+00:39:58,606 --> 00:40:00,326
+that represent my
+first and my last name.
+
+
+782
+00:40:00,776 --> 00:40:03,526
+And since our Python strings,
+I'm really free to the--
+
+
+783
+00:40:03,526 --> 00:40:05,146
+all the processing
+I need in those.
+
+
+784
+00:40:06,166 --> 00:40:08,496
+And again, I'll just
+return the string
+
+
+785
+00:40:08,886 --> 00:40:11,496
+and back to my variables view.
+
+
+786
+00:40:11,496 --> 00:40:14,776
+I still see the numbers because
+I haven't told the LLDB how
+
+
+787
+00:40:14,776 --> 00:40:15,466
+to do the magic.
+
+
+788
+00:40:16,056 --> 00:40:18,076
+So let's apply the
+secret sauce right now.
+
+
+789
+00:40:18,876 --> 00:40:22,796
+The type summary app command
+named Python function is the
+
+
+790
+00:40:22,796 --> 00:40:25,956
+LLDB secret sauce and it tells
+the debugger whenever you see an
+
+
+791
+00:40:25,956 --> 00:40:28,726
+option of this type, call this
+function to provide a summary,
+
+
+792
+00:40:29,666 --> 00:40:33,246
+and from the moment on,
+numbers are no more,
+
+
+793
+00:40:33,726 --> 00:40:35,426
+strings are on the string.
+
+
+794
+00:40:37,176 --> 00:40:37,356
+Thanks.
+
+
+795
+00:40:44,376 --> 00:40:47,366
+Expression, the expression
+parser is a great tool
+
+
+796
+00:40:47,366 --> 00:40:49,866
+to run your code, it's a
+great tool to check on state
+
+
+797
+00:40:49,866 --> 00:40:52,146
+of things, it can
+also be a great tool
+
+
+798
+00:40:52,146 --> 00:40:53,906
+for looking at opaque data.
+
+
+799
+00:40:54,686 --> 00:40:56,926
+Sometimes you have some data
+
+
+800
+00:40:57,056 --> 00:41:00,136
+and you don't really know
+its format 'cause they didn't
+
+
+801
+00:41:00,136 --> 00:41:01,086
+[inaudible] you how
+to explore them.
+
+
+802
+00:41:01,666 --> 00:41:05,476
+But you can go on Google and
+you can probably figure it out.
+
+
+803
+00:41:05,986 --> 00:41:08,206
+And now all the knowledge
+about the internals
+
+
+804
+00:41:08,206 --> 00:41:13,206
+of this data stretcher are here,
+but sometimes it's not enough,
+
+
+805
+00:41:13,746 --> 00:41:17,516
+we'd also like for those-- that
+information to go from here
+
+
+806
+00:41:17,646 --> 00:41:20,616
+into the Xcode UI when
+I'm debugging something.
+
+
+807
+00:41:21,086 --> 00:41:23,646
+An expression parser is a
+great tool to make that happen,
+
+
+808
+00:41:24,106 --> 00:41:25,156
+let's see a quick example.
+
+
+809
+00:41:26,446 --> 00:41:28,756
+I've been banded this
+API from a third party,
+
+
+810
+00:41:29,106 --> 00:41:32,706
+it's an opaque object and it
+says create me, do something
+
+
+811
+00:41:32,706 --> 00:41:33,886
+with me and then release me.
+
+
+812
+00:41:34,226 --> 00:41:36,536
+I Googled it, I'm really
+smart, I figured it out,
+
+
+813
+00:41:37,386 --> 00:41:39,576
+that's what the object
+really is.
+
+
+814
+00:41:40,416 --> 00:41:43,876
+But the fact that I know it
+doesn't translate into here.
+
+
+815
+00:41:43,876 --> 00:41:48,426
+In the user interface, it's
+still just a set opaque object.
+
+
+816
+00:41:48,906 --> 00:41:50,296
+Let's shed some light here.
+
+
+817
+00:41:50,856 --> 00:41:54,316
+I can type expression
+in the LLDB console
+
+
+818
+00:41:54,316 --> 00:41:56,686
+and I can define a
+full data structure.
+
+
+819
+00:41:57,266 --> 00:41:58,766
+Again, this is the power
+
+
+820
+00:41:58,766 --> 00:42:00,856
+of having the compiler
+the expression parser,
+
+
+821
+00:42:01,286 --> 00:42:03,336
+you can define a
+full native structure
+
+
+822
+00:42:03,336 --> 00:42:06,336
+and that will be
+accepted, that will work.
+
+
+823
+00:42:06,396 --> 00:42:09,716
+I can also define it
+as a persistent object,
+
+
+824
+00:42:09,716 --> 00:42:12,356
+as Sean was saying, you
+put a dollar sign there
+
+
+825
+00:42:12,696 --> 00:42:13,856
+and that's persistent.
+
+
+826
+00:42:14,246 --> 00:42:16,926
+That's really powerful
+because now I can right-click
+
+
+827
+00:42:16,926 --> 00:42:19,616
+in my variables view, I
+can say an expression,
+
+
+828
+00:42:20,086 --> 00:42:23,056
+and I can use an expression
+that takes my opaque pointer
+
+
+829
+00:42:23,296 --> 00:42:26,596
+and converts it into a point
+that was nonopaque structure.
+
+
+830
+00:42:27,266 --> 00:42:30,006
+So I define it in a
+console and it stays alive
+
+
+831
+00:42:30,146 --> 00:42:31,586
+in the Xcode user interface.
+
+
+832
+00:42:31,676 --> 00:42:36,656
+And for the moment on,
+it's not opaque anymore,
+
+
+833
+00:42:36,736 --> 00:42:47,046
+I can actually say the
+data that I care about.
+
+
+834
+00:42:48,056 --> 00:42:48,806
+All right.
+
+
+835
+00:42:49,186 --> 00:42:51,266
+So we've talked about
+interesting ways
+
+
+836
+00:42:51,336 --> 00:42:52,826
+that you can actually
+look at your data.
+
+
+837
+00:42:53,216 --> 00:42:56,386
+Let's cover another interesting
+topic where the full parallel
+
+
+838
+00:42:56,386 --> 00:42:57,766
+to be actually shines.
+
+
+839
+00:42:58,286 --> 00:43:00,556
+Let's talk about ways that
+it can extend the debugger
+
+
+840
+00:43:00,846 --> 00:43:04,186
+and make the debugger
+experience your very own.
+
+
+841
+00:43:04,756 --> 00:43:08,776
+And we're going to cover three
+topics on how to extend LLDB.
+
+
+842
+00:43:08,776 --> 00:43:11,816
+We're going to talk about
+cast on LLDB commands.
+
+
+843
+00:43:12,626 --> 00:43:14,526
+We're going to talk
+about breakpoint actions
+
+
+844
+00:43:15,076 --> 00:43:17,616
+and we're going to cover
+the LLDB init file.
+
+
+845
+00:43:18,616 --> 00:43:22,586
+[inaudible] Custom
+LLDB commands.
+
+
+846
+00:43:24,676 --> 00:43:27,966
+I'm sure some of you have
+used GDB quite a while
+
+
+847
+00:43:28,006 --> 00:43:28,636
+over the years.
+
+
+848
+00:43:29,316 --> 00:43:31,866
+And you have a library
+of scripts that you wrote
+
+
+849
+00:43:31,866 --> 00:43:34,856
+and you used them
+all or all the time
+
+
+850
+00:43:34,856 --> 00:43:36,526
+and they make you
+extremely productive.
+
+
+851
+00:43:37,276 --> 00:43:40,486
+Now we're transitioning you
+to LLDB and we're telling
+
+
+852
+00:43:40,486 --> 00:43:41,996
+that you can write
+commands in Python.
+
+
+853
+00:43:43,036 --> 00:43:44,266
+What happens on your scripts?
+
+
+854
+00:43:45,016 --> 00:43:47,536
+Well, it's going to be
+some work to convert them.
+
+
+855
+00:43:47,826 --> 00:43:49,316
+You're actually going
+to have to seat there
+
+
+856
+00:43:49,406 --> 00:43:54,496
+and do the conversion, but the
+reward that you're going to get
+
+
+857
+00:43:54,496 --> 00:43:57,006
+at the end of this process
+is going to be huge.
+
+
+858
+00:43:57,456 --> 00:43:59,426
+You're going to get a
+huge reward for making
+
+
+859
+00:43:59,426 --> 00:44:01,796
+that transition in
+terms of how easy
+
+
+860
+00:44:01,796 --> 00:44:04,296
+to maintain your commands
+can be and how powerful
+
+
+861
+00:44:04,296 --> 00:44:05,596
+that your commands can
+be because they're going
+
+
+862
+00:44:05,596 --> 00:44:07,606
+to be full Pythons scripts.
+
+
+863
+00:44:08,466 --> 00:44:11,856
+For those of you that really
+have not written your custom
+
+
+864
+00:44:11,856 --> 00:44:14,836
+library in GDB scripts, this
+is also extremely important
+
+
+865
+00:44:15,006 --> 00:44:17,166
+because it allows you to do a
+number of interesting things.
+
+
+866
+00:44:17,766 --> 00:44:20,306
+It allows you to create
+a new debugger feature.
+
+
+867
+00:44:20,756 --> 00:44:22,916
+You have this great idea
+of exactly the thing
+
+
+868
+00:44:22,916 --> 00:44:24,726
+that the debugger should
+do for you and it doesn't.
+
+
+869
+00:44:25,096 --> 00:44:27,736
+You can make it happen.
+
+
+870
+00:44:27,926 --> 00:44:31,806
+The default behavior of
+LLDB is just debug-perfect,
+
+
+871
+00:44:31,926 --> 00:44:35,176
+but if they could change
+that one little thing for me,
+
+
+872
+00:44:35,176 --> 00:44:37,786
+that will be awesome while
+you can change a little thing
+
+
+873
+00:44:37,786 --> 00:44:40,016
+yourself, you can implement
+your favored behavior.
+
+
+874
+00:44:41,006 --> 00:44:44,586
+And let's say, you always doing
+the same thing over and over
+
+
+875
+00:44:44,586 --> 00:44:46,086
+and over again, you
+do the same thing all
+
+
+876
+00:44:46,086 --> 00:44:47,186
+over and over, over again.
+
+
+877
+00:44:47,366 --> 00:44:50,296
+Well, you can take that kind
+of logic, you can make it
+
+
+878
+00:44:50,296 --> 00:44:51,666
+into its own building block.
+
+
+879
+00:44:51,866 --> 00:44:53,576
+And now every time
+you call the command,
+
+
+880
+00:44:53,826 --> 00:44:56,266
+the command is a building block
+like contains all the logic
+
+
+881
+00:44:56,616 --> 00:44:59,146
+and it just automatically
+executes for you.
+
+
+882
+00:44:59,146 --> 00:45:03,936
+Let's make a quick example
+of a great LLDB Command.
+
+
+883
+00:45:04,536 --> 00:45:06,706
+Let's say that my
+program is a recursion.
+
+
+884
+00:45:06,896 --> 00:45:09,006
+I'm recursing, calling foo,
+calling foo, calling foo,
+
+
+885
+00:45:09,006 --> 00:45:10,826
+calling foo and I
+am stopped somewhere
+
+
+886
+00:45:10,826 --> 00:45:12,286
+in the middle of that recursion.
+
+
+887
+00:45:12,576 --> 00:45:15,136
+I'd like to know how deep
+does recursion has gone.
+
+
+888
+00:45:15,136 --> 00:45:18,506
+Is it really too deep
+and I can see darn
+
+
+889
+00:45:18,506 --> 00:45:20,816
+to be a little coming
+monkey 1, 2, 3, 4,
+
+
+890
+00:45:20,816 --> 00:45:23,266
+5 or I can actually
+let [inaudible]
+
+
+891
+00:45:23,266 --> 00:45:24,406
+to become the frames for me.
+
+
+892
+00:45:24,406 --> 00:45:27,866
+LLDB is basically computer
+programs so it seems
+
+
+893
+00:45:27,866 --> 00:45:29,606
+like counting should
+be something
+
+
+894
+00:45:29,606 --> 00:45:31,926
+that it should be
+easily able to do rather
+
+
+895
+00:45:31,926 --> 00:45:33,476
+than having to do with myself.
+
+
+896
+00:45:34,166 --> 00:45:35,816
+With an LLDB Command
+you can do that
+
+
+897
+00:45:36,326 --> 00:45:39,636
+and the reason why the LLDB
+Command is so powerful is
+
+
+898
+00:45:39,636 --> 00:45:42,036
+that they have access to
+the LLDB Object Model.
+
+
+899
+00:45:42,566 --> 00:45:45,376
+We call it SB which stands
+for Scripting Bridge.
+
+
+900
+00:45:46,356 --> 00:45:49,796
+It's a Python API, it's what
+Xcode uses as the foundation
+
+
+901
+00:45:49,796 --> 00:45:51,206
+of the Debugger User Interface
+
+
+902
+00:45:51,206 --> 00:45:54,016
+and that means it's not
+just a little toy API
+
+
+903
+00:45:54,216 --> 00:45:56,696
+that somehow somebody
+brought one day
+
+
+904
+00:45:56,696 --> 00:45:57,776
+when it was brought
+in the office.
+
+
+905
+00:45:58,046 --> 00:46:02,036
+It means it's the full power of
+the debugger, the entire power
+
+
+906
+00:46:02,036 --> 00:46:05,516
+of the debugger and you that you
+use in Xcode is available to you
+
+
+907
+00:46:05,516 --> 00:46:09,336
+when you want to write all
+your LLDB Scripts right there.
+
+
+908
+00:46:09,526 --> 00:46:11,926
+We'd like to say
+that it is a good way
+
+
+909
+00:46:11,926 --> 00:46:14,886
+to represent the debugger
+session, let's look at it.
+
+
+910
+00:46:16,376 --> 00:46:19,176
+You will send this whether
+you've got five Apps
+
+
+911
+00:46:19,176 --> 00:46:22,346
+under your belt or
+you're just starting
+
+
+912
+00:46:22,346 --> 00:46:23,486
+to develop for platforms.
+
+
+913
+00:46:23,746 --> 00:46:24,366
+You've seen this.
+
+
+914
+00:46:24,556 --> 00:46:26,166
+This is the Xcode
+User Interface.
+
+
+915
+00:46:27,216 --> 00:46:29,566
+Let's look at it with the
+eye of a debugger engineer
+
+
+916
+00:46:29,566 --> 00:46:30,786
+for a second, will we?
+
+
+917
+00:46:30,786 --> 00:46:35,646
+Let's look at that, that
+is the after debugging,
+
+
+918
+00:46:36,046 --> 00:46:38,526
+that is the thing in which
+you put so much effort
+
+
+919
+00:46:38,526 --> 00:46:39,986
+and so much passion
+and so much love.
+
+
+920
+00:46:40,516 --> 00:46:44,596
+That is the thing you want to
+rock the stores while we called
+
+
+921
+00:46:44,596 --> 00:46:47,126
+that an SB target, it's the
+target of your debugging,
+
+
+922
+00:46:47,126 --> 00:46:49,126
+it's the thing you're
+aiming to make perfect.
+
+
+923
+00:46:50,176 --> 00:46:53,526
+And then you click the little
+Run Button in the user interface
+
+
+924
+00:46:53,886 --> 00:46:56,956
+and this thing that you put all
+that passion, all that coning,
+
+
+925
+00:46:56,956 --> 00:47:00,616
+all that wet and toiling too
+suddenly becomes a live entity,
+
+
+926
+00:47:00,836 --> 00:47:03,726
+you can suddenly type and type
+and click and type and type.
+
+
+927
+00:47:04,146 --> 00:47:06,936
+That's a process on the
+underlying physical machine.
+
+
+928
+00:47:07,396 --> 00:47:09,276
+So we call it an SB process
+
+
+929
+00:47:09,956 --> 00:47:12,846
+and processes have
+tried an execution
+
+
+930
+00:47:12,846 --> 00:47:16,496
+that are all striving
+together right job done
+
+
+931
+00:47:16,496 --> 00:47:17,856
+and they're all doing
+their own thing
+
+
+932
+00:47:17,856 --> 00:47:20,206
+and those are an SB thread.
+
+
+933
+00:47:20,206 --> 00:47:21,256
+Each one of those
+is an SB thread.
+
+
+934
+00:47:21,256 --> 00:47:23,936
+And of course a thread is
+going to call a function,
+
+
+935
+00:47:23,936 --> 00:47:25,386
+it's going to call a function,
+it's going to call a function,
+
+
+936
+00:47:25,386 --> 00:47:26,206
+it's going to call a function,
+
+
+937
+00:47:26,206 --> 00:47:28,106
+it's going to call a
+function again and each one
+
+
+938
+00:47:28,106 --> 00:47:30,656
+of those things is going to
+be a frame on your stacks.
+
+
+939
+00:47:30,656 --> 00:47:34,046
+So it's going to be
+surprisingly an SB frame.
+
+
+940
+00:47:34,046 --> 00:47:37,416
+Now that we're armed
+with all these objects
+
+
+941
+00:47:37,416 --> 00:47:39,796
+that actually represent a state
+of a program and we have access
+
+
+942
+00:47:39,796 --> 00:47:41,906
+to them, we see how
+easy it should be
+
+
+943
+00:47:41,906 --> 00:47:45,606
+to actually get our task done.
+
+
+944
+00:47:45,606 --> 00:47:47,666
+So how does a Python
+Command actually work?
+
+
+945
+00:47:48,136 --> 00:47:50,936
+It works by associating
+a name that you type
+
+
+946
+00:47:50,936 --> 00:47:53,166
+at the command line
+with a Python function
+
+
+947
+00:47:53,566 --> 00:47:56,196
+when LLDB is the command,
+it calls the function.
+
+
+948
+00:47:57,446 --> 00:48:00,656
+That's the prototype
+of Python commands.
+
+
+949
+00:48:01,616 --> 00:48:04,526
+They get past the debugger
+which an SB Debugger.
+
+
+950
+00:48:05,076 --> 00:48:07,366
+They get past the user
+input which is a String.
+
+
+951
+00:48:07,526 --> 00:48:09,436
+You get the real Python
+String that a user a types
+
+
+952
+00:48:09,866 --> 00:48:11,836
+so you're free to chop
+it up however you like,
+
+
+953
+00:48:11,926 --> 00:48:14,526
+whatever library you
+like to use, feel free
+
+
+954
+00:48:14,746 --> 00:48:17,906
+and then you get an SB
+command return object which is
+
+
+955
+00:48:17,906 --> 00:48:19,496
+like of a talk-back object.
+
+
+956
+00:48:19,496 --> 00:48:21,226
+It's the command
+talking to LLDB.
+
+
+957
+00:48:21,606 --> 00:48:24,606
+That object allows the command
+to tell the debugger, "Hey,
+
+
+958
+00:48:24,606 --> 00:48:27,076
+I worked, everything
+is fine" or "Love,
+
+
+959
+00:48:27,196 --> 00:48:29,106
+sorry I really couldn't
+do this today
+
+
+960
+00:48:29,106 --> 00:48:30,566
+for you, try again tomorrow."
+
+
+961
+00:48:30,566 --> 00:48:35,186
+And could you please tell
+the user, "Hello Wilt,"
+
+
+962
+00:48:35,266 --> 00:48:37,306
+yes the command return
+object knows how to do that.
+
+
+963
+00:48:37,376 --> 00:48:43,456
+And that's how you add one
+to the LLDB environment.
+
+
+964
+00:48:43,456 --> 00:48:45,006
+So, we have all these knowledge.
+
+
+965
+00:48:45,456 --> 00:48:47,616
+Now let's get back to
+our task calculated
+
+
+966
+00:48:47,616 --> 00:48:48,656
+in the depth of a recursion.
+
+
+967
+00:48:49,296 --> 00:48:51,936
+What I need to do is I need
+to loop over all the frames,
+
+
+968
+00:48:52,486 --> 00:48:55,686
+check if each frame is a
+part of my recursion or not
+
+
+969
+00:48:55,686 --> 00:48:58,746
+and at the end I would not tell
+the user I did the calculation
+
+
+970
+00:48:58,746 --> 00:48:59,856
+for you and it looks
+
+
+971
+00:48:59,856 --> 00:49:01,686
+like there's 10 frames
+of your recursion.
+
+
+972
+00:49:01,926 --> 00:49:04,846
+This is how you do
+the first step.
+
+
+973
+00:49:05,906 --> 00:49:08,366
+It's one line of Python,
+it's really powerful
+
+
+974
+00:49:08,366 --> 00:49:10,436
+because now you see that
+you have this thread object
+
+
+975
+00:49:10,686 --> 00:49:12,896
+and you can tell the
+thread what are all frames
+
+
+976
+00:49:13,236 --> 00:49:17,056
+and these frames object
+binds you a Python iterator
+
+
+977
+00:49:17,056 --> 00:49:18,296
+so they can loop over each one.
+
+
+978
+00:49:18,796 --> 00:49:23,386
+But hold on, I know some
+of you are looking at this
+
+
+979
+00:49:23,386 --> 00:49:25,466
+and they're perplexed
+because they saw
+
+
+980
+00:49:25,466 --> 00:49:27,716
+that I was given an SB debugger.
+
+
+981
+00:49:27,716 --> 00:49:29,006
+I wasn't given an SB thread.
+
+
+982
+00:49:29,476 --> 00:49:30,606
+How do I get here?
+
+
+983
+00:49:30,826 --> 00:49:33,696
+Well, the LLDB object
+model is extremely powerful
+
+
+984
+00:49:33,696 --> 00:49:36,146
+in this respect because
+I can ask the debugger
+
+
+985
+00:49:36,146 --> 00:49:37,756
+that I could pass
+as a Python command.
+
+
+986
+00:49:38,296 --> 00:49:39,786
+Tell me the thing
+you're debugging now,
+
+
+987
+00:49:39,786 --> 00:49:42,646
+tell me your SB target, the
+thing at the top of the UI.
+
+
+988
+00:49:42,826 --> 00:49:46,346
+And then I can tell that
+target, "Give me your process,
+
+
+989
+00:49:46,506 --> 00:49:49,526
+give me your live-running
+thing and process.
+
+
+990
+00:49:49,756 --> 00:49:52,986
+Can you please tell me what
+thread I currently selected,
+
+
+991
+00:49:52,986 --> 00:49:54,636
+we're currently looking at."
+
+
+992
+00:49:55,466 --> 00:49:57,626
+And now I actually
+have the thread
+
+
+993
+00:49:57,626 --> 00:49:59,276
+and you're not perplexed
+anymore.
+
+
+994
+00:50:00,036 --> 00:50:03,986
+So let's get going, I can ask
+you to frame the question,
+
+
+995
+00:50:05,126 --> 00:50:06,876
+what's your function
+and I can ask
+
+
+996
+00:50:07,086 --> 00:50:08,956
+that function a question,
+what's your name?
+
+
+997
+00:50:09,616 --> 00:50:11,646
+If that name is the
+name that I'm looking
+
+
+998
+00:50:11,646 --> 00:50:14,466
+at is my target name then I
+know to update the calendar.
+
+
+999
+00:50:14,556 --> 00:50:18,446
+And at the end, I'll
+say this is the result.
+
+
+1000
+00:50:19,276 --> 00:50:21,576
+Now I can print to
+that result object
+
+
+1001
+00:50:21,576 --> 00:50:25,126
+as if it was a Python file
+because we went so deeply
+
+
+1002
+00:50:25,126 --> 00:50:28,766
+with this API Integration that
+has become a return object.
+
+
+1003
+00:50:28,846 --> 00:50:31,736
+Looks just like a file to Python
+just praying to it at will.
+
+
+1004
+00:50:33,456 --> 00:50:36,556
+This is the full code and you
+can look at it from the slides,
+
+
+1005
+00:50:36,556 --> 00:50:38,956
+I'm not going to go
+all of these right now.
+
+
+1006
+00:50:39,166 --> 00:50:40,796
+Let's just look at
+the command in action.
+
+
+1007
+00:50:41,286 --> 00:50:42,856
+We stop, we got a recursion.
+
+
+1008
+00:50:43,016 --> 00:50:46,956
+I can count the frames,
+I can barely see 1, 2,
+
+
+1009
+00:50:46,956 --> 00:50:49,416
+3 or maybe that's not
+good, OK let's not do this.
+
+
+1010
+00:50:49,866 --> 00:50:52,406
+Let's just ask LLDB, I'll
+call the [inaudible] command.
+
+
+1011
+00:50:52,846 --> 00:50:55,166
+LLDB will think about it,
+hopefully very briefly
+
+
+1012
+00:50:55,166 --> 00:50:58,426
+and it will give us the
+answer that's 20 frames.
+
+
+1013
+00:50:58,906 --> 00:51:01,306
+Some of you probably
+have counted the frames
+
+
+1014
+00:51:01,396 --> 00:51:03,506
+and raise your hand
+if they're not ready.
+
+
+1015
+00:51:04,816 --> 00:51:08,176
+No one? OK then I guess
+I believe the Debugger.
+
+
+1016
+00:51:09,206 --> 00:51:11,376
+Let's move on, breakpoint
+actions.
+
+
+1017
+00:51:12,776 --> 00:51:16,146
+Sean has told us a lot of
+great things about breakpoints.
+
+
+1018
+00:51:16,336 --> 00:51:18,266
+He has shown us that
+they are really powerful
+
+
+1019
+00:51:18,266 --> 00:51:19,426
+and there's all these
+amazing ways
+
+
+1020
+00:51:19,426 --> 00:51:20,926
+that he can set breakpoints
+in your code.
+
+
+1021
+00:51:21,916 --> 00:51:23,716
+But by default, it's
+
+
+1022
+00:51:23,716 --> 00:51:25,556
+at a breakpoint it
+stops all the time.
+
+
+1023
+00:51:26,256 --> 00:51:28,146
+That's why we have
+conditional breakpoints, right?
+
+
+1024
+00:51:28,366 --> 00:51:29,916
+So they don't stop all the time
+
+
+1025
+00:51:30,726 --> 00:51:34,286
+but conditional breakpoints
+unlike looking at your program
+
+
+1026
+00:51:34,286 --> 00:51:37,366
+from within so they don't have
+access to the LLDB object model,
+
+
+1027
+00:51:37,366 --> 00:51:39,086
+they're like peers
+to your program.
+
+
+1028
+00:51:39,876 --> 00:51:41,666
+Breakpoint action
+is written in Python
+
+
+1029
+00:51:41,706 --> 00:51:45,536
+in a full program inspection
+and by full program inspection,
+
+
+1030
+00:51:45,656 --> 00:51:48,586
+I mean that they have access
+to the data, they have access
+
+
+1031
+00:51:48,586 --> 00:51:51,976
+to the code and they have also
+access to the LLDB object model
+
+
+1032
+00:51:52,146 --> 00:51:54,546
+because they're like running
+from above, they're running
+
+
+1033
+00:51:54,546 --> 00:51:57,426
+on peer with debugger and
+looking at your program instead
+
+
+1034
+00:51:57,426 --> 00:51:59,266
+of on peer with your programs.
+
+
+1035
+00:52:00,556 --> 00:52:01,586
+How do they work?
+
+
+1036
+00:52:01,826 --> 00:52:04,966
+Pretty easy, you probably
+hold and got this by now,
+
+
+1037
+00:52:05,366 --> 00:52:07,696
+breakpoint actions
+associated in breakpoint
+
+
+1038
+00:52:07,906 --> 00:52:08,926
+with a Python function.
+
+
+1039
+00:52:09,386 --> 00:52:12,356
+Whenever I hit the breakpoint,
+the Python function is invoked.
+
+
+1040
+00:52:13,736 --> 00:52:16,276
+That's one little bit of a
+secret sauce here which is new
+
+
+1041
+00:52:16,276 --> 00:52:19,746
+in Xcode 5 and it's a little
+bit of a secret sauce is
+
+
+1042
+00:52:19,806 --> 00:52:22,266
+that the Python function can
+choose to return a value.
+
+
+1043
+00:52:22,916 --> 00:52:25,696
+If that function chooses
+to return the value false,
+
+
+1044
+00:52:25,846 --> 00:52:28,886
+the logical value false,
+that is the equivalent
+
+
+1045
+00:52:28,886 --> 00:52:30,886
+of checking the automatically
+continue
+
+
+1046
+00:52:31,026 --> 00:52:33,736
+after evaluating check box
+in the Xcode user interface.
+
+
+1047
+00:52:34,726 --> 00:52:36,976
+What's so interesting
+about this is
+
+
+1048
+00:52:36,976 --> 00:52:39,976
+that these can actually employ
+arbitrary amounts of logic
+
+
+1049
+00:52:40,156 --> 00:52:43,156
+to decide whether that little
+check box should be checked
+
+
+1050
+00:52:43,156 --> 00:52:44,826
+or not in this particular
+instance
+
+
+1051
+00:52:44,826 --> 00:52:46,546
+of stopping at a breakpoint.
+
+
+1052
+00:52:47,106 --> 00:52:50,646
+You read a function with
+this kind of prototype
+
+
+1053
+00:52:51,026 --> 00:52:53,356
+and gets Python as
+reframed, and gets Python
+
+
+1054
+00:52:53,356 --> 00:52:55,486
+as the breakpoint location
+which is the location
+
+
+1055
+00:52:55,486 --> 00:52:56,756
+on which the breakpoint was hit.
+
+
+1056
+00:52:57,616 --> 00:53:00,416
+And that's how you bind
+one breakpoint command at.
+
+
+1057
+00:53:01,026 --> 00:53:05,226
+Let's give an example,
+let's go back
+
+
+1058
+00:53:05,226 --> 00:53:07,276
+to our old idea of recursion.
+
+
+1059
+00:53:07,366 --> 00:53:09,436
+I find it right recursion a lot.
+
+
+1060
+00:53:10,736 --> 00:53:12,626
+My program is doing
+some recursive thing
+
+
+1061
+00:53:12,696 --> 00:53:15,056
+but I'm not great of recursion
+
+
+1062
+00:53:15,056 --> 00:53:17,026
+so my program hangs
+while doing it.
+
+
+1063
+00:53:17,576 --> 00:53:19,756
+I don't really know
+what's going on.
+
+
+1064
+00:53:19,756 --> 00:53:23,566
+I get some reports and sometimes
+I can actually make it happen
+
+
+1065
+00:53:23,566 --> 00:53:25,556
+sometimes I cannot
+actually make it happen.
+
+
+1066
+00:53:26,076 --> 00:53:27,546
+It's really frustrating.
+
+
+1067
+00:53:27,546 --> 00:53:29,576
+I don't know how to set a
+breakpoint condition here.
+
+
+1068
+00:53:30,756 --> 00:53:32,146
+Well here's the idea.
+
+
+1069
+00:53:32,976 --> 00:53:36,846
+I can make a breakpoint action
+that looks at the call stack
+
+
+1070
+00:53:36,956 --> 00:53:40,546
+and I can tell LLDB you
+really should always stop
+
+
+1071
+00:53:40,546 --> 00:53:43,306
+if that recursion is getting
+too deep out of control.
+
+
+1072
+00:53:44,226 --> 00:53:45,076
+So that's what you get
+
+
+1073
+00:53:45,196 --> 00:53:46,966
+for actually attending
+the LLDB session.
+
+
+1074
+00:53:47,026 --> 00:53:48,906
+You get these cool ideas
+that you can go back
+
+
+1075
+00:53:48,906 --> 00:53:50,356
+and implement in
+your situations.
+
+
+1076
+00:53:51,566 --> 00:53:54,866
+Let's make it happen, there's
+two things that I need to do
+
+
+1077
+00:53:54,866 --> 00:53:56,816
+to make this magic
+happen, right?
+
+
+1078
+00:53:57,306 --> 00:54:00,796
+I need to see how deep the
+recursion is and I need to stop
+
+
+1079
+00:54:00,796 --> 00:54:03,476
+if that's more deep than
+I'm willing to accept.
+
+
+1080
+00:54:04,686 --> 00:54:08,066
+Here's great news, there's
+two things that we need to do
+
+
+1081
+00:54:08,236 --> 00:54:09,466
+and we already did one.
+
+
+1082
+00:54:10,206 --> 00:54:12,646
+That's the exact same
+command that we did before
+
+
+1083
+00:54:12,856 --> 00:54:14,526
+and since this is
+a Python thing,
+
+
+1084
+00:54:14,526 --> 00:54:16,186
+this is not some little
+heart codie [phonetic]
+
+
+1085
+00:54:16,186 --> 00:54:17,066
+command language.
+
+
+1086
+00:54:17,406 --> 00:54:20,096
+It means that I can actually
+take all these features
+
+
+1087
+00:54:20,096 --> 00:54:22,616
+that I've read before
+and I can reuse them
+
+
+1088
+00:54:22,616 --> 00:54:23,906
+in these different scenarios.
+
+
+1089
+00:54:23,906 --> 00:54:26,686
+I'll only need to do
+one little thing here.
+
+
+1090
+00:54:27,496 --> 00:54:30,526
+If I count the depth and I see
+
+
+1091
+00:54:30,526 --> 00:54:33,336
+that the recursion depth is
+smaller than the threshold
+
+
+1092
+00:54:33,336 --> 00:54:35,976
+that I decided that is too
+deep going out of control,
+
+
+1093
+00:54:36,366 --> 00:54:38,316
+then my breakpoint
+action returns false
+
+
+1094
+00:54:38,316 --> 00:54:39,966
+and LLDB just continues.
+
+
+1095
+00:54:40,676 --> 00:54:44,846
+It's for lines of code
+right here that implement
+
+
+1096
+00:54:44,846 --> 00:54:47,596
+that breakpoint action that
+looks at all the frames,
+
+
+1097
+00:54:47,726 --> 00:54:50,596
+calculates the depth and
+decides if it should stop or not
+
+
+1098
+00:54:50,596 --> 00:54:52,456
+at their breakpoint
+for lines of code.
+
+
+1099
+00:54:53,056 --> 00:54:55,986
+And here it is in action.
+
+
+1100
+00:54:57,046 --> 00:54:59,996
+It's the same situation
+as before we stopped
+
+
+1101
+00:55:00,316 --> 00:55:01,736
+and there's 20 frames.
+
+
+1102
+00:55:01,926 --> 00:55:04,016
+I guess we can-- we
+have a confirmation
+
+
+1103
+00:55:04,016 --> 00:55:06,366
+that it really was trying
+the frames an example before.
+
+
+1104
+00:55:10,656 --> 00:55:12,376
+Prototypes and customizations,
+
+
+1105
+00:55:12,486 --> 00:55:14,546
+why do we need prototypes
+and customization?
+
+
+1106
+00:55:14,716 --> 00:55:18,916
+Well, I hope that by the time
+WWDC is over and you're all back
+
+
+1107
+00:55:18,916 --> 00:55:22,056
+to your offices, you're actually
+going to take my word for it
+
+
+1108
+00:55:22,326 --> 00:55:24,306
+and you're going to start
+running your LLDB summaries
+
+
+1109
+00:55:24,306 --> 00:55:27,096
+and your LLDB commands and then
+you're going to click the LLDB
+
+
+1110
+00:55:27,096 --> 00:55:29,826
+and you're going to type
+them again the next time
+
+
+1111
+00:55:29,996 --> 00:55:31,996
+and then you're going to
+type them again the next time
+
+
+1112
+00:55:32,186 --> 00:55:33,736
+and then you're going to
+type them again the next time
+
+
+1113
+00:55:33,966 --> 00:55:35,806
+until all you're doing is
+actually typing this LLDB
+
+
+1114
+00:55:35,806 --> 00:55:37,796
+customizations and you're
+a little typing monkey
+
+
+1115
+00:55:37,796 --> 00:55:39,236
+and you wish you never
+really started doing this
+
+
+1116
+00:55:39,236 --> 00:55:42,826
+in the first place, it's
+horrible, stop this please.
+
+
+1117
+00:55:42,876 --> 00:55:45,356
+Well, it doesn't
+have to be like that.
+
+
+1118
+00:55:45,806 --> 00:55:47,386
+We thought about the situation
+
+
+1119
+00:55:47,386 --> 00:55:51,186
+and LLDB has a specific
+configuration file
+
+
+1120
+00:55:51,466 --> 00:55:54,856
+which very unsurprisingly
+is called .lldbinit
+
+
+1121
+00:55:54,856 --> 00:55:56,486
+and sits in your home folder.
+
+
+1122
+00:55:57,136 --> 00:55:59,796
+That file is loaded
+every time we start
+
+
+1123
+00:55:59,796 --> 00:56:01,476
+up a debug session with LLDB.
+
+
+1124
+00:56:02,226 --> 00:56:04,656
+It's a great place to
+treat debugger settings.
+
+
+1125
+00:56:05,186 --> 00:56:06,966
+It's a great place
+to load scripts
+
+
+1126
+00:56:07,016 --> 00:56:09,156
+that you find yourself
+using more and more
+
+
+1127
+00:56:09,156 --> 00:56:12,046
+as you become proficient
+with LLDB.
+
+
+1128
+00:56:12,296 --> 00:56:15,546
+If anything is to be loaded
+only when you're using LLDB
+
+
+1129
+00:56:15,546 --> 00:56:21,076
+from within Xcode, the LLDB
+init-Xcode is the place
+
+
+1130
+00:56:21,076 --> 00:56:22,276
+to go to put those things.
+
+
+1131
+00:56:22,956 --> 00:56:27,876
+So we covered quite
+a great deal today.
+
+
+1132
+00:56:28,226 --> 00:56:31,166
+We're almost at the end of
+this brief journey together.
+
+
+1133
+00:56:31,306 --> 00:56:33,486
+Well good things must
+come to an end I guess
+
+
+1134
+00:56:34,056 --> 00:56:39,576
+but let's make a recap the
+most topics that we saw today.
+
+
+1135
+00:56:39,576 --> 00:56:42,836
+LLDB is the debugger in Xcode 5.
+
+
+1136
+00:56:43,496 --> 00:56:46,776
+It's more efficient than
+ever before and it's packed
+
+
+1137
+00:56:46,876 --> 00:56:49,606
+with great new features
+for you to go out and use.
+
+
+1138
+00:56:50,236 --> 00:56:53,846
+We actually covered some of
+those great features right
+
+
+1139
+00:56:53,946 --> 00:56:55,236
+in this room, right today.
+
+
+1140
+00:56:56,786 --> 00:57:00,096
+Sean showed us great way to
+be effective when debugging.
+
+
+1141
+00:57:01,076 --> 00:57:03,606
+How I can use logging
+and assertions
+
+
+1142
+00:57:03,986 --> 00:57:06,346
+to debug even before
+actually starting debugging
+
+
+1143
+00:57:07,116 --> 00:57:10,026
+and how I can set the right
+breakpoints to make sure
+
+
+1144
+00:57:10,026 --> 00:57:12,476
+that I'm looking at just
+the code I care about
+
+
+1145
+00:57:12,476 --> 00:57:13,596
+and I don't waste my time
+
+
+1146
+00:57:13,596 --> 00:57:15,876
+and I can be a productive
+debugger engineer.
+
+
+1147
+00:57:16,886 --> 00:57:19,656
+Well, then we talked about how
+
+
+1148
+00:57:19,656 --> 00:57:21,716
+to exploit customizations
+properly.
+
+
+1149
+00:57:21,916 --> 00:57:24,596
+We showed ways that data
+formatter has allowed us to be--
+
+
+1150
+00:57:25,126 --> 00:57:27,966
+to view data in a much more
+meaningful way than before.
+
+
+1151
+00:57:27,966 --> 00:57:31,206
+And we saw that we can
+automate repeated workflows
+
+
+1152
+00:57:31,206 --> 00:57:33,796
+with custom commands and
+with breakpoint actions,
+
+
+1153
+00:57:35,066 --> 00:57:36,306
+has lots of great content.
+
+
+1154
+00:57:38,566 --> 00:57:40,686
+For more information
+about any of these things
+
+
+1155
+00:57:40,686 --> 00:57:42,646
+and anything else to be really,
+
+
+1156
+00:57:42,846 --> 00:57:45,036
+Dave DeLong is our
+famous evangelist.
+
+
+1157
+00:57:45,036 --> 00:57:46,106
+You can talk to him.
+
+
+1158
+00:57:46,736 --> 00:57:49,096
+We have a lot of
+documentation about LLDB though
+
+
+1159
+00:57:49,096 --> 00:57:50,976
+that you can consult
+before asking for help.
+
+
+1160
+00:57:51,376 --> 00:57:53,996
+You can check the quick
+start guide or you can log
+
+
+1161
+00:57:53,996 --> 00:57:56,906
+in to LLDB website or
+within LLDB itself,
+
+
+1162
+00:57:57,016 --> 00:57:58,286
+you can get help about LLDB.
+
+
+1163
+00:57:58,286 --> 00:58:00,796
+If you don't know exactly
+what you're looking for,
+
+
+1164
+00:58:01,036 --> 00:58:02,756
+you can use the appropriate
+po keyword for--
+
+
+1165
+00:58:02,756 --> 00:58:05,116
+appropriate po command
+followed by one or more keywords
+
+
+1166
+00:58:05,116 --> 00:58:06,856
+and LLDB will look for
+help on that thing.
+
+
+1167
+00:58:07,336 --> 00:58:09,036
+And of course if
+you have questions,
+
+
+1168
+00:58:09,366 --> 00:58:11,836
+the Apple developer forums
+are a great place to go.
+
+
+1169
+00:58:11,836 --> 00:58:16,216
+There's been a couple of
+related sessions over the week
+
+
+1170
+00:58:16,216 --> 00:58:19,106
+that will mention LLDB
+and debugging in general,
+
+
+1171
+00:58:19,296 --> 00:58:22,256
+the new in Xcode 5 and the
+session about debugging
+
+
+1172
+00:58:22,256 --> 00:58:24,166
+with Xcode that Kate
+mentioned before
+
+
+1173
+00:58:24,946 --> 00:58:26,886
+and thank you for
+joining us today.
+
+
+1174
+00:58:27,016 --> 00:58:28,576
+[ Applause ]
+
+
+1175
+00:58:28,576 --> 00:58:28,846
+Thank you.
+

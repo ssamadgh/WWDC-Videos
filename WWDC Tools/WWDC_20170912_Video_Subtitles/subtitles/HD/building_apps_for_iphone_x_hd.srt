@@ -1,0 +1,1717 @@
+1
+00:00:01,268 --> 00:00:03,804
+Linking your app
+against the iOS 11 SDK
+
+
+2
+00:00:03,804 --> 00:00:06,240
+is the only thing you need to do
+in order to take advantage
+
+
+3
+00:00:06,240 --> 00:00:09,643
+of the super Retina display
+on iPhone X.
+
+
+4
+00:00:09,643 --> 00:00:12,913
+If your app is largely based
+on standard UIKit controls
+
+
+5
+00:00:12,913 --> 00:00:15,515
+and you use Auto Layout,
+then you're in good shape
+
+
+6
+00:00:15,515 --> 00:00:18,886
+since most of the work
+will be done for you by UIKit.
+
+
+7
+00:00:19,887 --> 00:00:23,690
+If you use custom controls,
+or you're not using Auto Layout,
+
+
+8
+00:00:23,690 --> 00:00:25,692
+or if you're a custom
+full screen app
+
+
+9
+00:00:25,692 --> 00:00:27,794
+like many games are,
+don't worry.
+
+
+10
+00:00:27,794 --> 00:00:29,663
+While there may be
+some work for you to do,
+
+
+11
+00:00:29,663 --> 00:00:32,332
+it's not difficult and there is
+lots of support built in
+
+
+12
+00:00:32,332 --> 00:00:35,535
+with tools like the new
+Safe Area layout guides.
+
+
+13
+00:00:35,535 --> 00:00:38,205
+In either case, you will want
+to thoroughly test your app,
+
+
+14
+00:00:38,205 --> 00:00:41,375
+especially in landscape, to make
+sure everything looks right.
+
+
+15
+00:00:43,210 --> 00:00:45,979
+The latest version of Xcode
+includes simulator support
+
+
+16
+00:00:45,979 --> 00:00:49,917
+for iPhone X, allowing you
+to make most layout changes,
+
+
+17
+00:00:49,917 --> 00:00:51,251
+especially any adjustments
+
+
+18
+00:00:51,251 --> 00:00:54,254
+relating to respecting
+the Safe Area.
+
+
+19
+00:00:54,254 --> 00:00:56,490
+For some apps,
+like ones that use Metal,
+
+
+20
+00:00:56,490 --> 00:00:59,426
+or hardware features
+like the front-facing camera,
+
+
+21
+00:00:59,426 --> 00:01:02,029
+you may need to use
+an actual device.
+
+
+22
+00:01:02,029 --> 00:01:05,999
+Let's take a quick look
+at the new iPhone X simulator.
+
+
+23
+00:01:05,999 --> 00:01:08,602
+Just like other
+iPhone or iPad simulators,
+
+
+24
+00:01:08,602 --> 00:01:11,905
+you'll have access to many
+of the built-in system apps.
+
+
+25
+00:01:11,905 --> 00:01:13,507
+This is a great way
+to see examples
+
+
+26
+00:01:13,507 --> 00:01:18,178
+of how different UIKit
+components behave on iPhone X.
+
+
+27
+00:01:18,178 --> 00:01:19,846
+For example, the Files app
+
+
+28
+00:01:19,846 --> 00:01:23,150
+shows many of the latest
+iOS 11 APIs in action,
+
+
+29
+00:01:23,150 --> 00:01:27,487
+like the integrated search bar
+or large navigation bar titles.
+
+
+30
+00:01:27,487 --> 00:01:30,424
+And don't forget, you can
+sign into your iCloud account
+
+
+31
+00:01:30,424 --> 00:01:34,328
+in the simulator, which gives
+you access to iCloud Drive.
+
+
+32
+00:01:34,328 --> 00:01:36,530
+This makes it really easy
+to transfer files
+
+
+33
+00:01:36,530 --> 00:01:40,467
+or test content like photos
+into the simulator.
+
+
+34
+00:01:40,467 --> 00:01:43,103
+Another good example
+is the Contacts app,
+
+
+35
+00:01:43,103 --> 00:01:47,274
+which shows how table views
+behave on iPhone X.
+
+
+36
+00:01:47,274 --> 00:01:49,343
+Be sure to rotate
+the simulator to landscape
+
+
+37
+00:01:49,343 --> 00:01:51,645
+where you can see behaviors
+like the section headers
+
+
+38
+00:01:51,645 --> 00:01:53,146
+going edge to edge,
+
+
+39
+00:01:53,146 --> 00:01:55,215
+but the table contents
+remain indented
+
+
+40
+00:01:55,215 --> 00:01:58,185
+according to the Safe Area.
+
+
+41
+00:01:58,185 --> 00:02:01,188
+We'll talk more about
+table views a bit later.
+
+
+42
+00:02:01,188 --> 00:02:03,223
+Let's move on to
+an app that I work on,
+
+
+43
+00:02:03,223 --> 00:02:05,559
+the WWDC app.
+
+
+44
+00:02:05,559 --> 00:02:08,228
+I've spent a little time
+moving it over to iPhone X
+
+
+45
+00:02:08,228 --> 00:02:10,030
+and I'd like to share
+some layout issues
+
+
+46
+00:02:10,030 --> 00:02:12,666
+that I encountered,
+and how I fixed them.
+
+
+47
+00:02:12,666 --> 00:02:16,970
+The WWDC app is actually
+a pretty typical real-world app.
+
+
+48
+00:02:16,970 --> 00:02:19,072
+It's been around
+for a number of years
+
+
+49
+00:02:19,072 --> 00:02:20,974
+and it's been worked on
+by various engineers
+
+
+50
+00:02:20,974 --> 00:02:22,242
+from year to year.
+
+
+51
+00:02:22,242 --> 00:02:25,879
+While it uses lots of standard
+controls and Auto Layout,
+
+
+52
+00:02:25,879 --> 00:02:27,581
+it also has custom views,
+
+
+53
+00:02:27,581 --> 00:02:30,717
+and older parts of the app
+do manual layout instead.
+
+
+54
+00:02:30,717 --> 00:02:32,819
+I'll use it to highlight
+three different areas
+
+
+55
+00:02:32,819 --> 00:02:36,123
+that needed to be updated
+for iPhone X. 
+
+
+56
+00:02:36,123 --> 00:02:38,859
+I've started by opening
+the project in Xcode 9
+
+
+57
+00:02:38,859 --> 00:02:41,528
+and set the Base SDK to iOS 11.
+
+
+58
+00:02:41,528 --> 00:02:44,898
+So we're all set to run
+at the native resolution.
+
+
+59
+00:02:44,898 --> 00:02:46,566
+When you do this with your app,
+
+
+60
+00:02:46,566 --> 00:02:50,337
+if you don't see it running at
+the full iPhone X resolution,
+
+
+61
+00:02:50,337 --> 00:02:52,773
+double check that you've
+configured a Launch Storyboard,
+
+
+62
+00:02:52,773 --> 00:02:55,042
+as that's also needed.
+
+
+63
+00:02:55,042 --> 00:02:57,944
+OK, our initial view
+is the Videos tab, 
+
+
+64
+00:02:57,944 --> 00:02:59,513
+and this looks pretty good.
+
+
+65
+00:02:59,513 --> 00:03:01,081
+This was all new code this year
+
+
+66
+00:03:01,081 --> 00:03:03,750
+using UICollectionView
+with Auto Layout,
+
+
+67
+00:03:03,750 --> 00:03:07,320
+along with standard navigation
+bar and toolbar controls.
+
+
+68
+00:03:07,320 --> 00:03:09,489
+So I'm not really surprised
+that most of the interface
+
+
+69
+00:03:09,489 --> 00:03:10,957
+lays out correctly,
+
+
+70
+00:03:10,957 --> 00:03:14,261
+because UIKit is doing
+most of the work for me.
+
+
+71
+00:03:14,261 --> 00:03:16,363
+One place where
+we don't use Auto Layout
+
+
+72
+00:03:16,363 --> 00:03:17,931
+is on the News tab.
+
+
+73
+00:03:17,931 --> 00:03:19,866
+Let's have a look at that.
+
+
+74
+00:03:19,866 --> 00:03:21,768
+This view actually
+looks pretty good,
+
+
+75
+00:03:21,768 --> 00:03:24,671
+even though it's doing
+manual layout of the UI.
+
+
+76
+00:03:24,671 --> 00:03:27,140
+While we're not using
+Auto Layout directly,
+
+
+77
+00:03:27,140 --> 00:03:29,376
+the code doing the layout
+is paying attention
+
+
+78
+00:03:29,376 --> 00:03:31,912
+to the layout margin insets,
+
+
+79
+00:03:31,912 --> 00:03:34,147
+and UIKit is automatically
+adjusting those
+
+
+80
+00:03:34,147 --> 00:03:36,983
+to respect the Safe Area.
+
+
+81
+00:03:36,983 --> 00:03:38,418
+The first problem
+that I encountered
+
+
+82
+00:03:38,418 --> 00:03:39,986
+is here on the News tab,
+
+
+83
+00:03:39,986 --> 00:03:43,457
+and it's in
+the fullscreen photo viewer.
+
+
+84
+00:03:43,457 --> 00:03:46,560
+Even though this particular view
+uses Auto Layout,
+
+
+85
+00:03:46,560 --> 00:03:49,930
+the page control is too far down
+at the bottom of the screen.
+
+
+86
+00:03:49,930 --> 00:03:53,033
+It's running into
+the Home indicator.
+
+
+87
+00:03:53,033 --> 00:03:56,570
+The problem here is that the
+page control's bottom constraint
+
+
+88
+00:03:56,570 --> 00:03:58,472
+is relative to the superview,
+
+
+89
+00:03:58,472 --> 00:04:03,376
+which is full screen and goes
+behind the Home indicator.
+
+
+90
+00:04:03,376 --> 00:04:05,579
+Instead of constraining
+to the superview,
+
+
+91
+00:04:05,579 --> 00:04:07,681
+what we should do
+is constrain the page control
+
+
+92
+00:04:07,681 --> 00:04:10,784
+to the Safe Area layout guide
+at the bottom.
+
+
+93
+00:04:10,784 --> 00:04:12,586
+Let's make that change now.
+
+
+94
+00:04:14,421 --> 00:04:16,490
+I've opened this interface
+in Xcode,
+
+
+95
+00:04:16,490 --> 00:04:18,658
+but before I can
+adjust the constraint
+
+
+96
+00:04:18,658 --> 00:04:22,662
+I need to enable Safe Area
+layout guides in this xib file.
+
+
+97
+00:04:22,662 --> 00:04:26,166
+Storyboards and xibs
+created prior to Xcode 9
+
+
+98
+00:04:26,166 --> 00:04:27,467
+will not automatically have
+
+
+99
+00:04:27,467 --> 00:04:31,238
+Safe Area layout guides
+turned on.
+
+
+100
+00:04:31,238 --> 00:04:32,806
+Go to the Document inspector
+
+
+101
+00:04:32,806 --> 00:04:38,345
+and select the Use Safe Area
+Layout Guides checkbox.
+
+
+102
+00:04:38,345 --> 00:04:41,715
+One thing to note here
+is that for iOS storyboards,
+
+
+103
+00:04:41,715 --> 00:04:43,850
+turning this on
+will automatically upgrade
+
+
+104
+00:04:43,850 --> 00:04:47,521
+constraints tied to the scene's
+top and bottom layout guides,
+
+
+105
+00:04:47,521 --> 00:04:50,390
+as well as leading
+and trailing edges.
+
+
+106
+00:04:50,390 --> 00:04:53,160
+So be sure to review and test
+your Auto Layout constraints
+
+
+107
+00:04:53,160 --> 00:04:55,162
+after turning this on.
+
+
+108
+00:04:56,329 --> 00:05:00,066
+Now I can select the bottom
+constraint of the page control.
+
+
+109
+00:05:00,066 --> 00:05:04,037
+And look at the Attributes
+inspector for this constraint.
+
+
+110
+00:05:04,037 --> 00:05:05,939
+Here we see that
+the constraint is connected
+
+
+111
+00:05:05,939 --> 00:05:08,642
+to the superview's bottom edge
+
+
+112
+00:05:08,642 --> 00:05:11,645
+and that's what is keeping
+the control too far down.
+
+
+113
+00:05:11,645 --> 00:05:13,380
+Instead of the Superview,
+
+
+114
+00:05:13,380 --> 00:05:16,449
+if we change this to be
+connected to the Safe Area,
+
+
+115
+00:05:16,449 --> 00:05:18,418
+then on iPhone X
+the page indicator
+
+
+116
+00:05:18,418 --> 00:05:21,855
+will automatically move up
+above the Home indicator.
+
+
+117
+00:05:22,856 --> 00:05:24,491
+When I build and run now,
+
+
+118
+00:05:24,491 --> 00:05:26,660
+the page control
+is at the right place,
+
+
+119
+00:05:26,660 --> 00:05:30,430
+and this works for both
+portrait and landscape.
+
+
+120
+00:05:30,430 --> 00:05:33,466
+Let's move on to
+the second issue that I found,
+
+
+121
+00:05:33,466 --> 00:05:35,735
+which is over in the Videos tab.
+
+
+122
+00:05:35,735 --> 00:05:37,904
+Once again,
+things look pretty good,
+
+
+123
+00:05:37,904 --> 00:05:40,173
+but if I bring up
+the search field,
+
+
+124
+00:05:40,173 --> 00:05:42,142
+well, that doesn't
+look quite right.
+
+
+125
+00:05:42,142 --> 00:05:45,245
+Let's compare this
+to the Contacts app looks.
+
+
+126
+00:05:45,245 --> 00:05:47,080
+A couple things look wrong here.
+
+
+127
+00:05:47,080 --> 00:05:49,983
+The color of the search bar
+background isn't quite right,
+
+
+128
+00:05:49,983 --> 00:05:52,152
+and the sizing is a bit off.
+
+
+129
+00:05:52,152 --> 00:05:54,187
+And if I rotate to landscape,
+
+
+130
+00:05:54,187 --> 00:05:56,856
+I can see things
+don't look right here either.
+
+
+131
+00:05:56,856 --> 00:05:59,726
+The search field and Cancel
+buttons are both being clipped
+
+
+132
+00:05:59,726 --> 00:06:01,895
+by the rounded corners
+of the screen.
+
+
+133
+00:06:01,895 --> 00:06:03,997
+This is a typical example
+where paying attention
+
+
+134
+00:06:03,997 --> 00:06:07,434
+to the Safe Area
+is really important.
+
+
+135
+00:06:07,434 --> 00:06:10,804
+For this search field,
+what the WWDC app is doing
+
+
+136
+00:06:10,804 --> 00:06:14,374
+is explicitly presenting
+a UI search controller.
+
+
+137
+00:06:14,374 --> 00:06:16,142
+Now in iOS 11,
+
+
+138
+00:06:16,142 --> 00:06:19,145
+the search bar can be integrated
+with the navigation bar,
+
+
+139
+00:06:19,145 --> 00:06:20,714
+which will give
+the right presentation
+
+
+140
+00:06:20,714 --> 00:06:23,016
+like we saw in Contacts.
+
+
+141
+00:06:23,016 --> 00:06:25,185
+Let's look at the code
+and make that change.
+
+
+142
+00:06:26,419 --> 00:06:29,089
+Here's the code that presents
+our search controller.
+
+
+143
+00:06:29,089 --> 00:06:30,924
+I'm going to make two changes.
+
+
+144
+00:06:30,924 --> 00:06:33,827
+First, instead of presenting
+the search controller,
+
+
+145
+00:06:33,827 --> 00:06:35,762
+we'll hand it to
+the UINavigationItem
+
+
+146
+00:06:35,762 --> 00:06:37,864
+for this view controller.
+
+
+147
+00:06:37,864 --> 00:06:39,332
+And second,
+
+
+148
+00:06:39,332 --> 00:06:43,036
+I'll set the search controller's
+isActive property to true.
+
+
+149
+00:06:43,036 --> 00:06:44,604
+This will cause
+the navigation bar
+
+
+150
+00:06:44,604 --> 00:06:47,340
+to activate it
+and start editing.
+
+
+151
+00:06:47,340 --> 00:06:49,676
+Notice that we can use
+the availability support
+
+
+152
+00:06:49,676 --> 00:06:52,012
+to only do this for iOS 11,
+
+
+153
+00:06:52,012 --> 00:06:53,747
+while preserving
+the existing behavior
+
+
+154
+00:06:53,747 --> 00:06:56,283
+for older versions of iOS.
+
+
+155
+00:06:56,283 --> 00:06:58,652
+Let's build and run
+to see how that looks.
+
+
+156
+00:06:58,652 --> 00:06:59,986
+Much better.
+
+
+157
+00:06:59,986 --> 00:07:01,521
+This looks like
+the correct presentation
+
+
+158
+00:07:01,521 --> 00:07:03,923
+of the search field for iOS 11.
+
+
+159
+00:07:03,923 --> 00:07:06,426
+And in landscape?
+Terrific.
+
+
+160
+00:07:06,426 --> 00:07:09,729
+Now the search bar is fitting
+into the Safe Area nicely,
+
+
+161
+00:07:09,729 --> 00:07:12,299
+and this is all being
+automatically managed for us
+
+
+162
+00:07:12,299 --> 00:07:14,334
+by the navigation bar.
+
+
+163
+00:07:14,334 --> 00:07:17,504
+If you have search bars
+in your UI with navigation bars,
+
+
+164
+00:07:17,504 --> 00:07:20,840
+you definitely want to make
+a similar change on iOS 11.
+
+
+165
+00:07:22,542 --> 00:07:24,511
+Now let's take a look
+at the third part of the app
+
+
+166
+00:07:24,511 --> 00:07:26,713
+that I needed to work on.
+
+
+167
+00:07:26,713 --> 00:07:30,450
+Here in the Schedule tab,
+we are using a UITableView.
+
+
+168
+00:07:30,450 --> 00:07:32,886
+The layout in portrait
+looks pretty good,
+
+
+169
+00:07:32,886 --> 00:07:34,854
+although we've got
+another case of a search bar
+
+
+170
+00:07:34,854 --> 00:07:36,589
+that doesn't look right.
+
+
+171
+00:07:36,589 --> 00:07:38,258
+This one happens
+to be getting inserted
+
+
+172
+00:07:38,258 --> 00:07:40,627
+in the table view
+as a header view,
+
+
+173
+00:07:40,627 --> 00:07:42,595
+but we can apply
+the same change as before
+
+
+174
+00:07:42,595 --> 00:07:45,832
+to integrate it
+with the navigation bar instead.
+
+
+175
+00:07:45,832 --> 00:07:47,434
+I'll set the search controller
+
+
+176
+00:07:47,434 --> 00:07:49,736
+on the view controller's
+navigation item,
+
+
+177
+00:07:49,736 --> 00:07:52,339
+and set the active state
+appropriately.
+
+
+178
+00:07:52,339 --> 00:07:53,673
+Let's build and run.
+
+
+179
+00:07:53,673 --> 00:07:55,108
+This looks great.
+
+
+180
+00:07:55,108 --> 00:07:58,845
+If I rotate to landscape,
+the search field looks fine
+
+
+181
+00:07:58,845 --> 00:08:02,615
+and most of the UI looks like
+it's respecting the safe areas.
+
+
+182
+00:08:02,615 --> 00:08:04,584
+But if you look closely,
+
+
+183
+00:08:04,584 --> 00:08:06,386
+we use a custom
+background color
+
+
+184
+00:08:06,386 --> 00:08:10,090
+for the table section header,
+and that looks wrong.
+
+
+185
+00:08:10,090 --> 00:08:13,093
+The color should be extending
+to the edge of the screen,
+
+
+186
+00:08:13,093 --> 00:08:15,729
+like they do
+in the Contacts app.
+
+
+187
+00:08:15,729 --> 00:08:18,198
+If we look at the code,
+
+
+188
+00:08:18,198 --> 00:08:20,834
+we can see that the app
+is setting the background color
+
+
+189
+00:08:20,834 --> 00:08:23,403
+on the contentView
+of the header view.
+
+
+190
+00:08:23,403 --> 00:08:25,705
+That seems like
+a reasonable thing to do,
+
+
+191
+00:08:25,705 --> 00:08:30,443
+and in fact, it works fine
+on iPhones other than iPhone X.
+
+
+192
+00:08:30,443 --> 00:08:32,679
+So what is the problem here?
+
+
+193
+00:08:32,679 --> 00:08:34,614
+To understand what's happening,
+
+
+194
+00:08:34,614 --> 00:08:36,783
+we need to look at the details
+of how a table view
+
+
+195
+00:08:36,783 --> 00:08:39,184
+lays things out on iPhone X.
+
+
+196
+00:08:39,184 --> 00:08:42,087
+To help illustrate this, let's
+start with the really useful
+
+
+197
+00:08:42,087 --> 00:08:45,992
+View Hierarchy Debugger
+in Xcode.
+
+
+198
+00:08:45,992 --> 00:08:48,161
+Here's that view
+we were looking at.
+
+
+199
+00:08:48,161 --> 00:08:49,596
+Down in the bottom right,
+
+
+200
+00:08:49,596 --> 00:08:51,765
+I can adjust
+the visible view range
+
+
+201
+00:08:51,765 --> 00:08:56,002
+to hide all the views
+except the table view itself.
+
+
+202
+00:08:56,002 --> 00:08:59,406
+The table view will be
+the full size of the screen.
+
+
+203
+00:08:59,406 --> 00:09:01,074
+Now I'll adjust
+the visible range
+
+
+204
+00:09:01,074 --> 00:09:04,511
+to include the cells
+of the table view.
+
+
+205
+00:09:04,511 --> 00:09:07,914
+Notice how the cells extend
+from edge to edge.
+
+
+206
+00:09:07,914 --> 00:09:10,517
+I'll select one to highlight it,
+
+
+207
+00:09:10,517 --> 00:09:13,086
+and overlay the Safe Area
+on top of this view
+
+
+208
+00:09:13,086 --> 00:09:16,055
+to illustrate where it would be.
+
+
+209
+00:09:16,055 --> 00:09:18,024
+Now I'll keep extending
+the visible range
+
+
+210
+00:09:18,024 --> 00:09:20,360
+to pull more views
+into the picture.
+
+
+211
+00:09:22,028 --> 00:09:25,165
+What we're seeing now is that
+the content view of the cells
+
+
+212
+00:09:25,165 --> 00:09:28,234
+have been automatically
+inset to the Safe Area.
+
+
+213
+00:09:28,234 --> 00:09:30,336
+So this causes a discrepancy
+
+
+214
+00:09:30,336 --> 00:09:32,672
+between the size
+of the table cell,
+
+
+215
+00:09:32,672 --> 00:09:35,275
+the one that goes
+from edge to edge,
+
+
+216
+00:09:35,275 --> 00:09:37,076
+and the content view
+of the cell,
+
+
+217
+00:09:37,076 --> 00:09:38,745
+which has been inset.
+
+
+218
+00:09:39,979 --> 00:09:41,448
+I'll highlight
+a few of the views
+
+
+219
+00:09:41,448 --> 00:09:43,550
+that are involved here.
+
+
+220
+00:09:43,550 --> 00:09:45,618
+But now this picture
+is getting a bit busy,
+
+
+221
+00:09:45,618 --> 00:09:48,321
+so let's simplify this
+and label these views.
+
+
+222
+00:09:49,322 --> 00:09:53,026
+By default, table cells
+will inset their content views
+
+
+223
+00:09:53,026 --> 00:09:55,929
+so that they are
+inside the Safe Area.
+
+
+224
+00:09:55,929 --> 00:09:59,799
+That insetting behavior is
+something that you can control.
+
+
+225
+00:09:59,799 --> 00:10:01,601
+In Xcode, you can use
+
+
+226
+00:10:01,601 --> 00:10:05,171
+the Content View
+Insets to Safe Area checkbox.
+
+
+227
+00:10:05,171 --> 00:10:08,441
+There's a corresponding property
+you can set in code as well.
+
+
+228
+00:10:09,609 --> 00:10:11,678
+If you uncheck the checkbox,
+
+
+229
+00:10:11,678 --> 00:10:15,148
+then the content view
+will not be inset,
+
+
+230
+00:10:15,148 --> 00:10:18,685
+and the content view
+will now go from edge to edge.
+
+
+231
+00:10:19,686 --> 00:10:21,221
+One final point here
+
+
+232
+00:10:21,221 --> 00:10:24,090
+is that regardless
+of the content view's insetting,
+
+
+233
+00:10:24,090 --> 00:10:26,759
+the layout margins
+in the content view
+
+
+234
+00:10:26,759 --> 00:10:30,597
+will continue to be relative
+to the Safe Area by default.
+
+
+235
+00:10:30,597 --> 00:10:33,299
+Similar to
+the content view insetting,
+
+
+236
+00:10:33,299 --> 00:10:35,201
+there are properties
+that give you control
+
+
+237
+00:10:35,201 --> 00:10:38,071
+over the behavior
+of these layout margins.
+
+
+238
+00:10:38,071 --> 00:10:39,939
+You can get
+more details about this
+
+
+239
+00:10:39,939 --> 00:10:43,243
+and other margin-related options
+in the documentation
+
+
+240
+00:10:43,243 --> 00:10:46,746
+and WWDC videos which
+I'll mention at the end.
+
+
+241
+00:10:47,847 --> 00:10:51,017
+OK, now that we've seen how
+table views position their cells
+
+
+242
+00:10:51,017 --> 00:10:53,620
+with regard to the Safe Area,
+let's go back to the code
+
+
+243
+00:10:53,620 --> 00:10:55,522
+where we were setting
+the background color
+
+
+244
+00:10:55,522 --> 00:10:57,390
+on the header view.
+
+
+245
+00:10:57,390 --> 00:11:00,527
+We can see that we're setting it
+only on the content view,
+
+
+246
+00:11:00,527 --> 00:11:03,296
+which is being inset
+to the Safe Area.
+
+
+247
+00:11:04,531 --> 00:11:06,466
+At this point, there are
+a couple different ways
+
+
+248
+00:11:06,466 --> 00:11:08,535
+we could fix this problem.
+
+
+249
+00:11:08,535 --> 00:11:09,502
+One of them would be
+
+
+250
+00:11:09,502 --> 00:11:11,971
+to disable the table view's
+default behavior
+
+
+251
+00:11:11,971 --> 00:11:15,074
+of insetting content views
+to the Safe Area,
+
+
+252
+00:11:15,074 --> 00:11:17,010
+but doing that
+will affect everything else
+
+
+253
+00:11:17,010 --> 00:11:19,012
+in our content view as well,
+
+
+254
+00:11:19,012 --> 00:11:21,814
+and we'd lose this helpful
+default behavior.
+
+
+255
+00:11:21,814 --> 00:11:23,816
+Instead, the best solution here
+
+
+256
+00:11:23,816 --> 00:11:27,453
+is to set the background color
+of the background view,
+
+
+257
+00:11:27,453 --> 00:11:30,657
+which, unlike the
+inset content view,
+
+
+258
+00:11:30,657 --> 00:11:32,926
+spans the full width of the cell
+
+
+259
+00:11:32,926 --> 00:11:35,361
+regardless of any
+Safe Area insets.
+
+
+260
+00:11:36,829 --> 00:11:39,832
+With that change,
+when we build and run,
+
+
+261
+00:11:39,832 --> 00:11:41,134
+we go from this,
+
+
+262
+00:11:41,134 --> 00:11:45,171
+where the header background
+color doesn't go edge to edge,
+
+
+263
+00:11:45,171 --> 00:11:48,508
+to this, where the colors
+span the entire table
+
+
+264
+00:11:48,508 --> 00:11:51,911
+but the content view
+isn't changed at all.
+
+
+265
+00:11:51,911 --> 00:11:53,913
+That looks much better.
+
+
+266
+00:11:55,114 --> 00:11:57,550
+Those are three examples
+of issues I encountered
+
+
+267
+00:11:57,550 --> 00:12:01,754
+while updating the WWDC app
+for iPhone X.
+
+
+268
+00:12:01,754 --> 00:12:03,590
+They weren't difficult to fix,
+
+
+269
+00:12:03,590 --> 00:12:06,159
+and mostly had to do
+with landscape view.
+
+
+270
+00:12:06,159 --> 00:12:08,261
+A few quick reminders.
+
+
+271
+00:12:08,261 --> 00:12:10,830
+Linking against the iOS 11 SDK
+
+
+272
+00:12:10,830 --> 00:12:12,398
+and including
+a Launch Storyboard
+
+
+273
+00:12:12,398 --> 00:12:16,135
+will enable the fullscreen
+native resolution for your app.
+
+
+274
+00:12:16,135 --> 00:12:18,404
+And while you may see
+some issues in portrait,
+
+
+275
+00:12:18,404 --> 00:12:20,840
+the majority will very likely
+be in landscape
+
+
+276
+00:12:20,840 --> 00:12:24,410
+so be sure to test all your UI
+with the interface rotated,
+
+
+277
+00:12:24,410 --> 00:12:27,413
+both to the left
+and to the right.
+
+
+278
+00:12:27,413 --> 00:12:30,917
+You'll avoid most issues
+by respecting the Safe Areas.
+
+
+279
+00:12:30,917 --> 00:12:33,486
+Auto Layout
+and the safeAreaLayoutGuides
+
+
+280
+00:12:33,486 --> 00:12:36,956
+will handle a lot of the layout
+challenges automatically,
+
+
+281
+00:12:36,956 --> 00:12:38,925
+but if you're doing
+manual layout
+
+
+282
+00:12:38,925 --> 00:12:41,828
+you do have access
+to the Safe Area insets
+
+
+283
+00:12:41,828 --> 00:12:44,731
+and can do whatever
+calculations you need.
+
+
+284
+00:12:44,731 --> 00:12:48,635
+This information is available
+via the UIView class.
+
+
+285
+00:12:48,635 --> 00:12:50,703
+It's also important
+to not interfere with
+
+
+286
+00:12:50,703 --> 00:12:53,539
+the Home indicator
+at the bottom of the screen.
+
+
+287
+00:12:53,539 --> 00:12:55,174
+For details about
+the Home indicator
+
+
+288
+00:12:55,174 --> 00:12:59,012
+and many of the other aspects
+of designing for iPhone X,
+
+
+289
+00:12:59,012 --> 00:13:02,148
+be sure to watch
+the Designing for iPhone X video
+
+
+290
+00:13:02,148 --> 00:13:03,816
+which has lots
+of important details
+
+
+291
+00:13:03,816 --> 00:13:06,719
+for bringing your app
+to this new screen.
+
+
+292
+00:13:06,719 --> 00:13:11,591
+There were also
+a few key videos at WWDC 2017
+
+
+293
+00:13:11,591 --> 00:13:14,627
+where we introduced
+the Safe Area layout guides,
+
+
+294
+00:13:14,627 --> 00:13:17,530
+talked about important
+gesture handling changes,
+
+
+295
+00:13:17,530 --> 00:13:20,800
+and how to take advantage
+of new iOS 11 features
+
+
+296
+00:13:20,800 --> 00:13:24,637
+like the integrated search bar
+support, and much more.
+
+
+297
+00:13:24,637 --> 00:13:27,140
+And of course, you can always
+get more information
+
+
+298
+00:13:27,140 --> 00:13:31,310
+at developer.apple.com
+or on our Developer Forums.
+

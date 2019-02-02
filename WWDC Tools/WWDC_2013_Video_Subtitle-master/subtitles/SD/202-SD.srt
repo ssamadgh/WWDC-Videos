@@ -1,0 +1,6375 @@
+1
+00:00:00,506 --> 00:00:09,926
+[ Silence ]
+
+
+2
+00:00:10,426 --> 00:00:12,096
+>> Welcome to Accessibility
+in iOS.
+
+
+3
+00:00:12,096 --> 00:00:13,976
+My name is Sam White, I am one
+
+
+4
+00:00:13,976 --> 00:00:15,986
+of the iOS Accessibility
+Engineers here at Apple.
+
+
+5
+00:00:16,616 --> 00:00:17,576
+Today, I want to talk to you
+
+
+6
+00:00:17,576 --> 00:00:20,296
+about developing great
+applications for everyone.
+
+
+7
+00:00:20,646 --> 00:00:21,816
+And I want to show you how to do
+
+
+8
+00:00:21,816 --> 00:00:23,636
+that by implementing
+a little bit
+
+
+9
+00:00:23,636 --> 00:00:25,326
+of Accessibility in
+your applications.
+
+
+10
+00:00:25,966 --> 00:00:29,676
+So before we get
+started, what do we mean
+
+
+11
+00:00:29,676 --> 00:00:32,026
+when we say Accessibility
+in this context?
+
+
+12
+00:00:32,296 --> 00:00:34,796
+Well, in iOS, Accessibility
+is really
+
+
+13
+00:00:34,796 --> 00:00:37,196
+about supporting different
+abilities and more broadly
+
+
+14
+00:00:37,196 --> 00:00:38,776
+than that, supporting
+different users.
+
+
+15
+00:00:39,176 --> 00:00:41,496
+So, if you look at the
+iPad and the iPhone,
+
+
+16
+00:00:41,496 --> 00:00:44,366
+you see these amazing
+devices, you know, they help--
+
+
+17
+00:00:44,366 --> 00:00:46,576
+they let you communicate
+with your friends,
+
+
+18
+00:00:46,576 --> 00:00:48,076
+watch movies, browse
+the internet.
+
+
+19
+00:00:48,416 --> 00:00:51,786
+But the user experience of these
+devices is very much one size
+
+
+20
+00:00:51,786 --> 00:00:52,336
+fits all.
+
+
+21
+00:00:53,316 --> 00:00:56,566
+And so, if we look at, you know,
+two users of these devices,
+
+
+22
+00:00:56,726 --> 00:00:58,486
+no two users are
+the same, you know,
+
+
+23
+00:00:58,486 --> 00:00:59,626
+so this is the problem we have.
+
+
+24
+00:00:59,966 --> 00:01:01,206
+And more specifically,
+
+
+25
+00:01:01,556 --> 00:01:04,775
+no two users have the exact
+same abilities so this is
+
+
+26
+00:01:04,775 --> 00:01:06,336
+where Accessibility
+comes in on iOS.
+
+
+27
+00:01:06,816 --> 00:01:10,166
+Accessibility is the thin
+layer that sits between you
+
+
+28
+00:01:10,166 --> 00:01:13,136
+and your device and it
+transforms your input
+
+
+29
+00:01:13,236 --> 00:01:15,906
+into something more appropriate
+for the device and similarly,
+
+
+30
+00:01:15,906 --> 00:01:17,796
+it transforms the
+device's output
+
+
+31
+00:01:17,796 --> 00:01:19,536
+into something more
+appropriate for you.
+
+
+32
+00:01:20,206 --> 00:01:24,076
+So today's talk is broken
+into two main parts,
+
+
+33
+00:01:24,076 --> 00:01:27,856
+I'm going to start by giving
+you a brief introduction to some
+
+
+34
+00:01:28,036 --> 00:01:30,406
+of the Accessibility
+features that we offer on iOS.
+
+
+35
+00:01:30,826 --> 00:01:32,256
+And this should give you an idea
+
+
+36
+00:01:32,256 --> 00:01:35,226
+of how users will experience
+your accessible application.
+
+
+37
+00:01:35,896 --> 00:01:37,416
+And while we're at
+it, I'm really excited
+
+
+38
+00:01:37,416 --> 00:01:40,606
+to say we're adding a brand new
+Accessibility feature in iOS 7
+
+
+39
+00:01:40,876 --> 00:01:42,206
+so I'm really excited
+to show you that.
+
+
+40
+00:01:42,206 --> 00:01:44,946
+And then for the remainder
+of our time and really,
+
+
+41
+00:01:44,946 --> 00:01:46,276
+the bulk of the talk,
+
+
+42
+00:01:46,276 --> 00:01:48,376
+we're going to be doing some
+Accessibility development.
+
+
+43
+00:01:48,616 --> 00:01:49,786
+So, I've brought an
+application with me
+
+
+44
+00:01:49,786 --> 00:01:51,396
+that has some Accessibility
+issues.
+
+
+45
+00:01:51,756 --> 00:01:53,516
+So, we're going to fix
+them kind of from--
+
+
+46
+00:01:53,876 --> 00:01:55,536
+starting with the most
+basic, working our way
+
+
+47
+00:01:55,536 --> 00:01:57,516
+up to the advanced
+issues then I'm going
+
+
+48
+00:01:57,516 --> 00:01:59,616
+to use some brand new
+API on this application
+
+
+49
+00:01:59,886 --> 00:02:02,536
+that we've added in this release
+to do some really cool stuff
+
+
+50
+00:02:02,536 --> 00:02:04,056
+that was never before
+possible and it's going
+
+
+51
+00:02:04,056 --> 00:02:05,646
+to let you do some cool
+stuff in your applications.
+
+
+52
+00:02:05,646 --> 00:02:08,376
+And then, we're going to
+wrap up the day by looking
+
+
+53
+00:02:08,376 --> 00:02:10,205
+at some brand new
+API we've added
+
+
+54
+00:02:10,256 --> 00:02:11,826
+to Guided Access
+in this release.
+
+
+55
+00:02:11,826 --> 00:02:14,106
+And I'm going to show you
+how you can use that API
+
+
+56
+00:02:14,686 --> 00:02:16,366
+to really customize
+the user experience
+
+
+57
+00:02:16,486 --> 00:02:17,756
+of your application on the fly.
+
+
+58
+00:02:18,576 --> 00:02:20,506
+So, iOS Accessibility features.
+
+
+59
+00:02:20,886 --> 00:02:23,316
+One of our most powerful
+features is called VoiceOver
+
+
+60
+00:02:23,626 --> 00:02:27,496
+and VoiceOver is a screen reader
+application that lets blind
+
+
+61
+00:02:27,596 --> 00:02:30,376
+and low vision users
+use iOS in the same way
+
+
+62
+00:02:30,376 --> 00:02:31,366
+that everyone else does.
+
+
+63
+00:02:31,736 --> 00:02:35,286
+And so, VoiceOver works
+by intercepting all touch
+
+
+64
+00:02:35,336 --> 00:02:38,956
+and Multi-Touch gestures and
+transforming those into commands
+
+
+65
+00:02:38,956 --> 00:02:40,886
+that drive a cursor
+around the screen,
+
+
+66
+00:02:41,166 --> 00:02:42,426
+the cursor you see
+in this image.
+
+
+67
+00:02:43,666 --> 00:02:45,916
+And so, what that does
+is it allows a blind
+
+
+68
+00:02:45,916 --> 00:02:49,966
+or low vision user to explore
+an interface and have it spoken
+
+
+69
+00:02:49,966 --> 00:02:53,226
+to them to learn about it before
+they chose to interact with it.
+
+
+70
+00:02:54,566 --> 00:02:57,866
+We also added a feature in
+iOS 6 called Guided Access.
+
+
+71
+00:02:58,226 --> 00:03:00,316
+So we introduce Guided
+Access to deal
+
+
+72
+00:03:00,316 --> 00:03:01,996
+with the problem
+of distractions.
+
+
+73
+00:03:02,246 --> 00:03:04,906
+So if we return to, looking
+at the iPhone and the iPad,
+
+
+74
+00:03:05,266 --> 00:03:07,586
+we realized these devices
+have a great number
+
+
+75
+00:03:07,586 --> 00:03:09,116
+of distractions associated
+with them.
+
+
+76
+00:03:09,326 --> 00:03:11,876
+If we look at the hardware,
+they have many hardware buttons,
+
+
+77
+00:03:11,876 --> 00:03:13,296
+you know, volume
+buttons, lock buttons
+
+
+78
+00:03:13,296 --> 00:03:16,756
+and the interface itself
+responds to, you know,
+
+
+79
+00:03:16,756 --> 00:03:18,616
+a variety of touch and
+Multi-Touch gestures.
+
+
+80
+00:03:18,976 --> 00:03:21,606
+And what this means is, if
+you're a user who, you know,
+
+
+81
+00:03:21,606 --> 00:03:23,396
+maybe has trouble
+focusing or a child,
+
+
+82
+00:03:23,726 --> 00:03:25,436
+these distractions can
+really get in your way.
+
+
+83
+00:03:25,726 --> 00:03:30,106
+And so, what Guided Access does
+is it gives you a setup screen
+
+
+84
+00:03:30,106 --> 00:03:31,506
+that allows you to remove many
+
+
+85
+00:03:31,506 --> 00:03:33,476
+of these distractions
+on a per app basis.
+
+
+86
+00:03:33,846 --> 00:03:36,816
+So, you can really focus in on
+exactly the content you want to.
+
+
+87
+00:03:39,316 --> 00:03:42,106
+Also in iOS 6, we added Made
+for iPhone hearing aids.
+
+
+88
+00:03:42,576 --> 00:03:44,976
+And so, Made for iPhone hearing
+aids let you control your
+
+
+89
+00:03:44,976 --> 00:03:46,776
+hearing aids right
+from your iOS device
+
+
+90
+00:03:46,776 --> 00:03:48,126
+which you likely
+already have with you.
+
+
+91
+00:03:48,386 --> 00:03:51,026
+And so, this let you do
+things like adjust the volume
+
+
+92
+00:03:51,026 --> 00:03:53,156
+or adjust the balance
+between your hearing aids
+
+
+93
+00:03:53,156 --> 00:03:54,106
+if you have more than one.
+
+
+94
+00:03:54,476 --> 00:03:56,046
+I mean it even lets
+you quickly select
+
+
+95
+00:03:56,046 --> 00:03:59,926
+from multiple audiologist
+tuned presets that you have
+
+
+96
+00:03:59,926 --> 00:04:01,816
+in your hearing aid
+and on your device.
+
+
+97
+00:04:02,116 --> 00:04:04,716
+So, if you walk into say a noisy
+environment like a restaurant,
+
+
+98
+00:04:04,716 --> 00:04:06,876
+you know, you can quickly
+change your hearing aid
+
+
+99
+00:04:06,916 --> 00:04:08,596
+to an equalizer setting
+more appropriate
+
+
+100
+00:04:08,596 --> 00:04:09,276
+for that environment.
+
+
+101
+00:04:09,276 --> 00:04:11,946
+And similarly, maybe if
+you walk into a movie,
+
+
+102
+00:04:11,946 --> 00:04:14,536
+a very quiet environment, you
+can again pull out your iPhone
+
+
+103
+00:04:14,536 --> 00:04:16,716
+and quickly choose a
+preset more appropriate
+
+
+104
+00:04:16,716 --> 00:04:17,375
+for that environment.
+
+
+105
+00:04:17,896 --> 00:04:20,516
+And the last Accessibility
+feature,
+
+
+106
+00:04:20,606 --> 00:04:22,246
+I wanted to give you kind
+of a brief introduction
+
+
+107
+00:04:22,246 --> 00:04:24,176
+to today is called
+Assistive Touch.
+
+
+108
+00:04:24,636 --> 00:04:28,216
+So, we added a Assistive
+Touch to iOS in iOS 5.
+
+
+109
+00:04:28,626 --> 00:04:34,626
+And really, the goal of
+Assistive Touch is to help users
+
+
+110
+00:04:34,666 --> 00:04:38,346
+with physical and mobility
+impairments perform the complex
+
+
+111
+00:04:38,346 --> 00:04:40,536
+Multi-Touch gestures and
+hardware button presses
+
+
+112
+00:04:40,756 --> 00:04:43,406
+that are really necessarily
+to use iOS effectively.
+
+
+113
+00:04:43,686 --> 00:04:44,896
+And so, Assistive
+Touch does this
+
+
+114
+00:04:44,896 --> 00:04:48,106
+by giving you a single
+on-screen menu
+
+
+115
+00:04:48,436 --> 00:04:51,506
+that contains all these gestures
+and hardware button options.
+
+
+116
+00:04:51,846 --> 00:04:53,966
+And can be activated
+by just a single touch.
+
+
+117
+00:04:54,446 --> 00:04:57,536
+And also, Assistive Touch can
+be driven using an external
+
+
+118
+00:04:57,536 --> 00:04:59,636
+Accessibility device
+such as a joystick.
+
+
+119
+00:04:59,636 --> 00:05:03,106
+So, I want to return
+to this idea
+
+
+120
+00:05:03,106 --> 00:05:04,776
+of supporting different
+abilities
+
+
+121
+00:05:04,776 --> 00:05:06,276
+with Accessibility for a moment.
+
+
+122
+00:05:06,646 --> 00:05:07,966
+Now that we've seen some
+
+
+123
+00:05:07,966 --> 00:05:09,876
+of the more visible
+Accessibility features,
+
+
+124
+00:05:10,256 --> 00:05:11,436
+this starts to make
+sense, right?
+
+
+125
+00:05:11,436 --> 00:05:15,516
+We introduced Guided Access to
+offer some cognitive support,
+
+
+126
+00:05:15,706 --> 00:05:18,026
+we have VoiceOver that
+offers visual support
+
+
+127
+00:05:18,336 --> 00:05:20,866
+and so the question arises,
+you know, where do we go next?
+
+
+128
+00:05:20,866 --> 00:05:21,676
+Over the years, we've built
+
+
+129
+00:05:21,676 --> 00:05:24,616
+up a pretty rich
+Accessibility environment on iOS
+
+
+130
+00:05:24,616 --> 00:05:25,746
+and it's really second to none.
+
+
+131
+00:05:26,166 --> 00:05:27,906
+And so, to answer that
+question of where we go next,
+
+
+132
+00:05:28,166 --> 00:05:30,066
+I want to explain the picture
+you see in front of you.
+
+
+133
+00:05:30,396 --> 00:05:34,766
+And what you're seeing is
+what's known as a Switch User
+
+
+134
+00:05:35,166 --> 00:05:39,246
+and switch software is designed
+to allow a user to interface
+
+
+135
+00:05:39,246 --> 00:05:41,936
+with the computing device
+using just a single switch.
+
+
+136
+00:05:42,326 --> 00:05:44,786
+And so, this is accomplish
+by scanning
+
+
+137
+00:05:44,786 --> 00:05:47,696
+through the interface
+automatically and listening
+
+
+138
+00:05:47,766 --> 00:05:50,496
+for those switch presses
+from a user, you know,
+
+
+139
+00:05:50,496 --> 00:05:53,526
+when the thing they are
+interested in, you know,
+
+
+140
+00:05:53,526 --> 00:05:55,736
+becomes selected via
+the scanning process.
+
+
+141
+00:05:56,486 --> 00:05:59,096
+And so, as you may have guessed,
+I'm really excited to say
+
+
+142
+00:05:59,096 --> 00:06:01,086
+that we've worked really
+hard, you know, day and night
+
+
+143
+00:06:01,576 --> 00:06:03,956
+and we've gone ahead and baked
+a complete switch software
+
+
+144
+00:06:03,956 --> 00:06:05,986
+solution right into
+iOS in this release.
+
+
+145
+00:06:06,646 --> 00:06:09,146
+And so rather than talk
+about it, you know,
+
+
+146
+00:06:09,146 --> 00:06:10,226
+a picture is worth
+a thousand words,
+
+
+147
+00:06:10,486 --> 00:06:12,146
+I'd love to just give you
+a quick demo right now.
+
+
+148
+00:06:12,846 --> 00:06:16,266
+As with all of our Accessibility
+features, you can find them
+
+
+149
+00:06:16,266 --> 00:06:20,466
+by opening up the Settings
+application, go into General
+
+
+150
+00:06:21,986 --> 00:06:23,856
+and then to Accessibility.
+
+
+151
+00:06:24,806 --> 00:06:26,266
+And so, as I mentioned before,
+
+
+152
+00:06:26,266 --> 00:06:28,246
+you can see that the
+Accessibility features
+
+
+153
+00:06:28,246 --> 00:06:29,916
+on iOS are really
+grouped by needs.
+
+
+154
+00:06:30,186 --> 00:06:32,336
+So, we see the vision
+heading followed
+
+
+155
+00:06:32,336 --> 00:06:34,636
+by the vision related
+Accessibility features,
+
+
+156
+00:06:34,926 --> 00:06:36,836
+similarly hearing
+and hearing features.
+
+
+157
+00:06:37,036 --> 00:06:38,956
+And if we scroll all the way
+down, we see physical and motor
+
+
+158
+00:06:39,126 --> 00:06:40,706
+and that's where
+switch control lives.
+
+
+159
+00:06:41,546 --> 00:06:44,016
+And so, before I turn it on, I
+just want to scroll down a bit
+
+
+160
+00:06:44,016 --> 00:06:47,536
+and give you an idea of how
+customizable this feature is.
+
+
+161
+00:06:47,866 --> 00:06:50,516
+Again, we think it's really
+important for each user
+
+
+162
+00:06:50,516 --> 00:06:53,836
+to be able to tune this feature
+to really meet their abilities
+
+
+163
+00:06:53,836 --> 00:06:55,326
+and work with-- work
+well with them.
+
+
+164
+00:06:55,716 --> 00:06:57,876
+And so again, we've built
+in an incredible amount
+
+
+165
+00:06:57,876 --> 00:07:01,266
+of customization here so users
+can really set it up in a way
+
+
+166
+00:07:01,266 --> 00:07:02,116
+that works well for them.
+
+
+167
+00:07:02,706 --> 00:07:06,206
+And so, if I go ahead and
+turn Switch control on,
+
+
+168
+00:07:06,756 --> 00:07:09,516
+you can see a cursor that begins
+scanning through the interface.
+
+
+169
+00:07:09,826 --> 00:07:12,016
+And so, this in itself
+is pretty amazing, right?
+
+
+170
+00:07:12,796 --> 00:07:14,886
+If you've seen Switch
+software before, usually,
+
+
+171
+00:07:15,186 --> 00:07:18,876
+the solution is to, you know,
+drive-- if you're on a desktop,
+
+
+172
+00:07:18,876 --> 00:07:21,276
+it's to drive a mouse
+cursor around the interface.
+
+
+173
+00:07:21,596 --> 00:07:23,196
+And, you know, if
+you're on mobile device,
+
+
+174
+00:07:23,476 --> 00:07:26,336
+maybe you drive some false
+finger around the interface.
+
+
+175
+00:07:26,726 --> 00:07:29,376
+But because of your help in
+years passed and, you know,
+
+
+176
+00:07:29,376 --> 00:07:32,426
+our work on the OS end, we've
+already marked up the interfaces
+
+
+177
+00:07:32,426 --> 00:07:34,456
+with this great Accessibility
+API.
+
+
+178
+00:07:34,456 --> 00:07:36,556
+And so, we can just jump
+in and leverage to that API
+
+
+179
+00:07:36,816 --> 00:07:38,276
+and build this feature
+on top of it
+
+
+180
+00:07:38,276 --> 00:07:39,596
+because we know these
+elements exist.
+
+
+181
+00:07:39,876 --> 00:07:40,986
+And so, that's how we were able
+
+
+182
+00:07:40,986 --> 00:07:43,536
+to build an element
+scanning switch solution.
+
+
+183
+00:07:44,726 --> 00:07:46,666
+And so now, this
+cursor is scanning
+
+
+184
+00:07:46,666 --> 00:07:48,316
+through the interface
+waiting for switch presses.
+
+
+185
+00:07:48,616 --> 00:07:50,266
+And so, ahead of
+time, I've gone ahead
+
+
+186
+00:07:50,266 --> 00:07:54,556
+and paired my external Bluetooth
+switch with this device
+
+
+187
+00:07:54,776 --> 00:07:56,336
+and right out-- right
+off the bat,
+
+
+188
+00:07:56,336 --> 00:08:00,176
+we're supporting a large
+number of external switches
+
+
+189
+00:08:00,176 --> 00:08:01,056
+that will work for you.
+
+
+190
+00:08:01,246 --> 00:08:05,466
+And so, as this cursor scans the
+interface, I wait for, you know,
+
+
+191
+00:08:05,466 --> 00:08:07,146
+what I'm interested
+in to be selected,
+
+
+192
+00:08:07,336 --> 00:08:10,746
+and then I can press my switch
+to bring up a context menu.
+
+
+193
+00:08:11,136 --> 00:08:13,056
+And so if I bring up the
+context menu here, you can see,
+
+
+194
+00:08:13,056 --> 00:08:14,986
+I'm presented with options
+
+
+195
+00:08:14,986 --> 00:08:16,636
+that are appropriate
+for this element.
+
+
+196
+00:08:16,986 --> 00:08:18,816
+And in this case, I'm
+just going to wait
+
+
+197
+00:08:18,816 --> 00:08:21,286
+until the Home button group
+becomes selected and I'm going
+
+
+198
+00:08:21,286 --> 00:08:22,936
+to drill into it with
+a single switch press.
+
+
+199
+00:08:23,486 --> 00:08:27,396
+And then again, press
+right on the Home button
+
+
+200
+00:08:27,396 --> 00:08:29,186
+and you can see it's
+the equivalent
+
+
+201
+00:08:29,186 --> 00:08:30,596
+of just pressing the
+Home button yourself.
+
+
+202
+00:08:31,406 --> 00:08:34,446
+And so, let's say we want
+to take a look at, you know,
+
+
+203
+00:08:34,446 --> 00:08:35,686
+how Apple stock is doing today.
+
+
+204
+00:08:35,806 --> 00:08:39,736
+And so again, we'll just wait
+until the group with stocks
+
+
+205
+00:08:39,736 --> 00:08:45,346
+in it is selected and there
+it is and now, I'll just wait
+
+
+206
+00:08:45,346 --> 00:08:47,436
+for stocks to be
+highlighted and press again.
+
+
+207
+00:08:47,486 --> 00:08:49,466
+And again, you can see
+this context menu pops
+
+
+208
+00:08:49,466 --> 00:08:52,456
+up with anything I might
+be interested in, you know,
+
+
+209
+00:08:52,456 --> 00:08:54,636
+for this element, anything
+this element responds to.
+
+
+210
+00:08:54,936 --> 00:08:57,506
+And so, I'm going to wait
+until touch is selected
+
+
+211
+00:09:01,426 --> 00:09:03,456
+and maybe I want to see
+the graph associated
+
+
+212
+00:09:03,456 --> 00:09:04,846
+with Apple stock.
+
+
+213
+00:09:07,826 --> 00:09:10,786
+And so again, I'm going to
+walk down to the Apple stock
+
+
+214
+00:09:12,406 --> 00:09:13,826
+and use touch to drill in.
+
+
+215
+00:09:13,926 --> 00:09:16,336
+I can see how you get the
+graph related to Apple stock.
+
+
+216
+00:09:16,666 --> 00:09:19,296
+And so again, this is a
+really powerful feature
+
+
+217
+00:09:19,296 --> 00:09:21,846
+and we think it's going to open
+up iOS to a whole new group
+
+
+218
+00:09:21,846 --> 00:09:23,946
+of users and we're really
+excited to get it in your hands
+
+
+219
+00:09:24,146 --> 00:09:25,446
+and to get feedback from you.
+
+
+220
+00:09:27,026 --> 00:09:28,016
+And so, that's Switch control.
+
+
+221
+00:09:30,036 --> 00:09:32,356
+OK. So as I said before,
+the rest of today,
+
+
+222
+00:09:32,356 --> 00:09:34,256
+we're really just going to
+dive in and do some development
+
+
+223
+00:09:34,256 --> 00:09:35,576
+and fix some Accessibility
+problems.
+
+
+224
+00:09:36,026 --> 00:09:39,056
+So before we do that, I want to
+give you a brief introduction
+
+
+225
+00:09:39,056 --> 00:09:41,716
+to how UIAccessibility
+works under the hood to try
+
+
+226
+00:09:41,716 --> 00:09:43,306
+and give you a better
+understanding of that process.
+
+
+227
+00:09:43,626 --> 00:09:45,916
+After that, we're going to
+do an Accessibility audit
+
+
+228
+00:09:45,916 --> 00:09:48,046
+of the application I brought
+today and this will allow us
+
+
+229
+00:09:48,046 --> 00:09:50,956
+to quickly find any
+Accessibility issues we have
+
+
+230
+00:09:50,956 --> 00:09:53,436
+in our application so we
+can kind of get a game plan
+
+
+231
+00:09:53,436 --> 00:09:54,446
+of how we're going to fix them.
+
+
+232
+00:09:55,306 --> 00:09:57,326
+And then once we've
+identified these bugs,
+
+
+233
+00:09:57,626 --> 00:10:00,206
+we're going to use the
+UIAccessibility API
+
+
+234
+00:10:00,676 --> 00:10:03,116
+to fix them again, you know,
+starting with the most basic
+
+
+235
+00:10:03,116 --> 00:10:05,416
+and we'll see how far we can
+get just using those basic
+
+
+236
+00:10:05,416 --> 00:10:06,466
+Accessibility attributes.
+
+
+237
+00:10:06,776 --> 00:10:09,296
+And then we'll work up to
+some more advanced problems,
+
+
+238
+00:10:09,296 --> 00:10:11,126
+use a little bit
+of advanced API.
+
+
+239
+00:10:11,756 --> 00:10:13,486
+And again, the brand
+new API is going
+
+
+240
+00:10:13,486 --> 00:10:15,966
+to let us do some some cool
+stuff that we're excited to see
+
+
+241
+00:10:15,966 --> 00:10:17,686
+where you guys take that
+and then we'll finish
+
+
+242
+00:10:17,686 --> 00:10:21,046
+up by looking at Guided Access.
+
+
+243
+00:10:21,236 --> 00:10:23,176
+So, how does UIAccessibility
+work?
+
+
+244
+00:10:23,176 --> 00:10:26,176
+The easiest way to
+explain this is to look
+
+
+245
+00:10:26,176 --> 00:10:28,156
+at an Accessibility
+feature in action.
+
+
+246
+00:10:28,596 --> 00:10:31,446
+So here, you can see
+VoiceOver is on the far left,
+
+
+247
+00:10:31,516 --> 00:10:33,366
+the Calculator application
+is on the far right,
+
+
+248
+00:10:33,646 --> 00:10:36,726
+and we see UIAccessibility
+in the center tied
+
+
+249
+00:10:36,726 --> 00:10:39,186
+to the UIKit stack as it is.
+
+
+250
+00:10:39,186 --> 00:10:41,626
+And so, as I said before,
+when VoiceOver is on,
+
+
+251
+00:10:41,626 --> 00:10:43,896
+it is intercepting
+all of the touch
+
+
+252
+00:10:43,896 --> 00:10:45,286
+and Multi-Touch gestures
+on the screen.
+
+
+253
+00:10:45,576 --> 00:10:47,346
+And what it's doing when
+it intercepts those is it's
+
+
+254
+00:10:47,556 --> 00:10:49,136
+transforming them into questions
+
+
+255
+00:10:49,136 --> 00:10:52,586
+that it can ask your application
+using UIAccessibility.
+
+
+256
+00:10:53,106 --> 00:10:55,796
+And so, if a user were to
+touch on a Calculator app say
+
+
+257
+00:10:55,796 --> 00:11:01,076
+in the center of the screen,
+VoiceOver then internally,
+
+
+258
+00:11:01,076 --> 00:11:02,296
+you know, computes
+this question,
+
+
+259
+00:11:02,296 --> 00:11:03,876
+what is the element
+at this point?
+
+
+260
+00:11:04,256 --> 00:11:06,716
+And so, VoiceOver goes over
+through UIAccessibility
+
+
+261
+00:11:06,716 --> 00:11:07,656
+to answer this question.
+
+
+262
+00:11:07,936 --> 00:11:11,046
+And if your application has
+correctly implemented, you know,
+
+
+263
+00:11:11,046 --> 00:11:13,526
+the appropriate UIAccessibility
+methods,
+
+
+264
+00:11:14,086 --> 00:11:17,286
+VoiceOver can then pull things
+like the accessibilityLabel
+
+
+265
+00:11:17,286 --> 00:11:20,266
+and the accessibilityFrame right
+from your application and back
+
+
+266
+00:11:20,266 --> 00:11:21,656
+over through UIAccessibility.
+
+
+267
+00:11:21,916 --> 00:11:25,706
+And so once VoiceOver has this
+information, it can transform it
+
+
+268
+00:11:25,706 --> 00:11:27,416
+into output that's
+appropriate for the user
+
+
+269
+00:11:27,676 --> 00:11:31,506
+so that output may be
+speech or possibly Braille.
+
+
+270
+00:11:33,536 --> 00:11:36,106
+Great. So now, we have
+kind of a general idea
+
+
+271
+00:11:36,106 --> 00:11:39,466
+of how Accessibility features
+will query our application.
+
+
+272
+00:11:40,766 --> 00:11:44,186
+So, how can we make sure our
+application correctly responds
+
+
+273
+00:11:44,186 --> 00:11:44,756
+to these queries?
+
+
+274
+00:11:44,756 --> 00:11:46,256
+How can we make sure
+we are playing well
+
+
+275
+00:11:46,456 --> 00:11:47,776
+with these Accessibility
+features?
+
+
+276
+00:11:48,556 --> 00:11:51,376
+Well, as I said before, really,
+the easiest way to do this is
+
+
+277
+00:11:51,376 --> 00:11:53,676
+to do an Accessibility
+audit of our application.
+
+
+278
+00:11:54,186 --> 00:11:56,176
+And so, if you're working in
+a simulator, we have a tool
+
+
+279
+00:11:56,176 --> 00:11:58,216
+for you called the
+Accessibility Inspector.
+
+
+280
+00:11:58,666 --> 00:12:00,236
+But even better, if
+you're on the device,
+
+
+281
+00:12:00,236 --> 00:12:01,766
+we can just use the
+Accessibility features
+
+
+282
+00:12:01,766 --> 00:12:03,116
+themselves and this
+is really going
+
+
+283
+00:12:03,116 --> 00:12:04,396
+to give us a great understanding
+
+
+284
+00:12:04,606 --> 00:12:06,316
+of how our app works
+with Accessibility.
+
+
+285
+00:12:06,676 --> 00:12:08,176
+Both of these features
+can be found
+
+
+286
+00:12:08,176 --> 00:12:09,176
+in the Settings application
+
+
+287
+00:12:09,496 --> 00:12:12,576
+under General Accessibility
+as we saw before.
+
+
+288
+00:12:13,586 --> 00:12:16,936
+And it's worth noting that we
+also have a great extra feature
+
+
+289
+00:12:16,936 --> 00:12:18,246
+called the Accessibility
+Shortcut,
+
+
+290
+00:12:18,526 --> 00:12:22,186
+some of you may know it as its
+former name, just triple-click.
+
+
+291
+00:12:22,546 --> 00:12:26,146
+Accessibility Shortcut lets you
+tie an Accessibility feature
+
+
+292
+00:12:26,256 --> 00:12:29,536
+or more than one feature to
+three clicks of the Home button.
+
+
+293
+00:12:29,756 --> 00:12:32,066
+And so, this lets you quickly
+click the Home button three
+
+
+294
+00:12:32,066 --> 00:12:34,116
+times, turn something
+like VoiceOver on,
+
+
+295
+00:12:34,116 --> 00:12:35,916
+do an audit of your application,
+
+
+296
+00:12:35,996 --> 00:12:38,536
+click the Home button three
+times to turn VoiceOver off.
+
+
+297
+00:12:38,586 --> 00:12:40,336
+So, it's really handy
+for this audit process.
+
+
+298
+00:12:41,236 --> 00:12:42,466
+And so now, let's dive in
+
+
+299
+00:12:42,466 --> 00:12:44,516
+and find our accessibility
+bugs today,
+
+
+300
+00:12:44,516 --> 00:12:46,036
+let's see what we
+have to deal with.
+
+
+301
+00:12:46,386 --> 00:12:49,336
+Okay, as we said, we're going to
+open the Settings application,
+
+
+302
+00:12:50,266 --> 00:12:52,416
+General Accessibility,
+same as last time.
+
+
+303
+00:12:52,496 --> 00:12:54,396
+I'm going to scroll all
+the way to the bottom
+
+
+304
+00:12:54,486 --> 00:12:56,216
+and I see the Accessibility
+Shortcut.
+
+
+305
+00:12:57,156 --> 00:12:58,926
+So again, I'm going
+to pair VoiceOver
+
+
+306
+00:12:59,026 --> 00:13:00,256
+with my Accessibility Shortcut
+
+
+307
+00:13:00,656 --> 00:13:02,416
+and I really recommend
+you use VoiceOver.
+
+
+308
+00:13:02,416 --> 00:13:04,426
+I mean, you know, you
+can use Switch Control
+
+
+309
+00:13:04,426 --> 00:13:06,866
+if you're feeling courageous.
+
+
+310
+00:13:06,866 --> 00:13:10,166
+But VoiceOver has the
+easiest learning curve
+
+
+311
+00:13:10,456 --> 00:13:13,106
+and it's really a, you can turn
+it on, and just hear what's
+
+
+312
+00:13:13,106 --> 00:13:14,886
+under your finger,
+navigate around.
+
+
+313
+00:13:14,886 --> 00:13:16,096
+It's really a quick and easy way
+
+
+314
+00:13:16,096 --> 00:13:17,696
+to do a great accessibility
+audit.
+
+
+315
+00:13:18,006 --> 00:13:19,376
+And so now, if I
+click three times--
+
+
+316
+00:13:21,806 --> 00:13:23,326
+>> VoiceOver on, settings.
+
+
+317
+00:13:23,846 --> 00:13:25,646
+>> VoiceOver comes on
+and it reads what's
+
+
+318
+00:13:25,646 --> 00:13:26,906
+under the cursor as expected.
+
+
+319
+00:13:27,096 --> 00:13:28,256
+And if I click three
+times again-- -
+
+
+320
+00:13:28,256 --> 00:13:28,796
+>> VoiceOver off.
+
+
+321
+00:13:29,126 --> 00:13:31,456
+>> VoiceOver turns off
+so it's really easy.
+
+
+322
+00:13:33,176 --> 00:13:34,496
+And so now, let's
+open our application
+
+
+323
+00:13:34,496 --> 00:13:35,426
+and see what we're
+working on today.
+
+
+324
+00:13:36,256 --> 00:13:37,736
+So the application we're going
+
+
+325
+00:13:37,736 --> 00:13:40,886
+to be making accessible
+today is a floor--
+
+
+326
+00:13:40,886 --> 00:13:42,756
+a series of floor plans
+of the convention center.
+
+
+327
+00:13:42,996 --> 00:13:45,546
+And so, let's exam it before
+we turn accessibility on
+
+
+328
+00:13:45,546 --> 00:13:46,456
+and see what-- and, you know,
+
+
+329
+00:13:46,656 --> 00:13:48,106
+see what we're going
+to have to fix.
+
+
+330
+00:13:48,186 --> 00:13:51,246
+So if we look across
+the top, we have a label
+
+
+331
+00:13:51,246 --> 00:13:53,706
+of the convention center and
+it looks like an indicator
+
+
+332
+00:13:53,706 --> 00:13:54,936
+of what floor we're looking at.
+
+
+333
+00:13:55,306 --> 00:13:58,796
+On the left hand side, I
+see an Elevator control
+
+
+334
+00:13:59,026 --> 00:14:01,616
+that as expected,
+let us increment
+
+
+335
+00:14:01,616 --> 00:14:02,856
+or decrement the
+floor we're seeing.
+
+
+336
+00:14:03,196 --> 00:14:06,626
+And at the very bottom,
+a control called Coffee
+
+
+337
+00:14:06,626 --> 00:14:08,306
+and if I swipe it, it
+shows us, you know,
+
+
+338
+00:14:08,306 --> 00:14:10,296
+where you can find Coffee in
+the convention center right now.
+
+
+339
+00:14:10,526 --> 00:14:12,276
+And so, if we triple click
+to turn VoiceOver on-- -
+
+
+340
+00:14:12,336 --> 00:14:13,566
+>> VoiceOver on.
+
+
+341
+00:14:13,566 --> 00:14:14,066
+Landscape.
+
+
+342
+00:14:14,836 --> 00:14:14,966
+>> Great.
+
+
+343
+00:14:15,366 --> 00:14:17,426
+>> Home button to the
+left, top and center.
+
+
+344
+00:14:18,216 --> 00:14:20,736
+>> So it comes on as
+expected and it lands
+
+
+345
+00:14:20,736 --> 00:14:23,596
+on the first thing it finds and
+in this case, it finds a label
+
+
+346
+00:14:23,596 --> 00:14:24,446
+at the top of the screen
+
+
+347
+00:14:24,976 --> 00:14:27,586
+and that label is already
+accessible so that's great.
+
+
+348
+00:14:27,846 --> 00:14:30,736
+Let's try and touch the floor
+value next to the label.
+
+
+349
+00:14:31,306 --> 00:14:32,996
+So, it looks like I'm
+not getting anything
+
+
+350
+00:14:32,996 --> 00:14:35,966
+when I touch the floor
+number next to the--
+
+
+351
+00:14:35,966 --> 00:14:36,906
+or next to the heading,
+
+
+352
+00:14:36,906 --> 00:14:39,006
+I'm going to try touching the
+control on the left hand side.
+
+
+353
+00:14:40,446 --> 00:14:42,516
+Again, I don't see anything
+VoiceOver doesn't know anything
+
+
+354
+00:14:42,516 --> 00:14:47,376
+is there, the control at the
+bottom, nothing and as expected,
+
+
+355
+00:14:47,376 --> 00:14:49,936
+the map in the center,
+again, not accessible at all.
+
+
+356
+00:14:49,936 --> 00:14:51,926
+So, it looks like we've got
+our work cut out for us.
+
+
+357
+00:14:51,926 --> 00:14:53,046
+This is going to be, you know,
+
+
+358
+00:14:53,046 --> 00:14:55,146
+you think this might be a
+tough job but you're going
+
+
+359
+00:14:55,146 --> 00:14:56,816
+to be amazed that
+just in a few minutes,
+
+
+360
+00:14:56,816 --> 00:14:58,786
+we're going to take this
+completely inaccessible
+
+
+361
+00:14:58,786 --> 00:15:01,036
+application and make a great
+accessibility experience.
+
+
+362
+00:15:05,596 --> 00:15:09,796
+Okay, so we have an idea of the
+bugs we need to start tackling,
+
+
+363
+00:15:10,116 --> 00:15:11,616
+you know, how are we
+going to fix these bugs,
+
+
+364
+00:15:11,616 --> 00:15:12,606
+what API are we going to use?
+
+
+365
+00:15:12,936 --> 00:15:15,456
+So as I said, we're going to
+start with the basic API first
+
+
+366
+00:15:15,456 --> 00:15:17,446
+and work our way up, pick off
+the low hanging fruit, take,
+
+
+367
+00:15:17,446 --> 00:15:18,986
+you know, take off--
+take down the easy bugs.
+
+
+368
+00:15:18,986 --> 00:15:22,146
+So, the two most important
+accessibility attributes we're
+
+
+369
+00:15:22,146 --> 00:15:24,656
+going to be working with
+are isAccessibilityElement
+
+
+370
+00:15:24,656 --> 00:15:25,966
+and accessibilityLabel.
+
+
+371
+00:15:26,886 --> 00:15:29,636
+So, for isAccessibilityElement,
+you want to return yes
+
+
+372
+00:15:29,876 --> 00:15:32,656
+for any element that you
+want VoiceOver to see.
+
+
+373
+00:15:32,926 --> 00:15:34,346
+When we were using
+our application,
+
+
+374
+00:15:34,346 --> 00:15:36,216
+we saw that VoiceOver
+wasn't even aware of most
+
+
+375
+00:15:36,216 --> 00:15:37,126
+of the elements on screen.
+
+
+376
+00:15:37,396 --> 00:15:40,256
+And so to fix this, this would
+be the appropriate piece of API.
+
+
+377
+00:15:40,866 --> 00:15:43,476
+And it's worth noting that if
+you're using standard UIKit
+
+
+378
+00:15:43,476 --> 00:15:47,426
+controls or labels like
+UILabel, this is on by default,
+
+
+379
+00:15:47,426 --> 00:15:48,796
+VoiceOver knows about
+these by default.
+
+
+380
+00:15:48,796 --> 00:15:50,696
+You really get a lot of
+accessibility for free
+
+
+381
+00:15:50,696 --> 00:15:52,036
+when you use the
+built-in classes.
+
+
+382
+00:15:53,286 --> 00:15:55,486
+And second, as I said
+is accessibilityLabel.
+
+
+383
+00:15:55,836 --> 00:15:58,856
+Here, we want to return
+a textual representation
+
+
+384
+00:15:59,226 --> 00:16:01,396
+of the element and in
+the case of VoiceOver,
+
+
+385
+00:16:01,396 --> 00:16:02,826
+this is the first thing
+VoiceOver is going
+
+
+386
+00:16:02,826 --> 00:16:03,676
+to speak to the user.
+
+
+387
+00:16:04,206 --> 00:16:08,576
+And the last three pieces of
+easy API we're going to need
+
+
+388
+00:16:08,576 --> 00:16:11,466
+to use are accessibilityHint,
+accessibilityValue,
+
+
+389
+00:16:11,466 --> 00:16:12,646
+and accessibilityTraits.
+
+
+390
+00:16:13,046 --> 00:16:15,546
+So, for accessibilityHint,
+we're going to want
+
+
+391
+00:16:15,546 --> 00:16:17,646
+to provide some additional
+usage information
+
+
+392
+00:16:17,966 --> 00:16:20,086
+to the accessibility
+features like VoiceOver.
+
+
+393
+00:16:20,276 --> 00:16:22,286
+And we're going to want
+to do this in cases
+
+
+394
+00:16:22,286 --> 00:16:27,256
+where maybe the implications of
+using this control or element
+
+
+395
+00:16:27,256 --> 00:16:28,876
+as it were are non obvious.
+
+
+396
+00:16:28,926 --> 00:16:31,016
+So in the case of our Coffee
+control if we think back,
+
+
+397
+00:16:31,436 --> 00:16:33,496
+you know, when you use
+the Coffee control,
+
+
+398
+00:16:33,656 --> 00:16:35,206
+it changes something
+somewhere else.
+
+
+399
+00:16:35,436 --> 00:16:37,006
+So this would be a great
+place to add a hint
+
+
+400
+00:16:37,046 --> 00:16:38,596
+to let the user know, you
+know, what's happening.
+
+
+401
+00:16:38,796 --> 00:16:41,456
+Coffee is, you know, the--
+activating the switch will show
+
+
+402
+00:16:41,456 --> 00:16:42,886
+or hide Coffee in a
+different location.
+
+
+403
+00:16:43,496 --> 00:16:46,846
+We also have accessibilityValue
+so the--
+
+
+404
+00:16:46,846 --> 00:16:48,986
+usually, an elements
+label is quite static
+
+
+405
+00:16:49,326 --> 00:16:51,466
+but a value is meant
+to be changed.
+
+
+406
+00:16:51,466 --> 00:16:54,346
+So, if we think back to
+the header across the top
+
+
+407
+00:16:54,346 --> 00:16:57,266
+of the application, we
+remember we had a static label
+
+
+408
+00:16:57,266 --> 00:17:00,566
+that said Moscone West but
+we also had a floor value.
+
+
+409
+00:17:00,766 --> 00:17:03,486
+And so again, this is a great
+place to use accessibilityValue.
+
+
+410
+00:17:03,486 --> 00:17:04,726
+That floor can change
+
+
+411
+00:17:04,776 --> 00:17:07,306
+as we adjust the elevator
+control up or down.
+
+
+412
+00:17:07,306 --> 00:17:09,175
+We can view a different
+floor and we always want
+
+
+413
+00:17:09,175 --> 00:17:11,506
+to make sure we're returning the
+correct information to VoiceOver
+
+
+414
+00:17:11,736 --> 00:17:13,415
+because it's going to call
+into these APIs a lot.
+
+
+415
+00:17:14,606 --> 00:17:15,675
+And so, the very last piece
+
+
+416
+00:17:15,675 --> 00:17:18,356
+of basic API we need
+is accessibilityTraits.
+
+
+417
+00:17:18,715 --> 00:17:22,116
+So accessibilityTraits are a
+bit mask of unsigned integers
+
+
+418
+00:17:22,116 --> 00:17:25,675
+that you can or together to
+really convey the behavior
+
+
+419
+00:17:25,675 --> 00:17:27,566
+and intended use
+of that element.
+
+
+420
+00:17:28,046 --> 00:17:31,636
+And so, traits are a little
+tricky, you know, a little hard
+
+
+421
+00:17:31,636 --> 00:17:33,366
+to wrap your head around
+if this is your first time.
+
+
+422
+00:17:33,606 --> 00:17:36,406
+So, let's take a look at an
+application that's already
+
+
+423
+00:17:36,406 --> 00:17:37,986
+in iOS and see how the
+traits are applied.
+
+
+424
+00:17:39,286 --> 00:17:41,966
+Well first, we see this
+header across the top
+
+
+425
+00:17:41,966 --> 00:17:44,296
+of the application, you know,
+it really contains the city
+
+
+426
+00:17:44,426 --> 00:17:47,246
+and the temperature of that
+city and this really conveys,
+
+
+427
+00:17:47,246 --> 00:17:50,086
+you know, the most information
+for this application.
+
+
+428
+00:17:50,366 --> 00:17:51,696
+And so here, it would
+be appropriate
+
+
+429
+00:17:51,696 --> 00:17:52,756
+to use the header trait.
+
+
+430
+00:17:53,946 --> 00:17:56,636
+Similarly further down, we
+some static text, you know,
+
+
+431
+00:17:56,636 --> 00:17:58,046
+these days of the
+week do not change,
+
+
+432
+00:17:58,306 --> 00:18:00,806
+so the static text trait
+would be appropriate here
+
+
+433
+00:18:00,946 --> 00:18:02,376
+and it would give
+VoiceOver an indication
+
+
+434
+00:18:02,376 --> 00:18:03,266
+of how to speak this item.
+
+
+435
+00:18:04,316 --> 00:18:06,506
+Further down, we see
+a Standard button
+
+
+436
+00:18:06,506 --> 00:18:08,556
+and the button trait
+will be appropriate here
+
+
+437
+00:18:08,556 --> 00:18:12,806
+and it's worth noting that since
+this is, you know, built on top
+
+
+438
+00:18:12,806 --> 00:18:15,356
+of a standard UIButton,
+a UIKit class,
+
+
+439
+00:18:15,716 --> 00:18:18,196
+it already has this
+UIAccessibility trait of button,
+
+
+440
+00:18:18,196 --> 00:18:19,196
+we don't actually
+need to add it.
+
+
+441
+00:18:19,466 --> 00:18:21,746
+And again, this is the case for
+a lot of these built-in classes,
+
+
+442
+00:18:21,996 --> 00:18:24,396
+you know, they have the
+isAccessibilityElement yes,
+
+
+443
+00:18:24,426 --> 00:18:25,476
+they're visible to VoiceOver,
+
+
+444
+00:18:25,476 --> 00:18:26,726
+they have the appropriate
+traits.
+
+
+445
+00:18:26,726 --> 00:18:29,096
+If you've assigned a
+name to your button,
+
+
+446
+00:18:29,096 --> 00:18:31,426
+if you're just using a
+standard round rect button,
+
+
+447
+00:18:31,666 --> 00:18:33,176
+VoiceOver will use
+that as the label.
+
+
+448
+00:18:33,176 --> 00:18:34,306
+So, VoiceOver is
+very intelligent
+
+
+449
+00:18:34,306 --> 00:18:35,416
+about these standard classes.
+
+
+450
+00:18:35,686 --> 00:18:37,766
+So, it's a good way to
+get the most accessibility
+
+
+451
+00:18:37,766 --> 00:18:38,966
+for your buck.
+
+
+452
+00:18:40,036 --> 00:18:43,106
+And then lastly, we have this
+page control across the bottom
+
+
+453
+00:18:43,106 --> 00:18:48,076
+and again, by default, this page
+control is an adjustable item.
+
+
+454
+00:18:48,336 --> 00:18:51,766
+And if you are rolling
+one yourself, you know,
+
+
+455
+00:18:51,766 --> 00:18:54,386
+a selector type control,
+here is where you'd want
+
+
+456
+00:18:54,386 --> 00:18:56,456
+to use adjustable and this
+really will lend itself well
+
+
+457
+00:18:56,456 --> 00:18:58,396
+to that elevator control we
+saw on the left hand side
+
+
+458
+00:18:58,396 --> 00:19:00,706
+of the screen because it is
+basically just an increment
+
+
+459
+00:19:00,706 --> 00:19:02,476
+or decrement or up and down
+the change of the floor.
+
+
+460
+00:19:04,596 --> 00:19:07,356
+Great. So now, we know what
+pieces of API we need to use
+
+
+461
+00:19:07,556 --> 00:19:10,096
+to get us most of the way
+there, how do we use them?
+
+
+462
+00:19:11,146 --> 00:19:13,936
+Well, if your interface is
+quite static and you are working
+
+
+463
+00:19:13,936 --> 00:19:16,246
+in Interface Builder, the good
+news is you can handle most
+
+
+464
+00:19:16,246 --> 00:19:16,986
+of it right there.
+
+
+465
+00:19:17,756 --> 00:19:19,996
+So, we have an Accessibility
+enabled check box
+
+
+466
+00:19:20,046 --> 00:19:22,116
+that corresponds to
+isAccessibilityElement.
+
+
+467
+00:19:23,136 --> 00:19:27,786
+Similarly, we have a
+text field that is--
+
+
+468
+00:19:27,786 --> 00:19:30,086
+that corresponds to
+accessibilityLabel.
+
+
+469
+00:19:30,446 --> 00:19:33,876
+A text field that corresponds
+to accessibilityHint
+
+
+470
+00:19:35,006 --> 00:19:37,526
+and then you see a series
+of check boxes below
+
+
+471
+00:19:37,696 --> 00:19:39,146
+that correspond to
+accessibilityTraits
+
+
+472
+00:19:39,436 --> 00:19:41,376
+and you're going to want
+to select all the traits
+
+
+473
+00:19:41,636 --> 00:19:43,696
+and they are, you know,
+under the hood or together
+
+
+474
+00:19:43,886 --> 00:19:47,196
+to really convey the behavior
+and usage of this element
+
+
+475
+00:19:47,196 --> 00:19:49,176
+to VoiceOver or any
+Accessibility feature.
+
+
+476
+00:19:49,746 --> 00:19:52,296
+So, what if you're
+working in code?
+
+
+477
+00:19:52,546 --> 00:19:54,416
+Well again, if your
+interface is quite static,
+
+
+478
+00:19:54,626 --> 00:19:57,526
+we can set these attributes,
+we don't have to override them.
+
+
+479
+00:19:57,746 --> 00:20:00,426
+And so, you know, we find
+an appropriate place to do
+
+
+480
+00:20:00,426 --> 00:20:03,726
+that like awakeFromNib
+our header is created
+
+
+481
+00:20:03,826 --> 00:20:06,956
+and then we're going to set the
+isAccessibilityElement value
+
+
+482
+00:20:06,956 --> 00:20:07,466
+to yes.
+
+
+483
+00:20:07,646 --> 00:20:09,526
+We're going to set
+our accessibilityLabel
+
+
+484
+00:20:09,726 --> 00:20:10,606
+to something appropriate.
+
+
+485
+00:20:10,606 --> 00:20:12,846
+And then, we're going to
+set our accessibilityTraits
+
+
+486
+00:20:12,846 --> 00:20:13,706
+to something appropriate.
+
+
+487
+00:20:13,706 --> 00:20:15,446
+And again, in this case
+maybe the header trait was
+
+
+488
+00:20:15,446 --> 00:20:16,096
+most appropriate.
+
+
+489
+00:20:16,626 --> 00:20:20,496
+But your interface isn't
+always static, right?
+
+
+490
+00:20:20,496 --> 00:20:22,576
+I mean our interface that we're
+working on today is not static
+
+
+491
+00:20:22,576 --> 00:20:24,286
+so what do you do in
+these dynamic cases?
+
+
+492
+00:20:24,446 --> 00:20:25,416
+Well, here is where
+you're going to want
+
+
+493
+00:20:25,416 --> 00:20:26,736
+to override these methods
+
+
+494
+00:20:26,996 --> 00:20:30,266
+and make sure you're always
+returning the appropriate value
+
+
+495
+00:20:30,266 --> 00:20:31,236
+at the appropriate time.
+
+
+496
+00:20:31,536 --> 00:20:34,086
+And so here, we've
+overridden accessibilityValue
+
+
+497
+00:20:34,246 --> 00:20:37,086
+and we're always returning
+the actual floor number
+
+
+498
+00:20:37,086 --> 00:20:37,716
+that we're on.
+
+
+499
+00:20:37,996 --> 00:20:39,746
+And so again, we're going
+to use accessibilityValue
+
+
+500
+00:20:39,746 --> 00:20:42,006
+in our application for
+exactly this purpose.
+
+
+501
+00:20:43,706 --> 00:20:45,456
+Great. So now that
+we have an idea
+
+
+502
+00:20:45,456 --> 00:20:47,576
+of the basic API we're
+going to use, let's go ahead
+
+
+503
+00:20:47,576 --> 00:20:49,486
+and see how well
+we can do with just
+
+
+504
+00:20:49,486 --> 00:20:51,596
+that in our application, OK?
+
+
+505
+00:20:51,596 --> 00:20:54,316
+So, let's start by taking
+a look at this, you know,
+
+
+506
+00:20:54,826 --> 00:20:57,216
+header information across
+the top of the application.
+
+
+507
+00:20:58,086 --> 00:21:02,476
+So, if I find the class, I
+know that is my titleView,
+
+
+508
+00:21:03,156 --> 00:21:08,296
+I'm going to go ahead and just
+grab the basic accessibility
+
+
+509
+00:21:08,296 --> 00:21:12,326
+attribute stubs and drop them in
+and just go right down the list.
+
+
+510
+00:21:14,556 --> 00:21:16,386
+So first, we want
+VoiceOver to see this element
+
+
+511
+00:21:16,386 --> 00:21:19,526
+so isAccessibilityElement
+YES is absolutely necessary.
+
+
+512
+00:21:22,086 --> 00:21:25,306
+Secondly, we need a label
+for this element and we saw
+
+
+513
+00:21:25,306 --> 00:21:29,786
+that because we have a
+standard UILabel as a sub view
+
+
+514
+00:21:29,786 --> 00:21:32,306
+of this view, you know,
+it was already accessible,
+
+
+515
+00:21:32,306 --> 00:21:34,696
+it already had-- it lends
+itself well to accessibility.
+
+
+516
+00:21:34,986 --> 00:21:38,476
+So, what we're trying to do
+here is combine the floor
+
+
+517
+00:21:38,696 --> 00:21:41,306
+and the label together because
+they really only make sense
+
+
+518
+00:21:41,366 --> 00:21:43,776
+together out of context if
+you just heard, you know,
+
+
+519
+00:21:43,846 --> 00:21:45,116
+two out in the middle
+of nowhere,
+
+
+520
+00:21:45,116 --> 00:21:45,986
+it really makes no sense.
+
+
+521
+00:21:46,356 --> 00:21:48,146
+And so again, we're
+combining this information,
+
+
+522
+00:21:48,146 --> 00:21:49,486
+we're combining these
+sub views together.
+
+
+523
+00:21:49,486 --> 00:21:52,756
+And so, we're going to do that
+by simply returning the value
+
+
+524
+00:21:52,756 --> 00:21:56,586
+that title label was
+already giving us,
+
+
+525
+00:21:56,646 --> 00:22:01,376
+titleLabel, text, great.
+
+
+526
+00:22:02,036 --> 00:22:05,586
+So, this is a pretty
+obvious element,
+
+
+527
+00:22:05,586 --> 00:22:07,526
+accessibilityHint is not
+really necessary here
+
+
+528
+00:22:08,746 --> 00:22:11,066
+but we do have a use for value.
+
+
+529
+00:22:11,596 --> 00:22:13,756
+And for value, if I
+jump to the header,
+
+
+530
+00:22:13,956 --> 00:22:17,676
+I can see that this element,
+you know, has a representation
+
+
+531
+00:22:17,676 --> 00:22:18,836
+of the floor internally.
+
+
+532
+00:22:19,466 --> 00:22:21,206
+And so this is a great
+place to use that.
+
+
+533
+00:22:21,706 --> 00:22:27,956
+[ Pause ]
+
+
+534
+00:22:28,456 --> 00:22:29,776
+Okay.
+
+
+535
+00:22:30,276 --> 00:22:40,656
+[ Pause ]
+
+
+536
+00:22:41,156 --> 00:22:43,126
+And I'll leave traits
+out of this one.
+
+
+537
+00:22:43,406 --> 00:22:46,126
+It's worth mention that
+Accessibility is just
+
+
+538
+00:22:46,126 --> 00:22:48,006
+like application
+design in general.
+
+
+539
+00:22:48,336 --> 00:22:50,856
+You know, there is often
+no exact right answer,
+
+
+540
+00:22:50,856 --> 00:22:52,426
+just like you're
+designing your interface
+
+
+541
+00:22:52,426 --> 00:22:54,106
+to convey what you want
+to convey to the user,
+
+
+542
+00:22:54,346 --> 00:22:55,756
+you do that with
+Accessibility as well.
+
+
+543
+00:22:55,756 --> 00:22:57,536
+And so, you know, you need
+
+
+544
+00:22:57,536 --> 00:22:59,146
+to make these choices
+as you progress.
+
+
+545
+00:23:01,036 --> 00:23:03,186
+And I should also make note,
+you know, we always want
+
+
+546
+00:23:03,186 --> 00:23:06,016
+to localize our labels
+and use number formatters
+
+
+547
+00:23:06,016 --> 00:23:06,626
+as appropriate.
+
+
+548
+00:23:06,626 --> 00:23:10,016
+VoiceOver works in a huge number
+of languages but for brevity,
+
+
+549
+00:23:10,426 --> 00:23:14,906
+we'll leave that out today.
+
+
+550
+00:23:15,096 --> 00:23:17,086
+So next, let's take a look
+at this Coffee control
+
+
+551
+00:23:17,206 --> 00:23:18,316
+on the bottom of the screen.
+
+
+552
+00:23:18,866 --> 00:23:23,306
+We're going to start
+the same way as before.
+
+
+553
+00:23:25,016 --> 00:23:28,526
+The first thing to do is make
+sure Accessibility can see
+
+
+554
+00:23:28,526 --> 00:23:29,156
+this control.
+
+
+555
+00:23:31,146 --> 00:23:34,136
+Again, we need to return a label
+for this, something appropriate
+
+
+556
+00:23:35,096 --> 00:23:37,076
+and go ahead and call it Coffee.
+
+
+557
+00:23:37,676 --> 00:23:40,956
+And as we said before,
+you know, the implications
+
+
+558
+00:23:40,956 --> 00:23:44,956
+of activating this switch might
+not be obvious to all users
+
+
+559
+00:23:45,216 --> 00:23:49,466
+so let's go ahead and return
+a hint here, maybe something
+
+
+560
+00:23:49,466 --> 00:23:54,726
+like show or hide
+Coffee locations.
+
+
+561
+00:23:59,726 --> 00:24:00,626
+So, what should our value be?
+
+
+562
+00:24:00,626 --> 00:24:02,866
+Well, we do have a value
+associated with this control,
+
+
+563
+00:24:02,866 --> 00:24:04,336
+right, and that value
+is off or on.
+
+
+564
+00:24:05,426 --> 00:24:09,256
+And so here, if I jump
+to my header again,
+
+
+565
+00:24:09,306 --> 00:24:11,826
+I see that it does have
+a state of off or on
+
+
+566
+00:24:12,286 --> 00:24:14,776
+and so I'll just go
+ahead and use that state.
+
+
+567
+00:24:15,566 --> 00:24:20,106
+And if it's on, let's return
+a string that says on.
+
+
+568
+00:24:20,636 --> 00:24:22,046
+And similarly, if it's off,
+
+
+569
+00:24:22,736 --> 00:24:24,336
+let's just go ahead
+and return off.
+
+
+570
+00:24:24,876 --> 00:24:29,716
+And lastly, traits, what
+should the traits be for this.
+
+
+571
+00:24:30,356 --> 00:24:33,996
+Well, I'm thinking that the
+most appropriate trait here
+
+
+572
+00:24:34,276 --> 00:24:35,026
+is button.
+
+
+573
+00:24:35,086 --> 00:24:37,466
+This really is a
+stateful button.
+
+
+574
+00:24:37,716 --> 00:24:39,546
+If you, you know, press it,
+you can get it to go on,
+
+
+575
+00:24:39,546 --> 00:24:41,016
+if you press it again,
+you can get it to go off.
+
+
+576
+00:24:41,896 --> 00:24:43,566
+And so, we'll see
+how button works.
+
+
+577
+00:24:44,066 --> 00:24:49,716
+Let's see lastly, let's take a
+look at this Elevator control
+
+
+578
+00:24:50,016 --> 00:24:52,696
+on the left hand side of the
+screen for our, you know,
+
+
+579
+00:24:52,696 --> 00:24:53,916
+to see how to use our basic API.
+
+
+580
+00:24:54,786 --> 00:24:57,196
+And so, let's find
+it, Elevator control.
+
+
+581
+00:24:58,556 --> 00:24:59,606
+We'll drop in our stubs.
+
+
+582
+00:25:02,816 --> 00:25:05,216
+Again, let's make it
+visible to Accessibility,
+
+
+583
+00:25:05,216 --> 00:25:06,906
+that's our first step.
+
+
+584
+00:25:08,746 --> 00:25:12,076
+We need an appropriate label
+for Accessibility features
+
+
+585
+00:25:12,076 --> 00:25:13,926
+to speak or use as they need.
+
+
+586
+00:25:14,396 --> 00:25:18,106
+And here, let's do Floor.
+
+
+587
+00:25:19,686 --> 00:25:23,436
+It, you know, there's really no
+need for a hint in this case.
+
+
+588
+00:25:23,586 --> 00:25:24,656
+Again, it's pretty obvious.
+
+
+589
+00:25:28,656 --> 00:25:31,386
+The same as before, we're
+going to need to convey
+
+
+590
+00:25:31,386 --> 00:25:33,916
+that floor value and if
+we flip to our header,
+
+
+591
+00:25:33,916 --> 00:25:35,716
+we see that this control too has
+
+
+592
+00:25:36,066 --> 00:25:38,926
+or this element too has a
+floor value associated with it.
+
+
+593
+00:25:40,986 --> 00:25:50,316
+So, let's go ahead
+and return the-- oops.
+
+
+594
+00:25:50,836 --> 00:25:54,936
+And lastly, traits,
+what traits do we want?
+
+
+595
+00:25:55,146 --> 00:25:57,496
+Well, as I said before,
+this is really an
+
+
+596
+00:25:57,496 --> 00:26:00,296
+incrementor/decrementor and
+so, this is one of those times
+
+
+597
+00:26:00,296 --> 00:26:02,086
+when you as the implementer,
+you know,
+
+
+598
+00:26:02,086 --> 00:26:03,586
+have to make these
+decisions yourself just
+
+
+599
+00:26:03,586 --> 00:26:05,066
+like you're designing
+your application.
+
+
+600
+00:26:05,066 --> 00:26:07,236
+We're going to have to make
+some Accessibility choices.
+
+
+601
+00:26:07,486 --> 00:26:09,946
+So, we could make the
+top button, you know,
+
+
+602
+00:26:10,176 --> 00:26:11,636
+an increment button
+and the bottom button a
+
+
+603
+00:26:11,636 --> 00:26:12,276
+decrement button.
+
+
+604
+00:26:12,606 --> 00:26:14,806
+But again, I've decided that, I
+think, it would be most useful
+
+
+605
+00:26:14,976 --> 00:26:16,536
+if we just made this
+an adjustable control
+
+
+606
+00:26:16,786 --> 00:26:19,486
+that you could easily
+flip up and down.
+
+
+607
+00:26:20,076 --> 00:26:25,806
+And so, let's go ahead do
+that, I'll try adjustable.
+
+
+608
+00:26:26,386 --> 00:26:36,726
+Great. And so now, let's
+go ahead and push this
+
+
+609
+00:26:37,746 --> 00:26:39,046
+to our device and see how we did
+
+
+610
+00:26:39,046 --> 00:26:44,306
+with just a little
+bit of accessibility.
+
+
+611
+00:26:44,366 --> 00:26:44,716
+>> WWDC maps.
+
+
+612
+00:26:45,976 --> 00:26:47,496
+Double tap to open, VoiceOver.
+
+
+613
+00:26:47,496 --> 00:26:52,896
+>> VoiceOver is a
+little jumpy, anxious.
+
+
+614
+00:26:53,396 --> 00:26:59,226
+[ Pause ]
+
+
+615
+00:26:59,726 --> 00:27:01,956
+Okay, so if we switch back
+over to our application,
+
+
+616
+00:27:02,176 --> 00:27:03,346
+let's turn VoiceOver back on.
+
+
+617
+00:27:03,796 --> 00:27:05,356
+>> VoiceOver on, landscape.
+
+
+618
+00:27:06,526 --> 00:27:09,946
+Home button to the left,
+Moscone West, floor two.
+
+
+619
+00:27:10,416 --> 00:27:12,516
+>> Great. So if we check
+the title or the header
+
+
+620
+00:27:12,516 --> 00:27:13,456
+across the top of the screen.
+
+
+621
+00:27:13,706 --> 00:27:17,096
+We see that, we've now mashed
+all of that information together
+
+
+622
+00:27:17,096 --> 00:27:19,006
+into one element and it
+really makes sense, you know,
+
+
+623
+00:27:19,276 --> 00:27:22,436
+the context and the label are
+really all there together.
+
+
+624
+00:27:22,696 --> 00:27:24,246
+So let's try the control
+on the side of the screen.
+
+
+625
+00:27:24,336 --> 00:27:26,176
+>> Floor two, adjustable.
+
+
+626
+00:27:27,376 --> 00:27:29,546
+Swipe up or down with one
+finger to adjust the value.
+
+
+627
+00:27:30,496 --> 00:27:32,566
+>> Great. So VoiceOver can
+see this element as well.
+
+
+628
+00:27:32,686 --> 00:27:34,216
+And since we've used
+the adjustable trait,
+
+
+629
+00:27:34,216 --> 00:27:37,106
+it even gives us a hint
+on how to use this element
+
+
+630
+00:27:37,216 --> 00:27:38,576
+and it's telling you
+to swipe up or down
+
+
+631
+00:27:38,576 --> 00:27:39,436
+to increment or decrement.
+
+
+632
+00:27:39,436 --> 00:27:40,866
+So, I'm going to swipe up.
+
+
+633
+00:27:41,216 --> 00:27:41,956
+>> Two.
+
+
+634
+00:27:42,566 --> 00:27:43,796
+>> Unfortunately,
+we hear the bonk
+
+
+635
+00:27:43,796 --> 00:27:45,216
+so there's something
+we're missing there.
+
+
+636
+00:27:45,406 --> 00:27:47,706
+We're almost there so we'll
+have to handle that one again.
+
+
+637
+00:27:47,706 --> 00:27:49,456
+And the Coffee control
+at the bottom.
+
+
+638
+00:27:49,756 --> 00:27:51,286
+>> Coffee, up button.
+
+
+639
+00:27:52,416 --> 00:27:52,636
+>> Great.
+
+
+640
+00:27:52,636 --> 00:27:53,906
+>> Show or hide Coffee
+locations.
+
+
+641
+00:27:54,396 --> 00:27:56,356
+>> And we heard the hint which
+gave us some more information
+
+
+642
+00:27:56,356 --> 00:27:59,636
+about what this control actually
+does, you heard it speak button
+
+
+643
+00:27:59,636 --> 00:28:01,466
+because we applied the
+button trait to this control.
+
+
+644
+00:28:01,466 --> 00:28:03,046
+And so now, let's
+go ahead and try
+
+
+645
+00:28:03,046 --> 00:28:04,486
+and double tap to activate this.
+
+
+646
+00:28:05,186 --> 00:28:06,146
+>> Coffee, off.
+
+
+647
+00:28:07,736 --> 00:28:09,736
+>> OK. So we still have
+an issue there as well.
+
+
+648
+00:28:10,296 --> 00:28:11,886
+You know, VoiceOver is
+unable to activate it.
+
+
+649
+00:28:11,886 --> 00:28:14,226
+By default, when you double
+tap, VoiceOver is going
+
+
+650
+00:28:14,226 --> 00:28:16,336
+to send a touch to the
+center of that element.
+
+
+651
+00:28:16,336 --> 00:28:19,666
+And in this case, since
+our control is using swipe,
+
+
+652
+00:28:20,096 --> 00:28:23,576
+this touch sent to the center is
+not going to do what we want it
+
+
+653
+00:28:23,576 --> 00:28:26,666
+to do but we're in
+great shape, right?
+
+
+654
+00:28:26,666 --> 00:28:29,306
+We fixed a huge amount
+of the interface
+
+
+655
+00:28:29,576 --> 00:28:30,806
+with just a little bit of work.
+
+
+656
+00:28:31,006 --> 00:28:32,596
+So, let's see how we can
+get the rest the way there.
+
+
+657
+00:28:38,156 --> 00:28:40,106
+Well, the elephant in the
+room in this application,
+
+
+658
+00:28:40,396 --> 00:28:43,096
+the big hurdle we have left
+to get over is that map.
+
+
+659
+00:28:43,536 --> 00:28:46,066
+How do we convey this
+rich spatial information
+
+
+660
+00:28:46,246 --> 00:28:49,926
+out of what is essentially
+a custom drawn view.
+
+
+661
+00:28:50,516 --> 00:28:53,036
+So, the answer to that is
+we use something called the
+
+
+662
+00:28:53,036 --> 00:28:54,856
+UIAccessibility container
+protocol.
+
+
+663
+00:28:55,206 --> 00:28:57,826
+And here, we're going to
+create Accessibility elements
+
+
+664
+00:28:58,126 --> 00:29:01,006
+that represent everything we
+want to convey to the user
+
+
+665
+00:29:01,246 --> 00:29:05,156
+and return them using the
+UIAccessibility protocol.
+
+
+666
+00:29:06,236 --> 00:29:07,046
+And so, the three methods,
+
+
+667
+00:29:07,046 --> 00:29:08,986
+we're going to be using are
+accessibilityElementCount,
+
+
+668
+00:29:09,266 --> 00:29:12,356
+accessibilityElementAtIndex,
+and indexOfAccessibilityElement
+
+
+669
+00:29:12,646 --> 00:29:14,976
+and you might be thinking
+these look like array methods.
+
+
+670
+00:29:15,196 --> 00:29:15,856
+Well, that's great.
+
+
+671
+00:29:15,856 --> 00:29:17,586
+They line up very
+well with an array.
+
+
+672
+00:29:17,936 --> 00:29:20,606
+So, what we can do is
+create these elements,
+
+
+673
+00:29:20,686 --> 00:29:23,386
+put them in an array and I've
+called my array rooms here
+
+
+674
+00:29:23,546 --> 00:29:26,336
+and I just rely on
+those, NSArray methods
+
+
+675
+00:29:26,336 --> 00:29:27,676
+to really return
+this information
+
+
+676
+00:29:27,676 --> 00:29:28,836
+to Accessibility as needed.
+
+
+677
+00:29:29,326 --> 00:29:32,756
+And so, let's look at how we
+would do that, how do we fill
+
+
+678
+00:29:32,756 --> 00:29:34,446
+that array with accessible
+elements?
+
+
+679
+00:29:34,586 --> 00:29:37,036
+Well, the first thing we need
+
+
+680
+00:29:37,036 --> 00:29:40,146
+to do is create an accessibility
+element for every room.
+
+
+681
+00:29:40,266 --> 00:29:44,406
+And so, this is an example
+of us doing it in a loop.
+
+
+682
+00:29:44,686 --> 00:29:47,796
+Secondly, accessibility
+elements unlike UIView elements.
+
+
+683
+00:29:48,276 --> 00:29:50,156
+If, you know, if we're
+talking about UIView elements,
+
+
+684
+00:29:50,156 --> 00:29:53,026
+they have an accessibleFrame,
+an accessibilityFrame rather
+
+
+685
+00:29:53,236 --> 00:29:55,846
+by default, and that
+accessibilityFrame is just
+
+
+686
+00:29:55,846 --> 00:29:57,746
+pulled from the actual
+frame of that element.
+
+
+687
+00:29:57,746 --> 00:29:59,536
+But we're creating these
+elements, you know,
+
+
+688
+00:29:59,536 --> 00:30:01,056
+out of thin air so they
+don't have a frame,
+
+
+689
+00:30:01,286 --> 00:30:03,426
+so we need to figure out what
+we want this frame to be.
+
+
+690
+00:30:04,056 --> 00:30:06,826
+And so, I have a helper
+method that's, you know,
+
+
+691
+00:30:07,076 --> 00:30:08,656
+giving me a Frame for each room
+
+
+692
+00:30:09,036 --> 00:30:14,406
+and we have a nice convenience
+function in UIAccessibility.h
+
+
+693
+00:30:14,666 --> 00:30:18,376
+that lets you convert your
+frames from view coordinates
+
+
+694
+00:30:18,376 --> 00:30:20,716
+to screen coordinates because
+all of the accessibility works
+
+
+695
+00:30:20,716 --> 00:30:21,726
+in the screen coordinates.
+
+
+696
+00:30:22,036 --> 00:30:24,126
+But the great news is you don't
+really have to worry about it,
+
+
+697
+00:30:24,366 --> 00:30:25,846
+just use this convenient
+function.
+
+
+698
+00:30:26,986 --> 00:30:29,176
+And the last thing
+we need is a label.
+
+
+699
+00:30:29,726 --> 00:30:32,626
+So, we need to, you know,
+convey a textual representation
+
+
+700
+00:30:32,746 --> 00:30:34,886
+of these accessibility
+elements to VoiceOver
+
+
+701
+00:30:34,886 --> 00:30:36,606
+or whatever the accessibility
+feature is.
+
+
+702
+00:30:37,106 --> 00:30:40,816
+Another problem we had
+was that Coffee control
+
+
+703
+00:30:40,816 --> 00:30:42,406
+across the bottom of
+the screen, right?
+
+
+704
+00:30:42,406 --> 00:30:44,556
+We double-tapped on
+it, nothing happened.
+
+
+705
+00:30:44,556 --> 00:30:48,096
+And again, you know, our
+hypothesis is that that is
+
+
+706
+00:30:48,096 --> 00:30:50,476
+because it was only
+activatable by swipe.
+
+
+707
+00:30:50,476 --> 00:30:52,896
+We-- in this case, we're
+using a UIGestureRecognizer
+
+
+708
+00:30:52,926 --> 00:30:55,006
+under the hood and it's
+just looking for swipe,
+
+
+709
+00:30:55,006 --> 00:30:56,466
+it's not handling touch at all.
+
+
+710
+00:30:56,856 --> 00:30:58,576
+And so when you get yourself
+into cases like this,
+
+
+711
+00:30:58,866 --> 00:31:01,826
+we've added some brand new
+API in iOS 7 that's going
+
+
+712
+00:31:01,826 --> 00:31:03,886
+to allow you to, you know, get
+yourself out of this corner.
+
+
+713
+00:31:04,056 --> 00:31:06,676
+And the way you can do that is
+overriding accessibilityActivate
+
+
+714
+00:31:06,916 --> 00:31:07,756
+on any method.
+
+
+715
+00:31:07,986 --> 00:31:09,426
+And if you handle Activate,
+
+
+716
+00:31:09,666 --> 00:31:11,866
+you simply return yes
+after you handled it.
+
+
+717
+00:31:11,866 --> 00:31:16,016
+And so here, what we're going
+to do is take that default input
+
+
+718
+00:31:16,016 --> 00:31:19,286
+from VoiceOver and transform it
+into, you know, the equivalent
+
+
+719
+00:31:19,286 --> 00:31:20,976
+of a swipe so this
+control just works.
+
+
+720
+00:31:21,476 --> 00:31:24,476
+And then lastly,
+some really cool API
+
+
+721
+00:31:24,476 --> 00:31:26,486
+that we've added is
+accessibilityPath.
+
+
+722
+00:31:26,886 --> 00:31:31,046
+So, in-- historically, VoiceOver
+has only worked with, you know,
+
+
+723
+00:31:31,046 --> 00:31:32,356
+the cursor has only been a rect.
+
+
+724
+00:31:32,746 --> 00:31:35,066
+And the problem with
+this is that we're unable
+
+
+725
+00:31:35,066 --> 00:31:37,976
+to convey spatial information
+to users, you know, if--
+
+
+726
+00:31:37,976 --> 00:31:41,796
+you can imagine if this Map used
+a rect for every single element,
+
+
+727
+00:31:42,006 --> 00:31:43,166
+it wouldn't really help us.
+
+
+728
+00:31:43,166 --> 00:31:45,556
+We wouldn't really get any of
+that rich spatial information.
+
+
+729
+00:31:45,966 --> 00:31:50,106
+But now in iOS 7, we can
+override accessibility path
+
+
+730
+00:31:50,156 --> 00:31:52,806
+or set accessibility path as
+necessary and this is going
+
+
+731
+00:31:52,806 --> 00:31:53,466
+to be preferred
+
+
+732
+00:31:53,466 --> 00:31:55,406
+over accessibilityFrame
+any time it's present.
+
+
+733
+00:31:55,646 --> 00:31:56,606
+I mean you can see
+what this is--
+
+
+734
+00:31:56,606 --> 00:32:00,066
+on the screen, what this
+is going to allow us to do.
+
+
+735
+00:32:00,506 --> 00:32:02,766
+Great. So, let's now go
+back to the application
+
+
+736
+00:32:03,066 --> 00:32:04,826
+and implement some of
+this more advanced API
+
+
+737
+00:32:04,826 --> 00:32:06,346
+and see what we can do.
+
+
+738
+00:32:06,596 --> 00:32:09,966
+OK. Again, I'm going to go
+ahead and grab my stubs,
+
+
+739
+00:32:10,996 --> 00:32:17,916
+I'm going to find my
+floorPlanView and drop them in.
+
+
+740
+00:32:19,156 --> 00:32:21,186
+As we said, we need
+somewhere to cache this.
+
+
+741
+00:32:21,186 --> 00:32:22,946
+We don't want to be making these
+elements all the time, right?
+
+
+742
+00:32:23,236 --> 00:32:31,156
+That would be expensive so let's
+create an array to store them in
+
+
+743
+00:32:31,916 --> 00:32:40,966
+and I'll call my array,
+how about axRooms?
+
+
+744
+00:32:43,286 --> 00:32:47,456
+Great. And so now, as we saw
+on the slide, we can simply go
+
+
+745
+00:32:47,456 --> 00:32:51,366
+through these, use our array,
+
+
+746
+00:32:53,596 --> 00:32:56,776
+and fill these in
+as appropriate.
+
+
+747
+00:32:58,006 --> 00:33:00,356
+So, for
+accessibilityElementAtIndex,
+
+
+748
+00:33:00,836 --> 00:33:05,126
+we're just going to use the
+corresponding method on NSArray.
+
+
+749
+00:33:08,166 --> 00:33:10,676
+Similarly for
+accessibilityElementCount,
+
+
+750
+00:33:10,816 --> 00:33:12,076
+we just go right to the array.
+
+
+751
+00:33:13,426 --> 00:33:18,926
+And then as expected lastly,
+for indexOfAccessibilityElement,
+
+
+752
+00:33:18,926 --> 00:33:21,266
+we can just align that
+well with indexOfObject
+
+
+753
+00:33:21,616 --> 00:33:22,566
+and pass that element in.
+
+
+754
+00:33:23,796 --> 00:33:26,996
+Great. So now, we're returning
+these elements as needed
+
+
+755
+00:33:27,256 --> 00:33:28,836
+but we still have to
+create them, right?
+
+
+756
+00:33:29,006 --> 00:33:32,026
+And to do that, let's go ahead
+
+
+757
+00:33:32,026 --> 00:33:35,086
+and grab our helper
+method and walk through it.
+
+
+758
+00:33:37,046 --> 00:33:39,836
+So here, we're lazily
+creating an array
+
+
+759
+00:33:39,836 --> 00:33:43,066
+to hold these accessibility
+rooms and so, this won't happen
+
+
+760
+00:33:43,096 --> 00:33:46,036
+until Accessibility asks
+us for them, you know,
+
+
+761
+00:33:46,036 --> 00:33:48,236
+and at the very last minute
+lazily, they will be created.
+
+
+762
+00:33:48,646 --> 00:33:50,526
+And then you can see, I
+have a helper method here,
+
+
+763
+00:33:50,566 --> 00:33:51,626
+floor plan features.
+
+
+764
+00:33:52,206 --> 00:33:54,436
+Under the hood, that
+is returning to me all
+
+
+765
+00:33:54,436 --> 00:33:56,336
+of these paths that
+are being drawn
+
+
+766
+00:33:56,336 --> 00:33:57,716
+because that's really
+what we need.
+
+
+767
+00:33:58,326 --> 00:34:00,836
+And so, you might notice that we
+are enumerating this backwards
+
+
+768
+00:34:00,836 --> 00:34:02,586
+and there is a reason
+we're doing that.
+
+
+769
+00:34:02,586 --> 00:34:03,896
+We're enumerating backwards
+
+
+770
+00:34:04,326 --> 00:34:09,596
+because I've ordered my bezier
+paths from biggest to smallest.
+
+
+771
+00:34:09,876 --> 00:34:11,206
+And so, it's important--
+
+
+772
+00:34:11,206 --> 00:34:15,045
+the array of elements that
+we're creating are actually used
+
+
+773
+00:34:15,045 --> 00:34:16,176
+for hit testing as well.
+
+
+774
+00:34:16,206 --> 00:34:19,186
+As a user drags their finger
+around the screen, you know,
+
+
+775
+00:34:19,186 --> 00:34:20,016
+that's how we're hit testing
+
+
+776
+00:34:20,016 --> 00:34:22,406
+for these accessibility
+elements that we've created.
+
+
+777
+00:34:22,585 --> 00:34:25,186
+And so we have to order these
+from smallest to biggest.
+
+
+778
+00:34:25,186 --> 00:34:27,076
+We want, you know,
+elements that are
+
+
+779
+00:34:27,076 --> 00:34:29,545
+above bigger elements
+to be hit testable.
+
+
+780
+00:34:29,706 --> 00:34:32,136
+If we put the largest
+element on top, you know,
+
+
+781
+00:34:32,136 --> 00:34:34,126
+none of the smaller sub-elements
+would ever be reached.
+
+
+782
+00:34:34,315 --> 00:34:35,366
+So, it's important in this case
+
+
+783
+00:34:35,366 --> 00:34:37,045
+that we go backwards
+through the array.
+
+
+784
+00:34:37,045 --> 00:34:38,585
+And then again, at every step,
+
+
+785
+00:34:38,585 --> 00:34:40,396
+we're going to create an
+accessibility element,
+
+
+786
+00:34:40,946 --> 00:34:43,096
+we're going to get an
+appropriate accessibility label
+
+
+787
+00:34:43,096 --> 00:34:45,346
+for that element and
+we're going to get
+
+
+788
+00:34:45,585 --> 00:34:47,996
+and set an appropriate
+accessibility path
+
+
+789
+00:34:47,996 --> 00:34:48,585
+for that element.
+
+
+790
+00:34:48,585 --> 00:34:50,576
+And just like we have
+a convenience function
+
+
+791
+00:34:50,876 --> 00:34:53,516
+for converting frames
+to screen coordinates,
+
+
+792
+00:34:53,596 --> 00:34:55,886
+we also have the convenience
+function for converting paths
+
+
+793
+00:34:55,886 --> 00:34:57,836
+to screen coordinates
+so it's really helpful.
+
+
+794
+00:34:59,056 --> 00:35:01,846
+So, that's not it, we
+have one more thing to do.
+
+
+795
+00:35:02,156 --> 00:35:05,146
+What happens when we change
+floors or show or hide Coffee?
+
+
+796
+00:35:05,466 --> 00:35:07,796
+Well we're going to need to
+throw this array of elements
+
+
+797
+00:35:07,796 --> 00:35:09,186
+out occasionally, right?
+
+
+798
+00:35:09,186 --> 00:35:10,636
+If we select a different floor,
+
+
+799
+00:35:10,846 --> 00:35:13,446
+those accessibility elements
+we created are no longer valid.
+
+
+800
+00:35:14,036 --> 00:35:17,726
+And so, anytime we set a floor,
+
+
+801
+00:35:18,376 --> 00:35:25,006
+we can just simply
+throw those rooms out.
+
+
+802
+00:35:27,076 --> 00:35:32,466
+And similarly, if we change
+the visibility of Coffee,
+
+
+803
+00:35:33,126 --> 00:35:34,906
+we can just, again,
+throw the rooms out.
+
+
+804
+00:35:35,116 --> 00:35:38,076
+And the next time, VoiceOver or
+an Accessibility feature calls
+
+
+805
+00:35:38,076 --> 00:35:40,636
+in looking for them, they will
+be just created, you know,
+
+
+806
+00:35:40,766 --> 00:35:42,326
+with new updated information.
+
+
+807
+00:35:44,896 --> 00:35:48,106
+Great. So, two more
+problems we had.
+
+
+808
+00:35:48,106 --> 00:35:49,966
+One, we still have to
+fix our Coffee control,
+
+
+809
+00:35:49,966 --> 00:35:51,386
+so let's go ahead
+and do that now.
+
+
+810
+00:35:57,126 --> 00:35:59,276
+And as I stated, the
+new method we're looking
+
+
+811
+00:35:59,276 --> 00:36:01,586
+for here is
+accessibilityActivate.
+
+
+812
+00:36:02,766 --> 00:36:05,576
+And so if we jump to the header,
+we again see that on state
+
+
+813
+00:36:05,736 --> 00:36:08,006
+and really, all we want to
+do is toggle that on state
+
+
+814
+00:36:08,746 --> 00:36:10,286
+when VoiceOver double taps.
+
+
+815
+00:36:11,036 --> 00:36:16,826
+So we can do self.on
+equals not self.isOn
+
+
+816
+00:36:17,836 --> 00:36:20,426
+and that should take care of it.
+
+
+817
+00:36:20,726 --> 00:36:23,966
+And as I said before,
+if we are handling it,
+
+
+818
+00:36:24,086 --> 00:36:26,416
+we want to return yes and
+in this case, obviously,
+
+
+819
+00:36:26,416 --> 00:36:27,566
+we're handling it every time.
+
+
+820
+00:36:27,566 --> 00:36:28,976
+Maybe you have some
+more complex logic
+
+
+821
+00:36:29,226 --> 00:36:32,526
+and this return value
+is not constant.
+
+
+822
+00:36:33,136 --> 00:36:36,616
+And then lastly, we have
+this elevator control.
+
+
+823
+00:36:37,066 --> 00:36:39,696
+We need to swipe up and
+down to work appropriately.
+
+
+824
+00:36:40,666 --> 00:36:42,926
+So, let's go ahead and find
+the elevator control again.
+
+
+825
+00:36:43,536 --> 00:36:49,856
+And the last two methods we need
+to implement are two methods
+
+
+826
+00:36:49,856 --> 00:36:51,826
+that work hand in hand
+with the adjustable trait
+
+
+827
+00:36:52,136 --> 00:36:54,856
+and those methods are
+accessibilityDecrement
+
+
+828
+00:36:56,356 --> 00:37:00,186
+and similarly,
+accessibilityIncrement.
+
+
+829
+00:37:00,776 --> 00:37:06,276
+And so, it just so happens,
+I have a decrement floor
+
+
+830
+00:37:06,276 --> 00:37:09,786
+and increment floor method and
+so, this will be really easy.
+
+
+831
+00:37:10,386 --> 00:37:16,006
+I can just go ahead and
+call decrement floor
+
+
+832
+00:37:16,176 --> 00:37:19,346
+in the accessibilityDecrement
+method and similarly,
+
+
+833
+00:37:20,756 --> 00:37:23,086
+increment floor in the
+accessibilityIncrement method.
+
+
+834
+00:37:24,506 --> 00:37:29,756
+Great. So let's clean
+and go ahead
+
+
+835
+00:37:29,756 --> 00:37:31,196
+and build our application
+and see how we did.
+
+
+836
+00:37:31,696 --> 00:37:37,786
+[ Pause ]
+
+
+837
+00:37:38,286 --> 00:37:40,176
+Okay, let's turn VoiceOver on.
+
+
+838
+00:37:41,666 --> 00:37:43,386
+>> VoiceOver on landscape.
+
+
+839
+00:37:44,696 --> 00:37:45,556
+Home button to the left.
+
+
+840
+00:37:46,356 --> 00:37:48,636
+>> So, let's go down and try
+the elevator control first.
+
+
+841
+00:37:48,976 --> 00:37:50,146
+>> Floor two.
+
+
+842
+00:37:50,256 --> 00:37:52,606
+>> I'm going to stop
+VoiceOver Speech
+
+
+843
+00:37:52,606 --> 00:37:54,516
+by doing just a two
+finger tap on the screen.
+
+
+844
+00:37:55,006 --> 00:37:57,506
+Now, I remember the VoiceOver
+told me to swipe up or down
+
+
+845
+00:37:57,506 --> 00:37:58,836
+to adjust this so
+let's swipe up.
+
+
+846
+00:37:59,256 --> 00:37:59,856
+>> Two.
+
+
+847
+00:38:00,266 --> 00:38:04,646
+>> And it did not
+work and that happens.
+
+
+848
+00:38:05,586 --> 00:38:06,066
+And so let's-- -
+
+
+849
+00:38:06,066 --> 00:38:06,466
+>> Take time.
+
+
+850
+00:38:06,466 --> 00:38:07,196
+>> Let's try repushing.
+
+
+851
+00:38:07,726 --> 00:38:15,446
+>> Double tap to open.
+
+
+852
+00:38:15,446 --> 00:38:16,806
+>> WW-- floor three.
+
+
+853
+00:38:16,896 --> 00:38:17,546
+>> Okay, there we go.
+
+
+854
+00:38:17,546 --> 00:38:20,706
+We just-- Xcode problem,
+it was angry with us
+
+
+855
+00:38:21,116 --> 00:38:24,726
+but so we repushed the code,
+we can do the swipe up and now,
+
+
+856
+00:38:24,726 --> 00:38:25,386
+we get the third floor.
+
+
+857
+00:38:25,386 --> 00:38:26,166
+And if we swipe down-- -
+
+
+858
+00:38:26,366 --> 00:38:26,856
+>> Two.
+
+
+859
+00:38:27,076 --> 00:38:27,806
+>> Second floor.
+
+
+860
+00:38:28,006 --> 00:38:28,316
+>> One.
+
+
+861
+00:38:28,526 --> 00:38:28,976
+>> First floor.
+
+
+862
+00:38:28,976 --> 00:38:29,306
+Great.
+
+
+863
+00:38:29,826 --> 00:38:30,146
+>> Coffee--
+
+
+864
+00:38:30,356 --> 00:38:31,446
+>> Let's try that
+Coffee control.
+
+
+865
+00:38:31,526 --> 00:38:33,336
+I'm going to double tap on it.
+
+
+866
+00:38:33,806 --> 00:38:34,816
+>> Coffee on.
+
+
+867
+00:38:34,816 --> 00:38:35,216
+>> And you can see
+
+
+868
+00:38:35,216 --> 00:38:37,456
+that VoiceOver produces
+the appropriate noise
+
+
+869
+00:38:37,456 --> 00:38:38,956
+to let the user know
+that yes, this worked.
+
+
+870
+00:38:39,166 --> 00:38:41,086
+Everything is happy,
+we now see Coffee.
+
+
+871
+00:38:41,426 --> 00:38:44,096
+And now really, the biggest
+issue is how did we do
+
+
+872
+00:38:44,096 --> 00:38:45,216
+in terms of the path?
+
+
+873
+00:38:45,686 --> 00:38:47,216
+So, let's touch in to the lobby.
+
+
+874
+00:38:47,526 --> 00:38:47,946
+>> Lobby.
+
+
+875
+00:38:48,756 --> 00:38:49,836
+>> Great. So now, we can see
+
+
+876
+00:38:49,836 --> 00:38:51,256
+that VoiceOver knows
+about the lobby.
+
+
+877
+00:38:51,526 --> 00:38:54,096
+And if I move my finger
+down, take the escalator.
+
+
+878
+00:38:54,156 --> 00:38:54,736
+>> Escalator.
+
+
+879
+00:38:54,876 --> 00:38:55,656
+>> I see the escalator.
+
+
+880
+00:38:55,696 --> 00:38:57,896
+And now, I can just
+kind of move up and I'm
+
+
+881
+00:38:57,896 --> 00:38:59,436
+in the lobby, I'm
+still moving up.
+
+
+882
+00:38:59,466 --> 00:38:59,876
+>> Stairs.
+
+
+883
+00:38:59,876 --> 00:39:01,286
+>> And I get to the
+stairs eventually.
+
+
+884
+00:39:01,286 --> 00:39:04,256
+So you can see that this allows
+VoiceOver users to, you know,
+
+
+885
+00:39:04,256 --> 00:39:06,716
+move their finger around the
+screen and really get a sense
+
+
+886
+00:39:06,716 --> 00:39:08,316
+of the spatial nature
+of this Map.
+
+
+887
+00:39:08,836 --> 00:39:11,256
+>> Hold hot coffee.
+
+
+888
+00:39:11,556 --> 00:39:12,886
+>> Thankfully, even
+Coffee works.
+
+
+889
+00:39:14,466 --> 00:39:28,746
+>> VoiceOver off.
+
+
+890
+00:39:28,746 --> 00:39:29,556
+[ Pause ]
+
+
+891
+00:39:29,556 --> 00:39:30,366
+[ Applause ]
+
+
+892
+00:39:30,366 --> 00:39:32,716
+>> Great. So as I said, you
+can see we took this really
+
+
+893
+00:39:32,716 --> 00:39:35,426
+inaccessible application
+and made it Accessible
+
+
+894
+00:39:35,616 --> 00:39:36,726
+with just a little bit of work.
+
+
+895
+00:39:37,066 --> 00:39:38,496
+And, you know, I
+think you're going
+
+
+896
+00:39:38,496 --> 00:39:40,306
+to find that's the
+case for you as well.
+
+
+897
+00:39:41,166 --> 00:39:43,056
+And so now, let's move
+on to Guided Access.
+
+
+898
+00:39:43,276 --> 00:39:44,666
+I want to talk about a
+few things we learned
+
+
+899
+00:39:44,756 --> 00:39:47,636
+from Guided Access since
+we introduced it in iOS 6.
+
+
+900
+00:39:47,936 --> 00:39:50,106
+And so, the first thing we
+learned was hardware buttons
+
+
+901
+00:39:50,106 --> 00:39:50,646
+are useful.
+
+
+902
+00:39:50,966 --> 00:39:53,116
+Our initial approach
+with Guided Access was
+
+
+903
+00:39:53,116 --> 00:39:54,236
+when Guided Access is active.
+
+
+904
+00:39:54,556 --> 00:39:56,876
+We kind of remove all
+hardware buttons, you know,
+
+
+905
+00:39:56,876 --> 00:39:58,256
+none of them work,
+we really want
+
+
+906
+00:39:58,256 --> 00:39:59,386
+to remove all those
+distractions.
+
+
+907
+00:39:59,676 --> 00:40:02,196
+But we got some feedback and,
+you know, it turns out a lot
+
+
+908
+00:40:02,196 --> 00:40:03,746
+of really powerful
+great, you know,
+
+
+909
+00:40:03,746 --> 00:40:05,516
+camera apps use the
+volume buttons
+
+
+910
+00:40:05,756 --> 00:40:07,806
+and other apps use more
+buttons for different things
+
+
+911
+00:40:07,806 --> 00:40:10,476
+so lesson number one,
+hardware buttons are useful.
+
+
+912
+00:40:11,066 --> 00:40:15,146
+Lesson number two is if you want
+to occlude a region from touch
+
+
+913
+00:40:15,146 --> 00:40:18,096
+in Guided Access, currently,
+you know, you draw an area
+
+
+914
+00:40:18,096 --> 00:40:19,546
+around that region on the--
+
+
+915
+00:40:19,626 --> 00:40:22,236
+that area becomes grade out
+when Guided Access is active.
+
+
+916
+00:40:22,486 --> 00:40:23,306
+And so, that works great.
+
+
+917
+00:40:23,306 --> 00:40:25,286
+You can disable buttons
+as you need to.
+
+
+918
+00:40:25,286 --> 00:40:28,716
+The only problem is this doesn't
+address the visual distractions
+
+
+919
+00:40:28,756 --> 00:40:31,106
+associated with the application
+and so, that's the problem
+
+
+920
+00:40:31,106 --> 00:40:33,476
+and we think we can do better.
+
+
+921
+00:40:33,596 --> 00:40:35,616
+And lastly, developers
+are eager to adapt.
+
+
+922
+00:40:35,786 --> 00:40:38,526
+A lot of you reached
+out to us and, you know,
+
+
+923
+00:40:38,526 --> 00:40:40,026
+that's what drove this API.
+
+
+924
+00:40:40,026 --> 00:40:42,066
+And so, we're really
+happy to show it to you
+
+
+925
+00:40:42,066 --> 00:40:43,036
+and see how you use it.
+
+
+926
+00:40:43,556 --> 00:40:46,776
+And so, the best way to
+explain this is to jump right in
+
+
+927
+00:40:46,836 --> 00:40:48,896
+and just give a demo
+of Guided Access.
+
+
+928
+00:40:48,896 --> 00:40:48,963
+[ Pause ]
+
+
+929
+00:40:48,963 --> 00:40:58,666
+So now, I'm going to return to
+the Accessibility Settings menu,
+
+
+930
+00:41:00,056 --> 00:41:01,466
+to General Accessibility.
+
+
+931
+00:41:01,536 --> 00:41:06,666
+I'm going to scroll down, remove
+VoiceOver from my shortcut
+
+
+932
+00:41:06,786 --> 00:41:08,586
+and instead, add Guided Access.
+
+
+933
+00:41:09,196 --> 00:41:11,356
+I'm going to go ahead
+and set a passcode
+
+
+934
+00:41:11,356 --> 00:41:13,866
+for Guided Access, nobody look.
+
+
+935
+00:41:14,476 --> 00:41:18,906
+Great. So we're all setup,
+let's open our application.
+
+
+936
+00:41:24,236 --> 00:41:25,626
+And so, if I click three times
+
+
+937
+00:41:26,436 --> 00:41:27,816
+and enter the Guided
+Access workspace.
+
+
+938
+00:41:28,966 --> 00:41:31,336
+So, what if we want to share
+this application with someone
+
+
+939
+00:41:31,656 --> 00:41:33,576
+or maybe we're a
+developer that wants
+
+
+940
+00:41:33,576 --> 00:41:35,776
+to develop one application
+for two purposes?
+
+
+941
+00:41:36,036 --> 00:41:39,336
+One application to give to
+users of say a conference
+
+
+942
+00:41:39,336 --> 00:41:43,186
+at this venue and that same
+application to maybe post
+
+
+943
+00:41:43,186 --> 00:41:45,296
+around the halls and
+just display the floors.
+
+
+944
+00:41:45,766 --> 00:41:47,576
+So, maybe you want to
+hide certain controls
+
+
+945
+00:41:47,576 --> 00:41:49,466
+or really change the user
+interface on the fly.
+
+
+946
+00:41:49,986 --> 00:41:53,686
+And so up until now, really, the
+only option you've had is again,
+
+
+947
+00:41:54,046 --> 00:41:56,196
+to circle these controls
+you want to occlude
+
+
+948
+00:41:56,506 --> 00:41:59,356
+and then VoiceOver or-- and
+then Guided Access will disallow
+
+
+949
+00:41:59,356 --> 00:42:00,866
+touch from happening
+in these places
+
+
+950
+00:42:01,066 --> 00:42:02,766
+and so users won't be able
+to change these things.
+
+
+951
+00:42:02,816 --> 00:42:06,936
+But again, especially if you're
+developing one application
+
+
+952
+00:42:06,936 --> 00:42:10,486
+for both users in Kiosk, these
+visual distractions still exist
+
+
+953
+00:42:10,486 --> 00:42:12,026
+and it, you know, it looks
+pretty unprofessional
+
+
+954
+00:42:12,026 --> 00:42:12,506
+in that case.
+
+
+955
+00:42:12,546 --> 00:42:15,636
+And so, let's go ahead
+and remove those regions.
+
+
+956
+00:42:16,226 --> 00:42:20,306
+And so now, in Guided Access
+in iOS 7, any app that's bought
+
+
+957
+00:42:20,306 --> 00:42:22,996
+into this developer API
+will have this new option
+
+
+958
+00:42:23,316 --> 00:42:24,796
+that we can see in the
+bottom right corner
+
+
+959
+00:42:25,096 --> 00:42:28,186
+and you're presented with
+options button and an icon
+
+
+960
+00:42:28,186 --> 00:42:29,896
+of your application and
+your application's name.
+
+
+961
+00:42:30,186 --> 00:42:31,486
+And so, when I touch
+that options button,
+
+
+962
+00:42:31,866 --> 00:42:35,586
+up pops this list of
+all of the restrictions
+
+
+963
+00:42:35,666 --> 00:42:37,806
+that my application wants
+to provide to the user.
+
+
+964
+00:42:38,066 --> 00:42:41,096
+And so in this case, we see that
+we have a controls restriction
+
+
+965
+00:42:41,306 --> 00:42:43,816
+and some detail text that kind
+of explains the implications
+
+
+966
+00:42:43,816 --> 00:42:44,696
+of using this control.
+
+
+967
+00:42:44,696 --> 00:42:47,666
+In this case, these
+controls adjust the floor
+
+
+968
+00:42:47,666 --> 00:42:48,356
+and show Coffee.
+
+
+969
+00:42:48,356 --> 00:42:50,576
+And so, if I go ahead and
+turn those controls off
+
+
+970
+00:42:51,156 --> 00:42:54,696
+and resume Guided Access,
+what happens is we call
+
+
+971
+00:42:54,696 --> 00:42:56,736
+into your application and
+we tell you, you know,
+
+
+972
+00:42:56,886 --> 00:43:00,486
+the user wants to make
+these changes, you know,
+
+
+973
+00:43:00,626 --> 00:43:03,086
+act appropriately, and
+then it's your job--
+
+
+974
+00:43:03,086 --> 00:43:05,786
+this is your opportunity to
+then go into your application
+
+
+975
+00:43:05,786 --> 00:43:07,416
+and make the appropriate
+visual changes
+
+
+976
+00:43:07,606 --> 00:43:09,326
+or respond otherwise
+accordingly.
+
+
+977
+00:43:09,896 --> 00:43:16,006
+And so similarly, if we go back
+in, turn the controls back on
+
+
+978
+00:43:16,376 --> 00:43:17,756
+and resume, you can see
+
+
+979
+00:43:17,756 --> 00:43:20,616
+that your application is given
+another call and, you know,
+
+
+980
+00:43:20,616 --> 00:43:23,586
+here is your chance to
+re-add those controls
+
+
+981
+00:43:23,586 --> 00:43:25,086
+to your view hierarchy.
+
+
+982
+00:43:25,656 --> 00:43:27,736
+So that is the new Guided
+Access Developer API
+
+
+983
+00:43:27,916 --> 00:43:29,286
+so let's take a look
+at how it works.
+
+
+984
+00:43:35,746 --> 00:43:36,826
+So right off the
+bat, the first things
+
+
+985
+00:43:36,856 --> 00:43:40,526
+to note are these restrictions
+are per application,
+
+
+986
+00:43:40,526 --> 00:43:43,086
+they are not per view they
+are not per view controller.
+
+
+987
+00:43:43,086 --> 00:43:45,376
+And because of that,
+the appropriate place
+
+
+988
+00:43:45,376 --> 00:43:48,566
+to implement them is on
+your UIApplicationDelegate.
+
+
+989
+00:43:48,566 --> 00:43:51,066
+So, this protocol exists
+there and there alone.
+
+
+990
+00:43:51,466 --> 00:43:54,046
+The second thing is we
+wanted to make buying
+
+
+991
+00:43:54,046 --> 00:43:55,436
+in as easy as possible.
+
+
+992
+00:43:55,436 --> 00:43:57,406
+We really wanted to
+lower the bar and,
+
+
+993
+00:43:57,406 --> 00:43:58,586
+you know, make adaption easy.
+
+
+994
+00:43:58,876 --> 00:44:01,226
+And so for that reason,
+state persistence comes free.
+
+
+995
+00:44:01,526 --> 00:44:03,836
+You don't have to maintain
+state in your application
+
+
+996
+00:44:04,126 --> 00:44:06,646
+of what the user has currently
+set this restriction to.
+
+
+997
+00:44:06,816 --> 00:44:10,296
+We do that for you and we simply
+call you anytime you need to,
+
+
+998
+00:44:10,296 --> 00:44:12,866
+you know, update your
+interface as appropriate.
+
+
+999
+00:44:13,376 --> 00:44:16,646
+And so, the first three
+methods that we're going to look
+
+
+1000
+00:44:16,676 --> 00:44:18,996
+at are guidedAccessRestriction
+Identifiers,
+
+
+1001
+00:44:19,256 --> 00:44:21,226
+textForGuided
+AccessRestrictionWith
+
+
+1002
+00:44:21,226 --> 00:44:23,326
+Identifier: and detailed
+TextForGuided
+
+
+1003
+00:44:23,326 --> 00:44:24,806
+AccessRestrictionWith
+Identifier:.
+
+
+1004
+00:44:24,866 --> 00:44:26,986
+And so let's start from the top.
+
+
+1005
+00:44:27,276 --> 00:44:29,976
+In Guided Access restriction
+identifiers, you're going
+
+
+1006
+00:44:29,976 --> 00:44:33,806
+to want to return a unique
+restriction identifier
+
+
+1007
+00:44:34,326 --> 00:44:36,006
+for every restriction that you'd
+
+
+1008
+00:44:36,006 --> 00:44:39,706
+like to enable the
+user to control.
+
+
+1009
+00:44:39,936 --> 00:44:42,456
+And so in this case, I've just,
+you know, made a static string
+
+
+1010
+00:44:42,456 --> 00:44:44,426
+for this to, again, for
+brevity to kind of shorten it.
+
+
+1011
+00:44:44,806 --> 00:44:49,626
+But the header offers
+more on the way to do this
+
+
+1012
+00:44:49,626 --> 00:44:52,726
+and we really recommend that
+you use reversed DNS notation.
+
+
+1013
+00:44:52,726 --> 00:44:55,466
+These all need to be
+unique in your application.
+
+
+1014
+00:44:56,746 --> 00:44:58,846
+So again, here is where
+you would return an array
+
+
+1015
+00:44:58,846 --> 00:44:59,656
+of these strings.
+
+
+1016
+00:45:00,076 --> 00:45:02,396
+And then, the other two
+methods we're going to call
+
+
+1017
+00:45:02,396 --> 00:45:03,776
+into your application
+when we detect
+
+
+1018
+00:45:04,126 --> 00:45:05,476
+that you have a restriction
+you'd
+
+
+1019
+00:45:05,476 --> 00:45:06,426
+like to convey to the user.
+
+
+1020
+00:45:06,756 --> 00:45:08,756
+Then for each restriction
+identifier,
+
+
+1021
+00:45:08,956 --> 00:45:10,746
+we call in your application
+and we say, you know,
+
+
+1022
+00:45:10,746 --> 00:45:12,526
+what is the text you would
+like presented to the user
+
+
+1023
+00:45:12,526 --> 00:45:13,736
+for this restriction identifier?
+
+
+1024
+00:45:14,026 --> 00:45:15,996
+And similarly, what is
+the detail text you would
+
+
+1025
+00:45:15,996 --> 00:45:17,006
+like presented to the user.
+
+
+1026
+00:45:17,236 --> 00:45:19,206
+So this is your chance
+to give that to us
+
+
+1027
+00:45:19,206 --> 00:45:20,386
+and we will display
+it to the user.
+
+
+1028
+00:45:20,686 --> 00:45:22,626
+I mean you can see here, I'm
+not actually checking the
+
+
+1029
+00:45:22,626 --> 00:45:26,026
+restriction IDs, we only have
+one restriction so, you know,
+
+
+1030
+00:45:26,026 --> 00:45:28,146
+we can go ahead and safely
+just return the values
+
+
+1031
+00:45:28,146 --> 00:45:29,036
+for our one restriction.
+
+
+1032
+00:45:29,986 --> 00:45:32,866
+And the last method is mouthful
+that we want to take a look at.
+
+
+1033
+00:45:33,176 --> 00:45:36,316
+guidedAccessRestriction
+WithIdentifier:did ChangeState:.
+
+
+1034
+00:45:36,676 --> 00:45:38,216
+So, this is what I was
+talking about before
+
+
+1035
+00:45:38,446 --> 00:45:40,286
+and the reason you don't
+have to maintain state
+
+
+1036
+00:45:40,286 --> 00:45:42,666
+in your application,
+we're doing that for you.
+
+
+1037
+00:45:42,666 --> 00:45:45,846
+And anytime the state for
+restriction identifier changes,
+
+
+1038
+00:45:46,116 --> 00:45:49,296
+we simply call into this
+method with the restriction ID
+
+
+1039
+00:45:49,296 --> 00:45:51,246
+and with the new state
+of that restriction
+
+
+1040
+00:45:51,456 --> 00:45:52,636
+and this is really your chance
+
+
+1041
+00:45:52,636 --> 00:45:55,026
+to update your user
+interface as appropriate.
+
+
+1042
+00:45:55,266 --> 00:45:58,966
+And so here, we're doing self--
+set control enabled enabled.
+
+
+1043
+00:46:00,116 --> 00:46:02,706
+And lastly, we do
+have a helper function
+
+
+1044
+00:46:02,996 --> 00:46:05,036
+that will let you check
+the state of a restriction
+
+
+1045
+00:46:05,266 --> 00:46:06,756
+at any time if you need to.
+
+
+1046
+00:46:07,626 --> 00:46:11,346
+So that's Guided Access and, you
+know, we're really happy to get
+
+
+1047
+00:46:11,346 --> 00:46:13,556
+out there, we're excited to see
+what you're going to do with it.
+
+
+1048
+00:46:13,556 --> 00:46:15,486
+You know, you asked
+for it, we delivered it
+
+
+1049
+00:46:15,486 --> 00:46:18,606
+but there's one more thing that
+you asked for over the years
+
+
+1050
+00:46:18,606 --> 00:46:19,816
+and we're really happy
+to give it to you today
+
+
+1051
+00:46:19,816 --> 00:46:22,796
+and that's a brand new
+Text-to-Speech API.
+
+
+1052
+00:46:23,296 --> 00:46:28,926
+[ Applause ]
+
+
+1053
+00:46:29,426 --> 00:46:30,766
+So, we know a lot
+of applications
+
+
+1054
+00:46:30,876 --> 00:46:33,656
+in the App Store have some
+Text-To-Speech functionality.
+
+
+1055
+00:46:33,656 --> 00:46:36,806
+And really, up until today,
+your only option has been to,
+
+
+1056
+00:46:36,966 --> 00:46:39,306
+you know, roll your own
+Text-To-Speech ability
+
+
+1057
+00:46:39,306 --> 00:46:41,716
+into your application
+and while this works,
+
+
+1058
+00:46:41,716 --> 00:46:43,446
+it can make your
+application quite large.
+
+
+1059
+00:46:43,726 --> 00:46:46,136
+And so, we have gone
+ahead and added this in
+
+
+1060
+00:46:46,216 --> 00:46:48,646
+and the good news is it's
+extremely easy to use,
+
+
+1061
+00:46:48,646 --> 00:46:50,266
+you can use it in
+just three lines,
+
+
+1062
+00:46:50,266 --> 00:46:51,626
+you can make your
+application speak.
+
+
+1063
+00:46:51,626 --> 00:46:53,246
+And now, you have this,
+you know, this option.
+
+
+1064
+00:46:53,726 --> 00:46:57,506
+First you just allocate and
+initialize a synthesizer object.
+
+
+1065
+00:46:58,366 --> 00:47:00,666
+Second, you make an
+utterance out of a string
+
+
+1066
+00:47:00,736 --> 00:47:01,766
+that you'd like to speak.
+
+
+1067
+00:47:02,696 --> 00:47:05,776
+And last, you just speak the
+utterance and it's that easy.
+
+
+1068
+00:47:05,776 --> 00:47:07,846
+You can make your app
+speak with just three lines
+
+
+1069
+00:47:08,386 --> 00:47:11,376
+and it's also worth noting
+that this works in Safari.
+
+
+1070
+00:47:12,346 --> 00:47:15,126
+There are some Web Speech,
+there is a Web Speech ability
+
+
+1071
+00:47:15,356 --> 00:47:18,406
+that you can leverage to get
+this to work right from Safari
+
+
+1072
+00:47:18,406 --> 00:47:19,736
+if you're working on
+a web application.
+
+
+1073
+00:47:21,676 --> 00:47:23,856
+Great. So for more
+information, go ahead
+
+
+1074
+00:47:23,856 --> 00:47:25,606
+and check our documentation.
+
+
+1075
+00:47:25,606 --> 00:47:28,276
+We have a great wealth of
+Accessibility documentation
+
+
+1076
+00:47:28,446 --> 00:47:29,436
+that should help
+you get started.
+
+
+1077
+00:47:30,036 --> 00:47:31,646
+And if you, you know, you
+have deeper questions,
+
+
+1078
+00:47:31,646 --> 00:47:33,176
+the dev forms are always
+a great place to go
+
+
+1079
+00:47:33,176 --> 00:47:35,136
+for those deeper questions.
+
+
+1080
+00:47:36,206 --> 00:47:40,496
+For related sessions, there is
+a desktop accessibility talk
+
+
+1081
+00:47:40,866 --> 00:47:43,676
+in this room directly
+following this so stick
+
+
+1082
+00:47:43,676 --> 00:47:46,686
+around if you're interested
+in desktop accessibility.
+
+
+1083
+00:47:47,036 --> 00:47:52,216
+Or if you are interested
+in developing, you know,
+
+
+1084
+00:47:52,216 --> 00:47:53,436
+Made For iPhone hearing aids,
+
+
+1085
+00:47:53,746 --> 00:47:57,276
+or switches for our Switch
+Control feature, you can come
+
+
+1086
+00:47:57,276 --> 00:48:02,206
+over to the designing
+accessories for iOS and OS X.
+
+
+1087
+00:48:02,526 --> 00:48:06,536
+I mean, that is also directly
+following us over in Nob Hill.
+
+
+1088
+00:48:08,556 --> 00:48:11,086
+So in summary, we saw that
+adding accessibility is easy,
+
+
+1089
+00:48:11,376 --> 00:48:15,196
+I mean, we made this application
+accessible with just a few lines
+
+
+1090
+00:48:15,236 --> 00:48:17,206
+and it was, you know,
+virtually inaccessible before.
+
+
+1091
+00:48:17,856 --> 00:48:20,806
+It's going to get you more
+users and great feedback.
+
+
+1092
+00:48:20,806 --> 00:48:21,856
+We've always found
+throughout the years
+
+
+1093
+00:48:21,856 --> 00:48:24,286
+that the Accessibility
+communities provide us
+
+
+1094
+00:48:24,286 --> 00:48:25,326
+with great feedback.
+
+
+1095
+00:48:25,916 --> 00:48:27,566
+And then lastly, you know,
+
+
+1096
+00:48:27,566 --> 00:48:29,636
+we take accessibility
+very seriously here.
+
+
+1097
+00:48:30,016 --> 00:48:32,496
+And so, we want you to too
+and it's that partnership
+
+
+1098
+00:48:32,536 --> 00:48:37,066
+that has made iOS really the
+best mobile accessibility
+
+
+1099
+00:48:37,066 --> 00:48:37,716
+platform out there.
+
+
+1100
+00:48:38,936 --> 00:48:39,846
+Thank you all for coming.
+

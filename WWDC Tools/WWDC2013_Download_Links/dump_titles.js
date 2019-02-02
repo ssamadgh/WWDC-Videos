@@ -1,0 +1,1 @@
+var l=[];jQuery('.session>ul').each(function(i,e){o=jQuery(e).find('li');l[l.length]=o[2].innerText+':'+o[0].innerText});copy(l.join('\n'));alert(l.length+' titles copied!');

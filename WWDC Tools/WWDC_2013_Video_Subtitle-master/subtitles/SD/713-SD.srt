@@ -1,0 +1,5493 @@
+1
+00:00:00,506 --> 00:00:09,566
+[ Silence ]
+
+
+2
+00:00:10,066 --> 00:00:10,866
+>> Good afternoon.
+
+
+3
+00:00:11,116 --> 00:00:13,026
+Welcome to the Accelerate
+Framework Session.
+
+
+4
+00:00:13,726 --> 00:00:14,846
+My name's Jeff Belcher.
+
+
+5
+00:00:15,546 --> 00:00:17,536
+I'm an engineer in the
+Vector and Numerics Group.
+
+
+6
+00:00:18,776 --> 00:00:21,076
+Today I want to start off
+with a pretty common scenario.
+
+
+7
+00:00:22,036 --> 00:00:24,476
+Imagine you've got a great
+idea for an application,
+
+
+8
+00:00:24,666 --> 00:00:26,936
+and that application
+has a computationally
+
+
+9
+00:00:26,936 --> 00:00:27,956
+intensive component.
+
+
+10
+00:00:29,516 --> 00:00:31,506
+You look around and you
+find an open source solution
+
+
+11
+00:00:31,506 --> 00:00:34,546
+to the problem, you bring
+it into your application,
+
+
+12
+00:00:34,676 --> 00:00:37,916
+you test it, and you find
+the graph's too slow,
+
+
+13
+00:00:39,076 --> 00:00:40,516
+or maybe it's a battery drain.
+
+
+14
+00:00:41,966 --> 00:00:44,526
+At this point you're forced to
+spend the next several hours
+
+
+15
+00:00:44,526 --> 00:00:47,386
+or maybe days, profiling
+and optimizing that code
+
+
+16
+00:00:48,446 --> 00:00:50,406
+to get the performance to
+where you need it to be.
+
+
+17
+00:00:51,796 --> 00:00:53,496
+We don't think that's right.
+
+
+18
+00:00:54,026 --> 00:00:55,706
+The goal of the Accelerate
+Framework is
+
+
+19
+00:00:55,736 --> 00:00:56,976
+to solve this problem.
+
+
+20
+00:00:58,496 --> 00:01:01,116
+The Accelerate Framework is
+a collection of functions
+
+
+21
+00:01:01,116 --> 00:01:04,286
+of commonly used computationally
+intensive operations.
+
+
+22
+00:01:04,836 --> 00:01:08,436
+The Accelerate Framework is
+designed to be high performance
+
+
+23
+00:01:08,706 --> 00:01:12,366
+and deliver great
+energy savings for all
+
+
+24
+00:01:12,366 --> 00:01:13,946
+of these APIs that
+are available.
+
+
+25
+00:01:14,556 --> 00:01:17,236
+When you adopt the Accelerate
+Framework you're going
+
+
+26
+00:01:17,236 --> 00:01:20,126
+to get great performance and
+amazing energy characteristics
+
+
+27
+00:01:20,126 --> 00:01:22,576
+from the smallest
+iPhone all the way
+
+
+28
+00:01:22,576 --> 00:01:24,216
+up through the biggest Mac Pro
+
+
+29
+00:01:24,276 --> 00:01:27,226
+without changing a single
+line of code on your end.
+
+
+30
+00:01:28,286 --> 00:01:30,546
+Let's dive into the details
+of the Accelerate Framework
+
+
+31
+00:01:30,546 --> 00:01:33,546
+and see how it can help you
+make a really great app.
+
+
+32
+00:01:35,696 --> 00:01:37,576
+So what is the Accelerate
+Framework?
+
+
+33
+00:01:39,156 --> 00:01:41,146
+When you think Accelerate
+Framework there's a few things
+
+
+34
+00:01:41,146 --> 00:01:42,106
+that I want you to remember.
+
+
+35
+00:01:42,766 --> 00:01:45,226
+First, easy access to
+a lot of functionality.
+
+
+36
+00:01:46,536 --> 00:01:48,636
+There's more than
+2,000 APIs available
+
+
+37
+00:01:48,636 --> 00:01:49,716
+on the Accelerate Framework.
+
+
+38
+00:01:50,346 --> 00:01:52,856
+Throughout the rest of
+the talk we'll break this
+
+
+39
+00:01:52,886 --> 00:01:54,876
+down into four easy-to-remember
+categories
+
+
+40
+00:01:54,876 --> 00:01:56,956
+and show you what
+exactly is available.
+
+
+41
+00:01:57,506 --> 00:01:58,486
+Think accurate.
+
+
+42
+00:01:58,606 --> 00:02:03,276
+We spent a lot of time testing
+so that you don't have to.
+
+
+43
+00:02:04,196 --> 00:02:06,886
+The big one is fast
+with low energy usage.
+
+
+44
+00:02:07,646 --> 00:02:09,026
+You guys really pushed
+the limits
+
+
+45
+00:02:09,026 --> 00:02:12,116
+of the hardware available today
+with your great applications.
+
+
+46
+00:02:12,726 --> 00:02:14,216
+When you use the Accelerate
+Framework you're going
+
+
+47
+00:02:14,216 --> 00:02:16,366
+to get great performance,
+and that's going to come
+
+
+48
+00:02:16,366 --> 00:02:18,506
+with amazing energy
+characteristics.
+
+
+49
+00:02:19,056 --> 00:02:24,256
+The best part for you is it
+works great on both OS X and iOS
+
+
+50
+00:02:24,876 --> 00:02:28,426
+and it's optimized for all
+generations of hardware,
+
+
+51
+00:02:29,066 --> 00:02:30,896
+so when new hardware
+comes out you're not going
+
+
+52
+00:02:30,896 --> 00:02:35,666
+to have to revisit your code.
+
+
+53
+00:02:35,866 --> 00:02:38,106
+So I mentioned that there's
+a lot of functionality
+
+
+54
+00:02:38,266 --> 00:02:41,106
+and the Accelerate Framework
+is geared toward commonly used
+
+
+55
+00:02:41,226 --> 00:02:42,856
+computationally intensive
+operations,
+
+
+56
+00:02:43,166 --> 00:02:44,516
+but what exactly is available?
+
+
+57
+00:02:45,246 --> 00:02:47,516
+We break it down into
+these four categories.
+
+
+58
+00:02:48,446 --> 00:02:52,106
+First we've got image
+processing, with vImage,
+
+
+59
+00:02:53,536 --> 00:02:57,786
+we've got digital signal
+processing and VVSP,
+
+
+60
+00:02:57,976 --> 00:03:01,556
+transcendental math functions
+and vForce and vMathLive,
+
+
+61
+00:03:03,106 --> 00:03:06,876
+and finally, linear
+algebra in LAPACK and BLAS.
+
+
+62
+00:03:07,456 --> 00:03:11,726
+At the end of this talk
+there's a few points
+
+
+63
+00:03:11,726 --> 00:03:12,966
+that I want you to
+come away with.
+
+
+64
+00:03:13,906 --> 00:03:16,266
+The first of these is how the
+Accelerate Framework can help
+
+
+65
+00:03:16,266 --> 00:03:18,146
+you create a really
+great application.
+
+
+66
+00:03:19,106 --> 00:03:20,706
+I'm going to show
+you some examples
+
+
+67
+00:03:21,276 --> 00:03:23,336
+of real world performance
+and energy savings
+
+
+68
+00:03:23,336 --> 00:03:25,026
+that you can expect
+when you utilize the
+
+
+69
+00:03:25,026 --> 00:03:25,876
+Accelerate Framework.
+
+
+70
+00:03:26,446 --> 00:03:29,666
+I want you to have an
+idea of areas of your code
+
+
+71
+00:03:29,666 --> 00:03:34,216
+that are likely to benefit
+from the Accelerate Framework,
+
+
+72
+00:03:34,766 --> 00:03:37,736
+and finally, how to use
+the Accelerate Framework.
+
+
+73
+00:03:37,986 --> 00:03:39,816
+So this is going to
+range from linking
+
+
+74
+00:03:39,816 --> 00:03:43,066
+against the Accelerate Framework
+up through some tips and tricks
+
+
+75
+00:03:43,066 --> 00:03:45,056
+that can really allow
+you to get the most
+
+
+76
+00:03:45,056 --> 00:03:46,426
+out of the Accelerate Framework.
+
+
+77
+00:03:46,426 --> 00:03:51,736
+I want to move now to why the
+Accelerate Framework is fast.
+
+
+78
+00:03:53,086 --> 00:03:55,546
+Understanding why the Accelerate
+Framework is fast can help
+
+
+79
+00:03:55,546 --> 00:03:58,296
+in understanding when and why
+to use the Accelerate Framework.
+
+
+80
+00:03:58,296 --> 00:04:03,366
+One of the big reasons the
+Accelerate Framework is fast is
+
+
+81
+00:04:03,366 --> 00:04:05,166
+we utilize SIMD instructions.
+
+
+82
+00:04:06,576 --> 00:04:08,656
+This is Single Instruction
+Multiple Data.
+
+
+83
+00:04:08,656 --> 00:04:12,496
+For those of you
+unfamiliar, if we're trying
+
+
+84
+00:04:12,496 --> 00:04:15,856
+to for example add 2 arrays
+together, there are instructions
+
+
+85
+00:04:15,856 --> 00:04:17,216
+on current hardware
+that allow us
+
+
+86
+00:04:17,216 --> 00:04:19,255
+to add multiple elements
+simultaneously.
+
+
+87
+00:04:19,886 --> 00:04:23,196
+For those of you more
+familiar with SIMD operations,
+
+
+88
+00:04:23,736 --> 00:04:25,796
+on Intel this means
+we're taking advantage
+
+
+89
+00:04:25,796 --> 00:04:28,736
+of SSE, AVX, and now AVX2.
+
+
+90
+00:04:30,186 --> 00:04:34,196
+On ARM we're taking
+advantage of NEON.
+
+
+91
+00:04:34,366 --> 00:04:35,816
+Utilizing SIMD instructions
+
+
+92
+00:04:35,816 --> 00:04:38,166
+in certain situations can
+have significant energy
+
+
+93
+00:04:38,166 --> 00:04:39,346
+and performance savings.
+
+
+94
+00:04:40,606 --> 00:04:45,496
+We also spend a lot of time
+matching the microarchitecture
+
+
+95
+00:04:45,706 --> 00:04:47,486
+for the complete
+Apple hardware lineup.
+
+
+96
+00:04:48,386 --> 00:04:51,246
+This includes optimizations
+like instruction selection
+
+
+97
+00:04:51,246 --> 00:04:52,436
+and instruction scheduling,
+
+
+98
+00:04:52,486 --> 00:04:56,016
+as well as software
+pipelining and loop unrolling.
+
+
+99
+00:04:57,516 --> 00:05:00,256
+So I bring these up because
+it requires a certain amount
+
+
+100
+00:05:00,256 --> 00:05:01,666
+of data before optimizations
+
+
+101
+00:05:01,666 --> 00:05:03,396
+like loop unrolling
+become beneficial,
+
+
+102
+00:05:03,916 --> 00:05:05,116
+so it helps to understand
+
+
+103
+00:05:05,346 --> 00:05:07,546
+that this is sometimes
+happening behind the scenes
+
+
+104
+00:05:07,546 --> 00:05:08,576
+in the Accelerated Framework.
+
+
+105
+00:05:09,316 --> 00:05:12,746
+The last reason the
+Accelerated Framework is fast is
+
+
+106
+00:05:12,746 --> 00:05:15,316
+because it's multithreaded
+using GCD.
+
+
+107
+00:05:16,326 --> 00:05:18,106
+When it's appropriate we're
+going to take advantage
+
+
+108
+00:05:18,106 --> 00:05:19,416
+of all the cores available.
+
+
+109
+00:05:20,676 --> 00:05:25,806
+So I wanted to talk
+about why it's fast
+
+
+110
+00:05:25,806 --> 00:05:28,466
+so that you have an
+understanding of where some
+
+
+111
+00:05:28,466 --> 00:05:30,056
+of the tips for successful use
+
+
+112
+00:05:30,056 --> 00:05:31,576
+of the Accelerate
+Framework come from.
+
+
+113
+00:05:32,116 --> 00:05:35,276
+The first tip is
+preparation of your data.
+
+
+114
+00:05:35,276 --> 00:05:38,416
+When you prepare your
+data there's a few things
+
+
+115
+00:05:38,416 --> 00:05:39,466
+that I want you to remember.
+
+
+116
+00:05:40,426 --> 00:05:42,756
+The first is if you can
+make your data contiguous.
+
+
+117
+00:05:43,426 --> 00:05:45,466
+This means that if
+you're creating an array,
+
+
+118
+00:05:45,766 --> 00:05:46,726
+you want to make that array
+
+
+119
+00:05:46,726 --> 00:05:48,566
+such that the elements
+are contiguous.
+
+
+120
+00:05:49,116 --> 00:05:52,466
+If you're allocating or
+have control over the layout
+
+
+121
+00:05:52,466 --> 00:05:55,126
+of that buffer and memory, if
+you can align the beginning
+
+
+122
+00:05:55,126 --> 00:05:57,076
+of that buffer to
+16-byte boundary,
+
+
+123
+00:05:57,076 --> 00:05:58,196
+that's going to be ideal.
+
+
+124
+00:05:58,786 --> 00:06:01,916
+With the Accelerate
+Framework we always strive
+
+
+125
+00:06:01,916 --> 00:06:03,396
+to deliver the greatest
+performance,
+
+
+126
+00:06:03,426 --> 00:06:05,606
+but if you can meet
+these recommendations,
+
+
+127
+00:06:06,236 --> 00:06:09,066
+in certain situations we
+can algorithmically exploit
+
+
+128
+00:06:09,066 --> 00:06:11,216
+that to give you
+slightly more performance.
+
+
+129
+00:06:11,606 --> 00:06:16,556
+The next tip is to
+understand the problem size.
+
+
+130
+00:06:18,756 --> 00:06:21,476
+Any function call has a
+cost associated with it.
+
+
+131
+00:06:22,436 --> 00:06:24,846
+The Accelerate Framework
+is not immune to this.
+
+
+132
+00:06:26,216 --> 00:06:27,836
+On the previous slide
+we also saw
+
+
+133
+00:06:27,836 --> 00:06:29,686
+that in certain situations
+optimizations
+
+
+134
+00:06:29,686 --> 00:06:31,456
+like loop unrolling are used.
+
+
+135
+00:06:31,966 --> 00:06:34,596
+What this means for you is
+
+
+136
+00:06:34,596 --> 00:06:37,456
+that when you're
+using really small --
+
+
+137
+00:06:37,456 --> 00:06:38,916
+when you're using the
+Accelerate Framework
+
+
+138
+00:06:38,916 --> 00:06:40,306
+with really small datasets,
+
+
+139
+00:06:40,806 --> 00:06:43,246
+it may not deliver
+the best performance.
+
+
+140
+00:06:44,606 --> 00:06:45,716
+There's not a problem size
+
+
+141
+00:06:45,716 --> 00:06:47,766
+that I can say don't use
+the Accelerate Framework
+
+
+142
+00:06:47,766 --> 00:06:49,966
+for something that's
+small; it's going to depend
+
+
+143
+00:06:49,966 --> 00:06:51,406
+on the operation
+you're performing.
+
+
+144
+00:06:52,186 --> 00:06:54,916
+For example, if you're scaling a
+vector it might be on the order
+
+
+145
+00:06:54,916 --> 00:06:56,916
+of 100 elements; whereas
+
+
+146
+00:06:56,916 --> 00:06:59,286
+if you have a more complicated
+operation for example,
+
+
+147
+00:06:59,286 --> 00:07:02,826
+Matrix Multiply, it could
+be as small as 8 elements.
+
+
+148
+00:07:04,086 --> 00:07:06,196
+The best thing you can
+do here is to experiment.
+
+
+149
+00:07:07,116 --> 00:07:08,676
+The Accelerate Framework
+is always going
+
+
+150
+00:07:08,676 --> 00:07:10,196
+to deliver the great
+functionality,
+
+
+151
+00:07:10,626 --> 00:07:13,066
+just for these smaller
+problem sizes it may not be the
+
+
+152
+00:07:13,066 --> 00:07:13,986
+best performance.
+
+
+153
+00:07:13,986 --> 00:07:20,596
+The last tip for successful
+use is to do setup once
+
+
+154
+00:07:20,596 --> 00:07:21,956
+and destroy once at the end.
+
+
+155
+00:07:23,066 --> 00:07:25,376
+There's a handful of operations
+in the Accelerate Framework
+
+
+156
+00:07:25,376 --> 00:07:26,896
+that require a setup structure.
+
+
+157
+00:07:28,116 --> 00:07:30,096
+Creating this setup
+structure can be costly
+
+
+158
+00:07:30,096 --> 00:07:30,986
+and time-consuming.
+
+
+159
+00:07:31,496 --> 00:07:34,476
+These setup structures
+are designed
+
+
+160
+00:07:34,476 --> 00:07:38,836
+to be used multiple times, so if
+you find yourself in a situation
+
+
+161
+00:07:38,836 --> 00:07:42,576
+where you need to do these
+setups, create the setup,
+
+
+162
+00:07:42,746 --> 00:07:45,246
+do all of the computation that
+you want to do with that setup,
+
+
+163
+00:07:45,316 --> 00:07:48,696
+and then destroy
+once at the end.
+
+
+164
+00:07:48,696 --> 00:07:51,116
+Throughout the rest of the talk
+we'll see some examples of this
+
+
+165
+00:07:51,116 --> 00:07:52,406
+and it will become more clear.
+
+
+166
+00:07:53,066 --> 00:07:57,726
+Now I want to move on to using
+the Accelerate Framework.
+
+
+167
+00:07:58,376 --> 00:08:00,786
+For those of you brand new
+to the Accelerate Framework,
+
+
+168
+00:08:01,046 --> 00:08:03,896
+including it is just like
+including any other framework.
+
+
+169
+00:08:04,586 --> 00:08:08,946
+Here we have a typical Xcode
+project, and we're just going
+
+
+170
+00:08:08,946 --> 00:08:10,706
+to navigate to the build phases.
+
+
+171
+00:08:11,876 --> 00:08:13,976
+In the build phases we're
+going to find the link
+
+
+172
+00:08:13,976 --> 00:08:16,056
+with the library
+section and we're going
+
+
+173
+00:08:16,056 --> 00:08:17,106
+to find the Plus button.
+
+
+174
+00:08:18,276 --> 00:08:20,816
+This brings up the list
+of available frameworks.
+
+
+175
+00:08:21,396 --> 00:08:24,996
+The Accelerate Framework's
+right at the top,
+
+
+176
+00:08:24,996 --> 00:08:26,406
+we'll just select
+it and click Add.
+
+
+177
+00:08:27,276 --> 00:08:32,336
+And then we can be sure that the
+Accelerate Framework is included
+
+
+178
+00:08:32,336 --> 00:08:33,926
+in our project because
+it's going to show
+
+
+179
+00:08:33,926 --> 00:08:35,566
+up in this link the
+Library section.
+
+
+180
+00:08:35,976 --> 00:08:40,385
+The only other step to using
+the Accelerate Framework is
+
+
+181
+00:08:40,416 --> 00:08:41,446
+to include the headers.
+
+
+182
+00:08:41,936 --> 00:08:48,826
+This is accelerate/accelerate.h.
+That's all it takes
+
+
+183
+00:08:48,826 --> 00:08:50,346
+to use the Accelerate Framework.
+
+
+184
+00:08:50,966 --> 00:08:53,276
+Linking from the Command
+line is just as easy.
+
+
+185
+00:08:53,736 --> 00:08:57,396
+In your link step simply
+include -framework accelerate.
+
+
+186
+00:08:57,396 --> 00:09:03,256
+So now I want to dive into the
+details of what's available
+
+
+187
+00:09:03,256 --> 00:09:04,316
+in the Accelerate Framework.
+
+
+188
+00:09:05,176 --> 00:09:06,986
+I mentioned there's
+over 2,000 APIs
+
+
+189
+00:09:06,986 --> 00:09:10,056
+and we've got these four
+categories so we'll start
+
+
+190
+00:09:10,056 --> 00:09:11,356
+to step through these now.
+
+
+191
+00:09:12,346 --> 00:09:14,076
+And we'll begin with
+image processing.
+
+
+192
+00:09:16,346 --> 00:09:18,416
+For image processing
+we have vImage,
+
+
+193
+00:09:18,746 --> 00:09:20,946
+our vectorized image
+processing library.
+
+
+194
+00:09:21,436 --> 00:09:25,866
+There's a lot of
+functionality in vImage,
+
+
+195
+00:09:26,066 --> 00:09:28,686
+and rather than just list it
+I put together a short video
+
+
+196
+00:09:28,686 --> 00:09:30,656
+to show you some of the
+features that are available.
+
+
+197
+00:09:31,246 --> 00:09:33,916
+We've got alpha blending
+
+
+198
+00:09:33,916 --> 00:09:37,976
+and alpha compositing,
+dilation, erosion.
+
+
+199
+00:09:38,816 --> 00:09:41,706
+You can create Sobel filters
+for form edge detection,
+
+
+200
+00:09:42,826 --> 00:09:46,916
+various types of CONVLs
+to perform blur, deblur,
+
+
+201
+00:09:47,446 --> 00:09:52,896
+or multi-kernel CONVLs,
+MaxFilters, MinFilters,
+
+
+202
+00:09:54,416 --> 00:09:59,646
+color transformations,
+warps and Shears.
+
+
+203
+00:10:00,406 --> 00:10:04,536
+So this is just some of
+what you'll find in vImage.
+
+
+204
+00:10:05,046 --> 00:10:09,346
+We also have some great
+additions and improvements
+
+
+205
+00:10:09,766 --> 00:10:13,116
+in both iOS 7 and OS X.
+
+
+206
+00:10:13,976 --> 00:10:16,196
+First we have improved
+conversion support.
+
+
+207
+00:10:17,406 --> 00:10:20,476
+Conversions are operations
+like converting between planar
+
+
+208
+00:10:20,476 --> 00:10:24,656
+and chunky data or changing
+between a pixel component type,
+
+
+209
+00:10:24,656 --> 00:10:28,226
+so an 8-bit image format
+to a 16-bit image format
+
+
+210
+00:10:28,226 --> 00:10:33,556
+or a floating point image
+format, just to name a few.
+
+
+211
+00:10:33,776 --> 00:10:36,716
+We also introduced vImage
+buffer creation utilities,
+
+
+212
+00:10:37,826 --> 00:10:39,966
+so in the tips I talked
+about how important it is
+
+
+213
+00:10:39,966 --> 00:10:43,306
+to create a buffer,
+getting the alignment right
+
+
+214
+00:10:43,306 --> 00:10:46,246
+and getting everything
+contiguous, so to take some
+
+
+215
+00:10:46,246 --> 00:10:48,256
+of the guesswork out
+of that for vImage,
+
+
+216
+00:10:49,056 --> 00:10:50,356
+we introduced the utilities
+
+
+217
+00:10:50,356 --> 00:10:53,166
+where you can just specify
+the size of the image,
+
+
+218
+00:10:53,696 --> 00:10:58,436
+and this function will create
+the appropriately sized buffer
+
+
+219
+00:10:58,636 --> 00:11:00,556
+to deliver the maximum
+performance.
+
+
+220
+00:11:03,696 --> 00:11:07,046
+We also introduced
+resampling of 16-bit images,
+
+
+221
+00:11:08,246 --> 00:11:11,346
+so all the operations like Warp
+and Shear that were available
+
+
+222
+00:11:11,346 --> 00:11:14,486
+for 8-bit and floating point
+image formats are now available
+
+
+223
+00:11:14,486 --> 00:11:16,386
+for 16-bit image
+formats as well.
+
+
+224
+00:11:16,996 --> 00:11:23,216
+The last addition is streamlined
+core graphics interoperability.
+
+
+225
+00:11:23,506 --> 00:11:26,476
+This is a big one, and I
+want to dive into the details
+
+
+226
+00:11:26,476 --> 00:11:27,806
+of this with an example.
+
+
+227
+00:11:28,466 --> 00:11:31,616
+So we got the question a lot.
+
+
+228
+00:11:31,616 --> 00:11:34,826
+How do I use vImage
+with my CGImage ref?
+
+
+229
+00:11:35,756 --> 00:11:38,276
+To solve this problem
+we introduced two new
+
+
+230
+00:11:38,276 --> 00:11:39,536
+utility functions.
+
+
+231
+00:11:40,096 --> 00:11:43,656
+To go from CGImage
+ref to vImage buffer,
+
+
+232
+00:11:43,656 --> 00:11:47,416
+we introduced a utility function
+vImage buffer and with CGImage
+
+
+233
+00:11:48,466 --> 00:11:50,166
+and for the reverse direction,
+
+
+234
+00:11:50,166 --> 00:11:53,206
+we introduced vImage
+create CGImage from buffer.
+
+
+235
+00:11:53,846 --> 00:11:56,746
+Let's take a look at
+an example of this,
+
+
+236
+00:11:56,856 --> 00:11:58,856
+and see just how
+easy it is to use.
+
+
+237
+00:11:59,746 --> 00:12:03,646
+So here we're going
+to look at how to go
+
+
+238
+00:12:03,646 --> 00:12:06,646
+from a CGImage ref
+to a vImage buffer.
+
+
+239
+00:12:07,816 --> 00:12:09,636
+As always, we're going to begin
+
+
+240
+00:12:09,636 --> 00:12:11,576
+by including the
+Accelerate Framework header
+
+
+241
+00:12:12,136 --> 00:12:16,116
+and then we're going to
+create an openImage ref.
+
+
+242
+00:12:16,966 --> 00:12:19,136
+I'm not going to go through
+the details of this here.
+
+
+243
+00:12:19,136 --> 00:12:21,496
+There's a lot of documentation
+and examples of this,
+
+
+244
+00:12:22,136 --> 00:12:26,196
+but assume after this line that
+we have our CGImage ref open.
+
+
+245
+00:12:26,196 --> 00:12:28,636
+The first step that we're going
+
+
+246
+00:12:28,636 --> 00:12:31,046
+to do then is specify
+the image format.
+
+
+247
+00:12:31,606 --> 00:12:35,986
+This image format describes
+the format of the vImage buffer
+
+
+248
+00:12:35,986 --> 00:12:37,646
+that we want to create.
+
+
+249
+00:12:38,536 --> 00:12:42,156
+We've introduced the
+vImage/CGImage format structure.
+
+
+250
+00:12:43,526 --> 00:12:45,926
+You'll find several elements
+in here; for example,
+
+
+251
+00:12:45,926 --> 00:12:49,256
+bits per component,
+bits per pixel,
+
+
+252
+00:12:49,506 --> 00:12:56,586
+information about the color
+and bitmap info to name a few.
+
+
+253
+00:12:56,796 --> 00:13:00,576
+This descriptor is
+describing an ARGB 8-bit image.
+
+
+254
+00:13:01,876 --> 00:13:03,816
+We see that the first entry
+
+
+255
+00:13:03,886 --> 00:13:07,346
+in this structure is
+bits per component of 8,
+
+
+256
+00:13:07,686 --> 00:13:10,176
+so each component in the
+picture is going to be 8 bits.
+
+
+257
+00:13:10,976 --> 00:13:12,726
+The bits per pixel is 32,
+
+
+258
+00:13:12,726 --> 00:13:14,406
+so there's going
+to be 4 components.
+
+
+259
+00:13:16,516 --> 00:13:18,306
+Color space, we pass null.
+
+
+260
+00:13:18,766 --> 00:13:20,506
+When we pass null this
+means that we're going
+
+
+261
+00:13:20,506 --> 00:13:22,676
+to get a default
+RBG color space,
+
+
+262
+00:13:22,826 --> 00:13:24,766
+so we have 3 color components.
+
+
+263
+00:13:25,686 --> 00:13:29,926
+And then in the bitmap info,
+we have kCGImage alpha first.
+
+
+264
+00:13:30,366 --> 00:13:32,396
+This means we have a
+single alpha component
+
+
+265
+00:13:32,706 --> 00:13:33,886
+and it's the first component.
+
+
+266
+00:13:34,406 --> 00:13:37,356
+So this describes our
+8-bit ARGB image format.
+
+
+267
+00:13:37,926 --> 00:13:43,836
+With this format we're going to
+call vImage buffer with CGImage.
+
+
+268
+00:13:45,546 --> 00:13:48,306
+The first argument is the
+input buffer that we want
+
+
+269
+00:13:48,306 --> 00:13:50,626
+to create from our CGImage ref.
+
+
+270
+00:13:51,886 --> 00:13:53,546
+The second argument
+is the reference
+
+
+271
+00:13:53,546 --> 00:13:55,736
+to that format description
+that we just created.
+
+
+272
+00:13:56,336 --> 00:13:59,636
+The third argument is
+unused in this case.
+
+
+273
+00:13:59,636 --> 00:14:01,706
+This is information
+about background color.
+
+
+274
+00:14:02,706 --> 00:14:05,916
+In certain conversions when
+alpha channels are involved,
+
+
+275
+00:14:05,916 --> 00:14:07,966
+it may be necessary
+to provide information
+
+
+276
+00:14:07,966 --> 00:14:08,976
+about a background color.
+
+
+277
+00:14:09,576 --> 00:14:14,416
+The next argument is NImage --
+
+
+278
+00:14:14,416 --> 00:14:16,566
+this is our CGImage ref
+that we want to convert
+
+
+279
+00:14:16,566 --> 00:14:20,196
+to the vImage buffer, and
+finally any additional flags.
+
+
+280
+00:14:20,346 --> 00:14:24,226
+In this case we don't have any
+so we pass kV image no flags.
+
+
+281
+00:14:26,966 --> 00:14:30,046
+Upon successful return
+of this function,
+
+
+282
+00:14:30,046 --> 00:14:32,406
+we've allocated a
+new vImage buffer.
+
+
+283
+00:14:32,656 --> 00:14:37,026
+It contains the image format,
+the image and the format
+
+
+284
+00:14:37,026 --> 00:14:39,706
+that we've described,
+and we're free
+
+
+285
+00:14:39,706 --> 00:14:42,626
+to at this point
+release the CGImage ref.
+
+
+286
+00:14:44,736 --> 00:14:46,666
+The reverse is just as easy,
+
+
+287
+00:14:46,666 --> 00:14:49,866
+going from a vImage
+buffer to a CGImage ref.
+
+
+288
+00:14:50,876 --> 00:14:52,706
+So we've done our
+image processing,
+
+
+289
+00:14:53,606 --> 00:14:56,046
+and we have our vImage
+buffer out buffer.
+
+
+290
+00:14:56,796 --> 00:14:58,506
+We haven't changed the
+format so we're going
+
+
+291
+00:14:58,506 --> 00:15:01,676
+to use our same format specifier
+that we created before.
+
+
+292
+00:15:02,386 --> 00:15:05,536
+To create the CGImage
+refer we're going
+
+
+293
+00:15:05,536 --> 00:15:09,456
+to call vImageCreate
+CGImage ref from buffer.
+
+
+294
+00:15:09,926 --> 00:15:16,006
+The first argument is going
+to be the output vImage buffer
+
+
+295
+00:15:16,006 --> 00:15:17,666
+that we just finished
+processing,
+
+
+296
+00:15:18,976 --> 00:15:21,936
+that same format type, because
+we haven't changed the format.
+
+
+297
+00:15:23,156 --> 00:15:27,136
+The next two arguments are user
+callback and user functions,
+
+
+298
+00:15:27,966 --> 00:15:30,036
+user callback functions
+and user data.
+
+
+299
+00:15:30,926 --> 00:15:33,166
+For this particular
+conversion we don't need
+
+
+300
+00:15:33,166 --> 00:15:34,976
+that so we're just
+going to pass null.
+
+
+301
+00:15:35,496 --> 00:15:38,706
+And then we pass flag,
+any additional flags.
+
+
+302
+00:15:38,706 --> 00:15:40,616
+Again, in this case
+there are none,
+
+
+303
+00:15:40,676 --> 00:15:43,456
+so we pass k at vImage,
+no flags.
+
+
+304
+00:15:44,616 --> 00:15:47,056
+And then finally a
+reference to a vImage error
+
+
+305
+00:15:47,436 --> 00:15:50,616
+to capture the error state.
+
+
+306
+00:15:50,796 --> 00:15:52,876
+Upon successful return
+of this function,
+
+
+307
+00:15:53,176 --> 00:15:56,066
+we're going to return
+the CGImage ref,
+
+
+308
+00:15:56,066 --> 00:15:57,646
+out image in this case.
+
+
+309
+00:15:58,536 --> 00:16:03,336
+This is going to be a freshly
+allocated CGImage ref containing
+
+
+310
+00:16:03,486 --> 00:16:07,246
+the image information,
+and we are free
+
+
+311
+00:16:07,246 --> 00:16:08,796
+to release the vImagem buffer.
+
+
+312
+00:16:09,496 --> 00:16:15,136
+All of this is built
+around a really powerful API
+
+
+313
+00:16:15,136 --> 00:16:20,206
+that we're introducing now
+called vImage Convert Any
+
+
+314
+00:16:20,916 --> 00:16:22,926
+to Any.
+
+
+315
+00:16:23,116 --> 00:16:25,456
+What vImage Convert Any
+to Any does it it converts
+
+
+316
+00:16:25,456 --> 00:16:28,756
+between the image format
+specifiers that we just saw,
+
+
+317
+00:16:29,246 --> 00:16:34,506
+so you'll create two of these
+format types, one for the source
+
+
+318
+00:16:34,506 --> 00:16:35,926
+and one for the destination
+type,
+
+
+319
+00:16:35,986 --> 00:16:37,836
+and you'll create a converter.
+
+
+320
+00:16:39,036 --> 00:16:41,446
+Once you've created this
+converter, you can then convert
+
+
+321
+00:16:41,446 --> 00:16:44,266
+as many images as you
+want from that source type
+
+
+322
+00:16:44,266 --> 00:16:46,186
+to that destination type.
+
+
+323
+00:16:46,736 --> 00:16:49,546
+So this is one of those cases
+where you want to create
+
+
+324
+00:16:49,546 --> 00:16:52,976
+that converter once and use
+it as many times as you can.
+
+
+325
+00:16:53,576 --> 00:16:58,556
+The vImage Convert Any
+to Any is really fast,
+
+
+326
+00:16:59,336 --> 00:17:01,216
+and I want to show
+you an example of hits
+
+
+327
+00:17:01,216 --> 00:17:02,576
+with a real world application.
+
+
+328
+00:17:02,706 --> 00:17:08,715
+I want to show you that with
+software jpeg encode performance
+
+
+329
+00:17:09,106 --> 00:17:10,406
+running on the iPhone 5.
+
+
+330
+00:17:10,986 --> 00:17:13,646
+What I have here is a graph.
+
+
+331
+00:17:14,266 --> 00:17:16,726
+On the y-axis I've got
+megapixels per second,
+
+
+332
+00:17:16,826 --> 00:17:18,876
+so this is the rate at
+which we can perform
+
+
+333
+00:17:18,876 --> 00:17:20,296
+that software jpeg encode.
+
+
+334
+00:17:21,296 --> 00:17:24,386
+On the x-axis I have
+various image format types.
+
+
+335
+00:17:24,596 --> 00:17:26,236
+For the sake of this example,
+
+
+336
+00:17:26,236 --> 00:17:28,406
+think of this software
+jpeg encode
+
+
+337
+00:17:28,496 --> 00:17:30,036
+as happening in two steps.
+
+
+338
+00:17:31,086 --> 00:17:33,866
+Step one is to convert from
+our input image format type,
+
+
+339
+00:17:33,996 --> 00:17:35,856
+so those that we
+see on the x-axis;
+
+
+340
+00:17:36,656 --> 00:17:40,976
+two the image format type
+that the encode step consumes,
+
+
+341
+00:17:41,786 --> 00:17:44,386
+and the second step is to
+perform the actual encode.
+
+
+342
+00:17:45,046 --> 00:17:49,086
+What we're interested here
+is step one, so converting
+
+
+343
+00:17:49,086 --> 00:17:50,606
+from the input image format type
+
+
+344
+00:17:51,036 --> 00:17:53,426
+to the format type
+consumed by the encode.
+
+
+345
+00:17:54,476 --> 00:17:56,826
+Let's take a look at the
+performance the original way.
+
+
+346
+00:17:57,536 --> 00:18:01,786
+We see a few things here.
+
+
+347
+00:18:02,266 --> 00:18:03,976
+First we see a lot
+of variability.
+
+
+348
+00:18:05,146 --> 00:18:09,116
+For example, if you start
+from an 8-bit RGBA image,
+
+
+349
+00:18:09,606 --> 00:18:12,616
+your encode performance is
+going to be almost twice as fast
+
+
+350
+00:18:12,616 --> 00:18:15,516
+as if you start from a
+floating point RGBA image.
+
+
+351
+00:18:16,056 --> 00:18:19,156
+The reason that this
+is happening is
+
+
+352
+00:18:19,196 --> 00:18:21,276
+because step one is so variable.
+
+
+353
+00:18:22,676 --> 00:18:25,346
+So what we wanted to do
+is change just step one.
+
+
+354
+00:18:25,536 --> 00:18:28,436
+We replace step one now with
+vImage Convert Any to Any,
+
+
+355
+00:18:29,856 --> 00:18:31,196
+and let's look at
+the performance.
+
+
+356
+00:18:35,356 --> 00:18:37,526
+We see everything
+gets a lot faster now.
+
+
+357
+00:18:38,926 --> 00:18:43,266
+We also see that the
+performance is quite consistent.
+
+
+358
+00:18:46,286 --> 00:18:50,306
+So our 8-bit RGBA image is
+now only a few percent faster
+
+
+359
+00:18:50,306 --> 00:18:52,306
+than our floating
+point RGBA image.
+
+
+360
+00:18:52,856 --> 00:18:56,746
+The reason that this happens is
+because we reduced the amount
+
+
+361
+00:18:56,746 --> 00:18:58,416
+of time that we spent
+in step one,
+
+
+362
+00:18:58,416 --> 00:19:01,116
+converting from the input image
+format to the other format,
+
+
+363
+00:19:01,706 --> 00:19:04,266
+to a very small percent
+of the overall operation.
+
+
+364
+00:19:04,786 --> 00:19:09,836
+This type of result is what you
+can expect in your applications.
+
+
+365
+00:19:09,836 --> 00:19:11,536
+This is a real world
+application.
+
+
+366
+00:19:12,596 --> 00:19:14,736
+vImage is delivering
+great performance
+
+
+367
+00:19:14,866 --> 00:19:16,236
+and consistent results.
+
+
+368
+00:19:16,236 --> 00:19:20,876
+I want to stay on the
+topic of conversion
+
+
+369
+00:19:20,876 --> 00:19:21,886
+for a little bit longer.
+
+
+370
+00:19:22,676 --> 00:19:25,336
+I want to talk about an example
+
+
+371
+00:19:25,336 --> 00:19:27,936
+of scaling a premultiplied
+image.
+
+
+372
+00:19:28,506 --> 00:19:33,456
+A lot of people will have an
+image format and they'll have it
+
+
+373
+00:19:33,456 --> 00:19:36,136
+in a vImage buffer and
+they'll want to scale it.
+
+
+374
+00:19:36,526 --> 00:19:37,816
+They'll look through
+vImagem and see
+
+
+375
+00:19:37,816 --> 00:19:43,126
+that the only way you can scale
+an image is a non-premultiplied
+
+
+376
+00:19:43,126 --> 00:19:43,826
+image format.
+
+
+377
+00:19:44,926 --> 00:19:48,366
+So the way that you need to do
+this is three steps in vImage.
+
+
+378
+00:19:49,456 --> 00:19:51,806
+I'm not going to go into the
+details of each of these steps,
+
+
+379
+00:19:52,146 --> 00:19:59,386
+but in step one, we're going
+to unpremultiply the data.
+
+
+380
+00:19:59,566 --> 00:20:02,656
+In step two, we're going
+to perform the scale.
+
+
+381
+00:20:03,926 --> 00:20:05,706
+And then in step
+three we're going
+
+
+382
+00:20:05,706 --> 00:20:08,176
+to premultiply the
+results of that output.
+
+
+383
+00:20:08,726 --> 00:20:12,906
+A lot of people see this as
+three times the amount of work,
+
+
+384
+00:20:14,006 --> 00:20:15,906
+and they get afraid
+and they go off
+
+
+385
+00:20:15,906 --> 00:20:17,336
+and they implement
+their own scale.
+
+
+386
+00:20:17,336 --> 00:20:21,496
+I want to show you how much time
+we spent in each of these steps.
+
+
+387
+00:20:22,026 --> 00:20:26,456
+What I have here is the
+percentage of time in each
+
+
+388
+00:20:26,456 --> 00:20:28,396
+of those three same
+steps as we saw them.
+
+
+389
+00:20:28,976 --> 00:20:32,746
+At the top we see
+unpremultiply, a little over 1%,
+
+
+390
+00:20:32,746 --> 00:20:37,756
+at the bottom we see the
+premultiply, a little of 1/2%.
+
+
+391
+00:20:39,116 --> 00:20:42,016
+The vast majority of time is
+spent in the actual operation.
+
+
+392
+00:20:42,566 --> 00:20:44,596
+What I want you to take away
+
+
+393
+00:20:44,596 --> 00:20:47,816
+from this is don't take away
+the conversions, they're fast.
+
+
+394
+00:20:48,436 --> 00:20:51,446
+If your image isn't in the right
+format, use the conversions.
+
+
+395
+00:20:51,446 --> 00:20:53,996
+It's going to be worthwhile
+getting into the image.
+
+
+396
+00:20:53,996 --> 00:21:00,986
+Now I want to talk about
+some performance of vImage
+
+
+397
+00:21:00,986 --> 00:21:04,736
+as compared to some of the
+other options, and I want to do
+
+
+398
+00:21:04,736 --> 00:21:07,156
+that by comparing to OpenCV.
+
+
+399
+00:21:08,076 --> 00:21:11,946
+OpenCV is a third party open
+source computer vision library.
+
+
+400
+00:21:13,216 --> 00:21:14,996
+It has an image processing
+module.
+
+
+401
+00:21:15,766 --> 00:21:17,546
+That image processing
+module has a lot
+
+
+402
+00:21:17,546 --> 00:21:19,516
+of the same functionality
+that vImage has.
+
+
+403
+00:21:19,996 --> 00:21:23,426
+There's a couple points
+that I want to compare.
+
+
+404
+00:21:24,076 --> 00:21:25,826
+The first is execution time.
+
+
+405
+00:21:27,196 --> 00:21:29,436
+Everybody wants their
+applications to run fast.
+
+
+406
+00:21:30,356 --> 00:21:31,906
+The second is energy consumed.
+
+
+407
+00:21:32,616 --> 00:21:35,546
+We're increasingly reliant on
+our batteries so it's important
+
+
+408
+00:21:35,546 --> 00:21:37,976
+that we get that
+performance while being aware
+
+
+409
+00:21:37,976 --> 00:21:39,226
+of the energy consumption.
+
+
+410
+00:21:39,796 --> 00:21:43,856
+To begin we'll look at the
+execution time and we'll do
+
+
+411
+00:21:43,856 --> 00:21:47,456
+that by looking at the
+speedup of vImage over OpenCV.
+
+
+412
+00:21:48,726 --> 00:21:52,646
+So on this graph I've
+got numbers where numbers
+
+
+413
+00:21:52,646 --> 00:21:56,296
+above 1 means vImage is going
+to be that many times faster
+
+
+414
+00:21:56,296 --> 00:22:00,256
+than OpenCV, and for numbers
+below 1 it means OpenCV is going
+
+
+415
+00:22:00,256 --> 00:22:00,846
+to be faster.
+
+
+416
+00:22:01,986 --> 00:22:05,236
+I've got a handful of operations
+here, and we see that vImage is
+
+
+417
+00:22:05,236 --> 00:22:10,006
+between 1.6 and over 20
+times faster than OpenCV,
+
+
+418
+00:22:10,956 --> 00:22:13,506
+so these are some really
+great performance results.
+
+
+419
+00:22:13,926 --> 00:22:16,386
+But as I mentioned, it's not
+just all about performance.
+
+
+420
+00:22:17,676 --> 00:22:20,736
+We're concerned also with energy
+consumption and battery life.
+
+
+421
+00:22:20,736 --> 00:22:25,706
+I want to explain this
+relationship between performance
+
+
+422
+00:22:25,706 --> 00:22:29,606
+and energy consumption and
+battery life a little bit,
+
+
+423
+00:22:29,606 --> 00:22:30,666
+and there's a few points.
+
+
+424
+00:22:30,936 --> 00:22:34,666
+First, fast code tends to
+decrease energy consumption,
+
+
+425
+00:22:35,736 --> 00:22:38,466
+therefore, fast code tends
+to increase battery life.
+
+
+426
+00:22:39,616 --> 00:22:41,626
+Let's look at why
+this tends to happen.
+
+
+427
+00:22:42,896 --> 00:22:46,216
+What I have here is a typical
+energy consumption profile.
+
+
+428
+00:22:46,636 --> 00:22:48,896
+So we're measuring the
+instantaneous power.
+
+
+429
+00:22:50,336 --> 00:22:52,636
+Energy is the area
+underneath that power curve.
+
+
+430
+00:22:53,206 --> 00:22:56,156
+So on the x-axis I've got time.
+
+
+431
+00:22:57,616 --> 00:23:01,186
+In the beginning, on the y-axis
+I've got our instantaneous
+
+
+432
+00:23:01,186 --> 00:23:01,896
+power measurement.
+
+
+433
+00:23:03,156 --> 00:23:05,096
+In the beginning we're
+running at some idle state
+
+
+434
+00:23:05,096 --> 00:23:08,116
+and using a very
+small amount of power.
+
+
+435
+00:23:08,116 --> 00:23:10,276
+At time t0 our application
+begins
+
+
+436
+00:23:10,686 --> 00:23:13,676
+and we increase the amount of
+power that we're consuming.
+
+
+437
+00:23:14,246 --> 00:23:16,106
+The application runs
+through time t1
+
+
+438
+00:23:16,106 --> 00:23:18,796
+and we return back
+to some idle state.
+
+
+439
+00:23:19,456 --> 00:23:23,366
+The amount of battery that we're
+using, the energy consumption,
+
+
+440
+00:23:23,366 --> 00:23:25,076
+is the area underneath
+this curve.
+
+
+441
+00:23:25,786 --> 00:23:27,986
+Let's look at how an
+optimized routine compares
+
+
+442
+00:23:27,986 --> 00:23:29,336
+to an unoptimized routine.
+
+
+443
+00:23:29,926 --> 00:23:34,256
+So here in blue I've got
+an optimized routine --
+
+
+444
+00:23:34,846 --> 00:23:35,806
+much faster.
+
+
+445
+00:23:36,476 --> 00:23:41,156
+In certain situations it's
+going to take more power to make
+
+
+446
+00:23:41,156 --> 00:23:45,216
+that routine run faster, but
+the important part here is
+
+
+447
+00:23:45,436 --> 00:23:47,936
+that the energy consumption
+is the area underneath,
+
+
+448
+00:23:48,056 --> 00:23:50,626
+and we can seek that the
+optimized routine is using
+
+
+449
+00:23:50,626 --> 00:23:52,126
+significantly less energy.
+
+
+450
+00:23:52,766 --> 00:23:58,176
+So now let's look at that
+same vImage OpenCV comparison
+
+
+451
+00:23:58,876 --> 00:24:00,416
+for the energy numbers.
+
+
+452
+00:24:01,856 --> 00:24:05,216
+So I've got the vImage energy
+savings over OpenCV here.
+
+
+453
+00:24:06,596 --> 00:24:10,656
+So again, numbers above
+1 means vImage is using
+
+
+454
+00:24:10,656 --> 00:24:12,686
+that much times less
+energy than OpenCV,
+
+
+455
+00:24:12,686 --> 00:24:17,156
+and for numbers below 1 it means
+OpenCV is using less energy.
+
+
+456
+00:24:18,916 --> 00:24:24,036
+This ranges from .75 up through
+almost 7 times less energy.
+
+
+457
+00:24:25,246 --> 00:24:27,226
+So we're delivering
+really great performance,
+
+
+458
+00:24:27,226 --> 00:24:30,496
+and we're also delivering
+really great energy savings.
+
+
+459
+00:24:31,456 --> 00:24:33,716
+This is what you can
+expect in your applications.
+
+
+460
+00:24:33,716 --> 00:24:40,436
+We love to get feedback about
+use of the Accelerate Framework
+
+
+461
+00:24:40,436 --> 00:24:44,066
+and we found this tweet I wanted
+to share with you: "Using vImage
+
+
+462
+00:24:44,096 --> 00:24:45,556
+from the Accelerate Framework
+
+
+463
+00:24:45,556 --> 00:24:47,496
+to dynamically prerender
+my spreads,
+
+
+464
+00:24:48,776 --> 00:24:54,216
+it's the only way
+to make it fast."
+
+
+465
+00:24:54,976 --> 00:24:57,326
+Now I want to move on
+to the next big category
+
+
+466
+00:24:57,426 --> 00:24:59,596
+of operations available on
+the Accelerate Framework
+
+
+467
+00:24:59,596 --> 00:25:02,346
+and that is digital
+signal processing.
+
+
+468
+00:25:02,906 --> 00:25:06,606
+You'll find digital
+signal processing in vDSP.
+
+
+469
+00:25:06,646 --> 00:25:10,136
+This is our Vectorized Digital
+Signal Processing library.
+
+
+470
+00:25:10,756 --> 00:25:17,166
+In vDSP you'll find basic
+operation on arrays, additions,
+
+
+471
+00:25:17,166 --> 00:25:22,206
+subtractions, multiplies,
+conversions, accumulations.
+
+
+472
+00:25:23,496 --> 00:25:26,326
+You'll also find discrete
+Fourier transforms,
+
+
+473
+00:25:26,326 --> 00:25:28,086
+discrete cosine transforms,
+
+
+474
+00:25:28,556 --> 00:25:31,036
+as well as convolutions
+and correlations.
+
+
+475
+00:25:31,596 --> 00:25:36,656
+In both iOS 7 and OS 10.9,
+
+
+476
+00:25:36,656 --> 00:25:39,056
+we've introduced some great
+new features and functionality.
+
+
+477
+00:25:39,716 --> 00:25:43,936
+The first of these is a
+multi-channel IIR filter.
+
+
+478
+00:25:44,076 --> 00:25:46,406
+This is an infinite
+impulse response filter.
+
+
+479
+00:25:46,976 --> 00:25:51,016
+So whereas before if you
+needed to perform an IIR filter
+
+
+480
+00:25:51,016 --> 00:25:54,336
+on multiple channels, maybe you
+have a surround sound system
+
+
+481
+00:25:54,336 --> 00:25:56,246
+that you want to
+filter, you'd have to do
+
+
+482
+00:25:56,246 --> 00:26:00,296
+that with individual
+calls into an IIR filter.
+
+
+483
+00:26:00,456 --> 00:26:02,136
+Now with this new
+multi-channel you can do
+
+
+484
+00:26:02,136 --> 00:26:05,426
+that with a single function
+call, and we've been able
+
+
+485
+00:26:05,426 --> 00:26:08,656
+to give you some great
+performance and energy savings
+
+
+486
+00:26:08,686 --> 00:26:11,256
+by doing that operation
+in a single function.
+
+
+487
+00:26:15,216 --> 00:26:17,286
+We've also improved
+power of 2 support
+
+
+488
+00:26:17,286 --> 00:26:19,636
+for the discrete
+Fourier transform
+
+
+489
+00:26:19,636 --> 00:26:21,556
+and the discrete
+cosine transform.
+
+
+490
+00:26:21,896 --> 00:26:24,706
+I want to talk about
+this with an example.
+
+
+491
+00:26:25,326 --> 00:26:32,026
+So before we essentially
+had two entry points
+
+
+492
+00:26:32,376 --> 00:26:35,146
+for the same operation based
+on the number of points
+
+
+493
+00:26:35,146 --> 00:26:36,316
+that you wanted to evaluate.
+
+
+494
+00:26:38,116 --> 00:26:40,696
+So if you had a power of 2,
+you would call into the FFT.
+
+
+495
+00:26:40,696 --> 00:26:45,856
+If you had a non-power of 2
+you would call into the DFT.
+
+
+496
+00:26:45,976 --> 00:26:48,876
+Starting in iOS 10.9 and iOS 7,
+
+
+497
+00:26:48,876 --> 00:26:53,456
+the DFT supports
+certain powers of 2.
+
+
+498
+00:26:53,696 --> 00:26:56,006
+When the DFT supports the
+number of points that you want
+
+
+499
+00:26:56,006 --> 00:27:00,666
+to compute, we recommend
+that you use the DFT.
+
+
+500
+00:27:00,876 --> 00:27:03,306
+So this brings up another
+question: How can I be sure
+
+
+501
+00:27:03,306 --> 00:27:04,896
+that my number of
+points is supported?
+
+
+502
+00:27:05,736 --> 00:27:08,226
+If you can't find it in the
+documentation for some reason,
+
+
+503
+00:27:08,566 --> 00:27:10,156
+you can always programmatically
+check.
+
+
+504
+00:27:11,146 --> 00:27:14,506
+The DFT is one of the routines
+that requires a setup structure,
+
+
+505
+00:27:15,146 --> 00:27:18,136
+and that setup structure
+is designed to return 0
+
+
+506
+00:27:18,136 --> 00:27:19,816
+if the number of
+points isn't supported.
+
+
+507
+00:27:20,276 --> 00:27:21,536
+You can always be sure
+
+
+508
+00:27:21,766 --> 00:27:24,276
+that you're using
+the correct routine.
+
+
+509
+00:27:24,276 --> 00:27:29,666
+Let's look at an
+example of the DFT.
+
+
+510
+00:27:31,156 --> 00:27:33,436
+Again, we'll start by including
+the Accelerate Framework,
+
+
+511
+00:27:34,756 --> 00:27:36,776
+then we're going to create
+and prepare our data.
+
+
+512
+00:27:36,776 --> 00:27:40,446
+In this case we've got 4
+buffers, 2 input buffers,
+
+
+513
+00:27:41,126 --> 00:27:46,406
+one for the real numbers and
+one for the imaginary numbers,
+
+
+514
+00:27:46,696 --> 00:27:48,836
+2 output buffers --
+again, one for the real
+
+
+515
+00:27:48,836 --> 00:27:49,916
+and one for the imaginary.
+
+
+516
+00:27:50,916 --> 00:27:52,576
+We want to align
+these if possible.
+
+
+517
+00:27:53,126 --> 00:27:58,526
+Then we're going to perform a
+DFT setup, and we're going to do
+
+
+518
+00:27:58,526 --> 00:28:00,616
+that with vDSP zop create setup.
+
+
+519
+00:28:01,896 --> 00:28:03,076
+Takes a few arguments.
+
+
+520
+00:28:03,796 --> 00:28:05,926
+The first argument
+is information
+
+
+521
+00:28:05,926 --> 00:28:08,076
+about any pervious setups
+that may have occurred.
+
+
+522
+00:28:08,256 --> 00:28:11,736
+We don't have one in this case
+so we'll pass zero or null.
+
+
+523
+00:28:12,536 --> 00:28:15,596
+The next is the number of points
+that we want to compute, 1024,
+
+
+524
+00:28:15,596 --> 00:28:19,976
+and then information that
+describes the DFT that we want
+
+
+525
+00:28:20,306 --> 00:28:23,566
+to perform, in this
+case the forward DFT.
+
+
+526
+00:28:24,726 --> 00:28:29,326
+Once we've created a setup,
+we're going to execute our DFT.
+
+
+527
+00:28:30,396 --> 00:28:33,836
+We do that with vDSP
+DFT execute,
+
+
+528
+00:28:33,836 --> 00:28:35,696
+takes that setup structure
+that we just created
+
+
+529
+00:28:35,696 --> 00:28:39,996
+and the 4 buffers that
+we had set up before.
+
+
+530
+00:28:39,996 --> 00:28:44,066
+Again, we want to do this
+as many times as we can
+
+
+531
+00:28:44,066 --> 00:28:45,826
+with that same setup structure.
+
+
+532
+00:28:45,906 --> 00:28:47,436
+We can use it over
+and over again.
+
+
+533
+00:28:48,546 --> 00:28:51,276
+Once we've done all the
+computation one time at the end,
+
+
+534
+00:28:51,276 --> 00:28:55,306
+then we want to clean up our
+setup with vDSP DFT Destroy.
+
+
+535
+00:28:56,046 --> 00:29:02,596
+So I want to do another
+comparison now vDSP versus FFTW.
+
+
+536
+00:29:04,126 --> 00:29:07,886
+FFTW is called Fastest
+Fourier Transform in the West.
+
+
+537
+00:29:09,016 --> 00:29:13,086
+This is another third party
+freely available library,
+
+
+538
+00:29:13,826 --> 00:29:14,536
+supports one
+
+
+539
+00:29:14,536 --> 00:29:16,446
+and multidimensional
+transformations,
+
+
+540
+00:29:17,356 --> 00:29:19,116
+both real and complex data.
+
+
+541
+00:29:19,836 --> 00:29:20,606
+It's parallel.
+
+
+542
+00:29:21,176 --> 00:29:24,936
+It's a good freely
+available library.
+
+
+543
+00:29:24,936 --> 00:29:26,126
+It's a fair comparison.
+
+
+544
+00:29:30,286 --> 00:29:33,126
+I'm going to show
+again the vDSP speedup
+
+
+545
+00:29:33,126 --> 00:29:35,746
+over FFTW on the iPhone 5.
+
+
+546
+00:29:37,206 --> 00:29:40,396
+So again, numbers above 1
+means vDSP is going to be
+
+
+547
+00:29:40,396 --> 00:29:43,366
+that many times faster than FFTW
+
+
+548
+00:29:43,976 --> 00:29:46,056
+and numbers below
+1 FFTW is going
+
+
+549
+00:29:46,056 --> 00:29:47,816
+to be faster than the vDSP.
+
+
+550
+00:29:48,616 --> 00:29:54,766
+Across the x-axis I have
+several number of points
+
+
+551
+00:29:54,766 --> 00:29:55,866
+that we're going to execute.
+
+
+552
+00:29:56,676 --> 00:29:58,536
+Let's take a look at the
+performance that we get.
+
+
+553
+00:29:58,536 --> 00:30:06,836
+We see that vDSP is between
+1.8 and about 2.5 times faster
+
+
+554
+00:30:06,886 --> 00:30:09,606
+than FFTW for all of these
+number of points that we looked
+
+
+555
+00:30:09,606 --> 00:30:12,336
+at -- some really great
+performance results.
+
+
+556
+00:30:12,876 --> 00:30:16,376
+It's one thing to look
+at benchmarks, though.
+
+
+557
+00:30:17,476 --> 00:30:19,986
+It's another thing to
+look at the performance
+
+
+558
+00:30:19,986 --> 00:30:22,586
+that you can expect
+from a real application.
+
+
+559
+00:30:23,166 --> 00:30:28,536
+So imagine you need to code an
+audio signal using AAC enhanced
+
+
+560
+00:30:28,656 --> 00:30:29,156
+low delay.
+
+
+561
+00:30:30,656 --> 00:30:34,066
+This is a process
+that's done in face time.
+
+
+562
+00:30:34,846 --> 00:30:38,336
+The DFT is one of many of
+the DFT routines in use,
+
+
+563
+00:30:38,386 --> 00:30:40,026
+but it's the only one that
+we're looking at here.
+
+
+564
+00:30:40,026 --> 00:30:43,346
+And we're going to look at this
+by looking at the percentage
+
+
+565
+00:30:43,346 --> 00:30:49,696
+of time that we spend
+in the DFT.
+
+
+566
+00:30:49,906 --> 00:30:52,636
+So what I've got here is the
+percentage of time for the DFT
+
+
+567
+00:30:52,636 --> 00:30:58,706
+at 54% and at 47% is everything
+else in the operation.
+
+
+568
+00:30:59,196 --> 00:31:02,816
+This is when we're
+linking against FFTW.
+
+
+569
+00:31:02,816 --> 00:31:07,156
+The only thing we change
+is we link against vDSP
+
+
+570
+00:31:07,156 --> 00:31:10,236
+so that we get the
+DFT out of vDSP.
+
+
+571
+00:31:10,236 --> 00:31:13,086
+And let's look at
+how this changes.
+
+
+572
+00:31:17,116 --> 00:31:20,036
+When the DFT is replaced
+with the DFT out of VDSP,
+
+
+573
+00:31:20,036 --> 00:31:22,676
+the time spent goes to 30%.
+
+
+574
+00:31:23,446 --> 00:31:26,576
+This translates to significant
+performance and energy savings.
+
+
+575
+00:31:27,966 --> 00:31:30,346
+This is what you can
+expect in your applications.
+
+
+576
+00:31:30,886 --> 00:31:37,766
+A little bit more details
+about what VDSP supports.
+
+
+577
+00:31:38,296 --> 00:31:42,386
+It supports single and
+double precision, both real
+
+
+578
+00:31:42,386 --> 00:31:45,956
+and complex values,
+as well as strided
+
+
+579
+00:31:45,956 --> 00:31:47,596
+and non-strided data accesses.
+
+
+580
+00:31:48,166 --> 00:31:52,386
+So again, we love
+to get feedback.
+
+
+581
+00:31:52,386 --> 00:31:55,276
+Another tweet about using vDSP.
+
+
+582
+00:31:55,566 --> 00:31:57,166
+Want to do FFT on iOS?
+
+
+583
+00:31:57,416 --> 00:31:58,776
+Use the Accelerate Framework.
+
+
+584
+00:31:59,226 --> 00:32:00,296
+Highly recommended.
+
+
+585
+00:32:01,516 --> 00:32:02,006
+Thank you.
+
+
+586
+00:32:02,586 --> 00:32:06,686
+So now I want to move on to
+transcendental math functions.
+
+
+587
+00:32:06,926 --> 00:32:08,706
+And for that, I'm going
+to turn it over to Luke.
+
+
+588
+00:32:10,146 --> 00:32:10,786
+>> Luke: Hello, everyone.
+
+
+589
+00:32:10,786 --> 00:32:12,376
+My name's Luke Chang.
+
+
+590
+00:32:12,896 --> 00:32:14,826
+I'm here to talk
+about math functions.
+
+
+591
+00:32:15,676 --> 00:32:19,936
+In our group, we support
+math for every data level.
+
+
+592
+00:32:20,966 --> 00:32:26,116
+For scaled data, we have
+libem, takes a scalar input,
+
+
+593
+00:32:26,226 --> 00:32:28,286
+returns a scalar output.
+
+
+594
+00:32:29,256 --> 00:32:33,566
+If you're writing vector
+code, we have the method.
+
+
+595
+00:32:34,786 --> 00:32:36,656
+It takes a SIMD vector S input
+
+
+596
+00:32:36,656 --> 00:32:39,236
+and then return a
+SIMD vector S output.
+
+
+597
+00:32:39,736 --> 00:32:44,656
+And you want to handle a lot
+of data, will have vForce.
+
+
+598
+00:32:45,786 --> 00:32:48,766
+It takes Arias input and
+then returns Arias output.
+
+
+599
+00:32:48,766 --> 00:32:51,956
+We're going to talk
+about them one by one.
+
+
+600
+00:32:52,756 --> 00:32:54,556
+First, libem.
+
+
+601
+00:32:54,936 --> 00:33:00,766
+It's a standard C math
+library, it has a collection
+
+
+602
+00:33:00,766 --> 00:33:05,426
+of [inaudible] like
+exponents, logarithm,
+
+
+603
+00:33:06,286 --> 00:33:08,056
+trigonometry, power functions.
+
+
+604
+00:33:09,036 --> 00:33:12,206
+You're probably very familiar
+with it, so I'm going to talk
+
+
+605
+00:33:12,206 --> 00:33:14,806
+about what we added
+this year for libem.
+
+
+606
+00:33:15,366 --> 00:33:20,476
+What we added is an
+extension to the C11 standard,
+
+
+607
+00:33:20,476 --> 00:33:23,766
+so we prefixed the function
+name with double underscores.
+
+
+608
+00:33:25,046 --> 00:33:30,056
+They are available on both
+iOS 7 and Mac OS 10.9.
+
+
+609
+00:33:30,856 --> 00:33:35,696
+They are power of 10 function,
+trigonometry in terms of pi,
+
+
+610
+00:33:36,746 --> 00:33:38,206
+and sine and cosine pairs.
+
+
+611
+00:33:38,676 --> 00:33:44,386
+First, power of 10, why
+do we add power of 10?
+
+
+612
+00:33:45,486 --> 00:33:48,226
+It's a very common operation
+in decimal calculation,
+
+
+613
+00:33:48,976 --> 00:33:52,586
+so if you're writing audio apps,
+you need quite a lot of it.
+
+
+614
+00:33:53,586 --> 00:33:57,946
+Without a specific power of 10
+function you have 2 options --
+
+
+615
+00:33:59,026 --> 00:34:03,166
+one, to use Pow and use
+constant 10 as base.
+
+
+616
+00:34:04,046 --> 00:34:08,295
+However, this is inefficient,
+because Pow is designed
+
+
+617
+00:34:08,295 --> 00:34:09,716
+to handle generic inputs.
+
+
+618
+00:34:10,766 --> 00:34:13,786
+if you know your base is a
+constant, there are a lot
+
+
+619
+00:34:13,786 --> 00:34:18,116
+of optimization that we can
+do to make it go faster.
+
+
+620
+00:34:18,896 --> 00:34:21,235
+The other way is to use X.
+
+
+621
+00:34:22,326 --> 00:34:27,136
+You can prescale your input
+by log(10) to do power of 10.
+
+
+622
+00:34:28,456 --> 00:34:30,746
+But it has its own problem.
+
+
+623
+00:34:31,146 --> 00:34:31,976
+It's not accurate.
+
+
+624
+00:34:32,436 --> 00:34:34,876
+There's routing error
+in the multiplication.
+
+
+625
+00:34:35,766 --> 00:34:39,815
+For example, if you
+want to calculate 10(5),
+
+
+626
+00:34:40,406 --> 00:34:44,726
+using this method, you will
+not exactly get 100,000.
+
+
+627
+00:34:45,356 --> 00:34:46,966
+There's a small error
+at the end.
+
+
+628
+00:34:48,456 --> 00:34:52,406
+That's why we added
+X(10) so you can do power
+
+
+629
+00:34:52,406 --> 00:34:56,085
+of 10 faster and more accurate.
+
+
+630
+00:34:57,266 --> 00:35:00,486
+Next is trigonometry
+function in terms of pi.
+
+
+631
+00:35:01,836 --> 00:35:04,926
+Basically it's the same
+regular trigonometry function
+
+
+632
+00:35:04,926 --> 00:35:06,856
+with your input scale by pi.
+
+
+633
+00:35:07,546 --> 00:35:12,076
+It is faster because we can do
+automatic reductions faster.
+
+
+634
+00:35:12,566 --> 00:35:16,246
+It's much easier to reduce
+the argument by multiple of 2
+
+
+635
+00:35:16,786 --> 00:35:20,576
+than multiple of 2 pi.
+
+
+636
+00:35:20,576 --> 00:35:23,946
+It's also more accurate when
+you're dealing with degrees.
+
+
+637
+00:35:25,256 --> 00:35:29,576
+For example, if you want to
+calculate cosine of 90 degrees,
+
+
+638
+00:35:30,716 --> 00:35:32,726
+90 degrees [inaudible]
+into 1/2 pi.
+
+
+639
+00:35:33,696 --> 00:35:36,076
+With the regular trigonometry
+function you will have
+
+
+640
+00:35:36,076 --> 00:35:42,576
+to say cos pi x 0.5, and
+you will not get 0 back;
+
+
+641
+00:35:42,576 --> 00:35:44,056
+you will get a very
+small number,
+
+
+642
+00:35:44,646 --> 00:35:48,026
+because pi is not so accurate.
+
+
+643
+00:35:49,386 --> 00:35:56,016
+So if you use cos pi 0.5,
+you will get exactly 0 back.
+
+
+644
+00:35:56,556 --> 00:36:01,936
+There's no error
+sine/cosine pairs.
+
+
+645
+00:36:03,276 --> 00:36:05,096
+A lot of times when
+you can't really sine,
+
+
+646
+00:36:05,096 --> 00:36:07,656
+you'll need cosine
+for the same value.
+
+
+647
+00:36:08,086 --> 00:36:11,826
+For example, if you want to do
+a polar 2 [inaudible] conversion
+
+
+648
+00:36:11,826 --> 00:36:17,726
+you will need cosine for the
+x-axis and sine for the y-axis.
+
+
+649
+00:36:19,956 --> 00:36:22,276
+Because we do it simultaneously,
+
+
+650
+00:36:22,506 --> 00:36:24,296
+there is only one
+argument reduction.
+
+
+651
+00:36:24,856 --> 00:36:28,196
+You will have to do the argument
+reduction twice to save time.
+
+
+652
+00:36:28,196 --> 00:36:31,366
+And what's even better is
+
+
+653
+00:36:31,366 --> 00:36:34,026
+that compiler recognize
+we have sine cos,
+
+
+654
+00:36:34,546 --> 00:36:39,316
+so you will optimize your
+code into calling sine cos,
+
+
+655
+00:36:39,776 --> 00:36:40,866
+without even knowing it.
+
+
+656
+00:36:41,716 --> 00:36:46,646
+Of course, if you want to call
+sine cos yourself, you can.
+
+
+657
+00:36:47,356 --> 00:36:52,966
+We also added C11
+support for CMPLX.
+
+
+658
+00:36:54,846 --> 00:36:57,576
+This macro is used to
+define a complex number.
+
+
+659
+00:36:58,916 --> 00:37:01,176
+Without this, you're more likely
+
+
+660
+00:37:01,176 --> 00:37:05,716
+to do the real part
++ imaginary part x I.
+
+
+661
+00:37:06,696 --> 00:37:10,836
+But in that expression, there's
+addition and a multiplication
+
+
+662
+00:37:10,836 --> 00:37:15,376
+in it, so sometimes you will
+not get what you expect --
+
+
+663
+00:37:15,376 --> 00:37:19,116
+like this example:
+0.0 + infinity x I.
+
+
+664
+00:37:20,876 --> 00:37:24,866
+Using CMPLX allows you
+to specify the real part
+
+
+665
+00:37:24,866 --> 00:37:27,976
+and the imaginary part of
+the complex number directly,
+
+
+666
+00:37:28,516 --> 00:37:30,466
+so you don't have to worry
+about multiplication.
+
+
+667
+00:37:31,016 --> 00:37:37,786
+We also have CMPLXF and CMPLXL
+for float and load level.
+
+
+668
+00:37:39,196 --> 00:37:41,766
+So that's the new
+addition to libem.
+
+
+669
+00:37:42,896 --> 00:37:46,566
+Vmathlib is a SIMD
+vector math library.
+
+
+670
+00:37:47,416 --> 00:37:51,406
+It is designed to take
+a SIMD vector as input
+
+
+671
+00:37:51,486 --> 00:37:53,236
+and then return a SIMD vector.
+
+
+672
+00:37:54,926 --> 00:37:57,196
+Similar to libem,
+it has a collection
+
+
+673
+00:37:57,196 --> 00:37:57,796
+of [inaudible] functions.
+
+
+674
+00:37:58,516 --> 00:38:04,436
+We prefix the function then
+with a single V, so we have VX,
+
+
+675
+00:38:04,436 --> 00:38:06,986
+Vlog, Vsine, et cetera.
+
+
+676
+00:38:07,426 --> 00:38:11,146
+You want to use V method
+
+
+677
+00:38:11,146 --> 00:38:12,846
+when you're writing
+your own vector code.
+
+
+678
+00:38:14,136 --> 00:38:18,626
+Accelerate Framework provide a
+wide range of functionalities,
+
+
+679
+00:38:19,236 --> 00:38:21,766
+but sometimes you have
+your own special algorithm
+
+
+680
+00:38:21,766 --> 00:38:24,176
+that you write, and
+you want to be fast,
+
+
+681
+00:38:24,606 --> 00:38:25,746
+so you write in vector code.
+
+
+682
+00:38:26,176 --> 00:38:28,926
+What if you need
+the, for example?
+
+
+683
+00:38:31,126 --> 00:38:35,436
+You could use libem and then
+use a for loop to iterate
+
+
+684
+00:38:35,436 --> 00:38:39,116
+through each of your
+element in the SIMD vector.
+
+
+685
+00:38:39,896 --> 00:38:43,566
+But obviously you're not
+going to take full advantage
+
+
+686
+00:38:43,566 --> 00:38:49,346
+of the vector unit, so we
+can replace it with Vmathlib.
+
+
+687
+00:38:51,796 --> 00:38:55,846
+Instead of including Math.H,
+you include accelerator header,
+
+
+688
+00:38:55,846 --> 00:38:58,486
+accelerator.h. Instead of the
+
+
+689
+00:38:58,546 --> 00:39:02,326
+for loop you make one
+function call to VsineF.
+
+
+690
+00:39:02,716 --> 00:39:04,156
+You will take your SIMD vector
+
+
+691
+00:39:04,156 --> 00:39:07,256
+and then return the
+result SIMD vector.
+
+
+692
+00:39:07,846 --> 00:39:09,566
+But you can go on
+with your vector code.
+
+
+693
+00:39:10,996 --> 00:39:14,506
+The code looks simpler,
+cleaner, and it's also faster.
+
+
+694
+00:39:14,506 --> 00:39:16,656
+So it's VMathlib.
+
+
+695
+00:39:16,656 --> 00:39:20,986
+You use it when you write
+your own vector code.
+
+
+696
+00:39:21,896 --> 00:39:23,656
+Next, vForce.
+
+
+697
+00:39:24,676 --> 00:39:27,116
+vForce is designed to
+handle a lot of data,
+
+
+698
+00:39:27,816 --> 00:39:29,896
+called the vectorized
+math library.
+
+
+699
+00:39:30,506 --> 00:39:34,076
+It works on arrays, so it
+prefix the function then
+
+
+700
+00:39:34,076 --> 00:39:39,246
+with double Vs, VVX,
+VVlog, VVSine, et cetera.
+
+
+701
+00:39:39,246 --> 00:39:44,486
+Let's say you want to write
+a signal generator app
+
+
+702
+00:39:44,486 --> 00:39:47,166
+and you want to generate
+a sine wave, for example.
+
+
+703
+00:39:47,736 --> 00:39:52,366
+You can do it with Libem,
+again, write a for loop,
+
+
+704
+00:39:52,366 --> 00:39:54,336
+go through each element
+in your buffer --
+
+
+705
+00:39:54,906 --> 00:39:58,636
+you could do better
+by using vForce.
+
+
+706
+00:39:59,536 --> 00:40:00,036
+Here's how.
+
+
+707
+00:40:02,296 --> 00:40:04,036
+Instead of using a for loop,
+
+
+708
+00:40:04,706 --> 00:40:07,056
+you make one function
+call to VV Sine F.
+
+
+709
+00:40:08,136 --> 00:40:10,996
+You're passing the upper
+buffer, inner buffer,
+
+
+710
+00:40:10,996 --> 00:40:12,956
+and the pointer to the length.
+
+
+711
+00:40:14,476 --> 00:40:17,466
+The generator sine will be
+ready in the upper buffer right
+
+
+712
+00:40:17,466 --> 00:40:18,636
+after this function call.
+
+
+713
+00:40:19,086 --> 00:40:22,666
+Again, the code looks
+simpler, cleaner,
+
+
+714
+00:40:22,666 --> 00:40:26,196
+and most importantly, is faster.
+
+
+715
+00:40:27,376 --> 00:40:30,616
+Let's look at the performance
+measured on the iPhone 5.
+
+
+716
+00:40:30,796 --> 00:40:36,406
+As you can see, vForce
+is more than twice faster
+
+
+717
+00:40:36,626 --> 00:40:37,666
+than using a for loop.
+
+
+718
+00:40:38,546 --> 00:40:41,016
+Within the same amount of
+time it can generate more
+
+
+719
+00:40:41,016 --> 00:40:44,126
+than twice the restful
+than the for loop.
+
+
+720
+00:40:45,176 --> 00:40:46,196
+This is not it.
+
+
+721
+00:40:47,056 --> 00:40:49,726
+It also has great
+energy performance.
+
+
+722
+00:40:50,616 --> 00:40:53,116
+It use lot less energy
+than using a for loop.
+
+
+723
+00:40:53,696 --> 00:40:58,736
+It use about only
+60% of the energy
+
+
+724
+00:41:00,016 --> 00:41:04,116
+when you use vForce
+compared to a for loop.
+
+
+725
+00:41:05,576 --> 00:41:10,396
+So your app will last longer,
+you will not drain the battery,
+
+
+726
+00:41:10,506 --> 00:41:15,116
+and we did not cherry
+pick just VVSineF
+
+
+727
+00:41:15,116 --> 00:41:16,246
+to show you the performance.
+
+
+728
+00:41:16,686 --> 00:41:18,926
+There is performance
+improvement across the board.
+
+
+729
+00:41:19,726 --> 00:41:21,756
+The graph doesn't even
+fit into the screen.
+
+
+730
+00:41:22,146 --> 00:41:25,876
+For the Trunk F, vForce is
+more than 5 times faster
+
+
+731
+00:41:25,876 --> 00:41:27,106
+than using a for loop.
+
+
+732
+00:41:27,546 --> 00:41:30,846
+For all other functions they
+are at least twice faster
+
+
+733
+00:41:30,846 --> 00:41:32,446
+than using a for loop.
+
+
+734
+00:41:34,856 --> 00:41:36,916
+A few words about vForce.
+
+
+735
+00:41:36,916 --> 00:41:38,646
+vForce supports single
+
+
+736
+00:41:38,646 --> 00:41:40,436
+and double precision
+floating point numbers.
+
+
+737
+00:41:40,436 --> 00:41:44,926
+It handle Edge cases currently,
+so if you have infinities
+
+
+738
+00:41:44,926 --> 00:41:47,856
+or nins in your input, you
+don't have to worry about them.
+
+
+739
+00:41:48,656 --> 00:41:51,156
+vForce will handle the
+Edge cases correctly.
+
+
+740
+00:41:51,606 --> 00:41:55,476
+vForce require minimal
+data alignment.
+
+
+741
+00:41:56,226 --> 00:41:58,156
+We only require native
+data alignment
+
+
+742
+00:41:58,226 --> 00:42:01,646
+for a single precision floating
+number that's 4 bytes aligned,
+
+
+743
+00:42:02,106 --> 00:42:04,656
+double precision floating point
+number is 8 bytes aligned.
+
+
+744
+00:42:05,676 --> 00:42:08,506
+Supports in place
+operation, so you don't have
+
+
+745
+00:42:08,506 --> 00:42:09,986
+to create a temporary buffer.
+
+
+746
+00:42:09,986 --> 00:42:11,796
+That minimize the
+memory movement.
+
+
+747
+00:42:12,216 --> 00:42:16,146
+We get this question a lot.
+
+
+748
+00:42:16,406 --> 00:42:20,876
+Like Jeff mentioned before,
+how much data is enough,
+
+
+749
+00:42:21,206 --> 00:42:25,826
+so using vForce or any other
+server function is beneficial?
+
+
+750
+00:42:27,686 --> 00:42:32,056
+Well, for vForce, I can give
+a rule of thumb; that is,
+
+
+751
+00:42:32,056 --> 00:42:36,306
+if you have more than 16
+elements in your array,
+
+
+752
+00:42:36,306 --> 00:42:37,486
+consider using vForce.
+
+
+753
+00:42:38,126 --> 00:42:42,446
+Of course, the actual crossover
+point may vary for each function
+
+
+754
+00:42:42,446 --> 00:42:46,046
+in vForce, but if you
+have more than 16,
+
+
+755
+00:42:46,046 --> 00:42:49,006
+you're probably good to go.
+
+
+756
+00:42:49,006 --> 00:42:49,996
+So that's vForce.
+
+
+757
+00:42:49,996 --> 00:42:52,856
+I'm going to hand the
+presentation back to Jeff.
+
+
+758
+00:42:52,856 --> 00:42:54,316
+He'll talk about linear algebra,
+
+
+759
+00:42:54,316 --> 00:42:56,186
+my favorite section
+of the presentation.
+
+
+760
+00:42:57,516 --> 00:43:00,816
+[Applause]
+
+
+761
+00:43:01,316 --> 00:43:01,826
+>> Jeff: Thanks, Luke.
+
+
+762
+00:43:03,216 --> 00:43:06,546
+So for linear algebra we've got
+the industry standard LAPACK
+
+
+763
+00:43:06,716 --> 00:43:08,126
+and BLAS libraries.
+
+
+764
+00:43:08,766 --> 00:43:10,846
+LAPACK is linear
+algebra package,
+
+
+765
+00:43:11,636 --> 00:43:14,356
+and BLAS is basic linear
+algebra subprograms.
+
+
+766
+00:43:15,266 --> 00:43:17,046
+Let's begin with LAPACK.
+
+
+767
+00:43:17,876 --> 00:43:21,066
+In LAPACK you'll find high level
+linear algebra functionality.
+
+
+768
+00:43:22,206 --> 00:43:24,366
+This includes things
+like solving systems
+
+
+769
+00:43:24,366 --> 00:43:28,086
+of linear equations, performing
+matrix factorizations,
+
+
+770
+00:43:29,226 --> 00:43:31,946
+as well as computing eigen
+values and eigen vectors.
+
+
+771
+00:43:32,426 --> 00:43:37,346
+One of the great ways to tell
+how you're doing with LAPACK
+
+
+772
+00:43:37,346 --> 00:43:39,466
+and BLAS is to look at
+the LINPACK benchmark.
+
+
+773
+00:43:40,486 --> 00:43:42,176
+So as I mentioned these
+are industry standard.
+
+
+774
+00:43:42,176 --> 00:43:44,476
+They've been around a
+long time, and people came
+
+
+775
+00:43:44,476 --> 00:43:46,556
+up with LINPACK benchmark
+to see how they're doing.
+
+
+776
+00:43:48,586 --> 00:43:51,676
+LINPACK benchmark is essentially
+answering the question,
+
+
+777
+00:43:51,676 --> 00:43:54,356
+how fast can you solve a
+system of linear equations?
+
+
+778
+00:43:55,786 --> 00:43:57,956
+There's a couple variations
+of the LINPACK benchmark.
+
+
+779
+00:43:58,736 --> 00:44:01,436
+The one that we're going to
+look at here is using a matrix
+
+
+780
+00:44:01,436 --> 00:44:03,466
+of 1,000 x 1,000 elements.
+
+
+781
+00:44:03,846 --> 00:44:06,846
+Let's look at the performance.
+
+
+782
+00:44:07,386 --> 00:44:13,106
+So this is the LINPACK
+performance of Brand A.
+
+
+783
+00:44:13,486 --> 00:44:15,646
+Two years ago we
+did this comparison
+
+
+784
+00:44:15,726 --> 00:44:17,206
+and we compared Brand A.
+
+
+785
+00:44:17,846 --> 00:44:20,416
+We looked around at all
+the published benchmarks
+
+
+786
+00:44:20,416 --> 00:44:23,216
+that we could find, and
+they were at 40 megaflops.
+
+
+787
+00:44:23,736 --> 00:44:27,466
+In 2 years, there's
+been a lot of time,
+
+
+788
+00:44:27,536 --> 00:44:31,176
+improvements have been
+made, and that performance
+
+
+789
+00:44:31,176 --> 00:44:35,316
+for Brand A has come
+up to 788 megaflops,
+
+
+790
+00:44:35,796 --> 00:44:39,236
+just under a gigaflop
+-- pretty good.
+
+
+791
+00:44:39,236 --> 00:44:42,006
+Let's look at the performance
+
+
+792
+00:44:42,006 --> 00:44:44,606
+of the LINPACK benchmark using
+the Accelerate Framework.
+
+
+793
+00:44:49,036 --> 00:44:52,856
+1200 megaflops --
+this is 1.2 gigaflops.
+
+
+794
+00:44:53,516 --> 00:44:54,266
+This is pretty good.
+
+
+795
+00:44:55,506 --> 00:44:56,486
+There's just one thing.
+
+
+796
+00:44:57,926 --> 00:44:59,066
+We've had 2 years, too.
+
+
+797
+00:44:59,686 --> 00:45:04,376
+This is the performance
+running on the iPhone 4S.
+
+
+798
+00:45:04,376 --> 00:45:07,216
+Let's look at the performance
+
+
+799
+00:45:07,216 --> 00:45:19,096
+of the Accelerate Framework
+running on the iPhone 5.
+
+
+800
+00:45:19,096 --> 00:45:20,386
+It's quite a bit better.
+
+
+801
+00:45:21,756 --> 00:45:22,156
+Thank you.
+
+
+802
+00:45:25,076 --> 00:45:27,736
+Well, LINPACK benchmark using
+the Accelerate Framework
+
+
+803
+00:45:27,736 --> 00:45:31,326
+on the iPhone 5 is
+at 3,400 megaflops.
+
+
+804
+00:45:31,846 --> 00:45:33,896
+That's 3.4 gigaflops.
+
+
+805
+00:45:34,516 --> 00:45:36,736
+This is a phone that
+fits in your pocket
+
+
+806
+00:45:36,776 --> 00:45:37,906
+and runs on a battery.
+
+
+807
+00:45:38,416 --> 00:45:39,626
+This is really impressive.
+
+
+808
+00:45:40,126 --> 00:45:44,306
+As I said, the LINPACK
+benchmark's been
+
+
+809
+00:45:44,306 --> 00:45:47,436
+around for awhile, and so
+we wanted to do a comparison
+
+
+810
+00:45:47,436 --> 00:45:48,766
+to an older machine for fun.
+
+
+811
+00:45:49,636 --> 00:45:51,396
+And so we're going
+to compare the iPad
+
+
+812
+00:45:51,426 --> 00:45:54,156
+with the Retina display
+to a Power Mac G5.
+
+
+813
+00:45:54,156 --> 00:45:58,856
+For those of you that have
+been around for awhile,
+
+
+814
+00:45:58,856 --> 00:46:01,726
+you might remember some of the
+bake-offs with the Power Mac G5,
+
+
+815
+00:46:02,326 --> 00:46:04,916
+so we're having a
+triumphant return.
+
+
+816
+00:46:05,926 --> 00:46:07,426
+This is a 10-year old machine,
+
+
+817
+00:46:08,336 --> 00:46:10,666
+and if any of you remember
+this machine, it's returning
+
+
+818
+00:46:10,666 --> 00:46:11,996
+with all fans blazing.
+
+
+819
+00:46:12,636 --> 00:46:15,176
+I think there's 7 case
+fans, when you turn it
+
+
+820
+00:46:15,176 --> 00:46:17,156
+on you know it's in the room.
+
+
+821
+00:46:17,626 --> 00:46:20,166
+When you run LINPACK benchmark,
+sounds like you're driving
+
+
+822
+00:46:20,166 --> 00:46:21,826
+down the highway with
+your head out the window.
+
+
+823
+00:46:22,026 --> 00:46:25,046
+Let's look at the performance.
+
+
+824
+00:46:27,166 --> 00:46:33,116
+LINPACK benchmark on Power
+Mac G5 is 3,643 megaflops.
+
+
+825
+00:46:34,406 --> 00:46:36,106
+Let's see how the iPad compares.
+
+
+826
+00:46:38,606 --> 00:46:42,806
+Just edges it out at
+3,686 megaflops --
+
+
+827
+00:46:43,316 --> 00:46:45,446
+pretty impressive
+for a little tablet.
+
+
+828
+00:46:48,116 --> 00:46:48,816
+Thank you.
+
+
+829
+00:46:53,306 --> 00:46:56,156
+Let's look at an example
+of how to use a LAPACK.
+
+
+830
+00:46:56,656 --> 00:46:58,236
+As always, we'll begin
+
+
+831
+00:46:58,236 --> 00:47:00,466
+by including the
+Accelerate Framework header,
+
+
+832
+00:47:00,466 --> 00:47:03,886
+and then we're going to
+create and prepare our data,
+
+
+833
+00:47:04,426 --> 00:47:07,676
+so we'll create 2 major Cs, A
+and B, which describe our system
+
+
+834
+00:47:07,676 --> 00:47:08,446
+that we want to solve.
+
+
+835
+00:47:09,886 --> 00:47:13,216
+In this case, we're going to
+use a system solve that's going
+
+
+836
+00:47:13,216 --> 00:47:16,446
+to perform pivoting, so we need
+a vector to contain information
+
+
+837
+00:47:16,446 --> 00:47:17,956
+about the pivots that
+we're going to perform,
+
+
+838
+00:47:18,856 --> 00:47:22,286
+and then we're going to
+perform this all with DGESV.
+
+
+839
+00:47:23,536 --> 00:47:25,146
+There's a couple things
+I want to point out.
+
+
+840
+00:47:25,956 --> 00:47:28,556
+So as I mentioned, the
+LAPAC is industry standard,
+
+
+841
+00:47:28,556 --> 00:47:30,736
+it's been around for awhile.
+
+
+842
+00:47:30,996 --> 00:47:33,056
+It's originally written
+in FORTRAN and maintained
+
+
+843
+00:47:33,056 --> 00:47:35,546
+in FORTRAN, so the entry
+points look like this.
+
+
+844
+00:47:35,546 --> 00:47:38,496
+It's going to be DGSB
+followed by an underbar.
+
+
+845
+00:47:39,506 --> 00:47:41,636
+It also means that all the
+values are going to be passed
+
+
+846
+00:47:41,636 --> 00:47:44,156
+by reference, must
+something to be aware of.
+
+
+847
+00:47:44,156 --> 00:47:47,086
+It's pretty easy to get
+tripped up with this.
+
+
+848
+00:47:47,296 --> 00:47:50,916
+But to perform the system solve,
+we simply pass in the size
+
+
+849
+00:47:50,916 --> 00:47:53,976
+of the matrix in N, the
+number of right-hand sides
+
+
+850
+00:47:53,976 --> 00:47:55,906
+which is the number of systems
+that we're going to solve,
+
+
+851
+00:47:57,156 --> 00:47:59,446
+the matrix, the leading
+dimension of the matrix,
+
+
+852
+00:47:59,946 --> 00:48:03,046
+and then the pivot
+vector that we created,
+
+
+853
+00:48:03,956 --> 00:48:05,446
+and that right-hand sides B.
+
+
+854
+00:48:06,616 --> 00:48:10,206
+Info will capture any errors
+that happen in this operation.
+
+
+855
+00:48:10,746 --> 00:48:12,346
+It's pretty easy
+to solve a system
+
+
+856
+00:48:12,346 --> 00:48:16,816
+with linear equations
+with a LAPACK.
+
+
+857
+00:48:17,036 --> 00:48:18,066
+Next is BLAS.
+
+
+858
+00:48:18,376 --> 00:48:23,186
+So a LAPACK is the higher level
+linear algebra operations.
+
+
+859
+00:48:23,266 --> 00:48:24,986
+It's built heavily on BLAS,
+
+
+860
+00:48:25,016 --> 00:48:27,046
+the lower level linear
+algebra operations.
+
+
+861
+00:48:27,806 --> 00:48:30,186
+All of BLAS is available through
+the Accelerate Framework.
+
+
+862
+00:48:31,216 --> 00:48:34,216
+It's typically broken down
+into three categories:
+
+
+863
+00:48:34,666 --> 00:48:38,396
+vector operations -- this is
+DOT product, scalar product,
+
+
+864
+00:48:38,396 --> 00:48:41,796
+vector sums, matrix
+vector operations,
+
+
+865
+00:48:41,996 --> 00:48:44,986
+matrix vector product,
+outer product,
+
+
+866
+00:48:45,516 --> 00:48:49,236
+and matrix/matrix operations,
+like matrix multiply.
+
+
+867
+00:48:49,906 --> 00:48:53,766
+Let's look at an example
+of how to use BLAS
+
+
+868
+00:48:53,766 --> 00:48:54,826
+in the Accelerate Framework.
+
+
+869
+00:48:55,336 --> 00:48:59,016
+We'll begin by including the
+Accelerate Framework header.
+
+
+870
+00:48:59,876 --> 00:49:02,296
+As always we'll create
+and prepare our data,
+
+
+871
+00:49:02,336 --> 00:49:04,766
+so we'll align these
+buffers if we can.
+
+
+872
+00:49:05,296 --> 00:49:09,786
+In this case we have 2
+operands matrices A and B,
+
+
+873
+00:49:09,786 --> 00:49:11,376
+and the result matrix C.
+
+
+874
+00:49:15,516 --> 00:49:20,636
+And then we're going to
+call into C BLAS DGEM.
+
+
+875
+00:49:20,636 --> 00:49:22,846
+BLAS supports both
+row and call major,
+
+
+876
+00:49:22,846 --> 00:49:24,906
+so the first argument is
+going to be to specify
+
+
+877
+00:49:24,906 --> 00:49:26,206
+if we're a row or call major.
+
+
+878
+00:49:27,236 --> 00:49:30,756
+The next 2 arguments specify if
+we want to perform a transpose
+
+
+879
+00:49:30,756 --> 00:49:32,216
+on the 2 operand matrices.
+
+
+880
+00:49:32,736 --> 00:49:36,166
+It's important with BLAS
+and a LAPACK to understand
+
+
+881
+00:49:36,166 --> 00:49:38,676
+that these transposes
+don't actually happen;
+
+
+882
+00:49:39,046 --> 00:49:40,686
+the operation is
+organized as such
+
+
+883
+00:49:40,716 --> 00:49:43,836
+that they are implied
+as transposes.
+
+
+884
+00:49:45,016 --> 00:49:48,376
+And then the last
+several parameters
+
+
+885
+00:49:48,376 --> 00:49:50,376
+for this argument are
+information about the size
+
+
+886
+00:49:50,376 --> 00:49:52,306
+of the matrix, the
+matrices themselves,
+
+
+887
+00:49:52,306 --> 00:49:56,216
+their leading dimensions,
+and any scalar values
+
+
+888
+00:49:56,216 --> 00:49:58,666
+which will scale the
+operands or a result matrix.
+
+
+889
+00:50:02,876 --> 00:50:06,006
+Just to cover some of the data
+types and details supported
+
+
+890
+00:50:06,006 --> 00:50:08,756
+by both BLAS and LAPACK,
+they both support single
+
+
+891
+00:50:08,756 --> 00:50:13,226
+and double precision values,
+both real and complex,
+
+
+892
+00:50:13,766 --> 00:50:18,016
+and multiple data
+formats for your matrices,
+
+
+893
+00:50:18,016 --> 00:50:21,726
+so dense matrices, band in
+matrices, triangular matrices.
+
+
+894
+00:50:21,726 --> 00:50:26,226
+As we saw before, transposes as
+well as conjugate transposes --
+
+
+895
+00:50:26,446 --> 00:50:30,526
+and again, these
+disappear in the operation.
+
+
+896
+00:50:30,526 --> 00:50:32,126
+They aren't explicit transposes.
+
+
+897
+00:50:33,086 --> 00:50:35,216
+And then finally,
+BLAS supports both row
+
+
+898
+00:50:35,216 --> 00:50:38,766
+and column major while LAPACK
+only supports column major.
+
+
+899
+00:50:41,596 --> 00:50:43,286
+Another tweet I wanted
+to share with you,
+
+
+900
+00:50:43,286 --> 00:50:46,006
+playing with the Accelerate
+Framework today, having BLAST.
+
+
+901
+00:50:48,736 --> 00:50:52,666
+So in summary, there's
+a lot of functionality
+
+
+902
+00:50:52,666 --> 00:50:53,716
+in the Accelerate Framework.
+
+
+903
+00:50:54,476 --> 00:50:56,596
+You'll find image
+processing in vImage,
+
+
+904
+00:50:57,796 --> 00:51:01,526
+digital signal processing
+in vDSP,
+
+
+905
+00:51:01,526 --> 00:51:04,876
+transcendental math functions
+in vForce and vMathLib
+
+
+906
+00:51:05,886 --> 00:51:08,626
+and linear algebra,
+LAPACK and BLAS.
+
+
+907
+00:51:09,126 --> 00:51:13,066
+When you think Accelerate
+Framework, think easy access
+
+
+908
+00:51:13,066 --> 00:51:16,016
+to all this functionality,
+over 2,000 APIs.
+
+
+909
+00:51:16,806 --> 00:51:19,556
+Accurate, we tested so
+that you don't have to.
+
+
+910
+00:51:19,556 --> 00:51:22,686
+You're going to get
+great performance
+
+
+911
+00:51:22,966 --> 00:51:24,166
+with low energy usage.
+
+
+912
+00:51:24,166 --> 00:51:30,146
+It's going to work great on OS X
+and iOS, and it's going to work
+
+
+913
+00:51:30,146 --> 00:51:32,076
+on the complete Apple
+hardware lineup,
+
+
+914
+00:51:32,726 --> 00:51:35,486
+everything that's available now
+and everything that's to come.
+
+
+915
+00:51:36,016 --> 00:51:40,616
+Just a recap of the
+tips to be successful
+
+
+916
+00:51:40,616 --> 00:51:41,746
+with the Accelerate Framework.
+
+
+917
+00:51:42,516 --> 00:51:43,756
+When you're preparing your data,
+
+
+918
+00:51:43,876 --> 00:51:45,926
+if you can make the
+buffers contiguous
+
+
+919
+00:51:46,186 --> 00:51:48,006
+and you can align the
+beginning of those buffers
+
+
+920
+00:51:48,006 --> 00:51:50,116
+to a 16-byte boundary, we can
+
+
+921
+00:51:50,116 --> 00:51:52,466
+in some cases get you
+slightly more performance.
+
+
+922
+00:51:53,136 --> 00:51:55,306
+Again, Accelerate
+Framework is always going
+
+
+923
+00:51:55,306 --> 00:51:57,136
+to give you the best
+performance possible
+
+
+924
+00:51:57,136 --> 00:51:58,806
+when you can't meet
+these recommendations.
+
+
+925
+00:51:59,706 --> 00:52:01,246
+Understand the problem size.
+
+
+926
+00:52:01,846 --> 00:52:04,436
+For small problem sets,
+
+
+927
+00:52:04,436 --> 00:52:06,146
+the Accelerate Framework
+might not be able
+
+
+928
+00:52:06,146 --> 00:52:07,756
+to deliver the best performance.
+
+
+929
+00:52:08,086 --> 00:52:11,106
+It's always going to deliver
+the functionality, though.
+
+
+930
+00:52:11,966 --> 00:52:13,866
+Finally, do set up
+and destroy once.
+
+
+931
+00:52:14,016 --> 00:52:17,436
+If you find yourself
+creating a setup structure,
+
+
+932
+00:52:17,466 --> 00:52:19,836
+use that setup structure
+as many times as possible.
+
+
+933
+00:52:20,476 --> 00:52:25,536
+The Accelerate Framework is
+for you guys, and so I want
+
+
+934
+00:52:25,536 --> 00:52:26,186
+to leave you with this.
+
+
+935
+00:52:26,186 --> 00:52:28,776
+If you need a feature,
+please request it.
+
+
+936
+00:52:29,236 --> 00:52:33,196
+The best way to do that
+is by filing a bug.
+
+
+937
+00:52:33,416 --> 00:52:34,626
+And one more tweet:
+
+
+938
+00:52:34,936 --> 00:52:37,656
+"The discrete cosine transform
+was my feature request
+
+
+939
+00:52:37,656 --> 00:52:39,226
+that made it into the
+Accelerate Framework.
+
+
+940
+00:52:39,276 --> 00:52:40,276
+I feel so special."
+
+
+941
+00:52:41,006 --> 00:52:42,236
+So we do listen.
+
+
+942
+00:52:43,016 --> 00:52:43,686
+Please request.
+
+
+943
+00:52:44,256 --> 00:52:46,176
+And then lastly, thanks, Apple,
+
+
+944
+00:52:46,176 --> 00:52:47,586
+for making the Accelerate
+Framework.
+
+
+945
+00:52:48,096 --> 00:52:49,866
+Thank you, guys, for
+making it a success.
+
+
+946
+00:52:50,516 --> 00:52:54,996
+[Applause]
+
+
+947
+00:52:55,496 --> 00:52:58,146
+Just a little more information
+here, if you guys need to get
+
+
+948
+00:52:58,146 --> 00:53:00,736
+in touch with us,
+contact Paul or George.
+
+
+949
+00:53:01,116 --> 00:53:04,446
+There's some documentation
+available online, and as always,
+
+
+950
+00:53:04,476 --> 00:53:06,186
+check the Apple developer
+forums.
+
+
+951
+00:53:06,806 --> 00:53:08,756
+That's all we got,
+thank you, guys.
+
+
+952
+00:53:10,516 --> 00:53:18,270
+[Silence]
+

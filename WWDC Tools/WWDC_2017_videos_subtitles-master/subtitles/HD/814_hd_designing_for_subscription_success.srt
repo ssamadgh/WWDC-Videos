@@ -1,0 +1,1196 @@
+1
+00:00:20,046 --> 00:00:21,696
+Subscriptions are the fastest
+
+2
+00:00:21,696 --> 00:00:22,876
+growing business model in the
+
+3
+00:00:22,876 --> 00:00:23,426
+App Store.
+
+4
+00:00:23,886 --> 00:00:25,366
+Why is it almost every time
+
+5
+00:00:25,366 --> 00:00:27,846
+you're ready to sign up for an
+
+6
+00:00:27,846 --> 00:00:29,726
+awesome new service or to
+
+7
+00:00:29,726 --> 00:00:31,436
+subscribe to some amazing new
+
+8
+00:00:31,436 --> 00:00:33,926
+content, this is the feeling
+
+9
+00:00:33,926 --> 00:00:34,486
+that you get?
+
+10
+00:00:35,216 --> 00:00:36,736
+That's because it's all too
+
+11
+00:00:36,736 --> 00:00:38,796
+common for subscriptions to feel
+
+12
+00:00:38,796 --> 00:00:42,156
+complicated, confusing, or just
+
+13
+00:00:42,156 --> 00:00:44,386
+take too long to sign up.
+
+14
+00:00:44,386 --> 00:00:46,426
+So, for a great user experience,
+
+15
+00:00:46,576 --> 00:00:47,866
+make your subscription
+
+16
+00:00:48,126 --> 00:00:50,446
+effortless, transparent, and
+
+17
+00:00:50,446 --> 00:00:51,006
+engaging.
+
+18
+00:00:51,396 --> 00:00:52,926
+Let's focus on each of these
+
+19
+00:00:52,926 --> 00:00:54,396
+principles to improve the user
+
+20
+00:00:54,396 --> 00:00:55,876
+experience and design for
+
+21
+00:00:55,876 --> 00:00:56,826
+subscription success.
+
+22
+00:00:58,876 --> 00:01:00,816
+The first step we'll talk about,
+
+23
+00:01:01,436 --> 00:01:02,316
+being effortless.
+
+24
+00:01:02,976 --> 00:01:04,246
+So what does it mean for your
+
+25
+00:01:04,246 --> 00:01:05,556
+subscription to be effortless?
+
+26
+00:01:06,176 --> 00:01:07,546
+It means that people should know
+
+27
+00:01:07,546 --> 00:01:08,956
+that you have a subscription.
+
+28
+00:01:10,266 --> 00:01:11,336
+That way they shouldn't have to
+
+29
+00:01:11,336 --> 00:01:14,006
+look for how to sign up.
+
+30
+00:01:14,176 --> 00:01:16,166
+So it's important to be visible.
+
+31
+00:01:16,586 --> 00:01:18,356
+Get out there and don't be shy.
+
+32
+00:01:18,886 --> 00:01:20,206
+Let people know that you have a
+
+33
+00:01:20,206 --> 00:01:22,026
+subscription offer, and ask them
+
+34
+00:01:22,026 --> 00:01:23,316
+to sign up.
+
+35
+00:01:23,406 --> 00:01:25,296
+One approach would be to persist
+
+36
+00:01:25,296 --> 00:01:26,916
+a Subscribe button in your app's
+
+37
+00:01:26,916 --> 00:01:27,486
+interface.
+
+38
+00:01:28,356 --> 00:01:29,876
+Here in "The New York Times"
+
+39
+00:01:30,166 --> 00:01:31,966
+they do a great job persisting a
+
+40
+00:01:32,006 --> 00:01:32,876
+Subscribe button.
+
+41
+00:01:33,286 --> 00:01:34,846
+And they do this tastefully
+
+42
+00:01:34,896 --> 00:01:35,876
+throughout the entire UI.
+
+43
+00:01:36,666 --> 00:01:37,856
+It's very visible.
+
+44
+00:01:37,946 --> 00:01:39,616
+And it's across each article.
+
+45
+00:01:40,546 --> 00:01:41,976
+This is done really well.
+
+46
+00:01:42,156 --> 00:01:44,506
+And it's not annoying or pushy,
+
+47
+00:01:44,906 --> 00:01:46,416
+because it families together
+
+48
+00:01:46,416 --> 00:01:47,326
+with their interface.
+
+49
+00:01:48,606 --> 00:01:50,416
+Don't present your subscription
+
+50
+00:01:50,416 --> 00:01:51,846
+like a popup add or a
+
+51
+00:01:51,846 --> 00:01:52,706
+notification.
+
+52
+00:01:53,346 --> 00:01:55,376
+Because popups and notifications
+
+53
+00:01:55,376 --> 00:01:57,026
+are intended to be dismissed.
+
+54
+00:01:57,286 --> 00:01:58,616
+And you don't want people to
+
+55
+00:01:58,616 --> 00:02:00,116
+dismiss your subscription offer.
+
+56
+00:02:01,146 --> 00:02:02,386
+Another way to present your
+
+57
+00:02:02,386 --> 00:02:04,086
+subscription would be to be
+
+58
+00:02:04,086 --> 00:02:05,736
+visible and present it when
+
+59
+00:02:05,806 --> 00:02:07,396
+someone has expressed interest
+
+60
+00:02:07,996 --> 00:02:09,606
+in a piece of content or in a
+
+61
+00:02:09,606 --> 00:02:11,016
+feature that you offer through a
+
+62
+00:02:11,016 --> 00:02:12,146
+subscription.
+
+63
+00:02:13,516 --> 00:02:15,246
+This is the dating app Her.
+
+64
+00:02:15,876 --> 00:02:17,406
+So let's just say you're swiping
+
+65
+00:02:17,406 --> 00:02:19,626
+through a few profiles and you
+
+66
+00:02:19,626 --> 00:02:20,896
+accidentally pass on somebody
+
+67
+00:02:20,896 --> 00:02:21,386
+who's cute.
+
+68
+00:02:22,006 --> 00:02:23,276
+So you attempt to rewind that
+
+69
+00:02:23,276 --> 00:02:25,456
+profile, and in that moment, the
+
+70
+00:02:25,456 --> 00:02:27,626
+app Her tastefully presents an
+
+71
+00:02:27,626 --> 00:02:28,936
+option for you to subscribe.
+
+72
+00:02:29,426 --> 00:02:31,086
+Because the rewind feature is
+
+73
+00:02:31,086 --> 00:02:32,016
+what they offer as a
+
+74
+00:02:32,016 --> 00:02:32,756
+subscription.
+
+75
+00:02:33,796 --> 00:02:34,806
+And this is great.
+
+76
+00:02:34,806 --> 00:02:36,206
+It's an appropriate time for Her
+
+77
+00:02:36,206 --> 00:02:37,526
+to present you with this offer
+
+78
+00:02:37,636 --> 00:02:38,926
+because you've shown interest.
+
+79
+00:02:39,876 --> 00:02:41,196
+Her does a wonderful job
+
+80
+00:02:41,196 --> 00:02:42,376
+presenting the values of your
+
+81
+00:02:42,376 --> 00:02:44,276
+subscription right here as well
+
+82
+00:02:44,276 --> 00:02:46,206
+with this beautiful, light
+
+83
+00:02:46,206 --> 00:02:46,836
+animation.
+
+84
+00:02:48,256 --> 00:02:50,876
+So whether you choose to make it
+
+85
+00:02:50,876 --> 00:02:52,096
+persistent in your user
+
+86
+00:02:52,096 --> 00:02:55,266
+interface, or present the option
+
+87
+00:02:55,266 --> 00:02:57,066
+to subscribe when someone has
+
+88
+00:02:57,066 --> 00:02:59,586
+expressed interest, make sure
+
+89
+00:02:59,586 --> 00:03:01,276
+that it is visible to people so
+
+90
+00:03:01,276 --> 00:03:02,036
+they know you have a
+
+91
+00:03:02,036 --> 00:03:03,116
+subscription.
+
+92
+00:03:03,786 --> 00:03:05,636
+And no matter what you choose,
+
+93
+00:03:06,096 --> 00:03:07,686
+all subscription apps should
+
+94
+00:03:07,686 --> 00:03:09,536
+include a place to sign up in
+
+95
+00:03:09,536 --> 00:03:11,626
+Settings or Accounts, because
+
+96
+00:03:11,626 --> 00:03:13,446
+it's a very intuitive place for
+
+97
+00:03:13,446 --> 00:03:14,646
+place for people to look to sign
+
+98
+00:03:14,816 --> 00:03:14,883
+up.
+
+99
+00:03:16,876 --> 00:03:17,376
+All right.
+
+100
+00:03:17,996 --> 00:03:19,566
+Also, to make your subscription
+
+101
+00:03:19,646 --> 00:03:21,536
+effortless, you need to remove
+
+102
+00:03:21,536 --> 00:03:22,286
+friction.
+
+103
+00:03:23,116 --> 00:03:25,086
+Friction is asking for too much
+
+104
+00:03:25,086 --> 00:03:27,316
+information, having too many
+
+105
+00:03:27,316 --> 00:03:29,516
+steps, and taking too much time
+
+106
+00:03:29,516 --> 00:03:30,496
+for somebody to sign up.
+
+107
+00:03:31,236 --> 00:03:32,496
+But how do you know when you've
+
+108
+00:03:32,496 --> 00:03:33,576
+asked for too much?
+
+109
+00:03:34,716 --> 00:03:35,716
+This data should help.
+
+110
+00:03:36,406 --> 00:03:38,386
+This graph represents a snapshot
+
+111
+00:03:38,386 --> 00:03:40,196
+of one month of data from the
+
+112
+00:03:40,356 --> 00:03:42,406
+three top video streaming apps
+
+113
+00:03:42,596 --> 00:03:43,666
+in the US.
+
+114
+00:03:44,186 --> 00:03:45,296
+Now, while their names have been
+
+115
+00:03:45,296 --> 00:03:47,486
+removed, all the important data
+
+116
+00:03:47,486 --> 00:03:48,846
+here is the clicks to conversion
+
+117
+00:03:48,846 --> 00:03:49,446
+ratio.
+
+118
+00:03:50,196 --> 00:03:53,155
+A subscription flow that has
+
+119
+00:03:53,155 --> 00:03:55,856
+three clicks led to a 61%
+
+120
+00:03:55,856 --> 00:03:56,616
+conversion rate.
+
+121
+00:03:57,016 --> 00:03:58,456
+And a subscription flow with
+
+122
+00:03:58,546 --> 00:04:00,976
+four clicks led to a 48%
+
+123
+00:04:00,976 --> 00:04:01,676
+conversion rate.
+
+124
+00:04:02,186 --> 00:04:03,836
+However, as soon as there was
+
+125
+00:04:03,836 --> 00:04:05,106
+nine clicks, it dropped
+
+126
+00:04:05,166 --> 00:04:07,246
+significantly down to 7%.
+
+127
+00:04:08,096 --> 00:04:09,096
+Now, while this is just a
+
+128
+00:04:09,186 --> 00:04:10,976
+sample, it's clear that you
+
+129
+00:04:10,976 --> 00:04:12,316
+should only ask for what is
+
+130
+00:04:12,496 --> 00:04:14,166
+absolutely necessary for someone
+
+131
+00:04:14,166 --> 00:04:14,786
+to sign up.
+
+132
+00:04:15,276 --> 00:04:17,996
+Because quite literally, less is
+
+133
+00:04:17,996 --> 00:04:18,386
+more.
+
+134
+00:04:19,026 --> 00:04:21,756
+Less clicks, less friction, will
+
+135
+00:04:21,756 --> 00:04:23,736
+lead to more conversion and more
+
+136
+00:04:23,736 --> 00:04:24,466
+subscribers.
+
+137
+00:04:25,416 --> 00:04:27,136
+So focus on people on just
+
+138
+00:04:27,166 --> 00:04:28,186
+signing up first.
+
+139
+00:04:28,706 --> 00:04:30,246
+Things like favoriting,
+
+140
+00:04:30,246 --> 00:04:32,276
+personalization, and asking for
+
+141
+00:04:32,276 --> 00:04:33,656
+additional personal details can
+
+142
+00:04:33,656 --> 00:04:35,476
+all wait until after someone has
+
+143
+00:04:35,476 --> 00:04:36,566
+signed up.
+
+144
+00:04:37,316 --> 00:04:39,156
+So, by being visible, and
+
+145
+00:04:39,156 --> 00:04:41,386
+removing friction, your app
+
+146
+00:04:41,386 --> 00:04:42,756
+subscription will be effortless
+
+147
+00:04:42,756 --> 00:04:44,126
+and easier for people to
+
+148
+00:04:44,126 --> 00:04:44,646
+subscribe.
+
+149
+00:04:46,576 --> 00:04:48,546
+Next, let's talk about being
+
+150
+00:04:48,546 --> 00:04:49,536
+transparent with your
+
+151
+00:04:49,536 --> 00:04:50,406
+subscription.
+
+152
+00:04:51,076 --> 00:04:52,976
+Because transparency is the best
+
+153
+00:04:52,976 --> 00:04:53,546
+policy.
+
+154
+00:04:54,416 --> 00:04:55,756
+And you need to provide clear
+
+155
+00:04:55,756 --> 00:04:58,256
+terms so people understand what
+
+156
+00:04:58,256 --> 00:04:59,306
+they're signing up for.
+
+157
+00:05:00,596 --> 00:05:02,096
+Strive to be glance-able.
+
+158
+00:05:02,646 --> 00:05:04,486
+All in one view and in just a
+
+159
+00:05:04,486 --> 00:05:06,156
+few seconds, people should be
+
+160
+00:05:06,156 --> 00:05:07,966
+able to clearly understand what
+
+161
+00:05:07,966 --> 00:05:09,716
+your subscription offer is and
+
+162
+00:05:09,766 --> 00:05:11,506
+how to sign up.
+
+163
+00:05:11,506 --> 00:05:12,366
+So when you're making your
+
+164
+00:05:12,366 --> 00:05:15,276
+subscription, always include: a
+
+165
+00:05:15,276 --> 00:05:17,966
+concise value proposition, a
+
+166
+00:05:17,966 --> 00:05:21,096
+strong call to action, a place
+
+167
+00:05:21,176 --> 00:05:22,826
+for people to log in if they are
+
+168
+00:05:22,826 --> 00:05:24,036
+existing subscribers.
+
+169
+00:05:25,236 --> 00:05:27,036
+Also the ability to restore if
+
+170
+00:05:27,036 --> 00:05:28,076
+someone has a new device.
+
+171
+00:05:29,456 --> 00:05:31,066
+And a place to sign up that
+
+172
+00:05:31,066 --> 00:05:33,116
+includes clear pricing and
+
+173
+00:05:33,116 --> 00:05:33,616
+terms.
+
+174
+00:05:34,296 --> 00:05:36,306
+And always offer multiple tiers.
+
+175
+00:05:36,676 --> 00:05:37,856
+Because you don't know if
+
+176
+00:05:37,856 --> 00:05:39,286
+somebody wants to sign up for a
+
+177
+00:05:39,286 --> 00:05:42,026
+day, a week, a month, or two
+
+178
+00:05:42,026 --> 00:05:42,476
+years.
+
+179
+00:05:42,956 --> 00:05:44,996
+So try offering three or four
+
+180
+00:05:44,996 --> 00:05:47,056
+different tiers to find out what
+
+181
+00:05:47,056 --> 00:05:48,756
+works best for your audience.
+
+182
+00:05:49,776 --> 00:05:52,386
+The MLB At Bat app does a great
+
+183
+00:05:52,386 --> 00:05:54,406
+job and offers all of this in
+
+184
+00:05:54,406 --> 00:05:56,086
+one easy-to-understand
+
+185
+00:05:56,156 --> 00:05:57,286
+glance-able view.
+
+186
+00:05:57,766 --> 00:05:59,866
+And this is important because
+
+187
+00:05:59,866 --> 00:06:01,616
+most of us are signing up on our
+
+188
+00:06:01,616 --> 00:06:02,066
+phones.
+
+189
+00:06:02,066 --> 00:06:03,926
+So please, keep it simple.
+
+190
+00:06:05,576 --> 00:06:07,726
+By providing clear terms, people
+
+191
+00:06:07,726 --> 00:06:09,086
+will be able to make an informed
+
+192
+00:06:09,086 --> 00:06:10,846
+decision on how to subscribe.
+
+193
+00:06:12,026 --> 00:06:12,326
+All right.
+
+194
+00:06:13,016 --> 00:06:14,446
+I saved the best for last.
+
+195
+00:06:15,566 --> 00:06:17,716
+Your app needs to be engaging
+
+196
+00:06:17,906 --> 00:06:20,186
+from the start, before people
+
+197
+00:06:20,186 --> 00:06:20,796
+subscribe.
+
+198
+00:06:21,266 --> 00:06:22,846
+And the best way to engage them
+
+199
+00:06:22,946 --> 00:06:24,286
+is through experience.
+
+200
+00:06:25,316 --> 00:06:27,176
+Let them experience your app and
+
+201
+00:06:27,176 --> 00:06:29,016
+your app's content before having
+
+202
+00:06:29,016 --> 00:06:29,856
+them subscribe.
+
+203
+00:06:30,446 --> 00:06:32,186
+Because being able to experience
+
+204
+00:06:32,186 --> 00:06:34,056
+and try before you buy is a part
+
+205
+00:06:34,056 --> 00:06:35,086
+of how we make purchase
+
+206
+00:06:35,086 --> 00:06:35,746
+decisions today.
+
+207
+00:06:36,996 --> 00:06:39,296
+From trying on clothes to
+
+208
+00:06:39,296 --> 00:06:42,096
+attending an open house, or even
+
+209
+00:06:42,096 --> 00:06:43,446
+test driving a car before you
+
+210
+00:06:43,446 --> 00:06:44,556
+buy or lease it.
+
+211
+00:06:45,836 --> 00:06:47,426
+All of these are experiences
+
+212
+00:06:47,426 --> 00:06:48,856
+that you can do that help you
+
+213
+00:06:48,856 --> 00:06:50,116
+make a decision before you
+
+214
+00:06:50,116 --> 00:06:50,486
+purchase.
+
+215
+00:06:51,486 --> 00:06:53,336
+And the same applies for your
+
+216
+00:06:53,336 --> 00:06:53,446
+app.
+
+217
+00:06:54,706 --> 00:06:56,156
+There are three ways to engage
+
+218
+00:06:56,156 --> 00:06:57,286
+people through experience.
+
+219
+00:06:57,396 --> 00:06:58,906
+And it'll make it much easier
+
+220
+00:06:58,906 --> 00:06:59,936
+for them to subscribe.
+
+221
+00:07:01,306 --> 00:07:02,916
+First, you can offer a free
+
+222
+00:07:02,916 --> 00:07:03,426
+trial.
+
+223
+00:07:03,936 --> 00:07:05,416
+That way, people can try out the
+
+224
+00:07:05,416 --> 00:07:07,396
+entire app for free for a
+
+225
+00:07:07,396 --> 00:07:08,156
+limited time.
+
+226
+00:07:09,376 --> 00:07:11,406
+This works well for established
+
+227
+00:07:11,406 --> 00:07:12,786
+brands and when people have an
+
+228
+00:07:12,786 --> 00:07:14,556
+idea of what's included with the
+
+229
+00:07:14,556 --> 00:07:15,296
+subscription.
+
+230
+00:07:16,126 --> 00:07:17,676
+So, if you have an established
+
+231
+00:07:17,676 --> 00:07:19,606
+brand, a free trial is a great
+
+232
+00:07:19,606 --> 00:07:21,166
+way to let people engage with
+
+233
+00:07:21,166 --> 00:07:23,586
+your app and its contents before
+
+234
+00:07:23,586 --> 00:07:24,256
+they subscribe.
+
+235
+00:07:24,896 --> 00:07:27,506
+You can also make the majority
+
+236
+00:07:27,506 --> 00:07:29,286
+of your app available for free
+
+237
+00:07:29,336 --> 00:07:31,426
+and offer a premium feature as a
+
+238
+00:07:31,426 --> 00:07:32,166
+subscription.
+
+239
+00:07:32,916 --> 00:07:34,456
+For example, in the app Sleep
+
+240
+00:07:34,456 --> 00:07:36,496
+Cycle, you can use the entire
+
+241
+00:07:36,496 --> 00:07:38,836
+app for free, except the trends
+
+242
+00:07:38,836 --> 00:07:41,426
+feature shown here is what is
+
+243
+00:07:41,426 --> 00:07:43,416
+available to people who have
+
+244
+00:07:43,416 --> 00:07:44,006
+subscribed.
+
+245
+00:07:45,216 --> 00:07:46,816
+And Sleep Cycle makes it really
+
+246
+00:07:46,816 --> 00:07:48,256
+easy for people to sign up right
+
+247
+00:07:48,256 --> 00:07:48,716
+from here.
+
+248
+00:07:49,296 --> 00:07:50,946
+It's a great technique to offer
+
+249
+00:07:50,946 --> 00:07:52,696
+a peek of content behind this
+
+250
+00:07:52,766 --> 00:07:53,166
+blur.
+
+251
+00:07:53,606 --> 00:07:55,866
+That way potential subscribers
+
+252
+00:07:55,866 --> 00:07:57,486
+can see what kind of content
+
+253
+00:07:57,486 --> 00:07:59,206
+they would have access to if
+
+254
+00:07:59,206 --> 00:08:00,316
+they did subscribe.
+
+255
+00:08:01,666 --> 00:08:04,126
+And finally, you can allow
+
+256
+00:08:04,126 --> 00:08:05,486
+people to sample content.
+
+257
+00:08:06,046 --> 00:08:07,336
+It's a great way to engage
+
+258
+00:08:07,336 --> 00:08:08,146
+through experience.
+
+259
+00:08:08,146 --> 00:08:09,476
+And it works great for the
+
+260
+00:08:09,476 --> 00:08:10,626
+majority of apps.
+
+261
+00:08:12,026 --> 00:08:13,535
+This is "The New York Times."
+
+262
+00:08:13,616 --> 00:08:14,886
+And you're able to read ten
+
+263
+00:08:14,925 --> 00:08:17,136
+articles for free per month.
+
+264
+00:08:17,746 --> 00:08:19,256
+And this is a wonderful sampling
+
+265
+00:08:19,256 --> 00:08:21,116
+experience because "The New York
+
+266
+00:08:21,116 --> 00:08:23,176
+Times" lets people have control
+
+267
+00:08:23,176 --> 00:08:24,786
+over what content they're able
+
+268
+00:08:24,786 --> 00:08:25,426
+to sample.
+
+269
+00:08:26,216 --> 00:08:27,706
+That allows people to find the
+
+270
+00:08:27,706 --> 00:08:28,876
+content that they're interested
+
+271
+00:08:28,876 --> 00:08:30,376
+in and helps them better
+
+272
+00:08:30,376 --> 00:08:31,866
+understand the value of the
+
+273
+00:08:31,866 --> 00:08:32,596
+subscription.
+
+274
+00:08:33,896 --> 00:08:35,676
+The objective is to let people
+
+275
+00:08:35,676 --> 00:08:37,586
+experience and become familiar
+
+276
+00:08:37,586 --> 00:08:39,236
+with your app and its content.
+
+277
+00:08:39,646 --> 00:08:41,206
+And that will make it easier for
+
+278
+00:08:41,206 --> 00:08:42,026
+them to subscribe.
+
+279
+00:08:43,016 --> 00:08:44,616
+And no matter which option you
+
+280
+00:08:44,616 --> 00:08:46,636
+choose, make sure that it works
+
+281
+00:08:46,636 --> 00:08:47,876
+for your audience.
+
+282
+00:08:48,376 --> 00:08:49,716
+And you know them best.
+
+283
+00:08:50,326 --> 00:08:51,566
+Think about their current user
+
+284
+00:08:51,566 --> 00:08:53,556
+experience, the type of content
+
+285
+00:08:53,556 --> 00:08:54,966
+they have currently available in
+
+286
+00:08:54,966 --> 00:08:56,766
+your app, and how adding
+
+287
+00:08:56,766 --> 00:08:58,116
+subscriptions could impact that
+
+288
+00:08:58,116 --> 00:08:58,766
+experience.
+
+289
+00:09:00,336 --> 00:09:01,726
+So design your subscription to
+
+290
+00:09:01,726 --> 00:09:03,706
+be effortless by being visible
+
+291
+00:09:04,076 --> 00:09:05,226
+and reducing friction.
+
+292
+00:09:05,776 --> 00:09:07,276
+By being transparent with your
+
+293
+00:09:07,276 --> 00:09:09,606
+terms and pricing, and engaging
+
+294
+00:09:09,606 --> 00:09:11,586
+people through experiencing your
+
+295
+00:09:11,826 --> 00:09:13,326
+app and its rich contents.
+
+296
+00:09:13,766 --> 00:09:16,146
+That way it'll be really easy
+
+297
+00:09:16,146 --> 00:09:17,926
+for people to sign up.
+
+298
+00:09:18,066 --> 00:09:18,356
+Thank you.
+
+299
+00:09:18,416 --> 00:09:20,400
+[ Applause ]
+

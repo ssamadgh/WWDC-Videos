@@ -1,0 +1,6212 @@
+1
+00:00:00,506 --> 00:00:09,516
+[ Applause ]
+
+
+2
+00:00:10,016 --> 00:00:13,866
+>> Good morning and welcome.
+
+
+3
+00:00:14,496 --> 00:00:15,756
+My name is Dan Omachi.
+
+
+4
+00:00:15,866 --> 00:00:18,066
+I work in Apple's
+GPU software group
+
+
+5
+00:00:18,266 --> 00:00:20,276
+on the OpenGL ES framework.
+
+
+6
+00:00:20,846 --> 00:00:24,056
+I also work very closely
+with our GPU driver engineers
+
+
+7
+00:00:24,056 --> 00:00:26,956
+on improving performance
+and implementing features
+
+
+8
+00:00:27,056 --> 00:00:28,146
+on our graphics hardware.
+
+
+9
+00:00:28,206 --> 00:00:31,446
+And today I'm going to
+talk to you about Advances
+
+
+10
+00:00:31,446 --> 00:00:36,796
+in OpenGL ES on iOS 7.
+
+
+11
+00:00:37,066 --> 00:00:40,046
+Apple offers a number
+of rendering API's
+
+
+12
+00:00:40,046 --> 00:00:43,396
+that are highly optimized
+for a variety
+
+
+13
+00:00:43,396 --> 00:00:47,866
+of specific rendering scenarios
+- Core Graphics, Core Animation,
+
+
+14
+00:00:47,866 --> 00:00:49,956
+and now Sprite Kit
+are among those.
+
+
+15
+00:00:50,426 --> 00:00:54,656
+They do a ton for you,
+and they do it very well.
+
+
+16
+00:00:55,516 --> 00:00:58,986
+OpenGL ES, however, offers
+the most direct access
+
+
+17
+00:00:59,056 --> 00:01:00,006
+to graphics hardware.
+
+
+18
+00:01:00,486 --> 00:01:02,196
+This enables a lot
+of flexibility
+
+
+19
+00:01:02,446 --> 00:01:06,606
+to create custom effects
+and bring something new
+
+
+20
+00:01:06,606 --> 00:01:08,866
+and innovative into
+your rendering.
+
+
+21
+00:01:09,976 --> 00:01:13,836
+Now, this flexibility can
+be a challenge to master.
+
+
+22
+00:01:14,576 --> 00:01:17,526
+It's a low-level library,
+
+
+23
+00:01:18,106 --> 00:01:20,286
+and there can be some
+stumbling blocks,
+
+
+24
+00:01:20,436 --> 00:01:24,586
+but if you can utilize
+the API to its fullest,
+
+
+25
+00:01:24,946 --> 00:01:27,866
+you can bring some
+really wild custom effects
+
+
+26
+00:01:28,226 --> 00:01:32,026
+that people are amazed
+by and love.
+
+
+27
+00:01:32,636 --> 00:01:33,606
+This can make the difference
+
+
+28
+00:01:33,606 --> 00:01:36,686
+between shipping
+a good application
+
+
+29
+00:01:36,686 --> 00:01:40,846
+that a few people download and
+maybe play with for a few days,
+
+
+30
+00:01:41,376 --> 00:01:45,166
+and something great that people
+talk about, use day to day,
+
+
+31
+00:01:45,166 --> 00:01:46,766
+and download in droves.
+
+
+32
+00:01:46,766 --> 00:01:47,266
+[ Pause ]
+
+
+33
+00:01:47,266 --> 00:01:51,526
+So what am I going to
+be talking about today?
+
+
+34
+00:01:52,416 --> 00:01:54,886
+First, there are a
+number of new features
+
+
+35
+00:01:54,886 --> 00:01:57,296
+in the OpenGL ES API on iOS7.
+
+
+36
+00:01:58,446 --> 00:02:00,956
+The first feature I'll
+talk about is instancing,
+
+
+37
+00:02:01,416 --> 00:02:03,996
+and we support two
+new extensions
+
+
+38
+00:02:04,376 --> 00:02:06,036
+to implement that feature.
+
+
+39
+00:02:07,076 --> 00:02:10,175
+We're also now supporting
+texturing in the vertex shader.
+
+
+40
+00:02:10,265 --> 00:02:12,676
+I'll talk about why you
+might want to do that
+
+
+41
+00:02:12,676 --> 00:02:14,566
+and how it can be done.
+
+
+42
+00:02:14,776 --> 00:02:18,296
+We're also now supporting
+sRGB texture formats,
+
+
+43
+00:02:18,296 --> 00:02:22,756
+an alternate color
+space that you can use.
+
+
+44
+00:02:22,756 --> 00:02:27,196
+I'll also talk in detail about
+how you can utilize the API
+
+
+45
+00:02:27,356 --> 00:02:30,636
+and really optimize
+it for your needs.
+
+
+46
+00:02:31,356 --> 00:02:33,086
+I'll give you an
+in-depth understanding
+
+
+47
+00:02:33,266 --> 00:02:37,136
+of the GPU pipeline, which
+should give you some insight
+
+
+48
+00:02:37,136 --> 00:02:40,606
+into the feedback that
+our GPU tools provide.
+
+
+49
+00:02:40,981 --> 00:02:42,981
+[ Pause ]
+
+
+50
+00:02:43,356 --> 00:02:45,056
+But before I get
+into any of that,
+
+
+51
+00:02:45,056 --> 00:02:46,356
+I just want to touch briefly
+
+
+52
+00:02:46,356 --> 00:02:48,986
+on a very important
+topic: power efficiency.
+
+
+53
+00:02:51,056 --> 00:02:53,016
+So rendering requires power.
+
+
+54
+00:02:53,386 --> 00:02:57,786
+All the GPU's on iOS
+are power efficient.
+
+
+55
+00:02:57,996 --> 00:03:02,326
+However, there's still
+considerable needed
+
+
+56
+00:03:02,326 --> 00:03:06,086
+to put vertices into the
+pipe and spit out pixels.
+
+
+57
+00:03:07,226 --> 00:03:10,596
+The easiest thing that
+your application can do
+
+
+58
+00:03:11,106 --> 00:03:14,826
+to conserve power is to manage
+your frame rate appropriately.
+
+
+59
+00:03:14,926 --> 00:03:18,206
+You can use the CADisplayLink
+API to sync to the display.
+
+
+60
+00:03:18,596 --> 00:03:21,316
+The display refreshes
+60 times a second.
+
+
+61
+00:03:21,586 --> 00:03:24,206
+So that's really the maximum
+frame rate you could possibly
+
+
+62
+00:03:24,206 --> 00:03:28,236
+achieve, but in many
+cases, it really makes sense
+
+
+63
+00:03:28,236 --> 00:03:32,706
+to just limit your frame rate to
+a steady 30 frames per second.
+
+
+64
+00:03:33,316 --> 00:03:35,896
+You can achieve some
+smooth animations,
+
+
+65
+00:03:36,286 --> 00:03:39,856
+and you're conserving way more
+power than rendering at 60.
+
+
+66
+00:03:41,256 --> 00:03:43,866
+Additionally, it's not
+necessary to render at all
+
+
+67
+00:03:44,006 --> 00:03:46,476
+if there's no animation
+or movement in your scene.
+
+
+68
+00:03:46,806 --> 00:03:49,206
+You don't have to submit
+vertices to the pipe
+
+
+69
+00:03:49,596 --> 00:03:53,236
+and have pixels produced
+if you're just going
+
+
+70
+00:03:53,236 --> 00:03:55,906
+to show the same thing
+you showed a sixtieth
+
+
+71
+00:03:55,906 --> 00:03:57,966
+of a second ago or a
+thirtieth of a second ago.
+
+
+72
+00:03:58,636 --> 00:04:01,686
+Just blit what's already in
+your buffers to the front
+
+
+73
+00:04:02,386 --> 00:04:03,746
+or don't even blit at all
+
+
+74
+00:04:03,826 --> 00:04:05,026
+because nothing's
+going to change.
+
+
+75
+00:04:05,836 --> 00:04:10,136
+This is particularly important
+with the multi-layered iOS 7 UI
+
+
+76
+00:04:10,436 --> 00:04:12,886
+where there's a lot of
+compositing is going on.
+
+
+77
+00:04:13,056 --> 00:04:15,936
+The UI can skip this compositing
+if nothing has changed
+
+
+78
+00:04:15,936 --> 00:04:18,706
+in the layer, thereby
+saving some power
+
+
+79
+00:04:18,866 --> 00:04:20,906
+in the compositing operation.
+
+
+80
+00:04:24,366 --> 00:04:24,546
+[Pause] Alright.
+
+
+81
+00:04:24,666 --> 00:04:28,626
+I just wanted to
+touch on that briefly.
+
+
+82
+00:04:29,326 --> 00:04:31,506
+Now I would really like to
+get onto the meat of our talk
+
+
+83
+00:04:31,506 --> 00:04:32,506
+and some of the new features.
+
+
+84
+00:04:32,506 --> 00:04:34,186
+The first of which
+is instancing.
+
+
+85
+00:04:34,716 --> 00:04:38,366
+If you're familiar at all with
+the types of games that are
+
+
+86
+00:04:38,366 --> 00:04:39,926
+on the App Store, you'll know
+
+
+87
+00:04:40,216 --> 00:04:43,146
+that the Tower Defense
+genre is quite popular.
+
+
+88
+00:04:43,326 --> 00:04:46,376
+In these games, you've got
+hundreds of enemies trying
+
+
+89
+00:04:46,376 --> 00:04:47,636
+to storm your fortress.
+
+
+90
+00:04:47,756 --> 00:04:52,466
+The interesting thing about this
+rendering is these enemies often
+
+
+91
+00:04:52,466 --> 00:04:55,186
+share the same vertex data
+and use the same models.
+
+
+92
+00:04:55,186 --> 00:04:56,556
+They may be doing
+something different.
+
+
+93
+00:04:56,906 --> 00:04:58,306
+Some may be running.
+
+
+94
+00:04:58,306 --> 00:04:59,736
+Some may be attacking you,
+
+
+95
+00:05:00,106 --> 00:05:02,216
+but it's still the
+same base vertex data.
+
+
+96
+00:05:03,106 --> 00:05:05,266
+Also, maybe you've
+seen an adventure game
+
+
+97
+00:05:05,266 --> 00:05:06,526
+where your hero's running
+
+
+98
+00:05:06,526 --> 00:05:09,406
+through a forest that's
+densely populated.
+
+
+99
+00:05:09,406 --> 00:05:10,856
+It's got trees all about .
+
+
+100
+00:05:10,856 --> 00:05:14,616
+You've got trees in different
+orientations with branches
+
+
+101
+00:05:14,616 --> 00:05:17,486
+in different configurations,
+but, again,
+
+
+102
+00:05:17,486 --> 00:05:19,176
+all using the same vertex data.
+
+
+103
+00:05:19,886 --> 00:05:21,426
+They look distinct, however.
+
+
+104
+00:05:22,516 --> 00:05:25,876
+This type of rendering
+is a prime candidate
+
+
+105
+00:05:26,086 --> 00:05:27,916
+for optimization
+with instancing.
+
+
+106
+00:05:28,426 --> 00:05:31,626
+[Pause] Let me start
+with a simple example.
+
+
+107
+00:05:31,866 --> 00:05:35,126
+I've got a gear model, and I'd
+like to render it 100 times
+
+
+108
+00:05:35,126 --> 00:05:37,996
+on the screen as you see here.
+
+
+109
+00:05:38,206 --> 00:05:42,426
+Without instancing, what I
+would do before iOS 7 is,
+
+
+110
+00:05:42,426 --> 00:05:44,416
+I would create a for
+loop, and in this case,
+
+
+111
+00:05:44,506 --> 00:05:47,816
+I'm going down the width of
+the screen via the X axis,
+
+
+112
+00:05:48,296 --> 00:05:49,806
+and then within that loop,
+
+
+113
+00:05:49,806 --> 00:05:53,386
+I'm going up the
+screen on the Y axis.
+
+
+114
+00:05:53,956 --> 00:05:57,966
+For each iteration, I'm setting
+a uniform with the position
+
+
+115
+00:05:57,966 --> 00:06:00,526
+of my gear, and then
+drawing that gear.
+
+
+116
+00:06:01,746 --> 00:06:06,076
+That's 100 uniform sets and 100
+draw calls, and as you may know,
+
+
+117
+00:06:06,456 --> 00:06:10,336
+draw calls consume
+a lot of CPU cycles.
+
+
+118
+00:06:10,726 --> 00:06:13,766
+So it would be great if we
+could trim that down a bit.
+
+
+119
+00:06:14,806 --> 00:06:16,796
+[Pause] Jere's what
+instancing does.
+
+
+120
+00:06:17,456 --> 00:06:20,426
+It allows you to draw
+the same model many,
+
+
+121
+00:06:20,426 --> 00:06:22,866
+many times in a single
+draw call.
+
+
+122
+00:06:23,516 --> 00:06:28,606
+Each instance of that model
+can have different parameters.
+
+
+123
+00:06:28,606 --> 00:06:32,286
+You can have different
+positions for each model,
+
+
+124
+00:06:32,356 --> 00:06:36,336
+a different matrix for each
+model, or a different set
+
+
+125
+00:06:36,336 --> 00:06:37,306
+of texture coordinates.
+
+
+126
+00:06:37,636 --> 00:06:39,656
+Even though it's the
+same vertex data,
+
+
+127
+00:06:39,886 --> 00:06:42,846
+these models can look
+significantly different.
+
+
+128
+00:06:44,116 --> 00:06:47,626
+So there are two forms of
+instancing that we're shipping
+
+
+129
+00:06:47,796 --> 00:06:51,466
+on iOS 7, the first of which
+is using an extension called
+
+
+130
+00:06:51,466 --> 00:06:55,266
+APPLE-instanced-arrays,
+and this allows you
+
+
+131
+00:06:55,266 --> 00:06:57,386
+to send these instance
+parameters
+
+
+132
+00:06:57,486 --> 00:06:59,626
+down via another vertex array.
+
+
+133
+00:07:00,976 --> 00:07:04,046
+The second form is
+Shader Instance ID,
+
+
+134
+00:07:04,666 --> 00:07:08,346
+and we support this via an
+extension APPLE-draw-instance,
+
+
+135
+00:07:08,346 --> 00:07:11,616
+and the way this works is
+there's a new built-in ID
+
+
+136
+00:07:11,616 --> 00:07:14,216
+variable in the vertex
+shader that gets incremented
+
+
+137
+00:07:14,276 --> 00:07:18,056
+for each instance drawn within
+the draw call that you made.
+
+
+138
+00:07:18,526 --> 00:07:22,396
+[Pause] Let me talk about
+the first method here:
+
+
+139
+00:07:22,636 --> 00:07:23,536
+instanced arrays.
+
+
+140
+00:07:24,406 --> 00:07:27,696
+We're introducing a new call
+glVertexAttribDivisorAPPLE,
+
+
+141
+00:07:27,696 --> 00:07:30,956
+which indicates the
+attribute array that is going
+
+
+142
+00:07:30,956 --> 00:07:32,616
+to supply the instance data.
+
+
+143
+00:07:33,546 --> 00:07:36,046
+It also indicates the
+number of instances
+
+
+144
+00:07:36,046 --> 00:07:40,006
+to draw before you advanced to
+the next element in this array.
+
+
+145
+00:07:40,436 --> 00:07:46,056
+You could, for example
+have ten instances
+
+
+146
+00:07:46,056 --> 00:07:49,926
+that use the same
+parameter and then move
+
+
+147
+00:07:49,926 --> 00:07:53,916
+on to the next parameter,
+but the most common case is
+
+
+148
+00:07:53,916 --> 00:07:56,206
+to send a unique parameter
+
+
+149
+00:07:56,206 --> 00:07:59,706
+down to each instance
+inside your draw call.
+
+
+150
+00:08:00,166 --> 00:08:02,256
+Now we're introducing
+two new draw calls
+
+
+151
+00:08:02,596 --> 00:08:04,726
+to use this form of instancing.
+
+
+152
+00:08:05,156 --> 00:08:07,466
+This includes
+glDrawArraysInstancedAPPLE
+
+
+153
+00:08:07,466 --> 00:08:09,126
+and
+glDrawElementsInstancedAPPLE,
+
+
+154
+00:08:09,526 --> 00:08:12,716
+and these work exactly the
+same as the usual glDrawArrays
+
+
+155
+00:08:12,716 --> 00:08:15,856
+and glDrawElements, but
+there's an extra parameter
+
+
+156
+00:08:16,116 --> 00:08:17,346
+which indicates the number
+
+
+157
+00:08:17,346 --> 00:08:21,116
+of instances you
+would like to draw.
+
+
+158
+00:08:21,316 --> 00:08:22,936
+Alright. Here's our example.
+
+
+159
+00:08:22,936 --> 00:08:27,136
+We've got three vertex
+arrays that have model data,
+
+
+160
+00:08:27,506 --> 00:08:29,976
+the first of which is the
+position, the second normal,
+
+
+161
+00:08:30,316 --> 00:08:35,275
+and the third is vertex colors,
+and we have an extra array
+
+
+162
+00:08:35,275 --> 00:08:36,816
+that I'll get to in a minute.
+
+
+163
+00:08:37,275 --> 00:08:40,895
+We set up our arrays the
+same as we usually do.
+
+
+164
+00:08:40,946 --> 00:08:43,926
+We use glVertexAttribDivisor
+pointer
+
+
+165
+00:08:43,926 --> 00:08:46,636
+to specify the location
+of the array.
+
+
+166
+00:08:46,636 --> 00:08:50,396
+It also specifies
+things like the type,
+
+
+167
+00:08:50,456 --> 00:08:52,666
+whether it's unsigned
+byte, float, etc.,
+
+
+168
+00:08:52,926 --> 00:08:56,956
+whether the elements in it are
+normalized or unnormalized,
+
+
+169
+00:08:56,956 --> 00:09:01,736
+and the number of scalars or
+number of values per element.
+
+
+170
+00:09:02,526 --> 00:09:07,206
+We do this for our per vertex
+position here, and, again,
+
+
+171
+00:09:07,256 --> 00:09:12,256
+for our normal, and then a third
+time for our vertex colors.
+
+
+172
+00:09:13,166 --> 00:09:17,006
+Now we also do the same
+thing for this other array,
+
+
+173
+00:09:17,006 --> 00:09:21,726
+the instance positions, and,
+additionally, we make a call
+
+
+174
+00:09:22,116 --> 00:09:24,376
+to glVertexAttribDivisor.
+
+
+175
+00:09:25,186 --> 00:09:30,486
+The first argument here
+specifies it's attribute number
+
+
+176
+00:09:30,576 --> 00:09:34,976
+three that has our per
+instance attribute data.
+
+
+177
+00:09:34,976 --> 00:09:37,296
+These are the per
+instance parameters
+
+
+178
+00:09:37,296 --> 00:09:38,496
+that we'd like send to OpenGL.
+
+
+179
+00:09:38,946 --> 00:09:41,066
+The second argument
+here indicates
+
+
+180
+00:09:41,066 --> 00:09:44,816
+that each instance
+will get its own value.
+
+
+181
+00:09:48,236 --> 00:09:50,236
+Alright. We've done the set up.
+
+
+182
+00:09:50,376 --> 00:09:51,296
+We're ready to draw.
+
+
+183
+00:09:52,896 --> 00:09:56,846
+This K argument here: this
+indicates the size of our model,
+
+
+184
+00:09:56,846 --> 00:09:58,566
+the number of vertices
+in our model.
+
+
+185
+00:09:58,956 --> 00:10:00,776
+It's the same as
+in glDrawArrarys.
+
+
+186
+00:10:02,526 --> 00:10:08,486
+The second or last argument
+here, N, is the number
+
+
+187
+00:10:08,486 --> 00:10:10,116
+of instances we would
+like to draw,
+
+
+188
+00:10:10,116 --> 00:10:13,886
+and since each instance
+is getting a unique value,
+
+
+189
+00:10:14,306 --> 00:10:17,886
+we're setting it to the
+same value as the number
+
+
+190
+00:10:17,886 --> 00:10:19,606
+of elements inside
+this instance array.
+
+
+191
+00:10:19,606 --> 00:10:24,726
+Alright. We're ready
+to submit our vertices
+
+
+192
+00:10:24,806 --> 00:10:28,456
+to the vertex shader,
+and here's what happens.
+
+
+193
+00:10:29,276 --> 00:10:34,826
+That instance element gets set
+the vertex shader, and it's used
+
+
+194
+00:10:34,826 --> 00:10:37,546
+for all of the vertices inside
+
+
+195
+00:10:37,546 --> 00:10:40,346
+of the vertex array
+containing our model.
+
+
+196
+00:10:41,586 --> 00:10:44,556
+The second instance is
+drawn, in the same draw call,
+
+
+197
+00:10:44,556 --> 00:10:49,736
+and we set the second
+value here,
+
+
+198
+00:10:50,406 --> 00:10:52,426
+and all of the vertices inside
+
+
+199
+00:10:52,426 --> 00:10:54,686
+of the model are
+submitted to vertex shader.
+
+
+200
+00:10:55,086 --> 00:10:59,836
+They all use that same value
+throughout the entire array.
+
+
+201
+00:11:00,846 --> 00:11:04,626
+And we go through all of
+instances in our instance array,
+
+
+202
+00:11:05,096 --> 00:11:08,286
+and all of them get a unique
+instance value, and we submit
+
+
+203
+00:11:08,286 --> 00:11:11,036
+for every element inside
+that instance array all
+
+
+204
+00:11:11,036 --> 00:11:12,416
+of the vertices in our model.
+
+
+205
+00:11:12,896 --> 00:11:18,466
+Here's the API set
+up...just going over again.
+
+
+206
+00:11:19,396 --> 00:11:24,056
+As we usually do, we
+call glVertxAttribPointer
+
+
+207
+00:11:24,406 --> 00:11:27,506
+to indicate how we've
+set up our model data.
+
+
+208
+00:11:28,196 --> 00:11:31,996
+We also call
+glVertexAttribPointer
+
+
+209
+00:11:31,996 --> 00:11:37,246
+for this instance array
+and glVertexAttribDivisor.
+
+
+210
+00:11:37,956 --> 00:11:43,546
+We're indicating that attribute
+three is our instance array,
+
+
+211
+00:11:43,686 --> 00:11:46,926
+and we're iterating one
+element for each instance.
+
+
+212
+00:11:47,936 --> 00:11:49,436
+Finally, we're ready to draw.
+
+
+213
+00:11:49,676 --> 00:11:54,856
+We call glDrawArraysInstanced
+with the value 100
+
+
+214
+00:11:54,856 --> 00:11:57,266
+since e're going to
+render 100 gears.
+
+
+215
+00:11:58,606 --> 00:11:59,576
+Here's the vertex shader.
+
+
+216
+00:12:01,336 --> 00:12:05,636
+As usual, we've got attributes
+for our per vertex model data.
+
+
+217
+00:12:06,556 --> 00:12:08,196
+Here we've got position
+and normal.
+
+
+218
+00:12:09,436 --> 00:12:12,906
+And another attribute which will
+contain our per instance data.
+
+
+219
+00:12:13,886 --> 00:12:15,056
+Per instance position.
+
+
+220
+00:12:15,056 --> 00:12:15,966
+Not per vertex.
+
+
+221
+00:12:16,096 --> 00:12:16,926
+Per instance.
+
+
+222
+00:12:18,256 --> 00:12:21,396
+And we do a simple add
+of that instance position
+
+
+223
+00:12:21,846 --> 00:12:24,006
+to the vertex position.
+
+
+224
+00:12:24,036 --> 00:12:27,486
+We're displacing all the
+vertices by this constant value,
+
+
+225
+00:12:27,486 --> 00:12:30,136
+or at least it's constant
+throughout that instance.
+
+
+226
+00:12:30,966 --> 00:12:37,876
+And, finally, we will transform
+our model space position
+
+
+227
+00:12:38,136 --> 00:12:42,046
+into clip space by transforming
+
+
+228
+00:12:42,216 --> 00:12:45,576
+with our model view
+projection matrix and output
+
+
+229
+00:12:45,666 --> 00:12:47,866
+to the built-in gl-Position
+variable.
+
+
+230
+00:12:48,176 --> 00:12:51,816
+We also will do any other
+per vertex processing
+
+
+231
+00:12:51,816 --> 00:12:54,136
+such as maybe computing
+color via lighting
+
+
+232
+00:12:54,136 --> 00:12:57,146
+or generating texture
+coordinates, etc. Alright.
+
+
+233
+00:12:58,336 --> 00:13:01,596
+Here's the second method.
+
+
+234
+00:13:02,796 --> 00:13:05,716
+This is using the
+instance ID parameter.
+
+
+235
+00:13:06,446 --> 00:13:09,856
+We've built in this
+gl-InstanceIDAPPLE variable
+
+
+236
+00:13:09,856 --> 00:13:10,836
+inside the vertex shader,
+
+
+237
+00:13:11,266 --> 00:13:14,076
+and it gets incremented
+once for each instance.
+
+
+238
+00:13:14,846 --> 00:13:17,996
+You can use this ID
+in a number of ways.
+
+
+239
+00:13:18,546 --> 00:13:22,086
+You can calculate a unique
+info for each instance.
+
+
+240
+00:13:22,086 --> 00:13:25,596
+You can use the standard
+math functions that available
+
+
+241
+00:13:25,596 --> 00:13:27,976
+in the vertex shader to
+figure out unique details
+
+
+242
+00:13:28,336 --> 00:13:31,426
+of that instance, or you
+can use it as an index
+
+
+243
+00:13:31,426 --> 00:13:34,826
+into a uniform array or
+a texture, and I'll talk
+
+
+244
+00:13:34,826 --> 00:13:36,986
+about texturing in a vertex
+shader in just a minute.
+
+
+245
+00:13:38,376 --> 00:13:41,776
+This method also uses the
+same glDrawArraysInstanced
+
+
+246
+00:13:41,776 --> 00:13:45,316
+or glDrawElementsIntanced
+as the previous method.
+
+
+247
+00:13:45,726 --> 00:13:50,636
+Here's how this works: We call
+glDrawArraysInstancedAPPLE,
+
+
+248
+00:13:51,956 --> 00:13:55,616
+and the instance ID is
+set inside the shader,
+
+
+249
+00:13:55,856 --> 00:13:58,466
+and it's the same value
+for all the vertices.
+
+
+250
+00:13:59,666 --> 00:14:01,996
+It's incremented for
+the next instance,
+
+
+251
+00:14:02,266 --> 00:14:08,476
+and we submit all the vertices
+using the value of one.
+
+
+252
+00:14:08,646 --> 00:14:11,726
+Finally, we iterate through
+the entire number of instances
+
+
+253
+00:14:11,946 --> 00:14:14,206
+until we get to the
+Nth instance,
+
+
+254
+00:14:14,766 --> 00:14:18,626
+and we submit all the vertices
+for each instance value.
+
+
+255
+00:14:19,366 --> 00:14:21,826
+And we can reference
+that gl-InstanceID
+
+
+256
+00:14:21,826 --> 00:14:22,836
+within our vertex shader.
+
+
+257
+00:14:23,666 --> 00:14:27,356
+And here's what that looks like.
+
+
+258
+00:14:27,856 --> 00:14:31,756
+We use this gl-InstanceIDAPPLE
+variable,
+
+
+259
+00:14:31,756 --> 00:14:34,946
+and it's actually
+an integer value,
+
+
+260
+00:14:34,946 --> 00:14:36,476
+but we don't have integer math
+
+
+261
+00:14:36,526 --> 00:14:39,006
+in the OpenGL ES 100
+shading language.
+
+
+262
+00:14:39,006 --> 00:14:41,656
+So the first thing we need
+to do is cast it to a float
+
+
+263
+00:14:41,656 --> 00:14:46,156
+so that we can use our floating
+point math operations on it.
+
+
+264
+00:14:46,986 --> 00:14:51,066
+And now we perform
+a modulo of ten,
+
+
+265
+00:14:51,386 --> 00:14:54,916
+which will give us the x
+position, and we multiply it
+
+
+266
+00:14:54,916 --> 00:14:59,046
+by a gear size, then
+we divide by ten
+
+
+267
+00:14:59,246 --> 00:15:00,926
+to give us the y position.
+
+
+268
+00:15:01,376 --> 00:15:05,426
+Now we have an instance
+position, which we can add
+
+
+269
+00:15:05,426 --> 00:15:09,476
+to our vertex and output
+to this temp position.
+
+
+270
+00:15:10,316 --> 00:15:12,076
+And like the other method,
+
+
+271
+00:15:12,256 --> 00:15:15,856
+we will do our model view
+projection matrix multiply,
+
+
+272
+00:15:15,856 --> 00:15:19,116
+which will put our
+position into clip space
+
+
+273
+00:15:19,116 --> 00:15:21,326
+and give us a position
+that we can output.
+
+
+274
+00:15:21,326 --> 00:15:21,796
+[ Pause ]
+
+
+275
+00:15:21,796 --> 00:15:25,776
+So that was instancing.
+
+
+276
+00:15:27,696 --> 00:15:30,996
+The next feature is
+vertex texture sampling.
+
+
+277
+00:15:31,046 --> 00:15:33,346
+Why would you want a
+texture in the vertex shader?
+
+
+278
+00:15:33,346 --> 00:15:34,726
+It's not like you can see an
+image [in the vertex stage],
+
+
+279
+00:15:34,726 --> 00:15:35,006
+right?
+
+
+280
+00:15:35,956 --> 00:15:38,326
+Well, there are a
+number of uses for this.
+
+
+281
+00:15:39,416 --> 00:15:43,256
+The first and most obvious
+is displacement mapping.
+
+
+282
+00:15:43,256 --> 00:15:46,306
+You can put an image
+in memory and fetch it
+
+
+283
+00:15:46,306 --> 00:15:48,496
+in the vertex shader,
+and if you've got a mesh,
+
+
+284
+00:15:49,036 --> 00:15:53,846
+you can take the values from
+that texture and displace
+
+
+285
+00:15:53,846 --> 00:15:57,056
+that mesh with the
+values in the texture.
+
+
+286
+00:15:58,176 --> 00:16:00,776
+You can also use it as an
+alternative to uniforms.
+
+
+287
+00:16:02,126 --> 00:16:05,916
+Uniforms have a much smaller
+data store whereas textures has
+
+
+288
+00:16:05,916 --> 00:16:08,496
+a very large data store
+that you can now access
+
+
+289
+00:16:08,696 --> 00:16:09,466
+in the vertex shader.
+
+
+290
+00:16:10,676 --> 00:16:12,146
+Here's a height mapping example.
+
+
+291
+00:16:12,606 --> 00:16:15,636
+On the left, we've got our
+grey scale height map image,
+
+
+292
+00:16:15,746 --> 00:16:18,806
+and on the right, we've
+got the results of that.
+
+
+293
+00:16:19,816 --> 00:16:21,686
+And here's how we
+implemented it.
+
+
+294
+00:16:22,896 --> 00:16:26,586
+First, we've got an x and
+z position that we've sent
+
+
+295
+00:16:26,586 --> 00:16:28,656
+down via a vertex array.
+
+
+296
+00:16:29,816 --> 00:16:30,866
+Just X and Z.
+
+
+297
+00:16:30,926 --> 00:16:35,606
+No Y here, and we have
+a height map sampler.
+
+
+298
+00:16:35,606 --> 00:16:38,906
+Now this looks exactly like it
+would in the fragment shader.
+
+
+299
+00:16:38,966 --> 00:16:40,286
+This, however, is
+a vertex shader,
+
+
+300
+00:16:41,576 --> 00:16:47,826
+and this height map is a
+reference to a texture.
+
+
+301
+00:16:47,826 --> 00:16:51,676
+Now we sample from that texture
+and get our Y value from it.
+
+
+302
+00:16:52,586 --> 00:16:54,976
+Now, it splats the Y value
+
+
+303
+00:16:54,976 --> 00:16:58,136
+across all four components
+of temp position.
+
+
+304
+00:16:59,026 --> 00:17:03,046
+And so we overwrite
+the X and Z values
+
+
+305
+00:17:03,046 --> 00:17:04,826
+with the X and Z positions.
+
+
+306
+00:17:04,826 --> 00:17:07,886
+Now we have X, Y, and Z
+inside of our temp position.
+
+
+307
+00:17:08,126 --> 00:17:12,246
+The Y we just happened to
+have gotten from the texture.
+
+
+308
+00:17:13,476 --> 00:17:17,425
+And as with our other shaders,
+we can transform to clip space
+
+
+309
+00:17:17,476 --> 00:17:19,096
+and output to gl-Position.
+
+
+310
+00:17:19,096 --> 00:17:19,526
+[ Pause ]
+
+
+311
+00:17:19,526 --> 00:17:23,415
+Alright. That's a
+pretty simple example
+
+
+312
+00:17:23,415 --> 00:17:26,156
+of how you might use
+vertex texturing.
+
+
+313
+00:17:26,806 --> 00:17:30,236
+As I mentioned, the more
+interesting way you can use this
+
+
+314
+00:17:30,236 --> 00:17:33,526
+is to store just about
+any kind of generic data
+
+
+315
+00:17:33,526 --> 00:17:35,756
+into a texture for
+shader access.
+
+
+316
+00:17:36,246 --> 00:17:39,466
+It's really just a very large
+store of random access memory.
+
+
+317
+00:17:40,116 --> 00:17:41,966
+Read-only random
+access memory, that is.
+
+
+318
+00:17:42,906 --> 00:17:45,756
+Data normally passed in via
+a glUniform can be passed
+
+
+319
+00:17:45,756 --> 00:17:46,546
+in via a texture.
+
+
+320
+00:17:47,516 --> 00:17:49,776
+There are a number
+of advantages here.
+
+
+321
+00:17:50,376 --> 00:17:52,626
+It's a really, a
+much larger store.
+
+
+322
+00:17:53,116 --> 00:17:56,756
+We support 4K by 4K textures
+on most iOS 7 hardware.
+
+
+323
+00:17:57,186 --> 00:18:01,416
+Whereas uniform arrays are
+limited to 128 uniform,
+
+
+324
+00:18:02,226 --> 00:18:06,506
+that's four values per uniform,
+
+
+325
+00:18:06,646 --> 00:18:09,306
+there's way more storage
+inside of a texture.
+
+
+326
+00:18:10,456 --> 00:18:14,146
+This also enables potentially
+less API calls to set the data.
+
+
+327
+00:18:14,666 --> 00:18:17,896
+If you load your
+texture at app startup,
+
+
+328
+00:18:17,896 --> 00:18:20,946
+and you have all these values
+inside this large data store,
+
+
+329
+00:18:21,236 --> 00:18:25,316
+you can just bind the texture,
+and it's set up for you to draw.
+
+
+330
+00:18:25,786 --> 00:18:28,166
+You don't have to load
+a bunch of values to set
+
+
+331
+00:18:28,166 --> 00:18:29,926
+up for your draw call.
+
+
+332
+00:18:30,186 --> 00:18:32,716
+There's a bit more
+variety and types
+
+
+333
+00:18:32,716 --> 00:18:35,946
+that you can use whereas
+uniforms only allow you
+
+
+334
+00:18:35,946 --> 00:18:37,966
+to use 32-bit floats.
+
+
+335
+00:18:38,396 --> 00:18:42,116
+You can use unsigned byte,
+half float, and float.
+
+
+336
+00:18:42,116 --> 00:18:45,716
+Any of the texture
+types that you can use,
+
+
+337
+00:18:45,916 --> 00:18:48,756
+you can use for vertex
+texture sampling.
+
+
+338
+00:18:50,196 --> 00:18:54,116
+You can choose the appropriate
+type for the data that you'd
+
+
+339
+00:18:54,116 --> 00:18:56,386
+like to consume in your shader.
+
+
+340
+00:18:56,386 --> 00:18:59,246
+You can use filtering
+with the texture.
+
+
+341
+00:18:59,246 --> 00:19:00,486
+Anything you can do
+with the texture,
+
+
+342
+00:19:00,486 --> 00:19:03,766
+you can do with a vertex
+texture, and filtering is kind
+
+
+343
+00:19:03,766 --> 00:19:06,026
+of nice because you can average
+sequential values that are
+
+
+344
+00:19:06,326 --> 00:19:09,926
+in your texture,
+and with wrapping,
+
+
+345
+00:19:09,956 --> 00:19:12,056
+you can actually
+average the last value
+
+
+346
+00:19:12,356 --> 00:19:14,426
+in your texture with
+the first value.
+
+
+347
+00:19:14,886 --> 00:19:17,776
+So you can do a wraparound
+of averaging.
+
+
+348
+00:19:18,436 --> 00:19:20,396
+And because you can
+render to a texture,
+
+
+349
+00:19:20,936 --> 00:19:23,026
+you can have the
+GPU produce data.
+
+
+350
+00:19:23,586 --> 00:19:27,066
+Instead of just loading it
+in from CPU generated values,
+
+
+351
+00:19:27,066 --> 00:19:29,426
+you can render to the
+texture and then consume
+
+
+352
+00:19:29,426 --> 00:19:30,796
+that data in the vertex shader.
+
+
+353
+00:19:31,536 --> 00:19:33,326
+[Pause] Now I'd like
+to show you a demo
+
+
+354
+00:19:33,836 --> 00:19:36,186
+with some of these features.
+
+
+355
+00:19:36,906 --> 00:19:42,516
+Here we have 15,000 asteroids
+rotating about this planet,
+
+
+356
+00:19:43,616 --> 00:19:46,896
+and this is using what
+we call immediate mode.
+
+
+357
+00:19:47,156 --> 00:19:51,686
+There is a draw call
+for each asteroid here.
+
+
+358
+00:19:51,686 --> 00:19:54,726
+So that's over 15,000
+draw calls.
+
+
+359
+00:19:55,606 --> 00:19:58,436
+Now we're running at
+17 frames per second,
+
+
+360
+00:19:58,436 --> 00:20:00,086
+maybe 18 in some case.
+
+
+361
+00:20:00,086 --> 00:20:03,406
+That's alright, I guess.
+
+
+362
+00:20:04,556 --> 00:20:07,466
+The real problem here is
+
+
+363
+00:20:07,466 --> 00:20:10,006
+that we're consuming
+a lot of CPU cycles.
+
+
+364
+00:20:10,006 --> 00:20:12,866
+We're really leaving
+nothing for the app so that
+
+
+365
+00:20:12,866 --> 00:20:15,666
+if you've got some logic
+there, the frame rate's going
+
+
+366
+00:20:15,846 --> 00:20:17,756
+to slow down even more.
+
+
+367
+00:20:18,746 --> 00:20:21,646
+So what we like to do is
+offload this to the GPU.
+
+
+368
+00:20:22,966 --> 00:20:27,446
+Here we have the
+first improvement,
+
+
+369
+00:20:28,076 --> 00:20:31,186
+which is using instance
+ID, the built-in variable
+
+
+370
+00:20:31,266 --> 00:20:32,416
+within our vertex shader.
+
+
+371
+00:20:32,866 --> 00:20:35,896
+Now what's cool about this
+is we're actually rotating
+
+
+372
+00:20:35,896 --> 00:20:37,366
+or spinning each asteroid.
+
+
+373
+00:20:37,776 --> 00:20:40,106
+They all have unique
+values, and,
+
+
+374
+00:20:40,616 --> 00:20:41,946
+obviously, unique positions.
+
+
+375
+00:20:42,466 --> 00:20:47,466
+And here's another mode
+that we've implemented.
+
+
+376
+00:20:47,506 --> 00:20:50,976
+This uses the
+glVertexAttribDivisor method,
+
+
+377
+00:20:50,976 --> 00:20:54,206
+and we're getting even a
+slightly better frame rate here.
+
+
+378
+00:20:55,676 --> 00:21:00,006
+This is due to our pre-computing
+all of the rotations
+
+
+379
+00:21:00,006 --> 00:21:02,686
+and position of values
+outside the shader,
+
+
+380
+00:21:02,686 --> 00:21:03,916
+and we're just passing them in.
+
+
+381
+00:21:03,916 --> 00:21:06,496
+We're not actually doing
+much computation inside
+
+
+382
+00:21:06,496 --> 00:21:07,426
+of our vertex shader.
+
+
+383
+00:21:07,926 --> 00:21:10,016
+What's cool to note
+about this is
+
+
+384
+00:21:10,016 --> 00:21:12,736
+that a few years ago
+we presented this
+
+
+385
+00:21:12,766 --> 00:21:17,536
+on a Mac Pro with, I
+don't know how many cores
+
+
+386
+00:21:17,536 --> 00:21:19,266
+and a beefy desktop GPU.
+
+
+387
+00:21:19,816 --> 00:21:23,536
+This is really pretty nice
+that we are now showing this
+
+
+388
+00:21:23,536 --> 00:21:25,626
+to you on an iOS device.
+
+
+389
+00:21:25,626 --> 00:21:25,786
+[ Pause ]
+
+
+390
+00:21:25,786 --> 00:21:25,946
+[ Applause ]
+
+
+391
+00:21:25,946 --> 00:21:26,106
+[ Pause ]
+
+
+392
+00:21:26,106 --> 00:21:35,466
+Let me talk about some
+implementation details here.
+
+
+393
+00:21:36,696 --> 00:21:39,836
+With that second mode
+using the instance ID,
+
+
+394
+00:21:40,176 --> 00:21:43,716
+we calculate the transformation
+matrix in the vertex shader.
+
+
+395
+00:21:44,046 --> 00:21:48,526
+First, we figure out a spin
+value by doing a modulo
+
+
+396
+00:21:48,526 --> 00:21:51,616
+of our instance ID, and this
+gives us some spin value
+
+
+397
+00:21:51,616 --> 00:21:54,996
+in radians and we can then use
+the cosine and sine functions
+
+
+398
+00:21:55,246 --> 00:21:56,976
+to build a rotation matrix.
+
+
+399
+00:21:57,426 --> 00:22:00,586
+We then apply a translation
+matrix
+
+
+400
+00:22:00,956 --> 00:22:04,276
+that gives us the
+position of the asteroid.
+
+
+401
+00:22:05,046 --> 00:22:09,186
+We also use the instance
+ID variable to figure
+
+
+402
+00:22:09,186 --> 00:22:12,986
+out the positions, and
+then we create this matrix.
+
+
+403
+00:22:13,556 --> 00:22:16,576
+Now the matrix calculations
+are done per vertex.
+
+
+404
+00:22:16,966 --> 00:22:20,846
+So even though this
+matrix will be the same
+
+
+405
+00:22:20,846 --> 00:22:23,396
+for the entire asteroid,
+which is about 30
+
+
+406
+00:22:23,396 --> 00:22:28,086
+to 60 vertices (I think
+it's maybe a little bit
+
+
+407
+00:22:28,086 --> 00:22:30,236
+on the lower end)
+but that's 30 times
+
+
+408
+00:22:30,236 --> 00:22:33,486
+that we're calculating this
+transformation matrix, at least.
+
+
+409
+00:22:33,716 --> 00:22:39,216
+What we'd really like to do is
+just create this matrix once per
+
+
+410
+00:22:39,546 --> 00:22:41,576
+instance, not per vertex.
+
+
+411
+00:22:42,186 --> 00:22:46,666
+This is what the instance
+arrays method does.
+
+
+412
+00:22:47,206 --> 00:22:49,976
+We actually calculate
+this matrix array up front
+
+
+413
+00:22:49,976 --> 00:22:52,396
+at app startup, or
+all these matrices
+
+
+414
+00:22:52,396 --> 00:22:53,346
+up front at app startup.
+
+
+415
+00:22:53,346 --> 00:22:56,026
+We calculate positions
+and rotations.
+
+
+416
+00:22:56,356 --> 00:22:59,706
+We stuff that into a
+vertex array, and then set
+
+
+417
+00:22:59,706 --> 00:23:03,306
+up the vertex array with the
+glVertexAttribDivisor call,
+
+
+418
+00:23:03,666 --> 00:23:06,226
+and pass the parameters
+down for each asteroid,
+
+
+419
+00:23:07,446 --> 00:23:08,956
+not for each vertex.
+
+
+420
+00:23:10,676 --> 00:23:13,616
+There are a couple of
+advantages and disadvantages
+
+
+421
+00:23:13,836 --> 00:23:16,866
+to each of these methods.
+
+
+422
+00:23:16,866 --> 00:23:19,916
+Using the instance ID method,
+we're not using any memory
+
+
+423
+00:23:20,076 --> 00:23:21,476
+or really very little memory
+
+
+424
+00:23:21,546 --> 00:23:23,266
+because we're doing
+all the calculation
+
+
+425
+00:23:23,586 --> 00:23:26,146
+as needed on the GPU.
+
+
+426
+00:23:26,586 --> 00:23:29,086
+Another advantage is
+that you're using the GPU
+
+
+427
+00:23:29,086 --> 00:23:30,526
+as another computation device.
+
+
+428
+00:23:30,596 --> 00:23:34,626
+If you're not GPU bound, and
+you need the CPU for a lot
+
+
+429
+00:23:34,626 --> 00:23:38,016
+of cycles, well, then
+this may be the way to go.
+
+
+430
+00:23:38,956 --> 00:23:42,046
+But in general you may,
+if you have a number
+
+
+431
+00:23:42,046 --> 00:23:46,616
+of instances using the GPU, you
+could potentially overload it
+
+
+432
+00:23:46,666 --> 00:23:50,806
+with computation, which would
+really slow it down if you need
+
+
+433
+00:23:50,806 --> 00:23:51,946
+to do other computations.
+
+
+434
+00:23:51,946 --> 00:23:55,146
+So what we've got here
+is a different method
+
+
+435
+00:23:55,146 --> 00:23:57,096
+where we use instance array.
+
+
+436
+00:23:57,666 --> 00:24:01,166
+Instance arrays is generally
+faster than computing on the GPU
+
+
+437
+00:24:01,446 --> 00:24:03,776
+since you can save
+cycles on the GPU.
+
+
+438
+00:24:04,246 --> 00:24:09,836
+There's a lot more flexibility
+and types over uniforms.
+
+
+439
+00:24:11,086 --> 00:24:16,346
+You can use any type that
+a vertex array can use,
+
+
+440
+00:24:16,346 --> 00:24:20,396
+including bytes, unsigned
+bytes, floats, half floats,
+
+
+441
+00:24:20,396 --> 00:24:26,416
+etc. Now there's a third method
+that I didn't demonstrate,
+
+
+442
+00:24:26,416 --> 00:24:29,706
+but this would be to
+use the instance ID
+
+
+443
+00:24:30,156 --> 00:24:32,006
+as an index into a texture.
+
+
+444
+00:24:32,126 --> 00:24:33,566
+So instead of passing parameters
+
+
+445
+00:24:33,566 --> 00:24:38,036
+down via a vertex attribute
+array, you stuff them
+
+
+446
+00:24:38,036 --> 00:24:41,776
+into a texture and then fetch
+using the instance ID variable
+
+
+447
+00:24:42,736 --> 00:24:46,456
+to get the location, the
+position, and the rotation.
+
+
+448
+00:24:47,216 --> 00:24:48,586
+Now, as I mentioned before,
+
+
+449
+00:24:49,126 --> 00:24:52,056
+the textures are just this large
+storage of random access memory.
+
+
+450
+00:24:53,106 --> 00:24:54,556
+It's often logically simpler
+[to store data in a texture],
+
+
+451
+00:24:54,666 --> 00:24:58,766
+since you've got a 2D array,
+to put tables or any other sort
+
+
+452
+00:24:58,766 --> 00:25:00,286
+of data inside of a texture.
+
+
+453
+00:25:00,286 --> 00:25:04,096
+So this is really cool
+for bone matrices,
+
+
+454
+00:25:04,096 --> 00:25:09,246
+you can use the first row for
+the arm matrix, the second row
+
+
+455
+00:25:09,246 --> 00:25:11,166
+for the other arm
+matrix, the third row
+
+
+456
+00:25:11,166 --> 00:25:13,176
+for the leg matrix,
+head, and so on.
+
+
+457
+00:25:13,626 --> 00:25:17,126
+So it's actually a lot
+easier to use a texture
+
+
+458
+00:25:17,576 --> 00:25:19,356
+for your bone matrix parameters.
+
+
+459
+00:25:19,621 --> 00:25:21,621
+[ Pause ]
+
+
+460
+00:25:21,886 --> 00:25:24,936
+So here's a summary
+of instancing
+
+
+461
+00:25:24,936 --> 00:25:26,456
+and vertex texture sampling.
+
+
+462
+00:25:26,996 --> 00:25:29,536
+Instancing allows you
+to draw many models
+
+
+463
+00:25:29,536 --> 00:25:32,086
+of the single draw call, which
+is particularly important
+
+
+464
+00:25:32,086 --> 00:25:35,476
+because draw calls consume
+a number of CPU cycles,
+
+
+465
+00:25:36,036 --> 00:25:38,636
+and even though it's the same
+model that you're drawing,
+
+
+466
+00:25:39,156 --> 00:25:41,376
+they can look distinct
+since you are passing
+
+
+467
+00:25:41,376 --> 00:25:43,626
+down different parameters
+for each instance.
+
+
+468
+00:25:44,316 --> 00:25:47,006
+Vertex texture sampling:
+just think of it
+
+
+469
+00:25:47,006 --> 00:25:51,366
+as a large data store for
+random access read-only memory
+
+
+470
+00:25:51,366 --> 00:25:52,036
+in the vertex shader.
+
+
+471
+00:25:52,606 --> 00:25:54,276
+You can use it with
+the instance ID
+
+
+472
+00:25:54,276 --> 00:25:56,706
+to fetch per instance
+parameters.
+
+
+473
+00:25:58,636 --> 00:26:02,616
+These extensions and these
+features are supported
+
+
+474
+00:26:02,616 --> 00:26:04,996
+on all iOS 7 devices.
+
+
+475
+00:26:05,286 --> 00:26:07,286
+[ Pause ]
+
+
+476
+00:26:07,576 --> 00:26:13,836
+OK. Let's move on to the third
+feature in iOS 7 on OpenGLES.
+
+
+477
+00:26:17,196 --> 00:26:20,276
+sRGB is an alternate
+caller space,
+
+
+478
+00:26:20,996 --> 00:26:23,996
+which is more perceptually
+correct.
+
+
+479
+00:26:23,996 --> 00:26:26,046
+It matches the gamma
+curve of displays.
+
+
+480
+00:26:26,476 --> 00:26:32,266
+If you're looking at blacks and
+greys and whites, what you'd see
+
+
+481
+00:26:32,266 --> 00:26:36,766
+with the usual color space
+is that you'd move from black
+
+
+482
+00:26:37,136 --> 00:26:41,706
+to grey much more quickly
+than from grey to white,
+
+
+483
+00:26:42,166 --> 00:26:43,066
+which effectively means
+
+
+484
+00:26:43,066 --> 00:26:46,476
+that your brighter colors
+are weighted more heavily
+
+
+485
+00:26:46,546 --> 00:26:49,656
+when you're doing averaging
+or mixing of colors.
+
+
+486
+00:26:50,076 --> 00:26:52,876
+So it's not a linear
+distribution.
+
+
+487
+00:26:53,326 --> 00:26:55,196
+There's weight on
+some of the values.
+
+
+488
+00:26:55,896 --> 00:26:58,226
+aRGB compensates for this
+
+
+489
+00:26:58,226 --> 00:27:00,346
+by basically applying
+an inverse curve
+
+
+490
+00:27:00,346 --> 00:27:02,986
+so that the darker colors
+get a little bit more weight
+
+
+491
+00:27:02,986 --> 00:27:07,036
+than usual, and this allows
+you to have a linear mixing
+
+
+492
+00:27:07,036 --> 00:27:10,186
+when your image is
+presented on the display.
+
+
+493
+00:27:12,576 --> 00:27:14,526
+Here's some API details.
+
+
+494
+00:27:15,286 --> 00:27:19,196
+There are two external formats
+that you would put your data in.
+
+
+495
+00:27:20,516 --> 00:27:23,156
+This is sRGB8 and sRGB8-Alpha.
+
+
+496
+00:27:23,676 --> 00:27:27,206
+There is an internal
+format, SRGB 8 alpha 8,
+
+
+497
+00:27:27,946 --> 00:27:31,986
+and four compressed internal
+formats that you can read
+
+
+498
+00:27:31,986 --> 00:27:34,916
+from that support
+this sRGB color space.
+
+
+499
+00:27:36,206 --> 00:27:40,396
+Now the non-compressed
+format here is renderable.
+
+
+500
+00:27:40,396 --> 00:27:44,376
+This allows you to do linear
+blending or color calculations
+
+
+501
+00:27:44,376 --> 00:27:48,046
+in the shaders and have them
+come up in a linear fashion.
+
+
+502
+00:27:48,986 --> 00:27:54,336
+You need to check for the
+GL-EXT-sRGB extension string
+
+
+503
+00:27:54,836 --> 00:27:55,866
+because this is supported
+
+
+504
+00:27:55,866 --> 00:28:00,636
+on all iOS 7 devices
+except for the iPhone 4.
+
+
+505
+00:28:01,086 --> 00:28:04,026
+This is a great new feature.
+
+
+506
+00:28:04,226 --> 00:28:06,516
+It's perceptually correct.
+
+
+507
+00:28:07,266 --> 00:28:09,466
+However, you don't want
+to just turn this on.
+
+
+508
+00:28:09,876 --> 00:28:12,746
+You'll start getting some
+things that may not look right.
+
+
+509
+00:28:13,886 --> 00:28:15,926
+You need to author
+your textures for it.
+
+
+510
+00:28:15,926 --> 00:28:19,866
+You need your artists to keep
+the SRGB color space in mind
+
+
+511
+00:28:20,316 --> 00:28:22,306
+so that when they're
+actually presented,
+
+
+512
+00:28:22,376 --> 00:28:24,456
+they look as you
+intended them to.
+
+
+513
+00:28:24,456 --> 00:28:29,626
+And you should only use these
+SRGB textures for color data.
+
+
+514
+00:28:30,176 --> 00:28:32,556
+Lot of people encode normal maps
+
+
+515
+00:28:32,956 --> 00:28:36,076
+or just use an alpha
+map perhaps.
+
+
+516
+00:28:36,706 --> 00:28:38,126
+You shouldn't even
+use this for alpha.
+
+
+517
+00:28:38,126 --> 00:28:41,066
+Alpha is often thought
+of as going with RGB,
+
+
+518
+00:28:41,266 --> 00:28:44,846
+but alpha should use
+its own linear space.
+
+
+519
+00:28:45,311 --> 00:28:47,311
+[ Pause ]
+
+
+520
+00:28:47,776 --> 00:28:53,266
+Alright. So a lot of great new
+features in the OpenGL ES API,
+
+
+521
+00:28:54,836 --> 00:28:59,596
+but you really need to have a
+rock solid foundation before you
+
+
+522
+00:28:59,596 --> 00:29:01,896
+start adding to your
+rendering engines.
+
+
+523
+00:29:02,666 --> 00:29:08,046
+And, fortunately, Apple provides
+a slew of excellent GPU tools
+
+
+524
+00:29:08,046 --> 00:29:10,136
+to help you build
+this foundation.
+
+
+525
+00:29:11,916 --> 00:29:13,206
+The first tool I'd like to talk
+
+
+526
+00:29:13,206 --> 00:29:15,206
+about the OpenGLES
+frame debugger.
+
+
+527
+00:29:15,596 --> 00:29:20,826
+It allows you to capture a
+frame of rendering and debug it
+
+
+528
+00:29:20,826 --> 00:29:22,786
+and play with it and
+experiment with it.
+
+
+529
+00:29:23,566 --> 00:29:26,876
+Now, there are a ton of
+widgets here that I'll
+
+
+530
+00:29:27,086 --> 00:29:30,346
+and I'll just go
+over a few of them.
+
+
+531
+00:29:30,556 --> 00:29:32,806
+The first thing I'd like to
+point out is the scrubber bar.
+
+
+532
+00:29:33,046 --> 00:29:35,176
+So you've captured a
+frame of rendering,
+
+
+533
+00:29:35,376 --> 00:29:37,776
+and the scrubber bar
+allows you to position
+
+
+534
+00:29:38,106 --> 00:29:41,696
+on a particular call
+through your frame.
+
+
+535
+00:29:41,696 --> 00:29:47,406
+You can stop at a draw call or
+a bind or a uniform set, etc.,
+
+
+536
+00:29:48,536 --> 00:29:51,806
+and you can see what
+has just been rendered.
+
+
+537
+00:29:51,916 --> 00:29:54,546
+You can see your scene at
+it gets built up not only
+
+
+538
+00:29:54,546 --> 00:29:56,476
+in the color buffer,
+which is on the left,
+
+
+539
+00:29:56,576 --> 00:29:58,656
+but also the depth
+buffer on the right,
+
+
+540
+00:29:58,876 --> 00:30:00,736
+and whatever you've
+just rendered,
+
+
+541
+00:30:00,736 --> 00:30:04,496
+the results of last draw call
+you've made, shows up in green.
+
+
+542
+00:30:04,996 --> 00:30:09,796
+[ Pause ]
+
+
+543
+00:30:10,296 --> 00:30:13,816
+You can also examine all of
+the contents of context state
+
+
+544
+00:30:13,816 --> 00:30:15,996
+at a particular call
+inside that frame.
+
+
+545
+00:30:16,476 --> 00:30:18,236
+You can see everything
+in the context,
+
+
+546
+00:30:18,236 --> 00:30:20,546
+the whole state vector
+of OpenGL ES.
+
+
+547
+00:30:21,036 --> 00:30:23,786
+Everything that's bound,
+the programs, textures,
+
+
+548
+00:30:23,786 --> 00:30:26,686
+etc. Your blend state,
+your depth state,
+
+
+549
+00:30:26,896 --> 00:30:28,076
+whatever state you'd like.
+
+
+550
+00:30:28,796 --> 00:30:30,496
+If you think something
+may be going wrong
+
+
+551
+00:30:30,496 --> 00:30:34,146
+with the state vector, you
+can search in there for it.
+
+
+552
+00:30:34,816 --> 00:30:39,616
+But what's even nicer
+is that in Xcode 5,
+
+
+553
+00:30:40,166 --> 00:30:43,966
+you can now view the
+information that pertains
+
+
+554
+00:30:43,966 --> 00:30:46,476
+to the particular call
+that you're stopped on.
+
+
+555
+00:30:47,386 --> 00:30:50,356
+Instead of looking through
+all of the context state,
+
+
+556
+00:30:50,516 --> 00:30:53,886
+you can look at what's really
+useful to you at the moment.
+
+
+557
+00:30:54,946 --> 00:30:58,546
+Here, I am stopped at
+a glUseProgram call.
+
+
+558
+00:30:58,636 --> 00:31:01,746
+And so now I can look at
+all of the information
+
+
+559
+00:31:01,746 --> 00:31:03,586
+that pertains to
+that GLSL program.
+
+
+560
+00:31:04,056 --> 00:31:06,076
+All the uniforms
+and their values,
+
+
+561
+00:31:06,356 --> 00:31:11,336
+what attributes are
+necessary for that program,
+
+
+562
+00:31:12,136 --> 00:31:19,056
+etc. You can set that view in
+the lower left-hand corner here.
+
+
+563
+00:31:19,056 --> 00:31:20,726
+There's this auto
+variables view,
+
+
+564
+00:31:20,906 --> 00:31:29,126
+and this is new with Xcode 5.
+
+
+565
+00:31:29,126 --> 00:31:29,326
+[ Pause ]
+
+
+566
+00:31:29,326 --> 00:31:30,616
+You also have an object viewer.
+
+
+567
+00:31:30,616 --> 00:31:34,046
+You can view any of the
+objects in the OpenGL context.
+
+
+568
+00:31:34,046 --> 00:31:36,836
+You can view textures,
+vertex buffer objects,
+
+
+569
+00:31:37,106 --> 00:31:39,696
+and I think the most
+powerful feature here,
+
+
+570
+00:31:39,696 --> 00:31:43,806
+the most powerful object
+viewer is your shader viewer.
+
+
+571
+00:31:43,806 --> 00:31:46,866
+And you can take a look at the
+shaders and edit your shader
+
+
+572
+00:31:46,866 --> 00:31:49,706
+within it, and hit
+this button here
+
+
+573
+00:31:49,706 --> 00:31:51,306
+on the lower left-hand corner,
+
+
+574
+00:31:51,306 --> 00:31:53,256
+which will compile your
+shader immediately,
+
+
+575
+00:31:53,416 --> 00:31:57,526
+apply it to your scene, and then
+you can see how it has changed
+
+
+576
+00:31:57,786 --> 00:31:58,586
+your rendering.
+
+
+577
+00:31:59,086 --> 00:32:03,166
+[ Applause ]
+
+
+578
+00:32:03,666 --> 00:32:05,596
+So this allows you to experiment
+
+
+579
+00:32:05,986 --> 00:32:08,426
+and even debug shader
+compiler error.
+
+
+580
+00:32:08,426 --> 00:32:12,596
+As you see here, I've got use
+of an undeclared variable,
+
+
+581
+00:32:12,926 --> 00:32:17,856
+and it flags my error, and I can
+go ahead and fix it right away.
+
+
+582
+00:32:18,356 --> 00:32:20,756
+[ Pause ]
+
+
+583
+00:32:21,256 --> 00:32:23,396
+So an often overlooked feature
+
+
+584
+00:32:23,396 --> 00:32:28,006
+of the OpenGL ES frame debugger
+is the OpenGL issues navigator.
+
+
+585
+00:32:28,496 --> 00:32:32,026
+Here we point out a number
+of things that you could do
+
+
+586
+00:32:32,026 --> 00:32:33,696
+to improve your rendering.
+
+
+587
+00:32:33,696 --> 00:32:36,626
+There's also some
+information about things
+
+
+588
+00:32:36,626 --> 00:32:40,466
+that may cause rendering
+errors, but more importantly,
+
+
+589
+00:32:40,466 --> 00:32:41,506
+there is a lot of information
+
+
+590
+00:32:41,506 --> 00:32:46,526
+about how you can
+improve your performance.
+
+
+591
+00:32:46,526 --> 00:32:50,786
+Also in Xcode 5, we have the
+performance analysis page,
+
+
+592
+00:32:51,536 --> 00:32:53,286
+which allows you
+to hit this button
+
+
+593
+00:32:53,286 --> 00:32:57,446
+in the upper right-hand
+corner, and we'll run a couple
+
+
+594
+00:32:57,446 --> 00:33:01,096
+of experiments on your frame
+and figure out what bottlenecks
+
+
+595
+00:33:01,096 --> 00:33:03,676
+that you've got, whether you're
+vertex bound, fragment bound,
+
+
+596
+00:33:03,676 --> 00:33:06,156
+etc., and there are
+some helpful suggestions
+
+
+597
+00:33:06,156 --> 00:33:08,806
+as to what you might
+like to do next.
+
+
+598
+00:33:09,406 --> 00:33:10,886
+It also gives you
+some information
+
+
+599
+00:33:10,886 --> 00:33:15,846
+such as whether your GPU is
+pegged or your CPU is pegged.
+
+
+600
+00:33:17,046 --> 00:33:19,366
+So a lot of useful
+information here as well.
+
+
+601
+00:33:19,366 --> 00:33:20,236
+[ Pause ]
+
+
+602
+00:33:20,236 --> 00:33:23,096
+And new in Xcode
+5 is the ability
+
+
+603
+00:33:23,096 --> 00:33:24,936
+to break on any OpenGL error.
+
+
+604
+00:33:25,246 --> 00:33:29,556
+Now, what you used to have to
+do is add a glGetError call
+
+
+605
+00:33:29,556 --> 00:33:32,486
+after every single OpenGL call
+to stomp out these errors,
+
+
+606
+00:33:32,756 --> 00:33:37,856
+Figure out if your OpenGL call
+produced some sort of some error
+
+
+607
+00:33:37,856 --> 00:33:39,926
+because you sent in
+some bad arguments
+
+
+608
+00:33:39,926 --> 00:33:41,496
+or the state wasn't
+set up properly.
+
+
+609
+00:33:41,886 --> 00:33:43,516
+Well, you don't have
+to do this anymore.
+
+
+610
+00:33:43,906 --> 00:33:45,196
+In the lower left-hand
+corner here,
+
+
+611
+00:33:45,196 --> 00:33:50,606
+you can just say add OpenGL ES
+breakpoint, and any OpenGL call
+
+
+612
+00:33:50,606 --> 00:33:53,116
+that produces an error
+will break immediately,
+
+
+613
+00:33:53,116 --> 00:33:59,986
+and you can immediately fix it.
+
+
+614
+00:33:59,986 --> 00:34:00,166
+[ Applause ]
+
+
+615
+00:34:00,166 --> 00:34:02,906
+We also have the OpenGL
+ES Analyzer instrument,
+
+
+616
+00:34:03,156 --> 00:34:05,146
+and there are a number
+of very helpful views
+
+
+617
+00:34:05,146 --> 00:34:06,896
+for improving performance.
+
+
+618
+00:34:07,406 --> 00:34:11,485
+And a very powerful part
+
+
+619
+00:34:11,485 --> 00:34:18,966
+of the OpenGL ES Analyzer is the
+OpenGL ES Expert, which points
+
+
+620
+00:34:18,966 --> 00:34:22,576
+out more information, more
+things that you can do
+
+
+621
+00:34:22,576 --> 00:34:25,876
+to improve the performance
+in your application.
+
+
+622
+00:34:26,126 --> 00:34:30,206
+This points out a lot of
+data that is very similar
+
+
+623
+00:34:30,206 --> 00:34:33,025
+to what comes up in
+the issues navigator.
+
+
+624
+00:34:33,416 --> 00:34:37,606
+Whereas the issues navigator can
+actually run some more in-depth
+
+
+625
+00:34:37,606 --> 00:34:40,786
+experiments and give
+you more data,
+
+
+626
+00:34:41,275 --> 00:34:46,886
+it only can analyze one frame
+whereas the OpenGLES expert can
+
+
+627
+00:34:46,886 --> 00:34:48,985
+analyze multiple
+frames of rendering.
+
+
+628
+00:34:49,485 --> 00:34:53,196
+[ Pause ]
+
+
+629
+00:34:53,696 --> 00:34:56,656
+We offer a number of tools
+
+
+630
+00:34:57,126 --> 00:35:00,526
+that really provide
+an excellent means
+
+
+631
+00:35:00,526 --> 00:35:02,226
+for debugging your rendering.
+
+
+632
+00:35:03,606 --> 00:35:06,036
+Additionally, with
+the OpenGL ES Expert,
+
+
+633
+00:35:06,876 --> 00:35:09,486
+the performance analysis
+page and the frame debugger
+
+
+634
+00:35:09,816 --> 00:35:14,466
+with the issues navigator, we're
+providing lots of valuable data
+
+
+635
+00:35:14,606 --> 00:35:15,876
+to improve performance.
+
+
+636
+00:35:17,026 --> 00:35:18,826
+But there is a lot of
+data coming at you,
+
+
+637
+00:35:18,966 --> 00:35:22,266
+and it can be difficult to
+digest and assess the severity
+
+
+638
+00:35:22,266 --> 00:35:25,066
+of the issues that come up.
+
+
+639
+00:35:25,306 --> 00:35:27,416
+So I think it would be helpful
+
+
+640
+00:35:27,826 --> 00:35:32,006
+if I can give you a more
+in-depth understanding
+
+
+641
+00:35:32,556 --> 00:35:35,926
+of how OpenGL works
+and, in particular,
+
+
+642
+00:35:36,336 --> 00:35:40,756
+how the GPU beneath it takes the
+vertex data and transforms it
+
+
+643
+00:35:40,816 --> 00:35:42,726
+into pixels on the screen.
+
+
+644
+00:35:43,346 --> 00:35:45,596
+That way, you can keep the
+OpenGL architecture in mind
+
+
+645
+00:35:45,596 --> 00:35:48,456
+when you're designing your
+rendering architecture
+
+
+646
+00:35:49,406 --> 00:35:54,676
+and really assess the severity
+of issues that crop up.
+
+
+647
+00:35:54,676 --> 00:35:54,743
+[ Pause ]
+
+
+648
+00:35:54,743 --> 00:35:56,396
+I'm going to give
+you an overview
+
+
+649
+00:35:56,606 --> 00:36:01,396
+of the GPU architecture now.
+
+
+650
+00:36:01,616 --> 00:36:07,666
+All of the iOS GPU's are
+tile-based deferred renderers.
+
+
+651
+00:36:08,536 --> 00:36:12,326
+They are high-performance,
+low-power GPUs,
+
+
+652
+00:36:12,966 --> 00:36:17,196
+and the TBDR pipeline is
+significantly different
+
+
+653
+00:36:17,196 --> 00:36:19,026
+than that of traditional
+streaming GPUs
+
+
+654
+00:36:19,026 --> 00:36:20,216
+that you would find on the Mac.
+
+
+655
+00:36:21,276 --> 00:36:22,986
+There are a number
+of optimizations
+
+
+656
+00:36:23,346 --> 00:36:27,506
+to reduce the processing load,
+which increase performance
+
+
+657
+00:36:27,576 --> 00:36:29,736
+and really save lots of power.
+
+
+658
+00:36:29,956 --> 00:36:32,896
+Very important on
+these iOS devices.
+
+
+659
+00:36:33,296 --> 00:36:37,016
+Now the architecture
+depends heavily on caches
+
+
+660
+00:36:38,026 --> 00:36:39,416
+because large transfers
+
+
+661
+00:36:39,416 --> 00:36:43,616
+to unified memory are costly
+not only in terms of performance
+
+
+662
+00:36:43,616 --> 00:36:46,126
+and latency, but also
+in terms of power.
+
+
+663
+00:36:46,126 --> 00:36:48,716
+I t takes a lot of power
+to reach out across the bus
+
+
+664
+00:36:48,716 --> 00:36:49,946
+and grab something back in.
+
+
+665
+00:36:50,456 --> 00:36:54,406
+So we have these very
+nice, significantly large,
+
+
+666
+00:36:54,606 --> 00:36:58,256
+caches so that we can do
+a lot of work on the GPU.
+
+
+667
+00:36:59,346 --> 00:37:02,296
+There are certain operations
+that developers can do
+
+
+668
+00:37:02,296 --> 00:37:04,626
+that can prevent
+these optimizations
+
+
+669
+00:37:04,776 --> 00:37:06,066
+or cause cache misses.
+
+
+670
+00:37:07,076 --> 00:37:10,106
+Fortunately, these operations
+are entirely avoidable.
+
+
+671
+00:37:10,106 --> 00:37:10,626
+[ Pause ]
+
+
+672
+00:37:10,626 --> 00:37:15,666
+What I thought I'd do
+is take you on a trip
+
+
+673
+00:37:16,026 --> 00:37:18,746
+down the tile-based
+deferred rendering pipeline,
+
+
+674
+00:37:19,676 --> 00:37:22,546
+and along the way, I'll
+point out some issues
+
+
+675
+00:37:22,836 --> 00:37:25,986
+that you may stumble across
+and describe what's going
+
+
+676
+00:37:25,986 --> 00:37:28,536
+on when we warn you
+about these issues.
+
+
+677
+00:37:29,356 --> 00:37:31,516
+Let's start out with
+the vertex processor.
+
+
+678
+00:37:32,396 --> 00:37:37,396
+On your left, you've got the
+vertex arrays that we've set up.
+
+
+679
+00:37:37,396 --> 00:37:41,156
+Hopefully, you've used
+a vertex buffer object
+
+
+680
+00:37:41,156 --> 00:37:45,116
+or a vertex array object
+to encapsulate this data,
+
+
+681
+00:37:45,286 --> 00:37:47,126
+And we issue a draw call,
+
+
+682
+00:37:47,266 --> 00:37:49,116
+which begins this trip
+down the pipeline.
+
+
+683
+00:37:49,836 --> 00:37:52,996
+We shade the vertices,
+transform them into clip space,
+
+
+684
+00:37:53,146 --> 00:37:56,036
+and actually also apply the
+view port transformation
+
+
+685
+00:37:56,036 --> 00:37:58,476
+so that they're now
+window coordinate vertices.
+
+
+686
+00:37:59,596 --> 00:38:02,446
+The vertices are shaded and
+transformed, as I mentioned,
+
+
+687
+00:38:02,686 --> 00:38:04,676
+and stored out to
+unified memory.
+
+
+688
+00:38:05,176 --> 00:38:10,736
+[ Pause ]
+
+
+689
+00:38:11,236 --> 00:38:13,956
+Now a frames' worth of
+vertices are stored.
+
+
+690
+00:38:14,116 --> 00:38:16,986
+Unlike a traditional
+streaming GPU
+
+
+691
+00:38:17,126 --> 00:38:20,596
+where it only needs three
+vertices to produce a triangle
+
+
+692
+00:38:20,846 --> 00:38:23,606
+to go onto the next stage
+and start rasterization
+
+
+693
+00:38:23,876 --> 00:38:27,896
+and fragment processing,
+we defer all of that work
+
+
+694
+00:38:28,246 --> 00:38:31,016
+until you call
+presentRenderbuffer
+
+
+695
+00:38:31,246 --> 00:38:34,466
+or somehow change the
+render buffer another way,
+
+
+696
+00:38:34,466 --> 00:38:38,596
+by either binding a render
+buffer or changing an attachment
+
+
+697
+00:38:38,706 --> 00:38:40,236
+to a frame buffer object.
+
+
+698
+00:38:41,036 --> 00:38:43,686
+Let's say now we call
+presentRenderbuffer.
+
+
+699
+00:38:44,306 --> 00:38:48,966
+This, and only now is when
+we move to the next stage
+
+
+700
+00:38:49,456 --> 00:38:56,436
+of the pipeline, which
+is the tiling processor.
+
+
+701
+00:38:56,466 --> 00:38:58,616
+Every render buffer
+is split into tiles.
+
+
+702
+00:38:59,036 --> 00:39:03,986
+This allows rasterization
+and fragment shading to occur
+
+
+703
+00:39:03,986 --> 00:39:07,586
+on the GPU in little tile-sized
+pieces of embedded memory.
+
+
+704
+00:39:08,236 --> 00:39:11,326
+We can't push the entire
+frame buffer onto the GPU;
+
+
+705
+00:39:11,326 --> 00:39:12,946
+that's just way too large.
+
+
+706
+00:39:13,236 --> 00:39:16,386
+So we just split up this render
+buffer into much smaller tiles,
+
+
+707
+00:39:16,626 --> 00:39:18,676
+and then we can render
+to those one by one.
+
+
+708
+00:39:20,496 --> 00:39:24,816
+Here's what the tile processor
+does: It works in groups
+
+
+709
+00:39:24,816 --> 00:39:26,746
+of triangles, and it figures
+
+
+710
+00:39:26,746 --> 00:39:29,186
+out where the triangles
+would be rendered here.
+
+
+711
+00:39:29,186 --> 00:39:30,666
+Which tile they'll go to.
+
+
+712
+00:39:31,906 --> 00:39:35,356
+The larger triangles, which
+intersect multiple tiles,
+
+
+713
+00:39:35,496 --> 00:39:37,796
+may be binned into
+these multiple tiles.
+
+
+714
+00:39:37,796 --> 00:39:38,346
+[ Pause ]
+
+
+715
+00:39:38,346 --> 00:39:44,266
+And then we're ready
+for raster set up,
+
+
+716
+00:39:44,486 --> 00:39:45,936
+or set up for the rasterizer.
+
+
+717
+00:39:48,136 --> 00:39:53,216
+Here's the first issue
+that you could run across -
+
+
+718
+00:39:53,466 --> 00:39:56,446
+logical buffer load, and
+here's what this means.
+
+
+719
+00:39:59,176 --> 00:40:02,606
+The rasterizer uses tile size
+embedded memory, as I said.
+
+
+720
+00:40:03,226 --> 00:40:06,006
+Now if there is data already
+in this render buffer,
+
+
+721
+00:40:06,376 --> 00:40:08,636
+the GPU needs to load
+it from unified memory
+
+
+722
+00:40:08,676 --> 00:40:10,176
+because you're going
+to write on top of it.
+
+
+723
+00:40:11,346 --> 00:40:13,566
+This is pretty costly, OK.
+
+
+724
+00:40:13,566 --> 00:40:16,286
+We need to reach out
+across the bus, pull it in.
+
+
+725
+00:40:17,606 --> 00:40:20,086
+Same for the depth buffer:
+if there is data in it,
+
+
+726
+00:40:20,246 --> 00:40:22,846
+we also need to pull it
+in from unified memory.
+
+
+727
+00:40:27,026 --> 00:40:29,666
+Fortunately, you
+guys can avoid this.
+
+
+728
+00:40:30,716 --> 00:40:33,016
+Loading tiles is called
+a logical buffer load,
+
+
+729
+00:40:33,416 --> 00:40:36,586
+and you can avoid such
+a logical buffer load
+
+
+730
+00:40:36,636 --> 00:40:38,766
+if you call glClear
+before your rendering.
+
+
+731
+00:40:39,716 --> 00:40:43,246
+The driver knows that there is
+nothing important out in memory
+
+
+732
+00:40:43,536 --> 00:40:44,736
+since you're clearing the buffer
+
+
+733
+00:40:44,736 --> 00:40:47,416
+so in can just start
+rendering to this tile memory.
+
+
+734
+00:40:47,986 --> 00:40:49,646
+Great. No load necessary.
+
+
+735
+00:40:50,096 --> 00:40:52,526
+Very fast.
+
+
+736
+00:40:52,526 --> 00:40:52,596
+[ Pause ]
+
+
+737
+00:40:52,596 --> 00:40:57,546
+Logical buffer loads can happen
+in some less obvious ways.
+
+
+738
+00:40:58,226 --> 00:41:02,516
+For instance, if we render to a
+texture, render to a new buffer
+
+
+739
+00:41:02,516 --> 00:41:04,086
+or a new texture,
+and then render
+
+
+740
+00:41:04,086 --> 00:41:05,306
+to that first texture again.
+
+
+741
+00:41:05,556 --> 00:41:07,296
+Here's what happens: we
+render to our texture.
+
+
+742
+00:41:08,076 --> 00:41:09,626
+Now we want to render
+to a new texture.
+
+
+743
+00:41:09,626 --> 00:41:11,446
+We clear it, and render to that.
+
+
+744
+00:41:11,646 --> 00:41:16,296
+Great. Now we would like to
+render to our first texture.
+
+
+745
+00:41:17,056 --> 00:41:18,626
+Well, logical buffer load.
+
+
+746
+00:41:19,806 --> 00:41:26,496
+Need to load both the color
+buffer and depth buffer.
+
+
+747
+00:41:26,626 --> 00:41:34,046
+Developers should avoid frequent
+switching of render buffers.
+
+
+748
+00:41:34,256 --> 00:41:35,186
+Complete your rendering
+
+
+749
+00:41:35,186 --> 00:41:36,936
+to one buffer before
+switching to another.
+
+
+750
+00:41:37,216 --> 00:41:38,666
+Don't just say, "hey, you know,
+
+
+751
+00:41:38,916 --> 00:41:41,256
+I've finished a pretty
+good amount of rendering.
+
+
+752
+00:41:41,256 --> 00:41:42,486
+Let's just switch my buffer.
+
+
+753
+00:41:42,686 --> 00:41:45,996
+Go out and render something new,
+and then now I'd like to go back
+
+
+754
+00:41:45,996 --> 00:41:46,726
+to that first buffer."
+
+
+755
+00:41:47,136 --> 00:41:51,846
+You'll get this tile thrashing
+that I've just described.
+
+
+756
+00:41:51,846 --> 00:41:51,913
+[ Pause ]
+
+
+757
+00:41:51,913 --> 00:41:52,646
+Rasterization.
+
+
+758
+00:41:53,616 --> 00:41:58,566
+We're ready to actually do
+some further computation.
+
+
+759
+00:41:59,116 --> 00:42:01,646
+The GPU reads the triangles
+assigned to the tile,
+
+
+760
+00:42:01,806 --> 00:42:04,406
+and it computes the X
+and Y pixel coordinates
+
+
+761
+00:42:04,836 --> 00:42:07,236
+and the Z value,
+the depth value.
+
+
+762
+00:42:08,626 --> 00:42:10,996
+The fragment shader
+is not yet run.
+
+
+763
+00:42:11,626 --> 00:42:14,436
+Positions and depth
+are calculated only.
+
+
+764
+00:42:16,676 --> 00:42:20,866
+This allows an optimization
+called hidden surface removal.
+
+
+765
+00:42:21,506 --> 00:42:23,816
+Now let's say we
+submit a triangle,
+
+
+766
+00:42:23,816 --> 00:42:26,856
+and it's partially obscured
+by another triangle.
+
+
+767
+00:42:27,166 --> 00:42:29,066
+Well, a portion of that
+triangle is hidden.
+
+
+768
+00:42:29,066 --> 00:42:31,196
+W e don't need to run
+the fragment shader
+
+
+769
+00:42:31,436 --> 00:42:32,676
+on that hidden portion.
+
+
+770
+00:42:32,986 --> 00:42:36,326
+That saves us from
+fragment shader processing.
+
+
+771
+00:42:37,036 --> 00:42:38,586
+We can reject those fragments.
+
+
+772
+00:42:39,936 --> 00:42:42,726
+Now this is why we
+deferred all the rendering
+
+
+773
+00:42:42,726 --> 00:42:44,616
+until you called
+present render buffer.
+
+
+774
+00:42:45,176 --> 00:42:48,056
+W e have the entire
+frames' worth of triangles.
+
+
+775
+00:42:48,666 --> 00:42:51,416
+That's potentially a lot of
+fragments that we can reject.
+
+
+776
+00:42:51,416 --> 00:42:53,156
+[ Pause ]
+
+
+777
+00:42:53,156 --> 00:42:55,476
+But you can get this warning.
+
+
+778
+00:42:55,896 --> 00:42:58,906
+Loss of depth test
+hardware optimizations.
+
+
+779
+00:42:59,256 --> 00:43:00,746
+Loss of hidden surface removal.
+
+
+780
+00:43:01,586 --> 00:43:03,756
+It's really costly
+to enable blending
+
+
+781
+00:43:03,756 --> 00:43:05,556
+or use discard in the shader.
+
+
+782
+00:43:05,596 --> 00:43:08,696
+Lots of times we like to
+use discard for things
+
+
+783
+00:43:08,696 --> 00:43:10,376
+like implementing an alpha test,
+
+
+784
+00:43:10,946 --> 00:43:13,676
+but it defeats the hidden
+surface removal optimization.
+
+
+785
+00:43:14,086 --> 00:43:16,266
+We submit a triangle
+that maybe is blending
+
+
+786
+00:43:16,656 --> 00:43:18,576
+and it's transparent.
+
+
+787
+00:43:18,726 --> 00:43:20,436
+So you can see stuff behind it.
+
+
+788
+00:43:21,236 --> 00:43:24,356
+We need to run that fragment
+shader even for triangles
+
+
+789
+00:43:24,356 --> 00:43:26,126
+that are behind that
+other triangle.
+
+
+790
+00:43:26,426 --> 00:43:29,406
+The shader must run
+a lot more times.
+
+
+791
+00:43:30,036 --> 00:43:33,446
+This is a cost of
+performance and power.
+
+
+792
+00:43:33,446 --> 00:43:34,776
+We're doing a lot
+more processing.
+
+
+793
+00:43:36,036 --> 00:43:40,526
+Therefore, you guys need
+to be judicious in your use
+
+
+794
+00:43:40,526 --> 00:43:41,846
+of discard and blending.
+
+
+795
+00:43:42,646 --> 00:43:45,896
+Allow the GPU to reject as
+many fragments as possible.
+
+
+796
+00:43:45,896 --> 00:43:47,576
+[ Pause ]
+
+
+797
+00:43:47,576 --> 00:43:50,016
+Next up, we can perform
+fragment shading.
+
+
+798
+00:43:53,436 --> 00:43:57,596
+And what's great about
+the TBDR renderer is that,
+
+
+799
+00:43:57,596 --> 00:44:00,666
+if the hidden surface removal
+algorithm is allowed to work,
+
+
+800
+00:44:01,056 --> 00:44:04,466
+we only need to run the fragment
+shader on each pixel once.
+
+
+801
+00:44:04,466 --> 00:44:06,656
+It doesn't matter how
+many layers of triangles.
+
+
+802
+00:44:06,956 --> 00:44:08,896
+Doesn't matter what your
+depth complexity is.
+
+
+803
+00:44:09,386 --> 00:44:15,666
+Only one fragment shader
+is run on each pixel.
+
+
+804
+00:44:15,666 --> 00:44:18,996
+The fragment processor shades
+and produces color pixels,
+
+
+805
+00:44:19,536 --> 00:44:20,716
+and those colors are written
+
+
+806
+00:44:20,716 --> 00:44:23,236
+to the embedded tile
+memory on the GPU.
+
+
+807
+00:44:24,836 --> 00:44:26,346
+Now we're ready for
+tile storage.
+
+
+808
+00:44:26,846 --> 00:44:33,486
+[ Pause ]
+
+
+809
+00:44:33,986 --> 00:44:37,116
+Alright. The tile stored
+into unified memory,
+
+
+810
+00:44:37,476 --> 00:44:39,086
+and once all the
+tiles are processed,
+
+
+811
+00:44:39,496 --> 00:44:40,936
+the renderbuffer
+is ready for use.
+
+
+812
+00:44:41,066 --> 00:44:44,926
+You can present it to the user
+on the screen or you can use it
+
+
+813
+00:44:44,926 --> 00:44:46,576
+as a texture for another pass.
+
+
+814
+00:44:48,086 --> 00:44:50,926
+Storing a tile to unified memory
+is called a logical buffer
+
+
+815
+00:44:50,926 --> 00:44:53,466
+store, and each frame
+needs at least one.
+
+
+816
+00:44:53,926 --> 00:44:57,286
+It's considered a frame because
+you've presented your buffer
+
+
+817
+00:44:57,286 --> 00:45:00,036
+to the user, and that requires
+a logical buffer store.
+
+
+818
+00:45:01,636 --> 00:45:03,256
+However, you can
+get this warning -
+
+
+819
+00:45:03,916 --> 00:45:05,826
+unnecessary logical
+buffer store.
+
+
+820
+00:45:06,196 --> 00:45:07,136
+And here's what that's about.
+
+
+821
+00:45:07,696 --> 00:45:10,266
+A depth buffer is only
+needed to be stored
+
+
+822
+00:45:10,266 --> 00:45:12,596
+if you're using an
+effect like shadowing
+
+
+823
+00:45:12,886 --> 00:45:15,206
+or screen space ambient
+occlusion.
+
+
+824
+00:45:15,726 --> 00:45:18,606
+In general, if you're not
+using an effect like that,
+
+
+825
+00:45:19,236 --> 00:45:23,226
+it doesn't need to be stored;
+it's unnecessary to push it
+
+
+826
+00:45:23,226 --> 00:45:24,236
+out to unified memory.
+
+
+827
+00:45:25,636 --> 00:45:28,996
+So developers could call
+glDiscardFramebuffer
+
+
+828
+00:45:29,316 --> 00:45:32,436
+to skip this logical buffer
+store on the depth buffer.
+
+
+829
+00:45:33,426 --> 00:45:34,436
+It's simply flushed away.
+
+
+830
+00:45:34,636 --> 00:45:36,716
+We don't need that after
+rendering is complete.
+
+
+831
+00:45:37,876 --> 00:45:41,616
+The same thing for multisample
+anti-aliased renderbuffers,
+
+
+832
+00:45:41,686 --> 00:45:45,606
+and this is particularly
+important because these are big.
+
+
+833
+00:45:45,606 --> 00:45:50,706
+A multisample 4xaa render
+buffer has four times the amount
+
+
+834
+00:45:50,706 --> 00:45:54,306
+of data as a regular
+color buffer.
+
+
+835
+00:45:54,546 --> 00:45:58,866
+Fortunately, you guys don't need
+the pre-resolved MSAA buffer.
+
+
+836
+00:45:59,716 --> 00:46:03,506
+What you need is the
+resolved, much smaller tile
+
+
+837
+00:46:04,396 --> 00:46:06,566
+that you can store
+out to unified memory.
+
+
+838
+00:46:06,736 --> 00:46:10,706
+Not the large tile that
+has not been resolved yet.
+
+
+839
+00:46:11,946 --> 00:46:13,846
+You can call
+glDiscardFramebuffer
+
+
+840
+00:46:13,846 --> 00:46:15,846
+for the MSAA color
+buffer as well.
+
+
+841
+00:46:16,376 --> 00:46:20,226
+Same thing for depth.
+
+
+842
+00:46:21,036 --> 00:46:24,426
+Don't need the MSAA
+depth buffer.
+
+
+843
+00:46:24,766 --> 00:46:27,726
+Call glDiscardFramebuffer
+on the MSAA depth buffer.
+
+
+844
+00:46:28,246 --> 00:46:30,246
+Don't store that out.
+
+
+845
+00:46:30,246 --> 00:46:31,086
+[ Pause ]
+
+
+846
+00:46:31,086 --> 00:46:33,566
+We finished our trip down
+the tile base deferred
+
+
+847
+00:46:33,566 --> 00:46:34,376
+rendering pipeline.
+
+
+848
+00:46:35,046 --> 00:46:35,956
+Here are some take aways.
+
+
+849
+00:46:36,456 --> 00:46:39,076
+Hidden surface removal is
+a really unique strength
+
+
+850
+00:46:39,076 --> 00:46:39,976
+of this architecture.
+
+
+851
+00:46:40,016 --> 00:46:43,056
+It greatly reduces work
+load which saves power,
+
+
+852
+00:46:43,206 --> 00:46:44,196
+increases performance.
+
+
+853
+00:46:45,376 --> 00:46:46,996
+There are certain
+operations, however,
+
+
+854
+00:46:46,996 --> 00:46:50,336
+that defeat this HSR
+process, alpha blending
+
+
+855
+00:46:50,856 --> 00:46:52,436
+or using discard and the shader.
+
+
+856
+00:46:53,116 --> 00:46:54,436
+But I'm not saying you
+shouldn't use them.
+
+
+857
+00:46:54,436 --> 00:46:56,406
+There are some really cool
+effects that you can achieve
+
+
+858
+00:46:56,706 --> 00:46:58,866
+by enabling blending
+or using discard,
+
+
+859
+00:46:59,376 --> 00:47:02,776
+but there are some
+perfereable ways to use them.
+
+
+860
+00:47:02,936 --> 00:47:05,606
+First of all, draw all your
+triangles using discard
+
+
+861
+00:47:05,606 --> 00:47:07,626
+or blending after
+triangles that do not.
+
+
+862
+00:47:08,366 --> 00:47:10,516
+Hidden surface removal
+can at least be used
+
+
+863
+00:47:10,516 --> 00:47:13,006
+for the triangles in
+that opaque group.
+
+
+864
+00:47:14,416 --> 00:47:18,866
+Additionally, trim the
+geometry around the triangles
+
+
+865
+00:47:18,866 --> 00:47:21,756
+that need this sort
+of operation.
+
+
+866
+00:47:21,756 --> 00:47:23,506
+If you've implemented
+an alpha test,
+
+
+867
+00:47:24,116 --> 00:47:29,216
+make sure you wrap your
+alpha-tested object
+
+
+868
+00:47:29,616 --> 00:47:33,466
+so that you produce
+less fragments
+
+
+869
+00:47:33,466 --> 00:47:34,706
+that need this operation.
+
+
+870
+00:47:35,006 --> 00:47:36,796
+It's worth adding more vertices
+
+
+871
+00:47:36,796 --> 00:47:41,136
+to reduce fragments
+that need them.
+
+
+872
+00:47:41,136 --> 00:47:41,286
+[ Pause ]
+
+
+873
+00:47:41,286 --> 00:47:45,396
+Also, we've seen that transfers
+between the unified memory
+
+
+874
+00:47:45,396 --> 00:47:49,706
+and the GPU are expensive, and
+the best things that you can do
+
+
+875
+00:47:49,706 --> 00:47:52,426
+to avoid them is to call glClear
+
+
+876
+00:47:52,426 --> 00:47:53,966
+to avoid the logical
+buffer loads
+
+
+877
+00:47:54,086 --> 00:47:56,416
+so that the GPU can just
+simply start rendering.
+
+
+878
+00:47:56,416 --> 00:47:58,696
+Doesn't need to read
+the framebuffer.
+
+
+879
+00:47:58,926 --> 00:48:01,166
+Also avoid frequent
+render buffer switches,
+
+
+880
+00:48:01,476 --> 00:48:02,926
+which can cause tile thrashing.
+
+
+881
+00:48:04,056 --> 00:48:05,726
+And avoid logical buffer stores.
+
+
+882
+00:48:05,916 --> 00:48:08,416
+Use the glDiscardFramebuffer
+call,
+
+
+883
+00:48:08,716 --> 00:48:11,306
+especially for large
+multi-sampled
+
+
+884
+00:48:11,396 --> 00:48:12,706
+anti-alias buffers.
+
+
+885
+00:48:12,706 --> 00:48:13,176
+[ Pause ]
+
+
+886
+00:48:13,176 --> 00:48:16,906
+There are a couple of
+things that didn't fit
+
+
+887
+00:48:16,906 --> 00:48:19,666
+on that pipeline diagram,
+
+
+888
+00:48:19,666 --> 00:48:21,386
+and I want to point
+those out to you now.
+
+
+889
+00:48:21,736 --> 00:48:23,686
+The first is dependent
+texture sampling.
+
+
+890
+00:48:24,316 --> 00:48:26,756
+Now this happens if you
+calculate a texture coordinate
+
+
+891
+00:48:27,086 --> 00:48:31,446
+in the fragment shader and
+then sample from that texture
+
+
+892
+00:48:31,446 --> 00:48:34,226
+with the texture function.
+
+
+893
+00:48:34,326 --> 00:48:40,096
+Here I've got our texture
+sampler and two varyings here,
+
+
+894
+00:48:41,346 --> 00:48:45,196
+and the first thing I do is
+I add these values together
+
+
+895
+00:48:45,256 --> 00:48:49,556
+to produce a coordinate offset
+cord, and I use this offset cord
+
+
+896
+00:48:49,556 --> 00:48:50,796
+in the texture function.
+
+
+897
+00:48:50,796 --> 00:48:54,936
+Because it's a result of two
+previously-calculated varyings,
+
+
+898
+00:48:55,646 --> 00:48:59,706
+we now are making
+a dependent fetch
+
+
+899
+00:48:59,706 --> 00:49:02,096
+or a dependent sample
+or dependent read.
+
+
+900
+00:49:03,776 --> 00:49:07,706
+Here's a more devious example,
+a much less obvious example
+
+
+901
+00:49:07,706 --> 00:49:09,016
+of a dependent texture read.
+
+
+902
+00:49:09,376 --> 00:49:14,406
+Some developers get clever, and
+they think, "hey, you know what,
+
+
+903
+00:49:14,406 --> 00:49:17,226
+I've got two textures
+I want to sample from,
+
+
+904
+00:49:17,496 --> 00:49:20,596
+and I only need two scalars
+
+
+905
+00:49:20,916 --> 00:49:24,626
+to get a 2D texture
+for each texture.
+
+
+906
+00:49:24,696 --> 00:49:28,596
+What I'm going to do is pack
+them into a single vec4.
+
+
+907
+00:49:28,656 --> 00:49:31,236
+So I've got an S and
+T texture coordinate
+
+
+908
+00:49:31,236 --> 00:49:33,456
+in the first two components
+of the vec 4 and another S
+
+
+909
+00:49:33,456 --> 00:49:34,416
+and T texture coordinate
+
+
+910
+00:49:34,416 --> 00:49:36,676
+in the second two
+components of the vec4.
+
+
+911
+00:49:36,986 --> 00:49:42,196
+And then what I'm going to do is
+I'm going to use the first two
+
+
+912
+00:49:42,196 --> 00:49:47,646
+as the first texture coordinate,
+make the first texture fetch
+
+
+913
+00:49:47,646 --> 00:49:51,116
+with the X and Y and then
+a second one with Z and W."
+
+
+914
+00:49:51,116 --> 00:49:53,796
+Now these are actually
+both dependent reads.
+
+
+915
+00:49:54,096 --> 00:49:56,796
+Because what happens is the
+texture coordinates need
+
+
+916
+00:49:56,796 --> 00:50:01,076
+to be converted first
+from a vec4 to two vec2s.
+
+
+917
+00:50:01,076 --> 00:50:02,756
+This is happening
+all under the hood.
+
+
+918
+00:50:02,756 --> 00:50:03,896
+You don't actually see it,
+
+
+919
+00:50:04,046 --> 00:50:06,946
+but there is some
+calculation being done
+
+
+920
+00:50:07,186 --> 00:50:13,396
+which makes these
+dependent texture read.
+
+
+921
+00:50:13,396 --> 00:50:13,576
+[ Pause ]
+
+
+922
+00:50:13,576 --> 00:50:14,296
+Here's why it's bad.
+
+
+923
+00:50:14,576 --> 00:50:18,196
+There's a high latency to sample
+a texture in unified memory.
+
+
+924
+00:50:18,936 --> 00:50:21,016
+Now we avoid this latency
+
+
+925
+00:50:21,016 --> 00:50:23,356
+when you're not doing a
+dependent texture read
+
+
+926
+00:50:23,546 --> 00:50:25,236
+because the rasterizer
+says, "Hey,
+
+
+927
+00:50:25,666 --> 00:50:31,066
+this triangle uses a texture
+in this fragment shader,
+
+
+928
+00:50:31,066 --> 00:50:32,296
+and we've already
+got the coordinates.
+
+
+929
+00:50:32,296 --> 00:50:35,536
+So let's signal out to a memory
+and pull that data back in,
+
+
+930
+00:50:35,536 --> 00:50:36,856
+and soon as we start
+
+
+931
+00:50:37,186 --> 00:50:39,716
+that fragment shader,
+we'll have the data."
+
+
+932
+00:50:40,226 --> 00:50:44,156
+We can't do that if you're
+calculating the texture
+
+
+933
+00:50:44,156 --> 00:50:45,886
+coordinate in the shader.
+
+
+934
+00:50:46,496 --> 00:50:47,556
+The shader stalls.
+
+
+935
+00:50:48,016 --> 00:50:50,236
+It waits for the data
+to come back to it.
+
+
+936
+00:50:51,016 --> 00:50:53,786
+So minimize your
+dependent texture samples.
+
+
+937
+00:50:54,526 --> 00:50:55,756
+Hoist your calculation.
+
+
+938
+00:50:55,756 --> 00:51:00,486
+Do it in the vertex shader if
+possible, put it in a uniform
+
+
+939
+00:51:00,486 --> 00:51:02,266
+or put it in the vertex array.
+
+
+940
+00:51:02,536 --> 00:51:06,706
+Try to avoid, putting
+the calculation
+
+
+941
+00:51:06,706 --> 00:51:07,566
+in the fragment shader.
+
+
+942
+00:51:08,016 --> 00:51:13,176
+Here's the fixed version of
+that devious shader here.
+
+
+943
+00:51:13,736 --> 00:51:16,986
+We've now split that
+vec4 into two vec2's.
+
+
+944
+00:51:17,936 --> 00:51:19,286
+There's no calculations done.
+
+
+945
+00:51:19,286 --> 00:51:22,776
+We simply fetch using these
+two separate variables.
+
+
+946
+00:51:22,776 --> 00:51:23,206
+[ Pause ]
+
+
+947
+00:51:23,206 --> 00:51:27,576
+Alright. Here's another
+warning that shows up.
+
+
+948
+00:51:27,906 --> 00:51:29,766
+Fragment shader dynamic
+branching
+
+
+949
+00:51:29,766 --> 00:51:31,456
+or also Vertex shader
+dynamic branching.
+
+
+950
+00:51:33,516 --> 00:51:39,356
+Here we've got our varying and
+attributes that vary from vertex
+
+
+951
+00:51:39,356 --> 00:51:43,376
+to vertex, and because
+it varies,
+
+
+952
+00:51:43,436 --> 00:51:46,806
+it becomes a little bit
+difficult for the GPU to manage
+
+
+953
+00:51:46,806 --> 00:51:51,126
+because we now test, and the
+outcome of that test in the
+
+
+954
+00:51:51,126 --> 00:51:54,296
+if statement is dependent
+upon the test.
+
+
+955
+00:51:55,346 --> 00:51:56,366
+Here's why it's difficult.
+
+
+956
+00:51:56,676 --> 00:51:58,866
+GPU's are highly
+parallel devices.
+
+
+957
+00:51:58,866 --> 00:52:01,966
+It can process multiple vertices
+and fragments simultaneously.
+
+
+958
+00:52:03,106 --> 00:52:05,946
+We need a special
+branch mode for execution
+
+
+959
+00:52:06,066 --> 00:52:10,076
+of a dynamic branch, and
+this adds a bit more latency
+
+
+960
+00:52:10,076 --> 00:52:13,896
+for the parallel
+device to stay in sync.
+
+
+961
+00:52:13,896 --> 00:52:18,506
+If it's possible, calculate
+the predicate of your
+
+
+962
+00:52:18,506 --> 00:52:20,626
+if statements outside
+of the shader.
+
+
+963
+00:52:21,436 --> 00:52:25,336
+A branch on a uniform does
+not incur that same overhead
+
+
+964
+00:52:25,336 --> 00:52:29,726
+because it's constant across all
+of the vertices or fragments.
+
+
+965
+00:52:29,846 --> 00:52:31,456
+All of the shader execution.
+
+
+966
+00:52:33,226 --> 00:52:36,156
+And really if there's a shader
+
+
+967
+00:52:36,156 --> 00:52:38,506
+that uses both a
+dependent texture sample
+
+
+968
+00:52:38,506 --> 00:52:41,956
+and dynamic branching,
+this adds a lot of latency
+
+
+969
+00:52:41,956 --> 00:52:43,796
+and can be really costly.
+
+
+970
+00:52:44,416 --> 00:52:48,446
+Really look for that.
+
+
+971
+00:52:48,446 --> 00:52:48,586
+[ Pause ]
+
+
+972
+00:52:48,586 --> 00:52:52,966
+OK. I've talked a lot about how
+
+
+973
+00:52:52,966 --> 00:52:55,076
+to utilize the GPU
+to its fullest.
+
+
+974
+00:52:55,886 --> 00:53:00,336
+You also really want to get to
+the GPU as quick as possible
+
+
+975
+00:53:00,336 --> 00:53:02,526
+and minimize the CPU overhead.
+
+
+976
+00:53:03,526 --> 00:53:07,016
+And as you may know, a lot of
+time is spent in draw calls.
+
+
+977
+00:53:07,856 --> 00:53:09,786
+But what's less obvious is
+
+
+978
+00:53:09,786 --> 00:53:12,756
+that while state setting
+looks inexpensive,
+
+
+979
+00:53:12,756 --> 00:53:17,126
+if you make a bind
+call or an enable call
+
+
+980
+00:53:17,126 --> 00:53:20,976
+or use the new program, and
+you profile that or add timers
+
+
+981
+00:53:20,976 --> 00:53:23,376
+around it, it doesn't
+look like much time,
+
+
+982
+00:53:23,956 --> 00:53:25,576
+but that's because
+a lot of that time,
+
+
+983
+00:53:25,576 --> 00:53:28,226
+a lot of the work is
+deferred until draw.
+
+
+984
+00:53:28,226 --> 00:53:29,336
+We don't actually do a lot
+
+
+985
+00:53:29,336 --> 00:53:31,306
+of processing during
+the state setting.
+
+
+986
+00:53:31,696 --> 00:53:33,716
+It's all done later on.
+
+
+987
+00:53:34,466 --> 00:53:37,836
+The more state you
+set before a draw,
+
+
+988
+00:53:37,876 --> 00:53:40,056
+the more expensive
+that draw becomes.
+
+
+989
+00:53:41,346 --> 00:53:43,736
+So maximize the efficiency
+of each draw,
+
+
+990
+00:53:44,476 --> 00:53:47,906
+and the tools give you a
+couple of warnings of ways
+
+
+991
+00:53:47,906 --> 00:53:53,086
+that you can reduce the
+overhead for a particular call.
+
+
+992
+00:53:53,086 --> 00:53:56,526
+Redundant call and inefficient
+state update are these two
+
+
+993
+00:53:56,526 --> 00:53:57,866
+warnings you should
+look out for.
+
+
+994
+00:53:58,316 --> 00:54:07,756
+And what you can do is
+there are some algorithms
+
+
+995
+00:54:07,996 --> 00:54:09,326
+such as shadowing state.
+
+
+996
+00:54:10,226 --> 00:54:12,796
+Keep the state vector
+that you've been changing
+
+
+997
+00:54:12,796 --> 00:54:15,556
+in your application and
+don't set it in OpenGL
+
+
+998
+00:54:15,556 --> 00:54:17,006
+if you've already set it.
+
+
+999
+00:54:18,066 --> 00:54:22,496
+Also a more elegant algorithm
+is to use state sorting,
+
+
+1000
+00:54:23,066 --> 00:54:26,656
+which minimizes the
+number of state sets.
+
+
+1001
+00:54:26,656 --> 00:54:28,696
+You can use a state
+tree, for example,
+
+
+1002
+00:54:28,696 --> 00:54:31,776
+and only set the
+expensive states once,
+
+
+1003
+00:54:31,836 --> 00:54:36,966
+and draw with a unique
+vector each time.
+
+
+1004
+00:54:37,101 --> 00:54:39,101
+[ Pause ]
+
+
+1005
+00:54:39,236 --> 00:54:42,316
+However, there is some
+fixed overhead for a draw.
+
+
+1006
+00:54:42,316 --> 00:54:44,886
+It doesn't matter
+how little the number
+
+
+1007
+00:54:44,886 --> 00:54:46,276
+of state setting you make.
+
+
+1008
+00:54:46,566 --> 00:54:48,526
+We still have to do
+some state validation.
+
+
+1009
+00:54:48,526 --> 00:54:50,616
+We need to check that
+the parameters you've set
+
+
+1010
+00:54:51,046 --> 00:54:55,156
+in the draw are appropriate for
+the state that has been set,
+
+
+1011
+00:54:55,956 --> 00:54:58,806
+and we need to make a call to
+the driver, and the driver needs
+
+
+1012
+00:54:58,856 --> 00:55:04,076
+to do some calculations to
+convert to hardware state.
+
+
+1013
+00:55:04,956 --> 00:55:08,646
+So minimize the number
+of draw calls you make.
+
+
+1014
+00:55:08,646 --> 00:55:10,986
+The most obvious way
+is to don't draw things
+
+
+1015
+00:55:10,986 --> 00:55:13,256
+that don't show up
+on the screen.
+
+
+1016
+00:55:13,326 --> 00:55:14,246
+Cull your objects.
+
+
+1017
+00:55:14,246 --> 00:55:18,226
+You can use frustrum
+culling if it's a 3D scene.
+
+
+1018
+00:55:18,486 --> 00:55:21,046
+Just draw things that are
+in the area of visibility,
+
+
+1019
+00:55:21,276 --> 00:55:24,766
+and don't draw things that are
+not in the area of visibility.
+
+
+1020
+00:55:25,106 --> 00:55:28,316
+You can combine your draw
+calls via instancing,
+
+
+1021
+00:55:28,446 --> 00:55:29,826
+which I talked about
+a lot earlier.
+
+
+1022
+00:55:29,826 --> 00:55:32,896
+And also vertex batching
+and texture atlases.
+
+
+1023
+00:55:32,896 --> 00:55:33,886
+[ Pause ]
+
+
+1024
+00:55:33,886 --> 00:55:36,246
+Here's a way to reduce
+your binds.
+
+
+1025
+00:55:36,246 --> 00:55:40,886
+What we would normally do is
+we'd have these four models
+
+
+1026
+00:55:40,886 --> 00:55:41,736
+and four textures.
+
+
+1027
+00:55:41,826 --> 00:55:47,576
+We would bind, draw, bind, draw,
+bind, draw, and bind and draw.
+
+
+1028
+00:55:47,576 --> 00:55:50,276
+Now that's four binds, four
+draws, and each draw needs
+
+
+1029
+00:55:50,276 --> 00:55:53,236
+to validate that that bind
+made sense for that draw.
+
+
+1030
+00:55:53,236 --> 00:55:57,856
+We can reduce the number of
+binds, create a texture atlas
+
+
+1031
+00:55:57,856 --> 00:55:59,746
+by combining all of
+these textures into one.
+
+
+1032
+00:56:00,356 --> 00:56:04,236
+Simply bind once, then we can
+draw, draw, draw, and draw.
+
+
+1033
+00:56:04,336 --> 00:56:07,976
+Great. We can even go
+further and combine our draws,
+
+
+1034
+00:56:07,976 --> 00:56:11,116
+which would allow us to
+bind once and draw them all.
+
+
+1035
+00:56:11,116 --> 00:56:14,606
+This would require us to
+combine all of our vertex data
+
+
+1036
+00:56:14,666 --> 00:56:16,136
+into one vertex buffer object.
+
+
+1037
+00:56:16,136 --> 00:56:17,976
+[ Pause ]
+
+
+1038
+00:56:17,976 --> 00:56:20,756
+There is a new texture
+atlas tool.
+
+
+1039
+00:56:20,756 --> 00:56:26,096
+Sprite Kit is a new framework
+in iOS 7, and it is mainly
+
+
+1040
+00:56:26,096 --> 00:56:30,336
+for 2D games, but there
+are some nice tools
+
+
+1041
+00:56:30,336 --> 00:56:32,496
+that we can take
+advantage of in OpenGL.
+
+
+1042
+00:56:33,126 --> 00:56:36,336
+The texture atlas tool
+combines images efficiently,
+
+
+1043
+00:56:36,776 --> 00:56:40,096
+and it produces a property
+list denoting the subimage.
+
+
+1044
+00:56:40,806 --> 00:56:42,786
+You can scale your
+texture coordinates based
+
+
+1045
+00:56:42,786 --> 00:56:47,486
+on this property list, enabling
+you to render your 3D models
+
+
+1046
+00:56:47,486 --> 00:56:49,936
+with this texture atlas
+that has been produced.
+
+
+1047
+00:56:50,436 --> 00:56:54,956
+This texture atlas
+tool comes with Xcode.
+
+
+1048
+00:56:54,956 --> 00:56:55,023
+[ Pause ]
+
+
+1049
+00:56:55,023 --> 00:56:58,306
+For more information, you
+can talk to Alan Schaffer,
+
+
+1050
+00:56:58,306 --> 00:57:00,816
+our graphics and games
+technologies evangelist,
+
+
+1051
+00:57:01,226 --> 00:57:03,086
+and there's some
+excellent documentation
+
+
+1052
+00:57:03,436 --> 00:57:05,056
+on our developer site.
+
+
+1053
+00:57:05,146 --> 00:57:08,926
+You can also contact the
+community via the developer
+
+
+1054
+00:57:08,926 --> 00:57:11,626
+forum, and there are
+some engineers that lurk
+
+
+1055
+00:57:11,626 --> 00:57:12,676
+on those forums as well.
+
+
+1056
+00:57:12,676 --> 00:57:16,776
+So you can get your questions
+answered in a lot of detail.
+
+
+1057
+00:57:16,876 --> 00:57:20,416
+There are a couple
+of related sessions.
+
+
+1058
+00:57:20,416 --> 00:57:22,626
+There were 2 Sprite Kit sessions
+that happened yesterday,
+
+
+1059
+00:57:22,626 --> 00:57:25,556
+but you can catch
+the video of them.
+
+
+1060
+00:57:25,556 --> 00:57:28,216
+And the Sprite Kit sessions
+talked a little bit more
+
+
+1061
+00:57:28,216 --> 00:57:32,376
+in detail about their
+texture atlas tool.
+
+
+1062
+00:57:32,496 --> 00:57:34,816
+Later on in the afternoon
+there is
+
+
+1063
+00:57:34,816 --> 00:57:37,426
+"What's new in OpenGL for OS X."
+
+
+1064
+00:57:37,776 --> 00:57:40,406
+OpenGL ES is derived
+from its big brother
+
+
+1065
+00:57:40,406 --> 00:57:41,596
+on the desktop world.
+
+
+1066
+00:57:41,886 --> 00:57:44,176
+So you can get a bigger picture
+
+
+1067
+00:57:44,176 --> 00:57:47,106
+of what's happening
+in 3D graphics there.
+
+
+1068
+00:57:47,106 --> 00:57:47,173
+[ Pause ]
+
+
+1069
+00:57:47,173 --> 00:57:50,026
+In summary, you want to reduce
+your draw call overhead,
+
+
+1070
+00:57:50,406 --> 00:57:52,146
+use the techniques
+including instancing
+
+
+1071
+00:57:52,146 --> 00:57:54,146
+and texture atlases to do that.
+
+
+1072
+00:57:54,806 --> 00:57:56,526
+Consider the GPU's operation
+
+
+1073
+00:57:57,026 --> 00:57:58,886
+when you're architecting
+your rendering engine
+
+
+1074
+00:57:59,196 --> 00:58:01,546
+and in your performance
+investigations.
+
+
+1075
+00:58:01,946 --> 00:58:04,226
+The GPU tools really
+help greatly
+
+
+1076
+00:58:04,226 --> 00:58:07,376
+in this effort while the
+tile-based deferred rendering
+
+
+1077
+00:58:07,376 --> 00:58:10,226
+architecture has some
+special considerations
+
+
+1078
+00:58:10,566 --> 00:58:11,846
+that you want to think about.
+
+
+1079
+00:58:12,076 --> 00:58:15,186
+Thank you very much.
+

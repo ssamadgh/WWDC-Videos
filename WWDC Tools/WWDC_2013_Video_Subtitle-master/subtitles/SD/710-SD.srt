@@ -1,0 +1,5437 @@
+1
+00:00:00,506 --> 00:00:09,576
+[ Silence ]
+
+
+2
+00:00:10,076 --> 00:00:10,666
+>> Speaker 1: Hi.
+
+
+3
+00:00:11,006 --> 00:00:13,226
+How's it going?
+
+
+4
+00:00:13,396 --> 00:00:16,276
+Welcome to the most
+magical session at WWDC.
+
+
+5
+00:00:16,766 --> 00:00:18,696
+I think of this session as the
+centerpiece of the conference
+
+
+6
+00:00:18,696 --> 00:00:20,136
+and then we announce
+some other stuff too.
+
+
+7
+00:00:20,246 --> 00:00:22,296
+But, we're going to be talking
+about App Sandbox today.
+
+
+8
+00:00:22,926 --> 00:00:25,326
+And, before we really
+get into that,
+
+
+9
+00:00:25,806 --> 00:00:28,476
+we're going to talk about cars.
+
+
+10
+00:00:28,706 --> 00:00:31,976
+A lot of us drive, a
+lot of us know, sort of,
+
+
+11
+00:00:32,106 --> 00:00:36,616
+how cars have been evolving
+as time has gone on.
+
+
+12
+00:00:37,126 --> 00:00:41,446
+And I found, I found it pretty
+interesting that just a couple
+
+
+13
+00:00:41,446 --> 00:00:44,706
+of years ago traffic
+related fatalities
+
+
+14
+00:00:44,706 --> 00:00:47,506
+in the United States have
+actually reached a 50 year low.
+
+
+15
+00:00:48,006 --> 00:00:50,916
+The NHDSA has statistics on this
+
+
+16
+00:00:50,916 --> 00:00:52,806
+and the numbers have been
+getting better and better
+
+
+17
+00:00:53,086 --> 00:00:56,456
+and they're, basically, at a
+really long low at this point.
+
+
+18
+00:00:56,816 --> 00:00:58,316
+And if you look at why that is,
+
+
+19
+00:00:59,276 --> 00:01:01,456
+it's because the car
+industry has been investing
+
+
+20
+00:01:01,456 --> 00:01:04,866
+into safety mechanisms
+for a long time.
+
+
+21
+00:01:05,495 --> 00:01:07,016
+It's because you
+can't sell a car
+
+
+22
+00:01:07,016 --> 00:01:09,356
+without passing Federal
+Safety Certification.
+
+
+23
+00:01:10,226 --> 00:01:13,146
+But, what's more interesting
+to me, is how that investment
+
+
+24
+00:01:13,146 --> 00:01:15,706
+into safety has actually
+worked out in practice.
+
+
+25
+00:01:16,166 --> 00:01:19,276
+On the one hand, there's been a
+tremendous amount of innovation
+
+
+26
+00:01:19,446 --> 00:01:22,466
+in trying to prevent
+accidents from happening.
+
+
+27
+00:01:23,066 --> 00:01:26,466
+So, just in the last year or
+two, you're seeing a bunch
+
+
+28
+00:01:26,466 --> 00:01:29,066
+of new mechanisms in modern
+cars where, for instance,
+
+
+29
+00:01:29,216 --> 00:01:31,216
+there is blind spot detection.
+
+
+30
+00:01:31,216 --> 00:01:33,416
+The car will actually beep
+at you if you're trying
+
+
+31
+00:01:33,416 --> 00:01:36,786
+to change lanes and there's
+a car in your blind spot.
+
+
+32
+00:01:36,786 --> 00:01:40,566
+There are really a number of new
+electronic mechanisms that are,
+
+
+33
+00:01:40,566 --> 00:01:42,846
+for instance, how can
+you, if you're trying,
+
+
+34
+00:01:42,846 --> 00:01:44,516
+if you're drifting
+out in the lane,
+
+
+35
+00:01:44,716 --> 00:01:46,346
+sensors can now notice
+and warn you.
+
+
+36
+00:01:46,346 --> 00:01:47,756
+A lot of things that are trying
+
+
+37
+00:01:47,756 --> 00:01:50,276
+to help drivers be more
+alert even on longer trips
+
+
+38
+00:01:50,276 --> 00:01:52,126
+and make sure that you
+never get in a position
+
+
+39
+00:01:52,126 --> 00:01:53,096
+where you're in an accident.
+
+
+40
+00:01:53,716 --> 00:01:55,176
+And all of those have
+been really helpful.
+
+
+41
+00:01:55,756 --> 00:01:58,906
+Almost orthogonal to all of
+those, there's been a number
+
+
+42
+00:01:58,906 --> 00:02:02,706
+of mechanisms that try to
+make it so that if you wind
+
+
+43
+00:02:02,706 --> 00:02:05,536
+up in an accident,
+harm is minimized.
+
+
+44
+00:02:06,626 --> 00:02:11,236
+Seatbelts and airbags are
+the prime examples of this.
+
+
+45
+00:02:11,526 --> 00:02:14,246
+For many of you, I'm sure,
+
+
+46
+00:02:14,246 --> 00:02:15,956
+this is just something
+that's always been a part
+
+
+47
+00:02:15,956 --> 00:02:16,876
+of the car but, actually,
+
+
+48
+00:02:17,206 --> 00:02:19,196
+seatbelts were not
+standard equipment until,
+
+
+49
+00:02:19,196 --> 00:02:20,186
+I think, the '60s.
+
+
+50
+00:02:20,186 --> 00:02:21,706
+Airbags were not
+standard equipment
+
+
+51
+00:02:21,706 --> 00:02:23,876
+in most U.S. cars
+until the '90s.
+
+
+52
+00:02:24,766 --> 00:02:27,646
+And those standards are
+evolving even today.
+
+
+53
+00:02:28,956 --> 00:02:32,796
+So, it's interesting to
+me because, obviously,
+
+
+54
+00:02:32,796 --> 00:02:35,556
+the best case scenario is you
+never wind up in an accident.
+
+
+55
+00:02:36,366 --> 00:02:40,186
+But, if you do, the car is
+trying to be prepared for it
+
+
+56
+00:02:40,186 --> 00:02:43,066
+and is trying to keep
+you from getting harmed.
+
+
+57
+00:02:43,066 --> 00:02:48,906
+So, if you have that
+model in mind and you look
+
+
+58
+00:02:48,906 --> 00:02:52,536
+at how computer security
+used to work on desktops
+
+
+59
+00:02:52,536 --> 00:02:53,706
+and desktop operating systems,
+
+
+60
+00:02:54,086 --> 00:02:55,596
+it's really been
+very, very different.
+
+
+61
+00:02:55,596 --> 00:02:58,646
+There has never been a
+seatbelt or an airbag
+
+
+62
+00:02:58,936 --> 00:03:00,116
+for a desktop computer.
+
+
+63
+00:03:00,706 --> 00:03:03,406
+In other words, it was
+all about making sure
+
+
+64
+00:03:03,406 --> 00:03:06,416
+that an attack never succeeds.
+
+
+65
+00:03:06,956 --> 00:03:09,116
+But, once it does,
+there was really no way
+
+
+66
+00:03:09,116 --> 00:03:11,256
+to contain the damage,
+to contain the impact
+
+
+67
+00:03:11,256 --> 00:03:13,146
+of a malicious piece of software
+
+
+68
+00:03:13,146 --> 00:03:15,256
+that has successfully
+exploited the vulnerability.
+
+
+69
+00:03:15,256 --> 00:03:18,866
+It has just been defenders
+trying to defend 100 percent
+
+
+70
+00:03:19,256 --> 00:03:21,046
+of the attack surface
+all the time,
+
+
+71
+00:03:21,376 --> 00:03:24,866
+the attacker's finding 1
+hole, 1 time and winning.
+
+
+72
+00:03:25,216 --> 00:03:25,956
+So, why is that?
+
+
+73
+00:03:27,066 --> 00:03:31,156
+It turns out that the way
+we got here, as an industry,
+
+
+74
+00:03:31,456 --> 00:03:34,966
+is because of assumptions
+that were made in the era
+
+
+75
+00:03:35,166 --> 00:03:38,076
+of the original UNIX
+being designed
+
+
+76
+00:03:38,076 --> 00:03:39,276
+with Ritchie and Thompson.
+
+
+77
+00:03:39,766 --> 00:03:42,346
+Where they made this
+underlying assumption,
+
+
+78
+00:03:42,346 --> 00:03:44,056
+that I now call the
+unfortunate assumption,
+
+
+79
+00:03:44,056 --> 00:03:47,786
+which is that every program
+runs with the full privileges
+
+
+80
+00:03:48,056 --> 00:03:50,046
+of the user that
+ran that program.
+
+
+81
+00:03:50,536 --> 00:03:53,526
+In other words, we should
+direct security barriers
+
+
+82
+00:03:53,526 --> 00:03:55,516
+between different users
+of the same system,
+
+
+83
+00:03:55,746 --> 00:03:58,016
+but not between different
+apps from the same user.
+
+
+84
+00:03:58,986 --> 00:04:02,836
+And, again, if you sort
+of look back and think
+
+
+85
+00:04:02,836 --> 00:04:05,106
+about why 40 years ago
+this assumption was made,
+
+
+86
+00:04:05,256 --> 00:04:06,646
+it was because it
+made total sense.
+
+
+87
+00:04:07,006 --> 00:04:10,186
+There was no such thing as
+untrusted code being run
+
+
+88
+00:04:10,186 --> 00:04:12,096
+because all the code
+that would run was code
+
+
+89
+00:04:12,096 --> 00:04:13,616
+that you manually
+put on a punch card,
+
+
+90
+00:04:13,616 --> 00:04:15,876
+walked up to a machine,
+loaded and ran.
+
+
+91
+00:04:16,505 --> 00:04:18,826
+So it was pretty reasonable to
+say that that code should run
+
+
+92
+00:04:18,826 --> 00:04:20,245
+with your full privileges
+and that
+
+
+93
+00:04:20,245 --> 00:04:21,676
+that wouldn't be an
+issue in practice.
+
+
+94
+00:04:22,876 --> 00:04:26,706
+But, today, most machines
+are single user machines.
+
+
+95
+00:04:27,236 --> 00:04:28,626
+We run untrusted
+code all the time.
+
+
+96
+00:04:28,626 --> 00:04:29,776
+Every time you visit a website,
+
+
+97
+00:04:29,776 --> 00:04:31,046
+that's what's happening
+under the covers.
+
+
+98
+00:04:31,936 --> 00:04:34,396
+And so it's sort of clear
+
+
+99
+00:04:34,396 --> 00:04:37,616
+that apps should be only
+accessing the information they
+
+
+100
+00:04:37,616 --> 00:04:39,516
+actually need to
+get their work done
+
+
+101
+00:04:39,516 --> 00:04:41,856
+and not having unrestricted
+access to your whole computer.
+
+
+102
+00:04:42,756 --> 00:04:45,576
+I have an example
+that I, that I like.
+
+
+103
+00:04:45,716 --> 00:04:48,636
+This is a beautiful
+new application updated
+
+
+104
+00:04:48,636 --> 00:04:49,266
+for Mavericks.
+
+
+105
+00:04:49,266 --> 00:04:50,596
+It's called Watch Grass Grow.
+
+
+106
+00:04:50,596 --> 00:04:56,056
+I spent a lot of time with
+this app and it's gorgeous.
+
+
+107
+00:04:56,056 --> 00:05:00,276
+It shows grass growing in
+real time and, you know,
+
+
+108
+00:05:00,626 --> 00:05:02,436
+it connects to the network
+every once in a while
+
+
+109
+00:05:02,436 --> 00:05:04,066
+to pick up new grass assets.
+
+
+110
+00:05:04,066 --> 00:05:08,136
+So, for instance, droplets
+on shimmering blades of grass
+
+
+111
+00:05:08,136 --> 00:05:09,056
+that come over the network.
+
+
+112
+00:05:09,466 --> 00:05:12,126
+Beautiful stuff, but this
+app should never be able
+
+
+113
+00:05:12,126 --> 00:05:13,396
+to access any of my data.
+
+
+114
+00:05:13,696 --> 00:05:16,396
+If somehow, in the process of
+making these network requests,
+
+
+115
+00:05:16,396 --> 00:05:17,806
+this app were to
+become exploited,
+
+
+116
+00:05:18,576 --> 00:05:20,956
+it could normally
+access all of my data.
+
+
+117
+00:05:21,346 --> 00:05:22,286
+It could read my E-mail,
+
+
+118
+00:05:22,286 --> 00:05:23,986
+it could change my computer
+settings, it could look
+
+
+119
+00:05:23,986 --> 00:05:24,956
+at my browsing history.
+
+
+120
+00:05:25,256 --> 00:05:27,136
+All stuff that it should
+never be able to do.
+
+
+121
+00:05:27,476 --> 00:05:33,656
+And the way that the computing
+industry has traditionally dealt
+
+
+122
+00:05:33,656 --> 00:05:36,406
+with this is by erecting
+user interfaces that try
+
+
+123
+00:05:36,406 --> 00:05:38,756
+and get users to make
+the right decision
+
+
+124
+00:05:39,046 --> 00:05:42,376
+which is what this normally
+looks like to a normal user.
+
+
+125
+00:05:42,916 --> 00:05:46,866
+In other words, security
+interfaces generally don't work.
+
+
+126
+00:05:46,866 --> 00:05:49,426
+They're expecting way too
+much background understanding
+
+
+127
+00:05:49,426 --> 00:05:52,356
+of how computers work from
+normal users who don't have
+
+
+128
+00:05:52,356 --> 00:05:53,106
+that kind of knowledge.
+
+
+129
+00:05:53,906 --> 00:05:57,226
+And, as a result, over the years
+users have actually basically
+
+
+130
+00:05:57,226 --> 00:05:59,746
+been conditioned to just
+look for the Allow button.
+
+
+131
+00:06:00,246 --> 00:06:02,526
+And press it because it
+maximizes the chances
+
+
+132
+00:06:02,526 --> 00:06:04,716
+that they can get done the thing
+they were trying to get done.
+
+
+133
+00:06:05,576 --> 00:06:07,436
+Obviously, rendering
+the whole point
+
+
+134
+00:06:07,436 --> 00:06:08,666
+of the user interface moot.
+
+
+135
+00:06:09,736 --> 00:06:13,916
+There's this great saying
+in Washington, D.C.,
+
+
+136
+00:06:14,106 --> 00:06:15,656
+it's a political
+saying which says,
+
+
+137
+00:06:15,656 --> 00:06:18,476
+if you're explaining you're
+losing, and I think it applies
+
+
+138
+00:06:18,476 --> 00:06:19,876
+to security interfaces as well.
+
+
+139
+00:06:20,156 --> 00:06:24,586
+If you're hoping that a user
+understands the details of X.509
+
+
+140
+00:06:24,586 --> 00:06:27,516
+and SSL certificates and can
+make a valid decision about what
+
+
+141
+00:06:27,516 --> 00:06:29,156
+to do, you're probably losing.
+
+
+142
+00:06:29,646 --> 00:06:32,246
+So, that is how things
+used to be and, obviously,
+
+
+143
+00:06:32,246 --> 00:06:35,166
+the landscape has really changed
+a lot in the last few years.
+
+
+144
+00:06:35,946 --> 00:06:38,706
+Tons of apps and
+tons of developers,
+
+
+145
+00:06:39,016 --> 00:06:41,676
+it's never been this
+easy to be a developer
+
+
+146
+00:06:41,676 --> 00:06:44,016
+or to write apps
+largely facilitated
+
+
+147
+00:06:44,016 --> 00:06:45,316
+by the App Store revolution.
+
+
+148
+00:06:46,116 --> 00:06:49,236
+And, while that's happened,
+
+
+149
+00:06:49,236 --> 00:06:50,876
+computers have also
+basically started
+
+
+150
+00:06:50,876 --> 00:06:52,246
+to be always on networks.
+
+
+151
+00:06:52,806 --> 00:06:56,146
+Ubiquitous Wi-Fi and, for
+mobile devices, radios,
+
+
+152
+00:06:56,426 --> 00:06:59,706
+our computers spend much,
+much more time connected
+
+
+153
+00:06:59,706 --> 00:07:03,026
+than they do disconnected which
+didn't use to be the case.
+
+
+154
+00:07:03,346 --> 00:07:05,976
+Finding new software, super
+easy; it's never been this easy.
+
+
+155
+00:07:06,496 --> 00:07:08,896
+And so it really underscores
+that today's challenge
+
+
+156
+00:07:08,896 --> 00:07:12,006
+for security is to isolate data
+between different programs,
+
+
+157
+00:07:12,006 --> 00:07:13,196
+not between different users.
+
+
+158
+00:07:16,036 --> 00:07:20,806
+So, when I normally try and
+pitch people on, you know,
+
+
+159
+00:07:20,806 --> 00:07:23,206
+how some of this
+background works,
+
+
+160
+00:07:24,166 --> 00:07:27,196
+I get a lot of different
+responses.
+
+
+161
+00:07:27,196 --> 00:07:32,086
+And one frequent one
+is developers saying,
+
+
+162
+00:07:32,086 --> 00:07:35,516
+well I have a really simple
+app, it doesn't do much.
+
+
+163
+00:07:35,966 --> 00:07:39,546
+And I am very careful,
+I understand security
+
+
+164
+00:07:39,546 --> 00:07:41,436
+and I'm pretty sure that my
+code doesn't actually have
+
+
+165
+00:07:41,436 --> 00:07:44,576
+vulnerabilities so why do I
+have to bother with any of this?
+
+
+166
+00:07:45,166 --> 00:07:48,996
+And the answer is because even
+though your app may be simple
+
+
+167
+00:07:49,316 --> 00:07:51,356
+and pretty constrained
+in what it does,
+
+
+168
+00:07:51,356 --> 00:07:53,736
+remember that you're linking
+against millions and millions
+
+
+169
+00:07:53,736 --> 00:07:56,876
+and millions of lines of system
+libraries and other libraries
+
+
+170
+00:07:56,876 --> 00:08:01,536
+and frameworks which are doing
+incredibly complex things behind
+
+
+171
+00:08:01,536 --> 00:08:03,626
+the scenes where you might
+not have even thought of them.
+
+
+172
+00:08:03,626 --> 00:08:06,636
+So, you know, you might
+have a super simple app
+
+
+173
+00:08:06,636 --> 00:08:10,226
+that just shows a web view
+to authenticate the user.
+
+
+174
+00:08:10,856 --> 00:08:13,726
+That web view, in
+terms of complexity,
+
+
+175
+00:08:13,726 --> 00:08:16,126
+is practically a small
+operating system, right?
+
+
+176
+00:08:16,126 --> 00:08:19,466
+It's millions of lines
+of code to render HTML,
+
+
+177
+00:08:19,516 --> 00:08:21,596
+to run a just-in-time
+JavaScript compiler,
+
+
+178
+00:08:21,826 --> 00:08:23,676
+it's a huge amount
+of complexity.
+
+
+179
+00:08:24,486 --> 00:08:28,566
+And a single vulnerability
+anywhere in all the code
+
+
+180
+00:08:28,566 --> 00:08:32,135
+that your app has plus all
+the code it links against used
+
+
+181
+00:08:32,135 --> 00:08:34,336
+to mean a really bad
+day for the user.
+
+
+182
+00:08:35,236 --> 00:08:37,166
+Attack finds one
+hole, attack wins.
+
+
+183
+00:08:37,316 --> 00:08:40,806
+There's no containment
+of damage, that's it.
+
+
+184
+00:08:42,996 --> 00:08:46,256
+So it's against this
+backdrop that, in Lion,
+
+
+185
+00:08:46,256 --> 00:08:49,506
+we introduced App Sandbox,
+a mechanism that tried
+
+
+186
+00:08:49,506 --> 00:08:53,456
+to make it much easier to write
+secure applications for OS X.
+
+
+187
+00:08:54,606 --> 00:08:58,666
+And it tried to do this by
+doing something really different
+
+
+188
+00:08:58,666 --> 00:09:01,596
+which is, instead of trying
+to drive security policy
+
+
+189
+00:09:01,596 --> 00:09:04,746
+by explicit user
+choices through prompts,
+
+
+190
+00:09:05,036 --> 00:09:07,546
+it tried to drive security
+policy through user intent.
+
+
+191
+00:09:08,696 --> 00:09:10,526
+And it tried to, in effect,
+
+
+192
+00:09:10,926 --> 00:09:15,726
+do this so that it can then
+contain damage from exploitation
+
+
+193
+00:09:15,966 --> 00:09:19,616
+or even a misbehaving app such
+as pathological bugs in the code
+
+
+194
+00:09:19,806 --> 00:09:22,366
+that would try to delete
+or corrupt user data.
+
+
+195
+00:09:22,866 --> 00:09:25,526
+So, how does this work?
+
+
+196
+00:09:26,296 --> 00:09:27,186
+Well, the premise is this.
+
+
+197
+00:09:27,226 --> 00:09:30,526
+You write your apps which means
+you know what your apps are
+
+
+198
+00:09:30,526 --> 00:09:33,206
+meant to be able to do when
+they're working properly.
+
+
+199
+00:09:34,626 --> 00:09:36,196
+We take that app in
+the operating system,
+
+
+200
+00:09:36,196 --> 00:09:38,686
+we assign it its own
+space on the file system
+
+
+201
+00:09:38,686 --> 00:09:39,646
+that we call a container,
+
+
+202
+00:09:40,556 --> 00:09:43,696
+and then the operating system
+lets the user control what other
+
+
+203
+00:09:43,696 --> 00:09:45,256
+data your app can get access to.
+
+
+204
+00:09:45,976 --> 00:09:48,286
+And it does this by making all
+the special cases like drag
+
+
+205
+00:09:48,286 --> 00:09:49,496
+and drop and recent items
+
+
+206
+00:09:49,496 --> 00:09:55,276
+and so forth just work
+magically under the covers.
+
+
+207
+00:09:55,416 --> 00:09:57,056
+So, let's talk about
+the key components here.
+
+
+208
+00:09:57,476 --> 00:10:00,856
+I mentioned that you specify
+what your app is meant
+
+
+209
+00:10:00,856 --> 00:10:01,596
+to be able to do.
+
+
+210
+00:10:01,766 --> 00:10:04,626
+And the way it does this is by
+using what we call entitlements.
+
+
+211
+00:10:05,376 --> 00:10:06,726
+Entitlements are
+actually very simple,
+
+
+212
+00:10:06,726 --> 00:10:08,456
+they're just a very
+simple plist.
+
+
+213
+00:10:08,496 --> 00:10:11,286
+You can-- Xcode gives you a
+beautiful interface for it
+
+
+214
+00:10:11,286 --> 00:10:12,576
+and I'll show you that in a bit,
+
+
+215
+00:10:13,006 --> 00:10:14,886
+but it is just a
+very simple plist.
+
+
+216
+00:10:14,886 --> 00:10:17,796
+And the idea behind entitlements
+is that they express concepts
+
+
+217
+00:10:18,136 --> 00:10:22,196
+of access that should be
+easily understandable even
+
+
+218
+00:10:22,196 --> 00:10:24,116
+to an end user even
+though it's not ever meant
+
+
+219
+00:10:24,116 --> 00:10:25,176
+to be seen by an end user.
+
+
+220
+00:10:25,176 --> 00:10:27,956
+So here are some examples of
+things that are entitlements.
+
+
+221
+00:10:27,956 --> 00:10:29,606
+Entitlements are things
+like I want to be able
+
+
+222
+00:10:29,606 --> 00:10:31,756
+to access a Downloads folder,
+I want to be able to talk
+
+
+223
+00:10:31,756 --> 00:10:33,086
+to the network, I
+want to be able
+
+
+224
+00:10:33,086 --> 00:10:34,906
+to access the user's
+Address Book.
+
+
+225
+00:10:39,576 --> 00:10:42,096
+Now I mentioned that we
+take your app and we put it
+
+
+226
+00:10:42,096 --> 00:10:44,346
+in a container and the way this
+works is there's actually no
+
+
+227
+00:10:44,346 --> 00:10:45,406
+deep magic happening.
+
+
+228
+00:10:45,736 --> 00:10:46,776
+When we're launching your app,
+
+
+229
+00:10:46,776 --> 00:10:48,846
+we set 2 environment
+variables called Home
+
+
+230
+00:10:48,846 --> 00:10:52,216
+and CFFIXED-USER-HOME
+and we point them
+
+
+231
+00:10:52,466 --> 00:10:53,666
+at a file system location
+
+
+232
+00:10:53,666 --> 00:10:55,486
+that we assign specifically
+for your app.
+
+
+233
+00:10:56,496 --> 00:10:57,886
+And we basically pretend
+
+
+234
+00:10:58,286 --> 00:11:00,456
+that that location is the
+user's Home Directory.
+
+
+235
+00:11:01,466 --> 00:11:03,456
+So, here's what that looks
+like where we have an app,
+
+
+236
+00:11:03,456 --> 00:11:06,276
+we just put in a Sandbox
+and, if in the app,
+
+
+237
+00:11:06,276 --> 00:11:08,536
+we have a direct
+open system call
+
+
+238
+00:11:08,536 --> 00:11:11,446
+with the specific path inside
+their real Home Directory
+
+
+239
+00:11:11,446 --> 00:11:15,146
+of the user, the Sandbox
+denies this access.
+
+
+240
+00:11:15,486 --> 00:11:17,996
+And says, actually no, that's in
+the user's real Home Directory,
+
+
+241
+00:11:18,646 --> 00:11:21,726
+this aisle doesn't yet
+have access to that.
+
+
+242
+00:11:21,936 --> 00:11:26,086
+But if the app, instead, calls
+Apple API like NSHomeDirectory,
+
+
+243
+00:11:26,336 --> 00:11:29,086
+well the answer that it'll
+actually get is its own
+
+
+244
+00:11:29,086 --> 00:11:32,636
+container location which means
+that it's within the Sandbox
+
+
+245
+00:11:32,726 --> 00:11:33,966
+which means access is allowed.
+
+
+246
+00:11:34,456 --> 00:11:40,496
+So then, you might say, well
+okay, but an app is not going
+
+
+247
+00:11:40,496 --> 00:11:44,036
+to be very useful if all it can
+access are files that it read,
+
+
+248
+00:11:44,036 --> 00:11:45,566
+then wrote in its
+own little space.
+
+
+249
+00:11:45,566 --> 00:11:46,746
+How does it actually get access
+
+
+250
+00:11:46,746 --> 00:11:48,406
+to the real files
+that the user has?
+
+
+251
+00:11:49,006 --> 00:11:50,846
+And the answer is the Powerbox.
+
+
+252
+00:11:51,376 --> 00:11:55,106
+The Powerbox is a trusted
+operating system facility
+
+
+253
+00:11:55,106 --> 00:11:58,496
+in OS X that makes it
+so that Cocoa NSOpen
+
+
+254
+00:11:58,496 --> 00:12:02,216
+and NSSave panels are
+actually drawn out of process
+
+
+255
+00:12:02,216 --> 00:12:03,546
+by a trusted system service.
+
+
+256
+00:12:03,916 --> 00:12:06,436
+And, if you think about
+open and save panels,
+
+
+257
+00:12:06,436 --> 00:12:09,696
+they're this really unambiguous
+declaration of user intent.
+
+
+258
+00:12:09,696 --> 00:12:11,786
+If you have an app open
+and there's an open panel
+
+
+259
+00:12:11,786 --> 00:12:13,396
+and the user select
+a file or folder,
+
+
+260
+00:12:14,046 --> 00:12:15,766
+it's really clear what
+the user's trying to do.
+
+
+261
+00:12:15,766 --> 00:12:19,886
+They're saying I want to open
+this file or folder in this app.
+
+
+262
+00:12:19,886 --> 00:12:22,206
+So by moving the
+open and save panels
+
+
+263
+00:12:22,206 --> 00:12:25,746
+to be a trusted system service,
+we can take that declaration
+
+
+264
+00:12:25,746 --> 00:12:28,066
+of user intent and then
+form security policy
+
+
+265
+00:12:28,066 --> 00:12:30,816
+around it specifically
+by making those files
+
+
+266
+00:12:30,816 --> 00:12:33,666
+and folders then
+available to the app.
+
+
+267
+00:12:34,926 --> 00:12:36,316
+Let me show you what
+this looks like.
+
+
+268
+00:12:36,456 --> 00:12:39,016
+Here's an app, it links
+against AppKit in the top
+
+
+269
+00:12:39,596 --> 00:12:41,006
+and we're going to
+put it in the Sandbox.
+
+
+270
+00:12:41,716 --> 00:12:44,016
+And let's say that the
+app wants access to a file
+
+
+271
+00:12:44,286 --> 00:12:46,606
+within tilde documents.
+
+
+272
+00:12:47,496 --> 00:12:51,096
+Well an NSOpen panel is
+presented and normally,
+
+
+273
+00:12:51,096 --> 00:12:54,166
+because this app is
+Sandboxed, if AppKit were to try
+
+
+274
+00:12:54,166 --> 00:12:55,916
+and get access to tilde
+Documents directly,
+
+
+275
+00:12:55,916 --> 00:12:56,556
+this would just fail.
+
+
+276
+00:12:56,556 --> 00:12:58,006
+The sandbox would say,
+no you're not allowed.
+
+
+277
+00:12:58,266 --> 00:13:00,126
+But what happens in
+the App Sandbox world,
+
+
+278
+00:13:00,816 --> 00:13:03,496
+because of the Powerbox, is that
+AppKit realizes it's running
+
+
+279
+00:13:03,496 --> 00:13:05,316
+in a Sandbox and so, instead
+
+
+280
+00:13:05,316 --> 00:13:06,836
+of presenting the
+open panel directly,
+
+
+281
+00:13:06,836 --> 00:13:08,826
+it calls out the Powerbox
+and says, Powerbox,
+
+
+282
+00:13:09,116 --> 00:13:10,906
+please present an open
+panel on my behalf.
+
+
+283
+00:13:11,636 --> 00:13:14,426
+Powerbox also links against
+AppKit, but it's not Sandboxed
+
+
+284
+00:13:14,516 --> 00:13:15,946
+so it has access to documents
+
+
+285
+00:13:16,776 --> 00:13:21,636
+which means it can draw the
+open panel on the app's behalf.
+
+
+286
+00:13:22,286 --> 00:13:24,506
+This looks exactly like
+it's always looked.
+
+
+287
+00:13:24,506 --> 00:13:26,566
+You never know that
+you're using the Powerbox,
+
+
+288
+00:13:26,726 --> 00:13:30,116
+it's just completely
+under the covers.
+
+
+289
+00:13:30,866 --> 00:13:33,816
+But, once a user selects a file
+or folder in this open panel,
+
+
+290
+00:13:34,396 --> 00:13:37,386
+that file or folder is then
+made available directly
+
+
+291
+00:13:37,966 --> 00:13:40,646
+in the Sandbox of your app.
+
+
+292
+00:13:43,836 --> 00:13:49,006
+Finally, XPC Services
+are the easiest mechanism
+
+
+293
+00:13:49,576 --> 00:13:52,006
+that there's ever existed to
+split up parts of your app
+
+
+294
+00:13:52,406 --> 00:13:54,846
+into separate functional units
+
+
+295
+00:13:55,076 --> 00:13:57,896
+that can have different security
+policies assigned to them.
+
+
+296
+00:13:59,166 --> 00:13:59,806
+Why does this matter?
+
+
+297
+00:13:59,806 --> 00:14:02,396
+Well because, as apps get
+more and more complex,
+
+
+298
+00:14:02,396 --> 00:14:03,796
+they do more and more things.
+
+
+299
+00:14:03,836 --> 00:14:07,876
+And if, in the end, you have a
+single monolithic app that has
+
+
+300
+00:14:07,876 --> 00:14:10,546
+to be able to access all
+kinds of things from hardware
+
+
+301
+00:14:10,546 --> 00:14:12,666
+to private information
+to user documents.
+
+
+302
+00:14:13,146 --> 00:14:16,096
+Then, even though the app
+Sandbox still provides some
+
+
+303
+00:14:16,096 --> 00:14:18,396
+mitigation if that app
+were to become exploited,
+
+
+304
+00:14:19,146 --> 00:14:21,336
+it may be that an
+attack on that app
+
+
+305
+00:14:21,336 --> 00:14:24,386
+that succeeds can already get
+access to so much information
+
+
+306
+00:14:24,856 --> 00:14:26,966
+that maybe that's all
+the attacker cares about.
+
+
+307
+00:14:27,256 --> 00:14:31,346
+So to try and mitigate this,
+you can break out pieces
+
+
+308
+00:14:31,346 --> 00:14:35,126
+of your code, especially, highly
+sensitive pieces of your code,
+
+
+309
+00:14:35,126 --> 00:14:38,236
+for instance, the deal with
+the network into XPC services
+
+
+310
+00:14:38,236 --> 00:14:39,476
+that are made available
+to your app.
+
+
+311
+00:14:39,736 --> 00:14:42,496
+And then you can, basically,
+Sandbox those independently
+
+
+312
+00:14:42,926 --> 00:14:44,956
+and restrict their
+access to things
+
+
+313
+00:14:44,956 --> 00:14:46,166
+like sensitive user information.
+
+
+314
+00:14:47,336 --> 00:14:51,176
+And with XPC, the service's
+lifetime is fully managed
+
+
+315
+00:14:51,176 --> 00:14:52,846
+by the operating system
+so you don't have to worry
+
+
+316
+00:14:52,846 --> 00:14:54,876
+about starting them
+up and tearing them
+
+
+317
+00:14:55,186 --> 00:14:56,576
+down when you need to.
+
+
+318
+00:14:56,576 --> 00:14:57,786
+You don't have to
+worry about, you know,
+
+
+319
+00:14:57,786 --> 00:15:00,176
+whether they're running
+when you want them.
+
+
+320
+00:15:00,176 --> 00:15:01,736
+It's just done for
+you by the OS.
+
+
+321
+00:15:02,306 --> 00:15:06,166
+So that's a lot of concepts.
+
+
+322
+00:15:06,166 --> 00:15:10,966
+What does this actually
+look like?
+
+
+323
+00:15:11,216 --> 00:15:14,506
+I'm going to show you this
+on TextEdit because it's--
+
+
+324
+00:15:14,506 --> 00:15:19,496
+you can look at that source code
+and TextEdit has been Sandboxed
+
+
+325
+00:15:19,496 --> 00:15:22,476
+since Lion, but we're going to
+pretend it's not and we're going
+
+
+326
+00:15:22,476 --> 00:15:24,796
+to show you what it
+looks like to Sandbox it.
+
+
+327
+00:15:24,796 --> 00:15:27,776
+And the process we're going
+to follow here is we're going
+
+
+328
+00:15:27,776 --> 00:15:30,186
+to look at the Entitlements
+list and kind
+
+
+329
+00:15:30,186 --> 00:15:31,986
+of pick the ones
+we think make sense
+
+
+330
+00:15:31,986 --> 00:15:33,186
+for a program like TextEdit.
+
+
+331
+00:15:33,996 --> 00:15:36,426
+We're going to code sign
+TextEdit when building it
+
+
+332
+00:15:36,476 --> 00:15:38,436
+which will cause the
+Entitlements to take effect.
+
+
+333
+00:15:39,196 --> 00:15:42,136
+We'll double check that
+TextEdit, as it runs,
+
+
+334
+00:15:42,136 --> 00:15:43,676
+is in fact Sandboxed
+like we expect.
+
+
+335
+00:15:43,676 --> 00:15:46,696
+And then, finally, we'll
+look for Sandbox violations
+
+
+336
+00:15:46,696 --> 00:15:48,716
+that the OS is reporting
+to try and figure
+
+
+337
+00:15:48,716 --> 00:15:50,986
+out if we're maybe missing
+some Entitlements that we need.
+
+
+338
+00:15:51,826 --> 00:15:56,466
+And I should note that
+for the last two WWDCs,
+
+
+339
+00:15:56,696 --> 00:15:59,466
+the app I've used as
+my demo app is Adium
+
+
+340
+00:15:59,466 --> 00:16:02,706
+which is a really popular
+instant messaging client.
+
+
+341
+00:16:03,306 --> 00:16:05,746
+And I'm thrilled to be
+switching to TextEdit this year
+
+
+342
+00:16:05,746 --> 00:16:08,446
+because the actual Adium
+app became Sandboxed.
+
+
+343
+00:16:08,446 --> 00:16:10,136
+The developers took
+it, Sandboxed it,
+
+
+344
+00:16:10,136 --> 00:16:13,106
+and so if you download Adium
+now, it is Sandboxed so I feel
+
+
+345
+00:16:13,106 --> 00:16:17,666
+like I needed a new example.
+
+
+346
+00:16:17,666 --> 00:16:21,436
+Okay. So here's the
+TextEdit project.
+
+
+347
+00:16:21,436 --> 00:16:29,386
+And what we'll do is
+just run it, here it is.
+
+
+348
+00:16:29,686 --> 00:16:33,406
+And what I've done is I've
+grabbed activity monitor here
+
+
+349
+00:16:33,786 --> 00:16:35,266
+and I've filtered it by TextEdit
+
+
+350
+00:16:35,446 --> 00:16:37,006
+so you can see the
+process right there.
+
+
+351
+00:16:37,976 --> 00:16:39,616
+And in the View menu in columns,
+
+
+352
+00:16:39,616 --> 00:16:41,116
+I've actually enabled
+the Sandbox column
+
+
+353
+00:16:41,116 --> 00:16:43,476
+so that you can see that
+right now TextEdit is
+
+
+354
+00:16:43,656 --> 00:16:45,246
+running unsandboxed.
+
+
+355
+00:16:45,246 --> 00:16:49,086
+So let's see if we
+can Sandbox it.
+
+
+356
+00:16:50,196 --> 00:16:52,556
+We're going to click
+on the target and,
+
+
+357
+00:16:52,556 --> 00:16:54,736
+in the Capabilities
+tab in Xcode 5,
+
+
+358
+00:16:54,736 --> 00:16:57,176
+it's really this very
+nice graphical editor
+
+
+359
+00:16:57,176 --> 00:17:00,226
+of various capabilities, App
+Sandbox is just one set of them.
+
+
+360
+00:17:00,966 --> 00:17:03,606
+So, we'll flip on the
+App Sandbox switch
+
+
+361
+00:17:04,175 --> 00:17:06,596
+and TextEdit obviously needs
+to be able to edit files
+
+
+362
+00:17:06,596 --> 00:17:08,965
+that a user selects
+so that seems
+
+
+363
+00:17:08,965 --> 00:17:11,175
+like an obvious Entitlement to
+give it if it wants to be able
+
+
+364
+00:17:11,175 --> 00:17:13,215
+to both read them and write to
+them so we'll say read/write
+
+
+365
+00:17:13,306 --> 00:17:14,506
+to user selected files.
+
+
+366
+00:17:15,366 --> 00:17:16,126
+That seems about right.
+
+
+367
+00:17:16,935 --> 00:17:20,906
+Let's run it now.
+
+
+368
+00:17:21,126 --> 00:17:25,246
+There's TextEdit and in Activity
+Monitor, you'll notice now
+
+
+369
+00:17:25,246 --> 00:17:26,925
+that the Sandbox
+column indicates yes.
+
+
+370
+00:17:26,925 --> 00:17:28,286
+So this thing is
+running Sandbox.
+
+
+371
+00:17:29,466 --> 00:17:32,326
+So that's it, is there
+anything more to it?
+
+
+372
+00:17:32,406 --> 00:17:34,636
+Well, we want to check if there
+were any errors encountered
+
+
+373
+00:17:34,636 --> 00:17:38,306
+while TextEdit actually ran in
+the Sandbox so we'll switch here
+
+
+374
+00:17:38,616 --> 00:17:42,376
+to Console where I'm filtering
+by output of the Sandbox daemon.
+
+
+375
+00:17:43,396 --> 00:17:45,866
+And, indeed, you'll notice
+that there's actually a bunch
+
+
+376
+00:17:45,866 --> 00:17:49,356
+of messages indicating
+that SandboxD is telling us
+
+
+377
+00:17:49,356 --> 00:17:53,416
+that TextEdit was denied certain
+operations by the Sandbox.
+
+
+378
+00:17:53,766 --> 00:17:57,826
+So it looks like it was denied
+the ability to do a mach lookup
+
+
+379
+00:17:57,826 --> 00:18:02,276
+on SCNetworkReachability and
+some system socket access
+
+
+380
+00:18:02,276 --> 00:18:04,966
+and then some more mach
+lookups to com.apple.networkd.
+
+
+381
+00:18:05,916 --> 00:18:06,776
+So why is that?
+
+
+382
+00:18:07,836 --> 00:18:12,486
+Well, it's because this
+particular TextEdit tries
+
+
+383
+00:18:12,486 --> 00:18:14,016
+to make a network
+connection when it starts
+
+
+384
+00:18:14,846 --> 00:18:17,616
+and I didn't enable
+that in my Entitlements.
+
+
+385
+00:18:18,666 --> 00:18:20,176
+All I need for TextEdit
+
+
+386
+00:18:20,176 --> 00:18:22,196
+to be able access the
+network here is allow it
+
+
+387
+00:18:22,196 --> 00:18:23,886
+to make outbound
+connections to the network
+
+
+388
+00:18:23,886 --> 00:18:25,366
+to act as a network client.
+
+
+389
+00:18:25,936 --> 00:18:28,186
+So why don't we enable that?
+
+
+390
+00:18:28,776 --> 00:18:30,076
+And rerun TextEdit.
+
+
+391
+00:18:30,556 --> 00:18:33,196
+There it is.
+
+
+392
+00:18:34,326 --> 00:18:37,766
+And you'll notice there were no
+more violations shown meaning
+
+
+393
+00:18:38,156 --> 00:18:41,656
+TextEdit is running Sandboxed,
+everything's operating
+
+
+394
+00:18:41,656 --> 00:18:46,036
+like we want, no violations
+are getting logged, that's it.
+
+
+395
+00:18:46,036 --> 00:18:46,926
+TextEdit is Sandboxed.
+
+
+396
+00:18:47,276 --> 00:18:48,636
+What did we really
+accomplish there?
+
+
+397
+00:18:48,636 --> 00:18:49,966
+Why did we do this?
+
+
+398
+00:18:50,576 --> 00:18:53,726
+We did it because, even though
+that took us all of 3 minutes
+
+
+399
+00:18:53,726 --> 00:18:57,326
+to do, the TextEdit before we
+Sandboxed it and the TextEdit
+
+
+400
+00:18:57,326 --> 00:18:59,916
+after we Sandboxed it
+behave very differently
+
+
+401
+00:19:00,306 --> 00:19:01,436
+if you can exploit them.
+
+
+402
+00:19:02,096 --> 00:19:04,356
+Right now, when it's
+Sandboxed, if you are able
+
+
+403
+00:19:04,356 --> 00:19:08,006
+to somehow attack TextEdit and
+exploit it, all you get access
+
+
+404
+00:19:08,006 --> 00:19:09,786
+to as an attacker are the files
+
+
+405
+00:19:09,786 --> 00:19:11,996
+that the user currently
+has open in TextEdit.
+
+
+406
+00:19:12,656 --> 00:19:15,486
+Nothing else, no other
+access to the user's disk.
+
+
+407
+00:19:16,206 --> 00:19:18,026
+No other access to
+the user's hardware.
+
+
+408
+00:19:19,026 --> 00:19:20,096
+No access to user's E-mail,
+
+
+409
+00:19:20,096 --> 00:19:22,826
+no access to user's browsing
+history, you're contained.
+
+
+410
+00:19:23,086 --> 00:19:24,646
+You can't install applications,
+
+
+411
+00:19:24,646 --> 00:19:26,486
+you can't change the
+TextEdit application
+
+
+412
+00:19:26,486 --> 00:19:28,266
+to put a Trojan in there.
+
+
+413
+00:19:28,656 --> 00:19:29,776
+You're pretty tightly contained.
+
+
+414
+00:19:29,776 --> 00:19:32,866
+And, in order to really launch
+a successful attack here,
+
+
+415
+00:19:33,106 --> 00:19:35,236
+you need to chain
+multiple vulnerabilities,
+
+
+416
+00:19:35,236 --> 00:19:37,856
+some of them probably
+kernel vulnerabilities
+
+
+417
+00:19:38,226 --> 00:19:39,906
+to really pull off
+a strong attack.
+
+
+418
+00:19:40,666 --> 00:19:43,046
+So that's a tremendous
+improvement in the safety
+
+
+419
+00:19:43,206 --> 00:19:44,166
+of TextEdit as an app.
+
+
+420
+00:19:44,166 --> 00:19:50,626
+And if that resolved it
+for very many of you,
+
+
+421
+00:19:51,256 --> 00:19:53,656
+that is about all the exposure
+to App Sandbox that you'll need.
+
+
+422
+00:19:53,816 --> 00:19:57,916
+You'll be able to go in and look
+at the Capabilities interface
+
+
+423
+00:19:57,916 --> 00:20:00,756
+in Xcode 5, tick
+some boxes, try it,
+
+
+424
+00:20:00,916 --> 00:20:04,126
+check for violations,
+and you'll be done.
+
+
+425
+00:20:04,316 --> 00:20:07,176
+But, as your apps
+get more complex,
+
+
+426
+00:20:07,176 --> 00:20:09,736
+you may also need some
+advanced functionality and I'd
+
+
+427
+00:20:09,736 --> 00:20:11,766
+like to show you what
+else we have on offer.
+
+
+428
+00:20:12,156 --> 00:20:15,906
+The first thing I'm
+going to talk
+
+
+429
+00:20:15,906 --> 00:20:18,096
+about is a mechanism called
+Security Scoped Bookmarks.
+
+
+430
+00:20:18,636 --> 00:20:22,946
+And, to understand
+where this comes from,
+
+
+431
+00:20:23,526 --> 00:20:28,616
+I have to tell you a bit about
+how files and access given
+
+
+432
+00:20:28,616 --> 00:20:31,396
+to files are managed
+as your app runs.
+
+
+433
+00:20:31,686 --> 00:20:34,256
+So your app starts, it has
+access to nothing outside
+
+
+434
+00:20:34,256 --> 00:20:37,706
+of its container, the user
+then gives it access to a file
+
+
+435
+00:20:37,906 --> 00:20:39,686
+or folder through the Powerbox.
+
+
+436
+00:20:40,266 --> 00:20:41,796
+And so now, while
+the app is running,
+
+
+437
+00:20:41,796 --> 00:20:43,486
+it has access to this new file.
+
+
+438
+00:20:44,246 --> 00:20:46,926
+But, as soon as your app
+quits, it loses that access.
+
+
+439
+00:20:46,926 --> 00:20:49,476
+The next time it starts, it no
+longer has access to the file
+
+
+440
+00:20:49,476 --> 00:20:50,896
+that the user opened last time.
+
+
+441
+00:20:51,426 --> 00:20:55,076
+And this is the only reasonable
+default because, otherwise,
+
+
+442
+00:20:55,356 --> 00:20:57,856
+the amount of things that apps
+can access would just grow
+
+
+443
+00:20:57,856 --> 00:21:00,236
+without bound, over time,
+as the apps are used.
+
+
+444
+00:21:00,596 --> 00:21:03,346
+So defaulting to losing the
+access as the app restarts,
+
+
+445
+00:21:03,706 --> 00:21:04,706
+is the right thing to do.
+
+
+446
+00:21:05,286 --> 00:21:08,016
+But it's not, it can't
+be the only option.
+
+
+447
+00:21:08,346 --> 00:21:10,926
+There are apps that really
+legitimately need to be able
+
+
+448
+00:21:10,926 --> 00:21:12,906
+to preserve access
+to files and folders
+
+
+449
+00:21:12,906 --> 00:21:14,686
+that a user selected
+across launch.
+
+
+450
+00:21:15,436 --> 00:21:17,716
+And, usually, those use
+cases fall into 2 categories.
+
+
+451
+00:21:18,696 --> 00:21:20,806
+There are what we call
+app-scoped bookmarks
+
+
+452
+00:21:21,196 --> 00:21:23,886
+where the preservation of access
+to files and folders comes
+
+
+453
+00:21:23,886 --> 00:21:25,546
+as part of the app's
+configuration.
+
+
+454
+00:21:26,466 --> 00:21:28,296
+And then there are
+document-scoped bookmarks
+
+
+455
+00:21:28,816 --> 00:21:30,496
+which pertain to
+document formats
+
+
+456
+00:21:30,586 --> 00:21:33,436
+where the document itself can
+actually reference files all
+
+
+457
+00:21:33,436 --> 00:21:35,506
+over the disk and you
+want to be able to have
+
+
+458
+00:21:35,506 --> 00:21:38,166
+that continue working as
+the document is opened
+
+
+459
+00:21:38,166 --> 00:21:40,926
+and closed potentially
+across different apps.
+
+
+460
+00:21:42,516 --> 00:21:46,856
+So, for app-scoped bookmarks,
+there is no special Entitlement,
+
+
+461
+00:21:46,856 --> 00:21:49,806
+it's actually provided-- the
+ability to use this is provided
+
+
+462
+00:21:49,806 --> 00:21:53,536
+if you simply have the user
+selected files bookmark.
+
+
+463
+00:21:54,176 --> 00:21:55,666
+And what I have here
+is an example
+
+
+464
+00:21:55,666 --> 00:21:59,396
+from the Mail app where--
+which is Sandboxed by the way.
+
+
+465
+00:22:00,056 --> 00:22:02,486
+You can see that you
+can select the folder
+
+
+466
+00:22:02,486 --> 00:22:05,216
+to which attachments will
+get downloaded automatically.
+
+
+467
+00:22:05,756 --> 00:22:06,886
+And so, if you think about it,
+
+
+468
+00:22:06,886 --> 00:22:10,526
+if the user chooses a different
+folder here and mail loses
+
+
+469
+00:22:10,576 --> 00:22:13,376
+that access on re-launch,
+that wouldn't be very helpful.
+
+
+470
+00:22:13,376 --> 00:22:15,466
+So, somehow, it needs
+to be able to say,
+
+
+471
+00:22:15,466 --> 00:22:17,026
+I'm going to preserve
+the user selection
+
+
+472
+00:22:17,026 --> 00:22:18,706
+and always have access to it.
+
+
+473
+00:22:19,316 --> 00:22:23,336
+So app-scoped bookmarks
+allow you to do this
+
+
+474
+00:22:23,476 --> 00:22:26,986
+and they lock the files or
+folders that the user selected
+
+
+475
+00:22:27,096 --> 00:22:30,256
+to your specific app running
+as that specific user.
+
+
+476
+00:22:30,776 --> 00:22:32,686
+So here's what that looks like.
+
+
+477
+00:22:33,416 --> 00:22:35,296
+The user is going to
+pick a file or folder
+
+
+478
+00:22:35,866 --> 00:22:38,606
+and make access available to
+your app such as your Powerbox.
+
+
+479
+00:22:38,896 --> 00:22:43,346
+Your app is going to turn around
+and take that file and pass it
+
+
+480
+00:22:43,346 --> 00:22:45,056
+on to the
+bookmarkDataWithOptions API.
+
+
+481
+00:22:45,196 --> 00:22:48,586
+This is the same API that's been
+around for years now, actually,
+
+
+482
+00:22:48,586 --> 00:22:49,846
+just for normal bookmarks.
+
+
+483
+00:22:51,166 --> 00:22:56,096
+And this API is going to produce
+just an NSData, an opaque blob
+
+
+484
+00:22:56,096 --> 00:22:58,686
+that represents the app-scoped
+bookmark which your app is free
+
+
+485
+00:22:58,686 --> 00:23:05,506
+to store anywhere it pleases
+such as in its container
+
+
+486
+00:23:05,506 --> 00:23:09,596
+as a file or in user
+defaults or even in Core Data.
+
+
+487
+00:23:09,716 --> 00:23:10,766
+It doesn't matter
+so long as it's
+
+
+488
+00:23:10,766 --> 00:23:12,326
+in a place that's
+accessible to the app later.
+
+
+489
+00:23:13,676 --> 00:23:16,936
+Then, on next launch, when the
+app needs access to this file
+
+
+490
+00:23:16,936 --> 00:23:19,686
+or folder, it'll simply
+fish out that NSData
+
+
+491
+00:23:19,686 --> 00:23:20,726
+from wherever it stored it,
+
+
+492
+00:23:21,166 --> 00:23:23,506
+pass it into the
+URLByResolvingBookmarkData API
+
+
+493
+00:23:23,646 --> 00:23:26,416
+which will check that the
+blob came from the right app
+
+
+494
+00:23:27,256 --> 00:23:32,176
+and the API provides access
+to the file or folder.
+
+
+495
+00:23:32,316 --> 00:23:34,366
+If some other app were
+somehow to get a hold
+
+
+496
+00:23:34,366 --> 00:23:36,166
+of that same app-scoped
+bookmark,
+
+
+497
+00:23:36,986 --> 00:23:38,976
+this simply wouldn't work,
+the API would say, no,
+
+
+498
+00:23:38,976 --> 00:23:41,976
+you did not create this
+bookmark, you cannot resolve it.
+
+
+499
+00:23:42,106 --> 00:23:42,926
+The other use case,
+
+
+500
+00:23:43,076 --> 00:23:46,076
+the document-scoped
+bookmark use case is useful
+
+
+501
+00:23:46,076 --> 00:23:49,836
+if you have a document format
+that needs to be able to link
+
+
+502
+00:23:49,876 --> 00:23:52,426
+to movies or pictures
+or other large files
+
+
+503
+00:23:52,426 --> 00:23:55,206
+that may be all over the disk.
+
+
+504
+00:23:56,456 --> 00:23:59,216
+And the restrictions
+differ for document-scoped
+
+
+505
+00:23:59,216 --> 00:24:00,016
+and app-scoped bookmarks.
+
+
+506
+00:24:00,016 --> 00:24:03,946
+For document-scope, they
+are openable by other apps,
+
+
+507
+00:24:04,096 --> 00:24:07,076
+but the target of the
+bookmark cannot be
+
+
+508
+00:24:07,076 --> 00:24:09,036
+in a certain restricted
+set of locations.
+
+
+509
+00:24:09,036 --> 00:24:12,096
+So you can't bookmark Contents
+and things like tilde Library.
+
+
+510
+00:24:12,626 --> 00:24:14,796
+And currently you
+can't document,
+
+
+511
+00:24:14,796 --> 00:24:18,736
+you can't bookmark folders,
+it must be individual files.
+
+
+512
+00:24:19,306 --> 00:24:22,706
+So here's what the
+document-scoped case looks like.
+
+
+513
+00:24:23,126 --> 00:24:25,846
+The user is going to create
+the document in your app
+
+
+514
+00:24:26,466 --> 00:24:29,106
+and they're going to link
+a movie into that document
+
+
+515
+00:24:29,146 --> 00:24:32,566
+so you're going to turn around
+and actually pass both of these
+
+
+516
+00:24:32,566 --> 00:24:35,696
+into the bookmarkDataWithOptions
+API and say, I am planning
+
+
+517
+00:24:35,696 --> 00:24:37,626
+to take this movie that
+the user gave me access to
+
+
+518
+00:24:37,626 --> 00:24:39,716
+and I'm planning to insert
+it into this document.
+
+
+519
+00:24:39,716 --> 00:24:44,356
+And the API produces
+another NSData blob
+
+
+520
+00:24:45,566 --> 00:24:46,966
+that basically must be inserted
+
+
+521
+00:24:46,966 --> 00:24:48,996
+in the document you said you
+were going to put it into.
+
+
+522
+00:24:49,566 --> 00:24:51,526
+So that's what your app does.
+
+
+523
+00:24:52,536 --> 00:24:55,706
+Then, when the user
+reopens the document
+
+
+524
+00:24:55,706 --> 00:24:58,216
+which now has this link that,
+currently, from your Sandbox,
+
+
+525
+00:24:58,216 --> 00:24:59,636
+you can't follow to the movie.
+
+
+526
+00:25:00,576 --> 00:25:03,556
+You can take that security
+scoped bookmark out of
+
+
+527
+00:25:03,556 --> 00:25:06,526
+that document and say, I
+retrieved it from this document
+
+
+528
+00:25:06,526 --> 00:25:07,396
+and here's the bookmark.
+
+
+529
+00:25:08,456 --> 00:25:10,126
+Pass both of those to the API,
+
+
+530
+00:25:10,126 --> 00:25:12,696
+the API will resolve the
+bookmark, provide you access
+
+
+531
+00:25:13,046 --> 00:25:15,676
+to the movie and now you
+can recreate this link
+
+
+532
+00:25:16,266 --> 00:25:17,616
+and follow the reference.
+
+
+533
+00:25:17,716 --> 00:25:21,816
+I should mention that, for
+document-scoped bookmarks,
+
+
+534
+00:25:21,816 --> 00:25:25,046
+if you think about it, document
+formats need to generally run
+
+
+535
+00:25:25,046 --> 00:25:25,936
+between different apps.
+
+
+536
+00:25:26,156 --> 00:25:28,316
+So if another app can
+open the same document,
+
+
+537
+00:25:28,316 --> 00:25:30,346
+it can actually resolve
+that very same bookmark.
+
+
+538
+00:25:35,416 --> 00:25:37,546
+So, as I mentioned,
+there's no new API
+
+
+539
+00:25:37,546 --> 00:25:38,986
+to the security scoped
+bookmarks,
+
+
+540
+00:25:38,986 --> 00:25:41,236
+it's the same bookmark
+API that has been
+
+
+541
+00:25:41,236 --> 00:25:42,886
+around for several years.
+
+
+542
+00:25:44,086 --> 00:25:46,326
+In case any of you are not
+familiar with bookmark API,
+
+
+543
+00:25:46,446 --> 00:25:49,526
+it's actually the modern
+replacement to things
+
+
+544
+00:25:49,526 --> 00:25:52,686
+like aliases and
+FSRefs so, basically,
+
+
+545
+00:25:52,686 --> 00:25:58,636
+an API for being able to, as
+best as the OS can, track files
+
+
+546
+00:25:58,636 --> 00:26:01,406
+and folders as they move around
+the file system or get renamed.
+
+
+547
+00:26:02,466 --> 00:26:04,266
+But there's one critical
+difference
+
+
+548
+00:26:04,266 --> 00:26:08,846
+between the normal bookmark
+resolution API and using
+
+
+549
+00:26:08,846 --> 00:26:10,646
+that same API for
+security scoped bookmarks.
+
+
+550
+00:26:11,336 --> 00:26:14,086
+And that is that when you
+resolve a security scope
+
+
+551
+00:26:14,086 --> 00:26:17,076
+bookmark, what you get back
+is what we call a security
+
+
+552
+00:26:17,076 --> 00:26:18,406
+scoped NSURL.
+
+
+553
+00:26:19,726 --> 00:26:21,876
+It's an NSURL, it tells
+you where the file is,
+
+
+554
+00:26:22,276 --> 00:26:23,956
+but you can't immediately
+go and follow it.
+
+
+555
+00:26:23,956 --> 00:26:26,566
+It has not yet been made
+available inside your Sandbox.
+
+
+556
+00:26:26,976 --> 00:26:29,696
+Instead, you are responsible
+for calling a method
+
+
+557
+00:26:29,696 --> 00:26:32,066
+on that URL object
+called startAccessing
+
+
+558
+00:26:32,066 --> 00:26:33,236
+SecurityScopedResource.
+
+
+559
+00:26:34,006 --> 00:26:36,336
+And it's the act of calling
+that method that makes the file
+
+
+560
+00:26:36,336 --> 00:26:38,386
+or folder available
+within your Sandbox.
+
+
+561
+00:26:39,816 --> 00:26:41,446
+When you're done with
+the file or folder,
+
+
+562
+00:26:42,596 --> 00:26:44,756
+you have to match the call
+
+
+563
+00:26:44,756 --> 00:26:47,156
+with stopAccessing
+SecurityScopedResource
+
+
+564
+00:26:47,636 --> 00:26:49,906
+which tells the operating
+system to free up resources
+
+
+565
+00:26:49,906 --> 00:26:51,266
+that it's using on tracking
+
+
+566
+00:26:51,496 --> 00:26:53,776
+which additional files are
+available inside your Sandbox.
+
+
+567
+00:26:54,586 --> 00:26:58,386
+This is really important because
+if you don't call StopAccessing
+
+
+568
+00:26:58,776 --> 00:27:01,806
+and you start accumulating many,
+many, many Sandbox extensions
+
+
+569
+00:27:01,806 --> 00:27:04,756
+that were done in this way,
+eventually your app will,
+
+
+570
+00:27:04,886 --> 00:27:07,636
+basically, not be able
+to take in anymore.
+
+
+571
+00:27:07,846 --> 00:27:10,886
+And opening files through the
+Powerbox will start failing.
+
+
+572
+00:27:11,526 --> 00:27:14,376
+It's not a good place
+to be, basically,
+
+
+573
+00:27:14,506 --> 00:27:15,716
+until your app is restarted.
+
+
+574
+00:27:16,926 --> 00:27:18,786
+So balancing these
+is very important.
+
+
+575
+00:27:18,916 --> 00:27:25,316
+One other thing that App Sandbox
+focuses on is making sure that,
+
+
+576
+00:27:25,316 --> 00:27:29,606
+by default, applications
+really can't talk
+
+
+577
+00:27:29,606 --> 00:27:30,616
+to each other directly.
+
+
+578
+00:27:31,226 --> 00:27:34,346
+Generally, communication between
+Sandbox apps has to happen
+
+
+579
+00:27:34,346 --> 00:27:36,536
+through some kind of
+operating system interface
+
+
+580
+00:27:36,536 --> 00:27:39,126
+and mediation which, again,
+
+
+581
+00:27:39,206 --> 00:27:41,086
+turns out to be the
+right default.
+
+
+582
+00:27:41,706 --> 00:27:44,446
+But there are totally
+legitimate use cases
+
+
+583
+00:27:44,446 --> 00:27:46,446
+where multiple applications
+want to be able
+
+
+584
+00:27:46,446 --> 00:27:48,136
+to establish direct
+communication channels
+
+
+585
+00:27:48,416 --> 00:27:50,936
+or just share files
+and folders on disk.
+
+
+586
+00:27:51,286 --> 00:27:54,436
+The most common case for this
+is suites of applications
+
+
+587
+00:27:54,436 --> 00:27:58,336
+from the same developer where
+it makes sense that they want
+
+
+588
+00:27:58,336 --> 00:28:00,736
+to have a scratch base on
+disk that they all share
+
+
+589
+00:28:00,736 --> 00:28:04,716
+or that they want to be
+able to do direct IPC.
+
+
+590
+00:28:04,936 --> 00:28:08,146
+And another very common use
+case is apps that have a helper.
+
+
+591
+00:28:08,686 --> 00:28:09,786
+For instance, a login item
+
+
+592
+00:28:09,786 --> 00:28:11,726
+that runs every time
+the user logs in,
+
+
+593
+00:28:12,066 --> 00:28:13,606
+even when the main
+app is not running,
+
+
+594
+00:28:13,806 --> 00:28:15,526
+and then when the main
+app starts running,
+
+
+595
+00:28:15,686 --> 00:28:18,216
+it wants to be able to somehow
+establish direct communication
+
+
+596
+00:28:18,216 --> 00:28:20,466
+to the helper that's
+been running in the menu.
+
+
+597
+00:28:21,386 --> 00:28:23,066
+So, to solve that problem,
+
+
+598
+00:28:23,066 --> 00:28:24,876
+we have a mechanism
+called application groups.
+
+
+599
+00:28:25,856 --> 00:28:28,546
+The idea is it's just another
+Entitlement that you can put
+
+
+600
+00:28:29,186 --> 00:28:33,446
+on multiple apps or an
+app and its helpers.
+
+
+601
+00:28:34,266 --> 00:28:38,636
+And it's prefixed by your
+Apple Team ID and, after that,
+
+
+602
+00:28:38,636 --> 00:28:39,746
+it's whatever name you want.
+
+
+603
+00:28:40,936 --> 00:28:44,196
+And applications that have the
+same application group name get
+
+
+604
+00:28:44,196 --> 00:28:46,926
+to directly communicate and
+share file system locations.
+
+
+605
+00:28:47,626 --> 00:28:50,326
+So here's what that looks like.
+
+
+606
+00:28:50,326 --> 00:28:52,546
+Normally we have an app,
+it gets its own container
+
+
+607
+00:28:52,546 --> 00:28:54,296
+and it can access that
+container just fine.
+
+
+608
+00:28:54,906 --> 00:28:57,166
+And here we have a helper,
+maybe as a login item.
+
+
+609
+00:28:57,396 --> 00:29:00,736
+Well, our main app can't access
+the helper's container directly.
+
+
+610
+00:29:00,736 --> 00:29:02,316
+The Sandbox prohibits this.
+
+
+611
+00:29:02,556 --> 00:29:05,646
+But, if we create an
+Entitlement, and we say,
+
+
+612
+00:29:05,706 --> 00:29:06,836
+here we're actually
+going to put this
+
+
+613
+00:29:06,836 --> 00:29:10,216
+into myApp application group,
+and we place that Entitlement
+
+
+614
+00:29:10,216 --> 00:29:12,606
+on both our app and our helper.
+
+
+615
+00:29:13,616 --> 00:29:16,896
+Now a shared location comes
+into being on the file system
+
+
+616
+00:29:17,126 --> 00:29:18,676
+that both of these
+can access directly.
+
+
+617
+00:29:22,716 --> 00:29:26,486
+In addition, as I mentioned,
+certain IPC primitives like mach
+
+
+618
+00:29:26,486 --> 00:29:27,886
+and posix become available
+
+
+619
+00:29:27,886 --> 00:29:29,826
+for establishing direct
+communication channels
+
+
+620
+00:29:29,886 --> 00:29:32,216
+between the app and the helper
+or between different apps
+
+
+621
+00:29:32,216 --> 00:29:34,446
+in a suite where apps
+share an application group.
+
+
+622
+00:29:34,956 --> 00:29:38,806
+We have an API called
+SMLoginItemSetEnabled
+
+
+623
+00:29:39,206 --> 00:29:41,696
+that is fully App Sandbox
+compatible that will allow you
+
+
+624
+00:29:41,696 --> 00:29:45,076
+to run your helper as a login
+item every time the user
+
+
+625
+00:29:45,076 --> 00:29:47,766
+logs in.
+
+
+626
+00:29:48,016 --> 00:29:51,416
+Normally the fact that the
+Powerbox only provides access
+
+
+627
+00:29:51,416 --> 00:29:52,576
+to the file or the folder
+
+
+628
+00:29:52,576 --> 00:29:55,806
+that the user selected is
+exactly what we want both
+
+
+629
+00:29:55,806 --> 00:29:58,806
+for the security properties
+of App Sandbox and because
+
+
+630
+00:29:58,806 --> 00:30:00,226
+that sort of makes sense.
+
+
+631
+00:30:01,066 --> 00:30:02,566
+But there are some cases
+
+
+632
+00:30:02,756 --> 00:30:05,566
+where you want just a
+little bit more access.
+
+
+633
+00:30:06,426 --> 00:30:11,186
+So one example since we used
+TextEdit as our demo app,
+
+
+634
+00:30:11,636 --> 00:30:12,666
+TextEdit, as you probably know,
+
+
+635
+00:30:12,666 --> 00:30:15,046
+when you create a new document
+creates a Rich Text Format
+
+
+636
+00:30:15,046 --> 00:30:16,236
+document, an RTF file.
+
+
+637
+00:30:16,976 --> 00:30:21,376
+But, if you drag a picture
+into that file, TextEdit needs
+
+
+638
+00:30:21,376 --> 00:30:24,476
+to basically turn the file into
+a directory, change its name
+
+
+639
+00:30:24,476 --> 00:30:28,886
+from whatever the name was .rtf
+to whatever the name is .rtfd
+
+
+640
+00:30:29,396 --> 00:30:31,456
+so that it can basically
+store these attachments
+
+
+641
+00:30:31,526 --> 00:30:32,326
+in the directory.
+
+
+642
+00:30:33,346 --> 00:30:36,406
+And normally, that
+wouldn't work because trying
+
+
+643
+00:30:36,406 --> 00:30:39,706
+to rename blah.rtf
+into blah.rtfd,
+
+
+644
+00:30:40,486 --> 00:30:42,186
+the Sandbox would
+be prohibiting this.
+
+
+645
+00:30:42,586 --> 00:30:46,686
+The user did not give you access
+to blah.rtfd so you can't do it.
+
+
+646
+00:30:47,256 --> 00:30:50,606
+So to solve this problem in a
+specific narrow set of cases,
+
+
+647
+00:30:50,606 --> 00:30:52,846
+we have a facility
+called Related Items
+
+
+648
+00:30:53,226 --> 00:30:55,326
+that lets you express
+certain relationships
+
+
+649
+00:30:55,326 --> 00:30:57,246
+between file names
+and their extensions.
+
+
+650
+00:30:58,096 --> 00:31:03,226
+And in this case, you can
+specify that RTF is related
+
+
+651
+00:31:03,226 --> 00:31:07,176
+to RTFD so that if the user
+gives you access to blah.rtf,
+
+
+652
+00:31:07,516 --> 00:31:10,246
+you can also use
+NSFilePresenter methods
+
+
+653
+00:31:10,486 --> 00:31:12,566
+to obtain access to blah.rtfd.
+
+
+654
+00:31:12,566 --> 00:31:17,236
+This is how TextEdit does its
+rename and there are a number
+
+
+655
+00:31:17,236 --> 00:31:19,296
+of similar use cases like
+movie players wanting
+
+
+656
+00:31:19,296 --> 00:31:23,156
+to access subtitles which
+are normally named the same
+
+
+657
+00:31:23,156 --> 00:31:25,086
+as a movie file but with a
+different file extension.
+
+
+658
+00:31:26,286 --> 00:31:29,036
+This also requires a declaration
+of which patterns are allowed
+
+
+659
+00:31:29,036 --> 00:31:30,986
+in the info plist and we
+have some documentation
+
+
+660
+00:31:30,986 --> 00:31:32,046
+that shows you how to do this.
+
+
+661
+00:31:32,256 --> 00:31:37,946
+OS X for a long time has been
+the best platform for automation
+
+
+662
+00:31:37,946 --> 00:31:40,706
+and rich automation
+that there is.
+
+
+663
+00:31:41,066 --> 00:31:44,776
+And while App Sandbox never
+imposed any restrictions
+
+
+664
+00:31:44,776 --> 00:31:47,906
+on how Sandboxed apps can
+be scripted by the user,
+
+
+665
+00:31:48,796 --> 00:31:50,806
+it did impose rigorous
+restrictions
+
+
+666
+00:31:50,806 --> 00:31:52,916
+on how Sandboxed apps
+can script other apps.
+
+
+667
+00:31:52,916 --> 00:31:56,886
+And the reason for
+this is pretty obvious
+
+
+668
+00:31:56,886 --> 00:31:57,526
+if you think about it.
+
+
+669
+00:31:57,526 --> 00:31:59,836
+If you have a Sandbox and
+it's enforcing all these tight
+
+
+670
+00:31:59,836 --> 00:32:03,566
+restrictions, but the Sandbox
+allows a Sandboxed app to go
+
+
+671
+00:32:03,566 --> 00:32:05,156
+and script Finder or Terminal,
+
+
+672
+00:32:05,736 --> 00:32:07,946
+then there's effectively
+no Sandbox, right?
+
+
+673
+00:32:07,946 --> 00:32:08,676
+You can get those apps
+
+
+674
+00:32:08,676 --> 00:32:10,526
+to do pretty much anything
+you want on the system.
+
+
+675
+00:32:11,116 --> 00:32:14,326
+What we did is we created a
+mechanism called Apple Event
+
+
+676
+00:32:14,326 --> 00:32:18,636
+Access Groups that allows
+scriptable applications to mark
+
+
+677
+00:32:18,636 --> 00:32:21,126
+up their scripting
+definition and say
+
+
+678
+00:32:21,126 --> 00:32:23,776
+that certain groups
+of events are safe.
+
+
+679
+00:32:24,106 --> 00:32:26,426
+They're safe to be
+invoked by Sandboxed apps.
+
+
+680
+00:32:26,696 --> 00:32:28,876
+And this works for,
+if you're familiar
+
+
+681
+00:32:28,876 --> 00:32:33,026
+with scripting definitions,
+sort of the full richness
+
+
+682
+00:32:33,226 --> 00:32:37,466
+of that definition mechanism so
+commands, classes, properties,
+
+
+683
+00:32:37,466 --> 00:32:39,986
+you name it, all of them can
+be grouped into access groups.
+
+
+684
+00:32:40,286 --> 00:32:42,796
+So this is documented, then you
+can take a look at how it works.
+
+
+685
+00:32:43,526 --> 00:32:46,966
+But it's also used by a number
+of OS X apps already so,
+
+
+686
+00:32:46,966 --> 00:32:48,726
+for instance, Mail has
+an access group called
+
+
+687
+00:32:48,726 --> 00:32:51,556
+com.apple.mail.compose
+which means that now,
+
+
+688
+00:32:51,556 --> 00:32:55,536
+even if you're Sandboxed, you
+can use scripting to ask mail
+
+
+689
+00:32:55,536 --> 00:32:58,956
+to pop open a compose window and
+put some information in there
+
+
+690
+00:32:58,956 --> 00:33:00,666
+and get ready for the
+user to send E-mail.
+
+
+691
+00:33:00,956 --> 00:33:02,976
+iTunes, similarly, has a
+number of access groups
+
+
+692
+00:33:02,976 --> 00:33:04,456
+that you can use to
+control the playback
+
+
+693
+00:33:04,456 --> 00:33:05,666
+or access library information.
+
+
+694
+00:33:06,186 --> 00:33:09,786
+And so the way this works is
+there's a new Entitlement called
+
+
+695
+00:33:09,786 --> 00:33:13,846
+Scripting Targets where you
+list for every app that you want
+
+
+696
+00:33:13,846 --> 00:33:16,476
+to be able to script
+which has access groups,
+
+
+697
+00:33:16,656 --> 00:33:18,716
+you list which access
+groups your app wants
+
+
+698
+00:33:18,716 --> 00:33:22,126
+to be able to use.
+
+
+699
+00:33:22,126 --> 00:33:25,216
+For example, here's
+the Entitlement,
+
+
+700
+00:33:25,366 --> 00:33:27,886
+if we want to script Mail, we're
+going to say in this dictionary
+
+
+701
+00:33:27,886 --> 00:33:31,006
+that mail is the only key and
+that its value is an array
+
+
+702
+00:33:31,006 --> 00:33:31,946
+which contains, in this case,
+
+
+703
+00:33:31,946 --> 00:33:34,866
+just one access group called
+com.apple.mail.compose.
+
+
+704
+00:33:35,446 --> 00:33:38,596
+Now it turns out that
+there's one other familiar way
+
+
+705
+00:33:38,596 --> 00:33:42,416
+of doing scripting that a lot of
+OS X apps want to be able to do
+
+
+706
+00:33:42,806 --> 00:33:46,876
+which is allowing the user
+to select scripts that run
+
+
+707
+00:33:47,386 --> 00:33:50,416
+in reaction to certain things
+happening inside the app.
+
+
+708
+00:33:50,416 --> 00:33:51,676
+Timer app might want to be able
+
+
+709
+00:33:51,676 --> 00:33:53,406
+to run a script when
+the timer fires.
+
+
+710
+00:33:53,946 --> 00:33:56,486
+Mail actually supports
+you saying
+
+
+711
+00:33:56,486 --> 00:34:01,176
+that when a certain mail rule is
+triggered, a script should run.
+
+
+712
+00:34:01,176 --> 00:34:03,396
+Aperture allows you to set that
+a certain script should run
+
+
+713
+00:34:03,396 --> 00:34:06,406
+after all your photos
+have been imported.
+
+
+714
+00:34:06,876 --> 00:34:09,206
+And, traditionally,
+this would mean
+
+
+715
+00:34:09,206 --> 00:34:11,606
+that the script is actually
+executed by the application
+
+
+716
+00:34:11,846 --> 00:34:13,255
+which means, of course,
+that it's subject
+
+
+717
+00:34:13,255 --> 00:34:14,766
+to the application Sandbox.
+
+
+718
+00:34:15,216 --> 00:34:16,176
+This is really problematic.
+
+
+719
+00:34:16,176 --> 00:34:18,116
+If the user is writing
+scripts and expects to be able
+
+
+720
+00:34:18,116 --> 00:34:20,496
+to do whatever they want in
+the context of the script
+
+
+721
+00:34:20,815 --> 00:34:22,786
+because the Sandbox will
+simply prohibit those actions.
+
+
+722
+00:34:23,485 --> 00:34:27,246
+So we have a mechanism
+called NSUserScriptTask
+
+
+723
+00:34:27,626 --> 00:34:29,025
+that now fully supports this.
+
+
+724
+00:34:29,025 --> 00:34:30,646
+And the way this works
+is there's a folder
+
+
+725
+00:34:30,826 --> 00:34:32,815
+in tilde Library called
+Application Scripts.
+
+
+726
+00:34:33,775 --> 00:34:36,275
+Under that folder, there's
+a subfolder for every app
+
+
+727
+00:34:36,616 --> 00:34:40,396
+that wants to use this
+facility and any scripts
+
+
+728
+00:34:40,396 --> 00:34:44,346
+that the user drags into this
+folder, the per app folder,
+
+
+729
+00:34:45,235 --> 00:34:47,786
+that app is then allowed to
+ask the operating system to run
+
+
+730
+00:34:48,025 --> 00:34:49,286
+with no Sandbox restrictions.
+
+
+731
+00:34:50,335 --> 00:34:54,315
+So the app can use API to
+reveal that folder and Finder
+
+
+732
+00:34:54,505 --> 00:34:56,366
+and tell the user, if you want
+to be able to run any scripts,
+
+
+733
+00:34:56,366 --> 00:34:57,476
+just drag them in this window.
+
+
+734
+00:34:57,926 --> 00:35:00,376
+Once that happens, those
+scripts can run uninhibited
+
+
+735
+00:35:00,376 --> 00:35:01,196
+by the Sandbox.
+
+
+736
+00:35:01,746 --> 00:35:06,886
+So this is part of
+Foundation, the thing to look
+
+
+737
+00:35:06,886 --> 00:35:09,056
+up in documentation
+is NSUserScriptTask.
+
+
+738
+00:35:09,456 --> 00:35:13,416
+It supports all of the
+scripting that you might care
+
+
+739
+00:35:13,416 --> 00:35:16,286
+about so anything from just
+shell scripts to AppleScript
+
+
+740
+00:35:16,286 --> 00:35:19,186
+and even Automator
+Workflows and there are ways
+
+
+741
+00:35:19,186 --> 00:35:21,176
+to customize exactly how
+you want this to work.
+
+
+742
+00:35:21,526 --> 00:35:23,256
+There's no Entitlement
+required to use this,
+
+
+743
+00:35:23,646 --> 00:35:25,266
+you can just simply use it.
+
+
+744
+00:35:25,856 --> 00:35:27,416
+Previously it was the case
+
+
+745
+00:35:27,416 --> 00:35:31,486
+that iTunes maintained an
+XML file that, basically,
+
+
+746
+00:35:31,486 --> 00:35:34,176
+described all the information
+about songs and other items
+
+
+747
+00:35:34,176 --> 00:35:35,366
+in the user's media library.
+
+
+748
+00:35:36,376 --> 00:35:42,176
+And this is still the case,
+but if a Sandboxed app tried
+
+
+749
+00:35:42,266 --> 00:35:45,846
+to parse this XML database,
+
+
+750
+00:35:46,196 --> 00:35:49,836
+it would work fine
+unless the user had songs
+
+
+751
+00:35:49,836 --> 00:35:53,156
+and other media outside of
+their normal media directories.
+
+
+752
+00:35:53,156 --> 00:35:55,256
+So if they went into
+iTunes and said I want
+
+
+753
+00:35:55,256 --> 00:35:58,036
+to manage my own library and
+have songs on Network Volumes
+
+
+754
+00:35:58,036 --> 00:36:01,026
+or different disks and so
+forth, then Sandbox apps,
+
+
+755
+00:36:01,026 --> 00:36:03,206
+even though they could
+find the paths of the songs
+
+
+756
+00:36:03,206 --> 00:36:05,266
+and the items they cared about,
+they couldn't follow them
+
+
+757
+00:36:05,266 --> 00:36:07,286
+because the Sandbox
+would not allow it.
+
+
+758
+00:36:08,316 --> 00:36:11,026
+With iTunes 11, there's a
+great new framework called
+
+
+759
+00:36:11,026 --> 00:36:12,486
+iTunesLibrary.framework
+
+
+760
+00:36:13,416 --> 00:36:17,796
+that actually provides a great
+Objective C API that you can use
+
+
+761
+00:36:18,146 --> 00:36:20,286
+to never have to parse
+a line of XML again.
+
+
+762
+00:36:20,286 --> 00:36:23,046
+You can simply ask
+it for contents
+
+
+763
+00:36:23,046 --> 00:36:24,176
+of the user's media library.
+
+
+764
+00:36:24,656 --> 00:36:28,216
+You can ask it to gain access
+to those actual files on disk
+
+
+765
+00:36:28,386 --> 00:36:29,656
+and what comes back
+from the API,
+
+
+766
+00:36:30,196 --> 00:36:32,006
+just like with security
+scoped bookmarks,
+
+
+767
+00:36:32,746 --> 00:36:35,396
+are security scoped
+URLs so you can say,
+
+
+768
+00:36:35,396 --> 00:36:39,876
+I want to play this song, use
+the API to request access,
+
+
+769
+00:36:39,876 --> 00:36:42,016
+you'll get the URL,
+you'll call startAccessing
+
+
+770
+00:36:42,016 --> 00:36:45,516
+SecurityScopedResource on it
+and the file is made available
+
+
+771
+00:36:45,516 --> 00:36:47,126
+within your Sandbox
+and you can behave
+
+
+772
+00:36:47,376 --> 00:36:49,326
+like you always have
+towards that file,
+
+
+773
+00:36:49,326 --> 00:36:50,926
+regardless of where it
+is on the file system.
+
+
+774
+00:36:51,266 --> 00:36:56,026
+To use the iTunes Library
+framework from a Sandboxed app,
+
+
+775
+00:36:56,026 --> 00:36:58,766
+you need the normal music
+entitlements that have been
+
+
+776
+00:36:58,766 --> 00:37:00,366
+around since App
+Sandbox launched.
+
+
+777
+00:37:00,806 --> 00:37:01,986
+As I'm sure most of you know,
+
+
+778
+00:37:02,096 --> 00:37:03,786
+using App Sandbox
+is now a requirement
+
+
+779
+00:37:04,286 --> 00:37:07,866
+in the Mac App Store.
+
+
+780
+00:37:08,486 --> 00:37:12,076
+And this has been, for the
+most part, very smooth.
+
+
+781
+00:37:12,996 --> 00:37:15,626
+Most of our developers have had
+no trouble adopting their apps
+
+
+782
+00:37:15,626 --> 00:37:20,396
+just like I've shown you with
+very little time spent in Xcode
+
+
+783
+00:37:20,396 --> 00:37:22,736
+and just finding the right
+entitlements to enable.
+
+
+784
+00:37:23,576 --> 00:37:25,826
+But, as we've been doing
+this for some time now,
+
+
+785
+00:37:26,076 --> 00:37:29,116
+we've also picked up a bag
+of tips and tricks for things
+
+
+786
+00:37:29,156 --> 00:37:31,076
+to check when you're
+submitting your app especially
+
+
+787
+00:37:31,076 --> 00:37:32,046
+if it's for the first time.
+
+
+788
+00:37:32,606 --> 00:37:35,866
+And the first of those, and the
+most important one I'm going
+
+
+789
+00:37:35,866 --> 00:37:40,436
+to point you to, is a document
+called "Technical Q&A QA1773."
+
+
+790
+00:37:41,196 --> 00:37:44,516
+So if you search for that,
+you'll find the whole document
+
+
+791
+00:37:44,516 --> 00:37:49,336
+that actually lists a number of
+sort of common issues and tips
+
+
+792
+00:37:49,336 --> 00:37:52,226
+and tricks for when
+you're submitting your apps
+
+
+793
+00:37:52,616 --> 00:37:55,076
+to the Mac App Store and
+need to enable Sandboxing.
+
+
+794
+00:37:55,676 --> 00:37:57,546
+But I'm just going to
+point out a few of them
+
+
+795
+00:37:57,926 --> 00:38:00,596
+that I think are the most
+common kinds of things
+
+
+796
+00:38:00,596 --> 00:38:01,506
+that you might run in to.
+
+
+797
+00:38:01,666 --> 00:38:05,666
+So the first is this, when
+you're submitting your app
+
+
+798
+00:38:05,666 --> 00:38:06,866
+and you know it must
+be Sanboxed,
+
+
+799
+00:38:07,286 --> 00:38:09,106
+that's not just your
+main app binary,
+
+
+800
+00:38:09,106 --> 00:38:11,656
+it's actually every executable
+file that you're submitting.
+
+
+801
+00:38:12,156 --> 00:38:14,986
+Now most apps actually just
+have their main binary,
+
+
+802
+00:38:14,986 --> 00:38:18,066
+their main executable, but if
+you're including XPC services
+
+
+803
+00:38:18,066 --> 00:38:20,166
+or if you're including
+helper tools that you run
+
+
+804
+00:38:20,166 --> 00:38:23,606
+through things like NS Task, all
+of those must also be Sandboxed.
+
+
+805
+00:38:24,066 --> 00:38:27,426
+The entitlements you choose must
+match your app functionality.
+
+
+806
+00:38:27,986 --> 00:38:30,506
+Remember that there's a
+human reviewer that's looking
+
+
+807
+00:38:30,506 --> 00:38:34,786
+at your app and if it's a
+timer app that just, you know,
+
+
+808
+00:38:34,786 --> 00:38:37,076
+lets you set some
+timers and then they fire
+
+
+809
+00:38:37,076 --> 00:38:40,606
+and some music plays and it's
+requesting an entitlement
+
+
+810
+00:38:40,606 --> 00:38:44,296
+for access to the Address Book,
+that reviewer is going to say,
+
+
+811
+00:38:44,296 --> 00:38:45,256
+well, what's going on here?
+
+
+812
+00:38:45,566 --> 00:38:48,116
+I see no way that this app needs
+access to the Address Book,
+
+
+813
+00:38:48,466 --> 00:38:50,606
+why is the developer
+requesting this entitlement?
+
+
+814
+00:38:50,836 --> 00:38:53,326
+So that can add time to the
+review process and you'll have
+
+
+815
+00:38:53,326 --> 00:38:54,926
+to explain why you're
+doing this.
+
+
+816
+00:38:55,366 --> 00:38:58,396
+In general, don't be tempted
+to enable entitlements
+
+
+817
+00:38:58,396 --> 00:39:00,616
+that you don't need,
+really only enable the ones
+
+
+818
+00:39:00,616 --> 00:39:03,026
+that your app clearly
+has need for.
+
+
+819
+00:39:03,726 --> 00:39:06,406
+And, hand-in-hand with that,
+I showed you the process
+
+
+820
+00:39:06,406 --> 00:39:07,796
+of looking for Sandbox
+violations.
+
+
+821
+00:39:08,436 --> 00:39:10,956
+Now, not all Sandbox
+violations are bad.
+
+
+822
+00:39:11,656 --> 00:39:13,996
+And what I mean by that is, if
+there's no functional impact
+
+
+823
+00:39:13,996 --> 00:39:16,106
+on your app whatsoever, if
+you're seeing a violation,
+
+
+824
+00:39:17,056 --> 00:39:19,926
+everything in your app is
+working fine, that's fine,
+
+
+825
+00:39:20,026 --> 00:39:21,116
+you don't have to do anything.
+
+
+826
+00:39:21,286 --> 00:39:23,606
+You don't have to go through the
+list of entitlements trying to,
+
+
+827
+00:39:23,606 --> 00:39:26,806
+hoping that some random
+unrelated entitlement will make
+
+
+828
+00:39:26,806 --> 00:39:28,156
+the Sandbox violation go away.
+
+
+829
+00:39:28,336 --> 00:39:31,006
+Because it might, but then,
+when it comes time to submit
+
+
+830
+00:39:31,006 --> 00:39:33,646
+to the Mac App Store, it's
+going to be a raising eyebrows,
+
+
+831
+00:39:33,646 --> 00:39:35,536
+why do you have this random,
+unrelated entitlement?
+
+
+832
+00:39:36,396 --> 00:39:38,896
+Just the fact that there are
+violations is not a problem.
+
+
+833
+00:39:39,186 --> 00:39:41,576
+It's only when the violations
+are causing functionality
+
+
+834
+00:39:41,576 --> 00:39:44,526
+in your app that doesn't work,
+that's where you go and you try
+
+
+835
+00:39:44,526 --> 00:39:46,816
+and figure out what entitlements
+you might be missing.
+
+
+836
+00:39:47,226 --> 00:39:48,496
+And so, on a very similar note,
+
+
+837
+00:39:48,806 --> 00:39:50,416
+when you do request
+entitlements,
+
+
+838
+00:39:50,466 --> 00:39:53,006
+try and make sure you
+understand exactly what they do
+
+
+839
+00:39:53,066 --> 00:39:54,116
+and why you need them.
+
+
+840
+00:39:55,316 --> 00:39:58,546
+There are a few entitlements
+that lots of you are requesting
+
+
+841
+00:39:59,376 --> 00:40:01,936
+that we can kind
+of figure out why,
+
+
+842
+00:40:02,336 --> 00:40:05,656
+but it doesn't fully match the
+model so here's an example.
+
+
+843
+00:40:06,266 --> 00:40:09,586
+If your app needs to be
+able to open documents
+
+
+844
+00:40:09,586 --> 00:40:12,276
+from a USB stick the user
+has plugged into the machine,
+
+
+845
+00:40:12,986 --> 00:40:14,576
+you don't need any
+entitlements for that, right?
+
+
+846
+00:40:14,576 --> 00:40:16,126
+The Powerbox will just
+let you browse there
+
+
+847
+00:40:16,126 --> 00:40:18,686
+like any other file
+and that's it.
+
+
+848
+00:40:19,166 --> 00:40:20,016
+No entitlements needed.
+
+
+849
+00:40:20,626 --> 00:40:22,126
+That would not be reason
+
+
+850
+00:40:22,126 --> 00:40:24,906
+to specify the USB
+Device Access Entitlement
+
+
+851
+00:40:26,146 --> 00:40:27,986
+because that entitlement
+actually lets you interface
+
+
+852
+00:40:27,986 --> 00:40:30,466
+with custom USB devices that may
+be connected to the computer.
+
+
+853
+00:40:30,466 --> 00:40:32,696
+It has nothing to do with
+file access and USB sticks.
+
+
+854
+00:40:33,336 --> 00:40:38,316
+Similarly, if your app does any
+networking, it's really tempting
+
+
+855
+00:40:38,316 --> 00:40:40,806
+to just check both of the
+network entitlement boxes.
+
+
+856
+00:40:40,806 --> 00:40:42,176
+The one that says,
+Inbound Connections
+
+
+857
+00:40:42,176 --> 00:40:43,066
+and Outbound Connections.
+
+
+858
+00:40:43,516 --> 00:40:46,446
+But actually, the most, the
+vast majority of apps only needs
+
+
+859
+00:40:46,446 --> 00:40:48,386
+to be able to make
+outbound network requests,
+
+
+860
+00:40:49,186 --> 00:40:51,396
+meaning it only needs the
+client network entitlement.
+
+
+861
+00:40:52,086 --> 00:40:54,776
+Most of apps are not sitting
+and being network servers
+
+
+862
+00:40:54,776 --> 00:40:57,506
+where they bind the port and
+wait for inbound connections.
+
+
+863
+00:40:57,766 --> 00:41:00,316
+That's not what most apps do so,
+
+
+864
+00:41:00,736 --> 00:41:03,506
+if you're selecting the
+server networking entitlement,
+
+
+865
+00:41:03,506 --> 00:41:07,226
+make sure you actually need it
+rather than just being something
+
+
+866
+00:41:07,226 --> 00:41:08,666
+that sort of seems
+like you might need it.
+
+
+867
+00:41:08,836 --> 00:41:12,756
+Finally, we have this mechanism
+we call Temporary Exceptions
+
+
+868
+00:41:13,506 --> 00:41:15,906
+which are a way to,
+in certain cases,
+
+
+869
+00:41:16,246 --> 00:41:20,086
+where the Sandbox is
+prohibiting functionality
+
+
+870
+00:41:20,086 --> 00:41:22,796
+for which we want the support,
+
+
+871
+00:41:22,796 --> 00:41:26,976
+but currently don't have a
+good mechanism, there's a list
+
+
+872
+00:41:26,976 --> 00:41:29,046
+of temporary exceptions that
+you may be able to request
+
+
+873
+00:41:29,046 --> 00:41:31,246
+that would allow your
+app to continue working
+
+
+874
+00:41:31,246 --> 00:41:32,816
+until a better mechanism
+is available.
+
+
+875
+00:41:33,316 --> 00:41:36,666
+And there's a few things
+I want to say about this.
+
+
+876
+00:41:36,666 --> 00:41:39,346
+The first is there's been some
+trepidation about the name,
+
+
+877
+00:41:39,346 --> 00:41:40,986
+Temporary Exception,
+because it sounds
+
+
+878
+00:41:40,986 --> 00:41:43,166
+like maybe it'll just stop
+working all of a sudden.
+
+
+879
+00:41:43,496 --> 00:41:45,546
+And, if you've distributed
+your app and a bunch
+
+
+880
+00:41:45,546 --> 00:41:49,346
+of users have bought
+it, suddenly one day,
+
+
+881
+00:41:49,346 --> 00:41:50,896
+maybe it just won't run anymore
+
+
+882
+00:41:50,896 --> 00:41:52,666
+because the temporary
+exception has expired.
+
+
+883
+00:41:53,536 --> 00:41:54,506
+That's not how it works.
+
+
+884
+00:41:54,686 --> 00:41:57,516
+The Temporary Exception,
+if you are approved,
+
+
+885
+00:41:57,516 --> 00:41:59,236
+the Temporary Exception,
+it'll continue working
+
+
+886
+00:41:59,486 --> 00:42:01,356
+and it's simply that, at
+some point in the future,
+
+
+887
+00:42:01,356 --> 00:42:04,926
+as a better mechanism becomes
+available, you may be asked
+
+
+888
+00:42:05,176 --> 00:42:07,606
+to no longer submit
+new versions of the app
+
+
+889
+00:42:07,656 --> 00:42:09,606
+to the App Store carrying
+that temporary exception.
+
+
+890
+00:42:10,066 --> 00:42:12,126
+But, you don't have to
+fear temporary exceptions.
+
+
+891
+00:42:12,616 --> 00:42:14,216
+Once you request them,
+once they're approved,
+
+
+892
+00:42:14,416 --> 00:42:15,156
+they're going to keep working.
+
+
+893
+00:42:15,156 --> 00:42:16,466
+There's no issue
+about this breaking.
+
+
+894
+00:42:16,796 --> 00:42:18,566
+The second thing, and this
+is a really important one,
+
+
+895
+00:42:18,566 --> 00:42:20,196
+is temporary exceptions
+are not a way
+
+
+896
+00:42:20,196 --> 00:42:21,996
+to effectively disable
+the Sandbox.
+
+
+897
+00:42:22,866 --> 00:42:24,346
+So we've seen some
+very creative use
+
+
+898
+00:42:24,346 --> 00:42:28,196
+of temporary exceptions
+including popular ones
+
+
+899
+00:42:28,196 --> 00:42:30,526
+like asking, you know,
+for a temporary exception
+
+
+900
+00:42:30,526 --> 00:42:33,216
+to script Finder and Terminal
+or for a temporary exception
+
+
+901
+00:42:33,216 --> 00:42:37,716
+that allows access to slash and
+everything underneath which,
+
+
+902
+00:42:37,716 --> 00:42:38,986
+basically, means the
+entire file system.
+
+
+903
+00:42:39,686 --> 00:42:42,916
+So remember, again, that when
+you do this, it's going to go
+
+
+904
+00:42:42,916 --> 00:42:46,786
+in front of a human reviewer
+and they're going to be unhappy.
+
+
+905
+00:42:47,246 --> 00:42:51,876
+So these are not a mechanism
+to work around the Sandbox.
+
+
+906
+00:42:52,226 --> 00:42:54,196
+App Sandbox, ever
+since we introduced it,
+
+
+907
+00:42:54,196 --> 00:42:55,966
+in Lion has been
+a strong barrier
+
+
+908
+00:42:55,966 --> 00:42:57,686
+against exploitation and, even,
+
+
+909
+00:42:57,686 --> 00:42:59,036
+against pathological
+coding errors.
+
+
+910
+00:43:00,066 --> 00:43:02,746
+It tries to drive security
+policy by user intent,
+
+
+911
+00:43:03,256 --> 00:43:04,676
+instead of explicit security UI.
+
+
+912
+00:43:05,956 --> 00:43:07,726
+It's a technology for those
+of you who are looking
+
+
+913
+00:43:07,726 --> 00:43:10,116
+at Gatekeeper and Developer
+ID that's complementary
+
+
+914
+00:43:10,626 --> 00:43:14,466
+to Gatekeeper so you can, even
+if you're distributing your apps
+
+
+915
+00:43:14,466 --> 00:43:18,366
+through Developer ID, you
+can use App Sandbox with it.
+
+
+916
+00:43:19,016 --> 00:43:22,096
+We have some really great
+documentation covering almost
+
+
+917
+00:43:22,096 --> 00:43:23,366
+everything that I
+talked about today.
+
+
+918
+00:43:24,596 --> 00:43:27,186
+There's sample code where you
+can look at things like XPC
+
+
+919
+00:43:27,186 --> 00:43:28,896
+and Sandboxing and XPC services.
+
+
+920
+00:43:29,566 --> 00:43:35,936
+But the real takeaway for me
+is this, probably almost all
+
+
+921
+00:43:35,936 --> 00:43:40,766
+of you here are iOS users
+and iOS, as we announced,
+
+
+922
+00:43:40,766 --> 00:43:43,076
+has asked 50 billion
+app downloads.
+
+
+923
+00:43:43,376 --> 00:43:45,736
+Every single one of those
+has run in the Sandbox
+
+
+924
+00:43:46,956 --> 00:43:48,316
+and our users have loved
+
+
+925
+00:43:48,316 --> 00:43:51,206
+that the carefree experience
+they have of trying new apps.
+
+
+926
+00:43:51,906 --> 00:43:53,776
+They never worry about what's
+going to happen to their phone,
+
+
+927
+00:43:53,776 --> 00:43:55,866
+they never worry about, you
+know, what if it crashes
+
+
+928
+00:43:55,866 --> 00:43:57,076
+and deletes all my things.
+
+
+929
+00:43:57,526 --> 00:44:00,566
+Those are simply not in the
+vocabulary of our iOS users
+
+
+930
+00:44:00,566 --> 00:44:02,096
+because the Sandbox,
+from day one,
+
+
+931
+00:44:02,586 --> 00:44:04,826
+has imposed strong restrictions
+on what apps can do.
+
+
+932
+00:44:05,416 --> 00:44:07,576
+And we would like to
+delight our users on OS X
+
+
+933
+00:44:07,576 --> 00:44:09,566
+with the same carefree
+app experience.
+
+
+934
+00:44:10,496 --> 00:44:12,806
+Thank you.
+
+
+935
+00:44:13,306 --> 00:44:25,690
+[ Applause ]
+

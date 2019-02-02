@@ -1,0 +1,1302 @@
+1
+00:00:01,168 --> 00:00:03,537
+In this presentation
+we will focus on tile shading,
+
+
+2
+00:00:03,537 --> 00:00:06,707
+the new programmable stage
+in Apple's A11 GPU
+
+
+3
+00:00:06,707 --> 00:00:08,175
+that provides
+compute capabilities
+
+
+4
+00:00:08,175 --> 00:00:11,245
+inline within render passes.
+
+
+5
+00:00:11,245 --> 00:00:13,580
+Tile shading enables
+a whole new level of performance
+
+
+6
+00:00:13,580 --> 00:00:15,682
+and efficiency in Metal 2.
+
+
+7
+00:00:15,682 --> 00:00:18,118
+Rendering and compute operations
+can now share data
+
+
+8
+00:00:18,118 --> 00:00:22,956
+through the higher bandwidth
+and lower power tile memory.
+
+
+9
+00:00:22,956 --> 00:00:25,726
+Tile shading is deeply
+integrated with imageblocks.
+
+
+10
+00:00:25,726 --> 00:00:28,195
+You'll be able to analyze
+imageblock contents,
+
+
+11
+00:00:28,195 --> 00:00:31,765
+summarize that content,
+store imageblocks mid-scene,
+
+
+12
+00:00:31,765 --> 00:00:34,735
+or even change
+imageblock layouts.
+
+
+13
+00:00:34,735 --> 00:00:36,503
+Tile shading is also
+tightly integrated
+
+
+14
+00:00:36,503 --> 00:00:37,671
+with threadgroup memory
+
+
+15
+00:00:37,671 --> 00:00:39,773
+and can be used to cache
+tile constant data
+
+
+16
+00:00:39,773 --> 00:00:43,510
+for the later tile
+or fragment stages.
+
+
+17
+00:00:43,510 --> 00:00:46,346
+Let's start by motivating
+the need for tile shading.
+
+
+18
+00:00:47,314 --> 00:00:49,182
+Performing compute
+between render passes
+
+
+19
+00:00:49,182 --> 00:00:51,418
+has become more common
+in recent years.
+
+
+20
+00:00:51,418 --> 00:00:54,788
+For example, tiled deferred
+and forward rendering algorithms
+
+
+21
+00:00:54,788 --> 00:00:57,324
+intersect lights
+against screen-aligned tiles
+
+
+22
+00:00:57,324 --> 00:00:59,826
+in order to reduce shading cost.
+
+
+23
+00:00:59,826 --> 00:01:01,595
+The idea behind these algorithms
+
+
+24
+00:01:01,595 --> 00:01:04,230
+is that not all lights
+affect all pixels,
+
+
+25
+00:01:04,230 --> 00:01:07,434
+but culling per pixel
+may be too expensive,
+
+
+26
+00:01:07,434 --> 00:01:11,038
+so we amortize the cost
+over tile regions.
+
+
+27
+00:01:11,038 --> 00:01:13,507
+Previously in Metal
+for A Series GPUs,
+
+
+28
+00:01:13,507 --> 00:01:15,008
+performing compute mid-render
+
+
+29
+00:01:15,008 --> 00:01:16,944
+required storing
+render target data
+
+
+30
+00:01:16,944 --> 00:01:20,747
+that was cached in tile memory
+back out to device memory,
+
+
+31
+00:01:20,747 --> 00:01:23,884
+so that a compute pass
+could then consume it.
+
+
+32
+00:01:23,884 --> 00:01:26,753
+Compute would then
+have to also store its results
+
+
+33
+00:01:26,753 --> 00:01:29,823
+back to device memory
+before rendering would resume.
+
+
+34
+00:01:29,823 --> 00:01:31,758
+This repeated data movement
+between local
+
+
+35
+00:01:31,758 --> 00:01:34,461
+and external memories
+is bandwidth intensive.
+
+
+36
+00:01:36,163 --> 00:01:38,231
+With Metal 2 and the A11 GPU,
+
+
+37
+00:01:38,231 --> 00:01:40,834
+such algorithms
+can now operate exclusively
+
+
+38
+00:01:40,834 --> 00:01:44,071
+within the exposed tile memory
+using tile shading,
+
+
+39
+00:01:44,071 --> 00:01:46,673
+which takes the place
+of the compute pass.
+
+
+40
+00:01:46,673 --> 00:01:50,944
+Render target contents are now
+cached in tile memory once.
+
+
+41
+00:01:50,944 --> 00:01:53,780
+Tile shading then operates
+directly on the imageblock
+
+
+42
+00:01:53,780 --> 00:01:56,483
+and can even its results
+to threadgroup memory,
+
+
+43
+00:01:56,483 --> 00:01:58,285
+which is also backed
+by tile memory
+
+
+44
+00:01:58,285 --> 00:02:00,354
+for later use by rendering.
+
+
+45
+00:02:01,321 --> 00:02:02,723
+Now that we've seen
+how tile shaders
+
+
+46
+00:02:02,723 --> 00:02:05,359
+allow you to operate
+within tile memory more often,
+
+
+47
+00:02:05,359 --> 00:02:06,693
+let's take a closer look at
+
+
+48
+00:02:06,693 --> 00:02:10,464
+how tile shading
+interacts with draws.
+
+
+49
+00:02:10,464 --> 00:02:12,132
+Launching threads
+within a compute pass
+
+
+50
+00:02:12,132 --> 00:02:13,467
+is called a dispatch,
+
+
+51
+00:02:13,467 --> 00:02:16,470
+and Metal adopts the same name
+for tile shading operations
+
+
+52
+00:02:16,470 --> 00:02:18,438
+within a render pass.
+
+
+53
+00:02:18,438 --> 00:02:21,141
+Tile dispatches may be
+freely interleaved with draws
+
+
+54
+00:02:21,141 --> 00:02:24,511
+and are executed
+in API submission order.
+
+
+55
+00:02:24,511 --> 00:02:26,413
+Metal guarantees
+that the results of draws
+
+
+56
+00:02:26,413 --> 00:02:27,881
+issued before the dispatch
+
+
+57
+00:02:27,881 --> 00:02:31,051
+are visible when that dispatch
+is executed.
+
+
+58
+00:02:31,051 --> 00:02:33,920
+Likewise, Metal guarantees that
+the results of each dispatch
+
+
+59
+00:02:33,920 --> 00:02:38,258
+are visible when the next draw
+or dispatch is executed.
+
+
+60
+00:02:38,258 --> 00:02:40,827
+This synchronization guarantee
+allows race-free access
+
+
+61
+00:02:40,827 --> 00:02:42,596
+to tile memory.
+
+
+62
+00:02:42,596 --> 00:02:45,365
+No such guarantee is made
+between draws though.
+
+
+63
+00:02:46,833 --> 00:02:48,635
+Another important concept
+in tile shading
+
+
+64
+00:02:48,635 --> 00:02:52,205
+is how threads are organized
+into threadgroups and grids.
+
+
+65
+00:02:52,205 --> 00:02:54,307
+With traditional
+compute dispatches,
+
+
+66
+00:02:54,307 --> 00:02:58,145
+threadgroups are organized
+into tightly packed grids.
+
+
+67
+00:02:58,145 --> 00:02:59,913
+Within a render pass, however,
+
+
+68
+00:02:59,913 --> 00:03:02,849
+the tile grid is constant
+across the entire pass,
+
+
+69
+00:03:02,849 --> 00:03:06,720
+but the threadgroup size
+can differ for each dispatch.
+
+
+70
+00:03:06,720 --> 00:03:09,990
+If we zoom in on a tile,
+we see that this allows you
+
+
+71
+00:03:09,990 --> 00:03:12,592
+to map each thread
+to a unique pixel
+
+
+72
+00:03:12,592 --> 00:03:16,797
+or map each thread
+to multiple pixels.
+
+
+73
+00:03:16,797 --> 00:03:18,632
+The mapping of threads
+to resources
+
+
+74
+00:03:18,632 --> 00:03:20,801
+has no special meaning
+to Metal though.
+
+
+75
+00:03:20,801 --> 00:03:24,371
+You can launch threads that have
+no mapping to pixels whatsoever,
+
+
+76
+00:03:24,371 --> 00:03:26,540
+as would be the case
+for the light culling example
+
+
+77
+00:03:26,540 --> 00:03:28,442
+we previously discussed.
+
+
+78
+00:03:28,442 --> 00:03:30,610
+In that example,
+your threadgroup size
+
+
+79
+00:03:30,610 --> 00:03:35,182
+might match the number of lights
+that need intersection testing.
+
+
+80
+00:03:35,182 --> 00:03:37,751
+Tile shading threadgroups are
+launched for each tile
+
+
+81
+00:03:37,751 --> 00:03:40,087
+regardless of any geometry
+present.
+
+
+82
+00:03:40,087 --> 00:03:43,190
+For example, a triangle
+affecting a subset of tiles,
+
+
+83
+00:03:43,190 --> 00:03:46,293
+need only be processed
+by those tiles.
+
+
+84
+00:03:46,293 --> 00:03:48,261
+A subsequent tile dispatch,
+however,
+
+
+85
+00:03:48,261 --> 00:03:51,398
+will be processed
+by every tile of the screen.
+
+
+86
+00:03:51,398 --> 00:03:53,300
+Doing so is important
+because that dispatch
+
+
+87
+00:03:53,300 --> 00:03:56,236
+may be initializing tile memory
+for later geometry
+
+
+88
+00:03:56,236 --> 00:03:59,005
+that can land in those tiles.
+
+
+89
+00:03:59,005 --> 00:04:00,107
+Viewport and scissor states
+
+
+90
+00:04:00,107 --> 00:04:02,275
+do not restrict tile shading
+either.
+
+
+91
+00:04:02,275 --> 00:04:04,411
+In general,
+tile shading is unaffected
+
+
+92
+00:04:04,411 --> 00:04:06,980
+by traditional render states.
+
+
+93
+00:04:06,980 --> 00:04:09,116
+OK, so now let's turn
+to the API changes
+
+
+94
+00:04:09,116 --> 00:04:12,085
+that support tile shading.
+
+
+95
+00:04:12,085 --> 00:04:15,589
+A render pass can be configured
+with one of three tile sizes,
+
+
+96
+00:04:15,589 --> 00:04:18,325
+which will determine
+your imageblock dimensions.
+
+
+97
+00:04:18,325 --> 00:04:20,660
+You most often want to choose
+the largest tile size
+
+
+98
+00:04:20,660 --> 00:04:25,031
+that fits your imageblock --
+which is 32 KB on A11 GPUs --
+
+
+99
+00:04:25,031 --> 00:04:26,166
+to minimize any overhead
+
+
+100
+00:04:26,166 --> 00:04:29,236
+of the GPU's
+primitive processing stage.
+
+
+101
+00:04:29,236 --> 00:04:30,537
+Some algorithms may, however,
+
+
+102
+00:04:30,537 --> 00:04:32,772
+benefit from choosing
+a smaller tile size
+
+
+103
+00:04:32,772 --> 00:04:36,209
+when fragment or tile processing
+is particularly complex,
+
+
+104
+00:04:36,209 --> 00:04:37,844
+to increase the amount
+of tile parallelism
+
+
+105
+00:04:37,844 --> 00:04:40,313
+in the shader cores.
+
+
+106
+00:04:40,313 --> 00:04:41,481
+As we've already seen,
+
+
+107
+00:04:41,481 --> 00:04:43,917
+threadgroup memory
+is also sourced from tile memory
+
+
+108
+00:04:43,917 --> 00:04:47,988
+so it's size may also constrain
+your choice of tile size.
+
+
+109
+00:04:49,556 --> 00:04:51,224
+Creating a tile shading pipeline
+
+
+110
+00:04:51,224 --> 00:04:53,693
+is similar to creating
+a traditional pipeline.
+
+
+111
+00:04:53,693 --> 00:04:55,795
+You attach functions
+to a pipeline descriptor
+
+
+112
+00:04:55,795 --> 00:04:58,131
+to create a pipeline state.
+
+
+113
+00:04:58,131 --> 00:04:59,065
+For tile shading,
+
+
+114
+00:04:59,065 --> 00:05:02,002
+Metal introduces
+a new pipeline descriptor type.
+
+
+115
+00:05:02,002 --> 00:05:04,938
+It's similar to the existing
+render pipeline descriptor,
+
+
+116
+00:05:04,938 --> 00:05:06,640
+but removes
+render state properties
+
+
+117
+00:05:06,640 --> 00:05:08,542
+such as blending.
+
+
+118
+00:05:08,542 --> 00:05:09,809
+It's also similar
+to the existing
+
+
+119
+00:05:09,809 --> 00:05:11,444
+compute pipeline descriptor
+
+
+120
+00:05:11,444 --> 00:05:14,047
+because only one
+function can be bound.
+
+
+121
+00:05:14,047 --> 00:05:16,149
+That function, however,
+can either be
+
+
+122
+00:05:16,149 --> 00:05:19,052
+a compute kernel
+or a fragment function.
+
+
+123
+00:05:19,052 --> 00:05:20,487
+Compute kernels provide access
+
+
+124
+00:05:20,487 --> 00:05:22,189
+to all the tile shading
+and imageblock features
+
+
+125
+00:05:22,189 --> 00:05:24,391
+we've discussed so far.
+
+
+126
+00:05:24,391 --> 00:05:26,593
+Fragment-based tile shading
+is more limited
+
+
+127
+00:05:26,593 --> 00:05:28,728
+but plays a specific
+and important role
+
+
+128
+00:05:28,728 --> 00:05:30,363
+that I'll talk about later on.
+
+
+129
+00:05:31,831 --> 00:05:33,967
+First, I'd like to touch
+on imageblock capabilities
+
+
+130
+00:05:33,967 --> 00:05:36,002
+in tile pipelines.
+
+
+131
+00:05:36,002 --> 00:05:38,305
+Since tile shading executes
+compute dispatches
+
+
+132
+00:05:38,305 --> 00:05:39,773
+inline with rendering,
+
+
+133
+00:05:39,773 --> 00:05:43,510
+it has access to both implicit
+and explicit imageblocks,
+
+
+134
+00:05:43,510 --> 00:05:45,712
+just like fragment functions.
+
+
+135
+00:05:45,712 --> 00:05:47,480
+Unlike fragment functions,
+however,
+
+
+136
+00:05:47,480 --> 00:05:51,017
+kernel-based tile shaders can
+access the entire imageblock.
+
+
+137
+00:05:51,017 --> 00:05:52,619
+Let's take a look at the syntax.
+
+
+138
+00:05:54,054 --> 00:05:56,856
+We disambiguate between
+the implicit and explicit forms
+
+
+139
+00:05:56,856 --> 00:05:58,592
+of the templated imageblock type
+
+
+140
+00:05:58,592 --> 00:06:01,194
+using a second
+template argument.
+
+
+141
+00:06:01,194 --> 00:06:02,195
+We must disambiguate
+
+
+142
+00:06:02,195 --> 00:06:05,065
+because each
+has different access semantics.
+
+
+143
+00:06:05,065 --> 00:06:07,901
+The implicit form
+has value semantics,
+
+
+144
+00:06:07,901 --> 00:06:12,372
+meaning that we copy pixels
+into and out of the imageblock.
+
+
+145
+00:06:12,372 --> 00:06:14,741
+The explicit form
+has the reference semantics
+
+
+146
+00:06:14,741 --> 00:06:17,410
+discussed in
+the previous presentation.
+
+
+147
+00:06:19,346 --> 00:06:21,481
+We've already seen how
+imageblocks within a render pass
+
+
+148
+00:06:21,481 --> 00:06:23,516
+persist for
+the lifetime of the tile
+
+
+149
+00:06:23,516 --> 00:06:24,551
+and how we leverage this
+
+
+150
+00:06:24,551 --> 00:06:27,754
+to communicate across
+draws and dispatches.
+
+
+151
+00:06:27,754 --> 00:06:29,723
+In our opening example
+I also mentioned
+
+
+152
+00:06:29,723 --> 00:06:32,292
+that the same is true
+for threadgroup memory.
+
+
+153
+00:06:32,292 --> 00:06:34,761
+Persistent threadgroup memory
+is unique to tile shading
+
+
+154
+00:06:34,761 --> 00:06:37,130
+and is well-suited for storing
+data that's constant
+
+
+155
+00:06:37,130 --> 00:06:40,634
+across the tile,
+such as culled light lists.
+
+
+156
+00:06:40,634 --> 00:06:42,235
+Let's take a look
+at how we leverage this
+
+
+157
+00:06:42,235 --> 00:06:44,904
+in the shading language.
+
+
+158
+00:06:44,904 --> 00:06:45,905
+In this example,
+
+
+159
+00:06:45,905 --> 00:06:48,975
+our kernel-based tile function
+is provided the full light list
+
+
+160
+00:06:48,975 --> 00:06:51,244
+for culling against
+its tile bounds.
+
+
+161
+00:06:51,244 --> 00:06:53,513
+It's also given minimum
+and maximum depth
+
+
+162
+00:06:53,513 --> 00:06:57,784
+of the tile
+from an earlier tile dispatch.
+
+
+163
+00:06:57,784 --> 00:07:00,520
+It then places the culled result
+in threadgroup memory
+
+
+164
+00:07:00,520 --> 00:07:04,491
+so that later fragment shaders
+have access to it.
+
+
+165
+00:07:04,491 --> 00:07:06,760
+Both tile dispatch
+and fragment draws
+
+
+166
+00:07:06,760 --> 00:07:09,262
+must agree on
+the threadgroup bind point.
+
+
+167
+00:07:11,765 --> 00:07:13,199
+Let's finally consider the role
+
+
+168
+00:07:13,199 --> 00:07:15,502
+fragment-based
+tile pipelines play.
+
+
+169
+00:07:15,502 --> 00:07:18,104
+Tile shading encourages you
+to leverage tile memory
+
+
+170
+00:07:18,104 --> 00:07:21,141
+by merging what would previously
+have been multiple passes.
+
+
+171
+00:07:21,141 --> 00:07:23,443
+Tile memory is
+a precious resource,
+
+
+172
+00:07:23,443 --> 00:07:24,911
+so we need explicit imageblocks
+
+
+173
+00:07:24,911 --> 00:07:27,380
+to pack more data
+into that space.
+
+
+174
+00:07:27,380 --> 00:07:30,083
+But a static tile memory layout
+for an entire pass
+
+
+175
+00:07:30,083 --> 00:07:31,851
+is still unlikely to fit,
+
+
+176
+00:07:31,851 --> 00:07:34,621
+so we need to flexibly
+transition tile memory layouts
+
+
+177
+00:07:34,621 --> 00:07:38,058
+as we move through the different
+phases of our computation.
+
+
+178
+00:07:38,058 --> 00:07:41,094
+Fragment-based tile pipelines
+enable this transitioning.
+
+
+179
+00:07:41,094 --> 00:07:43,463
+The barrier semantics
+I described earlier
+
+
+180
+00:07:43,463 --> 00:07:45,065
+ensure that all
+tile memory access
+
+
+181
+00:07:45,065 --> 00:07:48,802
+is complete
+before the transition begins.
+
+
+182
+00:07:48,802 --> 00:07:50,537
+And since fragment shaders
+copy data
+
+
+183
+00:07:50,537 --> 00:07:52,038
+to and from imageblocks,
+
+
+184
+00:07:52,038 --> 00:07:55,975
+we can ensure that each pixel
+is transitioned atomically.
+
+
+185
+00:07:55,975 --> 00:07:58,278
+Let's look at an example.
+
+
+186
+00:07:58,278 --> 00:07:59,379
+In this example,
+
+
+187
+00:07:59,379 --> 00:08:01,548
+we finished with our
+deferred rendering phase
+
+
+188
+00:08:01,548 --> 00:08:03,983
+and would like to reconfigure
+the imageblock to implement
+
+
+189
+00:08:03,983 --> 00:08:07,053
+an approximate order-independent
+transparency technique called
+
+
+190
+00:08:07,053 --> 00:08:09,856
+Multi-Layer Alpha Blending.
+
+
+191
+00:08:09,856 --> 00:08:12,225
+We do so using
+a fragment-based tile function
+
+
+192
+00:08:12,225 --> 00:08:14,494
+that takes
+the old layout as input
+
+
+193
+00:08:14,494 --> 00:08:17,030
+and returns the new layout.
+
+
+194
+00:08:17,030 --> 00:08:18,331
+And as is often the case,
+
+
+195
+00:08:18,331 --> 00:08:19,999
+you often need
+to initialize the new layout
+
+
+196
+00:08:19,999 --> 00:08:23,837
+using data
+from the old layout.
+
+
+197
+00:08:23,837 --> 00:08:26,005
+Here we bring over
+the final lit value
+
+
+198
+00:08:26,005 --> 00:08:29,209
+from the deferred
+rendering phase.
+
+
+199
+00:08:29,209 --> 00:08:31,010
+To better understand
+tile shading,
+
+
+200
+00:08:31,010 --> 00:08:33,246
+please be sure
+to check out our sample code.
+
+
+201
+00:08:33,246 --> 00:08:35,215
+It demonstrates how
+to efficiently forward shade
+
+
+202
+00:08:35,215 --> 00:08:37,583
+with many lights
+in a single pass.
+
+
+203
+00:08:37,583 --> 00:08:39,352
+Tile shading is used
+to cull lights
+
+
+204
+00:08:39,352 --> 00:08:42,355
+that do not affect the tile.
+
+
+205
+00:08:42,355 --> 00:08:44,324
+Finally, the GPU Debugger
+in Xcode
+
+
+206
+00:08:44,324 --> 00:08:46,526
+makes inspecting
+threadgroup memory easy
+
+
+207
+00:08:46,526 --> 00:08:50,897
+by formatting the data based on
+how you use it in your shader.
+
+
+208
+00:08:50,897 --> 00:08:53,833
+After taking a capture
+with Xcode's GPU Debugger,
+
+
+209
+00:08:53,833 --> 00:08:55,368
+you can see
+each threadgroup memory
+
+
+210
+00:08:55,368 --> 00:08:59,406
+as buffers in the tile section
+of the bound resources view.
+
+
+211
+00:08:59,406 --> 00:09:00,306
+From there,
+
+
+212
+00:09:00,306 --> 00:09:02,776
+you can use the buffer viewer
+to inspect the data
+
+
+213
+00:09:02,776 --> 00:09:07,080
+formatted in same way
+that your shader uses it.
+
+
+214
+00:09:07,080 --> 00:09:08,148
+In this presentation,
+
+
+215
+00:09:08,148 --> 00:09:10,049
+we saw how tile shading
+enables developers
+
+
+216
+00:09:10,049 --> 00:09:13,186
+to analyze and manipulate
+whole tile contents,
+
+
+217
+00:09:13,186 --> 00:09:16,423
+communicate across draws,
+and repurpose tile memory
+
+
+218
+00:09:16,423 --> 00:09:18,691
+through different phases
+of computation.
+
+
+219
+00:09:18,691 --> 00:09:21,428
+Taken together,
+tile shaders enable developers
+
+
+220
+00:09:21,428 --> 00:09:23,930
+to merge multiple render
+and compute passes
+
+
+221
+00:09:23,930 --> 00:09:26,232
+in order to better leverage
+the higher bandwidth
+
+
+222
+00:09:26,232 --> 00:09:29,869
+and lower power tile memory
+of the A11 GPU.
+
+
+223
+00:09:29,869 --> 00:09:31,404
+For more information
+about Metal 2
+
+
+224
+00:09:31,404 --> 00:09:32,906
+and links to the sample code
+
+
+225
+00:09:32,906 --> 00:09:34,641
+please visit
+the Developer website
+
+
+226
+00:09:34,641 --> 00:09:38,344
+at
+developer.apple.com/metal.
+

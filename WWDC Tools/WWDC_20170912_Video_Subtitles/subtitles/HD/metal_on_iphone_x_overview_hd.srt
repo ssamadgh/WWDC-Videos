@@ -1,0 +1,1982 @@
+1
+00:00:00,968 --> 00:00:03,637
+Metal 2 introduces
+a new set of APIs
+
+
+2
+00:00:03,637 --> 00:00:05,272
+and shading language changes
+
+
+3
+00:00:05,272 --> 00:00:07,474
+to take advantage of
+the architecture
+
+
+4
+00:00:07,474 --> 00:00:10,310
+and new features
+of the A11 GPU.
+
+
+5
+00:00:10,310 --> 00:00:14,414
+Let us review what is new
+with Metal 2 on A11.
+
+
+6
+00:00:14,414 --> 00:00:17,351
+Apple designed Metal
+to enable rapid innovations
+
+
+7
+00:00:17,351 --> 00:00:18,685
+in GPU architecture.
+
+
+8
+00:00:18,685 --> 00:00:21,421
+And in turn,
+the Apple GPU architecture
+
+
+9
+00:00:21,421 --> 00:00:24,157
+has informed
+the design of Metal.
+
+
+10
+00:00:24,157 --> 00:00:25,692
+This deep and seamless
+
+
+11
+00:00:25,692 --> 00:00:28,028
+integration of hardware
+and software
+
+
+12
+00:00:28,028 --> 00:00:31,732
+enables exciting new
+possibilities for your graphics,
+
+
+13
+00:00:31,732 --> 00:00:34,768
+compute, machine learning apps,
+and games.
+
+
+14
+00:00:35,769 --> 00:00:38,672
+Just three years after
+the introduction of Metal,
+
+
+15
+00:00:38,672 --> 00:00:42,075
+we introduced Metal 2,
+the next generation of Metal,
+
+
+16
+00:00:42,075 --> 00:00:45,612
+at WWDC 2017.
+
+
+17
+00:00:45,612 --> 00:00:48,615
+Building on a clean
+and well-factored design,
+
+
+18
+00:00:48,615 --> 00:00:51,718
+Metal 2 expands to include
+even more cutting edge ways
+
+
+19
+00:00:51,718 --> 00:00:54,688
+to access the capabilities
+of the GPU,
+
+
+20
+00:00:54,688 --> 00:00:56,723
+such as GPU-driven rendering,
+
+
+21
+00:00:56,723 --> 00:01:00,794
+which allows the GPU to dispatch
+graphics workloads to itself,
+
+
+22
+00:01:00,794 --> 00:01:02,763
+further increasing efficiency
+
+
+23
+00:01:02,763 --> 00:01:06,500
+and decrease the draw call
+cost by up to 10X.
+
+
+24
+00:01:06,500 --> 00:01:08,735
+In 2015, Metal expanded
+
+
+25
+00:01:08,735 --> 00:01:11,638
+to support the Mac
+and desktop GPUs.
+
+
+26
+00:01:11,638 --> 00:01:16,710
+Now, Metal 2 aligns the API to
+expose key features uniformly,
+
+
+27
+00:01:16,710 --> 00:01:19,579
+regardless of the underlying
+GPU architecture.
+
+
+28
+00:01:19,579 --> 00:01:21,381
+With the rise of
+machine learning
+
+
+29
+00:01:21,381 --> 00:01:23,817
+across a wide variety
+of domains,
+
+
+30
+00:01:23,817 --> 00:01:27,888
+Metal 2 brings a wider and more
+sophisticated set of functions
+
+
+31
+00:01:27,888 --> 00:01:30,958
+that are aimed at accelerating
+inference operations
+
+
+32
+00:01:30,958 --> 00:01:34,227
+for improved performance
+and efficiency.
+
+
+33
+00:01:34,227 --> 00:01:37,164
+Metal 2 also brings a new
+set of optimization tools
+
+
+34
+00:01:37,164 --> 00:01:40,467
+that make it far easier for you
+to expertly tap into
+
+
+35
+00:01:40,467 --> 00:01:43,670
+the power of the GPUs
+on Apple platforms.
+
+
+36
+00:01:43,670 --> 00:01:47,240
+And now, we can reveal
+more Metal 2 capabilities
+
+
+37
+00:01:47,240 --> 00:01:50,310
+that we didn't announce at WWDC.
+
+
+38
+00:01:50,310 --> 00:01:53,113
+Metal 2 includes a set of
+powerful new features
+
+
+39
+00:01:53,113 --> 00:01:55,182
+that expose the unique
+capabilities
+
+
+40
+00:01:55,182 --> 00:01:57,284
+of Apple-designed GPU
+
+
+41
+00:01:57,284 --> 00:02:00,854
+in our latest A-series chip,
+the A11.
+
+
+42
+00:02:02,122 --> 00:02:03,924
+Before we go into the details
+
+
+43
+00:02:03,924 --> 00:02:06,960
+of A11 GPU architecture
+and features,
+
+
+44
+00:02:06,960 --> 00:02:10,030
+let us review the architecture
+of a classical GPU
+
+
+45
+00:02:10,030 --> 00:02:13,100
+and tile-based deferred
+rendering architecture.
+
+
+46
+00:02:13,100 --> 00:02:17,637
+This is a simplified diagram of
+a classical GPU architecture.
+
+
+47
+00:02:17,637 --> 00:02:20,574
+GPUs are massively
+parallel machines.
+
+
+48
+00:02:20,574 --> 00:02:23,744
+The vertex and fragment stages
+that are shown in this diagram
+
+
+49
+00:02:23,744 --> 00:02:27,280
+are replicated many times,
+and they run in parallel.
+
+
+50
+00:02:27,280 --> 00:02:29,483
+There are also many
+optimizations
+
+
+51
+00:02:29,483 --> 00:02:32,386
+such as cache hierarchies,
+FIFOs,
+
+
+52
+00:02:32,386 --> 00:02:34,755
+early coarse depth test,
+and so on,
+
+
+53
+00:02:34,755 --> 00:02:37,624
+that are not shown
+in this diagram.
+
+
+54
+00:02:37,624 --> 00:02:40,527
+Fundamentally,
+GPUs with classical architecture
+
+
+55
+00:02:40,527 --> 00:02:43,663
+take primitives
+and generate depth, color,
+
+
+56
+00:02:43,663 --> 00:02:46,533
+data buffers,
+and textures.
+
+
+57
+00:02:46,533 --> 00:02:48,035
+One of the defining
+characteristics
+
+
+58
+00:02:48,035 --> 00:02:49,236
+of this architecture
+
+
+59
+00:02:49,236 --> 00:02:51,838
+is that the output
+of the vertex stage
+
+
+60
+00:02:51,838 --> 00:02:55,876
+feeds directly into
+the fragment stage.
+
+
+61
+00:02:55,876 --> 00:02:58,845
+Let us look at the tile-based
+deferred rendering architecture,
+
+
+62
+00:02:58,845 --> 00:03:01,681
+which is also known as TBDR.
+
+
+63
+00:03:01,681 --> 00:03:06,853
+All A-series GPUs are based on
+TBDR architecture.
+
+
+64
+00:03:06,853 --> 00:03:08,555
+TBDR makes some
+significant changes
+
+
+65
+00:03:08,555 --> 00:03:11,358
+to the classical GPU
+architecture.
+
+
+66
+00:03:11,358 --> 00:03:14,327
+The first major difference
+is that the vertex stage
+
+
+67
+00:03:14,327 --> 00:03:17,664
+is not fed directly into
+the fragment stage.
+
+
+68
+00:03:17,664 --> 00:03:20,200
+Instead, as they come out
+of the vertex stage,
+
+
+69
+00:03:20,200 --> 00:03:23,503
+the primitives are binned into
+screen-aligned small tiles
+
+
+70
+00:03:23,503 --> 00:03:25,572
+and stored into the memory.
+
+
+71
+00:03:26,573 --> 00:03:28,208
+This change allows
+the vertex stage
+
+
+72
+00:03:28,208 --> 00:03:31,912
+to run asynchronously
+relative to fragment stage.
+
+
+73
+00:03:31,912 --> 00:03:35,782
+While running the fragment stage
+of a renderpass, in parallel,
+
+
+74
+00:03:35,782 --> 00:03:39,486
+the hardware executes the vertex
+stage of a future renderpass.
+
+
+75
+00:03:39,486 --> 00:03:41,788
+Running vertex stage
+asynchronously
+
+
+76
+00:03:41,788 --> 00:03:44,224
+provides significant
+performance improvements.
+
+
+77
+00:03:44,224 --> 00:03:46,259
+The vertex stage is usually
+making heavy use
+
+
+78
+00:03:46,259 --> 00:03:49,096
+of fixed-function hardware,
+whereas the fragment stage
+
+
+79
+00:03:49,096 --> 00:03:52,032
+is a heavy user of math
+and bandwidth.
+
+
+80
+00:03:52,032 --> 00:03:55,001
+Completely overlapping them
+allows us to use
+
+
+81
+00:03:55,001 --> 00:03:58,071
+all the hardware blocks
+on the GPU simultaneously.
+
+
+82
+00:03:58,071 --> 00:04:00,540
+Having primitives binned
+to tiles allows us
+
+
+83
+00:04:00,540 --> 00:04:03,610
+to process all primitives
+in a tile all together.
+
+
+84
+00:04:03,610 --> 00:04:06,580
+Let us see how we can
+take advantage of that.
+
+
+85
+00:04:06,580 --> 00:04:09,149
+We put tile-sized,
+full resolution,
+
+
+86
+00:04:09,149 --> 00:04:11,985
+depth, stencil,
+and frame buffers on the chip
+
+
+87
+00:04:11,985 --> 00:04:14,221
+next to our shader cores.
+
+
+88
+00:04:14,221 --> 00:04:17,224
+We call this memory
+tile memory.
+
+
+89
+00:04:17,224 --> 00:04:19,059
+There are three important
+characteristics
+
+
+90
+00:04:19,059 --> 00:04:20,760
+of the tile memory.
+
+
+91
+00:04:20,760 --> 00:04:24,030
+First, the bandwidth between
+the shader core and tile memory
+
+
+92
+00:04:24,030 --> 00:04:26,099
+is many times higher
+than the bandwidth
+
+
+93
+00:04:26,099 --> 00:04:28,468
+between the GPU
+and the external memory,
+
+
+94
+00:04:28,468 --> 00:04:32,105
+and scales proportionally
+with the number of shader cores.
+
+
+95
+00:04:33,106 --> 00:04:36,109
+Second, the memory access
+latency to the tile memory
+
+
+96
+00:04:36,109 --> 00:04:39,312
+is many times lower than
+the latency for the accesses
+
+
+97
+00:04:39,312 --> 00:04:40,881
+to the external memory.
+
+
+98
+00:04:40,881 --> 00:04:44,551
+Finally, tile memory consumes
+significantly lower power
+
+
+99
+00:04:44,551 --> 00:04:46,353
+than the external memory.
+
+
+100
+00:04:46,353 --> 00:04:50,624
+TBDR uses this low-latency,
+low-power-consumption,
+
+
+101
+00:04:50,624 --> 00:04:54,728
+high-bandwidth memory
+for two major optimizations.
+
+
+102
+00:04:54,728 --> 00:04:57,964
+First, the tile depth/stencil
+memory allows the hardware
+
+
+103
+00:04:57,964 --> 00:05:00,967
+to generate full depth
+and stencil buffer information
+
+
+104
+00:05:00,967 --> 00:05:02,135
+for opaque objects
+
+
+105
+00:05:02,135 --> 00:05:04,604
+before the shading core
+starts to process them,
+
+
+106
+00:05:04,604 --> 00:05:08,241
+which enables the hardware
+to perfectly cull fragments
+
+
+107
+00:05:08,241 --> 00:05:12,612
+that are occluded before
+sending to the shader core.
+
+
+108
+00:05:12,612 --> 00:05:14,347
+If the depth buffer
+is not needed
+
+
+109
+00:05:14,347 --> 00:05:16,383
+for the subsequent renderpasses,
+
+
+110
+00:05:16,383 --> 00:05:19,352
+the full-size depth buffer
+can be entirely eliminated
+
+
+111
+00:05:19,352 --> 00:05:21,855
+through the use of
+memoryless render targets,
+
+
+112
+00:05:21,855 --> 00:05:26,059
+saving a large amount of memory
+bandwidth, storage, and power.
+
+
+113
+00:05:26,059 --> 00:05:28,295
+Second, tile memory is used
+
+
+114
+00:05:28,295 --> 00:05:30,764
+for storing the color buffers
+on the chip.
+
+
+115
+00:05:30,764 --> 00:05:32,465
+Blending operations are fast
+
+
+116
+00:05:32,465 --> 00:05:34,100
+because they do not
+need to access
+
+
+117
+00:05:34,100 --> 00:05:37,337
+the full-sized frame buffer
+on the external memory.
+
+
+118
+00:05:37,337 --> 00:05:39,139
+Tile memory is written
+only once,
+
+
+119
+00:05:39,139 --> 00:05:40,941
+after the entire tile
+is processed,
+
+
+120
+00:05:40,941 --> 00:05:43,210
+and saves significant
+amounts of power,
+
+
+121
+00:05:43,210 --> 00:05:45,579
+performance, and bandwidth.
+
+
+122
+00:05:45,579 --> 00:05:49,683
+Higher occupancy is achieved
+thanks to this faster memory.
+
+
+123
+00:05:49,683 --> 00:05:50,817
+The framebuffer fetch feature
+
+
+124
+00:05:50,817 --> 00:05:52,852
+allows you to implement
+custom blending
+
+
+125
+00:05:52,852 --> 00:05:55,822
+and enables several
+advanced techniques.
+
+
+126
+00:05:55,822 --> 00:05:57,724
+Combined with
+memoryless frame buffers,
+
+
+127
+00:05:57,724 --> 00:05:59,359
+many of these techniques
+
+
+128
+00:05:59,359 --> 00:06:02,362
+do not need to consume
+external memory either.
+
+
+129
+00:06:02,362 --> 00:06:06,032
+As a result, TBDR brings
+great performance
+
+
+130
+00:06:06,032 --> 00:06:08,335
+even when bandwidth is limited.
+
+
+131
+00:06:08,335 --> 00:06:10,804
+TBDR consumes
+much lower power,
+
+
+132
+00:06:10,804 --> 00:06:13,540
+which is essential for
+battery-powered devices.
+
+
+133
+00:06:14,541 --> 00:06:17,911
+Let us now switch gears
+to A11 GPU.
+
+
+134
+00:06:17,911 --> 00:06:22,749
+On A11, the first major change
+we made to the GPU architecture
+
+
+135
+00:06:22,749 --> 00:06:26,720
+is to give you direct control of
+data residing in tile memory
+
+
+136
+00:06:26,720 --> 00:06:29,222
+from your fragment functions.
+
+
+137
+00:06:29,222 --> 00:06:31,858
+Imageblocks provide
+optimized access to image data
+
+
+138
+00:06:31,858 --> 00:06:33,827
+residing in tile memory.
+
+
+139
+00:06:33,827 --> 00:06:35,662
+You'll be able to lay out pixels
+
+
+140
+00:06:35,662 --> 00:06:38,031
+in the way that makes sense
+to your application,
+
+
+141
+00:06:38,031 --> 00:06:41,134
+yet can still be rendered to
+efficiently.
+
+
+142
+00:06:41,134 --> 00:06:45,005
+An imageblock is a 2D data
+structure in tile memory.
+
+
+143
+00:06:45,005 --> 00:06:49,442
+You can specify its width,
+height, depth, and format.
+
+
+144
+00:06:49,442 --> 00:06:51,845
+Metal 2 adds
+texture pixel formats
+
+
+145
+00:06:51,845 --> 00:06:53,146
+to the shading language
+
+
+146
+00:06:53,146 --> 00:06:55,882
+to give you full control
+over the pixel layout
+
+
+147
+00:06:55,882 --> 00:06:58,351
+through the packed data types.
+
+
+148
+00:06:58,351 --> 00:07:00,587
+The second major
+architectural change
+
+
+149
+00:07:00,587 --> 00:07:04,057
+gives you access to all pixels
+that are stored in tile memory
+
+
+150
+00:07:04,057 --> 00:07:06,059
+at the same time.
+
+
+151
+00:07:06,426 --> 00:07:08,728
+Tile shading is the new
+programmable stage
+
+
+152
+00:07:08,728 --> 00:07:12,666
+in Apple's A11 GPU that
+provides compute capabilities
+
+
+153
+00:07:12,666 --> 00:07:15,335
+inline within render passes.
+
+
+154
+00:07:15,335 --> 00:07:18,471
+Tile shading enables a whole new
+level of performance
+
+
+155
+00:07:18,471 --> 00:07:21,374
+and efficiency in Metal 2.
+
+
+156
+00:07:21,374 --> 00:07:23,977
+Rendering and compute operations
+can now share the data
+
+
+157
+00:07:23,977 --> 00:07:26,446
+through the higher bandwidth,
+lower latency,
+
+
+158
+00:07:26,446 --> 00:07:28,682
+and lower power tile memory.
+
+
+159
+00:07:28,682 --> 00:07:31,985
+Tile shading is deeply
+integrated with imageblocks.
+
+
+160
+00:07:31,985 --> 00:07:35,055
+You will be able to analyze
+imageblock contents,
+
+
+161
+00:07:35,055 --> 00:07:38,825
+summarize that content,
+store imageblocks mid-scene,
+
+
+162
+00:07:38,825 --> 00:07:41,628
+and even change
+imageblock layouts.
+
+
+163
+00:07:41,628 --> 00:07:43,496
+You can also use
+threadgroup memory
+
+
+164
+00:07:43,496 --> 00:07:45,932
+just like a regular
+compute kernel would.
+
+
+165
+00:07:45,932 --> 00:07:47,300
+For tile shaders,
+
+
+166
+00:07:47,300 --> 00:07:49,336
+the threadgroup memory
+is persistent.
+
+
+167
+00:07:49,336 --> 00:07:51,871
+Each successive invocation
+of tile shader
+
+
+168
+00:07:51,871 --> 00:07:54,107
+can operate on
+the threadgroup memory,
+
+
+169
+00:07:54,107 --> 00:07:56,042
+starting with the values
+that are left
+
+
+170
+00:07:56,042 --> 00:07:57,744
+from the previous tile shader.
+
+
+171
+00:07:57,744 --> 00:08:00,580
+This is true for imageblock
+memory as well.
+
+
+172
+00:08:00,580 --> 00:08:02,582
+They are persistent
+between invocations of
+
+
+173
+00:08:02,582 --> 00:08:04,551
+tile and fragment shaders.
+
+
+174
+00:08:04,551 --> 00:08:06,286
+Additionally, we are introducing
+
+
+175
+00:08:06,286 --> 00:08:08,455
+an advanced version of
+raster order groups
+
+
+176
+00:08:08,455 --> 00:08:11,491
+that supports imageblock
+and tile shading.
+
+
+177
+00:08:11,491 --> 00:08:14,361
+And finally, we are extending
+the Metal shading language
+
+
+178
+00:08:14,361 --> 00:08:16,830
+to give you full control over
+sample coverage
+
+
+179
+00:08:16,830 --> 00:08:19,632
+for multi-sampled imageblocks.
+
+
+180
+00:08:19,632 --> 00:08:21,634
+Let us see a set of
+rendering techniques
+
+
+181
+00:08:21,634 --> 00:08:24,404
+that can take great advantage
+of the new architecture
+
+
+182
+00:08:24,404 --> 00:08:26,373
+and the new Metal 2 features.
+
+
+183
+00:08:27,407 --> 00:08:30,009
+Tile shaders, imageblocks,
+and raster order groups
+
+
+184
+00:08:30,009 --> 00:08:31,878
+are a great way to combine
+interleaved,
+
+
+185
+00:08:31,878 --> 00:08:36,082
+render, and compute passes
+into a single combined pass.
+
+
+186
+00:08:36,082 --> 00:08:38,251
+Deferred rendering
+and tiled forward rendering
+
+
+187
+00:08:38,251 --> 00:08:40,854
+could be accelerated
+this way.
+
+
+188
+00:08:40,854 --> 00:08:44,357
+Let us look at the tiled forward
+implementation as an example.
+
+
+189
+00:08:44,357 --> 00:08:49,062
+You can pass geometry to create
+on-chip depth information first,
+
+
+190
+00:08:49,062 --> 00:08:50,597
+then run a tile shader
+
+
+191
+00:08:50,597 --> 00:08:54,401
+to create per tile min-max
+depth information,
+
+
+192
+00:08:54,401 --> 00:08:57,771
+run another tile shader
+to create a culled light list
+
+
+193
+00:08:57,771 --> 00:08:59,472
+in threadgroup memory,
+
+
+194
+00:08:59,472 --> 00:09:02,575
+and then run
+your material shaders.
+
+
+195
+00:09:02,575 --> 00:09:05,645
+All of these operations can
+be done in one combined pass,
+
+
+196
+00:09:05,645 --> 00:09:07,881
+increasing performance
+by eliminating
+
+
+197
+00:09:07,881 --> 00:09:11,384
+large amounts of bandwidth,
+storage, and power.
+
+
+198
+00:09:11,384 --> 00:09:14,053
+These features also enable
+efficient implementations
+
+
+199
+00:09:14,053 --> 00:09:15,922
+of order-independent
+transparency,
+
+
+200
+00:09:15,922 --> 00:09:20,360
+multi-layer alpha blending,
+and sub-surface scattering.
+
+
+201
+00:09:20,360 --> 00:09:23,797
+Sample coverage control,
+tile shaders, and imageblock
+
+
+202
+00:09:23,797 --> 00:09:27,467
+enable much more efficient ways
+of doing custom MSAA resolves,
+
+
+203
+00:09:27,467 --> 00:09:31,337
+MSAA tone mapping,
+and surface aggregation.
+
+
+204
+00:09:31,337 --> 00:09:34,674
+To show how some of these
+use cases can be accelerated,
+
+
+205
+00:09:34,674 --> 00:09:37,877
+we are releasing sample code
+for deferred rendering,
+
+
+206
+00:09:37,877 --> 00:09:40,914
+tiled forward, 
+multi-layer alpha blending,
+
+
+207
+00:09:40,914 --> 00:09:42,849
+and surface aggregation.
+
+
+208
+00:09:44,117 --> 00:09:47,821
+Metal 2 on A11 advances
+the TBDR architecture
+
+
+209
+00:09:47,821 --> 00:09:52,058
+by introducing imageblocks,
+tile shaders,
+
+
+210
+00:09:52,058 --> 00:09:54,294
+imageblock sample
+coverage control,
+
+
+211
+00:09:54,294 --> 00:09:56,296
+and raster order groups.
+
+
+212
+00:09:56,296 --> 00:09:59,732
+Additionally, we introduced new
+Metal shading language changes
+
+
+213
+00:09:59,732 --> 00:10:03,069
+to give you new and efficient
+mechanisms to share data
+
+
+214
+00:10:03,069 --> 00:10:06,139
+between your compute threads
+and threadgroups.
+
+
+215
+00:10:06,139 --> 00:10:09,375
+Let us briefly review these
+and other additional features
+
+
+216
+00:10:09,375 --> 00:10:12,412
+and performance
+improvements on A11.
+
+
+217
+00:10:13,313 --> 00:10:15,248
+Let us start with imageblocks.
+
+
+218
+00:10:15,248 --> 00:10:19,619
+An imageblock is a 2D data
+structure in tile memory.
+
+
+219
+00:10:19,619 --> 00:10:22,589
+Fragment functions
+can only access a single pixel
+
+
+220
+00:10:22,589 --> 00:10:24,691
+that corresponds
+to its location,
+
+
+221
+00:10:24,691 --> 00:10:27,727
+whereas kernels can access
+the entire imageblock.
+
+
+222
+00:10:27,727 --> 00:10:29,929
+Each pixel can be quite complex,
+
+
+223
+00:10:29,929 --> 00:10:31,931
+consisting of
+multiple components,
+
+
+224
+00:10:31,931 --> 00:10:33,700
+and each component
+can be addressed
+
+
+225
+00:10:33,700 --> 00:10:36,102
+as its own image plane.
+
+
+226
+00:10:36,102 --> 00:10:38,404
+Imageblocks also provide
+bulk access
+
+
+227
+00:10:38,404 --> 00:10:40,940
+to the GPU's format
+conversion hardware.
+
+
+228
+00:10:40,940 --> 00:10:43,343
+Floating point pixels
+will be converted to
+
+
+229
+00:10:43,343 --> 00:10:48,081
+the destination texture format
+when stored to device memory.
+
+
+230
+00:10:48,081 --> 00:10:50,483
+Tile shaders provide
+compute capabilities
+
+
+231
+00:10:50,483 --> 00:10:53,119
+inline within render passes.
+
+
+232
+00:10:53,119 --> 00:10:55,755
+Tile shaders can access
+the entire imageblock,
+
+
+233
+00:10:55,755 --> 00:10:57,590
+and just like regular
+compute kernels,
+
+
+234
+00:10:57,590 --> 00:11:00,293
+they have support
+for threadgroup memory.
+
+
+235
+00:11:00,293 --> 00:11:03,229
+Unlike a threadgroup memory
+of a compute kernel,
+
+
+236
+00:11:03,229 --> 00:11:05,265
+the threadgroup memory
+of a tile shader
+
+
+237
+00:11:05,265 --> 00:11:08,034
+persists across
+the lifetime of a tile,
+
+
+238
+00:11:08,034 --> 00:11:11,271
+just like color data
+persists across draws.
+
+
+239
+00:11:11,271 --> 00:11:12,939
+So where before
+you were limited
+
+
+240
+00:11:12,939 --> 00:11:15,842
+to communicating across draws
+within the scope of a pixel
+
+
+241
+00:11:15,842 --> 00:11:17,877
+using the framebuffer
+fetch feature,
+
+
+242
+00:11:17,877 --> 00:11:20,747
+you can now communicate
+between the tile dispatches
+
+
+243
+00:11:20,747 --> 00:11:24,684
+and fragment draw calls
+using the wider tile scope.
+
+
+244
+00:11:24,684 --> 00:11:27,287
+Let us now look into how A11
+improves MSAA
+
+
+245
+00:11:27,287 --> 00:11:29,789
+over previous generations.
+
+
+246
+00:11:29,789 --> 00:11:31,457
+Apple's A-series GPUs
+
+
+247
+00:11:31,457 --> 00:11:34,694
+have a very efficient
+MSAA implementation.
+
+
+248
+00:11:34,694 --> 00:11:37,096
+When the fragment
+is not an edge fragment,
+
+
+249
+00:11:37,096 --> 00:11:39,566
+the hardware blending
+executes once per fragment,
+
+
+250
+00:11:39,566 --> 00:11:41,668
+not once per sample.
+
+
+251
+00:11:41,668 --> 00:11:45,204
+Additionally, you can resolve
+directly from tile memory
+
+
+252
+00:11:45,204 --> 00:11:46,706
+to the resolve attachment
+
+
+253
+00:11:46,706 --> 00:11:49,842
+and avoid incurring
+additional memory bandwidth.
+
+
+254
+00:11:49,842 --> 00:11:51,277
+Through the use of Metal's
+
+
+255
+00:11:51,277 --> 00:11:53,046
+memoryless render
+target feature,
+
+
+256
+00:11:53,046 --> 00:11:54,314
+you can also eliminate
+
+
+257
+00:11:54,314 --> 00:11:57,417
+MSAA rendertarget memory
+storage entirely.
+
+
+258
+00:11:57,417 --> 00:12:01,187
+With Metal 2 on A11,
+we took MSAA even further.
+
+
+259
+00:12:01,187 --> 00:12:05,592
+While our current A-series GPUs
+already track edges in a pixel,
+
+
+260
+00:12:05,592 --> 00:12:08,928
+the A11 GPU
+extends this tracking
+
+
+261
+00:12:08,928 --> 00:12:11,164
+to an even finer granularity
+
+
+262
+00:12:11,164 --> 00:12:14,767
+by tracking the number of unique
+samples within each pixel.
+
+
+263
+00:12:14,767 --> 00:12:18,171
+This hardware change makes your
+multisample applications faster
+
+
+264
+00:12:18,171 --> 00:12:21,708
+without requiring
+any changes to your application.
+
+
+265
+00:12:21,708 --> 00:12:24,177
+With A11,
+Metal 2 also gives you
+
+
+266
+00:12:24,177 --> 00:12:26,713
+full control of this
+tracking metadata
+
+
+267
+00:12:26,713 --> 00:12:29,749
+with imageblock sample
+coverage control.
+
+
+268
+00:12:29,749 --> 00:12:31,951
+You can also leverage
+this feature in combination with
+
+
+269
+00:12:31,951 --> 00:12:34,787
+threadgroup imageblocks
+and tile shaders.
+
+
+270
+00:12:34,787 --> 00:12:37,156
+With imageblock sample
+coverage control,
+
+
+271
+00:12:37,156 --> 00:12:39,092
+your tile pipeline can modify
+
+
+272
+00:12:39,092 --> 00:12:41,694
+the GPU's sample
+coverage tracking data,
+
+
+273
+00:12:41,694 --> 00:12:43,663
+allowing you to resolve
+sample data
+
+
+274
+00:12:43,663 --> 00:12:45,565
+at any time in a render pass
+
+
+275
+00:12:45,565 --> 00:12:49,102
+with your own
+custom resolve algorithm.
+
+
+276
+00:12:49,102 --> 00:12:51,638
+Raster order groups enable
+you to access memory
+
+
+277
+00:12:51,638 --> 00:12:54,540
+from overlapping fragment
+functions in submission order,
+
+
+278
+00:12:54,540 --> 00:12:57,343
+and allows fragment functions
+to communicate.
+
+
+279
+00:12:57,343 --> 00:13:01,648
+A11 extends the raster order
+groups' functionality.
+
+
+280
+00:13:01,648 --> 00:13:05,618
+First, A11 exposes the GPU's
+internal tile memory.
+
+
+281
+00:13:05,618 --> 00:13:08,755
+Raster order groups
+make tile memory more useful
+
+
+282
+00:13:08,755 --> 00:13:12,825
+by giving you access to it
+in a predictable order.
+
+
+283
+00:13:12,825 --> 00:13:15,461
+Second, where raster order
+groups on other GPUs
+
+
+284
+00:13:15,461 --> 00:13:18,331
+are limited to only
+one mutex per pixel,
+
+
+285
+00:13:18,331 --> 00:13:20,867
+A11 can go finer-grained
+than that,
+
+
+286
+00:13:20,867 --> 00:13:22,735
+allowing an even lighter touch
+
+
+287
+00:13:22,735 --> 00:13:26,506
+and minimizing how often your
+threads are waiting for access.
+
+
+288
+00:13:27,507 --> 00:13:30,209
+Now let us look at how
+Metal 2 accelerates data sharing
+
+
+289
+00:13:30,209 --> 00:13:32,145
+between threads
+and threadgroups.
+
+
+290
+00:13:32,145 --> 00:13:34,881
+Metal 2 shading language
+extends atomic functions
+
+
+291
+00:13:34,881 --> 00:13:38,051
+with memory order
+and scope attributes.
+
+
+292
+00:13:38,051 --> 00:13:40,820
+These new additions enable
+new ways of flexible
+
+
+293
+00:13:40,820 --> 00:13:44,223
+and efficient sharing of data
+between threads.
+
+
+294
+00:13:44,223 --> 00:13:48,027
+Before Metal 2, to communicate
+between threadgroups
+
+
+295
+00:13:48,027 --> 00:13:50,563
+required completing
+the kernel execution
+
+
+296
+00:13:50,563 --> 00:13:53,266
+and issuing a new kernel
+to consume the outputs
+
+
+297
+00:13:53,266 --> 00:13:55,868
+of the threadgroups
+of the first kernel.
+
+
+298
+00:13:55,868 --> 00:13:58,705
+On Metal 2, threadgroups can
+communicate directly
+
+
+299
+00:13:58,705 --> 00:13:59,972
+with each other.
+
+
+300
+00:13:59,972 --> 00:14:02,942
+Additionally, with the addition
+of these new features,
+
+
+301
+00:14:02,942 --> 00:14:04,644
+threads within a threadgroup
+
+
+302
+00:14:04,644 --> 00:14:07,480
+can communicate 
+without using a barrier
+
+
+303
+00:14:07,480 --> 00:14:09,682
+resulting in improved
+performance.
+
+
+304
+00:14:10,850 --> 00:14:13,119
+We also added some other
+significant features
+
+
+305
+00:14:13,119 --> 00:14:16,489
+and capabilities to
+Metal 2 on A11.
+
+
+306
+00:14:16,489 --> 00:14:20,593
+On A11, f16 math has overall
+better accuracy
+
+
+307
+00:14:20,593 --> 00:14:22,028
+through the improvements
+to rounding
+
+
+308
+00:14:22,028 --> 00:14:24,764
+and the maximum value
+handling.
+
+
+309
+00:14:24,764 --> 00:14:27,667
+A11 adds support
+for texture cube arrays,
+
+
+310
+00:14:27,667 --> 00:14:31,104
+and introduces read-write
+texture functionality.
+
+
+311
+00:14:31,104 --> 00:14:33,706
+With A11, an array of
+sampler coverage
+
+
+312
+00:14:33,706 --> 00:14:36,309
+comes to A-series GPUs.
+
+
+313
+00:14:36,309 --> 00:14:38,845
+A11 adds post-depth
+coverage feature
+
+
+314
+00:14:38,845 --> 00:14:44,250
+and provides a more flexible way
+of dispatching compute kernels.
+
+
+315
+00:14:44,250 --> 00:14:48,721
+A11 adds support for quad scoped
+permute operations as well.
+
+
+316
+00:14:48,721 --> 00:14:50,890
+For further details about
+these features,
+
+
+317
+00:14:50,890 --> 00:14:54,127
+please check the Metal 2
+documentation.
+
+
+318
+00:14:54,127 --> 00:14:57,130
+A11 makes many significant
+performance improvements
+
+
+319
+00:14:57,130 --> 00:14:58,731
+to the GPU.
+
+
+320
+00:14:58,731 --> 00:15:00,833
+It has up to 2X math performance
+
+
+321
+00:15:00,833 --> 00:15:03,302
+when it comes to tasks
+for computer vision,
+
+
+322
+00:15:03,302 --> 00:15:06,439
+image processing,
+and machine learning.
+
+
+323
+00:15:06,439 --> 00:15:10,143
+But that is not the only area of
+improvement for performance.
+
+
+324
+00:15:10,143 --> 00:15:11,778
+Let us review
+the improved performance
+
+
+325
+00:15:11,778 --> 00:15:14,814
+and capabilities of A11 GPU.
+
+
+326
+00:15:14,814 --> 00:15:18,351
+We doubled F16 math
+and texture filtering rate
+
+
+327
+00:15:18,351 --> 00:15:22,288
+per clock cycle
+when compared to A10 GPU.
+
+
+328
+00:15:22,288 --> 00:15:24,257
+Please note: On A11,
+
+
+329
+00:15:24,257 --> 00:15:27,560
+using F16 data types
+in your shaders when possible
+
+
+330
+00:15:27,560 --> 00:15:31,063
+makes a much larger
+performance difference.
+
+
+331
+00:15:31,063 --> 00:15:32,965
+We doubled the maximum
+threadgroup size
+
+
+332
+00:15:32,965 --> 00:15:36,335
+from 512 to 1K on A11.
+
+
+333
+00:15:36,335 --> 00:15:38,838
+Maximum multiple render
+target size increased
+
+
+334
+00:15:38,838 --> 00:15:42,775
+from 256 bits to 512 bits.
+
+
+335
+00:15:42,775 --> 00:15:47,713
+Maximum threadgroup memory
+size doubled from 16K to 32K.
+
+
+336
+00:15:47,713 --> 00:15:49,482
+We also made significant
+improvement
+
+
+337
+00:15:49,482 --> 00:15:51,784
+over the performance of
+feedback operations.
+
+
+338
+00:15:51,784 --> 00:15:55,188
+They're also known as
+alpha-test and discard.
+
+
+339
+00:15:55,188 --> 00:15:57,390
+For more information
+about Metal 2
+
+
+340
+00:15:57,390 --> 00:15:59,058
+and links to the sample code,
+
+
+341
+00:15:59,058 --> 00:16:01,494
+please visit the developer
+website at
+
+
+342
+00:16:01,494 --> 00:16:05,031
+developer.apple.com/metal.
+

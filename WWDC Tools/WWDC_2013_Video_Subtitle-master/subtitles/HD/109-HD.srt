@@ -1,0 +1,6308 @@
+1
+00:00:17,516 --> 00:02:19,516
+[ Music ]
+
+
+2
+00:02:20,016 --> 00:02:24,000
+[ Applause ]
+
+
+3
+00:02:24,066 --> 00:02:26,476
+>> Hi, I'm Jack Greasley.
+
+
+4
+00:02:26,546 --> 00:02:27,996
+I work for The Foundry.
+
+
+5
+00:02:28,446 --> 00:02:32,506
+And we make software to
+do that sort of stuff.
+
+
+6
+00:02:32,506 --> 00:02:33,326
+It's a pretty cool job.
+
+
+7
+00:02:34,286 --> 00:02:37,906
+The Foundry was started about
+15 years ago by two guys,
+
+
+8
+00:02:38,566 --> 00:02:42,256
+Bruno and Simon, working out
+off a basement in Soho, London.
+
+
+9
+00:02:43,066 --> 00:02:45,216
+And they were making
+image processing tools
+
+
+10
+00:02:45,216 --> 00:02:48,276
+for the local film and
+visual effects industry.
+
+
+11
+00:02:49,216 --> 00:02:50,716
+Since then, we've grown a bit.
+
+
+12
+00:02:51,326 --> 00:02:56,066
+And we've really made a name
+for ourselves by taking tools
+
+
+13
+00:02:56,066 --> 00:03:00,176
+and technologies out of
+visual effects companies,
+
+
+14
+00:03:00,686 --> 00:03:03,916
+out of animation companies,
+and commercializing them
+
+
+15
+00:03:03,916 --> 00:03:07,076
+and making them available
+to everybody, so with tools
+
+
+16
+00:03:07,076 --> 00:03:10,416
+like NUKE from Digital
+Domain and KATANA
+
+
+17
+00:03:11,036 --> 00:03:12,646
+from Sony Pictures Imageworks.
+
+
+18
+00:03:13,266 --> 00:03:15,206
+We've taken tools
+and technologies
+
+
+19
+00:03:15,206 --> 00:03:18,716
+which were really only
+available to the elite few
+
+
+20
+00:03:19,116 --> 00:03:21,216
+and made them available
+to everybody.
+
+
+21
+00:03:22,106 --> 00:03:23,066
+One of the tools that we've done
+
+
+22
+00:03:23,066 --> 00:03:25,746
+that way is my particular
+baby which is MARI.
+
+
+23
+00:03:26,606 --> 00:03:32,466
+And MARI is a GPU-accelerated
+3D digital painting system.
+
+
+24
+00:03:32,946 --> 00:03:36,316
+And it was originally developed
+at Weta Digital in New Zealand
+
+
+25
+00:03:36,936 --> 00:03:39,126
+which is Peter Jackson's
+visual effects company.
+
+
+26
+00:03:40,516 --> 00:03:41,966
+I'm the product manager for MARI
+
+
+27
+00:03:41,966 --> 00:03:44,116
+but I'm also the
+original author.
+
+
+28
+00:03:44,116 --> 00:03:46,586
+And what I'd like to
+do is just take you
+
+
+29
+00:03:46,586 --> 00:03:50,356
+through just exactly what a
+3D digital painting system
+
+
+30
+00:03:50,356 --> 00:03:53,196
+actually is.
+
+
+31
+00:03:53,436 --> 00:03:56,586
+When you're making a movie
+and you're making a character
+
+
+32
+00:03:56,666 --> 00:04:01,716
+like Gollum here, he starts
+off as a model, as a mesh.
+
+
+33
+00:04:01,966 --> 00:04:04,766
+And that model gives
+you the overall shape.
+
+
+34
+00:04:04,766 --> 00:04:06,776
+It gives you the muscle
+and the size of the object.
+
+
+35
+00:04:07,446 --> 00:04:11,316
+But it lacks the fine-grain
+detail on the surface
+
+
+36
+00:04:11,316 --> 00:04:13,116
+that really make an
+object compelling.
+
+
+37
+00:04:13,956 --> 00:04:18,766
+And it's the job of a texture
+artist to go in there literally
+
+
+38
+00:04:18,766 --> 00:04:21,606
+with a brush and paint
+in individual freckles,
+
+
+39
+00:04:21,606 --> 00:04:24,366
+individual veins, and
+put the detail in there
+
+
+40
+00:04:24,366 --> 00:04:27,476
+that really makes it, you know,
+go from a gray blank model
+
+
+41
+00:04:27,476 --> 00:04:29,706
+like this to something
+looking pretty good.
+
+
+42
+00:04:30,726 --> 00:04:33,876
+And if any of you guys have
+ever painted any figurines
+
+
+43
+00:04:33,876 --> 00:04:37,266
+or any models, you know just
+how long it can take to get
+
+
+44
+00:04:37,266 --> 00:04:39,546
+that looking good and how much
+detail you have to put in there.
+
+
+45
+00:04:40,206 --> 00:04:44,736
+So imagine that your model is
+30-feet wide and it's going
+
+
+46
+00:04:44,736 --> 00:04:46,926
+to be projected on
+a screen this size.
+
+
+47
+00:04:48,196 --> 00:04:52,176
+And this is the problem that
+Weta Digital were facing.
+
+
+48
+00:04:52,716 --> 00:04:55,346
+How do you put enough
+detail into your models
+
+
+49
+00:04:55,816 --> 00:04:58,336
+where the director can choose
+to zoom into any part of it
+
+
+50
+00:04:58,336 --> 00:05:00,006
+and have it full screen?
+
+
+51
+00:05:00,996 --> 00:05:05,286
+In a game, you might put,
+you know, one or two textures
+
+
+52
+00:05:05,286 --> 00:05:08,976
+on a character, and they
+might be 1,000 pixel square
+
+
+53
+00:05:08,976 --> 00:05:10,686
+or 2,000 pixel square.
+
+
+54
+00:05:11,396 --> 00:05:13,406
+To get the level of
+detail that they needed,
+
+
+55
+00:05:13,406 --> 00:05:17,636
+Weta Digital would often put
+a patchwork of 500 textures
+
+
+56
+00:05:18,006 --> 00:05:19,696
+over the surface of
+a single character.
+
+
+57
+00:05:20,536 --> 00:05:23,456
+And each of those
+textures would be big.
+
+
+58
+00:05:23,456 --> 00:05:25,496
+It would be at least
+2,000 pixel square
+
+
+59
+00:05:25,496 --> 00:05:27,396
+and sometimes much, much bigger.
+
+
+60
+00:05:28,666 --> 00:05:30,216
+And it doesn't stop there.
+
+
+61
+00:05:31,056 --> 00:05:34,286
+Those 500 textures only tell
+you one thing about the surface.
+
+
+62
+00:05:34,656 --> 00:05:37,316
+They only tell you what color
+it is, but you also need
+
+
+63
+00:05:37,316 --> 00:05:40,256
+to tell the system how bumpy
+it is, how shiny it is,
+
+
+64
+00:05:40,306 --> 00:05:41,996
+how scratchy, how
+dirty, how dusty.
+
+
+65
+00:05:42,576 --> 00:05:43,766
+And each one of those pieces
+
+
+66
+00:05:43,766 --> 00:05:46,356
+of information gives you
+another 500 textures.
+
+
+67
+00:05:47,026 --> 00:05:51,886
+So very quickly you can be
+up at 10,000 huge textures
+
+
+68
+00:05:52,286 --> 00:05:55,436
+for a single character,
+and that can be 20, 30,
+
+
+69
+00:05:55,436 --> 00:05:57,016
+40 gigabytes of information.
+
+
+70
+00:05:57,016 --> 00:05:59,296
+And this was slowing
+people down.
+
+
+71
+00:05:59,296 --> 00:06:00,606
+This was slowing
+the artists down.
+
+
+72
+00:06:00,896 --> 00:06:03,656
+The one thing that artists
+love to do is paint.
+
+
+73
+00:06:04,606 --> 00:06:07,136
+Things that they hate doing
+are copying data around,
+
+
+74
+00:06:07,136 --> 00:06:09,196
+renaming files and
+managing complexity.
+
+
+75
+00:06:10,086 --> 00:06:12,676
+And so, this is really
+where MARI comes in.
+
+
+76
+00:06:13,336 --> 00:06:17,986
+I was hired by Weta
+Digital in 2006 to work
+
+
+77
+00:06:17,986 --> 00:06:21,126
+with their texture artists
+to really come up with tools
+
+
+78
+00:06:21,126 --> 00:06:22,656
+and technologies
+to get them back
+
+
+79
+00:06:22,876 --> 00:06:25,126
+to doing what they
+love which is painting.
+
+
+80
+00:06:25,886 --> 00:06:29,146
+So I got on a plane from London
+down to Wellington, New Zealand
+
+
+81
+00:06:29,716 --> 00:06:34,386
+and worked with the texture
+artists while they were working
+
+
+82
+00:06:34,386 --> 00:06:38,296
+on this little movie for
+James Cameron called Avatar.
+
+
+83
+00:06:38,296 --> 00:06:42,636
+So my team and I were sitting
+next to a room of fifty kind
+
+
+84
+00:06:42,636 --> 00:06:44,916
+of busy, kind of
+caffeinated texture artists
+
+
+85
+00:06:45,456 --> 00:06:47,406
+for about four years.
+
+
+86
+00:06:48,096 --> 00:06:51,636
+And it got to the point where we
+were releasing MARI three times
+
+
+87
+00:06:51,636 --> 00:06:51,926
+a day.
+
+
+88
+00:06:52,626 --> 00:06:55,036
+We'd do a version in the morning
+and then fix it at lunchtime
+
+
+89
+00:06:55,036 --> 00:06:56,336
+and then another one
+in the afternoon.
+
+
+90
+00:06:57,236 --> 00:07:00,186
+And if releasing three times
+a day wasn't, you know,
+
+
+91
+00:07:00,256 --> 00:07:02,636
+enough work, my brand
+new girlfriend
+
+
+92
+00:07:02,636 --> 00:07:05,076
+at that time was a
+texture artist using MARI.
+
+
+93
+00:07:06,496 --> 00:07:09,396
+It took me a little
+while to work out how
+
+
+94
+00:07:09,396 --> 00:07:10,866
+to prioritize her bugs properly.
+
+
+95
+00:07:11,036 --> 00:07:13,036
+[ Laughter ]
+
+
+96
+00:07:13,056 --> 00:07:16,116
+But I'm glad to say it worked
+out and we're still together.
+
+
+97
+00:07:17,111 --> 00:07:19,111
+[ Applause ]
+
+
+98
+00:07:19,206 --> 00:07:19,546
+Thank you.
+
+
+99
+00:07:20,031 --> 00:07:22,031
+[ Applause ]
+
+
+100
+00:07:22,046 --> 00:07:24,776
+So MARI was incredibly
+successful at Weta.
+
+
+101
+00:07:24,776 --> 00:07:29,036
+Every tool-- so every model,
+every character, every plant,
+
+
+102
+00:07:29,656 --> 00:07:32,576
+everything that Weta Digital
+painted for Avatar was done
+
+
+103
+00:07:32,576 --> 00:07:35,246
+in MARI, and that was
+several thousand assets.
+
+
+104
+00:07:36,066 --> 00:07:38,616
+Avatar did OK as well.
+
+
+105
+00:07:38,616 --> 00:07:41,796
+You know, I think three billion
+dollars at the Box Office.
+
+
+106
+00:07:42,576 --> 00:07:46,106
+And MARI continues to be used
+at Weta Digital until today.
+
+
+107
+00:07:46,396 --> 00:07:47,676
+Every movie that
+they've released
+
+
+108
+00:07:47,676 --> 00:07:50,796
+since 2008 has used
+MARI as its--
+
+
+109
+00:07:50,796 --> 00:07:51,786
+as their main texture tool.
+
+
+110
+00:07:52,386 --> 00:07:56,086
+So this includes things like
+The Avengers, The Adventures
+
+
+111
+00:07:56,086 --> 00:07:59,106
+of Tintin, Rise of the Planet
+of the Apes, and most recently,
+
+
+112
+00:07:59,596 --> 00:08:03,126
+this guy, again, for The Hobbit.
+
+
+113
+00:08:03,316 --> 00:08:08,336
+In 2010, Weta Digital and The
+Foundry came to an agreement
+
+
+114
+00:08:08,336 --> 00:08:09,266
+to commercialize MARI.
+
+
+115
+00:08:09,976 --> 00:08:12,936
+So The Foundry licensed
+MARI from Weta.
+
+
+116
+00:08:12,936 --> 00:08:15,646
+But what that really
+meant is that they sold it
+
+
+117
+00:08:15,646 --> 00:08:17,016
+and they sold me along with it.
+
+
+118
+00:08:17,016 --> 00:08:21,676
+So I got on a plane from
+Wellington, New Zealand back
+
+
+119
+00:08:21,676 --> 00:08:24,306
+to London which is 32
+hours door-to-door.
+
+
+120
+00:08:24,986 --> 00:08:27,306
+And this time, I was
+coming back with a USB stick
+
+
+121
+00:08:27,306 --> 00:08:33,405
+for the source code and an
+invoice for The Foundry to sign.
+
+
+122
+00:08:33,405 --> 00:08:35,756
+My role at The Foundry
+was simple.
+
+
+123
+00:08:36,405 --> 00:08:38,866
+We wanted to make MARI
+the industry standard
+
+
+124
+00:08:39,466 --> 00:08:41,926
+for visual effects,
+3D digital painting.
+
+
+125
+00:08:42,416 --> 00:08:46,586
+Over the last three
+years, we've done that.
+
+
+126
+00:08:46,636 --> 00:08:48,826
+We've been incredibly successful
+to the point that nine
+
+
+127
+00:08:48,826 --> 00:08:50,526
+out of ten of the
+movies nominated
+
+
+128
+00:08:50,526 --> 00:08:53,176
+for visual effects
+Oscars this year used MARI
+
+
+129
+00:08:53,176 --> 00:08:54,866
+as their main texture
+painting system.
+
+
+130
+00:08:55,696 --> 00:08:57,326
+The only reason that
+the tenth didn't is
+
+
+131
+00:08:57,326 --> 00:08:59,426
+that they didn't buy it in time
+enough to use on the movie.
+
+
+132
+00:09:01,056 --> 00:09:03,936
+MARI is at use-- in
+use at a whole bunch
+
+
+133
+00:09:03,936 --> 00:09:05,056
+of companies you
+will have heard of,
+
+
+134
+00:09:05,056 --> 00:09:07,756
+so there's Industrial Light
+& Magic over in the Presidio,
+
+
+135
+00:09:08,176 --> 00:09:10,616
+DreamWorks Animations,
+Sony Pictures Imageworks.
+
+
+136
+00:09:11,256 --> 00:09:13,526
+So really if you've seen a movie
+over the last couple of years
+
+
+137
+00:09:13,526 --> 00:09:16,656
+in which there has been an
+alien, a spaceship, a monster,
+
+
+138
+00:09:16,656 --> 00:09:19,006
+something blowing up,
+you've seen MARI at work.
+
+
+139
+00:09:19,006 --> 00:09:22,756
+One of the really
+great things though
+
+
+140
+00:09:22,756 --> 00:09:25,566
+about taking an in-house
+tool something thats design
+
+
+141
+00:09:25,566 --> 00:09:29,216
+for one specific task and making
+it available to everybody is
+
+
+142
+00:09:29,216 --> 00:09:33,416
+that you start seeing uses
+that you never expected for it.
+
+
+143
+00:09:33,416 --> 00:09:36,166
+We've seen it cropping up
+in games, in architecture,
+
+
+144
+00:09:36,166 --> 00:09:38,906
+in digital design, and even
+in amazing artwork like this
+
+
+145
+00:09:38,906 --> 00:09:40,296
+which is from an album cover.
+
+
+146
+00:09:41,436 --> 00:09:45,846
+One of our most technically
+innovative artists is a good
+
+
+147
+00:09:45,846 --> 00:09:47,816
+friend of mine called Scott
+Metzger who works out of LA.
+
+
+148
+00:09:47,816 --> 00:09:51,466
+And he's coming up with
+new novel techniques
+
+
+149
+00:09:51,526 --> 00:09:54,206
+for capturing digital
+environments
+
+
+150
+00:09:54,206 --> 00:09:58,226
+and making photorealistic
+rendering incredibly easy to do.
+
+
+151
+00:09:59,176 --> 00:10:01,656
+So what this really means is
+Scott went out one weekend
+
+
+152
+00:10:01,656 --> 00:10:04,116
+and rented an industrial
+laser scanner
+
+
+153
+00:10:04,366 --> 00:10:07,176
+and started scanning things,
+and he scanned his apartment.
+
+
+154
+00:10:08,086 --> 00:10:11,106
+And he scanned it down
+to millimeter accuracy.
+
+
+155
+00:10:11,866 --> 00:10:15,396
+And ran around his apartment
+with a camera taking hundreds
+
+
+156
+00:10:15,396 --> 00:10:19,166
+and hundreds of reference
+photographs making this enormous
+
+
+157
+00:10:19,206 --> 00:10:23,146
+dataset which he pulled
+into MARI and used MARI
+
+
+158
+00:10:23,306 --> 00:10:24,986
+to paint those photos down onto
+
+
+159
+00:10:24,986 --> 00:10:26,686
+to this enormous
+scan that he made.
+
+
+160
+00:10:27,226 --> 00:10:30,296
+And this created-- I think
+it was a 20 gigabyte dataset
+
+
+161
+00:10:30,866 --> 00:10:33,106
+that he was able to
+fly around inside
+
+
+162
+00:10:33,106 --> 00:10:34,716
+of MARI, edit in real time.
+
+
+163
+00:10:35,416 --> 00:10:40,466
+But it also meant that he could
+make amazing photorealistic
+
+
+164
+00:10:40,466 --> 00:10:41,656
+renderings like this.
+
+
+165
+00:10:42,216 --> 00:10:45,086
+You can actually zoom down
+into the work surfaces
+
+
+166
+00:10:45,086 --> 00:10:46,186
+and you can see fingerprints,
+
+
+167
+00:10:46,186 --> 00:10:50,156
+you can see fine-grained
+detail in the paint work.
+
+
+168
+00:10:51,216 --> 00:10:54,056
+And this is an incredibly
+useful thing
+
+
+169
+00:10:54,056 --> 00:10:56,866
+for the visual effects
+industry and the film industry
+
+
+170
+00:10:57,186 --> 00:10:58,226
+because when you're
+making a film,
+
+
+171
+00:10:58,226 --> 00:11:01,756
+what you normally do
+is you build a set,
+
+
+172
+00:11:02,446 --> 00:11:05,566
+you put some cameras on the set,
+you get the actors on the set,
+
+
+173
+00:11:06,246 --> 00:11:09,736
+you film it, and then the set
+gets torn down and thrown away.
+
+
+174
+00:11:09,736 --> 00:11:12,986
+But what often happens
+is two months later,
+
+
+175
+00:11:12,986 --> 00:11:15,056
+the director has this
+flash of inspiration
+
+
+176
+00:11:15,326 --> 00:11:17,036
+that the thing that's
+really going
+
+
+177
+00:11:17,036 --> 00:11:21,006
+to give him the Oscar this
+time is a zoom through this set
+
+
+178
+00:11:21,006 --> 00:11:23,926
+which is now sitting somewhere
+in a dumpster in Hollywood.
+
+
+179
+00:11:24,796 --> 00:11:26,736
+And these are called
+pickup shots,
+
+
+180
+00:11:26,736 --> 00:11:28,676
+and they're incredibly
+expensive to do.
+
+
+181
+00:11:28,976 --> 00:11:31,516
+You need to go and find the
+bits of set that still exists,
+
+
+182
+00:11:31,516 --> 00:11:32,636
+you need to rebuild the set,
+
+
+183
+00:11:32,636 --> 00:11:34,046
+you need to reconstruct
+the lighting,
+
+
+184
+00:11:34,496 --> 00:11:35,946
+you need to match
+everything perfectly.
+
+
+185
+00:11:36,716 --> 00:11:40,386
+But with this technique, you
+can actually capture the set
+
+
+186
+00:11:40,386 --> 00:11:42,176
+and its entirety, all
+of the information,
+
+
+187
+00:11:42,176 --> 00:11:44,216
+all the lighting,
+when you're shooting.
+
+
+188
+00:11:44,586 --> 00:11:47,406
+And when the director has this
+amazing flash of inspiration,
+
+
+189
+00:11:47,846 --> 00:11:50,786
+it's then incredibly cheap
+to do pickup shots rather
+
+
+190
+00:11:50,786 --> 00:11:52,426
+than incredibly expensive.
+
+
+191
+00:11:53,936 --> 00:11:57,046
+All of the examples
+that I've shown
+
+
+192
+00:11:57,046 --> 00:11:59,816
+up until now have been
+running on Windows and Linux.
+
+
+193
+00:12:00,586 --> 00:12:03,636
+But MARI was originally
+developed for the first couple
+
+
+194
+00:12:03,636 --> 00:12:07,286
+of years of its life on
+both Macintosh and Linux.
+
+
+195
+00:12:07,866 --> 00:12:09,126
+Unfortunately, as I mentioned,
+
+
+196
+00:12:09,126 --> 00:12:11,276
+we were releasing
+three times a day
+
+
+197
+00:12:11,816 --> 00:12:13,856
+and maintaining six builds a day
+
+
+198
+00:12:13,856 --> 00:12:16,036
+in full production was really
+more than we could deal with.
+
+
+199
+00:12:16,666 --> 00:12:18,746
+So we concentrated
+on Linux at the time,
+
+
+200
+00:12:18,746 --> 00:12:21,456
+but I'm incredibly pleased that
+MARI is actually coming back
+
+
+201
+00:12:21,516 --> 00:12:23,126
+to the Mac later this summer.
+
+
+202
+00:12:23,266 --> 00:12:24,936
+Thank you.
+
+
+203
+00:12:25,516 --> 00:12:28,256
+[ Applause ]
+
+
+204
+00:12:28,756 --> 00:12:30,336
+We've been developing on
+
+
+205
+00:12:30,336 --> 00:12:33,376
+and targeting common
+generation Mac hardware.
+
+
+206
+00:12:33,916 --> 00:12:35,796
+And partially this
+is really selfish.
+
+
+207
+00:12:35,796 --> 00:12:38,556
+I want to demo on my brand new
+shiny retina Macbook Pro and not
+
+
+208
+00:12:38,556 --> 00:12:42,406
+on a big ugly laptop
+I've got at the moment.
+
+
+209
+00:12:43,036 --> 00:12:48,026
+The porting process for us has
+been pretty straightforward.
+
+
+210
+00:12:48,856 --> 00:12:50,376
+It's really just
+some housekeeping.
+
+
+211
+00:12:50,376 --> 00:12:52,426
+We need to take MARI's
+OpenGL usage
+
+
+212
+00:12:52,426 --> 00:12:54,376
+because it really is
+fully OpenGL based
+
+
+213
+00:12:54,886 --> 00:12:58,066
+and update it to
+3.2 core profile.
+
+
+214
+00:12:58,756 --> 00:12:59,876
+This is something
+we've been meaning
+
+
+215
+00:12:59,876 --> 00:13:00,866
+to do for a while anyway.
+
+
+216
+00:13:01,106 --> 00:13:03,476
+It really gives us a
+lot of benefits in terms
+
+
+217
+00:13:03,476 --> 00:13:05,896
+of performance, speed,
+
+
+218
+00:13:05,896 --> 00:13:07,906
+simplicity of code
+and stability.
+
+
+219
+00:13:08,806 --> 00:13:11,326
+And it's taken us
+about six weeks to go
+
+
+220
+00:13:11,326 --> 00:13:13,976
+from absolutely nothing, MARI
+didn't compile on the Mac,
+
+
+221
+00:13:13,976 --> 00:13:17,916
+didn't run on the Mac, to
+being able to demo here today
+
+
+222
+00:13:17,916 --> 00:13:19,746
+which you guys will be
+seeing in a few minutes.
+
+
+223
+00:13:20,786 --> 00:13:24,556
+The screenshots you can see
+on the screen were taken
+
+
+224
+00:13:24,556 --> 00:13:26,466
+about a week apart
+by my developers
+
+
+225
+00:13:26,466 --> 00:13:28,166
+as they were bringing MARI up.
+
+
+226
+00:13:28,956 --> 00:13:31,866
+The first image is the
+first time MARI ran
+
+
+227
+00:13:31,866 --> 00:13:33,046
+on the Mac in five years.
+
+
+228
+00:13:33,736 --> 00:13:35,056
+The second one is a week later.
+
+
+229
+00:13:35,136 --> 00:13:36,456
+We have rendering
+up and working.
+
+
+230
+00:13:37,036 --> 00:13:40,896
+And the third one is a week
+after that where we're dealing
+
+
+231
+00:13:40,896 --> 00:13:45,936
+with big datasets we can
+paint and we can animate.
+
+
+232
+00:13:46,526 --> 00:13:49,816
+So it really has been a
+pretty seamless process.
+
+
+233
+00:13:49,936 --> 00:13:52,706
+However, we have been incredibly
+lucky during this whole
+
+
+234
+00:13:52,706 --> 00:13:55,246
+process-- have been given
+access to the new Mac Pro.
+
+
+235
+00:13:56,496 --> 00:14:00,886
+We originally designed MARI
+with multiple GPUs in mind.
+
+
+236
+00:14:01,686 --> 00:14:05,486
+For me it makes so much sense
+that you're going to want
+
+
+237
+00:14:05,486 --> 00:14:07,496
+to be processing
+huge amounts of data
+
+
+238
+00:14:07,496 --> 00:14:09,886
+on one device while you're
+displaying it fluidly
+
+
+239
+00:14:09,886 --> 00:14:12,396
+at 60 frames per
+second on a second.
+
+
+240
+00:14:13,086 --> 00:14:16,896
+However, we've not really
+ever seen a viable platform
+
+
+241
+00:14:16,896 --> 00:14:18,296
+for us to do this before.
+
+
+242
+00:14:18,856 --> 00:14:20,936
+We don't see multiple
+GPUs installed
+
+
+243
+00:14:20,936 --> 00:14:22,556
+in visual effects
+artist machines.
+
+
+244
+00:14:23,256 --> 00:14:25,696
+We see it in the
+gaming world, you know,
+
+
+245
+00:14:25,696 --> 00:14:28,646
+people who put two GPUs
+in their gaming rig
+
+
+246
+00:14:28,646 --> 00:14:31,686
+so they can play Gears
+of War at 1080p 60 hertz.
+
+
+247
+00:14:32,316 --> 00:14:35,156
+But that power has never
+been available to artists.
+
+
+248
+00:14:36,216 --> 00:14:40,036
+The multiple GPUs in the new
+Mac Pro especially combined
+
+
+249
+00:14:40,036 --> 00:14:41,286
+with the updated OpenGL
+
+
+250
+00:14:41,286 --> 00:14:45,876
+and OpenCL support makes
+it just a dream platform
+
+
+251
+00:14:45,876 --> 00:14:46,766
+for us to develop on it.
+
+
+252
+00:14:46,766 --> 00:14:49,996
+It's been really a
+fantastic experience.
+
+
+253
+00:14:50,556 --> 00:14:53,316
+It's also going to make
+my life a lot easier.
+
+
+254
+00:14:53,316 --> 00:14:56,786
+A large part of my job
+is actually working
+
+
+255
+00:14:56,786 --> 00:15:00,356
+with our most demanding
+customers to help them design
+
+
+256
+00:15:00,356 --> 00:15:04,246
+and build systems that
+will meet their, you know,
+
+
+257
+00:15:04,726 --> 00:15:05,936
+incredible requirements.
+
+
+258
+00:15:05,936 --> 00:15:08,586
+I often get emails in the
+morning along the lines of,
+
+
+259
+00:15:08,586 --> 00:15:11,376
+"So Jack, we tried to load
+250 gigs of data into MARI
+
+
+260
+00:15:11,376 --> 00:15:12,616
+and it's running a
+little bit slowly.
+
+
+261
+00:15:12,616 --> 00:15:13,396
+What can we do?"
+
+
+262
+00:15:14,856 --> 00:15:17,546
+So this machine is going to
+make my life really easy.
+
+
+263
+00:15:17,686 --> 00:15:19,956
+I can say, "Go buy
+the new Mac Pro."
+
+
+264
+00:15:20,516 --> 00:15:22,636
+[ Laughter ]
+
+
+265
+00:15:23,136 --> 00:15:27,686
+I can genuinely say it is the
+best out-of-the-box experience
+
+
+266
+00:15:27,686 --> 00:15:29,446
+I've ever seen with MARI.
+
+
+267
+00:15:30,056 --> 00:15:34,626
+In terms of our most
+demanding customers,
+
+
+268
+00:15:34,966 --> 00:15:39,916
+I think Pixar Animation Studios
+are right up there with them.
+
+
+269
+00:15:40,086 --> 00:15:41,736
+I love working with
+them as a company
+
+
+270
+00:15:41,736 --> 00:15:43,656
+because they represent
+this amazing fusion
+
+
+271
+00:15:43,656 --> 00:15:44,986
+of being deeply artistic
+
+
+272
+00:15:44,986 --> 00:15:47,036
+but at the same time
+being deeply technical.
+
+
+273
+00:15:48,336 --> 00:15:51,626
+Pixar were a very--
+early adopter of MARI.
+
+
+274
+00:15:51,866 --> 00:15:55,166
+And we've been working with them
+for the last, about three years,
+
+
+275
+00:15:55,616 --> 00:15:57,576
+to integrate MARI
+into their pipeline
+
+
+276
+00:15:57,576 --> 00:16:00,196
+to put together new techniques
+
+
+277
+00:16:00,196 --> 00:16:02,836
+for creating incredibly
+realistic characters
+
+
+278
+00:16:02,836 --> 00:16:04,156
+for their upcoming movies.
+
+
+279
+00:16:04,936 --> 00:16:08,316
+We're very lucky to have
+Jonathan Hoffman here today
+
+
+280
+00:16:08,316 --> 00:16:10,796
+who's a shading technical
+artist from Pixar.
+
+
+281
+00:16:12,086 --> 00:16:14,116
+Using MARI on the new Mac Pro,
+
+
+282
+00:16:14,116 --> 00:16:16,886
+he's going to be giving us a
+sneak peak behind the scenes
+
+
+283
+00:16:17,386 --> 00:16:21,156
+into the process of how Pixar
+design and build the characters
+
+
+284
+00:16:21,156 --> 00:16:22,256
+that are going to their movies.
+
+
+285
+00:16:22,676 --> 00:16:25,076
+But before we do that, I think
+we should have a quick look
+
+
+286
+00:16:25,076 --> 00:16:27,126
+at some of the amazing work
+that they've been up to
+
+
+287
+00:16:27,126 --> 00:16:28,176
+for the last couple of years.
+
+
+288
+00:16:29,516 --> 00:16:36,516
+[ Applause ]
+
+
+289
+00:16:37,016 --> 00:16:44,000
+[ Music ]
+
+
+290
+00:16:44,306 --> 00:16:46,196
+>> Tonight we party
+like scarers!
+
+
+291
+00:16:46,196 --> 00:16:47,966
+>> I want to piece
+of that action.
+
+
+292
+00:16:50,316 --> 00:16:51,466
+>> My friends call me Sully.
+
+
+293
+00:16:51,566 --> 00:16:52,186
+>> Mike Wazowski.
+
+
+294
+00:16:53,086 --> 00:16:55,816
+I'm officially a
+college student.
+
+
+295
+00:16:56,736 --> 00:16:56,803
+Yeah!
+
+
+296
+00:16:58,136 --> 00:16:59,976
+>> We don't need to study
+scaring, you know, do it.
+
+
+297
+00:17:00,126 --> 00:17:00,836
+>> That is a good point.
+
+
+298
+00:17:03,056 --> 00:17:04,886
+>> What's so scary about
+a little librarian?
+
+
+299
+00:17:05,086 --> 00:17:06,776
+>> A bunch of guys went
+to the hospital last year.
+
+
+300
+00:17:07,516 --> 00:17:08,616
+>> You can totally die.
+
+
+301
+00:17:09,236 --> 00:17:09,705
+>> And it's worth it.
+
+
+302
+00:17:12,126 --> 00:17:12,816
+Let the animal out!
+
+
+303
+00:17:14,066 --> 00:17:14,776
+>> Is that legal?
+
+
+304
+00:17:16,496 --> 00:17:18,506
+>> I've never seen him
+this way in my life!
+
+
+305
+00:17:20,236 --> 00:17:22,336
+>> Trust me when I say
+you are not going to want
+
+
+306
+00:17:22,536 --> 00:17:23,455
+to touch this bad boy.
+
+
+307
+00:17:23,455 --> 00:17:23,976
+>> I want to touch it.
+
+
+308
+00:17:26,626 --> 00:17:27,756
+>> Yeah, I want to touch him.
+
+
+309
+00:17:27,996 --> 00:17:29,336
+>> Hey, what are
+you doing up there?
+
+
+310
+00:17:29,336 --> 00:17:31,516
+>> I can't go back to jail.
+
+
+311
+00:17:35,046 --> 00:17:35,836
+>> I'm going to rule!
+
+
+312
+00:17:40,516 --> 00:17:45,056
+[ Applause ]
+
+
+313
+00:17:45,556 --> 00:17:48,566
+>> Obviously a lot of work goes
+into every one of our films.
+
+
+314
+00:17:48,566 --> 00:17:51,686
+It's truly a collaborative
+effort between hundreds
+
+
+315
+00:17:52,126 --> 00:17:53,356
+of really talented people.
+
+
+316
+00:17:53,756 --> 00:17:54,436
+What I'm going to talk to you
+
+
+317
+00:17:54,436 --> 00:17:57,896
+about today is really only one
+small part of the whole process.
+
+
+318
+00:17:59,296 --> 00:18:00,466
+You saw on the trailer,
+there are a lot
+
+
+319
+00:18:00,466 --> 00:18:02,946
+of different characters
+in this upcoming film
+
+
+320
+00:18:03,006 --> 00:18:06,066
+and each character presents its
+own unique set of challenges.
+
+
+321
+00:18:06,646 --> 00:18:08,716
+With Monsters University,
+
+
+322
+00:18:08,826 --> 00:18:10,836
+obviously since this is a
+prequel, we're going back
+
+
+323
+00:18:11,026 --> 00:18:12,896
+to the world of Monsters Inc.
+
+
+324
+00:18:13,036 --> 00:18:14,936
+which we haven't
+been to since 2001.
+
+
+325
+00:18:15,556 --> 00:18:20,676
+And recreating that world, you
+know, we wanted to stay true
+
+
+326
+00:18:20,676 --> 00:18:24,066
+to the essence of the design
+while still pushing the limits
+
+
+327
+00:18:24,066 --> 00:18:26,516
+of what we can do
+now that it's 2013.
+
+
+328
+00:18:26,626 --> 00:18:28,856
+Obviously the technology has
+come a long way since then.
+
+
+329
+00:18:29,236 --> 00:18:30,926
+Our two primary characters
+
+
+330
+00:18:30,926 --> 00:18:34,296
+in this film are still Mike
+Wazowski and James Sullivan
+
+
+331
+00:18:34,296 --> 00:18:35,356
+from Monsters Incorporated.
+
+
+332
+00:18:36,136 --> 00:18:38,636
+Now, since this is
+their college days,
+
+
+333
+00:18:38,636 --> 00:18:40,486
+we needed to redesign
+the characters to look
+
+
+334
+00:18:40,486 --> 00:18:42,826
+like teenagers, and that
+might be more difficult
+
+
+335
+00:18:42,826 --> 00:18:46,286
+than you would think because how
+exactly does one make a walking
+
+
+336
+00:18:46,286 --> 00:18:49,436
+eyeball look younger, right?
+
+
+337
+00:18:49,726 --> 00:18:51,856
+You don't normally think
+about this sort of thing.
+
+
+338
+00:18:51,856 --> 00:18:55,436
+But the people in the art team
+did an amazing job in figuring
+
+
+339
+00:18:55,436 --> 00:18:58,186
+out and envisioning, you know,
+how you take these monsters
+
+
+340
+00:18:58,186 --> 00:18:59,086
+and make them look younger.
+
+
+341
+00:18:59,416 --> 00:19:02,376
+With Mike Wazowski, this image
+by our production designer,
+
+
+342
+00:19:02,376 --> 00:19:05,296
+Ricky, is this great
+progression of Mike all the way
+
+
+343
+00:19:05,296 --> 00:19:06,956
+from toddler to adulthood.
+
+
+344
+00:19:07,586 --> 00:19:10,366
+And this is the final design
+for both of the main characters.
+
+
+345
+00:19:11,036 --> 00:19:12,836
+And there's a lot of
+real subtle things here.
+
+
+346
+00:19:12,836 --> 00:19:14,696
+I'm going to kind of show you
+some of the things that they did
+
+
+347
+00:19:14,696 --> 00:19:15,696
+to make them look younger.
+
+
+348
+00:19:16,136 --> 00:19:20,476
+With Mike Wazowski, you know,
+we took lots of pictures of all
+
+
+349
+00:19:20,476 --> 00:19:22,876
+of the people of the
+studio and looked at them
+
+
+350
+00:19:23,186 --> 00:19:24,396
+when they were teenagers
+and then looked
+
+
+351
+00:19:24,396 --> 00:19:25,276
+at their adult pictures.
+
+
+352
+00:19:25,666 --> 00:19:28,296
+And we learned a few things,
+you know, besides, you know,
+
+
+353
+00:19:28,636 --> 00:19:30,546
+we all are, you know, little
+bit less hair, you know,
+
+
+354
+00:19:30,546 --> 00:19:31,376
+some things like that.
+
+
+355
+00:19:31,746 --> 00:19:36,666
+But with teenagers, teenagers
+reach their adult height way
+
+
+356
+00:19:36,666 --> 00:19:38,056
+before they really fill in.
+
+
+357
+00:19:38,056 --> 00:19:40,326
+And so with Mike, you'll
+notice he's the same height
+
+
+358
+00:19:40,326 --> 00:19:40,986
+as he was before.
+
+
+359
+00:19:40,986 --> 00:19:42,216
+His limbs are the same length.
+
+
+360
+00:19:42,516 --> 00:19:44,226
+His hands and his feet
+are the same size.
+
+
+361
+00:19:44,566 --> 00:19:45,746
+But he's a lot skinnier, right?
+
+
+362
+00:19:45,746 --> 00:19:46,556
+He's lanky.
+
+
+363
+00:19:46,556 --> 00:19:49,376
+And there's a lot
+of other things too.
+
+
+364
+00:19:49,506 --> 00:19:53,536
+The colors are much more vibrant
+and saturated to give them
+
+
+365
+00:19:53,536 --> 00:19:54,616
+that sort of youthful glow.
+
+
+366
+00:19:54,836 --> 00:19:57,446
+The horns are shorter
+and more blunted because,
+
+
+367
+00:19:57,836 --> 00:20:00,946
+obviously as you get older,
+your horns get longer.
+
+
+368
+00:20:01,826 --> 00:20:04,756
+And with Mike, you know,
+you've got this great detail
+
+
+369
+00:20:04,806 --> 00:20:06,976
+of that retainer just coming
+out of high school, you know.
+
+
+370
+00:20:06,976 --> 00:20:08,386
+I'm sure a lot of you
+had to deal with that.
+
+
+371
+00:20:08,926 --> 00:20:10,486
+And then with Sullivan,
+
+
+372
+00:20:10,486 --> 00:20:14,996
+my favorite detail is he's
+got this great bedhead look.
+
+
+373
+00:20:14,996 --> 00:20:17,536
+But since it's all over his
+body, it's his bed-body look.
+
+
+374
+00:20:17,536 --> 00:20:19,766
+It looks like he just
+rolled out of bed and all
+
+
+375
+00:20:19,766 --> 00:20:20,676
+of his hair is disheveled.
+
+
+376
+00:20:21,816 --> 00:20:24,466
+So a lot of thought and
+time and effort goes
+
+
+377
+00:20:24,466 --> 00:20:27,976
+into really making these
+character designs perfect
+
+
+378
+00:20:28,136 --> 00:20:30,986
+for these characters,
+to really stay true
+
+
+379
+00:20:30,986 --> 00:20:32,956
+to that original design
+but really take them
+
+
+380
+00:20:32,956 --> 00:20:34,436
+in a new direction
+for this film.
+
+
+381
+00:20:34,986 --> 00:20:38,646
+But for every main character,
+for every, you know, for these--
+
+
+382
+00:20:38,686 --> 00:20:40,476
+our core characters,
+we need a good foil,
+
+
+383
+00:20:40,476 --> 00:20:42,496
+we need a good antagonist
+for the story.
+
+
+384
+00:20:42,496 --> 00:20:45,046
+And so, I'm going to
+introduce you to the character
+
+
+385
+00:20:45,046 --> 00:20:47,096
+that I have the chance to work
+on for this film and I'm going
+
+
+386
+00:20:47,096 --> 00:20:50,416
+to show you a never before
+seen clip from the movie
+
+
+387
+00:20:50,416 --> 00:20:52,896
+to introduce that character.
+
+
+388
+00:20:53,786 --> 00:20:55,446
+>> Please, let me
+try the simulator.
+
+
+389
+00:20:55,636 --> 00:20:56,416
+I'll surprise you.
+
+
+390
+00:20:57,156 --> 00:20:58,126
+>> Surprise me?
+
+
+391
+00:20:59,076 --> 00:21:01,096
+I doubt that very much.
+
+
+392
+00:21:03,236 --> 00:21:05,846
+>> All right, so that
+is Dean Hardscrabble
+
+
+393
+00:21:05,846 --> 00:21:08,006
+of the Monsters University
+School of Scaring.
+
+
+394
+00:21:08,376 --> 00:21:11,246
+Now, she is the scariest
+monster on campus.
+
+
+395
+00:21:11,356 --> 00:21:13,166
+And she is a scaring legend.
+
+
+396
+00:21:13,856 --> 00:21:16,676
+And with a character like
+this, where does it start?
+
+
+397
+00:21:16,786 --> 00:21:19,506
+How does a character go
+from start to finish?
+
+
+398
+00:21:19,506 --> 00:21:20,316
+Where does it begin?
+
+
+399
+00:21:20,566 --> 00:21:22,356
+Well it starts with
+a bunch of drawings.
+
+
+400
+00:21:22,866 --> 00:21:25,996
+The art team does hundreds
+of drawings for weeks to try
+
+
+401
+00:21:25,996 --> 00:21:28,376
+and really figure out
+what a character is,
+
+
+402
+00:21:28,476 --> 00:21:30,546
+to experiment with
+different ideas.
+
+
+403
+00:21:31,126 --> 00:21:34,416
+And with Hardscrabble, they
+had a very challenging goal.
+
+
+404
+00:21:34,416 --> 00:21:37,766
+They needed her to be
+very poised and elegant
+
+
+405
+00:21:37,766 --> 00:21:39,376
+and have this sense
+of authority.
+
+
+406
+00:21:39,906 --> 00:21:42,066
+But they also needed
+her to be terrifying.
+
+
+407
+00:21:42,696 --> 00:21:44,976
+And they were trying a bunch of
+different ideas but it wasn't
+
+
+408
+00:21:44,976 --> 00:21:49,656
+until they saw this video
+of a Amazonian centipede
+
+
+409
+00:21:49,656 --> 00:21:51,216
+which these things are huge.
+
+
+410
+00:21:51,216 --> 00:21:52,776
+It's a giant Amazonian
+centipede.
+
+
+411
+00:21:53,156 --> 00:21:57,466
+They saw this video and
+it had this amazing grace
+
+
+412
+00:21:57,466 --> 00:21:59,386
+to it despite the fact
+that the first things
+
+
+413
+00:21:59,386 --> 00:22:01,316
+that you see is "Wow,
+that is scary.
+
+
+414
+00:22:01,316 --> 00:22:03,966
+I'm going to"-- you know, if you
+see that you want to run away.
+
+
+415
+00:22:04,046 --> 00:22:07,746
+But you see it and it had this
+movement, this deadly grace
+
+
+416
+00:22:07,746 --> 00:22:09,776
+to it, and that is
+exactly what they wanted
+
+
+417
+00:22:09,776 --> 00:22:10,666
+for Dean Hardscrabble.
+
+
+418
+00:22:10,666 --> 00:22:13,546
+So the director, Dan Scanlon,
+drew the centipede tail
+
+
+419
+00:22:13,546 --> 00:22:14,596
+onto the back of Hardscrabble
+
+
+420
+00:22:14,596 --> 00:22:16,196
+and they realized
+that is the design.
+
+
+421
+00:22:16,636 --> 00:22:19,566
+That was the central
+part of her visual look.
+
+
+422
+00:22:19,566 --> 00:22:23,926
+So this is the final design by
+Jason Deamer and it really--
+
+
+423
+00:22:24,256 --> 00:22:27,296
+the central figure of the
+design is that centipede,
+
+
+424
+00:22:27,296 --> 00:22:30,766
+but then he's incorporated all
+these other really scary animals
+
+
+425
+00:22:30,856 --> 00:22:31,776
+into that design.
+
+
+426
+00:22:32,076 --> 00:22:35,276
+She's got these bat wings, the
+sort of dragon/lizard head.
+
+
+427
+00:22:35,836 --> 00:22:39,226
+And this, you know,
+this was the character
+
+
+428
+00:22:39,226 --> 00:22:42,186
+that they've been searching
+for, this elegance and grace,
+
+
+429
+00:22:42,736 --> 00:22:46,456
+authority along with
+this idea of being very,
+
+
+430
+00:22:46,456 --> 00:22:48,386
+very scary and terrifying.
+
+
+431
+00:22:49,556 --> 00:22:52,336
+The first film, we had a--
+
+
+432
+00:22:52,336 --> 00:22:55,376
+you know, we had this cast of
+very candy colored characters,
+
+
+433
+00:22:55,446 --> 00:22:59,736
+these very bright, you know,
+and saturated characters.
+
+
+434
+00:22:59,736 --> 00:23:02,696
+And with the next film, we
+wanted to stay true to that.
+
+
+435
+00:23:03,266 --> 00:23:06,476
+But with Hardscrabble, we needed
+to make sure that she still fit
+
+
+436
+00:23:06,476 --> 00:23:08,576
+in the world of all these
+other characters and
+
+
+437
+00:23:08,576 --> 00:23:09,536
+yet was still scarier.
+
+
+438
+00:23:09,976 --> 00:23:12,126
+In Monsters Incorporated, if
+you remember the character
+
+
+439
+00:23:12,166 --> 00:23:13,636
+of Waternoose, he was
+a little bit different.
+
+
+440
+00:23:13,636 --> 00:23:16,016
+And so we were trying to go
+for something similar to him
+
+
+441
+00:23:16,016 --> 00:23:18,486
+where he still fit in the
+world but was different
+
+
+442
+00:23:18,486 --> 00:23:19,286
+than all the other characters.
+
+
+443
+00:23:19,286 --> 00:23:22,036
+She again needed to be
+scarier and yet still feel
+
+
+444
+00:23:22,036 --> 00:23:23,176
+like she came from
+the same planet.
+
+
+445
+00:23:24,406 --> 00:23:27,816
+So once the design is settled,
+it really gets passed in to kind
+
+
+446
+00:23:27,816 --> 00:23:28,876
+of two different areas.
+
+
+447
+00:23:28,876 --> 00:23:32,736
+The first is the modeling
+department where, in this case,
+
+
+448
+00:23:32,736 --> 00:23:35,586
+Michael Honsel took this
+design and began to sculpt it
+
+
+449
+00:23:35,586 --> 00:23:38,946
+on the computer, very much
+how he would sculpt an object
+
+
+450
+00:23:38,946 --> 00:23:40,306
+in real life in real clay.
+
+
+451
+00:23:40,566 --> 00:23:42,386
+But he's sculpting it
+digitally on the computer.
+
+
+452
+00:23:42,776 --> 00:23:45,476
+But it also gets passed to the
+art department again to start
+
+
+453
+00:23:45,476 --> 00:23:48,056
+to develop the textural
+look of the character.
+
+
+454
+00:23:48,636 --> 00:23:52,446
+And so this is a painting by
+Shelly Wan and it was given
+
+
+455
+00:23:52,446 --> 00:23:55,606
+to me to show me,
+OK, this is the way
+
+
+456
+00:23:55,606 --> 00:23:57,926
+that the surface should look
+when it's reacting to light.
+
+
+457
+00:23:58,006 --> 00:24:00,726
+This is how the character
+needs to look
+
+
+458
+00:24:00,726 --> 00:24:03,016
+in color and with specularity.
+
+
+459
+00:24:03,016 --> 00:24:05,076
+And I'll explain some of
+the details of that later.
+
+
+460
+00:24:05,586 --> 00:24:07,476
+And so we've got
+this beautiful image.
+
+
+461
+00:24:08,396 --> 00:24:11,816
+And along with this image comes
+a bunch of reference photography
+
+
+462
+00:24:11,816 --> 00:24:15,086
+of the different creatures that
+make up what Hardscrabble is.
+
+
+463
+00:24:15,086 --> 00:24:18,676
+And so, we we start with
+her makeup, you know,
+
+
+464
+00:24:18,676 --> 00:24:20,276
+and all these little
+great details
+
+
+465
+00:24:20,276 --> 00:24:22,026
+about what her face makeup
+is going to look like.
+
+
+466
+00:24:22,026 --> 00:24:24,396
+But then we moved into
+her different aspects
+
+
+467
+00:24:24,396 --> 00:24:26,416
+like the horns, how those
+are going to be shaped,
+
+
+468
+00:24:26,416 --> 00:24:28,846
+what the colors are going
+to be, how shiny they are.
+
+
+469
+00:24:28,846 --> 00:24:30,566
+And we go through
+all of these details
+
+
+470
+00:24:30,566 --> 00:24:31,626
+of these different aspects.
+
+
+471
+00:24:31,886 --> 00:24:34,526
+But one of the things about
+her shells and her legs,
+
+
+472
+00:24:35,186 --> 00:24:38,056
+with a centipede that's only
+this big, I mean only this big,
+
+
+473
+00:24:38,416 --> 00:24:41,276
+it has this sort of
+translucency to it
+
+
+474
+00:24:41,346 --> 00:24:43,426
+but that would give her a
+sense of being very small.
+
+
+475
+00:24:43,426 --> 00:24:47,536
+So instead of going with the
+insect variety of shells,
+
+
+476
+00:24:47,536 --> 00:24:49,206
+we went with more
+of a crustacean look
+
+
+477
+00:24:49,546 --> 00:24:51,766
+because that would indicate
+a larger scale creature.
+
+
+478
+00:24:52,166 --> 00:24:55,046
+So we have these great images
+of her legs, of the shells,
+
+
+479
+00:24:56,066 --> 00:24:58,366
+and also these great
+batwings and the translucency
+
+
+480
+00:24:58,366 --> 00:24:59,696
+that we could get
+with the batwings.
+
+
+481
+00:24:59,696 --> 00:25:00,836
+All these things
+were thought about.
+
+
+482
+00:25:01,606 --> 00:25:05,756
+But with this photography-- with
+these images, I wasn't supposed
+
+
+483
+00:25:05,756 --> 00:25:09,496
+to take them and make a
+photorealistic character.
+
+
+484
+00:25:09,786 --> 00:25:13,816
+The goal at Pixar is never to
+go with just loads and loads
+
+
+485
+00:25:13,816 --> 00:25:16,186
+of detail and just make
+it look like a creature
+
+
+486
+00:25:16,446 --> 00:25:19,246
+because we've hit this area
+called "Uncanny Valley".
+
+
+487
+00:25:19,246 --> 00:25:22,136
+It's something we try to avoid
+very much where you've added
+
+
+488
+00:25:22,136 --> 00:25:25,736
+so much detail that it
+looks too realistic.
+
+
+489
+00:25:26,156 --> 00:25:30,126
+And at Pixar, we want to find
+the essence of these designs.
+
+
+490
+00:25:30,126 --> 00:25:32,366
+We want to boil it down
+to its simplest idea
+
+
+491
+00:25:32,366 --> 00:25:34,576
+and then really pull
+that idea out.
+
+
+492
+00:25:34,806 --> 00:25:36,926
+And so with all these
+photography, I was supposed
+
+
+493
+00:25:36,926 --> 00:25:39,326
+to take inspiration
+but not copy exactly.
+
+
+494
+00:25:39,676 --> 00:25:42,166
+I was supposed to
+find that simple idea.
+
+
+495
+00:25:42,986 --> 00:25:44,786
+So, the next thing
+that we're going
+
+
+496
+00:25:44,786 --> 00:25:49,116
+to do is actually demonstrate
+the process of how I began
+
+
+497
+00:25:49,116 --> 00:25:50,776
+to paint this character
+on the computer.
+
+
+498
+00:25:50,776 --> 00:25:54,696
+Now, bear with me
+because this is, you know,
+
+
+499
+00:25:55,036 --> 00:25:56,906
+the new Mac Pro,
+it's unreleased.
+
+
+500
+00:25:56,906 --> 00:25:59,756
+We're running on an unreleased
+OS and the software, MARI,
+
+
+501
+00:25:59,756 --> 00:26:01,446
+has only been on the
+Mac for about six weeks.
+
+
+502
+00:26:01,446 --> 00:26:03,736
+So, what could possibly
+go wrong, right?
+
+
+503
+00:26:04,996 --> 00:26:06,706
+So it'll be exciting
+for me, hopefully,
+
+
+504
+00:26:06,706 --> 00:26:08,606
+exciting for you
+as well to do this.
+
+
+505
+00:26:08,716 --> 00:26:10,566
+So, all right.
+
+
+506
+00:26:11,486 --> 00:26:12,546
+So this is the new Mac Pro
+
+
+507
+00:26:12,546 --> 00:26:14,806
+and this is MARI running
+on the new Mac Pro.
+
+
+508
+00:26:14,806 --> 00:26:17,566
+And this is how I get the model
+from the modeling department.
+
+
+509
+00:26:17,566 --> 00:26:18,256
+It's gray.
+
+
+510
+00:26:18,256 --> 00:26:20,936
+It doesn't have any detail
+yet because it's my job
+
+
+511
+00:26:21,276 --> 00:26:22,726
+to add the detail
+to the character.
+
+
+512
+00:26:22,796 --> 00:26:25,266
+So I'm going to navigate around
+and you can see, you know,
+
+
+513
+00:26:25,266 --> 00:26:27,436
+this is a 3D model
+brought in to the computer.
+
+
+514
+00:26:28,326 --> 00:26:31,196
+And the first thing that I do
+when I'm creating a character,
+
+
+515
+00:26:31,196 --> 00:26:32,656
+when I'm starting to
+paint in the detail,
+
+
+516
+00:26:32,996 --> 00:26:34,916
+is I start with the big
+details and then I move
+
+
+517
+00:26:34,916 --> 00:26:36,226
+into the smaller details.
+
+
+518
+00:26:36,566 --> 00:26:39,106
+So for her, I'm going to start
+with the color and I'm going
+
+
+519
+00:26:39,106 --> 00:26:44,196
+to start with her base color,
+basically her flat base color.
+
+
+520
+00:26:44,196 --> 00:26:46,266
+So she's more of this
+color than anything else.
+
+
+521
+00:26:46,266 --> 00:26:47,306
+So this is where
+I'm going to start.
+
+
+522
+00:26:47,796 --> 00:26:50,576
+And the first big read that
+I got from that shader packet
+
+
+523
+00:26:50,606 --> 00:26:53,556
+that I showed you earlier
+is that her horns are sort
+
+
+524
+00:26:53,556 --> 00:26:55,316
+of different material
+than her face.
+
+
+525
+00:26:55,316 --> 00:26:57,486
+It's a darker shell.
+
+
+526
+00:26:57,766 --> 00:26:59,216
+And so, I'm going to
+paint in a little bit
+
+
+527
+00:26:59,216 --> 00:27:00,486
+of that variation first.
+
+
+528
+00:27:00,856 --> 00:27:03,376
+And I'm going to be a little
+bit rough and sloppy here
+
+
+529
+00:27:03,376 --> 00:27:06,356
+because I'm compressing
+a couple--
+
+
+530
+00:27:06,356 --> 00:27:08,736
+I would at least want to work on
+this character for a few weeks
+
+
+531
+00:27:08,736 --> 00:27:10,666
+and I'm going to compress
+that into about 15 minutes.
+
+
+532
+00:27:10,666 --> 00:27:15,126
+So I apologize if I'm a
+little bit sloppy with this.
+
+
+533
+00:27:15,696 --> 00:27:17,716
+So I'm grabbing a brush,
+and this is very similar
+
+
+534
+00:27:17,716 --> 00:27:19,456
+to a program like Photoshop
+where you have a bunch
+
+
+535
+00:27:19,456 --> 00:27:21,826
+of different brushes that
+can do different things.
+
+
+536
+00:27:22,236 --> 00:27:23,796
+And I'm just going to
+start painting right
+
+
+537
+00:27:23,796 --> 00:27:26,066
+onto this model if I can.
+
+
+538
+00:27:26,976 --> 00:27:27,506
+Let's see.
+
+
+539
+00:27:28,846 --> 00:27:30,836
+Again, live demo, I apologize.
+
+
+540
+00:27:32,376 --> 00:27:33,216
+All right, here we go.
+
+
+541
+00:27:33,956 --> 00:27:36,846
+So I'm painting straight onto
+this model and you can see
+
+
+542
+00:27:36,846 --> 00:27:38,266
+that it's, you know,
+accepting this paint
+
+
+543
+00:27:38,266 --> 00:27:40,416
+and I'm getting a nice
+gradient towards her horns.
+
+
+544
+00:27:41,036 --> 00:27:42,736
+I'm just trying to
+lay in, you know,
+
+
+545
+00:27:42,736 --> 00:27:44,586
+a nice amount of detail here.
+
+
+546
+00:27:45,436 --> 00:27:47,556
+I'm going to move the camera
+and that paint is going
+
+
+547
+00:27:47,556 --> 00:27:49,396
+to be dropped onto the model.
+
+
+548
+00:27:49,396 --> 00:27:50,936
+So you can see it's
+actually been projected
+
+
+549
+00:27:51,026 --> 00:27:51,806
+through the model here.
+
+
+550
+00:27:51,806 --> 00:27:56,996
+I'm just going to add a little
+bit more from this angle.
+
+
+551
+00:28:01,496 --> 00:28:03,786
+Then I'm going to go in and
+do a little bit more detail
+
+
+552
+00:28:03,816 --> 00:28:04,816
+on one of these horns.
+
+
+553
+00:28:04,816 --> 00:28:07,746
+Now, again, I'm trying
+to lay in some
+
+
+554
+00:28:07,746 --> 00:28:11,636
+of the bigger base details
+first and then I'll start moving
+
+
+555
+00:28:11,636 --> 00:28:12,796
+into the smaller details.
+
+
+556
+00:28:12,796 --> 00:28:15,016
+You never want to start
+with small details.
+
+
+557
+00:28:15,226 --> 00:28:16,456
+And any artist will
+tell you this,
+
+
+558
+00:28:16,456 --> 00:28:19,656
+"If you start painting the
+eyelashes before you've really,
+
+
+559
+00:28:19,656 --> 00:28:21,286
+you know, figured out
+the shape of the head,
+
+
+560
+00:28:21,826 --> 00:28:23,086
+you're doing something wrong."
+
+
+561
+00:28:23,086 --> 00:28:26,166
+So I'm starting with the
+big broad strokes first.
+
+
+562
+00:28:26,786 --> 00:28:29,496
+And this horn, if you remember
+that image from the lizard,
+
+
+563
+00:28:30,246 --> 00:28:32,876
+it had some really nice
+striations that kind
+
+
+564
+00:28:32,876 --> 00:28:34,386
+of ran along the horn.
+
+
+565
+00:28:34,386 --> 00:28:38,886
+And so, I'm going to start
+painting some of those in.
+
+
+566
+00:28:39,756 --> 00:28:42,766
+But I don't want to go-- I
+don't want to go too detailed.
+
+
+567
+00:28:42,766 --> 00:28:43,866
+I'm trying to keep this--
+
+
+568
+00:28:44,086 --> 00:28:47,696
+these shapes graphic
+and really strong here,
+
+
+569
+00:28:48,096 --> 00:28:51,696
+get that simple idea
+without going into, you know,
+
+
+570
+00:28:51,696 --> 00:28:53,946
+all those tiny little
+nitty-gritties.
+
+
+571
+00:28:56,336 --> 00:28:58,146
+So I'm just rotating
+this around.
+
+
+572
+00:28:58,496 --> 00:29:02,466
+Now, you'll notice that
+this feels very liquid.
+
+
+573
+00:29:02,466 --> 00:29:03,896
+It feels very smooth, right?
+
+
+574
+00:29:03,896 --> 00:29:06,166
+As I'm tumbling,
+it's so responsive.
+
+
+575
+00:29:06,166 --> 00:29:09,136
+And this really feels just
+like I've got an object,
+
+
+576
+00:29:09,296 --> 00:29:11,756
+a model in my hand and I'm just
+turning it and painting it.
+
+
+577
+00:29:11,876 --> 00:29:14,116
+And the way-- the reason that
+that's possible is two things.
+
+
+578
+00:29:14,116 --> 00:29:16,616
+First, MARI is very,
+very slick at allowing me
+
+
+579
+00:29:16,716 --> 00:29:17,706
+to see all these detail.
+
+
+580
+00:29:17,706 --> 00:29:20,086
+But secondly, it's
+really so responsive
+
+
+581
+00:29:20,086 --> 00:29:22,346
+because the hardware is
+supporting it is so well.
+
+
+582
+00:29:22,666 --> 00:29:26,036
+It's just-- you know, I forget
+that I'm painting on a computer
+
+
+583
+00:29:26,036 --> 00:29:27,496
+and it feels like I'm
+painting in real life
+
+
+584
+00:29:27,736 --> 00:29:30,706
+which is exactly what
+I want as an artist.
+
+
+585
+00:29:31,406 --> 00:29:32,676
+So I painted this first horn.
+
+
+586
+00:29:32,676 --> 00:29:35,046
+I'm relatively satisfied
+with it.
+
+
+587
+00:29:35,046 --> 00:29:37,776
+As with everything, as an
+artist, I'd want to sit here
+
+
+588
+00:29:37,776 --> 00:29:38,626
+and noodle it for an hour.
+
+
+589
+00:29:38,626 --> 00:29:41,006
+But I'm going to skip
+ahead, not bore you
+
+
+590
+00:29:41,006 --> 00:29:42,296
+with painting the
+rest of these horns.
+
+
+591
+00:29:42,296 --> 00:29:45,036
+So I'll just-- this is another
+layer here that shows you,
+
+
+592
+00:29:45,176 --> 00:29:47,546
+you know, the same treatment
+to all these other horns.
+
+
+593
+00:29:47,956 --> 00:29:51,976
+And now as I zoom back, you get
+that first pass at her color.
+
+
+594
+00:29:51,976 --> 00:29:53,566
+Like if you were to see
+her from this far away,
+
+
+595
+00:29:54,036 --> 00:29:54,776
+she looks pretty good.
+
+
+596
+00:29:54,776 --> 00:29:56,956
+This is the biggest
+read of the character.
+
+
+597
+00:29:56,956 --> 00:29:58,876
+But her skin is way
+too simple, right?
+
+
+598
+00:29:58,946 --> 00:30:01,966
+Every-- all skin
+has variety to it.
+
+
+599
+00:30:01,966 --> 00:30:03,596
+It has mottling and
+freckles and--
+
+
+600
+00:30:03,986 --> 00:30:06,686
+you know, even the most perfect
+person has a large amount
+
+
+601
+00:30:06,686 --> 00:30:07,936
+of variation in their skin.
+
+
+602
+00:30:08,396 --> 00:30:10,206
+If they look like this,
+they look like a mannequin.
+
+
+603
+00:30:10,206 --> 00:30:13,636
+So I'm going to start adding
+in some variety to her skin.
+
+
+604
+00:30:14,166 --> 00:30:18,136
+And I'm not-- you know, I
+don't want to go too far again
+
+
+605
+00:30:18,136 --> 00:30:19,566
+because I don't want to
+make her look grotesque.
+
+
+606
+00:30:20,236 --> 00:30:22,926
+But I want her to look--
+I want her to look old.
+
+
+607
+00:30:22,926 --> 00:30:26,646
+She needs to be sort of this
+figure of wisdom and authority.
+
+
+608
+00:30:27,106 --> 00:30:30,076
+And so, I need her to kind
+of feel like she's had some,
+
+
+609
+00:30:30,186 --> 00:30:32,106
+you know, had some years,
+had some experience.
+
+
+610
+00:30:32,526 --> 00:30:38,136
+Not exactly sure how quickly
+lizard, centipede, bats age,
+
+
+611
+00:30:38,806 --> 00:30:42,356
+but, you know, she's got to
+look a little bit lived-in.
+
+
+612
+00:30:42,546 --> 00:30:47,166
+So I'm just going to add in some
+basic variety to her skin here.
+
+
+613
+00:30:48,336 --> 00:30:49,596
+You know, MARI comes
+with these, you know,
+
+
+614
+00:30:49,596 --> 00:30:51,746
+a lot of really great brushes
+that I can kind of start with
+
+
+615
+00:30:51,746 --> 00:30:53,886
+and lay on some detail.
+
+
+616
+00:30:58,326 --> 00:31:00,356
+Add some freckles, a
+little bit of darkening.
+
+
+617
+00:31:00,666 --> 00:31:01,966
+And I can put some stuff on
+
+
+618
+00:31:01,966 --> 00:31:04,386
+and then pull it off
+if I've gone too far.
+
+
+619
+00:31:05,326 --> 00:31:05,696
+That's nice.
+
+
+620
+00:31:10,776 --> 00:31:13,926
+Paint some freckles in
+the back of her neck here.
+
+
+621
+00:31:15,116 --> 00:31:17,686
+It's always interesting,
+the back of people's arms,
+
+
+622
+00:31:17,686 --> 00:31:19,696
+the back of people's necks
+always get a little bit dark
+
+
+623
+00:31:19,696 --> 00:31:20,906
+and I'm not sure if
+that's because of--
+
+
+624
+00:31:20,906 --> 00:31:23,196
+you know, that you just
+get more sun there,
+
+
+625
+00:31:23,246 --> 00:31:25,676
+if the skin is a bit
+more aged in those areas,
+
+
+626
+00:31:25,716 --> 00:31:26,886
+but it always seems that way.
+
+
+627
+00:31:27,826 --> 00:31:29,906
+It's one of those
+things you start staring
+
+
+628
+00:31:29,906 --> 00:31:33,876
+at people differently when
+you've been painting, you know?
+
+
+629
+00:31:33,876 --> 00:31:36,566
+And on creatures and humans
+and characters for a long time,
+
+
+630
+00:31:36,566 --> 00:31:38,116
+you just-- you're
+staring at someone's--
+
+
+631
+00:31:38,196 --> 00:31:40,106
+you know, the back of their
+leg for whatever reason
+
+
+632
+00:31:40,106 --> 00:31:42,056
+and they're thinking, you
+know, "What's he doing?
+
+
+633
+00:31:42,056 --> 00:31:42,976
+Why is he looking at me?"
+
+
+634
+00:31:42,976 --> 00:31:45,136
+And it's just because there's
+this really cool vein doing this
+
+
+635
+00:31:45,136 --> 00:31:45,906
+really cool thing.
+
+
+636
+00:31:46,556 --> 00:31:49,526
+And it's not, you know, I'm
+not trying to be insulting,
+
+
+637
+00:31:49,526 --> 00:31:51,476
+it's just that I'm
+fascinated by it, right?
+
+
+638
+00:31:52,166 --> 00:31:53,936
+Because I'm going to use it to--
+
+
+639
+00:31:53,936 --> 00:31:55,756
+on the next day when I'm
+painting this character.
+
+
+640
+00:31:55,876 --> 00:31:57,226
+So, anyway.
+
+
+641
+00:31:57,676 --> 00:32:00,276
+I hope I haven't
+offended too many people.
+
+
+642
+00:32:01,916 --> 00:32:04,956
+Anyway, so I'm OK with
+where she is right now.
+
+
+643
+00:32:04,956 --> 00:32:05,936
+And I want to talk a little bit
+
+
+644
+00:32:05,936 --> 00:32:08,196
+about how MARI is
+storing this data.
+
+
+645
+00:32:08,526 --> 00:32:10,736
+You know, Jack gave you
+a really great overview
+
+
+646
+00:32:10,736 --> 00:32:12,426
+of what MARI does, and we're
+going to get in a little bit
+
+
+647
+00:32:12,426 --> 00:32:14,326
+into the nuts and bolts
+as I'm demonstrating here
+
+
+648
+00:32:14,826 --> 00:32:16,166
+without being too technical
+
+
+649
+00:32:16,166 --> 00:32:18,096
+because I don't really
+understand all the nuts
+
+
+650
+00:32:18,096 --> 00:32:18,756
+and bolts.
+
+
+651
+00:32:20,356 --> 00:32:21,846
+So you can see what
+I've been painting
+
+
+652
+00:32:21,846 --> 00:32:24,956
+on the left side is mirrored
+over here on the right side.
+
+
+653
+00:32:24,956 --> 00:32:27,906
+And what we're looking
+at here is a series
+
+
+654
+00:32:27,906 --> 00:32:29,886
+of slightly disturbing images
+
+
+655
+00:32:30,296 --> 00:32:35,256
+where the character has been
+flattened out or kind of pelted
+
+
+656
+00:32:35,256 --> 00:32:36,956
+into these tiles, right?
+
+
+657
+00:32:36,956 --> 00:32:38,716
+And what these tiles represent,
+
+
+658
+00:32:38,716 --> 00:32:41,436
+each one represents
+a single color image,
+
+
+659
+00:32:41,526 --> 00:32:43,276
+just like an image you
+would take on your phone.
+
+
+660
+00:32:43,836 --> 00:32:46,746
+And these images keep
+all of that color data
+
+
+661
+00:32:46,746 --> 00:32:47,486
+that I've been painting.
+
+
+662
+00:32:47,486 --> 00:32:48,506
+And they can be scaled
+
+
+663
+00:32:48,946 --> 00:32:50,906
+to whatever amount
+of detail you need.
+
+
+664
+00:32:50,906 --> 00:32:54,426
+So for a video game, they'd be
+down at like 256 pixel squared
+
+
+665
+00:32:54,766 --> 00:32:55,516
+which is pretty small.
+
+
+666
+00:32:55,916 --> 00:32:57,226
+But for a feature film,
+
+
+667
+00:32:57,696 --> 00:32:59,876
+you never know how much
+detail you're going to need.
+
+
+668
+00:33:00,076 --> 00:33:04,226
+So these are actually 8,000
+pixels by 8,000 pixels.
+
+
+669
+00:33:04,846 --> 00:33:08,556
+That's 33 times bigger
+than an HD frame
+
+
+670
+00:33:08,556 --> 00:33:09,876
+from a movie, all right?
+
+
+671
+00:33:10,306 --> 00:33:12,556
+But the reason you need that
+is because you never know
+
+
+672
+00:33:12,556 --> 00:33:14,546
+if the character is going to
+walk right past the camera
+
+
+673
+00:33:14,876 --> 00:33:16,726
+and we're going to
+see all of this detail
+
+
+674
+00:33:16,726 --> 00:33:18,296
+on one of these legs, right?
+
+
+675
+00:33:18,346 --> 00:33:19,566
+And that actually
+happened in the film.
+
+
+676
+00:33:19,566 --> 00:33:21,626
+She walks right past the camera.
+
+
+677
+00:33:21,626 --> 00:33:25,066
+So we really need this level
+of fidelity to make sure
+
+
+678
+00:33:25,066 --> 00:33:28,596
+that she holds up in any
+situation that she shows up in.
+
+
+679
+00:33:28,676 --> 00:33:31,206
+So, the next thing I'm going
+to do and the reason why I came
+
+
+680
+00:33:31,206 --> 00:33:34,956
+into this view is to show you
+how I would paint her makeup.
+
+
+681
+00:33:34,956 --> 00:33:37,146
+And I painted on
+the flat version
+
+
+682
+00:33:37,146 --> 00:33:38,566
+because it's a little
+bit easier than trying
+
+
+683
+00:33:38,566 --> 00:33:39,816
+to work around the 3D shape.
+
+
+684
+00:33:40,136 --> 00:33:41,186
+But as I paint on the right,
+
+
+685
+00:33:41,186 --> 00:33:42,656
+you'll see that it
+updates on the left.
+
+
+686
+00:33:43,576 --> 00:33:45,826
+So I'm going to grab this
+great eye shadow color.
+
+
+687
+00:33:45,826 --> 00:33:49,896
+Now, a couple of weeks
+ago, we had the wrap party
+
+
+688
+00:33:49,896 --> 00:33:53,546
+where the movie is-- the movie
+is finished and we all go
+
+
+689
+00:33:53,546 --> 00:33:55,346
+to see it for the first
+time and we dress up.
+
+
+690
+00:33:55,346 --> 00:33:57,666
+And my wife usually gets her
+makeup professionally done.
+
+
+691
+00:33:57,666 --> 00:34:00,496
+But I told her, "Honey, I
+painted makeup before, you know.
+
+
+692
+00:34:00,496 --> 00:34:02,226
+I do it for work.
+
+
+693
+00:34:02,526 --> 00:34:03,906
+It's not a big deal.
+
+
+694
+00:34:03,906 --> 00:34:04,936
+I can handle it."
+
+
+695
+00:34:05,176 --> 00:34:08,056
+So, I painted her makeup,
+I painted her eye shadow.
+
+
+696
+00:34:08,056 --> 00:34:09,706
+I thought it looked
+great, you know?
+
+
+697
+00:34:10,065 --> 00:34:11,286
+I thought I did this great job.
+
+
+698
+00:34:11,286 --> 00:34:15,545
+She looks in the mirror, was
+not pleased with my efforts.
+
+
+699
+00:34:15,545 --> 00:34:18,946
+So, we ended up being about
+half an hour late to the movie.
+
+
+700
+00:34:19,826 --> 00:34:20,846
+Well we made it before
+the movie.
+
+
+701
+00:34:20,846 --> 00:34:21,976
+We're half an hour
+late to the party.
+
+
+702
+00:34:22,176 --> 00:34:23,556
+So we made it for
+the important part,
+
+
+703
+00:34:23,656 --> 00:34:26,755
+but I doubt she'll trust me to
+do her makeup again after that.
+
+
+704
+00:34:27,676 --> 00:34:28,946
+I guess, you know, painting
+
+
+705
+00:34:28,946 --> 00:34:31,275
+on monsters doesn't
+necessarily transfer directly
+
+
+706
+00:34:31,275 --> 00:34:33,516
+over to painting on humans.
+
+
+707
+00:34:34,585 --> 00:34:35,386
+Would never have guessed.
+
+
+708
+00:34:35,696 --> 00:34:38,036
+Anyway, so I'm painting
+this sweet purple eye shadow
+
+
+709
+00:34:38,036 --> 00:34:38,856
+onto this character.
+
+
+710
+00:34:39,136 --> 00:34:40,485
+And you can see,
+again, as I'm painting
+
+
+711
+00:34:40,485 --> 00:34:41,806
+on the right it's
+updating on the left.
+
+
+712
+00:34:42,166 --> 00:34:48,456
+And-- So what we've got
+here is basically two views
+
+
+713
+00:34:48,456 --> 00:34:49,196
+of the same thing.
+
+
+714
+00:34:49,916 --> 00:34:52,436
+So now I've done that, I'm
+going to just go ahead and visit
+
+
+715
+00:34:52,436 --> 00:34:54,496
+on the other side of--
+I've got another layer
+
+
+716
+00:34:54,496 --> 00:34:56,906
+that has her makeup
+on the other side.
+
+
+717
+00:34:56,976 --> 00:34:59,406
+I always forget character
+right or my right.
+
+
+718
+00:35:00,986 --> 00:35:03,446
+Guess-- I guessed right, great.
+
+
+719
+00:35:03,686 --> 00:35:05,006
+I'm not even going to
+bother with her lipstick.
+
+
+720
+00:35:05,006 --> 00:35:06,066
+Painting lipstick for me is
+
+
+721
+00:35:06,066 --> 00:35:08,066
+like when your four-year-old
+daughter tries
+
+
+722
+00:35:08,066 --> 00:35:09,516
+to paint her lipstick
+for the first time,
+
+
+723
+00:35:09,956 --> 00:35:11,406
+I've never gotten past
+
+
+724
+00:35:11,406 --> 00:35:13,186
+that because I just
+don't do it often enough.
+
+
+725
+00:35:13,846 --> 00:35:15,846
+Anyway, so we've
+got her makeup done,
+
+
+726
+00:35:15,846 --> 00:35:17,376
+and her skin color looks good.
+
+
+727
+00:35:17,666 --> 00:35:20,276
+But it's still lacking
+some that detail
+
+
+728
+00:35:20,276 --> 00:35:21,366
+that we saw from the packet.
+
+
+729
+00:35:21,406 --> 00:35:23,196
+Now, this is the color channel
+
+
+730
+00:35:23,196 --> 00:35:25,396
+and I've got some nice
+variety to her color.
+
+
+731
+00:35:25,846 --> 00:35:29,026
+But with every character
+in a 3D film,
+
+
+732
+00:35:29,426 --> 00:35:32,076
+there are multiple channels
+that define different parts
+
+
+733
+00:35:32,076 --> 00:35:33,326
+of what the character
+looks like.
+
+
+734
+00:35:33,646 --> 00:35:35,196
+So this is the slide
+from the shader packet
+
+
+735
+00:35:35,236 --> 00:35:37,916
+that shows me what the
+characters look like,
+
+
+736
+00:35:37,986 --> 00:35:39,866
+what the character's face
+looks like in more detail.
+
+
+737
+00:35:39,866 --> 00:35:42,396
+And there's some really
+graphic shapes to her wrinkles
+
+
+738
+00:35:42,786 --> 00:35:46,346
+and to the, you know,
+the shape of her face,
+
+
+739
+00:35:46,346 --> 00:35:47,456
+more than just the color.
+
+
+740
+00:35:47,966 --> 00:35:50,476
+And so we would actually paint
+that on a separate channel.
+
+
+741
+00:35:50,476 --> 00:35:53,486
+It would be on what we call the
+bump or the displacement map.
+
+
+742
+00:35:53,636 --> 00:35:56,056
+And that's a grayscale
+channel that defines
+
+
+743
+00:35:56,306 --> 00:35:58,366
+where the wrinkles go in
+and where things bump out.
+
+
+744
+00:35:58,776 --> 00:36:01,686
+And so, I'm going to show you
+how I would do that over here.
+
+
+745
+00:36:04,676 --> 00:36:06,986
+So, here we're starting with a
+color and I'm going to switch
+
+
+746
+00:36:06,986 --> 00:36:09,196
+over to the bump channel.
+
+
+747
+00:36:09,816 --> 00:36:11,976
+It starts out with this--
+
+
+748
+00:36:12,176 --> 00:36:14,176
+you know, just this
+gray solid image.
+
+
+749
+00:36:14,286 --> 00:36:18,276
+And the first thing I'm going
+to do is flood in some texture,
+
+
+750
+00:36:18,316 --> 00:36:22,366
+flood in just this
+basic leather variety.
+
+
+751
+00:36:22,366 --> 00:36:25,756
+Now, it looks good but it
+doesn't have the specificity
+
+
+752
+00:36:25,756 --> 00:36:29,176
+that we'd really want for this
+character to match that artwork,
+
+
+753
+00:36:29,176 --> 00:36:30,086
+that beautiful artwork.
+
+
+754
+00:36:31,506 --> 00:36:34,966
+So the first thing that I'm
+going to do is actually bring
+
+
+755
+00:36:34,966 --> 00:36:36,166
+in a picture of an elephant.
+
+
+756
+00:36:36,296 --> 00:36:39,246
+So this is the side of an
+elephant as you can see.
+
+
+757
+00:36:40,116 --> 00:36:43,756
+And I'm actually going to
+use that to paint through
+
+
+758
+00:36:43,756 --> 00:36:46,816
+and get some wrinkles on the
+surface of this character.
+
+
+759
+00:36:46,816 --> 00:36:48,026
+So I'm going to start
+with her eye.
+
+
+760
+00:36:49,196 --> 00:36:52,936
+And I'm trying to find the right
+angle to paint through because
+
+
+761
+00:36:53,296 --> 00:36:55,626
+with wrinkles, if you look at
+some with really wrinkly skin,
+
+
+762
+00:36:55,626 --> 00:36:57,376
+none of the wrinkles
+are arbitrary.
+
+
+763
+00:36:57,376 --> 00:37:01,216
+All of them flow exactly
+where the skin would fold
+
+
+764
+00:37:01,216 --> 00:37:02,366
+and compress over time.
+
+
+765
+00:37:02,966 --> 00:37:05,516
+And so, I can't just
+paint these willy-nilly.
+
+
+766
+00:37:05,516 --> 00:37:06,656
+I have to really make sure
+
+
+767
+00:37:06,656 --> 00:37:09,906
+that they are feeling what we
+would call motivated, right?
+
+
+768
+00:37:09,946 --> 00:37:12,666
+That they would be--
+they would be naturally
+
+
+769
+00:37:12,666 --> 00:37:14,216
+where the character
+would be wrinkling.
+
+
+770
+00:37:14,216 --> 00:37:15,846
+Now, this is obviously
+a made up character.
+
+
+771
+00:37:15,846 --> 00:37:18,236
+But the character still has
+to feel believable, right?
+
+
+772
+00:37:18,296 --> 00:37:20,726
+If this character
+creature were to exist,
+
+
+773
+00:37:21,366 --> 00:37:22,726
+how would she wrinkle
+in her face?
+
+
+774
+00:37:22,956 --> 00:37:25,086
+So, I'm good with these.
+
+
+775
+00:37:25,216 --> 00:37:26,716
+I'm going to zoom out.
+
+
+776
+00:37:26,716 --> 00:37:27,456
+And this is one of my--
+
+
+777
+00:37:28,016 --> 00:37:30,526
+it's really one of my
+favorite features in MARI
+
+
+778
+00:37:30,576 --> 00:37:34,166
+because I can get so much detail
+so rapidly onto the character.
+
+
+779
+00:37:34,596 --> 00:37:36,396
+And so I'm just going to paint
+some of these wrinkles in.
+
+
+780
+00:37:36,396 --> 00:37:38,486
+And again, since this is
+the black and white map,
+
+
+781
+00:37:38,936 --> 00:37:40,436
+it's really hard to tell
+it how this is going
+
+
+782
+00:37:40,436 --> 00:37:42,216
+to affect the final
+look of the character.
+
+
+783
+00:37:42,506 --> 00:37:43,706
+And I'll get more
+into that later.
+
+
+784
+00:37:43,766 --> 00:37:46,286
+But this is, you know,
+this is where we start
+
+
+785
+00:37:46,366 --> 00:37:49,156
+from in getting a lot
+of this detail in.
+
+
+786
+00:37:49,386 --> 00:37:51,596
+There's this great spot on
+the texture that looks just
+
+
+787
+00:37:51,596 --> 00:37:54,136
+like forehead, if I can find it.
+
+
+788
+00:37:54,916 --> 00:37:56,586
+Right about-- I'm upside down.
+
+
+789
+00:37:56,756 --> 00:37:57,716
+There we go.
+
+
+790
+00:38:02,546 --> 00:38:04,656
+So the next image that I'm
+actually going to pull in came
+
+
+791
+00:38:04,656 --> 00:38:06,486
+from a picture that
+I took on my iPhone
+
+
+792
+00:38:06,486 --> 00:38:07,676
+from the Pixar parking lot.
+
+
+793
+00:38:07,676 --> 00:38:08,756
+There are these trees there.
+
+
+794
+00:38:09,086 --> 00:38:11,036
+You can the tire of
+my car over here.
+
+
+795
+00:38:11,996 --> 00:38:15,746
+These trees there that spray sap
+in all the cars for some reason,
+
+
+796
+00:38:15,876 --> 00:38:17,476
+and I'm not sure, you know, why.
+
+
+797
+00:38:17,476 --> 00:38:21,196
+But I was walking into work and
+I saw the texture on the side
+
+
+798
+00:38:21,196 --> 00:38:23,036
+and I just stared at it,
+like, you know, weirdo.
+
+
+799
+00:38:23,186 --> 00:38:23,756
+I'm like, wow.
+
+
+800
+00:38:24,426 --> 00:38:25,616
+That texture looks really cool.
+
+
+801
+00:38:25,616 --> 00:38:26,726
+I'm not sure what I'm
+going to use it for.
+
+
+802
+00:38:26,726 --> 00:38:29,596
+So I took the picture and then
+I realized it was actually this
+
+
+803
+00:38:29,646 --> 00:38:33,816
+really perfect way to transition
+from the organic leather
+
+
+804
+00:38:33,816 --> 00:38:36,466
+on the front of her face
+to the more hardened shells
+
+
+805
+00:38:36,466 --> 00:38:37,336
+on the side of her head.
+
+
+806
+00:38:37,686 --> 00:38:40,666
+So, I really loved it for
+that particular purpose.
+
+
+807
+00:38:40,666 --> 00:38:41,926
+Though when I took the
+picture, I had no idea
+
+
+808
+00:38:41,926 --> 00:38:45,086
+when I was going to use it.
+
+
+809
+00:38:45,266 --> 00:38:48,706
+Again, I'm trying to get sort
+of this material transition
+
+
+810
+00:38:48,706 --> 00:38:51,136
+because we're talking about
+two different textures here.
+
+
+811
+00:38:53,456 --> 00:38:54,786
+This, again, is one
+of my favorite parts
+
+
+812
+00:38:54,786 --> 00:38:58,466
+because I can really paint in
+as much detail as I would like.
+
+
+813
+00:38:59,196 --> 00:39:02,706
+Now, so we've got these shapes
+and it's starting to feel good
+
+
+814
+00:39:02,706 --> 00:39:04,466
+but it's still in the realm
+
+
+815
+00:39:04,466 --> 00:39:06,886
+of being a bit too
+photorealistic, right?
+
+
+816
+00:39:06,926 --> 00:39:10,036
+We could be moving into Uncanny
+Valley here if I'm not careful
+
+
+817
+00:39:10,236 --> 00:39:12,616
+with all of this photo
+detail that I'm using.
+
+
+818
+00:39:12,616 --> 00:39:16,296
+And so, the next thing that
+I would do is actually start
+
+
+819
+00:39:16,296 --> 00:39:20,146
+to paint on top of this
+to really nail the details
+
+
+820
+00:39:20,146 --> 00:39:23,276
+down the way that-- the way
+that it was in the art packet.
+
+
+821
+00:39:24,836 --> 00:39:27,126
+So, let's see.
+
+
+822
+00:39:27,486 --> 00:39:31,176
+I remember from the packet there
+were these really graphic shapes
+
+
+823
+00:39:31,176 --> 00:39:31,876
+around her eyes.
+
+
+824
+00:39:31,876 --> 00:39:33,276
+I'm going to try
+and pull those out.
+
+
+825
+00:39:33,666 --> 00:39:35,986
+Again, like I said, I'm
+going pretty darn fast here.
+
+
+826
+00:39:35,986 --> 00:39:43,716
+So, I apologize I'm being a
+bit sloppy in how I do this.
+
+
+827
+00:39:43,936 --> 00:39:46,116
+Once I've painted kind
+of on top of this,
+
+
+828
+00:39:46,116 --> 00:39:48,926
+it starts to make
+it feel more graphic
+
+
+829
+00:39:48,926 --> 00:39:51,836
+and make it feel a
+bit more painterly
+
+
+830
+00:39:51,836 --> 00:39:53,946
+and less creature-shop.
+
+
+831
+00:39:54,636 --> 00:39:58,556
+I'm just trying to get
+in some of these folds.
+
+
+832
+00:39:59,366 --> 00:40:02,936
+I'm going to get some
+great crow's feet
+
+
+833
+00:40:02,936 --> 00:40:03,556
+on the side of her face.
+
+
+834
+00:40:03,866 --> 00:40:06,096
+It's funny because, shaders,
+we always love to work
+
+
+835
+00:40:06,096 --> 00:40:09,396
+on old characters because their
+faces really tell a story.
+
+
+836
+00:40:10,306 --> 00:40:13,176
+You can see, you know, the most
+common expression a person has
+
+
+837
+00:40:13,176 --> 00:40:13,986
+had for their whole life.
+
+
+838
+00:40:14,616 --> 00:40:17,346
+You know, if you frown a
+lot, those lines are kind
+
+
+839
+00:40:17,346 --> 00:40:19,206
+of etched permanently
+into your face.
+
+
+840
+00:40:19,846 --> 00:40:23,186
+And with older characters,
+I actually get to take part
+
+
+841
+00:40:23,186 --> 00:40:25,886
+in telling the story by what
+the character looks like.
+
+
+842
+00:40:26,006 --> 00:40:29,816
+And that was-- you know, my goal
+here is I-- with Hardscrabble,
+
+
+843
+00:40:29,816 --> 00:40:33,386
+I really wanted her to look
+as good as this character was,
+
+
+844
+00:40:33,386 --> 00:40:35,046
+I mean, because she's
+such an awesome character
+
+
+845
+00:40:35,046 --> 00:40:38,596
+and I really wanted to take
+part in telling that story
+
+
+846
+00:40:38,596 --> 00:40:41,456
+and make her look visually
+as cool as I possibly could.
+
+
+847
+00:40:42,106 --> 00:40:45,546
+So this is good enough for
+now, a good starting point.
+
+
+848
+00:40:45,546 --> 00:40:47,906
+So I've painted into
+this bump channel.
+
+
+849
+00:40:48,566 --> 00:40:52,056
+And I can actually take
+that channel and start
+
+
+850
+00:40:52,056 --> 00:40:53,466
+to use it in the color.
+
+
+851
+00:40:53,466 --> 00:40:55,636
+So when I visit that
+channel here,
+
+
+852
+00:40:55,636 --> 00:40:57,786
+I can multiply the color
+just like in Photoshop.
+
+
+853
+00:40:58,106 --> 00:41:00,276
+And we can start to see how
+it will affect the final look
+
+
+854
+00:41:00,276 --> 00:41:00,836
+of the character.
+
+
+855
+00:41:01,286 --> 00:41:02,636
+But there's a whole
+lot of other channels
+
+
+856
+00:41:02,666 --> 00:41:05,716
+that are needed for
+the final look.
+
+
+857
+00:41:05,896 --> 00:41:07,626
+The first is the
+specular channel.
+
+
+858
+00:41:07,626 --> 00:41:10,306
+What this is, and I'm not going
+to bother painting it today,
+
+
+859
+00:41:10,776 --> 00:41:14,976
+what this is, is it's showing
+where the shininess is,
+
+
+860
+00:41:14,976 --> 00:41:16,076
+if that makes any sense.
+
+
+861
+00:41:16,076 --> 00:41:17,186
+It's showing what
+parts are going
+
+
+862
+00:41:17,186 --> 00:41:18,866
+to be shinier than other parts.
+
+
+863
+00:41:19,276 --> 00:41:21,456
+And then the roughness channel,
+which makes it even less sense,
+
+
+864
+00:41:21,456 --> 00:41:23,386
+is showing how glossy
+
+
+865
+00:41:23,386 --> 00:41:26,206
+or how rough those specular
+highlights are going to be.
+
+
+866
+00:41:26,966 --> 00:41:30,496
+Now, as an artist, these
+things don't make a whole lot
+
+
+867
+00:41:30,496 --> 00:41:31,476
+of sense to me visually.
+
+
+868
+00:41:31,476 --> 00:41:33,316
+I look at this gray
+and I'm like, "OK.
+
+
+869
+00:41:33,976 --> 00:41:35,636
+What does that mean, right?
+
+
+870
+00:41:35,636 --> 00:41:36,496
+Her eyes are black.
+
+
+871
+00:41:36,496 --> 00:41:39,566
+Her lips are a slightly
+darker gray than her skin.
+
+
+872
+00:41:39,606 --> 00:41:40,856
+Her color is this other gray.
+
+
+873
+00:41:41,266 --> 00:41:44,506
+I don't know how that
+affects the final look."
+
+
+874
+00:41:44,506 --> 00:41:47,076
+And before a program like
+MARI, I would have to load
+
+
+875
+00:41:47,076 --> 00:41:49,516
+up these channels as
+individual flattened images
+
+
+876
+00:41:49,796 --> 00:41:51,016
+in a program like Photoshop.
+
+
+877
+00:41:51,356 --> 00:41:54,956
+I'd paint the gray her of her
+lips and hope that it was going
+
+
+878
+00:41:54,956 --> 00:41:57,116
+to be the right shade of gray.
+
+
+879
+00:41:57,116 --> 00:41:58,866
+And then I'd kick off a render,
+
+
+880
+00:41:58,996 --> 00:42:01,856
+and that render would take
+anywhere from two minutes
+
+
+881
+00:42:01,856 --> 00:42:05,016
+for a really kind of
+inexpensive render
+
+
+882
+00:42:05,016 --> 00:42:07,306
+that shows me a vague idea
+of what it's going to look
+
+
+883
+00:42:07,306 --> 00:42:11,036
+like to a full 12-hour render if
+I'm going into the actual shot
+
+
+884
+00:42:11,036 --> 00:42:13,166
+from the film with all of the
+lighting and all the bells
+
+
+885
+00:42:13,166 --> 00:42:14,046
+and whistles turned on.
+
+
+886
+00:42:14,506 --> 00:42:17,156
+So if I really wanted to see
+how her lips looked in the shot,
+
+
+887
+00:42:17,586 --> 00:42:19,786
+I would need to wait up
+to 12 hours to see that.
+
+
+888
+00:42:19,786 --> 00:42:21,076
+And so, I'd paint my gray.
+
+
+889
+00:42:21,656 --> 00:42:22,766
+I'd save the image.
+
+
+890
+00:42:22,766 --> 00:42:23,856
+I'd kick off the renders.
+
+
+891
+00:42:24,586 --> 00:42:25,326
+And I would wait.
+
+
+892
+00:42:25,326 --> 00:42:27,556
+And then I get to render
+back and I go like, "OK,
+
+
+893
+00:42:27,556 --> 00:42:30,146
+her lips are too
+glossy," so I'd go back.
+
+
+894
+00:42:30,176 --> 00:42:32,016
+I'd paint a slightly
+darker gray.
+
+
+895
+00:42:32,416 --> 00:42:34,816
+And then I'd send it and then
+I'd realize I'd gone the wrong
+
+
+896
+00:42:34,816 --> 00:42:36,886
+direction, and now her
+lips are even shinier.
+
+
+897
+00:42:37,136 --> 00:42:38,726
+And I'd wait another
+12 hours, right?
+
+
+898
+00:42:38,726 --> 00:42:39,806
+So, you can see how
+
+
+899
+00:42:39,806 --> 00:42:42,906
+that iteration could completely
+kill the creative process.
+
+
+900
+00:42:43,326 --> 00:42:45,776
+What MARI allows us to do
+is it allows us to take all
+
+
+901
+00:42:45,776 --> 00:42:49,376
+of these separate kind
+of nonsensical channels
+
+
+902
+00:42:49,786 --> 00:42:53,166
+and create a shader that we can
+actually preview in real time
+
+
+903
+00:42:53,496 --> 00:42:56,186
+that lets us look at
+what the final look
+
+
+904
+00:42:56,186 --> 00:42:58,656
+of the character is going to
+be in that finished render.
+
+
+905
+00:42:59,366 --> 00:43:02,276
+And instead of waiting for
+anywhere from 2 minutes
+
+
+906
+00:43:02,306 --> 00:43:06,356
+to 12 hours, we can see that
+at 60 frames per second.
+
+
+907
+00:43:07,186 --> 00:43:09,036
+So I'm going to switch
+over to her shader
+
+
+908
+00:43:10,116 --> 00:43:11,006
+and turn on the lighting.
+
+
+909
+00:43:11,776 --> 00:43:14,616
+And you can see here
+how now we've got all
+
+
+910
+00:43:14,616 --> 00:43:15,506
+of those different channels
+
+
+911
+00:43:15,506 --> 00:43:17,726
+that I've painted
+working at the same time.
+
+
+912
+00:43:18,166 --> 00:43:20,606
+We've got those bumps that I
+just painted, those wrinkles.
+
+
+913
+00:43:21,246 --> 00:43:22,136
+We've got the color.
+
+
+914
+00:43:22,136 --> 00:43:25,366
+And then the shininess, you
+can see how her eyelid is much
+
+
+915
+00:43:25,476 --> 00:43:28,036
+shinier than the
+rest of her skin.
+
+
+916
+00:43:28,036 --> 00:43:30,986
+And this is, you know, this
+is possible, you know, again,
+
+
+917
+00:43:30,986 --> 00:43:32,926
+through the hardware and the
+software working together
+
+
+918
+00:43:32,926 --> 00:43:33,826
+to give us this image.
+
+
+919
+00:43:34,366 --> 00:43:37,736
+And if you think about it,
+remember how I said that each
+
+
+920
+00:43:37,736 --> 00:43:40,626
+of those frames was
+8,000 pixel squared.
+
+
+921
+00:43:40,946 --> 00:43:43,516
+Well there's nine of those
+for every single channel.
+
+
+922
+00:43:43,676 --> 00:43:45,916
+So for one channel,
+the color channel,
+
+
+923
+00:43:45,916 --> 00:43:49,366
+that's 600 million
+pixels, all right,
+
+
+924
+00:43:49,486 --> 00:43:52,136
+600 million points
+of image data.
+
+
+925
+00:43:53,386 --> 00:43:56,506
+Now we're looking at four
+channels simultaneously which is
+
+
+926
+00:43:56,586 --> 00:44:00,106
+about 2.4 billion
+pixels, all right?
+
+
+927
+00:44:00,666 --> 00:44:02,146
+That is a vast amount of data.
+
+
+928
+00:44:02,146 --> 00:44:04,756
+That's 10 gigabytes
+of image data.
+
+
+929
+00:44:05,196 --> 00:44:07,996
+And MARI is letting us
+preview that all in real time
+
+
+930
+00:44:08,496 --> 00:44:10,646
+and it's running so
+smoothly on this hardware.
+
+
+931
+00:44:10,726 --> 00:44:14,536
+I've been working on MARI for
+about two or three years now
+
+
+932
+00:44:14,576 --> 00:44:16,156
+and I've never seen
+it run smoother
+
+
+933
+00:44:16,236 --> 00:44:17,776
+than it does on the new Mac Pro.
+
+
+934
+00:44:17,966 --> 00:44:20,626
+By the way, so I've been
+working on this for a couple
+
+
+935
+00:44:20,626 --> 00:44:22,976
+of weeks now and it's
+been in this giant box.
+
+
+936
+00:44:23,126 --> 00:44:26,816
+I had no idea what it looked
+like until yesterday, all right?
+
+
+937
+00:44:26,886 --> 00:44:27,296
+No idea.
+
+
+938
+00:44:28,016 --> 00:44:29,606
+[ Applause ]
+
+
+939
+00:44:29,606 --> 00:44:33,666
+The funny thing was it could've
+been the size of a mini fridge.
+
+
+940
+00:44:33,696 --> 00:44:34,846
+I had no idea.
+
+
+941
+00:44:34,986 --> 00:44:35,856
+Or an iPhone.
+
+
+942
+00:44:35,856 --> 00:44:37,676
+We were thinking it was this
+floating sphere, you know.
+
+
+943
+00:44:37,796 --> 00:44:38,596
+I had no idea.
+
+
+944
+00:44:38,596 --> 00:44:40,986
+But I just knew that it
+was running really well.
+
+
+945
+00:44:40,986 --> 00:44:43,006
+I just had no idea it was
+inside this mystery box.
+
+
+946
+00:44:43,006 --> 00:44:47,906
+So, it was just as exciting for
+me yesterday as for you guys.
+
+
+947
+00:44:47,906 --> 00:44:49,066
+Anyway, I lost my
+train of thought.
+
+
+948
+00:44:49,176 --> 00:44:51,646
+So here we are.
+
+
+949
+00:44:51,646 --> 00:44:52,826
+We're looking at
+all these shaders.
+
+
+950
+00:44:52,826 --> 00:44:55,526
+Now, the great thing is even
+though it's really pretty
+
+
+951
+00:44:55,526 --> 00:44:57,466
+to see this shader in real time,
+
+
+952
+00:44:57,866 --> 00:45:00,516
+here's where the actual
+real advantage comes in.
+
+
+953
+00:45:01,696 --> 00:45:04,486
+Working at an animation studio,
+you paint all these details
+
+
+954
+00:45:04,486 --> 00:45:06,156
+and then the animators
+have to come in
+
+
+955
+00:45:06,156 --> 00:45:08,086
+and start moving
+stuff around, right?
+
+
+956
+00:45:08,086 --> 00:45:09,996
+I mean the audacity of that.
+
+
+957
+00:45:10,206 --> 00:45:12,676
+So, I paint the wrinkles on her
+
+
+958
+00:45:12,676 --> 00:45:16,336
+and then once the character
+actually is talking and moving,
+
+
+959
+00:45:16,336 --> 00:45:19,136
+sometimes what I painted
+doesn't look right anymore
+
+
+960
+00:45:19,136 --> 00:45:20,006
+and I have to fix it.
+
+
+961
+00:45:20,006 --> 00:45:22,886
+Now, in the past, it's really
+hard to identify those problems
+
+
+962
+00:45:22,886 --> 00:45:24,256
+or at least it takes
+a lot of time
+
+
+963
+00:45:24,256 --> 00:45:27,086
+because to render the animation,
+I definitely need to wait
+
+
+964
+00:45:27,086 --> 00:45:28,636
+at least a few hours
+to see that.
+
+
+965
+00:45:29,236 --> 00:45:31,486
+And if I want to see it in
+the context of the shot,
+
+
+966
+00:45:31,886 --> 00:45:33,506
+I would need to wait
+up to 12 hours.
+
+
+967
+00:45:33,726 --> 00:45:37,906
+So, MARI allows us to bring the
+final animation from the shot
+
+
+968
+00:45:38,076 --> 00:45:40,516
+into this environment so
+I can actually preview it.
+
+
+969
+00:45:40,516 --> 00:45:42,816
+So, I'm going to scrub
+to her animation here.
+
+
+970
+00:45:42,816 --> 00:45:44,506
+And this is the same
+shot that I showed you.
+
+
+971
+00:45:44,786 --> 00:45:47,306
+And you can see her
+speaking and moving around.
+
+
+972
+00:45:47,366 --> 00:45:50,946
+And I noticed at this point
+where she raises eyebrow like,
+
+
+973
+00:45:50,946 --> 00:45:55,296
+wow, OK, my textures are
+stretching right there,
+
+
+974
+00:45:55,296 --> 00:45:55,666
+all right?
+
+
+975
+00:45:55,666 --> 00:45:56,576
+So let me fix that.
+
+
+976
+00:45:56,576 --> 00:45:58,636
+So I'm going to go
+to my bump channel.
+
+
+977
+00:45:58,636 --> 00:46:01,876
+I'm going to pull in my
+elephant texture again.
+
+
+978
+00:46:02,776 --> 00:46:05,836
+And I'm going to
+grab these wrinkles.
+
+
+979
+00:46:13,766 --> 00:46:15,186
+And I can paint straight
+
+
+980
+00:46:15,296 --> 00:46:17,926
+onto this animated frame,
+right, in real time.
+
+
+981
+00:46:18,016 --> 00:46:19,096
+[ Applause ]
+
+
+982
+00:46:19,096 --> 00:46:19,836
+It's pretty cool, huh?
+
+
+983
+00:46:20,516 --> 00:46:23,906
+[ Applause ]
+
+
+984
+00:46:24,406 --> 00:46:27,396
+And now when I play the
+animation, I can say, "OK,
+
+
+985
+00:46:27,516 --> 00:46:29,926
+you know, how does it look, you
+know, at this moment, right?
+
+
+986
+00:46:29,926 --> 00:46:32,586
+How does it look, you
+know, at any given frame?"
+
+
+987
+00:46:32,586 --> 00:46:35,496
+And I've just identified
+and fixed a problem
+
+
+988
+00:46:35,496 --> 00:46:37,766
+in about 30 seconds that
+would've typically taken me
+
+
+989
+00:46:37,766 --> 00:46:40,426
+about 2 days before if I
+were to wait for the full--
+
+
+990
+00:46:40,646 --> 00:46:42,246
+all the bells and
+whistles renders, right?
+
+
+991
+00:46:42,486 --> 00:46:43,676
+And that is fantastic.
+
+
+992
+00:46:43,676 --> 00:46:47,336
+It is-- you know, I'm able
+to work ridiculously faster
+
+
+993
+00:46:47,336 --> 00:46:48,666
+in an environment like this.
+
+
+994
+00:46:48,746 --> 00:46:53,176
+And it is, you know,
+again-- so, like I said,
+
+
+995
+00:46:53,176 --> 00:46:55,556
+MARI has never run faster than
+I've seen it on this machine.
+
+
+996
+00:46:55,626 --> 00:46:57,346
+And we can push the
+limits of that.
+
+
+997
+00:46:57,346 --> 00:47:00,636
+So, this character represents
+about 10 gigabytes worth
+
+
+998
+00:47:00,636 --> 00:47:02,606
+of image data but we
+can do more than that.
+
+
+999
+00:47:02,696 --> 00:47:07,956
+I can bring in Mike Wazowski
+which essentially doubles it
+
+
+1000
+00:47:07,956 --> 00:47:09,916
+to about 20 gigabytes
+because he's got his own set
+
+
+1001
+00:47:09,916 --> 00:47:10,546
+of textures.
+
+
+1002
+00:47:10,716 --> 00:47:12,666
+And so he's over here, right,
+
+
+1003
+00:47:12,666 --> 00:47:14,566
+and we can preview
+his animation as well.
+
+
+1004
+00:47:15,206 --> 00:47:20,206
+So he's saying, "Please,
+let me try the simulator.
+
+
+1005
+00:47:20,616 --> 00:47:21,246
+I'll surprise you."
+
+
+1006
+00:47:22,181 --> 00:47:24,181
+[ Laughter ]
+
+
+1007
+00:47:24,346 --> 00:47:24,926
+So there he is.
+
+
+1008
+00:47:24,926 --> 00:47:27,236
+And we've got both of these
+characters and I can see them
+
+
+1009
+00:47:27,236 --> 00:47:29,016
+in context together, right?
+
+
+1010
+00:47:29,046 --> 00:47:33,226
+I can see them right here
+and that is so helpful.
+
+
+1011
+00:47:33,226 --> 00:47:37,596
+It's so amazing to be able to
+find and identify any problems
+
+
+1012
+00:47:37,596 --> 00:47:39,146
+that we have by having
+these characters
+
+
+1013
+00:47:39,146 --> 00:47:39,886
+in the same room together.
+
+
+1014
+00:47:39,886 --> 00:47:42,726
+And I can even bring
+in the set and see them
+
+
+1015
+00:47:42,726 --> 00:47:44,746
+with their shadows
+in this environment.
+
+
+1016
+00:47:45,486 --> 00:47:47,026
+And it's been so amazing.
+
+
+1017
+00:47:47,066 --> 00:47:49,596
+And, you know, I think
+that's it for the demo.
+
+
+1018
+00:47:50,096 --> 00:47:53,566
+I've-- it's been such a
+privilege to speak to you today
+
+
+1019
+00:47:53,566 --> 00:47:55,136
+to able to work with
+this amazing hardware.
+
+
+1020
+00:47:55,136 --> 00:47:56,486
+I can't wait to get
+my hands on one.
+
+
+1021
+00:47:56,486 --> 00:47:58,416
+I can't wait 'til the fall.
+
+
+1022
+00:47:59,096 --> 00:48:01,266
+And I've been so-- it's been
+such a privilege to work
+
+
+1023
+00:48:01,266 --> 00:48:02,176
+on Monsters University.
+
+
+1024
+00:48:02,176 --> 00:48:03,566
+We're really proud of this film.
+
+
+1025
+00:48:03,566 --> 00:48:06,056
+And I hope that all of you guys
+go see it because it's amazing.
+
+
+1026
+00:48:06,396 --> 00:48:09,776
+We're going to end with
+another trailer from the movie.
+
+
+1027
+00:48:10,116 --> 00:48:11,676
+And, yeah, let's go to that now.
+
+
+1028
+00:48:12,516 --> 00:48:18,956
+[ Applause ]
+
+
+1029
+00:48:19,456 --> 00:48:22,376
+>> [Background Music]
+Welcome to the Scare Floor.
+
+
+1030
+00:48:22,696 --> 00:48:23,396
+>> Wow.
+
+
+1031
+00:48:25,386 --> 00:48:27,656
+>> How do I become a scarer?
+
+
+1032
+00:48:29,806 --> 00:48:32,016
+>> I'm officially
+a college student!
+
+
+1033
+00:48:32,856 --> 00:48:33,586
+Mike Wazowski.
+
+
+1034
+00:48:33,906 --> 00:48:34,456
+>> James P.
+
+
+1035
+00:48:34,456 --> 00:48:34,976
+Sullivan.
+
+
+1036
+00:48:35,266 --> 00:48:36,506
+>> Like Bill Sullivan?
+
+
+1037
+00:48:36,646 --> 00:48:37,056
+>> He's my dad.
+
+
+1038
+00:48:37,236 --> 00:48:39,176
+>> I expect big things from you.
+
+
+1039
+00:48:40,316 --> 00:48:43,406
+>> I just need to ace my
+classes, graduate with honors,
+
+
+1040
+00:48:43,876 --> 00:48:45,096
+and become the greatest
+scarer ever.
+
+
+1041
+00:48:45,916 --> 00:48:46,056
+>> Help!
+
+
+1042
+00:48:47,281 --> 00:48:49,281
+[ Noise ]
+
+
+1043
+00:48:49,546 --> 00:48:50,596
+>> Were you kissing my hand?
+
+
+1044
+00:48:50,596 --> 00:48:52,256
+>> And what about you
+with all your shedding.
+
+
+1045
+00:48:52,256 --> 00:48:52,796
+>> I don't shed.
+
+
+1046
+00:48:52,896 --> 00:48:53,106
+>> Really?
+
+
+1047
+00:48:53,856 --> 00:48:57,416
+>> The star player
+has just arrived.
+
+
+1048
+00:48:58,266 --> 00:48:58,696
+>> You're my hero.
+
+
+1049
+00:48:59,076 --> 00:48:59,143
+>> Yeah!
+
+
+1050
+00:49:01,186 --> 00:49:02,056
+>> Slow down, squirt.
+
+
+1051
+00:49:02,056 --> 00:49:04,076
+>> This is a party
+for scare students.
+
+
+1052
+00:49:04,076 --> 00:49:05,176
+>> I am a scare student.
+
+
+1053
+00:49:05,176 --> 00:49:07,046
+>> I mean for scare
+students who actually,
+
+
+1054
+00:49:07,046 --> 00:49:08,756
+you know, never change.
+
+
+1055
+00:49:09,296 --> 00:49:11,396
+>> Just wait hotshot.
+
+
+1056
+00:49:11,556 --> 00:49:13,656
+I'm going to scare circles
+around you this year.
+
+
+1057
+00:49:14,516 --> 00:49:17,936
+[ Noise ]
+
+
+1058
+00:49:18,436 --> 00:49:21,136
+>> My brothers appose
+my [inaudible].
+
+
+1059
+00:49:22,216 --> 00:49:24,746
+>> [Inaudible] everybody
+let's keep a dream journal.
+
+
+1060
+00:49:25,026 --> 00:49:26,186
+>> I'm a dance major.
+
+
+1061
+00:49:26,436 --> 00:49:27,046
+And I'm not.
+
+
+1062
+00:49:27,046 --> 00:49:28,976
+>> Not exactly the
+scariest group in the world.
+
+
+1063
+00:49:29,136 --> 00:49:29,346
+>> Smile!
+
+
+1064
+00:49:30,196 --> 00:49:31,486
+>> Hi mom!
+
+
+1065
+00:49:32,061 --> 00:49:34,061
+[ Laughter ]
+
+
+1066
+00:49:34,106 --> 00:49:35,416
+>> I thought I could
+show everybody
+
+
+1067
+00:49:35,416 --> 00:49:37,926
+that Mike Wazowski
+is something special.
+
+
+1068
+00:49:38,166 --> 00:49:40,966
+>> Just reach deep down
+and let the scary out.
+
+
+1069
+00:49:43,276 --> 00:49:44,846
+>> Boys, oh, scary.
+
+
+1070
+00:49:45,066 --> 00:49:45,856
+>> Up top.
+
+
+1071
+00:49:47,656 --> 00:49:48,796
+>> The whole school
+is finally going
+
+
+1072
+00:49:48,886 --> 00:49:49,946
+to see what Mike
+Wazowski can do.
+
+
+1073
+00:49:53,226 --> 00:49:53,946
+>> Time to go to work.
+
+
+1074
+00:49:54,076 --> 00:49:55,256
+>> Scary feet, scary
+feet, scary feet.
+
+
+1075
+00:49:55,256 --> 00:49:56,396
+The kid's in the bathroom.
+
+
+1076
+00:49:56,396 --> 00:49:57,936
+[Shouting]
+
+
+1077
+00:49:57,936 --> 00:49:58,436
+Angry poodle.
+
+
+1078
+00:49:58,436 --> 00:49:58,676
+Dance clown.
+
+
+1079
+00:49:59,146 --> 00:50:01,406
+My Aunt Phyllis.
+
+
+1080
+00:50:01,496 --> 00:50:01,816
+In the morning.
+
+
+1081
+00:50:02,046 --> 00:50:03,596
+>> Shhh! Quiet.
+
+
+1082
+00:50:03,776 --> 00:50:06,096
+>> What's so scary about
+a little old librarian?
+
+
+1083
+00:50:06,616 --> 00:50:08,126
+>> I said quiet!
+
+
+1084
+00:50:08,626 --> 00:50:09,146
+>> Move it!
+
+
+1085
+00:50:09,146 --> 00:50:09,946
+Move it! [Shouting]
+
+
+1086
+00:50:10,366 --> 00:50:12,366
+[ Music ]
+
+
+1087
+00:50:12,716 --> 00:50:14,546
+>> I want to piece
+of that action.
+
+
+1088
+00:50:14,546 --> 00:50:17,066
+>> Tentacles and
+serpent's wings, they-- ugh!
+
+
+1089
+00:50:18,196 --> 00:50:20,676
+>> Can't wait to start
+scaring with you brothers.
+
+
+1090
+00:50:20,676 --> 00:50:22,816
+>> We're going to
+hit you to pieces.
+
+
+1091
+00:50:23,516 --> 00:50:26,036
+[ Music ]
+
+
+1092
+00:50:26,536 --> 00:50:27,486
+>> Stop doing that.
+
+
+1093
+00:50:28,976 --> 00:50:30,546
+>> Have fun kids.
+
+
+1094
+00:50:30,986 --> 00:50:33,446
+I'll just be here
+listening to my tunes.
+
+
+1095
+00:50:34,516 --> 00:50:41,516
+[ Music ]
+
+
+1096
+00:50:42,016 --> 00:50:45,000
+[ Applause ]
+
+
+1097
+00:50:45,686 --> 00:50:49,086
+>> OK. So thank you very much to
+Jonathan and thank you very much
+
+
+1098
+00:50:49,086 --> 00:50:50,736
+to Apple for the opportunity
+for being here today.
+
+
+1099
+00:50:50,736 --> 00:50:53,066
+And thank you for
+being here to watch.
+
+
+1100
+00:50:53,286 --> 00:50:53,516
+Thank you.
+
+
+1101
+00:50:53,516 --> 00:50:53,976
+>> Thanks for coming.
+
+
+1102
+00:50:54,516 --> 00:50:59,920
+[ Applause ]
+

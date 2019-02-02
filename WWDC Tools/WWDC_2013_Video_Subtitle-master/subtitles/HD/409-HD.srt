@@ -1,0 +1,4905 @@
+1
+00:00:00,506 --> 00:00:10,516
+[ Silence ]
+
+
+2
+00:00:11,016 --> 00:00:11,826
+>> Good morning.
+
+
+3
+00:00:12,516 --> 00:00:16,256
+[ Applause ]
+
+
+4
+00:00:16,756 --> 00:00:20,606
+Wow. Thank you for coming
+to Testing in Xcode 5.
+
+
+5
+00:00:21,646 --> 00:00:24,486
+I'm Mike and before
+we get started,
+
+
+6
+00:00:24,486 --> 00:00:26,536
+could I have everyone
+raise your hand
+
+
+7
+00:00:26,666 --> 00:00:29,506
+if you've ever written
+a unit test before.
+
+
+8
+00:00:31,046 --> 00:00:33,646
+Wow. Actually, could
+you keep your hand
+
+
+9
+00:00:33,646 --> 00:00:35,826
+up if you've written a
+unit test in Objective-C.
+
+
+10
+00:00:37,276 --> 00:00:39,146
+Awesome. All right.
+
+
+11
+00:00:39,146 --> 00:00:39,776
+Thank you.
+
+
+12
+00:00:40,016 --> 00:00:41,726
+What I'm here today
+to show you is all
+
+
+13
+00:00:41,726 --> 00:00:44,066
+of the great unit testing
+features that we've added
+
+
+14
+00:00:44,116 --> 00:00:48,176
+in Xcode 5 and show you how
+easy it is to test your apps.
+
+
+15
+00:00:48,836 --> 00:00:51,266
+So easy that I hope
+by the end of today,
+
+
+16
+00:00:51,266 --> 00:00:53,576
+we'll have absolutely
+every hand raised.
+
+
+17
+00:00:54,976 --> 00:00:59,926
+So, first, why would anyone
+actually want to do testing?
+
+
+18
+00:01:01,036 --> 00:01:04,236
+Perhaps you've heard a few
+times this week that we want
+
+
+19
+00:01:04,236 --> 00:01:06,026
+to help you build better apps.
+
+
+20
+00:01:06,836 --> 00:01:08,986
+So first off, wouldn't
+it be great
+
+
+21
+00:01:08,986 --> 00:01:11,656
+if you could catch crashers
+before your app got submitted
+
+
+22
+00:01:11,656 --> 00:01:12,416
+into the app store?
+
+
+23
+00:01:13,126 --> 00:01:16,796
+Did you know that crashers are
+actually the number one cause
+
+
+24
+00:01:16,796 --> 00:01:17,756
+of app rejection?
+
+
+25
+00:01:19,736 --> 00:01:21,196
+Any crashers that make their way
+
+
+26
+00:01:21,196 --> 00:01:23,336
+to your customers are
+probably only going
+
+
+27
+00:01:23,336 --> 00:01:24,426
+to lower your app's rating.
+
+
+28
+00:01:25,126 --> 00:01:27,466
+And if you can catch
+your crasher in testing,
+
+
+29
+00:01:28,066 --> 00:01:30,156
+it means you don't have
+to re-submit your app.
+
+
+30
+00:01:31,246 --> 00:01:33,536
+But besides crashers,
+you'll also want
+
+
+31
+00:01:33,536 --> 00:01:35,076
+to catch logical errors.
+
+
+32
+00:01:36,026 --> 00:01:39,686
+Suppose, you have a game with
+a character who's running along
+
+
+33
+00:01:39,886 --> 00:01:43,376
+and picks up a health pack,
+it'd be pretty embarrassing
+
+
+34
+00:01:43,626 --> 00:01:46,766
+if picking up that
+health pack actually ended
+
+
+35
+00:01:46,766 --> 00:01:50,366
+up killing the character because
+of some sort of integer overflow
+
+
+36
+00:01:50,806 --> 00:01:53,846
+if the health was already
+topped off at 100 percent.
+
+
+37
+00:01:54,916 --> 00:01:58,096
+Or, perhaps the pack was
+poisoned or maybe the character,
+
+
+38
+00:01:58,096 --> 00:02:01,256
+it was just getting greedy, but
+either way you're going to want
+
+
+39
+00:02:01,256 --> 00:02:03,896
+to write a test to define
+what the correct behavior is
+
+
+40
+00:02:03,896 --> 00:02:04,436
+for your app.
+
+
+41
+00:02:06,026 --> 00:02:10,175
+So once you have a bank of
+this test built up over time
+
+
+42
+00:02:10,216 --> 00:02:13,996
+from release to release,
+you'll find that these sorts
+
+
+43
+00:02:13,996 --> 00:02:15,676
+of test will start
+to catch regressions
+
+
+44
+00:02:15,676 --> 00:02:17,866
+as the rules of your app change.
+
+
+45
+00:02:20,206 --> 00:02:23,976
+As your code evolves over time,
+these sorts of test will begin
+
+
+46
+00:02:23,976 --> 00:02:25,486
+to surface logical errors
+
+
+47
+00:02:26,576 --> 00:02:28,556
+and sometimes just
+find plain old bugs.
+
+
+48
+00:02:29,846 --> 00:02:32,546
+Also, in some of the other
+sessions, you may have been
+
+
+49
+00:02:32,546 --> 00:02:35,606
+at earlier this week you
+may have seen how to set
+
+
+50
+00:02:35,606 --> 00:02:39,336
+up OS X server to run your
+tests on a huge mix of OS
+
+
+51
+00:02:39,336 --> 00:02:40,586
+and device configurations.
+
+
+52
+00:02:41,316 --> 00:02:44,736
+Many more configurations than
+we could reasonably run by hand
+
+
+53
+00:02:45,526 --> 00:02:47,036
+because we as developers want
+
+
+54
+00:02:47,166 --> 00:02:50,156
+to actually spend time writing
+features and not spend all
+
+
+55
+00:02:50,156 --> 00:02:51,096
+of our time running tests.
+
+
+56
+00:02:52,996 --> 00:02:56,016
+And most importantly, for
+every test that you commit
+
+
+57
+00:02:56,016 --> 00:03:00,036
+to your source repository,
+OS X server can run that test
+
+
+58
+00:03:00,366 --> 00:03:01,966
+when someone else on
+your team commits.
+
+
+59
+00:03:03,006 --> 00:03:05,876
+Because, maybe the new guy
+doesn't have the entire model
+
+
+60
+00:03:05,876 --> 00:03:06,876
+of your app in his head yet,
+
+
+61
+00:03:07,676 --> 00:03:10,176
+or perhaps he just forgot
+some sort of subtle edge case.
+
+
+62
+00:03:10,816 --> 00:03:13,456
+I mean, who among us
+hasn't actually introduced a
+
+
+63
+00:03:13,456 --> 00:03:16,656
+jaw-dropping regression
+that nobody picked up on
+
+
+64
+00:03:16,846 --> 00:03:18,736
+until it was way too late
+in the release cycle.
+
+
+65
+00:03:20,476 --> 00:03:21,916
+So, all this is great, right?
+
+
+66
+00:03:22,616 --> 00:03:24,696
+Well, let's see how we're
+going to do all that.
+
+
+67
+00:03:26,246 --> 00:03:29,226
+So first, we're going to briefly
+touch on what a unit test is.
+
+
+68
+00:03:29,976 --> 00:03:32,506
+Then I'm going to show you
+the new testing framework
+
+
+69
+00:03:32,926 --> 00:03:34,476
+that we've added to Xcode 5.
+
+
+70
+00:03:35,356 --> 00:03:37,776
+And then we're going to cover
+how you can create your first
+
+
+71
+00:03:38,656 --> 00:03:40,236
+test and then for the
+bulk of the session,
+
+
+72
+00:03:40,236 --> 00:03:41,306
+we're going to show you some
+
+
+73
+00:03:41,306 --> 00:03:43,476
+of the exciting new UI
+enhancements we've added
+
+
+74
+00:03:43,476 --> 00:03:47,826
+to Xcode 5 that will allow
+you to run single tests just
+
+
+75
+00:03:47,826 --> 00:03:51,076
+with one click or all your
+tests in really large batches.
+
+
+76
+00:03:52,516 --> 00:03:54,186
+Then we'll show you
+how to debug your code
+
+
+77
+00:03:54,186 --> 00:03:55,716
+when it's running
+inside of the test rig.
+
+
+78
+00:03:56,386 --> 00:03:58,096
+And, we'll show you
+how testing fits
+
+
+79
+00:03:58,096 --> 00:04:00,876
+into the continuous integration
+the OS X server provides.
+
+
+80
+00:04:02,096 --> 00:04:06,166
+And finally, we'll look at
+some advanced configurations
+
+
+81
+00:04:06,206 --> 00:04:08,516
+for OS X server and how
+you can drive testing
+
+
+82
+00:04:08,516 --> 00:04:09,206
+on the command line.
+
+
+83
+00:04:10,606 --> 00:04:13,016
+So first, we should
+define what we mean
+
+
+84
+00:04:13,016 --> 00:04:14,546
+when we talk about unit tests.
+
+
+85
+00:04:15,516 --> 00:04:19,856
+[ Pause ]
+
+
+86
+00:04:20,356 --> 00:04:26,076
+A unit test is a small test
+of one unit of functionality.
+
+
+87
+00:04:26,706 --> 00:04:28,796
+It either passes or it fails
+
+
+88
+00:04:29,046 --> 00:04:31,556
+and the behavior should be
+completely deterministic.
+
+
+89
+00:04:32,246 --> 00:04:33,936
+If you want to run
+a lot of them,
+
+
+90
+00:04:34,326 --> 00:04:36,976
+they should run pretty quick
+because when they fail,
+
+
+91
+00:04:36,976 --> 00:04:38,906
+you're going to want to
+diagnose them really fast.
+
+
+92
+00:04:40,746 --> 00:04:43,316
+Though, unit testing
+is not necessarily good
+
+
+93
+00:04:43,316 --> 00:04:43,896
+for some things.
+
+
+94
+00:04:44,746 --> 00:04:48,596
+For example, unit tests
+are not performance tests,
+
+
+95
+00:04:49,586 --> 00:04:52,626
+a pass-fail result isn't going
+to tell you how long it takes
+
+
+96
+00:04:52,626 --> 00:04:55,716
+to run a benchmark or
+the standard deviation
+
+
+97
+00:04:55,716 --> 00:05:00,036
+of that benchmark over time, or
+the variation of that benchmark
+
+
+98
+00:05:00,076 --> 00:05:01,026
+across different hardware.
+
+
+99
+00:05:02,686 --> 00:05:05,566
+Also, UI testing is
+pretty hard to do
+
+
+100
+00:05:05,566 --> 00:05:06,896
+from a unit testing framework.
+
+
+101
+00:05:07,876 --> 00:05:11,076
+There are a lot of complex
+interactions in the UI
+
+
+102
+00:05:11,076 --> 00:05:13,756
+and it's hard to
+isolate down precisely
+
+
+103
+00:05:13,756 --> 00:05:15,346
+where a failure originates
+
+
+104
+00:05:15,346 --> 00:05:18,056
+from when you're running
+tests at such a high level.
+
+
+105
+00:05:18,876 --> 00:05:20,996
+You're also going to want
+screen recordings and a lot
+
+
+106
+00:05:20,996 --> 00:05:23,766
+of other support you don't get
+from a simple pass-fail result.
+
+
+107
+00:05:25,836 --> 00:05:29,216
+And this sort of speaks to a
+greater point and that it's hard
+
+
+108
+00:05:29,216 --> 00:05:34,846
+to understand failures that are
+introduced by the integration
+
+
+109
+00:05:35,006 --> 00:05:39,366
+of a complex system that isn't
+already granularly unit-tested.
+
+
+110
+00:05:41,876 --> 00:05:44,856
+You want to have the confidence
+that the individual pieces
+
+
+111
+00:05:44,856 --> 00:05:47,126
+of your application
+are well-tested
+
+
+112
+00:05:48,296 --> 00:05:51,236
+so that you can trust that your
+higher level tests are actually
+
+
+113
+00:05:51,236 --> 00:05:52,676
+reporting higher level failures.
+
+
+114
+00:05:53,616 --> 00:05:55,046
+What this means is that
+you're going to want
+
+
+115
+00:05:55,046 --> 00:05:58,846
+to pick the right place
+to start testing your app.
+
+
+116
+00:05:59,176 --> 00:06:01,876
+So here, we have a high
+level block diagram
+
+
+117
+00:06:01,876 --> 00:06:03,876
+of how your app might
+be structured.
+
+
+118
+00:06:04,126 --> 00:06:05,976
+You probably have
+some sort of model,
+
+
+119
+00:06:05,976 --> 00:06:09,166
+view and controller classes
+which are some pattern familiar
+
+
+120
+00:06:09,166 --> 00:06:10,906
+to anyone who's been
+working with Cocoa.
+
+
+121
+00:06:11,506 --> 00:06:15,776
+And you might have
+some sort of connection
+
+
+122
+00:06:15,776 --> 00:06:17,116
+to the network behind some sort
+
+
+123
+00:06:17,116 --> 00:06:20,646
+of database that's behind
+some sort of web service,
+
+
+124
+00:06:21,346 --> 00:06:24,276
+but what we're really
+focusing on today is
+
+
+125
+00:06:24,276 --> 00:06:28,026
+where your model classes
+meet your controller.
+
+
+126
+00:06:28,596 --> 00:06:33,576
+This is a good place to start to
+build up tests because you want
+
+
+127
+00:06:33,576 --> 00:06:36,936
+to know with certainty that your
+model classes are well-tested
+
+
+128
+00:06:37,206 --> 00:06:39,116
+before you work your
+way up to running test
+
+
+129
+00:06:39,116 --> 00:06:41,036
+for the controller
+classes which start
+
+
+130
+00:06:41,036 --> 00:06:44,216
+to touch the other more
+complex parts of your app.
+
+
+131
+00:06:44,636 --> 00:06:47,716
+Alternately, if you're a
+framework or a library author,
+
+
+132
+00:06:48,206 --> 00:06:52,256
+you could write tests around
+the external API of your code
+
+
+133
+00:06:52,586 --> 00:06:54,446
+and work your way into
+the internal classes.
+
+
+134
+00:06:55,366 --> 00:07:00,846
+It's really up to you, but
+the new testing framework
+
+
+135
+00:07:01,296 --> 00:07:03,926
+and UI features in
+Xcode 5 are designed
+
+
+136
+00:07:03,926 --> 00:07:09,756
+to make running model tests
+really easy and really fast.
+
+
+137
+00:07:10,876 --> 00:07:17,616
+So, the Xcode unit testing
+framework Xc test is brand new
+
+
+138
+00:07:17,666 --> 00:07:19,546
+to Xcode 5 and iOS 7.
+
+
+139
+00:07:20,406 --> 00:07:23,576
+If you've used testing before
+an Xcode, you may recognize
+
+
+140
+00:07:23,776 --> 00:07:28,016
+that Xc test is actually
+directly derived from OC unit.
+
+
+141
+00:07:28,616 --> 00:07:30,966
+But it's been significantly
+cleaned up and modernized.
+
+
+142
+00:07:31,986 --> 00:07:33,386
+We even have a migration tool
+
+
+143
+00:07:33,566 --> 00:07:39,766
+to migrate your existing
+send tests to Xc test.
+
+
+144
+00:07:39,766 --> 00:07:42,836
+Xcode builds your test
+into an Xc test bundle
+
+
+145
+00:07:43,436 --> 00:07:47,046
+which is injected directly into
+your application and invoked
+
+
+146
+00:07:47,286 --> 00:07:49,136
+after application
+did finish launching.
+
+
+147
+00:07:51,186 --> 00:07:55,646
+Or, when testing a library, the
+test rig will load your library
+
+
+148
+00:07:55,816 --> 00:07:57,066
+and the test bundles together.
+
+
+149
+00:07:58,446 --> 00:08:01,226
+So what does a test look like?
+
+
+150
+00:08:03,456 --> 00:08:06,536
+Tests are just ordinary
+Objective-C code.
+
+
+151
+00:08:07,056 --> 00:08:13,856
+A test class is simply a
+sub-class of Xc test case.
+
+
+152
+00:08:14,766 --> 00:08:18,176
+Tests are simply methods
+inside of a test class.
+
+
+153
+00:08:19,336 --> 00:08:21,906
+These methods are
+identified by the word test
+
+
+154
+00:08:22,126 --> 00:08:24,506
+at the beginning of
+their method name.
+
+
+155
+00:08:25,396 --> 00:08:29,356
+And, test methods return
+nothing and take no arguments.
+
+
+156
+00:08:30,776 --> 00:08:33,546
+So how do you know if
+a test passes or fails?
+
+
+157
+00:08:34,666 --> 00:08:38,376
+Well, tests make assertions
+in the bodies of their method.
+
+
+158
+00:08:40,866 --> 00:08:43,486
+What this means is that you can
+actually have multiple failures
+
+
+159
+00:08:43,486 --> 00:08:46,496
+inside of a test because you
+can make multiple assertions.
+
+
+160
+00:08:48,276 --> 00:08:50,136
+The test classes are discovered
+
+
+161
+00:08:50,136 --> 00:08:53,066
+by the test rig interrogating
+the Objective-Code runtime
+
+
+162
+00:08:53,406 --> 00:08:57,416
+and asking for all of the
+subclasses of Xc test case
+
+
+163
+00:08:57,736 --> 00:09:00,686
+from the Xc test bundle
+which has been injected
+
+
+164
+00:09:00,686 --> 00:09:01,516
+into your application.
+
+
+165
+00:09:03,136 --> 00:09:04,506
+So, these are the basics
+
+
+166
+00:09:04,716 --> 00:09:07,216
+of how tests are
+structured at the code level.
+
+
+167
+00:09:07,216 --> 00:09:11,366
+What I'd like to show you now is
+the most significant UI feature
+
+
+168
+00:09:11,556 --> 00:09:13,666
+that we've added to
+Xcode 5 for testing.
+
+
+169
+00:09:13,666 --> 00:09:17,676
+It will help you add, run, and
+navigate all of your tests.
+
+
+170
+00:09:18,506 --> 00:09:20,616
+This is the new test navigator.
+
+
+171
+00:09:21,956 --> 00:09:25,456
+As you can see here,
+nestled between the issue
+
+
+172
+00:09:25,456 --> 00:09:27,956
+and the debug navigators
+is where you'll find all
+
+
+173
+00:09:27,956 --> 00:09:29,156
+of your tests in your project.
+
+
+174
+00:09:30,406 --> 00:09:34,296
+When we started designing
+Xcode 5 to make the act
+
+
+175
+00:09:34,716 --> 00:09:37,386
+of testing your app a
+first class experience,
+
+
+176
+00:09:37,966 --> 00:09:41,776
+we quickly realized that
+the workflow of being able
+
+
+177
+00:09:41,776 --> 00:09:44,636
+to view your tests
+and their statuses was
+
+
+178
+00:09:44,636 --> 00:09:45,656
+critically important.
+
+
+179
+00:09:47,306 --> 00:09:50,606
+At the top level of the
+navigator, you'll see all
+
+
+180
+00:09:50,606 --> 00:09:52,576
+of your test bundles
+in your project.
+
+
+181
+00:09:53,366 --> 00:09:55,976
+Those test bundles
+contain your test classes
+
+
+182
+00:09:56,576 --> 00:09:59,516
+which contain your test methods.
+
+
+183
+00:09:59,996 --> 00:10:03,116
+We've also made it really
+easy to run any test or group
+
+
+184
+00:10:03,116 --> 00:10:05,746
+of tests with just one click.
+
+
+185
+00:10:10,226 --> 00:10:13,866
+As the tests run, the result
+show up live along the side
+
+
+186
+00:10:13,866 --> 00:10:17,326
+of the navigator, this gives
+you a great top level overview
+
+
+187
+00:10:17,396 --> 00:10:19,916
+of what's passing and
+failing and lets you drill
+
+
+188
+00:10:19,916 --> 00:10:22,566
+down to any specific test.
+
+
+189
+00:10:22,916 --> 00:10:26,506
+Also, if you just want to focus
+on only the failing tests,
+
+
+190
+00:10:26,506 --> 00:10:28,166
+we have a filter for that.
+
+
+191
+00:10:29,766 --> 00:10:33,586
+In this view, you can see
+only the current failures
+
+
+192
+00:10:33,946 --> 00:10:35,546
+but still run all of your tests
+
+
+193
+00:10:36,176 --> 00:10:37,586
+as you work your
+way down to zero.
+
+
+194
+00:10:38,576 --> 00:10:41,966
+We think that the new navigator
+will give you a very nice
+
+
+195
+00:10:41,966 --> 00:10:43,046
+overview of your tests.
+
+
+196
+00:10:43,046 --> 00:10:44,806
+But we didn't stop there.
+
+
+197
+00:10:45,546 --> 00:10:50,506
+Next to each test method
+in the source editor,
+
+
+198
+00:10:50,696 --> 00:10:52,786
+we added new test indicators.
+
+
+199
+00:10:53,946 --> 00:10:58,036
+You can click to run just
+that test and see its status.
+
+
+200
+00:10:59,106 --> 00:11:01,746
+Running each test
+is really easy even
+
+
+201
+00:11:01,746 --> 00:11:03,206
+without the test navigator open.
+
+
+202
+00:11:04,436 --> 00:11:06,216
+So let's look at each
+of these features
+
+
+203
+00:11:06,456 --> 00:11:08,976
+and how they work together
+over on the demo machine.
+
+
+204
+00:11:09,516 --> 00:11:16,186
+[ Pause ]
+
+
+205
+00:11:16,686 --> 00:11:19,946
+So here, we have a project
+that's a board game class
+
+
+206
+00:11:20,656 --> 00:11:26,836
+that has several classes which
+represent the model of our game.
+
+
+207
+00:11:27,696 --> 00:11:32,486
+There are classes for how the
+parts, the pieces on the board,
+
+
+208
+00:11:32,926 --> 00:11:36,986
+the scoring and how the board
+itself actually interacts.
+
+
+209
+00:11:37,256 --> 00:11:42,336
+So, one of the rules in a game
+like this is that normally,
+
+
+210
+00:11:42,526 --> 00:11:45,426
+two pieces cannot occupy
+the same space on the board
+
+
+211
+00:11:45,426 --> 00:11:48,326
+at the same time, but we've
+actually noticed this has been
+
+
+212
+00:11:48,326 --> 00:11:49,786
+happening in our board class.
+
+
+213
+00:11:50,166 --> 00:11:53,446
+So let's try and write a test
+to tease out this problem.
+
+
+214
+00:11:54,326 --> 00:11:57,146
+I can do that by going
+to the test navigator.
+
+
+215
+00:11:57,986 --> 00:12:00,416
+As you noticed we have
+no tests for our project,
+
+
+216
+00:12:01,486 --> 00:12:06,076
+go down to the plus menu
+and choose new test target.
+
+
+217
+00:12:10,516 --> 00:12:16,666
+What this will do is create a
+new bundle inside of our project
+
+
+218
+00:12:17,006 --> 00:12:19,316
+that is linked against
+our application
+
+
+219
+00:12:19,706 --> 00:12:24,526
+which contains the board
+class that we want to test.
+
+
+220
+00:12:24,686 --> 00:12:27,706
+As you can see, the new test
+bundle shows up right away
+
+
+221
+00:12:28,086 --> 00:12:29,876
+and takes just a
+moment for the indexer
+
+
+222
+00:12:29,926 --> 00:12:32,886
+to find the board class
+and the test method.
+
+
+223
+00:12:33,816 --> 00:12:36,066
+The test class and
+the test method.
+
+
+224
+00:12:37,026 --> 00:12:39,376
+We can run the test just by
+clicking on the indicator
+
+
+225
+00:12:39,376 --> 00:12:41,116
+in the test navigator.
+
+
+226
+00:12:42,626 --> 00:12:45,136
+And the test fails.
+
+
+227
+00:12:46,236 --> 00:12:48,606
+So we can find out why
+by clicking on the test
+
+
+228
+00:12:48,856 --> 00:12:51,796
+which will navigate us to that
+test and the source editor.
+
+
+229
+00:12:52,166 --> 00:12:56,016
+And as you can see here,
+the test is unimplemented
+
+
+230
+00:12:56,166 --> 00:12:59,076
+so by default it has a
+built-in unconditional failure.
+
+
+231
+00:12:59,766 --> 00:13:07,496
+So, we created a code
+snippet ahead of time
+
+
+232
+00:13:07,586 --> 00:13:10,136
+that has a pre-cooked test
+for this demo which I'm going
+
+
+233
+00:13:10,136 --> 00:13:11,456
+to autocomplete into
+place, so you don't have
+
+
+234
+00:13:11,456 --> 00:13:13,216
+to watch me type
+this all at on stage.
+
+
+235
+00:13:14,436 --> 00:13:19,616
+This is test unit locations and
+it's got a couple of imports
+
+
+236
+00:13:19,646 --> 00:13:21,416
+that we need to put
+here at the top.
+
+
+237
+00:13:22,496 --> 00:13:24,736
+There we go.
+
+
+238
+00:13:26,096 --> 00:13:31,026
+So this test creates four model
+objects in our game, the board,
+
+
+239
+00:13:31,526 --> 00:13:35,346
+two pieces and one location to
+try and move them both into.
+
+
+240
+00:13:36,526 --> 00:13:38,106
+This test makes four assertions.
+
+
+241
+00:13:39,206 --> 00:13:42,546
+First, it asserts that
+moving the first piece
+
+
+242
+00:13:42,646 --> 00:13:44,746
+into the location on
+the board succeeds
+
+
+243
+00:13:45,336 --> 00:13:46,826
+and then it actually
+checks to see
+
+
+244
+00:13:46,826 --> 00:13:48,446
+if the piece is at
+that location.
+
+
+245
+00:13:49,906 --> 00:13:53,326
+Then, it tries to move a second
+piece into the same location
+
+
+246
+00:13:53,326 --> 00:13:56,966
+on the board and asserts that
+that move actually fails.
+
+
+247
+00:13:58,076 --> 00:14:01,446
+Then, we check to
+see if the second--
+
+
+248
+00:14:01,446 --> 00:14:03,956
+if the first piece is
+still on the board.
+
+
+249
+00:14:04,816 --> 00:14:06,856
+So let's run this
+test by clicking
+
+
+250
+00:14:06,996 --> 00:14:10,346
+on the test indicator next to
+the method here on the editor.
+
+
+251
+00:14:11,516 --> 00:14:14,126
+Well, it looks like
+our test is failing.
+
+
+252
+00:14:14,216 --> 00:14:17,296
+We should probably take a
+look at the move piece method
+
+
+253
+00:14:17,526 --> 00:14:20,736
+to see why it's not
+working as we expect.
+
+
+254
+00:14:21,326 --> 00:14:22,966
+I'll do that just
+by command-clicking
+
+
+255
+00:14:23,386 --> 00:14:24,396
+on the move piece method.
+
+
+256
+00:14:25,056 --> 00:14:29,086
+And it looks like there's--
+
+
+257
+00:14:30,356 --> 00:14:34,916
+that the location to piece map
+is always getting the piece
+
+
+258
+00:14:35,116 --> 00:14:38,266
+slammed in and there's no point
+
+
+259
+00:14:38,266 --> 00:14:41,506
+where this method is actually
+trying to reject a move
+
+
+260
+00:14:41,506 --> 00:14:43,796
+to a location if there's
+a piece already in place.
+
+
+261
+00:14:44,636 --> 00:14:48,046
+So, we can fix this pretty
+easily just by adding a check
+
+
+262
+00:14:48,396 --> 00:14:50,066
+to a location to
+piece map to see
+
+
+263
+00:14:50,066 --> 00:14:53,326
+if there is something that's
+already in the location
+
+
+264
+00:14:54,116 --> 00:14:58,546
+and just return early with
+a no to reject that move.
+
+
+265
+00:15:00,236 --> 00:15:06,356
+So, we can go back to the test
+and rerun it with our change
+
+
+266
+00:15:06,356 --> 00:15:08,466
+in place and our test succeeds.
+
+
+267
+00:15:09,696 --> 00:15:13,256
+So, now our board class is
+correctly rejecting moving a
+
+
+268
+00:15:13,256 --> 00:15:15,916
+piece into the same space
+where another piece already is
+
+
+269
+00:15:16,856 --> 00:15:18,736
+and we'll go back to the slides.
+
+
+270
+00:15:19,516 --> 00:15:24,886
+[ Applause ]
+
+
+271
+00:15:25,386 --> 00:15:26,336
+So, what did we just see?
+
+
+272
+00:15:27,616 --> 00:15:31,986
+We made our first Xc test
+bundle in our project
+
+
+273
+00:15:32,416 --> 00:15:34,596
+to test our board class inside
+
+
+274
+00:15:34,596 --> 00:15:36,596
+of our app using
+the test navigator.
+
+
+275
+00:15:37,696 --> 00:15:39,996
+Then we wrote our first test
+
+
+276
+00:15:40,086 --> 00:15:44,106
+and asserted what the correct
+behavior was for the board
+
+
+277
+00:15:44,206 --> 00:15:46,446
+and the piece classes and how
+they were supposed to interact.
+
+
+278
+00:15:47,656 --> 00:15:50,376
+Then we ran the test
+which exposed the bug
+
+
+279
+00:15:50,376 --> 00:15:54,186
+in our games model and once we
+fixed up the implementation,
+
+
+280
+00:15:54,566 --> 00:15:57,826
+we reran the test without
+ever leaving the editor just
+
+
+281
+00:15:58,416 --> 00:16:00,586
+by clicking on the
+test indicator.
+
+
+282
+00:16:01,666 --> 00:16:04,066
+So now we have a test
+that we can commit
+
+
+283
+00:16:04,066 --> 00:16:07,866
+into our source repository and
+be sure that any future changes
+
+
+284
+00:16:07,866 --> 00:16:11,376
+to the board or piece classes
+won't reintroduce the same bug
+
+
+285
+00:16:11,376 --> 00:16:12,716
+as long as that test gets run.
+
+
+286
+00:16:13,696 --> 00:16:15,516
+Pretty easy, start getting to--
+
+
+287
+00:16:15,566 --> 00:16:17,086
+easy to get started
+with testing, right?
+
+
+288
+00:16:18,436 --> 00:16:21,726
+So let's take a closer
+look at how Xc test works.
+
+
+289
+00:16:22,306 --> 00:16:28,566
+So the whole point of a
+test method is to assert
+
+
+290
+00:16:28,766 --> 00:16:30,136
+that certain assumptions
+are met.
+
+
+291
+00:16:31,196 --> 00:16:33,306
+If you can think of a condition
+that you might want to test,
+
+
+292
+00:16:33,986 --> 00:16:37,646
+Xc test's got an
+assertion for that.
+
+
+293
+00:16:39,016 --> 00:16:40,256
+We're just going to take a look
+
+
+294
+00:16:40,256 --> 00:16:41,616
+at a couple of common
+assertions.
+
+
+295
+00:16:42,646 --> 00:16:48,076
+For example, XCT assert equals
+objects, takes two objects
+
+
+296
+00:16:48,486 --> 00:16:49,626
+and the optional message.
+
+
+297
+00:16:51,066 --> 00:16:57,666
+It passes if the two objects is
+equals methods actually agree
+
+
+298
+00:16:57,666 --> 00:16:59,596
+that the two objects
+are in fact the same.
+
+
+299
+00:17:01,466 --> 00:17:04,195
+XCT assert not nil
+is a favorite of mine
+
+
+300
+00:17:04,606 --> 00:17:07,036
+because it can catch
+situations where you message nil
+
+
+301
+00:17:07,445 --> 00:17:10,465
+and it returns nil and
+propagates that nil farther
+
+
+302
+00:17:10,465 --> 00:17:11,386
+than you might expect.
+
+
+303
+00:17:13,486 --> 00:17:15,496
+XCT assert true and false.
+
+
+304
+00:17:16,006 --> 00:17:17,796
+Both take a single
+Boolean expression
+
+
+305
+00:17:18,215 --> 00:17:21,776
+and an optional message and do
+basically what you would expect.
+
+
+306
+00:17:22,955 --> 00:17:30,286
+And XCT assert throws is really
+good for testing your API
+
+
+307
+00:17:30,616 --> 00:17:34,816
+to ensure that an exception
+is thrown in situations
+
+
+308
+00:17:34,946 --> 00:17:37,636
+where it's actually being
+passed in valid parameters.
+
+
+309
+00:17:39,266 --> 00:17:43,526
+So let's take a look at a few
+things that are good to assert.
+
+
+310
+00:17:44,486 --> 00:17:46,496
+Most tests fall into
+a few categories.
+
+
+311
+00:17:46,896 --> 00:17:49,146
+First, are expected successes.
+
+
+312
+00:17:50,326 --> 00:17:53,246
+These are situations where
+your code is working basically
+
+
+313
+00:17:53,246 --> 00:17:55,006
+as designed.
+
+
+314
+00:17:55,006 --> 00:17:59,236
+An addition method takes 2 and
+2 and returns 4, a character,
+
+
+315
+00:17:59,716 --> 00:18:02,576
+gets a health pack and health
+is bumped up by 5 percent.
+
+
+316
+00:18:03,676 --> 00:18:07,346
+This may include EDGE Cases,
+but this is still situations
+
+
+317
+00:18:07,346 --> 00:18:09,006
+where your code is
+doing the right thing
+
+
+318
+00:18:09,046 --> 00:18:12,686
+by whatever definition it is
+that you've defined it to be.
+
+
+319
+00:18:13,116 --> 00:18:15,336
+Some people actually
+write tests first
+
+
+320
+00:18:15,996 --> 00:18:17,886
+which help them define
+their implementation.
+
+
+321
+00:18:18,926 --> 00:18:21,816
+They'll take use cases
+and express them as tests
+
+
+322
+00:18:21,816 --> 00:18:25,726
+and they'll keep writing
+their actual implementation
+
+
+323
+00:18:25,846 --> 00:18:29,466
+until they get all of
+their tests to pass.
+
+
+324
+00:18:30,376 --> 00:18:34,106
+The second category are from
+bugs that have been reported
+
+
+325
+00:18:34,106 --> 00:18:36,606
+by your users or have been
+found in other testing
+
+
+326
+00:18:37,056 --> 00:18:39,576
+that you've distilled down
+into making unit tests.
+
+
+327
+00:18:40,746 --> 00:18:43,876
+These kinds of tests
+grow over time and ensure
+
+
+328
+00:18:43,876 --> 00:18:46,556
+that you don't reintroduce
+the same kinds of problems
+
+
+329
+00:18:46,836 --> 00:18:47,896
+with later code changes.
+
+
+330
+00:18:49,406 --> 00:18:51,976
+The third category is a
+little less intuitive.
+
+
+331
+00:18:53,256 --> 00:18:56,656
+To fully cover your code,
+you should consider cases
+
+
+332
+00:18:56,656 --> 00:18:58,766
+where your code is
+actually expected
+
+
+333
+00:18:58,766 --> 00:19:03,776
+to fail however it emits errors,
+how it might throw an exemption
+
+
+334
+00:19:04,816 --> 00:19:07,866
+if your addition method takes
+2 billion plus 2 billion,
+
+
+335
+00:19:08,356 --> 00:19:13,696
+it could result in overflow or
+out of nowhere, a wild infinity
+
+
+336
+00:19:13,696 --> 00:19:16,696
+or not a number could appear as
+a result of some calculation.
+
+
+337
+00:19:18,566 --> 00:19:21,396
+It makes sense to
+write a test to ensure
+
+
+338
+00:19:21,396 --> 00:19:22,946
+that an exception gets thrown
+
+
+339
+00:19:23,476 --> 00:19:26,186
+or some other error is
+surfaced for these cases.
+
+
+340
+00:19:27,526 --> 00:19:29,476
+Sometimes with higher
+level objects,
+
+
+341
+00:19:29,476 --> 00:19:31,996
+getting past nil is
+totally unexpected
+
+
+342
+00:19:32,856 --> 00:19:36,486
+or you could be passing an
+array which is shockingly empty.
+
+
+343
+00:19:37,756 --> 00:19:40,826
+The untyped collections in
+Cocoa can be problematic
+
+
+344
+00:19:41,116 --> 00:19:43,666
+if you assume things like keys
+
+
+345
+00:19:43,666 --> 00:19:45,436
+and dictionaries
+and always strings.
+
+
+346
+00:19:46,046 --> 00:19:48,936
+Or, you could get an NS
+null value that could sneak
+
+
+347
+00:19:48,936 --> 00:19:51,796
+in as a side effect to
+somebody observing through KVO.
+
+
+348
+00:19:52,366 --> 00:19:56,076
+And finally, if your
+code uses NS errors
+
+
+349
+00:19:56,486 --> 00:19:59,526
+or venns them throughout
+parameters, you want to assert
+
+
+350
+00:19:59,526 --> 00:20:02,706
+that those errors are actually
+created with useful information
+
+
+351
+00:20:02,706 --> 00:20:06,436
+in them and that they're
+handled in a sensible way.
+
+
+352
+00:20:08,136 --> 00:20:10,876
+So writing tests for
+all of these sorts
+
+
+353
+00:20:10,876 --> 00:20:13,976
+of situations will give your
+code the most complete coverage.
+
+
+354
+00:20:15,876 --> 00:20:19,356
+So now, I'd like to back up and
+take a look at what sort of set
+
+
+355
+00:20:19,356 --> 00:20:20,736
+up might be needed for each
+
+
+356
+00:20:20,736 --> 00:20:22,246
+of your test methods
+before they're run.
+
+
+357
+00:20:22,246 --> 00:20:29,196
+The set up method is your
+opportunity to run common bits
+
+
+358
+00:20:29,196 --> 00:20:31,526
+of code before each
+of your test methods.
+
+
+359
+00:20:32,246 --> 00:20:34,776
+If you find that you're
+copying and pasting code
+
+
+360
+00:20:34,776 --> 00:20:36,246
+from test method to test method,
+
+
+361
+00:20:36,766 --> 00:20:38,506
+set up might actually
+be a pretty good place
+
+
+362
+00:20:38,506 --> 00:20:39,636
+to centralize some of that.
+
+
+363
+00:20:41,086 --> 00:20:43,856
+You can set up shim objects
+that might represent things
+
+
+364
+00:20:43,856 --> 00:20:46,626
+like a server which would
+not be appropriate to contact
+
+
+365
+00:20:47,056 --> 00:20:48,086
+in a testing environment.
+
+
+366
+00:20:48,936 --> 00:20:53,546
+You can also load
+Plist, JSON, and XML data
+
+
+367
+00:20:53,956 --> 00:20:56,996
+from your Xc test
+bundles resources just
+
+
+368
+00:20:56,996 --> 00:20:59,726
+by calling NS bundle,
+bundle for class
+
+
+369
+00:20:59,866 --> 00:21:03,216
+and giving it a reference
+to your test class.
+
+
+370
+00:21:03,856 --> 00:21:05,216
+Putting data and documents
+
+
+371
+00:21:05,686 --> 00:21:07,606
+into your test bundle
+is a great place
+
+
+372
+00:21:07,606 --> 00:21:10,806
+to store pathological used cases
+
+
+373
+00:21:10,976 --> 00:21:13,096
+that may have been
+reported by as bugs.
+
+
+374
+00:21:13,916 --> 00:21:16,286
+And finally, if you need to
+undo anything that you did
+
+
+375
+00:21:16,286 --> 00:21:18,746
+in your set up method,
+tear down is there for you.
+
+
+376
+00:21:19,816 --> 00:21:23,576
+So let's see how
+this works in action.
+
+
+377
+00:21:24,256 --> 00:21:29,096
+First, the test rig finds all
+subclasses of Xc test case
+
+
+378
+00:21:30,346 --> 00:21:33,006
+and starts iterating through
+them in no particular order.
+
+
+379
+00:21:34,216 --> 00:21:38,946
+Then for this example, it finds
+exempt-- the example tests class
+
+
+380
+00:21:39,326 --> 00:21:41,016
+and notices that there
+are two methods in it.
+
+
+381
+00:21:42,676 --> 00:21:45,986
+First, the set up method
+for the class is run,
+
+
+382
+00:21:46,906 --> 00:21:51,286
+then a new instance of
+the test class is created
+
+
+383
+00:21:51,286 --> 00:21:52,746
+and set up as called on that.
+
+
+384
+00:21:53,756 --> 00:21:57,486
+Then your actual test
+method itself is run
+
+
+385
+00:21:58,046 --> 00:22:01,356
+which in this case
+will pass and then tear
+
+
+386
+00:22:01,356 --> 00:22:02,776
+down is called on that instance.
+
+
+387
+00:22:03,956 --> 00:22:06,316
+After that, another
+instance is created
+
+
+388
+00:22:06,316 --> 00:22:08,676
+and setup is called on it.
+
+
+389
+00:22:08,816 --> 00:22:12,486
+Then the second test method gets
+run which in this case will fail
+
+
+390
+00:22:12,486 --> 00:22:16,146
+and tear down gets called on
+the instance then gets called
+
+
+391
+00:22:16,146 --> 00:22:19,656
+on the class and the test rig
+moves on to the next class.
+
+
+392
+00:22:21,116 --> 00:22:23,826
+Pretty straightforward, right?
+
+
+393
+00:22:24,806 --> 00:22:29,416
+So, I'd like to take a
+moment before another demo
+
+
+394
+00:22:29,886 --> 00:22:31,566
+to mention OC unit.
+
+
+395
+00:22:32,596 --> 00:22:36,406
+OC unit is Xcode's unit
+testing framework or has been
+
+
+396
+00:22:36,406 --> 00:22:41,066
+since version 2.1 and that's--
+you may already have some tests
+
+
+397
+00:22:41,066 --> 00:22:41,746
+that are written in it.
+
+
+398
+00:22:41,746 --> 00:22:44,946
+A lot of you actually have
+tests that are written in it.
+
+
+399
+00:22:45,376 --> 00:22:48,356
+That's great and we don't want
+to break any of your tests.
+
+
+400
+00:22:48,986 --> 00:22:54,056
+So we ensured that OC unit
+and Xc unit could coexist side
+
+
+401
+00:22:54,056 --> 00:22:56,996
+by side as we make
+more disruptive changes
+
+
+402
+00:22:56,996 --> 00:22:58,576
+to Xc test in the future.
+
+
+403
+00:22:59,706 --> 00:23:04,016
+Xcode 5 actually recognizes
+all of the same test classes
+
+
+404
+00:23:04,376 --> 00:23:07,576
+and will show you your classes
+and your test methods inside
+
+
+405
+00:23:07,576 --> 00:23:10,956
+of the test navigator
+as well as all
+
+
+406
+00:23:10,956 --> 00:23:14,366
+of the editor indicators
+in the side bar.
+
+
+407
+00:23:14,576 --> 00:23:18,526
+If you're-- if you want to
+run your tests on iOS 6 and 7,
+
+
+408
+00:23:19,516 --> 00:23:25,246
+OC unit is actually the
+right choice for you.
+
+
+409
+00:23:25,696 --> 00:23:29,556
+So-- but when you're
+ready to adopt Xc unit,
+
+
+410
+00:23:29,856 --> 00:23:34,276
+Xc test we have an
+option available under--
+
+
+411
+00:23:34,776 --> 00:23:36,156
+to the run the migration tool
+
+
+412
+00:23:36,156 --> 00:23:39,186
+under the Edit menu
+refactoring option
+
+
+413
+00:23:40,066 --> 00:23:44,266
+and then convert
+to Xc test case.
+
+
+414
+00:23:44,816 --> 00:23:47,956
+So now that we've dove
+into Xc test all the way
+
+
+415
+00:23:47,956 --> 00:23:48,896
+down to the code level.
+
+
+416
+00:23:49,506 --> 00:23:51,566
+I'm sure you're going to want
+to see how to debug your tests.
+
+
+417
+00:23:52,826 --> 00:23:54,836
+We've added some
+great new UI features
+
+
+418
+00:23:54,836 --> 00:23:57,966
+to Xcode 5 beyond just
+the test navigator
+
+
+419
+00:23:57,996 --> 00:24:01,496
+and the editor indicators
+to help you quickly run
+
+
+420
+00:24:01,496 --> 00:24:02,666
+and debug your tests
+
+
+421
+00:24:02,666 --> 00:24:05,096
+with a workflow I think
+you're going to love.
+
+
+422
+00:24:05,966 --> 00:24:08,856
+So to show this to you in our
+next demo, I'd like to turn it
+
+
+423
+00:24:08,856 --> 00:24:11,226
+over to my friend and
+colleague Bino George.
+
+
+424
+00:24:12,516 --> 00:24:18,776
+[ Applause ]
+
+
+425
+00:24:19,276 --> 00:24:19,736
+>> Thanks Mike.
+
+
+426
+00:24:20,996 --> 00:24:22,516
+This is the demonstration.
+
+
+427
+00:24:23,326 --> 00:24:27,626
+So this is a newer version of
+the project that we saw earlier
+
+
+428
+00:24:27,626 --> 00:24:31,256
+and it has many more test that
+covered the various EDGE Cases
+
+
+429
+00:24:31,916 --> 00:24:35,556
+for our board games
+model classes.
+
+
+430
+00:24:35,896 --> 00:24:38,036
+Before we get started and I need
+
+
+431
+00:24:38,036 --> 00:24:41,456
+to add a new break point
+that's new in Xcode 5
+
+
+432
+00:24:42,156 --> 00:24:43,756
+which breaks on test failures.
+
+
+433
+00:24:44,416 --> 00:24:47,036
+To do that I'm going
+to switch the test--
+
+
+434
+00:24:47,036 --> 00:24:52,426
+to the breakpoint navigator
+and I'm going to click
+
+
+435
+00:24:52,426 --> 00:25:01,066
+on the plus button and select
+Add test failure breakpoint.
+
+
+436
+00:25:01,446 --> 00:25:03,846
+So this special breakpoint stops
+when a test assertion fails.
+
+
+437
+00:25:03,846 --> 00:25:06,326
+You'll probably want
+to understand
+
+
+438
+00:25:06,326 --> 00:25:08,126
+when you're debugging your test.
+
+
+439
+00:25:08,746 --> 00:25:11,756
+It's helpful because it stops
+the debugger right at the point
+
+
+440
+00:25:11,756 --> 00:25:14,196
+of the failure, at the
+point of the test assertion
+
+
+441
+00:25:14,196 --> 00:25:19,216
+where you can inspect the live
+objects that caused the failure.
+
+
+442
+00:25:20,556 --> 00:25:24,626
+So let's switch back to test
+navigator and run all the test.
+
+
+443
+00:25:25,086 --> 00:25:29,506
+I can do that by clicking on
+the one button for the bundle.
+
+
+444
+00:25:30,516 --> 00:25:36,496
+[ Pause ]
+
+
+445
+00:25:36,996 --> 00:25:39,886
+Huh, looks like there's
+a failure.
+
+
+446
+00:25:40,866 --> 00:25:42,526
+Mike must have checked in
+something before he went
+
+
+447
+00:25:42,526 --> 00:25:45,036
+on the stage that
+broke one of my test.
+
+
+448
+00:25:46,046 --> 00:25:47,806
+It looks like they're
+failing on and this--
+
+
+449
+00:25:47,806 --> 00:25:49,406
+it looks they're
+failing on an assertion
+
+
+450
+00:25:49,406 --> 00:25:50,486
+for our rule checker class.
+
+
+451
+00:25:51,056 --> 00:25:54,306
+In the out of bounds move test,
+
+
+452
+00:25:55,346 --> 00:25:57,636
+it's creating an invalid
+location and then trying
+
+
+453
+00:25:57,636 --> 00:25:58,856
+to move the piece there.
+
+
+454
+00:25:59,516 --> 00:26:03,476
+[ Pause ]
+
+
+455
+00:26:03,976 --> 00:26:05,686
+The debugger tool
+tip was telling us
+
+
+456
+00:26:05,996 --> 00:26:08,696
+that the rule check is
+actually allowing this.
+
+
+457
+00:26:09,856 --> 00:26:13,776
+So now we know why the test is
+actually failing but let's find
+
+
+458
+00:26:13,776 --> 00:26:14,836
+out why it's actually failing,
+
+
+459
+00:26:14,836 --> 00:26:16,326
+why the rule checker
+is allowing this.
+
+
+460
+00:26:17,426 --> 00:26:21,836
+To do that, I'm going to add a
+new manual breakpoint before the
+
+
+461
+00:26:21,836 --> 00:26:22,586
+test failure.
+
+
+462
+00:26:23,016 --> 00:26:28,406
+And then I can rerun
+the test again.
+
+
+463
+00:26:32,256 --> 00:26:37,476
+Now, on the second run we hit
+the manual breakpoint before the
+
+
+464
+00:26:37,476 --> 00:26:38,086
+actual failure.
+
+
+465
+00:26:38,136 --> 00:26:42,646
+So lets step into the
+valid location method.
+
+
+466
+00:26:47,516 --> 00:26:51,276
+So the first thing it does is
+actually check that the piece
+
+
+467
+00:26:51,276 --> 00:26:53,536
+that you're moving is
+actually already on the board
+
+
+468
+00:26:53,536 --> 00:26:55,976
+and to do it I just
+find the old location.
+
+
+469
+00:26:56,716 --> 00:27:01,106
+I'm going to step
+over it and it looks
+
+
+470
+00:27:01,106 --> 00:27:02,466
+like all location is not nil
+
+
+471
+00:27:02,466 --> 00:27:04,406
+so that means the piece
+is already on the board.
+
+
+472
+00:27:04,406 --> 00:27:09,166
+So the next thing it does
+is it actually checks
+
+
+473
+00:27:09,166 --> 00:27:13,076
+that the location you're
+moving to is actually
+
+
+474
+00:27:13,076 --> 00:27:14,136
+within the bounds of the board.
+
+
+475
+00:27:14,256 --> 00:27:19,366
+And that's exactly what our test
+is actually doing in this test.
+
+
+476
+00:27:19,856 --> 00:27:21,886
+So let's see if that's the case.
+
+
+477
+00:27:22,516 --> 00:27:30,686
+[ Pause ]
+
+
+478
+00:27:31,186 --> 00:27:35,066
+Clearly the rule check is
+clearly wrong here and--
+
+
+479
+00:27:35,516 --> 00:27:38,206
+no the logic is clearly
+giving us the wrong result.
+
+
+480
+00:27:38,206 --> 00:27:44,476
+So the board's frame
+is actually 0088
+
+
+481
+00:27:44,546 --> 00:27:46,106
+and the coordinate is actually--
+
+
+482
+00:27:46,106 --> 00:27:47,966
+the removing tool is
+negative one, negative one
+
+
+483
+00:27:48,366 --> 00:27:50,086
+which is clearly outside
+of the bounds of the board.
+
+
+484
+00:27:50,086 --> 00:27:55,276
+The bug is probably in
+this giant nest of code
+
+
+485
+00:27:56,026 --> 00:27:59,996
+and since we already
+have the board's frame
+
+
+486
+00:27:59,996 --> 00:28:02,036
+and the performance of
+NSRect and the boards--
+
+
+487
+00:28:02,766 --> 00:28:05,226
+the location we were going to--
+in the form of an NS point,
+
+
+488
+00:28:05,916 --> 00:28:08,026
+I think there's a foundation
+method that does this for us
+
+
+489
+00:28:08,026 --> 00:28:10,256
+and we can remove all those
+bunch (inaudible) away.
+
+
+490
+00:28:10,256 --> 00:28:15,746
+It's again it's called
+NSPoint/NSRect.
+
+
+491
+00:28:17,346 --> 00:28:19,436
+It takes a point and NSRect.
+
+
+492
+00:28:20,056 --> 00:28:21,966
+So the point in this
+case is new coordinate
+
+
+493
+00:28:22,946 --> 00:28:25,286
+and the rect is board frame.
+
+
+494
+00:28:27,936 --> 00:28:28,966
+That's a lot simpler.
+
+
+495
+00:28:28,966 --> 00:28:32,166
+So let's see if this actually--
+if the test is passing now.
+
+
+496
+00:28:36,376 --> 00:28:39,756
+To do that, I'm going to
+use a new test command
+
+
+497
+00:28:39,756 --> 00:28:41,426
+in the Product menu.
+
+
+498
+00:28:41,916 --> 00:28:47,826
+The test again command
+is very powerful.
+
+
+499
+00:28:47,826 --> 00:28:50,126
+It allows you to rebond the last
+set of test that you're in over
+
+
+500
+00:28:50,126 --> 00:28:54,396
+and over again and it can help
+you debug your test while you're
+
+
+501
+00:28:54,396 --> 00:28:57,866
+iterating over the test.
+
+
+502
+00:28:58,036 --> 00:29:00,536
+So in the Product menu
+under Perform Action,
+
+
+503
+00:29:00,536 --> 00:29:01,826
+I'm going to select test again.
+
+
+504
+00:29:01,826 --> 00:29:07,446
+It looks like I hit
+the manual breakpoint
+
+
+505
+00:29:07,446 --> 00:29:08,346
+that we added earlier.
+
+
+506
+00:29:08,576 --> 00:29:15,106
+So I'm going to remove
+that and continue.
+
+
+507
+00:29:15,106 --> 00:29:18,406
+Great, our test is
+passing and the one checked
+
+
+508
+00:29:18,406 --> 00:29:19,196
+in code is working now.
+
+
+509
+00:29:20,626 --> 00:29:23,486
+So now that we fixed this
+test, I want to make sure
+
+
+510
+00:29:23,486 --> 00:29:25,926
+that we didn't break any
+other test in my code.
+
+
+511
+00:29:26,526 --> 00:29:29,676
+So I want to find out
+which other test are there
+
+
+512
+00:29:29,736 --> 00:29:30,436
+for this API.
+
+
+513
+00:29:31,406 --> 00:29:34,386
+To do this, I can use the--
+
+
+514
+00:29:34,386 --> 00:29:36,396
+a new assessment category
+at the other Xcode 5.
+
+
+515
+00:29:36,396 --> 00:29:43,846
+So I'm going to switch
+the assessment editor
+
+
+516
+00:29:44,656 --> 00:29:46,226
+and select Test Colors.
+
+
+517
+00:29:46,226 --> 00:29:51,656
+And I'm going to switch
+to the primary editor back
+
+
+518
+00:29:51,656 --> 00:29:56,246
+to the API review testing and
+here is our first test method
+
+
+519
+00:29:56,246 --> 00:29:57,536
+that we already tested.
+
+
+520
+00:29:58,026 --> 00:30:00,746
+Let's see if there
+are any other test.
+
+
+521
+00:30:02,106 --> 00:30:04,696
+There's another test called test
+vertical move and let's switch
+
+
+522
+00:30:04,696 --> 00:30:07,926
+to that and run that
+test as well.
+
+
+523
+00:30:08,136 --> 00:30:11,796
+Great, this test
+is also passing.
+
+
+524
+00:30:12,616 --> 00:30:15,706
+So now let's make sure that
+everything else is working
+
+
+525
+00:30:15,706 --> 00:30:17,626
+and to do that I'm going to
+switch the test navigator.
+
+
+526
+00:30:17,626 --> 00:30:23,526
+It looks like we never
+completely finished the full run
+
+
+527
+00:30:23,526 --> 00:30:24,606
+of tests.
+
+
+528
+00:30:24,706 --> 00:30:26,206
+So I can rerun all the tests
+
+
+529
+00:30:26,206 --> 00:30:28,826
+by using the Test
+Menu on the product.
+
+
+530
+00:30:29,516 --> 00:30:36,376
+[ Pause ]
+
+
+531
+00:30:36,876 --> 00:30:38,946
+Great. Looks like
+there are no failures
+
+
+532
+00:30:38,946 --> 00:30:42,626
+and we see green all the
+way down to test navigator.
+
+
+533
+00:30:42,656 --> 00:30:44,236
+Everything looks great
+on my local machine
+
+
+534
+00:30:44,236 --> 00:30:46,136
+and I should probably
+check in this fix,
+
+
+535
+00:30:46,476 --> 00:30:48,436
+but for now let's switch
+back to the slides.
+
+
+536
+00:30:49,516 --> 00:31:11,906
+[ Pause ]
+
+
+537
+00:31:12,406 --> 00:31:13,806
+So we just saw a
+lot in the demo.
+
+
+538
+00:31:13,806 --> 00:31:17,816
+There are three new Xcode 5 UI
+features I'd like to call out.
+
+
+539
+00:31:18,956 --> 00:31:21,206
+The first is the test
+failure breakpoint.
+
+
+540
+00:31:22,056 --> 00:31:25,576
+When we add it to our project
+it stopped the test execution
+
+
+541
+00:31:25,576 --> 00:31:28,566
+in the debugger right
+at the test failure.
+
+
+542
+00:31:29,056 --> 00:31:31,516
+So this allows us to
+inspect the live objects
+
+
+543
+00:31:31,516 --> 00:31:35,266
+that cause test failure.
+
+
+544
+00:31:35,266 --> 00:31:37,636
+Second we saw that there are
+new assistant categories.
+
+
+545
+00:31:39,056 --> 00:31:41,426
+We use a test color's
+category in the demo
+
+
+546
+00:31:42,106 --> 00:31:43,416
+to find the second method
+
+
+547
+00:31:43,416 --> 00:31:46,536
+that was calling our test
+a valid location API.
+
+
+548
+00:31:46,746 --> 00:31:50,326
+It works just like the
+general colors category
+
+
+549
+00:31:50,486 --> 00:31:52,066
+but it focused just
+on the test methods
+
+
+550
+00:31:52,186 --> 00:31:54,796
+that are calling the
+method that you're editing
+
+
+551
+00:31:54,796 --> 00:31:55,596
+in the primary editor.
+
+
+552
+00:31:56,246 --> 00:31:58,056
+Very tight, very
+focused results.
+
+
+553
+00:31:59,796 --> 00:32:04,406
+The test pluses category we
+didn't see it in the demo
+
+
+554
+00:32:04,556 --> 00:32:07,366
+but it's a good way-- what it
+does is it gives you a wider
+
+
+555
+00:32:07,396 --> 00:32:12,116
+range of classes that have test
+methods in them that call the--
+
+
+556
+00:32:12,116 --> 00:32:15,116
+that referenced the classes
+you are editing in the primary.
+
+
+557
+00:32:16,526 --> 00:32:18,666
+It's a good way to step back
+and see where you might want
+
+
+558
+00:32:18,666 --> 00:32:21,696
+to add new test especially for
+new code that you're developing.
+
+
+559
+00:32:22,236 --> 00:32:28,396
+And third, we saw
+the-- we use a test--
+
+
+560
+00:32:28,396 --> 00:32:32,396
+a new test command in the
+product Perform Action menu.
+
+
+561
+00:32:32,916 --> 00:32:37,486
+The test again command
+is incredibly powerful.
+
+
+562
+00:32:37,486 --> 00:32:41,336
+It allows you to rerun the last
+set of test that you run over
+
+
+563
+00:32:41,336 --> 00:32:44,226
+and over again with
+just one key stroke.
+
+
+564
+00:32:44,226 --> 00:32:49,116
+You can be in the middle
+of editing any file
+
+
+565
+00:32:49,116 --> 00:32:51,326
+in your source editor
+and would want it
+
+
+566
+00:32:51,326 --> 00:32:52,916
+and you can work the
+Test Again command
+
+
+567
+00:32:52,976 --> 00:32:54,626
+and you get immediate results.
+
+
+568
+00:32:55,226 --> 00:32:57,396
+You will now just then
+rather, changes you made
+
+
+569
+00:32:57,396 --> 00:32:59,766
+in the editor actually fix the
+test that you're working on.
+
+
+570
+00:33:00,356 --> 00:33:03,246
+We think it's a really big deal
+and it's one of those features
+
+
+571
+00:33:03,246 --> 00:33:06,126
+that you love once
+you start using it.
+
+
+572
+00:33:08,136 --> 00:33:09,836
+So now that we've
+shown you how to write
+
+
+573
+00:33:09,836 --> 00:33:11,796
+and debug test locally
+inside test Xcode,
+
+
+574
+00:33:12,216 --> 00:33:15,436
+I'd like to shift gears and show
+you how OS X server can save you
+
+
+575
+00:33:15,436 --> 00:33:17,456
+time and catch problems
+by running all
+
+
+576
+00:33:17,456 --> 00:33:22,006
+of your tests all the time.
+
+
+577
+00:33:22,006 --> 00:33:24,266
+So earlier this week you
+may have seen how to set
+
+
+578
+00:33:24,266 --> 00:33:27,596
+up OS X server, so we will
+make something how to set
+
+
+579
+00:33:27,596 --> 00:33:28,796
+up OS X server in this session
+
+
+580
+00:33:28,796 --> 00:33:31,596
+but in the Continuous
+Integration with Xcode 5 session
+
+
+581
+00:33:31,596 --> 00:33:35,346
+on Tuesday this was covered and
+depth so you might want to refer
+
+
+582
+00:33:35,346 --> 00:33:37,966
+to that for your-- when
+you leave the session.
+
+
+583
+00:33:38,606 --> 00:33:41,916
+So after you set up the export
+service, you can create a bot
+
+
+584
+00:33:42,046 --> 00:33:44,376
+to integrate your project.
+
+
+585
+00:33:44,376 --> 00:33:48,186
+Integration is the act of
+checking out your code, building
+
+
+586
+00:33:48,186 --> 00:33:50,016
+and running your tests.
+
+
+587
+00:33:50,166 --> 00:33:53,816
+Integration can happen on
+every commit, on every hour
+
+
+588
+00:33:53,816 --> 00:33:55,646
+or whatever interval
+is right for your team.
+
+
+589
+00:33:56,516 --> 00:34:02,316
+[ Pause ]
+
+
+590
+00:34:02,816 --> 00:34:06,526
+So, you could have multiple bots
+-- integrate all of the products
+
+
+591
+00:34:06,526 --> 00:34:09,076
+in your project, one
+for your app NSTest,
+
+
+592
+00:34:09,485 --> 00:34:13,146
+one for your framework NSTest,
+one for your library NSTest.
+
+
+593
+00:34:13,246 --> 00:34:14,266
+But there is a much
+simplier way.
+
+
+594
+00:34:14,306 --> 00:34:19,196
+You can create a shared scheme
+
+
+595
+00:34:19,896 --> 00:34:22,096
+and this shared scheme
+everything in your app,
+
+
+596
+00:34:22,255 --> 00:34:25,065
+your app NSTest, your library
+NSTest, they're all going
+
+
+597
+00:34:25,065 --> 00:34:25,956
+to this shared scheme.
+
+
+598
+00:34:26,846 --> 00:34:28,176
+All the test bundles for all
+
+
+599
+00:34:28,176 --> 00:34:32,176
+of the products you create
+are going to the scheme
+
+
+600
+00:34:32,396 --> 00:34:34,206
+which you can then edit
+in the scheme sheet
+
+
+601
+00:34:34,206 --> 00:34:36,985
+or in the test navigator
+directly
+
+
+602
+00:34:36,985 --> 00:34:40,186
+in the test navigator itself.
+
+
+603
+00:34:40,275 --> 00:34:42,116
+You will then check
+in this sheet--
+
+
+604
+00:34:42,116 --> 00:34:45,166
+this scheme into
+source repository
+
+
+605
+00:34:45,166 --> 00:34:50,166
+and then the bots can integrate
+your project, the scheme.
+
+
+606
+00:34:50,456 --> 00:34:53,636
+Since the shared scheme,
+
+
+607
+00:34:53,636 --> 00:34:59,666
+everybody in your team can
+also run the same scheme.
+
+
+608
+00:34:59,866 --> 00:35:01,546
+So once you've set up a bot
+
+
+609
+00:35:01,546 --> 00:35:04,656
+for your project any time
+there's a new test failure
+
+
+610
+00:35:04,656 --> 00:35:07,646
+or new build issue will
+bring that to you right away.
+
+
+611
+00:35:07,646 --> 00:35:10,606
+On the score board over
+the next code itself right
+
+
+612
+00:35:10,606 --> 00:35:12,766
+into the activity
+area where you can--
+
+
+613
+00:35:12,766 --> 00:35:17,366
+when you open that project.
+
+
+614
+00:35:17,466 --> 00:35:20,426
+So besides running all of your
+test all the time for you,
+
+
+615
+00:35:20,736 --> 00:35:22,976
+there's an, you will now an
+exciting reason why you want
+
+
+616
+00:35:22,976 --> 00:35:25,716
+to have OS X server do your
+continuous integration for you.
+
+
+617
+00:35:25,716 --> 00:35:30,276
+You can cover-- your test
+will run on a wide variety
+
+
+618
+00:35:30,276 --> 00:35:32,486
+of configurations that
+simply isn't possible to do
+
+
+619
+00:35:32,486 --> 00:35:35,166
+on your laptop or
+while you are sitting
+
+
+620
+00:35:35,166 --> 00:35:37,756
+at your desktop,
+sitting at your desk.
+
+
+621
+00:35:37,976 --> 00:35:43,116
+You can have many more
+devices connected to the server
+
+
+622
+00:35:43,236 --> 00:35:46,416
+and the server will basically
+run all of your test on any
+
+
+623
+00:35:46,416 --> 00:35:48,766
+or all of these devices
+for you automatically.
+
+
+624
+00:35:51,216 --> 00:35:53,586
+This allows you to cover
+a wide variety of hardware
+
+
+625
+00:35:53,586 --> 00:35:55,666
+and software configurations
+automatically.
+
+
+626
+00:35:56,326 --> 00:36:01,526
+You can also run your test
+on the simulator although
+
+
+627
+00:36:01,526 --> 00:36:04,456
+in the current OS X server
+seed that's not supported,
+
+
+628
+00:36:05,056 --> 00:36:08,286
+it's not available.
+
+
+629
+00:36:08,286 --> 00:36:11,126
+Between the simulator and the
+devices connected to the server,
+
+
+630
+00:36:11,126 --> 00:36:13,666
+you can cut-- you can cover
+a wide variety of hardware
+
+
+631
+00:36:13,666 --> 00:36:15,276
+and software cointegrations
+automatically
+
+
+632
+00:36:16,486 --> 00:36:18,536
+and you can cover
+all the OS versions
+
+
+633
+00:36:18,536 --> 00:36:19,376
+that you support as well.
+
+
+634
+00:36:20,076 --> 00:36:25,866
+If you're integrating an OS
+X project, server will check
+
+
+635
+00:36:25,866 --> 00:36:29,966
+out your project, build
+your app and NSTests
+
+
+636
+00:36:29,966 --> 00:36:33,086
+and run everything locally on
+the server itself without having
+
+
+637
+00:36:33,086 --> 00:36:34,406
+to have a user logged
+in graphically.
+
+
+638
+00:36:34,406 --> 00:36:38,616
+So to see this in action,
+let's switch to a demo machine.
+
+
+639
+00:36:38,676 --> 00:36:45,496
+So this is the same
+project that we saw earlier
+
+
+640
+00:36:45,496 --> 00:36:48,366
+that I just checked out
+from my OS X server here.
+
+
+641
+00:36:53,916 --> 00:36:56,456
+This red indicator shows us
+that there's a problem with one
+
+
+642
+00:36:56,456 --> 00:36:58,006
+of the boards that's
+integrating this project.
+
+
+643
+00:36:58,006 --> 00:37:03,946
+So I'm going to click on this
+indicator to see what's wrong.
+
+
+644
+00:37:04,516 --> 00:37:10,236
+[ Pause ]
+
+
+645
+00:37:10,736 --> 00:37:12,976
+Let's take a look at the board
+to see exactly what's going on.
+
+
+646
+00:37:13,516 --> 00:37:21,546
+[ Pause ]
+
+
+647
+00:37:22,046 --> 00:37:25,306
+Here we see all the
+recent integrations
+
+
+648
+00:37:25,486 --> 00:37:27,376
+that we performed on--
+that the board performed
+
+
+649
+00:37:27,426 --> 00:37:28,346
+for this project.
+
+
+650
+00:37:28,436 --> 00:37:33,516
+I can see all the test
+failures as well, a few.
+
+
+651
+00:37:34,286 --> 00:37:35,946
+So we've had a run
+of clean integrations
+
+
+652
+00:37:36,156 --> 00:37:38,166
+and everything was going
+up until this point
+
+
+653
+00:37:38,636 --> 00:37:40,286
+but somebody broke one
+of our tests just now.
+
+
+654
+00:37:44,856 --> 00:37:46,556
+So to find out which
+test is failing,
+
+
+655
+00:37:46,556 --> 00:37:48,706
+let's click on the
+integration test results.
+
+
+656
+00:37:49,516 --> 00:37:55,226
+[ Pause ]
+
+
+657
+00:37:55,726 --> 00:38:00,266
+So I have-- this is where you
+can see all your tests and all
+
+
+658
+00:38:00,266 --> 00:38:01,996
+of the devices that are
+connected to the server
+
+
+659
+00:38:02,036 --> 00:38:04,316
+and the results for all of the
+test that ran on the server.
+
+
+660
+00:38:04,826 --> 00:38:08,016
+You can see various
+configurations
+
+
+661
+00:38:08,336 --> 00:38:10,246
+like I have an iPad mini here
+
+
+662
+00:38:10,246 --> 00:38:12,926
+and an iPhone running
+iOS 6-- iOS 7.
+
+
+663
+00:38:12,926 --> 00:38:16,296
+I only have two devices here
+
+
+664
+00:38:16,296 --> 00:38:21,036
+but you could have many more
+devices connected to the server.
+
+
+665
+00:38:21,036 --> 00:38:24,316
+The first device I have is an
+iPad mini and its running iOS 6,
+
+
+666
+00:38:24,396 --> 00:38:27,476
+the second device I have
+is an iPhone running iOS 7.
+
+
+667
+00:38:27,476 --> 00:38:32,626
+So we can look at the failing
+test, the code of failing test
+
+
+668
+00:38:32,626 --> 00:38:35,196
+by clicking on the
+red test indicator.
+
+
+669
+00:38:35,826 --> 00:38:42,506
+So this is a test that
+basically parses high score data
+
+
+670
+00:38:42,506 --> 00:38:43,356
+from our server.
+
+
+671
+00:38:44,516 --> 00:38:46,656
+In this test we fake the
+data because we don't--
+
+
+672
+00:38:46,656 --> 00:38:48,746
+this is a unit test and we
+want it to be really fast.
+
+
+673
+00:38:49,706 --> 00:38:51,366
+We also want the test
+to work in isolation
+
+
+674
+00:38:51,366 --> 00:38:53,586
+so that it's not relying
+on any data from the server
+
+
+675
+00:38:53,586 --> 00:38:54,786
+that could change
+from one to one.
+
+
+676
+00:38:54,786 --> 00:39:00,196
+So what could have gone wrong?
+
+
+677
+00:39:00,196 --> 00:39:02,766
+Perhaps integration
+summary could help us out.
+
+
+678
+00:39:03,086 --> 00:39:05,276
+So let's go back to
+integration summary.
+
+
+679
+00:39:05,486 --> 00:39:09,676
+So the integration
+details tell us
+
+
+680
+00:39:09,676 --> 00:39:12,246
+that we are calling an
+unrecognized selector called
+
+
+681
+00:39:12,246 --> 00:39:13,756
+scan on-sign long, long.
+
+
+682
+00:39:14,226 --> 00:39:19,956
+This is really weird because we
+didn't have any build failures.
+
+
+683
+00:39:20,876 --> 00:39:22,006
+So let's switch back
+to the code and see
+
+
+684
+00:39:22,006 --> 00:39:22,966
+where we're actually using it.
+
+
+685
+00:39:23,516 --> 00:39:27,776
+[ Pause ]
+
+
+686
+00:39:28,276 --> 00:39:30,916
+We're not actually using
+in the test meter itself.
+
+
+687
+00:39:31,036 --> 00:39:33,396
+I don't see it here,
+it's quite small.
+
+
+688
+00:39:34,296 --> 00:39:36,276
+Maybe we are using again
+the high scores class.
+
+
+689
+00:39:36,766 --> 00:39:39,226
+So let's command-click on
+it and see if we're using it
+
+
+690
+00:39:39,226 --> 00:39:40,086
+in the high scores class.
+
+
+691
+00:39:40,446 --> 00:39:48,526
+It's quite a big file so I'm
+going to search for it in here.
+
+
+692
+00:39:48,526 --> 00:39:50,276
+There it is.
+
+
+693
+00:39:50,486 --> 00:39:51,866
+So how could this fail on an--
+
+
+694
+00:39:51,866 --> 00:39:54,016
+on the iPad but not
+on the iPhone?
+
+
+695
+00:39:55,086 --> 00:39:59,406
+Perhaps there's a
+difference in the OS versions?
+
+
+696
+00:39:59,766 --> 00:40:01,786
+So let's look at the header
+for this method to find
+
+
+697
+00:40:01,786 --> 00:40:02,856
+out when it was introduced.
+
+
+698
+00:40:03,576 --> 00:40:09,136
+I can do that by
+command-clicking on the method.
+
+
+699
+00:40:09,276 --> 00:40:16,866
+So this method was newly
+introduced in iOS 7.
+
+
+700
+00:40:16,866 --> 00:40:20,296
+So we're running an iOS 7 API,
+we're calling an iOS 7 API
+
+
+701
+00:40:20,296 --> 00:40:22,146
+on a device that's
+running iOS 6.
+
+
+702
+00:40:22,146 --> 00:40:23,786
+This is not going to work.
+
+
+703
+00:40:23,786 --> 00:40:27,996
+No wonder it's failing.
+
+
+704
+00:40:27,996 --> 00:40:30,866
+So right about that, I
+see another method called
+
+
+705
+00:40:30,866 --> 00:40:32,106
+which scans the sign numbers.
+
+
+706
+00:40:32,866 --> 00:40:35,756
+So we could probably use this
+
+
+707
+00:40:35,756 --> 00:40:40,676
+because it's exists iOS
+6 and I think it'll do.
+
+
+708
+00:40:41,536 --> 00:40:44,046
+It just means that the highest
+score can only be 9 quintillion
+
+
+709
+00:40:44,046 --> 00:40:47,386
+instead of 18 quintillion,
+I guess that will work.
+
+
+710
+00:40:49,096 --> 00:40:52,906
+So let's switch back to the
+code and fix it-- fix the AP--
+
+
+711
+00:40:52,986 --> 00:40:55,906
+fix our code to use the
+new AP-- the older API.
+
+
+712
+00:40:56,516 --> 00:41:02,896
+[ Pause ]
+
+
+713
+00:41:03,396 --> 00:41:07,756
+And now I think I fixed
+the test and fixed my code,
+
+
+714
+00:41:07,756 --> 00:41:09,896
+so let's run all
+the test locally
+
+
+715
+00:41:09,896 --> 00:41:11,556
+to see if it works locally.
+
+
+716
+00:41:12,466 --> 00:41:15,516
+During that I am going to
+switch to Test Navigator
+
+
+717
+00:41:15,516 --> 00:41:17,796
+and select product test
+
+
+718
+00:41:17,916 --> 00:41:19,796
+to run all the test
+locally in the simulator.
+
+
+719
+00:41:23,736 --> 00:41:26,006
+Great, everything
+is passing locally.
+
+
+720
+00:41:26,006 --> 00:41:29,346
+So let's check it in by
+using the source control menu
+
+
+721
+00:41:29,346 --> 00:41:30,796
+and selecting commit.
+
+
+722
+00:41:31,516 --> 00:41:46,096
+[ Background Conversation ]
+
+
+723
+00:41:46,596 --> 00:41:50,676
+Push it to the server.
+
+
+724
+00:41:50,856 --> 00:41:54,726
+So now I checked it in and I can
+click off a manual integration
+
+
+725
+00:41:54,786 --> 00:41:57,576
+because I want it to happen
+right away by switching
+
+
+726
+00:41:57,576 --> 00:42:00,906
+to the bott and performing
+integrate.
+
+
+727
+00:42:01,516 --> 00:42:07,016
+[ Pause ]
+
+
+728
+00:42:07,516 --> 00:42:13,656
+So, when I push the
+integrate button,
+
+
+729
+00:42:14,616 --> 00:42:19,646
+Xcode sends integration
+request to the server.
+
+
+730
+00:42:19,816 --> 00:42:22,456
+The server then checks out all
+of the code from my project
+
+
+731
+00:42:22,456 --> 00:42:26,746
+from the source repository into
+a temporary build location.
+
+
+732
+00:42:27,286 --> 00:42:32,646
+Then it builds all of the
+apps code and the test code
+
+
+733
+00:42:32,646 --> 00:42:35,066
+into an app bundle and a
+test code, test bundle.
+
+
+734
+00:42:37,306 --> 00:42:39,476
+Server then tries to
+figure out all the devices,
+
+
+735
+00:42:39,576 --> 00:42:42,486
+it scans all the
+devices connected to it.
+
+
+736
+00:42:44,896 --> 00:42:50,106
+Server then uploads your app
+and its test bundles into the--
+
+
+737
+00:42:50,106 --> 00:42:51,746
+to each of the devices.
+
+
+738
+00:42:52,486 --> 00:42:59,596
+In this case I have
+an iPad and an iPhone.
+
+
+739
+00:42:59,596 --> 00:43:04,146
+Then your application
+is launched as we talked
+
+
+740
+00:43:04,146 --> 00:43:06,366
+about earlier in the application
+
+
+741
+00:43:06,366 --> 00:43:10,836
+that finished launching
+it calls your test
+
+
+742
+00:43:10,956 --> 00:43:12,806
+and it got-- runs your test.
+
+
+743
+00:43:15,396 --> 00:43:18,846
+Once the last test is
+finished on the last device,
+
+
+744
+00:43:19,656 --> 00:43:22,756
+basically server collects
+all of the data for all
+
+
+745
+00:43:22,756 --> 00:43:26,366
+of the test results from
+each device and stores it
+
+
+746
+00:43:26,366 --> 00:43:27,686
+into the box integration
+history.
+
+
+747
+00:43:27,846 --> 00:43:29,636
+So you can go back and see where
+
+
+748
+00:43:29,636 --> 00:43:31,136
+and how things have
+done in the past.
+
+
+749
+00:43:31,236 --> 00:43:33,146
+And the whole integration
+results are stored
+
+
+750
+00:43:33,146 --> 00:43:35,366
+in the history.
+
+
+751
+00:43:35,456 --> 00:43:38,696
+Then, all the connected
+clients Xcode here
+
+
+752
+00:43:38,696 --> 00:43:41,436
+and the score board
+we saw earlier and any
+
+
+753
+00:43:41,436 --> 00:43:44,226
+of the web sessions are
+all informed of the result.
+
+
+754
+00:43:46,716 --> 00:43:49,546
+And now what we can see here
+in Xcode that all of the test
+
+
+755
+00:43:49,546 --> 00:43:53,226
+and all of the configurations
+have passed.
+
+
+756
+00:43:53,376 --> 00:43:53,836
+Excellent.
+
+
+757
+00:43:54,716 --> 00:43:57,166
+Thanks to OS X server we've
+tested many more configurations
+
+
+758
+00:43:57,976 --> 00:43:59,866
+automatically than we
+have time to do by hand.
+
+
+759
+00:44:00,516 --> 00:44:01,646
+So let's switch back
+to the slides.
+
+
+760
+00:44:01,886 --> 00:44:08,456
+I'd like to invite Mike back up
+to recap and then wrap it up.
+
+
+761
+00:44:09,516 --> 00:44:14,526
+[ Applause ]
+
+
+762
+00:44:15,026 --> 00:44:17,436
+>> Great. Great, thank you Bino.
+
+
+763
+00:44:17,536 --> 00:44:22,046
+So, what did Bino just show us?
+
+
+764
+00:44:23,506 --> 00:44:28,826
+Well, first to set up the bot,
+you need to add your tests
+
+
+765
+00:44:29,506 --> 00:44:31,736
+to a shared scheme and commit
+
+
+766
+00:44:31,736 --> 00:44:33,656
+that into your source
+repository.
+
+
+767
+00:44:35,276 --> 00:44:40,456
+In the demo, we showed-- we
+saw how OS X server can run all
+
+
+768
+00:44:40,456 --> 00:44:44,946
+of your tests on a variety of
+devices and configurations.
+
+
+769
+00:44:46,736 --> 00:44:52,336
+Then, Bino showed us the bot and
+test summary results in Xcode 5
+
+
+770
+00:44:52,476 --> 00:44:55,106
+and how you can use
+it to find failures
+
+
+771
+00:44:55,586 --> 00:44:59,296
+that are not necessarily
+reproducing in the IDE.
+
+
+772
+00:44:59,466 --> 00:45:02,256
+Now, all of this is great
+if you can start fresh
+
+
+773
+00:45:02,616 --> 00:45:05,086
+with a brand new OS X
+server and set that up
+
+
+774
+00:45:05,086 --> 00:45:06,896
+as your continuous
+integration environment.
+
+
+775
+00:45:07,436 --> 00:45:10,846
+But what if you already
+have one?
+
+
+776
+00:45:11,986 --> 00:45:15,106
+Through all the new features
+that we've added to Xcode 5
+
+
+777
+00:45:15,106 --> 00:45:16,926
+for testing, we haven't
+forgotten
+
+
+778
+00:45:16,926 --> 00:45:17,766
+about the command line.
+
+
+779
+00:45:18,576 --> 00:45:19,946
+This is your opportunity
+
+
+780
+00:45:20,036 --> 00:45:24,146
+for your existing continuous
+integration system to hook in.
+
+
+781
+00:45:24,146 --> 00:45:27,906
+The Xcode build command
+line tool can drive testing
+
+
+782
+00:45:28,206 --> 00:45:31,006
+in exactly the same
+way as the Xcode IDE
+
+
+783
+00:45:31,356 --> 00:45:33,946
+or the Xcode service
+inside Xcode server.
+
+
+784
+00:45:34,756 --> 00:45:37,976
+The only mandatory argument
+is the shared scheme.
+
+
+785
+00:45:40,006 --> 00:45:42,376
+You can also specify
+different destinations
+
+
+786
+00:45:42,566 --> 00:45:44,346
+that you want the
+integration performed to.
+
+
+787
+00:45:44,866 --> 00:45:50,506
+For example, My Mac 64, or
+if you have devices plugged
+
+
+788
+00:45:50,506 --> 00:45:53,236
+in to the server, you
+can call them now by name
+
+
+789
+00:45:53,526 --> 00:45:54,726
+and their device identifier.
+
+
+790
+00:45:55,326 --> 00:45:59,196
+You can also use a simulator
+
+
+791
+00:46:00,446 --> 00:46:03,546
+to target all the
+different device form factors
+
+
+792
+00:46:04,076 --> 00:46:07,786
+and OS combinations that
+that simulator supports.
+
+
+793
+00:46:08,316 --> 00:46:11,616
+Best of all, you can chain all
+
+
+794
+00:46:11,616 --> 00:46:13,446
+of these destination
+arguments together
+
+
+795
+00:46:13,446 --> 00:46:16,736
+and an integration we
+performed across all of them.
+
+
+796
+00:46:18,126 --> 00:46:21,476
+If there are any issues that
+came up in either the building
+
+
+797
+00:46:21,476 --> 00:46:23,336
+or the actual tests themselves,
+
+
+798
+00:46:23,816 --> 00:46:27,266
+Xcode build will return a
+non-zero exit code and this is
+
+
+799
+00:46:27,266 --> 00:46:29,086
+where your automation
+can pick up on that
+
+
+800
+00:46:29,936 --> 00:46:32,916
+and store off the
+transcript of the log for you
+
+
+801
+00:46:32,916 --> 00:46:34,366
+to investigate the
+failure later.
+
+
+802
+00:46:35,136 --> 00:46:38,906
+So, we think this is really
+easy for command line tool
+
+
+803
+00:46:39,746 --> 00:46:44,616
+and that is the last thing I
+have to show that's new today.
+
+
+804
+00:46:44,816 --> 00:46:52,316
+So, to recap, today we covered
+what a unit test is in general
+
+
+805
+00:46:52,766 --> 00:46:54,286
+and how they test
+just one thing.
+
+
+806
+00:46:55,296 --> 00:46:57,836
+And how to quickly
+write those tests
+
+
+807
+00:46:58,156 --> 00:47:00,156
+in Objective-C using Xc test.
+
+
+808
+00:47:01,906 --> 00:47:04,356
+In the demo, we showed
+just how easy it was
+
+
+809
+00:47:04,356 --> 00:47:07,896
+to start getting writing-- get
+started writing your unit tests
+
+
+810
+00:47:09,036 --> 00:47:12,346
+and how to run them quickly
+in the test navigator
+
+
+811
+00:47:12,346 --> 00:47:15,416
+and using the test indicators
+in the source editor.
+
+
+812
+00:47:16,006 --> 00:47:22,636
+Then, Bino showed us how to
+use the test failure breakpoint
+
+
+813
+00:47:23,116 --> 00:47:25,256
+to step through your
+code at the moment
+
+
+814
+00:47:25,556 --> 00:47:27,536
+that a test assertion failed.
+
+
+815
+00:47:29,386 --> 00:47:33,606
+Then, he also showed us how to
+use the new assistant categories
+
+
+816
+00:47:33,606 --> 00:47:36,796
+to find other tests that might
+be calling the implementation
+
+
+817
+00:47:36,796 --> 00:47:39,056
+that you're working on
+in the primary editor.
+
+
+818
+00:47:40,696 --> 00:47:44,176
+Then, he also showed us how the
+Test Again command can quickly
+
+
+819
+00:47:44,176 --> 00:47:47,346
+help you rerun the same test
+over and over and over again
+
+
+820
+00:47:47,816 --> 00:47:49,716
+as your iterating on
+the implementation
+
+
+821
+00:47:50,216 --> 00:47:53,966
+without even having the test
+navigator or to test itself up.
+
+
+822
+00:47:54,156 --> 00:47:58,476
+In the demo, he showed us
+how to run a wide variety
+
+
+823
+00:47:58,536 --> 00:48:01,596
+of configurations
+on different devices
+
+
+824
+00:48:02,026 --> 00:48:05,286
+and how you can run all those
+configurations all the time
+
+
+825
+00:48:06,136 --> 00:48:08,956
+and then finally we
+covered just now how
+
+
+826
+00:48:08,956 --> 00:48:13,036
+to drive the same integrations
+at the command line.
+
+
+827
+00:48:14,656 --> 00:48:18,286
+So throughout the three demos
+today, we showed three bugs
+
+
+828
+00:48:18,286 --> 00:48:20,486
+that could've been
+potential show stoppers
+
+
+829
+00:48:20,486 --> 00:48:21,606
+for any application.
+
+
+830
+00:48:22,796 --> 00:48:25,946
+The first, being a pure logic
+bug where the two pieces
+
+
+831
+00:48:25,946 --> 00:48:29,866
+on our board collided,
+the second was a case
+
+
+832
+00:48:29,866 --> 00:48:31,656
+of overly complicated
+balance check
+
+
+833
+00:48:31,656 --> 00:48:34,496
+in that could've been replaced
+by a simple library function.
+
+
+834
+00:48:35,666 --> 00:48:40,476
+And the third was the case
+of using a two new API
+
+
+835
+00:48:41,136 --> 00:48:43,076
+when deploying on to
+an older OS version.
+
+
+836
+00:48:44,366 --> 00:48:47,346
+What I hope that you've seen
+today is how testing can catch
+
+
+837
+00:48:47,346 --> 00:48:50,596
+these kinds of bugs in your
+app and just how easy it is
+
+
+838
+00:48:50,596 --> 00:48:53,756
+to start the testing right
+now if you haven't already.
+
+
+839
+00:48:56,856 --> 00:49:00,056
+So, if you have any
+questions or feedback,
+
+
+840
+00:49:00,396 --> 00:49:02,226
+please let our evangelist
+Dave know.
+
+
+841
+00:49:02,226 --> 00:49:04,076
+Here are the links
+
+
+842
+00:49:04,076 --> 00:49:06,386
+to the documentation
+and developer forums.
+
+
+843
+00:49:07,566 --> 00:49:10,446
+To learn more about
+OS X's server--
+
+
+844
+00:49:11,026 --> 00:49:14,826
+learn more about OS X server and
+the Xcode service, please check
+
+
+845
+00:49:14,826 --> 00:49:16,586
+out the Continuous Integration
+
+
+846
+00:49:16,586 --> 00:49:18,656
+with Xcode 5 session
+that was on Tuesday.
+
+
+847
+00:49:19,326 --> 00:49:21,506
+The video is available
+right now from the wwcf
+
+
+848
+00:49:21,506 --> 00:49:22,866
+that you have in your pocket.
+
+
+849
+00:49:24,706 --> 00:49:26,486
+And with that, I'd
+like to say thank you.
+
+
+850
+00:49:27,516 --> 00:49:33,800
+[ Applause ]
+

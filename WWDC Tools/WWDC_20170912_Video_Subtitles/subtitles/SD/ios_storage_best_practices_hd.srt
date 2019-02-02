@@ -1,0 +1,1147 @@
+1
+00:00:01,101 --> 00:00:02,369
+As an app developer,
+
+
+2
+00:00:02,369 --> 00:00:04,104
+it's critical that
+you know exactly
+
+
+3
+00:00:04,104 --> 00:00:06,039
+what your app
+is storing on disk,
+
+
+4
+00:00:06,039 --> 00:00:07,875
+where everything
+is being stored,
+
+
+5
+00:00:07,875 --> 00:00:09,743
+and why it's needed.
+
+
+6
+00:00:09,743 --> 00:00:11,945
+The best way to stay
+on top of these details
+
+
+7
+00:00:11,945 --> 00:00:15,682
+is to take inventory of
+what your app actually stores.
+
+
+8
+00:00:17,217 --> 00:00:21,255
+To get started, build and
+run your app on a device,
+
+
+9
+00:00:21,255 --> 00:00:25,626
+then exercise all the features
+that will store things on disk.
+
+
+10
+00:00:25,626 --> 00:00:26,827
+Once you've done this,
+
+
+11
+00:00:26,827 --> 00:00:30,597
+it's time to look at what
+actually got stored, and where.
+
+
+12
+00:00:30,597 --> 00:00:33,867
+Use the Devices and Simulators
+window in Xcode
+
+
+13
+00:00:33,867 --> 00:00:38,472
+to extract your app's container
+so that we can see what's in it.
+
+
+14
+00:00:38,472 --> 00:00:41,241
+Select your device
+in the column on the left,
+
+
+15
+00:00:41,241 --> 00:00:44,344
+then select your app
+in the Installed Apps list.
+
+
+16
+00:00:45,445 --> 00:00:48,815
+And using the gear icon,
+choose Download Container,
+
+
+17
+00:00:48,815 --> 00:00:50,684
+and save it on your Mac.
+
+
+18
+00:00:53,220 --> 00:00:54,655
+In the Finder,
+
+
+19
+00:00:54,655 --> 00:00:59,693
+Control-click on the xcappdata
+file that was downloaded.
+
+
+20
+00:00:59,693 --> 00:01:02,496
+Choose Show Package Contents,
+
+
+21
+00:01:02,496 --> 00:01:06,733
+and go into the App Data folder
+and start taking inventory.
+
+
+22
+00:01:06,733 --> 00:01:08,001
+Look through the directories
+
+
+23
+00:01:08,001 --> 00:01:10,337
+to see what got stored
+in each one.
+
+
+24
+00:01:12,339 --> 00:01:15,976
+For each file, make sure
+you can identify what it is,
+
+
+25
+00:01:15,976 --> 00:01:17,811
+and why it's being stored.
+
+
+26
+00:01:17,811 --> 00:01:20,013
+If you're not sure
+why something is there,
+
+
+27
+00:01:20,013 --> 00:01:22,316
+you may be able
+to get rid of it.
+
+
+28
+00:01:22,316 --> 00:01:24,718
+You want to verify that
+you're putting the right files
+
+
+29
+00:01:24,718 --> 00:01:26,620
+in the appropriate directories,
+
+
+30
+00:01:26,620 --> 00:01:29,189
+and also consider whether
+the file should be included
+
+
+31
+00:01:29,189 --> 00:01:31,792
+in iTunes and iCloud backups.
+
+
+32
+00:01:31,792 --> 00:01:34,194
+Only you can answer
+the first two questions,
+
+
+33
+00:01:34,194 --> 00:01:37,264
+since they relate
+to your app's functionality.
+
+
+34
+00:01:37,264 --> 00:01:39,132
+I'll focus on
+the last two questions
+
+
+35
+00:01:39,132 --> 00:01:42,803
+and start with
+where files should be stored.
+
+
+36
+00:01:42,803 --> 00:01:45,272
+iCloud Drive is the best
+place to put documents
+
+
+37
+00:01:45,272 --> 00:01:49,810
+because they become available
+on all of the user's devices.
+
+
+38
+00:01:49,810 --> 00:01:52,946
+Because the contents of your
+app's folder on iCloud Drive
+
+
+39
+00:01:52,946 --> 00:01:56,516
+is visible, it's important that
+you only put documents in there
+
+
+40
+00:01:56,516 --> 00:02:00,053
+that people will recognize
+and access directly.
+
+
+41
+00:02:00,053 --> 00:02:03,357
+Your app reads and writes
+the content locally,
+
+
+42
+00:02:03,357 --> 00:02:06,193
+and then the operating
+system will automatically upload
+
+
+43
+00:02:06,193 --> 00:02:09,496
+those files when
+the network is available.
+
+
+44
+00:02:09,496 --> 00:02:12,366
+Since multiple devices may
+be accessing the files
+
+
+45
+00:02:12,366 --> 00:02:14,501
+in iCloud Drive
+at the same time,
+
+
+46
+00:02:14,501 --> 00:02:16,636
+you do need to use
+file coordination
+
+
+47
+00:02:16,636 --> 00:02:18,505
+to avoid any conflicts.
+
+
+48
+00:02:18,505 --> 00:02:20,407
+So be sure to read
+the documentation
+
+
+49
+00:02:20,407 --> 00:02:22,242
+for more details.
+
+
+50
+00:02:22,242 --> 00:02:25,645
+For locally stored files,
+the Documents directory
+
+
+51
+00:02:25,645 --> 00:02:28,348
+is available
+in your app's container.
+
+
+52
+00:02:28,348 --> 00:02:29,683
+Like with iCloud Drive,
+
+
+53
+00:02:29,683 --> 00:02:33,153
+you should only store
+user-visible documents here.
+
+
+54
+00:02:33,153 --> 00:02:36,390
+Once you have verified
+that your Documents directory
+
+
+55
+00:02:36,390 --> 00:02:39,359
+only contains files
+that should be exposed,
+
+
+56
+00:02:39,359 --> 00:02:41,061
+the Files app can show them
+
+
+57
+00:02:41,061 --> 00:02:44,664
+in the On My iPhone
+or On My iPad location.
+
+
+58
+00:02:44,664 --> 00:02:47,734
+To do this, your app
+should support Open in Place
+
+
+59
+00:02:47,734 --> 00:02:50,737
+and indicate that
+file sharing is enabled,
+
+
+60
+00:02:50,737 --> 00:02:54,775
+both of which are configured
+in your Info.plist file.
+
+
+61
+00:02:54,775 --> 00:02:57,611
+In addition to seeing
+their files in the Files app,
+
+
+62
+00:02:57,611 --> 00:03:00,280
+people can find
+their files in Spotlight,
+
+
+63
+00:03:00,280 --> 00:03:03,450
+and on iPad, drag and drop them
+to other apps.
+
+
+64
+00:03:04,785 --> 00:03:06,386
+Another great
+benefit of exposing
+
+
+65
+00:03:06,386 --> 00:03:07,587
+your Documents directory
+
+
+66
+00:03:07,587 --> 00:03:11,525
+is that people will see their
+files in the Storage Settings UI
+
+
+67
+00:03:11,525 --> 00:03:14,227
+and can individually
+remove items.
+
+
+68
+00:03:14,227 --> 00:03:17,130
+This makes it much easier
+to manage disk space,
+
+
+69
+00:03:17,130 --> 00:03:18,665
+and will reduce the likelihood
+
+
+70
+00:03:18,665 --> 00:03:22,069
+that your entire app is deleted
+when space is low.
+
+
+71
+00:03:22,069 --> 00:03:25,272
+But remember, the only
+things that should be going
+
+
+72
+00:03:25,272 --> 00:03:26,940
+into the Documents directory
+
+
+73
+00:03:26,940 --> 00:03:29,810
+are files that will make sense
+to people using your app.
+
+
+74
+00:03:29,810 --> 00:03:32,646
+The critical question
+you should ask is,
+
+
+75
+00:03:32,646 --> 00:03:35,882
+"Should my users
+be able to see this file?"
+
+
+76
+00:03:35,882 --> 00:03:38,585
+If the answer is yes,
+then that's fine.
+
+
+77
+00:03:38,585 --> 00:03:40,487
+But if the answer is no,
+
+
+78
+00:03:40,487 --> 00:03:42,489
+move it out of
+the Documents directory
+
+
+79
+00:03:42,489 --> 00:03:45,992
+and into one
+of the following locations.
+
+
+80
+00:03:45,992 --> 00:03:47,828
+The Application Support
+directory
+
+
+81
+00:03:47,828 --> 00:03:49,396
+is a good place to store files
+
+
+82
+00:03:49,396 --> 00:03:51,298
+that might be in your
+Documents directory
+
+
+83
+00:03:51,298 --> 00:03:54,000
+but that shouldn't
+be seen by users.
+
+
+84
+00:03:54,000 --> 00:03:56,736
+For example,
+a database that your app needs
+
+
+85
+00:03:56,736 --> 00:03:59,372
+but that the user would
+never open manually.
+
+
+86
+00:04:00,140 --> 00:04:02,075
+You can store files
+at the top level,
+
+
+87
+00:04:02,075 --> 00:04:03,610
+or you can create directories
+
+
+88
+00:04:03,610 --> 00:04:06,279
+if that helps
+keep things organized.
+
+
+89
+00:04:06,279 --> 00:04:08,782
+The directory is
+completely under your control,
+
+
+90
+00:04:08,782 --> 00:04:10,917
+and it's persistent.
+
+
+91
+00:04:10,917 --> 00:04:13,954
+The contents are included
+in backups by default,
+
+
+92
+00:04:13,954 --> 00:04:15,522
+but you can opt files out 
+
+
+93
+00:04:15,522 --> 00:04:18,257
+if they don't need
+to be backed up.
+
+
+94
+00:04:18,257 --> 00:04:20,594
+And finally, the disk space used
+
+
+95
+00:04:20,594 --> 00:04:22,362
+in the Application Support
+directory
+
+
+96
+00:04:22,362 --> 00:04:25,132
+is reported in
+the Storage Settings UI
+
+
+97
+00:04:25,132 --> 00:04:28,702
+under your app's
+Documents & Data total.
+
+
+98
+00:04:28,702 --> 00:04:30,904
+The next location
+available to your app
+
+
+99
+00:04:30,904 --> 00:04:32,606
+is the Caches directory.
+
+
+100
+00:04:32,606 --> 00:04:34,007
+You can store files here
+
+
+101
+00:04:34,007 --> 00:04:36,877
+that can be discarded
+if space is low.
+
+
+102
+00:04:36,877 --> 00:04:38,745
+This is a good location
+for any content
+
+
+103
+00:04:38,745 --> 00:04:41,815
+that can be
+re-downloaded when needed.
+
+
+104
+00:04:41,815 --> 00:04:43,517
+The contents of
+the Caches directory
+
+
+105
+00:04:43,517 --> 00:04:45,986
+is not included in backups.
+
+
+106
+00:04:45,986 --> 00:04:48,688
+When a device
+is low on disk space,
+
+
+107
+00:04:48,688 --> 00:04:51,691
+iOS can help by clearing caches.
+
+
+108
+00:04:51,691 --> 00:04:54,661
+Files will never be removed
+from your caches directory
+
+
+109
+00:04:54,661 --> 00:04:56,096
+if your app is running,
+
+
+110
+00:04:56,096 --> 00:04:58,865
+and the operating system
+will start by clearing caches
+
+
+111
+00:04:58,865 --> 00:05:01,535
+for apps that haven't
+been used in a while.
+
+
+112
+00:05:01,535 --> 00:05:04,871
+As a bonus to you,
+files in your caches directory
+
+
+113
+00:05:04,871 --> 00:05:07,107
+are not reported
+as part of your app's
+
+
+114
+00:05:07,107 --> 00:05:08,475
+Documents & Data total.
+
+
+115
+00:05:08,475 --> 00:05:10,110
+Although they are included
+
+
+116
+00:05:10,110 --> 00:05:12,679
+in the overall space
+taken up by apps.
+
+
+117
+00:05:13,680 --> 00:05:16,550
+And finally, you can put
+files that you won't need
+
+
+118
+00:05:16,550 --> 00:05:20,187
+for any extended period of time
+in the Temporary directory.
+
+
+119
+00:05:20,187 --> 00:05:22,923
+Even though the operating
+system will periodically
+
+
+120
+00:05:22,923 --> 00:05:25,592
+remove these files
+when your app is not running,
+
+
+121
+00:05:25,592 --> 00:05:28,662
+it's best to remove them
+when you're done with them.
+
+
+122
+00:05:29,496 --> 00:05:31,331
+Like the Caches directory,
+
+
+123
+00:05:31,331 --> 00:05:33,500
+the Temporary directory
+is not backed up
+
+
+124
+00:05:33,500 --> 00:05:36,636
+and is not reported in your
+app's Documents & Data total.
+
+
+125
+00:05:37,637 --> 00:05:39,739
+These are all
+the common locations
+
+
+126
+00:05:39,739 --> 00:05:41,341
+that your app
+can store files in.
+
+
+127
+00:05:41,341 --> 00:05:43,977
+Use iCloud Drive
+and the Documents directory
+
+
+128
+00:05:43,977 --> 00:05:46,913
+for files that should be
+accessible in the Files app,
+
+
+129
+00:05:46,913 --> 00:05:48,448
+while application support,
+
+
+130
+00:05:48,448 --> 00:05:50,717
+caches,
+and temporary directories
+
+
+131
+00:05:50,717 --> 00:05:53,220
+are all for use
+by your app privately.
+
+
+132
+00:05:53,220 --> 00:05:55,488
+Be sure to review
+where you're storing things
+
+
+133
+00:05:55,488 --> 00:05:57,691
+and use the right directory.
+
+
+134
+00:05:57,691 --> 00:06:01,061
+Lastly, a couple
+best practice tips.
+
+
+135
+00:06:01,061 --> 00:06:03,730
+If you have files
+that don't need to be included
+
+
+136
+00:06:03,730 --> 00:06:05,932
+in iTunes or iCloud backups,
+
+
+137
+00:06:05,932 --> 00:06:08,468
+use the NSFileManager APIs
+
+
+138
+00:06:08,468 --> 00:06:12,872
+to set the
+"IsExcludedFromBackupKey".
+
+
+139
+00:06:12,872 --> 00:06:15,442
+You also want to
+be resilient to files
+
+
+140
+00:06:15,442 --> 00:06:18,311
+that might be restored from
+an older version of your app.
+
+
+141
+00:06:18,311 --> 00:06:22,015
+For example, if you had
+a 32-bit version of your app
+
+
+142
+00:06:22,015 --> 00:06:24,517
+and its files were backed up,
+
+
+143
+00:06:24,517 --> 00:06:27,254
+then for a 64-bit version
+of your app,
+
+
+144
+00:06:27,254 --> 00:06:29,689
+those older files
+might get restored
+
+
+145
+00:06:29,689 --> 00:06:32,259
+and you need to be able
+to handle that situation.
+
+
+146
+00:06:32,259 --> 00:06:35,195
+It's best to use a versioning
+scheme on your files
+
+
+147
+00:06:35,195 --> 00:06:37,597
+so that you can provide
+robust compatibility
+
+
+148
+00:06:37,597 --> 00:06:40,800
+across multiple versions
+of your app.
+
+
+149
+00:06:40,800 --> 00:06:44,070
+And be sure that you're only
+storing files in one location.
+
+
+150
+00:06:44,070 --> 00:06:45,372
+For example,
+
+
+151
+00:06:45,372 --> 00:06:48,241
+if you put files into
+your local Documents directory,
+
+
+152
+00:06:48,241 --> 00:06:51,077
+don't duplicate
+those in iCloud Drive.
+
+
+153
+00:06:51,077 --> 00:06:53,813
+Choose one place
+and stick to it.
+
+
+154
+00:06:53,813 --> 00:06:55,081
+For user documents,
+
+
+155
+00:06:55,081 --> 00:06:57,751
+I suggest preferring
+a cloud storage location
+
+
+156
+00:06:57,751 --> 00:06:59,619
+unless you have
+a specific reason
+
+
+157
+00:06:59,619 --> 00:07:02,622
+to store files only
+local to a device.
+
+
+158
+00:07:05,225 --> 00:07:08,295
+And finally, some new
+volume capacity details
+
+
+159
+00:07:08,295 --> 00:07:10,397
+are available in iOS 11
+
+
+160
+00:07:10,397 --> 00:07:12,565
+to help in knowing
+if it's a good time
+
+
+161
+00:07:12,565 --> 00:07:15,068
+for your app to take up
+more disk space.
+
+
+162
+00:07:16,303 --> 00:07:17,671
+The first key,
+
+
+163
+00:07:17,671 --> 00:07:20,840
+Available Capacity
+For Important Usage,
+
+
+164
+00:07:20,840 --> 00:07:23,710
+indicates the amount of space
+that can be made available
+
+
+165
+00:07:23,710 --> 00:07:26,413
+for things that the user
+has explicitly requested
+
+
+166
+00:07:26,413 --> 00:07:28,248
+in your app's UI.
+
+
+167
+00:07:28,248 --> 00:07:31,751
+For example, if they have
+chosen to download a video
+
+
+168
+00:07:31,751 --> 00:07:34,120
+or a new level in a game.
+
+
+169
+00:07:34,120 --> 00:07:36,923
+If the space you need is
+greater than what's available,
+
+
+170
+00:07:36,923 --> 00:07:38,958
+you should let them
+know that their request
+
+
+171
+00:07:38,958 --> 00:07:41,661
+cannot be fulfilled.
+
+
+172
+00:07:41,661 --> 00:07:42,962
+The second key,
+
+
+173
+00:07:42,962 --> 00:07:45,899
+Available Capacity
+For Opportunistic Usage,
+
+
+174
+00:07:45,899 --> 00:07:48,001
+indicates the amount
+of space available
+
+
+175
+00:07:48,001 --> 00:07:50,603
+for things that
+the user is likely to want,
+
+
+176
+00:07:50,603 --> 00:07:53,606
+but hasn't explicitly requested.
+
+
+177
+00:07:53,606 --> 00:07:55,475
+This could be something
+like the next episode
+
+
+178
+00:07:55,475 --> 00:07:58,111
+in a series of videos
+that they are watching,
+
+
+179
+00:07:58,111 --> 00:08:00,280
+or recently updated
+documents on a server
+
+
+180
+00:08:00,280 --> 00:08:02,982
+that they might
+be likely to open.
+
+
+181
+00:08:02,982 --> 00:08:04,351
+For these types of files,
+
+
+182
+00:08:04,351 --> 00:08:07,420
+you might store them initially
+in the Caches directory
+
+
+183
+00:08:07,420 --> 00:08:09,589
+until they are actually used,
+
+
+184
+00:08:09,589 --> 00:08:10,957
+at which point
+you could move them
+
+
+185
+00:08:10,957 --> 00:08:14,127
+to the Application Support
+or Documents directory.
+
+
+186
+00:08:15,462 --> 00:08:16,996
+After taking inventory
+
+
+187
+00:08:16,996 --> 00:08:18,998
+and identifying what your app
+stored,
+
+
+188
+00:08:18,998 --> 00:08:21,368
+if you found something
+that wasn't in the right place,
+
+
+189
+00:08:21,368 --> 00:08:24,537
+then update your code to put it
+in the appropriate directory.
+
+
+190
+00:08:24,537 --> 00:08:28,007
+And don't forget to add
+any necessary migration code
+
+
+191
+00:08:28,007 --> 00:08:30,677
+to move the files
+from one place to another.
+
+
+192
+00:08:30,677 --> 00:08:31,711
+If you don't do this,
+
+
+193
+00:08:31,711 --> 00:08:35,248
+you might inadvertently
+leave abandoned files behind.
+
+
+194
+00:08:35,248 --> 00:08:37,217
+By cleaning up
+your on-disk storage,
+
+
+195
+00:08:37,217 --> 00:08:39,219
+you can open up your
+Documents directory
+
+
+196
+00:08:39,219 --> 00:08:40,553
+to people in the Files app
+
+
+197
+00:08:40,553 --> 00:08:43,523
+and they can be even more
+productive with your app.
+
+
+198
+00:08:43,523 --> 00:08:45,258
+You can find
+more information at
+
+
+199
+00:08:45,258 --> 00:08:46,726
+developer.apple.com
+
+
+200
+00:08:46,726 --> 00:08:48,261
+or on our Developer Forums.
+

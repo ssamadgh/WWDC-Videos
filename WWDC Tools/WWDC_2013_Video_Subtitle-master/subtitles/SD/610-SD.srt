@@ -1,0 +1,6919 @@
+1
+00:00:12,046 --> 00:00:13,056
+>> Morning everyone.
+
+
+2
+00:00:14,196 --> 00:00:15,486
+Welcome to Session 610.
+
+
+3
+00:00:15,486 --> 00:00:18,286
+I'm Brad Ford, I work on the
+core media engineering team.
+
+
+4
+00:00:18,616 --> 00:00:21,286
+For the next hour I'm
+going to talk to you
+
+
+5
+00:00:21,286 --> 00:00:24,026
+about the most popular
+camera in the world.
+
+
+6
+00:00:25,226 --> 00:00:26,376
+Actually that's inaccurate.
+
+
+7
+00:00:26,416 --> 00:00:28,526
+If you go by Flickr data,
+I'm going to talk to you
+
+
+8
+00:00:28,526 --> 00:00:31,066
+about the three most popular
+cameras in the world --
+
+
+9
+00:00:31,706 --> 00:00:34,756
+iPhone 4s, iPhone
+5, and iPhone 4.
+
+
+10
+00:00:35,456 --> 00:00:38,676
+And we recognize that you're
+a big part of that popularity.
+
+
+11
+00:00:38,966 --> 00:00:42,856
+We bring the great
+hardware, we bring the camera
+
+
+12
+00:00:42,856 --> 00:00:44,146
+that people get excited about,
+
+
+13
+00:00:44,816 --> 00:00:47,786
+and we bring the framework level
+support, but you bring the apps.
+
+
+14
+00:00:48,236 --> 00:00:51,976
+And we wouldn't be as popular or
+as successful without your apps
+
+
+15
+00:00:51,976 --> 00:00:55,196
+that make our platform
+so useful, and so fun.
+
+
+16
+00:00:55,366 --> 00:00:56,906
+So thank you for that.
+
+
+17
+00:00:57,816 --> 00:01:01,586
+Today we're going to
+have a brief appetizer
+
+
+18
+00:01:01,686 --> 00:01:04,046
+of greater transparency
+for users,
+
+
+19
+00:01:04,046 --> 00:01:05,786
+and then the main
+course is features --
+
+
+20
+00:01:05,896 --> 00:01:08,746
+lots and lots of new features,
+and then we'll follow that up
+
+
+21
+00:01:08,746 --> 00:01:12,006
+with a sample code
+update for our dessert.
+
+
+22
+00:01:12,646 --> 00:01:15,736
+We're not going to spend any
+time today on core media basics
+
+
+23
+00:01:15,736 --> 00:01:18,476
+or AV foundation basics,
+because we just don't have time
+
+
+24
+00:01:18,476 --> 00:01:19,356
+in an hour to do that.
+
+
+25
+00:01:19,906 --> 00:01:22,756
+But lucky for you, we've
+talked about them several times
+
+
+26
+00:01:22,756 --> 00:01:25,756
+in the past, and all of
+these sessions are available
+
+
+27
+00:01:26,166 --> 00:01:29,236
+on your WWDC app on
+your phone right now.
+
+
+28
+00:01:29,236 --> 00:01:31,306
+So you could actually call it
+up, and you could be listening
+
+
+29
+00:01:31,306 --> 00:01:33,676
+to me two years ago, while
+you're listening to me now.
+
+
+30
+00:01:36,026 --> 00:01:36,896
+But turn the sound down.
+
+
+31
+00:01:38,086 --> 00:01:40,146
+First upgrade for
+transparency for users,
+
+
+32
+00:01:40,596 --> 00:01:45,036
+last year we introduced
+some security hardening
+
+
+33
+00:01:45,036 --> 00:01:50,186
+that we introduced in iOS 6
+to make it more transparent
+
+
+34
+00:01:50,186 --> 00:01:53,656
+for users when the photos and
+videos were being accessed
+
+
+35
+00:01:53,656 --> 00:01:54,876
+in their photos library.
+
+
+36
+00:01:55,266 --> 00:01:56,336
+And we did that by popping
+
+
+37
+00:01:56,336 --> 00:01:59,706
+up a dialog the first time your
+application tries to access --
+
+
+38
+00:01:59,706 --> 00:02:04,086
+that is read to-- read from,
+or write to the assets library,
+
+
+39
+00:02:04,676 --> 00:02:07,396
+so that the user would have an
+opportunity to opt in or out.
+
+
+40
+00:02:08,526 --> 00:02:10,826
+And we warned you that you
+should start paying attention
+
+
+41
+00:02:10,826 --> 00:02:13,476
+to errors that you get back
+from AL assets library.
+
+
+42
+00:02:14,426 --> 00:02:17,256
+Well this year we're hardening
+things even a little bit more,
+
+
+43
+00:02:17,996 --> 00:02:19,696
+and we do this for
+a couple of reasons.
+
+
+44
+00:02:20,396 --> 00:02:23,126
+You've probably noticed that
+on our iOS devices we have no
+
+
+45
+00:02:23,126 --> 00:02:27,436
+hardware blinky light that
+tells you that recording is
+
+
+46
+00:02:27,436 --> 00:02:30,766
+in progress, and AV foundation
+
+
+47
+00:02:30,766 --> 00:02:34,996
+as a framework does not force
+you to put up a UI saying
+
+
+48
+00:02:35,116 --> 00:02:36,296
+"recording in progress".
+
+
+49
+00:02:36,926 --> 00:02:39,246
+So therefore it's possible
+to do something headlessly.
+
+
+50
+00:02:39,416 --> 00:02:41,586
+And users want to trust
+your app, they want to know
+
+
+51
+00:02:41,586 --> 00:02:42,536
+when things are happening.
+
+
+52
+00:02:43,116 --> 00:02:46,506
+So also in some regions
+it's now required by law
+
+
+53
+00:02:47,016 --> 00:02:50,126
+to present users notice
+when the microphone
+
+
+54
+00:02:50,446 --> 00:02:51,896
+or the camera is in use.
+
+
+55
+00:02:52,326 --> 00:02:55,336
+So new in iOS 7, we are going
+
+
+56
+00:02:55,336 --> 00:02:58,866
+to introduce two new dialogs the
+first time your app makes use
+
+
+57
+00:02:58,866 --> 00:03:02,166
+of the microphone or the
+camera to allow users to know
+
+
+58
+00:03:02,166 --> 00:03:03,746
+about it, and to opt in or out.
+
+
+59
+00:03:04,366 --> 00:03:09,226
+Now the microphone dialog is
+everywhere, that is all iPhones,
+
+
+60
+00:03:09,226 --> 00:03:10,776
+all iPads, everywhere.
+
+
+61
+00:03:11,196 --> 00:03:14,756
+The camera dialog is just in
+certain regions where required
+
+
+62
+00:03:14,756 --> 00:03:16,036
+by law, such as China.
+
+
+63
+00:03:16,856 --> 00:03:19,606
+Here's how it looks in code.
+
+
+64
+00:03:20,166 --> 00:03:23,836
+The first time you create
+an AV capture device input,
+
+
+65
+00:03:25,106 --> 00:03:26,466
+the dialog will be invoked.
+
+
+66
+00:03:27,746 --> 00:03:29,106
+In code it looks like this.
+
+
+67
+00:03:29,356 --> 00:03:33,126
+You call device input with
+device, and pay attention
+
+
+68
+00:03:33,126 --> 00:03:35,266
+to that error, because it
+might return an error now.
+
+
+69
+00:03:36,256 --> 00:03:38,836
+The very first time we need
+to succeed, because we need
+
+
+70
+00:03:38,836 --> 00:03:40,366
+to return control
+to you immediately,
+
+
+71
+00:03:40,366 --> 00:03:42,776
+but we actually don't know the
+answer yet because the dialog is
+
+
+72
+00:03:42,776 --> 00:03:45,446
+up but the person might
+not have said okay or deny.
+
+
+73
+00:03:46,146 --> 00:03:48,066
+So what do we do in the interim?
+
+
+74
+00:03:49,106 --> 00:03:51,306
+For a microphone
+we produce Silence
+
+
+75
+00:03:51,506 --> 00:03:55,126
+until the user grants access,
+and for the camera we spit
+
+
+76
+00:03:55,126 --> 00:03:57,656
+out black frames until
+they've granted access.
+
+
+77
+00:03:58,546 --> 00:04:01,626
+If on subsequent launches we
+already know what the answer is,
+
+
+78
+00:04:01,976 --> 00:04:04,346
+we can return an
+error immediately,
+
+
+79
+00:04:04,516 --> 00:04:05,496
+and that's a new error
+
+
+80
+00:04:05,496 --> 00:04:09,346
+in AV foundation called
+application is not authorized
+
+
+81
+00:04:09,346 --> 00:04:10,306
+to use device.
+
+
+82
+00:04:10,386 --> 00:04:11,486
+So pay attention to that.
+
+
+83
+00:04:11,486 --> 00:04:14,666
+That means the user is
+choosing not to allow you
+
+
+84
+00:04:14,666 --> 00:04:16,036
+to use the camera or microphone.
+
+
+85
+00:04:19,216 --> 00:04:20,786
+Alright, on to features.
+
+
+86
+00:04:20,786 --> 00:04:24,286
+This is going to be the
+major bulk of our talk today,
+
+
+87
+00:04:24,886 --> 00:04:27,346
+and we have a lot of
+them to get through.
+
+
+88
+00:04:28,016 --> 00:04:32,776
+Five major feature areas, first
+60 fps support, video zoom,
+
+
+89
+00:04:33,456 --> 00:04:36,146
+machine readable code
+detection, or barcode detection,
+
+
+90
+00:04:36,716 --> 00:04:40,626
+focus enhancements, and
+integration with audio session.
+
+
+91
+00:04:40,976 --> 00:04:42,656
+First up 60 fps support.
+
+
+92
+00:04:43,386 --> 00:04:45,276
+And we know a lot of you
+have been waiting a long time
+
+
+93
+00:04:45,276 --> 00:04:45,786
+for this.
+
+
+94
+00:04:45,786 --> 00:04:48,906
+You've been waiting patiently,
+and I think it's worth the wait.
+
+
+95
+00:04:49,166 --> 00:04:51,956
+We didn't want to unleash
+this feature on all
+
+
+96
+00:04:51,956 --> 00:04:53,946
+of you before we had
+really thought it through,
+
+
+97
+00:04:54,316 --> 00:04:57,356
+and given you comprehensive
+support across the media stack.
+
+
+98
+00:04:57,926 --> 00:05:01,336
+So by introducing 60
+frame rate movies,
+
+
+99
+00:05:01,336 --> 00:05:03,626
+we wanted to make sure you
+could also do interesting things
+
+
+100
+00:05:03,626 --> 00:05:05,716
+with them, as far as
+playback and editing.
+
+
+101
+00:05:06,436 --> 00:05:09,546
+So we are introducing
+full iOS ecosystem support
+
+
+102
+00:05:09,686 --> 00:05:10,996
+for high frame rate content.
+
+
+103
+00:05:11,346 --> 00:05:11,946
+What does that mean?
+
+
+104
+00:05:12,516 --> 00:05:15,166
+On capture we support
+720p video,
+
+
+105
+00:05:15,166 --> 00:05:19,256
+up to 60 frames per second,
+with video stabilization,
+
+
+106
+00:05:19,556 --> 00:05:22,206
+and we write really cool movies.
+
+
+107
+00:05:22,206 --> 00:05:25,696
+These have droppable p-frames
+in them, a feature of H264,
+
+
+108
+00:05:25,696 --> 00:05:27,856
+which allows them to
+play back smoothly,
+
+
+109
+00:05:27,856 --> 00:05:30,776
+even on lower powered
+machines, or older machines.
+
+
+110
+00:05:31,396 --> 00:05:34,886
+On the playback front,
+we've beefed up our support
+
+
+111
+00:05:34,886 --> 00:05:38,716
+for audio processing in
+the time pitch domain,
+
+
+112
+00:05:38,716 --> 00:05:41,056
+so that if you want to do
+effects like slow the movies
+
+
+113
+00:05:41,056 --> 00:05:43,056
+down or speed them up, you
+can do interesting things
+
+
+114
+00:05:43,056 --> 00:05:43,656
+with audio.
+
+
+115
+00:05:44,926 --> 00:05:47,526
+On the editing side, we largely
+already had the support there,
+
+
+116
+00:05:48,036 --> 00:05:53,186
+but we do support fully scaled
+edits in mutable compositions.
+
+
+117
+00:05:53,926 --> 00:05:56,796
+And lastly, in export we
+allow you to do it two ways.
+
+
+118
+00:05:56,796 --> 00:06:00,436
+You can either export such
+that the high frame rate areas
+
+
+119
+00:06:00,436 --> 00:06:01,746
+of the movie are preserved,
+
+
+120
+00:06:02,306 --> 00:06:05,506
+or you can do a frame rate
+conversion that will sort
+
+
+121
+00:06:05,506 --> 00:06:07,906
+of flatten it all down
+to 30 frames per second,
+
+
+122
+00:06:07,906 --> 00:06:08,626
+or something else.
+
+
+123
+00:06:09,086 --> 00:06:14,976
+But enough talk,
+let's do a demo.
+
+
+124
+00:06:15,996 --> 00:06:19,066
+Alright. So the first demo
+app is called Slowpoke.
+
+
+125
+00:06:19,496 --> 00:06:23,896
+This is an app that showcases
+all four feature areas
+
+
+126
+00:06:23,896 --> 00:06:25,536
+of 60 frames per second support.
+
+
+127
+00:06:26,366 --> 00:06:28,956
+First one is capture,
+as you might expect.
+
+
+128
+00:06:29,296 --> 00:06:32,696
+Now it looks just like a regular
+capture app, except I don't know
+
+
+129
+00:06:32,846 --> 00:06:35,766
+if you can tell out there, but
+it's a really fast frame rate,
+
+
+130
+00:06:35,766 --> 00:06:38,846
+it's a buttery smooth 60
+frames per second preview.
+
+
+131
+00:06:39,536 --> 00:06:43,116
+And it's running the
+camera at 720p 60.
+
+
+132
+00:06:43,606 --> 00:06:45,936
+You can also do all the things
+you'd expect, like focus,
+
+
+133
+00:06:46,656 --> 00:06:53,826
+and it writes movies that have
+the proper H264 bitrate profile
+
+
+134
+00:06:53,826 --> 00:06:54,636
+level, etcetera.
+
+
+135
+00:06:55,266 --> 00:06:57,376
+Let's go over to the
+more interesting part
+
+
+136
+00:06:57,376 --> 00:07:00,086
+for today's demo, which is
+the playback and editing.
+
+
+137
+00:07:00,786 --> 00:07:03,306
+I recorded several
+movies here previously,
+
+
+138
+00:07:03,406 --> 00:07:05,296
+they're all 60 frames
+per second movies.
+
+
+139
+00:07:05,296 --> 00:07:08,436
+I'm just going to pick one
+of them, and now we'll find
+
+
+140
+00:07:08,436 --> 00:07:10,806
+out why this app
+got its namesake.
+
+
+141
+00:07:11,516 --> 00:07:14,736
+This is a clip of a
+guitarist playing the prelude
+
+
+142
+00:07:14,736 --> 00:07:16,716
+from Bach's E Major Lute Suite,
+
+
+143
+00:07:17,416 --> 00:07:21,166
+let me play a little
+bit for you.
+
+
+144
+00:07:21,166 --> 00:07:22,106
+[ Music ]
+
+
+145
+00:07:22,106 --> 00:07:24,916
+So let's say you're trying
+to learn this piece yourself,
+
+
+146
+00:07:25,316 --> 00:07:28,086
+and he's going too fast,
+you need to slow him down so
+
+
+147
+00:07:28,086 --> 00:07:29,066
+that you can hear it better.
+
+
+148
+00:07:29,066 --> 00:07:32,926
+I'm going to swipe to
+the left to slow it down.
+
+
+149
+00:07:32,926 --> 00:07:33,136
+[ Music ]
+
+
+150
+00:07:33,136 --> 00:07:38,176
+And I'll go even slower now.
+
+
+151
+00:07:38,176 --> 00:07:38,416
+[ Music ]
+
+
+152
+00:07:38,416 --> 00:07:46,046
+So now you can really see
+his fingers move well.
+
+
+153
+00:07:46,326 --> 00:07:47,666
+Alternately, you
+could make him sound
+
+
+154
+00:07:47,666 --> 00:07:49,946
+like Yngwie Malmsteen,
+which is my favorite.
+
+
+155
+00:07:49,946 --> 00:07:50,136
+[ Music ]
+
+
+156
+00:07:50,136 --> 00:07:53,006
+Notice how good it sounds.
+
+
+157
+00:07:53,006 --> 00:08:01,786
+We're preserving pitch here, so
+that you could even export this
+
+
+158
+00:08:01,786 --> 00:08:03,956
+and pass it off as him
+doing the real thing.
+
+
+159
+00:08:03,956 --> 00:08:07,566
+Now he's an amazing guitarist.
+
+
+160
+00:08:08,596 --> 00:08:09,736
+Alright, let's pick another one.
+
+
+161
+00:08:09,736 --> 00:08:10,516
+[ Applause ]
+
+
+162
+00:08:10,516 --> 00:08:11,296
+Thank you.
+
+
+163
+00:08:11,296 --> 00:08:17,906
+Let's have a little fun
+at my dog's expense.
+
+
+164
+00:08:18,126 --> 00:08:21,836
+This poor animal protects our
+house from dangerous birds
+
+
+165
+00:08:21,836 --> 00:08:24,716
+on wires, and this is
+what he sounds like.
+
+
+166
+00:08:24,716 --> 00:08:26,156
+[ Dog Barking ]
+
+
+167
+00:08:26,156 --> 00:08:30,706
+Okay, protecting our house.
+
+
+168
+00:08:30,706 --> 00:08:33,366
+Now let's have some fun speeding
+him up and slowing him down,
+
+
+169
+00:08:33,366 --> 00:08:36,006
+but this time I'm going
+to engage chipmunk mode.
+
+
+170
+00:08:36,226 --> 00:08:37,616
+You'll notice over in
+the corner I'm going
+
+
+171
+00:08:37,616 --> 00:08:39,525
+to turn the chipmunk
+button on so
+
+
+172
+00:08:39,525 --> 00:08:46,756
+that we can make him
+sound like a yip-yip dog.
+
+
+173
+00:08:46,756 --> 00:08:47,336
+[ Dog Barking ]
+
+
+174
+00:08:47,336 --> 00:08:49,566
+Or, like Barry White.
+
+
+175
+00:08:49,566 --> 00:08:50,156
+[ Dog Barking ]
+
+
+176
+00:08:50,156 --> 00:08:55,296
+Or a dinosaur.
+
+
+177
+00:08:55,296 --> 00:08:55,826
+[ Dog Barking ]
+
+
+178
+00:08:55,826 --> 00:08:57,256
+Okay, enough of that.
+
+
+179
+00:08:57,256 --> 00:09:00,266
+And finally, let's go --
+
+
+180
+00:09:00,266 --> 00:09:01,606
+[ Applause ]
+
+
+181
+00:09:01,606 --> 00:09:08,396
+Notice we have so many
+frames in the movie
+
+
+182
+00:09:08,396 --> 00:09:10,576
+that it looks really good
+when you slow him down.
+
+
+183
+00:09:11,286 --> 00:09:13,606
+Let's take this last one
+here, this is an action shot,
+
+
+184
+00:09:14,186 --> 00:09:19,406
+kind of a frightening one of
+my dog coming up towards you
+
+
+185
+00:09:19,406 --> 00:09:20,526
+at a million miles an hour.
+
+
+186
+00:09:20,526 --> 00:09:22,266
+Now let's engage
+the chipmunk mode,
+
+
+187
+00:09:22,266 --> 00:09:24,936
+but let's say this time I don't
+just want to mess around with it
+
+
+188
+00:09:24,936 --> 00:09:28,996
+in real time, I want to
+program a slow motion part right
+
+
+189
+00:09:28,996 --> 00:09:31,366
+into the asset.
+
+
+190
+00:09:32,106 --> 00:09:34,696
+Okay, so I'll pick a point
+right where he's starting
+
+
+191
+00:09:34,696 --> 00:09:35,526
+to come up the stairs.
+
+
+192
+00:09:35,526 --> 00:09:38,476
+Now I'm going to swipe down
+to begin and end it, and edit.
+
+
+193
+00:09:39,096 --> 00:09:43,956
+And then I'll go to where he's
+right next to me, and I'll swipe
+
+
+194
+00:09:43,956 --> 00:09:46,436
+up to end the edit, and
+here I get to apply a rate.
+
+
+195
+00:09:46,996 --> 00:09:52,046
+So I'll set the rate to .25,
+quarter speed, and apply it.
+
+
+196
+00:09:52,046 --> 00:09:54,836
+And you notice that the duration
+just changed on this movie.
+
+
+197
+00:09:55,566 --> 00:09:58,746
+Now I can go back and play it.
+
+
+198
+00:09:59,246 --> 00:10:02,086
+[ Silence ]
+
+
+199
+00:10:02,586 --> 00:10:09,166
+Oh yeah. He's coming for you.
+
+
+200
+00:10:10,156 --> 00:10:14,776
+Okay. So -- and then of
+course as you might suspect,
+
+
+201
+00:10:15,096 --> 00:10:17,576
+we would want to be able to
+save these off for posterity,
+
+
+202
+00:10:17,576 --> 00:10:19,776
+so we have the export button
+over here on the side,
+
+
+203
+00:10:20,276 --> 00:10:22,376
+which lets us export
+to the camera roll,
+
+
+204
+00:10:22,616 --> 00:10:24,756
+either preserving the
+high frame rate sections,
+
+
+205
+00:10:25,066 --> 00:10:28,526
+or going down to a constant
+frame rate of say 30,
+
+
+206
+00:10:28,526 --> 00:10:29,266
+or something like that.
+
+
+207
+00:10:29,266 --> 00:10:31,116
+And that is Slowpoke.
+
+
+208
+00:10:31,116 --> 00:10:32,106
+[ Applause ]
+
+
+209
+00:10:32,106 --> 00:10:38,356
+On the playback side, AV
+player does most of this
+
+
+210
+00:10:38,356 --> 00:10:39,496
+for you automatically.
+
+
+211
+00:10:40,346 --> 00:10:45,256
+If you just use player setRate,
+it can select arbitrary rates
+
+
+212
+00:10:45,256 --> 00:10:47,336
+and play them back, and
+do the really hard job
+
+
+213
+00:10:47,336 --> 00:10:49,516
+of keeping audio
+and video in sync.
+
+
+214
+00:10:50,506 --> 00:10:53,886
+There's a new property
+on the player item.
+
+
+215
+00:10:53,886 --> 00:10:56,116
+A player is composed
+of player items,
+
+
+216
+00:10:56,156 --> 00:10:57,286
+because it's a queue model.
+
+
+217
+00:10:57,926 --> 00:10:59,206
+You can take the player item
+
+
+218
+00:10:59,206 --> 00:11:01,426
+and set its audio
+time pitch algorithm,
+
+
+219
+00:11:01,426 --> 00:11:04,426
+that's what I was using there to
+either adjust the pitch higher
+
+
+220
+00:11:04,426 --> 00:11:05,786
+or lower, or keep it constant.
+
+
+221
+00:11:05,786 --> 00:11:08,946
+I was using the bottom
+two constants there,
+
+
+222
+00:11:08,946 --> 00:11:12,616
+which are spectral, which keeps
+it preserved, and varispeed,
+
+
+223
+00:11:12,816 --> 00:11:14,106
+which alters the pitch.
+
+
+224
+00:11:14,536 --> 00:11:16,896
+And these are very high
+quality algorithms.
+
+
+225
+00:11:16,896 --> 00:11:21,456
+They can go constantly from
+32x down to 1 over 32x.
+
+
+226
+00:11:21,846 --> 00:11:22,666
+And they sound great.
+
+
+227
+00:11:23,316 --> 00:11:28,906
+On the editing side, I was using
+AV mutable composition to build
+
+
+228
+00:11:28,906 --> 00:11:33,216
+up those temporal edits when I
+saved off that scaled section.
+
+
+229
+00:11:33,676 --> 00:11:38,836
+I did that by creating an empty
+composition, inserting all
+
+
+230
+00:11:38,836 --> 00:11:41,646
+of my source asset
+into that composition,
+
+
+231
+00:11:42,376 --> 00:11:44,696
+and then choosing the section
+that I wanted to scale up
+
+
+232
+00:11:44,696 --> 00:11:47,196
+or down, just by
+using scale time range
+
+
+233
+00:11:47,276 --> 00:11:49,116
+to duration, very simple.
+
+
+234
+00:11:50,726 --> 00:11:53,726
+See the Slowpoke sample code
+where you can find out how
+
+
+235
+00:11:53,726 --> 00:11:54,816
+to do all this yourselves.
+
+
+236
+00:11:55,116 --> 00:11:58,036
+And if you're interested in
+the editing aspect of this,
+
+
+237
+00:11:58,036 --> 00:12:01,006
+I invite you to come back
+tomorrow at 9:00 a.m.
+
+
+238
+00:12:01,136 --> 00:12:03,456
+where we're having an
+advanced editing session
+
+
+239
+00:12:03,726 --> 00:12:04,696
+with AV foundation.
+
+
+240
+00:12:05,496 --> 00:12:12,296
+On the export side, I'm using AV
+asset export session to flatten
+
+
+241
+00:12:12,296 --> 00:12:13,506
+that out into a new movie.
+
+
+242
+00:12:13,506 --> 00:12:16,256
+Now as I mentioned, there
+are two ways to do this.
+
+
+243
+00:12:16,726 --> 00:12:20,666
+You can use the pass-through
+export preset if you want
+
+
+244
+00:12:20,666 --> 00:12:22,296
+to avoid any re-encoding.
+
+
+245
+00:12:22,376 --> 00:12:23,826
+That will just retime the media,
+
+
+246
+00:12:24,176 --> 00:12:27,986
+and send it out as section
+60 frames per second,
+
+
+247
+00:12:28,096 --> 00:12:29,676
+section slowed down or sped up.
+
+
+248
+00:12:30,996 --> 00:12:33,026
+Or you can do a constant
+frame rate export.
+
+
+249
+00:12:33,156 --> 00:12:34,036
+You might want to do this
+
+
+250
+00:12:34,036 --> 00:12:36,386
+if you want maximum
+playback compatibility.
+
+
+251
+00:12:36,996 --> 00:12:40,416
+To do this you set the video
+composition's frame duration,
+
+
+252
+00:12:40,416 --> 00:12:46,046
+saying my source's composition's
+frame duration is 1
+
+
+253
+00:12:46,136 --> 00:12:48,566
+over 30 frames per
+second, for instance.
+
+
+254
+00:12:49,576 --> 00:12:52,006
+This gives you maximum
+playback compatibility.
+
+
+255
+00:12:52,376 --> 00:12:55,876
+And you can also choose to
+set the time pitch algorithm
+
+
+256
+00:12:56,096 --> 00:12:57,226
+for the export as well.
+
+
+257
+00:12:57,226 --> 00:12:59,286
+So you can use a low quality,
+
+
+258
+00:12:59,286 --> 00:13:01,906
+or a cheap expensive
+one during playback,
+
+
+259
+00:13:01,906 --> 00:13:03,646
+and then when you export
+use a high quality one.
+
+
+260
+00:13:04,376 --> 00:13:07,646
+Again, that's all in Slowpoke.
+
+
+261
+00:13:08,336 --> 00:13:10,496
+Now on to recording, which
+is why we're all here.
+
+
+262
+00:13:11,436 --> 00:13:15,306
+AV capture movie file output
+just works, as you might expect.
+
+
+263
+00:13:15,306 --> 00:13:20,786
+It picks for you automatically
+the right H264 profile level bit
+
+
+264
+00:13:20,786 --> 00:13:22,996
+rate, and makes sure that
+the movie looks great.
+
+
+265
+00:13:23,826 --> 00:13:26,966
+If you want to do stuff
+with the frames yourself,
+
+
+266
+00:13:26,966 --> 00:13:28,676
+you need to use AV asset writer,
+
+
+267
+00:13:29,306 --> 00:13:31,156
+and it requires some
+additional setup.
+
+
+268
+00:13:31,766 --> 00:13:34,546
+As with all real-time
+use of AV asset writer,
+
+
+269
+00:13:34,826 --> 00:13:38,226
+you need to set expects media
+data in real time to yes,
+
+
+270
+00:13:38,296 --> 00:13:40,446
+otherwise it won't be able to
+keep up with the frame rate.
+
+
+271
+00:13:41,516 --> 00:13:43,306
+And we have a new object
+
+
+272
+00:13:43,306 --> 00:13:46,456
+that helps you create
+settings dictionaries
+
+
+273
+00:13:46,456 --> 00:13:47,616
+for the AV asset writer.
+
+
+274
+00:13:47,926 --> 00:13:49,386
+An asset writer doesn't
+know what kind
+
+
+275
+00:13:49,386 --> 00:13:50,786
+of output you want by default.
+
+
+276
+00:13:50,786 --> 00:13:53,356
+You have to tell it what
+kind of settings to use.
+
+
+277
+00:13:53,646 --> 00:13:56,046
+And this can be complicated
+with high frame rate movies,
+
+
+278
+00:13:56,046 --> 00:13:58,906
+knowing what H264
+keys to use, etcetera.
+
+
+279
+00:13:59,336 --> 00:14:02,996
+So you can instantiate an AV
+output settings assistant,
+
+
+280
+00:14:03,506 --> 00:14:05,556
+tell it what the
+source video format is,
+
+
+281
+00:14:05,586 --> 00:14:09,516
+tell it what the source video
+frame rate is, and then ask it
+
+
+282
+00:14:09,576 --> 00:14:11,826
+for a dictionary of
+settings, and then apply
+
+
+283
+00:14:11,826 --> 00:14:13,956
+that to your asset
+writer, and it just works.
+
+
+284
+00:14:14,126 --> 00:14:15,546
+It'll pick the best
+settings for you.
+
+
+285
+00:14:16,146 --> 00:14:21,586
+That was the recording aspect
+of 60 fps, now let's talk
+
+
+286
+00:14:21,586 --> 00:14:24,346
+about how you just configure
+the session in general.
+
+
+287
+00:14:25,206 --> 00:14:28,296
+Those who've used AV
+foundation's capture classes
+
+
+288
+00:14:28,296 --> 00:14:32,036
+know that we have an AV capture
+session that's the center
+
+
+289
+00:14:32,036 --> 00:14:32,846
+of our universe.
+
+
+290
+00:14:33,126 --> 00:14:35,676
+And the way that you
+configure it is one call.
+
+
+291
+00:14:36,356 --> 00:14:39,126
+You set the session
+preset to something.
+
+
+292
+00:14:39,236 --> 00:14:44,046
+We have a set of strings
+that tell you the quality
+
+
+293
+00:14:44,046 --> 00:14:47,646
+of service you're going to
+get -- photo, high quality,
+
+
+294
+00:14:47,646 --> 00:14:49,166
+medium, low, etcetera.
+
+
+295
+00:14:49,736 --> 00:14:51,146
+And that does the hard job
+
+
+296
+00:14:51,146 --> 00:14:53,986
+of configuring the inputs
+and outputs for you.
+
+
+297
+00:14:55,866 --> 00:14:59,346
+now we had a problem with
+60 fps captures on iOS 7,
+
+
+298
+00:14:59,346 --> 00:15:03,486
+because we didn't want to try
+to make new session presets
+
+
+299
+00:15:03,486 --> 00:15:07,476
+for every conceivable frame
+rate and resolution combination,
+
+
+300
+00:15:07,476 --> 00:15:10,446
+because that would result
+in a combinatorial explosion
+
+
+301
+00:15:10,726 --> 00:15:13,036
+of presets, and it would be
+very difficult to program to.
+
+
+302
+00:15:13,596 --> 00:15:16,046
+So in iOS 7 we're
+introducing a parallel
+
+
+303
+00:15:16,116 --> 00:15:17,486
+configuration mechanism.
+
+
+304
+00:15:17,696 --> 00:15:18,986
+The old one is not going away,
+
+
+305
+00:15:19,486 --> 00:15:22,366
+but this one is for
+a power use case.
+
+
+306
+00:15:22,786 --> 00:15:27,576
+And that is we're now going to
+allow you to inspect the format
+
+
+307
+00:15:27,846 --> 00:15:31,596
+of the AV capture device, and
+set the active format directly.
+
+
+308
+00:15:32,436 --> 00:15:35,066
+And when you do this, the
+session is no longer in control,
+
+
+309
+00:15:35,066 --> 00:15:38,216
+it no longer automatically
+configures inputs and outputs.
+
+
+310
+00:15:38,416 --> 00:15:44,886
+720p 60 capture is supported
+on iPhone 5, iPod Touch,
+
+
+311
+00:15:44,886 --> 00:15:47,276
+the tall one, and iPad Mini.
+
+
+312
+00:15:49,546 --> 00:15:52,586
+Let's review how set
+session preset works.
+
+
+313
+00:15:53,796 --> 00:15:56,596
+Here's a block diagram we have
+
+
+314
+00:15:56,746 --> 00:15:59,356
+of the various pieces
+in a capture session.
+
+
+315
+00:15:59,646 --> 00:16:01,806
+You have inputs, you have
+outputs, you have a preview,
+
+
+316
+00:16:02,426 --> 00:16:05,176
+and they're connected
+via these white arrows,
+
+
+317
+00:16:05,236 --> 00:16:08,866
+which are represented in our
+API as AV capture connections.
+
+
+318
+00:16:08,866 --> 00:16:12,386
+So you can see the capture
+session kind of knows its inputs
+
+
+319
+00:16:12,386 --> 00:16:14,096
+and outputs, it knows
+its topology.
+
+
+320
+00:16:16,106 --> 00:16:19,796
+So when you set a session
+preset, let's say photo,
+
+
+321
+00:16:21,426 --> 00:16:23,256
+here's a common scenario,
+you might also want
+
+
+322
+00:16:23,256 --> 00:16:27,096
+to get BGRA frames out of
+your video data output instead
+
+
+323
+00:16:27,096 --> 00:16:29,546
+of the default, which is 4:2:0.
+
+
+324
+00:16:30,256 --> 00:16:31,736
+Here's what happens
+under the covers.
+
+
+325
+00:16:32,306 --> 00:16:35,216
+The session goes and talks
+to all of its outputs.
+
+
+326
+00:16:35,306 --> 00:16:36,486
+It says still image output,
+
+
+327
+00:16:37,096 --> 00:16:41,226
+for the photo preset what
+shall -- what do you require?
+
+
+328
+00:16:41,626 --> 00:16:44,106
+And it requires full
+res jpeg, so it figures
+
+
+329
+00:16:44,106 --> 00:16:47,546
+out that it should
+give 3264 by 2448,
+
+
+330
+00:16:47,676 --> 00:16:48,976
+assuming this is an iPhone 5.
+
+
+331
+00:16:50,046 --> 00:16:53,876
+The video data output does
+not give full res buffers
+
+
+332
+00:16:53,876 --> 00:16:56,426
+for the photo preset, it's
+sort of a special case.
+
+
+333
+00:16:56,686 --> 00:16:59,156
+Instead it gives screen
+sized buffers to make sure
+
+
+334
+00:16:59,156 --> 00:17:01,026
+that they're not too
+large for your processing.
+
+
+335
+00:17:01,466 --> 00:17:05,156
+So it picks a screen
+resolution, and chooses BGRA
+
+
+336
+00:17:05,156 --> 00:17:07,016
+because you wanted to
+override the default.
+
+
+337
+00:17:07,866 --> 00:17:10,746
+The video preview layer
+just wants screen size,
+
+
+338
+00:17:10,746 --> 00:17:12,935
+and it can cope with
+the native format.
+
+
+339
+00:17:14,296 --> 00:17:16,336
+So knowing all of
+these requirements now,
+
+
+340
+00:17:16,586 --> 00:17:20,396
+the session goes up, aggregates
+all of those requirements,
+
+
+341
+00:17:20,396 --> 00:17:21,705
+goes to the AV capture device,
+
+
+342
+00:17:21,705 --> 00:17:24,496
+and says pick me
+the best format.
+
+
+343
+00:17:25,326 --> 00:17:28,066
+And the AV capture device
+looks through its formats,
+
+
+344
+00:17:28,666 --> 00:17:33,086
+picks the best match, and also
+picks the optimal frame rates --
+
+
+345
+00:17:33,086 --> 00:17:35,856
+min and max frame rate to
+satisfy all those requirements.
+
+
+346
+00:17:35,856 --> 00:17:36,886
+That's what's happening
+underneath.
+
+
+347
+00:17:38,426 --> 00:17:41,596
+Now using the new configuration
+mechanism, it's simple.
+
+
+348
+00:17:41,926 --> 00:17:42,756
+Just do this.
+
+
+349
+00:17:44,166 --> 00:17:47,056
+Oh let's highlight
+this one at a time.
+
+
+350
+00:17:47,646 --> 00:17:51,906
+The AV capture device
+now exposes an array
+
+
+351
+00:17:51,906 --> 00:17:53,586
+of natively supported formats.
+
+
+352
+00:17:53,636 --> 00:17:56,056
+Each one is an AV
+capture device format.
+
+
+353
+00:17:56,526 --> 00:17:58,676
+So here I'm iterating
+through them trying
+
+
+354
+00:17:58,676 --> 00:18:00,016
+to find the highest frame rate.
+
+
+355
+00:18:00,846 --> 00:18:02,496
+In the next little
+section I look
+
+
+356
+00:18:02,496 --> 00:18:08,316
+at each format object's
+supported frame rate ranges,
+
+
+357
+00:18:08,756 --> 00:18:11,526
+find the one that has the max
+-- the highest max frame rate.
+
+
+358
+00:18:11,986 --> 00:18:14,816
+From that I select the
+best format match based
+
+
+359
+00:18:14,816 --> 00:18:16,146
+on the highest frame rate range.
+
+
+360
+00:18:16,696 --> 00:18:19,436
+And once I have a best
+format, I lock my device
+
+
+361
+00:18:19,436 --> 00:18:22,616
+for configuration,
+set the active format,
+
+
+362
+00:18:22,616 --> 00:18:27,256
+and then I pin the min and
+max to the highest frame rate
+
+
+363
+00:18:27,256 --> 00:18:29,956
+that I found, which is exactly
+what I did in the Slowpoke app.
+
+
+364
+00:18:31,066 --> 00:18:32,536
+Always, always, always unlock
+
+
+365
+00:18:32,536 --> 00:18:34,006
+for configuration
+when you're done.
+
+
+366
+00:18:35,846 --> 00:18:38,466
+A note about frame
+rate selection.
+
+
+367
+00:18:38,786 --> 00:18:40,676
+Previously we've only
+allowed you to do this
+
+
+368
+00:18:40,676 --> 00:18:42,956
+at the AV capture
+connections, which as you know,
+
+
+369
+00:18:42,956 --> 00:18:47,896
+sit lower in the session
+hierarchy than the device.
+
+
+370
+00:18:48,306 --> 00:18:50,536
+But what they're doing is
+actually going and talking
+
+
+371
+00:18:50,536 --> 00:18:52,386
+to the device and setting
+the active format --
+
+
+372
+00:18:52,386 --> 00:18:55,226
+or the active frame rates
+on the device, and we would
+
+
+373
+00:18:55,226 --> 00:18:56,456
+like you to do now too.
+
+
+374
+00:18:56,626 --> 00:18:58,666
+This is the new preferred
+mechanism
+
+
+375
+00:18:58,666 --> 00:18:59,756
+for setting frame rates.
+
+
+376
+00:19:00,686 --> 00:19:03,426
+So talk to the device,
+not the connections.
+
+
+377
+00:19:04,656 --> 00:19:06,986
+Frame rates can be
+set at any time,
+
+
+378
+00:19:06,986 --> 00:19:09,176
+whether using the set
+session preset API,
+
+
+379
+00:19:09,466 --> 00:19:11,456
+or the new set active
+format API.
+
+
+380
+00:19:12,566 --> 00:19:14,796
+It's -- you can use
+them at any time,
+
+
+381
+00:19:15,196 --> 00:19:21,226
+and it reconfigures the
+graph without tearing down.
+
+
+382
+00:19:22,186 --> 00:19:23,416
+Sometimes you just
+want to go back
+
+
+383
+00:19:23,416 --> 00:19:25,196
+to whatever the default
+was supposed to be
+
+
+384
+00:19:25,196 --> 00:19:27,986
+for the given preset or active
+format that you're using.
+
+
+385
+00:19:27,986 --> 00:19:29,916
+But if you don't know
+what those defaults are,
+
+
+386
+00:19:30,256 --> 00:19:33,036
+you can just set the min
+and max frame durations
+
+
+387
+00:19:33,036 --> 00:19:36,136
+to CM time invalid, which
+will go back to the defaults.
+
+
+388
+00:19:37,646 --> 00:19:40,236
+As I mentioned, AV capture
+connection's frame rate
+
+
+389
+00:19:40,236 --> 00:19:42,776
+selection, accessors
+are now deprecated.
+
+
+390
+00:19:43,216 --> 00:19:45,636
+Please switch over to the
+new one as soon as possible.
+
+
+391
+00:19:47,616 --> 00:19:49,746
+Okay, this slide hopefully
+doesn't scare you too much.
+
+
+392
+00:19:49,746 --> 00:19:51,906
+This is a list of
+supported formats
+
+
+393
+00:19:51,956 --> 00:19:54,356
+on the iPhone 5's
+back facing camera.
+
+
+394
+00:19:54,416 --> 00:19:55,416
+It's a little overwhelming.
+
+
+395
+00:19:55,866 --> 00:19:57,276
+There are 10 formats here,
+
+
+396
+00:19:57,676 --> 00:19:59,086
+and actually that's
+only half of them.
+
+
+397
+00:19:59,086 --> 00:20:01,416
+There are 20 formats,
+but I left half of them
+
+
+398
+00:20:01,416 --> 00:20:04,636
+out because they're really just
+two flavors of the same format.
+
+
+399
+00:20:04,636 --> 00:20:07,586
+There's a 420v and a 420f,
+
+
+400
+00:20:07,856 --> 00:20:10,716
+the v for video range,
+the f for full range.
+
+
+401
+00:20:11,056 --> 00:20:12,426
+But if we take that
+complexity out,
+
+
+402
+00:20:12,426 --> 00:20:15,576
+we're left with basically 10
+formats, and as you can see,
+
+
+403
+00:20:15,796 --> 00:20:19,126
+they're sorted, ascending
+by dimensions,
+
+
+404
+00:20:19,796 --> 00:20:23,136
+and the more commonly used
+ones are listed first.
+
+
+405
+00:20:23,876 --> 00:20:27,446
+So let's take a look over
+at the right-hand column.
+
+
+406
+00:20:27,816 --> 00:20:29,956
+You can see that most
+of them are already used
+
+
+407
+00:20:29,956 --> 00:20:32,766
+by one session preset
+or another.
+
+
+408
+00:20:33,216 --> 00:20:36,216
+There are, however, two new ones
+that we've never exposed before
+
+
+409
+00:20:36,216 --> 00:20:42,536
+on iPhone 5, which is the 720p
+60 format and one that's a 4
+
+
+410
+00:20:42,536 --> 00:20:44,286
+by 3 format, but not as big
+
+
+411
+00:20:44,286 --> 00:20:47,696
+as the absolute full
+res 8 megapixel,
+
+
+412
+00:20:47,946 --> 00:20:51,026
+and that's a 5 megapixel
+4 by 3, and it's not used
+
+
+413
+00:20:51,026 --> 00:20:52,196
+by any session preset.
+
+
+414
+00:20:52,676 --> 00:20:55,186
+To get at it, you have to use
+the active format setters.
+
+
+415
+00:20:56,496 --> 00:20:59,076
+Here's what happens
+when you use the new way
+
+
+416
+00:20:59,076 --> 00:21:01,136
+of configuring AV capture.
+
+
+417
+00:21:02,106 --> 00:21:05,236
+Instead of talking to the
+session, you talk directly
+
+
+418
+00:21:05,236 --> 00:21:06,456
+to the AV capture device.
+
+
+419
+00:21:06,456 --> 00:21:08,176
+You say I want your
+active format
+
+
+420
+00:21:08,176 --> 00:21:10,536
+to be 8 megapixel, let's say.
+
+
+421
+00:21:11,566 --> 00:21:14,406
+Now when you do this, the
+session is listening for that,
+
+
+422
+00:21:14,406 --> 00:21:17,236
+and the session says okay,
+they are now in control,
+
+
+423
+00:21:17,236 --> 00:21:18,596
+I'm going to take hands-off.
+
+
+424
+00:21:18,936 --> 00:21:21,596
+My session preset is
+now inputPriority,
+
+
+425
+00:21:21,706 --> 00:21:24,046
+which means I'm not going to
+touch the inputs or the outputs,
+
+
+426
+00:21:24,046 --> 00:21:25,726
+I'm just going to let
+the user be in control.
+
+
+427
+00:21:27,276 --> 00:21:29,796
+That means that the AV
+capture device will now deliver
+
+
+428
+00:21:29,796 --> 00:21:32,406
+to the still image output
+the full 8 megapixel.
+
+
+429
+00:21:33,556 --> 00:21:34,936
+Video preview layer
+is an exception,
+
+
+430
+00:21:34,936 --> 00:21:36,886
+it still only gets screen size.
+
+
+431
+00:21:37,516 --> 00:21:39,986
+But now, new for
+video data output,
+
+
+432
+00:21:39,986 --> 00:21:44,386
+you get the full 8 megapixel
+buffers, not a scaled
+
+
+433
+00:21:44,386 --> 00:21:48,196
+down screen resolution
+version of it.
+
+
+434
+00:21:49,226 --> 00:21:51,576
+Let's talk briefly about what is
+
+
+435
+00:21:51,626 --> 00:21:54,176
+in an AV capture
+device format object.
+
+
+436
+00:21:54,486 --> 00:21:56,196
+It has a media type,
+as you might expect,
+
+
+437
+00:21:56,196 --> 00:21:57,806
+so you know if it's
+audio or video,
+
+
+438
+00:21:58,846 --> 00:22:00,156
+it has a format description
+
+
+439
+00:22:00,156 --> 00:22:02,766
+from which you can get
+the pixel dimensions,
+
+
+440
+00:22:02,766 --> 00:22:09,016
+the pixel format
+such as 420v, 420f.
+
+
+441
+00:22:10,416 --> 00:22:12,096
+You can also get the
+video field of view.
+
+
+442
+00:22:12,186 --> 00:22:13,336
+This is a really handy one.
+
+
+443
+00:22:13,456 --> 00:22:15,846
+Previously, in order to
+know what the field of view
+
+
+444
+00:22:15,846 --> 00:22:19,336
+of the sensor is, you would
+have to run a video data output,
+
+
+445
+00:22:19,336 --> 00:22:21,916
+and then look through the meta
+data and find the focal length
+
+
+446
+00:22:21,916 --> 00:22:24,146
+in 35-millimeter film,
+and that's really hard.
+
+
+447
+00:22:24,766 --> 00:22:26,476
+Now you don't need to
+run the camera at all.
+
+
+448
+00:22:26,476 --> 00:22:28,816
+You can just look through
+the supported formats array,
+
+
+449
+00:22:28,816 --> 00:22:32,516
+and see what the field of
+view is, and it's expressed
+
+
+450
+00:22:32,516 --> 00:22:34,916
+in degrees, and this is the
+horizontal field of view.
+
+
+451
+00:22:36,366 --> 00:22:39,626
+Also it tells you whether a
+given sensor format supports
+
+
+452
+00:22:39,626 --> 00:22:42,736
+video stabilization, so that
+later when you enable it
+
+
+453
+00:22:42,736 --> 00:22:45,866
+on the connection, you can
+know if it's going to succeed,
+
+
+454
+00:22:45,866 --> 00:22:49,156
+if it's going to turn
+on stabilization or not.
+
+
+455
+00:22:49,606 --> 00:22:52,486
+You can also look through the
+supported frame rate ranges,
+
+
+456
+00:22:52,486 --> 00:22:55,756
+such as I support 1 through
+30 frames per second.
+
+
+457
+00:22:56,726 --> 00:22:59,896
+And there's something called
+video binned, which you may
+
+
+458
+00:22:59,896 --> 00:23:00,816
+or may not have heard of.
+
+
+459
+00:23:00,876 --> 00:23:05,326
+This is sort of a
+sensor-specific keyword.
+
+
+460
+00:23:05,746 --> 00:23:10,016
+And binning means taking
+groups of neighboring pixels
+
+
+461
+00:23:10,016 --> 00:23:12,786
+and binning them together,
+sort of averaging them.
+
+
+462
+00:23:13,086 --> 00:23:16,656
+And it's a means of
+reducing the resolution,
+
+
+463
+00:23:16,656 --> 00:23:17,686
+reducing the throughput,
+
+
+464
+00:23:17,896 --> 00:23:19,476
+but without reducing
+the field of view.
+
+
+465
+00:23:19,476 --> 00:23:21,866
+Let me give you an
+example of it.
+
+
+466
+00:23:22,936 --> 00:23:26,986
+Going back to the iPhone 5 back
+facing camera, we have two 1280
+
+
+467
+00:23:26,986 --> 00:23:29,446
+by 720 modes available.
+
+
+468
+00:23:30,006 --> 00:23:32,536
+Previously we only let you
+use the 1 through 30 one.
+
+
+469
+00:23:33,196 --> 00:23:36,066
+But the 1 through 60 one has
+almost an identical field
+
+
+470
+00:23:36,066 --> 00:23:40,466
+of view, so you're not really
+losing any depth of field.
+
+
+471
+00:23:41,046 --> 00:23:43,946
+Instead, one of them is
+binned and one is non-binned.
+
+
+472
+00:23:44,266 --> 00:23:46,176
+If you'd like to read
+more about what this means
+
+
+473
+00:23:46,176 --> 00:23:48,086
+and the different image
+characteristics of binned
+
+
+474
+00:23:48,086 --> 00:23:51,446
+versus non-binned, I encourage
+you to go do a web search
+
+
+475
+00:23:51,446 --> 00:23:55,436
+for sensor pixel binning,
+and read all about it.
+
+
+476
+00:23:55,906 --> 00:23:58,786
+So some guidance about when
+to use one over the other.
+
+
+477
+00:23:59,336 --> 00:24:03,486
+The session presets setting
+mechanism is not deprecated,
+
+
+478
+00:24:03,486 --> 00:24:04,586
+it's not going away.
+
+
+479
+00:24:04,886 --> 00:24:07,986
+It's still a good one to
+use, because it knows how
+
+
+480
+00:24:07,986 --> 00:24:10,246
+to optimally configure
+inputs and outputs,
+
+
+481
+00:24:10,526 --> 00:24:11,936
+so it gives you the
+best bang for the buck.
+
+
+482
+00:24:11,936 --> 00:24:13,886
+It's just one call and it
+does everything for you.
+
+
+483
+00:24:15,486 --> 00:24:19,006
+But you should use the new
+set active format means
+
+
+484
+00:24:19,006 --> 00:24:21,806
+of configuration if you
+need a specific format,
+
+
+485
+00:24:21,806 --> 00:24:25,306
+such as the 60 frames per second
+format, or if you're looking
+
+
+486
+00:24:25,306 --> 00:24:26,826
+for a specific field of view,
+
+
+487
+00:24:26,826 --> 00:24:29,576
+or if you need those full
+resolution video data output
+
+
+488
+00:24:29,576 --> 00:24:31,566
+buffers, this is the
+only way to do that.
+
+
+489
+00:24:33,136 --> 00:24:34,616
+Alright, I think we've
+talked that to death.
+
+
+490
+00:24:35,216 --> 00:24:37,926
+Let's move on to video zoom,
+and to do that I'd like to bring
+
+
+491
+00:24:37,926 --> 00:24:39,416
+up Ethan Tira-Thompson.
+
+
+492
+00:24:39,786 --> 00:24:40,056
+Thank you.
+
+
+493
+00:24:40,056 --> 00:24:40,166
+[ Applause ]
+
+
+494
+00:24:40,166 --> 00:24:44,416
+>> Hi everyone.
+
+
+495
+00:24:44,916 --> 00:24:47,336
+I'm very excited to talk
+to you today about zoom.
+
+
+496
+00:24:47,706 --> 00:24:48,866
+I hope that perked you up,
+
+
+497
+00:24:48,906 --> 00:24:51,696
+because we've got some exciting
+stuff here, and I think a lot
+
+
+498
+00:24:51,696 --> 00:24:54,846
+of you will want to
+take advantage of it.
+
+
+499
+00:24:54,846 --> 00:24:57,556
+I'd like to start by
+reviewing our current API,
+
+
+500
+00:24:57,556 --> 00:24:59,536
+which is the video
+scale and crop factor
+
+
+501
+00:24:59,896 --> 00:25:01,606
+of the AV capture connection.
+
+
+502
+00:25:02,006 --> 00:25:04,386
+Apparently this only applies
+to still image outputs,
+
+
+503
+00:25:04,386 --> 00:25:06,926
+so you could enlarge an image
+by setting this property.
+
+
+504
+00:25:07,436 --> 00:25:10,106
+And typically then you
+would also apply a transform
+
+
+505
+00:25:10,106 --> 00:25:13,126
+to the preview layer so that
+the user gets some feedback
+
+
+506
+00:25:13,126 --> 00:25:14,536
+as to how much zoom
+has been applied.
+
+
+507
+00:25:15,036 --> 00:25:16,496
+So that would look something
+
+
+508
+00:25:16,496 --> 00:25:17,796
+like this screenshot
+on the left.
+
+
+509
+00:25:18,726 --> 00:25:20,096
+And this is not being
+deprecated,
+
+
+510
+00:25:20,096 --> 00:25:21,126
+so this is still available.
+
+
+511
+00:25:21,576 --> 00:25:27,226
+However, we're introducing a
+new property simply called video
+
+
+512
+00:25:27,226 --> 00:25:29,726
+zoom factor, which is on
+the AV capture device.
+
+
+513
+00:25:29,726 --> 00:25:31,756
+So this is at the
+root of the session,
+
+
+514
+00:25:31,756 --> 00:25:34,086
+and applies to all image
+outputs, including the preview.
+
+
+515
+00:25:34,086 --> 00:25:37,056
+So by setting this one
+factor, you'll get a preview,
+
+
+516
+00:25:37,056 --> 00:25:39,416
+which is enlarged,
+and also much sharper.
+
+
+517
+00:25:40,626 --> 00:25:43,896
+So to look under the hood and
+let you know how this works,
+
+
+518
+00:25:43,896 --> 00:25:46,806
+let's go back to our
+architecture diagram,
+
+
+519
+00:25:46,806 --> 00:25:49,886
+and we have our video
+scale and crop factor
+
+
+520
+00:25:49,886 --> 00:25:51,176
+on the AV capture connection.
+
+
+521
+00:25:52,106 --> 00:25:54,746
+And notice this is only applying
+to the still image output,
+
+
+522
+00:25:54,746 --> 00:25:56,076
+and again this is still there.
+
+
+523
+00:25:56,726 --> 00:26:00,636
+However, our new property up on
+the capture device is applying
+
+
+524
+00:26:00,636 --> 00:26:03,596
+to all the image outputs,
+including some not shown here,
+
+
+525
+00:26:03,596 --> 00:26:05,926
+such as the meta data output
+and movie file output.
+
+
+526
+00:26:06,436 --> 00:26:09,726
+And because this is at
+the root of the session,
+
+
+527
+00:26:09,726 --> 00:26:10,846
+we can do some interesting
+things
+
+
+528
+00:26:10,846 --> 00:26:11,836
+with the image processing.
+
+
+529
+00:26:12,986 --> 00:26:15,096
+Normally when we're getting
+an image from the sensor,
+
+
+530
+00:26:15,096 --> 00:26:16,516
+it's at the full
+photo resolution,
+
+
+531
+00:26:16,516 --> 00:26:18,116
+it's the maximum
+resolution of the sensor.
+
+
+532
+00:26:18,696 --> 00:26:21,906
+However, video resolutions
+that we output, like 1080p,
+
+
+533
+00:26:21,906 --> 00:26:22,936
+are a lower resolution.
+
+
+534
+00:26:22,936 --> 00:26:25,666
+So we must scale down
+the image in order
+
+
+535
+00:26:25,666 --> 00:26:26,916
+to get to that resolution.
+
+
+536
+00:26:27,846 --> 00:26:29,616
+Now if we want to
+enlarge the image,
+
+
+537
+00:26:29,926 --> 00:26:33,276
+instead of upscaling the
+video that we're outputting,
+
+
+538
+00:26:33,736 --> 00:26:36,396
+let's just crop the image
+and not downscale as much.
+
+
+539
+00:26:37,146 --> 00:26:39,066
+This means that you'll be
+getting a larger output,
+
+
+540
+00:26:39,326 --> 00:26:40,316
+without actually --
+
+
+541
+00:26:40,766 --> 00:26:43,996
+with retaining the original
+detail that's coming
+
+
+542
+00:26:43,996 --> 00:26:44,616
+from the sensor.
+
+
+543
+00:26:45,116 --> 00:26:48,206
+Of course we can also
+crop tighter than that.
+
+
+544
+00:26:48,556 --> 00:26:51,856
+So once we are requesting
+a smaller source area
+
+
+545
+00:26:51,856 --> 00:26:54,776
+than the output, then we need
+to upscale, and that's fine.
+
+
+546
+00:26:55,876 --> 00:26:57,676
+We have a property to let
+you know when this is going
+
+
+547
+00:26:57,676 --> 00:26:58,936
+to happen, and this
+is a property
+
+
+548
+00:26:58,936 --> 00:27:01,016
+of the new AV capture
+device format
+
+
+549
+00:27:01,016 --> 00:27:02,396
+that Brad was just
+talking about.
+
+
+550
+00:27:02,986 --> 00:27:04,466
+So you can check
+for each format,
+
+
+551
+00:27:04,466 --> 00:27:07,726
+depending on the resolution
+of the video that's going
+
+
+552
+00:27:07,726 --> 00:27:11,016
+to be returned, that will
+adjust how much upscaling --
+
+
+553
+00:27:11,116 --> 00:27:12,936
+the threshold before
+you hit upscaling.
+
+
+554
+00:27:13,766 --> 00:27:16,056
+So you can check the property
+for each format and know
+
+
+555
+00:27:16,636 --> 00:27:17,896
+when you're going to
+encounter this range.
+
+
+556
+00:27:18,276 --> 00:27:22,706
+To illustrate this, we have
+a little animation here.
+
+
+557
+00:27:22,706 --> 00:27:25,686
+So the purple box would
+be the same dimensions
+
+
+558
+00:27:25,686 --> 00:27:29,866
+as the video output, and the
+red box would be the maximum say
+
+
+559
+00:27:29,866 --> 00:27:30,966
+that you want to zoom down to.
+
+
+560
+00:27:31,426 --> 00:27:34,746
+And as we increase the zoom
+factor, we cross that threshold,
+
+
+561
+00:27:34,746 --> 00:27:37,186
+so now we're in the upscaling
+range as zoom back out.
+
+
+562
+00:27:37,586 --> 00:27:39,546
+Now we enter the
+crop zoom section,
+
+
+563
+00:27:39,546 --> 00:27:41,376
+so that's just cropping
+on the sensor.
+
+
+564
+00:27:41,376 --> 00:27:43,876
+And you kind of just go back
+and forth across the transition.
+
+
+565
+00:27:43,876 --> 00:27:44,756
+You don't actually need to know
+
+
+566
+00:27:44,756 --> 00:27:47,356
+where that threshold
+is, but it's there.
+
+
+567
+00:27:47,956 --> 00:27:52,486
+So to talk a little bit
+about the API behind this,
+
+
+568
+00:27:53,086 --> 00:27:57,296
+there's the aforementioned video
+zoom factor, which is applying
+
+
+569
+00:27:57,296 --> 00:27:58,496
+to all the image outputs.
+
+
+570
+00:27:59,226 --> 00:28:01,916
+And it's up to a maximum value,
+which is also a method --
+
+
+571
+00:28:02,046 --> 00:28:04,816
+property of the AV
+capture device format.
+
+
+572
+00:28:05,316 --> 00:28:07,286
+So if you just care
+about the current format,
+
+
+573
+00:28:07,286 --> 00:28:10,606
+the active sensor format,
+there's a property,
+
+
+574
+00:28:10,606 --> 00:28:12,066
+the device active format,
+
+
+575
+00:28:12,066 --> 00:28:13,746
+and then you can check
+the max zoom factor
+
+
+576
+00:28:13,746 --> 00:28:14,646
+of the active format,
+
+
+577
+00:28:14,716 --> 00:28:16,886
+and that'll let you know
+what the current maximum zoom
+
+
+578
+00:28:17,036 --> 00:28:18,156
+that you can use is.
+
+
+579
+00:28:18,956 --> 00:28:22,246
+The device coordinates
+are a little interesting
+
+
+580
+00:28:22,246 --> 00:28:24,666
+because they are going to
+stay fixed through the frame.
+
+
+581
+00:28:24,736 --> 00:28:26,656
+You can think of this as an
+optical zoom at the front
+
+
+582
+00:28:26,656 --> 00:28:29,466
+of the pipeline, the rest of
+the pipeline has already been --
+
+
+583
+00:28:29,466 --> 00:28:30,506
+the image has already
+been cropped.
+
+
+584
+00:28:30,506 --> 00:28:32,236
+And so all the device
+coordinates are going
+
+
+585
+00:28:32,236 --> 00:28:35,006
+to be applying to the
+image that is being shown.
+
+
+586
+00:28:35,926 --> 00:28:40,096
+So for instance, if we
+set a focus interest point
+
+
+587
+00:28:40,386 --> 00:28:42,686
+on the soccer ball in the
+corner, and then we zoom in,
+
+
+588
+00:28:43,466 --> 00:28:46,016
+as the image scales, the soccer
+ball will go out of the field
+
+
+589
+00:28:46,016 --> 00:28:48,376
+of view, but that focus
+point's going to stay fixed
+
+
+590
+00:28:48,376 --> 00:28:49,476
+in the corner where you set it.
+
+
+591
+00:28:49,476 --> 00:28:50,606
+Those corners are static.
+
+
+592
+00:28:51,826 --> 00:28:54,986
+Similarly, if the -- if you
+have face detection enabled,
+
+
+593
+00:28:55,306 --> 00:28:58,256
+the faces will be returned
+as they're being displayed,
+
+
+594
+00:28:58,256 --> 00:29:00,176
+and as the face goes out
+of the field of view,
+
+
+595
+00:29:00,626 --> 00:29:01,916
+they will stop being detected.
+
+
+596
+00:29:02,726 --> 00:29:06,106
+There's a pre-existing
+transform meta data object
+
+
+597
+00:29:06,106 --> 00:29:08,466
+for meta data object, which
+also helps you coordinate these,
+
+
+598
+00:29:08,466 --> 00:29:11,526
+because we return the meta
+data and device coordinates,
+
+
+599
+00:29:11,526 --> 00:29:14,286
+and if you want to convert it to
+the preview layer coordinates,
+
+
+600
+00:29:14,676 --> 00:29:20,306
+this pre-existing method
+will do that for you.
+
+
+601
+00:29:20,306 --> 00:29:21,306
+There's an interesting --
+
+
+602
+00:29:21,416 --> 00:29:24,396
+another aspect to this in
+that we are now applying zoom
+
+
+603
+00:29:24,396 --> 00:29:25,906
+to video outputs.
+
+
+604
+00:29:26,196 --> 00:29:27,526
+And there's a temporal
+aspect there.
+
+
+605
+00:29:28,046 --> 00:29:31,336
+Because we don't
+want you to have
+
+
+606
+00:29:31,336 --> 00:29:34,116
+to increment the zoom
+factor for each frame
+
+
+607
+00:29:34,116 --> 00:29:37,426
+as it's being captured, because
+you might have some threading
+
+
+608
+00:29:37,426 --> 00:29:40,186
+issues, it might be hard to time
+and synchronize your threads
+
+
+609
+00:29:40,186 --> 00:29:42,576
+and updates with the
+capture of frames
+
+
+610
+00:29:42,576 --> 00:29:45,716
+as they're being received,
+so we can do that internally.
+
+
+611
+00:29:45,716 --> 00:29:46,836
+And we have this new method,
+
+
+612
+00:29:47,126 --> 00:29:49,006
+ramp to video zoom
+factor with rate.
+
+
+613
+00:29:49,296 --> 00:29:52,886
+So you can specify the target
+factor, and the rate at which
+
+
+614
+00:29:52,886 --> 00:29:57,446
+to get there, and then we will
+internally increment the zoom
+
+
+615
+00:29:57,446 --> 00:30:00,596
+factor on each frame as it's
+being captured in real time.
+
+
+616
+00:30:04,016 --> 00:30:06,396
+There's another method,
+cancel video zoom ramp,
+
+
+617
+00:30:06,636 --> 00:30:08,716
+so that any time you can
+do this interactively.
+
+
+618
+00:30:08,716 --> 00:30:11,616
+You can either call ramp
+to video zoom factor again
+
+
+619
+00:30:11,616 --> 00:30:12,936
+with a new rate or a new target,
+
+
+620
+00:30:13,286 --> 00:30:16,376
+or you can just cancel the
+current one if the user has --
+
+
+621
+00:30:17,036 --> 00:30:18,706
+cancels, you know,
+lets go on the button.
+
+
+622
+00:30:19,256 --> 00:30:24,336
+And then any changes in the
+rate are smoothed further,
+
+
+623
+00:30:24,646 --> 00:30:28,256
+so that you don't have any jumpy
+transitions within the zooms.
+
+
+624
+00:30:28,526 --> 00:30:32,956
+Now rates are a little tricky in
+zoom, because the apparent speed
+
+
+625
+00:30:32,956 --> 00:30:37,266
+of a zoom is actually determined
+by the multiplicative factor
+
+
+626
+00:30:37,266 --> 00:30:38,996
+that we're applying, it's
+not an additive thing.
+
+
+627
+00:30:39,646 --> 00:30:42,306
+So the rate is specified
+in powers of 2 per second.
+
+
+628
+00:30:42,426 --> 00:30:45,146
+So if you want a consistent
+speed of doubling every second,
+
+
+629
+00:30:45,666 --> 00:30:46,876
+then you'll set a rate of 1.
+
+
+630
+00:30:47,276 --> 00:30:49,176
+When you set a rate of 2,
+it'll go twice as fast,
+
+
+631
+00:30:49,176 --> 00:30:51,976
+if you set a rate of .5
+it'll go half as fast.
+
+
+632
+00:30:53,216 --> 00:30:56,346
+What you see here on the right
+is the graph showing a rate
+
+
+633
+00:30:56,346 --> 00:30:56,796
+of 1.
+
+
+634
+00:30:56,856 --> 00:30:59,056
+So essentially every
+second we double the zoom.
+
+
+635
+00:30:59,616 --> 00:31:03,256
+And so we go from 1 to 2,
+2 to 4, 4 to 8, and so on.
+
+
+636
+00:31:03,616 --> 00:31:06,336
+In practice you'll probably
+want to stay around 1 to 3
+
+
+637
+00:31:06,336 --> 00:31:09,016
+for comfortable ranges, but
+of course your app is welcome
+
+
+638
+00:31:09,016 --> 00:31:12,066
+to do whatever it wants.
+
+
+639
+00:31:12,126 --> 00:31:15,126
+To demonstrate this I'm going
+to bring up Rob Simutis,
+
+
+640
+00:31:15,186 --> 00:31:18,116
+and he's going to
+help me demo SoZoomy.
+
+
+641
+00:31:18,646 --> 00:31:20,746
+There we go.
+
+
+642
+00:31:21,266 --> 00:31:24,926
+Alright, so we're going to start
+
+
+643
+00:31:24,926 --> 00:31:27,186
+with a mode called
+constant face size.
+
+
+644
+00:31:27,626 --> 00:31:30,146
+So there's a cinematic
+effect called a dolly zoom,
+
+
+645
+00:31:30,536 --> 00:31:33,406
+where the zoom is changed
+
+
+646
+00:31:33,406 --> 00:31:37,296
+to keep a target object
+a consistent size,
+
+
+647
+00:31:37,566 --> 00:31:38,806
+while the object is moving,
+
+
+648
+00:31:38,876 --> 00:31:41,706
+which causes the
+background to shift.
+
+
+649
+00:31:42,136 --> 00:31:45,536
+So if I have Rob start walking
+forward, tap on his face,
+
+
+650
+00:31:46,286 --> 00:31:49,206
+then if there's anything
+in the background,
+
+
+651
+00:31:49,206 --> 00:31:51,236
+which it's mostly dark so
+you'll have trouble seeing this,
+
+
+652
+00:31:52,486 --> 00:31:54,256
+but yeah, let's have
+him try that again.
+
+
+653
+00:31:54,406 --> 00:31:57,146
+Keep backing up, and you can
+kind of see -- there you go.
+
+
+654
+00:31:57,326 --> 00:31:58,256
+Let's see, I'll try again.
+
+
+655
+00:31:58,436 --> 00:31:59,326
+And we're losing the face.
+
+
+656
+00:31:59,356 --> 00:32:01,866
+But anyway, so that's
+the constant face size.
+
+
+657
+00:32:02,216 --> 00:32:04,736
+There's another aspect
+of this demo,
+
+
+658
+00:32:04,736 --> 00:32:08,306
+which I hope you'll recognize,
+if he turns around and I zoom
+
+
+659
+00:32:08,306 --> 00:32:09,976
+in a little bit,
+let's get a good size.
+
+
+660
+00:32:10,706 --> 00:32:13,376
+And let's go.
+
+
+661
+00:32:13,376 --> 00:32:14,906
+[ Music ]
+
+
+662
+00:32:14,906 --> 00:32:16,436
+[ Applause ]
+
+
+663
+00:32:16,436 --> 00:32:22,646
+So I think people have
+a lot of fun with that.
+
+
+664
+00:32:22,766 --> 00:32:26,296
+Let's take a look at the
+code that's running in this.
+
+
+665
+00:32:26,296 --> 00:32:27,716
+First off if you
+notice there's a slider,
+
+
+666
+00:32:27,716 --> 00:32:29,086
+which I was using
+to adjust the zoom.
+
+
+667
+00:32:29,086 --> 00:32:31,516
+And I was actually accounting
+for that exponential growth
+
+
+668
+00:32:31,516 --> 00:32:35,036
+in the zoom, and the formula
+for that is there on the slide.
+
+
+669
+00:32:35,636 --> 00:32:38,856
+So what we do is you don't
+want to directly take --
+
+
+670
+00:32:38,856 --> 00:32:41,406
+say your slider's going
+from 0 to 1, you don't want
+
+
+671
+00:32:41,406 --> 00:32:43,506
+to directly send that
+right into the zoom factor,
+
+
+672
+00:32:43,506 --> 00:32:45,996
+because that'll mean that it's
+very sensitive on the wide end
+
+
+673
+00:32:45,996 --> 00:32:48,056
+of the zoom, it'll
+be less sensitive
+
+
+674
+00:32:48,206 --> 00:32:49,706
+on the telephoto
+end of the zoom.
+
+
+675
+00:32:50,516 --> 00:32:53,686
+By taking our maximum zoom
+that you want to achieve,
+
+
+676
+00:32:54,126 --> 00:32:57,716
+and taking that to the power
+of the current 0 to 1 target,
+
+
+677
+00:32:58,176 --> 00:33:00,176
+that'll give you that
+exponential growth
+
+
+678
+00:33:00,176 --> 00:33:02,426
+over the range, and so
+you get a linear feel
+
+
+679
+00:33:02,426 --> 00:33:04,026
+to the actual zoom motion.
+
+
+680
+00:33:04,536 --> 00:33:09,026
+And of course remember to lock
+the configuration and unlock it
+
+
+681
+00:33:09,426 --> 00:33:10,966
+when adjusting these values.
+
+
+682
+00:33:11,306 --> 00:33:16,366
+Now for speed control, such as a
+jog dial, or maybe you just want
+
+
+683
+00:33:16,366 --> 00:33:18,056
+to have a button you
+hold down to zoom in,
+
+
+684
+00:33:19,406 --> 00:33:22,496
+you'll typically want to set
+the target either to the minimum
+
+
+685
+00:33:22,496 --> 00:33:24,726
+or maximum zoom, and
+then you'll be --
+
+
+686
+00:33:24,726 --> 00:33:26,506
+the user will be interactively
+controlling the rate.
+
+
+687
+00:33:27,246 --> 00:33:29,886
+So in this case, we look
+to see if we're zooming in,
+
+
+688
+00:33:29,886 --> 00:33:31,086
+then we go to the maximum zoom,
+
+
+689
+00:33:31,086 --> 00:33:32,526
+otherwise we go to
+the minimum zoom.
+
+
+690
+00:33:32,816 --> 00:33:35,046
+And we pass this to ramp
+to video zoom factor,
+
+
+691
+00:33:35,396 --> 00:33:37,126
+and then you specify some rate.
+
+
+692
+00:33:37,686 --> 00:33:40,776
+And then at any point if
+the user cancels the zoom,
+
+
+693
+00:33:41,026 --> 00:33:44,006
+then you cancel the video
+zoom ramp, and we will ease
+
+
+694
+00:33:44,006 --> 00:33:46,816
+out of the ramp so that
+it looks very silky.
+
+
+695
+00:33:50,136 --> 00:33:53,936
+In summary, to compare it to
+the video scale and crop factor,
+
+
+696
+00:33:53,976 --> 00:33:56,476
+they both apply to
+still image output,
+
+
+697
+00:33:56,606 --> 00:33:58,396
+but our new video
+zoom factor applies
+
+
+698
+00:33:58,396 --> 00:33:59,686
+to all the image outputs.
+
+
+699
+00:34:00,206 --> 00:34:02,296
+You can set the zoom
+factor directly,
+
+
+700
+00:34:02,756 --> 00:34:05,346
+but the new video
+zoom factor API
+
+
+701
+00:34:05,846 --> 00:34:08,565
+on the AV capture device lets
+you set the zoom rate as well.
+
+
+702
+00:34:10,065 --> 00:34:12,266
+And this is currently
+available on the iPhone 5
+
+
+703
+00:34:12,266 --> 00:34:13,956
+and iPod Touch 5th generation.
+
+
+704
+00:34:14,456 --> 00:34:17,326
+And with that I'd like
+to welcome Rob back
+
+
+705
+00:34:17,326 --> 00:34:19,476
+up to present machine
+readable codes.
+
+
+706
+00:34:19,476 --> 00:34:20,065
+[ Applause ]
+
+
+707
+00:34:20,065 --> 00:34:22,216
+>> Thank you, Ethan.
+
+
+708
+00:34:22,485 --> 00:34:24,206
+Hi, I'm Rob Simutis,
+and I'm also
+
+
+709
+00:34:24,206 --> 00:34:25,286
+with core media engineering.
+
+
+710
+00:34:25,505 --> 00:34:26,706
+I'm here to talk to you today
+
+
+711
+00:34:26,706 --> 00:34:30,366
+about machine readable code
+detection, which is a formal way
+
+
+712
+00:34:30,366 --> 00:34:31,976
+of talking about
+barcode scanning.
+
+
+713
+00:34:33,396 --> 00:34:36,706
+We've introduced this in iOS 7,
+
+
+714
+00:34:36,956 --> 00:34:39,696
+but to do real-time machine
+readable code detection
+
+
+715
+00:34:39,866 --> 00:34:42,016
+for one-dimensional and
+two-dimensional barcodes,
+
+
+716
+00:34:42,616 --> 00:34:46,795
+up to four at a time on both
+the front and back cameras
+
+
+717
+00:34:47,226 --> 00:34:51,646
+on all supported iOS 7 hardware
+that has a camera on it.
+
+
+718
+00:34:52,065 --> 00:34:55,416
+You can see this in
+action today in the seed
+
+
+719
+00:34:55,626 --> 00:34:57,786
+with the passbook application.
+
+
+720
+00:34:58,406 --> 00:35:01,506
+In the upper right-hand corner,
+there's now a scan code button.
+
+
+721
+00:35:01,656 --> 00:35:07,156
+So when you press that, you
+get a view to scan in codes.
+
+
+722
+00:35:07,156 --> 00:35:11,506
+These are PDF417 or QR codes,
+or Aztec codes that are
+
+
+723
+00:35:11,506 --> 00:35:13,436
+in the passbook format,
+and they pull directly
+
+
+724
+00:35:13,436 --> 00:35:14,106
+into your passbook.
+
+
+725
+00:35:15,486 --> 00:35:18,176
+Now beyond just those types,
+we actually support a number
+
+
+726
+00:35:18,176 --> 00:35:20,826
+of different types of
+machine readable codes,
+
+
+727
+00:35:20,826 --> 00:35:25,276
+or symbologies -- UPC-E often
+found in products in stores,
+
+
+728
+00:35:25,326 --> 00:35:30,246
+EAN-8 and 13 commonly found over
+in Europe, code 39, code 93,
+
+
+729
+00:35:30,246 --> 00:35:33,376
+and code 128, some other types
+of one-dimensional codes.
+
+
+730
+00:35:34,776 --> 00:35:39,006
+In the 2D space we support
+three types, PDF417 often found
+
+
+731
+00:35:39,006 --> 00:35:42,686
+on airline passes, QR
+codes found on buildings
+
+
+732
+00:35:42,686 --> 00:35:45,686
+and billboards, and corn
+fields in some cases,
+
+
+733
+00:35:46,256 --> 00:35:49,836
+and Aztec which you often find
+on packages that you ship.
+
+
+734
+00:35:51,016 --> 00:35:54,516
+So we'll demo this
+in action today,
+
+
+735
+00:35:54,516 --> 00:35:56,306
+and I'll invite Ethan
+to come back up.
+
+
+736
+00:35:56,306 --> 00:36:00,356
+And we have a sample
+app we call QRchestra.
+
+
+737
+00:36:01,006 --> 00:36:04,206
+So Ethan has a version
+of the application,
+
+
+738
+00:36:05,026 --> 00:36:07,846
+and his view has a
+bunch of QR codes on it.
+
+
+739
+00:36:08,976 --> 00:36:12,746
+And each of these contains
+a value that is a midi note.
+
+
+740
+00:36:13,606 --> 00:36:15,626
+And I'm just going to
+have the scanner on mine,
+
+
+741
+00:36:15,626 --> 00:36:20,116
+if I can hold it steady.
+
+
+742
+00:36:20,116 --> 00:36:24,156
+[Several Beeps] So each of
+the QR codes is a midi note,
+
+
+743
+00:36:24,296 --> 00:36:27,766
+and we translate that into
+a string, and then we run it
+
+
+744
+00:36:27,766 --> 00:36:29,276
+through a synthesizer,
+and then out.
+
+
+745
+00:36:29,996 --> 00:36:36,536
+And the detection's failing
+'cause I'm shaking a little.
+
+
+746
+00:36:37,156 --> 00:36:38,146
+[Several Beeps] But
+it allows you
+
+
+747
+00:36:38,146 --> 00:36:42,556
+to have a QRchestra
+right in front of you.
+
+
+748
+00:36:43,506 --> 00:36:44,026
+There we go.
+
+
+749
+00:36:44,026 --> 00:36:44,093
+[ Beeping ]
+
+
+750
+00:36:44,093 --> 00:36:51,636
+Alright, there we go.
+
+
+751
+00:36:52,286 --> 00:36:52,906
+Thanks, Ethan.
+
+
+752
+00:36:53,336 --> 00:36:55,136
+So a couple of notes.
+
+
+753
+00:36:55,186 --> 00:36:57,036
+You'll be able to download
+this with sample code along
+
+
+754
+00:36:57,036 --> 00:36:59,746
+with our slides and the other
+demos that we have today.
+
+
+755
+00:37:00,386 --> 00:37:03,256
+But those QR codes were actually
+being generated on the fly,
+
+
+756
+00:37:03,256 --> 00:37:04,436
+they weren't fixed images.
+
+
+757
+00:37:04,496 --> 00:37:07,156
+And those are being done
+with a new core image filter
+
+
+758
+00:37:07,156 --> 00:37:09,696
+that is available in iOS 7, so
+you can go and check out how
+
+
+759
+00:37:09,696 --> 00:37:17,226
+to make your own QR
+codes on the fly.
+
+
+760
+00:37:17,226 --> 00:37:17,293
+[ Applause ]
+
+
+761
+00:37:17,293 --> 00:37:19,286
+So getting into the
+programming model,
+
+
+762
+00:37:19,286 --> 00:37:23,176
+in iOS 6 we introduced the AV
+capture meta data output class,
+
+
+763
+00:37:23,176 --> 00:37:25,636
+and this was originally done
+for face detection data.
+
+
+764
+00:37:26,036 --> 00:37:30,066
+So we've expanded that, and this
+is how we get bar codes out.
+
+
+765
+00:37:30,426 --> 00:37:32,536
+Normally you add it to
+your capture session,
+
+
+766
+00:37:32,536 --> 00:37:35,226
+and it has a connection
+to your capture device,
+
+
+767
+00:37:35,226 --> 00:37:36,716
+and so this would be
+your video device.
+
+
+768
+00:37:36,746 --> 00:37:41,166
+And then your application
+implements a meta data output
+
+
+769
+00:37:41,166 --> 00:37:42,306
+objects delegate.
+
+
+770
+00:37:42,856 --> 00:37:46,536
+And as we detect barcodes,
+machine readable codes,
+
+
+771
+00:37:46,626 --> 00:37:48,276
+we will then send an array
+
+
+772
+00:37:48,276 --> 00:37:51,986
+of those AV meta data
+machine readable code objects
+
+
+773
+00:37:52,416 --> 00:37:53,206
+to your delegate.
+
+
+774
+00:37:54,416 --> 00:37:55,536
+We'll take a look
+at this in code.
+
+
+775
+00:37:56,326 --> 00:38:00,796
+First, alloc/init your meta data
+output, add it to your session,
+
+
+776
+00:38:02,176 --> 00:38:05,096
+create your meta data delegate,
+along with its dispatch queue,
+
+
+777
+00:38:06,316 --> 00:38:10,196
+set it on the output, and
+then configure the types
+
+
+778
+00:38:10,196 --> 00:38:12,046
+of machine readable codes
+that you're interested in.
+
+
+779
+00:38:12,216 --> 00:38:14,936
+Here we've set it up to
+look for Aztec codes.
+
+
+780
+00:38:16,966 --> 00:38:18,636
+Now in your meta
+data output delegate,
+
+
+781
+00:38:18,636 --> 00:38:20,236
+you implement the
+capture output,
+
+
+782
+00:38:20,546 --> 00:38:23,346
+didOutputMetadataObjects
+fromConnection API.
+
+
+783
+00:38:24,156 --> 00:38:27,066
+And this will get
+callbacks periodically,
+
+
+784
+00:38:27,066 --> 00:38:29,526
+and you'll receive an array
+of AV meta data objects.
+
+
+785
+00:38:29,886 --> 00:38:32,106
+So because we're listening for
+machine readable code objects,
+
+
+786
+00:38:32,426 --> 00:38:33,896
+we'll look and make
+sure that they're
+
+
+787
+00:38:33,896 --> 00:38:37,126
+of the class AV meta data
+machine readable code object.
+
+
+788
+00:38:37,686 --> 00:38:39,926
+And once we have one of
+those, we can retain it
+
+
+789
+00:38:39,926 --> 00:38:46,066
+or use it further at that point.
+
+
+790
+00:38:46,246 --> 00:38:49,426
+So let's take a look now at
+what a machine readable code
+
+
+791
+00:38:49,426 --> 00:38:50,726
+object contains.
+
+
+792
+00:38:50,886 --> 00:38:54,226
+It contains a bounds property,
+the bounding rectangle
+
+
+793
+00:38:54,466 --> 00:38:57,196
+that it's sitting within,
+an array of corners
+
+
+794
+00:38:57,196 --> 00:38:59,626
+which are CG points
+represented as dictionaries.
+
+
+795
+00:38:59,626 --> 00:39:00,966
+We'll cover the difference
+between bounds
+
+
+796
+00:39:00,966 --> 00:39:02,876
+and corners here
+in a later slide.
+
+
+797
+00:39:03,656 --> 00:39:07,746
+It also has a type property, so
+it indicates whether it's UPC-E
+
+
+798
+00:39:07,746 --> 00:39:09,756
+or QR, EAN-8, etcetera.
+
+
+799
+00:39:11,216 --> 00:39:13,236
+And then finally the most
+important one is the string
+
+
+800
+00:39:13,236 --> 00:39:13,886
+value property.
+
+
+801
+00:39:14,546 --> 00:39:17,516
+This is our best effort
+attempt to decode the payload
+
+
+802
+00:39:17,516 --> 00:39:18,936
+into a string that
+you can make use of.
+
+
+803
+00:39:19,776 --> 00:39:21,896
+Now I say best effort,
+because in certain cases
+
+
+804
+00:39:21,896 --> 00:39:26,636
+with some barcodes, maybe it's
+damaged beyond recognition,
+
+
+805
+00:39:26,636 --> 00:39:30,146
+but we can still tell maybe that
+it's a QR code or Aztec code.
+
+
+806
+00:39:30,606 --> 00:39:32,666
+This property might return nil,
+
+
+807
+00:39:32,756 --> 00:39:37,316
+so your code should be
+prepared to handle this.
+
+
+808
+00:39:37,466 --> 00:39:38,746
+Now, bounds versus corners.
+
+
+809
+00:39:39,246 --> 00:39:41,566
+So let's say you've got
+your QR code scanning app,
+
+
+810
+00:39:41,566 --> 00:39:46,146
+and your user is holding it
+off center, and it's sort
+
+
+811
+00:39:46,146 --> 00:39:49,606
+of off axis, and the
+bounds property's going
+
+
+812
+00:39:49,606 --> 00:39:52,266
+to come back as a CG rect.
+
+
+813
+00:39:52,266 --> 00:39:56,586
+It is a rectangle that is
+axis-aligned with the image.
+
+
+814
+00:39:57,626 --> 00:40:00,156
+But your corners are going
+to come back as the corners
+
+
+815
+00:40:00,156 --> 00:40:02,836
+of where the barcode were
+detected, and so this allows you
+
+
+816
+00:40:02,836 --> 00:40:05,006
+to draw a much tighter
+fitting overlay
+
+
+817
+00:40:05,006 --> 00:40:06,536
+of where the barcode was found,
+
+
+818
+00:40:06,676 --> 00:40:08,796
+so you can give a better
+representation onscreen.
+
+
+819
+00:40:09,406 --> 00:40:13,596
+So, performance considerations.
+
+
+820
+00:40:13,596 --> 00:40:16,046
+These are some things you
+want to take into account
+
+
+821
+00:40:16,336 --> 00:40:18,556
+for your application to get
+the best user experience.
+
+
+822
+00:40:19,936 --> 00:40:22,606
+To start off, you should
+really just enable the codes
+
+
+823
+00:40:22,606 --> 00:40:24,466
+that you're interested
+in finding.
+
+
+824
+00:40:24,746 --> 00:40:29,036
+You generally don't want to
+turn all types of barcodes on,
+
+
+825
+00:40:29,256 --> 00:40:32,016
+because this takes more
+CPU, more processing power,
+
+
+826
+00:40:32,426 --> 00:40:33,446
+and it hurts battery life.
+
+
+827
+00:40:33,446 --> 00:40:36,266
+So depending on your
+application's needs,
+
+
+828
+00:40:36,266 --> 00:40:39,016
+just enable the codes
+that you're interested in.
+
+
+829
+00:40:39,016 --> 00:40:44,076
+You can also make use of a new
+AV capture meta data output rect
+
+
+830
+00:40:44,076 --> 00:40:44,876
+of interest property.
+
+
+831
+00:40:44,986 --> 00:40:47,026
+We've introduced this
+in iOS 7, and I'll talk
+
+
+832
+00:40:47,026 --> 00:40:49,466
+about this in a little bit.
+
+
+833
+00:40:49,586 --> 00:40:51,216
+You also want to pick
+the right session preset
+
+
+834
+00:40:51,216 --> 00:40:52,096
+for your use case.
+
+
+835
+00:40:52,256 --> 00:40:55,976
+Most applications can
+start off with the 640
+
+
+836
+00:40:55,976 --> 00:40:57,856
+by 480 session preset.
+
+
+837
+00:40:58,406 --> 00:41:00,396
+Depending on the density of
+the codes, you might want
+
+
+838
+00:41:00,396 --> 00:41:02,656
+to go higher or lower,
+maybe up 720p,
+
+
+839
+00:41:02,656 --> 00:41:05,296
+or something below 640 by 480.
+
+
+840
+00:41:05,296 --> 00:41:09,926
+But you can start there, and
+adjust as your testing dictates.
+
+
+841
+00:41:10,476 --> 00:41:14,376
+You could also consider using a
+new auto focus range restriction
+
+
+842
+00:41:14,376 --> 00:41:18,206
+API that can help you get faster
+performance for auto focus,
+
+
+843
+00:41:18,206 --> 00:41:22,416
+and Brad's going to cover
+this a little bit later.
+
+
+844
+00:41:22,666 --> 00:41:24,516
+And as Ethan said, you
+could also make use
+
+
+845
+00:41:24,516 --> 00:41:27,436
+of the new zoom APIs to
+get the barcode right,
+
+
+846
+00:41:27,436 --> 00:41:29,506
+nice and tight in your image.
+
+
+847
+00:41:29,546 --> 00:41:33,986
+So let's talk about
+requesting the codes you want.
+
+
+848
+00:41:34,576 --> 00:41:37,166
+As before in iOS 6, you make use
+
+
+849
+00:41:37,166 --> 00:41:39,826
+of the AV capture meta data
+output meta data object
+
+
+850
+00:41:39,866 --> 00:41:40,596
+types property.
+
+
+851
+00:41:40,866 --> 00:41:43,726
+And this is an array of string
+constants, these are defined
+
+
+852
+00:41:43,726 --> 00:41:46,566
+in AV MetadataObject.h, you
+can check out that header.
+
+
+853
+00:41:47,936 --> 00:41:53,006
+Now normally you -- with
+iOS 6 we had behavior
+
+
+854
+00:41:53,006 --> 00:41:56,536
+where all meta data types
+would be turned on by default.
+
+
+855
+00:41:56,986 --> 00:41:58,726
+This was fine when
+we just had faces,
+
+
+856
+00:41:59,096 --> 00:42:02,616
+but now we're introduced a
+new type for each symbology
+
+
+857
+00:42:02,616 --> 00:42:04,146
+of machine readable
+code that we detect.
+
+
+858
+00:42:04,146 --> 00:42:06,976
+So that's really not
+the ideal situation.
+
+
+859
+00:42:07,386 --> 00:42:09,986
+So in iOS 7 you need
+to explicitly opt
+
+
+860
+00:42:09,986 --> 00:42:12,176
+in to all desired meta
+data object types.
+
+
+861
+00:42:12,686 --> 00:42:15,526
+If your app was built and
+linked prior to iOS 7,
+
+
+862
+00:42:15,766 --> 00:42:18,366
+you get the old behavior
+of face data only,
+
+
+863
+00:42:19,006 --> 00:42:20,626
+if that device supports it.
+
+
+864
+00:42:22,536 --> 00:42:25,166
+So here's an example of what
+you probably want to avoid.
+
+
+865
+00:42:26,006 --> 00:42:27,196
+You can make use
+
+
+866
+00:42:27,196 --> 00:42:29,526
+of the available meta
+data object types method
+
+
+867
+00:42:29,646 --> 00:42:31,866
+on the meta data output,
+which is the array
+
+
+868
+00:42:31,866 --> 00:42:35,056
+of all the supported types
+that that device will support,
+
+
+869
+00:42:35,056 --> 00:42:36,756
+and then you set it on
+the meta data output.
+
+
+870
+00:42:36,966 --> 00:42:38,406
+This would enable
+everything by default.
+
+
+871
+00:42:39,456 --> 00:42:41,156
+Most apps should avoid this.
+
+
+872
+00:42:41,806 --> 00:42:46,046
+Instead, do something like
+specifying your array of types,
+
+
+873
+00:42:46,236 --> 00:42:49,936
+and here we're going to look
+for faces, as well as QR codes,
+
+
+874
+00:42:49,936 --> 00:42:51,916
+so this is the way we
+prefer you to do it.
+
+
+875
+00:42:51,916 --> 00:42:53,416
+Specify them as you need.
+
+
+876
+00:42:54,446 --> 00:43:00,336
+So here, now I can find
+faces within my QR code.
+
+
+877
+00:43:00,336 --> 00:43:03,846
+Alright, let's talk about
+limiting your search area.
+
+
+878
+00:43:04,756 --> 00:43:07,176
+The new property AV capture
+meta data output rect
+
+
+879
+00:43:07,176 --> 00:43:09,536
+of interest was introduced,
+and this is going
+
+
+880
+00:43:09,536 --> 00:43:11,176
+to help you narrow
+the search window
+
+
+881
+00:43:11,176 --> 00:43:13,536
+for where you're scanning
+for your meta data.
+
+
+882
+00:43:14,466 --> 00:43:16,486
+This works on faces
+as well as barcodes.
+
+
+883
+00:43:17,196 --> 00:43:20,606
+By default, it's the
+entire size of the image,
+
+
+884
+00:43:20,606 --> 00:43:22,856
+but you can restrict
+that to a smaller portion
+
+
+885
+00:43:23,176 --> 00:43:24,376
+as your application needs.
+
+
+886
+00:43:25,436 --> 00:43:29,886
+And as Ethan talked about, and
+also as Brad discussed last year
+
+
+887
+00:43:29,886 --> 00:43:34,316
+in WWDC slides, there's some
+conversion that you need to keep
+
+
+888
+00:43:34,316 --> 00:43:37,556
+in mind when going between the
+different coordinate spaces.
+
+
+889
+00:43:37,836 --> 00:43:40,186
+So the meta data output
+rect of interest is
+
+
+890
+00:43:40,186 --> 00:43:42,396
+in the devices coordinate
+space, which is different
+
+
+891
+00:43:42,396 --> 00:43:44,766
+from your preview layer,
+or your video data output
+
+
+892
+00:43:44,766 --> 00:43:45,486
+coordinate space.
+
+
+893
+00:43:45,916 --> 00:43:48,636
+So we've provided conversion
+methods that help you go
+
+
+894
+00:43:48,636 --> 00:43:49,986
+between those different
+coordinate spaces,
+
+
+895
+00:43:49,986 --> 00:43:50,816
+and make it really easy.
+
+
+896
+00:43:51,296 --> 00:43:54,436
+Let's look at this
+and visualize it.
+
+
+897
+00:43:54,696 --> 00:43:58,636
+So here I've got an app that's
+doing a scan of a barcode.
+
+
+898
+00:43:58,636 --> 00:43:59,356
+You can see the sort
+
+
+899
+00:43:59,356 --> 00:44:00,866
+of highlighted region
+up near the top.
+
+
+900
+00:44:01,546 --> 00:44:03,316
+That's the rect of
+interest that I would
+
+
+901
+00:44:03,316 --> 00:44:04,556
+like to have in my application.
+
+
+902
+00:44:05,306 --> 00:44:06,956
+As far as the video
+preview layer's concerned,
+
+
+903
+00:44:07,656 --> 00:44:11,406
+its coordinates are
+in pixel coordinates,
+
+
+904
+00:44:11,436 --> 00:44:15,056
+so the upper left is 0,0, and
+the bottom right is 320, 540.
+
+
+905
+00:44:15,496 --> 00:44:19,116
+The meta data output,
+however, is different.
+
+
+906
+00:44:19,116 --> 00:44:21,196
+It's actually rotated
+90 degrees,
+
+
+907
+00:44:21,606 --> 00:44:24,726
+and its coordinates
+are normalized.
+
+
+908
+00:44:24,726 --> 00:44:27,246
+They're in scalar
+coordinates from 0 to 1,
+
+
+909
+00:44:27,246 --> 00:44:31,816
+so 0,0 is the upper left
+and 1,1 in the bottom right.
+
+
+910
+00:44:31,816 --> 00:44:35,746
+So if we want our rect of
+interest to be at 100 pixels
+
+
+911
+00:44:35,746 --> 00:44:40,706
+down and 320 by 540, in the meta
+data outputs coordinate space
+
+
+912
+00:44:40,746 --> 00:44:45,336
+that's .1,0, and the
+rectangle size is .4 by 1.0.
+
+
+913
+00:44:45,766 --> 00:44:46,686
+So you can see going back
+
+
+914
+00:44:46,686 --> 00:44:49,126
+and forth here could be a little
+complicated, and it gets tricky
+
+
+915
+00:44:49,126 --> 00:44:50,856
+with mirroring and
+video gravity,
+
+
+916
+00:44:50,856 --> 00:44:51,586
+and things of that nature.
+
+
+917
+00:44:51,586 --> 00:44:55,006
+So we've provided the methods
+that help you go back and forth.
+
+
+918
+00:44:56,536 --> 00:44:58,536
+So when going from the
+video preview layer
+
+
+919
+00:44:58,596 --> 00:45:02,216
+to the meta data output, you
+use the AV capture video preview
+
+
+920
+00:45:02,216 --> 00:45:05,966
+layer meta data output rect
+of interest for rect method.
+
+
+921
+00:45:06,556 --> 00:45:08,726
+To go the opposite way
+from the meta data output
+
+
+922
+00:45:08,726 --> 00:45:10,006
+to the video preview layer,
+
+
+923
+00:45:10,356 --> 00:45:13,696
+use rect for meta data
+output rect of interest.
+
+
+924
+00:45:13,696 --> 00:45:16,686
+We'll take a look at this
+in code very briefly.
+
+
+925
+00:45:17,406 --> 00:45:19,606
+So using the previous example
+that I showed you visually,
+
+
+926
+00:45:20,006 --> 00:45:22,186
+if I have my CG rect
+that are the bounds,
+
+
+927
+00:45:23,426 --> 00:45:26,866
+I make my rectangle
+that's 100 pixels down,
+
+
+928
+00:45:26,866 --> 00:45:32,326
+and it's 150 pixels
+high, and then that's
+
+
+929
+00:45:32,326 --> 00:45:33,406
+in the preview layer's
+coordinates,
+
+
+930
+00:45:33,466 --> 00:45:34,506
+so let's go to the devices,
+
+
+931
+00:45:34,536 --> 00:45:36,586
+or the meta data
+output's coordinates,
+
+
+932
+00:45:36,916 --> 00:45:38,356
+and use the conversion method.
+
+
+933
+00:45:38,356 --> 00:45:41,346
+And then finally, we'll
+set that rect of interest
+
+
+934
+00:45:41,396 --> 00:45:42,336
+on our meta data output.
+
+
+935
+00:45:42,896 --> 00:45:45,896
+So all of these things
+are good to keep in mind
+
+
+936
+00:45:45,996 --> 00:45:48,246
+to give your users the
+best experience possible
+
+
+937
+00:45:48,246 --> 00:45:49,766
+when doing machine
+readable code scanning.
+
+
+938
+00:45:51,546 --> 00:45:53,806
+And just to drill this
+home, this is supported
+
+
+939
+00:45:53,806 --> 00:45:57,176
+on every single platform
+where iOS 7 is supported.
+
+
+940
+00:45:58,026 --> 00:46:00,196
+And with that, I'm going to turn
+it back over to Brad to talk
+
+
+941
+00:46:00,196 --> 00:46:01,756
+about some additional
+focus enhancements.
+
+
+942
+00:46:01,946 --> 00:46:02,186
+Thank you.
+
+
+943
+00:46:02,686 --> 00:46:04,946
+[ Applause ]
+
+
+944
+00:46:05,446 --> 00:46:07,016
+>> Are your brains
+exploding yet?
+
+
+945
+00:46:07,886 --> 00:46:11,436
+This is a little bit of
+information overload,
+
+
+946
+00:46:11,436 --> 00:46:13,596
+but I hope that if
+you'll just focus with me
+
+
+947
+00:46:13,596 --> 00:46:16,126
+for a few more minutes,
+all will become clear.
+
+
+948
+00:46:17,766 --> 00:46:19,146
+Alright, focus enhancements.
+
+
+949
+00:46:19,636 --> 00:46:22,016
+Focus is a hard job.
+
+
+950
+00:46:22,676 --> 00:46:24,216
+We take it for granted
+because our eyes do
+
+
+951
+00:46:24,216 --> 00:46:25,186
+such a good job of it.
+
+
+952
+00:46:25,896 --> 00:46:29,446
+The eyes are the motor
+that change shape
+
+
+953
+00:46:29,446 --> 00:46:31,286
+and can bring different
+things into focus,
+
+
+954
+00:46:31,286 --> 00:46:32,976
+and the brain is
+the engine that --
+
+
+955
+00:46:33,116 --> 00:46:36,366
+the pixel processing engine that
+can determine what's supposed
+
+
+956
+00:46:36,366 --> 00:46:38,596
+to be sharp, and what
+you want to focus on.
+
+
+957
+00:46:39,516 --> 00:46:41,086
+The iPhone does the same thing.
+
+
+958
+00:46:41,256 --> 00:46:45,136
+It has a physical mechanism
+that can move the lens
+
+
+959
+00:46:45,136 --> 00:46:47,556
+so that it can get
+it into focus,
+
+
+960
+00:46:48,016 --> 00:46:50,586
+and there's some
+algorithms that have to run
+
+
+961
+00:46:50,586 --> 00:46:53,076
+to decide what should
+be in focus.
+
+
+962
+00:46:53,146 --> 00:46:54,516
+But this can be a
+really hard job,
+
+
+963
+00:46:54,516 --> 00:46:58,056
+because sometimes you have
+ambiguous results, such as here
+
+
+964
+00:46:58,056 --> 00:47:01,106
+where we have a person looking
+at a clock that's very close
+
+
+965
+00:47:01,106 --> 00:47:03,036
+to him, and a tree that's far.
+
+
+966
+00:47:03,036 --> 00:47:07,096
+And both might be equally sharp,
+and so which one do you choose?
+
+
+967
+00:47:07,096 --> 00:47:09,166
+Which one should be in focus?
+
+
+968
+00:47:09,596 --> 00:47:11,756
+Sometimes we need a little
+help to get that right.
+
+
+969
+00:47:11,956 --> 00:47:13,606
+And you can make sure
+that we get it right
+
+
+970
+00:47:13,606 --> 00:47:16,946
+by using the new auto focus
+range restriction modifiers
+
+
+971
+00:47:16,946 --> 00:47:18,696
+to our auto focus mechanism.
+
+
+972
+00:47:19,326 --> 00:47:20,586
+Here's what it looks
+like in code.
+
+
+973
+00:47:21,016 --> 00:47:24,356
+You tell the AV capture
+device to set its focus range
+
+
+974
+00:47:24,596 --> 00:47:30,576
+to just near, or just far, or by
+default none means the default
+
+
+975
+00:47:30,576 --> 00:47:31,906
+of search the whole range.
+
+
+976
+00:47:34,016 --> 00:47:36,656
+For machine readable code
+detection, we'd recommend
+
+
+977
+00:47:36,656 --> 00:47:39,496
+that you use near, unless
+again you're going to look
+
+
+978
+00:47:39,496 --> 00:47:41,246
+for barcodes that are in fields.
+
+
+979
+00:47:43,646 --> 00:47:46,056
+And these auto focus range
+restrictions are supported
+
+
+980
+00:47:46,056 --> 00:47:50,576
+on all iOS devices that have
+cameras, so go to town on it.
+
+
+981
+00:47:51,086 --> 00:47:54,246
+The next enhancement
+is smooth auto focus.
+
+
+982
+00:47:54,546 --> 00:47:56,686
+I'm going to show you
+two different videos.
+
+
+983
+00:47:56,986 --> 00:48:00,286
+The one on the left is what
+I'll term fast focus --
+
+
+984
+00:48:00,286 --> 00:48:03,206
+this is what's shipping
+today, this is our algorithm
+
+
+985
+00:48:03,206 --> 00:48:07,216
+for finding focus -- and
+then what I term smooth focus
+
+
+986
+00:48:07,216 --> 00:48:09,436
+on the right.
+
+
+987
+00:48:09,476 --> 00:48:13,026
+You'll notice that it's going to
+pan from one side to the other,
+
+
+988
+00:48:13,026 --> 00:48:15,596
+and then pan back, and you'll
+see different characteristics
+
+
+989
+00:48:15,596 --> 00:48:16,666
+in the focus.
+
+
+990
+00:48:16,786 --> 00:48:20,446
+The one that's fast has a
+tendency to sometimes pulse,
+
+
+991
+00:48:20,496 --> 00:48:22,576
+or throb a little bit,
+because it's running
+
+
+992
+00:48:22,576 --> 00:48:24,846
+through the whole
+range really fast,
+
+
+993
+00:48:25,456 --> 00:48:29,126
+whereas the smooth one runs
+slower, takes a little more time
+
+
+994
+00:48:29,126 --> 00:48:32,486
+to do it, but doesn't
+have the visual pulsing.
+
+
+995
+00:48:32,586 --> 00:48:33,916
+So here I go, 1, 2, 3.
+
+
+996
+00:48:35,356 --> 00:48:38,116
+Take a look at both sides.
+
+
+997
+00:48:38,116 --> 00:48:41,866
+You'll see the one on the left
+has a tendency to just come in
+
+
+998
+00:48:41,866 --> 00:48:43,406
+and out a little
+bit more noticeably.
+
+
+999
+00:48:43,896 --> 00:48:45,686
+The right one is focusing.
+
+
+1000
+00:48:46,296 --> 00:48:50,106
+It's just doing it more subtly.
+
+
+1001
+00:48:50,606 --> 00:48:56,156
+[ Silence ]
+
+
+1002
+00:48:56,656 --> 00:48:59,246
+You'll still see
+it focus from --
+
+
+1003
+00:48:59,246 --> 00:49:00,826
+every once in a while
+you'll see --
+
+
+1004
+00:49:00,826 --> 00:49:04,996
+you can definitely see that the
+smooth one is zooming it back
+
+
+1005
+00:49:04,996 --> 00:49:10,736
+into focus, but the left one
+tends to be much more prominent.
+
+
+1006
+00:49:11,796 --> 00:49:14,356
+Okay, like I said, the
+fast focus is the one
+
+
+1007
+00:49:14,356 --> 00:49:15,436
+that ships today.
+
+
+1008
+00:49:15,646 --> 00:49:17,376
+We're offering now
+the smooth focus
+
+
+1009
+00:49:17,376 --> 00:49:20,966
+as an alternative behavior
+modifier to auto focus,
+
+
+1010
+00:49:22,016 --> 00:49:24,386
+and you do that by telling
+the AV capture device
+
+
+1011
+00:49:24,386 --> 00:49:27,096
+to set smooth auto
+focus enabled to yes.
+
+
+1012
+00:49:29,036 --> 00:49:32,216
+Smooth auto focus just
+slows the focus scan down,
+
+
+1013
+00:49:32,636 --> 00:49:34,866
+so it's a little less
+visually intrusive.
+
+
+1014
+00:49:35,946 --> 00:49:38,736
+We recommend that you use this
+if you're recording a movie.
+
+
+1015
+00:49:38,836 --> 00:49:41,496
+For instance, you want
+to perform a tap to focus
+
+
+1016
+00:49:41,776 --> 00:49:42,966
+in the middle of a recording.
+
+
+1017
+00:49:43,216 --> 00:49:44,486
+Well you don't want
+to ruin your recording
+
+
+1018
+00:49:44,486 --> 00:49:45,946
+with a big vwoop in the middle.
+
+
+1019
+00:49:46,286 --> 00:49:50,226
+So if you use the smooth
+recording it will take a little
+
+
+1020
+00:49:50,226 --> 00:49:52,746
+bit longer to get there, but
+the smooth focus will be less
+
+
+1021
+00:49:52,746 --> 00:49:53,766
+visually intrusive.
+
+
+1022
+00:49:55,166 --> 00:49:57,566
+We do recommend that you
+stick with the fast focus
+
+
+1023
+00:49:57,626 --> 00:50:01,566
+for still image taking, because
+it's faster, and no one's going
+
+
+1024
+00:50:01,566 --> 00:50:05,286
+to see the pulse in the
+resulting still image
+
+
+1025
+00:50:05,286 --> 00:50:06,626
+if it got to focus faster.
+
+
+1026
+00:50:07,876 --> 00:50:10,636
+This is supported on iPhone 5.
+
+
+1027
+00:50:12,756 --> 00:50:15,646
+And Slowpoke makes use of
+this when recording movies,
+
+
+1028
+00:50:15,646 --> 00:50:18,166
+so you can see how it does it.
+
+
+1029
+00:50:18,446 --> 00:50:21,106
+Now let's look at how you
+program with these modifiers.
+
+
+1030
+00:50:22,486 --> 00:50:26,366
+It's easy, just do that.
+
+
+1031
+00:50:27,006 --> 00:50:30,016
+So as with all setters
+on the video device,
+
+
+1032
+00:50:30,016 --> 00:50:32,096
+you have to lock it for
+configuration first.
+
+
+1033
+00:50:32,986 --> 00:50:36,456
+If you're successful, then you
+can start checking whether these
+
+
+1034
+00:50:36,456 --> 00:50:37,586
+features are available.
+
+
+1035
+00:50:37,936 --> 00:50:42,596
+Don't set them blindly, you'll
+throw an exception on platforms
+
+
+1036
+00:50:42,596 --> 00:50:44,016
+where these features
+are not supported.
+
+
+1037
+00:50:44,596 --> 00:50:46,546
+Auto focus range
+restriction happens
+
+
+1038
+00:50:46,546 --> 00:50:49,076
+to be supported everywhere,
+but be safe.
+
+
+1039
+00:50:49,216 --> 00:50:52,146
+So here we're going to
+set it to the far range,
+
+
+1040
+00:50:52,746 --> 00:50:56,056
+and then in the next block I'm
+seeing whether smooth auto focus
+
+
+1041
+00:50:56,056 --> 00:50:57,776
+is supported, and
+I set it to yes.
+
+
+1042
+00:50:57,776 --> 00:51:01,116
+And then for giggles I
+threw in an extra one,
+
+
+1043
+00:51:01,116 --> 00:51:02,716
+which is to set the
+point of interest.
+
+
+1044
+00:51:02,716 --> 00:51:05,526
+This is how you would do a tap
+to focus at a particular point.
+
+
+1045
+00:51:06,336 --> 00:51:08,836
+None of these actually
+start a focus operation,
+
+
+1046
+00:51:09,056 --> 00:51:11,656
+they're just programming
+the next focus operation.
+
+
+1047
+00:51:11,656 --> 00:51:14,686
+You're telling it I
+want you to focus far,
+
+
+1048
+00:51:14,686 --> 00:51:16,376
+I want you to focus smooth,
+
+
+1049
+00:51:16,756 --> 00:51:19,276
+I want you to focus
+at dead center.
+
+
+1050
+00:51:19,576 --> 00:51:22,096
+And then the way that you
+actually kick off the focus is
+
+
+1051
+00:51:22,586 --> 00:51:27,066
+to set focus mode to auto
+focus, or continuous focus,
+
+
+1052
+00:51:27,206 --> 00:51:29,126
+and then unlock when
+you're done.
+
+
+1053
+00:51:30,916 --> 00:51:34,166
+The last bit we're going to
+talk about today is integration
+
+
+1054
+00:51:34,166 --> 00:51:35,886
+with application audio session.
+
+
+1055
+00:51:36,436 --> 00:51:38,396
+Hopefully you've seen some
+of the core audio sessions
+
+
+1056
+00:51:38,396 --> 00:51:39,556
+in years past, and the one
+
+
+1057
+00:51:39,556 --> 00:51:42,546
+that they just did I think it
+was yesterday, where they talked
+
+
+1058
+00:51:42,546 --> 00:51:44,576
+about some improvements
+to AV audio session.
+
+
+1059
+00:51:45,006 --> 00:51:47,916
+If you're not familiar
+with it, you have one.
+
+
+1060
+00:51:48,196 --> 00:51:51,006
+If you have an app, you
+have an AV audio session.
+
+
+1061
+00:51:51,606 --> 00:51:53,896
+It's a singleton instance
+that every app gets,
+
+
+1062
+00:51:53,986 --> 00:51:55,626
+whether they want it or not.
+
+
+1063
+00:51:55,626 --> 00:51:58,676
+As soon as you use audio,
+you have an AV audio session.
+
+
+1064
+00:51:59,216 --> 00:52:02,136
+And it does important things for
+you like configure the routing,
+
+
+1065
+00:52:02,136 --> 00:52:04,376
+for instance, whether
+both the microphones
+
+
+1066
+00:52:04,376 --> 00:52:07,546
+and the speakers are
+active at the same time,
+
+
+1067
+00:52:07,986 --> 00:52:09,666
+or just speakers only.
+
+
+1068
+00:52:10,276 --> 00:52:13,186
+You can customize your
+category, for instance
+
+
+1069
+00:52:13,186 --> 00:52:16,856
+so that you include Bluetooth
+or not, lots of goodness there.
+
+
+1070
+00:52:17,496 --> 00:52:20,006
+And new in iOS 7 they have
+some great new features
+
+
+1071
+00:52:20,006 --> 00:52:21,846
+for microphone selection
+that they talked
+
+
+1072
+00:52:21,846 --> 00:52:23,196
+about in yesterday's session,
+
+
+1073
+00:52:23,916 --> 00:52:28,306
+where you can select a specific
+microphone, top or bottom,
+
+
+1074
+00:52:28,306 --> 00:52:31,346
+back or front, and you can
+even set polar patterns.
+
+
+1075
+00:52:31,496 --> 00:52:34,496
+For instance, if you want
+an omnidirectional pickup
+
+
+1076
+00:52:34,496 --> 00:52:36,476
+as opposed to cardioid
+
+
+1077
+00:52:36,476 --> 00:52:38,486
+or sub-cardioid, so
+great stuff there.
+
+
+1078
+00:52:40,396 --> 00:52:43,496
+Why do I bring it up here in
+a video recording session?
+
+
+1079
+00:52:43,546 --> 00:52:45,436
+It's because we have a situation
+
+
+1080
+00:52:45,436 --> 00:52:48,906
+on our hands called
+dueling audio sessions,
+
+
+1081
+00:52:49,026 --> 00:52:50,396
+and let me describe it to you.
+
+
+1082
+00:52:51,726 --> 00:52:55,326
+Let's say you have an app,
+and it plays back audio,
+
+
+1083
+00:52:56,096 --> 00:52:59,696
+and it also does some
+recording with the camera
+
+
+1084
+00:52:59,696 --> 00:53:00,806
+and with the microphone.
+
+
+1085
+00:53:01,796 --> 00:53:05,066
+Well, you're probably going to
+be using an AV audio session,
+
+
+1086
+00:53:05,066 --> 00:53:06,506
+because you're playing
+some audio,
+
+
+1087
+00:53:06,886 --> 00:53:09,246
+and you're definitely going to
+be using an AV capture session,
+
+
+1088
+00:53:09,246 --> 00:53:10,456
+because you have
+to if you're going
+
+
+1089
+00:53:10,456 --> 00:53:12,216
+to use it for camera capture.
+
+
+1090
+00:53:13,426 --> 00:53:16,496
+Unbeknownst to you, AV
+capture session is kind
+
+
+1091
+00:53:16,496 --> 00:53:19,186
+of lousing things up, because
+it has its own little private AV
+
+
+1092
+00:53:19,186 --> 00:53:20,306
+audio session.
+
+
+1093
+00:53:21,636 --> 00:53:25,896
+So now what happens when you
+play and record, you fight.
+
+
+1094
+00:53:26,656 --> 00:53:28,416
+So you get a situation
+where depending
+
+
+1095
+00:53:28,416 --> 00:53:30,756
+on which one you started
+first, one is going
+
+
+1096
+00:53:30,756 --> 00:53:31,736
+to interrupt the other.
+
+
+1097
+00:53:32,276 --> 00:53:34,706
+So if you started playback first
+and then you start recording,
+
+
+1098
+00:53:34,986 --> 00:53:38,686
+the playback stops, or
+if you do vice versa,
+
+
+1099
+00:53:38,686 --> 00:53:40,096
+then you interrupt
+your recording.
+
+
+1100
+00:53:40,696 --> 00:53:41,816
+Not good for anyone.
+
+
+1101
+00:53:42,876 --> 00:53:46,376
+So in iOS 7, we're
+changing that behavior.
+
+
+1102
+00:53:47,716 --> 00:53:49,796
+There were some good things
+about the old behavior.
+
+
+1103
+00:53:50,056 --> 00:53:52,216
+By having a private
+AV audio session,
+
+
+1104
+00:53:52,596 --> 00:53:55,996
+we ensured that the AV capture
+session is always configured
+
+
+1105
+00:53:55,996 --> 00:53:58,206
+correctly to succeed
+for recording.
+
+
+1106
+00:53:58,626 --> 00:54:01,986
+And your audio session is
+not configured automatically
+
+
+1107
+00:54:01,986 --> 00:54:05,146
+by default to record,
+it's just for playback.
+
+
+1108
+00:54:05,406 --> 00:54:06,506
+So we needed to do that.
+
+
+1109
+00:54:06,506 --> 00:54:10,326
+But now we're going to help
+out the interruption problem
+
+
+1110
+00:54:10,676 --> 00:54:14,086
+by using your app's
+audio session by default.
+
+
+1111
+00:54:14,876 --> 00:54:16,296
+And we tell you that we're doing
+
+
+1112
+00:54:16,296 --> 00:54:20,656
+that by accessing the session
+property uses application
+
+
+1113
+00:54:20,656 --> 00:54:21,566
+audio session.
+
+
+1114
+00:54:21,566 --> 00:54:23,466
+And again, by default it's yes.
+
+
+1115
+00:54:24,366 --> 00:54:27,186
+If your app is linked before
+iOS 7 you get the old behavior.
+
+
+1116
+00:54:27,186 --> 00:54:29,146
+We use our own little
+private audio session,
+
+
+1117
+00:54:29,146 --> 00:54:30,256
+and nothing changes.
+
+
+1118
+00:54:31,886 --> 00:54:36,176
+And we still will configure your
+audio session now, not ours,
+
+
+1119
+00:54:36,836 --> 00:54:38,556
+so that it succeeds
+for recording.
+
+
+1120
+00:54:38,556 --> 00:54:40,306
+And that's the default behavior.
+
+
+1121
+00:54:40,426 --> 00:54:41,846
+You can opt out of
+that behavior,
+
+
+1122
+00:54:42,116 --> 00:54:45,616
+and there's an accessor for that
+called automatically configures
+
+
+1123
+00:54:45,666 --> 00:54:47,696
+application audio session.
+
+
+1124
+00:54:47,906 --> 00:54:48,956
+(We're going for length here.)
+
+
+1125
+00:54:48,956 --> 00:54:53,636
+After the capture is finished,
+we're not going to attempt
+
+
+1126
+00:54:53,636 --> 00:54:57,776
+to clean up our mess, so we're
+not going to try to preserve any
+
+
+1127
+00:54:57,776 --> 00:55:00,046
+of the state that was in
+your audio session before we
+
+
+1128
+00:55:00,046 --> 00:55:01,346
+configured it to succeed.
+
+
+1129
+00:55:01,686 --> 00:55:03,596
+If you want to stash off
+some state you can do
+
+
+1130
+00:55:03,596 --> 00:55:05,296
+that before beginning
+your recording.
+
+
+1131
+00:55:07,066 --> 00:55:07,846
+Be careful though.
+
+
+1132
+00:55:07,846 --> 00:55:10,946
+If you opt out of the automatic
+configuration that we provide,
+
+
+1133
+00:55:11,376 --> 00:55:14,086
+because you are now in control
+of your AV audio session,
+
+
+1134
+00:55:14,146 --> 00:55:16,596
+you can pick a category that
+will make recording fail.
+
+
+1135
+00:55:16,756 --> 00:55:20,436
+So just be on guard there.
+
+
+1136
+00:55:20,636 --> 00:55:22,976
+I mentioned earlier in the talk
+that we have this great new way
+
+
+1137
+00:55:22,976 --> 00:55:26,116
+of configuring AV
+capture devices
+
+
+1138
+00:55:26,116 --> 00:55:27,936
+by setting the active format.
+
+
+1139
+00:55:28,506 --> 00:55:32,386
+This however, does not apply
+to audio devices on iOS 7.
+
+
+1140
+00:55:32,386 --> 00:55:36,456
+It exposes a no format array,
+its format's array is nil,
+
+
+1141
+00:55:36,776 --> 00:55:39,526
+and that's because we already
+have a perfectly good mechanism
+
+
+1142
+00:55:39,526 --> 00:55:43,356
+on iOS 7 to configure audio,
+which is the AV audio session.
+
+
+1143
+00:55:43,756 --> 00:55:45,536
+If you want to configure
+your input,
+
+
+1144
+00:55:45,896 --> 00:55:48,996
+instantiate your AV audio
+session, and then go to town -
+
+
+1145
+00:55:49,316 --> 00:55:52,016
+setting gain, sample
+rate, whatever you want.
+
+
+1146
+00:55:53,886 --> 00:55:56,686
+Best practices, we do recommend
+
+
+1147
+00:55:56,686 --> 00:55:59,546
+that you let us use
+your app audio session
+
+
+1148
+00:55:59,546 --> 00:56:01,506
+so that we don't have
+the interruption problem,
+
+
+1149
+00:56:02,026 --> 00:56:06,916
+and we do recommend that you let
+AV capture session modify your
+
+
+1150
+00:56:06,916 --> 00:56:10,146
+AV audio session by default,
+because it'll succeed.
+
+
+1151
+00:56:11,026 --> 00:56:13,836
+The exceptions to the rule would
+be if you know that it's going
+
+
+1152
+00:56:13,836 --> 00:56:15,706
+to do something that
+you don't want to do.
+
+
+1153
+00:56:15,806 --> 00:56:18,876
+For instance, by default it
+will always pick the microphone
+
+
+1154
+00:56:18,876 --> 00:56:20,296
+that's pointed the
+same direction
+
+
+1155
+00:56:20,296 --> 00:56:21,736
+as the camera that you're using.
+
+
+1156
+00:56:22,146 --> 00:56:23,936
+So if you're using the
+front facing camera,
+
+
+1157
+00:56:24,186 --> 00:56:26,916
+it's going to pick the
+microphone that's pointed
+
+
+1158
+00:56:26,996 --> 00:56:28,436
+at the person's face.
+
+
+1159
+00:56:28,826 --> 00:56:31,196
+If you for instance want to
+use the front facing camera,
+
+
+1160
+00:56:31,196 --> 00:56:33,266
+but also record from
+something in the back,
+
+
+1161
+00:56:33,676 --> 00:56:36,966
+you'll need to use your own AV
+audio session configuration.
+
+
+1162
+00:56:38,766 --> 00:56:40,246
+Lastly, sample code update.
+
+
+1163
+00:56:40,696 --> 00:56:41,446
+Here's our dessert.
+
+
+1164
+00:56:42,166 --> 00:56:43,896
+Last year we talked
+about Video Snake,
+
+
+1165
+00:56:43,996 --> 00:56:47,176
+which was a great demo app
+that incorporates a lot
+
+
+1166
+00:56:47,176 --> 00:56:49,346
+of capture aspects with open GL.
+
+
+1167
+00:56:49,976 --> 00:56:53,836
+We've updated it this year,
+incorporated iOS 7 APIs
+
+
+1168
+00:56:53,836 --> 00:56:57,706
+and best practices,
+including use of clock APIs
+
+
+1169
+00:56:57,706 --> 00:57:00,586
+that I have not talked about
+today, but they let you know
+
+
+1170
+00:57:00,586 --> 00:57:02,826
+which clock we're
+using, video or audio,
+
+
+1171
+00:57:03,056 --> 00:57:04,956
+which one is the master
+clock for a session.
+
+
+1172
+00:57:05,916 --> 00:57:08,176
+It also illustrates best
+practices with respect
+
+
+1173
+00:57:08,176 --> 00:57:12,296
+to integration with open GL,
+and writing with asset writers.
+
+
+1174
+00:57:12,296 --> 00:57:16,456
+So please download it, and
+model your code after it.
+
+
+1175
+00:57:17,536 --> 00:57:20,306
+If you've been watching the news
+-- the Apple news, you'll --
+
+
+1176
+00:57:20,306 --> 00:57:23,516
+you probably were aware that two
+weeks ago we introduced a new
+
+
+1177
+00:57:23,516 --> 00:57:24,336
+iPod Touch.
+
+
+1178
+00:57:24,386 --> 00:57:28,686
+It's the 16 gigabyte iPod Touch,
+and what's unusual about it is
+
+
+1179
+00:57:28,726 --> 00:57:30,676
+that it has no back
+facing camera,
+
+
+1180
+00:57:30,776 --> 00:57:32,176
+it only has a front
+facing camera.
+
+
+1181
+00:57:32,996 --> 00:57:36,346
+Well, if you have been
+following Apple's sample code,
+
+
+1182
+00:57:36,746 --> 00:57:39,276
+your app still works
+with this new device,
+
+
+1183
+00:57:39,276 --> 00:57:41,176
+because it would have picked
+the right one by default.
+
+
+1184
+00:57:41,636 --> 00:57:43,236
+So sample code is your friend.
+
+
+1185
+00:57:43,506 --> 00:57:44,316
+Please use it.
+
+
+1186
+00:57:44,316 --> 00:57:46,836
+Please model your code
+after these samples
+
+
+1187
+00:57:46,836 --> 00:57:48,556
+that we spend a lot of
+time putting together,
+
+
+1188
+00:57:48,776 --> 00:57:50,856
+because we want to make sure
+you're using best practices
+
+
+1189
+00:57:50,856 --> 00:57:51,546
+in your apps.
+
+
+1190
+00:57:52,886 --> 00:57:56,616
+In summary, we talked about
+user consent, transparency,
+
+
+1191
+00:57:57,086 --> 00:57:59,976
+then we talked about
+a lot of new features,
+
+
+1192
+00:57:59,976 --> 00:58:05,216
+60 frames per second, video
+zoom, barcodes, app integration,
+
+
+1193
+00:58:05,216 --> 00:58:07,806
+app audio session
+integration, focus enhancements.
+
+
+1194
+00:58:09,776 --> 00:58:13,326
+And all of these demos that we
+showed you today are available,
+
+
+1195
+00:58:13,416 --> 00:58:17,836
+so go download them and
+take a look at them.
+
+
+1196
+00:58:17,976 --> 00:58:22,206
+Documentation, and of
+course, related sessions.
+
+
+1197
+00:58:22,596 --> 00:58:25,836
+Some of these already happened,
+but you can already look at them
+
+
+1198
+00:58:25,866 --> 00:58:28,486
+in your WWDC app, because
+they've already been posted.
+
+
+1199
+00:58:28,486 --> 00:58:29,126
+They're amazing.
+
+
+1200
+00:58:30,106 --> 00:58:34,726
+Thank you for coming today,
+and enjoy the rest of the show.
+
+
+1201
+00:58:35,226 --> 00:58:39,060
+[ Applause ]
+

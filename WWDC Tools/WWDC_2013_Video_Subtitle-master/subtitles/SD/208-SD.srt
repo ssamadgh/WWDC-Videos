@@ -1,0 +1,6397 @@
+1
+00:00:00,506 --> 00:00:09,456
+[ Silence ]
+
+
+2
+00:00:09,956 --> 00:00:10,606
+>> Greg Christie: Good morning.
+
+
+3
+00:00:11,106 --> 00:00:16,756
+[ Applause ]
+
+
+4
+00:00:17,256 --> 00:00:21,066
+This session is What's New
+in iOS User Interface Design.
+
+
+5
+00:00:21,756 --> 00:00:23,646
+And I want to thank so
+many of you for caring
+
+
+6
+00:00:23,646 --> 00:00:26,226
+about software design, for
+being here at nine o'clock
+
+
+7
+00:00:26,226 --> 00:00:27,616
+in the morning to talk
+
+
+8
+00:00:27,616 --> 00:00:30,486
+about this topic that's
+very important to us.
+
+
+9
+00:00:30,486 --> 00:00:32,055
+If this were another company
+
+
+10
+00:00:32,055 --> 00:00:34,196
+and if this were another
+developer conference,
+
+
+11
+00:00:34,946 --> 00:00:40,736
+I might imagine a full room
+could be a session like this
+
+
+12
+00:00:40,856 --> 00:00:44,516
+but it's not, we are Apple,
+we care about software design,
+
+
+13
+00:00:45,156 --> 00:00:47,336
+and this is what this
+session is about.
+
+
+14
+00:00:47,336 --> 00:00:53,706
+[Applause] So why don't you
+guys give yourself a hand.
+
+
+15
+00:00:54,676 --> 00:00:56,516
+I'm Greg Christie and I'm here
+
+
+16
+00:00:56,516 --> 00:01:00,156
+to introduce Mike Stern
+eventually and talk
+
+
+17
+00:01:00,156 --> 00:01:02,176
+about what the new
+user interface means
+
+
+18
+00:01:02,176 --> 00:01:03,146
+to you as developers.
+
+
+19
+00:01:03,486 --> 00:01:08,046
+I thought the keynote
+went great.
+
+
+20
+00:01:08,466 --> 00:01:09,616
+I hope you guys all enjoyed it.
+
+
+21
+00:01:09,996 --> 00:01:13,956
+You guys have been playing with
+iOS 7 for a day and a half now
+
+
+22
+00:01:14,556 --> 00:01:16,526
+and so I thought it would be
+a really great way to start
+
+
+23
+00:01:16,526 --> 00:01:23,466
+if we take a fresh look at
+Jony's words and the video now
+
+
+24
+00:01:23,466 --> 00:01:25,696
+that you've used iOS
+7 for a day and a half
+
+
+25
+00:01:25,696 --> 00:01:29,526
+and can get some context into
+what he was talking about.
+
+
+26
+00:01:29,656 --> 00:01:34,746
+So, I'd like to start with that.
+
+
+27
+00:01:34,746 --> 00:01:36,276
+[ Music ]
+
+
+28
+00:01:36,276 --> 00:01:53,096
+>> We have always thought of
+design as being so much more
+
+
+29
+00:01:53,826 --> 00:01:56,816
+than just the way
+something looks.
+
+
+30
+00:01:56,816 --> 00:01:57,696
+It's the whole thing.
+
+
+31
+00:01:57,766 --> 00:02:05,586
+The way something actually works
+on so many different levels.
+
+
+32
+00:02:05,806 --> 00:02:07,936
+Ultimately, of course,
+design defines
+
+
+33
+00:02:07,936 --> 00:02:19,966
+so much of our experience.
+
+
+34
+00:02:19,966 --> 00:02:20,033
+[ Music ]
+
+
+35
+00:02:20,033 --> 00:02:26,856
+I think there is a profound and
+enduring beauty in simplicity,
+
+
+36
+00:02:26,856 --> 00:02:28,826
+in clarity, in efficiency.
+
+
+37
+00:02:28,826 --> 00:02:33,796
+True simplicity is
+derived from so much more
+
+
+38
+00:02:33,796 --> 00:02:39,246
+than just the absence of
+clutter and ornamentation.
+
+
+39
+00:02:39,776 --> 00:02:42,616
+It's about bringing
+order to complexity.
+
+
+40
+00:02:43,116 --> 00:02:47,596
+[ Music ]
+
+
+41
+00:02:48,096 --> 00:02:57,106
+iOS 7 is a clear
+representation of these goals.
+
+
+42
+00:02:57,106 --> 00:03:00,856
+It has a whole new
+structure that is coherent
+
+
+43
+00:03:01,336 --> 00:03:08,166
+and it is applied
+across the entire system.
+
+
+44
+00:03:08,166 --> 00:03:08,566
+[ Music ]
+
+
+45
+00:03:08,566 --> 00:03:12,386
+We've considered
+the tiniest details,
+
+
+46
+00:03:13,326 --> 00:03:21,586
+like refining the
+typography, to much larger ones
+
+
+47
+00:03:21,586 --> 00:03:23,386
+like redesigning all the icons,
+
+
+48
+00:03:23,846 --> 00:03:28,306
+and developing a grid
+system allowed us
+
+
+49
+00:03:28,306 --> 00:03:31,496
+to achieve a much more
+harmonious relationship
+
+
+50
+00:03:31,756 --> 00:03:34,046
+between individual elements.
+
+
+51
+00:03:34,356 --> 00:03:41,906
+We've also incorporated a
+whole new palette of colors.
+
+
+52
+00:03:41,906 --> 00:03:42,266
+[ Music ]
+
+
+53
+00:03:42,266 --> 00:03:50,876
+Distinct, functional layers help
+establish hierarchy and order.
+
+
+54
+00:03:50,876 --> 00:03:50,996
+[ Music ]
+
+
+55
+00:03:50,996 --> 00:03:58,546
+And the use of translucency
+gives you a sense
+
+
+56
+00:03:59,076 --> 00:04:01,066
+of your context.
+
+
+57
+00:04:01,606 --> 00:04:06,036
+These planes, combined with
+new approaches to animation
+
+
+58
+00:04:06,216 --> 00:04:10,306
+and motion, create a sense
+of depth and vitality.
+
+
+59
+00:04:10,306 --> 00:04:10,496
+[ Music ]
+
+
+60
+00:04:10,496 --> 00:04:19,796
+The iPhone responding to your
+movements drives the parallax
+
+
+61
+00:04:19,796 --> 00:04:21,906
+to create a whole new
+experience of depth.
+
+
+62
+00:04:21,906 --> 00:04:21,973
+[ Music ]
+
+
+63
+00:04:21,973 --> 00:04:26,336
+In many ways, we've tried
+to create an interface
+
+
+64
+00:04:26,456 --> 00:04:34,646
+that is unobtrusive
+and deferential.
+
+
+65
+00:04:34,646 --> 00:04:39,626
+One where the design
+recedes and in doing
+
+
+66
+00:04:39,626 --> 00:04:44,146
+so actually elevates
+your content.
+
+
+67
+00:04:44,216 --> 00:04:51,236
+Even the simple act of changing
+your wallpaper has a very
+
+
+68
+00:04:51,236 --> 00:04:57,726
+noticeable effect on the way
+your iPhone looks and feels
+
+
+69
+00:04:57,916 --> 00:05:00,466
+across the entire system.
+
+
+70
+00:05:00,466 --> 00:05:01,056
+[ Music ]
+
+
+71
+00:05:01,056 --> 00:05:08,686
+While iOS 7 is completely
+new, it was important to us
+
+
+72
+00:05:09,146 --> 00:05:10,956
+to make it instantly familiar.
+
+
+73
+00:05:10,956 --> 00:05:12,776
+[ Music ]
+
+
+74
+00:05:12,776 --> 00:05:20,186
+We wanted to take an experience
+the people know very well
+
+
+75
+00:05:20,226 --> 00:05:25,556
+and actually add to it
+to make it more useful,
+
+
+76
+00:05:25,676 --> 00:05:27,656
+to make enjoyable.
+
+
+77
+00:05:28,516 --> 00:05:31,816
+To create it, we brought
+together a broad range
+
+
+78
+00:05:31,956 --> 00:05:35,256
+of expertise from
+design to engineering.
+
+
+79
+00:05:37,206 --> 00:05:41,686
+With what we've been able to
+achieve together, we see iOS 7
+
+
+80
+00:05:42,976 --> 00:05:45,416
+as defining an important
+new direction,
+
+
+81
+00:05:45,846 --> 00:05:55,156
+and in many ways, a beginning.
+
+
+82
+00:05:55,626 --> 00:05:57,626
+[ Music ]
+
+
+83
+00:05:58,096 --> 00:06:00,096
+[ Applause ]
+
+
+84
+00:06:00,566 --> 00:06:02,436
+>> Greg Christie: I won't
+do nearly that well but.
+
+
+85
+00:06:03,746 --> 00:06:05,006
+What's new in iOS 7?
+
+
+86
+00:06:05,236 --> 00:06:07,676
+Well, everything is new.
+
+
+87
+00:06:08,256 --> 00:06:10,846
+It's a 100 percent
+new pixels there.
+
+
+88
+00:06:10,846 --> 00:06:12,466
+No pixel here has
+been used before
+
+
+89
+00:06:12,466 --> 00:06:14,786
+in any previous release of iOS.
+
+
+90
+00:06:16,996 --> 00:06:20,866
+A really great example to look
+at when we talk about what's new
+
+
+91
+00:06:20,866 --> 00:06:24,396
+in iOS 7 and where we're
+headed is the Weather app.
+
+
+92
+00:06:25,436 --> 00:06:26,496
+It's not the most important app
+
+
+93
+00:06:26,496 --> 00:06:29,586
+on the phone unless you really
+need to know what the weather is
+
+
+94
+00:06:29,586 --> 00:06:30,986
+and it's not the most used app,
+
+
+95
+00:06:30,986 --> 00:06:34,576
+but it really gives
+a great indication
+
+
+96
+00:06:34,576 --> 00:06:36,576
+of what we're doing with iOS 7.
+
+
+97
+00:06:37,156 --> 00:06:41,176
+You guys by now are familiar
+
+
+98
+00:06:41,176 --> 00:06:42,946
+with the animated
+weather states,
+
+
+99
+00:06:43,456 --> 00:06:44,946
+how they occupy the
+full display.
+
+
+100
+00:06:47,866 --> 00:06:53,566
+It's really interesting
+comparing old and new side
+
+
+101
+00:06:53,566 --> 00:06:55,646
+by side and you can see a lot
+
+
+102
+00:06:55,646 --> 00:06:58,006
+of what we were doing is
+maximizing the screen size,
+
+
+103
+00:06:58,406 --> 00:07:03,626
+blowing out the edges, removing
+unnecessary edges and borders,
+
+
+104
+00:07:04,266 --> 00:07:06,876
+refining the typography,
+refining the line work,
+
+
+105
+00:07:08,166 --> 00:07:10,906
+really just creating a whole
+new immersive experience.
+
+
+106
+00:07:11,536 --> 00:07:13,786
+The graphical ornamentation
+is now an intrinsic part
+
+
+107
+00:07:13,786 --> 00:07:14,586
+of the application.
+
+
+108
+00:07:14,826 --> 00:07:16,076
+It's not just tacked on.
+
+
+109
+00:07:17,196 --> 00:07:20,156
+Okay? You can see
+all those things here
+
+
+110
+00:07:20,476 --> 00:07:24,066
+in detail compared to that.
+
+
+111
+00:07:25,016 --> 00:07:25,896
+It's really interesting.
+
+
+112
+00:07:29,596 --> 00:07:33,676
+Johnny touches on four
+key notions in the video
+
+
+113
+00:07:33,976 --> 00:07:36,276
+and that's what we're going
+to talk about here today,
+
+
+114
+00:07:36,706 --> 00:07:38,476
+because when everything has
+changed it's hard to know
+
+
+115
+00:07:38,476 --> 00:07:41,086
+where to start, so we'll
+start with the simplest notion
+
+
+116
+00:07:41,086 --> 00:07:42,036
+and that's one of clarity.
+
+
+117
+00:07:42,676 --> 00:07:45,036
+Clarity simply put
+is being clear.
+
+
+118
+00:07:45,636 --> 00:07:49,986
+In the Weather app we're
+very clear in terms
+
+
+119
+00:07:49,986 --> 00:07:51,626
+of what the temperature is
+
+
+120
+00:07:51,626 --> 00:07:53,026
+and what the current
+weather conditions are.
+
+
+121
+00:07:53,026 --> 00:07:57,296
+We make the current temperature
+as large as possible,
+
+
+122
+00:07:58,256 --> 00:08:01,366
+yet fit in a sound design with
+the rest of the information.
+
+
+123
+00:08:02,716 --> 00:08:06,216
+Being clear means clearly
+indicating what's text
+
+
+124
+00:08:06,726 --> 00:08:08,826
+and what's a control,
+what's content
+
+
+125
+00:08:09,106 --> 00:08:13,086
+and what's a control layer.
+
+
+126
+00:08:14,016 --> 00:08:17,586
+Another important concept
+is this of deference, right.
+
+
+127
+00:08:18,396 --> 00:08:21,486
+So what we're doing in our apps
+now is deferring to the content.
+
+
+128
+00:08:21,486 --> 00:08:24,656
+We're letting photos be
+photos, web pages be web pages,
+
+
+129
+00:08:25,636 --> 00:08:27,806
+email messages be
+email messages,
+
+
+130
+00:08:28,286 --> 00:08:29,796
+but there's another
+side of deference.
+
+
+131
+00:08:30,356 --> 00:08:32,866
+This is very important
+for you folks and that's
+
+
+132
+00:08:32,905 --> 00:08:38,876
+that iOS now has a design that
+defers to your apps, okay?
+
+
+133
+00:08:39,206 --> 00:08:43,956
+We're not putting a really
+strong visual imprint
+
+
+134
+00:08:44,275 --> 00:08:46,396
+on the overall system
+so that your apps,
+
+
+135
+00:08:46,396 --> 00:08:49,396
+if you're doing custom UI, will
+feel out of place on the system.
+
+
+136
+00:08:49,806 --> 00:08:51,616
+Our UI is now getting
+out of the way,
+
+
+137
+00:08:51,886 --> 00:08:53,526
+we're letting your
+apps be your apps
+
+
+138
+00:08:53,816 --> 00:08:56,036
+and letting the customer's
+content be the
+
+
+139
+00:08:56,036 --> 00:08:57,016
+customer's content.
+
+
+140
+00:08:57,456 --> 00:09:01,366
+Another way that we're
+reinforcing clarity
+
+
+141
+00:09:01,816 --> 00:09:04,316
+and this difference between
+controls and content,
+
+
+142
+00:09:04,536 --> 00:09:05,666
+is by our use of depth.
+
+
+143
+00:09:06,116 --> 00:09:09,446
+You see this really strongly
+in the case of the Home screen.
+
+
+144
+00:09:10,506 --> 00:09:12,756
+We're using this layering
+model and we're using layers
+
+
+145
+00:09:12,756 --> 00:09:14,856
+and notification center
+and control center
+
+
+146
+00:09:14,856 --> 00:09:16,806
+and within the individual
+apps themselves.
+
+
+147
+00:09:17,706 --> 00:09:21,556
+Having controls exist on one
+layer, content exist on another.
+
+
+148
+00:09:24,196 --> 00:09:25,416
+Finally, detail.
+
+
+149
+00:09:27,996 --> 00:09:31,286
+Detail really shows itself
+in terms of topography,
+
+
+150
+00:09:31,286 --> 00:09:39,596
+using a consistent and coherent
+set of weights and sizes
+
+
+151
+00:09:40,126 --> 00:09:45,686
+and in colors and
+in the iconography.
+
+
+152
+00:09:46,236 --> 00:09:50,286
+Again, we're using a highly
+disciplined, controlled,
+
+
+153
+00:09:50,336 --> 00:09:55,276
+limited set of colors yet it
+provides a very rich pallet
+
+
+154
+00:09:55,276 --> 00:09:59,786
+and one that can express you
+know just the incredible variety
+
+
+155
+00:09:59,786 --> 00:10:01,456
+of apps that are on iOS.
+
+
+156
+00:10:02,416 --> 00:10:04,516
+This also applies to the
+Glyphs, things that appear
+
+
+157
+00:10:04,516 --> 00:10:06,476
+in button bars, toolbars,
+those types of things.
+
+
+158
+00:10:06,996 --> 00:10:08,596
+These have all been
+normalized with regard
+
+
+159
+00:10:08,596 --> 00:10:11,186
+to line weight and
+shape and size.
+
+
+160
+00:10:12,676 --> 00:10:14,716
+Paying attention to
+the details matters.
+
+
+161
+00:10:15,276 --> 00:10:17,256
+It matters a lot.
+
+
+162
+00:10:18,586 --> 00:10:20,926
+Another thing that
+we're doing with regard
+
+
+163
+00:10:20,986 --> 00:10:24,606
+to detail is we're finally
+exploiting the retina screens
+
+
+164
+00:10:24,606 --> 00:10:26,296
+to their, you know,
+fullest capability.
+
+
+165
+00:10:26,656 --> 00:10:29,436
+We've lots of single pixel
+details, single pixel lines
+
+
+166
+00:10:29,436 --> 00:10:31,826
+that we're using and exploiting
+throughout the system.
+
+
+167
+00:10:35,906 --> 00:10:38,786
+Okay? So here to walk you
+through the nuts and bolts
+
+
+168
+00:10:38,786 --> 00:10:41,196
+of what we did and some of
+what you will have to do
+
+
+169
+00:10:41,376 --> 00:10:45,656
+to bring your apps into the
+iOS 7 world is Mike Stern.
+
+
+170
+00:10:45,656 --> 00:10:50,526
+He's going to walk you
+through some of these things.
+
+
+171
+00:10:51,026 --> 00:10:53,246
+[Applause]
+
+
+172
+00:10:53,746 --> 00:10:54,486
+>> Mike Stern: Thank you Greg.
+
+
+173
+00:10:56,506 --> 00:10:59,706
+I'm really excited to be
+with you this morning to go
+
+
+174
+00:10:59,706 --> 00:11:03,406
+into some detail about iOS
+7 and some of the new apps
+
+
+175
+00:11:03,406 --> 00:11:04,636
+like Mail and Calendar.
+
+
+176
+00:11:04,736 --> 00:11:07,386
+We're going to compare
+how they are now
+
+
+177
+00:11:07,386 --> 00:11:10,496
+with how they were before and
+I'm going to talk a little bit
+
+
+178
+00:11:10,696 --> 00:11:14,116
+about why things have changed,
+the thought process that went
+
+
+179
+00:11:14,116 --> 00:11:17,386
+into the new apps and I'm
+really hoping that you'll take
+
+
+180
+00:11:17,386 --> 00:11:18,746
+from this hour some ideas
+
+
+181
+00:11:18,746 --> 00:11:21,436
+about how you can make
+your apps more dynamic,
+
+
+182
+00:11:22,526 --> 00:11:24,986
+easier to use and
+more delightful.
+
+
+183
+00:11:24,986 --> 00:11:28,636
+I've got a lot to
+cover so let's dive in.
+
+
+184
+00:11:31,716 --> 00:11:34,936
+This was how the design
+for iOS 7 started.
+
+
+185
+00:11:36,106 --> 00:11:38,346
+We started with a
+totally blank slate.
+
+
+186
+00:11:38,346 --> 00:11:42,446
+We had to think about what's
+the most important thing
+
+
+187
+00:11:42,446 --> 00:11:43,436
+that people care about.
+
+
+188
+00:11:44,416 --> 00:11:46,186
+What's the content that
+they care about most?
+
+
+189
+00:11:46,796 --> 00:11:48,646
+So in Mail it's this.
+
+
+190
+00:11:49,066 --> 00:11:51,056
+It's the message,
+it's a single thing.
+
+
+191
+00:11:51,646 --> 00:11:54,896
+Of all else that you see in
+mail that's the most important.
+
+
+192
+00:11:55,196 --> 00:11:56,716
+Everything else is secondary.
+
+
+193
+00:11:57,236 --> 00:11:59,786
+And for what was
+added, it was added
+
+
+194
+00:12:00,256 --> 00:12:01,916
+with really great restraint.
+
+
+195
+00:12:02,996 --> 00:12:04,966
+We had to make sure that
+anything that was added
+
+
+196
+00:12:04,966 --> 00:12:07,306
+to this was absolutely
+necessary.
+
+
+197
+00:12:08,696 --> 00:12:11,936
+So eventually started adding
+things like date and sender
+
+
+198
+00:12:11,966 --> 00:12:15,956
+but again it was secondary
+to what mattered most.
+
+
+199
+00:12:20,176 --> 00:12:23,796
+Eventually we added controls
+but we did so in a way
+
+
+200
+00:12:24,126 --> 00:12:28,656
+that didn't interfere with
+your ability to read text.
+
+
+201
+00:12:29,086 --> 00:12:33,246
+It doesn't take much to make
+these controls available
+
+
+202
+00:12:33,616 --> 00:12:36,086
+and legible, easy to access.
+
+
+203
+00:12:36,266 --> 00:12:39,806
+Now you've got to do a
+little bit more than that
+
+
+204
+00:12:39,806 --> 00:12:43,356
+so color got added
+at a later stage just
+
+
+205
+00:12:43,356 --> 00:12:45,166
+to distinguish controls
+from content.
+
+
+206
+00:12:45,776 --> 00:12:48,736
+Some background colors,
+a couple of crisp lines
+
+
+207
+00:12:49,876 --> 00:12:54,016
+but at all times the message
+stayed present, it stayed front
+
+
+208
+00:12:54,016 --> 00:12:56,146
+and center, it was
+the star of the show.
+
+
+209
+00:12:56,766 --> 00:13:00,126
+Then this is the
+final design for Mail.
+
+
+210
+00:13:00,676 --> 00:13:03,676
+As you can see when photos
+were added they were made to be
+
+
+211
+00:13:03,726 --> 00:13:06,916
+as large as possible so that
+you can see as much detail
+
+
+212
+00:13:06,916 --> 00:13:10,696
+as possible without having to
+pinch to zoom quite so much.
+
+
+213
+00:13:11,266 --> 00:13:17,306
+Now this focus in
+starting with type first,
+
+
+214
+00:13:17,646 --> 00:13:20,516
+that really prioritized
+type for us
+
+
+215
+00:13:20,866 --> 00:13:23,616
+and I don't think this will come
+as a big shock to anybody here,
+
+
+216
+00:13:23,616 --> 00:13:26,136
+Apple has always
+been deeply committed
+
+
+217
+00:13:26,426 --> 00:13:29,816
+to making the displayed and
+the printed word as legible
+
+
+218
+00:13:29,816 --> 00:13:31,766
+as possible and gorgeous.
+
+
+219
+00:13:32,306 --> 00:13:38,246
+So that's how dynamic type came
+about and there's a lot of stuff
+
+
+220
+00:13:38,246 --> 00:13:41,896
+in dynamic type and I'm sure you
+guys have already heard quite a
+
+
+221
+00:13:41,896 --> 00:13:44,386
+bit about it in previous
+sessions, but I want to focus
+
+
+222
+00:13:44,386 --> 00:13:47,916
+on two aspects of that,
+scaling and styles.
+
+
+223
+00:13:48,676 --> 00:13:50,786
+Let's start with text scaling.
+
+
+224
+00:13:52,446 --> 00:13:57,026
+Now a big part of legibility
+is the size of type.
+
+
+225
+00:13:57,686 --> 00:14:00,666
+I've worked as an interface
+designer for 17 years
+
+
+226
+00:14:01,086 --> 00:14:03,296
+and I've worked on countless
+projects and probably
+
+
+227
+00:14:03,296 --> 00:14:06,086
+on every single one type
+was a big component of it,
+
+
+228
+00:14:06,726 --> 00:14:09,896
+and you know I or my team
+would develop designs
+
+
+229
+00:14:09,896 --> 00:14:13,096
+and we would show them
+to stakeholders, clients
+
+
+230
+00:14:13,486 --> 00:14:15,706
+and you'd always get this
+diversity of reactions.
+
+
+231
+00:14:16,566 --> 00:14:19,546
+"I'm getting too old, my eyes
+ain't what they used to be
+
+
+232
+00:14:19,546 --> 00:14:24,466
+and this is really hard to read"
+or you know, "make text smaller,
+
+
+233
+00:14:24,646 --> 00:14:27,326
+it's truncating too quickly,
+there's not enough controls,
+
+
+234
+00:14:27,326 --> 00:14:29,746
+I want to see more stuff
+because it's more powerful
+
+
+235
+00:14:29,746 --> 00:14:31,776
+and I can deal with all
+of that complexity."
+
+
+236
+00:14:33,026 --> 00:14:36,986
+And it's impossible to satisfy
+both ends of that spectrum.
+
+
+237
+00:14:37,256 --> 00:14:37,886
+How do you do it?
+
+
+238
+00:14:37,886 --> 00:14:40,256
+You normally had to
+pick one size of type.
+
+
+239
+00:14:40,256 --> 00:14:42,896
+I mean maybe you could build
+some kind of custom thing
+
+
+240
+00:14:42,896 --> 00:14:43,946
+that allowed text to scale
+
+
+241
+00:14:43,946 --> 00:14:47,286
+but it was prohibitively
+expensive engineering-wise,
+
+
+242
+00:14:48,016 --> 00:14:53,716
+and the results probably
+would not be very good.
+
+
+243
+00:14:53,716 --> 00:14:57,246
+Dynamic type is game changing
+because it allows for that
+
+
+244
+00:14:57,246 --> 00:14:59,136
+and it's really easy to use.
+
+
+245
+00:15:03,116 --> 00:15:06,296
+You have a huge diversity
+of sizes to choose from
+
+
+246
+00:15:06,846 --> 00:15:10,316
+and with the accessibility
+mode you can have,
+
+
+247
+00:15:10,496 --> 00:15:11,686
+you know, massive text.
+
+
+248
+00:15:12,256 --> 00:15:12,926
+It's really great.
+
+
+249
+00:15:14,106 --> 00:15:16,836
+But simply scaling type,
+this is Helvetica Neue Light,
+
+
+250
+00:15:17,836 --> 00:15:19,496
+which looks really
+awesome when it's big
+
+
+251
+00:15:19,496 --> 00:15:23,196
+but when it's small it
+doesn't work very well.
+
+
+252
+00:15:23,196 --> 00:15:24,156
+It's not very legible.
+
+
+253
+00:15:24,156 --> 00:15:25,426
+The letter forms are very thin.
+
+
+254
+00:15:25,426 --> 00:15:26,246
+They're very delicate.
+
+
+255
+00:15:26,826 --> 00:15:32,866
+So to resolve for that,
+to solve for that,
+
+
+256
+00:15:33,086 --> 00:15:37,126
+you can make small type bold
+but that results in large type
+
+
+257
+00:15:37,616 --> 00:15:41,356
+which looks heavy and cumbersome
+so this isn't very good either.
+
+
+258
+00:15:42,856 --> 00:15:47,396
+So dynamic type dynamically
+makes text heavier
+
+
+259
+00:15:47,476 --> 00:15:50,226
+when it's smaller and
+thinner when it's lighter.
+
+
+260
+00:15:50,646 --> 00:15:52,256
+Has a range of about
+two weights.
+
+
+261
+00:15:52,746 --> 00:15:56,646
+As a result text has
+this great continuity.
+
+
+262
+00:15:56,646 --> 00:15:58,136
+It looks great at every size,
+
+
+263
+00:15:58,776 --> 00:16:00,516
+but of course we
+didn't stop there.
+
+
+264
+00:16:01,496 --> 00:16:03,706
+Text that has more
+space between characters
+
+
+265
+00:16:03,706 --> 00:16:06,486
+at small sizes is
+also more legible
+
+
+266
+00:16:07,086 --> 00:16:08,736
+so dynamic type does
+that as well.
+
+
+267
+00:16:08,976 --> 00:16:12,676
+It dynamically adjusts, very
+fine tune, sub-pixel level,
+
+
+268
+00:16:12,676 --> 00:16:14,026
+the space between characters
+
+
+269
+00:16:14,276 --> 00:16:16,446
+so no matter what size you
+choose your text is going
+
+
+270
+00:16:16,446 --> 00:16:16,966
+to look great.
+
+
+271
+00:16:18,776 --> 00:16:20,146
+Now let's talk about styles.
+
+
+272
+00:16:20,776 --> 00:16:23,896
+In printed publishing,
+typesetting, you know,
+
+
+273
+00:16:24,426 --> 00:16:28,206
+word processing we have these
+categories for type like Body,
+
+
+274
+00:16:28,206 --> 00:16:31,186
+Headline, Caption,
+and that helps you
+
+
+275
+00:16:31,186 --> 00:16:35,476
+to establish a clear information
+hierarchy in your UI.
+
+
+276
+00:16:35,526 --> 00:16:37,156
+Some text is more
+important than others
+
+
+277
+00:16:37,156 --> 00:16:38,466
+so it should be bigger
+and heavier.
+
+
+278
+00:16:39,196 --> 00:16:41,026
+Some stuff less so right?
+
+
+279
+00:16:42,516 --> 00:16:43,796
+You guys are familiar
+with this stuff.
+
+
+280
+00:16:43,796 --> 00:16:46,626
+You've seen it a million
+times and this is a really,
+
+
+281
+00:16:46,766 --> 00:16:50,006
+really great system so we've
+made that a fundamental part
+
+
+282
+00:16:50,006 --> 00:16:53,626
+of dynamic text-- type.
+
+
+283
+00:16:53,836 --> 00:16:55,736
+So this is the Inbox and all
+
+
+284
+00:16:55,736 --> 00:16:58,566
+of this was designed
+using type styles.
+
+
+285
+00:16:59,346 --> 00:17:02,266
+The Inbox, the title for the
+screen is the most important
+
+
+286
+00:17:02,266 --> 00:17:04,195
+thing here so you
+know where you are,
+
+
+287
+00:17:04,195 --> 00:17:05,256
+you know what you're looking at.
+
+
+288
+00:17:05,656 --> 00:17:07,526
+Secondarily who sent it?
+
+
+289
+00:17:07,656 --> 00:17:10,036
+At this stage in time that's
+the most important thing
+
+
+290
+00:17:10,036 --> 00:17:13,076
+that you need to know so
+those use the heaviest styles.
+
+
+291
+00:17:14,986 --> 00:17:18,226
+It's really clean and
+these styles allow you
+
+
+292
+00:17:18,226 --> 00:17:20,786
+to create relationships
+between different types of text,
+
+
+293
+00:17:21,406 --> 00:17:24,236
+so you can see the intent
+of how you're trying
+
+
+294
+00:17:24,236 --> 00:17:25,506
+to establish that hierarchy.
+
+
+295
+00:17:25,996 --> 00:17:29,836
+And of course these two
+features work together.
+
+
+296
+00:17:31,896 --> 00:17:36,166
+Fine tune adjustments were made
+to every one of these pieces
+
+
+297
+00:17:36,166 --> 00:17:41,756
+of text, every one of these
+combinations of style and size.
+
+
+298
+00:17:41,986 --> 00:17:44,206
+So the other thing
+that I want to point
+
+
+299
+00:17:44,206 --> 00:17:46,836
+out is there's line
+height, which is the space
+
+
+300
+00:17:46,836 --> 00:17:48,596
+between lines of
+text or leading.
+
+
+301
+00:17:49,866 --> 00:17:52,686
+And that adjusts too
+so it's proportional.
+
+
+302
+00:17:53,126 --> 00:17:57,076
+So the composition of your
+interface has great integrity no
+
+
+303
+00:17:57,076 --> 00:17:58,526
+matter what the text scale is.
+
+
+304
+00:17:58,686 --> 00:18:00,356
+These kinds of details
+are really important
+
+
+305
+00:18:00,356 --> 00:18:02,636
+with visual design.
+
+
+306
+00:18:02,796 --> 00:18:06,766
+Now typography is
+really complicated.
+
+
+307
+00:18:07,126 --> 00:18:09,466
+I've been a designer for
+a while and I've worked
+
+
+308
+00:18:09,466 --> 00:18:12,826
+with some amazing designers
+who can make great icons,
+
+
+309
+00:18:13,016 --> 00:18:15,476
+have a great sense of
+composition and color,
+
+
+310
+00:18:15,476 --> 00:18:17,966
+good interaction designers
+
+
+311
+00:18:18,866 --> 00:18:21,086
+but I've seen people
+struggle with typography.
+
+
+312
+00:18:21,186 --> 00:18:24,006
+It's something that a lot of us
+as designers aren't trained for.
+
+
+313
+00:18:25,126 --> 00:18:26,136
+People go to school for this
+
+
+314
+00:18:26,136 --> 00:18:28,336
+for a really long
+time and read books.
+
+
+315
+00:18:29,196 --> 00:18:30,436
+There's a lot of details here.
+
+
+316
+00:18:32,036 --> 00:18:35,716
+But luckily we have some really
+good type designers at Apple
+
+
+317
+00:18:36,006 --> 00:18:40,166
+who have spent a lot of time
+perfecting type in iOS 7.
+
+
+318
+00:18:40,656 --> 00:18:43,996
+So they've taken something
+that's extremely hard to do well
+
+
+319
+00:18:44,276 --> 00:18:46,236
+and they made it really easy.
+
+
+320
+00:18:48,556 --> 00:18:50,196
+All right, let's move on.
+
+
+321
+00:18:50,196 --> 00:18:54,446
+So let's talk about
+some of the differences
+
+
+322
+00:18:54,446 --> 00:18:56,866
+between iOS 7 and iOS 6 Mail.
+
+
+323
+00:18:57,426 --> 00:18:59,586
+Let's talk about bars.
+
+
+324
+00:19:00,156 --> 00:19:01,836
+Not the ones you
+guys are going to go
+
+
+325
+00:19:01,836 --> 00:19:05,856
+to tonight but navigation bars.
+
+
+326
+00:19:07,216 --> 00:19:08,926
+Now obviously this has
+changed quite a bit.
+
+
+327
+00:19:08,926 --> 00:19:12,116
+It's no longer this blue plastic
+material that's convex in shape
+
+
+328
+00:19:12,486 --> 00:19:15,336
+and meant to portray some
+sense of dimensionality.
+
+
+329
+00:19:15,786 --> 00:19:19,396
+It's now this solid white
+color and it extends to the top
+
+
+330
+00:19:19,396 --> 00:19:22,326
+of the screen to work
+really closely well,
+
+
+331
+00:19:22,326 --> 00:19:26,036
+work well with the status bar so
+they work as one unified element
+
+
+332
+00:19:26,266 --> 00:19:27,276
+and it's still really clean.
+
+
+333
+00:19:27,276 --> 00:19:29,306
+It's easy to see everything
+what's inside of it.
+
+
+334
+00:19:29,306 --> 00:19:32,016
+There's a lot of nice negative
+space there, white space.
+
+
+335
+00:19:32,686 --> 00:19:35,926
+And the toolbar was designed
+to match both of those
+
+
+336
+00:19:37,286 --> 00:19:39,356
+and as you can see it's
+blurring the background content.
+
+
+337
+00:19:39,356 --> 00:19:40,716
+We saw that in the video before
+
+
+338
+00:19:41,016 --> 00:19:42,716
+so it's not completely
+occluding,
+
+
+339
+00:19:42,836 --> 00:19:44,796
+clobbering the content behind.
+
+
+340
+00:19:45,706 --> 00:19:47,476
+As a result Mail
+was more expansive.
+
+
+341
+00:19:47,476 --> 00:19:50,446
+It goes from edge to edge,
+side to side, top to bottom
+
+
+342
+00:19:51,636 --> 00:19:54,666
+and the message, the
+text and the picture,
+
+
+343
+00:19:55,276 --> 00:19:56,576
+it comes to the foreground more.
+
+
+344
+00:19:56,816 --> 00:19:59,656
+It's not stuck behind
+these two blue bars
+
+
+345
+00:20:00,436 --> 00:20:03,376
+and that's what matters
+most so we're deferring
+
+
+346
+00:20:03,376 --> 00:20:07,916
+to that through the UI.
+
+
+347
+00:20:08,116 --> 00:20:10,576
+Now we've removed the
+borders around buttons
+
+
+348
+00:20:11,716 --> 00:20:15,876
+or bezels, as I might call them.
+
+
+349
+00:20:15,876 --> 00:20:16,676
+Why did we do that?
+
+
+350
+00:20:16,676 --> 00:20:17,876
+Well it's a really
+simple reason.
+
+
+351
+00:20:18,096 --> 00:20:21,046
+When you get rid of that
+ornamentation you have more room
+
+
+352
+00:20:21,046 --> 00:20:23,236
+to make text larger
+and more legible.
+
+
+353
+00:20:24,126 --> 00:20:26,736
+Icons can be bigger and
+they stand out more,
+
+
+354
+00:20:26,836 --> 00:20:28,816
+they're not competing
+with the border themselves
+
+
+355
+00:20:28,816 --> 00:20:29,906
+for your attention.
+
+
+356
+00:20:30,476 --> 00:20:34,756
+The Back button, it remains
+essentially unchanged.
+
+
+357
+00:20:35,186 --> 00:20:37,076
+It's still pointing to the
+left side of the screen,
+
+
+358
+00:20:37,296 --> 00:20:39,516
+it's still the same height,
+it still has the same label,
+
+
+359
+00:20:39,716 --> 00:20:41,016
+it's really easy to use.
+
+
+360
+00:20:41,216 --> 00:20:43,596
+You don't need the
+border so it's gone.
+
+
+361
+00:20:47,376 --> 00:20:49,976
+Now words really matter
+in interface design.
+
+
+362
+00:20:50,626 --> 00:20:53,726
+You have to answer the question
+that your user is asking
+
+
+363
+00:20:54,146 --> 00:20:56,006
+in the way that they've
+asked that question.
+
+
+364
+00:20:56,496 --> 00:20:59,676
+So, for example, this status
+text, this isn't something
+
+
+365
+00:20:59,676 --> 00:21:02,136
+that we particularly innovated
+but we improved upon it,
+
+
+366
+00:21:02,276 --> 00:21:03,116
+we can make it better.
+
+
+367
+00:21:03,926 --> 00:21:06,596
+The user is asking how
+current is this content?
+
+
+368
+00:21:06,876 --> 00:21:07,976
+Rather than tell them the time
+
+
+369
+00:21:07,976 --> 00:21:10,496
+of day we tell them how
+long ago this was updated.
+
+
+370
+00:21:10,496 --> 00:21:13,356
+So I want you guys to think
+about that in your apps.
+
+
+371
+00:21:13,816 --> 00:21:15,006
+How are you phrasing things?
+
+
+372
+00:21:15,006 --> 00:21:15,976
+Are things technical?
+
+
+373
+00:21:16,836 --> 00:21:18,606
+Do people need to parse
+them and interpret them?
+
+
+374
+00:21:18,876 --> 00:21:21,076
+Can you make it easier
+for them to understand?
+
+
+375
+00:21:21,386 --> 00:21:22,806
+Can you speak with more clarity?
+
+
+376
+00:21:23,396 --> 00:21:26,766
+We heard about this
+is Jony's video
+
+
+377
+00:21:26,836 --> 00:21:29,606
+but it was really important
+to establish familiarity
+
+
+378
+00:21:29,606 --> 00:21:32,146
+and that was true for the
+whole iOS and it's true
+
+
+379
+00:21:32,146 --> 00:21:33,346
+for every single
+one of our apps.
+
+
+380
+00:21:33,346 --> 00:21:35,386
+So let's look at some
+examples of that.
+
+
+381
+00:21:35,936 --> 00:21:38,716
+There's some really new,
+powerful new features
+
+
+382
+00:21:38,716 --> 00:21:39,716
+that were added to Mail.
+
+
+383
+00:21:40,186 --> 00:21:43,256
+You can add smart searches
+to quickly find mail
+
+
+384
+00:21:43,256 --> 00:21:47,166
+with attachments or flagged
+messages, unread messages,
+
+
+385
+00:21:47,166 --> 00:21:50,426
+you can add links to
+mailboxes you go to frequently.
+
+
+386
+00:21:50,946 --> 00:21:54,556
+That's powerful stuff but it was
+added in a way that was logical,
+
+
+387
+00:21:54,556 --> 00:21:57,396
+it was an extension of what
+people already knew before
+
+
+388
+00:21:57,396 --> 00:22:00,526
+which is to go into this Edit
+mode, so it's really seamless.
+
+
+389
+00:22:00,836 --> 00:22:02,086
+Think about that with your apps.
+
+
+390
+00:22:02,336 --> 00:22:06,066
+You make an app, you release
+it, people get to know how
+
+
+391
+00:22:06,066 --> 00:22:08,646
+to use it, they get
+accustomed to certain things,
+
+
+392
+00:22:08,866 --> 00:22:11,146
+location of controls
+and nomenclature,
+
+
+393
+00:22:11,746 --> 00:22:14,026
+and then you do an update and
+you add some new features.
+
+
+394
+00:22:14,756 --> 00:22:18,126
+You don't want to completely
+move things around on them.
+
+
+395
+00:22:18,446 --> 00:22:20,946
+That makes people
+confused, frustrated,
+
+
+396
+00:22:22,356 --> 00:22:24,746
+it's not a good thing.
+
+
+397
+00:22:24,966 --> 00:22:26,836
+Another great example
+of that is Action Sheet.
+
+
+398
+00:22:27,606 --> 00:22:29,126
+So this is visually different.
+
+
+399
+00:22:29,126 --> 00:22:31,636
+You can see we removed the
+borders around buttons here too
+
+
+400
+00:22:32,326 --> 00:22:35,126
+and as a result it's much more
+compact and you can see more
+
+
+401
+00:22:35,126 --> 00:22:36,196
+of the message still even
+
+
+402
+00:22:36,196 --> 00:22:38,266
+when the Action Sheet is
+up, which is important.
+
+
+403
+00:22:38,446 --> 00:22:40,336
+It's important to know
+what you're acting upon.
+
+
+404
+00:22:40,676 --> 00:22:42,636
+But a lot has remained the same.
+
+
+405
+00:22:42,856 --> 00:22:45,586
+The order that these are
+in, the labels that we used,
+
+
+406
+00:22:45,696 --> 00:22:48,496
+red still warns you about
+potentially harmful actions,
+
+
+407
+00:22:48,786 --> 00:22:51,056
+the safest button is at the
+bottom and it's separated
+
+
+408
+00:22:51,056 --> 00:22:53,516
+out from the rest and it's
+the easiest to access.
+
+
+409
+00:22:53,786 --> 00:22:57,126
+It's a lot of important stuff
+that's remained exactly the same
+
+
+410
+00:22:57,126 --> 00:22:58,436
+so it's instantly familiar.
+
+
+411
+00:23:02,816 --> 00:23:04,116
+Let's move onto Calendar.
+
+
+412
+00:23:04,736 --> 00:23:07,766
+So as you can see, Calendar
+has changed as well.
+
+
+413
+00:23:07,766 --> 00:23:10,226
+It's adopted a lot of the
+same design language as Mail
+
+
+414
+00:23:10,226 --> 00:23:12,766
+so it's now open
+and less fragmented,
+
+
+415
+00:23:12,846 --> 00:23:16,146
+but that's not what
+I want to talk about.
+
+
+416
+00:23:16,216 --> 00:23:19,736
+I want to talk about that, that
+segmented control right there.
+
+
+417
+00:23:19,736 --> 00:23:22,026
+I'm going to spend a little
+bit of time with this.
+
+
+418
+00:23:22,976 --> 00:23:25,206
+In particular, I'm going
+to start with the Day
+
+
+419
+00:23:25,476 --> 00:23:27,966
+and Month buttons in
+the segmented control.
+
+
+420
+00:23:29,226 --> 00:23:31,706
+Now as we know there's a
+hierarchal relationship
+
+
+421
+00:23:32,036 --> 00:23:33,526
+between days and months.
+
+
+422
+00:23:34,016 --> 00:23:36,286
+We all have that
+deeply engrained in us,
+
+
+423
+00:23:36,706 --> 00:23:40,156
+seconds are in minutes
+are in hours are in days,
+
+
+424
+00:23:40,336 --> 00:23:42,786
+I hope I get this right, are
+in weeks are in months are
+
+
+425
+00:23:42,786 --> 00:23:44,676
+in years are in decades,
+centuries.
+
+
+426
+00:23:45,976 --> 00:23:48,806
+It's really important that
+the information hierarchy
+
+
+427
+00:23:49,546 --> 00:23:54,126
+of the data inside of your app
+is respected by the interface.
+
+
+428
+00:23:54,296 --> 00:23:56,666
+The interface is a
+natural fit for that.
+
+
+429
+00:23:57,206 --> 00:23:59,116
+I'll explain more
+about what I mean.
+
+
+430
+00:24:01,336 --> 00:24:05,246
+So this is the Month view and
+as you can see if I want to get
+
+
+431
+00:24:05,246 --> 00:24:09,606
+to today I don't have the button
+there in the bottom to press,
+
+
+432
+00:24:09,846 --> 00:24:10,736
+so how do I get there?
+
+
+433
+00:24:11,176 --> 00:24:13,176
+Well, I simply press the 12.
+
+
+434
+00:24:13,746 --> 00:24:17,076
+Now before I do that I want
+to have you guys pay attention
+
+
+435
+00:24:17,076 --> 00:24:18,926
+to where that red dot goes.
+
+
+436
+00:24:19,496 --> 00:24:23,526
+See how it just splits open?
+
+
+437
+00:24:23,936 --> 00:24:26,986
+That animation reinforces
+that feeling that you've dove
+
+
+438
+00:24:27,156 --> 00:24:31,496
+into that day and the week stays
+around at the top so you can use
+
+
+439
+00:24:31,496 --> 00:24:33,856
+that as a control,
+which is really elegant.
+
+
+440
+00:24:35,316 --> 00:24:39,046
+And we conceptualize hierarchy
+visually from top to bottom,
+
+
+441
+00:24:39,146 --> 00:24:41,066
+right, that's the way we
+typically think about it.
+
+
+442
+00:24:42,036 --> 00:24:43,166
+Look at the order of things.
+
+
+443
+00:24:43,386 --> 00:24:46,486
+The Back button shows you the
+month, the week below that,
+
+
+444
+00:24:46,746 --> 00:24:49,656
+the current day below that
+and then the hours below that.
+
+
+445
+00:24:50,536 --> 00:24:54,306
+It's perfectly complementing
+our mental model of hierarchy.
+
+
+446
+00:24:55,056 --> 00:24:56,436
+So it's a really nice design.
+
+
+447
+00:24:57,856 --> 00:25:00,446
+Now I also want to
+talk about animation
+
+
+448
+00:25:00,446 --> 00:25:01,766
+and moving across days.
+
+
+449
+00:25:02,276 --> 00:25:05,196
+So this day picker, or this
+week view, sticks around.
+
+
+450
+00:25:05,786 --> 00:25:09,576
+So if I want to see what
+I did on Monday we get
+
+
+451
+00:25:09,576 --> 00:25:10,736
+that lateral animation.
+
+
+452
+00:25:10,736 --> 00:25:12,526
+It gives us a really
+nice intuitive sense
+
+
+453
+00:25:12,526 --> 00:25:13,586
+of movement through time.
+
+
+454
+00:25:14,366 --> 00:25:17,756
+And if we go to Friday,
+again, it just goes
+
+
+455
+00:25:17,756 --> 00:25:18,956
+in the opposite direction.
+
+
+456
+00:25:20,156 --> 00:25:22,396
+So we always have our context.
+
+
+457
+00:25:22,396 --> 00:25:23,856
+It really feels solid.
+
+
+458
+00:25:24,176 --> 00:25:25,946
+We're oriented inside
+the application
+
+
+459
+00:25:25,946 --> 00:25:26,956
+and that's really important.
+
+
+460
+00:25:27,326 --> 00:25:30,576
+The opposite of feeling in
+context is feeling lost.
+
+
+461
+00:25:31,676 --> 00:25:34,136
+It's really easy to get
+lost in someone's interface.
+
+
+462
+00:25:37,516 --> 00:25:41,486
+So, oops, went too fast.
+
+
+463
+00:25:42,286 --> 00:25:44,906
+So in iOS 6 and before
+there was this swipe.
+
+
+464
+00:25:44,906 --> 00:25:47,076
+You would swipe anywhere
+on the Calendar, to move -
+
+
+465
+00:25:47,436 --> 00:25:49,126
+to move to the next
+day or the previous day
+
+
+466
+00:25:50,276 --> 00:25:52,906
+and so we extended
+that to the week.
+
+
+467
+00:25:53,086 --> 00:25:53,926
+It's really natural.
+
+
+468
+00:25:54,086 --> 00:25:55,216
+It's really powerful.
+
+
+469
+00:25:55,456 --> 00:25:57,676
+So now I can also
+animate to the next week
+
+
+470
+00:25:57,676 --> 00:25:58,656
+to see what's going on there.
+
+
+471
+00:25:58,656 --> 00:26:04,696
+So the next thing I want to
+talk about with animation is
+
+
+472
+00:26:04,696 --> 00:26:07,956
+that making really
+good animations is kind
+
+
+473
+00:26:07,956 --> 00:26:08,746
+of a tricky thing.
+
+
+474
+00:26:08,746 --> 00:26:11,296
+It's really delicate yet
+there's a lot of subtlety to it.
+
+
+475
+00:26:11,296 --> 00:26:13,876
+You're trying to reproduce
+the feeling of real life.
+
+
+476
+00:26:14,396 --> 00:26:18,566
+So the next thing we'll do is go
+back, step back through the days
+
+
+477
+00:26:18,566 --> 00:26:20,586
+of this week and I want
+you to pay attention
+
+
+478
+00:26:20,586 --> 00:26:21,816
+to how the animation works.
+
+
+479
+00:26:22,176 --> 00:26:24,066
+You don't just go from
+point A to point B.
+
+
+480
+00:26:24,066 --> 00:26:28,276
+You go to point A to point B
+and you overshoot and come back.
+
+
+481
+00:26:28,756 --> 00:26:29,966
+Let's look at that.
+
+
+482
+00:26:31,516 --> 00:26:33,346
+See that little bounce?
+
+
+483
+00:26:34,196 --> 00:26:37,356
+That bounce adds a sense
+of physical realism.
+
+
+484
+00:26:38,316 --> 00:26:39,716
+We get this kind
+of intuitive sense
+
+
+485
+00:26:39,716 --> 00:26:41,206
+of how the mechanics
+of this work.
+
+
+486
+00:26:41,206 --> 00:26:45,486
+And that imparts a
+sense of liveliness.
+
+
+487
+00:26:46,796 --> 00:26:49,736
+Not through the visual design
+but through how things respond
+
+
+488
+00:26:49,806 --> 00:26:51,306
+to our touch interactions.
+
+
+489
+00:26:52,136 --> 00:26:55,106
+And this kind of stuff you
+can do with UI dynamics.
+
+
+490
+00:26:55,966 --> 00:26:59,156
+That physics engine that
+we've built in, you can apply
+
+
+491
+00:26:59,156 --> 00:27:02,466
+that to your apps to make them
+feel more deeply lifelike.
+
+
+492
+00:27:03,686 --> 00:27:07,356
+It's great stuff.
+
+
+493
+00:27:08,786 --> 00:27:10,986
+So now we want to get
+back to the Month field
+
+
+494
+00:27:11,036 --> 00:27:11,786
+and how do we do that?
+
+
+495
+00:27:11,786 --> 00:27:13,076
+Well we press the Back button
+
+
+496
+00:27:13,916 --> 00:27:17,286
+and as you just saw the
+animation is the opposite
+
+
+497
+00:27:17,316 --> 00:27:20,016
+of what we saw before
+when we went into the Day.
+
+
+498
+00:27:20,056 --> 00:27:22,486
+And that's really
+important too with animation.
+
+
+499
+00:27:22,946 --> 00:27:25,116
+You want to make sure that your
+animations are symmetrical.
+
+
+500
+00:27:25,346 --> 00:27:27,906
+I've seen tons of apps
+where getting from point A
+
+
+501
+00:27:27,906 --> 00:27:30,116
+to point B there's
+one type of animation
+
+
+502
+00:27:30,346 --> 00:27:32,716
+but coming back again it's a
+different type of animation
+
+
+503
+00:27:32,936 --> 00:27:36,616
+or there's no animation at
+all, and that's deeply bizarre.
+
+
+504
+00:27:37,456 --> 00:27:39,536
+You want to make sure you
+have symmetry in animation.
+
+
+505
+00:27:40,106 --> 00:27:43,076
+Now the great thing
+about this new design is
+
+
+506
+00:27:43,076 --> 00:27:44,006
+that it's scalable.
+
+
+507
+00:27:44,636 --> 00:27:46,976
+So now we can do something
+we couldn't do before using
+
+
+508
+00:27:46,976 --> 00:27:48,756
+that segmented control.
+
+
+509
+00:27:49,516 --> 00:27:50,966
+We can go back up to the Year.
+
+
+510
+00:27:51,566 --> 00:27:53,456
+Let's watch as that
+animation happens
+
+
+511
+00:27:53,456 --> 00:27:55,226
+because this is really keen.
+
+
+512
+00:27:55,776 --> 00:27:59,276
+The whole screen shrinks down
+to where the Month is now.
+
+
+513
+00:27:59,826 --> 00:28:03,896
+Your eye follows it so there's
+no doubt where, how you get back
+
+
+514
+00:28:03,896 --> 00:28:04,996
+to where you were before.
+
+
+515
+00:28:05,466 --> 00:28:07,956
+You feel in context the
+hierarchy is really clear
+
+
+516
+00:28:07,956 --> 00:28:09,296
+through that zoom out animation.
+
+
+517
+00:28:09,296 --> 00:28:13,296
+And what's really awesome about
+this is that that same approach
+
+
+518
+00:28:13,296 --> 00:28:16,856
+to animation applies to
+when we exit Calendar
+
+
+519
+00:28:16,856 --> 00:28:18,156
+and go back to the Home screen.
+
+
+520
+00:28:18,276 --> 00:28:19,226
+So let's do that now.
+
+
+521
+00:28:21,296 --> 00:28:24,076
+The Year shrinks
+down to the app icon.
+
+
+522
+00:28:24,256 --> 00:28:26,516
+If you accidentally press
+the Home button and you want
+
+
+523
+00:28:26,516 --> 00:28:28,996
+to quickly go back to
+Calendar, it's really easy to do
+
+
+524
+00:28:28,996 --> 00:28:31,916
+that because your eye
+tracked to the app icon.
+
+
+525
+00:28:33,366 --> 00:28:36,616
+That kind of rigor,
+systematic application
+
+
+526
+00:28:36,616 --> 00:28:40,636
+of animation throughout the
+platform, throughout iOS 7,
+
+
+527
+00:28:41,366 --> 00:28:44,236
+is really important and I think
+there's something to take away
+
+
+528
+00:28:44,236 --> 00:28:45,766
+from that with your apps.
+
+
+529
+00:28:45,766 --> 00:28:46,856
+You want to be consistent.
+
+
+530
+00:28:47,356 --> 00:28:48,466
+You want to be rigorous.
+
+
+531
+00:28:49,026 --> 00:28:51,346
+It leads to a really
+cohesive user experience
+
+
+532
+00:28:51,346 --> 00:28:52,376
+and it's really important
+
+
+533
+00:28:52,406 --> 00:28:54,886
+to have your app stand
+out from the rest.
+
+
+534
+00:28:55,806 --> 00:28:57,386
+Let's watch as we dive back in
+
+
+535
+00:28:57,386 --> 00:28:58,576
+and just see it all
+come together.
+
+
+536
+00:29:02,916 --> 00:29:05,716
+[Silence] It's really
+fluid, really natural.
+
+
+537
+00:29:07,156 --> 00:29:11,426
+All right, now Greg
+talked about clarity.
+
+
+538
+00:29:11,426 --> 00:29:14,296
+A big part of that is starting
+with functionality and thinking
+
+
+539
+00:29:14,296 --> 00:29:15,956
+about how to design
+your application
+
+
+540
+00:29:15,956 --> 00:29:18,216
+so it's a pure expression
+of that functionality.
+
+
+541
+00:29:18,626 --> 00:29:21,416
+You pick up the phone,
+you look at the app
+
+
+542
+00:29:21,416 --> 00:29:24,716
+and you immediately know what
+this is capable of doing,
+
+
+543
+00:29:25,036 --> 00:29:28,086
+what this is for and how
+you're supposed to use it.
+
+
+544
+00:29:28,776 --> 00:29:32,186
+This is a theme you're going
+to see in a lot of these apps.
+
+
+545
+00:29:32,906 --> 00:29:35,206
+So this was the third button
+in that segmented control.
+
+
+546
+00:29:35,206 --> 00:29:36,546
+This is the List view.
+
+
+547
+00:29:36,546 --> 00:29:38,596
+Now the List view
+is kind of useful
+
+
+548
+00:29:38,596 --> 00:29:41,606
+but what was really powerful
+about the List view is
+
+
+549
+00:29:41,606 --> 00:29:42,526
+that you could search it.
+
+
+550
+00:29:43,236 --> 00:29:46,826
+Searching is really useful
+but you wouldn't know
+
+
+551
+00:29:46,826 --> 00:29:48,136
+that by the fact
+that it was stuck
+
+
+552
+00:29:48,136 --> 00:29:49,836
+in the List view
+unless you lived
+
+
+553
+00:29:49,836 --> 00:29:52,906
+in the List view all the time,
+you would be missing the fact
+
+
+554
+00:29:52,906 --> 00:29:54,346
+that you could search Calendar.
+
+
+555
+00:29:55,626 --> 00:29:58,816
+So to rectify that Search was
+put at the top right corner
+
+
+556
+00:29:59,026 --> 00:30:01,046
+so it's immediately
+available at any point
+
+
+557
+00:30:01,586 --> 00:30:02,536
+when you're using Calendar.
+
+
+558
+00:30:03,106 --> 00:30:04,676
+And you can apply
+that too to your app.
+
+
+559
+00:30:04,676 --> 00:30:07,006
+I mean what's the really
+important functionality
+
+
+560
+00:30:07,006 --> 00:30:07,506
+in your app?
+
+
+561
+00:30:07,506 --> 00:30:09,396
+Is it placed in the
+right location?
+
+
+562
+00:30:09,396 --> 00:30:10,446
+Is it understandable?
+
+
+563
+00:30:10,446 --> 00:30:12,146
+Can people find it?
+
+
+564
+00:30:13,456 --> 00:30:15,816
+Now getting rid of clutter
+is a big part of that.
+
+
+565
+00:30:16,186 --> 00:30:18,736
+If there's less things competing
+for someone's attention,
+
+
+566
+00:30:18,996 --> 00:30:20,636
+they're more likely
+to see what matters.
+
+
+567
+00:30:21,056 --> 00:30:25,716
+Now we can search,
+we can see the list,
+
+
+568
+00:30:26,636 --> 00:30:28,086
+it's really straight forward.
+
+
+569
+00:30:30,456 --> 00:30:32,756
+So while we're talking
+about Search,
+
+
+570
+00:30:32,956 --> 00:30:34,506
+let's spend a second
+with these two icons.
+
+
+571
+00:30:35,046 --> 00:30:36,716
+I'm going to give
+you some free advice.
+
+
+572
+00:30:37,736 --> 00:30:40,116
+Okay, it's going
+to cost you $1,600
+
+
+573
+00:30:40,356 --> 00:30:42,766
+but I think it's
+totally worth it.
+
+
+574
+00:30:44,376 --> 00:30:46,556
+These icons work
+really, really well.
+
+
+575
+00:30:46,816 --> 00:30:49,686
+You guys all know, I don't
+know all of you but I know
+
+
+576
+00:30:50,156 --> 00:30:53,146
+that you know what these mean,
+Search and Add something,
+
+
+577
+00:30:53,146 --> 00:30:54,706
+whatever that is,
+depends on the context
+
+
+578
+00:30:54,706 --> 00:30:56,936
+of the application you're
+in, but it totally works.
+
+
+579
+00:30:57,236 --> 00:31:00,446
+And it works because you've
+seen these icons a million times
+
+
+580
+00:31:00,976 --> 00:31:04,346
+and every time you've pressed
+one of those icons it responded
+
+
+581
+00:31:04,346 --> 00:31:05,856
+in a really consistent way.
+
+
+582
+00:31:05,986 --> 00:31:07,026
+It allowed you to search.
+
+
+583
+00:31:07,026 --> 00:31:08,136
+It allowed you to add whatever.
+
+
+584
+00:31:09,806 --> 00:31:12,666
+Most icons don't fall
+into that category.
+
+
+585
+00:31:13,376 --> 00:31:16,766
+Now I've made who knows
+how many icons in my time.
+
+
+586
+00:31:17,336 --> 00:31:19,456
+More than I care to
+even think about.
+
+
+587
+00:31:20,656 --> 00:31:22,726
+And I think I'm pretty
+decent at making them
+
+
+588
+00:31:22,956 --> 00:31:26,406
+but I can't tell you how
+many times I've made an icon
+
+
+589
+00:31:26,406 --> 00:31:27,976
+and I thought I did a
+really good job with it
+
+
+590
+00:31:28,216 --> 00:31:29,546
+and then I showed it to someone
+
+
+591
+00:31:30,016 --> 00:31:31,586
+and they didn't know
+what it meant.
+
+
+592
+00:31:31,586 --> 00:31:33,696
+It wasn't clear.
+
+
+593
+00:31:34,146 --> 00:31:35,996
+They guessed but
+they guessed wrong.
+
+
+594
+00:31:37,106 --> 00:31:41,136
+And I suspect that it might be
+the same with some of your apps.
+
+
+595
+00:31:42,216 --> 00:31:45,376
+If you have icons in your
+apps, you'll look at them
+
+
+596
+00:31:45,376 --> 00:31:47,306
+and you'll know exactly
+what they do,
+
+
+597
+00:31:47,306 --> 00:31:51,136
+exactly what they represent,
+but it's important to show them
+
+
+598
+00:31:51,136 --> 00:31:55,196
+to someone else who's never used
+your app before and ask them,
+
+
+599
+00:31:56,056 --> 00:31:57,586
+tell them to tell you,
+"What does this mean?"
+
+
+600
+00:31:57,696 --> 00:31:58,316
+What does this do?
+
+
+601
+00:31:58,856 --> 00:32:01,226
+You might be really surprised
+to find the answers you get.
+
+
+602
+00:32:02,086 --> 00:32:05,256
+It's often more clear
+to use text.
+
+
+603
+00:32:06,076 --> 00:32:08,846
+So for example this is
+the Inbox icon that we had
+
+
+604
+00:32:08,976 --> 00:32:10,326
+in the previous version
+of Calendar.
+
+
+605
+00:32:11,246 --> 00:32:13,226
+Sorry, I see people
+craning their neck.
+
+
+606
+00:32:13,226 --> 00:32:15,786
+It's a little tray with
+an arrow pointing to it.
+
+
+607
+00:32:17,036 --> 00:32:18,626
+Now this actually
+is a good icon.
+
+
+608
+00:32:18,866 --> 00:32:20,036
+There's nothing wrong with it.
+
+
+609
+00:32:20,036 --> 00:32:23,366
+It sort of extends
+the Mail Inbox model,
+
+
+610
+00:32:23,366 --> 00:32:25,686
+we've always had
+this tray for that.
+
+
+611
+00:32:26,236 --> 00:32:30,866
+But we have more space with
+iOS 7 so it was much more clear
+
+
+612
+00:32:30,866 --> 00:32:33,376
+to present this command as text.
+
+
+613
+00:32:33,556 --> 00:32:34,846
+There's no ambiguity there.
+
+
+614
+00:32:35,036 --> 00:32:39,446
+Sorry, for those that can't
+see it, it says Inbox in text.
+
+
+615
+00:32:40,226 --> 00:32:44,676
+And also just another thing,
+in a bar like this it's better
+
+
+616
+00:32:44,676 --> 00:32:47,626
+to just have all
+text or all icons.
+
+
+617
+00:32:47,876 --> 00:32:50,346
+If you mix the two it can
+get kind of confusing.
+
+
+618
+00:32:50,846 --> 00:32:53,116
+All right, Notes.
+
+
+619
+00:32:53,296 --> 00:32:59,846
+I want to talk about
+realism for a second.
+
+
+620
+00:32:59,906 --> 00:33:02,166
+This was Notes.
+
+
+621
+00:33:02,766 --> 00:33:05,106
+This was Notes from iOS 6
+
+
+622
+00:33:05,106 --> 00:33:07,706
+and actually all the way
+back to the first phone.
+
+
+623
+00:33:09,006 --> 00:33:13,116
+And it had this really clear
+notepad motif, this theme.
+
+
+624
+00:33:13,116 --> 00:33:14,646
+It looked like a
+legal pad of paper.
+
+
+625
+00:33:15,476 --> 00:33:18,836
+And the team that made this
+did a really good job of it.
+
+
+626
+00:33:18,926 --> 00:33:21,636
+It was a great attention
+to detail, the textures,
+
+
+627
+00:33:21,666 --> 00:33:25,896
+the torn paper edges, the way
+the lines there move slightly
+
+
+628
+00:33:25,896 --> 00:33:28,136
+over to the left to
+convey the sense of depth,
+
+
+629
+00:33:28,776 --> 00:33:31,346
+the typeface that's legible,
+the handwritten font,
+
+
+630
+00:33:32,056 --> 00:33:35,226
+the icons that were custom
+designed to match the style
+
+
+631
+00:33:35,226 --> 00:33:38,806
+of the notepad and the way
+the page curled as you went
+
+
+632
+00:33:38,906 --> 00:33:42,606
+from the next to the previous
+note or went through notes,
+
+
+633
+00:33:43,516 --> 00:33:46,446
+really sold the idea that
+this was a legal pad.
+
+
+634
+00:33:47,936 --> 00:33:50,536
+But why? Why do this?
+
+
+635
+00:33:51,646 --> 00:33:56,256
+Well to explain that we
+have to go back to 2007.
+
+
+636
+00:33:56,256 --> 00:33:57,986
+We're going to take
+a trip back in time.
+
+
+637
+00:33:58,426 --> 00:34:00,866
+It's 2007, there is no iPhone,
+
+
+638
+00:34:01,056 --> 00:34:02,546
+you don't know what
+multi-touch means,
+
+
+639
+00:34:02,936 --> 00:34:05,336
+you've never used
+a device like this.
+
+
+640
+00:34:05,756 --> 00:34:08,386
+You haven't heard about swipe,
+you haven't heard about pinch,
+
+
+641
+00:34:08,386 --> 00:34:11,266
+you haven't heard about rotate,
+that's not in your lexicon,
+
+
+642
+00:34:11,536 --> 00:34:14,376
+it's not in your vocabulary,
+you don't use those terms.
+
+
+643
+00:34:15,876 --> 00:34:18,906
+So when these apps were being
+designed it was really important
+
+
+644
+00:34:18,906 --> 00:34:22,815
+that to make it easy,
+to pick one of these up
+
+
+645
+00:34:22,815 --> 00:34:26,065
+and be successful with it,
+accomplish tasks that you want
+
+
+646
+00:34:26,065 --> 00:34:28,716
+to accomplish, that it should
+be immediately familiar.
+
+
+647
+00:34:29,766 --> 00:34:33,456
+So real world objects were used
+as the basis for the app UI
+
+
+648
+00:34:33,545 --> 00:34:35,585
+in a lot of the apps
+that we saw.
+
+
+649
+00:34:36,596 --> 00:34:38,896
+A legal pad is so ordinary.
+
+
+650
+00:34:39,166 --> 00:34:40,416
+Everyone knows what it's for.
+
+
+651
+00:34:40,416 --> 00:34:42,246
+Everyone knows how to use it.
+
+
+652
+00:34:44,396 --> 00:34:48,666
+But sometimes when you use a
+real world metaphor as the basis
+
+
+653
+00:34:48,815 --> 00:34:51,136
+for your UI it doesn't
+really scale.
+
+
+654
+00:34:52,485 --> 00:34:56,076
+So for example, you
+can't search a notepad.
+
+
+655
+00:34:57,085 --> 00:35:00,066
+So when you add that it
+starts to ruin the illusion.
+
+
+656
+00:35:00,676 --> 00:35:01,886
+Things start to breakdown.
+
+
+657
+00:35:02,526 --> 00:35:05,726
+So this is the new
+design for Notes.
+
+
+658
+00:35:07,526 --> 00:35:09,946
+It's so much more clear
+what's important here.
+
+
+659
+00:35:10,326 --> 00:35:11,786
+It's the content of your notes.
+
+
+660
+00:35:12,236 --> 00:35:13,416
+That's front and center.
+
+
+661
+00:35:13,416 --> 00:35:15,956
+It's not about the
+style of the app.
+
+
+662
+00:35:15,956 --> 00:35:19,696
+It's not about showing you how
+great you can represent a legal
+
+
+663
+00:35:19,696 --> 00:35:20,456
+pad of paper.
+
+
+664
+00:35:20,676 --> 00:35:23,926
+It's about what matters,
+the Notes.
+
+
+665
+00:35:24,876 --> 00:35:28,556
+But you can still see that it's
+been stylized, it has a theme
+
+
+666
+00:35:28,556 --> 00:35:30,936
+but that theme serves a
+very different purpose now.
+
+
+667
+00:35:31,436 --> 00:35:34,876
+It's meant to impart warmth
+and personality and character.
+
+
+668
+00:35:35,946 --> 00:35:38,476
+And great detail went into
+making this just right.
+
+
+669
+00:35:38,476 --> 00:35:40,706
+We have this letterpress
+text effect
+
+
+670
+00:35:41,866 --> 00:35:44,196
+and the paper texture
+is really realistic.
+
+
+671
+00:35:44,796 --> 00:35:47,696
+You can see that
+when you zoom in.
+
+
+672
+00:35:47,826 --> 00:35:51,956
+Now let's talk about clutter.
+
+
+673
+00:35:51,956 --> 00:35:57,596
+As you'll see there's
+a difference here
+
+
+674
+00:35:57,716 --> 00:35:58,956
+between these two versions.
+
+
+675
+00:35:58,956 --> 00:36:02,486
+There's something missing in
+iOS 7 and that's the title.
+
+
+676
+00:36:03,326 --> 00:36:06,066
+Now we've always advised
+have a title for your screen,
+
+
+677
+00:36:06,066 --> 00:36:07,686
+have a title for your
+screen, it's really important
+
+
+678
+00:36:07,906 --> 00:36:10,746
+and 99 percent of the time
+it is really important
+
+
+679
+00:36:11,086 --> 00:36:13,746
+so don't just go remove your
+titles with reckless abandon.
+
+
+680
+00:36:14,336 --> 00:36:19,826
+The title tells you where you
+are and what you are looking at,
+
+
+681
+00:36:20,856 --> 00:36:22,696
+but did it matter here?
+
+
+682
+00:36:23,296 --> 00:36:25,086
+Notes is such a simple
+application.
+
+
+683
+00:36:25,416 --> 00:36:27,756
+The name of the application
+is its title.
+
+
+684
+00:36:27,986 --> 00:36:29,926
+It tells you what you're
+going to be looking at here.
+
+
+685
+00:36:30,196 --> 00:36:31,336
+There's no ambiguity.
+
+
+686
+00:36:31,336 --> 00:36:32,096
+You don't know.
+
+
+687
+00:36:32,096 --> 00:36:34,906
+Those aren't emails
+or something else.
+
+
+688
+00:36:35,296 --> 00:36:35,816
+These are notes.
+
+
+689
+00:36:36,496 --> 00:36:39,206
+So there is no point in
+showing the title so we didn't.
+
+
+690
+00:36:41,596 --> 00:36:43,956
+Same is true when you're
+looking at an individual note.
+
+
+691
+00:36:44,246 --> 00:36:46,476
+Previously it was just generated
+by the first line of text
+
+
+692
+00:36:46,476 --> 00:36:47,946
+so it was always
+totally redundant.
+
+
+693
+00:36:48,456 --> 00:36:49,646
+What's the point of doing that?
+
+
+694
+00:36:50,326 --> 00:36:52,316
+There is none so the
+title is removed.
+
+
+695
+00:36:52,956 --> 00:36:56,026
+And one last thing
+about Notes is color.
+
+
+696
+00:36:56,806 --> 00:37:00,286
+Now you'll see that the color,
+you'll see this yellow color
+
+
+697
+00:37:00,286 --> 00:37:02,946
+in Notes and that's the tint
+color of the application.
+
+
+698
+00:37:03,656 --> 00:37:05,256
+That color serves
+two purposes here.
+
+
+699
+00:37:05,526 --> 00:37:08,736
+One, it indicates things that
+are interactive and two it helps
+
+
+700
+00:37:08,796 --> 00:37:10,946
+to stylize the look and
+appearance of your app.
+
+
+701
+00:37:12,006 --> 00:37:14,976
+Now you'll want to pick a
+tint color for your iOS 7 app
+
+
+702
+00:37:14,976 --> 00:37:17,186
+and you'll probably pick
+something that works well
+
+
+703
+00:37:17,186 --> 00:37:19,006
+with your brand or
+your app icon.
+
+
+704
+00:37:19,006 --> 00:37:22,556
+So if your logo has green
+color, make a green tint.
+
+
+705
+00:37:23,236 --> 00:37:24,886
+You know any color is
+going to work well.
+
+
+706
+00:37:25,576 --> 00:37:31,266
+You can use purple, red,
+yellow, orange, green, blue,
+
+
+707
+00:37:31,346 --> 00:37:35,186
+everything expect for
+white, I don't know.
+
+
+708
+00:37:36,696 --> 00:37:37,676
+Let's move onto Safari.
+
+
+709
+00:37:38,796 --> 00:37:41,246
+So with Safari I want to
+talk about iconography.
+
+
+710
+00:37:41,976 --> 00:37:45,036
+Now as you saw we've
+redesigned all of our icons.
+
+
+711
+00:37:45,036 --> 00:37:50,896
+So these five icons they look
+visually different and that's
+
+
+712
+00:37:51,076 --> 00:37:55,416
+because they're five
+of a huge set of icons
+
+
+713
+00:37:55,416 --> 00:37:58,966
+that were fully redesigned for
+iOS 7 and they were redesigned
+
+
+714
+00:37:58,966 --> 00:38:00,576
+so that they matched each other.
+
+
+715
+00:38:01,886 --> 00:38:04,196
+They're straightforward,
+front on,
+
+
+716
+00:38:04,416 --> 00:38:07,566
+they have thin delicate
+line features, the curvature
+
+
+717
+00:38:07,646 --> 00:38:09,656
+of the shapes is
+really consistent.
+
+
+718
+00:38:10,006 --> 00:38:11,616
+A lot of care and thought went
+
+
+719
+00:38:11,616 --> 00:38:14,066
+into making this
+system hang together.
+
+
+720
+00:38:14,886 --> 00:38:18,206
+Now I know a lot of you guys
+don't make a couple dozen apps
+
+
+721
+00:38:18,206 --> 00:38:19,566
+and whole operating system,
+
+
+722
+00:38:20,206 --> 00:38:24,256
+but even if in your app you
+only have two icons you have
+
+
+723
+00:38:24,316 --> 00:38:26,376
+to make sure that they
+work well together.
+
+
+724
+00:38:26,916 --> 00:38:30,276
+I can't tell you how many apps
+I've seen in my experience
+
+
+725
+00:38:30,276 --> 00:38:33,166
+where icons just look
+like they were pulled
+
+
+726
+00:38:33,166 --> 00:38:35,516
+from different sources or
+made by different designers.
+
+
+727
+00:38:36,446 --> 00:38:39,096
+And the problem with that is it
+makes your app look cluttered
+
+
+728
+00:38:40,206 --> 00:38:43,836
+and incoherent and we're
+really sensitive to that.
+
+
+729
+00:38:43,836 --> 00:38:47,546
+We have a really high bar
+for that kind of consistency.
+
+
+730
+00:38:48,406 --> 00:38:50,886
+We've seen a lot of great
+software in our time, all of us,
+
+
+731
+00:38:51,206 --> 00:38:56,966
+and so when we look at every app
+we measure them against that.
+
+
+732
+00:38:57,176 --> 00:39:02,206
+Now it wasn't sufficient to just
+make icons match each other,
+
+
+733
+00:39:03,156 --> 00:39:06,316
+they also match the
+clean, crisp typeface
+
+
+734
+00:39:06,366 --> 00:39:07,906
+that we use as a system font.
+
+
+735
+00:39:09,166 --> 00:39:10,126
+That's also really important.
+
+
+736
+00:39:10,126 --> 00:39:13,806
+We wanted to establish an
+overall aesthetic for iOS 7
+
+
+737
+00:39:13,806 --> 00:39:15,546
+that really hung together well.
+
+
+738
+00:39:16,886 --> 00:39:20,066
+That also can apply, you know
+let's say you're making an app
+
+
+739
+00:39:20,066 --> 00:39:23,426
+about the U.S. Constitution, you
+don't want to use marker felt
+
+
+740
+00:39:23,866 --> 00:39:26,366
+with the parchment texture,
+that would look really corny.
+
+
+741
+00:39:26,946 --> 00:39:28,696
+You want to pick a font
+that's appropriate.
+
+
+742
+00:39:30,436 --> 00:39:33,156
+But although the style of
+these icons has changed
+
+
+743
+00:39:33,946 --> 00:39:35,356
+so much has remained the same.
+
+
+744
+00:39:35,966 --> 00:39:40,026
+The symbology of the icons
+is identical, arrows for back
+
+
+745
+00:39:40,026 --> 00:39:42,596
+and forward, open
+book for bookmarks,
+
+
+746
+00:39:43,066 --> 00:39:46,036
+the order that they're in and
+the location on the screen,
+
+
+747
+00:39:46,276 --> 00:39:47,486
+they've all stayed the same
+
+
+748
+00:39:47,486 --> 00:39:49,806
+so your muscle memory still
+will serve you really well,
+
+
+749
+00:39:50,146 --> 00:39:51,336
+it's really familiar.
+
+
+750
+00:39:51,906 --> 00:39:54,196
+Let's move onto Weather.
+
+
+751
+00:39:54,196 --> 00:39:57,616
+I want to talk about affordance.
+
+
+752
+00:39:58,346 --> 00:40:03,116
+Now this is a $5 word and I know
+a lot of you know what it means
+
+
+753
+00:40:04,036 --> 00:40:05,966
+but I've heard different
+definitions and for anyone
+
+
+754
+00:40:05,966 --> 00:40:08,206
+who doesn't know what it
+means, let me define it just
+
+
+755
+00:40:08,206 --> 00:40:11,536
+so we all share a
+common meaning for this.
+
+
+756
+00:40:12,306 --> 00:40:14,306
+So take a door for example.
+
+
+757
+00:40:14,376 --> 00:40:15,686
+If it has a handle on it,
+
+
+758
+00:40:16,016 --> 00:40:17,996
+it affords you the
+ability to pull it.
+
+
+759
+00:40:18,706 --> 00:40:20,006
+If it doesn't have
+a handle on it,
+
+
+760
+00:40:20,006 --> 00:40:21,706
+it affords you the
+ability to push it.
+
+
+761
+00:40:22,306 --> 00:40:24,806
+All physical objects
+have this quality.
+
+
+762
+00:40:25,176 --> 00:40:27,786
+They afford you a different
+way of manipulating them,
+
+
+763
+00:40:27,906 --> 00:40:29,156
+of interacting with them.
+
+
+764
+00:40:29,916 --> 00:40:33,146
+We learn this stuff
+from our earliest ages
+
+
+765
+00:40:33,406 --> 00:40:34,696
+of childhood development.
+
+
+766
+00:40:34,956 --> 00:40:37,396
+It's how we interface
+with the world.
+
+
+767
+00:40:37,946 --> 00:40:40,586
+So interface, it's
+really important
+
+
+768
+00:40:40,586 --> 00:40:42,676
+in your user interface design
+to think about this stuff
+
+
+769
+00:40:42,676 --> 00:40:45,266
+and be conscious of these
+visual cues that we use
+
+
+770
+00:40:45,266 --> 00:40:47,486
+to understand how to
+interact with things.
+
+
+771
+00:40:48,756 --> 00:40:54,206
+So with that in mind, I want
+to draw your attention to this.
+
+
+772
+00:40:55,396 --> 00:40:58,376
+There's this blue rounded
+rectangle in the background
+
+
+773
+00:40:58,376 --> 00:41:01,276
+of all this data that we saw in
+the previous version of Weather
+
+
+774
+00:41:01,556 --> 00:41:03,406
+and it was there for a
+very specific purpose.
+
+
+775
+00:41:03,406 --> 00:41:05,976
+It looks a little
+bit like a card,
+
+
+776
+00:41:06,496 --> 00:41:08,846
+like a playing card
+right, business card.
+
+
+777
+00:41:09,696 --> 00:41:11,946
+The affordance of a
+card when it's sitting
+
+
+778
+00:41:11,946 --> 00:41:14,636
+on a table is something that
+you can take with one finger
+
+
+779
+00:41:14,636 --> 00:41:19,026
+and swipe it around, so it's
+perfect to indicate to people
+
+
+780
+00:41:19,026 --> 00:41:19,976
+that they can do this.
+
+
+781
+00:41:20,466 --> 00:41:25,526
+And when it flips around
+that feels natural.
+
+
+782
+00:41:25,896 --> 00:41:26,706
+Cards flip around.
+
+
+783
+00:41:27,696 --> 00:41:28,696
+It's really straight forward.
+
+
+784
+00:41:29,086 --> 00:41:31,686
+But there was a third
+element which none
+
+
+785
+00:41:31,686 --> 00:41:34,126
+of us were familiar with,
+which is this page control.
+
+
+786
+00:41:34,716 --> 00:41:37,216
+We had to learn the
+meaning of that
+
+
+787
+00:41:37,216 --> 00:41:38,926
+and it was a really
+easy thing to learn.
+
+
+788
+00:41:38,926 --> 00:41:40,816
+I mean it only takes
+a couple minutes
+
+
+789
+00:41:42,266 --> 00:41:43,816
+but that didn't exist before.
+
+
+790
+00:41:45,356 --> 00:41:50,636
+So with that, do we need the
+card to tell you you can swipe?
+
+
+791
+00:41:51,006 --> 00:41:53,466
+In fact, now swiping
+is so natural for us
+
+
+792
+00:41:53,466 --> 00:41:55,646
+when we use an iPhone or an iPad
+
+
+793
+00:41:55,646 --> 00:41:57,456
+that we just try to
+swipe everything.
+
+
+794
+00:41:57,576 --> 00:41:58,546
+We try to pinch everything,
+
+
+795
+00:41:58,546 --> 00:42:01,066
+rotate everything,
+we play with it.
+
+
+796
+00:42:01,066 --> 00:42:02,106
+It feels comfortable.
+
+
+797
+00:42:02,106 --> 00:42:04,026
+We expect these gestures
+to be there.
+
+
+798
+00:42:04,616 --> 00:42:06,506
+We don't need it.
+
+
+799
+00:42:06,506 --> 00:42:08,826
+We got rid of it.
+
+
+800
+00:42:08,826 --> 00:42:10,716
+It was an unnecessary
+ornamentation
+
+
+801
+00:42:11,086 --> 00:42:13,916
+and as a result there
+was more space to use
+
+
+802
+00:42:13,916 --> 00:42:17,376
+for displaying what really
+matters here, the information
+
+
+803
+00:42:17,376 --> 00:42:18,876
+about the current
+weather conditions.
+
+
+804
+00:42:18,876 --> 00:42:21,966
+It's amazing what taking
+over that little amount
+
+
+805
+00:42:21,966 --> 00:42:28,066
+of space accomplishes, 640
+pixels to display data.
+
+
+806
+00:42:29,556 --> 00:42:32,376
+So you can make text larger
+and it be more legible.
+
+
+807
+00:42:32,846 --> 00:42:34,836
+You have room for
+additional information
+
+
+808
+00:42:35,086 --> 00:42:36,506
+like the current
+weather conditions.
+
+
+809
+00:42:36,966 --> 00:42:39,976
+Now that background does a
+really good job of telling you
+
+
+810
+00:42:39,976 --> 00:42:41,676
+that it's snowing or it's
+raining or it's going
+
+
+811
+00:42:41,676 --> 00:42:42,906
+to be sunny or whatever,
+
+
+812
+00:42:42,906 --> 00:42:48,216
+but if there's any ambiguity
+whatsoever, that text nails it,
+
+
+813
+00:42:49,096 --> 00:42:50,856
+Takes all the guesswork
+out of it.
+
+
+814
+00:42:50,856 --> 00:42:54,856
+So again information is
+expressed as clearly as possible
+
+
+815
+00:42:55,276 --> 00:42:57,106
+and often times that's
+done with text.
+
+
+816
+00:42:57,466 --> 00:43:02,306
+As a result Weather is a simple,
+
+
+817
+00:43:02,846 --> 00:43:05,786
+beautiful app that's
+really easy to use.
+
+
+818
+00:43:06,086 --> 00:43:08,896
+Its form serves its function.
+
+
+819
+00:43:09,426 --> 00:43:10,876
+It's a pure expression of it.
+
+
+820
+00:43:11,996 --> 00:43:13,376
+This is clarity in design.
+
+
+821
+00:43:13,906 --> 00:43:17,066
+Let's move onto the Compass.
+
+
+822
+00:43:17,456 --> 00:43:23,876
+Now I love the Compass app but I
+want to start with a little bit
+
+
+823
+00:43:23,876 --> 00:43:26,446
+of discussion about realism.
+
+
+824
+00:43:27,106 --> 00:43:29,286
+Now this is going to be
+a little bit redundant
+
+
+825
+00:43:29,286 --> 00:43:30,566
+but I think this is
+kind of important.
+
+
+826
+00:43:31,096 --> 00:43:37,486
+The previous version of
+Compass looked like this kind
+
+
+827
+00:43:37,486 --> 00:43:39,266
+of nice looking thing
+that you would find
+
+
+828
+00:43:39,266 --> 00:43:40,966
+on a yacht or something.
+
+
+829
+00:43:40,966 --> 00:43:42,316
+I don't know, I've
+never been on one,
+
+
+830
+00:43:42,766 --> 00:43:46,266
+but it was really
+carefully crafted
+
+
+831
+00:43:46,266 --> 00:43:51,646
+and it was really attractive,
+pretty, but was it necessary
+
+
+832
+00:43:52,576 --> 00:43:53,526
+to make it look like this
+
+
+833
+00:43:53,526 --> 00:43:56,676
+so that we would understand
+how to use a compass?
+
+
+834
+00:43:57,256 --> 00:43:59,256
+Was it necessary to
+design it this way
+
+
+835
+00:43:59,946 --> 00:44:02,146
+so you understood
+what this was for?
+
+
+836
+00:44:02,656 --> 00:44:06,276
+No. And did it limit what
+was possible with Compass?
+
+
+837
+00:44:06,566 --> 00:44:08,656
+Yes. Let's look at why.
+
+
+838
+00:44:09,636 --> 00:44:12,056
+So in the center of the dial
+there's this four points
+
+
+839
+00:44:12,056 --> 00:44:14,506
+adornment and this
+capstone and that took
+
+
+840
+00:44:14,506 --> 00:44:15,816
+up quite a bit of space.
+
+
+841
+00:44:16,876 --> 00:44:21,006
+By getting rid of that we could
+put a level right in the center.
+
+
+842
+00:44:21,636 --> 00:44:23,676
+That makes Compass more useful.
+
+
+843
+00:44:24,286 --> 00:44:26,986
+It's a direct tradeoff
+between the desire
+
+
+844
+00:44:26,986 --> 00:44:29,756
+to have this ornamentation
+and the desire
+
+
+845
+00:44:30,126 --> 00:44:32,076
+to have more functionality.
+
+
+846
+00:44:32,496 --> 00:44:33,976
+So the decision is really clear.
+
+
+847
+00:44:35,476 --> 00:44:37,066
+Making it more useful
+is important.
+
+
+848
+00:44:37,556 --> 00:44:44,226
+As a result Compass
+is clean it's elegant.
+
+
+849
+00:44:44,946 --> 00:44:47,226
+It's the expression of
+what a Compass should be
+
+
+850
+00:44:47,226 --> 00:44:51,066
+on this device, not what a
+compass should be on a boat.
+
+
+851
+00:44:55,536 --> 00:44:58,606
+And also when you turn and
+face a different direction,
+
+
+852
+00:44:59,996 --> 00:45:02,426
+the letters stay upright
+so they're more legible.
+
+
+853
+00:45:02,766 --> 00:45:05,996
+Again, if we had done this
+with the previous Compass,
+
+
+854
+00:45:06,446 --> 00:45:08,426
+it would have totally
+ruined the illusion.
+
+
+855
+00:45:08,806 --> 00:45:11,166
+Those two things are at
+odds with each other.
+
+
+856
+00:45:11,746 --> 00:45:15,996
+A little bit more about color.
+
+
+857
+00:45:15,996 --> 00:45:18,516
+So you notice there's
+this red color in Compass
+
+
+858
+00:45:18,956 --> 00:45:21,026
+and there's something really
+special about that red.
+
+
+859
+00:45:22,406 --> 00:45:26,996
+That red is the same red
+that we saw in Calendar.
+
+
+860
+00:45:27,186 --> 00:45:28,816
+It's the same red that
+you'll see in Stocks.
+
+
+861
+00:45:28,816 --> 00:45:30,516
+It's the same red that
+you see in Stop Watch.
+
+
+862
+00:45:30,996 --> 00:45:33,976
+It's the same red you'll
+find in a lot of places.
+
+
+863
+00:45:34,566 --> 00:45:40,006
+This color pallet was designed
+to be carefully balanced
+
+
+864
+00:45:40,276 --> 00:45:42,676
+to be clean and vibrant,
+beautiful,
+
+
+865
+00:45:42,676 --> 00:45:48,296
+and our products use these
+colors with great restraint.
+
+
+866
+00:45:49,476 --> 00:45:50,836
+You don't want to
+just arbitrarily pick
+
+
+867
+00:45:50,836 --> 00:45:52,266
+different application.
+
+
+868
+00:45:52,266 --> 00:45:54,346
+It makes things start to
+fragment and fall apart,
+
+
+869
+00:45:54,406 --> 00:45:56,336
+and that too applies
+to your app.
+
+
+870
+00:45:56,856 --> 00:45:59,426
+If you use color, use
+it with restraint.
+
+
+871
+00:46:00,566 --> 00:46:03,266
+Carefully select colors
+that look really good
+
+
+872
+00:46:03,846 --> 00:46:07,106
+and don't just arbitrarily pick
+different colors at random.
+
+
+873
+00:46:07,586 --> 00:46:12,376
+It's going to make your UI
+feel fragmented, incoherent.
+
+
+874
+00:46:14,976 --> 00:46:16,836
+All right, Settings.
+
+
+875
+00:46:17,356 --> 00:46:19,136
+Now Settings is a great
+way to see how all
+
+
+876
+00:46:19,136 --> 00:46:21,426
+of the UIKit controls
+have changed.
+
+
+877
+00:46:22,496 --> 00:46:25,156
+So I encourage you to open
+up Settings and play around
+
+
+878
+00:46:25,156 --> 00:46:26,396
+and look at some of
+the different controls
+
+
+879
+00:46:26,396 --> 00:46:34,946
+that are there, but I want to
+focus on three of those today.
+
+
+880
+00:46:35,176 --> 00:46:38,696
+Switches. Now Switches
+have changed a lot.
+
+
+881
+00:46:39,986 --> 00:46:42,286
+Instead of using text to show
+you that the switch is off
+
+
+882
+00:46:42,446 --> 00:46:47,606
+or on, you see there's
+just a nice solid color
+
+
+883
+00:46:47,736 --> 00:46:49,556
+which is expressing
+that information.
+
+
+884
+00:46:50,986 --> 00:46:55,006
+And the reason why that can
+work is because it's consistent
+
+
+885
+00:46:55,006 --> 00:46:57,936
+with so many other controls
+that you'll see in iOS 7.
+
+
+886
+00:46:58,316 --> 00:47:00,716
+Selection is shown in
+this consistent way
+
+
+887
+00:47:00,986 --> 00:47:05,696
+so each control reinforces
+how selection is indicated.
+
+
+888
+00:47:06,206 --> 00:47:09,336
+Date Pickers.
+
+
+889
+00:47:10,086 --> 00:47:11,296
+Now these have changed
+quite a bit.
+
+
+890
+00:47:12,486 --> 00:47:16,586
+No longer do you see all of
+this glossy, different colors
+
+
+891
+00:47:16,586 --> 00:47:20,586
+of blue, glass, inter-shadows,
+highlights and all this stuff,
+
+
+892
+00:47:20,586 --> 00:47:21,726
+all this ornamentation.
+
+
+893
+00:47:23,146 --> 00:47:26,156
+What you see instead
+is some clean text
+
+
+894
+00:47:26,436 --> 00:47:29,146
+which has been distorted
+in such a way to suggest
+
+
+895
+00:47:29,146 --> 00:47:32,036
+that these are printed
+on wheels and because
+
+
+896
+00:47:32,036 --> 00:47:35,246
+of that you get a sense that
+you can just swipe these up
+
+
+897
+00:47:35,246 --> 00:47:36,876
+and down to change the values.
+
+
+898
+00:47:37,486 --> 00:47:40,876
+Kind of relates to this
+concept of continuation.
+
+
+899
+00:47:40,876 --> 00:47:43,236
+Our mind has to make sense of
+why these are being distorted
+
+
+900
+00:47:43,236 --> 00:47:45,346
+and we make sense
+of it by thinking
+
+
+901
+00:47:45,346 --> 00:47:46,776
+about then as being on a wheel.
+
+
+902
+00:47:47,356 --> 00:47:51,656
+Now we don't need these
+strong vertical dividing lines
+
+
+903
+00:47:51,726 --> 00:47:52,816
+to separate the values.
+
+
+904
+00:47:53,206 --> 00:47:56,166
+A little bit of negative space
+will do the trick just fine,
+
+
+905
+00:47:56,996 --> 00:48:00,746
+and which value is selected
+is really easy to see
+
+
+906
+00:48:00,876 --> 00:48:01,906
+because it's darker text,
+
+
+907
+00:48:01,906 --> 00:48:04,066
+it's right in the center,
+it totally obvious.
+
+
+908
+00:48:04,106 --> 00:48:06,716
+You don't need that blue glass
+
+
+909
+00:48:07,066 --> 00:48:09,206
+to show you what the
+current value is.
+
+
+910
+00:48:10,026 --> 00:48:12,306
+And as a result of
+these changes,
+
+
+911
+00:48:13,326 --> 00:48:14,826
+it works really well inline.
+
+
+912
+00:48:15,046 --> 00:48:20,236
+You don't have to go to a
+separate view to adjust the date
+
+
+913
+00:48:20,536 --> 00:48:22,486
+or adjust the value
+of time in this case,
+
+
+914
+00:48:22,816 --> 00:48:26,156
+and that's important too.
+
+
+915
+00:48:27,436 --> 00:48:30,116
+Going to a separate view
+means you lose your context.
+
+
+916
+00:48:30,716 --> 00:48:32,986
+Perhaps there's some
+information in the previous view
+
+
+917
+00:48:33,216 --> 00:48:35,826
+that you need to make
+the decision in the view
+
+
+918
+00:48:35,826 --> 00:48:37,876
+that you've just gone to and now
+you're going to have to go back
+
+
+919
+00:48:37,876 --> 00:48:39,846
+and forth and memorize.
+
+
+920
+00:48:41,046 --> 00:48:44,136
+Displaying something
+inline allows you to stay
+
+
+921
+00:48:44,136 --> 00:48:46,406
+in the context you were
+in before and swiping up
+
+
+922
+00:48:46,406 --> 00:48:48,086
+and down is really easy.
+
+
+923
+00:48:49,176 --> 00:48:52,246
+This is an example
+of a simple design
+
+
+924
+00:48:52,496 --> 00:48:53,806
+that has tremendous depth.
+
+
+925
+00:48:55,186 --> 00:48:56,446
+And finally, Back buttons.
+
+
+926
+00:48:56,626 --> 00:49:00,686
+Now, to get back previously you
+would press on the Back button.
+
+
+927
+00:49:01,176 --> 00:49:04,746
+That makes sense and you still
+do that but now with the iPhone,
+
+
+928
+00:49:04,746 --> 00:49:06,446
+I don't have one on
+me, I can't show you,
+
+
+929
+00:49:07,056 --> 00:49:08,716
+you swipe in from the left edge
+
+
+930
+00:49:09,416 --> 00:49:11,356
+and that allows you
+to get back as well.
+
+
+931
+00:49:12,366 --> 00:49:14,706
+So let's look at how that works
+
+
+932
+00:49:15,056 --> 00:49:16,876
+but pay close attention
+to the Back button.
+
+
+933
+00:49:17,416 --> 00:49:21,136
+See how it just slides over
+and morphs into the title?
+
+
+934
+00:49:21,756 --> 00:49:24,136
+It's kind of an obvious thing.
+
+
+935
+00:49:24,686 --> 00:49:25,616
+So intuitive.
+
+
+936
+00:49:25,876 --> 00:49:28,676
+It clearly shows that
+parent child relationship
+
+
+937
+00:49:28,746 --> 00:49:31,436
+and clearly shows you that
+you're moving from one level
+
+
+938
+00:49:31,436 --> 00:49:32,756
+in the hierarchy to another.
+
+
+939
+00:49:33,386 --> 00:49:35,066
+It's really elegant.
+
+
+940
+00:49:36,186 --> 00:49:36,606
+I like it.
+
+
+941
+00:49:37,156 --> 00:49:38,716
+All right, Control Center.
+
+
+942
+00:49:38,966 --> 00:49:41,466
+Now, you've heard a lot about
+Control Center, I'm not going
+
+
+943
+00:49:41,466 --> 00:49:44,136
+to repeat all of that, but I
+want to talk about layering.
+
+
+944
+00:49:44,856 --> 00:49:47,686
+We can see here we've brought up
+Control Center and we're looking
+
+
+945
+00:49:47,686 --> 00:49:50,016
+at the very top of that
+and we know that we're
+
+
+946
+00:49:50,016 --> 00:49:52,316
+at the Home screen because
+we can still see the app
+
+
+947
+00:49:52,316 --> 00:49:53,486
+icons behind.
+
+
+948
+00:49:54,676 --> 00:49:57,346
+That transparency it
+provides this sense of depth
+
+
+949
+00:49:57,906 --> 00:50:01,786
+and the colors coming through
+just reinforces that sense
+
+
+950
+00:50:01,786 --> 00:50:05,266
+of depth, and that's
+important because you bring
+
+
+951
+00:50:05,266 --> 00:50:07,216
+up the Control Center in all of
+these different applications.
+
+
+952
+00:50:07,216 --> 00:50:09,406
+I brought it up here in Mail and
+I know that I'm still in Mail
+
+
+953
+00:50:09,406 --> 00:50:12,126
+so when I dismiss the Control
+Center I'm going to be back
+
+
+954
+00:50:12,166 --> 00:50:16,186
+in Mail or Compass or Calendar.
+
+
+955
+00:50:17,136 --> 00:50:18,556
+My context is maintained.
+
+
+956
+00:50:19,436 --> 00:50:21,066
+And you guys can apply
+that to your apps too.
+
+
+957
+00:50:21,066 --> 00:50:23,996
+You can use layering
+to bring in things
+
+
+958
+00:50:23,996 --> 00:50:25,896
+that people need quick access
+to and then they're going
+
+
+959
+00:50:25,896 --> 00:50:27,886
+to dismiss and go back to
+where they were before,
+
+
+960
+00:50:27,886 --> 00:50:29,916
+but their context is maintained.
+
+
+961
+00:50:31,606 --> 00:50:32,606
+It's really fluid.
+
+
+962
+00:50:32,756 --> 00:50:33,846
+It makes things really easy.
+
+
+963
+00:50:34,596 --> 00:50:36,166
+And it just looks pretty.
+
+
+964
+00:50:38,416 --> 00:50:40,486
+All right, last but not
+least, the Home screen.
+
+
+965
+00:50:40,846 --> 00:50:45,586
+Now as we saw, the Home screen
+has remained structurally the
+
+
+966
+00:50:45,586 --> 00:50:48,506
+same as it was before
+and why not?
+
+
+967
+00:50:48,506 --> 00:50:50,256
+It's a really great interface.
+
+
+968
+00:50:50,576 --> 00:50:53,816
+So all the interactions about
+deleting app icons and swiping
+
+
+969
+00:50:53,816 --> 00:50:55,566
+between Home screens
+and reordering and that,
+
+
+970
+00:50:55,746 --> 00:50:58,646
+it's all the same, but
+the icons have changed
+
+
+971
+00:50:58,646 --> 00:51:01,116
+so we'll spend a little bit of
+time talking about these icons.
+
+
+972
+00:51:02,446 --> 00:51:06,726
+Gone are the heaviest of
+textures, the stripes,
+
+
+973
+00:51:07,216 --> 00:51:12,506
+the light rays, the glossy
+overlays and the photo realism.
+
+
+974
+00:51:14,076 --> 00:51:18,756
+The Safari icon, for example,
+has been greatly simplified.
+
+
+975
+00:51:19,756 --> 00:51:23,366
+Safari is represented by a
+compass and it doesn't take much
+
+
+976
+00:51:23,476 --> 00:51:26,516
+to communicate the concept of a
+compass, to depict that image.
+
+
+977
+00:51:26,966 --> 00:51:30,476
+All you need is a red and
+white needle, circular dial
+
+
+978
+00:51:30,476 --> 00:51:31,536
+and maybe some tick marks.
+
+
+979
+00:51:31,646 --> 00:51:32,126
+That's it.
+
+
+980
+00:51:32,856 --> 00:51:35,836
+If you start to add other stuff
+it becomes busy and heavy.
+
+
+981
+00:51:36,536 --> 00:51:38,896
+So you don't need the
+cardinal directions
+
+
+982
+00:51:38,896 --> 00:51:40,236
+of North, East, South and West.
+
+
+983
+00:51:40,236 --> 00:51:41,876
+You don't need the
+globe background.
+
+
+984
+00:51:41,876 --> 00:51:43,096
+You don't need the
+glossy overlay.
+
+
+985
+00:51:43,096 --> 00:51:45,226
+You don't need the
+specular highlights
+
+
+986
+00:51:45,226 --> 00:51:47,446
+and the drop shadows
+and all that stuff.
+
+
+987
+00:51:48,836 --> 00:51:52,216
+The result is a cleaner shape
+that's easier to identify.
+
+
+988
+00:51:52,426 --> 00:51:53,006
+It's simpler.
+
+
+989
+00:51:53,006 --> 00:51:55,966
+There's less stuff
+coming at you.
+
+
+990
+00:51:56,796 --> 00:51:59,866
+And when you see this along
+a bunch of other app icons
+
+
+991
+00:51:59,866 --> 00:52:00,576
+that all have a bunch
+
+
+992
+00:52:00,576 --> 00:52:02,686
+of ornamentation it
+becomes hard to find stuff.
+
+
+993
+00:52:03,846 --> 00:52:05,996
+Now we've been providing
+this advice for some time now
+
+
+994
+00:52:06,076 --> 00:52:07,956
+and now we're kind
+of listening to it.
+
+
+995
+00:52:08,176 --> 00:52:10,646
+It's really nice
+to find a clean,
+
+
+996
+00:52:10,696 --> 00:52:13,266
+simple shape and just one color.
+
+
+997
+00:52:13,696 --> 00:52:15,786
+Makes app icons stand
+out really well.
+
+
+998
+00:52:17,226 --> 00:52:19,836
+And of course the color that's
+chosen matches the tint color
+
+
+999
+00:52:19,836 --> 00:52:20,756
+from the applications.
+
+
+1000
+00:52:21,686 --> 00:52:23,286
+You want to have that
+kind of consistency.
+
+
+1001
+00:52:29,676 --> 00:52:32,886
+Now, many of you might ask,
+well, if you're simplifying,
+
+
+1002
+00:52:33,166 --> 00:52:34,336
+getting rid of all
+this ornamentation,
+
+
+1003
+00:52:34,336 --> 00:52:35,096
+what about the gradients?
+
+
+1004
+00:52:35,096 --> 00:52:36,766
+Why don't you just
+use a solid color?
+
+
+1005
+00:52:36,766 --> 00:52:37,956
+That's going to be
+a lot simpler.
+
+
+1006
+00:52:38,346 --> 00:52:43,306
+Well, perhaps, but it turns
+out it's also really boring.
+
+
+1007
+00:52:44,416 --> 00:52:46,716
+Vibrancy, life, that's
+important.
+
+
+1008
+00:52:47,446 --> 00:52:48,806
+Those are really
+important values
+
+
+1009
+00:52:48,806 --> 00:52:51,766
+and these gradients they add
+that but in a subtle way,
+
+
+1010
+00:52:51,796 --> 00:52:55,046
+but it still makes it so much
+more visually interesting.
+
+
+1011
+00:52:56,956 --> 00:53:00,146
+Now these icons they're
+simpler but the approach
+
+
+1012
+00:53:00,146 --> 00:53:01,916
+to designing them
+wasn't simplistic.
+
+
+1013
+00:53:02,406 --> 00:53:05,456
+So to demonstrate, I'm going to
+replay that video that we saw
+
+
+1014
+00:53:05,456 --> 00:53:06,166
+at the very beginning.
+
+
+1015
+00:53:06,666 --> 00:53:22,656
+[ Silence ]
+
+
+1016
+00:53:23,156 --> 00:53:24,286
+It's kind of a nice video.
+
+
+1017
+00:53:25,556 --> 00:53:30,266
+All of our app icons were
+designed using this grid,
+
+
+1018
+00:53:30,446 --> 00:53:34,746
+this template, to give them
+consistency and composition.
+
+
+1019
+00:53:35,316 --> 00:53:37,726
+So they're connected at
+this really deep level.
+
+
+1020
+00:53:39,226 --> 00:53:42,126
+This template, it's
+really balanced.
+
+
+1021
+00:53:43,056 --> 00:53:44,886
+I spent some time
+recreating this and I got
+
+
+1022
+00:53:44,886 --> 00:53:48,606
+to appreciate the subtlety of it
+and why all the lines are placed
+
+
+1023
+00:53:48,606 --> 00:53:50,626
+where they are and how
+the circles work with that
+
+
+1024
+00:53:51,986 --> 00:53:53,726
+and it's sophisticated stuff.
+
+
+1025
+00:53:54,116 --> 00:53:54,666
+It's kind of cool.
+
+
+1026
+00:53:54,666 --> 00:53:55,486
+I was impressed.
+
+
+1027
+00:53:56,036 --> 00:54:02,416
+But as a result of following
+this template our icons share
+
+
+1028
+00:54:02,796 --> 00:54:06,236
+things like this blue dot
+in Stocks aligns perfectly
+
+
+1029
+00:54:06,236 --> 00:54:08,256
+with the corner of
+that intersection.
+
+
+1030
+00:54:09,956 --> 00:54:14,756
+The circular shape of the
+Safari icon matches perfectly
+
+
+1031
+00:54:15,746 --> 00:54:19,136
+with the iTunes Store
+icon and the Photos icon.
+
+
+1032
+00:54:19,636 --> 00:54:24,006
+Alright I'm running low on time
+so I want to go quickly forward.
+
+
+1033
+00:54:24,436 --> 00:54:26,916
+One thing to point out, you guys
+should all be aware of this,
+
+
+1034
+00:54:27,006 --> 00:54:28,716
+the app icons are now
+a little bit bigger,
+
+
+1035
+00:54:28,716 --> 00:54:31,176
+so you don't want
+your icons to scale,
+
+
+1036
+00:54:31,896 --> 00:54:35,616
+be best to deliver all work
+at this size, 120 by 120.
+
+
+1037
+00:54:36,636 --> 00:54:39,316
+So all of these icons
+they have colors,
+
+
+1038
+00:54:39,316 --> 00:54:40,346
+they have different features,
+
+
+1039
+00:54:40,856 --> 00:54:43,036
+but everything was done
+with great restraint.
+
+
+1040
+00:54:43,286 --> 00:54:46,836
+If it didn't help to communicate
+the meaning of the app,
+
+
+1041
+00:54:47,106 --> 00:54:49,576
+what its function
+was, it was removed.
+
+
+1042
+00:54:49,576 --> 00:54:51,826
+If it didn't help to
+differentiate one icon
+
+
+1043
+00:54:51,826 --> 00:54:54,406
+from the next and help them
+stand out, it was removed.
+
+
+1044
+00:54:55,336 --> 00:54:57,646
+And as a result it's a
+simpler set of icons.
+
+
+1045
+00:54:58,126 --> 00:54:59,056
+It's easier on the eye.
+
+
+1046
+00:54:59,706 --> 00:55:02,386
+So some final thoughts.
+
+
+1047
+00:55:03,916 --> 00:55:09,716
+The values that were at the
+heart of iOS 7 were clarity,
+
+
+1048
+00:55:10,526 --> 00:55:13,706
+deference, depth and detail.
+
+
+1049
+00:55:15,526 --> 00:55:17,146
+Let's talk about
+those because I think
+
+
+1050
+00:55:17,886 --> 00:55:20,656
+if you guys take anything away
+from today it should be this.
+
+
+1051
+00:55:20,956 --> 00:55:22,866
+It's really powerful stuff.
+
+
+1052
+00:55:23,956 --> 00:55:28,696
+Clarity. We saw what
+clarity meant in Compass.
+
+
+1053
+00:55:29,626 --> 00:55:32,966
+It meant doing nothing more
+than showing you information
+
+
+1054
+00:55:32,966 --> 00:55:34,376
+and express functionality.
+
+
+1055
+00:55:35,556 --> 00:55:38,026
+Nothing more and nothing less.
+
+
+1056
+00:55:41,536 --> 00:55:42,546
+Deference.
+
+
+1057
+00:55:44,036 --> 00:55:48,926
+Deference in Mail meant making
+sure that text is large,
+
+
+1058
+00:55:49,846 --> 00:55:56,176
+resizable, legible and
+gorgeous, and photos are large
+
+
+1059
+00:55:56,646 --> 00:56:02,576
+so you can see the detail.
+
+
+1060
+00:56:04,296 --> 00:56:06,206
+Depth. Now I didn't
+show this before
+
+
+1061
+00:56:06,766 --> 00:56:09,206
+but I think this is really
+cool so let's look at this now.
+
+
+1062
+00:56:09,646 --> 00:56:13,856
+When you swipe up to see
+the Camera and you let go,
+
+
+1063
+00:56:14,296 --> 00:56:15,616
+see it bounces a little bit?
+
+
+1064
+00:56:15,996 --> 00:56:18,786
+And it bounces differently based
+on the height you drop in from.
+
+
+1065
+00:56:18,846 --> 00:56:21,736
+You can even slam it down
+and it really bounces.
+
+
+1066
+00:56:22,266 --> 00:56:28,136
+That provides such a
+sense of physical realism.
+
+
+1067
+00:56:28,676 --> 00:56:30,736
+Makes it so much more
+lifelike and believable.
+
+
+1068
+00:56:32,156 --> 00:56:33,216
+You guys could do that too.
+
+
+1069
+00:56:33,456 --> 00:56:35,766
+UI Dynamics, with
+its physics engine,
+
+
+1070
+00:56:35,766 --> 00:56:39,266
+is going to really enable people
+to do some amazing stuff here.
+
+
+1071
+00:56:41,776 --> 00:56:44,746
+The Home screen and the
+way we have these distinct,
+
+
+1072
+00:56:44,746 --> 00:56:47,456
+functional planes that are
+separated from each other
+
+
+1073
+00:56:47,456 --> 00:56:53,326
+and respond to the
+movement of the device.
+
+
+1074
+00:56:53,476 --> 00:56:55,676
+And detail, detail
+brings it all together.
+
+
+1075
+00:57:00,496 --> 00:57:02,526
+So you've seen what
+it meant for us.
+
+
+1076
+00:57:03,426 --> 00:57:06,506
+You've seen what these
+new tools allowed Apple
+
+
+1077
+00:57:06,656 --> 00:57:10,406
+to do with apps in iOS 7.
+
+
+1078
+00:57:11,236 --> 00:57:15,126
+How are your apps going
+to have more depth?
+
+
+1079
+00:57:15,646 --> 00:57:19,616
+How can you use behaviors and
+motion effects and transitions
+
+
+1080
+00:57:20,196 --> 00:57:24,796
+and layering to improve the
+experience of your apps?
+
+
+1081
+00:57:25,996 --> 00:57:28,566
+How are you going to be more
+deferential in your apps?
+
+
+1082
+00:57:28,956 --> 00:57:30,916
+What do users care about most?
+
+
+1083
+00:57:30,916 --> 00:57:33,026
+What's the content that's
+most important to them?
+
+
+1084
+00:57:33,486 --> 00:57:35,386
+How can you get out
+of their way?
+
+
+1085
+00:57:36,066 --> 00:57:37,846
+And clarity.
+
+
+1086
+00:57:38,546 --> 00:57:40,406
+What's the functionality
+of your app?
+
+
+1087
+00:57:41,156 --> 00:57:42,896
+What's the information
+you're trying to express?
+
+
+1088
+00:57:43,236 --> 00:57:45,476
+How can you do a
+better job of that?
+
+
+1089
+00:57:46,026 --> 00:57:47,326
+How can you prioritize things
+
+
+1090
+00:57:47,326 --> 00:57:50,966
+and make things simpler
+for people?
+
+
+1091
+00:57:51,126 --> 00:57:54,006
+Now, this is a really
+exciting time
+
+
+1092
+00:57:54,746 --> 00:57:58,196
+to be doing interface design and
+talking about it and thinking
+
+
+1093
+00:57:58,196 --> 00:58:01,026
+about it, for you
+developers making apps.
+
+
+1094
+00:58:02,056 --> 00:58:06,416
+There's some amazing new tools
+in iOS 7 and we've applied those
+
+
+1095
+00:58:06,866 --> 00:58:09,896
+to the apps that ship
+with the devices.
+
+
+1096
+00:58:10,656 --> 00:58:12,586
+But we're just scratching
+the surface.
+
+
+1097
+00:58:13,056 --> 00:58:18,446
+There's 800,000 apps in the App
+Store, 6 million developers,
+
+
+1098
+00:58:19,126 --> 00:58:22,756
+some of the brightest minds
+in the world are spending all
+
+
+1099
+00:58:22,756 --> 00:58:25,356
+of their time, you guys,
+you're spending all
+
+
+1100
+00:58:25,356 --> 00:58:27,126
+of your time using all
+of that brain power
+
+
+1101
+00:58:27,126 --> 00:58:29,096
+to do some amazing
+things with your apps.
+
+
+1102
+00:58:29,846 --> 00:58:32,266
+What are you going to
+do with this stuff?
+
+
+1103
+00:58:33,596 --> 00:58:35,616
+It's really exciting because
+we're at the precipice of that.
+
+
+1104
+00:58:36,096 --> 00:58:38,806
+We're at the beginning
+of a whole new phase
+
+
+1105
+00:58:38,806 --> 00:58:41,866
+of software development
+for mobile devices.
+
+
+1106
+00:58:42,476 --> 00:58:46,276
+I have no idea what you're going
+to make but I know it's going
+
+
+1107
+00:58:46,276 --> 00:58:49,616
+to be awesome and I'm
+really looking forward
+
+
+1108
+00:58:49,616 --> 00:58:51,396
+to when we come back
+together next year
+
+
+1109
+00:58:51,686 --> 00:58:54,236
+and seeing what was done
+over the course of that year.
+
+
+1110
+00:58:54,616 --> 00:58:56,356
+It's going to be mind-blowing.
+
+
+1111
+00:58:57,556 --> 00:59:00,576
+So go out there,
+make some cool stuff
+
+
+1112
+00:59:01,436 --> 00:59:02,726
+and let's regroup in a year.
+
+
+1113
+00:59:03,236 --> 00:59:04,426
+Thank you very much.
+
+
+1114
+00:59:04,926 --> 00:59:13,013
+[ Applause ]
+
+
+1115
+00:59:13,513 --> 00:59:21,600
+[ Silence ]
+

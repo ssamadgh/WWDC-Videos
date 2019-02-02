@@ -1,0 +1,5916 @@
+1
+00:00:00,506 --> 00:00:09,516
+[ Silence ]
+
+
+2
+00:00:10,016 --> 00:00:10,083
+[Applause]
+
+
+3
+00:00:11,016 --> 00:00:13,316
+>> Thank you.
+
+
+4
+00:00:15,046 --> 00:00:15,886
+[applause] Good afternoon!
+
+
+5
+00:00:16,776 --> 00:00:19,796
+Welcome to "What's New
+in the LLVM Compiler?"
+
+
+6
+00:00:20,506 --> 00:00:21,806
+My name is Evan.
+
+
+7
+00:00:22,036 --> 00:00:23,146
+Let's-- shall we start?
+
+
+8
+00:00:24,436 --> 00:00:25,656
+What's our mission?
+
+
+9
+00:00:26,726 --> 00:00:29,906
+We want to provide the
+Best-in-Class tools for you,
+
+
+10
+00:00:29,906 --> 00:00:33,176
+for the developers, the
+lifelines of our platforms.
+
+
+11
+00:00:33,666 --> 00:00:36,046
+We want to make sure
+you have the best tools
+
+
+12
+00:00:36,206 --> 00:00:37,446
+to build your awesome apps.
+
+
+13
+00:00:38,846 --> 00:00:40,736
+We want to support the best--
+
+
+14
+00:00:40,836 --> 00:00:44,276
+the latest hardware,
+be Macs, iOS devices.
+
+
+15
+00:00:44,276 --> 00:00:47,736
+We want to make sure we can
+build your codes so they run
+
+
+16
+00:00:47,816 --> 00:00:50,206
+as fast as they can
+on the unit--
+
+
+17
+00:00:50,486 --> 00:00:53,816
+latest iPhone, the
+iPads and the Macs.
+
+
+18
+00:00:54,076 --> 00:00:56,686
+I want to make sure the
+performance is great.
+
+
+19
+00:00:57,296 --> 00:01:00,756
+We're not satisfied if we
+cannot squeeze every ounce
+
+
+20
+00:01:00,756 --> 00:01:02,966
+of performance in
+audio applications.
+
+
+21
+00:01:03,516 --> 00:01:06,306
+And we want to make sure you
+have the great productivity.
+
+
+22
+00:01:06,886 --> 00:01:10,546
+We want our tools to run fast
+and we want to provide you
+
+
+23
+00:01:10,546 --> 00:01:12,096
+with the best diagnoses.
+
+
+24
+00:01:12,266 --> 00:01:14,316
+We want to give you as
+much information we can
+
+
+25
+00:01:14,576 --> 00:01:15,796
+to make your job easy.
+
+
+26
+00:01:16,976 --> 00:01:21,386
+So let's take a look at what
+have we done in different areas.
+
+
+27
+00:01:21,896 --> 00:01:24,166
+First, let's talk
+about the support
+
+
+28
+00:01:24,166 --> 00:01:29,086
+for the latest hardware,
+armv7s architecture.
+
+
+29
+00:01:29,356 --> 00:01:31,176
+This is something
+you may have seen.
+
+
+30
+00:01:31,636 --> 00:01:33,846
+This is not new in Xcode 5
+
+
+31
+00:01:33,846 --> 00:01:35,846
+but there's something new
+happened during the last year.
+
+
+32
+00:01:35,846 --> 00:01:41,386
+The iPhone 5-- for the iPhone
+5, we have the Apple A6 chip,
+
+
+33
+00:01:41,866 --> 00:01:44,166
+that's something Apple
+built and very proud of it.
+
+
+34
+00:01:44,406 --> 00:01:46,646
+We worked very closely
+with our team
+
+
+35
+00:01:46,886 --> 00:01:49,256
+to make sure the compiler
+generate the best code words.
+
+
+36
+00:01:49,416 --> 00:01:52,916
+If you care about performance
+on your app on the latest iPhone
+
+
+37
+00:01:53,806 --> 00:01:58,186
+and the latest iPads, you
+want to build your application
+
+
+38
+00:01:58,186 --> 00:01:59,206
+for this architecture.
+
+
+39
+00:01:59,766 --> 00:02:04,396
+This is simple because
+this is already a part
+
+
+40
+00:02:04,396 --> 00:02:08,205
+of the standard architecture for
+iOS apps so we encourage you,
+
+
+41
+00:02:08,446 --> 00:02:10,936
+just go with it,
+don't pick and choose,
+
+
+42
+00:02:11,116 --> 00:02:12,846
+just use the standard
+architecture
+
+
+43
+00:02:13,096 --> 00:02:16,896
+and you'd get the best
+performance for your apps.
+
+
+44
+00:02:17,126 --> 00:02:20,046
+Next, let's talk
+about Intel AVX.
+
+
+45
+00:02:20,556 --> 00:02:23,346
+AVX stands for Advanced
+Vector Extension.
+
+
+46
+00:02:23,786 --> 00:02:26,356
+Anything with the word
+"Advanced" sounds great there.
+
+
+47
+00:02:26,956 --> 00:02:28,776
+It must be good,
+you should use it.
+
+
+48
+00:02:29,376 --> 00:02:31,366
+So Intel AVX is not new.
+
+
+49
+00:02:31,366 --> 00:02:34,416
+It's been around for a couple of
+years, but this year you have--
+
+
+50
+00:02:34,416 --> 00:02:38,586
+you have heard, we have just
+announced Haswell-Based Macs,
+
+
+51
+00:02:38,766 --> 00:02:41,886
+they have Intel AVX2,
+so AVX was all
+
+
+52
+00:02:41,886 --> 00:02:45,486
+about getting the best
+performance with your loop
+
+
+53
+00:02:45,486 --> 00:02:46,826
+with a lot of parallels in,
+
+
+54
+00:02:46,826 --> 00:02:48,726
+a lot of floating
+point computation code.
+
+
+55
+00:02:49,216 --> 00:02:52,966
+AVX2 takes a little step further
+and bring the same kind of power
+
+
+56
+00:02:53,176 --> 00:02:54,416
+to the-- your integer code.
+
+
+57
+00:02:55,066 --> 00:02:58,726
+It had a few more other kind
+of instructions to make it easy
+
+
+58
+00:02:58,726 --> 00:03:01,736
+to vectorize your code
+so you definitely want
+
+
+59
+00:03:01,736 --> 00:03:06,136
+to take advantage of AVX2.
+
+
+60
+00:03:06,286 --> 00:03:13,276
+So using AVX2 is easy but it's
+not quite, kind of, work-free.
+
+
+61
+00:03:13,736 --> 00:03:17,216
+You do want to make sure
+your app does runtime checks
+
+
+62
+00:03:17,216 --> 00:03:20,726
+to make the hardware you're
+running the code support AVX2.
+
+
+63
+00:03:21,406 --> 00:03:23,276
+So you may want to
+partition your code
+
+
+64
+00:03:23,276 --> 00:03:27,466
+to have a special version that
+only run on AVX2 and compile
+
+
+65
+00:03:27,466 --> 00:03:33,676
+with the -mavx2 instruction,
+I mean, -2avx2, -mavx2 option.
+
+
+66
+00:03:34,716 --> 00:03:36,946
+If you have any questions
+about this,
+
+
+67
+00:03:37,096 --> 00:03:38,986
+feel free to come
+by to our labs.
+
+
+68
+00:03:39,546 --> 00:03:41,246
+We'll be happy to
+talk to you about it
+
+
+69
+00:03:42,006 --> 00:03:45,096
+and also we'll be talking
+a lot more about AVX2
+
+
+70
+00:03:45,096 --> 00:03:47,846
+and many other things
+we talked about today
+
+
+71
+00:03:48,366 --> 00:03:50,216
+in tomorrow's session, that's--
+
+
+72
+00:03:51,186 --> 00:03:52,466
+we're we going to focus
+
+
+73
+00:03:52,466 --> 00:03:54,896
+on how you can using
+the LLVM technology
+
+
+74
+00:03:54,896 --> 00:03:56,456
+to fully optimize your code.
+
+
+75
+00:03:57,396 --> 00:04:01,396
+So if you use AVX2 in Xcode
+5, it's pretty simple,
+
+
+76
+00:04:01,586 --> 00:04:03,116
+go to the Build Configuration
+
+
+77
+00:04:03,356 --> 00:04:06,706
+and just enable Additional
+Vector Extension, choose AVX2.
+
+
+78
+00:04:07,576 --> 00:04:10,906
+This is going to be important to
+get your code to performance--
+
+
+79
+00:04:10,906 --> 00:04:16,755
+to the best you can on
+the Haswell-Based Macs.
+
+
+80
+00:04:16,926 --> 00:04:19,336
+Next, let's focus
+on performance.
+
+
+81
+00:04:19,676 --> 00:04:21,546
+We've done a lot of
+work in this area.
+
+
+82
+00:04:21,786 --> 00:04:23,336
+We have many new features,
+
+
+83
+00:04:23,616 --> 00:04:25,476
+a lot of work we're
+very, very proud of.
+
+
+84
+00:04:26,146 --> 00:04:28,566
+We're so proud of, in
+fact, we've made a video,
+
+
+85
+00:04:28,776 --> 00:04:30,396
+I'd like to show you today.
+
+
+86
+00:04:31,306 --> 00:04:32,346
+I'm just kidding.
+
+
+87
+00:04:32,346 --> 00:04:34,016
+[Laughter]
+
+
+88
+00:04:34,016 --> 00:04:38,000
+[ Laughter & Applause ]
+
+
+89
+00:04:38,796 --> 00:04:40,226
+They will be editing the video
+
+
+90
+00:04:40,226 --> 00:04:43,126
+for a long time before
+I can show you anything.
+
+
+91
+00:04:43,496 --> 00:04:45,776
+But let's take a quick look
+what we have done for you.
+
+
+92
+00:04:46,906 --> 00:04:48,866
+So the compiler has
+definitely improved a lot.
+
+
+93
+00:04:49,336 --> 00:04:51,186
+The performance has
+gotten better every year.
+
+
+94
+00:04:51,586 --> 00:04:54,246
+This past year as you've
+seen, just a quick chart--
+
+
+95
+00:04:54,246 --> 00:04:56,596
+a few examples, we're
+getting quite a bit
+
+
+96
+00:04:56,596 --> 00:04:58,156
+of performance of your code.
+
+
+97
+00:04:58,806 --> 00:05:01,596
+So if you're just
+building your application
+
+
+98
+00:05:01,596 --> 00:05:05,716
+with the new LLVM compiler
+in Xcode 5, you're going
+
+
+99
+00:05:05,716 --> 00:05:07,826
+to get some significant
+improvement for your code.
+
+
+100
+00:05:08,366 --> 00:05:11,046
+So it ranges differently
+depends on what kind
+
+
+101
+00:05:11,046 --> 00:05:11,726
+of code you're writing.
+
+
+102
+00:05:13,296 --> 00:05:16,796
+If your iOS app, you're
+going to see the same kind
+
+
+103
+00:05:16,796 --> 00:05:18,826
+of performance but a bit more.
+
+
+104
+00:05:19,056 --> 00:05:21,576
+We've been really,
+really focused on this
+
+
+105
+00:05:21,866 --> 00:05:24,476
+and we're working really
+closely with our team
+
+
+106
+00:05:24,716 --> 00:05:28,446
+to bring you the best compiler
+technology in this area.
+
+
+107
+00:05:29,456 --> 00:05:33,426
+So here you can see across
+the board teams of 20,
+
+
+108
+00:05:33,516 --> 00:05:36,336
+30 percent performance
+gains just by switching
+
+
+109
+00:05:36,336 --> 00:05:38,616
+to the latest Xcode
+5 and using--
+
+
+110
+00:05:38,616 --> 00:05:41,136
+latest Apple LLVM compiler.
+
+
+111
+00:05:41,136 --> 00:05:47,246
+One other thing I want to talk
+to you very briefly about,
+
+
+112
+00:05:47,736 --> 00:05:50,946
+Strict Aliasing, this is
+technology we introduced
+
+
+113
+00:05:50,946 --> 00:05:55,146
+in Xcode and Apple LLVM
+compiler about a year or so ago.
+
+
+114
+00:05:55,876 --> 00:05:58,796
+The only difference here is,
+you know, during the past year,
+
+
+115
+00:05:58,796 --> 00:06:02,486
+we have enabled by
+default in 4.-- Xcode 4.6.
+
+
+116
+00:06:03,026 --> 00:06:06,066
+I just want to bring
+this to your attention,
+
+
+117
+00:06:06,286 --> 00:06:07,516
+in case you have some any kind
+
+
+118
+00:06:07,516 --> 00:06:10,706
+of legacy code that's
+still building and shipping
+
+
+119
+00:06:10,706 --> 00:06:13,516
+with the older Xcode,
+you might be--
+
+
+120
+00:06:13,516 --> 00:06:15,056
+want to be aware of this change.
+
+
+121
+00:06:15,496 --> 00:06:17,376
+So I'm not going to go
+into a lot of details
+
+
+122
+00:06:17,776 --> 00:06:21,756
+but strict aliasing is basically
+using the type of informations
+
+
+123
+00:06:21,756 --> 00:06:23,926
+to do more advanced
+than pointer analysis.
+
+
+124
+00:06:24,666 --> 00:06:26,946
+The reason we turn on
+strict aliasing is simple,
+
+
+125
+00:06:27,206 --> 00:06:28,216
+its performance.
+
+
+126
+00:06:28,906 --> 00:06:32,246
+It's a-- few percentage is here
+and there, but in some cases,
+
+
+127
+00:06:32,246 --> 00:06:36,136
+we see significant wins such
+as 20 percent improvement
+
+
+128
+00:06:36,136 --> 00:06:37,836
+for some simulation benchmarks.
+
+
+129
+00:06:40,256 --> 00:06:43,606
+So again, just want to remind
+you, if you are legacy code,
+
+
+130
+00:06:43,866 --> 00:06:48,056
+they might be using some illegal
+scenes such as typecasting
+
+
+131
+00:06:48,286 --> 00:06:50,866
+from one type to another
+that's not compatible
+
+
+132
+00:06:51,126 --> 00:06:53,646
+from floating point to
+integer or vice-versa.
+
+
+133
+00:06:54,676 --> 00:06:57,356
+If you want it, you have code
+that does this, please switch
+
+
+134
+00:06:57,356 --> 00:07:02,266
+to a well understood [inaudible]
+such as-- unions to do the cut--
+
+
+135
+00:07:02,266 --> 00:07:04,076
+type conversion and
+you'd be home free.
+
+
+136
+00:07:04,396 --> 00:07:05,946
+Chances are, since we've been--
+
+
+137
+00:07:05,946 --> 00:07:09,186
+you've been shipping your
+application with Xcode 4.6,
+
+
+138
+00:07:09,386 --> 00:07:12,126
+this is working perfectly for
+you, there's absolutely nothing
+
+
+139
+00:07:12,126 --> 00:07:12,876
+for you to worry about.
+
+
+140
+00:07:12,876 --> 00:07:16,476
+One other thing I
+wanted to bring
+
+
+141
+00:07:16,476 --> 00:07:18,686
+to your attention is
+Link-time Optimization.
+
+
+142
+00:07:19,036 --> 00:07:20,746
+Again, this is not
+a new feature.
+
+
+143
+00:07:21,686 --> 00:07:24,286
+What's new is we've
+put so much effort
+
+
+144
+00:07:24,286 --> 00:07:26,486
+into Link-time Optimization
+during last year
+
+
+145
+00:07:26,896 --> 00:07:28,586
+and we feel so great about it.
+
+
+146
+00:07:28,786 --> 00:07:30,616
+We have enabled it using it
+
+
+147
+00:07:30,616 --> 00:07:32,806
+to build some key
+Apple technologies
+
+
+148
+00:07:33,286 --> 00:07:35,176
+in the Mac and iOS release.
+
+
+149
+00:07:37,456 --> 00:07:41,746
+So some examples such as Apple
+LLVM compiler itself is built
+
+
+150
+00:07:41,746 --> 00:07:42,426
+with LTO.
+
+
+151
+00:07:43,116 --> 00:07:46,396
+This can have the benefit
+of compiling your code
+
+
+152
+00:07:46,396 --> 00:07:48,376
+up to 6-- 6 percent faster.
+
+
+153
+00:07:49,666 --> 00:07:52,516
+The iOS Kernel, that's
+important application,
+
+
+154
+00:07:52,996 --> 00:07:57,206
+can do some of the-- IO--
+performance can be up to 20--
+
+
+155
+00:07:57,486 --> 00:08:01,176
+20 percent faster and in
+addition to performance,
+
+
+156
+00:08:01,356 --> 00:08:05,946
+sometimes you have [inaudible]
+benefit such as iOS iMovie app
+
+
+157
+00:08:06,296 --> 00:08:09,846
+that got 25 percent smaller
+just by building with LTO.
+
+
+158
+00:08:10,986 --> 00:08:12,726
+So we think LTO is great.
+
+
+159
+00:08:12,956 --> 00:08:15,786
+You definitely want
+to try it out.
+
+
+160
+00:08:16,046 --> 00:08:18,926
+But in case you have a
+really massive application,
+
+
+161
+00:08:19,526 --> 00:08:23,586
+this could have impact on
+the build time because LTO is
+
+
+162
+00:08:23,586 --> 00:08:27,906
+about bringing everything about
+your application into last stage
+
+
+163
+00:08:27,906 --> 00:08:30,806
+and do the all the optimization,
+compilation at that time.
+
+
+164
+00:08:31,316 --> 00:08:33,976
+So if you find you
+were building with LTO
+
+
+165
+00:08:33,976 --> 00:08:37,946
+and that's taking too much time
+and maybe and you're running
+
+
+166
+00:08:37,946 --> 00:08:41,046
+out of memory, you consider
+dropping the debugging full
+
+
+167
+00:08:41,046 --> 00:08:42,816
+level to a Line table only,
+
+
+168
+00:08:42,816 --> 00:08:50,166
+that can have a significant
+improvement to the real time.
+
+
+169
+00:08:50,366 --> 00:08:54,286
+Something new in Xcode 5,
+here's the Auto Vectorizer.
+
+
+170
+00:08:54,386 --> 00:08:57,786
+We talked about this in
+"What's New in Xcode?"
+
+
+171
+00:08:57,786 --> 00:08:58,336
+this morning.
+
+
+172
+00:08:59,116 --> 00:09:01,296
+This is something that
+we built from the grown
+
+
+173
+00:09:01,296 --> 00:09:02,546
+up during the past year.
+
+
+174
+00:09:03,436 --> 00:09:05,496
+This is already showing
+amazing results.
+
+
+175
+00:09:05,846 --> 00:09:08,486
+This is certainly some really
+computation intensive code
+
+
+176
+00:09:09,336 --> 00:09:14,876
+and can have 2 to 5 to 8
+times the benefit for you--
+
+
+177
+00:09:14,986 --> 00:09:18,086
+for your computation
+intensive loop.
+
+
+178
+00:09:18,206 --> 00:09:22,796
+And this works great for both
+iOS and OS X applications
+
+
+179
+00:09:23,066 --> 00:09:25,966
+so you can have portable code
+that you write simple code
+
+
+180
+00:09:25,966 --> 00:09:30,556
+that works perfectly for all
+the-- for both platforms.
+
+
+181
+00:09:31,106 --> 00:09:32,766
+So previously, if
+you are familiar
+
+
+182
+00:09:32,766 --> 00:09:35,406
+with ARM NEON intrinsics,
+you may be using--
+
+
+183
+00:09:35,406 --> 00:09:39,086
+intrinsics to kind of get the
+best performance on your loop.
+
+
+184
+00:09:39,656 --> 00:09:41,656
+And now we're saying,
+all you have
+
+
+185
+00:09:41,656 --> 00:09:43,796
+to do is you just write
+simple scalar code
+
+
+186
+00:09:44,316 --> 00:09:46,006
+and let the compiler
+do the rest for you.
+
+
+187
+00:09:46,666 --> 00:09:48,816
+It's that simple,
+it's that powerful,
+
+
+188
+00:09:49,136 --> 00:09:51,036
+you definitely want to try it.
+
+
+189
+00:09:52,216 --> 00:09:52,536
+[applause] Thank you.
+
+
+190
+00:09:53,036 --> 00:09:55,556
+[Applause]
+
+
+191
+00:09:56,056 --> 00:09:59,106
+So the auto-vectorizer,
+again, is new in Xcode 5,
+
+
+192
+00:09:59,376 --> 00:10:02,296
+go to the Build Setting
+and choose vectorize loops,
+
+
+193
+00:10:02,726 --> 00:10:05,826
+and let us know, we're really
+proud of this technology
+
+
+194
+00:10:06,196 --> 00:10:09,466
+and we think we-- you'll get
+a lot of benefit from it.
+
+
+195
+00:10:11,596 --> 00:10:13,506
+Again, this is something
+we're going to go
+
+
+196
+00:10:13,506 --> 00:10:15,736
+into a lot more details
+in tomorrow's session.
+
+
+197
+00:10:16,306 --> 00:10:17,396
+What we're going to talk about,
+
+
+198
+00:10:17,396 --> 00:10:20,006
+how to optimize your
+code using the LLVM.
+
+
+199
+00:10:23,716 --> 00:10:26,566
+The last thing, if you've been
+playing with the new Xcode 5,
+
+
+200
+00:10:26,566 --> 00:10:30,316
+you may-- may have noticed a
+new optimization level, -Ofast.
+
+
+201
+00:10:30,416 --> 00:10:33,196
+What is this?
+
+
+202
+00:10:34,016 --> 00:10:37,246
+Well, think about it as
+if it's a turbo button
+
+
+203
+00:10:37,246 --> 00:10:38,096
+for your application.
+
+
+204
+00:10:38,676 --> 00:10:42,606
+You press it and you
+go-- your code goes fast.
+
+
+205
+00:10:43,796 --> 00:10:47,756
+So through -Ofast, it turn
+out all the -03 optimizations,
+
+
+206
+00:10:47,986 --> 00:10:50,836
+squeezing as much performance
+out of your code as possible.
+
+
+207
+00:10:51,316 --> 00:10:53,226
+It turn on the vectorization,
+
+
+208
+00:10:53,436 --> 00:10:56,026
+it turn on the -ffast-math
+optimization.
+
+
+209
+00:10:56,396 --> 00:10:57,956
+For floating point code,
+
+
+210
+00:10:57,956 --> 00:11:00,876
+that can have a significant
+performance benefits.
+
+
+211
+00:11:03,206 --> 00:11:06,386
+So what do you want to do
+is for your release build,
+
+
+212
+00:11:06,476 --> 00:11:10,696
+choose -Ofast, not with Debug
+Build, only the Release Build.
+
+
+213
+00:11:11,226 --> 00:11:15,076
+So a quick disclaimer, there's
+a few things you should be aware
+
+
+214
+00:11:15,076 --> 00:11:19,226
+about -Ofast, particularly,
+because you used -ffast-math.
+
+
+215
+00:11:20,206 --> 00:11:22,626
+You can do aggressive
+optimization
+
+
+216
+00:11:22,626 --> 00:11:25,996
+such as re-association of your
+floating-point expressions
+
+
+217
+00:11:26,166 --> 00:11:30,456
+and many other things can
+have subtle impact precisions
+
+
+218
+00:11:30,456 --> 00:11:30,986
+of your code.
+
+
+219
+00:11:31,236 --> 00:11:35,356
+So if your application has to be
+incongruous precise as using--
+
+
+220
+00:11:35,356 --> 00:11:38,156
+floating point, test carefully.
+
+
+221
+00:11:38,566 --> 00:11:40,186
+We believe for the
+majority of the code,
+
+
+222
+00:11:40,186 --> 00:11:43,616
+this will just work
+fine but please test
+
+
+223
+00:11:44,166 --> 00:11:45,516
+and let us know how it works.
+
+
+224
+00:11:46,256 --> 00:11:49,526
+And one other thing is,
+this doesn't turn on LTO
+
+
+225
+00:11:49,526 --> 00:11:50,916
+for you automatically.
+
+
+226
+00:11:51,346 --> 00:11:52,296
+We want to control
+
+
+227
+00:11:52,296 --> 00:11:56,256
+that separately becomes
+the compile to impact.
+
+
+228
+00:11:56,356 --> 00:11:59,086
+So that's all I want to talk
+about-- about performance.
+
+
+229
+00:11:59,596 --> 00:12:02,316
+Next up, I would like to
+ask, Bob Wilson to come up,
+
+
+230
+00:12:02,676 --> 00:12:05,706
+about all the work we have done
+to improve your productivities.
+
+
+231
+00:12:05,706 --> 00:12:05,886
+Thank you.
+
+
+232
+00:12:06,516 --> 00:12:13,336
+[ Applause ]
+
+
+233
+00:12:13,836 --> 00:12:14,636
+>> Thanks Evan.
+
+
+234
+00:12:15,396 --> 00:12:18,906
+So the Apple LLVM Compiler can
+help your apps to run faster.
+
+
+235
+00:12:19,476 --> 00:12:21,486
+It can also improve
+your productivity
+
+
+236
+00:12:21,866 --> 00:12:24,916
+and help you develop higher
+quality apps with fewer bugs.
+
+
+237
+00:12:25,636 --> 00:12:28,776
+So in the rest of the
+session, we're going to go
+
+
+238
+00:12:28,776 --> 00:12:29,926
+through a number
+of different ways
+
+
+239
+00:12:29,926 --> 00:12:32,446
+that the compiler
+can help with that.
+
+
+240
+00:12:32,776 --> 00:12:35,366
+By updating the compiler
+and some of the other tools,
+
+
+241
+00:12:35,836 --> 00:12:37,886
+we give you a more
+consistent experience
+
+
+242
+00:12:38,456 --> 00:12:41,056
+with an easier installation
+and update process.
+
+
+243
+00:12:41,666 --> 00:12:44,676
+We've got some new C++
+features that make it easier
+
+
+244
+00:12:44,676 --> 00:12:46,626
+to express the code
+that you want
+
+
+245
+00:12:47,716 --> 00:12:50,836
+and we've improved the compiler
+warnings and the static analyzer
+
+
+246
+00:12:50,836 --> 00:12:54,176
+to help you catch bugs before
+you have to go and spend a lot
+
+
+247
+00:12:54,176 --> 00:12:55,796
+of time debugging your app.
+
+
+248
+00:12:55,796 --> 00:12:59,476
+And finally, we've got a great
+new feature that makes it easier
+
+
+249
+00:12:59,476 --> 00:13:02,396
+to document your code
+right in the comments.
+
+
+250
+00:13:03,396 --> 00:13:05,486
+So let's dive into
+these starting
+
+
+251
+00:13:05,486 --> 00:13:10,686
+with the compiler
+and tool updates.
+
+
+252
+00:13:10,876 --> 00:13:13,956
+So Apple has been using
+the gnu gcc compiler
+
+
+253
+00:13:13,956 --> 00:13:17,306
+for quite a few years
+but a few years back,
+
+
+254
+00:13:17,306 --> 00:13:20,256
+we decided we really
+wanted a better compiler.
+
+
+255
+00:13:20,456 --> 00:13:23,806
+We wanted better performance,
+we wanted tighter integration
+
+
+256
+00:13:23,806 --> 00:13:27,516
+in the Xcode, we wanted more
+helpful diagnostic messages
+
+
+257
+00:13:27,586 --> 00:13:30,396
+that really explain to you when
+there's a problem in your code
+
+
+258
+00:13:30,396 --> 00:13:31,716
+in a way that makes sense
+
+
+259
+00:13:31,716 --> 00:13:34,006
+and you could easily
+see how to fix it.
+
+
+260
+00:13:34,556 --> 00:13:40,786
+So we began to invest in the
+llvm compiler and for a number
+
+
+261
+00:13:40,786 --> 00:13:45,096
+of years now, we've shipped both
+gcc and the llvm compiler side
+
+
+262
+00:13:45,096 --> 00:13:49,606
+by side, as well as the
+hybrid llvm-gcc to ease
+
+
+263
+00:13:49,606 --> 00:13:53,556
+that transition away from
+gcc to the llvm compiler.
+
+
+264
+00:13:54,786 --> 00:13:57,106
+And I'm really pleased
+to say that this year,
+
+
+265
+00:13:57,106 --> 00:13:59,966
+in Xcode 5, the gnu is gone.
+
+
+266
+00:14:00,786 --> 00:14:02,696
+We only have the llvm compiler.
+
+
+267
+00:14:03,516 --> 00:14:07,876
+[ Applause ]
+
+
+268
+00:14:08,376 --> 00:14:10,066
+Yeah, as I said, that
+makes me happy too.
+
+
+269
+00:14:10,476 --> 00:14:12,666
+The good news for you
+is this gives you a
+
+
+270
+00:14:12,666 --> 00:14:14,046
+consistent experience.
+
+
+271
+00:14:14,596 --> 00:14:18,026
+And in the past, if you've
+been building with gcc,
+
+
+272
+00:14:18,066 --> 00:14:22,906
+you'd see inconsistencies
+between the diagnostics reported
+
+
+273
+00:14:22,906 --> 00:14:25,606
+to you in Xcode while you're
+editing, which are coming
+
+
+274
+00:14:25,606 --> 00:14:29,366
+from LLVM and the messages,
+the problems you'd see
+
+
+275
+00:14:29,576 --> 00:14:30,966
+at build time using gcc.
+
+
+276
+00:14:31,056 --> 00:14:33,366
+And all of that mess
+has gone now.
+
+
+277
+00:14:33,426 --> 00:14:35,866
+There's just one compiler
+and everything is consistent.
+
+
+278
+00:14:37,126 --> 00:14:38,316
+It's also really good news
+
+
+279
+00:14:38,346 --> 00:14:40,386
+because it means we
+can focus our efforts
+
+
+280
+00:14:40,736 --> 00:14:44,476
+on adding new features in just
+one compiler and move forward
+
+
+281
+00:14:44,476 --> 00:14:45,696
+at an even faster rate.
+
+
+282
+00:14:47,006 --> 00:14:48,966
+So I'm going to come
+back and talk about some
+
+
+283
+00:14:48,966 --> 00:14:51,126
+of those advances in
+LLVM in just a minute
+
+
+284
+00:14:51,186 --> 00:14:54,486
+but before I do that, I want
+to go over a related topic
+
+
+285
+00:14:54,816 --> 00:14:56,216
+which is the command line tools.
+
+
+286
+00:14:57,436 --> 00:15:00,006
+If you're not already familiar
+with the command line tools,
+
+
+287
+00:15:00,526 --> 00:15:03,596
+this is a package that we
+provide separately from Xcode
+
+
+288
+00:15:04,156 --> 00:15:06,776
+that is useful for
+building open source
+
+
+289
+00:15:06,776 --> 00:15:09,246
+and other common Unix
+software on the Mac.
+
+
+290
+00:15:09,916 --> 00:15:14,016
+And it consists of two basic
+components, there's a set
+
+
+291
+00:15:14,016 --> 00:15:17,276
+of tools such as the
+compiler that install
+
+
+292
+00:15:17,276 --> 00:15:20,826
+in the /usr/bin directory and
+then there's the Mac OS X SDK,
+
+
+293
+00:15:20,976 --> 00:15:25,496
+with headers and /usr/include,
+libraries and user lib,
+
+
+294
+00:15:25,496 --> 00:15:27,596
+and also in System
+Library/Frameworks.
+
+
+295
+00:15:28,666 --> 00:15:31,136
+This is what the
+command line tools look
+
+
+296
+00:15:31,136 --> 00:15:32,946
+like on Mountain Lion.
+
+
+297
+00:15:33,306 --> 00:15:36,176
+Now if you're an Xcode
+developer, you've got Xcode
+
+
+298
+00:15:36,176 --> 00:15:39,486
+but you just want to go and
+build some open source code,
+
+
+299
+00:15:40,116 --> 00:15:41,696
+you may find yourself
+still needing
+
+
+300
+00:15:41,696 --> 00:15:44,546
+to install the command line
+tools even though you already
+
+
+301
+00:15:44,546 --> 00:15:45,216
+got Xcode.
+
+
+302
+00:15:45,216 --> 00:15:48,776
+And the reason for that is that
+the standard Unix convention is
+
+
+303
+00:15:48,776 --> 00:15:52,616
+that the compiler and the
+other tools live in /usr/bin
+
+
+304
+00:15:52,786 --> 00:15:56,076
+and that's not where
+Xcode puts them.
+
+
+305
+00:15:56,286 --> 00:16:00,196
+So new in Mavericks,
+we have the inspiration
+
+
+306
+00:16:00,196 --> 00:16:03,126
+that Xcode already has
+all of those same tools,
+
+
+307
+00:16:03,436 --> 00:16:07,776
+it already has the OS X SDK so
+there's no reason to make you go
+
+
+308
+00:16:07,776 --> 00:16:10,136
+and download this
+separate package just
+
+
+309
+00:16:10,136 --> 00:16:10,956
+to get those same things.
+
+
+310
+00:16:10,956 --> 00:16:15,686
+And the way this works is
+that the Mavericks OS comes
+
+
+311
+00:16:16,146 --> 00:16:19,616
+with a set of shims
+installed in /usr/bin.
+
+
+312
+00:16:19,776 --> 00:16:21,846
+These shims are just
+really small,
+
+
+313
+00:16:21,926 --> 00:16:25,806
+simple wrapper executables
+that know where to find Xcode
+
+
+314
+00:16:25,806 --> 00:16:28,606
+and where to find the
+corresponding tools inside
+
+
+315
+00:16:28,606 --> 00:16:29,166
+of Xcode.
+
+
+316
+00:16:29,166 --> 00:16:33,346
+So if you run the compiler from
+/usr/bin via one of these shims,
+
+
+317
+00:16:34,006 --> 00:16:36,446
+it just reinvokes the
+compiler from Xcode
+
+
+318
+00:16:36,446 --> 00:16:37,756
+for you automatically.
+
+
+319
+00:16:40,016 --> 00:16:44,396
+So the summary of this is
+if you have Xcode and you're
+
+
+320
+00:16:44,396 --> 00:16:46,746
+on Mavericks, there's
+no longer any need
+
+
+321
+00:16:46,746 --> 00:16:48,936
+to ever download the
+command line tools.
+
+
+322
+00:16:49,476 --> 00:16:57,066
+[applause] So what if
+you don't have Xcode?
+
+
+323
+00:16:57,106 --> 00:16:57,846
+What then?
+
+
+324
+00:16:58,256 --> 00:17:01,036
+Well, if you-- say you've got
+a brand new Mac and you try
+
+
+325
+00:17:01,036 --> 00:17:02,736
+to run the compiler
+from /usr/bin,
+
+
+326
+00:17:02,736 --> 00:17:05,715
+you'll get this message telling
+you, "Hey, you need some tools,"
+
+
+327
+00:17:06,415 --> 00:17:07,435
+and it's giving you choice.
+
+
+328
+00:17:08,046 --> 00:17:11,165
+You can click on that Get
+Xcode button, it'll bring you
+
+
+329
+00:17:11,165 --> 00:17:13,296
+to the apps store and you
+can install Xcode just
+
+
+330
+00:17:13,296 --> 00:17:14,286
+as in the normal way.
+
+
+331
+00:17:15,296 --> 00:17:17,506
+You can also choose Install
+
+
+332
+00:17:17,546 --> 00:17:21,016
+which will install a standalone
+set of command line tools.
+
+
+333
+00:17:21,806 --> 00:17:23,846
+Let's take a closer look
+at what that looks like.
+
+
+334
+00:17:25,205 --> 00:17:28,526
+This is about the Mavericks
+version of command line tools.
+
+
+335
+00:17:28,636 --> 00:17:31,616
+We have the same
+shims in /usr/bin
+
+
+336
+00:17:32,166 --> 00:17:33,736
+and the tools now install
+
+
+337
+00:17:33,736 --> 00:17:37,876
+into library developer command
+line tools and the shims forward
+
+
+338
+00:17:37,876 --> 00:17:40,126
+to that location
+automatically in the same way
+
+
+339
+00:17:40,126 --> 00:17:42,966
+that they would forward
+to Xcode.
+
+
+340
+00:17:43,106 --> 00:17:45,386
+My favorite feature
+about this is it's hooked
+
+
+341
+00:17:45,386 --> 00:17:46,736
+up to software update.
+
+
+342
+00:17:47,176 --> 00:17:49,946
+On Mountain Lion,
+if you've got--
+
+
+343
+00:17:49,946 --> 00:17:52,056
+if a new version of command
+line tools was released,
+
+
+344
+00:17:52,056 --> 00:17:56,086
+it's up to you to remember that
+you need to go and install it.
+
+
+345
+00:17:56,526 --> 00:17:58,976
+With Mavericks, you'll get a
+notification in the apps store
+
+
+346
+00:17:58,976 --> 00:18:01,556
+to tell you that an update is
+available and you just go in it
+
+
+347
+00:18:01,556 --> 00:18:02,756
+and install it in the same way.
+
+
+348
+00:18:03,326 --> 00:18:07,306
+So that update process
+is so much smoother now.
+
+
+349
+00:18:09,466 --> 00:18:11,696
+It's also easier to
+remove the tools.
+
+
+350
+00:18:12,466 --> 00:18:15,516
+Say that you had installed the
+command line tools separately.
+
+
+351
+00:18:16,036 --> 00:18:18,166
+Maybe, you were in a coffee
+shop or something and you--
+
+
+352
+00:18:18,166 --> 00:18:20,076
+you needed to download
+a compiler quickly,
+
+
+353
+00:18:20,076 --> 00:18:21,846
+with a low bandwidth connection,
+
+
+354
+00:18:22,266 --> 00:18:24,006
+the command line tools
+are much smaller,
+
+
+355
+00:18:24,006 --> 00:18:26,796
+but then when you get home,
+you got more bandwidth,
+
+
+356
+00:18:26,796 --> 00:18:29,406
+you probably want to install
+Xcode, now you're left
+
+
+357
+00:18:29,406 --> 00:18:32,476
+with these tools, you
+don't need them anymore.
+
+
+358
+00:18:32,996 --> 00:18:34,746
+On Mountain Lion,
+it was really hard
+
+
+359
+00:18:34,746 --> 00:18:36,386
+to ever remove the
+command line tools
+
+
+360
+00:18:36,386 --> 00:18:38,036
+because they were scattered
+throughout your root
+
+
+361
+00:18:38,036 --> 00:18:38,716
+file system.
+
+
+362
+00:18:39,206 --> 00:18:40,396
+Now, they're all in one place,
+
+
+363
+00:18:40,766 --> 00:18:42,486
+Library/Developer/
+CommandLineTools.
+
+
+364
+00:18:42,986 --> 00:18:45,706
+And if you've got Xcode, you
+can just blow that folder away
+
+
+365
+00:18:45,706 --> 00:18:46,996
+and everything will
+continue working.
+
+
+366
+00:18:46,996 --> 00:18:50,186
+So again, just to summarize,
+
+
+367
+00:18:50,286 --> 00:18:54,306
+the command line tools make
+it really easy to install
+
+
+368
+00:18:54,306 --> 00:18:56,786
+and update and even
+remove in a way
+
+
+369
+00:18:56,786 --> 00:18:58,086
+that Mountain Lion
+didn't provide.
+
+
+370
+00:18:58,086 --> 00:19:00,866
+But before we get back to
+the compiler, there's--
+
+
+371
+00:19:00,866 --> 00:19:02,636
+there's one issue I want
+to let you know about.
+
+
+372
+00:19:03,166 --> 00:19:05,336
+Notice that we've only
+talked about one part
+
+
+373
+00:19:05,336 --> 00:19:06,296
+of the command line tools
+
+
+374
+00:19:06,296 --> 00:19:09,206
+which is the tools
+themselves in /usr/bin.
+
+
+375
+00:19:09,526 --> 00:19:13,566
+Remember, there's
+that SO 10 SDK?
+
+
+376
+00:19:13,806 --> 00:19:14,546
+And it's moved.
+
+
+377
+00:19:15,246 --> 00:19:18,136
+It's no longer installed
+in the /directory.
+
+
+378
+00:19:18,606 --> 00:19:21,626
+This is the problem
+for the compiler
+
+
+379
+00:19:21,626 --> 00:19:25,036
+because the compiler knows
+where that SDK is installed.
+
+
+380
+00:19:25,586 --> 00:19:29,026
+But if you've got, make files
+or scripts or anything else
+
+
+381
+00:19:29,026 --> 00:19:32,676
+that refers to files in
+usr/include, usr/lib,
+
+
+382
+00:19:33,156 --> 00:19:34,546
+or System/Library/Frameworks
+
+
+383
+00:19:34,796 --> 00:19:37,226
+with hard coded paths
+then you're going to need
+
+
+384
+00:19:37,226 --> 00:19:39,386
+to fix those things
+up so that they know
+
+
+385
+00:19:39,386 --> 00:19:43,216
+where to find that Mac OS X SDK.
+
+
+386
+00:19:43,216 --> 00:19:43,716
+How do you know?
+
+
+387
+00:19:43,776 --> 00:19:44,816
+Where is it installed?
+
+
+388
+00:19:45,596 --> 00:19:47,086
+We do have something
+to help with that.
+
+
+389
+00:19:48,066 --> 00:19:50,416
+xcrun is a tool you
+may be familiar with.
+
+
+390
+00:19:50,416 --> 00:19:52,656
+It's been included with
+Xcode for a long time.
+
+
+391
+00:19:53,456 --> 00:19:55,346
+Like those shims,
+it's just a wrapper,
+
+
+392
+00:19:55,806 --> 00:19:57,746
+it knows where to
+find tools in Xcode
+
+
+393
+00:19:57,746 --> 00:20:01,086
+and you can use it to run them.
+
+
+394
+00:20:01,286 --> 00:20:03,196
+It's now included with
+a command line tools
+
+
+395
+00:20:03,196 --> 00:20:04,256
+and it has a new option.
+
+
+396
+00:20:05,076 --> 00:20:09,196
+If you run xcrun
+-- show-sdk-path --
+
+
+397
+00:20:09,196 --> 00:20:13,176
+sdk and a short name like
+macosx, it will print
+
+
+398
+00:20:13,176 --> 00:20:15,956
+out the full path to the
+SDK and you can use this
+
+
+399
+00:20:15,956 --> 00:20:18,956
+to programmatically update
+make files or scripts
+
+
+400
+00:20:19,696 --> 00:20:22,126
+with the full path to the SDK.
+
+
+401
+00:20:23,436 --> 00:20:27,696
+And related feature, since
+xcrun knows where the SDK is,
+
+
+402
+00:20:28,206 --> 00:20:31,436
+you can also use this to tell
+the compiler where the SDK is.
+
+
+403
+00:20:31,436 --> 00:20:35,576
+In the past, you'd have to
+use the -isys root option
+
+
+404
+00:20:35,576 --> 00:20:38,956
+to the compiler and give it the
+full paths to the SDK you want
+
+
+405
+00:20:38,956 --> 00:20:41,956
+to use and those full
+paths are often quite long.
+
+
+406
+00:20:41,956 --> 00:20:43,846
+If you're on the command
+line, it's a lot to type.
+
+
+407
+00:20:44,536 --> 00:20:47,946
+Well now, you can use
+xcrun, give it a short name,
+
+
+408
+00:20:47,946 --> 00:20:52,046
+like iPhone OS or Mac OS X and
+it will communicate that through
+
+
+409
+00:20:52,046 --> 00:20:56,116
+to the compiler so you don't
+have to type the whole path.
+
+
+410
+00:20:56,326 --> 00:20:59,046
+You can also set the
+SDKROOT environment variable
+
+
+411
+00:20:59,386 --> 00:21:01,476
+and xcrun will notice
+and pick that up
+
+
+412
+00:21:01,476 --> 00:21:05,786
+and use that to set the SDK.
+
+
+413
+00:21:05,986 --> 00:21:09,156
+So try out the new command line
+tools, I hope you like them,
+
+
+414
+00:21:09,156 --> 00:21:14,066
+and now let's get back to the
+compiler, starting with C++.
+
+
+415
+00:21:14,456 --> 00:21:19,896
+C++11 is a major update
+to the C++ language.
+
+
+416
+00:21:20,446 --> 00:21:22,216
+This is something that we've
+been working on rolling
+
+
+417
+00:21:22,216 --> 00:21:23,986
+out in Xcode for a while now.
+
+
+418
+00:21:25,426 --> 00:21:29,626
+This year, in Apple LLVM version
+5.0, we have complete support
+
+
+419
+00:21:29,626 --> 00:21:33,406
+for everything in C++11
+with the sole exception
+
+
+420
+00:21:33,406 --> 00:21:34,726
+of thread local storage.
+
+
+421
+00:21:37,056 --> 00:21:39,936
+Here's a list of some of the
+major features we've added
+
+
+422
+00:21:39,936 --> 00:21:43,246
+in the last year and I don't
+have time to go into all
+
+
+423
+00:21:43,246 --> 00:21:44,456
+of these in any detail.
+
+
+424
+00:21:45,276 --> 00:21:47,806
+So I just-- to give you a taste
+if I wanted to single out one
+
+
+425
+00:21:47,806 --> 00:21:49,726
+of them to look at a
+little more closely,
+
+
+426
+00:21:50,556 --> 00:21:54,376
+which is Inheriting
+Constructors, and let's look
+
+
+427
+00:21:54,376 --> 00:21:55,676
+at this with an example.
+
+
+428
+00:21:56,246 --> 00:21:58,776
+I've got here a simple class.
+
+
+429
+00:21:59,036 --> 00:22:02,686
+It's got an integer A field
+and a float B field and a set
+
+
+430
+00:22:02,686 --> 00:22:05,576
+of constructors that let you
+specify the initial values
+
+
+431
+00:22:05,766 --> 00:22:07,126
+for various combinations
+
+
+432
+00:22:07,126 --> 00:22:09,176
+of those fields using
+default values
+
+
+433
+00:22:09,176 --> 00:22:10,616
+for the things you
+didn't specify.
+
+
+434
+00:22:10,616 --> 00:22:15,096
+Now I want to make
+a derive class Y
+
+
+435
+00:22:15,536 --> 00:22:17,056
+with those same constructors.
+
+
+436
+00:22:17,266 --> 00:22:19,556
+And I just want to pass
+the same values along
+
+
+437
+00:22:19,556 --> 00:22:20,976
+to the base class constructors.
+
+
+438
+00:22:21,836 --> 00:22:23,736
+There's a lot of
+boiler-plate code here
+
+
+439
+00:22:24,296 --> 00:22:26,136
+and it's also error
+prone to maintain.
+
+
+440
+00:22:26,136 --> 00:22:28,706
+If you make a change in the
+base class, you've got to go
+
+
+441
+00:22:28,706 --> 00:22:31,816
+and update all the drive
+classes in ways that match.
+
+
+442
+00:22:32,736 --> 00:22:36,846
+And C++11 inheriting
+constructors let you replace all
+
+
+443
+00:22:36,846 --> 00:22:39,536
+that boiler plate
+which just using X::X.
+
+
+444
+00:22:39,536 --> 00:22:43,576
+And all this does is
+tell the compiler if--
+
+
+445
+00:22:43,726 --> 00:22:45,896
+if I see a use of one
+of these constructors
+
+
+446
+00:22:45,896 --> 00:22:48,226
+that matches the signature
+from the base class,
+
+
+447
+00:22:48,736 --> 00:22:50,296
+just implicitly declare that,
+
+
+448
+00:22:50,716 --> 00:22:53,366
+and it will invoke
+the constructor
+
+
+449
+00:22:53,366 --> 00:22:54,966
+from the base class
+as you'd expect.
+
+
+450
+00:22:56,286 --> 00:23:00,046
+Notice though, I've added an
+int c field in the derive class.
+
+
+451
+00:23:00,216 --> 00:23:01,406
+How do we initialize that?
+
+
+452
+00:23:02,456 --> 00:23:04,726
+Well, there-- there's a lot of
+different ways you could do it
+
+
+453
+00:23:05,096 --> 00:23:08,476
+and C++11 has a number of
+features that help with this.
+
+
+454
+00:23:09,166 --> 00:23:11,076
+I want to-- since it fits
+nicely in this example,
+
+
+455
+00:23:11,076 --> 00:23:13,096
+I wanted to talk about
+one way to do that.
+
+
+456
+00:23:13,096 --> 00:23:14,656
+This is not a new
+feature this year
+
+
+457
+00:23:14,656 --> 00:23:17,716
+but it's something that's
+been around for a while
+
+
+458
+00:23:17,716 --> 00:23:20,466
+which is non-static data
+member initializers.
+
+
+459
+00:23:21,116 --> 00:23:24,156
+You can now set the initial
+value right in the class
+
+
+460
+00:23:25,096 --> 00:23:29,196
+and this tells the compiler if I
+don't have some other values set
+
+
+461
+00:23:29,196 --> 00:23:32,496
+in the constructor to use
+that as a default value.
+
+
+462
+00:23:33,026 --> 00:23:37,526
+Notice we can use the same
+thing in the base class X
+
+
+463
+00:23:38,176 --> 00:23:43,086
+to set the values of fields A
+and B, and then remove a lot
+
+
+464
+00:23:43,086 --> 00:23:45,306
+of the complexity from
+the constructors there.
+
+
+465
+00:23:46,396 --> 00:23:48,796
+So together, inheriting
+constructors,
+
+
+466
+00:23:48,996 --> 00:23:50,986
+a non-static data
+member initializers,
+
+
+467
+00:23:51,416 --> 00:23:54,056
+take the simple example and
+make it a lot more clear
+
+
+468
+00:23:54,056 --> 00:23:56,006
+and concise and easy
+to maintain.
+
+
+469
+00:23:56,796 --> 00:23:59,656
+While we're on the topic of C++,
+
+
+470
+00:23:59,766 --> 00:24:01,176
+there's one other
+important piece
+
+
+471
+00:24:01,336 --> 00:24:02,716
+which is the Runtime Library.
+
+
+472
+00:24:03,896 --> 00:24:05,416
+We've been going
+through a transition
+
+
+473
+00:24:05,496 --> 00:24:08,936
+from the older GNU lib
+standard C++ library
+
+
+474
+00:24:09,256 --> 00:24:11,676
+to the new LLVM libc++.
+
+
+475
+00:24:11,806 --> 00:24:15,756
+And if you want to use a lot
+of those features from C++11,
+
+
+476
+00:24:16,186 --> 00:24:18,726
+you really need libc++
+to support them.
+
+
+477
+00:24:19,506 --> 00:24:21,406
+It supports the number
+of the language features
+
+
+478
+00:24:21,406 --> 00:24:23,056
+and it also has a number
+
+
+479
+00:24:23,056 --> 00:24:28,576
+of new library components
+that come with C++11.
+
+
+480
+00:24:28,706 --> 00:24:30,846
+One thing that is
+new this year is
+
+
+481
+00:24:30,846 --> 00:24:32,956
+that we've made this
+the compiler default
+
+
+482
+00:24:32,956 --> 00:24:36,036
+if you're deploying to
+iOS 7 or OS X Mavericks.
+
+
+483
+00:24:37,426 --> 00:24:41,156
+If you want to deploy back
+as far as iOS 5 or OS X Lion,
+
+
+484
+00:24:41,506 --> 00:24:43,976
+you can still choose
+to use libc++ by going
+
+
+485
+00:24:43,976 --> 00:24:45,286
+to the Xcode build settings,
+
+
+486
+00:24:45,936 --> 00:24:50,276
+look for C++ standard
+library and choose libc++.
+
+
+487
+00:24:51,386 --> 00:24:54,776
+So again, C++11 is a huge
+change to the language.
+
+
+488
+00:24:54,776 --> 00:24:57,796
+If you're a C++ programmer,
+I strongly encourage you
+
+
+489
+00:24:57,796 --> 00:25:00,886
+to check it out and there's a
+lot of great new features there
+
+
+490
+00:25:00,886 --> 00:25:02,206
+that can make you
+more productive.
+
+
+491
+00:25:02,206 --> 00:25:07,826
+Our next topic is about
+Compiler Warnings.
+
+
+492
+00:25:08,626 --> 00:25:13,906
+So as you're writing your code
+and building, the compiler is--
+
+
+493
+00:25:13,946 --> 00:25:17,706
+is looking closely at that
+code and in the process,
+
+
+494
+00:25:18,046 --> 00:25:19,816
+we can catch errors or--
+
+
+495
+00:25:19,816 --> 00:25:23,476
+and warn you about them so
+that you can fix them quickly
+
+
+496
+00:25:23,476 --> 00:25:25,846
+without having to spend
+a lot of time debugging.
+
+
+497
+00:25:27,166 --> 00:25:29,746
+So there's three different
+categories of changes
+
+
+498
+00:25:29,746 --> 00:25:32,256
+that I want to talk about
+related to compiler warnings.
+
+
+499
+00:25:32,256 --> 00:25:34,256
+First, we have some
+new compiler warnings.
+
+
+500
+00:25:35,286 --> 00:25:38,376
+We have a number of warnings
+that have been around for awhile
+
+
+501
+00:25:38,456 --> 00:25:41,066
+but we've identified them
+as being really important
+
+
+502
+00:25:41,206 --> 00:25:44,446
+and we're going to now enable
+them by default in new projects.
+
+
+503
+00:25:45,086 --> 00:25:46,536
+And finally, there's
+a few warnings
+
+
+504
+00:25:47,136 --> 00:25:49,846
+that are really serious,
+it cause serious problems
+
+
+505
+00:25:49,846 --> 00:25:52,636
+and we're now going to treat
+them as errors by default.
+
+
+506
+00:25:53,396 --> 00:25:56,196
+So let's-- dive into
+this starting
+
+
+507
+00:25:56,196 --> 00:25:57,576
+with the new compiler warnings.
+
+
+508
+00:25:59,036 --> 00:26:01,206
+The first one is
+unsequenced modification.
+
+
+509
+00:26:01,356 --> 00:26:03,606
+This is a warning about
+non-portable code.
+
+
+510
+00:26:04,526 --> 00:26:08,616
+C-based languages don't define
+the order of some operations
+
+
+511
+00:26:08,616 --> 00:26:10,186
+and I'll give you an
+example in just a minute,
+
+
+512
+00:26:10,846 --> 00:26:12,686
+but if you have some
+code working
+
+
+513
+00:26:12,686 --> 00:26:15,696
+with a different compiler
+from a different platform or--
+
+
+514
+00:26:15,696 --> 00:26:19,686
+or wherever and you move
+to using the LLVM compiler,
+
+
+515
+00:26:20,036 --> 00:26:23,276
+it may behave differently
+in a way that causes a bug.
+
+
+516
+00:26:23,796 --> 00:26:25,196
+Let's look at an example.
+
+
+517
+00:26:25,586 --> 00:26:29,076
+This simple function is supposed
+to just increment a value
+
+
+518
+00:26:29,216 --> 00:26:31,746
+and return it but
+there's a problem.
+
+
+519
+00:26:32,006 --> 00:26:34,646
+There's actually two
+assignments to the value X here,
+
+
+520
+00:26:35,146 --> 00:26:38,936
+the equal operator does an
+assignment, the plus, plus,
+
+
+521
+00:26:38,936 --> 00:26:41,756
+post increment operator
+does a separate assignment
+
+
+522
+00:26:42,066 --> 00:26:45,466
+and the order between those two
+is not defined by the language.
+
+
+523
+00:26:45,726 --> 00:26:47,436
+Some compilers may
+do them in one order,
+
+
+524
+00:26:47,436 --> 00:26:48,776
+some may do it in
+the other order.
+
+
+525
+00:26:49,596 --> 00:26:52,376
+So the LLVM compiler now gives
+you a warning about this.
+
+
+526
+00:26:53,666 --> 00:26:55,946
+It's an indication to you,
+you need to look at your code
+
+
+527
+00:26:55,946 --> 00:26:57,516
+and figure out how
+to rewrite that so
+
+
+528
+00:26:57,516 --> 00:26:58,966
+that the ordering
+is well-defined.
+
+
+529
+00:26:59,506 --> 00:27:03,146
+Let's go on to the next
+new warning which is
+
+
+530
+00:27:03,146 --> 00:27:04,466
+about integer overflow.
+
+
+531
+00:27:05,146 --> 00:27:07,346
+In some cases, the
+compiler can determine
+
+
+532
+00:27:07,876 --> 00:27:11,106
+that an integer operation
+is going to overflow.
+
+
+533
+00:27:11,856 --> 00:27:14,646
+This is almost certain
+to cause a bug at runtime
+
+
+534
+00:27:15,226 --> 00:27:16,926
+so we now warn about that.
+
+
+535
+00:27:17,706 --> 00:27:19,616
+For example, if we're
+multiplying two constants,
+
+
+536
+00:27:19,646 --> 00:27:21,396
+they're big numbers,
+not that big,
+
+
+537
+00:27:21,396 --> 00:27:24,136
+but when you multiply them
+the product is too big
+
+
+538
+00:27:24,136 --> 00:27:25,946
+to even fit in a 32-bit integer.
+
+
+539
+00:27:26,406 --> 00:27:28,736
+So the LLVM compiler
+will now warn about this
+
+
+540
+00:27:29,096 --> 00:27:30,526
+and tell you, this doesn't fit.
+
+
+541
+00:27:31,366 --> 00:27:33,386
+The obvious solution in
+a case like this would be
+
+
+542
+00:27:33,386 --> 00:27:35,846
+to use a larger size
+integer such as long longs.
+
+
+543
+00:27:36,686 --> 00:27:40,026
+You can use long long constants
+and a long long return value
+
+
+544
+00:27:40,126 --> 00:27:41,306
+and the warning goes away.
+
+
+545
+00:27:42,646 --> 00:27:44,276
+So those are two new warnings.
+
+
+546
+00:27:44,976 --> 00:27:46,506
+Let's talk about
+some of the warnings
+
+
+547
+00:27:46,506 --> 00:27:48,686
+that we're now going
+to enable by default.
+
+
+548
+00:27:49,116 --> 00:27:51,886
+Unused functions,
+this is an easy one.
+
+
+549
+00:27:52,426 --> 00:27:55,056
+While you're editing your
+project, it's not that uncommon
+
+
+550
+00:27:55,386 --> 00:27:58,236
+to leave behind some pieces of
+code that are no longer used.
+
+
+551
+00:27:58,756 --> 00:28:02,596
+And if those are in static
+functions either in declarations
+
+
+552
+00:28:02,596 --> 00:28:04,596
+or actual definitions
+with the function body
+
+
+553
+00:28:04,596 --> 00:28:07,746
+like I've shown here, the
+compiler can detect this
+
+
+554
+00:28:07,826 --> 00:28:11,246
+and warn you, and this is just
+an opportunity for you to clean
+
+
+555
+00:28:11,246 --> 00:28:13,956
+up your code, remove
+some of that unused craft
+
+
+556
+00:28:13,956 --> 00:28:15,496
+and make it easier to maintain.
+
+
+557
+00:28:16,336 --> 00:28:18,926
+We're going to now enable this
+by default in new projects.
+
+
+558
+00:28:20,556 --> 00:28:23,476
+Implicit Boolean
+conversions is another warning
+
+
+559
+00:28:23,476 --> 00:28:25,346
+like that, enabled by default.
+
+
+560
+00:28:25,796 --> 00:28:29,816
+This is especially helpful in
+C++, and let's see an example.
+
+
+561
+00:28:30,536 --> 00:28:33,656
+Here, I've got a helper function
+that I've declared and I want
+
+
+562
+00:28:33,656 --> 00:28:35,726
+to check and see if the
+helper is available,
+
+
+563
+00:28:35,726 --> 00:28:37,366
+I'm going to call it.
+
+
+564
+00:28:37,976 --> 00:28:40,966
+The compiler warns and says,
+"If you take the address
+
+
+565
+00:28:40,966 --> 00:28:43,406
+of the function, it will
+always evaluate to true."
+
+
+566
+00:28:43,406 --> 00:28:46,166
+So the conditional here
+isn't doing what we expect.
+
+
+567
+00:28:46,596 --> 00:28:49,856
+In a case like this,
+you probably meant
+
+
+568
+00:28:49,856 --> 00:28:51,076
+to make that a weak import.
+
+
+569
+00:28:51,576 --> 00:28:54,526
+And you just need to
+add the weak attribute
+
+
+570
+00:28:54,626 --> 00:28:56,866
+on that function declaration
+to tell the compiler
+
+
+571
+00:28:57,236 --> 00:28:59,516
+that this value, this
+function pointer maybe zero
+
+
+572
+00:28:59,616 --> 00:29:01,106
+and without the warning
+goes away.
+
+
+573
+00:29:01,636 --> 00:29:05,086
+So this again is a serious
+problem enabled by default,
+
+
+574
+00:29:05,296 --> 00:29:06,756
+the warning is enabled
+by default.
+
+
+575
+00:29:07,306 --> 00:29:11,176
+A similar issue is
+with Enum conversions.
+
+
+576
+00:29:11,726 --> 00:29:13,766
+Here's an example of that.
+
+
+577
+00:29:13,766 --> 00:29:17,026
+I've got two Enums, a set of
+shapes and a set of circles
+
+
+578
+00:29:17,256 --> 00:29:19,956
+and I want to-- I have a draw
+function that can draw that
+
+
+579
+00:29:19,956 --> 00:29:24,676
+and I try to draw a blue circle
+but I-- I got the order wrong.
+
+
+580
+00:29:24,676 --> 00:29:26,386
+It's supposed to be
+Draw Circle Blue,
+
+
+581
+00:29:26,386 --> 00:29:27,756
+instead of Draw Blue Circle.
+
+
+582
+00:29:29,106 --> 00:29:32,296
+The implicit Enum conversion
+warning detects that.
+
+
+583
+00:29:32,296 --> 00:29:34,576
+It would actually warn
+twice here, ones for each
+
+
+584
+00:29:34,576 --> 00:29:36,666
+of the arguments, because
+they're both in the wrong order.
+
+
+585
+00:29:37,126 --> 00:29:40,626
+Again, this is something
+that's trivial to fix.
+
+
+586
+00:29:41,036 --> 00:29:43,366
+If you have a problem
+like this, you really want
+
+
+587
+00:29:43,366 --> 00:29:44,296
+to fix it right away
+
+
+588
+00:29:44,296 --> 00:29:46,636
+and so we're now enabling
+this warning by default.
+
+
+589
+00:29:49,156 --> 00:29:53,356
+Undeclared selectors,
+let's look at an example.
+
+
+590
+00:29:53,356 --> 00:29:58,696
+I want to make a timer, an NS
+timer to go off in 60 seconds
+
+
+591
+00:29:58,696 --> 00:30:01,916
+and when that timer goes off, I
+want to send the close message
+
+
+592
+00:30:02,176 --> 00:30:04,856
+to the current object,
+but I've got a typo.
+
+
+593
+00:30:04,976 --> 00:30:07,286
+Instead of close with an
+"S" I wrote close with a "Z"
+
+
+594
+00:30:07,646 --> 00:30:10,976
+and the undeclared selector
+warning will catch this.
+
+
+595
+00:30:11,956 --> 00:30:14,596
+The last category of
+warnings that I want to talk
+
+
+596
+00:30:14,596 --> 00:30:17,296
+about are two issues
+that are so serious,
+
+
+597
+00:30:17,296 --> 00:30:19,386
+we're going to treat them
+as errors by default.
+
+
+598
+00:30:21,146 --> 00:30:22,856
+Mismatched Return Types, this is
+
+
+599
+00:30:22,856 --> 00:30:24,866
+where you're simply
+missing a return value
+
+
+600
+00:30:24,926 --> 00:30:27,136
+and here's an example of that.
+
+
+601
+00:30:27,726 --> 00:30:31,996
+I had intended to make a safe
+square root function based
+
+
+602
+00:30:31,996 --> 00:30:34,546
+on the realization you can't
+compute the square root
+
+
+603
+00:30:34,546 --> 00:30:38,186
+of a negative value so I'm
+checking if the input is less
+
+
+604
+00:30:38,186 --> 00:30:40,016
+than zero, I'll just return.
+
+
+605
+00:30:40,826 --> 00:30:43,276
+But I didn't think about the
+fact that the function needs
+
+
+606
+00:30:43,276 --> 00:30:45,766
+to return something, is
+declared to return a float.
+
+
+607
+00:30:46,676 --> 00:30:48,826
+The compiler catches
+this of course says,
+
+
+608
+00:30:49,016 --> 00:30:50,276
+"You're missing a return value."
+
+
+609
+00:30:50,846 --> 00:30:54,086
+A problem like this is really
+serious because it's going
+
+
+610
+00:30:54,326 --> 00:30:58,266
+to lead to undefined behavior
+and your program is going
+
+
+611
+00:30:58,266 --> 00:31:00,716
+to crash or it's just going
+to do something really wrong.
+
+
+612
+00:31:01,446 --> 00:31:03,406
+So this is now going to
+be treated as an error
+
+
+613
+00:31:03,406 --> 00:31:05,296
+by default in new projects.
+
+
+614
+00:31:06,696 --> 00:31:08,576
+Another very serious problem
+
+
+615
+00:31:08,576 --> 00:31:10,826
+like that is Unintentional
+Root Classes.
+
+
+616
+00:31:11,546 --> 00:31:13,466
+This is more of a
+typo kind of problem.
+
+
+617
+00:31:13,466 --> 00:31:16,786
+I'm declaring a new interface,
+my class, and I just forgot
+
+
+618
+00:31:16,786 --> 00:31:18,326
+to specify the base class.
+
+
+619
+00:31:20,096 --> 00:31:23,886
+The compiler again
+catches this and suggest
+
+
+620
+00:31:24,436 --> 00:31:26,906
+that you declare an NS
+object base class or--
+
+
+621
+00:31:26,906 --> 00:31:28,226
+or maybe some other base class
+
+
+622
+00:31:28,226 --> 00:31:30,566
+that would be more
+appropriate in your code.
+
+
+623
+00:31:31,976 --> 00:31:34,716
+This, too, we are going to
+treat as an error by default.
+
+
+624
+00:31:35,456 --> 00:31:38,646
+Now, if you really did intend
+for that to be a root class,
+
+
+625
+00:31:39,196 --> 00:31:42,016
+you can add NS root class
+before the add interface just
+
+
+626
+00:31:42,016 --> 00:31:44,356
+to tell the compiler, "Yeah,
+this is really what I meant."
+
+
+627
+00:31:44,896 --> 00:31:49,406
+So to summarize all
+these warning changes,
+
+
+628
+00:31:49,716 --> 00:31:51,096
+we have two new warnings:
+
+
+629
+00:31:51,266 --> 00:31:54,706
+unsequenced modifications
+and integer overflow.
+
+
+630
+00:31:55,576 --> 00:31:58,346
+We have four warnings that
+are now going to be enabled
+
+
+631
+00:31:58,346 --> 00:32:00,996
+by default in new
+projects, unused functions,
+
+
+632
+00:32:01,236 --> 00:32:03,446
+implicit Boolean
+and Enum conversions
+
+
+633
+00:32:03,806 --> 00:32:07,166
+and undeclared selectors,
+and finally, two warnings
+
+
+634
+00:32:07,166 --> 00:32:09,466
+that are really serious:
+mismatch return types
+
+
+635
+00:32:09,586 --> 00:32:12,086
+and unintentional root classes
+that we're going to treat
+
+
+636
+00:32:12,086 --> 00:32:14,226
+as errors by default
+in new projects.
+
+
+637
+00:32:16,636 --> 00:32:20,416
+So just as the warnings
+can help you catch bugs,
+
+
+638
+00:32:21,066 --> 00:32:24,036
+the LLVM compiler provides
+a really powerful feature
+
+
+639
+00:32:24,406 --> 00:32:26,426
+to go deeper in analyzing
+your code
+
+
+640
+00:32:26,426 --> 00:32:29,536
+and finding more subtle issues
+and so to talk about that,
+
+
+641
+00:32:29,536 --> 00:32:32,516
+I'd like to invite
+up Anna Zaks to talk
+
+
+642
+00:32:32,516 --> 00:32:34,386
+about the Static
+Analyzer and finish
+
+
+643
+00:32:34,386 --> 00:32:34,976
+up the rest of the session.
+
+
+644
+00:32:35,516 --> 00:32:41,066
+[ Applause ]
+
+
+645
+00:32:41,566 --> 00:32:42,136
+>> Thank you, Bob.
+
+
+646
+00:32:42,796 --> 00:32:44,406
+First, I'm going to
+talk about the new
+
+
+647
+00:32:44,406 --> 00:32:45,856
+and exciting features
+we've added
+
+
+648
+00:32:45,856 --> 00:32:47,966
+to the static analyzer
+over the past year.
+
+
+649
+00:32:48,516 --> 00:32:51,066
+And for those of you who had
+never used the static analyzer,
+
+
+650
+00:32:51,356 --> 00:32:54,416
+you'll get to learn it-- learn
+about what it is all about
+
+
+651
+00:32:54,416 --> 00:32:57,166
+and how it can help you
+in your development cycle.
+
+
+652
+00:32:58,166 --> 00:33:00,986
+So everyone agrees
+that bugs are bad
+
+
+653
+00:33:00,986 --> 00:33:02,796
+and as Bob has just mentioned,
+
+
+654
+00:33:02,866 --> 00:33:06,516
+compiler warnings might pinpoint
+some of those bugs to you.
+
+
+655
+00:33:07,336 --> 00:33:10,836
+So how the analyzer issues are
+different from compiler warnings
+
+
+656
+00:33:11,246 --> 00:33:13,366
+and why should you use
+the static analyzer?
+
+
+657
+00:33:14,326 --> 00:33:17,506
+Well, the static analyzer
+performs much deeper analysis
+
+
+658
+00:33:17,506 --> 00:33:18,226
+of your program.
+
+
+659
+00:33:18,726 --> 00:33:21,696
+It systematically explores
+every paths for your program
+
+
+660
+00:33:21,976 --> 00:33:23,786
+which allows it to
+find those hard
+
+
+661
+00:33:23,786 --> 00:33:25,496
+to reproduce edge case bugs.
+
+
+662
+00:33:25,566 --> 00:33:28,416
+The static analyzer that ships
+
+
+663
+00:33:28,416 --> 00:33:31,296
+to this Xcode 5 finds
+new kinds of bugs.
+
+
+664
+00:33:31,956 --> 00:33:34,476
+It performs deeper
+record analysis especially
+
+
+665
+00:33:34,476 --> 00:33:38,896
+for objective-C and C++ and
+it also exposes new workflows
+
+
+666
+00:33:39,146 --> 00:33:41,856
+that will allow you to
+tailor analysis power
+
+
+667
+00:33:42,126 --> 00:33:43,576
+to your specific setting.
+
+
+668
+00:33:44,366 --> 00:33:46,136
+So let's first talk
+about the new kinds
+
+
+669
+00:33:46,136 --> 00:33:47,676
+of bugs analyzer can find.
+
+
+670
+00:33:48,056 --> 00:33:51,736
+Most of you are familiar
+with NSDictionary
+
+
+671
+00:33:52,026 --> 00:33:56,776
+and NSMutableDictionary APIs
+that this code snippet is using.
+
+
+672
+00:33:56,856 --> 00:34:00,646
+However, let's bring here
+the Apple documentation site
+
+
+673
+00:34:00,886 --> 00:34:03,356
+that will tell us exactly
+what this method does.
+
+
+674
+00:34:04,216 --> 00:34:05,956
+So the Apple documentation
+tells us
+
+
+675
+00:34:05,956 --> 00:34:07,926
+that this method
+creates a dictionary
+
+
+676
+00:34:07,926 --> 00:34:09,556
+with a given key and value pair.
+
+
+677
+00:34:10,456 --> 00:34:12,056
+However, look at the fine print.
+
+
+678
+00:34:12,616 --> 00:34:15,326
+Here in the parameter
+section, it also tells us
+
+
+679
+00:34:15,786 --> 00:34:17,446
+that if the value is nil,
+
+
+680
+00:34:17,476 --> 00:34:19,856
+then an exception will
+be thrown at runtime.
+
+
+681
+00:34:20,346 --> 00:34:23,786
+And the runtime exception is
+not something any of us want
+
+
+682
+00:34:23,786 --> 00:34:25,846
+to happen on the user's iPad
+
+
+683
+00:34:25,846 --> 00:34:29,096
+or an iPhone while our
+application is being run there.
+
+
+684
+00:34:29,916 --> 00:34:31,755
+So how can the static
+analyzer help?
+
+
+685
+00:34:32,706 --> 00:34:35,216
+Well, let's go back to our
+code snippet and suppose here
+
+
+686
+00:34:35,216 --> 00:34:36,755
+that the default object was set
+
+
+687
+00:34:36,755 --> 00:34:39,266
+to nil earlier along
+the execution path.
+
+
+688
+00:34:40,016 --> 00:34:42,286
+So if the analyzer
+knows this, it can--
+
+
+689
+00:34:42,286 --> 00:34:44,916
+it will warn you and
+it will remind you
+
+
+690
+00:34:45,206 --> 00:34:47,815
+that this API should
+not be used in this way.
+
+
+691
+00:34:48,835 --> 00:34:51,476
+And of course if you've switched
+to the new literal syntax,
+
+
+692
+00:34:51,476 --> 00:34:52,565
+they're also going to warn
+
+
+693
+00:34:52,565 --> 00:34:54,505
+but with a slightly
+different error message.
+
+
+694
+00:34:54,996 --> 00:34:58,606
+Well, mostly you will say,
+"This code is too simple.
+
+
+695
+00:34:58,606 --> 00:34:59,956
+I don't try code like that.
+
+
+696
+00:34:59,956 --> 00:35:02,856
+I don't set an object to nil and
+immediately create an array."
+
+
+697
+00:35:03,376 --> 00:35:07,136
+Well, we've run the analyzer
+with this warning turned on,
+
+
+698
+00:35:07,136 --> 00:35:11,116
+on several large Objective-C
+code bases and it found issues
+
+
+699
+00:35:11,116 --> 00:35:13,616
+in every single one of them.
+
+
+700
+00:35:13,926 --> 00:35:16,766
+Here's an example from a
+large Objective-C code base
+
+
+701
+00:35:16,766 --> 00:35:18,046
+where the analyzer warns.
+
+
+702
+00:35:18,696 --> 00:35:23,086
+Here it tells you that the
+object inModifiedKeys is--
+
+
+703
+00:35:23,436 --> 00:35:26,466
+could be nil and it is
+used to create a dictionary
+
+
+704
+00:35:27,796 --> 00:35:29,886
+so when the analyzer
+reports an issue to you,
+
+
+705
+00:35:29,886 --> 00:35:32,336
+not only does it point
+to the line number
+
+
+706
+00:35:32,336 --> 00:35:35,206
+where the issue occurred
+but it also explains
+
+
+707
+00:35:35,206 --> 00:35:37,096
+to you why this problem
+has happened.
+
+
+708
+00:35:37,936 --> 00:35:40,646
+And the analyzer explains
+issues by showing you a path
+
+
+709
+00:35:41,386 --> 00:35:44,386
+through your program on which
+the-- the problem occurs.
+
+
+710
+00:35:44,866 --> 00:35:47,066
+So in just-- in order to
+see the path, you just click
+
+
+711
+00:35:47,066 --> 00:35:49,526
+on the issue and the
+path gets displayed.
+
+
+712
+00:35:50,376 --> 00:35:52,446
+And notice at the top
+of the editor window,
+
+
+713
+00:35:52,446 --> 00:35:55,886
+you'll also see analyzer
+issue navigation bar
+
+
+714
+00:35:55,886 --> 00:35:58,086
+that will allow you to
+step through this task
+
+
+715
+00:35:58,206 --> 00:36:00,196
+and examine each
+step along the way.
+
+
+716
+00:36:01,136 --> 00:36:03,086
+So let's see what
+actually happens here.
+
+
+717
+00:36:03,086 --> 00:36:05,116
+Why the analyzer thinks
+there is a problem?
+
+
+718
+00:36:05,796 --> 00:36:08,796
+Well, first, we call
+postNotificationName method.
+
+
+719
+00:36:09,286 --> 00:36:13,126
+And here we-- in-- the
+creator's third argument
+
+
+720
+00:36:13,156 --> 00:36:15,456
+for this method call,
+the special case,
+
+
+721
+00:36:15,456 --> 00:36:17,966
+the case when inModifiedKeys
+object is nil.
+
+
+722
+00:36:17,966 --> 00:36:20,956
+So we say, "If inModifiedKeys
+object is not nil,
+
+
+723
+00:36:21,336 --> 00:36:24,856
+create a dictionary, otherwise,
+just pass a nil and use
+
+
+724
+00:36:24,856 --> 00:36:26,356
+that as a third argument."
+
+
+725
+00:36:26,836 --> 00:36:30,746
+This program keeps running
+along the same paths and later
+
+
+726
+00:36:30,746 --> 00:36:34,966
+on the same API is gone
+and called again and here,
+
+
+727
+00:36:34,966 --> 00:36:38,076
+the programmer just
+forgot to check for--
+
+
+728
+00:36:38,376 --> 00:36:40,566
+they don't check if
+inModifiedKeys is nil.
+
+
+729
+00:36:40,566 --> 00:36:44,426
+They just-- just called it--
+they just create a dictionary
+
+
+730
+00:36:44,426 --> 00:36:45,846
+and use it at the
+third argument.
+
+
+731
+00:36:46,156 --> 00:36:48,256
+So clearly there is
+an inconsistency here
+
+
+732
+00:36:48,256 --> 00:36:50,276
+and this is what
+the analyzer notices
+
+
+733
+00:36:50,546 --> 00:36:52,386
+and this is why it
+reports the issue.
+
+
+734
+00:36:52,936 --> 00:36:57,106
+So we've-- we've also
+stand a lot of time
+
+
+735
+00:36:57,106 --> 00:37:00,316
+and we've greatly
+improved our C++ support.
+
+
+736
+00:37:00,726 --> 00:37:03,086
+So here's another
+example of a new--
+
+
+737
+00:37:03,086 --> 00:37:05,556
+of warning that we've
+added to C++.
+
+
+738
+00:37:06,076 --> 00:37:09,236
+Here, we-- we allocate an
+object and later on be freed.
+
+
+739
+00:37:09,236 --> 00:37:11,956
+So, of course, the
+problem here is
+
+
+740
+00:37:11,956 --> 00:37:15,346
+that object allocators was
+new, should be the allocated
+
+
+741
+00:37:15,346 --> 00:37:20,016
+with delete, because calling a
+free function will not call the
+
+
+742
+00:37:20,016 --> 00:37:22,986
+distractor of the object so
+this might result in memory
+
+
+743
+00:37:22,986 --> 00:37:26,396
+or resource leaks which are
+hard to find at runtime.
+
+
+744
+00:37:26,886 --> 00:37:30,796
+So we've added several new
+warnings over the past year.
+
+
+745
+00:37:30,796 --> 00:37:34,646
+We are going to warn if you're
+trying to add a nil element
+
+
+746
+00:37:34,646 --> 00:37:39,066
+to NSMutableArray or nil key or
+value to NSMutableDictionary.
+
+
+747
+00:37:39,446 --> 00:37:43,506
+We also warn on use-after-free
+in C++, mismatched deallocators
+
+
+748
+00:37:43,566 --> 00:37:46,196
+and creation references
+to null in C++.
+
+
+749
+00:37:46,716 --> 00:37:50,986
+And of course these new
+warnings just add on top
+
+
+750
+00:37:50,986 --> 00:37:53,486
+of the growing body
+of the analyzer issues
+
+
+751
+00:37:53,486 --> 00:37:55,806
+that we've added over the years.
+
+
+752
+00:37:56,696 --> 00:38:00,686
+And know that both old and
+new issues greatly benefit
+
+
+753
+00:38:00,686 --> 00:38:04,426
+from the power of the
+analysis because again a factor
+
+
+754
+00:38:04,426 --> 00:38:08,576
+to finding bugs in your programs
+is actually understanding what
+
+
+755
+00:38:08,576 --> 00:38:09,406
+your program does.
+
+
+756
+00:38:09,506 --> 00:38:12,436
+For example, when you call
+a method, what happens?
+
+
+757
+00:38:13,876 --> 00:38:15,616
+Some of you might
+remember that last year,
+
+
+758
+00:38:15,616 --> 00:38:18,816
+we've added cross function
+reasoning for C functions.
+
+
+759
+00:38:19,356 --> 00:38:22,556
+Well, this year, we've extended
+it to objective-C and C++.
+
+
+760
+00:38:23,856 --> 00:38:27,196
+And we found that this greatly
+benefit the power of analysis
+
+
+761
+00:38:27,196 --> 00:38:30,746
+because it's so natural for
+people to split their cord
+
+
+762
+00:38:30,746 --> 00:38:32,986
+into subfunctions or submethods.
+
+
+763
+00:38:33,956 --> 00:38:36,976
+I'm going to explain
+to you how this works
+
+
+764
+00:38:36,976 --> 00:38:38,216
+and why this important
+
+
+765
+00:38:38,476 --> 00:38:41,676
+by showing you how the analyzer
+operates behind the scenes,
+
+
+766
+00:38:42,216 --> 00:38:44,326
+on this code snippet.
+
+
+767
+00:38:44,326 --> 00:38:48,386
+So as I mentioned earlier, the
+analyzer analyzes your program
+
+
+768
+00:38:48,386 --> 00:38:51,886
+by systemically exploring every
+paths through your program.
+
+
+769
+00:38:52,606 --> 00:38:56,196
+And it has to be statically
+without running your program.
+
+
+770
+00:38:57,046 --> 00:38:59,826
+And in order to do that,
+it extracts away the values
+
+
+771
+00:38:59,826 --> 00:39:03,156
+of your variables and
+constructs a draft
+
+
+772
+00:39:03,396 --> 00:39:06,296
+from extract system states--
+of extract system states
+
+
+773
+00:39:06,296 --> 00:39:07,596
+and transitions between them.
+
+
+774
+00:39:08,076 --> 00:39:10,436
+So let's construct such a
+draft for this code snippet.
+
+
+775
+00:39:11,296 --> 00:39:14,366
+The analyzer starts with
+the initial state and then
+
+
+776
+00:39:14,366 --> 00:39:16,746
+as it evaluates the
+statement in your program,
+
+
+777
+00:39:16,986 --> 00:39:21,266
+it construct a second
+state, so here we create,
+
+
+778
+00:39:21,266 --> 00:39:23,666
+allocate an object,
+localized its name.
+
+
+779
+00:39:24,276 --> 00:39:26,946
+Notice here how the
+analyzer splits the path
+
+
+780
+00:39:27,446 --> 00:39:31,546
+to capture the fact that L could
+be nil and from now on is going
+
+
+781
+00:39:31,546 --> 00:39:34,106
+to explore both of these paths.
+
+
+782
+00:39:34,736 --> 00:39:38,076
+So now let's go back and see
+what happened when the analyzed
+
+
+783
+00:39:38,186 --> 00:39:40,676
+or when the simulated
+this last method call.
+
+
+784
+00:39:41,506 --> 00:39:43,326
+So previously the analyzer had
+
+
+785
+00:39:43,366 --> 00:39:45,426
+to use the most pessimistic
+assumptions
+
+
+786
+00:39:45,426 --> 00:39:47,166
+about what a method
+call could do.
+
+
+787
+00:39:48,036 --> 00:39:49,046
+However, it's silly.
+
+
+788
+00:39:49,266 --> 00:39:51,076
+If the method implementation
+is available
+
+
+789
+00:39:51,076 --> 00:39:52,326
+to us, we should use that.
+
+
+790
+00:39:52,966 --> 00:39:56,176
+So let's go back and replay
+how this will work now.
+
+
+791
+00:39:56,756 --> 00:40:00,046
+So in this case, the
+analyzer knows that the type
+
+
+792
+00:40:00,046 --> 00:40:03,706
+of object A is asset and
+given the object type
+
+
+793
+00:40:03,706 --> 00:40:07,256
+and the method name, we can
+just very high assurance detect
+
+
+794
+00:40:07,566 --> 00:40:09,766
+which method will be
+called at runtime.
+
+
+795
+00:40:10,836 --> 00:40:12,886
+And this-- if this
+method's implementation is
+
+
+796
+00:40:12,886 --> 00:40:16,136
+in the same source file or
+one of the included headers,
+
+
+797
+00:40:16,566 --> 00:40:18,906
+then we can bring the
+method implementation
+
+
+798
+00:40:19,156 --> 00:40:21,696
+and use it while we
+simulate this method call.
+
+
+799
+00:40:22,386 --> 00:40:23,546
+So here what will happen,
+
+
+800
+00:40:23,546 --> 00:40:27,226
+the analyzer will simulate a
+method call, add localized name
+
+
+801
+00:40:27,226 --> 00:40:30,546
+to the properties
+map, add regular name
+
+
+802
+00:40:30,546 --> 00:40:32,116
+through the properties
+map and return.
+
+
+803
+00:40:32,846 --> 00:40:34,076
+Now, let's see what happens on--
+
+
+804
+00:40:34,076 --> 00:40:36,276
+along the path on
+which L is nil.
+
+
+805
+00:40:37,006 --> 00:40:38,876
+Again, we simulate a method call
+
+
+806
+00:40:38,876 --> 00:40:42,026
+and next we add nil
+to the dictionary.
+
+
+807
+00:40:42,856 --> 00:40:45,996
+And here the analyzer notice
+that this is a problem,
+
+
+808
+00:40:45,996 --> 00:40:48,346
+adding a nil to
+NSMutableDictionary is
+
+
+809
+00:40:48,346 --> 00:40:50,906
+against the rules so
+it's going to warn you.
+
+
+810
+00:40:51,936 --> 00:40:55,736
+So if you were going to run this
+code through Xcode right now,
+
+
+811
+00:40:55,736 --> 00:40:59,236
+this is what you would see, you
+would see a path through both--
+
+
+812
+00:40:59,476 --> 00:41:03,866
+both of the methods that shows
+you how the problem could
+
+
+813
+00:41:03,916 --> 00:41:04,496
+have occurred.
+
+
+814
+00:41:05,096 --> 00:41:08,056
+As I mentioned previously,
+
+
+815
+00:41:08,056 --> 00:41:11,146
+we've also extended this
+cross method reasoning to C++
+
+
+816
+00:41:11,526 --> 00:41:13,906
+so here's another
+example, C++ example.
+
+
+817
+00:41:14,516 --> 00:41:18,186
+Here, we allocate a buffer and
+we use autopointer to yield
+
+
+818
+00:41:18,336 --> 00:41:20,456
+with memory management for us.
+
+
+819
+00:41:21,316 --> 00:41:24,456
+So if you were to run this
+code through the analyzer,
+
+
+820
+00:41:24,456 --> 00:41:27,116
+the analyzer is actually
+going to report a bug.
+
+
+821
+00:41:28,576 --> 00:41:32,096
+It's going to tell us that
+here the memory is allocated
+
+
+822
+00:41:32,096 --> 00:41:34,836
+with operator array new
+or news square bracket
+
+
+823
+00:41:35,206 --> 00:41:38,596
+and it should be deallocator
+as operator array delete,
+
+
+824
+00:41:38,916 --> 00:41:39,856
+however it tells us
+
+
+825
+00:41:39,856 --> 00:41:42,156
+that deallocators
+was operator delete.
+
+
+826
+00:41:43,576 --> 00:41:45,316
+Notice here that
+we don't see the--
+
+
+827
+00:41:45,316 --> 00:41:49,876
+the allocation side so what
+happens actually if we click
+
+
+828
+00:41:49,876 --> 00:41:52,216
+on this warning to extend it,
+
+
+829
+00:41:52,216 --> 00:41:57,106
+we'll see that the analyzer sees
+the distractor of autopointer
+
+
+830
+00:41:57,386 --> 00:42:00,326
+and it sees which the
+allocation method it uses there
+
+
+831
+00:42:00,746 --> 00:42:03,586
+and this is what's required
+to report this problem.
+
+
+832
+00:42:04,116 --> 00:42:08,706
+So this just highlights how
+important the cross method
+
+
+833
+00:42:08,706 --> 00:42:12,876
+reasoning is for C++ since so
+much implementation detail is
+
+
+834
+00:42:12,876 --> 00:42:17,556
+hidden in the headers.
+
+
+835
+00:42:17,706 --> 00:42:20,996
+OK, so to summarize,
+what made this possible?
+
+
+836
+00:42:21,216 --> 00:42:23,976
+If you do path specific
+tracking of object types,
+
+
+837
+00:42:24,686 --> 00:42:28,416
+we reason about constructors
+and destructors in C++.
+
+
+838
+00:42:29,176 --> 00:42:32,076
+Also, if your method
+implementation is either
+
+
+839
+00:42:32,076 --> 00:42:35,526
+in the given source file or in
+one of the included headers,
+
+
+840
+00:42:35,836 --> 00:42:37,316
+the analyzer will be able
+
+
+841
+00:42:37,316 --> 00:42:40,496
+to use it while it's
+simulating a method call.
+
+
+842
+00:42:40,496 --> 00:42:43,766
+However, like the compiler,
+the analyzer only reasons
+
+
+843
+00:42:43,766 --> 00:42:45,576
+about one source file at a time.
+
+
+844
+00:42:45,576 --> 00:42:48,816
+So if your method implementation
+is in another source file,
+
+
+845
+00:42:48,816 --> 00:42:52,026
+it will not be able to see the
+[inaudible] during the analysis.
+
+
+846
+00:42:54,586 --> 00:42:59,616
+So now, I'm sure you're all
+excited about going to have
+
+
+847
+00:42:59,616 --> 00:43:01,566
+and running the analyzer
+on your code
+
+
+848
+00:43:01,566 --> 00:43:04,516
+and the only question you
+have is how do I do that?
+
+
+849
+00:43:04,516 --> 00:43:06,806
+How do I trigger
+analysis of my project?
+
+
+850
+00:43:07,946 --> 00:43:09,376
+Well, there are several
+ways of doing that.
+
+
+851
+00:43:09,786 --> 00:43:13,736
+So first, we can go to Xcode
+and choose product analyze
+
+
+852
+00:43:13,736 --> 00:43:17,016
+and that is going to trigger
+analysis of your whole project
+
+
+853
+00:43:17,386 --> 00:43:20,336
+that minute or that
+second from within Xcode.
+
+
+854
+00:43:21,386 --> 00:43:23,336
+However, often what
+you've done--
+
+
+855
+00:43:23,336 --> 00:43:25,416
+do is you've analyzed
+the project before
+
+
+856
+00:43:25,716 --> 00:43:28,596
+and you've changed one or
+two files and you just want
+
+
+857
+00:43:28,596 --> 00:43:30,006
+to reanalyze those files.
+
+
+858
+00:43:30,836 --> 00:43:33,336
+So we've added a new
+feature in Xcode 5,
+
+
+859
+00:43:33,416 --> 00:43:36,156
+you can go to product
+perform action and choose
+
+
+860
+00:43:36,156 --> 00:43:40,786
+to analyze a single
+file, that's much faster.
+
+
+861
+00:43:40,866 --> 00:43:44,116
+Well, some of you might want
+to have continuous feedback
+
+
+862
+00:43:44,116 --> 00:43:46,676
+from the analyzer as part
+of your active development.
+
+
+863
+00:43:47,416 --> 00:43:51,706
+You can go to build settings
+for Xcode and you can choose
+
+
+864
+00:43:52,066 --> 00:43:53,546
+to analyze during build.
+
+
+865
+00:43:53,996 --> 00:43:57,966
+What that will do is it will
+trigger analysis every time you
+
+
+866
+00:43:57,966 --> 00:43:59,036
+build your project.
+
+
+867
+00:43:59,626 --> 00:44:02,366
+If you have a project that
+analyzer warning is free,
+
+
+868
+00:44:02,456 --> 00:44:05,826
+then we highly recommend that
+you use aesthetic analysis
+
+
+869
+00:44:05,826 --> 00:44:08,176
+as part of your continuous
+integration.
+
+
+870
+00:44:08,776 --> 00:44:11,736
+You can do that by just
+adding Xcode build analyze
+
+
+871
+00:44:12,116 --> 00:44:15,656
+to your integration-- continuous
+integration script of choice
+
+
+872
+00:44:16,386 --> 00:44:19,506
+or you can set up a bot
+through Xcode by going
+
+
+873
+00:44:19,506 --> 00:44:20,766
+to product create bot.
+
+
+874
+00:44:21,486 --> 00:44:23,706
+And for more information
+about creating a bot
+
+
+875
+00:44:24,276 --> 00:44:28,046
+that rruns the aesthetic
+analyzer and other stuff,
+
+
+876
+00:44:28,566 --> 00:44:31,276
+please attend the session
+that will happen right
+
+
+877
+00:44:31,276 --> 00:44:32,666
+after this session in Presidio,
+
+
+878
+00:44:32,666 --> 00:44:34,596
+"Continuous Integration
+with Xcode 5."
+
+
+879
+00:44:34,686 --> 00:44:39,616
+Now, I've told you how to choose
+which code to analyze and when
+
+
+880
+00:44:39,616 --> 00:44:40,696
+to trigger the analysis.
+
+
+881
+00:44:40,776 --> 00:44:44,706
+However, what you also can
+control is the analysis power.
+
+
+882
+00:44:45,586 --> 00:44:48,216
+There are two analysis
+mode, there is Shallow,
+
+
+883
+00:44:48,856 --> 00:44:52,116
+shallow for quick
+analysis, and there is Deep
+
+
+884
+00:44:52,326 --> 00:44:55,326
+for more thorough analysis
+that might find more issues
+
+
+885
+00:44:55,696 --> 00:44:57,706
+but might take significantly
+longer.
+
+
+886
+00:44:58,756 --> 00:45:01,146
+And here are the defaults
+that you can change by going
+
+
+887
+00:45:01,146 --> 00:45:02,686
+to the Xcode build settings.
+
+
+888
+00:45:03,506 --> 00:45:06,306
+So the default for--
+mode for analysis with--
+
+
+889
+00:45:06,306 --> 00:45:08,306
+during analyze action is deep
+
+
+890
+00:45:08,646 --> 00:45:11,166
+and the analyze action is
+what's gets used when you go
+
+
+891
+00:45:11,166 --> 00:45:15,536
+to product-- product menu
+choose analyze or what gets used
+
+
+892
+00:45:15,536 --> 00:45:18,406
+when you use analyzer as part
+of your continuous integration.
+
+
+893
+00:45:19,136 --> 00:45:22,986
+The default mode of analysis
+during build is shallow
+
+
+894
+00:45:23,686 --> 00:45:26,736
+because this is when you
+want a very fast turnaround.
+
+
+895
+00:45:26,736 --> 00:45:30,676
+Now, if there is one
+thing to remember,
+
+
+896
+00:45:30,866 --> 00:45:35,496
+that is we suggest you
+always analyze your project
+
+
+897
+00:45:35,496 --> 00:45:37,866
+in deep mode as part
+of your qualifications.
+
+
+898
+00:45:38,186 --> 00:45:43,946
+Now, last but not least, let's
+talk about your comments.
+
+
+899
+00:45:45,376 --> 00:45:48,176
+So most of you had heard
+this question before,
+
+
+900
+00:45:48,706 --> 00:45:52,166
+where is the documentation,
+or maybe some
+
+
+901
+00:45:52,166 --> 00:45:54,216
+of you always write the
+documentation then you've
+
+
+902
+00:45:54,346 --> 00:45:56,486
+probably asked this
+question before.
+
+
+903
+00:45:57,596 --> 00:46:00,336
+And a very handy way of
+writing the documentation is
+
+
+904
+00:46:00,336 --> 00:46:02,986
+to use structured
+comments such as Doxygen.
+
+
+905
+00:46:03,526 --> 00:46:06,176
+This is very useful because
+the documentation stays--
+
+
+906
+00:46:06,176 --> 00:46:08,316
+has more chance of
+staying up-to-date,
+
+
+907
+00:46:08,726 --> 00:46:12,096
+it's easier to write, it
+stays with your code, however,
+
+
+908
+00:46:12,096 --> 00:46:13,416
+up to now, the compiler
+
+
+909
+00:46:13,416 --> 00:46:16,686
+and Xcode only pays special
+attention to your code
+
+
+910
+00:46:17,146 --> 00:46:18,546
+but skips your comments.
+
+
+911
+00:46:19,816 --> 00:46:23,936
+Well, in Xcode 5, the
+Xcode 5 pays attention
+
+
+912
+00:46:23,936 --> 00:46:26,776
+to everything you wrote
+including your comments
+
+
+913
+00:46:27,486 --> 00:46:31,056
+and this allows us to provide
+a great user experience
+
+
+914
+00:46:31,056 --> 00:46:32,336
+and developer experience.
+
+
+915
+00:46:32,626 --> 00:46:33,956
+Let's see what that means.
+
+
+916
+00:46:34,766 --> 00:46:38,656
+So previously, if you went
+to Xcode and option clicked
+
+
+917
+00:46:38,656 --> 00:46:42,166
+on a method to see what it does,
+if the method was not declared
+
+
+918
+00:46:42,166 --> 00:46:44,726
+in the system header,
+this is all you would see,
+
+
+919
+00:46:45,216 --> 00:46:47,126
+it will just tell
+you, the header--
+
+
+920
+00:46:47,126 --> 00:46:49,546
+which just tell you the header
+where this method was declared
+
+
+921
+00:46:49,976 --> 00:46:51,936
+which is useful but
+not so useful.
+
+
+922
+00:46:52,676 --> 00:46:56,936
+Well, now, what will happen is
+we will generate and display
+
+
+923
+00:46:56,936 --> 00:47:01,776
+to you the documentation that
+is based on your comment.
+
+
+924
+00:47:02,086 --> 00:47:04,776
+Another way of viewing
+quick help is
+
+
+925
+00:47:04,856 --> 00:47:06,636
+through quick help inspector.
+
+
+926
+00:47:06,936 --> 00:47:08,996
+You can configure
+Xcode to display it
+
+
+927
+00:47:08,996 --> 00:47:11,416
+on the right-hand side
+of the Xcode window.
+
+
+928
+00:47:12,016 --> 00:47:14,406
+And then whenever you
+hover your cursor over--
+
+
+929
+00:47:15,126 --> 00:47:16,506
+over a given method name,
+
+
+930
+00:47:16,556 --> 00:47:18,556
+that documentation will
+be displayed there.
+
+
+931
+00:47:19,086 --> 00:47:21,906
+No-- no need to option click.
+
+
+932
+00:47:22,596 --> 00:47:27,806
+Now, another way of using your
+comments is code completion
+
+
+933
+00:47:27,856 --> 00:47:32,016
+so whenever a user-- someone
+who's using your API types the
+
+
+934
+00:47:32,016 --> 00:47:33,996
+name of the method,
+not only will--
+
+
+935
+00:47:33,996 --> 00:47:36,856
+will it display its
+full signature
+
+
+936
+00:47:36,856 --> 00:47:40,726
+but will also display the
+comment that is based on your--
+
+
+937
+00:47:40,726 --> 00:47:43,706
+the connotation that's
+based on your comment
+
+
+938
+00:47:43,856 --> 00:47:45,316
+or the brief section
+of your comment.
+
+
+939
+00:47:45,986 --> 00:47:48,976
+Now, let's talk about
+how this feature works.
+
+
+940
+00:47:49,336 --> 00:47:51,406
+This feature is powered
+by the compiler.
+
+
+941
+00:47:51,926 --> 00:47:55,606
+The compiler parses your
+comments along with your code
+
+
+942
+00:47:55,946 --> 00:48:00,886
+and attaches comments to the
+declarations and this allows us
+
+
+943
+00:48:00,886 --> 00:48:03,426
+to create a very
+precise representation
+
+
+944
+00:48:03,696 --> 00:48:07,206
+of your whole program that
+includes your comments
+
+
+945
+00:48:07,616 --> 00:48:10,846
+and this precise representation,
+not only allows us
+
+
+946
+00:48:10,846 --> 00:48:12,316
+to show you your comments back
+
+
+947
+00:48:12,736 --> 00:48:17,056
+but also give you active
+feedback about them.
+
+
+948
+00:48:17,256 --> 00:48:20,706
+So we've also added a
+new warning that's called
+
+
+949
+00:48:20,706 --> 00:48:24,716
+Wdocumentation and you can turn
+it on by going to build settings
+
+
+950
+00:48:24,716 --> 00:48:29,446
+and choosing-- turning
+documentation comments to--
+
+
+951
+00:48:29,446 --> 00:48:30,446
+from no to yes.
+
+
+952
+00:48:31,406 --> 00:48:33,776
+What this warning does
+is it tries to make sure
+
+
+953
+00:48:34,036 --> 00:48:35,706
+that your comments
+stay up-to-date
+
+
+954
+00:48:35,706 --> 00:48:38,306
+and don't have some
+simple errors
+
+
+955
+00:48:38,306 --> 00:48:41,866
+that the analyzer can find--
+that the compiler can find.
+
+
+956
+00:48:42,106 --> 00:48:43,626
+I'll give you some examples.
+
+
+957
+00:48:43,716 --> 00:48:45,926
+So here is the first example,
+
+
+958
+00:48:45,926 --> 00:48:49,356
+here we have a method
+whose signature changed.
+
+
+959
+00:48:49,416 --> 00:48:52,826
+This method used to return
+an error code, however,
+
+
+960
+00:48:52,826 --> 00:48:54,146
+now it returns a void.
+
+
+961
+00:48:55,146 --> 00:48:57,526
+Notice here that
+the comment is stale
+
+
+962
+00:48:58,096 --> 00:49:01,586
+and the compiler notices
+this and it tells you
+
+
+963
+00:49:01,586 --> 00:49:03,926
+that you should probably
+change the stale comment,
+
+
+964
+00:49:03,926 --> 00:49:06,156
+this method does not
+return anything anymore.
+
+
+965
+00:49:06,696 --> 00:49:09,166
+Here is yet another example.
+
+
+966
+00:49:09,166 --> 00:49:12,136
+Here we have-- started
+writing this documentation
+
+
+967
+00:49:12,136 --> 00:49:14,386
+and probably we got
+distracted because we forgot
+
+
+968
+00:49:14,386 --> 00:49:15,766
+to fill in the brief section.
+
+
+969
+00:49:16,576 --> 00:49:19,946
+Again the compiler is going
+to warn us-- warn and tell us,
+
+
+970
+00:49:20,216 --> 00:49:22,936
+"Hey, you definitely
+meant to fill this
+
+
+971
+00:49:22,936 --> 00:49:24,086
+in but you just forgot."
+
+
+972
+00:49:24,956 --> 00:49:26,356
+Here is yet another example.
+
+
+973
+00:49:26,996 --> 00:49:27,946
+Here, we have a method
+
+
+974
+00:49:27,946 --> 00:49:30,806
+that takes two arguments:
+name and bundle.
+
+
+975
+00:49:31,626 --> 00:49:34,266
+However, we've mistyped
+bundle and instead
+
+
+976
+00:49:34,266 --> 00:49:35,946
+of writing bundle,
+we wrote bungle.
+
+
+977
+00:49:36,836 --> 00:49:40,036
+Not-- not only the
+compiler notices this
+
+
+978
+00:49:40,866 --> 00:49:43,356
+but it's also a little
+bit psychic.
+
+
+979
+00:49:44,426 --> 00:49:46,886
+It's going to issue a
+Fix-it and it will tell you,
+
+
+980
+00:49:46,886 --> 00:49:49,626
+"didn't you mean
+bungle-- bundle?"
+
+
+981
+00:49:50,676 --> 00:49:54,036
+And the only action necessary
+for you to fix this problem is
+
+
+982
+00:49:54,036 --> 00:49:58,746
+to just click enter and your
+code will be-- all header.
+
+
+983
+00:49:59,516 --> 00:50:04,736
+[ Applause ]
+
+
+984
+00:50:05,236 --> 00:50:08,246
+So we've added support
+to structured comments
+
+
+985
+00:50:08,246 --> 00:50:10,016
+such as Doxygen and HeaderDoc
+
+
+986
+00:50:10,376 --> 00:50:14,056
+and HeaderDoc is
+Apple-structured comment format.
+
+
+987
+00:50:14,096 --> 00:50:15,976
+For more information
+about this structured--
+
+
+988
+00:50:15,976 --> 00:50:19,416
+comment format, please visit
+the website that I've listed
+
+
+989
+00:50:19,416 --> 00:50:20,526
+at the bottom of the slide.
+
+
+990
+00:50:21,496 --> 00:50:24,226
+We highly encourage you to
+write your documentation
+
+
+991
+00:50:24,496 --> 00:50:28,926
+and using structured comments
+and instantly see them appear
+
+
+992
+00:50:28,926 --> 00:50:31,146
+in quick help and
+code completion.
+
+
+993
+00:50:31,886 --> 00:50:34,596
+If you'd like to hear
+feedback about your comments
+
+
+994
+00:50:34,596 --> 00:50:36,796
+from the compiler,
+don't forget to turn
+
+
+995
+00:50:36,796 --> 00:50:40,436
+on the connotation comments
+warning, it's all wired up,
+
+
+996
+00:50:40,586 --> 00:50:41,976
+ready for your comments.
+
+
+997
+00:50:42,396 --> 00:50:46,996
+So to summarize, we've
+covered a lot of topics today.
+
+
+998
+00:50:46,996 --> 00:50:50,126
+Now, the LLVM compiler
+is stronger than ever.
+
+
+999
+00:50:50,726 --> 00:50:53,516
+It produces faster apps
+by providing support
+
+
+1000
+00:50:53,516 --> 00:50:55,966
+for latest hardware and having--
+
+
+1001
+00:50:56,346 --> 00:51:00,046
+enabling new, aggressive
+optimizations, it also--
+
+
+1002
+00:51:00,126 --> 00:51:02,226
+we also want to make
+sure that you can focus
+
+
+1003
+00:51:02,226 --> 00:51:03,516
+on writing your features
+
+
+1004
+00:51:03,876 --> 00:51:06,246
+so we streamlined the
+development process
+
+
+1005
+00:51:06,596 --> 00:51:08,836
+by making the tools
+installation easier,
+
+
+1006
+00:51:09,086 --> 00:51:11,896
+providing almost
+complete C++11 support,
+
+
+1007
+00:51:12,436 --> 00:51:15,136
+providing stricter
+warnings, deeper analyzing--
+
+
+1008
+00:51:15,406 --> 00:51:19,016
+analysis and taking full use
+of your comments in the ID
+
+
+1009
+00:51:19,016 --> 00:51:21,986
+to make it easier for
+you to concentrate
+
+
+1010
+00:51:21,986 --> 00:51:24,406
+and focus on the code.
+
+
+1011
+00:51:24,576 --> 00:51:25,496
+For more information,
+
+
+1012
+00:51:25,496 --> 00:51:28,056
+please contact our
+Developers Tools Evangelist
+
+
+1013
+00:51:28,056 --> 00:51:29,716
+and visit these websites.
+
+
+1014
+00:51:30,106 --> 00:51:34,576
+If you want to learn more
+about the new optimizations
+
+
+1015
+00:51:34,576 --> 00:51:35,796
+that Evan talked about,
+
+
+1016
+00:51:36,016 --> 00:51:40,176
+please visit Optimize Your Code
+Using LLVM Session tomorrow.
+
+
+1017
+00:51:40,706 --> 00:51:43,186
+There will be also two
+related sessions today:
+
+
+1018
+00:51:43,556 --> 00:51:48,296
+Advances in Objective-C at
+4:30 and Continuous Integration
+
+
+1019
+00:51:48,296 --> 00:51:52,156
+with Xcode 5 right after this
+session at 3:15 in Presidio.
+
+
+1020
+00:51:53,326 --> 00:51:55,976
+Thank you all for coming and
+enjoy the rest of your day.
+
+
+1021
+00:51:56,516 --> 00:51:59,516
+[ Applause ]
+
+
+1022
+00:52:00,016 --> 00:52:09,886
+[ Silence ]
+

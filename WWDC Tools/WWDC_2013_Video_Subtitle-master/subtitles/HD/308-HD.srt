@@ -1,0 +1,5398 @@
+1
+00:00:00,506 --> 00:00:09,516
+[ Silence ]
+
+
+2
+00:00:10,016 --> 00:00:13,000
+[ Applause ]
+
+
+3
+00:00:13,316 --> 00:00:13,656
+>> Thank you.
+
+
+4
+00:00:15,116 --> 00:00:16,056
+Good afternoon.
+
+
+5
+00:00:16,936 --> 00:00:19,936
+Hi, my name is James Wilson
+and I'm the Engineering Manager
+
+
+6
+00:00:20,106 --> 00:00:21,266
+for the App Store in OS X.
+
+
+7
+00:00:22,486 --> 00:00:23,906
+It's great to see
+so many of you here
+
+
+8
+00:00:23,906 --> 00:00:25,366
+that are interested
+in getting paid.
+
+
+9
+00:00:26,206 --> 00:00:30,026
+In this session, we're going
+to be talking all about how
+
+
+10
+00:00:30,026 --> 00:00:32,636
+to protect your digital
+sales using receipts.
+
+
+11
+00:00:35,316 --> 00:00:38,626
+There's a huge amount of
+revenue that is being generated
+
+
+12
+00:00:39,236 --> 00:00:40,426
+through In-App Purchases.
+
+
+13
+00:00:41,536 --> 00:00:48,856
+In fact, so much so that just a
+few days ago, 96% of the top 25,
+
+
+14
+00:00:48,906 --> 00:00:51,906
+top grossing apps for the
+iPhone were free apps,
+
+
+15
+00:00:52,936 --> 00:00:54,966
+and they were using
+In-App Purchases alone
+
+
+16
+00:00:55,466 --> 00:00:59,056
+to generate enough revenue to
+make them top grossing apps.
+
+
+17
+00:01:00,226 --> 00:01:03,776
+Now that's huge groundswell
+of momentum and popularity
+
+
+18
+00:01:03,836 --> 00:01:06,566
+for the free with In-App
+Purchase, or Freemium model,
+
+
+19
+00:01:07,356 --> 00:01:09,956
+combined with the
+continued popularity of paid,
+
+
+20
+00:01:10,166 --> 00:01:11,836
+with or without In-App
+Purchases,
+
+
+21
+00:01:13,146 --> 00:01:16,136
+means that there is a lot
+of importance for you,
+
+
+22
+00:01:16,136 --> 00:01:18,636
+the developer, to protect
+those digital sales
+
+
+23
+00:01:19,516 --> 00:01:23,706
+and to secure your revenue,
+because if your app is easy
+
+
+24
+00:01:23,706 --> 00:01:27,186
+to be pirated, cracked,
+stolen, and shared around,
+
+
+25
+00:01:27,946 --> 00:01:31,216
+there's no money
+in that for you.
+
+
+26
+00:01:31,696 --> 00:01:35,356
+So in this session, I'm going
+to introduce you to the concept
+
+
+27
+00:01:35,356 --> 00:01:38,926
+of the receipt, and the
+receipt is the foundation upon
+
+
+28
+00:01:38,926 --> 00:01:41,616
+which you can build your
+business model enforcement logic
+
+
+29
+00:01:42,036 --> 00:01:45,116
+directly into your app, as
+well as into your servers
+
+
+30
+00:01:45,276 --> 00:01:47,246
+that are providing the
+content out to your users.
+
+
+31
+00:01:48,446 --> 00:01:50,796
+We are going to introduce you
+to the receipt, how it works,
+
+
+32
+00:01:50,796 --> 00:01:53,406
+what's in it, when you
+get them, then we're going
+
+
+33
+00:01:53,406 --> 00:01:57,416
+to actually look down into the
+code level on both iOS and OS X
+
+
+34
+00:01:57,926 --> 00:02:00,876
+as to how you actually go
+about validating these receipts
+
+
+35
+00:02:01,166 --> 00:02:04,626
+and getting the purchase
+information out of them.
+
+
+36
+00:02:04,826 --> 00:02:05,706
+We'll do some -- we'll do a look
+
+
+37
+00:02:05,706 --> 00:02:07,856
+into some platform
+specific concerns about how
+
+
+38
+00:02:07,856 --> 00:02:11,006
+to implement receipt
+validation, and then finally,
+
+
+39
+00:02:11,006 --> 00:02:13,406
+we'll look at the test
+environment that you can use
+
+
+40
+00:02:13,436 --> 00:02:16,206
+to make sure that you
+ship code that's bug free.
+
+
+41
+00:02:16,776 --> 00:02:20,666
+So the receipt.
+
+
+42
+00:02:21,576 --> 00:02:25,976
+It's exactly like the
+receipt that you get
+
+
+43
+00:02:25,976 --> 00:02:28,066
+when you're shopping
+at a physical store.
+
+
+44
+00:02:28,646 --> 00:02:30,316
+Just like when you're
+at a department store,
+
+
+45
+00:02:30,746 --> 00:02:33,736
+you're at the checkout,
+you exchange your cash
+
+
+46
+00:02:33,736 --> 00:02:34,796
+for goods that you're buying.
+
+
+47
+00:02:35,326 --> 00:02:37,086
+Not only do you get those
+goods that you've bought,
+
+
+48
+00:02:37,496 --> 00:02:38,906
+but you get a receipt, as well.
+
+
+49
+00:02:39,446 --> 00:02:43,256
+That little piece of paper that
+verifies exactly what you paid
+
+
+50
+00:02:43,256 --> 00:02:49,246
+for in this store, and it's
+that little piece of paper
+
+
+51
+00:02:49,246 --> 00:02:53,006
+that that physical store that
+you're in can use as the basis
+
+
+52
+00:02:53,006 --> 00:02:55,176
+of their security
+model to make sure
+
+
+53
+00:02:55,176 --> 00:02:56,986
+that their goods don't
+go walking out the door
+
+
+54
+00:02:56,986 --> 00:02:58,176
+with a five finger discount.
+
+
+55
+00:02:59,556 --> 00:03:02,176
+Likewise in the App
+Store, the receipt is
+
+
+56
+00:03:02,176 --> 00:03:03,326
+that digital equivalent.
+
+
+57
+00:03:04,706 --> 00:03:08,356
+The receipt is your trusted and
+verifiable record of purchase.
+
+
+58
+00:03:08,926 --> 00:03:11,836
+It's issued by the App Store
+and contains signatures
+
+
+59
+00:03:12,066 --> 00:03:15,366
+and certificates and security
+measures that make sure
+
+
+60
+00:03:15,366 --> 00:03:17,136
+that it came from
+Apple and is unaltered,
+
+
+61
+00:03:18,316 --> 00:03:21,936
+and that it ties directly to
+your app on a specific device.
+
+
+62
+00:03:23,186 --> 00:03:25,516
+Now if you're a paid app, this
+is really important obviously
+
+
+63
+00:03:25,516 --> 00:03:26,886
+for implementing
+copy protection,
+
+
+64
+00:03:27,966 --> 00:03:29,696
+and if you're a free app
+with In-App Purchases
+
+
+65
+00:03:29,786 --> 00:03:31,416
+or a paid app using
+In-App Purchases,
+
+
+66
+00:03:31,906 --> 00:03:33,766
+the receipt is what you use
+
+
+67
+00:03:33,766 --> 00:03:35,926
+to know exactly what
+the customer paid for so
+
+
+68
+00:03:36,436 --> 00:03:38,796
+that you can unlock
+features and content.
+
+
+69
+00:03:41,196 --> 00:03:44,236
+So understanding the receipt
+and knowing how it works,
+
+
+70
+00:03:44,396 --> 00:03:47,136
+knowing how to validate it and
+get the purchase information
+
+
+71
+00:03:47,136 --> 00:03:50,226
+out of it, is how you
+enable your business model
+
+
+72
+00:03:50,696 --> 00:03:53,596
+in your apps directly,
+as well as in servers
+
+
+73
+00:03:53,596 --> 00:03:56,416
+that you have issuing content
+and assets out to customers.
+
+
+74
+00:03:57,826 --> 00:04:01,836
+Using the receipt is how you
+know exactly what the user has
+
+
+75
+00:04:01,896 --> 00:04:02,376
+paid for.
+
+
+76
+00:04:06,076 --> 00:04:07,656
+Now if you haven't
+looked into how
+
+
+77
+00:04:07,656 --> 00:04:10,996
+to do receipt validation before,
+or maybe you've looked at it
+
+
+78
+00:04:10,996 --> 00:04:13,516
+but haven't yet implemented
+it, this session is going
+
+
+79
+00:04:13,516 --> 00:04:15,076
+to be great for you because
+we're going to take you
+
+
+80
+00:04:15,076 --> 00:04:16,546
+through a step-by-step look
+
+
+81
+00:04:16,815 --> 00:04:18,706
+at exactly how you
+validate the receipt
+
+
+82
+00:04:18,706 --> 00:04:21,476
+and get the purchase
+information out of it.
+
+
+83
+00:04:22,106 --> 00:04:25,766
+For my iOS developers who are
+already doing receipt checking
+
+
+84
+00:04:25,966 --> 00:04:29,226
+in iOS 6 and earlier, using the
+methods we had available then,
+
+
+85
+00:04:30,276 --> 00:04:32,736
+I've got some new
+APIs for you and also,
+
+
+86
+00:04:32,736 --> 00:04:35,016
+a change in the receipt
+format that is going
+
+
+87
+00:04:35,016 --> 00:04:36,656
+to give you even
+greater flexibility
+
+
+88
+00:04:36,656 --> 00:04:40,366
+and a whole lot more power to
+not only validate purchases
+
+
+89
+00:04:40,486 --> 00:04:43,136
+on your servers, but to
+validate the receipts
+
+
+90
+00:04:43,216 --> 00:04:44,456
+on the device itself.
+
+
+91
+00:04:45,006 --> 00:04:50,586
+But now for my OS X developers,
+I think you'll particularly
+
+
+92
+00:04:50,586 --> 00:04:53,746
+like this because the
+receipt format that you know
+
+
+93
+00:04:53,746 --> 00:04:56,436
+and understand and that we've
+been using since we debuted
+
+
+94
+00:04:57,056 --> 00:04:59,046
+on the -- since we
+debuted the Mac App Store,
+
+
+95
+00:05:00,426 --> 00:05:03,186
+is now the exact same receipt
+format that we are using
+
+
+96
+00:05:03,186 --> 00:05:06,476
+across iOS 7 and OS X.
+
+
+97
+00:05:07,596 --> 00:05:13,396
+This gives you a unified,
+trusted, validated,
+
+
+98
+00:05:13,726 --> 00:05:17,146
+proof of purchase or purchase
+record across both platforms
+
+
+99
+00:05:17,256 --> 00:05:19,216
+to know exactly what the
+customer has paid for.
+
+
+100
+00:05:19,806 --> 00:05:24,306
+Not only do we now have the
+unified receipt model across iOS
+
+
+101
+00:05:24,306 --> 00:05:28,106
+and OS X, but the receipt
+now includes two new pieces
+
+
+102
+00:05:28,106 --> 00:05:28,766
+of information.
+
+
+103
+00:05:29,726 --> 00:05:31,776
+If you've opted into the
+Volume Purchase Program
+
+
+104
+00:05:31,776 --> 00:05:34,266
+to license your app out
+to business and education,
+
+
+105
+00:05:34,576 --> 00:05:36,396
+there's extra information
+in the receipt now
+
+
+106
+00:05:36,396 --> 00:05:40,126
+that tells you whether that
+receipt is allocated to a user
+
+
+107
+00:05:40,126 --> 00:05:42,466
+or whether it has been
+revoked from them,
+
+
+108
+00:05:43,036 --> 00:05:44,906
+but I think the most
+exciting thing that's
+
+
+109
+00:05:44,906 --> 00:05:46,996
+in the receipt this year,
+especially for you guys,
+
+
+110
+00:05:47,026 --> 00:05:48,536
+if you have a paid
+app in the store,
+
+
+111
+00:05:49,416 --> 00:05:50,766
+is that we've included
+information
+
+
+112
+00:05:50,766 --> 00:05:52,876
+in the receipt that's going
+to let you do a transition
+
+
+113
+00:05:52,876 --> 00:05:56,476
+from being a paid app to being
+a free app with In-App Purchases
+
+
+114
+00:05:57,086 --> 00:05:58,966
+without leaving behind
+all the customers
+
+
+115
+00:05:58,966 --> 00:06:01,476
+that have already
+paid for your app.
+
+
+116
+00:06:04,726 --> 00:06:04,946
+[Applause] Right.
+
+
+117
+00:06:05,186 --> 00:06:06,116
+Which is important, right?
+
+
+118
+00:06:06,116 --> 00:06:07,966
+Because you can see that
+there's this huge groundswell
+
+
+119
+00:06:07,966 --> 00:06:10,886
+of momentum towards the Freemium
+model but you don't want
+
+
+120
+00:06:10,886 --> 00:06:13,526
+to leave behind people who've
+already paid for your app.
+
+
+121
+00:06:16,096 --> 00:06:18,816
+So the receipts, this
+foundation, this core upon
+
+
+122
+00:06:18,816 --> 00:06:21,006
+which you build enforcement
+of your business model,
+
+
+123
+00:06:21,236 --> 00:06:22,316
+directly into your apps.
+
+
+124
+00:06:23,876 --> 00:06:26,586
+When it comes to the finding
+exactly how you're going
+
+
+125
+00:06:26,586 --> 00:06:29,186
+to enforce your business
+model, that's going
+
+
+126
+00:06:29,186 --> 00:06:31,686
+to be something that's
+unique to your app.
+
+
+127
+00:06:32,656 --> 00:06:34,146
+Everyone's app is
+different, right?
+
+
+128
+00:06:35,286 --> 00:06:37,096
+You have a different
+value proposition,
+
+
+129
+00:06:37,226 --> 00:06:39,486
+different price point,
+different target market,
+
+
+130
+00:06:39,556 --> 00:06:41,906
+different customers, different
+expectations, everything.
+
+
+131
+00:06:43,066 --> 00:06:45,776
+Everyone's app is
+unique, and the products
+
+
+132
+00:06:45,776 --> 00:06:47,456
+that you're selling,
+be it the app itself
+
+
+133
+00:06:47,456 --> 00:06:50,626
+or through In-App Purchases,
+they have different values.
+
+
+134
+00:06:51,936 --> 00:06:55,166
+That uniqueness needs to
+translate into how you decide
+
+
+135
+00:06:55,476 --> 00:06:56,846
+to enforce your business model
+
+
+136
+00:06:57,156 --> 00:06:59,586
+and protect your revenue,
+your app and servers.
+
+
+137
+00:07:00,406 --> 00:07:01,346
+So it's like a recipe.
+
+
+138
+00:07:02,466 --> 00:07:04,196
+Together we're going to
+bake a cake that's going
+
+
+139
+00:07:04,266 --> 00:07:05,446
+to make sure you get paid.
+
+
+140
+00:07:06,936 --> 00:07:08,636
+Apple has got some ingredients
+that we're going to bring
+
+
+141
+00:07:08,636 --> 00:07:11,126
+to the table, but there's
+some that you'll need to bring
+
+
+142
+00:07:11,126 --> 00:07:14,526
+to the table as well, but the
+great thing is that I'm going
+
+
+143
+00:07:14,526 --> 00:07:17,376
+to show you that all of these
+things that you need to work out
+
+
+144
+00:07:17,696 --> 00:07:20,866
+and work out how you want to
+approach them, they're all based
+
+
+145
+00:07:20,866 --> 00:07:23,716
+on standards that are open and
+very well used and there's lots
+
+
+146
+00:07:23,716 --> 00:07:26,326
+of examples, third-party
+libraries ready to go,
+
+
+147
+00:07:26,726 --> 00:07:28,076
+plus you have the flexibility
+
+
+148
+00:07:28,336 --> 00:07:30,336
+to write the code
+yourself if you choose.
+
+
+149
+00:07:30,766 --> 00:07:34,376
+Because Apple gives you the
+receipt format specification
+
+
+150
+00:07:34,376 --> 00:07:37,626
+itself and the receipt is
+based on open standards,
+
+
+151
+00:07:37,626 --> 00:07:41,576
+everything in the
+receipt is based
+
+
+152
+00:07:41,576 --> 00:07:43,616
+on an open standard that's
+very well documented,
+
+
+153
+00:07:44,066 --> 00:07:47,036
+used industry wide, and is used
+in many, many different ways.
+
+
+154
+00:07:47,576 --> 00:07:52,716
+We give you the receipt itself,
+and we give you instructions
+
+
+155
+00:07:52,716 --> 00:07:55,516
+on how to do both on-device
+validation for the receipt,
+
+
+156
+00:07:55,606 --> 00:07:58,706
+as well as validating the
+receipt server-to-server,
+
+
+157
+00:07:58,956 --> 00:08:00,446
+if you have servers
+out there that need
+
+
+158
+00:08:00,446 --> 00:08:02,186
+to validate these
+before issuing content.
+
+
+159
+00:08:03,466 --> 00:08:06,546
+But it's up to you guys,
+you the developers,
+
+
+160
+00:08:06,986 --> 00:08:08,656
+to make some decisions
+along the way
+
+
+161
+00:08:09,526 --> 00:08:12,276
+about exactly what security
+level is important for you,
+
+
+162
+00:08:12,726 --> 00:08:13,976
+and I'm going to
+call those out to you
+
+
+163
+00:08:13,976 --> 00:08:14,976
+as we go through these slides.
+
+
+164
+00:08:15,516 --> 00:08:20,576
+[ Pause ]
+
+
+165
+00:08:21,076 --> 00:08:23,876
+So let's start with an
+understanding of the receipts.
+
+
+166
+00:08:27,176 --> 00:08:30,906
+So a receipt, again, just like
+the physical receipt you get
+
+
+167
+00:08:30,906 --> 00:08:34,076
+in the store, is issued when
+a transaction takes place
+
+
+168
+00:08:34,116 --> 00:08:36,135
+between the App Store
+and your app.
+
+
+169
+00:08:37,226 --> 00:08:40,806
+So when your app is purchased
+or updated, a receipt is issued.
+
+
+170
+00:08:42,066 --> 00:08:44,306
+If someone performs an In-App
+Purchase or there are stores
+
+
+171
+00:08:44,306 --> 00:08:45,476
+that have completed
+transactions,
+
+
+172
+00:08:46,386 --> 00:08:47,216
+a receipt is issued.
+
+
+173
+00:08:48,076 --> 00:08:50,226
+If you've opted into the
+Great Volume Purchase Program,
+
+
+174
+00:08:50,936 --> 00:08:53,096
+when the license is
+allocated or when it's revoked
+
+
+175
+00:08:53,096 --> 00:08:55,056
+from that user, a
+receipt's issued.
+
+
+176
+00:08:56,596 --> 00:08:59,856
+There's also some on-demand APIs
+that you can use within your app
+
+
+177
+00:09:00,266 --> 00:09:01,836
+to get in your receipt
+if it appears
+
+
+178
+00:09:01,836 --> 00:09:05,056
+that the one there is missing
+or doesn't appear to be valid
+
+
+179
+00:09:05,056 --> 00:09:06,376
+for your app on this device.
+
+
+180
+00:09:08,716 --> 00:09:09,946
+So what's in these things?
+
+
+181
+00:09:11,736 --> 00:09:12,926
+So within the receipt itself,
+
+
+182
+00:09:13,956 --> 00:09:16,376
+first and foremost there's
+certificates and signatures,
+
+
+183
+00:09:16,726 --> 00:09:18,666
+and this allows you to make
+sure it came from Apple
+
+
+184
+00:09:18,666 --> 00:09:19,836
+and hasn't been tampered with.
+
+
+185
+00:09:21,026 --> 00:09:23,966
+There's information that ties
+the receipt directly to your app
+
+
+186
+00:09:24,096 --> 00:09:26,656
+on a specific device,
+so it hasn't been copied
+
+
+187
+00:09:26,656 --> 00:09:29,206
+around between people, it
+hasn't been copied from one app
+
+
+188
+00:09:29,256 --> 00:09:32,286
+to another app, it's
+legitimately for your app
+
+
+189
+00:09:32,676 --> 00:09:36,616
+on a single device, and then
+once you know that it's trusted
+
+
+190
+00:09:36,616 --> 00:09:39,196
+and it's for your app on this
+device, you can get a whole lot
+
+
+191
+00:09:39,196 --> 00:09:40,886
+of purchase information
+out of that receipt.
+
+
+192
+00:09:42,236 --> 00:09:44,526
+You've got purchase information
+about the app itself,
+
+
+193
+00:09:45,146 --> 00:09:47,536
+plus the In-App Purchases
+that the user has made,
+
+
+194
+00:09:48,716 --> 00:09:51,286
+and there's also information
+there, I mentioned as well,
+
+
+195
+00:09:51,286 --> 00:09:52,656
+about the Volume
+Purchase Program,
+
+
+196
+00:09:54,016 --> 00:09:56,066
+but I think the most exciting
+thing that we've added
+
+
+197
+00:09:56,066 --> 00:09:59,686
+to the receipt this year is
+the initial purchase date
+
+
+198
+00:10:00,036 --> 00:10:01,686
+and initial purchase version.
+
+
+199
+00:10:02,326 --> 00:10:07,926
+So for everyone that's got a
+paid app on the store today,
+
+
+200
+00:10:08,826 --> 00:10:11,106
+and you want to make the
+transition to being a free app
+
+
+201
+00:10:11,106 --> 00:10:13,836
+with In-App Purchases,
+previously that used
+
+
+202
+00:10:13,836 --> 00:10:18,126
+to be quite a challenge for you,
+because if you simply switch
+
+
+203
+00:10:18,126 --> 00:10:19,816
+to being a free app
+with In-App Purchases,
+
+
+204
+00:10:20,176 --> 00:10:21,336
+your customers would have to go
+
+
+205
+00:10:21,336 --> 00:10:23,006
+and buy all those
+In-App Purchases again,
+
+
+206
+00:10:23,006 --> 00:10:23,986
+but they've already paid for it,
+
+
+207
+00:10:24,666 --> 00:10:25,646
+and they're not going
+to like that.
+
+
+208
+00:10:27,156 --> 00:10:29,976
+So now in the receipt
+itself we have the date,
+
+
+209
+00:10:29,976 --> 00:10:33,806
+when the user first purchased
+your app, and the version
+
+
+210
+00:10:33,806 --> 00:10:35,066
+that it was at that time.
+
+
+211
+00:10:36,476 --> 00:10:38,646
+So you can use this to
+make a really informed,
+
+
+212
+00:10:38,826 --> 00:10:42,606
+intelligent decision about
+what features and content
+
+
+213
+00:10:42,606 --> 00:10:46,066
+to grant this user into, so if
+your app looks at the receipt
+
+
+214
+00:10:46,066 --> 00:10:49,356
+and inspects it and sees this
+user bought my app before I made
+
+
+215
+00:10:49,356 --> 00:10:51,126
+the switch to being free
+with In-App Purchases,
+
+
+216
+00:10:51,776 --> 00:10:53,146
+grant them into what
+they've paid for,
+
+
+217
+00:10:53,666 --> 00:10:57,646
+but if they purchased your app
+after you've made the transition
+
+
+218
+00:10:57,646 --> 00:10:58,976
+to being free with
+In-App Purchases,
+
+
+219
+00:10:59,566 --> 00:11:01,886
+you know then not too
+unlock features and content
+
+
+220
+00:11:02,256 --> 00:11:05,246
+until they make the purchase
+and you verify that transaction
+
+
+221
+00:11:05,386 --> 00:11:06,886
+with the receipt itself.
+
+
+222
+00:11:08,256 --> 00:11:10,816
+So understanding the
+receipt not only allows you
+
+
+223
+00:11:10,816 --> 00:11:12,736
+to protect your revenue
+and your digital sales,
+
+
+224
+00:11:13,666 --> 00:11:16,476
+but it's also really
+powerful for you
+
+
+225
+00:11:16,476 --> 00:11:19,796
+to adjust your business model
+to suit changes in the market.
+
+
+226
+00:11:20,346 --> 00:11:25,586
+Now speaking of transitions,
+I want to talk for a second
+
+
+227
+00:11:25,586 --> 00:11:28,176
+to iOS developers who are
+already doing receipt checking
+
+
+228
+00:11:28,176 --> 00:11:30,016
+for In-App Purchases on iOS 6.
+
+
+229
+00:11:31,056 --> 00:11:33,526
+For OS X developers and anyone
+else that's not doing this
+
+
+230
+00:11:33,526 --> 00:11:35,466
+receipt checking, if
+you've got a moment,
+
+
+231
+00:11:35,676 --> 00:11:37,956
+hit the documentation
+slide and have a look
+
+
+232
+00:11:37,956 --> 00:11:39,386
+for the receipt validation
+guide,
+
+
+233
+00:11:39,386 --> 00:11:40,646
+because that's what we're going
+
+
+234
+00:11:40,646 --> 00:11:41,806
+to be going through
+very shortly.
+
+
+235
+00:11:42,346 --> 00:11:48,036
+But for iOS developers who are
+already doing receipt checking
+
+
+236
+00:11:48,386 --> 00:11:52,056
+on iOS 6 and earlier
+-- don't panic.
+
+
+237
+00:11:53,246 --> 00:11:56,716
+Your app as it is today in the
+store doing receipt checking
+
+
+238
+00:11:56,976 --> 00:12:00,296
+on iOS 6 will continue
+to work in iOS 7.
+
+
+239
+00:12:00,806 --> 00:12:05,386
+iOS 7 is binary compatible with
+the receipt checking methods
+
+
+240
+00:12:05,386 --> 00:12:11,466
+that we shipped in iOS 6, but
+those APIs are deprecated.
+
+
+241
+00:12:12,676 --> 00:12:16,726
+So you need to make the
+jump to using the iOS 7 way
+
+
+242
+00:12:16,726 --> 00:12:18,346
+of doing receipt validation,
+
+
+243
+00:12:19,686 --> 00:12:21,546
+not just because the
+receipts are deprecated,
+
+
+244
+00:12:21,996 --> 00:12:25,126
+but because now you can actually
+do the receipt validation
+
+
+245
+00:12:25,126 --> 00:12:26,916
+entirely on the device itself.
+
+
+246
+00:12:27,546 --> 00:12:30,016
+You no longer need to
+have a server just there
+
+
+247
+00:12:30,016 --> 00:12:32,166
+for the purpose of doing
+receipt validation for you.
+
+
+248
+00:12:33,516 --> 00:12:35,516
+[ Pause ]
+
+
+249
+00:12:36,016 --> 00:12:37,000
+[ Applause ]
+
+
+250
+00:12:37,336 --> 00:12:37,656
+Thank you.
+
+
+251
+00:12:40,226 --> 00:12:44,176
+But what if you want to have one
+binary on the store that works
+
+
+252
+00:12:44,176 --> 00:12:46,946
+in iOS 6 and 7, and
+takes advantage
+
+
+253
+00:12:46,946 --> 00:12:48,956
+of the best possible
+receipt checking methods
+
+
+254
+00:12:48,956 --> 00:12:50,276
+on both of those platforms?
+
+
+255
+00:12:51,066 --> 00:12:54,746
+Well, you can, and the way you
+do this is you just Weak Link
+
+
+256
+00:12:54,746 --> 00:13:00,046
+to the iOS 7 APIs, and
+if I lose any of you
+
+
+257
+00:13:00,046 --> 00:13:02,916
+when I said Weak
+Linking, it's not nearly
+
+
+258
+00:13:02,916 --> 00:13:04,396
+as complicated as it can sound.
+
+
+259
+00:13:05,566 --> 00:13:07,546
+Weak Linking simply means check
+
+
+260
+00:13:07,546 --> 00:13:10,056
+that the API exists
+before you go and use it.
+
+
+261
+00:13:10,886 --> 00:13:15,016
+This prevents your app crashing
+on a platform where the method
+
+
+262
+00:13:15,016 --> 00:13:17,746
+or the API doesn't exist; it
+prevents you from crashing
+
+
+263
+00:13:17,746 --> 00:13:19,966
+with an unrecognized selector
+or an unresolved symbol.
+
+
+264
+00:13:22,356 --> 00:13:24,656
+So Weak Linking, first
+of all, you run --
+
+
+265
+00:13:24,786 --> 00:13:26,846
+you call the Response
+to Selector
+
+
+266
+00:13:27,196 --> 00:13:29,476
+to see whether a given
+object will actually respond
+
+
+267
+00:13:29,476 --> 00:13:30,016
+to this method.
+
+
+268
+00:13:30,016 --> 00:13:32,596
+In this case I'm calling
+App Store Receipt URL to ask
+
+
+269
+00:13:32,776 --> 00:13:34,916
+for the location of
+the unified receipt.
+
+
+270
+00:13:35,976 --> 00:13:37,196
+If that returns true,
+
+
+271
+00:13:38,066 --> 00:13:41,916
+then I know that this device I'm
+running on supports the new way
+
+
+272
+00:13:41,916 --> 00:13:43,846
+of doing receipt checking
+with a unified receipt
+
+
+273
+00:13:43,846 --> 00:13:46,816
+and I can proceed down
+that course, but when I go
+
+
+274
+00:13:46,816 --> 00:13:50,926
+to call App Store Receipt
+URL, I use Perform Selector.
+
+
+275
+00:13:51,856 --> 00:13:54,216
+That way I avoid crashing
+with unrecognized selector.
+
+
+276
+00:13:54,216 --> 00:13:57,336
+So this is what we mean
+when we say Weak Linking,
+
+
+277
+00:13:57,646 --> 00:13:59,936
+but do this instead of
+checking the system version.
+
+
+278
+00:14:00,816 --> 00:14:03,556
+This uses the runtime to
+know exactly what methods are
+
+
+279
+00:14:03,556 --> 00:14:05,976
+available and allows you
+to take advantage of those
+
+
+280
+00:14:06,266 --> 00:14:07,136
+when they're available.
+
+
+281
+00:14:07,756 --> 00:14:09,616
+Much better, much
+more future proof
+
+
+282
+00:14:09,996 --> 00:14:11,126
+than checking the system version
+
+
+283
+00:14:11,126 --> 00:14:12,686
+or making arbitrary
+decisions based
+
+
+284
+00:14:12,686 --> 00:14:17,466
+on the running version
+of the OS.
+
+
+285
+00:14:17,466 --> 00:14:20,966
+So now we're going to
+delve into some code,
+
+
+286
+00:14:21,716 --> 00:14:22,886
+but I'll say this
+from the outset.
+
+
+287
+00:14:24,266 --> 00:14:26,766
+Some of the code and the
+concepts that we're going
+
+
+288
+00:14:26,766 --> 00:14:30,186
+to look at now might be a bit
+outside your comfort zone,
+
+
+289
+00:14:31,126 --> 00:14:33,616
+especially if you're used to
+dealing with Objective-C and all
+
+
+290
+00:14:33,616 --> 00:14:35,696
+of its wonderful,
+developer friendly APIs
+
+
+291
+00:14:35,696 --> 00:14:39,356
+and App Kit new iKit,
+because to validate receipts,
+
+
+292
+00:14:39,616 --> 00:14:41,316
+we're going to delve
+into some cryptography,
+
+
+293
+00:14:42,316 --> 00:14:47,006
+and also some doddering coding
+standards, but let's take it
+
+
+294
+00:14:47,556 --> 00:14:52,186
+down to the simple fact;
+the receipt is just a file.
+
+
+295
+00:14:52,756 --> 00:14:56,696
+It's stored in the app bundle,
+we give you an API to get a hold
+
+
+296
+00:14:56,696 --> 00:15:00,096
+of it, and it's a single
+file that has purchased data
+
+
+297
+00:15:00,096 --> 00:15:01,916
+and signatures to
+check authenticity.
+
+
+298
+00:15:03,446 --> 00:15:05,706
+Don't let the acronyms and
+cryptic function names we are
+
+
+299
+00:15:05,706 --> 00:15:06,796
+about to look at fool you.
+
+
+300
+00:15:07,686 --> 00:15:10,546
+In essence, all we're doing
+here is opening a file,
+
+
+301
+00:15:10,716 --> 00:15:13,676
+reading it into memory,
+running some functions over it,
+
+
+302
+00:15:13,726 --> 00:15:16,116
+calling some methods,
+checking the return codes
+
+
+303
+00:15:16,116 --> 00:15:18,306
+and comparing values, and that's
+
+
+304
+00:15:18,306 --> 00:15:19,646
+within the reach
+of any developer.
+
+
+305
+00:15:19,646 --> 00:15:24,056
+In fact, what I'm
+going to take you
+
+
+306
+00:15:24,056 --> 00:15:30,266
+through is a three-step process,
+and this is a three-step process
+
+
+307
+00:15:30,316 --> 00:15:34,596
+to guarantee your
+revenue, protect the value
+
+
+308
+00:15:34,596 --> 00:15:38,206
+of your products, and make sure
+
+
+309
+00:15:38,206 --> 00:15:39,966
+that you retain your
+customer loyalty.
+
+
+310
+00:15:41,056 --> 00:15:41,726
+Three steps.
+
+
+311
+00:15:42,346 --> 00:15:45,586
+This is the WWDC session
+that pays for itself.
+
+
+312
+00:15:47,276 --> 00:15:48,476
+So step one.
+
+
+313
+00:15:49,486 --> 00:15:51,206
+You verify the signature
+of the receipt.
+
+
+314
+00:15:51,406 --> 00:15:52,846
+This makes sure it
+came from Apple
+
+
+315
+00:15:52,846 --> 00:15:53,896
+and it hasn't been altered.
+
+
+316
+00:15:54,366 --> 00:15:56,906
+No one's tried to add in
+some extra In-App Purchases
+
+
+317
+00:15:56,906 --> 00:15:58,096
+that they haven't really made.
+
+
+318
+00:15:58,816 --> 00:16:01,276
+No one's tried to doctor up
+a receipt that's not really
+
+
+319
+00:16:01,276 --> 00:16:02,426
+for an app that they purchased.
+
+
+320
+00:16:03,036 --> 00:16:03,816
+That's step one.
+
+
+321
+00:16:04,696 --> 00:16:07,556
+Step two is we confirm
+that the receipt is
+
+
+322
+00:16:07,556 --> 00:16:09,866
+for your app on a given device.
+
+
+323
+00:16:10,416 --> 00:16:12,526
+This makes sure that no
+one's just copied the receipt
+
+
+324
+00:16:12,576 --> 00:16:15,596
+between devices or has tried
+to copy a receipt from one app
+
+
+325
+00:16:15,686 --> 00:16:17,036
+to another in hope
+that it works.
+
+
+326
+00:16:18,206 --> 00:16:22,116
+The third step is that
+now we trust the receipt
+
+
+327
+00:16:22,906 --> 00:16:24,576
+and we know it's for
+our app on this device,
+
+
+328
+00:16:24,716 --> 00:16:26,466
+we get the purchase
+information up out of it
+
+
+329
+00:16:26,466 --> 00:16:28,746
+and we make decisions about
+what to give the customer,
+
+
+330
+00:16:29,076 --> 00:16:30,106
+because they're, at that point,
+
+
+331
+00:16:30,306 --> 00:16:31,846
+we know exactly what
+they've paid for.
+
+
+332
+00:16:32,876 --> 00:16:37,216
+So let's start with step
+one, verifying the signature.
+
+
+333
+00:16:38,856 --> 00:16:42,016
+Verifying the signature in
+simple terms is, step one,
+
+
+334
+00:16:42,256 --> 00:16:46,136
+locate the file, and we
+do that with this API here
+
+
+335
+00:16:46,326 --> 00:16:49,096
+on NSBundle we call
+App Store Receipt URL
+
+
+336
+00:16:49,096 --> 00:16:51,186
+and this works in
+iOS 7 and OS X.
+
+
+337
+00:16:52,206 --> 00:16:55,076
+That gives us a URL to find
+the actual receipt file,
+
+
+338
+00:16:55,836 --> 00:16:58,306
+and the great thing is is
+that the OS manages this
+
+
+339
+00:16:58,306 --> 00:17:00,336
+for us on both iOS and OS X.
+
+
+340
+00:17:00,836 --> 00:17:02,636
+It keeps the receipt
+file there for you.
+
+
+341
+00:17:02,936 --> 00:17:05,296
+You don't have to process
+the receipt yourself anymore
+
+
+342
+00:17:05,356 --> 00:17:07,496
+like you used to.
+
+
+343
+00:17:08,286 --> 00:17:11,546
+We read the contents into memory
+and we verify the signature.
+
+
+344
+00:17:12,056 --> 00:17:16,896
+Here's your first decision
+point as a developer.
+
+
+345
+00:17:17,366 --> 00:17:22,306
+You need to decide what
+you're going to use to verify
+
+
+346
+00:17:22,306 --> 00:17:25,376
+that signature, and the
+great thing is that if you're
+
+
+347
+00:17:25,376 --> 00:17:27,236
+at all familiar with
+cryptography standards
+
+
+348
+00:17:27,236 --> 00:17:31,406
+and secure exchange of data, the
+receipt itself is what we refer
+
+
+349
+00:17:31,406 --> 00:17:33,506
+to as a PKCS #7 container.
+
+
+350
+00:17:33,656 --> 00:17:35,296
+Like I said, don't let
+the acronyms fool you.
+
+
+351
+00:17:35,296 --> 00:17:36,316
+This is doable.
+
+
+352
+00:17:37,096 --> 00:17:40,946
+It's a PKCS #7 container, which
+is an open, industry standard,
+
+
+353
+00:17:40,986 --> 00:17:45,796
+cryptographic scheme for
+embedding a payload of data
+
+
+354
+00:17:45,796 --> 00:17:47,026
+around certificates
+and signature
+
+
+355
+00:17:47,026 --> 00:17:48,996
+to guarantee its
+origin and authenticity.
+
+
+356
+00:17:50,436 --> 00:17:53,486
+The good thing is that
+because that is such an open
+
+
+357
+00:17:53,486 --> 00:17:56,836
+and very widely used standard,
+you have a huge amount
+
+
+358
+00:17:57,356 --> 00:17:59,716
+of options available
+to you in terms
+
+
+359
+00:17:59,716 --> 00:18:01,736
+of deciding how you
+verify this signature.
+
+
+360
+00:18:02,956 --> 00:18:06,626
+At one end of the extreme,
+there are third party libraries
+
+
+361
+00:18:06,626 --> 00:18:08,896
+that you can get off the shelf
+that are freely available,
+
+
+362
+00:18:09,466 --> 00:18:11,126
+put them in your
+project, use them,
+
+
+363
+00:18:11,896 --> 00:18:14,236
+and they will do the
+certificate validation for you.
+
+
+364
+00:18:15,656 --> 00:18:18,226
+But at the other end of the
+extreme, if the security
+
+
+365
+00:18:18,226 --> 00:18:21,156
+that you want for protecting
+your sales requires you
+
+
+366
+00:18:21,156 --> 00:18:23,226
+to own this code
+end-to-end yourself,
+
+
+367
+00:18:23,946 --> 00:18:25,526
+then because this
+is an open standard
+
+
+368
+00:18:25,526 --> 00:18:28,156
+with specifications
+available, you can do that.
+
+
+369
+00:18:28,726 --> 00:18:31,056
+You could write your own code
+to validate this signature
+
+
+370
+00:18:31,056 --> 00:18:34,076
+if you wanted, and of course
+there's the great middle ground
+
+
+371
+00:18:34,076 --> 00:18:36,526
+of there being lots of examples
+and sample code out there
+
+
+372
+00:18:36,896 --> 00:18:40,556
+that you can use and
+leverage to suit your needs.
+
+
+373
+00:18:41,076 --> 00:18:46,356
+The example that we provide
+in the documentation is
+
+
+374
+00:18:46,356 --> 00:18:48,556
+to use Open SSL to
+verify the signature.
+
+
+375
+00:18:49,216 --> 00:18:53,896
+Open SSL is an extremely well
+used cryptographic library.
+
+
+376
+00:18:53,896 --> 00:18:56,206
+It's used on many different
+operating systems for millions
+
+
+377
+00:18:56,206 --> 00:18:57,826
+and millions of secure
+operations,
+
+
+378
+00:18:58,976 --> 00:19:02,086
+and if we used Open SSL to
+do the verification for us,
+
+
+379
+00:19:02,576 --> 00:19:03,456
+here's what it would look like.
+
+
+380
+00:19:04,336 --> 00:19:06,326
+We assume, first of all,
+you've loaded up the receipt
+
+
+381
+00:19:06,326 --> 00:19:09,026
+into memory and a copy of
+Apple's Root CA Certificate
+
+
+382
+00:19:09,026 --> 00:19:10,896
+and you can find that
+certificate online,
+
+
+383
+00:19:11,816 --> 00:19:14,486
+and we've stored these in two
+root variables here, B receipt
+
+
+384
+00:19:14,556 --> 00:19:18,486
+and BX 509, X 509 being
+the standard that's used
+
+
+385
+00:19:18,486 --> 00:19:20,176
+to encode Apple's
+Root CA Certificate.
+
+
+386
+00:19:21,556 --> 00:19:24,196
+The first thing we do is we
+want to take those raw bytes
+
+
+387
+00:19:24,196 --> 00:19:25,906
+from the receipt
+and convert them
+
+
+388
+00:19:25,906 --> 00:19:29,396
+into a PKCS #7 data structure
+so that Open SSL can work
+
+
+389
+00:19:29,396 --> 00:19:32,446
+with it at a code level.
+
+
+390
+00:19:32,556 --> 00:19:36,256
+Next, to verify the signature,
+we need to tell Open SSL
+
+
+391
+00:19:36,646 --> 00:19:39,806
+who we are actually expecting
+to have signed this certificate,
+
+
+392
+00:19:39,886 --> 00:19:41,676
+who we're expecting
+it to have come from.
+
+
+393
+00:19:42,836 --> 00:19:44,666
+So we load up Apple's Root CA
+
+
+394
+00:19:44,666 --> 00:19:46,736
+and we create a certificate
+store.
+
+
+395
+00:19:47,386 --> 00:19:48,616
+We add that certificate in.
+
+
+396
+00:19:49,976 --> 00:19:51,146
+With our certificate in hand,
+
+
+397
+00:19:51,676 --> 00:19:54,266
+and our PKCS #7 data
+structure ready to go,
+
+
+398
+00:19:55,086 --> 00:19:57,986
+we simply call PKCS #7 Verify.
+
+
+399
+00:19:57,986 --> 00:20:00,856
+We check the result.
+
+
+400
+00:20:01,886 --> 00:20:04,716
+If result's one, the
+receipt is valid.
+
+
+401
+00:20:05,476 --> 00:20:05,836
+That's it.
+
+
+402
+00:20:06,406 --> 00:20:08,366
+And the great thing is
+
+
+403
+00:20:08,986 --> 00:20:13,086
+that calling PKCS #7 Verify also
+actually returns back to you
+
+
+404
+00:20:13,086 --> 00:20:15,076
+that payload of data
+that's inside the receipt,
+
+
+405
+00:20:15,416 --> 00:20:18,696
+the actual purchase information
+that you want to get a hold
+
+
+406
+00:20:18,726 --> 00:20:21,266
+of to make decisions about
+what the users purchased.
+
+
+407
+00:20:24,216 --> 00:20:28,946
+So right now, we have a receipt
+that we know came from Apple
+
+
+408
+00:20:28,946 --> 00:20:32,846
+for an App Store Purchased app,
+and we know that it's authentic
+
+
+409
+00:20:32,846 --> 00:20:33,686
+and hasn't been altered.
+
+
+410
+00:20:34,676 --> 00:20:37,986
+The next thing we need to do is
+confirm that it is definitely
+
+
+411
+00:20:37,986 --> 00:20:42,186
+for our app on this device,
+and to do that we need
+
+
+412
+00:20:42,186 --> 00:20:46,076
+to actually inspect these raw
+bytes of data that we took
+
+
+413
+00:20:46,076 --> 00:20:48,476
+out from the receipt
+payload itself.
+
+
+414
+00:20:49,436 --> 00:20:54,686
+Now that payload of data,
+we arrange that in a series
+
+
+415
+00:20:54,686 --> 00:20:56,466
+of attributes that have
+a Type and a value.
+
+
+416
+00:20:57,736 --> 00:21:00,276
+We encode these using a
+standard called ASN.1.
+
+
+417
+00:21:01,286 --> 00:21:04,066
+ASN.1 again, I know I sound like
+I'm repeating myself, but again,
+
+
+418
+00:21:04,066 --> 00:21:07,386
+is a very widely used open
+and industry-standard,
+
+
+419
+00:21:07,826 --> 00:21:12,106
+and it's been round for a long,
+long time, and that's great
+
+
+420
+00:21:12,336 --> 00:21:15,236
+because that means that there
+is a wealth of options available
+
+
+421
+00:21:15,236 --> 00:21:19,386
+for you for how to read
+that doddering ASN.1 format.
+
+
+422
+00:21:20,386 --> 00:21:23,726
+ASN.1 is the abstract
+syntax notation.
+
+
+423
+00:21:24,846 --> 00:21:28,346
+It allows us to write in
+a textual form like this,
+
+
+424
+00:21:29,196 --> 00:21:32,876
+a description of how we've laid
+out the actual bytes contained
+
+
+425
+00:21:32,876 --> 00:21:35,666
+within the receipt,
+and what this body
+
+
+426
+00:21:35,666 --> 00:21:38,976
+of text here tells you is that
+we have arranged those bytes
+
+
+427
+00:21:38,976 --> 00:21:41,586
+in the receipt as a
+sequence of attributes.
+
+
+428
+00:21:42,896 --> 00:21:47,046
+In a cocoa sense, it would be
+kind of like having NSArray full
+
+
+429
+00:21:47,076 --> 00:21:49,266
+of NSObject sub-classes
+that we've created
+
+
+430
+00:21:49,766 --> 00:21:51,786
+that have a type property
+and a value property.
+
+
+431
+00:21:53,556 --> 00:21:56,156
+That's essentially what we've
+defined here with this block
+
+
+432
+00:21:56,156 --> 00:22:01,346
+of ASN.1, and here's your second
+decision point as a developer.
+
+
+433
+00:22:02,366 --> 00:22:05,216
+You need to decide what
+you're going to use to read
+
+
+434
+00:22:05,216 --> 00:22:07,966
+that ASN.1 encoded
+data at the code level.
+
+
+435
+00:22:10,376 --> 00:22:13,886
+Now documentation that we've
+had on the developer site
+
+
+436
+00:22:14,266 --> 00:22:17,386
+since we debuted the Mac App
+Store has included an example
+
+
+437
+00:22:17,386 --> 00:22:19,556
+of using a third-party
+tool called ASN1c.
+
+
+438
+00:22:21,476 --> 00:22:24,596
+ASN1c is a third-party
+tool that allows you
+
+
+439
+00:22:24,596 --> 00:22:27,246
+to essentially take this textual
+representation of the data
+
+
+440
+00:22:27,976 --> 00:22:30,776
+and ASN1c creates for you
+a bunch of boilerplate code
+
+
+441
+00:22:30,776 --> 00:22:33,566
+that you can copy straight
+into your project, build it,
+
+
+442
+00:22:34,226 --> 00:22:36,666
+and it gives you some
+functions and data structures
+
+
+443
+00:22:36,666 --> 00:22:39,566
+that you can use to actually
+work with these attributes
+
+
+444
+00:22:39,636 --> 00:22:40,436
+that are in the receipt,
+
+
+445
+00:22:40,606 --> 00:22:42,376
+the actual purchase
+information you want.
+
+
+446
+00:22:43,906 --> 00:22:46,536
+Another option you
+could use is Open SSL.
+
+
+447
+00:22:46,856 --> 00:22:49,986
+It can also open read ASN.1
+coded data, and again,
+
+
+448
+00:22:49,986 --> 00:22:52,676
+it's this wide range of
+options you've got available,
+
+
+449
+00:22:53,616 --> 00:22:56,336
+from the extreme of taking
+a library that already exist
+
+
+450
+00:22:56,996 --> 00:22:58,626
+to the extreme of
+writing it yourself,
+
+
+451
+00:22:59,426 --> 00:23:01,426
+and all the middle
+ground of finding examples
+
+
+452
+00:23:01,426 --> 00:23:02,636
+and making informed decisions
+
+
+453
+00:23:02,636 --> 00:23:04,446
+about exactly how you
+want to do this yourself.
+
+
+454
+00:23:05,886 --> 00:23:08,696
+Just remember it's a risk and
+reward calculation for you.
+
+
+455
+00:23:09,776 --> 00:23:12,236
+At this end of the spectrum of
+taking a third-party library
+
+
+456
+00:23:12,236 --> 00:23:14,786
+and using it, the
+reward is obviously rapid
+
+
+457
+00:23:14,786 --> 00:23:15,596
+development time.
+
+
+458
+00:23:15,596 --> 00:23:17,316
+You can get this up and
+running really quickly.
+
+
+459
+00:23:17,936 --> 00:23:20,826
+The risk is when you take
+someone else's library
+
+
+460
+00:23:20,826 --> 00:23:22,716
+and use it, you get
+their bugs, as well.
+
+
+461
+00:23:24,736 --> 00:23:28,086
+The middle ground of finding
+some examples to guide you,
+
+
+462
+00:23:28,086 --> 00:23:30,966
+of finding some samples that
+are out there and using some
+
+
+463
+00:23:30,966 --> 00:23:33,546
+of that code, may be
+a good middle ground
+
+
+464
+00:23:33,546 --> 00:23:36,526
+if that's the level of security
+you want, and at the other end
+
+
+465
+00:23:36,526 --> 00:23:39,176
+of the extreme, if your
+products are so high value
+
+
+466
+00:23:39,716 --> 00:23:42,476
+that you absolutely have to
+own this yourself end-to-end,
+
+
+467
+00:23:43,596 --> 00:23:46,066
+the ASN.1 specifications
+are available for you,
+
+
+468
+00:23:46,156 --> 00:23:47,846
+you could write your
+own parser if you want.
+
+
+469
+00:23:48,296 --> 00:23:51,716
+Here's how it would
+look if we used ASN1c.
+
+
+470
+00:23:51,816 --> 00:23:55,656
+The first one I'm trying
+to call there, BRD Coder,
+
+
+471
+00:23:57,216 --> 00:24:00,326
+takes in my receipt bytes
+itself, the actual payload
+
+
+472
+00:24:00,326 --> 00:24:03,456
+of data we got, and it gives
+me a data structure back
+
+
+473
+00:24:03,506 --> 00:24:06,766
+that I can use to set up a
+full loop and iterate over each
+
+
+474
+00:24:06,766 --> 00:24:08,166
+of these attributes
+in the receipt.
+
+
+475
+00:24:09,906 --> 00:24:13,426
+Whether you use ASN1c,
+Open SSL, or roll your own,
+
+
+476
+00:24:13,896 --> 00:24:16,536
+you're generally going to end
+up in some sort of full loop
+
+
+477
+00:24:16,566 --> 00:24:19,426
+to iterate over these
+attributes in the receipt,
+
+
+478
+00:24:19,936 --> 00:24:24,256
+just like with an NSArray, you'd
+use 4 ID Object NArray and have
+
+
+479
+00:24:24,256 --> 00:24:26,236
+that loop ready to
+iterate over these things.
+
+
+480
+00:24:26,786 --> 00:24:31,246
+So getting back to
+validating that the receipts
+
+
+481
+00:24:31,246 --> 00:24:32,636
+for our app on this device.
+
+
+482
+00:24:34,236 --> 00:24:38,086
+There's four attributes that
+we are particularly interested
+
+
+483
+00:24:38,086 --> 00:24:39,086
+in here.
+
+
+484
+00:24:39,676 --> 00:24:41,466
+Let's go with the first
+part of this equation,
+
+
+485
+00:24:41,926 --> 00:24:45,286
+that the receipt is for
+your app on this device.
+
+
+486
+00:24:46,566 --> 00:24:48,396
+To know it's for your
+app, you want to look
+
+
+487
+00:24:48,396 --> 00:24:51,256
+at attributes Type 2 and
+3, so in that full loop,
+
+
+488
+00:24:51,256 --> 00:24:52,686
+when I'm looping
+over the attributes,
+
+
+489
+00:24:53,056 --> 00:24:56,816
+checking the actual attribute
+type, we'd look for Type 2
+
+
+490
+00:24:56,876 --> 00:24:58,626
+and we'd know that that's
+the bundle identifier.
+
+
+491
+00:24:59,746 --> 00:25:02,056
+We'd look for Type 3 and know
+that it's the bundle version.
+
+
+492
+00:25:02,856 --> 00:25:05,746
+We can take these and compare
+these to the running app.
+
+
+493
+00:25:05,746 --> 00:25:07,866
+If they match, the
+receipt's for your app
+
+
+494
+00:25:07,866 --> 00:25:08,956
+and this version of your app.
+
+
+495
+00:25:10,066 --> 00:25:11,036
+You might not want to check it
+
+
+496
+00:25:11,036 --> 00:25:12,296
+against the info
+paylist, though.
+
+
+497
+00:25:13,666 --> 00:25:15,976
+That's all too easy for
+someone to edit the info paylist
+
+
+498
+00:25:16,116 --> 00:25:18,646
+and have it match the receipt
+that they want you to validate,
+
+
+499
+00:25:18,986 --> 00:25:21,586
+so you might want to hardcode
+these values into your app.
+
+
+500
+00:25:22,296 --> 00:25:26,536
+The second part of the
+equation is we now know it's
+
+
+501
+00:25:26,536 --> 00:25:30,656
+for your app, but is it for
+your app on this device only?
+
+
+502
+00:25:32,046 --> 00:25:36,016
+Now the way we do that
+is we need three pieces
+
+
+503
+00:25:36,016 --> 00:25:36,726
+of information.
+
+
+504
+00:25:37,936 --> 00:25:41,226
+Firstly, we need the
+unique identifier
+
+
+505
+00:25:41,226 --> 00:25:42,546
+for the device that
+it's running on.
+
+
+506
+00:25:42,886 --> 00:25:45,746
+If you're on an iOS device,
+that's your identifier
+
+
+507
+00:25:45,746 --> 00:25:48,096
+for vendor that you
+find from UI device.
+
+
+508
+00:25:48,636 --> 00:25:51,626
+If you're on OS X, that's
+the machine's globally unique
+
+
+509
+00:25:51,626 --> 00:25:55,156
+identifier, or GUID, and
+there's a sample code available
+
+
+510
+00:25:55,156 --> 00:25:56,436
+on the documentation site
+
+
+511
+00:25:56,436 --> 00:25:58,466
+that shows you exactly
+how to derive that GUID.
+
+
+512
+00:25:59,306 --> 00:26:00,946
+So that's the first
+bit of information.
+
+
+513
+00:26:01,406 --> 00:26:05,576
+A sequence of bytes that
+uniquely identifies this device
+
+
+514
+00:26:05,636 --> 00:26:06,256
+that you're running on.
+
+
+515
+00:26:06,846 --> 00:26:10,026
+The second piece of information
+we need is your bundle
+
+
+516
+00:26:10,026 --> 00:26:11,926
+identifier, because
+it's for your app.
+
+
+517
+00:26:12,426 --> 00:26:13,926
+So we take these
+bytes and memory
+
+
+518
+00:26:13,926 --> 00:26:15,966
+that uniquely identified
+the device,
+
+
+519
+00:26:16,326 --> 00:26:20,266
+concatenate on the string of
+bytes that represent your app,
+
+
+520
+00:26:20,446 --> 00:26:21,416
+the bundle identifier.
+
+
+521
+00:26:22,846 --> 00:26:27,096
+Then we take these attribute
+Type 4, the opaque value.
+
+
+522
+00:26:27,826 --> 00:26:29,556
+It's just a series of bytes.
+
+
+523
+00:26:30,946 --> 00:26:33,506
+Append those series of bytes
+onto this long string of bytes
+
+
+524
+00:26:33,506 --> 00:26:35,906
+that you're forming in
+memory, device identifier,
+
+
+525
+00:26:36,306 --> 00:26:38,456
+bundle identifier, opaque value.
+
+
+526
+00:26:39,616 --> 00:26:41,246
+When you've got this
+long string of bytes,
+
+
+527
+00:26:41,766 --> 00:26:43,656
+you create an SHA-1
+hash of those,
+
+
+528
+00:26:43,916 --> 00:26:47,156
+which gives you a 20 byte hash
+of this long string of bytes.
+
+
+529
+00:26:47,786 --> 00:26:48,776
+Creating a hash is easy.
+
+
+530
+00:26:48,776 --> 00:26:51,136
+You can use common crypto;
+you could use Open SSL,
+
+
+531
+00:26:51,226 --> 00:26:53,996
+whatever you want to do.
+
+
+532
+00:26:54,246 --> 00:26:58,086
+If you compare that hash to the
+value here in attribute Type 5
+
+
+533
+00:26:58,086 --> 00:27:01,256
+and it matches, you've
+successfully confirmed it's
+
+
+534
+00:27:01,256 --> 00:27:03,436
+for your app on this device.
+
+
+535
+00:27:04,866 --> 00:27:05,756
+Now how does that work?
+
+
+536
+00:27:06,736 --> 00:27:10,076
+How does that convoluted set
+of steps there actually confirm
+
+
+537
+00:27:10,186 --> 00:27:12,096
+that it's for your
+app on this device?
+
+
+538
+00:27:12,906 --> 00:27:15,596
+Well, the reason is --
+well the way it works,
+
+
+539
+00:27:16,156 --> 00:27:17,936
+is that at the time
+of the transaction,
+
+
+540
+00:27:18,206 --> 00:27:20,686
+the result in this receipt
+being issued by the store,
+
+
+541
+00:27:21,176 --> 00:27:22,806
+we did the exact
+same calculation.
+
+
+542
+00:27:23,936 --> 00:27:25,886
+When an In-App Purchase
+was made, for example,
+
+
+543
+00:27:26,576 --> 00:27:29,356
+we took the identifier of the
+device making the purchase,
+
+
+544
+00:27:29,536 --> 00:27:31,556
+the bundle identifier of
+the app making the purchase,
+
+
+545
+00:27:31,906 --> 00:27:35,266
+[inaudible] opaque value,
+hashed it, put it in the receipt
+
+
+546
+00:27:35,266 --> 00:27:37,546
+as attribute Type 5,
+and then signed it
+
+
+547
+00:27:37,596 --> 00:27:38,866
+and shipped the receipt to you.
+
+
+548
+00:27:39,436 --> 00:27:43,426
+So if your calculation of
+runtime matches our calculation
+
+
+549
+00:27:43,426 --> 00:27:47,286
+of the time of purchase, it's
+for your app on this device.
+
+
+550
+00:27:48,836 --> 00:27:52,206
+But now we can get into the
+really interesting end of this
+
+
+551
+00:27:52,206 --> 00:27:57,336
+which is what did
+they actually pay for?
+
+
+552
+00:27:57,546 --> 00:28:00,846
+When you're iterating over those
+attributes within the receipt
+
+
+553
+00:28:00,916 --> 00:28:02,776
+and you've got those
+Type 2, three, four,
+
+
+554
+00:28:02,776 --> 00:28:03,906
+and five attributes out,
+
+
+555
+00:28:04,596 --> 00:28:07,306
+if you're offering In-App
+Purchases, you're also going
+
+
+556
+00:28:07,306 --> 00:28:10,446
+to see one or more
+Type 17 attributes.
+
+
+557
+00:28:11,086 --> 00:28:13,256
+Now the Type 17 attribute,
+
+
+558
+00:28:13,886 --> 00:28:16,826
+the value of that is actually
+a nested set of attributes
+
+
+559
+00:28:17,176 --> 00:28:19,846
+that tells you about an In-App
+Purchase that has been made,
+
+
+560
+00:28:20,866 --> 00:28:25,046
+so which of these Type 17
+attributes contains an attribute
+
+
+561
+00:28:25,166 --> 00:28:28,676
+-- a nested attribute in there,
+these Type 17 01, 02, 03, 04,
+
+
+562
+00:28:29,506 --> 00:28:31,836
+that tell you the quantity
+and the product identifier
+
+
+563
+00:28:31,836 --> 00:28:34,906
+of what was purchased?
+
+
+564
+00:28:35,036 --> 00:28:38,526
+And again we give you the
+ASN.1 textual representation
+
+
+565
+00:28:38,526 --> 00:28:39,826
+of how we've encoded this data
+
+
+566
+00:28:40,406 --> 00:28:41,846
+so you've got the same
+options available.
+
+
+567
+00:28:41,846 --> 00:28:45,156
+You could use Open SSL to read
+this, ASN.1 to generate code
+
+
+568
+00:28:45,156 --> 00:28:48,336
+to read it, write your own,
+whatever suits the value
+
+
+569
+00:28:48,336 --> 00:28:51,266
+of your products and the
+level of security you want.
+
+
+570
+00:28:53,856 --> 00:28:56,826
+So let's recap some of the
+key technologies we've just
+
+
+571
+00:28:56,826 --> 00:28:57,946
+talked about.
+
+
+572
+00:28:59,856 --> 00:29:02,916
+Firstly, it's a PKCS
+#7 container.
+
+
+573
+00:29:03,606 --> 00:29:06,316
+I guarantee if you Google
+for that, you'll be amazed
+
+
+574
+00:29:06,316 --> 00:29:09,326
+at the wealth of information
+that's out there to find out how
+
+
+575
+00:29:09,326 --> 00:29:11,996
+to read those, verify them,
+and validate the signature.
+
+
+576
+00:29:12,766 --> 00:29:15,196
+This is not something unique
+to the App Store receipt.
+
+
+577
+00:29:15,596 --> 00:29:18,036
+It's done in millions
+of different ways.
+
+
+578
+00:29:18,576 --> 00:29:22,116
+You could get Open SSL to
+do it if you wanted to,
+
+
+579
+00:29:22,596 --> 00:29:23,436
+you could roll your own,
+
+
+580
+00:29:23,436 --> 00:29:25,366
+or use any other option
+that's available to you.
+
+
+581
+00:29:25,366 --> 00:29:26,086
+It's up to you.
+
+
+582
+00:29:26,196 --> 00:29:27,276
+You decide the complexity.
+
+
+583
+00:29:27,816 --> 00:29:31,856
+And the actual data itself
+is encoded using ASN.1,
+
+
+584
+00:29:32,506 --> 00:29:33,666
+and again the same applies.
+
+
+585
+00:29:33,836 --> 00:29:40,106
+Lots of options available to
+decide how to read that data.
+
+
+586
+00:29:40,286 --> 00:29:43,426
+Now those of you that are really
+in the know might be thinking
+
+
+587
+00:29:43,426 --> 00:29:45,306
+to yourself this guy doesn't
+know what he's talking about.
+
+
+588
+00:29:46,116 --> 00:29:50,246
+Open SSL doesn't exist on iOS,
+and if I link to it on OS X,
+
+
+589
+00:29:50,466 --> 00:29:52,006
+I get a billion and
+one compile errors.
+
+
+590
+00:29:52,526 --> 00:29:58,346
+You got me, but there's
+a good reason for that,
+
+
+591
+00:30:00,286 --> 00:30:02,906
+because if you're using a
+dynamically linked library
+
+
+592
+00:30:04,346 --> 00:30:05,536
+on the device that
+you're running
+
+
+593
+00:30:05,536 --> 00:30:09,046
+on to verify your signature and
+get your purchase information,
+
+
+594
+00:30:09,946 --> 00:30:11,566
+imagine how easy it
+would be for someone
+
+
+595
+00:30:11,566 --> 00:30:14,546
+with less honorable intents to
+swap that library out with one
+
+
+596
+00:30:14,546 --> 00:30:15,586
+that said everything is good.
+
+
+597
+00:30:17,456 --> 00:30:20,816
+So make sure all the
+code that you are using
+
+
+598
+00:30:21,146 --> 00:30:22,286
+to validate your receipts
+
+
+599
+00:30:22,286 --> 00:30:25,836
+and get this purchase
+information is linked statically
+
+
+600
+00:30:26,126 --> 00:30:27,556
+into your binary
+you're submitting.
+
+
+601
+00:30:28,206 --> 00:30:31,086
+That way you are certain
+that the code that's going
+
+
+602
+00:30:31,086 --> 00:30:33,486
+to confirm this,
+protect your revenues,
+
+
+603
+00:30:33,836 --> 00:30:36,976
+protect your digital sales,
+is the code you intended
+
+
+604
+00:30:37,636 --> 00:30:39,536
+and hasn't been messed with.
+
+
+605
+00:30:41,756 --> 00:30:43,316
+Now everything we
+talked about there is
+
+
+606
+00:30:43,316 --> 00:30:46,056
+about validating the
+receipt on the device itself,
+
+
+607
+00:30:46,906 --> 00:30:49,246
+which is great now that
+you can do that in iOS 7
+
+
+608
+00:30:49,476 --> 00:30:50,816
+with the unified receipt format.
+
+
+609
+00:30:51,366 --> 00:30:55,966
+A lot of you are going
+to have servers out there
+
+
+610
+00:30:56,636 --> 00:31:00,136
+that issue these -- these,
+you know, Game Levels, assets,
+
+
+611
+00:31:00,306 --> 00:31:03,576
+contents, periodicals,
+whatever it might be,
+
+
+612
+00:31:04,226 --> 00:31:06,746
+and you don't want those servers
+to just be handing those assets
+
+
+613
+00:31:06,746 --> 00:31:08,166
+out to anyone that
+asks for them right?
+
+
+614
+00:31:09,316 --> 00:31:11,176
+Your servers need to
+be able to validate
+
+
+615
+00:31:11,176 --> 00:31:13,976
+that these purchases
+are real and authentic
+
+
+616
+00:31:14,536 --> 00:31:16,216
+and that the user
+really has paid for it
+
+
+617
+00:31:16,216 --> 00:31:18,416
+to make sure you
+get paid for it.
+
+
+618
+00:31:19,216 --> 00:31:20,266
+So Apple provides you
+
+
+619
+00:31:20,266 --> 00:31:23,716
+with a server-to-server
+online validation service.
+
+
+620
+00:31:24,686 --> 00:31:25,656
+Here's how this works.
+
+
+621
+00:31:26,806 --> 00:31:30,036
+Your app on the device
+gets the receipt.
+
+
+622
+00:31:30,196 --> 00:31:32,776
+Your app sends the
+receipt up to Apple --
+
+
+623
+00:31:32,776 --> 00:31:36,086
+sorry, up to, your app sends
+the receipt up to your server,
+
+
+624
+00:31:36,086 --> 00:31:40,326
+and it would usually do that as
+part of the request for a piece
+
+
+625
+00:31:40,326 --> 00:31:42,226
+of content or an
+asset, so for example,
+
+
+626
+00:31:42,226 --> 00:31:43,766
+if they've just bought
+Game Level 5,
+
+
+627
+00:31:44,256 --> 00:31:46,116
+your app would just make
+a request to your servers
+
+
+628
+00:31:46,116 --> 00:31:47,596
+and say "Hey, give
+me Game Level 5,"
+
+
+629
+00:31:48,286 --> 00:31:50,556
+and it would include the
+receipt in that request.
+
+
+630
+00:31:51,736 --> 00:31:54,636
+Then your server can take
+that receipt and send it
+
+
+631
+00:31:54,636 --> 00:31:56,086
+to Apple's validation service.
+
+
+632
+00:31:56,956 --> 00:31:58,126
+We crack open the receipt,
+
+
+633
+00:31:58,306 --> 00:32:00,416
+confirm that the receipt
+is authentic and unaltered,
+
+
+634
+00:32:01,126 --> 00:32:04,536
+and we return back to you a
+JSON code, coded block of data,
+
+
+635
+00:32:04,536 --> 00:32:06,536
+that describes the
+purchase that was made,
+
+
+636
+00:32:07,556 --> 00:32:10,256
+and because that's returned
+in JSON, it's really easy
+
+
+637
+00:32:10,256 --> 00:32:11,336
+for your service to pause it,
+
+
+638
+00:32:11,336 --> 00:32:17,876
+no matter what platform you're
+running on, but this is only
+
+
+639
+00:32:17,876 --> 00:32:21,046
+to be used for your server
+to talk to our server
+
+
+640
+00:32:21,046 --> 00:32:21,986
+to validate the receipt.
+
+
+641
+00:32:23,706 --> 00:32:26,496
+It's not to be used for
+your app to talk directly
+
+
+642
+00:32:26,496 --> 00:32:27,896
+to the validation service.
+
+
+643
+00:32:28,386 --> 00:32:32,186
+So if you're doing that today,
+you really need to stop,
+
+
+644
+00:32:33,086 --> 00:32:35,936
+because you can now validate the
+receipt on the device in itself.
+
+
+645
+00:32:36,296 --> 00:32:39,806
+And another thing
+that's important to note
+
+
+646
+00:32:39,846 --> 00:32:43,706
+about the online validation
+service is it can only do two
+
+
+647
+00:32:43,706 --> 00:32:45,436
+of those three steps
+that we just looked at.
+
+
+648
+00:32:45,976 --> 00:32:50,206
+It can validate that the receipt
+is authentic and unaltered,
+
+
+649
+00:32:50,206 --> 00:32:53,586
+and it can return back to
+you the purchase information,
+
+
+650
+00:32:54,536 --> 00:32:57,476
+but it doesn't confirm that
+the receipt was intended
+
+
+651
+00:32:57,476 --> 00:32:59,526
+for your app on a given device.
+
+
+652
+00:32:59,886 --> 00:33:01,776
+You still want to do
+that at the device level.
+
+
+653
+00:33:06,836 --> 00:33:10,316
+So now let's look at some
+platform specific implementation
+
+
+654
+00:33:10,316 --> 00:33:12,106
+details about how we
+validate the receipts.
+
+
+655
+00:33:12,606 --> 00:33:18,456
+Let's start with iOS 7.
+
+
+656
+00:33:18,626 --> 00:33:21,986
+On iOS, when your
+app 4 first launches,
+
+
+657
+00:33:22,516 --> 00:33:25,076
+you want to validate the
+receipt as soon as possible,
+
+
+658
+00:33:25,626 --> 00:33:27,036
+and I mean way before you get
+
+
+659
+00:33:27,036 --> 00:33:28,646
+to application did
+finish launching,
+
+
+660
+00:33:28,936 --> 00:33:31,646
+in fact way before you get
+anywhere near UI application
+
+
+661
+00:33:31,646 --> 00:33:32,476
+or the main run loop.
+
+
+662
+00:33:33,306 --> 00:33:34,566
+Do this in the main function.
+
+
+663
+00:33:35,116 --> 00:33:36,946
+Do this before anything else.
+
+
+664
+00:33:37,896 --> 00:33:39,936
+Check that the receipt
+exists and validate it.
+
+
+665
+00:33:40,696 --> 00:33:42,716
+Now if it doesn't exist or
+it appears to be invalid
+
+
+666
+00:33:42,716 --> 00:33:44,156
+on that device, and
+that can happen,
+
+
+667
+00:33:45,426 --> 00:33:46,886
+refresh it using Store Kit.
+
+
+668
+00:33:47,876 --> 00:33:50,596
+Store Kit now has the SK
+Receipt Refresh Request,
+
+
+669
+00:33:51,976 --> 00:33:53,866
+which you can use to get
+yourself a new receipt
+
+
+670
+00:33:53,866 --> 00:33:55,336
+to do your receipt validation,
+
+
+671
+00:33:56,756 --> 00:33:59,016
+but you don't always
+need the latest
+
+
+672
+00:33:59,016 --> 00:34:00,186
+and most up-to-date receipt.
+
+
+673
+00:34:00,696 --> 00:34:04,996
+Use what's there first,
+because as soon as you start one
+
+
+674
+00:34:04,996 --> 00:34:06,716
+of these SK Receipt
+Refresh Requests,
+
+
+675
+00:34:07,436 --> 00:34:08,676
+the first thing the
+user is going
+
+
+676
+00:34:08,676 --> 00:34:10,985
+to see is an authentication
+prompt to sign
+
+
+677
+00:34:10,985 --> 00:34:14,005
+into the App Store, and
+it's not acceptable to do
+
+
+678
+00:34:14,005 --> 00:34:16,886
+that on every launch, so only
+do it if the receipt is missing
+
+
+679
+00:34:16,916 --> 00:34:18,025
+or appears to be invalid,
+
+
+680
+00:34:19,295 --> 00:34:21,116
+and this will require
+a network connection.
+
+
+681
+00:34:21,746 --> 00:34:24,386
+So just keep that in mind when
+you're working out how stringent
+
+
+682
+00:34:24,386 --> 00:34:27,426
+to be, and how secure your
+business model enforcement is,
+
+
+683
+00:34:28,326 --> 00:34:30,246
+that if the device doesn't
+have a network connection,
+
+
+684
+00:34:30,295 --> 00:34:31,596
+it won't be able
+to get a receipt.
+
+
+685
+00:34:31,596 --> 00:34:37,156
+Now OS X is a little different.
+
+
+686
+00:34:37,216 --> 00:34:41,716
+On OS X, for an App
+Store purchased app,
+
+
+687
+00:34:41,716 --> 00:34:43,166
+the receipt will
+always be there.
+
+
+688
+00:34:43,346 --> 00:34:45,376
+The only time you wouldn't
+see a receipt on OS X is
+
+
+689
+00:34:45,376 --> 00:34:48,466
+when you're developing the app
+and you run it and you need
+
+
+690
+00:34:48,466 --> 00:34:49,616
+to get a receipt to test with,
+
+
+691
+00:34:50,266 --> 00:34:52,936
+and the receipt should always
+be there, but if it appears
+
+
+692
+00:34:52,936 --> 00:34:56,065
+to be invalid, as in it's
+perhaps not for this device,
+
+
+693
+00:34:56,436 --> 00:34:58,706
+which could happen if apps
+are migrated from one machine
+
+
+694
+00:34:58,706 --> 00:35:03,286
+to another, then your app
+exists with a Code 173.
+
+
+695
+00:35:03,836 --> 00:35:07,666
+This special Exit Code
+tells OS X in the App Store
+
+
+696
+00:35:07,716 --> 00:35:10,746
+that you believe your receipt's
+invalid and you want a new one.
+
+
+697
+00:35:12,086 --> 00:35:14,006
+Again, the first thing
+that your user is going
+
+
+698
+00:35:14,006 --> 00:35:16,816
+to see here is a prompt to
+sign into the App Store,
+
+
+699
+00:35:16,896 --> 00:35:20,226
+even if they're already signed
+in, so definitely don't do this
+
+
+700
+00:35:20,226 --> 00:35:22,336
+on every launch, only do
+it if the receipt appears
+
+
+701
+00:35:22,336 --> 00:35:24,886
+to be invalid, and again,
+
+
+702
+00:35:25,196 --> 00:35:26,766
+network connection
+will be required.
+
+
+703
+00:35:30,916 --> 00:35:34,326
+Now for everyone doing In-App
+Purchases, whether it's on iOS
+
+
+704
+00:35:35,006 --> 00:35:38,636
+or OS X, because now OS X
+supports subscription In-App
+
+
+705
+00:35:38,686 --> 00:35:43,186
+Purchases as well, there are
+some differences in the type
+
+
+706
+00:35:43,236 --> 00:35:46,086
+of In-App Purchases
+that are offered insofar
+
+
+707
+00:35:46,086 --> 00:35:47,776
+as how they're represented
+in the receipt,
+
+
+708
+00:35:47,776 --> 00:35:49,666
+especially over the
+lifecycle of the receipt.
+
+
+709
+00:35:51,066 --> 00:35:53,906
+Consumables and non-renewing
+subscriptions.
+
+
+710
+00:35:54,996 --> 00:35:56,486
+They're a one-off
+purchase, right?
+
+
+711
+00:35:57,386 --> 00:35:59,896
+So if you've got a racing car
+game, you might offer the user
+
+
+712
+00:35:59,896 --> 00:36:02,866
+to purchase 500 gallons of gas
+through an In-App Purchase.
+
+
+713
+00:36:03,806 --> 00:36:07,166
+You would expect that that 500
+gallons of gas is used once,
+
+
+714
+00:36:07,766 --> 00:36:09,946
+only on that device, and
+once it's done, it's gone.
+
+
+715
+00:36:10,556 --> 00:36:12,816
+You can't restore
+transactions and get 500 gallons
+
+
+716
+00:36:12,816 --> 00:36:16,056
+of gas back each time, nor would
+you expect to have 500 gallons
+
+
+717
+00:36:16,056 --> 00:36:19,136
+of gas on your iPad and
+then magically another 500
+
+
+718
+00:36:19,166 --> 00:36:22,476
+on your iPhone and whatever
+other devices you might have.
+
+
+719
+00:36:22,936 --> 00:36:24,616
+So these are one-time purchases.
+
+
+720
+00:36:24,616 --> 00:36:28,056
+Once they're used, they go on.
+
+
+721
+00:36:28,276 --> 00:36:32,106
+Likewise in the receipt,
+you'll only ever see a record
+
+
+722
+00:36:32,106 --> 00:36:35,306
+of a consumable or a
+non-renewing subscription once,
+
+
+723
+00:36:35,956 --> 00:36:38,376
+and you'll only see it in
+the receipt that's issued
+
+
+724
+00:36:38,456 --> 00:36:40,256
+at the time of that transaction,
+
+
+725
+00:36:40,256 --> 00:36:42,046
+at the time they
+make that purchase.
+
+
+726
+00:36:43,346 --> 00:36:46,546
+It won't be present in receipts
+that are issued in the future,
+
+
+727
+00:36:46,706 --> 00:36:48,566
+so if the user then
+makes another purchase,
+
+
+728
+00:36:49,196 --> 00:36:51,486
+that consumable that they
+bought before won't be in there.
+
+
+729
+00:36:52,676 --> 00:36:54,546
+If they restore transactions,
+that consumable,
+
+
+730
+00:36:54,546 --> 00:36:57,636
+it won't be in there, so you
+get one chance to see it,
+
+
+731
+00:36:57,866 --> 00:36:58,996
+one chance to validate it,
+
+
+732
+00:36:58,996 --> 00:37:01,466
+and then set whatever
+state you need.
+
+
+733
+00:37:02,966 --> 00:37:04,366
+Now non-consumables
+
+
+734
+00:37:04,366 --> 00:37:06,876
+and auto-renewable subscriptions
+are the exact opposite
+
+
+735
+00:37:07,186 --> 00:37:09,436
+because these are permanent
+purchases that are designed
+
+
+736
+00:37:09,436 --> 00:37:13,246
+to persist across devices,
+so if I bought Game Level 5,
+
+
+737
+00:37:14,026 --> 00:37:17,476
+but I then get a new iPhone,
+and I restore my transactions
+
+
+738
+00:37:17,826 --> 00:37:19,756
+or I restore transactions
+on another device,
+
+
+739
+00:37:19,856 --> 00:37:22,436
+I expect that Game Level 5 is
+there ready for me to play.
+
+
+740
+00:37:24,216 --> 00:37:26,146
+Likewise, with auto-renewable
+subscriptions.
+
+
+741
+00:37:26,146 --> 00:37:28,416
+If I subscribe on one device,
+I want to be able to use
+
+
+742
+00:37:28,416 --> 00:37:29,666
+that subscription on others.
+
+
+743
+00:37:30,736 --> 00:37:32,056
+So these non-consumables
+
+
+744
+00:37:32,056 --> 00:37:35,116
+and auto-renewable subscriptions
+are always in the receipt,
+
+
+745
+00:37:36,376 --> 00:37:39,186
+and they can be restored
+using the Store Kit API
+
+
+746
+00:37:39,426 --> 00:37:41,066
+to restore completed
+transactions.
+
+
+747
+00:37:41,146 --> 00:37:45,626
+So keep that in mind when you're
+deciding how you persist state
+
+
+748
+00:37:45,696 --> 00:37:47,456
+based on In-App Purchases
+that have been made.
+
+
+749
+00:37:48,156 --> 00:37:50,316
+Consumables, non-renewing
+subscriptions,
+
+
+750
+00:37:50,796 --> 00:37:51,816
+only in there once.
+
+
+751
+00:37:52,306 --> 00:37:56,266
+One shot. Non-consumables and
+auto-renewable subscriptions,
+
+
+752
+00:37:56,926 --> 00:37:57,796
+always in the receipt.
+
+
+753
+00:38:03,156 --> 00:38:07,666
+But what happens if, even after
+you've requested a new receipt,
+
+
+754
+00:38:08,236 --> 00:38:09,586
+it still appears to be invalid?
+
+
+755
+00:38:10,666 --> 00:38:12,936
+Your app launched, you
+did the receipt checking,
+
+
+756
+00:38:13,186 --> 00:38:15,496
+it didn't look right,
+you requested a new one,
+
+
+757
+00:38:15,946 --> 00:38:18,826
+checked it again, it
+still didn't look right.
+
+
+758
+00:38:20,176 --> 00:38:22,566
+This doesn't mean necessarily
+
+
+759
+00:38:23,036 --> 00:38:25,746
+that something evil
+is happening.
+
+
+760
+00:38:25,906 --> 00:38:27,626
+There might be reasons
+why this is happening,
+
+
+761
+00:38:29,226 --> 00:38:30,336
+and you should make sure
+
+
+762
+00:38:30,336 --> 00:38:33,216
+that whatever user experience
+you implement here, particularly
+
+
+763
+00:38:33,216 --> 00:38:37,536
+on iOS, is tasteful and suits
+the value of your products,
+
+
+764
+00:38:38,086 --> 00:38:42,816
+and I say iOS in particular
+because on iOS, apps can't quit.
+
+
+765
+00:38:43,326 --> 00:38:44,926
+There's no way to quit your app.
+
+
+766
+00:38:45,166 --> 00:38:45,936
+It keeps running.
+
+
+767
+00:38:46,906 --> 00:38:49,776
+So if the receipt appears to be
+invalid and you've determined
+
+
+768
+00:38:49,776 --> 00:38:52,106
+that this user is not
+eligible to use your app,
+
+
+769
+00:38:52,106 --> 00:38:54,596
+or the In-App Purchases that
+they think they have based
+
+
+770
+00:38:54,596 --> 00:38:57,246
+on the receipt, then
+it's up to you
+
+
+771
+00:38:57,246 --> 00:38:58,826
+to design that user experience.
+
+
+772
+00:38:59,216 --> 00:39:00,926
+You might decide to
+make the app read only,
+
+
+773
+00:39:01,126 --> 00:39:03,456
+block parts of the UI,
+whatever you want to do,
+
+
+774
+00:39:04,126 --> 00:39:05,456
+but please make sure
+it's tasteful
+
+
+775
+00:39:05,456 --> 00:39:07,476
+and make sure it respects
+the value of your products
+
+
+776
+00:39:07,476 --> 00:39:08,726
+and what your users
+would expect.
+
+
+777
+00:39:08,726 --> 00:39:14,036
+Now OS X is different because in
+the model of OS X, apps can quit
+
+
+778
+00:39:14,036 --> 00:39:17,156
+and they do, and that's
+exactly what we want you to do
+
+
+779
+00:39:17,156 --> 00:39:18,196
+if the receipt's invalid.
+
+
+780
+00:39:18,406 --> 00:39:19,056
+Every time.
+
+
+781
+00:39:19,946 --> 00:39:21,506
+Always Exit 173.
+
+
+782
+00:39:22,696 --> 00:39:27,636
+The App Store will handle
+showing the UI for you depending
+
+
+783
+00:39:27,636 --> 00:39:29,406
+on various conditions of why
+
+
+784
+00:39:29,406 --> 00:39:30,896
+that receipt may
+still be invalid.
+
+
+785
+00:39:31,786 --> 00:39:35,836
+For example, if the receipt
+just plain appears to be invalid
+
+
+786
+00:39:35,836 --> 00:39:37,956
+or perhaps it looks as though
+it might have been forged,
+
+
+787
+00:39:38,786 --> 00:39:40,806
+we'll present UI telling
+the user please go
+
+
+788
+00:39:40,806 --> 00:39:42,766
+and re-download this app
+from the purchases page,
+
+
+789
+00:39:43,056 --> 00:39:44,116
+which if they have
+really bought it,
+
+
+790
+00:39:44,116 --> 00:39:46,176
+should get them a new
+copy with a new receipt.
+
+
+791
+00:39:47,466 --> 00:39:49,956
+Or if you've opted into
+the Volume Purchase Program
+
+
+792
+00:39:49,956 --> 00:39:51,726
+and they had a license
+but it's been revoked
+
+
+793
+00:39:51,726 --> 00:39:53,676
+and they're expired,
+we tell them that, too,
+
+
+794
+00:39:53,676 --> 00:39:56,606
+and encourage them to go and
+buy their own copy, but on OS X,
+
+
+795
+00:39:56,836 --> 00:40:00,666
+let us drive the UI,
+always just Exit 173.
+
+
+796
+00:40:01,516 --> 00:40:05,936
+[ Pause ]
+
+
+797
+00:40:06,436 --> 00:40:08,366
+Now let's talk about
+the test environment.
+
+
+798
+00:40:08,856 --> 00:40:14,266
+As powerful as this is to
+protecting your revenue,
+
+
+799
+00:40:14,966 --> 00:40:18,106
+making sure you get paid, that
+your app's not being ripped off,
+
+
+800
+00:40:18,576 --> 00:40:21,086
+retain those loyal customers
+that are happy that they've paid
+
+
+801
+00:40:21,086 --> 00:40:24,076
+for what they're getting,
+it's really powerful.
+
+
+802
+00:40:24,076 --> 00:40:26,226
+The receipt's the foundation
+upon which you do that,
+
+
+803
+00:40:27,766 --> 00:40:31,246
+but a bug in this part of your
+code could have some really
+
+
+804
+00:40:31,246 --> 00:40:32,296
+bad consequences.
+
+
+805
+00:40:33,026 --> 00:40:36,156
+A bug in this part of your code
+could potentially give away
+
+
+806
+00:40:36,156 --> 00:40:39,306
+assets and content that maybe
+the user hasn't paid for,
+
+
+807
+00:40:40,146 --> 00:40:41,516
+but even worse, a
+bug in this part
+
+
+808
+00:40:41,516 --> 00:40:43,706
+of your code could
+lock customers
+
+
+809
+00:40:43,706 --> 00:40:45,736
+out of things they really
+actually have paid for.
+
+
+810
+00:40:46,276 --> 00:40:51,706
+We all know exactly how they're
+going to tell you about that.
+
+
+811
+00:40:52,256 --> 00:40:55,206
+So Apple gives you
+the test environment.
+
+
+812
+00:40:55,736 --> 00:40:59,096
+The test environment is like
+a replica of the App Store
+
+
+813
+00:40:59,096 --> 00:41:02,416
+that you can use to make
+transactions, get receipts,
+
+
+814
+00:41:02,416 --> 00:41:05,816
+use In-App Purchases, without
+actually exchanging any money.
+
+
+815
+00:41:08,016 --> 00:41:10,766
+The test environment allows you
+to test your code in this area
+
+
+816
+00:41:10,766 --> 00:41:12,106
+for receipt validation, as well
+
+
+817
+00:41:12,106 --> 00:41:13,616
+as In-App Purchases,
+really thoroughly.
+
+
+818
+00:41:14,026 --> 00:41:16,646
+You can see how your app has
+with no receipt, with a receipt,
+
+
+819
+00:41:16,646 --> 00:41:19,416
+when it's invalid, when it's
+refreshes, all those sorts
+
+
+820
+00:41:19,416 --> 00:41:23,106
+of code parts, and there's also
+APIs in Store Kit that allow you
+
+
+821
+00:41:23,106 --> 00:41:25,986
+to get a Volume Purchase Program
+license in various states
+
+
+822
+00:41:25,986 --> 00:41:28,006
+of valid, revoked, expired,
+
+
+823
+00:41:28,416 --> 00:41:30,846
+so you can really thoroughly
+test this, and please do,
+
+
+824
+00:41:31,406 --> 00:41:35,016
+because it's crucial that when a
+user pays money for your content
+
+
+825
+00:41:35,016 --> 00:41:36,826
+and your app, that they get it,
+
+
+826
+00:41:36,826 --> 00:41:38,506
+and that a bug doesn't
+prevent them,
+
+
+827
+00:41:38,776 --> 00:41:41,906
+so the test environment is
+exactly what you use to verify
+
+
+828
+00:41:42,096 --> 00:41:43,946
+that this works before
+you submit your code.
+
+
+829
+00:41:45,176 --> 00:41:47,496
+So how in iOS?
+
+
+830
+00:41:48,166 --> 00:41:50,386
+Run the device from
+Xcode; use the Shake It API
+
+
+831
+00:41:50,466 --> 00:41:51,426
+to get yourself a receipt.
+
+
+832
+00:41:52,616 --> 00:41:54,546
+Make sure your app is
+development signed, though.
+
+
+833
+00:41:54,916 --> 00:41:57,546
+That's how the iOS App Store
+knows to route your request
+
+
+834
+00:41:57,546 --> 00:41:58,546
+to the test environment.
+
+
+835
+00:42:00,496 --> 00:42:01,426
+OS X developers.
+
+
+836
+00:42:01,426 --> 00:42:02,176
+A little bit different.
+
+
+837
+00:42:02,966 --> 00:42:06,126
+Build your app in Xcode,
+run it from find to first.
+
+
+838
+00:42:06,856 --> 00:42:11,716
+Why? Because if you Exit 173
+while you're debugging an Xcode,
+
+
+839
+00:42:11,716 --> 00:42:12,746
+Xcode doesn't care.
+
+
+840
+00:42:13,716 --> 00:42:17,556
+So you've got to run your
+app from Finder to get
+
+
+841
+00:42:17,596 --> 00:42:20,846
+that initial receipt,
+because when you Exit 173
+
+
+842
+00:42:20,846 --> 00:42:22,866
+after being launched from
+Finder, the App Store
+
+
+843
+00:42:22,866 --> 00:42:25,126
+in OS X sees it, we
+get you a new receipt,
+
+
+844
+00:42:25,706 --> 00:42:28,626
+but make sure you're development
+signed because that's how,
+
+
+845
+00:42:28,626 --> 00:42:31,796
+again, the App Store in OS X
+knows to route that request
+
+
+846
+00:42:31,796 --> 00:42:32,806
+to the test environment,
+
+
+847
+00:42:33,286 --> 00:42:36,716
+and just in case you missed
+the very deliberate repetition
+
+
+848
+00:42:36,716 --> 00:42:41,256
+on those last two slides,
+your app must be signed
+
+
+849
+00:42:41,576 --> 00:42:42,876
+with your development
+certificate
+
+
+850
+00:42:43,076 --> 00:42:44,346
+to use the test environment.
+
+
+851
+00:42:44,726 --> 00:42:48,046
+It's the only way the OS
+knows to route your request
+
+
+852
+00:42:48,046 --> 00:42:50,666
+for a receipt and also
+to do In-App Purchases
+
+
+853
+00:42:50,666 --> 00:42:54,676
+to the test environment, and
+not the production store.
+
+
+854
+00:42:56,416 --> 00:42:58,576
+Also another common
+gotcha with this is,
+
+
+855
+00:42:58,856 --> 00:43:02,206
+sign-out of the App Store
+with your production account,
+
+
+856
+00:43:03,236 --> 00:43:05,436
+because that production account
+that you use, your Apple ID
+
+
+857
+00:43:05,436 --> 00:43:08,566
+that you use to buy songs and
+movies and apps, that won't work
+
+
+858
+00:43:08,566 --> 00:43:09,476
+in a test environment.
+
+
+859
+00:43:10,266 --> 00:43:13,066
+The test environment only works
+with test environment accounts
+
+
+860
+00:43:13,436 --> 00:43:16,396
+that you set up for
+your app only.
+
+
+861
+00:43:16,986 --> 00:43:22,416
+Now one last word, and that's
+
+
+862
+00:43:22,416 --> 00:43:24,306
+on the app submission
+review process
+
+
+863
+00:43:24,306 --> 00:43:25,216
+that we all know and love.
+
+
+864
+00:43:27,036 --> 00:43:28,306
+When you're developing your app,
+
+
+865
+00:43:29,126 --> 00:43:32,246
+you're using your development
+certificate, building
+
+
+866
+00:43:32,246 --> 00:43:34,286
+and compiling and code
+signing with that certificate,
+
+
+867
+00:43:34,286 --> 00:43:37,296
+and that allows you to
+use the test environment.
+
+
+868
+00:43:38,486 --> 00:43:40,616
+When you submit your app to
+the store to get it sold,
+
+
+869
+00:43:41,956 --> 00:43:44,216
+you're assigning that with
+your distribution certificate,
+
+
+870
+00:43:44,216 --> 00:43:46,966
+your production certificate,
+which allows the app
+
+
+871
+00:43:46,966 --> 00:43:49,146
+to then work with the
+production store to make sure
+
+
+872
+00:43:49,146 --> 00:43:50,836
+that you get paid when
+you app is purchased
+
+
+873
+00:43:51,036 --> 00:43:52,316
+and when In-App Purchases
+are made,
+
+
+874
+00:43:53,136 --> 00:43:54,966
+but app review is
+a little different
+
+
+875
+00:43:54,966 --> 00:43:56,606
+and it's a really
+important distinction,
+
+
+876
+00:43:57,216 --> 00:43:59,486
+especially when you go to
+implement receipt validation.
+
+
+877
+00:43:59,856 --> 00:44:03,966
+The app reviewers are actually
+testing your production site,
+
+
+878
+00:44:04,236 --> 00:44:05,876
+ready to go into
+the store binary,
+
+
+879
+00:44:06,906 --> 00:44:08,376
+but against the test
+environment,
+
+
+880
+00:44:09,496 --> 00:44:10,686
+so your production signed
+
+
+881
+00:44:10,686 --> 00:44:13,626
+out will see test
+environment receipts.
+
+
+882
+00:44:13,986 --> 00:44:16,636
+So don't invalidate them,
+
+
+883
+00:44:16,986 --> 00:44:18,806
+just because you think
+I'm production signed
+
+
+884
+00:44:18,806 --> 00:44:20,576
+and I should never be
+seeing the test environment.
+
+
+885
+00:44:21,276 --> 00:44:23,256
+That means the reviewers won't
+be able to test your app,
+
+
+886
+00:44:23,376 --> 00:44:25,596
+won't be able to confirm
+your receipt validation works
+
+
+887
+00:44:25,596 --> 00:44:28,726
+and your In-App Purchases
+work, and it's an express
+
+
+888
+00:44:28,766 --> 00:44:29,626
+to the rejection queue.
+
+
+889
+00:44:29,626 --> 00:44:34,866
+In summary, to make sure
+
+
+890
+00:44:35,496 --> 00:44:41,186
+that your digital
+sales are protected,
+
+
+891
+00:44:41,726 --> 00:44:44,386
+that your revenue is
+secured, and the value
+
+
+892
+00:44:44,386 --> 00:44:45,646
+of your product is maintained
+
+
+893
+00:44:45,646 --> 00:44:48,506
+and that your products can't be
+stolen, cracked, and pirated,
+
+
+894
+00:44:49,546 --> 00:44:51,316
+verify and inspect the receipts.
+
+
+895
+00:44:52,576 --> 00:44:56,306
+Now on iOS 7, just like on OS
+X, you can do this on device
+
+
+896
+00:44:57,146 --> 00:44:58,876
+and you can do it
+server-to-server as well,
+
+
+897
+00:44:58,876 --> 00:45:00,316
+for servers that
+are issuing content.
+
+
+898
+00:45:01,136 --> 00:45:02,746
+But choose a model
+that suits you.
+
+
+899
+00:45:03,186 --> 00:45:06,446
+Remember that long
+gamut of options
+
+
+900
+00:45:06,446 --> 00:45:09,826
+that you've got available,
+from the third-party libraries
+
+
+901
+00:45:09,826 --> 00:45:12,686
+that are ready to go, to
+rolling your own with some help
+
+
+902
+00:45:12,686 --> 00:45:15,726
+from examples and samples, to
+looking at the technical specs
+
+
+903
+00:45:15,726 --> 00:45:18,916
+and writing your own code from
+scratch, the point you arrive
+
+
+904
+00:45:18,916 --> 00:45:22,446
+at on that spectrum should speak
+to the value of your products
+
+
+905
+00:45:23,056 --> 00:45:24,836
+and the level of
+security you want
+
+
+906
+00:45:25,026 --> 00:45:26,416
+in your receipt model
+enforcement.
+
+
+907
+00:45:27,526 --> 00:45:30,326
+Also, don't forget that it's
+important to choose a way
+
+
+908
+00:45:30,326 --> 00:45:33,176
+of doing the receipt validation
+that's a little bit unique,
+
+
+909
+00:45:33,866 --> 00:45:36,586
+because if everyone
+chose the exact same way
+
+
+910
+00:45:36,586 --> 00:45:40,176
+to do receipt validation,
+then it would be all too easy
+
+
+911
+00:45:41,066 --> 00:45:44,306
+for those evil folks with the
+less honorable intentions to go
+
+
+912
+00:45:44,306 --> 00:45:46,366
+and find those really
+common code segments
+
+
+913
+00:45:46,876 --> 00:45:47,676
+and work around them.
+
+
+914
+00:45:48,826 --> 00:45:51,846
+So make sure you do things
+a little bit special,
+
+
+915
+00:45:51,896 --> 00:45:56,006
+a little bit unique to your app,
+but no matter how you do it,
+
+
+916
+00:45:56,006 --> 00:45:59,146
+use the test environment,
+and to use that you've got
+
+
+917
+00:45:59,146 --> 00:46:03,536
+to be development signed, using
+your test environment accounts.
+
+
+918
+00:46:05,456 --> 00:46:06,756
+Now for more information,
+
+
+919
+00:46:07,336 --> 00:46:11,006
+you can contact our excellent
+evangelist Paul Marcus.
+
+
+920
+00:46:12,626 --> 00:46:15,536
+We have documentation that
+we're updating for iOS
+
+
+921
+00:46:15,536 --> 00:46:17,066
+and OS X available online
+
+
+922
+00:46:17,066 --> 00:46:19,276
+and that's the receipt
+validation programming guide,
+
+
+923
+00:46:20,066 --> 00:46:22,976
+and of course there's the very
+active Apple developer forum
+
+
+924
+00:46:22,976 --> 00:46:25,226
+as well, where you're welcome
+to ask all manner of questions
+
+
+925
+00:46:25,226 --> 00:46:26,916
+about receipt validations,
+Store Kit,
+
+
+926
+00:46:26,916 --> 00:46:29,196
+In-App Purchases,
+whatever you need.
+
+
+927
+00:46:30,316 --> 00:46:30,586
+Thank you.
+
+
+928
+00:46:31,516 --> 00:46:35,516
+[ Applause ]
+
+
+929
+00:46:36,016 --> 00:46:46,026
+[ Silence ]
+

@@ -1,0 +1,6011 @@
+1
+00:00:00,506 --> 00:00:10,556
+[ Silence ]
+
+
+2
+00:00:11,056 --> 00:00:12,286
+>> Good morning and
+welcome to the session
+
+
+3
+00:00:12,286 --> 00:00:14,206
+about using StoreKit
+for In-App purchases.
+
+
+4
+00:00:14,926 --> 00:00:18,346
+So ... [Applause] Thank you.
+
+
+5
+00:00:19,016 --> 00:00:21,266
+So why are we even
+sitting here in this room?
+
+
+6
+00:00:21,726 --> 00:00:24,556
+Well, because more and
+more apps are switching
+
+
+7
+00:00:24,556 --> 00:00:25,396
+to In-App purchases.
+
+
+8
+00:00:25,726 --> 00:00:27,066
+In fact, when I was
+making the slides
+
+
+9
+00:00:27,066 --> 00:00:30,126
+on June 2nd, it was shocking.
+
+
+10
+00:00:30,686 --> 00:00:31,266
+This works?
+
+
+11
+00:00:32,716 --> 00:00:38,076
+An amazing 96 percent of the
+top 25 top grossing iPhone apps
+
+
+12
+00:00:38,076 --> 00:00:40,016
+in the U.S. were using
+In-App purchases.
+
+
+13
+00:00:40,286 --> 00:00:42,446
+Of course that number
+has changed every day
+
+
+14
+00:00:42,506 --> 00:00:44,256
+and today it dropped
+embarrassingly
+
+
+15
+00:00:44,256 --> 00:00:47,536
+to a miserable like 88 percent.
+
+
+16
+00:00:48,006 --> 00:00:51,526
+So apps are switching and we
+want to better support them.
+
+
+17
+00:00:51,526 --> 00:00:52,916
+And we made a bunch of changes,
+
+
+18
+00:00:53,236 --> 00:00:54,616
+and we'd like to share
+them with you today.
+
+
+19
+00:00:55,746 --> 00:00:59,256
+So first we'll talk about the
+changes that we made to --
+
+
+20
+00:00:59,776 --> 00:01:02,496
+to StoreKit and then we'll
+review the In-App purchase
+
+
+21
+00:01:02,496 --> 00:01:05,226
+process and highlight the
+changes that you might want
+
+
+22
+00:01:05,226 --> 00:01:08,886
+to make, and also discuss a few
+of the options and decisions,
+
+
+23
+00:01:08,886 --> 00:01:10,686
+and the APIs you might
+want to use, as well.
+
+
+24
+00:01:11,226 --> 00:01:13,756
+Then we'll demystify
+the test environment
+
+
+25
+00:01:13,756 --> 00:01:15,296
+because it's really
+important to use it.
+
+
+26
+00:01:15,966 --> 00:01:18,006
+Then we'll have a
+grab-bag of tips straight
+
+
+27
+00:01:18,006 --> 00:01:20,906
+from the app review team to make
+sure you can pass the app review
+
+
+28
+00:01:21,026 --> 00:01:21,836
+with flying colors.
+
+
+29
+00:01:23,306 --> 00:01:24,906
+So first, what's
+new in StoreKit?
+
+
+30
+00:01:26,436 --> 00:01:28,496
+So at the core, StoreKit
+is a payment system.
+
+
+31
+00:01:28,726 --> 00:01:31,836
+It possesses transactions and
+for every single transaction,
+
+
+32
+00:01:32,146 --> 00:01:35,326
+it hands the application
+a receipt and the security
+
+
+33
+00:01:35,326 --> 00:01:37,156
+of the whole model
+comes from the receipt.
+
+
+34
+00:01:37,156 --> 00:01:39,716
+And if there's only one thing
+you remember from today,
+
+
+35
+00:01:40,296 --> 00:01:42,516
+is that the security
+is in the receipt.
+
+
+36
+00:01:43,496 --> 00:01:45,976
+So you can decide
+to make this as safe
+
+
+37
+00:01:45,976 --> 00:01:47,676
+as possible as you want to.
+
+
+38
+00:01:47,676 --> 00:01:49,096
+You can really choose
+the safety level.
+
+
+39
+00:01:49,096 --> 00:01:51,346
+If your accountant warrants it,
+you can do very, very secure
+
+
+40
+00:01:51,346 --> 00:01:53,836
+and you can do whatever what
+with it, but in the end,
+
+
+41
+00:01:53,836 --> 00:01:54,996
+the security is in the receipt.
+
+
+42
+00:01:56,016 --> 00:01:59,606
+And it's not very
+difficult to verify receipts,
+
+
+43
+00:01:59,686 --> 00:02:01,226
+but there's a bunch of
+details you want to get right.
+
+
+44
+00:02:01,816 --> 00:02:04,676
+So we spun off a separate
+session called, "Using Receipts
+
+
+45
+00:02:04,676 --> 00:02:07,006
+to Protect Your Digital
+Sales," in Presidio
+
+
+46
+00:02:07,006 --> 00:02:09,566
+at 2:00 p.m. You'll learn all
+the tools, the technique s,
+
+
+47
+00:02:09,566 --> 00:02:11,686
+the APIs to verify the receipt
+and all the options you have.
+
+
+48
+00:02:12,166 --> 00:02:15,466
+So I very much recommend
+that you attend that session.
+
+
+49
+00:02:15,966 --> 00:02:18,576
+Now, let's take a
+step back and look
+
+
+50
+00:02:18,786 --> 00:02:20,376
+at the history of the receipt.
+
+
+51
+00:02:21,336 --> 00:02:23,856
+In 2009, IOS introduced
+In-App purchases
+
+
+52
+00:02:24,196 --> 00:02:28,666
+and for every In-App purchase,
+we give you a receipt and it was
+
+
+53
+00:02:28,666 --> 00:02:30,716
+up to the application to
+store it and manage it.
+
+
+54
+00:02:31,446 --> 00:02:36,406
+And then in 2011, the OS X added
+the Mac App Store and threw
+
+
+55
+00:02:36,406 --> 00:02:38,026
+in a new receipt
+in this ecosystem.
+
+
+56
+00:02:38,356 --> 00:02:40,176
+It's the app purchase receipt.
+
+
+57
+00:02:40,266 --> 00:02:42,426
+It's a proof of purchase
+for the application itself.
+
+
+58
+00:02:43,596 --> 00:02:46,516
+So when we added enough
+purchases to the Mac App Store,
+
+
+59
+00:02:47,266 --> 00:02:49,166
+we decided to unite
+all these receipts
+
+
+60
+00:02:49,406 --> 00:02:51,176
+into one big unified receipt.
+
+
+61
+00:02:52,226 --> 00:02:56,286
+And today, I'm very excited to
+announce that iOS is switching
+
+
+62
+00:02:56,286 --> 00:02:57,806
+to the same unified receipt,
+
+
+63
+00:02:57,806 --> 00:02:59,366
+which proved to be
+so successful.
+
+
+64
+00:03:00,856 --> 00:03:02,536
+[applause] So, thank you.
+
+
+65
+00:03:02,936 --> 00:03:03,706
+I'm glad you appreciate that.
+
+
+66
+00:03:05,376 --> 00:03:08,986
+So, it's the same receipt
+format for iOS 7 and OS X.
+
+
+67
+00:03:09,446 --> 00:03:10,976
+It is managed for
+you by StoreKit,
+
+
+68
+00:03:11,086 --> 00:03:12,896
+which means we store it
+in the [inaudible] system
+
+
+69
+00:03:12,896 --> 00:03:15,376
+and we give you an API to access
+it anytime you want to check it.
+
+
+70
+00:03:16,516 --> 00:03:19,576
+And you can now validate
+that receipt just like OS X
+
+
+71
+00:03:19,746 --> 00:03:22,076
+on the device, which means
+you don't need your own
+
+
+72
+00:03:22,076 --> 00:03:22,856
+servers anymore.
+
+
+73
+00:03:24,566 --> 00:03:25,886
+[Applause and cheering] Some
+people have implemented that,
+
+
+74
+00:03:27,406 --> 00:03:27,686
+I see.
+
+
+75
+00:03:27,896 --> 00:03:29,526
+And there's another bonus.
+
+
+76
+00:03:30,286 --> 00:03:33,156
+This receipt contains the orange
+box, the app purchase receipt
+
+
+77
+00:03:33,666 --> 00:03:35,696
+and you can use this
+for two things.
+
+
+78
+00:03:36,226 --> 00:03:38,366
+First, if you want this
+extra level of security,
+
+
+79
+00:03:38,366 --> 00:03:40,626
+if you to make sure your
+application has been really paid
+
+
+80
+00:03:40,686 --> 00:03:43,046
+for, then you can
+check this receipt
+
+
+81
+00:03:43,046 --> 00:03:45,106
+and make sure has been
+purchased on this device
+
+
+82
+00:03:45,106 --> 00:03:46,126
+and everything is legit.
+
+
+83
+00:03:46,956 --> 00:03:50,976
+But it also helps you if want
+to transfer to the premium level
+
+
+84
+00:03:50,976 --> 00:03:52,866
+where the application is free
+and you sell the content.
+
+
+85
+00:03:53,646 --> 00:03:54,566
+How's that possible?
+
+
+86
+00:03:55,606 --> 00:03:58,576
+So say your application
+is stocked in the store
+
+
+87
+00:03:58,576 --> 00:04:00,896
+as a paid application and
+at some point in time,
+
+
+88
+00:04:01,016 --> 00:04:03,486
+you want to make this
+application a free application.
+
+
+89
+00:04:04,556 --> 00:04:07,176
+The problem is that when the
+user restores to a new device,
+
+
+90
+00:04:07,626 --> 00:04:10,316
+you have no idea when they
+purchased the application.
+
+
+91
+00:04:10,316 --> 00:04:12,246
+So did they purchase the paid
+version or the free version?
+
+
+92
+00:04:12,306 --> 00:04:13,896
+So you don't know what
+content they're entitled to.
+
+
+93
+00:04:14,546 --> 00:04:17,606
+So, if you look into the
+app purchase receipts,
+
+
+94
+00:04:18,046 --> 00:04:21,375
+you'll find a purchase date
+and this will allow you to know
+
+
+95
+00:04:21,375 --> 00:04:23,026
+if your user is entitled
+to content,
+
+
+96
+00:04:23,116 --> 00:04:26,826
+or if the user purchased
+after you switched to premium.
+
+
+97
+00:04:27,366 --> 00:04:29,286
+Now of course, we are
+talking about transition,
+
+
+98
+00:04:30,126 --> 00:04:34,446
+which means that we have the
+old style receipts around
+
+
+99
+00:04:35,046 --> 00:04:37,026
+and to be very clear,
+they are duplicated.
+
+
+100
+00:04:38,096 --> 00:04:41,636
+But fear not, your
+existing apps will continue
+
+
+101
+00:04:41,636 --> 00:04:42,506
+to work, of course.
+
+
+102
+00:04:43,186 --> 00:04:46,026
+Even, in fact, if you take your
+existing code and you rebuild it
+
+
+103
+00:04:46,026 --> 00:04:48,066
+against the iOS 7 SDK,
+
+
+104
+00:04:48,066 --> 00:04:49,556
+the application will
+continue to work.
+
+
+105
+00:04:50,386 --> 00:04:52,566
+You'll still get your
+receipts, but you'll get a bunch
+
+
+106
+00:04:52,566 --> 00:04:53,626
+of duplication warnings.
+
+
+107
+00:04:54,266 --> 00:04:56,616
+And I'm sure you got the --
+
+
+108
+00:04:56,986 --> 00:04:59,666
+you heard distinctive
+slide about 93 percent
+
+
+109
+00:04:59,666 --> 00:05:02,316
+of the applications, of
+the users having updated
+
+
+110
+00:05:02,316 --> 00:05:03,596
+to the latest version
+of the iOS.
+
+
+111
+00:05:04,286 --> 00:05:06,436
+That means people will
+transition to iOS 7.
+
+
+112
+00:05:07,046 --> 00:05:08,926
+And that means it's high
+time to transition --
+
+
+113
+00:05:08,926 --> 00:05:10,946
+it's time to start transitioning
+to a new receipt style.
+
+
+114
+00:05:12,286 --> 00:05:13,606
+But in the meantime,
+you probably want
+
+
+115
+00:05:13,606 --> 00:05:16,236
+to support both the old style
+and new style of receipts
+
+
+116
+00:05:16,686 --> 00:05:19,316
+and the right way to do this is
+not to check for the OS version,
+
+
+117
+00:05:19,786 --> 00:05:22,766
+it is to use weak linking so
+you only keep the two good paths
+
+
+118
+00:05:22,766 --> 00:05:26,526
+around and you want to check
+if your main bundle responds
+
+
+119
+00:05:26,526 --> 00:05:28,886
+to the selector for the new
+API added to access a receipt.
+
+
+120
+00:05:31,136 --> 00:05:34,286
+Next is Volume Purchase Program.
+
+
+121
+00:05:35,186 --> 00:05:36,866
+We're adding a new
+licensing model here.
+
+
+122
+00:05:37,946 --> 00:05:40,766
+If you opt into this
+program then you are allowing
+
+
+123
+00:05:40,766 --> 00:05:43,996
+large-volume purchasers,
+think large companies,
+
+
+124
+00:05:44,246 --> 00:05:46,346
+think universities,
+think schools.
+
+
+125
+00:05:46,776 --> 00:05:50,496
+You're allowing them to buy your
+application in bulk and then
+
+
+126
+00:05:50,496 --> 00:05:52,836
+for a school to assign
+licenses to the students.
+
+
+127
+00:05:53,556 --> 00:05:55,046
+And when the school year ends,
+
+
+128
+00:05:55,786 --> 00:05:58,286
+the school can take the
+licenses back from the students
+
+
+129
+00:05:58,556 --> 00:06:00,976
+and assign them to the
+new batch of students.
+
+
+130
+00:06:01,446 --> 00:06:03,276
+So that really unlocks
+the education market
+
+
+131
+00:06:03,416 --> 00:06:05,646
+and the large enterprise
+market for applications.
+
+
+132
+00:06:06,716 --> 00:06:10,006
+Now if you look at it from
+a device point of view,
+
+
+133
+00:06:10,556 --> 00:06:13,116
+when the school year ends
+and the students walk away,
+
+
+134
+00:06:13,376 --> 00:06:16,376
+the school will revoke --
+will revoke the licenses.
+
+
+135
+00:06:17,046 --> 00:06:19,406
+This will start a 30-day
+grace period during
+
+
+136
+00:06:19,406 --> 00:06:21,306
+which the students can
+still launch the application
+
+
+137
+00:06:21,306 --> 00:06:22,586
+and they can back
+up their documents
+
+
+138
+00:06:22,586 --> 00:06:23,466
+and whatever they want.
+
+
+139
+00:06:23,596 --> 00:06:24,456
+They are warned about this.
+
+
+140
+00:06:25,296 --> 00:06:28,336
+But then when the 30-days --
+the 30-day grace period expires,
+
+
+141
+00:06:28,736 --> 00:06:30,336
+the license becomes revoked.
+
+
+142
+00:06:31,076 --> 00:06:34,146
+And on iOS, when the
+license is revoked,
+
+
+143
+00:06:34,146 --> 00:06:36,666
+iOS will prevent the
+launch of the application.
+
+
+144
+00:06:36,666 --> 00:06:39,426
+And instead of launching,
+it will display dialog
+
+
+145
+00:06:39,426 --> 00:06:42,906
+to explain the situation
+and offer the students
+
+
+146
+00:06:42,906 --> 00:06:44,566
+to buy the application
+to keep using it.
+
+
+147
+00:06:45,486 --> 00:06:48,156
+OS X has a different
+security model.
+
+
+148
+00:06:48,346 --> 00:06:50,136
+On OS X your application
+will have to launch,
+
+
+149
+00:06:50,816 --> 00:06:54,096
+discover it is expired, and
+then exit with a special code
+
+
+150
+00:06:54,096 --> 00:06:56,436
+so that the finder can display
+this dialog and offer people
+
+
+151
+00:06:56,436 --> 00:06:57,386
+to buy your applications.
+
+
+152
+00:06:58,506 --> 00:07:00,396
+But again, the security
+is in the receipt.
+
+
+153
+00:07:00,816 --> 00:07:03,996
+So in both cases, it is the
+application's responsibility
+
+
+154
+00:07:04,446 --> 00:07:06,996
+to check the receipt and enforce
+
+
+155
+00:07:06,996 --> 00:07:08,656
+and make sure the
+application stops running
+
+
+156
+00:07:08,656 --> 00:07:10,266
+if the -- if it is expired.
+
+
+157
+00:07:11,346 --> 00:07:13,116
+And to do this, we added
+new fields in receipts.
+
+
+158
+00:07:14,356 --> 00:07:17,036
+So we've just touched
+the surface.
+
+
+159
+00:07:17,076 --> 00:07:19,606
+If you want to know more about
+this volume purchasing program,
+
+
+160
+00:07:19,976 --> 00:07:22,206
+you can watch a video of the
+session that happened yesterday
+
+
+161
+00:07:22,286 --> 00:07:23,646
+about extending your
+applications
+
+
+162
+00:07:23,646 --> 00:07:24,946
+for enterprise and education.
+
+
+163
+00:07:26,276 --> 00:07:29,606
+And also you can attend the
+session in Presidio at 2:00 p.m.
+
+
+164
+00:07:29,606 --> 00:07:31,976
+about validating the receipts,
+which will tell you everything
+
+
+165
+00:07:31,976 --> 00:07:36,396
+about the new fields we
+added to the receipts.
+
+
+166
+00:07:37,036 --> 00:07:40,076
+Next, hosted In-App
+purchases can now be free.
+
+
+167
+00:07:41,446 --> 00:07:44,956
+And what that really means
+is, you can use them for --
+
+
+168
+00:07:44,956 --> 00:07:47,686
+to distribute message content
+that all the user's need.
+
+
+169
+00:07:48,186 --> 00:07:49,876
+So think like musical
+instruments,
+
+
+170
+00:07:49,876 --> 00:07:53,906
+or you know musical samples
+-- not navigation packages,
+
+
+171
+00:07:53,906 --> 00:07:55,696
+anything that's huge
+and that you have
+
+
+172
+00:07:55,696 --> 00:07:57,036
+to distribute to the same users.
+
+
+173
+00:07:57,406 --> 00:07:58,866
+You can use host
+in-app purchases.
+
+
+174
+00:07:58,996 --> 00:08:02,156
+You can upload this to the Apple
+server and Apple will host this,
+
+
+175
+00:08:02,256 --> 00:08:04,516
+Apple will serve it, and
+Apple will even download it
+
+
+176
+00:08:04,516 --> 00:08:05,836
+in the background
+for re-application,
+
+
+177
+00:08:06,106 --> 00:08:07,226
+so it's very convenient.
+
+
+178
+00:08:08,166 --> 00:08:09,846
+In fact, many applications,
+
+
+179
+00:08:09,846 --> 00:08:11,596
+that's' the only
+reason they had servers,
+
+
+180
+00:08:11,596 --> 00:08:12,636
+to back their applications.
+
+
+181
+00:08:13,006 --> 00:08:14,536
+If that's the case, you
+don't need servers anymore,
+
+
+182
+00:08:14,616 --> 00:08:15,416
+so its way simpler.
+
+
+183
+00:08:16,206 --> 00:08:19,226
+But keep in mind that
+they are In-App purchases
+
+
+184
+00:08:19,696 --> 00:08:22,586
+so they still -- you know, the
+user still has to buy them,
+
+
+185
+00:08:22,586 --> 00:08:24,336
+although it's for
+free, and authenticate.
+
+
+186
+00:08:24,936 --> 00:08:26,936
+And they still have to go
+through the app review process,
+
+
+187
+00:08:27,126 --> 00:08:32,186
+but they're a very convenient
+way to distribute some content.
+
+
+188
+00:08:32,285 --> 00:08:35,395
+Now, let's review the four types
+of In-App purchases we have
+
+
+189
+00:08:35,626 --> 00:08:36,785
+in the Apple ecosystem.
+
+
+190
+00:08:37,836 --> 00:08:41,436
+On the one end of the spectrum,
+we have consumable products.
+
+
+191
+00:08:41,905 --> 00:08:43,836
+It's for things like gold coins,
+
+
+192
+00:08:44,206 --> 00:08:45,536
+things you can buy
+multiple times,
+
+
+193
+00:08:46,026 --> 00:08:48,306
+but every time StoreKit
+hands it only once
+
+
+194
+00:08:48,306 --> 00:08:50,766
+through the application and
+the application takes over
+
+
+195
+00:08:50,766 --> 00:08:51,606
+and manages the amount
+
+
+196
+00:08:51,606 --> 00:08:53,366
+of remaining gold coins
+or whatever it is.
+
+
+197
+00:08:53,366 --> 00:08:55,926
+And because it's managed
+by your application,
+
+
+198
+00:08:56,086 --> 00:08:58,466
+StoreKit does not
+restore it to past devices
+
+
+199
+00:08:59,076 --> 00:09:00,986
+because you're managing it.
+
+
+200
+00:09:01,306 --> 00:09:02,876
+Now on the other
+end of the spectrum,
+
+
+201
+00:09:03,556 --> 00:09:06,286
+we have non-consumable
+products and it's for things
+
+
+202
+00:09:06,286 --> 00:09:09,626
+like magazines, things
+that when you buy them,
+
+
+203
+00:09:09,666 --> 00:09:10,616
+you own then forever.
+
+
+204
+00:09:10,616 --> 00:09:12,746
+And those are completely
+managed through StoreKit
+
+
+205
+00:09:13,056 --> 00:09:16,236
+and StoreKit will -- will
+restore them across devices
+
+
+206
+00:09:16,236 --> 00:09:17,076
+and manage them completely.
+
+
+207
+00:09:17,616 --> 00:09:22,306
+Now since we're talking about
+magazines, if you are dealing
+
+
+208
+00:09:22,306 --> 00:09:24,876
+with periodicals
+then you can use the
+
+
+209
+00:09:24,876 --> 00:09:26,236
+auto-renewable subscriptions.
+
+
+210
+00:09:27,026 --> 00:09:30,776
+And those -- what a user really
+buys is a period of time.
+
+
+211
+00:09:30,776 --> 00:09:34,006
+The user buys a period of time,
+a subscription period and when
+
+
+212
+00:09:34,006 --> 00:09:35,086
+that period finishes,
+
+
+213
+00:09:35,606 --> 00:09:37,986
+[inaudible] store will
+automatically renew the
+
+
+214
+00:09:37,986 --> 00:09:40,236
+subscription period
+and drop a transaction
+
+
+215
+00:09:40,396 --> 00:09:41,556
+into the device payment queue.
+
+
+216
+00:09:42,266 --> 00:09:44,196
+So it's, again, managed
+by StoreKit.
+
+
+217
+00:09:44,736 --> 00:09:45,916
+And you also have the option
+
+
+218
+00:09:46,106 --> 00:09:50,576
+to provide a free subscription
+period to the users in exchange
+
+
+219
+00:09:50,576 --> 00:09:53,686
+for them opting in to share in
+their personal data with you.
+
+
+220
+00:09:54,406 --> 00:09:56,366
+And the data from the
+field shows that a majority
+
+
+221
+00:09:56,366 --> 00:09:58,196
+of people actually
+trust your applications
+
+
+222
+00:09:58,196 --> 00:09:59,906
+and trust your brands, so
+they opt in to share the data.
+
+
+223
+00:10:00,276 --> 00:10:07,366
+Now, for all the other types
+of time-based In-App purchases,
+
+
+224
+00:10:08,116 --> 00:10:09,946
+you should use non-renewing
+subscriptions.
+
+
+225
+00:10:10,186 --> 00:10:14,606
+You can view them
+conceptually as consumables
+
+
+226
+00:10:14,906 --> 00:10:19,336
+because the user -- when the
+user purchases them they're only
+
+
+227
+00:10:19,336 --> 00:10:22,026
+handed once to the application
+and the application takes over
+
+
+228
+00:10:22,386 --> 00:10:24,986
+and manages the subscription
+in whatever way
+
+
+229
+00:10:24,986 --> 00:10:26,886
+that makes sense
+for the application.
+
+
+230
+00:10:27,216 --> 00:10:28,446
+So it is extremely flexible.
+
+
+231
+00:10:28,446 --> 00:10:30,326
+You can do any kind of
+subscription model here.
+
+
+232
+00:10:31,086 --> 00:10:33,766
+But -- sorry -- in
+fact, it is so flexible
+
+
+233
+00:10:33,766 --> 00:10:37,436
+that it has no duration
+information inside the
+
+
+234
+00:10:37,436 --> 00:10:38,176
+purchase object.
+
+
+235
+00:10:38,176 --> 00:10:40,026
+It is really up to you to
+implement it the way --
+
+
+236
+00:10:40,456 --> 00:10:42,156
+a way that's meaningful
+to your application.
+
+
+237
+00:10:42,956 --> 00:10:44,316
+So that's typically used --
+
+
+238
+00:10:44,316 --> 00:10:47,346
+typically used for things
+like access to fly charts --
+
+
+239
+00:10:47,506 --> 00:10:50,246
+the latest fly charts,
+access to financial services,
+
+
+240
+00:10:50,416 --> 00:10:53,016
+all the professional apps.
+
+
+241
+00:10:53,616 --> 00:10:54,576
+Now if you summarize,
+
+
+242
+00:10:55,736 --> 00:10:58,596
+iOS supports all four
+types of in-app purchases.
+
+
+243
+00:10:59,746 --> 00:11:02,886
+OS X supports only
+consumables and non-consumables.
+
+
+244
+00:11:03,666 --> 00:11:07,056
+And as you've probably
+guessed, today we're excited
+
+
+245
+00:11:07,476 --> 00:11:09,576
+to bring subscriptions
+to OS X Mavericks.
+
+
+246
+00:11:11,136 --> 00:11:14,536
+So the first question we
+expect is how can they make
+
+
+247
+00:11:14,536 --> 00:11:17,026
+that content available
+on both platforms?
+
+
+248
+00:11:17,806 --> 00:11:20,996
+And the answer is you
+can, but the product
+
+
+249
+00:11:20,996 --> 00:11:23,556
+and identifiers are
+separate in OS X and iOS.
+
+
+250
+00:11:24,146 --> 00:11:26,576
+So you will have to use
+your own account management,
+
+
+251
+00:11:27,286 --> 00:11:30,256
+track the subscription
+on one platform,
+
+
+252
+00:11:30,256 --> 00:11:32,716
+and make the content available
+on the other platform,
+
+
+253
+00:11:33,246 --> 00:11:37,046
+and that wraps the updates
+for In-App purchases.
+
+
+254
+00:11:38,706 --> 00:11:40,846
+Now, let's go through the
+In-App purchase process
+
+
+255
+00:11:41,466 --> 00:11:44,676
+and let's highlight the few
+changes you'll have to make
+
+
+256
+00:11:44,676 --> 00:11:45,976
+to transition to new receipts.
+
+
+257
+00:11:46,706 --> 00:11:48,416
+And also on the way we'll
+make a bunch of stops,
+
+
+258
+00:11:48,516 --> 00:11:50,026
+and we'll discuss all
+the options you have,
+
+
+259
+00:11:50,026 --> 00:11:52,416
+all the APIs you can use
+to deal with the content
+
+
+260
+00:11:52,416 --> 00:11:55,576
+and all the issues
+connected to In-App purchases.
+
+
+261
+00:11:56,186 --> 00:12:00,386
+So I'm going to assume here
+that you already know the basics
+
+
+262
+00:12:00,386 --> 00:12:03,216
+of StoreKit and that you
+probably have an application
+
+
+263
+00:12:03,216 --> 00:12:04,766
+to store and an iOS
+application running.
+
+
+264
+00:12:05,196 --> 00:12:07,806
+Now if you don't, I will gladly
+point you to the [inaudible]
+
+
+265
+00:12:07,806 --> 00:12:11,636
+on the website, and to the
+introductory session we had last
+
+
+266
+00:12:11,636 --> 00:12:13,846
+year that you can watch a
+video for on the website.
+
+
+267
+00:12:15,046 --> 00:12:17,846
+So what do we need to make
+an In-App purchase process?
+
+
+268
+00:12:18,426 --> 00:12:20,016
+We need really three
+large phases.
+
+
+269
+00:12:20,806 --> 00:12:23,186
+First you have to set up the
+products in Action Connect
+
+
+270
+00:12:23,936 --> 00:12:26,266
+and if it's hosting In-App
+purchases, if you have content,
+
+
+271
+00:12:26,266 --> 00:12:29,426
+you want to package your
+content inside of Xcode.
+
+
+272
+00:12:29,556 --> 00:12:32,396
+Then the user can make the
+purchase on the client --
+
+
+273
+00:12:32,556 --> 00:12:35,776
+the device or the Mac, and
+when purchase happens you want
+
+
+274
+00:12:35,776 --> 00:12:38,276
+to verify receipts and
+you can do this either
+
+
+275
+00:12:38,366 --> 00:12:40,526
+on the client or on the server.
+
+
+276
+00:12:41,606 --> 00:12:44,636
+So let's assume here
+that you have set
+
+
+277
+00:12:44,706 --> 00:12:46,416
+up your [inaudible] already.
+
+
+278
+00:12:46,416 --> 00:12:47,806
+So when the user wants to --
+
+
+279
+00:12:48,276 --> 00:12:52,636
+sorry, the In-App purchase
+process is this long process
+
+
+280
+00:12:52,636 --> 00:12:54,876
+of stages and the first thing
+you want to do is figure
+
+
+281
+00:12:54,876 --> 00:12:55,956
+out what you want to sell.
+
+
+282
+00:12:56,796 --> 00:12:58,756
+And you really have
+two major options here.
+
+
+283
+00:12:59,206 --> 00:13:01,916
+If you have In-App
+purchases like game options,
+
+
+284
+00:13:02,006 --> 00:13:03,336
+things just unlocking the game,
+
+
+285
+00:13:03,796 --> 00:13:06,186
+then you can just
+bake the identifiers
+
+
+286
+00:13:06,266 --> 00:13:07,136
+into your application.
+
+
+287
+00:13:07,256 --> 00:13:09,036
+That's perfectly fine.
+
+
+288
+00:13:09,106 --> 00:13:11,896
+Now, if you have -- if you're
+sending content like magazines
+
+
+289
+00:13:11,896 --> 00:13:15,526
+or comics, then you probably
+want to fetch your identifier
+
+
+290
+00:13:15,526 --> 00:13:17,316
+from your server so that
+it can be very dynamic.
+
+
+291
+00:13:18,626 --> 00:13:21,896
+So we know what we want to
+sell now, but now we have
+
+
+292
+00:13:21,896 --> 00:13:23,566
+to fetch the information
+about the product
+
+
+293
+00:13:23,646 --> 00:13:24,736
+to display to the user.
+
+
+294
+00:13:25,846 --> 00:13:29,516
+And to do this, you first want
+to create a set of identifiers
+
+
+295
+00:13:30,716 --> 00:13:32,186
+and then with a set
+of identifiers,
+
+
+296
+00:13:32,186 --> 00:13:34,006
+you can create a
+StoreKit products request.
+
+
+297
+00:13:35,446 --> 00:13:37,626
+You want to add yourself
+as delegate to request
+
+
+298
+00:13:38,266 --> 00:13:39,086
+and start the request.
+
+
+299
+00:13:40,006 --> 00:13:41,166
+And that's all there is to do
+
+
+300
+00:13:41,166 --> 00:13:42,616
+and the request will
+be sent to the server.
+
+
+301
+00:13:43,276 --> 00:13:45,466
+And when it comes down from
+the server with a response,
+
+
+302
+00:13:46,036 --> 00:13:48,946
+your delegate will
+fire with either --
+
+
+303
+00:13:48,946 --> 00:13:51,676
+fire with error because
+the device was --
+
+
+304
+00:13:51,796 --> 00:13:54,196
+may be offline, not very
+interesting but you still have
+
+
+305
+00:13:54,196 --> 00:13:57,656
+to handle it or if you're
+online -- that's a good case,
+
+
+306
+00:13:57,696 --> 00:14:01,076
+you will get, "Did
+receive response."
+
+
+307
+00:14:01,676 --> 00:14:04,336
+And the response will
+contain two things.
+
+
+308
+00:14:05,236 --> 00:14:07,696
+The first thing is invalid
+product identifiers.
+
+
+309
+00:14:08,346 --> 00:14:10,516
+It's the unlucky case where
+you ask for information
+
+
+310
+00:14:10,516 --> 00:14:12,186
+of the product that is
+not in the store anymore
+
+
+311
+00:14:12,836 --> 00:14:14,906
+and that could be
+because maybe you removed
+
+
+312
+00:14:14,906 --> 00:14:16,096
+from the store Action Connect,
+
+
+313
+00:14:16,696 --> 00:14:18,316
+or maybe you just
+didn't make it available
+
+
+314
+00:14:18,316 --> 00:14:20,456
+in this specific country
+for any kind of reason.
+
+
+315
+00:14:21,356 --> 00:14:26,086
+So, it's a case to keep in
+mind, but in most of the cases,
+
+
+316
+00:14:26,166 --> 00:14:29,436
+the product is valid and
+you will get a product
+
+
+317
+00:14:29,436 --> 00:14:30,316
+rating response.
+
+
+318
+00:14:30,956 --> 00:14:34,976
+So, that production rating
+contains StoreKit products.
+
+
+319
+00:14:35,646 --> 00:14:38,736
+And each of those has all the
+attributes you want to use
+
+
+320
+00:14:38,826 --> 00:14:40,826
+to display the -- to
+display the contents.
+
+
+321
+00:14:41,736 --> 00:14:45,876
+So, you'll find a title
+localized in the country
+
+
+322
+00:14:45,876 --> 00:14:46,616
+of the store accounts.
+
+
+323
+00:14:47,346 --> 00:14:49,536
+You'll find the description
+localized for the same country.
+
+
+324
+00:14:50,336 --> 00:14:53,366
+You'll find a price in the
+currency of the store accounts
+
+
+325
+00:14:54,276 --> 00:14:56,506
+and you'll find the locale,
+which contains the currency.
+
+
+326
+00:14:57,356 --> 00:14:59,276
+And if it's a hosted
+In-App purchase,
+
+
+327
+00:14:59,946 --> 00:15:03,346
+well you'll also get the content
+size and the content version.
+
+
+328
+00:15:03,826 --> 00:15:05,546
+And you can use this
+information for things
+
+
+329
+00:15:05,966 --> 00:15:09,716
+like offering the user to
+upgrade to a new version
+
+
+330
+00:15:09,836 --> 00:15:11,826
+or just telling then
+they're up to date.
+
+
+331
+00:15:12,736 --> 00:15:14,736
+So there's one question
+we get very often.
+
+
+332
+00:15:15,026 --> 00:15:17,466
+How do you display
+the product price?
+
+
+333
+00:15:17,556 --> 00:15:19,676
+And it's difficult,
+dollar goes in to franc,
+
+
+334
+00:15:19,806 --> 00:15:23,206
+Euros goes in the back,
+where does the Yen go,
+
+
+335
+00:15:23,206 --> 00:15:25,006
+and then you have
+decimal separators.
+
+
+336
+00:15:25,366 --> 00:15:30,156
+So the best way to deal with
+this is to be super lazy.
+
+
+337
+00:15:30,936 --> 00:15:32,296
+And we have this class
+
+
+338
+00:15:32,296 --> 00:15:33,966
+in the system called
+NS Number Formatter.
+
+
+339
+00:15:33,966 --> 00:15:37,296
+And if you create one of
+those and you said it's style
+
+
+340
+00:15:37,296 --> 00:15:40,176
+to be a currency style,
+and you set it's locale
+
+
+341
+00:15:40,176 --> 00:15:42,726
+to be the locale you got
+from the product response,
+
+
+342
+00:15:43,386 --> 00:15:45,846
+then all you have to do
+is go string from number
+
+
+343
+00:15:46,206 --> 00:15:47,436
+with the price you
+got from the store
+
+
+344
+00:15:47,666 --> 00:15:49,886
+and this gives you a string that
+you can display to the user.
+
+
+345
+00:15:50,506 --> 00:15:51,276
+So it's pretty simple.
+
+
+346
+00:15:52,406 --> 00:15:55,086
+What you should really not
+do is try to do any kind
+
+
+347
+00:15:55,086 --> 00:15:58,976
+of currency conversion because
+the price the store gives you
+
+
+348
+00:15:59,246 --> 00:16:02,916
+and the price currency that the
+store gives you is what we will
+
+
+349
+00:16:02,916 --> 00:16:03,766
+charge to the user.
+
+
+350
+00:16:04,056 --> 00:16:06,026
+So it is the price that should
+be displayed to the user.
+
+
+351
+00:16:06,536 --> 00:16:09,146
+So that's the best way to do
+it, just display the price as is
+
+
+352
+00:16:09,146 --> 00:16:10,976
+and get help for formatting
+the price with the unit
+
+
+353
+00:16:10,976 --> 00:16:14,016
+and all these kinds of things.
+
+
+354
+00:16:14,216 --> 00:16:18,976
+Now we have information
+and now it's time to kind
+
+
+355
+00:16:18,976 --> 00:16:20,916
+of expose the user to the goods.
+
+
+356
+00:16:21,176 --> 00:16:23,606
+You want to show the in-app
+purchase you are to the user.
+
+
+357
+00:16:23,796 --> 00:16:25,986
+And this is completely
+up to the application.
+
+
+358
+00:16:26,706 --> 00:16:29,816
+Why? Well, because only
+you know your application.
+
+
+359
+00:16:30,036 --> 00:16:32,046
+Only you know your content.
+
+
+360
+00:16:32,046 --> 00:16:34,606
+Only you can actually present it
+in a way that does it justice,
+
+
+361
+00:16:34,906 --> 00:16:36,956
+in a way that's attractive,
+that fits the game play,
+
+
+362
+00:16:37,246 --> 00:16:38,276
+or the application style.
+
+
+363
+00:16:38,816 --> 00:16:41,886
+So it's something that's worth
+investing some time and effort
+
+
+364
+00:16:41,886 --> 00:16:44,266
+in to get it right because
+when you get it right,
+
+
+365
+00:16:44,586 --> 00:16:45,836
+it has a huge impact.
+
+
+366
+00:16:45,836 --> 00:16:48,036
+It shows dramatically
+on the sales numbers.
+
+
+367
+00:16:49,116 --> 00:16:52,946
+So for example, if you're
+selling comics then you want
+
+
+368
+00:16:52,946 --> 00:16:55,306
+to build a comic store,
+a gorgeous comic store.
+
+
+369
+00:16:55,676 --> 00:16:56,586
+This is comiXsology.
+
+
+370
+00:16:56,586 --> 00:17:00,366
+Look at that, it has
+a 99 cent specials.
+
+
+371
+00:17:00,516 --> 00:17:01,596
+It has [inaudible] Sprint.
+
+
+372
+00:17:01,596 --> 00:17:02,886
+It is attractive.
+
+
+373
+00:17:02,916 --> 00:17:03,516
+You can browse.
+
+
+374
+00:17:03,516 --> 00:17:04,126
+You can discover.
+
+
+375
+00:17:04,445 --> 00:17:07,386
+It has all the features you want
+to have in a real comic store.
+
+
+376
+00:17:08,886 --> 00:17:12,126
+Now if you're a game and your
+currency is like, you know,
+
+
+377
+00:17:12,126 --> 00:17:15,746
+gold coins, then again you want
+to display these gold coins
+
+
+378
+00:17:15,746 --> 00:17:17,116
+in a way that fits
+your application,
+
+
+379
+00:17:17,596 --> 00:17:20,126
+in a way that fits the game
+play, so at the right moment
+
+
+380
+00:17:20,126 --> 00:17:22,276
+in the game so that people
+are in the right mood
+
+
+381
+00:17:22,276 --> 00:17:24,376
+and they don't feel like
+they're pressured to buy.
+
+
+382
+00:17:25,046 --> 00:17:26,486
+This is Heyday.
+
+
+383
+00:17:26,486 --> 00:17:29,906
+It's a free application
+yet its number three --
+
+
+384
+00:17:30,226 --> 00:17:31,976
+it's the third top
+grossing application today.
+
+
+385
+00:17:32,566 --> 00:17:35,846
+So that really shows that when
+you do it right, it works.
+
+
+386
+00:17:36,706 --> 00:17:39,286
+So let's assume here
+that you do it right,
+
+
+387
+00:17:39,286 --> 00:17:43,996
+because why else would you
+do it, and make the purchase.
+
+
+388
+00:17:43,996 --> 00:17:45,776
+So the user has clicked
+this bag of coins
+
+
+389
+00:17:46,176 --> 00:17:47,226
+and you want to make
+the purchase.
+
+
+390
+00:17:48,396 --> 00:17:51,546
+So to do this you want to
+create a StoreKit payment object
+
+
+391
+00:17:52,326 --> 00:17:54,296
+with the product you get
+from the product response,
+
+
+392
+00:17:55,296 --> 00:17:58,066
+and then you add this
+payment to the payment queue,
+
+
+393
+00:17:58,536 --> 00:17:59,566
+and that's all you have to do.
+
+
+394
+00:18:00,376 --> 00:18:01,846
+StoreKit will take over.
+
+
+395
+00:18:01,906 --> 00:18:05,166
+StoreKit will start the dialog
+to ask the user to authenticate,
+
+
+396
+00:18:05,716 --> 00:18:07,476
+and then StoreKit
+will also ask the user
+
+
+397
+00:18:07,476 --> 00:18:10,246
+to make sure they really want
+to buy this bag of coins.
+
+
+398
+00:18:11,376 --> 00:18:12,606
+And if the user says buy,
+
+
+399
+00:18:12,906 --> 00:18:15,996
+StoreKit will send the payment
+request up to the server.
+
+
+400
+00:18:16,606 --> 00:18:20,106
+So I'm going to interrupt
+the smooth flow here
+
+
+401
+00:18:20,386 --> 00:18:23,926
+and open a parenthesis
+about irregular activity.
+
+
+402
+00:18:24,836 --> 00:18:29,166
+So Apple has an advanced engine
+to discover irregular activity
+
+
+403
+00:18:29,166 --> 00:18:30,686
+and block it before
+it even happens
+
+
+404
+00:18:31,516 --> 00:18:32,596
+and that's the best case.
+
+
+405
+00:18:33,416 --> 00:18:35,656
+But there's cases where we can't
+detect it before it happens
+
+
+406
+00:18:36,016 --> 00:18:36,736
+so we can't block it.
+
+
+407
+00:18:37,286 --> 00:18:39,816
+So the purchases go through
+and then we have to --
+
+
+408
+00:18:40,176 --> 00:18:42,846
+we will eventually detect
+it anyway so we'll have
+
+
+409
+00:18:42,846 --> 00:18:44,346
+to refund the customer.
+
+
+410
+00:18:44,626 --> 00:18:46,476
+We'll have to pull back
+the function developers
+
+
+411
+00:18:46,906 --> 00:18:50,516
+and that tarnishes everybody's
+reputation; tarnishes ours
+
+
+412
+00:18:50,616 --> 00:18:52,486
+and your application's
+name might be associated
+
+
+413
+00:18:52,486 --> 00:18:53,016
+to the scheme.
+
+
+414
+00:18:53,016 --> 00:18:56,516
+So it is in our -- our
+interests are aligned.
+
+
+415
+00:18:56,516 --> 00:18:58,806
+It is in our interest
+to block the activity
+
+
+416
+00:18:58,806 --> 00:18:59,556
+as much as possible.
+
+
+417
+00:19:00,656 --> 00:19:04,866
+So here's one case where
+we're going to be asking
+
+
+418
+00:19:04,866 --> 00:19:05,726
+for your collaboration.
+
+
+419
+00:19:06,876 --> 00:19:10,466
+Imagine three devices are
+making In-App purchases
+
+
+420
+00:19:10,986 --> 00:19:13,216
+with three different --
+three different Apple IDs.
+
+
+421
+00:19:14,156 --> 00:19:15,476
+There's really nothing
+suspicious here.
+
+
+422
+00:19:15,766 --> 00:19:16,916
+There could be three,
+could be dozens.
+
+
+423
+00:19:17,396 --> 00:19:18,616
+That's what the story's about.
+
+
+424
+00:19:18,616 --> 00:19:21,066
+Its millions of devices
+making millions of purchases
+
+
+425
+00:19:21,286 --> 00:19:24,226
+with millions of Apple
+IDs, so it's really hard
+
+
+426
+00:19:24,226 --> 00:19:25,976
+to block this kind of
+activity when it's fraudulous.
+
+
+427
+00:19:27,166 --> 00:19:30,406
+But now if I tell you, "Oh,
+
+
+428
+00:19:30,486 --> 00:19:32,566
+all these devices
+are buying gold coins
+
+
+429
+00:19:34,156 --> 00:19:37,526
+and all these devices are
+crediting those gold coins
+
+
+430
+00:19:37,986 --> 00:19:40,976
+to the same game
+account," then suddenly
+
+
+431
+00:19:40,976 --> 00:19:43,196
+that picture becomes
+highly suspicious.
+
+
+432
+00:19:43,946 --> 00:19:45,966
+And it's something
+that, if you help us,
+
+
+433
+00:19:46,106 --> 00:19:47,246
+we can detect and block.
+
+
+434
+00:19:48,256 --> 00:19:51,166
+And to do this, we've added
+API in StoreKits for you
+
+
+435
+00:19:51,166 --> 00:19:54,066
+to provide us with an
+opaque account identifier.
+
+
+436
+00:19:54,856 --> 00:19:56,136
+So let's be very clear.
+
+
+437
+00:19:56,756 --> 00:19:58,336
+It has to be an opaque
+identifier.
+
+
+438
+00:19:58,846 --> 00:20:01,976
+That means we don't want to know
+your account names or users.
+
+
+439
+00:20:02,046 --> 00:20:04,106
+We really don't want
+to know about this.
+
+
+440
+00:20:04,836 --> 00:20:07,346
+The only thing we want to
+be able to do is in fact
+
+
+441
+00:20:07,456 --> 00:20:10,346
+if multiple devices
+are making purchases
+
+
+442
+00:20:10,526 --> 00:20:13,466
+for the same game accounts,
+so it has to be opaque.
+
+
+443
+00:20:13,466 --> 00:20:15,246
+It has to be your user account.
+
+
+444
+00:20:15,666 --> 00:20:17,446
+So don't give us the Apple
+ID, we know this already.
+
+
+445
+00:20:18,116 --> 00:20:21,146
+Don't give us your
+account's name; we don't want
+
+
+446
+00:20:21,146 --> 00:20:21,826
+to know the account's name.
+
+
+447
+00:20:22,376 --> 00:20:23,796
+That's really your
+business, not ours.
+
+
+448
+00:20:24,476 --> 00:20:25,736
+Don't give us the
+password, obviously.
+
+
+449
+00:20:26,456 --> 00:20:29,136
+What we suggest you do
+is hash the account name
+
+
+450
+00:20:29,666 --> 00:20:32,796
+so that gives you -- that gives
+us an opaque identifier that's
+
+
+451
+00:20:32,796 --> 00:20:36,066
+going to be the same across
+devices yet will not allow us
+
+
+452
+00:20:36,066 --> 00:20:37,096
+to identify your accounts.
+
+
+453
+00:20:38,076 --> 00:20:40,036
+And to do this, when you
+create your payment object,
+
+
+454
+00:20:40,806 --> 00:20:43,586
+you only have to set the
+application username property
+
+
+455
+00:20:43,996 --> 00:20:45,526
+to be that hash of
+user accounts.
+
+
+456
+00:20:46,086 --> 00:20:50,486
+So let's close this in
+unpleasant parenthesis
+
+
+457
+00:20:51,206 --> 00:20:53,406
+and go back to the
+In-App purchase process.
+
+
+458
+00:20:53,976 --> 00:20:55,806
+So you have issued the purchase
+
+
+459
+00:20:56,526 --> 00:21:00,616
+and the store will be processing
+it, and it will come back
+
+
+460
+00:21:00,716 --> 00:21:02,286
+to the device as a transaction.
+
+
+461
+00:21:03,516 --> 00:21:07,776
+So you will be informed, because
+your payment queue server will
+
+
+462
+00:21:07,776 --> 00:21:09,626
+be invoked with data
+transactions
+
+
+463
+00:21:10,166 --> 00:21:13,396
+and you'll receive no change
+all in array of transactions.
+
+
+464
+00:21:13,556 --> 00:21:15,326
+The first thing it will
+do usually is eat right
+
+
+465
+00:21:15,326 --> 00:21:17,226
+through those.
+
+
+466
+00:21:17,226 --> 00:21:20,216
+For each transaction
+you want to check
+
+
+467
+00:21:20,216 --> 00:21:22,096
+and examine the transaction
+state.
+
+
+468
+00:21:23,336 --> 00:21:27,206
+If the state is purchased it
+means the transaction succeeded.
+
+
+469
+00:21:28,186 --> 00:21:32,076
+So, so far, you are accessing
+the old style receipt
+
+
+470
+00:21:32,576 --> 00:21:34,116
+by calling the receipt property
+
+
+471
+00:21:34,116 --> 00:21:36,156
+of the transaction
+and this is changing.
+
+
+472
+00:21:36,886 --> 00:21:39,366
+Now, the new way to
+access the receipt is
+
+
+473
+00:21:39,366 --> 00:21:42,946
+to call app store receipt
+URL on your main bundle,
+
+
+474
+00:21:42,946 --> 00:21:46,366
+and this gives you
+a URL to the receipt
+
+
+475
+00:21:46,366 --> 00:21:48,076
+in the [inaudible] system
+and then you can load it
+
+
+476
+00:21:48,136 --> 00:21:50,776
+with your favorite
+NS data methods.
+
+
+477
+00:21:51,286 --> 00:21:53,936
+So that's the only
+change you have to do
+
+
+478
+00:21:53,986 --> 00:21:54,886
+to get to new receipts.
+
+
+479
+00:21:55,946 --> 00:21:58,066
+And once you have the
+receipts, you want to verify it.
+
+
+480
+00:21:58,876 --> 00:22:01,236
+And again, you choose the level
+
+
+481
+00:22:01,236 --> 00:22:02,756
+of security you want
+to implement.
+
+
+482
+00:22:02,976 --> 00:22:05,156
+You can do it as simple as you
+want or as strong as you want.
+
+
+483
+00:22:05,956 --> 00:22:09,956
+You can verify on the device,
+-- that's the Mac or the phone,
+
+
+484
+00:22:10,106 --> 00:22:11,876
+or you can verify
+on your server.
+
+
+485
+00:22:12,626 --> 00:22:14,736
+And if you're the kind of
+extremely cautious person,
+
+
+486
+00:22:14,806 --> 00:22:15,856
+you can check on both, as well.
+
+
+487
+00:22:17,256 --> 00:22:20,576
+So, first option evaluating
+the receipt on the clients.
+
+
+488
+00:22:21,006 --> 00:22:21,906
+It is the preferred method.
+
+
+489
+00:22:21,906 --> 00:22:25,256
+It is the exact same validation
+as you have been doing iOS X.
+
+
+490
+00:22:25,406 --> 00:22:26,586
+It is exactly as secure.
+
+
+491
+00:22:27,396 --> 00:22:31,116
+And because in-app purchases
+have receipts all the time,
+
+
+492
+00:22:31,566 --> 00:22:33,576
+you can access the receipt
+any time, even outside
+
+
+493
+00:22:33,576 --> 00:22:34,946
+of the purchase process.
+
+
+494
+00:22:35,276 --> 00:22:38,936
+So if you have a comics
+application and user navigates
+
+
+495
+00:22:38,936 --> 00:22:41,556
+to a comic to read it, that
+might be the right moment
+
+
+496
+00:22:41,556 --> 00:22:43,436
+to go check the receipt
+for the comic to make sure
+
+
+497
+00:22:43,436 --> 00:22:44,886
+that the user actually
+purchased the comic.
+
+
+498
+00:22:45,396 --> 00:22:47,826
+So you can do this any time
+and because it's local,
+
+
+499
+00:22:47,826 --> 00:22:49,446
+of course it works offline.
+
+
+500
+00:22:50,836 --> 00:22:52,696
+Now the other solution is
+
+
+501
+00:22:53,646 --> 00:22:55,816
+to evaluate the receipt
+on your own servers.
+
+
+502
+00:22:56,536 --> 00:22:59,816
+In that solution you want to
+first open a secure connection
+
+
+503
+00:23:00,356 --> 00:23:03,326
+to your server and send a
+receipt up to your server,
+
+
+504
+00:23:04,016 --> 00:23:07,136
+and then your server can turn
+around and forward the receipts
+
+
+505
+00:23:07,136 --> 00:23:08,586
+to the Apple validation servers.
+
+
+506
+00:23:09,576 --> 00:23:12,226
+And what the evaluation servers
+do is they crack open the
+
+
+507
+00:23:12,226 --> 00:23:14,956
+receipts and they return a
+pay load, adjacent pay load,
+
+
+508
+00:23:15,076 --> 00:23:17,906
+easy two parts, that contains
+all the fields of the receipts
+
+
+509
+00:23:18,316 --> 00:23:20,486
+and results go to tell you
+oh that receipt is valid.
+
+
+510
+00:23:21,556 --> 00:23:23,766
+So then your server
+can process that.
+
+
+511
+00:23:24,896 --> 00:23:26,556
+In addition, if you are dealing
+
+
+512
+00:23:26,556 --> 00:23:28,016
+with auto-renewable
+subscriptions,
+
+
+513
+00:23:28,566 --> 00:23:30,616
+your server can send
+a shared secret
+
+
+514
+00:23:30,786 --> 00:23:32,156
+to the Apple validation servers
+
+
+515
+00:23:32,776 --> 00:23:35,296
+and that will tell the Apple
+validation servers that "oh,
+
+
+516
+00:23:35,696 --> 00:23:37,316
+if the transaction
+auto-renewed --
+
+
+517
+00:23:37,646 --> 00:23:40,796
+I'm sorry if the subscription
+was renewed then the Apple
+
+
+518
+00:23:40,796 --> 00:23:42,886
+validation server will
+return the renewed receipt
+
+
+519
+00:23:42,886 --> 00:23:43,416
+to the server."
+
+
+520
+00:23:43,416 --> 00:23:45,026
+And that's very important
+
+
+521
+00:23:45,776 --> 00:23:48,536
+because that means the server
+can manage the subscription
+
+
+522
+00:23:48,536 --> 00:23:51,126
+complete server side without the
+device being involved anymore.
+
+
+523
+00:23:51,936 --> 00:23:55,076
+And if you are a newsstand
+application it means the server
+
+
+524
+00:23:55,076 --> 00:23:57,336
+can determine which
+issues to push to devices
+
+
+525
+00:23:57,916 --> 00:23:58,766
+so it's very convenient.
+
+
+526
+00:24:00,076 --> 00:24:03,936
+So again, you want to validate
+the receipt of your server
+
+
+527
+00:24:04,846 --> 00:24:07,196
+and you own the secure connect.
+
+
+528
+00:24:07,266 --> 00:24:08,686
+You only keep it
+secured as needed
+
+
+529
+00:24:09,086 --> 00:24:10,846
+so of course we recommend
+you use SSL,
+
+
+530
+00:24:10,996 --> 00:24:12,546
+extended verification
+certificates,
+
+
+531
+00:24:12,546 --> 00:24:14,896
+certificate pinning,
+whatever you want to do
+
+
+532
+00:24:14,896 --> 00:24:16,606
+to ensure you're talking
+to your own server
+
+
+533
+00:24:16,606 --> 00:24:17,896
+and the content hasn't
+been tampered with.
+
+
+534
+00:24:19,156 --> 00:24:21,886
+As we saw it's great for
+auto renewable subscriptions
+
+
+535
+00:24:21,886 --> 00:24:24,426
+because you can move all the
+subscription logic server side.
+
+
+536
+00:24:25,176 --> 00:24:27,326
+But the downside is because
+you're talking to a server,
+
+
+537
+00:24:27,326 --> 00:24:30,196
+you have to be online so the
+application has to be aware
+
+
+538
+00:24:30,196 --> 00:24:33,976
+that if it's offline it will
+have to deal with the case.
+
+
+539
+00:24:34,136 --> 00:24:39,336
+Now, what you should absolutely
+never do is check the receipt
+
+
+540
+00:24:39,606 --> 00:24:41,666
+from your application directly
+
+
+541
+00:24:41,666 --> 00:24:43,106
+against the Apple
+validation servers.
+
+
+542
+00:24:44,506 --> 00:24:44,996
+Why is that?
+
+
+543
+00:24:45,816 --> 00:24:48,386
+Well, you don't own both
+ends of the transaction --
+
+
+544
+00:24:48,386 --> 00:24:50,776
+of the connection so you can't
+make that connection secure,
+
+
+545
+00:24:51,326 --> 00:24:52,226
+that means you can't trust it.
+
+
+546
+00:24:52,356 --> 00:24:55,996
+And if you're dealing with
+subscriptions then you will have
+
+
+547
+00:24:56,046 --> 00:24:58,216
+to embed your shared secret
+into your application,
+
+
+548
+00:24:58,526 --> 00:24:59,326
+which is kind of fragile.
+
+
+549
+00:24:59,796 --> 00:25:01,436
+And you want to send
+it across a connection
+
+
+550
+00:25:01,436 --> 00:25:02,606
+that you really know
+you can trust.
+
+
+551
+00:25:03,086 --> 00:25:06,166
+So that's two, actually
+three reasons not to do this.
+
+
+552
+00:25:07,436 --> 00:25:11,876
+And again, validating receipt
+is not very hard, but you have
+
+
+553
+00:25:11,876 --> 00:25:13,426
+to get it right and
+there's a bunch of APIs
+
+
+554
+00:25:13,426 --> 00:25:15,296
+and tools you can use
+to help you with this.
+
+
+555
+00:25:15,806 --> 00:25:18,216
+So again, I'm going to refer
+you to the session in Presidio
+
+
+556
+00:25:18,216 --> 00:25:20,826
+at 2:00 PM to learn all
+the, you know, ins and outs
+
+
+557
+00:25:20,826 --> 00:25:21,656
+of receipt validation.
+
+
+558
+00:25:23,656 --> 00:25:26,976
+All right, so we have determined
+that the receipt is valid
+
+
+559
+00:25:28,296 --> 00:25:29,886
+and now it's time
+to deliver the goods
+
+
+560
+00:25:29,886 --> 00:25:31,016
+because the user paid for them.
+
+
+561
+00:25:31,656 --> 00:25:33,436
+So there's five choices here.
+
+
+562
+00:25:34,146 --> 00:25:36,356
+If you just have to unlock
+something in your application
+
+
+563
+00:25:36,356 --> 00:25:39,286
+like a weapon, then just
+unlock it, that's very easy.
+
+
+564
+00:25:40,136 --> 00:25:44,726
+Now, if you want to download
+digital content then you have
+
+
+565
+00:25:44,726 --> 00:25:45,946
+four APIs you can use.
+
+
+566
+00:25:46,326 --> 00:25:49,286
+You can use host In-App
+purchases as we saw earlier.
+
+
+567
+00:25:50,126 --> 00:25:52,176
+We can use newsstand
+kit for periodicals.
+
+
+568
+00:25:53,046 --> 00:25:56,016
+In iOS 7 we're adding a new
+API to download contents
+
+
+569
+00:25:56,086 --> 00:25:59,216
+in the background and you
+can also use the legacy
+
+
+570
+00:25:59,216 --> 00:25:59,916
+classic downloads.
+
+
+571
+00:26:00,796 --> 00:26:02,276
+So first, host In-App purchases.
+
+
+572
+00:26:02,936 --> 00:26:04,556
+They are just regular
+In-App purchases
+
+
+573
+00:26:04,766 --> 00:26:06,326
+with content associated.
+
+
+574
+00:26:06,776 --> 00:26:08,196
+So it comes from
+the Apple servers.
+
+
+575
+00:26:08,656 --> 00:26:11,326
+That's great because if the
+application becomes an overnight
+
+
+576
+00:26:11,376 --> 00:26:15,196
+hit, which I honestly wish it
+would happens, you won't have
+
+
+577
+00:26:15,196 --> 00:26:19,316
+to scramble to buy servers and
+bandwidth overnight and try
+
+
+578
+00:26:19,316 --> 00:26:21,726
+to kind of, you know, face
+all the server downtime
+
+
+579
+00:26:21,726 --> 00:26:24,546
+and these issues because
+Apple will serve these In-App
+
+
+580
+00:26:24,546 --> 00:26:26,076
+purchases, these
+host In-App purchases
+
+
+581
+00:26:26,076 --> 00:26:27,666
+and we'll scale them
+necessarily.
+
+
+582
+00:26:29,486 --> 00:26:31,426
+And also because they're
+downloaded through StoreKit
+
+
+583
+00:26:31,786 --> 00:26:34,776
+and StoreKit's a background API,
+they will continue downloading
+
+
+584
+00:26:34,846 --> 00:26:35,706
+in the background, as well.
+
+
+585
+00:26:36,716 --> 00:26:38,486
+And they are in-app purchases
+so they go through review.
+
+
+586
+00:26:39,236 --> 00:26:41,306
+And there's one limit to those.
+
+
+587
+00:26:42,046 --> 00:26:43,296
+It's that you can only have --
+
+
+588
+00:26:43,626 --> 00:26:46,466
+I mean each In-App
+purchase can only be
+
+
+589
+00:26:46,466 --> 00:26:47,766
+up to two gigabytes in size.
+
+
+590
+00:26:47,896 --> 00:26:50,976
+You can have as many products as
+you want, but each of them has
+
+
+591
+00:26:50,976 --> 00:26:54,126
+to be -- is limited
+to two gigabytes.
+
+
+592
+00:26:54,276 --> 00:26:57,966
+So quick overview how the API
+works so you can know what
+
+
+593
+00:26:57,966 --> 00:27:00,096
+to look for in the
+future, when you get --
+
+
+594
+00:27:00,516 --> 00:27:04,296
+when you're payment of
+server fires with updates
+
+
+595
+00:27:04,296 --> 00:27:07,806
+to transactions, if a
+transaction is associated
+
+
+596
+00:27:07,806 --> 00:27:09,306
+with a host In-App purchase,
+
+
+597
+00:27:09,786 --> 00:27:11,736
+the transaction will have
+an array of downloads.
+
+
+598
+00:27:12,686 --> 00:27:15,736
+And to start them you can
+just tell the payment cues
+
+
+599
+00:27:15,736 --> 00:27:17,106
+to start the downloads
+with this array,
+
+
+600
+00:27:18,326 --> 00:27:19,716
+and then the downloads
+will start,
+
+
+601
+00:27:19,906 --> 00:27:23,936
+and as they progress your
+payment queue server will fire
+
+
+602
+00:27:23,936 --> 00:27:25,456
+with update downloads.
+
+
+603
+00:27:26,236 --> 00:27:28,176
+And each of these
+download objects
+
+
+604
+00:27:28,176 --> 00:27:30,676
+in the array you
+will find a progress,
+
+
+605
+00:27:31,326 --> 00:27:35,006
+you'll find the time
+remaining, you'll find the state
+
+
+606
+00:27:35,506 --> 00:27:37,016
+and if things go wrong,
+you'll find the error.
+
+
+607
+00:27:38,396 --> 00:27:43,636
+When the state reaches download
+state finished then you can
+
+
+608
+00:27:43,636 --> 00:27:46,776
+access another property called
+content URL that tells you
+
+
+609
+00:27:46,776 --> 00:27:47,666
+where the file landed
+
+
+610
+00:27:47,666 --> 00:27:48,976
+in the file system
+so you can access it.
+
+
+611
+00:27:51,166 --> 00:27:52,216
+Now, if you're dealing
+
+
+612
+00:27:52,216 --> 00:27:53,706
+with periodicals you
+have another option.
+
+
+613
+00:27:53,706 --> 00:27:56,066
+You can use Newsstand
+Kit downloads.
+
+
+614
+00:27:56,596 --> 00:27:59,386
+Newsstand Kits downloads
+from your own server
+
+
+615
+00:27:59,386 --> 00:28:02,516
+to your application
+in the background
+
+
+616
+00:28:02,666 --> 00:28:04,526
+and gives you a fine-grain
+control
+
+
+617
+00:28:04,526 --> 00:28:05,996
+of the credentials
+and authentication.
+
+
+618
+00:28:06,656 --> 00:28:09,086
+And the bonus that
+Newsstand Kit offers is
+
+
+619
+00:28:09,086 --> 00:28:12,126
+that when the download finishes,
+the application gets woken
+
+
+620
+00:28:12,126 --> 00:28:16,666
+up so it has a chance to look
+at the file and updates its icon
+
+
+621
+00:28:16,666 --> 00:28:18,546
+in the Newsstand folder
+to be the latest cover.
+
+
+622
+00:28:20,276 --> 00:28:22,156
+So again, high level
+overview of the API.
+
+
+623
+00:28:22,936 --> 00:28:24,816
+It all starts with a
+Newsstand Kit library.
+
+
+624
+00:28:25,976 --> 00:28:27,556
+And when you want to
+download something,
+
+
+625
+00:28:27,716 --> 00:28:30,766
+you want to first add a
+Newsstand Kit issue with a name
+
+
+626
+00:28:30,766 --> 00:28:32,866
+and a date that you can get
+from the direct response.
+
+
+627
+00:28:34,186 --> 00:28:36,076
+Then you want to
+wrap the download URL
+
+
+628
+00:28:36,156 --> 00:28:37,556
+into an [inaudible]
+recall subject.
+
+
+629
+00:28:38,166 --> 00:28:40,336
+And with this subject, you
+can create Newsstand Kit asset
+
+
+630
+00:28:40,406 --> 00:28:41,086
+download object.
+
+
+631
+00:28:41,926 --> 00:28:44,746
+So if you followed the
+library contains the issues
+
+
+632
+00:28:44,746 --> 00:28:46,606
+and the issues contain
+Asset downloads.
+
+
+633
+00:28:47,626 --> 00:28:50,216
+So when you're ready to
+download, you can just scroll
+
+
+634
+00:28:50,216 --> 00:28:53,566
+down to the delegates on the
+download, and this will begin
+
+
+635
+00:28:53,566 --> 00:28:55,736
+to download and this make
+your object the delegate,
+
+
+636
+00:28:56,706 --> 00:28:59,576
+so it will get informed
+whenever that makes progress
+
+
+637
+00:28:59,576 --> 00:29:00,346
+or finishes downloading.
+
+
+638
+00:29:02,376 --> 00:29:06,136
+So we mentioned that
+Newsstand Kits was downloading
+
+
+639
+00:29:06,136 --> 00:29:06,706
+in the background.
+
+
+640
+00:29:06,886 --> 00:29:08,596
+So potentially the
+application could exit
+
+
+641
+00:29:08,596 --> 00:29:10,236
+and then launch again.
+
+
+642
+00:29:10,806 --> 00:29:13,116
+So the question is how does
+the application reconnect
+
+
+643
+00:29:13,266 --> 00:29:15,166
+to downloads that have been
+progressing in the background.
+
+
+644
+00:29:16,306 --> 00:29:19,386
+Well, the Newsstand Kit library,
+again, is the starting point.
+
+
+645
+00:29:19,936 --> 00:29:21,566
+It keeps -- it maintains
+for you,
+
+
+646
+00:29:21,566 --> 00:29:25,216
+a list of the downloading assets
+so you can access this list
+
+
+647
+00:29:25,216 --> 00:29:27,636
+when you launch your application
+and for each of those,
+
+
+648
+00:29:27,966 --> 00:29:29,986
+we call the same method,
+download with delegates.
+
+
+649
+00:29:30,446 --> 00:29:32,506
+This will reconnect
+you to download,
+
+
+650
+00:29:33,176 --> 00:29:34,366
+make your object the delegate,
+
+
+651
+00:29:34,556 --> 00:29:36,526
+and all the delegate
+methods will fire exactly
+
+
+652
+00:29:36,526 --> 00:29:38,976
+as the application and never
+go into the background.
+
+
+653
+00:29:39,756 --> 00:29:43,386
+So it's very simple, but
+it's only for periodicals.
+
+
+654
+00:29:44,036 --> 00:29:46,946
+Now, in iOS 7 we've
+added a new API
+
+
+655
+00:29:47,396 --> 00:29:48,376
+to download in the background.
+
+
+656
+00:29:49,036 --> 00:29:52,376
+So it's only iOS, it lets you
+download from your own servers.
+
+
+657
+00:29:53,046 --> 00:29:54,446
+It lets you download
+in foreground
+
+
+658
+00:29:54,446 --> 00:29:57,296
+and in the background, and you
+can control the authentication
+
+
+659
+00:29:57,296 --> 00:29:57,976
+pretty precisely.
+
+
+660
+00:29:59,076 --> 00:30:01,756
+And an added benefit
+is its power efficient.
+
+
+661
+00:30:02,046 --> 00:30:04,036
+So as long as the application
+is in the foreground,
+
+
+662
+00:30:04,456 --> 00:30:05,466
+then the content is urgent,
+
+
+663
+00:30:05,536 --> 00:30:06,866
+we'll get it as fast
+as possible.
+
+
+664
+00:30:06,866 --> 00:30:09,596
+But if the user backgrounds
+the application,
+
+
+665
+00:30:09,716 --> 00:30:11,636
+then maybe that content
+isn't that urgent anymore,
+
+
+666
+00:30:12,056 --> 00:30:14,056
+so iOS will use its
+best judgment
+
+
+667
+00:30:14,116 --> 00:30:16,006
+to find the appropriate
+moments to download this
+
+
+668
+00:30:16,006 --> 00:30:19,876
+without draining the battery.
+
+
+669
+00:30:20,376 --> 00:30:23,606
+So again, a high level
+overview of the API.
+
+
+670
+00:30:24,106 --> 00:30:26,166
+To initiate the download,
+you first want
+
+
+671
+00:30:26,166 --> 00:30:28,886
+to create an NSURL session
+configuration object
+
+
+672
+00:30:29,596 --> 00:30:32,636
+and we have a factory method for
+this that creates one for you
+
+
+673
+00:30:32,636 --> 00:30:34,616
+that is pre-configured to
+continue in the background.
+
+
+674
+00:30:35,686 --> 00:30:37,696
+And all you give it is an
+identifier that's going
+
+
+675
+00:30:37,696 --> 00:30:39,126
+to be very useful
+for reconnecting
+
+
+676
+00:30:39,206 --> 00:30:40,456
+when the application
+launches again.
+
+
+677
+00:30:41,866 --> 00:30:44,026
+And then the real
+object you want
+
+
+678
+00:30:44,026 --> 00:30:47,186
+to create is an NSURL session
+and you can create this
+
+
+679
+00:30:47,186 --> 00:30:48,226
+with a configuration object.
+
+
+680
+00:30:49,016 --> 00:30:50,636
+You give it your
+object as a delegate
+
+
+681
+00:30:51,336 --> 00:30:52,686
+and you can give
+it the delegate cue
+
+
+682
+00:30:52,796 --> 00:30:55,256
+so that you know what cue the
+delegate methods will fire on,
+
+
+683
+00:30:55,406 --> 00:30:56,966
+very convenient for
+multithreading.
+
+
+684
+00:30:58,276 --> 00:31:01,626
+So again, you want to wrap your
+URL into a URL request object
+
+
+685
+00:31:02,296 --> 00:31:06,206
+and you want to create an
+NSURL session download task.
+
+
+686
+00:31:07,076 --> 00:31:09,286
+That's an object that as
+soon as you create it,
+
+
+687
+00:31:09,536 --> 00:31:11,976
+will start downloading into
+temporary file location.
+
+
+688
+00:31:13,076 --> 00:31:15,556
+And because you are
+the delegates,
+
+
+689
+00:31:16,056 --> 00:31:18,366
+your delegate methods will fire
+every time there's progress
+
+
+690
+00:31:18,436 --> 00:31:21,806
+so didWriteData is the right
+place to compute the progress
+
+
+691
+00:31:21,806 --> 00:31:22,816
+and display to the user.
+
+
+692
+00:31:23,516 --> 00:31:26,606
+When the download finishes
+you'll get didFinishDownloading
+
+
+693
+00:31:26,606 --> 00:31:29,226
+to your URL and this
+will give you the URL
+
+
+694
+00:31:29,226 --> 00:31:31,436
+of the place the
+download [inaudible] in.
+
+
+695
+00:31:31,856 --> 00:31:35,286
+Usually the first thing you want
+to do there is access the file
+
+
+696
+00:31:35,286 --> 00:31:36,376
+and copy to a safe place.
+
+
+697
+00:31:36,906 --> 00:31:40,626
+And again, this application
+downloads in the background
+
+
+698
+00:31:41,126 --> 00:31:44,356
+so you have to be able to
+reconnect to the downloads,
+
+
+699
+00:31:44,886 --> 00:31:47,886
+and it's very easy
+with this application.
+
+
+700
+00:31:48,476 --> 00:31:51,286
+It happens at the UI
+application delegate level.
+
+
+701
+00:31:51,286 --> 00:31:53,486
+So the UI application
+protocol go to new method
+
+
+702
+00:31:54,166 --> 00:31:55,456
+and your application delegates.
+
+
+703
+00:31:55,876 --> 00:31:57,776
+When the application
+launches, we'll get called
+
+
+704
+00:31:57,816 --> 00:32:00,226
+with handle events with
+background URL session.
+
+
+705
+00:32:00,946 --> 00:32:02,576
+This will give you the
+identifier for the session
+
+
+706
+00:32:02,576 --> 00:32:04,086
+that just -- that you
+have to reconnect to
+
+
+707
+00:32:04,586 --> 00:32:05,516
+and a completion handler.
+
+
+708
+00:32:06,606 --> 00:32:10,506
+So you want to use the same
+code to recreate the session
+
+
+709
+00:32:11,006 --> 00:32:12,446
+and this will reconnect
+you to the session.
+
+
+710
+00:32:12,446 --> 00:32:14,276
+And because you passed
+your objects
+
+
+711
+00:32:14,326 --> 00:32:16,986
+as delegates your delegate
+methods will start firing again
+
+
+712
+00:32:16,986 --> 00:32:19,766
+exactly as if the
+application had never been put
+
+
+713
+00:32:19,766 --> 00:32:22,096
+in the background -- so very
+convenient, very simple.
+
+
+714
+00:32:23,236 --> 00:32:25,946
+Once all the delegate
+methods are finished firing
+
+
+715
+00:32:25,946 --> 00:32:28,926
+and you finish processing and
+updating the UI and do all
+
+
+716
+00:32:28,926 --> 00:32:31,256
+that you have to do, you only
+call the completion handler.
+
+
+717
+00:32:31,846 --> 00:32:35,096
+So for now the best thing you
+can do is store it somewhere
+
+
+718
+00:32:35,096 --> 00:32:38,336
+so you can use it later.
+
+
+719
+00:32:38,586 --> 00:32:41,606
+So we just scratched
+the surface of the API
+
+
+720
+00:32:41,606 --> 00:32:43,386
+and it has many more
+bounties to offer.
+
+
+721
+00:32:43,796 --> 00:32:44,836
+So if you want to know more
+
+
+722
+00:32:44,836 --> 00:32:47,846
+of this API download new
+background then you're welcome
+
+
+723
+00:32:47,846 --> 00:32:51,496
+to watch a session about the
+Foundation Networking session --
+
+
+724
+00:32:51,496 --> 00:32:53,326
+the video from the session
+that happened yesterday.
+
+
+725
+00:32:53,886 --> 00:32:58,856
+And finally, you can keep
+using the legacy download APIs,
+
+
+726
+00:32:59,416 --> 00:33:00,476
+but it's not a good idea,
+
+
+727
+00:33:00,476 --> 00:33:04,436
+actually because when the
+application gets backgrounded,
+
+
+728
+00:33:05,016 --> 00:33:08,886
+the download stops so
+that means you know this.
+
+
+729
+00:33:08,886 --> 00:33:11,596
+Your user is stuck
+looking at a progress bar
+
+
+730
+00:33:11,926 --> 00:33:13,726
+and user is afraid
+to exit the app.
+
+
+731
+00:33:13,726 --> 00:33:14,886
+User's afraid to do anything
+
+
+732
+00:33:14,886 --> 00:33:15,856
+because it will stop
+the download.
+
+
+733
+00:33:16,336 --> 00:33:18,106
+So it's not the best experience.
+
+
+734
+00:33:18,886 --> 00:33:21,246
+Now of course some applications
+use begin background task
+
+
+735
+00:33:21,376 --> 00:33:23,636
+and they use it to get
+some background time
+
+
+736
+00:33:23,636 --> 00:33:24,576
+to finish downloading,
+
+
+737
+00:33:25,246 --> 00:33:27,896
+but it was never meant
+for doing downloads.
+
+
+738
+00:33:28,236 --> 00:33:29,356
+In fact, in iOS 7,
+
+
+739
+00:33:29,526 --> 00:33:31,906
+begin background tasks
+has changed semantics.
+
+
+740
+00:33:32,466 --> 00:33:34,456
+It no longer prevents
+the device from sleeping.
+
+
+741
+00:33:35,226 --> 00:33:38,356
+So you will get your 10 minutes,
+but maybe not right now.
+
+
+742
+00:33:38,816 --> 00:33:42,026
+Maybe you'll get them when the
+iPod touch has left the home
+
+
+743
+00:33:42,026 --> 00:33:43,446
+and has no Wi-Fi
+connection anymore.
+
+
+744
+00:33:43,796 --> 00:33:46,976
+So for downloads, not
+a very good experience.
+
+
+745
+00:33:47,636 --> 00:33:50,926
+So we recommend that you
+use the other options now
+
+
+746
+00:33:50,926 --> 00:33:52,316
+that we have really
+good options.
+
+
+747
+00:33:52,956 --> 00:33:58,056
+And finally you have
+the [inaudible] assets
+
+
+748
+00:33:58,446 --> 00:34:00,186
+and the final step is to
+finish this transaction.
+
+
+749
+00:34:00,386 --> 00:34:01,206
+Again, not change here.
+
+
+750
+00:34:01,936 --> 00:34:02,986
+You have to finish
+the transaction
+
+
+751
+00:34:02,986 --> 00:34:04,846
+by calling finish transaction.
+
+
+752
+00:34:05,826 --> 00:34:10,596
+And it's the right thing to
+do, but if you don't do it,
+
+
+753
+00:34:10,746 --> 00:34:11,496
+it's actually terrible.
+
+
+754
+00:34:11,576 --> 00:34:14,366
+If you don't do it, the end
+finish transactions will stack
+
+
+755
+00:34:14,366 --> 00:34:15,786
+up and you have all this backlog
+
+
+756
+00:34:15,786 --> 00:34:18,806
+and every time you launch your
+application StoreKit will notify
+
+
+757
+00:34:18,806 --> 00:34:21,716
+your payment queue server
+every single application launch
+
+
+758
+00:34:21,716 --> 00:34:23,356
+of every single unfinished
+transaction,
+
+
+759
+00:34:23,786 --> 00:34:25,246
+and this slows down your app.
+
+
+760
+00:34:25,636 --> 00:34:29,176
+So, for the user's -- user's
+stuck waiting, it's not great,
+
+
+761
+00:34:29,916 --> 00:34:31,846
+but also StoreKit will
+have to talk to the server
+
+
+762
+00:34:31,846 --> 00:34:32,926
+to confirm the transactions.
+
+
+763
+00:34:33,346 --> 00:34:36,806
+So if user is on cellular
+you will incur some cellular
+
+
+764
+00:34:36,806 --> 00:34:37,505
+data consumption.
+
+
+765
+00:34:37,755 --> 00:34:40,696
+So there's no point
+in doing this.
+
+
+766
+00:34:40,735 --> 00:34:43,206
+So it's very simple to just
+finish the transactions.
+
+
+767
+00:34:43,686 --> 00:34:48,755
+And that concludes the in-app
+purchase process overview.
+
+
+768
+00:34:49,956 --> 00:34:53,476
+So there's one best
+practice I'd like to mention.
+
+
+769
+00:34:54,176 --> 00:34:57,056
+To get your delegate
+method's goal you have
+
+
+770
+00:34:57,085 --> 00:34:58,286
+to install the payment
+cube server.
+
+
+771
+00:34:58,516 --> 00:35:01,086
+And you guys are already
+doing this, but don't wait
+
+
+772
+00:35:01,326 --> 00:35:03,046
+to make a purchase
+to install it.
+
+
+773
+00:35:03,046 --> 00:35:05,166
+You have to do it right when
+the application launches
+
+
+774
+00:35:05,796 --> 00:35:08,146
+because as soon as the
+application launches,
+
+
+775
+00:35:08,236 --> 00:35:10,906
+it may receive transaction
+any time.
+
+
+776
+00:35:11,746 --> 00:35:13,636
+Classic example,
+you try to make a --
+
+
+777
+00:35:13,636 --> 00:35:17,576
+you try to make a transaction
+and you lost the connection.
+
+
+778
+00:35:18,136 --> 00:35:19,886
+So transaction will
+have completed
+
+
+779
+00:35:19,946 --> 00:35:21,876
+when the application
+was not running anymore.
+
+
+780
+00:35:21,876 --> 00:35:23,706
+So the next time you launch it,
+you will find the transaction.
+
+
+781
+00:35:23,706 --> 00:35:24,826
+You should process
+it; otherwise,
+
+
+782
+00:35:24,826 --> 00:35:26,026
+the user has lost some content.
+
+
+783
+00:35:27,176 --> 00:35:30,336
+The user might have received
+a gift code and redeemed
+
+
+784
+00:35:30,336 --> 00:35:31,766
+that gift code inside
+the app store.
+
+
+785
+00:35:32,376 --> 00:35:33,956
+And when the user
+launches the application,
+
+
+786
+00:35:33,956 --> 00:35:36,966
+they expect that gift to be
+there so you have to process it
+
+
+787
+00:35:36,966 --> 00:35:38,346
+as soon as the application
+launches.
+
+
+788
+00:35:38,916 --> 00:35:42,296
+And if you do periodicals then
+when you launch the application,
+
+
+789
+00:35:42,666 --> 00:35:44,436
+the subscription might
+have renewed and you want
+
+
+790
+00:35:44,436 --> 00:35:45,236
+to take this into account.
+
+
+791
+00:35:45,846 --> 00:35:47,676
+So as soon as you
+get app, you know,
+
+
+792
+00:35:47,786 --> 00:35:49,426
+as soon as you get app
+did finish launching,
+
+
+793
+00:35:49,846 --> 00:35:54,896
+it's the right moment to
+install the payment cube server.
+
+
+794
+00:35:54,896 --> 00:35:58,096
+And finally, for real,
+restoring in-app purchases --
+
+
+795
+00:35:58,626 --> 00:36:01,336
+nothing changes except
+the API you call
+
+
+796
+00:36:01,336 --> 00:36:02,926
+to get the receipt
+so no change here.
+
+
+797
+00:36:04,976 --> 00:36:08,206
+And that wraps our kind
+of quick over flight
+
+
+798
+00:36:08,206 --> 00:36:10,346
+of the in-app purchase process.
+
+
+799
+00:36:11,216 --> 00:36:15,756
+Now I'd like to discuss and
+demystify the test environment
+
+
+800
+00:36:15,756 --> 00:36:17,696
+because it's something
+that's a very powerful tool.
+
+
+801
+00:36:17,696 --> 00:36:18,746
+It's something you
+should really use
+
+
+802
+00:36:18,746 --> 00:36:20,856
+to make sure your in-app
+purchases behave correctly.
+
+
+803
+00:36:20,976 --> 00:36:25,686
+So today I'm going to call
+it SendBox, but it's not
+
+
+804
+00:36:25,686 --> 00:36:27,176
+to be confused with
+the other SendBox,
+
+
+805
+00:36:27,226 --> 00:36:30,546
+the one that limits access to
+your application resources.
+
+
+806
+00:36:30,996 --> 00:36:33,936
+So SendBox today means the test
+environment of the app store.
+
+
+807
+00:36:34,446 --> 00:36:37,656
+So the app store has a
+production environment
+
+
+808
+00:36:38,506 --> 00:36:40,586
+and its evil twin, the SendBox.
+
+
+809
+00:36:41,486 --> 00:36:43,486
+So when the application
+is talking
+
+
+810
+00:36:43,486 --> 00:36:46,656
+to the store they can be
+talking to either the SendBox
+
+
+811
+00:36:47,536 --> 00:36:49,156
+or the production store.
+
+
+812
+00:36:49,966 --> 00:36:53,386
+How do you determine
+which one is very simple?
+
+
+813
+00:36:53,836 --> 00:36:55,926
+It's based on the
+certificate that was used
+
+
+814
+00:36:56,016 --> 00:36:57,576
+for signing your application.
+
+
+815
+00:36:58,276 --> 00:37:00,276
+So when you develop your
+application it is signed
+
+
+816
+00:37:00,276 --> 00:37:01,456
+with the development
+certificate.
+
+
+817
+00:37:02,196 --> 00:37:05,396
+So the OS would point
+your application
+
+
+818
+00:37:05,556 --> 00:37:07,956
+to the production store
+-- sorry, to the SendBox.
+
+
+819
+00:37:08,496 --> 00:37:10,156
+Development hit SendBox.
+
+
+820
+00:37:10,796 --> 00:37:12,396
+Now, if your application
+is signed
+
+
+821
+00:37:12,906 --> 00:37:14,556
+with app store certificates
+
+
+822
+00:37:15,056 --> 00:37:16,516
+and the only way
+this could happen is
+
+
+823
+00:37:16,766 --> 00:37:19,286
+if the user downloads the
+application from the app store,
+
+
+824
+00:37:20,236 --> 00:37:22,896
+then the OS will point it
+to the production store.
+
+
+825
+00:37:23,906 --> 00:37:25,876
+And if you're ever unsure
+because you've messed
+
+
+826
+00:37:25,876 --> 00:37:28,646
+up some accounts or something,
+just make internet purchase
+
+
+827
+00:37:29,456 --> 00:37:32,526
+because you'll hear this dialog
+and if you see this line,
+
+
+828
+00:37:32,946 --> 00:37:34,486
+it means you're hitting
+the SendBox.
+
+
+829
+00:37:35,656 --> 00:37:37,236
+So what's the main difference?
+
+
+830
+00:37:38,296 --> 00:37:41,096
+First of all, the SendBox does
+not charge you, which is great
+
+
+831
+00:37:41,096 --> 00:37:42,486
+because you want to test
+as much as possible.
+
+
+832
+00:37:43,066 --> 00:37:46,296
+And -- yeah, you can laugh.
+
+
+833
+00:37:46,916 --> 00:37:52,046
+And if you get a SendBox
+receipt is it not backed
+
+
+834
+00:37:52,106 --> 00:37:55,196
+by a financial transaction,
+therefore, it will not validate
+
+
+835
+00:37:55,376 --> 00:37:57,926
+against the production
+store validation servers.
+
+
+836
+00:37:58,946 --> 00:38:00,576
+So you can feel free
+to use the SendBox.
+
+
+837
+00:38:00,646 --> 00:38:02,366
+These receipts will not
+validate against production.
+
+
+838
+00:38:03,726 --> 00:38:06,286
+And if you want to implement
+the Volume Purchase Program,
+
+
+839
+00:38:06,716 --> 00:38:09,086
+then we mentioned that the
+receipt will contain new fields.
+
+
+840
+00:38:09,626 --> 00:38:11,916
+And we have API in the SendBox
+
+
+841
+00:38:11,916 --> 00:38:15,236
+to request a receipt that's
+either expired or revoke
+
+
+842
+00:38:15,686 --> 00:38:17,996
+so that the application
+can test how it behaves
+
+
+843
+00:38:17,996 --> 00:38:19,486
+when licenses are
+expired or revoked.
+
+
+844
+00:38:20,236 --> 00:38:22,946
+And of course, if you get a
+revoked receipt from SendBox,
+
+
+845
+00:38:22,946 --> 00:38:25,606
+iOS will not prevent your
+application from launching.
+
+
+846
+00:38:25,606 --> 00:38:28,946
+Otherwise, you could
+never test your code.
+
+
+847
+00:38:29,166 --> 00:38:31,956
+And the final thing to
+know about SendBox is
+
+
+848
+00:38:31,956 --> 00:38:36,126
+that it makes time
+fly faster, for real.
+
+
+849
+00:38:36,446 --> 00:38:37,756
+This is great if you
+do subscriptions.
+
+
+850
+00:38:38,196 --> 00:38:42,526
+The rule of thumb is that
+one year becomes one hour,
+
+
+851
+00:38:43,246 --> 00:38:45,316
+so a yearly subscription
+renews every hour
+
+
+852
+00:38:46,006 --> 00:38:48,966
+and it will renew six
+times, and stop renewing
+
+
+853
+00:38:49,676 --> 00:38:52,326
+so you can test your code
+for renewing subscriptions
+
+
+854
+00:38:52,736 --> 00:38:55,096
+and you can test your code when
+a subscription stops renewing.
+
+
+855
+00:38:57,096 --> 00:39:01,976
+So in practice, that means
+you have to first log
+
+
+856
+00:39:01,976 --> 00:39:04,276
+into Access Connect,
+create a test user,
+
+
+857
+00:39:04,956 --> 00:39:06,916
+test users are not valid
+in the production store,
+
+
+858
+00:39:06,916 --> 00:39:09,176
+there are two different sets,
+it's a source of confusion.
+
+
+859
+00:39:09,176 --> 00:39:10,376
+Its two different sets of users.
+
+
+860
+00:39:11,196 --> 00:39:12,666
+Then you want to
+create a product.
+
+
+861
+00:39:12,666 --> 00:39:16,246
+You want to build your app
+and you want to sign it.
+
+
+862
+00:39:16,326 --> 00:39:18,726
+And on the Mac there's
+one extra step.
+
+
+863
+00:39:18,776 --> 00:39:21,156
+On the Mac you have to
+launch the application once
+
+
+864
+00:39:21,156 --> 00:39:24,806
+from the finder, and when the
+application detects there's no
+
+
+865
+00:39:24,806 --> 00:39:26,736
+receipt and exits
+with the magic code,
+
+
+866
+00:39:27,236 --> 00:39:30,386
+the finder will intercept this
+magic code and fetch a receipt
+
+
+867
+00:39:30,386 --> 00:39:31,746
+for the application
+and relaunch it.
+
+
+868
+00:39:32,346 --> 00:39:35,086
+That is how you get a receipt
+on the Mac the first time.
+
+
+869
+00:39:35,086 --> 00:39:36,636
+If you launch the
+application from Xcode
+
+
+870
+00:39:37,076 --> 00:39:38,826
+and the application
+exists with a magic code,
+
+
+871
+00:39:39,166 --> 00:39:41,416
+the Xcode will just like
+intercept this and submit,
+
+
+872
+00:39:41,416 --> 00:39:42,236
+and nothing will happen.
+
+
+873
+00:39:42,416 --> 00:39:43,686
+So launch the first
+time in the finder.
+
+
+874
+00:39:43,806 --> 00:39:45,276
+That's a very frequent,
+you know,
+
+
+875
+00:39:45,276 --> 00:39:46,906
+kind of head-scratching case.
+
+
+876
+00:39:47,466 --> 00:39:48,266
+And that's all you have to do.
+
+
+877
+00:39:48,516 --> 00:39:50,946
+Next thing is just buy
+products, as much as you can.
+
+
+878
+00:39:51,966 --> 00:39:57,936
+So, to summarize, when you're
+developing the application is
+
+
+879
+00:39:58,106 --> 00:39:59,976
+signed by your development
+certificate.
+
+
+880
+00:40:01,516 --> 00:40:03,736
+So the OS will point
+it to the SendBox
+
+
+881
+00:40:04,606 --> 00:40:07,056
+and you can get a SendBox
+receipt and forward it
+
+
+882
+00:40:07,056 --> 00:40:08,546
+to your own test server.
+
+
+883
+00:40:09,156 --> 00:40:11,476
+And your test server
+will let you get
+
+
+884
+00:40:11,476 --> 00:40:13,346
+that receipt against
+the SendBox.
+
+
+885
+00:40:13,826 --> 00:40:15,886
+So, things just work.
+
+
+886
+00:40:16,976 --> 00:40:19,786
+Once the application is live
+in the store, it is signed
+
+
+887
+00:40:19,786 --> 00:40:23,016
+by the store so if the
+production application,
+
+
+888
+00:40:23,186 --> 00:40:24,496
+you will hit the
+production store.
+
+
+889
+00:40:24,876 --> 00:40:26,136
+You will get production
+receipts,
+
+
+890
+00:40:26,136 --> 00:40:29,086
+you will form those production
+servers and you'll validate
+
+
+891
+00:40:29,086 --> 00:40:30,976
+against the production
+store, everything works.
+
+
+892
+00:40:32,076 --> 00:40:34,126
+Now there's one case you
+really have to be aware
+
+
+893
+00:40:34,126 --> 00:40:36,256
+of because it affects
+app review.
+
+
+894
+00:40:36,766 --> 00:40:39,186
+During app review,
+
+
+895
+00:40:39,426 --> 00:40:40,806
+your application
+comes from the store.
+
+
+896
+00:40:40,906 --> 00:40:41,996
+So it is production signed.
+
+
+897
+00:40:42,716 --> 00:40:46,246
+But the reviewers don't want
+to charge anyone for reviewing.
+
+
+898
+00:40:46,296 --> 00:40:48,006
+So they will point the
+application to SendBox.
+
+
+899
+00:40:48,796 --> 00:40:51,976
+So your production application
+might get a SendBox receipt
+
+
+900
+00:40:52,466 --> 00:40:55,266
+and forward it to your
+own production servers.
+
+
+901
+00:40:55,866 --> 00:40:57,266
+And if the server
+tries to validate
+
+
+902
+00:40:57,266 --> 00:40:59,906
+that against the Apple
+production validation servers,
+
+
+903
+00:40:59,906 --> 00:41:02,476
+it will fail, and you
+don't want this to fail
+
+
+904
+00:41:02,476 --> 00:41:03,546
+because this will
+fail at review.
+
+
+905
+00:41:04,446 --> 00:41:08,576
+So, what we recommend to do, is
+to have your service first try
+
+
+906
+00:41:08,576 --> 00:41:11,086
+to validate the receipts in
+the production environments
+
+
+907
+00:41:11,426 --> 00:41:14,726
+and if it fails with
+the area code 21007,
+
+
+908
+00:41:14,936 --> 00:41:18,596
+pretty easy to remember,
+then you want to turn back,
+
+
+909
+00:41:18,596 --> 00:41:21,406
+and fall back, and hit the
+SendBox validation servers.
+
+
+910
+00:41:21,866 --> 00:41:26,516
+And if you do this, you'll
+pass the review easily.
+
+
+911
+00:41:26,516 --> 00:41:29,726
+So, talking about the app
+review, I'd like to finish
+
+
+912
+00:41:29,726 --> 00:41:33,196
+with some feedback from the app
+review team but make no mistake,
+
+
+913
+00:41:33,646 --> 00:41:35,326
+we want your application
+to pass that review.
+
+
+914
+00:41:36,046 --> 00:41:37,416
+We want them to be in the store.
+
+
+915
+00:41:37,796 --> 00:41:40,936
+We want them to have a great
+user experience and we want them
+
+
+916
+00:41:40,936 --> 00:41:43,586
+to have a consistent user
+experience especially
+
+
+917
+00:41:43,586 --> 00:41:44,756
+when transactions are involved.
+
+
+918
+00:41:44,756 --> 00:41:46,446
+You want that to be
+super clear to the user
+
+
+919
+00:41:46,446 --> 00:41:47,696
+so they all have
+to be hit the same.
+
+
+920
+00:41:47,696 --> 00:41:49,746
+If they don't be hit the
+same, then the use --
+
+
+921
+00:41:49,746 --> 00:41:51,736
+the user's going to be confused.
+
+
+922
+00:41:51,736 --> 00:41:53,416
+They'll be confused,
+they'll like hesitate,
+
+
+923
+00:41:53,416 --> 00:41:55,006
+they'll be fearful and
+that's something we'd
+
+
+924
+00:41:55,006 --> 00:41:56,056
+like to leave the
+to competition.
+
+
+925
+00:41:56,726 --> 00:42:01,366
+So the first thing you have to
+do is have a restore button.
+
+
+926
+00:42:02,036 --> 00:42:05,226
+If you have non-consumables, you
+want to have a restore button.
+
+
+927
+00:42:05,786 --> 00:42:08,466
+If you don't and the user
+restores the application
+
+
+928
+00:42:08,466 --> 00:42:10,346
+to new device, they have no way
+
+
+929
+00:42:10,346 --> 00:42:12,236
+of restoring the
+content they paid for.
+
+
+930
+00:42:12,666 --> 00:42:13,656
+So they have lost content.
+
+
+931
+00:42:13,856 --> 00:42:15,086
+It's a terrible user experience.
+
+
+932
+00:42:15,426 --> 00:42:16,506
+So if you don't have
+a restore button,
+
+
+933
+00:42:16,976 --> 00:42:18,246
+the application will
+get rejected.
+
+
+934
+00:42:20,406 --> 00:42:23,436
+And another misconception,
+
+
+935
+00:42:24,026 --> 00:42:26,646
+restoring purchases
+is a free process.
+
+
+936
+00:42:26,866 --> 00:42:29,606
+You get a new device, you
+install the application,
+
+
+937
+00:42:29,606 --> 00:42:30,496
+restore the purchases.
+
+
+938
+00:42:31,196 --> 00:42:33,366
+It's free; it's to
+get your content back.
+
+
+939
+00:42:33,796 --> 00:42:37,086
+The purchase process is to get
+new content and pay for it.
+
+
+940
+00:42:37,346 --> 00:42:38,556
+It's really different processes.
+
+
+941
+00:42:39,156 --> 00:42:41,156
+And you want this to be
+very clear for the user
+
+
+942
+00:42:41,676 --> 00:42:43,216
+and so they have to
+be separate buttons.
+
+
+943
+00:42:43,366 --> 00:42:45,006
+No need to merge them.
+
+
+944
+00:42:45,946 --> 00:42:48,436
+If you are a news stand
+application, as we mentioned,
+
+
+945
+00:42:48,436 --> 00:42:51,086
+you can give an incentive
+for people
+
+
+946
+00:42:51,086 --> 00:42:52,056
+to share their personal data.
+
+
+947
+00:42:52,586 --> 00:42:54,076
+So you will receive
+personal data,
+
+
+948
+00:42:54,636 --> 00:42:56,926
+so to make sure you
+treat this properly,
+
+
+949
+00:42:56,926 --> 00:42:59,326
+you have to have a
+privacy policy and you have
+
+
+950
+00:42:59,376 --> 00:43:00,616
+to feel your [inaudible]
+connects.
+
+
+951
+00:43:01,396 --> 00:43:03,096
+Otherwise, this is an
+automatic rejection.
+
+
+952
+00:43:03,976 --> 00:43:05,896
+Also you want to
+make it very clear
+
+
+953
+00:43:05,896 --> 00:43:07,286
+to the user what
+they subscribe to,
+
+
+954
+00:43:07,556 --> 00:43:08,906
+even before they
+purchase the app,
+
+
+955
+00:43:09,466 --> 00:43:11,666
+so you want to put the
+subscription information
+
+
+956
+00:43:11,666 --> 00:43:13,076
+directly into the
+marketing text.
+
+
+957
+00:43:13,536 --> 00:43:15,546
+We have a schedule in the
+application store guidelines
+
+
+958
+00:43:15,596 --> 00:43:16,456
+that you can use for this.
+
+
+959
+00:43:18,056 --> 00:43:21,906
+And free subscriptions
+-- it's okay to use them.
+
+
+960
+00:43:21,906 --> 00:43:24,746
+In fact, we love them but
+they are for free stuff.
+
+
+961
+00:43:25,336 --> 00:43:28,536
+They should not be used as a
+way to get people to subscribe
+
+
+962
+00:43:28,536 --> 00:43:30,466
+to a temporary promotion and
+then you raise the price.
+
+
+963
+00:43:30,466 --> 00:43:32,806
+In fact, if you try to
+do this, it will fail
+
+
+964
+00:43:32,806 --> 00:43:34,246
+because the moment
+you raise the price,
+
+
+965
+00:43:34,596 --> 00:43:35,806
+the store will stop renewing
+
+
+966
+00:43:35,806 --> 00:43:38,026
+because the users haven't
+agreed to the new price.
+
+
+967
+00:43:38,626 --> 00:43:40,666
+So, free subscriptions
+are for free publications.
+
+
+968
+00:43:41,686 --> 00:43:42,976
+And even though they're free,
+
+
+969
+00:43:43,716 --> 00:43:46,356
+that doesn't mean you
+can auto enroll the user
+
+
+970
+00:43:46,356 --> 00:43:49,526
+or subscribe the user because
+the user still should be
+
+
+971
+00:43:49,526 --> 00:43:51,736
+in control of the content
+that goes into the devices.
+
+
+972
+00:43:52,156 --> 00:43:53,276
+So even a free subscription,
+
+
+973
+00:43:53,276 --> 00:43:54,946
+they should have a
+subscribe button.
+
+
+974
+00:43:55,996 --> 00:44:00,606
+And in Newsstand, it is
+totally okay, in fact it's great
+
+
+975
+00:44:00,606 --> 00:44:02,516
+if you offer the
+users the option
+
+
+976
+00:44:02,516 --> 00:44:04,386
+to purchase individual
+issues of the magazines.
+
+
+977
+00:44:05,216 --> 00:44:08,096
+But you also have to have
+the option to subscribe
+
+
+978
+00:44:08,096 --> 00:44:10,766
+to the magazine because that's
+what Newsstand is all about.
+
+
+979
+00:44:10,766 --> 00:44:13,186
+It's having content magically
+delivered to your device
+
+
+980
+00:44:13,186 --> 00:44:14,616
+when you -- and it's
+there when you wake up.
+
+
+981
+00:44:17,176 --> 00:44:19,106
+So if you are not
+a Newsstand app,
+
+
+982
+00:44:19,456 --> 00:44:20,876
+but you do auto renewal
+subscriptions,
+
+
+983
+00:44:21,296 --> 00:44:22,936
+it's almost the same case.
+
+
+984
+00:44:22,936 --> 00:44:24,756
+You might be exposed to
+personal data so you have
+
+
+985
+00:44:24,756 --> 00:44:28,006
+to have your privacy policy.
+
+
+986
+00:44:28,006 --> 00:44:30,416
+You have to give
+the users an idea
+
+
+987
+00:44:30,416 --> 00:44:31,666
+of what they're going
+to be subscribing to.
+
+
+988
+00:44:31,666 --> 00:44:33,756
+So you have to put the
+subscription information inside
+
+
+989
+00:44:33,756 --> 00:44:34,456
+the marketing text.
+
+
+990
+00:44:35,836 --> 00:44:37,986
+And you have to think
+about what happens
+
+
+991
+00:44:37,986 --> 00:44:39,156
+to the user if they subscribe.
+
+
+992
+00:44:39,586 --> 00:44:42,636
+So when the user subscribes,
+you know, they pay some money.
+
+
+993
+00:44:43,306 --> 00:44:44,166
+They should get something.
+
+
+994
+00:44:44,466 --> 00:44:46,016
+The latest issue
+should become downloaded
+
+
+995
+00:44:46,126 --> 00:44:47,266
+or even downloaded
+automatically.
+
+
+996
+00:44:47,866 --> 00:44:50,306
+But what you shouldn't do
+is have the user subscribe
+
+
+997
+00:44:50,306 --> 00:44:51,166
+and then nothing happens.
+
+
+998
+00:44:51,376 --> 00:44:54,516
+They should get some content.
+
+
+999
+00:44:55,386 --> 00:44:57,406
+Again, paid subscriptions,
+they're totally fine
+
+
+1000
+00:44:57,796 --> 00:44:59,096
+but they're offered
+paid contents.
+
+
+1001
+00:44:59,096 --> 00:45:00,606
+You can't ask the user to pay
+
+
+1002
+00:45:00,646 --> 00:45:02,256
+for things he could
+get for free otherwise.
+
+
+1003
+00:45:03,316 --> 00:45:06,216
+And apps that do
+services, professional apps,
+
+
+1004
+00:45:06,606 --> 00:45:08,606
+they usually -- they
+should use their flexibility
+
+
+1005
+00:45:08,696 --> 00:45:09,956
+of non-renewing subscriptions.
+
+
+1006
+00:45:10,906 --> 00:45:12,696
+And talking about the
+non-renewing subscriptions,
+
+
+1007
+00:45:13,046 --> 00:45:16,496
+it is okay to ask
+user to register
+
+
+1008
+00:45:17,186 --> 00:45:18,116
+but it should be optional.
+
+
+1009
+00:45:18,546 --> 00:45:21,086
+That is, users can use
+your app and if you want
+
+
+1010
+00:45:21,086 --> 00:45:22,486
+to track them, offer
+to register.
+
+
+1011
+00:45:22,566 --> 00:45:24,106
+They can register if they
+want to, that's great.
+
+
+1012
+00:45:24,866 --> 00:45:27,996
+Don't make it compulsory unless
+your application has features
+
+
+1013
+00:45:27,996 --> 00:45:31,296
+that users can only
+get through accounts --
+
+
+1014
+00:45:31,296 --> 00:45:32,266
+you know, through
+their accounts.
+
+
+1015
+00:45:32,786 --> 00:45:37,476
+And the final word
+is about purchases.
+
+
+1016
+00:45:38,856 --> 00:45:42,186
+They just must work because
+the app review team will make
+
+
+1017
+00:45:42,186 --> 00:45:43,846
+purchases and if the
+purchases don't work,
+
+
+1018
+00:45:43,846 --> 00:45:44,966
+they can't approve
+the application.
+
+
+1019
+00:45:45,506 --> 00:45:46,746
+So purchases have to work
+
+
+1020
+00:45:47,116 --> 00:45:48,596
+and that's why we have
+this test environment.
+
+
+1021
+00:45:48,596 --> 00:45:50,656
+That's why we ask that
+you test your purchases
+
+
+1022
+00:45:50,656 --> 00:45:51,496
+as much as possible.
+
+
+1023
+00:45:52,416 --> 00:45:58,736
+And the best way to pass app
+review easily is also the best
+
+
+1024
+00:45:58,736 --> 00:46:01,916
+way to get good user feedback
+and read reviews and loyalty.
+
+
+1025
+00:46:02,506 --> 00:46:05,246
+And it's also the best
+way to get great sales is
+
+
+1026
+00:46:06,286 --> 00:46:10,576
+to have a clean, easy
+to understand, simple,
+
+
+1027
+00:46:10,576 --> 00:46:13,146
+entertaining, pleasant,
+and above all,
+
+
+1028
+00:46:13,146 --> 00:46:15,076
+rock solid user experience.
+
+
+1029
+00:46:15,136 --> 00:46:17,206
+And that's all I
+have for you today.
+
+
+1030
+00:46:18,116 --> 00:46:21,296
+So if you have any
+questions, feel free to talk
+
+
+1031
+00:46:21,296 --> 00:46:23,106
+to our evangelist Paul Marcos.
+
+
+1032
+00:46:23,806 --> 00:46:26,056
+We have updated the
+Commentator Developer websites
+
+
+1033
+00:46:26,606 --> 00:46:29,076
+and the Apple Developer Forum
+are a good place to ask --
+
+
+1034
+00:46:29,236 --> 00:46:30,906
+look around and ask
+a bunch of questions.
+
+
+1035
+00:46:32,376 --> 00:46:32,796
+That's it.
+
+
+1036
+00:46:32,796 --> 00:46:33,976
+Thanks for using StoreKits.
+
+
+1037
+00:46:34,516 --> 00:46:41,516
+[ Applause ]
+
+
+1038
+00:46:42,016 --> 00:46:46,606
+[ Silence ]
+

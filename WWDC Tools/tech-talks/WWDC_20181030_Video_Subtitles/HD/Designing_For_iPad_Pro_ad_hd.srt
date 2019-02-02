@@ -1,0 +1,1047 @@
+1
+00:00:01,134 --> 00:00:03,770
+Mike Stern: The new iPad Pro
+features an all-screen design
+
+
+2
+00:00:03,770 --> 00:00:06,373
+so people can focus
+on what matters most:
+
+
+3
+00:00:06,373 --> 00:00:09,543
+immersing themselves
+in your app or game.
+
+
+4
+00:00:09,543 --> 00:00:11,478
+And the second generation
+Apple Pencil
+
+
+5
+00:00:11,478 --> 00:00:13,513
+includes
+a new double-tap feature
+
+
+6
+00:00:13,513 --> 00:00:17,184
+that makes it even more capable
+and convenient.
+
+
+7
+00:00:17,184 --> 00:00:19,820
+Let's talk about
+how to update your app's design
+
+
+8
+00:00:19,820 --> 00:00:23,624
+to take advantage
+of these new features.
+
+
+9
+00:00:23,624 --> 00:00:25,792
+The 11-inch iPad Pro display
+
+
+10
+00:00:25,792 --> 00:00:32,332
+is 1,194 by 834 points
+at 2x resolution.
+
+
+11
+00:00:32,332 --> 00:00:34,835
+The 12.9-inch iPad Pro's display
+
+
+12
+00:00:34,835 --> 00:00:41,675
+is 1,366 by 1,024 points
+at 2x resolution.
+
+
+13
+00:00:41,675 --> 00:00:46,380
+In pixels, that's 2,388 by 1,668
+
+
+14
+00:00:46,380 --> 00:00:51,084
+and 2,732 by 2,048.
+
+
+15
+00:00:51,084 --> 00:00:54,554
+The 12.9-inch display
+is the same width and height
+
+
+16
+00:00:54,554 --> 00:00:56,490
+as the previous generation.
+
+
+17
+00:00:56,490 --> 00:00:58,492
+The 11-inch iPad Pro display
+
+
+18
+00:00:58,492 --> 00:01:01,728
+has the same height
+as a 10.5-inch iPad Pro,
+
+
+19
+00:01:01,728 --> 00:01:07,100
+while being 82 points,
+or 164 pixels, wider.
+
+
+20
+00:01:07,100 --> 00:01:10,070
+The new iPad Pros
+feature a thin bezel
+
+
+21
+00:01:10,070 --> 00:01:11,638
+and rounded corners.
+
+
+22
+00:01:11,638 --> 00:01:14,341
+As with current generation
+iPhone displays,
+
+
+23
+00:01:14,341 --> 00:01:17,377
+avoid placing
+critical information or controls
+
+
+24
+00:01:17,377 --> 00:01:20,781
+into the extreme corners
+of your interface.
+
+
+25
+00:01:20,781 --> 00:01:25,085
+For many apps, the status bar
+and UIKit navigation bar,
+
+
+26
+00:01:25,085 --> 00:01:27,020
+toolbar, and tab bar
+
+
+27
+00:01:27,020 --> 00:01:30,757
+will automatically
+inset elements correctly.
+
+
+28
+00:01:30,757 --> 00:01:33,493
+And, as with iPhone,
+a Home indicator
+
+
+29
+00:01:33,493 --> 00:01:35,362
+lets people know
+they can swipe up
+
+
+30
+00:01:35,362 --> 00:01:39,132
+to return to the Home screen
+and switch apps.
+
+
+31
+00:01:39,132 --> 00:01:42,269
+To make sure your app or game
+looks great on iPad Pro,
+
+
+32
+00:01:42,269 --> 00:01:44,805
+you'll want to follow
+three best practices
+
+
+33
+00:01:44,805 --> 00:01:47,374
+when laying out your interface.
+
+
+34
+00:01:47,374 --> 00:01:50,010
+First, use safe area
+layout guides
+
+
+35
+00:01:50,010 --> 00:01:52,746
+to prevent interface elements
+from getting clipped
+
+
+36
+00:01:52,746 --> 00:01:54,881
+by the display's
+rounded corners,
+
+
+37
+00:01:54,881 --> 00:01:56,883
+or covered
+by the Home indicator.
+
+
+38
+00:01:56,883 --> 00:01:58,385
+Safe areas are determined
+
+
+39
+00:01:58,385 --> 00:02:01,888
+by insets from each edge
+of the screen.
+
+
+40
+00:02:01,888 --> 00:02:04,992
+With nothing on screen,
+all insets are zero,
+
+
+41
+00:02:04,992 --> 00:02:06,660
+except for the bottom.
+
+
+42
+00:02:06,660 --> 00:02:08,762
+The bottom safe area inset
+keeps elements
+
+
+43
+00:02:08,762 --> 00:02:11,365
+from getting covered
+by the Home indicator.
+
+
+44
+00:02:11,365 --> 00:02:15,002
+The inset is 20 points
+in portrait orientation
+
+
+45
+00:02:15,002 --> 00:02:17,504
+and in landscape.
+
+
+46
+00:02:17,504 --> 00:02:20,007
+While it may be tempting
+to put UI elements
+
+
+47
+00:02:20,007 --> 00:02:22,009
+on either side
+of the Home indicator,
+
+
+48
+00:02:22,009 --> 00:02:23,543
+it's not recommended.
+
+
+49
+00:02:23,543 --> 00:02:25,879
+The Home indicator
+is centered in the display.
+
+
+50
+00:02:25,879 --> 00:02:30,217
+In a split view, its position
+relative to your app will change
+
+
+51
+00:02:30,217 --> 00:02:33,286
+and may cover
+interface elements.
+
+
+52
+00:02:33,286 --> 00:02:34,888
+When a status bar is displayed,
+
+
+53
+00:02:34,888 --> 00:02:37,657
+the top inset value
+is 24 points.
+
+
+54
+00:02:37,657 --> 00:02:41,762
+That's slightly taller than
+the 20-point top inset on iPhone
+
+
+55
+00:02:41,762 --> 00:02:44,664
+and previous generation iPads.
+
+
+56
+00:02:44,664 --> 00:02:47,034
+A quick but important side note.
+
+
+57
+00:02:47,034 --> 00:02:49,870
+Apps running in Slide Over
+will have zero height
+
+
+58
+00:02:49,870 --> 00:02:52,973
+top and bottom
+safe area insets.
+
+
+59
+00:02:52,973 --> 00:02:56,276
+The safe area is further inset
+to accommodate
+
+
+60
+00:02:56,276 --> 00:03:00,747
+a navigation bar
+and tab bar or toolbar.
+
+
+61
+00:03:00,747 --> 00:03:02,215
+In both orientations,
+
+
+62
+00:03:02,215 --> 00:03:05,385
+the left and right
+safe area insets are zero.
+
+
+63
+00:03:05,385 --> 00:03:08,522
+That's different from iPhone,
+where left and right insets
+
+
+64
+00:03:08,522 --> 00:03:10,290
+keep elements
+from getting covered
+
+
+65
+00:03:10,290 --> 00:03:13,126
+by the device's sensor housing.
+
+
+66
+00:03:13,126 --> 00:03:16,363
+Next, use layout margins
+to inset content
+
+
+67
+00:03:16,363 --> 00:03:19,566
+from the left and right
+screen edges.
+
+
+68
+00:03:19,566 --> 00:03:23,270
+Layout margins provide
+breathing space between content
+
+
+69
+00:03:23,270 --> 00:03:26,106
+and the display's
+left and right edges.
+
+
+70
+00:03:26,106 --> 00:03:27,741
+They're great
+for aligning content
+
+
+71
+00:03:27,741 --> 00:03:29,509
+to elements
+in the navigation bar,
+
+
+72
+00:03:29,509 --> 00:03:33,513
+toolbar, and status bar,
+and they keep content
+
+
+73
+00:03:33,513 --> 00:03:36,750
+from scrolling into
+the display's rounded corners.
+
+
+74
+00:03:36,750 --> 00:03:40,987
+The width of layout margins
+varies based on size class.
+
+
+75
+00:03:40,987 --> 00:03:46,693
+They are 20 points for regular
+and 16 points for compact.
+
+
+76
+00:03:46,693 --> 00:03:49,229
+Finally, be ready
+to accommodate
+
+
+77
+00:03:49,229 --> 00:03:51,631
+multiple aspect ratios.
+
+
+78
+00:03:51,631 --> 00:03:55,435
+All previous iPads
+had a 4:3 aspect ratio.
+
+
+79
+00:03:55,435 --> 00:04:00,373
+The new 11-inch iPad Pro
+has a wider aspect ratio.
+
+
+80
+00:04:00,373 --> 00:04:02,242
+If your app
+is designed and built
+
+
+81
+00:04:02,242 --> 00:04:04,878
+for a 4:3 aspect ratio only,
+
+
+82
+00:04:04,878 --> 00:04:07,347
+you'll need to allow
+for more flexibility
+
+
+83
+00:04:07,347 --> 00:04:09,382
+in your design and code.
+
+
+84
+00:04:09,382 --> 00:04:14,221
+For example, a game that's only
+designed for a 4:3 aspect ratio
+
+
+85
+00:04:14,221 --> 00:04:17,690
+may wind up having black bars
+along the smaller screen edges
+
+
+86
+00:04:17,690 --> 00:04:20,026
+if it's scaled
+to fit the display.
+
+
+87
+00:04:20,026 --> 00:04:22,229
+If the game were scaled
+to fill the display,
+
+
+88
+00:04:22,229 --> 00:04:25,198
+parts of the UI
+could wind up off screen.
+
+
+89
+00:04:25,198 --> 00:04:28,368
+So take care to thoughtfully
+position and scale
+
+
+90
+00:04:28,368 --> 00:04:30,137
+individual interface elements
+
+
+91
+00:04:30,137 --> 00:04:32,772
+so that your app and game
+looks great,
+
+
+92
+00:04:32,772 --> 00:04:37,077
+regardless of the display's
+aspect ratio.
+
+
+93
+00:04:37,077 --> 00:04:39,813
+Alongside our latest
+generation iPad Pro,
+
+
+94
+00:04:39,813 --> 00:04:43,517
+we're introducing a new,
+more powerful Apple Pencil.
+
+
+95
+00:04:43,517 --> 00:04:46,686
+The new Pencil has
+all the same capabilities
+
+
+96
+00:04:46,686 --> 00:04:48,788
+as the previous generation.
+
+
+97
+00:04:48,788 --> 00:04:52,259
+This includes the ability
+to use pressure, or force,
+
+
+98
+00:04:52,259 --> 00:04:56,096
+to control things like
+brush opacity and size,
+
+
+99
+00:04:56,096 --> 00:04:59,900
+and the ability to sense
+altitude and azimuth,
+
+
+100
+00:04:59,900 --> 00:05:02,769
+two properties that,
+when combined with each other,
+
+
+101
+00:05:02,769 --> 00:05:05,305
+deliver a fantastic
+tilt experience
+
+
+102
+00:05:05,305 --> 00:05:08,275
+for expressive
+and realistic shading.
+
+
+103
+00:05:08,275 --> 00:05:11,711
+The new Apple Pencil
+adds a double-tap gesture.
+
+
+104
+00:05:11,711 --> 00:05:14,014
+In the Settings app,
+people can choose
+
+
+105
+00:05:14,014 --> 00:05:16,783
+one of four behaviors
+for double-tap.
+
+
+106
+00:05:16,783 --> 00:05:18,518
+These system-wide behaviors
+
+
+107
+00:05:18,518 --> 00:05:22,055
+offer people a consistent
+and predictable experience.
+
+
+108
+00:05:22,055 --> 00:05:23,590
+People can switch between
+
+
+109
+00:05:23,590 --> 00:05:26,893
+the currently selected
+tool and eraser,
+
+
+110
+00:05:26,893 --> 00:05:30,397
+switch between the
+current tool and last used tool,
+
+
+111
+00:05:30,397 --> 00:05:32,566
+show a color palette,
+
+
+112
+00:05:32,566 --> 00:05:39,172
+or if they prefer,
+turn the double-tap gesture off.
+
+
+113
+00:05:39,172 --> 00:05:41,007
+Because every
+app is unique,
+
+
+114
+00:05:41,007 --> 00:05:43,510
+you'll need to give some thought
+to what double-tap does
+
+
+115
+00:05:43,510 --> 00:05:44,678
+in your app.
+
+
+116
+00:05:44,678 --> 00:05:46,379
+To help you make the right call,
+
+
+117
+00:05:46,379 --> 00:05:49,249
+please consider
+the following best practices,
+
+
+118
+00:05:49,249 --> 00:05:51,751
+starting with the most basic.
+
+
+119
+00:05:51,751 --> 00:05:54,554
+If a person has turned
+double-tap off
+
+
+120
+00:05:54,554 --> 00:05:56,022
+at the system level,
+
+
+121
+00:05:56,022 --> 00:05:59,960
+your app should do nothing
+in response to double-tap.
+
+
+122
+00:05:59,960 --> 00:06:03,663
+If someone using your app
+has turned double-tap off,
+
+
+123
+00:06:03,663 --> 00:06:07,300
+they'll expect every app
+to respect that choice.
+
+
+124
+00:06:07,300 --> 00:06:11,037
+More generally, your app
+should follow the system setting
+
+
+125
+00:06:11,037 --> 00:06:13,440
+whenever possible.
+
+
+126
+00:06:13,440 --> 00:06:16,076
+Apple Pencil
+is a mark-making tool
+
+
+127
+00:06:16,076 --> 00:06:18,411
+and the system settings
+reflect that.
+
+
+128
+00:06:18,411 --> 00:06:20,780
+If your app
+has multiple drawing tools,
+
+
+129
+00:06:20,780 --> 00:06:25,018
+an eraser, and color palette,
+people will expect your app
+
+
+130
+00:06:25,018 --> 00:06:28,622
+to mirror whatever choice
+they've made in Settings.
+
+
+131
+00:06:28,622 --> 00:06:32,092
+Being inconsistent will make
+your app less intuitive,
+
+
+132
+00:06:32,092 --> 00:06:34,427
+especially when multitasking
+with another app
+
+
+133
+00:06:34,427 --> 00:06:36,630
+that supports Apple Pencil.
+
+
+134
+00:06:36,630 --> 00:06:39,866
+If you decide to offer
+another behavior for double-tap
+
+
+135
+00:06:39,866 --> 00:06:41,968
+beyond the choices shown here,
+
+
+136
+00:06:41,968 --> 00:06:44,638
+make that custom behavior
+opt-in,
+
+
+137
+00:06:44,638 --> 00:06:48,842
+meaning it should be optional
+and not enabled by default.
+
+
+138
+00:06:48,842 --> 00:06:51,911
+Display the option
+to enable your custom behavior
+
+
+139
+00:06:51,911 --> 00:06:54,481
+within your app's settings.
+
+
+140
+00:06:54,481 --> 00:06:55,615
+This will require people
+
+
+141
+00:06:55,615 --> 00:06:58,285
+to make an explicit
+and deliberate choice
+
+
+142
+00:06:58,285 --> 00:07:01,388
+to override
+the system-level behavior.
+
+
+143
+00:07:01,388 --> 00:07:04,057
+It will make it more clear
+why double-tapping Apple Pencil
+
+
+144
+00:07:04,057 --> 00:07:07,093
+leads to a different behavior
+in your app.
+
+
+145
+00:07:07,093 --> 00:07:10,730
+And if they decide to turn off
+your app's custom behavior,
+
+
+146
+00:07:10,730 --> 00:07:13,466
+they'll be more likely
+to remember how.
+
+
+147
+00:07:13,466 --> 00:07:16,903
+Now, there are apps that work
+great with Apple Pencil
+
+
+148
+00:07:16,903 --> 00:07:20,173
+but do not have multiple tools
+or a color palette.
+
+
+149
+00:07:20,173 --> 00:07:21,875
+If that describes your app,
+
+
+150
+00:07:21,875 --> 00:07:25,111
+it won't be possible
+to follow the system settings.
+
+
+151
+00:07:25,111 --> 00:07:28,381
+However, you can still
+provide a double-tap behavior
+
+
+152
+00:07:28,381 --> 00:07:31,551
+that's consistent with
+the spirit of these settings.
+
+
+153
+00:07:31,551 --> 00:07:34,554
+Meaning, double-tap should
+modify the behavior
+
+
+154
+00:07:34,554 --> 00:07:36,156
+of Apple Pencil.
+
+
+155
+00:07:36,156 --> 00:07:39,259
+So, for example, a photo app
+may include effects
+
+
+156
+00:07:39,259 --> 00:07:42,896
+with masks the user can
+paint onto their images.
+
+
+157
+00:07:42,896 --> 00:07:44,531
+Double-tapping Apple Pencil
+
+
+158
+00:07:44,531 --> 00:07:47,133
+could toggle between
+two painting modes:
+
+
+159
+00:07:47,133 --> 00:07:51,371
+Adding to or subtracting
+from the effect mask.
+
+
+160
+00:07:51,371 --> 00:07:53,239
+What double-tapping
+should not do
+
+
+161
+00:07:53,239 --> 00:07:57,143
+is perform an action
+that directly modifies content.
+
+
+162
+00:07:57,143 --> 00:07:59,379
+An action performed
+with double-tap
+
+
+163
+00:07:59,379 --> 00:08:01,047
+could be done accidentally
+
+
+164
+00:08:01,047 --> 00:08:03,883
+and cause significant
+workflow issues.
+
+
+165
+00:08:03,883 --> 00:08:07,153
+Now, whatever double-tapping
+does in your app,
+
+
+166
+00:08:07,153 --> 00:08:11,257
+always be sure to provide clear
+and immediate visual feedback
+
+
+167
+00:08:11,257 --> 00:08:13,760
+about what double-tapping did.
+
+
+168
+00:08:13,760 --> 00:08:15,562
+It's important
+that people realize
+
+
+169
+00:08:15,562 --> 00:08:18,164
+they've changed
+the behavior of their pencil
+
+
+170
+00:08:18,164 --> 00:08:21,167
+before they resume
+drawing or writing.
+
+
+171
+00:08:21,167 --> 00:08:25,572
+And, finally, be prepared
+to deliver a great experience
+
+
+172
+00:08:25,572 --> 00:08:27,974
+to existing Pencil users.
+
+
+173
+00:08:27,974 --> 00:08:30,410
+More specifically,
+double-tapping
+
+
+174
+00:08:30,410 --> 00:08:32,812
+shouldn't provide
+special functionality
+
+
+175
+00:08:32,812 --> 00:08:36,916
+that isn't easily achievable
+through your app's interface.
+
+
+176
+00:08:36,916 --> 00:08:40,919
+For more iPad Pro and
+Apple Pencil design guidance,
+
+
+177
+00:08:40,919 --> 00:08:43,690
+please visit the
+Apple Human Interface Guidelines
+
+
+178
+00:08:43,690 --> 00:08:47,961
+at developer.apple.com/design.
+
+
+179
+00:08:47,961 --> 00:08:49,129
+And while you're there,
+
+
+180
+00:08:49,129 --> 00:08:53,666
+download the latest version of
+the iOS Apple Design Resources.
+
+
+181
+00:08:53,666 --> 00:08:58,138
+We've updated the iPad templates
+for Sketch and Photoshop.
+
+
+182
+00:08:58,138 --> 00:09:00,140
+Thank you!
+

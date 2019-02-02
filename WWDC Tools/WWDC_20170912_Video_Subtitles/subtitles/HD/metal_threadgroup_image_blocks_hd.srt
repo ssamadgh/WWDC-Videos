@@ -1,0 +1,1429 @@
+1
+00:00:01,000 --> 00:00:03,570
+In this presentation
+we will focus on imageblocks,
+
+
+2
+00:00:03,570 --> 00:00:06,273
+which allow you to describe
+image data in tile memory
+
+
+3
+00:00:06,273 --> 00:00:09,643
+that the GPU
+can manipulate efficiently.
+
+
+4
+00:00:09,643 --> 00:00:12,246
+Imageblocks provide
+optimized access to image data
+
+
+5
+00:00:12,246 --> 00:00:14,314
+residing in tile memory.
+
+
+6
+00:00:14,314 --> 00:00:15,816
+And with the A11 GPU,
+
+
+7
+00:00:15,816 --> 00:00:17,985
+we're giving you
+direct control of it.
+
+
+8
+00:00:17,985 --> 00:00:19,486
+You will be able
+to lay out pixels
+
+
+9
+00:00:19,486 --> 00:00:22,055
+in the way that makes sense
+to your application,
+
+
+10
+00:00:22,055 --> 00:00:26,026
+as well as move data explicitly
+to and from it.
+
+
+11
+00:00:26,026 --> 00:00:27,594
+Imageblocks are deeply
+integrated
+
+
+12
+00:00:27,594 --> 00:00:31,331
+with fragment processing
+and the new tile shading stage.
+
+
+13
+00:00:31,331 --> 00:00:33,967
+They are also available
+to traditional compute.
+
+
+14
+00:00:33,967 --> 00:00:35,335
+No matter which stage you're in,
+
+
+15
+00:00:35,335 --> 00:00:37,905
+imageblocks are recommended
+for representing your images
+
+
+16
+00:00:37,905 --> 00:00:41,141
+because they optimize access
+to grids of 2D data.
+
+
+17
+00:00:41,141 --> 00:00:42,743
+Imageblocks are
+a key building block
+
+
+18
+00:00:42,743 --> 00:00:44,978
+for several of
+the other features we'll discuss
+
+
+19
+00:00:44,978 --> 00:00:47,080
+in this presentation series.
+
+
+20
+00:00:47,080 --> 00:00:50,751
+Let's start by defining
+imageblocks more precisely.
+
+
+21
+00:00:50,751 --> 00:00:54,021
+An Imageblock is a 2D
+data structure in tile memory.
+
+
+22
+00:00:54,021 --> 00:00:57,457
+It has width, height,
+and a pixel depth.
+
+
+23
+00:00:57,457 --> 00:00:59,793
+Fragment functions
+can only access a single pixel
+
+
+24
+00:00:59,793 --> 00:01:02,696
+that corresponds to
+its location.
+
+
+25
+00:01:02,696 --> 00:01:04,230
+Compute kernels,
+on the other hand,
+
+
+26
+00:01:04,230 --> 00:01:07,567
+have access to
+the entire imageblock.
+
+
+27
+00:01:07,567 --> 00:01:09,503
+Each pixel can be quite complex,
+
+
+28
+00:01:09,503 --> 00:01:11,138
+consisting of multiple
+components,
+
+
+29
+00:01:11,138 --> 00:01:12,472
+and each component
+can be addressed
+
+
+30
+00:01:12,472 --> 00:01:15,275
+as its own image plane.
+
+
+31
+00:01:15,275 --> 00:01:18,011
+This allows adjacent components
+to be efficiently stored
+
+
+32
+00:01:18,011 --> 00:01:20,280
+to one or more textures
+in device memory
+
+
+33
+00:01:20,280 --> 00:01:22,582
+as bulk operations.
+
+
+34
+00:01:22,582 --> 00:01:24,384
+Imageblocks also provide
+bulk access
+
+
+35
+00:01:24,384 --> 00:01:27,120
+to the GPU's format
+conversion hardware.
+
+
+36
+00:01:27,120 --> 00:01:28,956
+Floating point pixels
+will be converted to
+
+
+37
+00:01:28,956 --> 00:01:33,660
+the destination texture format
+when stored to device memory.
+
+
+38
+00:01:33,660 --> 00:01:34,995
+Let's now take a closer look at
+
+
+39
+00:01:34,995 --> 00:01:37,264
+one of the benefits of
+using imageblocks,
+
+
+40
+00:01:37,264 --> 00:01:42,102
+accelerating image data movement
+out of tile memory.
+
+
+41
+00:01:42,102 --> 00:01:43,337
+Prior to imageblocks,
+
+
+42
+00:01:43,337 --> 00:01:45,105
+you probably moved
+portions of your textures
+
+
+43
+00:01:45,105 --> 00:01:47,908
+into threadgroup memory
+before operating on them,
+
+
+44
+00:01:47,908 --> 00:01:50,010
+one pixel at a time.
+
+
+45
+00:01:50,010 --> 00:01:51,511
+But the GPU didn't understand
+that you were
+
+
+46
+00:01:51,511 --> 00:01:53,046
+operating on image data,
+
+
+47
+00:01:53,046 --> 00:01:55,115
+so you also had to
+store those pixels back out to
+
+
+48
+00:01:55,115 --> 00:01:59,119
+device memory textures,
+one pixel at a time.
+
+
+49
+00:01:59,119 --> 00:02:01,888
+With imageblocks, you can
+instead store the image data
+
+
+50
+00:02:01,888 --> 00:02:06,026
+using a single operation,
+which is much more efficient.
+
+
+51
+00:02:06,026 --> 00:02:07,294
+Now let's turn to
+how you describe
+
+
+52
+00:02:07,294 --> 00:02:10,263
+imageblock properties
+to Metal.
+
+
+53
+00:02:10,263 --> 00:02:11,264
+In a compute pass,
+
+
+54
+00:02:11,264 --> 00:02:13,066
+you describe the imageblock's
+width and height
+
+
+55
+00:02:13,066 --> 00:02:15,102
+using the API shown here.
+
+
+56
+00:02:15,102 --> 00:02:18,071
+The dimensions can be
+different for each dispatch.
+
+
+57
+00:02:18,071 --> 00:02:19,373
+The imageblock's pixel depth
+
+
+58
+00:02:19,373 --> 00:02:22,476
+is described in the shading
+language as a structure.
+
+
+59
+00:02:22,476 --> 00:02:25,045
+The entire imageblock
+is made available as an argument
+
+
+60
+00:02:25,045 --> 00:02:28,248
+whose type is templated
+by that struct.
+
+
+61
+00:02:28,248 --> 00:02:32,152
+Let's take a closer look
+at the shading language syntax.
+
+
+62
+00:02:32,152 --> 00:02:34,187
+In this example,
+we are describing a pixel
+
+
+63
+00:02:34,187 --> 00:02:35,856
+consisting of three elements,
+
+
+64
+00:02:35,856 --> 00:02:38,658
+each with a varying number of
+components.
+
+
+65
+00:02:38,658 --> 00:02:42,829
+The imageblock is made available
+to the kernel as an argument.
+
+
+66
+00:02:42,829 --> 00:02:45,265
+Kernels access any location
+within the imageblock
+
+
+67
+00:02:45,265 --> 00:02:47,634
+by reference
+using the data method,
+
+
+68
+00:02:47,634 --> 00:02:49,703
+which takes the location
+as its argument
+
+
+69
+00:02:49,703 --> 00:02:52,072
+and returns a pointer to
+a new address space
+
+
+70
+00:02:52,072 --> 00:02:54,207
+called threadgroup_imageblock.
+
+
+71
+00:02:54,207 --> 00:02:56,276
+With a reference
+to a particular location,
+
+
+72
+00:02:56,276 --> 00:03:01,148
+we can read and write
+to elements at that location.
+
+
+73
+00:03:01,148 --> 00:03:02,983
+I mentioned earlier that
+imageblocks are laid out
+
+
+74
+00:03:02,983 --> 00:03:04,751
+in planes that can be
+stored efficiently
+
+
+75
+00:03:04,751 --> 00:03:06,987
+to device memory textures.
+
+
+76
+00:03:06,987 --> 00:03:08,321
+In the shading language,
+
+
+77
+00:03:08,321 --> 00:03:11,958
+we call adjacent planes that
+can be stored together a slice.
+
+
+78
+00:03:11,958 --> 00:03:14,995
+Let's take a look at
+an example kernel.
+
+
+79
+00:03:14,995 --> 00:03:15,796
+In this example,
+
+
+80
+00:03:15,796 --> 00:03:18,165
+we've loaded a source texture
+into an imageblock,
+
+
+81
+00:03:18,165 --> 00:03:20,634
+performed some image processing
+on that block,
+
+
+82
+00:03:20,634 --> 00:03:22,069
+and are ready to store
+the color elements
+
+
+83
+00:03:22,069 --> 00:03:24,271
+out to a destination texture.
+
+
+84
+00:03:24,271 --> 00:03:25,939
+We only need one thread
+of our threadgroup
+
+
+85
+00:03:25,939 --> 00:03:27,307
+to perform the write,
+
+
+86
+00:03:27,307 --> 00:03:29,209
+so we must first barrier
+to ensure all threads
+
+
+87
+00:03:29,209 --> 00:03:32,345
+have finished processing
+the imageblock.
+
+
+88
+00:03:32,345 --> 00:03:35,649
+Notice that Metal adds a new
+memory target for the barrier,
+
+
+89
+00:03:35,649 --> 00:03:37,517
+declaring that we only
+need to wait for writes
+
+
+90
+00:03:37,517 --> 00:03:40,320
+on the imageblock to complete.
+
+
+91
+00:03:40,320 --> 00:03:42,923
+We then acquire our desired
+slice from the imageblock
+
+
+92
+00:03:42,923 --> 00:03:45,125
+using the slice method.
+
+
+93
+00:03:45,125 --> 00:03:46,526
+The slice method
+takes a reference
+
+
+94
+00:03:46,526 --> 00:03:49,796
+to any pixel element
+that's part of the slice.
+
+
+95
+00:03:49,796 --> 00:03:52,966
+Finally, we write the slice
+to the destination texture.
+
+
+96
+00:03:55,001 --> 00:03:56,570
+Each imageblock
+probably represents
+
+
+97
+00:03:56,570 --> 00:03:58,305
+only a region of your texture,
+
+
+98
+00:03:58,305 --> 00:03:59,973
+so we specify the texture offset
+
+
+99
+00:03:59,973 --> 00:04:02,709
+at which to write
+the imageblock.
+
+
+100
+00:04:02,709 --> 00:04:03,376
+Let's now turn to
+
+
+101
+00:04:03,376 --> 00:04:07,380
+how imageblocks in fragment
+functions are specified.
+
+
+102
+00:04:07,380 --> 00:04:09,583
+Unlike imageblocks
+in compute passes,
+
+
+103
+00:04:09,583 --> 00:04:11,218
+imageblock dimensions
+in a render pass
+
+
+104
+00:04:11,218 --> 00:04:13,153
+are constant for the entire pass
+
+
+105
+00:04:13,153 --> 00:04:16,255
+and set using the properties
+shown here.
+
+
+106
+00:04:16,255 --> 00:04:18,158
+Imageblock pixel depth
+can be declared
+
+
+107
+00:04:18,158 --> 00:04:19,993
+in the shading language
+as a struct,
+
+
+108
+00:04:19,993 --> 00:04:22,562
+just as I've already shown
+for kernels.
+
+
+109
+00:04:22,562 --> 00:04:23,730
+Fragment functions, however,
+
+
+110
+00:04:23,730 --> 00:04:25,799
+also support declaring
+the pixel depth
+
+
+111
+00:04:25,799 --> 00:04:28,401
+using render pass attachments.
+
+
+112
+00:04:28,401 --> 00:04:31,404
+Let's take a look at the syntax.
+
+
+113
+00:04:31,404 --> 00:04:33,640
+In this example, we've declared
+the pixel structure
+
+
+114
+00:04:33,640 --> 00:04:35,909
+explicitly in
+the shading language.
+
+
+115
+00:04:35,909 --> 00:04:37,577
+Since fragment functions
+only have access
+
+
+116
+00:04:37,577 --> 00:04:40,247
+to their implied location
+within the imageblock,
+
+
+117
+00:04:40,247 --> 00:04:43,617
+the argument type
+is the struct itself,
+
+
+118
+00:04:43,617 --> 00:04:46,520
+but tagged with the
+imageblock_data attribute.
+
+
+119
+00:04:46,520 --> 00:04:48,388
+We also need to
+tag the return value
+
+
+120
+00:04:48,388 --> 00:04:50,957
+with the same attribute.
+
+
+121
+00:04:50,957 --> 00:04:52,192
+Doing so allows Metal
+
+
+122
+00:04:52,192 --> 00:04:55,495
+to generate the correct access
+instructions.
+
+
+123
+00:04:55,495 --> 00:04:57,464
+Now let's see what this
+same example looks like
+
+
+124
+00:04:57,464 --> 00:04:58,932
+when we declare
+the pixel structure
+
+
+125
+00:04:58,932 --> 00:05:03,069
+using traditional
+render pass attachments.
+
+
+126
+00:05:03,069 --> 00:05:06,006
+This form is identical to
+the syntax you already know.
+
+
+127
+00:05:06,006 --> 00:05:08,308
+In fact, you've always used
+imageblocks in render passes
+
+
+128
+00:05:08,308 --> 00:05:10,110
+because tile memory
+has always been
+
+
+129
+00:05:10,110 --> 00:05:13,547
+a key aspect of A-series GPUs.
+
+
+130
+00:05:13,547 --> 00:05:15,081
+What's new is that Metal 2
+
+
+131
+00:05:15,081 --> 00:05:18,852
+now makes tile memory
+generally accessible.
+
+
+132
+00:05:18,852 --> 00:05:20,287
+This form abstracts
+the underlying
+
+
+133
+00:05:20,287 --> 00:05:22,155
+imageblock storage format,
+
+
+134
+00:05:22,155 --> 00:05:23,523
+which is derived from
+the textures
+
+
+135
+00:05:23,523 --> 00:05:25,592
+attached to the render pass.
+
+
+136
+00:05:25,592 --> 00:05:27,527
+Regardless of
+texture storage type,
+
+
+137
+00:05:27,527 --> 00:05:30,163
+the data is presented as
+floating point or integer
+
+
+138
+00:05:30,163 --> 00:05:31,831
+in the fragment function.
+
+
+139
+00:05:34,167 --> 00:05:37,270
+Another difference between
+A11 and earlier architectures
+
+
+140
+00:05:37,270 --> 00:05:39,573
+is where those implicit
+imageblock format conversions
+
+
+141
+00:05:39,573 --> 00:05:40,774
+occur.
+
+
+142
+00:05:40,774 --> 00:05:42,943
+On A7 through A10 GPUs,
+
+
+143
+00:05:42,943 --> 00:05:45,345
+the storage formats
+were expanded to floating point
+
+
+144
+00:05:45,345 --> 00:05:47,214
+in tile memory.
+
+
+145
+00:05:47,214 --> 00:05:50,817
+This is why Metal documents two
+sizes for every pixel format:
+
+
+146
+00:05:50,817 --> 00:05:52,385
+one when stored in device memory
+
+
+147
+00:05:52,385 --> 00:05:54,221
+and one when stored
+in tile memory
+
+
+148
+00:05:54,221 --> 00:05:56,623
+as render pass attachments.
+
+
+149
+00:05:56,623 --> 00:06:00,327
+On A11, format conversion
+occurs on each load and store
+
+
+150
+00:06:00,327 --> 00:06:02,128
+from tile memory
+to temporary registers
+
+
+151
+00:06:02,128 --> 00:06:03,763
+in the shader core.
+
+
+152
+00:06:03,763 --> 00:06:05,865
+Doing so allows you
+to squeeze even more use
+
+
+153
+00:06:05,865 --> 00:06:07,500
+out of tile memory.
+
+
+154
+00:06:09,169 --> 00:06:11,771
+You now have a choice in how to
+declare your pixel structure,
+
+
+155
+00:06:11,771 --> 00:06:15,075
+so let's review best practices
+that can help you decide.
+
+
+156
+00:06:15,075 --> 00:06:17,611
+Implicit imageblocks are great
+when your fragment function
+
+
+157
+00:06:17,611 --> 00:06:20,614
+must support multiple
+render pass attachment layouts
+
+
+158
+00:06:20,614 --> 00:06:23,817
+because they abstract
+the underlying storage formats.
+
+
+159
+00:06:23,817 --> 00:06:25,719
+Implicit imageblocks
+are also compatible
+
+
+160
+00:06:25,719 --> 00:06:27,420
+with load and store actions
+
+
+161
+00:06:27,420 --> 00:06:30,724
+because the structure
+is known by the API.
+
+
+162
+00:06:30,724 --> 00:06:32,392
+Explicit imageblocks
+on the other hand
+
+
+163
+00:06:32,392 --> 00:06:35,695
+allow you to express
+more complex pixel structure.
+
+
+164
+00:06:35,695 --> 00:06:39,332
+Explicit imageblocks also don't
+require main memory backing,
+
+
+165
+00:06:39,332 --> 00:06:41,101
+so they're a great fit
+for temporary data
+
+
+166
+00:06:41,101 --> 00:06:42,235
+produced and consumed
+
+
+167
+00:06:42,235 --> 00:06:45,538
+entirely within
+the scope of a render pass.
+
+
+168
+00:06:45,538 --> 00:06:47,741
+Now let's take a closer look at
+what we mean by
+
+
+169
+00:06:47,741 --> 00:06:50,744
+complex pixel structure.
+
+
+170
+00:06:50,744 --> 00:06:52,078
+In this example,
+we're going to store
+
+
+171
+00:06:52,078 --> 00:06:55,515
+multiple translucent colors
+and their depths per pixel
+
+
+172
+00:06:55,515 --> 00:06:57,384
+so that we can later
+sort and composite
+
+
+173
+00:06:57,384 --> 00:06:59,986
+for more accurate
+transparency effects.
+
+
+174
+00:06:59,986 --> 00:07:02,656
+We start with a single
+fragment declaration,
+
+
+175
+00:07:02,656 --> 00:07:04,658
+declare an array of them,
+
+
+176
+00:07:04,658 --> 00:07:07,761
+and then nest it in
+a top-level struct
+
+
+177
+00:07:07,761 --> 00:07:10,630
+that we can pass
+to and from our shader.
+
+
+178
+00:07:10,630 --> 00:07:13,199
+Expressing this structure
+using render pass attachments
+
+
+179
+00:07:13,199 --> 00:07:17,237
+would be awkward and would
+obscure the author's intent.
+
+
+180
+00:07:17,237 --> 00:07:18,972
+Of course,
+you don't have to choose between
+
+
+181
+00:07:18,972 --> 00:07:20,273
+implicit and explicit forms
+
+
+182
+00:07:20,273 --> 00:07:23,510
+because Metal allows you to
+pick the right tool for the job.
+
+
+183
+00:07:23,510 --> 00:07:25,312
+Mixing also allows you
+to incrementally
+
+
+184
+00:07:25,312 --> 00:07:27,414
+adopt imageblocks
+into your code base
+
+
+185
+00:07:27,414 --> 00:07:28,915
+and easily integrate
+new features
+
+
+186
+00:07:28,915 --> 00:07:33,453
+into existing shaders that
+benefit from the explicit form.
+
+
+187
+00:07:33,453 --> 00:07:35,388
+Using both forms together
+is easy,
+
+
+188
+00:07:35,388 --> 00:07:37,924
+just provide
+two imageblock arguments.
+
+
+189
+00:07:37,924 --> 00:07:40,427
+Let's take a look at an example.
+
+
+190
+00:07:40,427 --> 00:07:42,929
+As you can see, we can
+supply two imageblocks
+
+
+191
+00:07:42,929 --> 00:07:45,632
+as both inputs and outputs.
+
+
+192
+00:07:45,632 --> 00:07:47,567
+The color and imageblock_data
+attributes
+
+
+193
+00:07:47,567 --> 00:07:48,668
+make it clear to Metal
+
+
+194
+00:07:48,668 --> 00:07:51,471
+which slices derive from
+render pass attachments
+
+
+195
+00:07:51,471 --> 00:07:52,739
+and which do not.
+
+
+196
+00:07:52,739 --> 00:07:55,075
+Up to two imageblocks
+per input and output
+
+
+197
+00:07:55,075 --> 00:07:56,976
+can be declared
+for each function.
+
+
+198
+00:07:58,845 --> 00:08:01,781
+Explicit imageblocks allow you
+to control pixel layout exactly
+
+
+199
+00:08:01,781 --> 00:08:03,450
+using packed types.
+
+
+200
+00:08:03,450 --> 00:08:05,251
+The Metal shading language
+already provides
+
+
+201
+00:08:05,251 --> 00:08:07,287
+packed floating point
+vector types,
+
+
+202
+00:08:07,287 --> 00:08:08,922
+which have traditionally
+described vertex
+
+
+203
+00:08:08,922 --> 00:08:11,458
+and constant data layouts.
+
+
+204
+00:08:11,458 --> 00:08:12,759
+But now we need packed types
+
+
+205
+00:08:12,759 --> 00:08:15,328
+that match what could have
+previously been described
+
+
+206
+00:08:15,328 --> 00:08:19,499
+using implicit imageblocks
+and texture pixel formats.
+
+
+207
+00:08:19,499 --> 00:08:22,302
+Metal 2 adds such types
+to the shading language.
+
+
+208
+00:08:22,302 --> 00:08:24,771
+These formats are converted
+to and from floating point
+
+
+209
+00:08:24,771 --> 00:08:28,241
+using the load/store hardware
+we discussed earlier.
+
+
+210
+00:08:28,241 --> 00:08:30,076
+What's more is that
+these new packed formats
+
+
+211
+00:08:30,076 --> 00:08:34,447
+can be used to describe vertex
+and constant data layouts, too.
+
+
+212
+00:08:34,447 --> 00:08:36,416
+Let's take a look at
+how you declare these new types
+
+
+213
+00:08:36,416 --> 00:08:38,518
+in the shading language.
+
+
+214
+00:08:38,518 --> 00:08:41,020
+In this example we see
+a few of the new packed types
+
+
+215
+00:08:41,020 --> 00:08:44,657
+used to describe both
+imageblocks and vertex data.
+
+
+216
+00:08:44,657 --> 00:08:46,059
+These types require
+that you declare
+
+
+217
+00:08:46,059 --> 00:08:50,897
+both the storage format
+and unpack format
+
+
+218
+00:08:50,897 --> 00:08:54,401
+used within the shader core.
+
+
+219
+00:08:54,401 --> 00:08:56,403
+Now let's glance at
+all the new packed data types
+
+
+220
+00:08:56,403 --> 00:08:58,838
+that have been added.
+
+
+221
+00:08:58,838 --> 00:09:00,907
+As you can see, the Metal
+shading language adds
+
+
+222
+00:09:00,907 --> 00:09:04,310
+one, two, and four
+component normalized types,
+
+
+223
+00:09:04,310 --> 00:09:07,680
+each supporting eight
+or 16-bit components.
+
+
+224
+00:09:07,680 --> 00:09:10,483
+We've also added both signed
+and unsigned variants
+
+
+225
+00:09:10,483 --> 00:09:13,753
+as well as support for more
+specialized 32-bit formats
+
+
+226
+00:09:13,753 --> 00:09:20,760
+such as 10a2, mini floats,
+shared exponent, and sRGB.
+
+
+227
+00:09:20,760 --> 00:09:23,963
+Finally, the GPU debugger
+in Xcode directly supports
+
+
+228
+00:09:23,963 --> 00:09:27,167
+the visualization and
+inspection of imageblocks.
+
+
+229
+00:09:27,167 --> 00:09:31,738
+Each slice can be inspected
+as if it were a texture.
+
+
+230
+00:09:31,738 --> 00:09:33,873
+Here we see on the top
+an example G-Buffer layout
+
+
+231
+00:09:33,873 --> 00:09:35,642
+from our sample code.
+
+
+232
+00:09:35,642 --> 00:09:38,478
+And on the bottom we have
+the same imageblock
+
+
+233
+00:09:38,478 --> 00:09:41,080
+show in Xcode's GPU Debugger.
+
+
+234
+00:09:41,080 --> 00:09:43,750
+The tile section of
+the bound resources view
+
+
+235
+00:09:43,750 --> 00:09:46,920
+shows the imageblock slices
+as a set of textures.
+
+
+236
+00:09:46,920 --> 00:09:48,988
+From here you can
+inspect each of the slices
+
+
+237
+00:09:48,988 --> 00:09:51,691
+just like any other texture.
+
+
+238
+00:09:51,691 --> 00:09:53,793
+In this presentation,
+we saw how imageblocks
+
+
+239
+00:09:53,793 --> 00:09:56,296
+enable you to efficiently
+move multiple pixels
+
+
+240
+00:09:56,296 --> 00:09:58,798
+from tile memory
+to device memory
+
+
+241
+00:09:58,798 --> 00:10:01,100
+and control the layout
+of image data in tile memory
+
+
+242
+00:10:01,100 --> 00:10:04,037
+precisely to improve
+storage density.
+
+
+243
+00:10:04,037 --> 00:10:05,839
+We also saw how we could
+also leverage
+
+
+244
+00:10:05,839 --> 00:10:09,008
+the A11 GPU's new
+pack/unpack hardware
+
+
+245
+00:10:09,008 --> 00:10:13,580
+in both imageblocks
+and other address spaces.
+
+
+246
+00:10:13,580 --> 00:10:15,248
+For more information
+about Metal 2
+
+
+247
+00:10:15,248 --> 00:10:16,616
+and links to the sample code,
+
+
+248
+00:10:16,616 --> 00:10:18,585
+please visit
+the Developer website
+
+
+249
+00:10:18,585 --> 00:10:21,988
+at developer.apple.com/metal.
+

@@ -1,0 +1,1102 @@
+1
+00:00:01,968 --> 00:00:03,403
+Apple Watch Series 4
+
+
+2
+00:00:03,403 --> 00:00:05,439
+includes significant
+enhancements
+
+
+3
+00:00:05,439 --> 00:00:07,875
+for designers and developers.
+
+
+4
+00:00:07,875 --> 00:00:11,545
+Series 4 watches have new
+displays with larger dimensions,
+
+
+5
+00:00:11,545 --> 00:00:14,982
+along with new APIs
+and improvements in performance,
+
+
+6
+00:00:14,982 --> 00:00:18,218
+enhancing your ability
+to deliver rich information
+
+
+7
+00:00:18,218 --> 00:00:21,788
+and actions to the people
+who use your app.
+
+
+8
+00:00:21,788 --> 00:00:24,424
+You'll want to take these
+new dimensions into account
+
+
+9
+00:00:24,424 --> 00:00:27,027
+as your create
+or update your app.
+
+
+10
+00:00:27,027 --> 00:00:30,163
+Series 4 watches are larger
+than watches in previous series.
+
+
+11
+00:00:30,163 --> 00:00:33,800
+They come in two sizes, measured
+on the exterior of the case:
+
+
+12
+00:00:33,800 --> 00:00:38,005
+40mm and 44mm.
+
+
+13
+00:00:38,005 --> 00:00:42,609
+Previous series of Apple Watch
+are 38mm and 42mm.
+
+
+14
+00:00:42,609 --> 00:00:45,145
+And the display dimensions
+of these watches
+
+
+15
+00:00:45,145 --> 00:00:50,984
+measure 272 by 340 pixels
+on 38mm watches,
+
+
+16
+00:00:50,984 --> 00:00:56,056
+and 312 by 390 pixels
+on 42mm watches.
+
+
+17
+00:00:56,056 --> 00:00:59,526
+The displays of Series 4 watches
+have grown significantly,
+
+
+18
+00:00:59,526 --> 00:01:04,730
+measuring 324 by 394 pixels
+for 40mm,
+
+
+19
+00:01:04,730 --> 00:01:10,203
+and 368 by 448 pixels for 44mm.
+
+
+20
+00:01:10,203 --> 00:01:12,039
+Not only is display larger,
+
+
+21
+00:01:12,039 --> 00:01:14,107
+but the border around it
+is thinner,
+
+
+22
+00:01:14,107 --> 00:01:16,877
+bringing more attention
+to interactive elements,
+
+
+23
+00:01:16,877 --> 00:01:21,248
+and making the information
+feel richer and more immersive.
+
+
+24
+00:01:21,248 --> 00:01:24,217
+You'll want to account
+for all display dimensions.
+
+
+25
+00:01:24,217 --> 00:01:26,753
+Your app should deliver
+the same information
+
+
+26
+00:01:26,753 --> 00:01:30,390
+and actions to the user,
+regardless of screen size.
+
+
+27
+00:01:30,390 --> 00:01:31,892
+As you consider your layouts,
+
+
+28
+00:01:31,892 --> 00:01:35,696
+notice that the display
+of the 40mm Series 4 watch
+
+
+29
+00:01:35,696 --> 00:01:37,898
+is actually very similar
+in dimension
+
+
+30
+00:01:37,898 --> 00:01:43,103
+to the display of the 42mm
+watches of previous series.
+
+
+31
+00:01:43,103 --> 00:01:45,872
+The new 40mm watch
+has a display size
+
+
+32
+00:01:45,872 --> 00:01:50,444
+that is 12 pixels wider
+and 4 pixels taller.
+
+
+33
+00:01:50,444 --> 00:01:52,145
+Looking across the case sizes,
+
+
+34
+00:01:52,145 --> 00:01:56,249
+40 and 42mm watches
+sit in the middle of a spectrum.
+
+
+35
+00:01:56,249 --> 00:01:59,286
+If you target your screens
+layouts here,
+
+
+36
+00:01:59,286 --> 00:02:02,022
+you should then ensure
+your layouts scale down
+
+
+37
+00:02:02,022 --> 00:02:07,761
+to 38mm dimensions,
+and up for 44mm dimensions.
+
+
+38
+00:02:07,761 --> 00:02:10,830
+The Design Resources
+on developer.apple.com
+
+
+39
+00:02:10,830 --> 00:02:13,567
+contain assets and templates
+to get you started
+
+
+40
+00:02:13,567 --> 00:02:15,902
+in designing for all 4 sizes.
+
+
+41
+00:02:15,902 --> 00:02:18,605
+Be aware that some watchOS
+interface elements
+
+
+42
+00:02:18,605 --> 00:02:20,707
+scale with the watch size.
+
+
+43
+00:02:20,707 --> 00:02:23,510
+The templates contain
+extensive collections
+
+
+44
+00:02:23,510 --> 00:02:26,246
+of these elements,
+organized by watch size,
+
+
+45
+00:02:26,246 --> 00:02:32,019
+to ensure that your mock-ups are
+as pixel-precise as possible.
+
+
+46
+00:02:32,019 --> 00:02:34,354
+So now let's talk about
+how these new displays
+
+
+47
+00:02:34,354 --> 00:02:37,190
+impact the layout
+of your screens.
+
+
+48
+00:02:37,190 --> 00:02:41,428
+The most notable difference
+of the new display is its shape.
+
+
+49
+00:02:41,428 --> 00:02:42,796
+Like iPhone X,
+
+
+50
+00:02:42,796 --> 00:02:45,165
+Apple Watch Series 4
+has rounded corners,
+
+
+51
+00:02:45,165 --> 00:02:46,566
+creating a symmetrical look
+
+
+52
+00:02:46,566 --> 00:02:49,536
+within the curved corners
+of the case.
+
+
+53
+00:02:49,536 --> 00:02:51,038
+WatchKit will assist you
+
+
+54
+00:02:51,038 --> 00:02:53,473
+in the presentation
+of text and controls,
+
+
+55
+00:02:53,473 --> 00:02:56,643
+so that your UI appears
+in an optimal location
+
+
+56
+00:02:56,643 --> 00:02:58,078
+in the viewport.
+
+
+57
+00:02:58,078 --> 00:03:00,781
+WatchKit elements will adapt
+to the new displays.
+
+
+58
+00:03:00,781 --> 00:03:03,917
+At the top,
+your app's status bar
+
+
+59
+00:03:03,917 --> 00:03:06,253
+will account for
+the rounded corners.
+
+
+60
+00:03:06,253 --> 00:03:08,622
+As in previous versions
+of watchOS,
+
+
+61
+00:03:08,622 --> 00:03:11,358
+the clock will appear
+on every screen,
+
+
+62
+00:03:11,358 --> 00:03:13,727
+and your app can use
+the title area
+
+
+63
+00:03:13,727 --> 00:03:16,096
+to provide a helpful heading
+or title
+
+
+64
+00:03:16,096 --> 00:03:18,398
+describing the purpose
+of the screen.
+
+
+65
+00:03:18,398 --> 00:03:21,134
+Both of these elements
+will be indented,
+
+
+66
+00:03:21,134 --> 00:03:24,571
+and this indentation should
+create left and right margins
+
+
+67
+00:03:24,571 --> 00:03:27,107
+that extend vertically through
+the display of content
+
+
+68
+00:03:27,107 --> 00:03:28,108
+in your app.
+
+
+69
+00:03:28,108 --> 00:03:31,111
+These are
+System Minimum Layout Margins.
+
+
+70
+00:03:31,111 --> 00:03:33,480
+Graphic elements
+and button backgrounds
+
+
+71
+00:03:33,480 --> 00:03:35,515
+should extend
+beyond these margins
+
+
+72
+00:03:35,515 --> 00:03:39,152
+and run nearly edge to edge,
+up to the one pixel margin
+
+
+73
+00:03:39,152 --> 00:03:41,888
+that runs by default
+on either side.
+
+
+74
+00:03:41,888 --> 00:03:44,257
+Text should align
+to the left margin,
+
+
+75
+00:03:44,257 --> 00:03:48,328
+extending from the left edge
+of the text in the status bar.
+
+
+76
+00:03:48,328 --> 00:03:50,664
+To account for the corners
+in scroll views,
+
+
+77
+00:03:50,664 --> 00:03:53,467
+there are clear areas
+at the top and bottom
+
+
+78
+00:03:53,467 --> 00:03:55,135
+of the content area.
+
+
+79
+00:03:55,135 --> 00:03:57,537
+These are known as
+scroll clear areas,
+
+
+80
+00:03:57,537 --> 00:03:59,473
+and they ensure that text
+and buttons
+
+
+81
+00:03:59,473 --> 00:04:01,875
+are nudged fully into view
+
+
+82
+00:04:01,875 --> 00:04:04,678
+when the user completes
+a scrolling action.
+
+
+83
+00:04:04,678 --> 00:04:08,081
+For example, a button at
+the bottom of a scroll view
+
+
+84
+00:04:08,081 --> 00:04:11,918
+will settle in the safe area
+above the clear area.
+
+
+85
+00:04:11,918 --> 00:04:15,222
+If you're using a full-screen
+SpriteKit or SceneKit scene,
+
+
+86
+00:04:15,222 --> 00:04:18,190
+you'll want to use
+the margins and insets
+
+
+87
+00:04:18,190 --> 00:04:21,228
+to nudge your content
+into view.
+
+
+88
+00:04:21,228 --> 00:04:24,397
+The best watch experiences
+are simple and glanceable,
+
+
+89
+00:04:24,397 --> 00:04:26,399
+so you may have views
+within your app
+
+
+90
+00:04:26,399 --> 00:04:28,535
+that are intentionally
+single-screen
+
+
+91
+00:04:28,535 --> 00:04:30,103
+and should not scroll.
+
+
+92
+00:04:30,103 --> 00:04:32,405
+For example,
+if you want to make sure
+
+
+93
+00:04:32,405 --> 00:04:34,875
+that a button rests
+in the clear area,
+
+
+94
+00:04:34,875 --> 00:04:37,410
+rather than getting nudged up
+by the system,
+
+
+95
+00:04:37,410 --> 00:04:41,681
+you can do so by setting
+an attribute in Xcode.
+
+
+96
+00:04:41,681 --> 00:04:43,984
+In the attribute inspector
+for the view,
+
+
+97
+00:04:43,984 --> 00:04:46,987
+you can select
+Fixed to screen edges,
+
+
+98
+00:04:46,987 --> 00:04:49,890
+and this will ensure that
+the content within that view
+
+
+99
+00:04:49,890 --> 00:04:51,925
+will not scroll.
+
+
+100
+00:04:51,925 --> 00:04:54,060
+Now let's talk about
+updating your app
+
+
+101
+00:04:54,060 --> 00:04:56,730
+for Apple Watch Series 4.
+
+
+102
+00:04:56,730 --> 00:04:59,232
+Your app will run
+on Series 4 watches
+
+
+103
+00:04:59,232 --> 00:05:02,869
+even before you recompile it
+for watchOS 5.
+
+
+104
+00:05:02,869 --> 00:05:08,108
+It will be displayed at 38mm
+dimensions on 40mm watches,
+
+
+105
+00:05:08,108 --> 00:05:13,213
+and at 42mm dimensions
+on 44mm watches.
+
+
+106
+00:05:13,213 --> 00:05:16,516
+It will be centered
+in Series 4 displays.
+
+
+107
+00:05:16,516 --> 00:05:18,018
+And from a user point of view,
+
+
+108
+00:05:18,018 --> 00:05:21,354
+your app will appear
+and behave predictably.
+
+
+109
+00:05:21,354 --> 00:05:23,690
+Recompiling your app
+for watchOS 5
+
+
+110
+00:05:23,690 --> 00:05:27,427
+will allow your app to occupy
+the full width and height
+
+
+111
+00:05:27,427 --> 00:05:29,429
+of the new display.
+
+
+112
+00:05:29,429 --> 00:05:31,998
+As long as you've implemented
+your WatchKit elements
+
+
+113
+00:05:31,998 --> 00:05:35,902
+relative to their containers
+rather than at fixed widths,
+
+
+114
+00:05:35,902 --> 00:05:39,005
+your app will expand to fill
+the additional screen space
+
+
+115
+00:05:39,005 --> 00:05:42,042
+on Series 4 watches,
+and this will feel much more
+
+
+116
+00:05:42,042 --> 00:05:44,878
+immersive and engaging
+to your users.
+
+
+117
+00:05:44,878 --> 00:05:47,347
+If your app contains
+a full-screen SpriteKit
+
+
+118
+00:05:47,347 --> 00:05:49,916
+or SceneKit scene,
+you'll want to make sure
+
+
+119
+00:05:49,916 --> 00:05:52,018
+that text and controls
+in your scene
+
+
+120
+00:05:52,018 --> 00:05:54,955
+are rendered correctly
+on Series 4 watches.
+
+
+121
+00:05:54,955 --> 00:05:57,824
+You should access the
+System Minimum Layout Margins
+
+
+122
+00:05:57,824 --> 00:06:00,760
+to ensure that your content
+is inset properly
+
+
+123
+00:06:00,760 --> 00:06:03,029
+from the left and right edges
+of the screen,
+
+
+124
+00:06:03,029 --> 00:06:05,799
+and the Content Safe Area Inset
+information
+
+
+125
+00:06:05,799 --> 00:06:08,702
+to ensure that text and actions
+settle appropriately
+
+
+126
+00:06:08,702 --> 00:06:13,940
+in the content area of the watch
+when the user scrolls.
+
+
+127
+00:06:13,940 --> 00:06:16,576
+Series 4 introduces new haptics
+
+
+128
+00:06:16,576 --> 00:06:19,446
+that correspond with the
+rotation of the Digital Crown,
+
+
+129
+00:06:19,446 --> 00:06:23,350
+creating a more tactile
+experience across Apple Watch.
+
+
+130
+00:06:23,350 --> 00:06:26,152
+By default,
+haptic detents, or taps,
+
+
+131
+00:06:26,152 --> 00:06:28,955
+are produced when the
+Digital Crown is rotated.
+
+
+132
+00:06:28,955 --> 00:06:32,859
+So common user interactions,
+like scrolling
+
+
+133
+00:06:32,859 --> 00:06:35,061
+or selecting an item
+in a picker,
+
+
+134
+00:06:35,061 --> 00:06:37,731
+will deliver tactile
+feedback to the user.
+
+
+135
+00:06:37,731 --> 00:06:39,666
+You should evaluate your
+app's experience
+
+
+136
+00:06:39,666 --> 00:06:43,570
+with this new haptic feedback
+on Series 4 watches.
+
+
+137
+00:06:43,570 --> 00:06:47,707
+Users will become accustomed to
+a consistent tactile experience,
+
+
+138
+00:06:47,707 --> 00:06:50,076
+so if your app coordinates
+events in the UI
+
+
+139
+00:06:50,076 --> 00:06:51,878
+with Digital Crown rotation,
+
+
+140
+00:06:51,878 --> 00:06:54,314
+you'll want to make sure
+that those UI events
+
+
+141
+00:06:54,314 --> 00:06:56,950
+line up with these
+new haptic effects.
+
+
+142
+00:06:56,950 --> 00:07:01,988
+Next, let's discuss the new text
+styles introduced in watchOS 5,
+
+
+143
+00:07:01,988 --> 00:07:04,357
+and the implementation
+of Dynamic Type
+
+
+144
+00:07:04,357 --> 00:07:06,493
+on Series 4 watches.
+
+
+145
+00:07:06,493 --> 00:07:09,229
+In watchOS 5,
+the Dynamic Type Library
+
+
+146
+00:07:09,229 --> 00:07:13,033
+was expanded to include
+four new larger sizes.
+
+
+147
+00:07:13,033 --> 00:07:16,236
+Large Title,
+and Titles 1, 2, and 3
+
+
+148
+00:07:16,236 --> 00:07:19,539
+provide more ways to ensure
+that content and actions
+
+
+149
+00:07:19,539 --> 00:07:22,242
+are glanceable
+on the watch screen.
+
+
+150
+00:07:22,242 --> 00:07:24,611
+As you're implementing
+and testing these styles,
+
+
+151
+00:07:24,611 --> 00:07:26,446
+remember that there
+are different
+
+
+152
+00:07:26,446 --> 00:07:29,282
+default content categories
+that correspond
+
+
+153
+00:07:29,282 --> 00:07:31,384
+to the watch case size.
+
+
+154
+00:07:31,384 --> 00:07:35,288
+Small is the default
+category for 38mm,
+
+
+155
+00:07:35,288 --> 00:07:42,195
+Large for 40mm and 42mm,
+and XLarge for 44mm.
+
+
+156
+00:07:42,195 --> 00:07:45,031
+While watches may start
+with different default settings,
+
+
+157
+00:07:45,031 --> 00:07:47,367
+each offers the same spectrum
+
+
+158
+00:07:47,367 --> 00:07:51,037
+to accommodate a wide range
+of user settings.
+
+
+159
+00:07:51,037 --> 00:07:53,907
+Adhering to these styles
+will ensure that your app
+
+
+160
+00:07:53,907 --> 00:07:56,943
+is delivered predictably
+to all users.
+
+
+161
+00:07:56,943 --> 00:07:58,978
+Finally, let's discuss
+enhancements
+
+
+162
+00:07:58,978 --> 00:08:02,515
+related to the visual assets
+in your watch project.
+
+
+163
+00:08:02,515 --> 00:08:04,918
+You can now streamline
+the production of graphics
+
+
+164
+00:08:04,918 --> 00:08:08,455
+by using PDFs, allowing for
+high-resolution scaling
+
+
+165
+00:08:08,455 --> 00:08:10,190
+across device sizes.
+
+
+166
+00:08:10,190 --> 00:08:13,226
+If you prepare your graphics
+with a scale factor of 2
+
+
+167
+00:08:13,226 --> 00:08:15,128
+and save them as PDFs,
+
+
+168
+00:08:15,128 --> 00:08:16,996
+you can create a single file
+
+
+169
+00:08:16,996 --> 00:08:20,900
+for usage across all
+four watch sizes.
+
+
+170
+00:08:20,900 --> 00:08:23,169
+When you bring this PDF asset
+into Xcode,
+
+
+171
+00:08:23,169 --> 00:08:26,906
+place it in the Asset Catalog
+of your Watch project,
+
+
+172
+00:08:26,906 --> 00:08:30,110
+drop the asset in
+the Universal 2x box.
+
+
+173
+00:08:30,110 --> 00:08:32,345
+And then, in the
+attribute inspector,
+
+
+174
+00:08:32,345 --> 00:08:35,715
+adjust the Auto Scaling
+property to Automatic.
+
+
+175
+00:08:35,715 --> 00:08:40,854
+This scales your graphics down
+by 9 percent for 38mm displays,
+
+
+176
+00:08:40,854 --> 00:08:45,492
+and up 10 percent
+for 44mm displays.
+
+
+177
+00:08:45,492 --> 00:08:49,796
+One last note: To account
+for the UI of the 44mm watch,
+
+
+178
+00:08:49,796 --> 00:08:53,500
+there are two new
+app icon sizes.
+
+
+179
+00:08:53,500 --> 00:08:56,403
+These new icons will be used
+for the short look notification
+
+
+180
+00:08:56,403 --> 00:08:59,038
+and the Home screen icon.
+
+
+181
+00:08:59,038 --> 00:09:00,940
+Guides and dimensions
+for these icons
+
+
+182
+00:09:00,940 --> 00:09:03,810
+can be found in the templates
+in the Design Resources,
+
+
+183
+00:09:03,810 --> 00:09:07,647
+which have been newly updated
+for Apple Watch Series 4.
+
+
+184
+00:09:07,647 --> 00:09:09,315
+There's also a thorough
+introduction
+
+
+185
+00:09:09,315 --> 00:09:12,018
+to watchOS 5 features
+in the video,
+
+
+186
+00:09:12,018 --> 00:09:15,622
+"What's New in watchOS"
+from WWDC.
+
+
+187
+00:09:15,622 --> 00:09:17,557
+This video,
+the Design Resources,
+
+
+188
+00:09:17,557 --> 00:09:20,226
+and the Human Interface
+Guidelines can be found
+
+
+189
+00:09:20,226 --> 00:09:23,229
+at developer.apple.com.
+

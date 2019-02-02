@@ -1,0 +1,1 @@
+var s='SD',l=[];jQuery('a:contains('+s+')').each(function(i,e){l[l.length]=e.href});copy(l.join('\n'));alert(l.length+' urls copied!');

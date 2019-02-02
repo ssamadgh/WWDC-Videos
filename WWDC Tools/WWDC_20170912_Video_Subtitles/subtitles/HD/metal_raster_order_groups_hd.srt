@@ -1,0 +1,1578 @@
+1
+00:00:01,034 --> 00:00:02,035
+Raster Order Groups
+
+
+2
+00:00:02,035 --> 00:00:03,703
+is a new feature in Metal 2
+
+
+3
+00:00:03,703 --> 00:00:04,738
+and we're further extended it
+
+
+4
+00:00:04,738 --> 00:00:08,508
+specifically for
+the new A11 GPU.
+
+
+5
+00:00:08,508 --> 00:00:09,710
+This video is one of five
+
+
+6
+00:00:09,710 --> 00:00:12,746
+that describe
+the new GPU capabilities of A11.
+
+
+7
+00:00:12,746 --> 00:00:13,647
+To get the most out of it,
+
+
+8
+00:00:13,647 --> 00:00:15,215
+you'll want to have
+previously watched videos
+
+
+9
+00:00:15,215 --> 00:00:16,984
+on Imageblocks and Tile Shaders.
+
+
+10
+00:00:18,585 --> 00:00:20,587
+I'll start with a brief review
+of Raster Order Groups
+
+
+11
+00:00:20,587 --> 00:00:22,189
+as already available in Metal 2,
+
+
+12
+00:00:22,189 --> 00:00:25,659
+before moving on
+to new A11's new capabilities.
+
+
+13
+00:00:25,659 --> 00:00:27,494
+Raster Order Groups
+is a feature that requires
+
+
+14
+00:00:27,494 --> 00:00:30,264
+that the GPU execute part
+of your fragment shader threads
+
+
+15
+00:00:30,264 --> 00:00:33,867
+in order with other threads
+that overlap it.
+
+
+16
+00:00:33,867 --> 00:00:35,769
+This ordering comes
+from the submission order
+
+
+17
+00:00:35,769 --> 00:00:37,938
+of your draw calls
+within a renderpass,
+
+
+18
+00:00:37,938 --> 00:00:41,642
+and the order of each triangle
+within that draw call.
+
+
+19
+00:00:41,642 --> 00:00:44,645
+The overlap is determined
+by the Rasterizer.
+
+
+20
+00:00:44,645 --> 00:00:47,014
+Two fragment threads
+are determined to overlap
+
+
+21
+00:00:47,014 --> 00:00:50,183
+if they target the same
+framebuffer X and Y location,
+
+
+22
+00:00:50,183 --> 00:00:53,954
+the same sample,
+and the same layer.
+
+
+23
+00:00:53,954 --> 00:00:57,424
+For example, two fragments
+would be considered to overlap
+
+
+24
+00:00:57,424 --> 00:00:58,592
+if they would both depth test
+
+
+25
+00:00:58,592 --> 00:01:01,862
+against the same
+depth buffer sample.
+
+
+26
+00:01:01,862 --> 00:01:04,431
+This is a typical case
+of two triangles,
+
+
+27
+00:01:04,431 --> 00:01:08,135
+with the blue triangle first
+and the green triangle second.
+
+
+28
+00:01:08,135 --> 00:01:10,537
+For access to classic
+graphics framebuffers,
+
+
+29
+00:01:10,537 --> 00:01:14,374
+blending is always something
+the GPU executes in order.
+
+
+30
+00:01:14,374 --> 00:01:16,343
+GPUs are not going
+to suddenly blend
+
+
+31
+00:01:16,343 --> 00:01:17,644
+the green triangle in back,
+
+
+32
+00:01:17,644 --> 00:01:20,914
+because of scheduling variations
+from frame to frame.
+
+
+33
+00:01:20,914 --> 00:01:21,982
+But fragment shaders
+
+
+34
+00:01:21,982 --> 00:01:24,885
+are going to execute
+concurrently and out of order.
+
+
+35
+00:01:24,885 --> 00:01:27,788
+Without raster order groups,
+work is only serialized
+
+
+36
+00:01:27,788 --> 00:01:29,456
+after fragment shading
+completes,
+
+
+37
+00:01:29,456 --> 00:01:32,092
+but before blending.
+
+
+38
+00:01:32,092 --> 00:01:34,494
+But what if you're not blending
+into the framebuffer?
+
+
+39
+00:01:34,494 --> 00:01:36,530
+Many recent developments
+in graphics algorithms
+
+
+40
+00:01:36,530 --> 00:01:38,732
+attempt to build
+more interesting data structures
+
+
+41
+00:01:38,732 --> 00:01:40,434
+from your fragment shaders.
+
+
+42
+00:01:40,434 --> 00:01:43,136
+There are multi-layer encodings
+for better post-processing
+
+
+43
+00:01:43,136 --> 00:01:45,505
+or order independent
+transparency.
+
+
+44
+00:01:45,505 --> 00:01:46,606
+There's voxelization,
+
+
+45
+00:01:46,606 --> 00:01:49,042
+and special purpose
+blend functions.
+
+
+46
+00:01:49,042 --> 00:01:50,911
+All of these are built
+on the fragment shaders
+
+
+47
+00:01:50,911 --> 00:01:52,980
+that are storing data
+into custom data structures
+
+
+48
+00:01:52,980 --> 00:01:53,780
+in memory,
+
+
+49
+00:01:53,780 --> 00:01:57,451
+rather than merely blending
+a color into an output texture.
+
+
+50
+00:01:57,451 --> 00:01:59,052
+But if direct access to memory
+
+
+51
+00:01:59,052 --> 00:02:00,520
+from the body
+of your fragment shader
+
+
+52
+00:02:00,520 --> 00:02:03,623
+can happen in any order,
+at any time, and concurrently,
+
+
+53
+00:02:03,623 --> 00:02:05,692
+that's severely limiting.
+
+
+54
+00:02:05,692 --> 00:02:07,327
+Dealing with those data races
+has caused
+
+
+55
+00:02:07,327 --> 00:02:09,363
+existing implementations of
+those algorithms
+
+
+56
+00:02:09,363 --> 00:02:10,597
+to be far more expensive
+
+
+57
+00:02:10,597 --> 00:02:11,999
+than they otherwise
+would have been.
+
+
+58
+00:02:13,700 --> 00:02:14,701
+What we really want
+
+
+59
+00:02:14,701 --> 00:02:16,837
+is to get that blending-like
+ordered behavior,
+
+
+60
+00:02:16,837 --> 00:02:18,739
+but not after the end
+of our fragment shader,
+
+
+61
+00:02:18,739 --> 00:02:19,940
+but within it.
+
+
+62
+00:02:19,940 --> 00:02:21,375
+We effectively want the illusion
+
+
+63
+00:02:21,375 --> 00:02:24,878
+that our memory accesses
+are happening serially in order.
+
+
+64
+00:02:24,878 --> 00:02:27,547
+That's what
+Raster Order Groups does.
+
+
+65
+00:02:27,547 --> 00:02:29,516
+It lets you annotate
+your pointers to memory
+
+
+66
+00:02:29,516 --> 00:02:31,284
+with a Raster Order Group.
+
+
+67
+00:02:31,284 --> 00:02:32,519
+Accesses through
+those pointers
+
+
+68
+00:02:32,519 --> 00:02:35,856
+are then done
+in a per-pixel submission order.
+
+
+69
+00:02:35,856 --> 00:02:36,923
+The hardware will wait
+
+
+70
+00:02:36,923 --> 00:02:38,792
+for any older
+Fragment Shader Threads
+
+
+71
+00:02:38,792 --> 00:02:40,260
+that overlap
+with the current thread
+
+
+72
+00:02:40,260 --> 00:02:44,698
+to finish before the current
+thread is allowed to proceed.
+
+
+73
+00:02:44,698 --> 00:02:46,767
+This effectively
+gives you mutual exclusion,
+
+
+74
+00:02:46,767 --> 00:02:47,968
+but better.
+
+
+75
+00:02:47,968 --> 00:02:50,804
+It provides
+ordered mutual exclusion,
+
+
+76
+00:02:50,804 --> 00:02:52,472
+where you know
+which thread is going to enter
+
+
+77
+00:02:52,472 --> 00:02:54,074
+the critical section first,
+
+
+78
+00:02:54,074 --> 00:02:56,643
+and which will do so second.
+
+
+79
+00:02:56,643 --> 00:03:00,914
+This feature was presented
+in greater detail at WWDC 2017
+
+
+80
+00:03:00,914 --> 00:03:03,383
+in the session
+Introducing Metal 2,
+
+
+81
+00:03:03,383 --> 00:03:07,320
+so if you'd like a deeper dive,
+you can watch that video.
+
+
+82
+00:03:07,320 --> 00:03:08,889
+So with the basics covered,
+
+
+83
+00:03:08,889 --> 00:03:12,826
+let's move on to what's new
+in the A11 GPU.
+
+
+84
+00:03:12,826 --> 00:03:14,661
+Raster Order Groups
+are more useful,
+
+
+85
+00:03:14,661 --> 00:03:17,998
+more powerful,
+and higher performing on A11.
+
+
+86
+00:03:17,998 --> 00:03:22,903
+First, A11 exposes
+the GPU's internal tile memory.
+
+
+87
+00:03:22,903 --> 00:03:25,072
+Just like device
+and texture access,
+
+
+88
+00:03:25,072 --> 00:03:27,140
+tile memory is
+a lot more useful
+
+
+89
+00:03:27,140 --> 00:03:29,309
+if you can access it
+in a predictable order,
+
+
+90
+00:03:29,309 --> 00:03:30,310
+and so Raster Order Groups
+
+
+91
+00:03:30,310 --> 00:03:33,380
+can now apply
+to tile memory too.
+
+
+92
+00:03:33,380 --> 00:03:34,514
+Second,
+
+
+93
+00:03:34,514 --> 00:03:36,650
+where Raster Order Groups
+on other GPUs
+
+
+94
+00:03:36,650 --> 00:03:38,985
+are limited
+to only one mutex per pixel,
+
+
+95
+00:03:38,985 --> 00:03:41,421
+A11 can go finer-grained
+than that,
+
+
+96
+00:03:41,421 --> 00:03:43,290
+allowing an even lighter touch,
+
+
+97
+00:03:43,290 --> 00:03:44,891
+and minimizing how often
+your threads
+
+
+98
+00:03:44,891 --> 00:03:46,726
+are waiting for access.
+
+
+99
+00:03:46,726 --> 00:03:48,728
+I'd like to show you
+a pair of examples
+
+
+100
+00:03:48,728 --> 00:03:50,530
+demonstrating how to use
+these capabilities
+
+
+101
+00:03:50,530 --> 00:03:51,765
+to unlock new performance
+
+
+102
+00:03:51,765 --> 00:03:53,733
+in some
+common graphics algorithms.
+
+
+103
+00:03:55,402 --> 00:03:58,772
+The first example
+is classic deferred shading.
+
+
+104
+00:03:58,772 --> 00:04:00,841
+On traditional GPUs,
+
+
+105
+00:04:00,841 --> 00:04:03,276
+deferred shading is done
+in two passes.
+
+
+106
+00:04:03,276 --> 00:04:06,580
+First filling a G-Buffer and
+outputting multiple textures,
+
+
+107
+00:04:06,580 --> 00:04:09,916
+and then a second renderpass
+that reads from those textures,
+
+
+108
+00:04:09,916 --> 00:04:11,151
+rendering light volumes,
+
+
+109
+00:04:11,151 --> 00:04:14,187
+and calculating
+the shading results.
+
+
+110
+00:04:14,187 --> 00:04:14,855
+But deferred shading
+
+
+111
+00:04:14,855 --> 00:04:17,457
+tends to burns
+a lot of memory bandwidth.
+
+
+112
+00:04:17,457 --> 00:04:20,260
+One great ability
+of our A-series GPUs
+
+
+113
+00:04:20,260 --> 00:04:23,196
+is keeping as much bandwidth
+as possible on chip,
+
+
+114
+00:04:23,196 --> 00:04:25,031
+eliminating these
+intermediate textures
+
+
+115
+00:04:25,031 --> 00:04:27,467
+by coalescing
+both passes into one,
+
+
+116
+00:04:27,467 --> 00:04:29,636
+keeping the G-Buffer
+in tile-sized chunks
+
+
+117
+00:04:29,636 --> 00:04:33,440
+entirely with an imageblock
+within the GPU.
+
+
+118
+00:04:33,440 --> 00:04:37,811
+Both of these tasks become
+phases of one renderpass.
+
+
+119
+00:04:37,811 --> 00:04:39,412
+You can see
+a much deeper dive
+
+
+120
+00:04:39,412 --> 00:04:41,615
+of how to build
+these coalesced RenderRasses
+
+
+121
+00:04:41,615 --> 00:04:44,518
+in the A11 Imageblock
+and Tile Shading videos,
+
+
+122
+00:04:44,518 --> 00:04:46,019
+while this video
+is going to focus on
+
+
+123
+00:04:46,019 --> 00:04:49,389
+just the synchronization
+aspects.
+
+
+124
+00:04:49,389 --> 00:04:51,424
+The performance
+of single pass deferred shading
+
+
+125
+00:04:51,424 --> 00:04:52,225
+gets even better
+
+
+126
+00:04:52,225 --> 00:04:54,494
+by leveraging multiple
+Raster Order Groups.
+
+
+127
+00:04:54,494 --> 00:04:55,462
+To take look at that,
+
+
+128
+00:04:55,462 --> 00:04:57,797
+lets dig into some of the
+details of Phase number two:
+
+
+129
+00:04:57,797 --> 00:04:59,666
+Lighting.
+
+
+130
+00:04:59,666 --> 00:05:02,836
+Our basic lighting process
+starts by drawing a volume
+
+
+131
+00:05:02,836 --> 00:05:04,771
+that encompasses
+a light's influence,
+
+
+132
+00:05:04,771 --> 00:05:06,706
+spawning fragment
+shader threads.
+
+
+133
+00:05:06,706 --> 00:05:08,074
+Each thread
+is effectively applying
+
+
+134
+00:05:08,074 --> 00:05:10,343
+one light to one pixel.
+
+
+135
+00:05:10,343 --> 00:05:13,313
+Our Lighting thread starts
+by reading the G-Buffer fields.
+
+
+136
+00:05:13,313 --> 00:05:14,681
+On A-series GPUs,
+
+
+137
+00:05:14,681 --> 00:05:16,850
+you'll want to read this
+directly from an imageblock,
+
+
+138
+00:05:16,850 --> 00:05:19,619
+which is
+the fastest memory available.
+
+
+139
+00:05:19,619 --> 00:05:21,788
+Then you'll execute
+your chosen shading model,
+
+
+140
+00:05:21,788 --> 00:05:23,290
+which is typically
+quite a bit of math,
+
+
+141
+00:05:23,290 --> 00:05:25,892
+and can take some time
+to execute.
+
+
+142
+00:05:25,892 --> 00:05:26,493
+Finally,
+
+
+143
+00:05:26,493 --> 00:05:28,094
+you'll sum the contribution
+of this light
+
+
+144
+00:05:28,094 --> 00:05:29,329
+back into the imageblock.
+
+
+145
+00:05:29,329 --> 00:05:31,698
+A very quick step.
+
+
+146
+00:05:31,698 --> 00:05:33,033
+Then we have a second light
+
+
+147
+00:05:33,033 --> 00:05:35,869
+being applied
+by a second thread.
+
+
+148
+00:05:35,869 --> 00:05:37,737
+For a single-pass
+deferred shading implementation
+
+
+149
+00:05:37,737 --> 00:05:41,007
+before A11, it would
+look something like this.
+
+
+150
+00:05:41,007 --> 00:05:42,075
+You can see the ordering
+
+
+151
+00:05:42,075 --> 00:05:43,677
+is imposed
+on the very first read
+
+
+152
+00:05:43,677 --> 00:05:44,978
+from the imageblock,
+
+
+153
+00:05:44,978 --> 00:05:47,380
+forcing the entire execution
+of these two lights
+
+
+154
+00:05:47,380 --> 00:05:48,949
+to run serially.
+
+
+155
+00:05:48,949 --> 00:05:50,116
+This is because a GPU
+
+
+156
+00:05:50,116 --> 00:05:52,152
+that supports only
+a single Raster Order Group
+
+
+157
+00:05:52,152 --> 00:05:55,655
+must wait on all accesses
+from prior threads to complete
+
+
+158
+00:05:55,655 --> 00:05:59,993
+before any accesses
+from later threads can begin.
+
+
+159
+00:05:59,993 --> 00:06:02,295
+This applies
+even if both accesses are reads
+
+
+160
+00:06:02,295 --> 00:06:05,131
+that do not actually conflict
+with each other.
+
+
+161
+00:06:05,131 --> 00:06:07,534
+A11's support
+for multiple Raster Order Groups
+
+
+162
+00:06:07,534 --> 00:06:10,203
+eliminates
+this over-synchronization.
+
+
+163
+00:06:10,203 --> 00:06:11,738
+Multiple groups
+allow you to run
+
+
+164
+00:06:11,738 --> 00:06:13,940
+these non-conflicting reads
+concurrently,
+
+
+165
+00:06:13,940 --> 00:06:17,477
+and synchronizing only on
+the very brief end of the shader
+
+
+166
+00:06:17,477 --> 00:06:18,945
+that accumulates the result.
+
+
+167
+00:06:20,981 --> 00:06:22,215
+You can achieve this
+
+
+168
+00:06:22,215 --> 00:06:25,652
+by declaring our three G-Buffer
+fields to be in one group
+
+
+169
+00:06:25,652 --> 00:06:29,556
+and our accumulated lighting
+result to be in a second group.
+
+
+170
+00:06:29,556 --> 00:06:31,858
+The hardware may now
+order them separately.
+
+
+171
+00:06:31,858 --> 00:06:33,293
+Outstanding writes
+into one group
+
+
+172
+00:06:33,293 --> 00:06:37,063
+do not require that reads
+in another group have to wait.
+
+
+173
+00:06:37,063 --> 00:06:38,632
+Multiple readers
+within a single group
+
+
+174
+00:06:38,632 --> 00:06:41,101
+do not have to
+wait on each other.
+
+
+175
+00:06:41,101 --> 00:06:42,402
+This means that more threads
+
+
+176
+00:06:42,402 --> 00:06:44,804
+can be eligible to run
+at any given time,
+
+
+177
+00:06:44,804 --> 00:06:47,641
+allowing for more parallelism
+and improved performance,
+
+
+178
+00:06:47,641 --> 00:06:48,742
+above and beyond what you get
+
+
+179
+00:06:48,742 --> 00:06:52,912
+by keeping your G-Buffers
+on-chip in the first place.
+
+
+180
+00:06:52,912 --> 00:06:55,282
+The code is just as simple.
+
+
+181
+00:06:55,282 --> 00:06:57,584
+My three G-Buffer fields
+are read and written together
+
+
+182
+00:06:57,584 --> 00:06:58,551
+at the same time,
+
+
+183
+00:06:58,551 --> 00:07:02,522
+and so I will annotate them all
+to put them into group zero.
+
+
+184
+00:07:02,522 --> 00:07:04,591
+The accumulator is read
+and written at a different time,
+
+
+185
+00:07:04,591 --> 00:07:07,427
+and so I'll annotate it
+into group one.
+
+
+186
+00:07:07,427 --> 00:07:10,130
+As far as adoption goes,
+that's really about it.
+
+
+187
+00:07:10,130 --> 00:07:11,031
+Raster Order Groups
+
+
+188
+00:07:11,031 --> 00:07:15,268
+is an extremely easy capability
+to start using.
+
+
+189
+00:07:15,268 --> 00:07:17,704
+On to the second example.
+
+
+190
+00:07:17,704 --> 00:07:20,173
+I'm going to make our deferred
+shading example more complex
+
+
+191
+00:07:20,173 --> 00:07:22,142
+by adding another phase.
+
+
+192
+00:07:22,142 --> 00:07:24,978
+After I have a lit version
+of my opaque content,
+
+
+193
+00:07:24,978 --> 00:07:27,547
+I'm going to add
+a transparency phase to the mix,
+
+
+194
+00:07:27,547 --> 00:07:28,648
+forward shaded,
+
+
+195
+00:07:28,648 --> 00:07:32,652
+and approximating
+back-to-front blending order.
+
+
+196
+00:07:32,652 --> 00:07:35,188
+One way to do that,
+which A11 is really good at,
+
+
+197
+00:07:35,188 --> 00:07:36,556
+is to declare our imageblock
+
+
+198
+00:07:36,556 --> 00:07:39,793
+to store an array
+of color and depth pairs.
+
+
+199
+00:07:39,793 --> 00:07:42,829
+Each forward-shading fragment
+adds an entry to this array
+
+
+200
+00:07:42,829 --> 00:07:45,332
+with some handling
+of overflow.
+
+
+201
+00:07:45,332 --> 00:07:46,533
+And at the end of my tile,
+
+
+202
+00:07:46,533 --> 00:07:47,867
+I'll sort and blend
+back to front,
+
+
+203
+00:07:47,867 --> 00:07:52,539
+using the saved depths,
+enabling back-to-front blending.
+
+
+204
+00:07:52,539 --> 00:07:55,508
+So this is a timeline
+showing off the life of one tile
+
+
+205
+00:07:55,508 --> 00:07:58,011
+and its imageblock
+from left to right.
+
+
+206
+00:07:58,011 --> 00:08:01,481
+I start with A11's imageblock
+laid out for deferred shading,
+
+
+207
+00:08:01,481 --> 00:08:04,651
+and I end up
+with my shade opaque color.
+
+
+208
+00:08:04,651 --> 00:08:07,087
+At the end, I have
+my transparency phase,
+
+
+209
+00:08:07,087 --> 00:08:07,787
+where I'm building
+
+
+210
+00:08:07,787 --> 00:08:11,558
+and then sorting my arrays
+of colors and depths.
+
+
+211
+00:08:11,558 --> 00:08:13,193
+Within each of these passes,
+
+
+212
+00:08:13,193 --> 00:08:14,494
+Raster Order Groups will control
+
+
+213
+00:08:14,494 --> 00:08:19,165
+how much parallelism is possible
+between fragment threads.
+
+
+214
+00:08:19,165 --> 00:08:20,200
+For performance reasons,
+
+
+215
+00:08:20,200 --> 00:08:21,901
+I really want
+these two operations
+
+
+216
+00:08:21,901 --> 00:08:24,037
+to be one renderpass.
+
+
+217
+00:08:24,037 --> 00:08:26,439
+I do not want to save anything
+out to device memory
+
+
+218
+00:08:26,439 --> 00:08:29,976
+just to reload it
+at a later pass.
+
+
+219
+00:08:29,976 --> 00:08:32,312
+But the imageblock declaration
+is wildly different
+
+
+220
+00:08:32,312 --> 00:08:34,280
+between the first and second
+parts of my scene,
+
+
+221
+00:08:34,280 --> 00:08:35,347
+both in data type
+
+
+222
+00:08:35,347 --> 00:08:38,551
+and Raster Order Group
+assignments.
+
+
+223
+00:08:38,551 --> 00:08:43,056
+A11 can do this transition
+with one step on your part.
+
+
+224
+00:08:43,056 --> 00:08:44,858
+To bridge the gap
+between these phases,
+
+
+225
+00:08:44,858 --> 00:08:47,327
+you need to put
+a tile shader in between.
+
+
+226
+00:08:47,327 --> 00:08:49,295
+A tile shader
+is a compute threadgroup
+
+
+227
+00:08:49,295 --> 00:08:53,199
+that can access the entire
+tile memory and imageblock.
+
+
+228
+00:08:53,199 --> 00:08:55,602
+Tile shaders have the behavior
+that they do not launch
+
+
+229
+00:08:55,602 --> 00:08:58,838
+until all fragment shader
+threads prior have completed,
+
+
+230
+00:08:58,838 --> 00:09:02,208
+regardless of Raster Order Group
+declarations.
+
+
+231
+00:09:02,208 --> 00:09:03,376
+This lets you be assured
+
+
+232
+00:09:03,376 --> 00:09:04,611
+that this tile shading
+threadgroup
+
+
+233
+00:09:04,611 --> 00:09:07,480
+has exclusive access
+to this memory.
+
+
+234
+00:09:07,480 --> 00:09:08,515
+With the tile shader,
+
+
+235
+00:09:08,515 --> 00:09:10,383
+you can read and write
+the entire tile,
+
+
+236
+00:09:10,383 --> 00:09:13,386
+reformatting it as you wish,
+and in particular,
+
+
+237
+00:09:13,386 --> 00:09:16,189
+reading from the imageblock
+via its old outgoing type,
+
+
+238
+00:09:16,189 --> 00:09:18,391
+and reinitializing
+the contents of imageblocks
+
+
+239
+00:09:18,391 --> 00:09:20,994
+using its new type.
+
+
+240
+00:09:20,994 --> 00:09:23,062
+Just like tile shaders
+have a full barrier
+
+
+241
+00:09:23,062 --> 00:09:24,330
+before they execute,
+
+
+242
+00:09:24,330 --> 00:09:28,001
+they also have a full barrier
+after they execute.
+
+
+243
+00:09:28,001 --> 00:09:29,936
+No subsequent
+fragment shader threads
+
+
+244
+00:09:29,936 --> 00:09:30,837
+will access memory
+
+
+245
+00:09:30,837 --> 00:09:33,940
+until after the tile shader
+has fully completed,
+
+
+246
+00:09:33,940 --> 00:09:36,075
+regardless of how you've set up
+Raster Order Groups
+
+
+247
+00:09:36,075 --> 00:09:38,111
+in the later phase.
+
+
+248
+00:09:38,111 --> 00:09:40,780
+This means that you can rely
+on this initialization
+
+
+249
+00:09:40,780 --> 00:09:43,583
+being completed before
+the transparency work begins.
+
+
+250
+00:09:45,018 --> 00:09:47,153
+The requirement here
+is pretty simple.
+
+
+251
+00:09:47,153 --> 00:09:49,556
+If you want to rearrange
+your imageblock contents
+
+
+252
+00:09:49,556 --> 00:09:52,625
+or change which fields
+a Raster Order Group protects,
+
+
+253
+00:09:52,625 --> 00:09:54,394
+you need to put a tile shader
+in the middle
+
+
+254
+00:09:54,394 --> 00:09:58,131
+to make that transition
+well-ordered and safe.
+
+
+255
+00:09:58,131 --> 00:10:01,000
+Several of the pieces of sample
+code we're publishing for A11
+
+
+256
+00:10:01,000 --> 00:10:02,469
+shows this sequence in practice.
+
+
+257
+00:10:04,103 --> 00:10:06,139
+So that's really all there is
+to making use
+
+
+258
+00:10:06,139 --> 00:10:09,909
+of Raster Order Groups'
+expanded capabilities on A11.
+
+
+259
+00:10:09,909 --> 00:10:11,444
+You've seen
+how Raster Order Groups
+
+
+260
+00:10:11,444 --> 00:10:15,348
+are even more flexible
+on A11 than on any other GPU.
+
+
+261
+00:10:15,348 --> 00:10:16,950
+The hardware
+supports multiple groups,
+
+
+262
+00:10:16,950 --> 00:10:18,918
+which can eliminate
+over-synchronization
+
+
+263
+00:10:18,918 --> 00:10:20,987
+and improve performance.
+
+
+264
+00:10:20,987 --> 00:10:22,288
+They work hand-in-hand
+
+
+265
+00:10:22,288 --> 00:10:25,525
+with A11's fragment shader's
+access to tile memory
+
+
+266
+00:10:25,525 --> 00:10:28,061
+and you can use tile shaders
+to entirely change
+
+
+267
+00:10:28,061 --> 00:10:29,762
+the character of
+your imageblocks,
+
+
+268
+00:10:29,762 --> 00:10:31,898
+including Raster Order Group
+configuration,
+
+
+269
+00:10:31,898 --> 00:10:34,968
+right in the middle
+of your render pass.
+
+
+270
+00:10:34,968 --> 00:10:36,069
+Putting it all together,
+
+
+271
+00:10:36,069 --> 00:10:37,804
+this lets you build workloads
+on A11
+
+
+272
+00:10:37,804 --> 00:10:39,639
+that are incredibly light
+on bandwidth,
+
+
+273
+00:10:39,639 --> 00:10:41,040
+and very well-performing.
+
+
+274
+00:10:43,209 --> 00:10:46,012
+For more information
+about Metal 2 and A11,
+
+
+275
+00:10:46,012 --> 00:10:47,514
+and links to the sample code,
+
+
+276
+00:10:47,514 --> 00:10:49,516
+please visit
+the Metal developer website.
+

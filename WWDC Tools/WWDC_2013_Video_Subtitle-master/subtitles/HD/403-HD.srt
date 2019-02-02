@@ -1,0 +1,5152 @@
+1
+00:00:00,506 --> 00:00:04,766
+[ Silence ]
+
+
+2
+00:00:05,266 --> 00:00:09,526
+[Applause]
+
+
+3
+00:00:10,026 --> 00:00:11,196
+>> Welcome, welcome.
+
+
+4
+00:00:12,686 --> 00:00:15,716
+So I know it's almost lunch
+- I need you guys to hang
+
+
+5
+00:00:15,716 --> 00:00:16,826
+with me, we'll be fast.
+
+
+6
+00:00:17,086 --> 00:00:20,896
+I'd like to start out with
+a question for all of you:
+
+
+7
+00:00:21,686 --> 00:00:26,336
+who here builds apps for iOS
+devices or builds Mac apps
+
+
+8
+00:00:26,336 --> 00:00:28,336
+that take advantage
+of store-only features
+
+
+9
+00:00:28,576 --> 00:00:32,336
+like iCloud or Game Center?
+
+
+10
+00:00:32,856 --> 00:00:35,056
+Great, this session
+is all about you.
+
+
+11
+00:00:35,056 --> 00:00:38,796
+You want to get your system
+and your projects configured
+
+
+12
+00:00:38,796 --> 00:00:43,166
+for these tasks as quickly as
+possible because at the end
+
+
+13
+00:00:43,166 --> 00:00:45,966
+of the day you want to spend
+more time doing what it is
+
+
+14
+00:00:45,966 --> 00:00:47,966
+that you love, building
+great products,
+
+
+15
+00:00:48,066 --> 00:00:50,656
+and spend less time
+configuring things
+
+
+16
+00:00:50,686 --> 00:00:52,106
+so you can begin that process.
+
+
+17
+00:00:53,356 --> 00:00:55,156
+My name Joshua Pennington,
+
+
+18
+00:00:55,746 --> 00:00:58,896
+I'm one of the Xcode engineering
+managers and today I'm going
+
+
+19
+00:00:58,896 --> 00:01:02,136
+to show you some of the changes
+that we've made in Xcode 5
+
+
+20
+00:01:02,756 --> 00:01:05,186
+that make it easy and
+fast to get everything set
+
+
+21
+00:01:05,186 --> 00:01:07,776
+up so you can spend
+more time writing code
+
+
+22
+00:01:07,926 --> 00:01:10,436
+and less time configuring
+things like entitlements
+
+
+23
+00:01:10,436 --> 00:01:11,436
+or provisioning profiles.
+
+
+24
+00:01:11,936 --> 00:01:14,626
+We're going to cover
+a few topics today.
+
+
+25
+00:01:15,466 --> 00:01:18,116
+We're going to start out by
+talking about signing assets.
+
+
+26
+00:01:19,186 --> 00:01:22,246
+When you develop apps for Apple
+platforms, you need to sign them
+
+
+27
+00:01:22,246 --> 00:01:25,176
+and there are a few things that
+you need in order to do so.
+
+
+28
+00:01:25,226 --> 00:01:29,816
+After that we're going to
+talk about some of the changes
+
+
+29
+00:01:29,816 --> 00:01:32,926
+that we've made in Xcode
+5 regarding how we use
+
+
+30
+00:01:32,926 --> 00:01:35,206
+and manage your Apple
+ID accounts.
+
+
+31
+00:01:35,246 --> 00:01:40,056
+After that we'll talk about some
+of the changes that we've made
+
+
+32
+00:01:40,056 --> 00:01:42,376
+in the project editor
+that makes getting set
+
+
+33
+00:01:42,376 --> 00:01:44,466
+up to use platform
+features like iCloud
+
+
+34
+00:01:44,466 --> 00:01:47,656
+or Game Center really easy,
+especially when it comes
+
+
+35
+00:01:47,656 --> 00:01:49,086
+to setting up entitlements.
+
+
+36
+00:01:49,896 --> 00:01:52,106
+We're also going to show
+you some of the changes
+
+
+37
+00:01:52,106 --> 00:01:54,206
+that we've made to the
+distribution workflow
+
+
+38
+00:01:54,406 --> 00:01:56,066
+that makes it easier
+to get your products
+
+
+39
+00:01:56,266 --> 00:01:58,426
+into iTunes Connect
+for App review.
+
+
+40
+00:01:58,516 --> 00:02:02,586
+And after that we're
+going to talk about some
+
+
+41
+00:02:02,586 --> 00:02:04,106
+of the advancements
+that we've made
+
+
+42
+00:02:04,156 --> 00:02:06,536
+in troubleshooting issues
+involving code signing
+
+
+43
+00:02:06,896 --> 00:02:07,556
+and entitlements.
+
+
+44
+00:02:08,976 --> 00:02:12,356
+Xcode 5 makes it easy
+to identify, diagnose
+
+
+45
+00:02:12,356 --> 00:02:16,126
+and fix problems in these
+areas entirely within Xcode,
+
+
+46
+00:02:16,126 --> 00:02:19,826
+so that's what we're
+going to cover today.
+
+
+47
+00:02:20,636 --> 00:02:25,406
+Let's get started by
+talking about signing.
+
+
+48
+00:02:25,556 --> 00:02:26,686
+Why do you need to
+sign your code?
+
+
+49
+00:02:26,796 --> 00:02:33,066
+Well, if you want to run an app
+on an iOS device that app has
+
+
+50
+00:02:33,066 --> 00:02:35,396
+to be signed with an
+Apple issued certificate
+
+
+51
+00:02:36,166 --> 00:02:38,446
+or the application will
+not install or launch.
+
+
+52
+00:02:39,816 --> 00:02:43,776
+Similarly if you're building a
+Mac app that's taking advantage
+
+
+53
+00:02:43,776 --> 00:02:47,876
+of services like iCloud or Game
+Center, for your app to connect
+
+
+54
+00:02:47,946 --> 00:02:50,246
+to the different daemons
+in order to do that,
+
+
+55
+00:02:50,246 --> 00:02:51,596
+you have to have your app signed
+
+
+56
+00:02:51,596 --> 00:02:52,896
+and include the correct
+entitlements.
+
+
+57
+00:02:52,896 --> 00:02:56,286
+And of course when it comes time
+
+
+58
+00:02:56,376 --> 00:02:58,946
+to distribute your
+application you need to sign
+
+
+59
+00:02:58,946 --> 00:03:01,046
+that with your distribution
+signing identity.
+
+
+60
+00:03:02,376 --> 00:03:04,096
+So if you want to
+do these things,
+
+
+61
+00:03:04,236 --> 00:03:05,136
+you need to sign your code.
+
+
+62
+00:03:05,136 --> 00:03:08,706
+And there are a few things that
+you need in order to do so.
+
+
+63
+00:03:10,506 --> 00:03:13,556
+There are two signing assets
+that you need in order
+
+
+64
+00:03:13,556 --> 00:03:14,596
+to sign your application.
+
+
+65
+00:03:15,796 --> 00:03:18,356
+The first asset is
+a signing identity.
+
+
+66
+00:03:19,146 --> 00:03:23,236
+A signing identity means a
+certificate and the private key
+
+
+67
+00:03:23,236 --> 00:03:24,186
+that goes along with it.
+
+
+68
+00:03:24,286 --> 00:03:27,226
+I'm not going to
+go into the details
+
+
+69
+00:03:27,226 --> 00:03:29,156
+of public-private
+key cryptography
+
+
+70
+00:03:29,156 --> 00:03:32,546
+or what code sign
+does under the hood.
+
+
+71
+00:03:32,646 --> 00:03:34,816
+But for the purpose of this
+session, you just need to know
+
+
+72
+00:03:34,816 --> 00:03:36,416
+that you have to
+have the private key
+
+
+73
+00:03:36,826 --> 00:03:40,466
+and the Apple issued certificate
+in order to sign your app.
+
+
+74
+00:03:40,706 --> 00:03:43,756
+So that's the first asset that
+you need, a signing identity.
+
+
+75
+00:03:44,556 --> 00:03:47,896
+After that you need a
+provisioning profile.
+
+
+76
+00:03:48,886 --> 00:03:50,836
+A provisioning profile
+is a document
+
+
+77
+00:03:50,836 --> 00:03:53,866
+that outlines a few details
+about your application
+
+
+78
+00:03:53,916 --> 00:03:58,186
+and it contains the following:
+an App ID that will be matched
+
+
+79
+00:03:58,186 --> 00:04:00,906
+against the bundle ID of the
+application that includes it.
+
+
+80
+00:04:01,606 --> 00:04:04,016
+If this doesn't match what's
+in the app's bundle ID,
+
+
+81
+00:04:04,016 --> 00:04:05,416
+it's not going to launch.
+
+
+82
+00:04:06,816 --> 00:04:09,366
+You can include a wildcard
+in your provisioning profile
+
+
+83
+00:04:09,476 --> 00:04:12,146
+so you can use the same
+profile from multiple apps
+
+
+84
+00:04:12,196 --> 00:04:13,126
+that your team develops.
+
+
+85
+00:04:13,666 --> 00:04:18,636
+A profile also includes a list
+of devices that are authorized
+
+
+86
+00:04:18,636 --> 00:04:19,555
+to run the application.
+
+
+87
+00:04:20,206 --> 00:04:21,946
+If your device is
+not in this list,
+
+
+88
+00:04:22,196 --> 00:04:23,816
+the app will not
+install or launch.
+
+
+89
+00:04:25,096 --> 00:04:28,496
+It also includes a list of
+certificates that may be used
+
+
+90
+00:04:28,496 --> 00:04:30,306
+in conjunction with the
+provisioning profile.
+
+
+91
+00:04:30,306 --> 00:04:34,496
+And finally it contains a
+whitelist of entitlements.
+
+
+92
+00:04:35,276 --> 00:04:37,826
+At runtime, any entitlements
+that are
+
+
+93
+00:04:37,826 --> 00:04:40,516
+in your application will be
+validated against the ones
+
+
+94
+00:04:40,516 --> 00:04:41,716
+in the provisioning profile.
+
+
+95
+00:04:42,616 --> 00:04:45,166
+So if you include an entitlement
+in your app that isn't
+
+
+96
+00:04:45,166 --> 00:04:48,226
+in your profile, your app
+will not install or launch.
+
+
+97
+00:04:49,516 --> 00:04:52,956
+So those are the two signing
+assets that you need in order
+
+
+98
+00:04:53,266 --> 00:04:54,286
+to sign your applications.
+
+
+99
+00:04:55,496 --> 00:04:58,606
+Where do you get them?
+
+
+100
+00:04:58,806 --> 00:05:01,706
+The first step is to join
+an Apple Developer Program.
+
+
+101
+00:05:02,056 --> 00:05:06,476
+Apple has three developer
+programs, iOS, Mac and Safari.
+
+
+102
+00:05:08,606 --> 00:05:11,446
+Each one allows you to obtain
+the signing assets required
+
+
+103
+00:05:11,916 --> 00:05:13,306
+to build for those platforms.
+
+
+104
+00:05:13,996 --> 00:05:17,686
+In the iOS and Mac Developer
+Program begin the process
+
+
+105
+00:05:17,686 --> 00:05:20,276
+of allowing you to submit
+applications for review.
+
+
+106
+00:05:21,796 --> 00:05:25,646
+Once you've joined the developer
+program you'll have an Apple ID
+
+
+107
+00:05:25,646 --> 00:05:27,066
+account that is associated
+
+
+108
+00:05:27,286 --> 00:05:29,366
+with a development team
+in the Member Center.
+
+
+109
+00:05:30,156 --> 00:05:32,576
+This allows you to log
+in to the Member Center
+
+
+110
+00:05:32,886 --> 00:05:34,856
+where you can request
+signing certificates
+
+
+111
+00:05:35,136 --> 00:05:36,336
+and provisioning profiles.
+
+
+112
+00:05:37,246 --> 00:05:40,066
+But really you should use
+the integration Xcode has.
+
+
+113
+00:05:40,676 --> 00:05:43,026
+Xcode has had integration
+with the Member Center
+
+
+114
+00:05:43,026 --> 00:05:43,966
+for some time now
+
+
+115
+00:05:43,966 --> 00:05:47,286
+for automatically downloading
+your signing assets,
+
+
+116
+00:05:47,906 --> 00:05:48,676
+so you should use this.
+
+
+117
+00:05:49,676 --> 00:05:53,036
+In Xcode 5, we've made a number
+of changes to how this works,
+
+
+118
+00:05:53,486 --> 00:05:56,846
+to make obtaining your signing
+assets easier and faster
+
+
+119
+00:05:57,276 --> 00:05:59,146
+and also to make it easier
+
+
+120
+00:05:59,146 --> 00:06:01,586
+to diagnose problems
+as they crop up.
+
+
+121
+00:06:02,256 --> 00:06:05,306
+To begin telling you about
+these changes, I'd like to talk
+
+
+122
+00:06:05,306 --> 00:06:07,026
+about the changes
+that we've made
+
+
+123
+00:06:07,026 --> 00:06:09,856
+to how we use your Apple
+ID accounts in Xcode.
+
+
+124
+00:06:12,116 --> 00:06:13,336
+Who's seen this before?
+
+
+125
+00:06:15,646 --> 00:06:18,146
+Yes. [chuckles] So this
+is what we would show you
+
+
+126
+00:06:18,146 --> 00:06:20,776
+in Xcode 4 whenever we
+needed to authenticate
+
+
+127
+00:06:20,776 --> 00:06:21,576
+with the Member Center.
+
+
+128
+00:06:22,366 --> 00:06:24,426
+We'd ask you for the
+username and password
+
+
+129
+00:06:24,886 --> 00:06:26,736
+of the Apple ID account
+that you use
+
+
+130
+00:06:26,736 --> 00:06:28,116
+for your developer
+program membership.
+
+
+131
+00:06:28,976 --> 00:06:32,076
+And we would ask you for
+this every single time.
+
+
+132
+00:06:32,176 --> 00:06:34,736
+So if you use the
+Member Center a lot
+
+
+133
+00:06:34,736 --> 00:06:37,246
+in Xcode you would see this
+sheet quite frequently.
+
+
+134
+00:06:38,966 --> 00:06:41,666
+Also I know a lot of
+you are contractors
+
+
+135
+00:06:41,666 --> 00:06:43,806
+and may have multiple
+Apple ID accounts.
+
+
+136
+00:06:44,176 --> 00:06:46,036
+With this UI, it's
+not always clear
+
+
+137
+00:06:46,036 --> 00:06:47,196
+which account you should use
+
+
+138
+00:06:47,776 --> 00:06:50,186
+and it isn't clear what
+we're going to use that for.
+
+
+139
+00:06:51,106 --> 00:06:55,206
+In Xcode 5 we have now dedicated
+space in Xcode's preferences
+
+
+140
+00:06:55,526 --> 00:06:58,306
+for managing all of the
+account that you use in Xcode
+
+
+141
+00:06:58,306 --> 00:07:01,346
+for your development
+including Apple ID accounts.
+
+
+142
+00:07:01,856 --> 00:07:05,986
+We make it really easy to add
+accounts and to view details
+
+
+143
+00:07:05,986 --> 00:07:06,946
+about that information.
+
+
+144
+00:07:07,506 --> 00:07:10,516
+And once you've entered in an
+account, we will not ask you
+
+
+145
+00:07:10,516 --> 00:07:11,576
+for the password again.
+
+
+146
+00:07:12,446 --> 00:07:17,636
+[applause] So I'd
+like to show you some
+
+
+147
+00:07:17,636 --> 00:07:19,336
+of these changes
+instead of talking
+
+
+148
+00:07:19,336 --> 00:07:20,736
+about them with a quick demo.
+
+
+149
+00:07:20,796 --> 00:07:23,346
+I'm going to hop over
+to my demo machine.
+
+
+150
+00:07:23,986 --> 00:07:26,956
+So I've got a copy of Xcode here
+
+
+151
+00:07:27,396 --> 00:07:30,266
+and to view the accounts
+information I just go
+
+
+152
+00:07:30,266 --> 00:07:31,366
+to Xcode's preferences.
+
+
+153
+00:07:32,246 --> 00:07:34,976
+To do that I just click
+Xcode in the Menu bar
+
+
+154
+00:07:35,066 --> 00:07:38,406
+and choose Preferences.
+
+
+155
+00:07:38,526 --> 00:07:44,706
+At this point you can see
+that there are a few accounts
+
+
+156
+00:07:44,706 --> 00:07:46,066
+that Xcode already knows about.
+
+
+157
+00:07:46,836 --> 00:07:48,826
+These are some source
+control repositories
+
+
+158
+00:07:49,286 --> 00:07:50,086
+that I have entered in.
+
+
+159
+00:07:50,086 --> 00:07:55,776
+To add an Apple ID account,
+I just click the plus button
+
+
+160
+00:07:56,216 --> 00:08:02,326
+in the Source list and
+choice Add Apple ID.
+
+
+161
+00:08:02,326 --> 00:08:04,246
+I enter in the log
+in information
+
+
+162
+00:08:04,246 --> 00:08:10,426
+from my developer program
+Apple ID, and choose Add.
+
+
+163
+00:08:10,426 --> 00:08:20,306
+And now Xcode knows about that
+account and will not ask me
+
+
+164
+00:08:20,686 --> 00:08:24,316
+for the password again.
+
+
+165
+00:08:24,466 --> 00:08:26,566
+You can see we display a
+little bit of information
+
+
+166
+00:08:26,566 --> 00:08:28,476
+about the account on
+the right-hand side.
+
+
+167
+00:08:29,776 --> 00:08:32,626
+The most important thing that
+we display here is the list
+
+
+168
+00:08:32,626 --> 00:08:35,826
+of the teams that this
+account is a member of.
+
+
+169
+00:08:36,086 --> 00:08:38,606
+Now, I know a lot of you
+have individual memberships
+
+
+170
+00:08:38,716 --> 00:08:40,956
+in the developer program so
+you're probably thinking,
+
+
+171
+00:08:41,635 --> 00:08:42,676
+"What's this development team?"
+
+
+172
+00:08:43,356 --> 00:08:46,176
+Well, whenever, you join that
+you have a team created for you.
+
+
+173
+00:08:46,266 --> 00:08:48,496
+It's probably your name and it
+will be listed here as well.
+
+
+174
+00:08:49,306 --> 00:08:51,876
+For those of you who
+have used your Apple ID
+
+
+175
+00:08:51,876 --> 00:08:55,486
+to join multiple teams, you'll
+see all the teams listed here
+
+
+176
+00:08:56,256 --> 00:08:58,956
+and you also see the role
+that your account plays.
+
+
+177
+00:09:00,226 --> 00:09:02,946
+Each account in a development
+team has a different role
+
+
+178
+00:09:02,946 --> 00:09:06,376
+and the basic idea is there
+are varying permission levels
+
+
+179
+00:09:06,376 --> 00:09:09,016
+for the types of signing assets
+that an account is allowed
+
+
+180
+00:09:09,016 --> 00:09:13,406
+to create and assigning
+roles allows you to do that.
+
+
+181
+00:09:13,656 --> 00:09:16,746
+We also have some UI for
+viewing the signing details
+
+
+182
+00:09:17,156 --> 00:09:19,936
+about the varying signing
+assets that you have for a team
+
+
+183
+00:09:19,936 --> 00:09:20,986
+and you can get at that
+
+
+184
+00:09:20,986 --> 00:09:22,366
+by clicking the View
+Details button.
+
+
+185
+00:09:23,036 --> 00:09:24,656
+We'll cover this later
+on in this session.
+
+
+186
+00:09:26,436 --> 00:09:28,036
+So that's how you
+add an account.
+
+
+187
+00:09:28,786 --> 00:09:30,256
+You can see it's
+pretty straightforward,
+
+
+188
+00:09:30,866 --> 00:09:34,066
+and the good news is if you've
+used Xcode 4 in the past
+
+
+189
+00:09:34,376 --> 00:09:37,126
+and you checked that saved in
+keychain option on that log
+
+
+190
+00:09:37,126 --> 00:09:40,026
+in sheet, will automatically
+import those accounts here.
+
+
+191
+00:09:40,026 --> 00:09:43,876
+So you don't even have
+to add your account.
+
+
+192
+00:09:44,046 --> 00:09:46,436
+Now, this UI is not just
+about making it easier
+
+
+193
+00:09:46,436 --> 00:09:47,806
+to manage multiple Apple IDs.
+
+
+194
+00:09:47,806 --> 00:09:50,386
+We've also made it
+easy to migrate
+
+
+195
+00:09:50,386 --> 00:09:51,756
+to a new development machine.
+
+
+196
+00:09:54,576 --> 00:09:57,346
+Right now it's pretty easy
+to get into a situation
+
+
+197
+00:09:57,346 --> 00:10:00,126
+where you can't build your apps
+when you move to a new machine.
+
+
+198
+00:10:00,726 --> 00:10:02,556
+You try to build and
+you'll get an error about
+
+
+199
+00:10:02,746 --> 00:10:04,456
+"No valid signing
+identity found."
+
+
+200
+00:10:05,526 --> 00:10:07,496
+What that means is
+you probably forgot
+
+
+201
+00:10:07,496 --> 00:10:09,716
+to bring your private key
+along from your old machine
+
+
+202
+00:10:09,836 --> 00:10:11,876
+to your new one and this is
+
+
+203
+00:10:11,876 --> 00:10:14,276
+because Apple does not have
+a copy of your private key,
+
+
+204
+00:10:14,616 --> 00:10:17,116
+so you need to move it along
+to any development machines
+
+
+205
+00:10:17,586 --> 00:10:19,636
+as you change machines
+to work on.
+
+
+206
+00:10:20,726 --> 00:10:23,446
+And we wanted to make this
+process really straight forward,
+
+
+207
+00:10:24,096 --> 00:10:26,896
+and we also wanted to
+bring along all the account
+
+
+208
+00:10:26,896 --> 00:10:28,256
+information that we
+have stored here.
+
+
+209
+00:10:28,916 --> 00:10:32,546
+So it is now possible to export
+all of the account information
+
+
+210
+00:10:32,546 --> 00:10:36,206
+that Xcode has in the signing
+assets that go along with them.
+
+
+211
+00:10:36,706 --> 00:10:38,356
+So we'll take your
+signing identities
+
+
+212
+00:10:38,766 --> 00:10:42,126
+which include your private keys
+and your provisioning profiles.
+
+
+213
+00:10:42,676 --> 00:10:44,196
+We'll bundle that
+up with the list
+
+
+214
+00:10:44,196 --> 00:10:47,146
+of the accounts including
+their username their passwords.
+
+
+215
+00:10:47,846 --> 00:10:50,426
+We'll stash that in a single
+password protected file
+
+
+216
+00:10:50,426 --> 00:10:54,006
+that we then hand off to you
+and you can take that file,
+
+
+217
+00:10:54,356 --> 00:10:57,256
+airdrop it to your new
+Mac, double click the file
+
+
+218
+00:10:57,256 --> 00:11:00,186
+and Xcode will automatically
+import the contains.
+
+
+219
+00:11:01,256 --> 00:11:03,886
+This means that you can hit
+build in your new project,
+
+
+220
+00:11:04,346 --> 00:11:05,926
+or rather your existing project,
+
+
+221
+00:11:06,276 --> 00:11:08,926
+and get the exact same code
+signing behavior that you had
+
+
+222
+00:11:08,926 --> 00:11:11,176
+on your old machine and
+in a matter of minutes.
+
+
+223
+00:11:11,176 --> 00:11:12,806
+And this is really easy.
+
+
+224
+00:11:13,296 --> 00:11:16,296
+To export your accounts, you
+just click on the Gear button
+
+
+225
+00:11:16,436 --> 00:11:19,356
+in the Source list and
+choose export accounts.
+
+
+226
+00:11:20,916 --> 00:11:25,136
+Type in filename and enter in
+a password to secure the file,
+
+
+227
+00:11:25,136 --> 00:11:30,756
+type it in again for
+verification and choose save.
+
+
+228
+00:11:32,636 --> 00:11:36,256
+And just like that Xcode has
+now given me a developer profile
+
+
+229
+00:11:36,256 --> 00:11:38,406
+that I can take to my
+new machine and import.
+
+
+230
+00:11:39,356 --> 00:11:41,626
+So you can see, it's really
+straightforward to move
+
+
+231
+00:11:41,626 --> 00:11:44,336
+to a new machine and
+you can also use this
+
+
+232
+00:11:44,686 --> 00:11:46,216
+to update your development
+machines.
+
+
+233
+00:11:46,316 --> 00:11:47,996
+If you get some new
+signing identities,
+
+
+234
+00:11:47,996 --> 00:11:50,496
+you can export your
+accounts and reimport them
+
+
+235
+00:11:50,896 --> 00:11:53,546
+in your other development
+machines to make sure
+
+
+236
+00:11:53,546 --> 00:11:55,186
+that your signing
+identities are always
+
+
+237
+00:11:55,636 --> 00:11:57,256
+in a current state
+on each machine.
+
+
+238
+00:11:57,756 --> 00:12:02,696
+So that's the account section
+so I'll go back over to slides.
+
+
+239
+00:12:05,476 --> 00:12:09,086
+And one thing to note here is
+the accounts UI is not just
+
+
+240
+00:12:09,086 --> 00:12:10,856
+about making it really
+convenient
+
+
+241
+00:12:10,856 --> 00:12:12,096
+to have multiple accounts
+
+
+242
+00:12:12,096 --> 00:12:14,696
+or to view information
+about those accounts.
+
+
+243
+00:12:16,206 --> 00:12:19,056
+It's really the most visible
+part of a number of changes
+
+
+244
+00:12:19,056 --> 00:12:21,166
+that we've made throughout
+Xcode's infrastructure
+
+
+245
+00:12:21,166 --> 00:12:24,776
+for using your accounts and
+for using your signing assets.
+
+
+246
+00:12:25,996 --> 00:12:29,056
+This means that Xcode can give
+you better error messages.
+
+
+247
+00:12:29,556 --> 00:12:32,156
+Instead of saying, "no valid
+signing identities found,"
+
+
+248
+00:12:32,476 --> 00:12:34,116
+we can tell you your
+private key is missing.
+
+
+249
+00:12:34,826 --> 00:12:36,146
+One's actionable, one's not.
+
+
+250
+00:12:37,276 --> 00:12:39,276
+[applause] Yeah, I'm pretty
+excited about that too.
+
+
+251
+00:12:41,866 --> 00:12:44,026
+This also means that we can
+be helpful whenever your
+
+
+252
+00:12:44,026 --> 00:12:46,226
+configuring your
+project to take advantage
+
+
+253
+00:12:46,226 --> 00:12:48,016
+of platform features
+like iCloud.
+
+
+254
+00:12:48,316 --> 00:12:50,046
+We'll set up your
+provisioning profiles
+
+
+255
+00:12:50,046 --> 00:12:51,866
+and all the other
+details that you need
+
+
+256
+00:12:51,866 --> 00:12:53,646
+so you can begin
+writing your code.
+
+
+257
+00:12:54,396 --> 00:12:56,566
+To give you a tour of the
+changes that we've made
+
+
+258
+00:12:56,566 --> 00:12:59,316
+in the project editor for this
+I'd like to turn this stage
+
+
+259
+00:12:59,316 --> 00:13:00,556
+over to my colleague
+Itai [phonetic],
+
+
+260
+00:13:00,796 --> 00:13:01,886
+who's going to show
+you these things.
+
+
+261
+00:13:02,356 --> 00:13:02,656
+Thank you.
+
+
+262
+00:13:03,156 --> 00:13:09,576
+[ Applause ]
+
+
+263
+00:13:10,076 --> 00:13:12,076
+>> Good morning everybody,
+
+
+264
+00:13:12,716 --> 00:13:15,336
+as Joshua mentioned we've
+added some great new features
+
+
+265
+00:13:15,336 --> 00:13:17,796
+to the project editor
+in Xcode 5.
+
+
+266
+00:13:18,146 --> 00:13:20,796
+We want the tools to help you
+configure your applications
+
+
+267
+00:13:20,796 --> 00:13:24,086
+efficiently so that you can
+devote more time to development.
+
+
+268
+00:13:24,086 --> 00:13:28,416
+One of the areas that we've
+focused on is capabilities.
+
+
+269
+00:13:29,246 --> 00:13:32,766
+Capabilities are platform
+features such as iCloud
+
+
+270
+00:13:32,766 --> 00:13:36,476
+or Game Center that you can make
+use of in your applications.
+
+
+271
+00:13:37,146 --> 00:13:39,826
+These are often features that
+make your apps more appealing
+
+
+272
+00:13:39,826 --> 00:13:42,556
+or useful to your customers
+so we want you to use them,
+
+
+273
+00:13:42,756 --> 00:13:45,116
+and we want the tools to
+make it easy to set them up.
+
+
+274
+00:13:45,966 --> 00:13:48,106
+That said how many of you
+have tried to take advantage
+
+
+275
+00:13:48,106 --> 00:13:50,156
+of capabilities such
+as iCloud in one
+
+
+276
+00:13:50,156 --> 00:13:51,496
+of your applications
+in the past?
+
+
+277
+00:13:51,836 --> 00:13:53,786
+I see a few hands.
+
+
+278
+00:13:54,066 --> 00:13:56,846
+If you've done so then you know
+that the process for setting
+
+
+279
+00:13:56,846 --> 00:14:01,266
+that up could often be complex,
+time consuming, and error prone.
+
+
+280
+00:14:02,006 --> 00:14:04,066
+So let's take a look
+at a few examples.
+
+
+281
+00:14:04,576 --> 00:14:06,816
+When you want to set up iCloud
+
+
+282
+00:14:06,816 --> 00:14:09,096
+in your application the first
+thing you need to do is sign
+
+
+283
+00:14:09,096 --> 00:14:10,146
+in to the Member Center
+
+
+284
+00:14:10,796 --> 00:14:13,516
+and download a new provisioning
+profile with iCloud enabled.
+
+
+285
+00:14:14,276 --> 00:14:15,926
+Then you need to
+hop back into Xcode,
+
+
+286
+00:14:16,166 --> 00:14:18,846
+create an entitlements file
+if you don't already have one
+
+
+287
+00:14:18,846 --> 00:14:21,676
+and enter in the appropriate
+iCloud specific entitlements.
+
+
+288
+00:14:22,906 --> 00:14:23,976
+So that's just iCloud.
+
+
+289
+00:14:23,976 --> 00:14:24,956
+What about Game Center?
+
+
+290
+00:14:25,516 --> 00:14:28,236
+When you want to use Game Center
+you need to follow a similar set
+
+
+291
+00:14:28,236 --> 00:14:29,976
+of steps but the
+details are different.
+
+
+292
+00:14:30,726 --> 00:14:33,066
+You still need a provisioning
+profile but now you also need
+
+
+293
+00:14:33,066 --> 00:14:35,896
+to link in a framework and
+maybe make some modifications
+
+
+294
+00:14:35,896 --> 00:14:38,346
+to your info.plist.
+
+
+295
+00:14:38,506 --> 00:14:40,816
+Maps integration and
+in-app purchase come
+
+
+296
+00:14:40,816 --> 00:14:42,646
+with another similar but
+slightly different set
+
+
+297
+00:14:42,646 --> 00:14:45,076
+of configuration steps
+and these aren't even all
+
+
+298
+00:14:45,076 --> 00:14:46,646
+of the capabilities
+that you can make use
+
+
+299
+00:14:46,646 --> 00:14:48,216
+of in your apps,
+it's just a subset.
+
+
+300
+00:14:48,616 --> 00:14:51,676
+Each one has its own unique
+set of configuration steps.
+
+
+301
+00:14:51,926 --> 00:14:54,006
+You need to perform
+them all correctly.
+
+
+302
+00:14:54,586 --> 00:14:57,406
+Now, none of this
+is rocket science
+
+
+303
+00:14:57,406 --> 00:15:00,796
+but as you might imagine the
+more apps you develop the more
+
+
+304
+00:15:00,796 --> 00:15:03,216
+capabilities you take advantage
+of, the more time you'll have
+
+
+305
+00:15:03,246 --> 00:15:05,666
+to devote to these
+configuration tasks.
+
+
+306
+00:15:06,606 --> 00:15:08,526
+Not only that, but if
+you make a mistake,
+
+
+307
+00:15:08,696 --> 00:15:10,806
+your application may
+not launch and you need
+
+
+308
+00:15:10,806 --> 00:15:12,916
+to spend more time
+debugging that issue.
+
+
+309
+00:15:14,046 --> 00:15:16,186
+And keep in mind you
+need to perform all
+
+
+310
+00:15:16,186 --> 00:15:19,176
+of this configuration before
+you can even write a single line
+
+
+311
+00:15:19,176 --> 00:15:21,836
+of code to take advantage
+of a capability.
+
+
+312
+00:15:22,556 --> 00:15:25,966
+So won't it be great if instead
+of you needing to fuss with all
+
+
+313
+00:15:25,966 --> 00:15:29,696
+of these configuration details
+all you had to do is tell Xcode
+
+
+314
+00:15:29,956 --> 00:15:33,786
+which capabilities you intend
+to use and Xcode took care
+
+
+315
+00:15:33,786 --> 00:15:35,066
+of the configuration for you.
+
+
+316
+00:15:36,316 --> 00:15:38,526
+Well, that's what the
+capabilities tab does.
+
+
+317
+00:15:39,086 --> 00:15:40,986
+This is what it looks like.
+
+
+318
+00:15:40,986 --> 00:15:44,486
+As you can see, it's just a new
+tab inside of the project editor
+
+
+319
+00:15:44,846 --> 00:15:47,266
+and when you view it, it shows
+you all of the capabilities
+
+
+320
+00:15:47,266 --> 00:15:49,366
+that are available for
+you to use in your apps.
+
+
+321
+00:15:50,666 --> 00:15:53,876
+When you want to use one,
+all you have to do is hit the
+
+
+322
+00:15:53,876 --> 00:15:57,366
+On switch and Xcode
+will perform all
+
+
+323
+00:15:57,366 --> 00:15:58,506
+of the configuration for you.
+
+
+324
+00:15:58,506 --> 00:15:59,886
+There are no additional steps.
+
+
+325
+00:16:01,386 --> 00:16:02,066
+This-- [applause] Yeah.
+
+
+326
+00:16:05,836 --> 00:16:07,356
+This configuration
+includes things
+
+
+327
+00:16:07,356 --> 00:16:09,716
+like configuration your
+provisioning profiles
+
+
+328
+00:16:09,716 --> 00:16:11,486
+and downloading them
+from the Member Center,
+
+
+329
+00:16:12,066 --> 00:16:14,886
+setting up entitlements,
+modifying your info.plist,
+
+
+330
+00:16:14,996 --> 00:16:17,866
+linking frameworks,
+modifying build settings.
+
+
+331
+00:16:18,566 --> 00:16:19,756
+There's no magic involve.
+
+
+332
+00:16:19,756 --> 00:16:22,076
+Xcode performs all of the
+same steps that you use
+
+
+333
+00:16:22,076 --> 00:16:23,156
+to have to do manually.
+
+
+334
+00:16:23,716 --> 00:16:27,576
+Now, taking the step back,
+one of the really great things
+
+
+335
+00:16:27,576 --> 00:16:30,196
+about this is that you
+don't need to configure all
+
+
+336
+00:16:30,196 --> 00:16:33,046
+of these small details in
+different editors and Xcode
+
+
+337
+00:16:33,046 --> 00:16:34,606
+or in the Member Center anymore.
+
+
+338
+00:16:35,546 --> 00:16:38,186
+All you have to do is
+tell Xcode that you intend
+
+
+339
+00:16:38,186 --> 00:16:40,176
+to use the capability
+by hitting the On switch
+
+
+340
+00:16:40,596 --> 00:16:42,876
+and Xcode takes care
+of the rest.
+
+
+341
+00:16:42,876 --> 00:16:44,466
+It also remembers your intent.
+
+
+342
+00:16:45,026 --> 00:16:46,946
+So if anything goes wrong
+with your configuration
+
+
+343
+00:16:46,946 --> 00:16:49,356
+in the future, Xcode
+can help diagnose
+
+
+344
+00:16:49,356 --> 00:16:50,756
+and resolve those
+issues for you.
+
+
+345
+00:16:51,716 --> 00:16:53,676
+We'll see more of how that
+works a little bit later
+
+
+346
+00:16:53,676 --> 00:16:55,656
+on in this session
+but it's clear
+
+
+347
+00:16:55,656 --> 00:16:58,036
+that the capabilities tab is
+going to make it really simple
+
+
+348
+00:16:58,036 --> 00:17:01,686
+for you to take advantage of
+platform features in your apps.
+
+
+349
+00:17:02,696 --> 00:17:04,576
+Now I'd like to show this
+to you on the demo machine
+
+
+350
+00:17:04,576 --> 00:17:06,366
+but first I want
+to show you a few
+
+
+351
+00:17:06,366 --> 00:17:08,556
+of the other changes we've
+made to project editor.
+
+
+352
+00:17:12,556 --> 00:17:15,455
+We've taken the summary tab
+and renamed it to General
+
+
+353
+00:17:15,886 --> 00:17:17,856
+and we've also cleaned
+up its user interface,
+
+
+354
+00:17:18,156 --> 00:17:21,376
+added some new functionality
+and focused specifically
+
+
+355
+00:17:21,376 --> 00:17:23,896
+on the iOS App icons
+and launch images UI.
+
+
+356
+00:17:24,876 --> 00:17:26,846
+Here's what it used to
+look like in Xcode 4.
+
+
+357
+00:17:27,836 --> 00:17:30,116
+As you can see it's a little
+cluttered and disorganized.
+
+
+358
+00:17:30,426 --> 00:17:33,746
+It's not really easy to tell how
+to use it, what you're supposed
+
+
+359
+00:17:33,746 --> 00:17:35,116
+to do with those
+images UIs [phonetic].
+
+
+360
+00:17:35,206 --> 00:17:37,876
+It's not showing you image
+UI for all of the App icons
+
+
+361
+00:17:37,876 --> 00:17:39,436
+that you should provide
+for your apps
+
+
+362
+00:17:39,436 --> 00:17:41,066
+such as Spotlight
+and Setting icons.
+
+
+363
+00:17:41,476 --> 00:17:43,996
+And sometimes it also doesn't
+show you the right information.
+
+
+364
+00:17:44,606 --> 00:17:47,296
+For example this
+application has App icons
+
+
+365
+00:17:47,996 --> 00:17:50,926
+but the summary tab is
+not showing them to me.
+
+
+366
+00:17:51,106 --> 00:17:53,636
+So we wanted to provide you with
+the better experience for this.
+
+
+367
+00:17:54,336 --> 00:17:56,926
+In Xcode 5 we present you
+
+
+368
+00:17:56,926 --> 00:17:59,996
+with a much simplier
+streamlined table based view
+
+
+369
+00:18:00,236 --> 00:18:02,016
+where each image that
+you need to provide
+
+
+370
+00:18:02,016 --> 00:18:05,376
+for you app is represented by a
+row in the table and it's easy
+
+
+371
+00:18:05,376 --> 00:18:07,916
+to tell which images you
+specified and which are missing
+
+
+372
+00:18:07,916 --> 00:18:10,496
+because Xcode shows you a
+warning badge for the ones
+
+
+373
+00:18:10,496 --> 00:18:11,456
+that you still need to add.
+
+
+374
+00:18:12,846 --> 00:18:14,246
+When you're ready to
+add one you just click
+
+
+375
+00:18:14,246 --> 00:18:15,446
+on the file picker button
+
+
+376
+00:18:15,996 --> 00:18:18,266
+and Xcode will show you a
+familiar file picker sheet
+
+
+377
+00:18:18,396 --> 00:18:20,646
+and you just choose the
+image you want to use.
+
+
+378
+00:18:21,816 --> 00:18:24,646
+In addition to streamlining
+this, we've also built
+
+
+379
+00:18:24,646 --> 00:18:27,336
+in support for the iOS app icons
+and launch images you'll need
+
+
+380
+00:18:27,336 --> 00:18:29,866
+to add when you start
+building apps for iOS 7
+
+
+381
+00:18:29,866 --> 00:18:31,466
+so you can just specify
+those here.
+
+
+382
+00:18:31,886 --> 00:18:35,876
+And finally we've also built
+in support for asset catalogs.
+
+
+383
+00:18:36,766 --> 00:18:38,766
+If you missed the "What's
+New in Xcode 5" session
+
+
+384
+00:18:38,766 --> 00:18:42,056
+from earlier this week, asset
+catalogs are a great new feature
+
+
+385
+00:18:42,056 --> 00:18:45,326
+in Xcode 5 that will help
+you manage all of the images
+
+
+386
+00:18:45,326 --> 00:18:47,626
+for your application
+in one place.
+
+
+387
+00:18:48,896 --> 00:18:52,006
+Xcode 5 comes with a
+dedicated asset catalog editor
+
+
+388
+00:18:52,006 --> 00:18:55,096
+which provides you with a very
+nice streamlined environment
+
+
+389
+00:18:55,276 --> 00:18:58,556
+for viewing and updating your
+images including your App icons
+
+
+390
+00:18:58,556 --> 00:18:59,266
+and launch images.
+
+
+391
+00:19:00,466 --> 00:19:03,486
+It's a simple drag and drop
+interface and you no longer need
+
+
+392
+00:19:03,486 --> 00:19:06,506
+to remember all of the various
+suffices that need to be added
+
+
+393
+00:19:06,506 --> 00:19:09,276
+to launch images in order to
+comply with a naming convention.
+
+
+394
+00:19:09,536 --> 00:19:11,416
+You just need to drag in
+the images you want to use.
+
+
+395
+00:19:12,546 --> 00:19:14,666
+So when you're ready to make
+use of an asset catalog,
+
+
+396
+00:19:14,946 --> 00:19:17,216
+the general tab makes
+it just one click away.
+
+
+397
+00:19:17,216 --> 00:19:20,026
+You just have to click, click
+the use asset catalog button
+
+
+398
+00:19:20,586 --> 00:19:22,956
+and the general tab will
+copy all of your app icons
+
+
+399
+00:19:22,956 --> 00:19:24,876
+and launch images into
+a new asset catalog.
+
+
+400
+00:19:26,086 --> 00:19:28,696
+So let's take a look, let's
+take a look at how that works.
+
+
+401
+00:19:31,426 --> 00:19:33,576
+[applause] So here we are back
+at Xcode's welcome screen,
+
+
+402
+00:19:34,106 --> 00:19:36,426
+and one of the things we've
+like to show you over the course
+
+
+403
+00:19:36,426 --> 00:19:38,736
+of this session is how
+Xcode makes it really easy
+
+
+404
+00:19:38,736 --> 00:19:41,696
+to create a brand new
+application, configure it
+
+
+405
+00:19:41,846 --> 00:19:44,216
+and then eventually archive
+and submit it to the App store.
+
+
+406
+00:19:44,816 --> 00:19:48,756
+So I'm going to start off by
+creating a new application.
+
+
+407
+00:19:48,756 --> 00:19:51,446
+I'll do that by hitting the
+Create A New Xcode Project
+
+
+408
+00:19:51,446 --> 00:19:53,916
+button on the welcome window
+
+
+409
+00:19:54,576 --> 00:19:56,536
+and then Xcode will show
+me its template assistant.
+
+
+410
+00:19:57,876 --> 00:20:02,126
+Xcode comes prepackaged with
+a variety of starting points,
+
+
+411
+00:20:02,126 --> 00:20:05,006
+excuse me for various
+types of products
+
+
+412
+00:20:05,066 --> 00:20:07,646
+that you can build
+including iOS applications.
+
+
+413
+00:20:07,926 --> 00:20:10,646
+So, here we can see
+the list of templates
+
+
+414
+00:20:10,646 --> 00:20:12,336
+that Xcode comes
+packaged with for iOS.
+
+
+415
+00:20:12,336 --> 00:20:15,136
+And I can just choose
+one and hit Next.
+
+
+416
+00:20:15,376 --> 00:20:17,506
+In this case I'll choose
+Master Detail Application.
+
+
+417
+00:20:18,356 --> 00:20:24,466
+I'll give my App a name,
+"Crazy notes", and hit Next.
+
+
+418
+00:20:24,466 --> 00:20:26,356
+And I'll just put
+this on the Desktop
+
+
+419
+00:20:26,816 --> 00:20:28,046
+and I'll hit the Create button.
+
+
+420
+00:20:28,626 --> 00:20:32,386
+Now, Xcode has created my
+brand new iOS application.
+
+
+421
+00:20:33,386 --> 00:20:36,216
+Now, by Default, Xcode
+opens to the project editor
+
+
+422
+00:20:36,306 --> 00:20:40,046
+for a new App, so that you can
+immediately begin making project
+
+
+423
+00:20:40,106 --> 00:20:41,306
+configuration changes.
+
+
+424
+00:20:42,166 --> 00:20:44,396
+The first thing I'd like
+to do is to enable my App
+
+
+425
+00:20:44,396 --> 00:20:46,386
+to use iCloud because
+I plan to use iCloud.
+
+
+426
+00:20:46,936 --> 00:20:49,746
+So, to do that I'll click
+on the Capabilities tab
+
+
+427
+00:20:49,746 --> 00:20:53,816
+and I will see the same
+interface that we saw
+
+
+428
+00:20:53,816 --> 00:20:54,926
+in the slides a moment ago.
+
+
+429
+00:20:55,486 --> 00:20:57,986
+Xcode shows me all
+of the capabilities
+
+
+430
+00:20:57,986 --> 00:20:59,536
+that are available
+for use in my App.
+
+
+431
+00:21:00,786 --> 00:21:02,576
+If I want to see more
+information about one,
+
+
+432
+00:21:03,096 --> 00:21:05,976
+all I have to do is click this
+Disclosure Triangle by its name
+
+
+433
+00:21:06,216 --> 00:21:08,136
+and Xcode will show me a
+brief description of what
+
+
+434
+00:21:08,136 --> 00:21:10,186
+that Capability does as long
+
+
+435
+00:21:10,186 --> 00:21:11,976
+as the steps involved
+and enabling it.
+
+
+436
+00:21:12,566 --> 00:21:15,946
+So, as you can see, when I hit
+the On switch to enable iCloud,
+
+
+437
+00:21:16,176 --> 00:21:18,446
+Xcode is going to perform
+the same tasks we saw
+
+
+438
+00:21:18,446 --> 00:21:19,416
+in the slides earlier.
+
+
+439
+00:21:19,696 --> 00:21:21,506
+It's going to sign in
+to the Member Center
+
+
+440
+00:21:21,506 --> 00:21:24,136
+and download a provisioning
+profile and it's also going
+
+
+441
+00:21:24,136 --> 00:21:25,746
+to update my entitlements.
+
+
+442
+00:21:26,436 --> 00:21:33,786
+So, I want to use iCloud,
+let's go ahead and turn it on.
+
+
+443
+00:21:33,886 --> 00:21:38,436
+OK, now as I said earlier,
+when enabling iCloud,
+
+
+444
+00:21:38,436 --> 00:21:40,426
+Xcode needs to communicate
+with the Member Center
+
+
+445
+00:21:40,426 --> 00:21:42,346
+to download a provisioning
+profile for me.
+
+
+446
+00:21:43,126 --> 00:21:45,836
+So, the first thing, the key
+piece of information it needs
+
+
+447
+00:21:45,836 --> 00:21:47,906
+to know in order to
+perform that task is
+
+
+448
+00:21:47,906 --> 00:21:50,466
+which development
+team I'd like to use.
+
+
+449
+00:21:51,496 --> 00:21:54,706
+The Capabilities tab makes use
+of the accounts integration
+
+
+450
+00:21:54,706 --> 00:21:57,836
+that Joshua showed you
+earlier, both when communicating
+
+
+451
+00:21:57,836 --> 00:22:00,586
+with the Member Center and
+also in showing you this list
+
+
+452
+00:22:00,586 --> 00:22:02,136
+of teams from which
+you can choose.
+
+
+453
+00:22:02,256 --> 00:22:04,166
+So, you don't need to
+type in anything manually,
+
+
+454
+00:22:04,576 --> 00:22:06,636
+we already know all of the
+teams that you want to use
+
+
+455
+00:22:06,636 --> 00:22:10,906
+because you specified
+them in the account.
+
+
+456
+00:22:10,906 --> 00:22:12,976
+So, I can simply select
+a team from this list
+
+
+457
+00:22:13,296 --> 00:22:16,516
+and one thing I should point out
+is if I had multiple Apple IDs,
+
+
+458
+00:22:16,956 --> 00:22:18,786
+I would see all of
+those Apple IDs listed
+
+
+459
+00:22:18,786 --> 00:22:22,326
+in this pop-up Menu along with
+the teams that they belong to.
+
+
+460
+00:22:22,516 --> 00:22:25,736
+But since we only have one Apple
+ID, we're just showing the teams
+
+
+461
+00:22:25,736 --> 00:22:27,056
+from that-- from that account.
+
+
+462
+00:22:27,646 --> 00:22:30,916
+I'll choose the SDK tools
+team and hit Choose.
+
+
+463
+00:22:32,276 --> 00:22:35,056
+Now, Xcode won't ask me
+development team again
+
+
+464
+00:22:35,056 --> 00:22:37,306
+for this application, it's
+going to remember my selection.
+
+
+465
+00:22:37,406 --> 00:22:40,236
+So, if I enable any other
+Capabilities, I won't be asked
+
+
+466
+00:22:40,316 --> 00:22:42,486
+that again and I can change
+it later if I want to.
+
+
+467
+00:22:42,486 --> 00:22:46,616
+Once Xcode is done communicating
+with the member center,
+
+
+468
+00:22:46,886 --> 00:22:48,946
+we can see that it's
+finished enabling iCloud.
+
+
+469
+00:22:49,806 --> 00:22:50,946
+The steps at the bottom
+
+
+470
+00:22:50,946 --> 00:22:52,966
+of the iCloud section
+now have checkmarks next
+
+
+471
+00:22:52,966 --> 00:22:55,266
+to them indicating that
+Xcode completed those
+
+
+472
+00:22:55,266 --> 00:22:56,176
+steps successfully.
+
+
+473
+00:22:57,636 --> 00:22:59,846
+We can see here in the
+project navigator for example
+
+
+474
+00:22:59,846 --> 00:23:01,636
+that it's created a
+new entitlements file
+
+
+475
+00:23:01,926 --> 00:23:03,756
+with the iCloud entitlements
+that I'll need.
+
+
+476
+00:23:04,366 --> 00:23:07,586
+Now, there's also some
+new UI that's appeared
+
+
+477
+00:23:07,586 --> 00:23:08,546
+in the iCloud section.
+
+
+478
+00:23:09,216 --> 00:23:12,736
+Some Capabilities have optional
+features that you might want
+
+
+479
+00:23:12,736 --> 00:23:15,756
+to configure yourself such
+as using the key-value store
+
+
+480
+00:23:15,756 --> 00:23:19,996
+for iCloud or specifying some
+custom container identifiers.
+
+
+481
+00:23:21,016 --> 00:23:23,116
+We show you interface
+
+
+482
+00:23:23,116 --> 00:23:25,566
+for managing those options
+right alongside the rest
+
+
+483
+00:23:25,566 --> 00:23:27,686
+of the Capability so
+that you can make all
+
+
+484
+00:23:27,686 --> 00:23:31,196
+of your Capability configuration
+changes in the Capabilities tab,
+
+
+485
+00:23:31,236 --> 00:23:32,666
+you don't have to
+go anywhere else.
+
+
+486
+00:23:33,966 --> 00:23:36,656
+So, for example, if I want
+to use the key-value store,
+
+
+487
+00:23:36,656 --> 00:23:39,026
+I can just check the box
+
+
+488
+00:23:39,196 --> 00:23:42,216
+and Xcode will modify my
+entitlements file for me.
+
+
+489
+00:23:42,936 --> 00:23:45,236
+Now, my App is fully
+configured to use iCloud.
+
+
+490
+00:23:46,016 --> 00:23:48,296
+You'll notice a few things
+that I didn't have to do.
+
+
+491
+00:23:48,296 --> 00:23:50,236
+I didn't have to sign
+in to the Member Center
+
+
+492
+00:23:50,236 --> 00:23:51,726
+and download a provisioning
+profile.
+
+
+493
+00:23:51,726 --> 00:23:53,726
+I didn't have to go
+to Keychain Access.
+
+
+494
+00:23:53,726 --> 00:23:56,366
+I didn't have to go to any
+other editors in Xcode.
+
+
+495
+00:23:56,366 --> 00:23:58,366
+I did everything I needed to do
+
+
+496
+00:23:58,366 --> 00:23:59,786
+from within the Capabilities
+tab.
+
+
+497
+00:24:00,306 --> 00:24:02,226
+And my application
+is actually ready
+
+
+498
+00:24:02,226 --> 00:24:03,576
+to build and run on my device.
+
+
+499
+00:24:04,316 --> 00:24:07,356
+So, I'm going to go ahead and
+do that by hitting the Build
+
+
+500
+00:24:07,356 --> 00:24:09,116
+and Run button in
+Xcode's toolbar.
+
+
+501
+00:24:10,336 --> 00:24:12,576
+And my device is locked,
+so I'll unlock it first.
+
+
+502
+00:24:12,846 --> 00:24:15,646
+And we'll try that again.
+
+
+503
+00:24:16,516 --> 00:24:19,626
+Now, we can see that Xcode
+is building my application.
+
+
+504
+00:24:19,866 --> 00:24:21,336
+It's shipping it
+over to my device
+
+
+505
+00:24:21,336 --> 00:24:23,396
+and in a few moments
+we'll see it launch.
+
+
+506
+00:24:23,396 --> 00:24:25,526
+I'll just hold this
+up, so we can see
+
+
+507
+00:24:25,526 --> 00:24:28,626
+that it launches,
+and there it goes.
+
+
+508
+00:24:28,796 --> 00:24:32,796
+Screen turns white and that's
+my new master detail application
+
+
+509
+00:24:32,796 --> 00:24:36,866
+with iCloud enabled,
+and it's launched.
+
+
+510
+00:24:37,366 --> 00:24:40,026
+[ Applause ]
+
+
+511
+00:24:40,526 --> 00:24:43,416
+Now, those of you who have
+made use of the capabilities
+
+
+512
+00:24:43,416 --> 00:24:46,106
+such as iCloud in the past might
+recognize that as the point
+
+
+513
+00:24:46,106 --> 00:24:49,286
+where if you made a mistake,
+your app won't launch
+
+
+514
+00:24:49,286 --> 00:24:51,346
+and you need to start
+debugging entitlements issues.
+
+
+515
+00:24:52,116 --> 00:24:54,286
+With the Capabilities tab,
+that's the thing of the past,
+
+
+516
+00:24:54,536 --> 00:24:56,346
+every thing's configured
+correctly.
+
+
+517
+00:24:56,866 --> 00:24:59,086
+So, your application
+can immediately launch
+
+
+518
+00:24:59,136 --> 00:25:00,356
+after you enable iCloud.
+
+
+519
+00:25:00,356 --> 00:25:05,096
+Now, let's go back to the
+Capabilities tab and take a look
+
+
+520
+00:25:05,096 --> 00:25:07,006
+at one of the other
+Capabilities available here.
+
+
+521
+00:25:07,506 --> 00:25:11,886
+There's a new feature in iOS
+7 called "Background fetch"
+
+
+522
+00:25:11,886 --> 00:25:14,906
+and I want my App to be able
+to take advantage of that.
+
+
+523
+00:25:14,906 --> 00:25:16,466
+So that it can download
+information
+
+
+524
+00:25:16,466 --> 00:25:18,866
+over the network while it's
+running in the background.
+
+
+525
+00:25:19,616 --> 00:25:22,706
+In order to enable that, I
+would need to make modification
+
+
+526
+00:25:22,786 --> 00:25:23,926
+to my info.plist file.
+
+
+527
+00:25:24,146 --> 00:25:25,576
+And first, I'd probably
+have to look
+
+
+528
+00:25:25,576 --> 00:25:28,566
+up documentation explaining
+what exactly I needed to do.
+
+
+529
+00:25:28,976 --> 00:25:30,466
+So that takes a little
+bit of time.
+
+
+530
+00:25:30,956 --> 00:25:32,716
+With the Capabilities
+tab, I don't have
+
+
+531
+00:25:32,776 --> 00:25:33,796
+to do any of that anymore.
+
+
+532
+00:25:34,106 --> 00:25:36,836
+All I have to do is enable
+the Capability by hitting the
+
+
+533
+00:25:36,836 --> 00:25:42,236
+On switch and then I can choose
+the Background Fetch option.
+
+
+534
+00:25:42,786 --> 00:25:44,956
+And we can see from
+the list of steps below
+
+
+535
+00:25:44,956 --> 00:25:47,106
+that Xcode has modified
+my info.plist for me.
+
+
+536
+00:25:47,446 --> 00:25:49,556
+So, I didn't have to look
+up the documentation or go
+
+
+537
+00:25:49,556 --> 00:25:51,026
+to any other editors in Xcode.
+
+
+538
+00:25:51,346 --> 00:25:53,796
+And now, I can just start
+writing my code to make use
+
+
+539
+00:25:53,796 --> 00:25:55,056
+of Background Fetch on iCloud.
+
+
+540
+00:25:55,106 --> 00:25:57,796
+I didn't have to
+go anywhere else.
+
+
+541
+00:25:57,796 --> 00:25:59,916
+I did everything from
+the Capabilities tab.
+
+
+542
+00:26:00,286 --> 00:26:01,836
+So, as I've shown you,
+
+
+543
+00:26:02,086 --> 00:26:05,326
+the Capabilities tab makes it
+really easy to take advantage
+
+
+544
+00:26:05,326 --> 00:26:07,336
+of these platform
+features, all you have
+
+
+545
+00:26:07,336 --> 00:26:08,716
+to do is hit a single switch.
+
+
+546
+00:26:09,286 --> 00:26:15,196
+Now, let's look at some of the
+changes in the General tab.
+
+
+547
+00:26:17,456 --> 00:26:20,416
+The first thing I'd like to
+highlight is this team pop-up
+
+
+548
+00:26:20,416 --> 00:26:21,556
+in the identity section.
+
+
+549
+00:26:22,656 --> 00:26:25,496
+If I ever want to go back and
+change the team that I selected
+
+
+550
+00:26:25,496 --> 00:26:27,076
+when I enabled the Capability,
+
+
+551
+00:26:27,076 --> 00:26:28,726
+I can do that from
+this Pop-up button.
+
+
+552
+00:26:29,026 --> 00:26:31,706
+All I have to do is choose a
+different team and these shows
+
+
+553
+00:26:31,706 --> 00:26:33,256
+that same list of
+teams that we would see
+
+
+554
+00:26:33,256 --> 00:26:36,786
+in the Accounts.prefPane or in
+that sheets that came up earlier
+
+
+555
+00:26:36,786 --> 00:26:37,756
+when we enabled iCloud.
+
+
+556
+00:26:38,266 --> 00:26:41,436
+For now, I'll leave it with
+the team I previously selected.
+
+
+557
+00:26:41,736 --> 00:26:45,996
+Scrolling down a little,
+we can see the new App icon
+
+
+558
+00:26:45,996 --> 00:26:48,116
+in launch images UI that
+we saw in the slides.
+
+
+559
+00:26:48,586 --> 00:26:50,316
+And it's easy to
+tell at a glance
+
+
+560
+00:26:50,316 --> 00:26:52,576
+that I'm missing
+some of my images.
+
+
+561
+00:26:52,576 --> 00:26:54,826
+For example, my iPhone
+non-retina image has a
+
+
+562
+00:26:54,826 --> 00:26:55,596
+warning icon.
+
+
+563
+00:26:56,556 --> 00:26:59,816
+When I'm ready to add it I
+can just click the file picker
+
+
+564
+00:26:59,816 --> 00:27:02,606
+button and Xcode will show me
+a familiar file picker sheet
+
+
+565
+00:27:02,876 --> 00:27:05,086
+that confuse any image
+from within my project
+
+
+566
+00:27:05,086 --> 00:27:07,686
+or from anywhere else
+on my Mac and add it
+
+
+567
+00:27:07,686 --> 00:27:11,586
+and that's all I need to do.
+
+
+568
+00:27:11,836 --> 00:27:14,126
+In addition, you'll see there
+are some rows in these tables
+
+
+569
+00:27:14,176 --> 00:27:16,266
+for iOS 7 App icons
+and launch images.
+
+
+570
+00:27:16,266 --> 00:27:18,116
+So, you can just use the same UI
+
+
+571
+00:27:18,216 --> 00:27:21,226
+to add those when
+you adopt iOS7.
+
+
+572
+00:27:21,226 --> 00:27:24,186
+And finally, as I
+mentioned earlier,
+
+
+573
+00:27:24,646 --> 00:27:26,746
+we also support asset
+catalog migration.
+
+
+574
+00:27:27,226 --> 00:27:29,116
+When you're ready to
+migrate to asset catalogs
+
+
+575
+00:27:29,116 --> 00:27:31,126
+for managing you App
+icon and launch images,
+
+
+576
+00:27:31,636 --> 00:27:32,386
+so that you don't have
+
+
+577
+00:27:32,386 --> 00:27:35,196
+to remember those complicated
+suffixes anymore, for example,
+
+
+578
+00:27:35,546 --> 00:27:38,956
+all you have to do is click one
+button, I'll do that right now.
+
+
+579
+00:27:38,956 --> 00:27:40,956
+I'll click the Use
+Asset Catalog button
+
+
+580
+00:27:42,076 --> 00:27:44,916
+and Xcode will show me a
+sheet informing me that it's
+
+
+581
+00:27:44,916 --> 00:27:48,606
+about to create a new asset
+catalog and then it's going
+
+
+582
+00:27:48,606 --> 00:27:51,316
+to copy my existing App icons
+and launch images to it.
+
+
+583
+00:27:51,716 --> 00:27:55,346
+And when I hit the Migrate
+button, Xcode will do just that.
+
+
+584
+00:27:58,756 --> 00:28:01,286
+So, now we can see here
+in the project navigator
+
+
+585
+00:28:01,286 --> 00:28:04,406
+that Xcode has created an
+asset catalog called "Images."
+
+
+586
+00:28:05,586 --> 00:28:08,446
+And the tables that I used
+to see in the App icons
+
+
+587
+00:28:08,446 --> 00:28:11,296
+and launch images sections
+are gone because my app icons
+
+
+588
+00:28:11,296 --> 00:28:13,436
+and launch images are
+now managed via the Asset
+
+
+589
+00:28:13,436 --> 00:28:14,416
+Catalog Editor.
+
+
+590
+00:28:15,166 --> 00:28:17,686
+So, when I'm ready to go look
+at those or make some edits,
+
+
+591
+00:28:18,066 --> 00:28:19,816
+I can either click
+on the asset catalog
+
+
+592
+00:28:19,896 --> 00:28:21,046
+in the project navigator.
+
+
+593
+00:28:21,046 --> 00:28:23,176
+Or I can just click
+on the arrow button
+
+
+594
+00:28:23,886 --> 00:28:27,076
+and Xcode will navigate
+directly to my asset catalog.
+
+
+595
+00:28:27,076 --> 00:28:29,486
+And here, we can see a
+brand new asset catalog,
+
+
+596
+00:28:29,736 --> 00:28:32,556
+it's got the same app icons
+and launch images that we used
+
+
+597
+00:28:32,556 --> 00:28:34,206
+to see inside of
+the project editor.
+
+
+598
+00:28:35,126 --> 00:28:37,066
+They've just been copied
+into the new asset catalog,
+
+
+599
+00:28:37,306 --> 00:28:40,266
+I can view them, I can make
+updates just using this drag
+
+
+600
+00:28:40,266 --> 00:28:41,166
+and drop image UIs.
+
+
+601
+00:28:41,166 --> 00:28:45,046
+And when I build and run
+my app, Xcode's going
+
+
+602
+00:28:45,046 --> 00:28:48,086
+to bundle those app icons and
+launch images up with the rest
+
+
+603
+00:28:48,086 --> 00:28:51,156
+of my application and iOS will
+make use of them the same way
+
+
+604
+00:28:51,156 --> 00:28:52,686
+that it always has,
+so I don't have
+
+
+605
+00:28:52,726 --> 00:28:54,496
+to do any additional
+configuration.
+
+
+606
+00:28:54,956 --> 00:28:57,996
+So, that's asset
+catalog migration.
+
+
+607
+00:28:58,536 --> 00:29:00,726
+Let's take a look
+at the slides again.
+
+
+608
+00:29:01,466 --> 00:29:06,616
+So, I've just shown you how
+the new project editor makes it
+
+
+609
+00:29:06,616 --> 00:29:09,446
+really easy to configure
+your application both
+
+
+610
+00:29:09,446 --> 00:29:11,356
+to take advantage
+of platform features
+
+
+611
+00:29:11,756 --> 00:29:14,096
+and to make use of
+asset catalogs.
+
+
+612
+00:29:15,836 --> 00:29:18,226
+Once you're done creating
+your app, configuring it,
+
+
+613
+00:29:18,856 --> 00:29:20,186
+you have to write
+the code of course.
+
+
+614
+00:29:20,786 --> 00:29:22,806
+And then, you're
+ready to archive it
+
+
+615
+00:29:22,806 --> 00:29:24,296
+and submit it to the App Store.
+
+
+616
+00:29:25,546 --> 00:29:27,126
+To show you how to do that,
+
+
+617
+00:29:27,126 --> 00:29:29,186
+I'd like to invite my
+colleague Clark on stage.
+
+
+618
+00:29:29,686 --> 00:29:36,206
+[ Applause ]
+
+
+619
+00:29:36,706 --> 00:29:37,426
+>> Good morning everyone.
+
+
+620
+00:29:39,846 --> 00:29:42,446
+OK, so now that you've
+got your App configured
+
+
+621
+00:29:42,446 --> 00:29:44,856
+and you've written the code
+and it's ready to be submitted
+
+
+622
+00:29:44,856 --> 00:29:47,586
+to the store, what
+do you need to do?
+
+
+623
+00:29:48,286 --> 00:29:51,446
+The first step in this process
+is to create an archive.
+
+
+624
+00:29:52,636 --> 00:29:55,036
+Now, what is an archive
+and why do I need one?
+
+
+625
+00:29:56,086 --> 00:30:00,306
+Well, on a basic level, an
+archive in Xcode is a bundle
+
+
+626
+00:30:00,306 --> 00:30:02,776
+that contains a built
+copy of your application
+
+
+627
+00:30:03,416 --> 00:30:06,246
+and the associated dSYM file.
+
+
+628
+00:30:07,116 --> 00:30:09,946
+The application itself
+is typically built
+
+
+629
+00:30:09,946 --> 00:30:11,576
+with you development
+signing identity.
+
+
+630
+00:30:11,646 --> 00:30:16,016
+This is important because it
+allows anyone in your team
+
+
+631
+00:30:16,016 --> 00:30:19,096
+to create the archive
+whether or not they're able
+
+
+632
+00:30:19,446 --> 00:30:22,656
+to perform the final submission.
+
+
+633
+00:30:23,196 --> 00:30:26,746
+Additionally the dSYM
+file contains one
+
+
+634
+00:30:26,746 --> 00:30:28,856
+that is essentially a
+mapping table to map
+
+
+635
+00:30:29,096 --> 00:30:32,116
+from the seemingly
+arbitrary addresses you find
+
+
+636
+00:30:32,116 --> 00:30:35,306
+in the crash log,
+to useful locations
+
+
+637
+00:30:35,306 --> 00:30:36,296
+within your source code.
+
+
+638
+00:30:37,366 --> 00:30:41,276
+This allows you to quickly
+track down the cause
+
+
+639
+00:30:41,276 --> 00:30:45,026
+of the crash being reported.
+
+
+640
+00:30:45,026 --> 00:30:47,836
+Archives are managed within
+the organizer in Xcode.
+
+
+641
+00:30:48,796 --> 00:30:51,726
+It's important to keep
+around archives of any app
+
+
+642
+00:30:52,106 --> 00:30:55,676
+that you distributed elsewhere,
+whether that'd be to the store
+
+
+643
+00:30:55,676 --> 00:30:59,576
+or to testers or even
+within your organization.
+
+
+644
+00:30:59,576 --> 00:31:02,736
+It's important because
+you want to be able
+
+
+645
+00:31:02,736 --> 00:31:05,336
+to symbolicate those crash
+logs should they come in.
+
+
+646
+00:31:05,336 --> 00:31:09,356
+And you need the exact build
+of app that crashed along
+
+
+647
+00:31:09,356 --> 00:31:12,456
+with the associated dSYM.
+
+
+648
+00:31:12,646 --> 00:31:16,616
+Now for submitting the app
+or distributing into others,
+
+
+649
+00:31:16,836 --> 00:31:20,256
+all I need to do is select
+the archive that I want
+
+
+650
+00:31:20,256 --> 00:31:23,466
+to distribute in the organizer,
+and click the Distribute button.
+
+
+651
+00:31:24,426 --> 00:31:31,996
+Now when I go to upload my
+app, to submit it to Apple
+
+
+652
+00:31:31,996 --> 00:31:39,926
+for review, what Xcode will do
+is take my archive, take the App
+
+
+653
+00:31:39,926 --> 00:31:41,966
+from my archive, reassign it
+
+
+654
+00:31:42,696 --> 00:31:48,696
+with the appropriate signing
+identity, back it up as an IPA,
+
+
+655
+00:31:49,046 --> 00:31:51,906
+and upload it to iTunes
+connect where a series
+
+
+656
+00:31:51,906 --> 00:31:55,186
+of automated validation
+steps will be performed
+
+
+657
+00:31:55,186 --> 00:31:57,506
+on it before it is sent
+on to a human reviewer.
+
+
+658
+00:31:58,966 --> 00:32:00,226
+Let's take a look at
+what that looks like.
+
+
+659
+00:32:00,756 --> 00:32:03,116
+So here we have the app
+that Itai just created,
+
+
+660
+00:32:03,236 --> 00:32:05,826
+and we're going to assume that
+somebody's written the code
+
+
+661
+00:32:05,826 --> 00:32:08,966
+in the past few minutes and
+it's ready to be submitted.
+
+
+662
+00:32:09,776 --> 00:32:13,536
+So I start this process,
+by going to a product menu
+
+
+663
+00:32:14,346 --> 00:32:15,976
+and choosing archives.
+
+
+664
+00:32:16,906 --> 00:32:19,546
+So Xcode is building a
+release configuration of my App
+
+
+665
+00:32:20,146 --> 00:32:22,566
+and packaging up with
+the associated symbols.
+
+
+666
+00:32:22,566 --> 00:32:26,216
+And as you can see here, when
+it's completed it shows up here
+
+
+667
+00:32:26,216 --> 00:32:30,426
+in the organizer along with
+previous iterations of the app
+
+
+668
+00:32:30,486 --> 00:32:31,516
+that I've built before.
+
+
+669
+00:32:31,516 --> 00:32:34,546
+As I said before it's
+important to keep those around,
+
+
+670
+00:32:34,686 --> 00:32:37,466
+should you receive crash logs
+from those particular builds.
+
+
+671
+00:32:39,506 --> 00:32:42,986
+In this case, I'm planning to
+distribute this particular build
+
+
+672
+00:32:42,986 --> 00:32:46,726
+of the app, so I select
+that and click distribute.
+
+
+673
+00:32:47,046 --> 00:32:51,026
+Now the options presented here
+vary based on what's contained
+
+
+674
+00:32:51,026 --> 00:32:54,126
+in the archive, which in
+this case is an iOS app.
+
+
+675
+00:32:54,906 --> 00:32:57,816
+I've given the option to
+submit to the iOS app store,
+
+
+676
+00:32:58,866 --> 00:33:01,716
+or I can save it out as an
+IPA file which is useful
+
+
+677
+00:33:01,716 --> 00:33:03,346
+for distributing to testers,
+
+
+678
+00:33:03,346 --> 00:33:05,036
+or for use with the
+enterprise program.
+
+
+679
+00:33:06,146 --> 00:33:08,616
+I can also export
+the archive itself.
+
+
+680
+00:33:09,566 --> 00:33:11,676
+This is important and useful
+
+
+681
+00:33:12,196 --> 00:33:14,256
+when somebody else is
+doing the final submission.
+
+
+682
+00:33:14,686 --> 00:33:16,856
+As I mentioned before, anyone
+
+
+683
+00:33:16,856 --> 00:33:19,726
+on your development team
+can create the archive even
+
+
+684
+00:33:19,726 --> 00:33:22,256
+if they don't have
+the credentials needed
+
+
+685
+00:33:22,256 --> 00:33:23,716
+to submit it to the store.
+
+
+686
+00:33:25,076 --> 00:33:27,236
+In this case I'm
+going to choose submit
+
+
+687
+00:33:27,236 --> 00:33:30,356
+to the iOS app store
+and click next.
+
+
+688
+00:33:31,886 --> 00:33:34,196
+Xcode is communicating
+with iTunes Connect,
+
+
+689
+00:33:34,676 --> 00:33:37,566
+looking for any apps that are
+in the state ready to upload.
+
+
+690
+00:33:38,256 --> 00:33:40,696
+As you can see it's
+found this particular app
+
+
+691
+00:33:41,346 --> 00:33:42,546
+as it has noted here.
+
+
+692
+00:33:43,916 --> 00:33:47,046
+Now what I need to do is choose
+how I'm going to sign this app.
+
+
+693
+00:33:47,456 --> 00:33:51,716
+In previous versions of Xcode,
+this would be a relatively,
+
+
+694
+00:33:52,166 --> 00:33:54,736
+shall we say, verbose menu.
+
+
+695
+00:33:55,036 --> 00:33:58,536
+It would list practically all of
+your provisioning profiles along
+
+
+696
+00:33:58,536 --> 00:34:00,416
+with all those certificates
+contained in them,
+
+
+697
+00:34:00,736 --> 00:34:02,406
+even if they weren't
+directly relevant.
+
+
+698
+00:34:03,206 --> 00:34:05,466
+However, thanks to the new
+accounts infrastructure,
+
+
+699
+00:34:06,596 --> 00:34:09,746
+Xcode knows exactly who
+you are and knows how
+
+
+700
+00:34:09,746 --> 00:34:12,525
+to associate a specific
+provisioning profile
+
+
+701
+00:34:12,565 --> 00:34:13,335
+with the app.
+
+
+702
+00:34:13,516 --> 00:34:16,266
+So it's only displaying the
+relevant provisioning profile.
+
+
+703
+00:34:16,886 --> 00:34:18,746
+So I would select that,
+
+
+704
+00:34:19,896 --> 00:34:21,386
+and here's where I
+would click submit
+
+
+705
+00:34:21,386 --> 00:34:22,476
+to actually submit it to Apple.
+
+
+706
+00:34:22,956 --> 00:34:25,116
+Of course this is just
+a demo and I don't want
+
+
+707
+00:34:25,116 --> 00:34:30,016
+to waste their time so I'm
+going to cancel out of that.
+
+
+708
+00:34:30,606 --> 00:34:33,876
+So we've shown you how easy it
+is to configure your application
+
+
+709
+00:34:34,166 --> 00:34:38,306
+and how simple everything is
+when everything goes your way.
+
+
+710
+00:34:39,356 --> 00:34:42,036
+However, what happens when
+things don't quite go your way?
+
+
+711
+00:34:43,676 --> 00:34:45,626
+There are many issues
+that can happen
+
+
+712
+00:34:45,626 --> 00:34:48,366
+in configuring your entitlements
+or provisioning profiles,
+
+
+713
+00:34:48,746 --> 00:34:52,266
+especially in versions of Xcode
+before the Capabilities tab.
+
+
+714
+00:34:52,806 --> 00:34:53,846
+One such example,
+
+
+715
+00:34:54,065 --> 00:34:55,956
+it's a misconfiguration
+in your entitlements.
+
+
+716
+00:34:57,025 --> 00:34:58,216
+Now that may be as simple
+
+
+717
+00:34:58,216 --> 00:35:02,516
+as the entitlements file is
+just missing or it may be harder
+
+
+718
+00:35:02,516 --> 00:35:06,306
+to diagnose issues such as a
+typo in the name or the value
+
+
+719
+00:35:06,306 --> 00:35:07,436
+of the particular entitlement.
+
+
+720
+00:35:09,116 --> 00:35:12,776
+Other possible issues include
+issues with your signing assets
+
+
+721
+00:35:14,486 --> 00:35:16,306
+such as your signing identity,
+
+
+722
+00:35:16,386 --> 00:35:17,896
+you may be missing
+the private key,
+
+
+723
+00:35:18,296 --> 00:35:20,726
+which is unfortunately
+a fairly common issue,
+
+
+724
+00:35:20,726 --> 00:35:24,806
+but it's is not always obvious
+that the private key only lives
+
+
+725
+00:35:24,806 --> 00:35:27,976
+on the machine that you used to
+create it in the first place.
+
+
+726
+00:35:27,976 --> 00:35:29,006
+It's never sent to Apple.
+
+
+727
+00:35:30,696 --> 00:35:34,196
+Another possible issue is you
+might be missing the appropriate
+
+
+728
+00:35:34,196 --> 00:35:35,256
+provisioning profiles
+
+
+729
+00:35:36,016 --> 00:35:39,146
+or the profile might not
+specify the correct entitlement.
+
+
+730
+00:35:39,946 --> 00:35:43,206
+Now to that point, I'm
+going to talk a little bit
+
+
+731
+00:35:43,206 --> 00:35:45,496
+about how entitlements
+are controlled
+
+
+732
+00:35:45,496 --> 00:35:46,636
+by provisioning profiles.
+
+
+733
+00:35:48,086 --> 00:35:51,516
+Both your app by way of
+your entitlements file
+
+
+734
+00:35:52,016 --> 00:35:54,646
+and the provisioning profile
+contain a list of entitlements.
+
+
+735
+00:35:56,676 --> 00:35:57,996
+But the list of entitlements
+
+
+736
+00:35:58,146 --> 00:36:01,146
+in the profile is
+just the white list.
+
+
+737
+00:36:01,276 --> 00:36:03,306
+It's a list of allowed
+entitlements
+
+
+738
+00:36:03,366 --> 00:36:05,346
+that your app is allowed
+to take advantage of.
+
+
+739
+00:36:06,686 --> 00:36:10,476
+So if entitlement is
+specified in your app
+
+
+740
+00:36:10,476 --> 00:36:12,846
+and the profile, that's fine.
+
+
+741
+00:36:12,846 --> 00:36:15,526
+You can use that entitlement,
+the OS will let your app launch.
+
+
+742
+00:36:16,116 --> 00:36:19,566
+However, if your app specifies
+an entitlement that's not
+
+
+743
+00:36:19,566 --> 00:36:22,496
+in the profile, your app
+won't be able to launch.
+
+
+744
+00:36:23,736 --> 00:36:26,236
+And more importantly the
+error message you're given
+
+
+745
+00:36:26,236 --> 00:36:29,896
+in that case is shall
+we say slightly opaque.
+
+
+746
+00:36:31,096 --> 00:36:35,276
+It's not always obvious what
+the problem is or how to fix it.
+
+
+747
+00:36:36,976 --> 00:36:41,696
+Well, in the capability's
+tab, remember the steps
+
+
+748
+00:36:41,696 --> 00:36:45,716
+that Itai showed you earlier,
+Xcode remembers those steps too.
+
+
+749
+00:36:46,516 --> 00:36:49,246
+And it's constantly
+validating that the work
+
+
+750
+00:36:49,246 --> 00:36:51,056
+for those steps does
+not come undone.
+
+
+751
+00:36:52,076 --> 00:36:56,766
+In this case you can see
+the entitlement is missing
+
+
+752
+00:36:56,766 --> 00:36:58,966
+from my entitlements file.
+
+
+753
+00:36:59,736 --> 00:37:02,336
+Xcode knows that, it
+knows exactly what's wrong
+
+
+754
+00:37:02,556 --> 00:37:06,936
+and more importantly it
+knows exactly how to fix it.
+
+
+755
+00:37:06,936 --> 00:37:09,926
+And so it presents this App
+we named, Fix Issue button.
+
+
+756
+00:37:12,406 --> 00:37:14,556
+Likewise, in the General tab,
+
+
+757
+00:37:15,906 --> 00:37:18,026
+we show issues relating
+your signing identities,
+
+
+758
+00:37:18,026 --> 00:37:21,606
+such as your signing assets,
+such as your signing identity
+
+
+759
+00:37:21,606 --> 00:37:22,866
+or your provisioning profile.
+
+
+760
+00:37:24,116 --> 00:37:26,126
+Again this is a problem
+that would prevent you
+
+
+761
+00:37:26,126 --> 00:37:29,086
+from building you running or
+running your app in the past
+
+
+762
+00:37:29,516 --> 00:37:31,436
+that it may not have been
+obvious what the actual
+
+
+763
+00:37:31,516 --> 00:37:32,166
+problem was.
+
+
+764
+00:37:33,136 --> 00:37:35,446
+In this case, we know
+exactly what's wrong.
+
+
+765
+00:37:36,496 --> 00:37:37,716
+I'm missing my private key.
+
+
+766
+00:37:39,046 --> 00:37:40,446
+Additionally, I'm presented
+
+
+767
+00:37:40,516 --> 00:37:42,636
+with the two options
+to fix this problem.
+
+
+768
+00:37:43,526 --> 00:37:45,556
+If I still have access
+in the machine
+
+
+769
+00:37:45,666 --> 00:37:47,726
+on which I generated the
+key in the first place,
+
+
+770
+00:37:48,896 --> 00:37:52,346
+I can go to that machine,
+use the export functionality
+
+
+771
+00:37:52,346 --> 00:37:55,726
+that Joshua showed you
+earlier in the accounts pane,
+
+
+772
+00:37:55,726 --> 00:37:58,056
+and import it here using
+the button on the left.
+
+
+773
+00:37:59,426 --> 00:38:02,366
+Alternatively, if I no longer
+have access to that machine,
+
+
+774
+00:38:02,926 --> 00:38:06,886
+I revoke my identity and request
+a new one using the button
+
+
+775
+00:38:06,886 --> 00:38:07,336
+on the right.
+
+
+776
+00:38:08,316 --> 00:38:12,686
+Again, Xcode knows exactly what
+the problem is and how to fix it
+
+
+777
+00:38:13,106 --> 00:38:16,666
+and presents a simple way
+for you to enact that fix.
+
+
+778
+00:38:17,956 --> 00:38:22,206
+Now I'm going to show a little
+about what this looks like.
+
+
+779
+00:38:22,296 --> 00:38:27,116
+So here I have an old iCloud app
+
+
+780
+00:38:27,846 --> 00:38:29,536
+that I haven't quite
+configured correctly.
+
+
+781
+00:38:30,376 --> 00:38:34,816
+In this case, again I'm missing
+the appropriate entitlement
+
+
+782
+00:38:34,926 --> 00:38:36,006
+in my entitlements file.
+
+
+783
+00:38:37,416 --> 00:38:39,846
+Now previous versions of
+Xcode, I would be able
+
+
+784
+00:38:39,846 --> 00:38:42,436
+to build this app just
+fine, it will build,
+
+
+785
+00:38:42,436 --> 00:38:44,426
+there'd be no warnings,
+no errors.
+
+
+786
+00:38:45,026 --> 00:38:47,656
+But when I were to run it,
+I would get an obscure error
+
+
+787
+00:38:47,846 --> 00:38:52,516
+that frankly without being
+someone who works at Apple,
+
+
+788
+00:38:52,666 --> 00:38:55,136
+I might not have any way to
+understand what's going on.
+
+
+789
+00:38:55,836 --> 00:38:59,976
+But in this case it knows
+what's wrong, how to fix it
+
+
+790
+00:39:00,246 --> 00:39:02,136
+and gives me this button.
+
+
+791
+00:39:03,576 --> 00:39:06,336
+That's all it took.
+
+
+792
+00:39:06,836 --> 00:39:11,296
+[ Applause ]
+
+
+793
+00:39:11,796 --> 00:39:15,126
+Now what used to mean hours
+of searching documentation
+
+
+794
+00:39:15,186 --> 00:39:19,216
+for obscure error codes or
+trying out help forums online,
+
+
+795
+00:39:19,816 --> 00:39:22,006
+has been reduced to a
+single button click.
+
+
+796
+00:39:23,756 --> 00:39:26,966
+Likewise another common
+issue, unfortunately,
+
+
+797
+00:39:26,966 --> 00:39:30,826
+all too common is the
+missing private key issue
+
+
+798
+00:39:31,086 --> 00:39:32,526
+that I'd showed you
+before in the slides.
+
+
+799
+00:39:33,586 --> 00:39:37,976
+Again Xcode knows exactly
+what's wrong, and exactly how
+
+
+800
+00:39:37,976 --> 00:39:40,026
+to fix it, in this case
+there are two options.
+
+
+801
+00:39:40,946 --> 00:39:42,866
+And as I described before,
+
+
+802
+00:39:42,866 --> 00:39:45,716
+I can either import
+the developer profile
+
+
+803
+00:39:45,836 --> 00:39:49,726
+from my original machine
+or I can revoke my identity
+
+
+804
+00:39:49,726 --> 00:39:51,086
+and request a new one.
+
+
+805
+00:39:52,916 --> 00:39:57,076
+Now we think that the trouble
+shooting capabilities offered
+
+
+806
+00:39:57,166 --> 00:39:59,446
+here in the General
+and Capabilities tab,
+
+
+807
+00:39:59,946 --> 00:40:02,336
+will be sufficient for
+diagnosing and fixing,
+
+
+808
+00:40:02,336 --> 00:40:04,166
+just about any issue
+you're going to find
+
+
+809
+00:40:04,456 --> 00:40:06,656
+with your entitlements or
+your signing credentials.
+
+
+810
+00:40:07,656 --> 00:40:10,346
+But for those of you who
+are the type who need
+
+
+811
+00:40:10,386 --> 00:40:12,556
+to know a little more
+about what's going
+
+
+812
+00:40:12,556 --> 00:40:15,116
+on with the signing
+credentials in your team,
+
+
+813
+00:40:15,366 --> 00:40:17,196
+we offer the team detail sheet.
+
+
+814
+00:40:18,126 --> 00:40:21,596
+I'm going to go back
+to preferences,
+
+
+815
+00:40:21,956 --> 00:40:23,076
+back to the accounts pane,
+
+
+816
+00:40:24,166 --> 00:40:25,666
+select the account
+I'm interested in
+
+
+817
+00:40:25,666 --> 00:40:29,466
+and the team I'm interested
+in, and click View Details.
+
+
+818
+00:40:30,056 --> 00:40:33,916
+Now this sheet displays
+two important classes
+
+
+819
+00:40:34,046 --> 00:40:34,626
+of information.
+
+
+820
+00:40:35,706 --> 00:40:39,116
+In the upper table, I see the
+signing identities for this team
+
+
+821
+00:40:39,246 --> 00:40:41,816
+that are currently installed
+in my key chain on this map.
+
+
+822
+00:40:44,616 --> 00:40:49,566
+It displays each identity
+along with the platform
+
+
+823
+00:40:49,746 --> 00:40:50,976
+and some important status.
+
+
+824
+00:40:51,696 --> 00:40:55,626
+Should any of my keys be
+expired, revoked, missing,
+
+
+825
+00:40:56,076 --> 00:40:57,626
+that status will show up here.
+
+
+826
+00:40:58,606 --> 00:40:59,956
+Should I have such a problem,
+
+
+827
+00:41:00,306 --> 00:41:03,006
+I can quickly request
+a new signing identity
+
+
+828
+00:41:03,486 --> 00:41:06,956
+by clicking the plus button and
+choosing the type of identity
+
+
+829
+00:41:07,106 --> 00:41:10,336
+that I wish to request.
+
+
+830
+00:41:11,196 --> 00:41:14,606
+Additionally, even though we
+have the ability to export all
+
+
+831
+00:41:14,606 --> 00:41:18,046
+of your account info and all of
+your signing credentials and all
+
+
+832
+00:41:18,046 --> 00:41:21,116
+of your provisioning profiles,
+that's not always appropriate.
+
+
+833
+00:41:21,816 --> 00:41:22,736
+Sometimes you just need
+
+
+834
+00:41:22,736 --> 00:41:26,226
+to export a single signing
+identity, perhaps you want
+
+
+835
+00:41:26,226 --> 00:41:29,816
+to have someone else say a
+build engineer build as you
+
+
+836
+00:41:29,816 --> 00:41:30,796
+for the final submission.
+
+
+837
+00:41:32,496 --> 00:41:35,386
+That's easily done by selecting
+the identity you're interested
+
+
+838
+00:41:35,516 --> 00:41:38,586
+in and choosing export
+from the gear menu.
+
+
+839
+00:41:40,096 --> 00:41:50,436
+As before I give it a name--
+[pause] password and click Save.
+
+
+840
+00:41:51,546 --> 00:41:54,416
+Now Xcode has taken that
+identity and saved it
+
+
+841
+00:41:54,416 --> 00:41:58,216
+as an encrypted P12 file that I
+can give to that build engineer
+
+
+842
+00:41:58,346 --> 00:41:59,976
+to have them build as me.
+
+
+843
+00:42:00,436 --> 00:42:03,226
+And I didn't have to give them
+any of my log-in credentials,
+
+
+844
+00:42:03,546 --> 00:42:06,156
+any of the additional signing
+identities or profiles.
+
+
+845
+00:42:06,656 --> 00:42:09,106
+I just exported the
+individual item
+
+
+846
+00:42:09,106 --> 00:42:10,246
+that I needed to care about.
+
+
+847
+00:42:14,086 --> 00:42:17,926
+Likewise, should you need to
+revoke a signing identity,
+
+
+848
+00:42:17,926 --> 00:42:19,316
+you can do that from
+here as well.
+
+
+849
+00:42:19,686 --> 00:42:23,556
+Again, select the identity you
+care about and choose revoke
+
+
+850
+00:42:23,556 --> 00:42:25,876
+from the gear menu, all this
+
+
+851
+00:42:25,876 --> 00:42:29,726
+without ever touching Keychain
+Access or needing to deal
+
+
+852
+00:42:29,726 --> 00:42:31,416
+with the Member Center.
+
+
+853
+00:42:32,556 --> 00:42:35,946
+The lower part of the
+sheet displays all
+
+
+854
+00:42:35,946 --> 00:42:37,816
+of the provisioning
+profiles from this team
+
+
+855
+00:42:38,176 --> 00:42:39,486
+that I have locally on this Mac.
+
+
+856
+00:42:40,406 --> 00:42:44,096
+As well as important information
+about them, such as their name,
+
+
+857
+00:42:44,316 --> 00:42:46,586
+when they expire
+and most importantly
+
+
+858
+00:42:46,746 --> 00:42:50,566
+which entitlements
+are allowed by each.
+
+
+859
+00:42:50,816 --> 00:42:53,216
+And should I want to make sure
+that I have the latest version
+
+
+860
+00:42:53,216 --> 00:42:55,256
+of this information
+and the latest version
+
+
+861
+00:42:55,256 --> 00:42:58,466
+of all the profiles, I can
+refresh the Member Center
+
+
+862
+00:42:59,006 --> 00:43:00,336
+by clicking this button here.
+
+
+863
+00:43:00,836 --> 00:43:04,856
+[ Pause ]
+
+
+864
+00:43:05,356 --> 00:43:13,466
+So today we've shown you
+some of the new features
+
+
+865
+00:43:13,466 --> 00:43:17,646
+in Xcode dealing with managing
+your signing assets, as well as,
+
+
+866
+00:43:17,646 --> 00:43:19,266
+managing your Apple ID accounts.
+
+
+867
+00:43:20,366 --> 00:43:23,046
+We've also shown you how
+easy it is in Xcode 5
+
+
+868
+00:43:23,136 --> 00:43:25,556
+to configure your
+application, to take advantage
+
+
+869
+00:43:25,556 --> 00:43:28,956
+of platform features without
+needing to know the details
+
+
+870
+00:43:28,956 --> 00:43:31,316
+about what needs to be
+done for each feature.
+
+
+871
+00:43:32,966 --> 00:43:35,926
+We've also shown you the
+process for submitting your App
+
+
+872
+00:43:35,926 --> 00:43:37,476
+to the App store and
+actually getting it
+
+
+873
+00:43:37,476 --> 00:43:38,486
+out there to your customers.
+
+
+874
+00:43:41,406 --> 00:43:43,046
+Most importantly in my opinion,
+
+
+875
+00:43:43,136 --> 00:43:45,586
+we've shown you the
+changes we've made in Xcode,
+
+
+876
+00:43:45,676 --> 00:43:48,016
+thanks to the account
+infrastructure
+
+
+877
+00:43:48,696 --> 00:43:52,826
+that we can now diagnose
+and troubleshoot most
+
+
+878
+00:43:52,826 --> 00:43:56,696
+of the common issues that
+plague many of you today.
+
+
+879
+00:43:59,746 --> 00:44:01,456
+If you've got additional
+questions,
+
+
+880
+00:44:01,756 --> 00:44:03,656
+feel free to e-mail
+our Evangelist
+
+
+881
+00:44:05,076 --> 00:44:09,346
+and if you're interested in
+the gritty details of what goes
+
+
+882
+00:44:09,576 --> 00:44:12,536
+on when you codesign your
+app, you can go to this link,
+
+
+883
+00:44:12,916 --> 00:44:14,566
+if you can type very quickly.
+
+
+884
+00:44:15,626 --> 00:44:17,686
+You also might be interested
+in going to these session,
+
+
+885
+00:44:18,866 --> 00:44:23,006
+held later today after lunch,
+it's a guide to what goes
+
+
+886
+00:44:23,006 --> 00:44:31,306
+on when you sandbox your
+App, and have a nice lunch.
+
+
+887
+00:44:31,806 --> 00:44:34,770
+[ Applause ]
+

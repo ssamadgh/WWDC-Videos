@@ -1,0 +1,10429 @@
+1
+00:00:07,516 --> 00:00:15,500
+[ Music ]
+
+
+2
+00:00:27,516 --> 00:00:34,116
+[ Applause ]
+
+
+3
+00:00:34,616 --> 00:00:36,876
+Hi, everybody, I'm Ben.
+
+
+4
+00:00:37,016 --> 00:00:37,986
+I work on the Swift standard
+
+
+5
+00:00:37,986 --> 00:00:38,306
+library.
+
+
+6
+00:00:38,386 --> 00:00:39,686
+And together with my colleague
+
+
+7
+00:00:39,686 --> 00:00:40,816
+Doug, from the compiler team.
+
+
+8
+00:00:40,946 --> 00:00:42,326
+We're going to talk to you about
+
+
+9
+00:00:42,326 --> 00:00:43,136
+Swift generics.
+
+
+10
+00:00:43,726 --> 00:00:46,416
+So the recent releases of Swift
+
+
+11
+00:00:46,416 --> 00:00:47,536
+have added some important new
+
+
+12
+00:00:47,536 --> 00:00:48,056
+features.
+
+
+13
+00:00:48,826 --> 00:00:49,916
+Including conditional
+
+
+14
+00:00:49,916 --> 00:00:51,506
+conformance and recursive
+
+
+15
+00:00:51,506 --> 00:00:52,446
+protocol constraints.
+
+
+16
+00:00:53,536 --> 00:00:55,186
+And, in fact, with every release
+
+
+17
+00:00:55,186 --> 00:00:56,876
+of Swift, we've been refining
+
+
+18
+00:00:56,876 --> 00:00:58,506
+the generic system, making it
+
+
+19
+00:00:58,506 --> 00:00:59,266
+more expressive.
+
+
+20
+00:00:59,396 --> 00:01:01,926
+And we feel that the 4.2 release
+
+
+21
+00:01:01,926 --> 00:01:03,166
+marks an important point.
+
+
+22
+00:01:04,296 --> 00:01:05,756
+It's the point where we can
+
+
+23
+00:01:05,756 --> 00:01:08,056
+finally fully implement a number
+
+
+24
+00:01:08,056 --> 00:01:09,226
+of designs that have always been
+
+
+25
+00:01:09,226 --> 00:01:10,096
+envisioned for the standard
+
+
+26
+00:01:10,096 --> 00:01:10,746
+library.
+
+
+27
+00:01:10,936 --> 00:01:12,196
+Something that's critical for us
+
+
+28
+00:01:12,626 --> 00:01:14,106
+in achieving our goal of API
+
+
+29
+00:01:14,106 --> 00:01:15,176
+stability for Swift.
+
+
+30
+00:01:16,696 --> 00:01:18,226
+So, we've given a lot of talks
+
+
+31
+00:01:18,226 --> 00:01:19,406
+about generics in the past, but
+
+
+32
+00:01:19,406 --> 00:01:20,516
+we haven't taken a step back.
+
+
+33
+00:01:20,546 --> 00:01:22,016
+And talked about generics as a
+
+
+34
+00:01:22,016 --> 00:01:22,756
+whole for a while.
+
+
+35
+00:01:23,496 --> 00:01:24,686
+So today, we're going to take
+
+
+36
+00:01:24,686 --> 00:01:26,306
+you through a few different
+
+
+37
+00:01:26,306 --> 00:01:27,436
+features of the generics system.
+
+
+38
+00:01:27,436 --> 00:01:29,626
+Both new and old, to help
+
+
+39
+00:01:29,626 --> 00:01:30,716
+understand how they fit
+
+
+40
+00:01:30,716 --> 00:01:31,026
+together.
+
+
+41
+00:01:31,026 --> 00:01:34,006
+I'm going to briefly recap the
+
+
+42
+00:01:34,006 --> 00:01:35,426
+motivation for generics.
+
+
+43
+00:01:37,076 --> 00:01:38,186
+We're going to talk about
+
+
+44
+00:01:38,186 --> 00:01:39,356
+designing protocols, given a
+
+
+45
+00:01:39,356 --> 00:01:41,116
+number of concrete types, using
+
+
+46
+00:01:41,116 --> 00:01:42,576
+examples taken from the standard
+
+
+47
+00:01:42,576 --> 00:01:43,236
+library.
+
+
+48
+00:01:44,016 --> 00:01:45,526
+We're going to review protocol
+
+
+49
+00:01:45,526 --> 00:01:47,146
+inheritance, and talk about the
+
+
+50
+00:01:47,146 --> 00:01:48,626
+new feature of conditional
+
+
+51
+00:01:48,626 --> 00:01:49,206
+conformance.
+
+
+52
+00:01:49,206 --> 00:01:50,186
+And how it interacts with
+
+
+53
+00:01:50,226 --> 00:01:51,176
+protocol inheritance.
+
+
+54
+00:01:51,996 --> 00:01:53,356
+And finally, we're going to wrap
+
+
+55
+00:01:53,356 --> 00:01:55,486
+up with a discussion of classes
+
+
+56
+00:01:55,486 --> 00:01:56,216
+and generics.
+
+
+57
+00:01:58,556 --> 00:01:59,796
+So why are generics such an
+
+
+58
+00:01:59,796 --> 00:02:01,026
+important part of Swift?
+
+
+59
+00:02:01,836 --> 00:02:03,236
+Well one way of seeing their
+
+
+60
+00:02:03,236 --> 00:02:05,486
+impact is by designing a simple
+
+
+61
+00:02:05,486 --> 00:02:06,606
+collection, like type.
+
+
+62
+00:02:08,205 --> 00:02:09,666
+We'll call it buffer, and it's
+
+
+63
+00:02:09,666 --> 00:02:10,536
+going to be similar to the
+
+
+64
+00:02:10,536 --> 00:02:11,816
+standard library's array type.
+
+
+65
+00:02:12,876 --> 00:02:14,586
+Now, the simplest possible API
+
+
+66
+00:02:14,586 --> 00:02:15,856
+for the reading part of a buffer
+
+
+67
+00:02:15,856 --> 00:02:17,276
+might include a count of the
+
+
+68
+00:02:17,276 --> 00:02:18,096
+number of elements.
+
+
+69
+00:02:18,366 --> 00:02:20,046
+And a way to fetch each element
+
+
+70
+00:02:20,046 --> 00:02:21,026
+to the given position in the
+
+
+71
+00:02:21,026 --> 00:02:21,516
+index.
+
+
+72
+00:02:22,086 --> 00:02:23,376
+But, what do we make of that
+
+
+73
+00:02:23,376 --> 00:02:24,016
+return type?
+
+
+74
+00:02:24,916 --> 00:02:26,336
+Now, if we didn't have generics,
+
+
+75
+00:02:26,336 --> 00:02:28,136
+we'd have to make it some kind
+
+
+76
+00:02:28,136 --> 00:02:29,126
+of type that could represent
+
+
+77
+00:02:29,126 --> 00:02:30,556
+anything that we'd want to put
+
+
+78
+00:02:30,556 --> 00:02:31,376
+inside the buffer.
+
+
+79
+00:02:32,096 --> 00:02:33,966
+You can call that type ID or
+
+
+80
+00:02:33,966 --> 00:02:35,226
+object or void star.
+
+
+81
+00:02:35,506 --> 00:02:38,006
+In Swift we call it Any, which
+
+
+82
+00:02:38,006 --> 00:02:39,566
+is a type that can stand in for
+
+
+83
+00:02:39,566 --> 00:02:40,936
+any different kind of type in
+
+
+84
+00:02:40,936 --> 00:02:41,306
+Swift.
+
+
+85
+00:02:44,006 --> 00:02:45,106
+So if you wanted to handle
+
+
+86
+00:02:45,106 --> 00:02:45,996
+anything in the buffer, you
+
+
+87
+00:02:45,996 --> 00:02:47,356
+could have subscript return an
+
+
+88
+00:02:47,356 --> 00:02:47,706
+Any.
+
+
+89
+00:02:48,086 --> 00:02:49,496
+But, of course, you probably
+
+
+90
+00:02:49,496 --> 00:02:50,466
+know that that leads to a really
+
+
+91
+00:02:50,466 --> 00:02:51,906
+unpleasant user experience.
+
+
+92
+00:02:52,136 --> 00:02:53,186
+At some point, you've got to get
+
+
+93
+00:02:53,186 --> 00:02:55,086
+out that type from inside the
+
+
+94
+00:02:55,086 --> 00:02:55,566
+box.
+
+
+95
+00:02:56,076 --> 00:02:57,906
+In order to actually use it.
+
+
+96
+00:03:00,576 --> 00:03:03,106
+And this isn't just annoying,
+
+
+97
+00:03:03,106 --> 00:03:04,406
+it's also error-prone.
+
+
+98
+00:03:04,826 --> 00:03:05,856
+What if somewhere in your code,
+
+
+99
+00:03:05,856 --> 00:03:07,806
+maybe by accident, you put an
+
+
+100
+00:03:07,806 --> 00:03:09,226
+integer into what was supposed
+
+
+101
+00:03:09,226 --> 00:03:10,286
+to be a buffer of strings?
+
+
+102
+00:03:11,226 --> 00:03:13,926
+But it's not just about ease of
+
+
+103
+00:03:13,926 --> 00:03:14,246
+use.
+
+
+104
+00:03:14,246 --> 00:03:15,246
+We also want to solve some
+
+
+105
+00:03:15,246 --> 00:03:16,856
+problems relating to how these
+
+
+106
+00:03:16,856 --> 00:03:18,506
+values are represented in
+
+
+107
+00:03:18,506 --> 00:03:18,876
+memory.
+
+
+108
+00:03:19,666 --> 00:03:23,106
+Now, the ideal representation
+
+
+109
+00:03:23,326 --> 00:03:24,986
+for a buffer of strings, would
+
+
+110
+00:03:24,986 --> 00:03:26,716
+be a contiguous block of memory.
+
+
+111
+00:03:27,146 --> 00:03:28,936
+With every element held in line
+
+
+112
+00:03:28,936 --> 00:03:29,626
+next to each other.
+
+
+113
+00:03:30,626 --> 00:03:32,566
+But with an untyped approach,
+
+
+114
+00:03:33,016 --> 00:03:34,076
+this doesn't work out quite so
+
+
+115
+00:03:34,076 --> 00:03:34,336
+well.
+
+
+116
+00:03:34,336 --> 00:03:35,646
+Because the buffer doesn't know
+
+
+117
+00:03:35,646 --> 00:03:37,856
+in advance what kind of type
+
+
+118
+00:03:37,856 --> 00:03:38,766
+it's going to contain.
+
+
+119
+00:03:38,766 --> 00:03:40,696
+And so it has to use a type like
+
+
+120
+00:03:40,746 --> 00:03:42,126
+Any that can account for any of
+
+
+121
+00:03:42,126 --> 00:03:42,936
+the possibilities.
+
+
+122
+00:03:43,236 --> 00:03:44,536
+And, there's a lot of overhead
+
+
+123
+00:03:44,776 --> 00:03:46,086
+in tracking, boxing, and
+
+
+124
+00:03:46,086 --> 00:03:49,146
+unboxing the types in that Any.
+
+
+125
+00:03:50,296 --> 00:03:52,436
+Here, I might have just wanted a
+
+
+126
+00:03:52,436 --> 00:03:54,056
+buffer of integers, but I have
+
+
+127
+00:03:54,186 --> 00:03:55,686
+no way of expressing that to the
+
+
+128
+00:03:55,686 --> 00:03:56,626
+compiler.
+
+
+129
+00:03:56,626 --> 00:03:57,616
+And so, I'm paying for
+
+
+130
+00:03:57,616 --> 00:03:59,176
+flexibility, even though I'm not
+
+
+131
+00:03:59,176 --> 00:04:01,266
+interested in it.
+
+
+132
+00:04:01,586 --> 00:04:02,976
+What's more, because Any has to
+
+
+133
+00:04:02,976 --> 00:04:04,526
+account for any different kind
+
+
+134
+00:04:04,526 --> 00:04:04,896
+of type.
+
+
+135
+00:04:05,466 --> 00:04:06,566
+Including types that are too
+
+
+136
+00:04:06,566 --> 00:04:08,686
+large to fit inside its own
+
+
+137
+00:04:08,686 --> 00:04:10,666
+internal storage, it has to
+
+
+138
+00:04:10,666 --> 00:04:11,866
+sometimes use indirection.
+
+
+139
+00:04:11,866 --> 00:04:13,456
+It has to hold a pointer to the
+
+
+140
+00:04:13,456 --> 00:04:14,886
+values, and that value could be
+
+
+141
+00:04:14,886 --> 00:04:16,565
+located all over memory.
+
+
+142
+00:04:17,886 --> 00:04:18,875
+And so we really want to solve
+
+
+143
+00:04:18,875 --> 00:04:20,136
+these problems, not just for
+
+
+144
+00:04:20,136 --> 00:04:21,526
+ease of use and correctness, but
+
+
+145
+00:04:21,526 --> 00:04:23,556
+also for performance reasons.
+
+
+146
+00:04:24,146 --> 00:04:26,126
+And, we do it using a technique
+
+
+147
+00:04:26,816 --> 00:04:28,556
+called parametric polymorphism.
+
+
+148
+00:04:29,376 --> 00:04:30,606
+Which is just another term for
+
+
+149
+00:04:30,606 --> 00:04:32,776
+what we in Swift refer to as
+
+
+150
+00:04:32,776 --> 00:04:33,446
+generics.
+
+
+151
+00:04:34,716 --> 00:04:36,476
+With a generic approach, we put
+
+
+152
+00:04:36,476 --> 00:04:38,346
+more information on the buffer,
+
+
+153
+00:04:38,346 --> 00:04:39,466
+to represent the type that the
+
+
+154
+00:04:39,466 --> 00:04:40,596
+buffer is going to contain.
+
+
+155
+00:04:41,746 --> 00:04:42,836
+We'll call that type Element.
+
+
+156
+00:04:44,196 --> 00:04:45,826
+Element is a generic parameter
+
+
+157
+00:04:45,826 --> 00:04:47,436
+of the type, hence the term of
+
+
+158
+00:04:47,436 --> 00:04:48,896
+parametric polymorphism.
+
+
+159
+00:04:49,096 --> 00:04:50,726
+You can think of it kind of like
+
+
+160
+00:04:50,726 --> 00:04:52,626
+a compile-time argument that
+
+
+161
+00:04:52,626 --> 00:04:53,926
+tells the buffer what it's going
+
+
+162
+00:04:53,926 --> 00:04:54,396
+to contain.
+
+
+163
+00:04:55,716 --> 00:04:56,946
+Now it has a way of referring to
+
+
+164
+00:04:56,946 --> 00:04:57,706
+that element type.
+
+
+165
+00:04:57,976 --> 00:04:59,106
+It can use it wherever it was
+
+
+166
+00:04:59,146 --> 00:05:00,316
+previously using Any.
+
+
+167
+00:05:03,336 --> 00:05:04,216
+And, that means that there's no
+
+
+168
+00:05:04,216 --> 00:05:05,476
+need to do conversions when
+
+
+169
+00:05:05,476 --> 00:05:06,416
+you're getting a type out of the
+
+
+170
+00:05:06,416 --> 00:05:06,746
+buffer.
+
+
+171
+00:05:06,746 --> 00:05:09,106
+And if you make an accidental
+
+
+172
+00:05:09,296 --> 00:05:10,456
+assignment of the wrong kind of
+
+
+173
+00:05:10,456 --> 00:05:12,086
+type, or some issue similar to
+
+
+174
+00:05:12,086 --> 00:05:12,306
+that.
+
+
+175
+00:05:12,526 --> 00:05:13,566
+The compiler will catch you.
+
+
+176
+00:05:15,216 --> 00:05:17,136
+Now, now there's no such type as
+
+
+177
+00:05:17,136 --> 00:05:19,406
+buffer without an associated
+
+
+178
+00:05:19,406 --> 00:05:20,116
+element type.
+
+
+179
+00:05:20,836 --> 00:05:22,216
+If you try to declare a type
+
+
+180
+00:05:22,216 --> 00:05:23,646
+like that, you'll get a
+
+
+181
+00:05:23,646 --> 00:05:24,326
+compilation error.
+
+
+182
+00:05:26,176 --> 00:05:26,956
+You might find that slightly
+
+
+183
+00:05:26,956 --> 00:05:27,636
+surprising.
+
+
+184
+00:05:27,636 --> 00:05:29,106
+Because sometimes you'll see
+
+
+185
+00:05:29,106 --> 00:05:30,456
+that you can declare types like
+
+
+186
+00:05:30,516 --> 00:05:32,386
+buffer without any element type.
+
+
+187
+00:05:33,206 --> 00:05:33,926
+But, that's just because the
+
+
+188
+00:05:33,926 --> 00:05:35,716
+compiler is able to infer what
+
+
+189
+00:05:35,716 --> 00:05:36,896
+the element type ought to be
+
+
+190
+00:05:37,206 --> 00:05:38,126
+from the context.
+
+
+191
+00:05:38,546 --> 00:05:39,716
+In this case, from the literals
+
+
+192
+00:05:39,716 --> 00:05:40,676
+on the right-hand side here.
+
+
+193
+00:05:41,686 --> 00:05:43,846
+The element is still there, it's
+
+
+194
+00:05:43,846 --> 00:05:44,576
+just implicit.
+
+
+195
+00:05:46,356 --> 00:05:48,046
+This knowledge of exactly what
+
+
+196
+00:05:48,126 --> 00:05:50,506
+type a buff-- a type like buffer
+
+
+197
+00:05:50,506 --> 00:05:52,326
+contains is carried all the way
+
+
+198
+00:05:52,326 --> 00:05:54,276
+through both compile and
+
+
+199
+00:05:54,276 --> 00:05:54,886
+runtime.
+
+
+200
+00:05:55,596 --> 00:05:57,926
+And this means that we can
+
+
+201
+00:05:58,076 --> 00:05:59,576
+achieve our goal of holding all
+
+
+202
+00:05:59,576 --> 00:06:01,266
+of the elements in a contiguous
+
+
+203
+00:06:01,306 --> 00:06:02,416
+block of memory, with no
+
+
+204
+00:06:02,416 --> 00:06:02,936
+overhead.
+
+
+205
+00:06:03,966 --> 00:06:05,476
+Even if those types are
+
+
+206
+00:06:05,476 --> 00:06:06,526
+arbitrarily large.
+
+
+207
+00:06:08,196 --> 00:06:09,866
+And because the compiler has
+
+
+208
+00:06:10,816 --> 00:06:12,416
+direct knowledge at all times of
+
+
+209
+00:06:12,416 --> 00:06:14,546
+exactly what element type the
+
+
+210
+00:06:14,546 --> 00:06:15,376
+buffer contains.
+
+
+211
+00:06:15,956 --> 00:06:16,976
+It has optimization
+
+
+212
+00:06:16,976 --> 00:06:18,356
+opportunities available to it
+
+
+213
+00:06:18,356 --> 00:06:19,646
+that it wouldn't otherwise have.
+
+
+214
+00:06:20,586 --> 00:06:21,796
+So, in the case here, where I've
+
+
+215
+00:06:21,796 --> 00:06:23,436
+declared a buffer of integers.
+
+
+216
+00:06:24,296 --> 00:06:25,686
+A loop like this ought to be
+
+
+217
+00:06:25,686 --> 00:06:27,366
+compiled down to just a handful
+
+
+218
+00:06:27,366 --> 00:06:28,766
+of very efficient CPU
+
+
+219
+00:06:28,766 --> 00:06:29,436
+instructions.
+
+
+220
+00:06:31,936 --> 00:06:32,876
+Now, if you were writing a loop
+
+
+221
+00:06:32,876 --> 00:06:36,186
+like this, on a regular basis.
+
+
+222
+00:06:36,546 --> 00:06:37,826
+To sum up a buffer of integers,
+
+
+223
+00:06:38,006 --> 00:06:39,336
+it might make sense to extract
+
+
+224
+00:06:39,336 --> 00:06:40,776
+it out into a method.
+
+
+225
+00:06:40,876 --> 00:06:44,086
+An extension on buffer that's
+
+
+226
+00:06:44,086 --> 00:06:45,526
+more unit-testable, and more
+
+
+227
+00:06:45,526 --> 00:06:46,966
+readable when you actually call
+
+
+228
+00:06:47,026 --> 00:06:47,206
+it.
+
+
+229
+00:06:48,356 --> 00:06:49,326
+But, you probably know that if
+
+
+230
+00:06:49,326 --> 00:06:50,306
+you've written code like this,
+
+
+231
+00:06:50,706 --> 00:06:52,026
+you'll get a compilation issue,
+
+
+232
+00:06:52,516 --> 00:06:54,466
+because not all element types
+
+
+233
+00:06:54,466 --> 00:06:57,366
+can be summed up like this.
+
+
+234
+00:06:57,666 --> 00:06:58,916
+We need to tell the compiler
+
+
+235
+00:06:59,126 --> 00:07:01,506
+more about the capabilities the
+
+
+236
+00:07:01,506 --> 00:07:03,646
+element needs to have, in order
+
+
+237
+00:07:03,646 --> 00:07:05,636
+to make this method available on
+
+
+238
+00:07:05,636 --> 00:07:06,356
+a buffer.
+
+
+239
+00:07:07,136 --> 00:07:08,816
+Now, the easiest way to do that
+
+
+240
+00:07:08,816 --> 00:07:10,626
+is by constraining the element
+
+
+241
+00:07:10,626 --> 00:07:12,386
+type to be a specific type like
+
+
+242
+00:07:12,386 --> 00:07:13,856
+the Int from our original loop.
+
+
+243
+00:07:14,676 --> 00:07:18,366
+If you take this easy approach
+
+
+244
+00:07:18,366 --> 00:07:19,396
+to get up and running with your
+
+
+245
+00:07:19,396 --> 00:07:20,656
+extension, it's easy to
+
+
+246
+00:07:20,656 --> 00:07:21,726
+generalize it later.
+
+
+247
+00:07:22,176 --> 00:07:22,926
+When you find that you need to
+
+
+248
+00:07:22,926 --> 00:07:23,676
+do something different.
+
+
+249
+00:07:23,676 --> 00:07:25,296
+Like sum up a buffer of doubles,
+
+
+250
+00:07:25,296 --> 00:07:25,906
+or floats.
+
+
+251
+00:07:26,966 --> 00:07:28,256
+Just look at the type that
+
+
+252
+00:07:28,256 --> 00:07:29,226
+you've constrained to.
+
+
+253
+00:07:29,226 --> 00:07:31,006
+Look at the protocols it
+
+
+254
+00:07:31,006 --> 00:07:31,656
+conforms to.
+
+
+255
+00:07:31,846 --> 00:07:33,116
+And follow them up until you get
+
+
+256
+00:07:33,116 --> 00:07:34,816
+the most general protocol that
+
+
+257
+00:07:34,816 --> 00:07:35,736
+gives you everything that you
+
+
+258
+00:07:35,736 --> 00:07:36,626
+need to do your work.
+
+
+259
+00:07:37,686 --> 00:07:39,206
+In this case, the numeric
+
+
+260
+00:07:39,206 --> 00:07:40,646
+protocol, which gives us the two
+
+
+261
+00:07:40,646 --> 00:07:41,756
+things we're relying on here.
+
+
+262
+00:07:42,486 --> 00:07:44,876
+The ability to create a new
+
+
+263
+00:07:44,876 --> 00:07:46,596
+element with a value of zero,
+
+
+264
+00:07:46,596 --> 00:07:48,096
+and the ability to add elements
+
+
+265
+00:07:48,096 --> 00:07:48,476
+to it.
+
+
+266
+00:07:49,076 --> 00:07:49,876
+Which come as part of the
+
+
+267
+00:07:49,876 --> 00:07:50,676
+numeric protocol.
+
+
+268
+00:07:53,696 --> 00:07:54,776
+Now, let's talk about that
+
+
+269
+00:07:54,776 --> 00:07:56,156
+process of factoring out
+
+
+270
+00:07:56,246 --> 00:07:58,496
+protocols from various types.
+
+
+271
+00:07:59,456 --> 00:08:01,226
+So we've been talking about this
+
+
+272
+00:08:01,226 --> 00:08:03,366
+buffer type, and we can make it
+
+
+273
+00:08:03,366 --> 00:08:04,336
+generic across different
+
+
+274
+00:08:04,336 --> 00:08:04,856
+elements.
+
+
+275
+00:08:04,856 --> 00:08:06,176
+But what about writing generic
+
+
+276
+00:08:06,176 --> 00:08:07,936
+code that's generic in a
+
+
+277
+00:08:07,936 --> 00:08:08,596
+different direction?
+
+
+278
+00:08:09,156 --> 00:08:10,356
+Or writing code that works on
+
+
+279
+00:08:10,356 --> 00:08:11,236
+any different kind of
+
+
+280
+00:08:11,236 --> 00:08:11,716
+collection?
+
+
+281
+00:08:13,236 --> 00:08:14,946
+Such as an array that's very
+
+
+282
+00:08:14,946 --> 00:08:16,136
+similar to our buffer type.
+
+
+283
+00:08:16,886 --> 00:08:18,766
+But also more varied types, like
+
+
+284
+00:08:18,906 --> 00:08:20,506
+a dictionary that's a collection
+
+
+285
+00:08:20,506 --> 00:08:23,226
+of key value pairs.
+
+
+286
+00:08:23,226 --> 00:08:24,806
+Or maybe types that aren't
+
+
+287
+00:08:24,806 --> 00:08:25,766
+generic or are the different
+
+
+288
+00:08:25,766 --> 00:08:27,656
+element types, like data or
+
+
+289
+00:08:27,656 --> 00:08:29,086
+string that returns specific
+
+
+290
+00:08:29,086 --> 00:08:29,746
+element types.
+
+
+291
+00:08:30,286 --> 00:08:33,256
+We want to create a protocol
+
+
+292
+00:08:33,256 --> 00:08:34,876
+that captures all of their
+
+
+293
+00:08:34,876 --> 00:08:36,025
+common capabilities.
+
+
+294
+00:08:36,635 --> 00:08:38,466
+We're going to create a, a cut
+
+
+295
+00:08:38,525 --> 00:08:40,236
+down, simplified version of the
+
+
+296
+00:08:40,236 --> 00:08:41,236
+standard library's own
+
+
+297
+00:08:41,236 --> 00:08:41,976
+collection protocol.
+
+
+298
+00:08:45,126 --> 00:08:46,926
+So notice that we considered a
+
+
+299
+00:08:46,926 --> 00:08:49,266
+varied number of concrete types
+
+
+300
+00:08:49,266 --> 00:08:49,906
+first.
+
+
+301
+00:08:49,906 --> 00:08:51,806
+And now, we're thinking about a
+
+
+302
+00:08:51,806 --> 00:08:53,546
+kind of protocol that could join
+
+
+303
+00:08:53,546 --> 00:08:54,076
+them all together.
+
+
+304
+00:08:54,196 --> 00:08:55,656
+And, it's important to think of
+
+
+305
+00:08:55,656 --> 00:08:56,966
+things as this way around.
+
+
+306
+00:08:57,226 --> 00:08:58,726
+To start with some concrete
+
+
+307
+00:08:58,726 --> 00:09:00,566
+types, and then try and unify
+
+
+308
+00:09:00,566 --> 00:09:01,816
+them with a protocol.
+
+
+309
+00:09:03,336 --> 00:09:04,176
+What do those types have in
+
+
+310
+00:09:04,176 --> 00:09:04,566
+common?
+
+
+311
+00:09:05,186 --> 00:09:06,456
+What don't they have in common?
+
+
+312
+00:09:07,356 --> 00:09:08,706
+When you're designing a protocol
+
+
+313
+00:09:08,706 --> 00:09:09,886
+like this, you can think of it
+
+
+314
+00:09:09,886 --> 00:09:11,246
+kind of like a contract
+
+
+315
+00:09:11,246 --> 00:09:11,966
+negotiation.
+
+
+316
+00:09:13,316 --> 00:09:14,686
+There's a natural push and pull
+
+
+317
+00:09:14,686 --> 00:09:16,426
+here, between conforming types
+
+
+318
+00:09:16,426 --> 00:09:17,086
+on the one hand.
+
+
+319
+00:09:17,526 --> 00:09:19,386
+That want as much flexibility as
+
+
+320
+00:09:19,386 --> 00:09:20,896
+possible in fulfilling that
+
+
+321
+00:09:20,896 --> 00:09:21,376
+contract.
+
+
+322
+00:09:22,636 --> 00:09:24,636
+And users of the protocol, that
+
+
+323
+00:09:24,636 --> 00:09:25,856
+want a really nice, tight,
+
+
+324
+00:09:26,086 --> 00:09:28,546
+simple protocol in order to do
+
+
+325
+00:09:28,546 --> 00:09:29,246
+their extensions.
+
+
+326
+00:09:30,306 --> 00:09:32,196
+That's why it's really important
+
+
+327
+00:09:32,226 --> 00:09:33,776
+to have both a variety of
+
+
+328
+00:09:33,776 --> 00:09:35,006
+different possible conforming
+
+
+329
+00:09:35,006 --> 00:09:35,396
+types.
+
+
+330
+00:09:35,916 --> 00:09:37,226
+And a number of different use
+
+
+331
+00:09:37,226 --> 00:09:38,616
+cases in mind when you're
+
+
+332
+00:09:38,616 --> 00:09:39,626
+designing your protocol.
+
+
+333
+00:09:40,276 --> 00:09:42,246
+Because it's a balancing act.
+
+
+334
+00:09:43,076 --> 00:09:45,716
+So, let's start to flesh out the
+
+
+335
+00:09:45,716 --> 00:09:46,546
+collection protocol.
+
+
+336
+00:09:46,726 --> 00:09:47,896
+So, first we need to represent
+
+
+337
+00:09:47,896 --> 00:09:48,616
+the element type.
+
+
+338
+00:09:49,036 --> 00:09:50,236
+Now, in protocols, we use an
+
+
+339
+00:09:50,236 --> 00:09:52,556
+associated type for that.
+
+
+340
+00:09:52,956 --> 00:09:54,356
+Each conforming type needs to
+
+
+341
+00:09:54,356 --> 00:09:55,906
+set element to be something
+
+
+342
+00:09:55,906 --> 00:09:56,476
+appropriate.
+
+
+343
+00:09:56,556 --> 00:09:59,096
+In the case of buffer, or array,
+
+
+344
+00:09:59,096 --> 00:10:01,726
+as of Swift 4.2, this happens
+
+
+345
+00:10:01,846 --> 00:10:02,516
+automatically.
+
+
+346
+00:10:03,256 --> 00:10:04,416
+Because we also named their
+
+
+347
+00:10:04,416 --> 00:10:06,016
+generic parameters to be element
+
+
+348
+00:10:06,016 --> 00:10:06,416
+as well.
+
+
+349
+00:10:07,706 --> 00:10:09,136
+This is a nice side benefit of
+
+
+350
+00:10:09,136 --> 00:10:10,356
+giving your generic arguments
+
+
+351
+00:10:10,466 --> 00:10:11,856
+meaningful names that follow
+
+
+352
+00:10:11,856 --> 00:10:13,816
+common conventions like the word
+
+
+353
+00:10:13,816 --> 00:10:14,226
+element.
+
+
+354
+00:10:15,726 --> 00:10:16,406
+Rather than giving them
+
+
+355
+00:10:16,406 --> 00:10:17,856
+something arbitrary like T that
+
+
+356
+00:10:17,856 --> 00:10:19,256
+you'd have to separately state
+
+
+357
+00:10:19,256 --> 00:10:20,116
+was the element type.
+
+
+358
+00:10:22,096 --> 00:10:23,296
+For other data types, you might
+
+
+359
+00:10:23,296 --> 00:10:24,186
+need to do something slightly
+
+
+360
+00:10:24,186 --> 00:10:24,816
+more specific.
+
+
+361
+00:10:24,816 --> 00:10:26,186
+For example, a dictionary needs
+
+
+362
+00:10:26,186 --> 00:10:27,466
+to set the element type to be
+
+
+363
+00:10:27,466 --> 00:10:28,986
+the pair of its key and value
+
+
+364
+00:10:29,066 --> 00:10:29,266
+type.
+
+
+365
+00:10:29,746 --> 00:10:33,486
+Next, let's talk about adding
+
+
+366
+00:10:33,486 --> 00:10:34,646
+the subscript operation.
+
+
+367
+00:10:35,896 --> 00:10:37,026
+Now, if we were talking about
+
+
+368
+00:10:37,156 --> 00:10:38,566
+just a protocol for types like
+
+
+369
+00:10:38,626 --> 00:10:40,376
+array, we might be tempted to
+
+
+370
+00:10:40,376 --> 00:10:42,576
+have subscripts take an Int as
+
+
+371
+00:10:42,576 --> 00:10:43,146
+its argument.
+
+
+372
+00:10:45,036 --> 00:10:47,256
+But making subscript take an Int
+
+
+373
+00:10:47,476 --> 00:10:49,006
+would imply a very strong
+
+
+374
+00:10:49,006 --> 00:10:50,456
+contract.
+
+
+375
+00:10:50,936 --> 00:10:52,466
+Every conforming type would have
+
+
+376
+00:10:52,586 --> 00:10:54,536
+to supply the ability to fetch
+
+
+377
+00:10:54,536 --> 00:10:55,756
+an element's given position that
+
+
+378
+00:10:55,756 --> 00:10:57,396
+was represented by an integer.
+
+
+379
+00:10:57,916 --> 00:10:59,836
+And, that works great for types
+
+
+380
+00:11:00,086 --> 00:11:00,716
+like array.
+
+
+381
+00:11:01,596 --> 00:11:03,526
+It's also definitely easy for
+
+
+382
+00:11:03,526 --> 00:11:04,586
+users of the protocol to
+
+
+383
+00:11:04,586 --> 00:11:05,116
+understand.
+
+
+384
+00:11:06,186 --> 00:11:07,296
+But is it flexible enough for a
+
+
+385
+00:11:07,296 --> 00:11:08,526
+slightly more complicated type,
+
+
+386
+00:11:08,626 --> 00:11:09,506
+like a dictionary?
+
+
+387
+00:11:11,136 --> 00:11:13,636
+Now no matter how you model it,
+
+
+388
+00:11:13,866 --> 00:11:15,256
+a dictionary's probably going to
+
+
+389
+00:11:15,256 --> 00:11:16,406
+be backed by some fairly
+
+
+390
+00:11:16,406 --> 00:11:17,746
+complicated internal data
+
+
+391
+00:11:17,746 --> 00:11:18,176
+structure.
+
+
+392
+00:11:18,666 --> 00:11:19,866
+That has specific logic for
+
+
+393
+00:11:19,866 --> 00:11:21,466
+moving from one element to the
+
+
+394
+00:11:21,466 --> 00:11:21,916
+next.
+
+
+395
+00:11:22,586 --> 00:11:24,146
+For example, it could be backed
+
+
+396
+00:11:24,276 --> 00:11:26,046
+by an internal buffer of some
+
+
+397
+00:11:26,046 --> 00:11:29,096
+kind, and it could use an index
+
+
+398
+00:11:29,096 --> 00:11:30,736
+type that stored an offset into
+
+
+399
+00:11:30,736 --> 00:11:31,266
+that buffer.
+
+
+400
+00:11:31,266 --> 00:11:33,166
+That it could then take as the
+
+
+401
+00:11:33,166 --> 00:11:34,526
+argument to subscript in order
+
+
+402
+00:11:34,526 --> 00:11:35,366
+to fetch an element to the
+
+
+403
+00:11:35,366 --> 00:11:37,346
+position, using that offset.
+
+
+404
+00:11:38,166 --> 00:11:39,776
+But it would be critical that
+
+
+405
+00:11:39,776 --> 00:11:41,496
+the dictionary's index type be
+
+
+406
+00:11:41,496 --> 00:11:43,116
+an opaque type that only the
+
+
+407
+00:11:43,116 --> 00:11:44,416
+dictionary can control.
+
+
+408
+00:11:45,206 --> 00:11:45,866
+You wouldn't want somebody
+
+
+409
+00:11:45,866 --> 00:11:47,506
+necessarily just adding one to
+
+
+410
+00:11:47,506 --> 00:11:48,036
+your offset.
+
+
+411
+00:11:48,306 --> 00:11:49,176
+That wouldn't necessarily move
+
+
+412
+00:11:49,176 --> 00:11:50,076
+to the next element in the
+
+
+413
+00:11:50,076 --> 00:11:50,576
+dictionary.
+
+
+414
+00:11:51,056 --> 00:11:52,466
+It could move some arbitrary,
+
+
+415
+00:11:52,466 --> 00:11:54,206
+maybe uninitialized part of the
+
+
+416
+00:11:54,206 --> 00:11:55,706
+dictionary's internal storage.
+
+
+417
+00:11:56,826 --> 00:11:57,936
+So instead we want the
+
+
+418
+00:11:57,936 --> 00:12:00,486
+dictionary to control moving
+
+
+419
+00:12:00,486 --> 00:12:02,126
+forward through the collection
+
+
+420
+00:12:02,126 --> 00:12:03,346
+by advancing the index.
+
+
+421
+00:12:04,096 --> 00:12:05,356
+And so to do that, we add
+
+
+422
+00:12:05,356 --> 00:12:05,986
+another method.
+
+
+423
+00:12:06,926 --> 00:12:08,756
+That given an index, gives you
+
+
+424
+00:12:08,756 --> 00:12:09,706
+the index that marks the
+
+
+425
+00:12:09,706 --> 00:12:12,256
+position after it.
+
+
+426
+00:12:12,506 --> 00:12:13,386
+Once you take this step, you
+
+
+427
+00:12:13,386 --> 00:12:14,376
+need a couple more things.
+
+
+428
+00:12:14,376 --> 00:12:15,806
+You need a start index property,
+
+
+429
+00:12:16,126 --> 00:12:17,706
+and an end index property.
+
+
+430
+00:12:18,226 --> 00:12:19,356
+Because a simple count isn't
+
+
+431
+00:12:19,356 --> 00:12:20,356
+going to work anymore in order
+
+
+432
+00:12:20,356 --> 00:12:21,346
+to tell us that we've reached
+
+
+433
+00:12:21,346 --> 00:12:21,766
+the end.
+
+
+434
+00:12:22,076 --> 00:12:24,056
+Now that we're not using Ints as
+
+
+435
+00:12:24,056 --> 00:12:24,696
+our index type.
+
+
+436
+00:12:26,376 --> 00:12:27,586
+So let's bring those back to the
+
+
+437
+00:12:27,586 --> 00:12:28,466
+collection protocol.
+
+
+438
+00:12:30,086 --> 00:12:31,606
+So we've got a subscript that
+
+
+439
+00:12:31,606 --> 00:12:33,136
+takes some index type to
+
+
+440
+00:12:33,136 --> 00:12:34,396
+represent a position, and gives
+
+
+441
+00:12:34,396 --> 00:12:35,056
+you an element there.
+
+
+442
+00:12:35,636 --> 00:12:36,956
+And, we've got a way of moving
+
+
+443
+00:12:36,956 --> 00:12:37,916
+that position forward.
+
+
+444
+00:12:39,076 --> 00:12:41,176
+But we also need types to supply
+
+
+445
+00:12:41,176 --> 00:12:42,206
+what kind of type they're going
+
+
+446
+00:12:42,206 --> 00:12:43,576
+to use for their index.
+
+
+447
+00:12:43,816 --> 00:12:44,946
+We do that with another
+
+
+448
+00:12:44,946 --> 00:12:45,916
+associated type.
+
+
+449
+00:12:47,886 --> 00:12:49,436
+Conforming types would supply
+
+
+450
+00:12:50,046 --> 00:12:50,736
+the appropriate types.
+
+
+451
+00:12:50,736 --> 00:12:52,946
+So an array or a data would give
+
+
+452
+00:12:53,156 --> 00:12:54,536
+an Int as their index type.
+
+
+453
+00:12:55,206 --> 00:12:56,406
+Whereas a dictionary would give
+
+
+454
+00:12:56,406 --> 00:12:58,096
+its own custom implementation
+
+
+455
+00:12:58,176 --> 00:12:59,426
+that handles its own internal
+
+
+456
+00:12:59,426 --> 00:12:59,756
+logic.
+
+
+457
+00:13:04,306 --> 00:13:05,956
+So let's go back to count that
+
+
+458
+00:13:05,956 --> 00:13:07,456
+we dropped a minute ago in order
+
+
+459
+00:13:07,456 --> 00:13:09,106
+to generalize our indexing
+
+
+460
+00:13:09,106 --> 00:13:09,386
+model.
+
+
+461
+00:13:09,536 --> 00:13:10,636
+It's still a really useful
+
+
+462
+00:13:10,636 --> 00:13:11,396
+property to have.
+
+
+463
+00:13:11,396 --> 00:13:12,916
+So we probably want to add it
+
+
+464
+00:13:12,916 --> 00:13:15,396
+back as an extension on
+
+
+465
+00:13:15,396 --> 00:13:15,856
+collection.
+
+
+466
+00:13:16,656 --> 00:13:18,816
+Something that walks over the
+
+
+467
+00:13:18,816 --> 00:13:20,296
+collection, moving the index
+
+
+468
+00:13:20,296 --> 00:13:22,246
+forward, incrementing a counter
+
+
+469
+00:13:22,296 --> 00:13:23,376
+that it then returns.
+
+
+470
+00:13:23,376 --> 00:13:27,426
+Now, if we try and implement
+
+
+471
+00:13:27,426 --> 00:13:28,886
+this, we hit another missing
+
+
+472
+00:13:28,886 --> 00:13:29,406
+requirement.
+
+
+473
+00:13:30,346 --> 00:13:31,886
+Since we moved off of Int to a
+
+
+474
+00:13:31,886 --> 00:13:33,746
+general index type, we can no
+
+
+475
+00:13:33,746 --> 00:13:35,626
+longer assume that the index
+
+
+476
+00:13:35,626 --> 00:13:36,596
+type was equatable.
+
+
+477
+00:13:37,526 --> 00:13:39,286
+Ints are, but arbitrary index
+
+
+478
+00:13:39,286 --> 00:13:40,306
+types aren't necessarily.
+
+
+479
+00:13:40,306 --> 00:13:42,646
+And, we need that in order to
+
+
+480
+00:13:42,646 --> 00:13:43,936
+know that we've reached the end.
+
+
+481
+00:13:45,226 --> 00:13:47,216
+Now, we could solve this in the
+
+
+482
+00:13:47,216 --> 00:13:48,846
+same way that we did earlier, of
+
+
+483
+00:13:49,316 --> 00:13:50,636
+constraining our extension.
+
+
+484
+00:13:50,706 --> 00:13:52,096
+Say that it only works when the
+
+
+485
+00:13:52,096 --> 00:13:53,486
+index type is equatable.
+
+
+486
+00:13:54,706 --> 00:13:55,976
+But, that doesn't feel right.
+
+
+487
+00:13:57,456 --> 00:13:59,006
+We want a protocol to be easy to
+
+
+488
+00:13:59,006 --> 00:13:59,456
+use.
+
+
+489
+00:13:59,766 --> 00:14:01,556
+And it's going to get really
+
+
+490
+00:14:01,556 --> 00:14:02,736
+irritating, if we have to
+
+
+491
+00:14:02,736 --> 00:14:04,276
+always, on every extension we
+
+
+492
+00:14:04,276 --> 00:14:06,696
+write, put this constraint on
+
+
+493
+00:14:06,696 --> 00:14:06,886
+there.
+
+
+494
+00:14:06,886 --> 00:14:07,666
+Because we're nearly always
+
+
+495
+00:14:07,666 --> 00:14:08,396
+going to need to be able to
+
+
+496
+00:14:08,396 --> 00:14:09,396
+compare two indexes.
+
+
+497
+00:14:10,316 --> 00:14:11,296
+Instead, it's probably better
+
+
+498
+00:14:11,296 --> 00:14:13,556
+expressed as a requirement of
+
+
+499
+00:14:13,556 --> 00:14:14,196
+the protocol.
+
+
+500
+00:14:14,196 --> 00:14:17,816
+As a constraint on our
+
+
+501
+00:14:17,816 --> 00:14:19,016
+index-associated type.
+
+
+502
+00:14:20,386 --> 00:14:21,406
+Putting this constraint on the
+
+
+503
+00:14:21,406 --> 00:14:23,246
+protocol means that all types
+
+
+504
+00:14:23,246 --> 00:14:24,226
+that conform to the protocol
+
+
+505
+00:14:24,226 --> 00:14:26,266
+need to supply an equatable type
+
+
+506
+00:14:26,266 --> 00:14:27,036
+for their index.
+
+
+507
+00:14:28,626 --> 00:14:30,026
+That way you don't have to
+
+
+508
+00:14:30,076 --> 00:14:31,426
+specify it every time you write
+
+
+509
+00:14:31,426 --> 00:14:32,046
+the extension.
+
+
+510
+00:14:33,476 --> 00:14:35,806
+This is another example of
+
+
+511
+00:14:35,806 --> 00:14:36,936
+negotiating the protocol
+
+
+512
+00:14:36,936 --> 00:14:37,386
+contract.
+
+
+513
+00:14:38,806 --> 00:14:39,946
+Users of the protocol had a
+
+
+514
+00:14:39,946 --> 00:14:41,306
+requirement that they really
+
+
+515
+00:14:41,306 --> 00:14:42,406
+needed to be able to compare
+
+
+516
+00:14:42,406 --> 00:14:42,926
+indexes.
+
+
+517
+00:14:43,666 --> 00:14:45,876
+And, conforming types, they did
+
+
+518
+00:14:45,876 --> 00:14:47,226
+a check that they can reasonably
+
+
+519
+00:14:47,226 --> 00:14:48,186
+accommodate that without giving
+
+
+520
+00:14:48,186 --> 00:14:49,566
+up too much flexibility.
+
+
+521
+00:14:50,726 --> 00:14:52,116
+In this case, they definitely
+
+
+522
+00:14:52,116 --> 00:14:52,506
+can.
+
+
+523
+00:14:53,556 --> 00:14:54,976
+Ints, the data, and array are
+
+
+524
+00:14:54,976 --> 00:14:56,236
+using are already equatable.
+
+
+525
+00:14:56,296 --> 00:14:57,986
+And, with Swift 4.2's new
+
+
+526
+00:14:57,986 --> 00:14:59,646
+automatic synthesis of equatable
+
+
+527
+00:14:59,646 --> 00:15:00,316
+conformance.
+
+
+528
+00:15:01,336 --> 00:15:02,536
+It's easy for dictionary to make
+
+
+529
+00:15:02,536 --> 00:15:03,736
+its index type equatable as
+
+
+530
+00:15:03,736 --> 00:15:03,976
+well.
+
+
+531
+00:15:07,346 --> 00:15:08,106
+Next, let's talk about
+
+
+532
+00:15:08,226 --> 00:15:10,246
+optimizing this count operation
+
+
+533
+00:15:10,426 --> 00:15:12,256
+with a customization point.
+
+
+534
+00:15:14,416 --> 00:15:16,456
+So, we've written a version of
+
+
+535
+00:15:16,456 --> 00:15:19,126
+count, that calculates the
+
+
+536
+00:15:19,126 --> 00:15:19,886
+number of elements in the
+
+
+537
+00:15:19,886 --> 00:15:21,446
+collection by walking over the
+
+
+538
+00:15:21,446 --> 00:15:22,356
+entire collection.
+
+
+539
+00:15:22,356 --> 00:15:23,176
+But, obviously a lot of
+
+
+540
+00:15:23,176 --> 00:15:24,846
+collections can probably do that
+
+
+541
+00:15:24,846 --> 00:15:25,476
+a lot faster.
+
+
+542
+00:15:25,476 --> 00:15:27,596
+For example, supposing a
+
+
+543
+00:15:27,596 --> 00:15:29,736
+dictionary kept internally a
+
+
+544
+00:15:29,736 --> 00:15:30,946
+count of the number of elements
+
+
+545
+00:15:30,946 --> 00:15:32,516
+it held, for its own purposes.
+
+
+546
+00:15:33,256 --> 00:15:34,946
+If it has this information, it
+
+
+547
+00:15:34,946 --> 00:15:36,376
+can just serve it up in its own
+
+
+548
+00:15:36,376 --> 00:15:37,416
+implementation of count.
+
+
+549
+00:15:38,386 --> 00:15:40,396
+That means that when people call
+
+
+550
+00:15:40,396 --> 00:15:41,806
+count on a dictionary, they're
+
+
+551
+00:15:42,036 --> 00:15:43,676
+getting fast constant time.
+
+
+552
+00:15:44,096 --> 00:15:45,416
+Instead of the linear time that
+
+
+553
+00:15:45,416 --> 00:15:47,116
+our original version that works
+
+
+554
+00:15:47,116 --> 00:15:48,256
+with any collection takes.
+
+
+555
+00:15:49,116 --> 00:15:51,296
+But, when adding optimizations
+
+
+556
+00:15:51,296 --> 00:15:52,196
+like this, there's something you
+
+
+557
+00:15:52,196 --> 00:15:52,796
+need to be aware of.
+
+
+558
+00:15:52,796 --> 00:15:54,386
+Which is the difference between
+
+
+559
+00:15:54,386 --> 00:15:55,476
+fulfilling protocol
+
+
+560
+00:15:55,476 --> 00:15:57,486
+requirements, and just adding
+
+
+561
+00:15:57,486 --> 00:15:59,546
+lots of overloads onto specific
+
+
+562
+00:15:59,546 --> 00:16:00,076
+types.
+
+
+563
+00:16:00,856 --> 00:16:03,526
+Up until now, this new version
+
+
+564
+00:16:03,526 --> 00:16:04,976
+of count on dictionary is just
+
+
+565
+00:16:05,066 --> 00:16:05,686
+an overload.
+
+
+566
+00:16:05,686 --> 00:16:07,626
+That means that when you have a
+
+
+567
+00:16:07,626 --> 00:16:09,436
+dictionary, and you know it's a
+
+
+568
+00:16:09,436 --> 00:16:09,866
+dictionary.
+
+
+569
+00:16:10,526 --> 00:16:11,656
+You'll get the newer, better
+
+
+570
+00:16:11,656 --> 00:16:12,446
+version of count.
+
+
+571
+00:16:13,226 --> 00:16:14,326
+But, what about calling it
+
+
+572
+00:16:14,326 --> 00:16:15,886
+inside a generic algorithm?
+
+
+573
+00:16:17,816 --> 00:16:19,806
+So supposing we wanted, for
+
+
+574
+00:16:19,806 --> 00:16:21,206
+example, to write a version of
+
+
+575
+00:16:21,206 --> 00:16:22,486
+the standard library's map?
+
+
+576
+00:16:23,116 --> 00:16:24,086
+If you're not already familiar
+
+
+577
+00:16:24,086 --> 00:16:25,656
+with it, it's a really useful
+
+
+578
+00:16:25,656 --> 00:16:28,186
+operation that transforms each
+
+
+579
+00:16:28,226 --> 00:16:29,476
+element in the collection.
+
+
+580
+00:16:29,526 --> 00:16:30,946
+And gives it back to you as a
+
+
+581
+00:16:30,946 --> 00:16:31,526
+new array.
+
+
+582
+00:16:32,596 --> 00:16:34,216
+The implementation's pretty
+
+
+583
+00:16:34,216 --> 00:16:34,566
+simple.
+
+
+584
+00:16:35,036 --> 00:16:36,686
+It just creates a new array,
+
+
+585
+00:16:37,486 --> 00:16:38,466
+moves over the collection,
+
+
+586
+00:16:39,056 --> 00:16:40,106
+transforms each element.
+
+
+587
+00:16:40,386 --> 00:16:42,846
+And then appends it to the
+
+
+588
+00:16:42,846 --> 00:16:42,913
+array.
+
+
+589
+00:16:42,913 --> 00:16:44,566
+Now, as you append elements to
+
+
+590
+00:16:44,566 --> 00:16:46,606
+an array like this, the array
+
+
+591
+00:16:46,606 --> 00:16:47,846
+automatically grows.
+
+
+592
+00:16:48,626 --> 00:16:50,466
+And, as it grows, it needs
+
+
+593
+00:16:50,466 --> 00:16:52,196
+sometimes to re-allocate its
+
+
+594
+00:16:52,196 --> 00:16:53,116
+internal storage.
+
+
+595
+00:16:53,216 --> 00:16:54,456
+In order to make more room to
+
+
+596
+00:16:54,456 --> 00:16:55,586
+accommodate the new elements.
+
+
+597
+00:16:56,256 --> 00:16:57,586
+In a loop like this, it might
+
+
+598
+00:16:57,586 --> 00:16:59,276
+have to do that multiple times
+
+
+599
+00:16:59,276 --> 00:17:00,356
+over, depending on how big it
+
+
+600
+00:17:00,356 --> 00:17:00,606
+gets.
+
+
+601
+00:17:00,606 --> 00:17:02,696
+And, doing that takes time.
+
+
+602
+00:17:02,926 --> 00:17:04,715
+Allocating memory can be fairly
+
+
+603
+00:17:04,715 --> 00:17:05,256
+expensive.
+
+
+604
+00:17:05,346 --> 00:17:07,996
+There is a nice optimization
+
+
+605
+00:17:07,996 --> 00:17:09,106
+trick we can do with this
+
+
+606
+00:17:09,106 --> 00:17:09,766
+implementation.
+
+
+607
+00:17:10,606 --> 00:17:12,336
+We already know exactly how big
+
+
+608
+00:17:12,636 --> 00:17:13,986
+the final array is going to be.
+
+
+609
+00:17:14,016 --> 00:17:15,396
+It's going to be exactly the
+
+
+610
+00:17:15,396 --> 00:17:16,945
+same size as our original
+
+
+611
+00:17:16,945 --> 00:17:17,425
+collection.
+
+
+612
+00:17:18,445 --> 00:17:20,836
+So we could reserve exactly the
+
+
+613
+00:17:20,836 --> 00:17:22,766
+right amount of space in the
+
+
+614
+00:17:22,766 --> 00:17:24,486
+array up front, before we start
+
+
+615
+00:17:24,486 --> 00:17:26,435
+appending to it, which is a nice
+
+
+616
+00:17:26,435 --> 00:17:26,816
+speed-up.
+
+
+617
+00:17:26,906 --> 00:17:29,106
+And to do this, we're calling
+
+
+618
+00:17:29,196 --> 00:17:29,576
+count.
+
+
+619
+00:17:30,726 --> 00:17:32,466
+But, we're calling count here,
+
+
+620
+00:17:32,466 --> 00:17:34,226
+in what's referred to as a
+
+
+621
+00:17:34,226 --> 00:17:35,466
+generic context.
+
+
+622
+00:17:35,886 --> 00:17:37,976
+That is, a context where the
+
+
+623
+00:17:37,976 --> 00:17:39,266
+collection type is completely
+
+
+624
+00:17:39,266 --> 00:17:40,626
+generic, not specific.
+
+
+625
+00:17:40,626 --> 00:17:41,816
+It could be an array, or a
+
+
+626
+00:17:41,816 --> 00:17:43,296
+dictionary, or a link list, or
+
+
+627
+00:17:43,296 --> 00:17:43,686
+anything.
+
+
+628
+00:17:44,486 --> 00:17:46,286
+So, we can't know that it
+
+
+629
+00:17:46,286 --> 00:17:48,156
+necessarily has a better
+
+
+630
+00:17:48,156 --> 00:17:49,396
+implementation of count
+
+
+631
+00:17:49,396 --> 00:17:50,036
+available to it.
+
+
+632
+00:17:50,236 --> 00:17:51,646
+When the compiler compiles this
+
+
+633
+00:17:51,646 --> 00:17:51,976
+code.
+
+
+634
+00:17:52,726 --> 00:17:55,326
+And so, in this case, the
+
+
+635
+00:17:55,326 --> 00:17:56,376
+version of count that's going to
+
+
+636
+00:17:56,376 --> 00:17:57,966
+be called is actually the
+
+
+637
+00:17:57,966 --> 00:17:59,046
+general version of count.
+
+
+638
+00:17:59,246 --> 00:18:01,086
+That works on any collection and
+
+
+639
+00:18:01,086 --> 00:18:02,256
+iterates over the entire
+
+
+640
+00:18:02,256 --> 00:18:02,766
+collection.
+
+
+641
+00:18:03,466 --> 00:18:04,536
+If you called map on a
+
+
+642
+00:18:04,536 --> 00:18:06,496
+dictionary, it wouldn't call the
+
+
+643
+00:18:06,496 --> 00:18:07,436
+better version of count that
+
+
+644
+00:18:07,436 --> 00:18:08,606
+we've just written yet.
+
+
+645
+00:18:11,156 --> 00:18:13,316
+In order for customized method
+
+
+646
+00:18:13,316 --> 00:18:15,386
+or property like this to be
+
+
+647
+00:18:15,386 --> 00:18:17,526
+called in a gen-- in a generic
+
+
+648
+00:18:17,526 --> 00:18:18,066
+context.
+
+
+649
+00:18:18,476 --> 00:18:19,886
+It needs to be declared as a
+
+
+650
+00:18:19,886 --> 00:18:21,446
+requirement on the protocol
+
+
+651
+00:18:21,446 --> 00:18:22,026
+itself.
+
+
+652
+00:18:22,516 --> 00:18:24,256
+We've established that there's
+
+
+653
+00:18:24,256 --> 00:18:26,166
+definitely a way in which
+
+
+654
+00:18:26,166 --> 00:18:27,576
+certain collections could
+
+
+655
+00:18:27,576 --> 00:18:28,826
+provide an optimized version of
+
+
+656
+00:18:28,826 --> 00:18:30,806
+count, so it makes sense to add
+
+
+657
+00:18:30,806 --> 00:18:32,566
+it as a requirement on the
+
+
+658
+00:18:32,566 --> 00:18:33,086
+protocol.
+
+
+659
+00:18:34,446 --> 00:18:36,396
+Now, even though we've made it a
+
+
+660
+00:18:36,396 --> 00:18:40,036
+requirement to implement it, all
+
+
+661
+00:18:40,036 --> 00:18:41,346
+collections don't have to
+
+
+662
+00:18:41,346 --> 00:18:42,066
+provide their own
+
+
+663
+00:18:42,066 --> 00:18:42,716
+implementation.
+
+
+664
+00:18:42,926 --> 00:18:44,086
+Because we've already provided
+
+
+665
+00:18:44,086 --> 00:18:45,976
+one via our extension that will
+
+
+666
+00:18:45,976 --> 00:18:47,076
+work on any collection.
+
+
+667
+00:18:48,306 --> 00:18:49,776
+Adding a requirement to the
+
+
+668
+00:18:49,776 --> 00:18:51,856
+protocol, and alongside it
+
+
+669
+00:18:51,856 --> 00:18:53,516
+adding a default implementation
+
+
+670
+00:18:53,736 --> 00:18:55,576
+via an extension is what we
+
+
+671
+00:18:55,576 --> 00:18:57,706
+refer to as a customization
+
+
+672
+00:18:57,706 --> 00:18:57,996
+point.
+
+
+673
+00:18:58,666 --> 00:19:01,456
+With a customization point, the
+
+
+674
+00:19:01,456 --> 00:19:03,126
+compiler can know that there's
+
+
+675
+00:19:03,126 --> 00:19:04,286
+potentially a better
+
+
+676
+00:19:04,286 --> 00:19:06,026
+implementation of a method or
+
+
+677
+00:19:06,026 --> 00:19:07,036
+property available to it.
+
+
+678
+00:19:07,296 --> 00:19:09,956
+And so, in a generic context, it
+
+
+679
+00:19:09,956 --> 00:19:11,896
+dynamically dispatches to that
+
+
+680
+00:19:11,896 --> 00:19:13,416
+implementation through the
+
+
+681
+00:19:13,416 --> 00:19:13,926
+protocol.
+
+
+682
+00:19:15,336 --> 00:19:17,406
+So now, if you call map on a
+
+
+683
+00:19:17,406 --> 00:19:18,856
+dictionary, even though it's a
+
+
+684
+00:19:18,856 --> 00:19:19,876
+completely generic function.
+
+
+685
+00:19:20,596 --> 00:19:21,406
+You will get the better
+
+
+686
+00:19:21,406 --> 00:19:22,456
+implementation of count.
+
+
+687
+00:19:24,596 --> 00:19:26,086
+Adding customization points like
+
+
+688
+00:19:26,086 --> 00:19:27,736
+this, alongside default
+
+
+689
+00:19:27,736 --> 00:19:28,756
+implementations through
+
+
+690
+00:19:28,756 --> 00:19:29,286
+extensions.
+
+
+691
+00:19:30,376 --> 00:19:31,516
+Is a really powerful way of
+
+
+692
+00:19:31,516 --> 00:19:32,906
+getting the same kind of benefit
+
+
+693
+00:19:32,976 --> 00:19:34,396
+that you can also get with
+
+
+694
+00:19:34,396 --> 00:19:35,966
+classes, implementation
+
+
+695
+00:19:35,966 --> 00:19:37,086
+inheritance, and method
+
+
+696
+00:19:37,086 --> 00:19:37,626
+overwriting.
+
+
+697
+00:19:38,366 --> 00:19:39,676
+But, this technique works on
+
+
+698
+00:19:39,676 --> 00:19:41,916
+structs and enums, as well as
+
+
+699
+00:19:41,916 --> 00:19:42,326
+classes.
+
+
+700
+00:19:45,356 --> 00:19:47,386
+Now, not every method can be
+
+
+701
+00:19:47,386 --> 00:19:48,476
+optimized like this.
+
+
+702
+00:19:49,026 --> 00:19:51,016
+And, customization points have a
+
+
+703
+00:19:51,016 --> 00:19:53,146
+small but non-zero impact on
+
+
+704
+00:19:53,146 --> 00:19:55,006
+your binary size, your compiler
+
+
+705
+00:19:55,056 --> 00:19:55,996
+runtime performance.
+
+
+706
+00:19:56,406 --> 00:19:57,656
+So, it only makes sense to add
+
+
+707
+00:19:57,656 --> 00:19:59,506
+customization points when
+
+
+708
+00:19:59,506 --> 00:20:00,036
+there's definitely an
+
+
+709
+00:20:00,036 --> 00:20:01,306
+opportunity for customization.
+
+
+710
+00:20:02,256 --> 00:20:03,596
+For example, in the map
+
+
+711
+00:20:03,596 --> 00:20:05,006
+operation that we just wrote.
+
+
+712
+00:20:05,446 --> 00:20:06,826
+There's no reasonable way in
+
+
+713
+00:20:06,826 --> 00:20:08,026
+which any different kind of
+
+
+714
+00:20:08,026 --> 00:20:09,496
+collection could actually
+
+
+715
+00:20:09,496 --> 00:20:11,436
+provide a better implementation.
+
+
+716
+00:20:12,046 --> 00:20:13,216
+And so, it doesn't make sense to
+
+
+717
+00:20:13,216 --> 00:20:14,636
+add it as a customization point.
+
+
+718
+00:20:14,996 --> 00:20:16,376
+It can just stay as an
+
+
+719
+00:20:16,376 --> 00:20:16,926
+extension.
+
+
+720
+00:20:18,396 --> 00:20:19,756
+So, we've created this
+
+
+721
+00:20:19,756 --> 00:20:20,966
+collection type, and it's
+
+
+722
+00:20:20,966 --> 00:20:21,976
+actually pretty fully-featured
+
+
+723
+00:20:21,976 --> 00:20:22,166
+now.
+
+
+724
+00:20:22,166 --> 00:20:23,016
+It has lots of different
+
+
+725
+00:20:23,696 --> 00:20:24,926
+conforming types possible.
+
+
+726
+00:20:25,236 --> 00:20:26,456
+And various different useful
+
+
+727
+00:20:26,456 --> 00:20:28,356
+algorithms you can write for it.
+
+
+728
+00:20:28,616 --> 00:20:30,016
+But, sometimes you need more
+
+
+729
+00:20:30,016 --> 00:20:31,696
+than just a single protocol in
+
+
+730
+00:20:31,696 --> 00:20:33,116
+order to categorize your family
+
+
+731
+00:20:33,116 --> 00:20:33,696
+of types.
+
+
+732
+00:20:34,646 --> 00:20:36,356
+You need protocol inheritance.
+
+
+733
+00:20:36,656 --> 00:20:37,726
+And, to talk to you more about
+
+
+734
+00:20:37,726 --> 00:20:38,936
+that, here's Doug.
+
+
+735
+00:20:40,516 --> 00:20:45,586
+[ Applause ]
+
+
+736
+00:20:46,086 --> 00:20:46,706
+>> Thank you, Ben.
+
+
+737
+00:20:47,936 --> 00:20:49,846
+So, protocol inheritance has
+
+
+738
+00:20:49,896 --> 00:20:50,976
+been around since the beginning
+
+
+739
+00:20:50,976 --> 00:20:51,396
+of Swift.
+
+
+740
+00:20:52,336 --> 00:20:53,766
+And, to think about where we
+
+
+741
+00:20:53,766 --> 00:20:54,956
+need protocol inheritance.
+
+
+742
+00:20:55,026 --> 00:20:56,446
+Let's go look at this collection
+
+
+743
+00:20:56,446 --> 00:20:57,206
+protocol that we've been
+
+
+744
+00:20:57,206 --> 00:20:57,596
+building.
+
+
+745
+00:20:58,276 --> 00:20:59,126
+It's a nice protocol.
+
+
+746
+00:20:59,126 --> 00:20:59,906
+It's well-designed.
+
+
+747
+00:21:00,566 --> 00:21:02,136
+It describes a set of conforming
+
+
+748
+00:21:02,136 --> 00:21:03,966
+types, and gives you the ability
+
+
+749
+00:21:03,966 --> 00:21:05,136
+to write interesting generic
+
+
+750
+00:21:05,136 --> 00:21:05,996
+algorithms on them.
+
+
+751
+00:21:06,726 --> 00:21:07,756
+But, we don't have to reach very
+
+
+752
+00:21:07,756 --> 00:21:09,316
+far to find other
+
+
+753
+00:21:09,316 --> 00:21:10,906
+collection-like algorithms that
+
+
+754
+00:21:10,906 --> 00:21:12,896
+we cannot implement in terms of
+
+
+755
+00:21:12,896 --> 00:21:14,186
+the collection protocol thus
+
+
+756
+00:21:14,186 --> 00:21:14,556
+far.
+
+
+757
+00:21:15,226 --> 00:21:16,466
+For example, if we want to find
+
+
+758
+00:21:16,466 --> 00:21:18,416
+the index of the last element in
+
+
+759
+00:21:18,416 --> 00:21:20,026
+a collection, that matches some
+
+
+760
+00:21:20,026 --> 00:21:20,626
+predicate.
+
+
+761
+00:21:20,826 --> 00:21:22,136
+The best way to do that would be
+
+
+762
+00:21:22,136 --> 00:21:23,736
+to start at the end, and walk
+
+
+763
+00:21:23,786 --> 00:21:24,426
+backwards.
+
+
+764
+00:21:25,096 --> 00:21:26,086
+Collection protocol doesn't let
+
+
+765
+00:21:26,086 --> 00:21:26,636
+us do that.
+
+
+766
+00:21:27,916 --> 00:21:29,256
+Or say we want to build a
+
+
+767
+00:21:29,256 --> 00:21:30,616
+shuffle operation to randomly
+
+
+768
+00:21:30,616 --> 00:21:31,716
+shuffle around the elements in a
+
+
+769
+00:21:31,716 --> 00:21:32,246
+collection.
+
+
+770
+00:21:32,856 --> 00:21:34,146
+Well, that requires mutation,
+
+
+771
+00:21:34,146 --> 00:21:35,316
+and collection doesn't do that.
+
+
+772
+00:21:35,716 --> 00:21:37,016
+Now it's not that the collection
+
+
+773
+00:21:37,016 --> 00:21:38,426
+protocol is wrong.
+
+
+774
+00:21:39,876 --> 00:21:41,206
+But it's that we need something
+
+
+775
+00:21:41,206 --> 00:21:42,496
+more to describe these
+
+
+776
+00:21:42,496 --> 00:21:44,246
+additional generic algorithms,
+
+
+777
+00:21:44,636 --> 00:21:45,866
+and that is the point of
+
+
+778
+00:21:45,866 --> 00:21:46,956
+protocol inheritance.
+
+
+779
+00:21:47,376 --> 00:21:47,806
+So, here the
+
+
+780
+00:21:47,806 --> 00:21:49,816
+bidirectionalCollection protocol
+
+
+781
+00:21:50,056 --> 00:21:51,856
+inherits from, or is a
+
+
+782
+00:21:52,426 --> 00:21:52,876
+collection.
+
+
+783
+00:21:53,726 --> 00:21:55,026
+What that means is that any type
+
+
+784
+00:21:55,066 --> 00:21:56,236
+that conforms to the
+
+
+785
+00:21:56,236 --> 00:21:57,866
+bidirectionalCollection protocol
+
+
+786
+00:21:58,376 --> 00:21:59,816
+also conforms to collection, and
+
+
+787
+00:21:59,816 --> 00:22:00,776
+you can use those collection
+
+
+788
+00:22:00,776 --> 00:22:01,426
+algorithms.
+
+
+789
+00:22:02,186 --> 00:22:03,596
+But bidirectionalCollection adds
+
+
+790
+00:22:03,596 --> 00:22:04,976
+this additional requirement, of
+
+
+791
+00:22:05,016 --> 00:22:07,226
+being able to step backwards in
+
+
+792
+00:22:07,226 --> 00:22:07,836
+the collection.
+
+
+793
+00:22:08,276 --> 00:22:09,866
+An important thing to note is
+
+
+794
+00:22:10,006 --> 00:22:11,216
+not every collection can
+
+
+795
+00:22:11,216 --> 00:22:12,386
+actually implement this
+
+
+796
+00:22:12,436 --> 00:22:13,636
+particular requirement.
+
+
+797
+00:22:13,976 --> 00:22:15,476
+Think of a singlyLinkedList,
+
+
+798
+00:22:15,476 --> 00:22:16,936
+where you only have these
+
+
+799
+00:22:17,496 --> 00:22:18,826
+pointers hopping from one
+
+
+800
+00:22:18,826 --> 00:22:19,856
+location to the next.
+
+
+801
+00:22:20,156 --> 00:22:21,486
+There's no efficient way to walk
+
+
+802
+00:22:21,486 --> 00:22:22,786
+backward through this sequence,
+
+
+803
+00:22:22,926 --> 00:22:24,346
+so it cannot be a
+
+
+804
+00:22:24,346 --> 00:22:25,406
+bidirectionalCollection.
+
+
+805
+00:22:25,776 --> 00:22:26,566
+So, once we've introduced
+
+
+806
+00:22:26,566 --> 00:22:28,046
+inheritance, you've restricted
+
+
+807
+00:22:28,046 --> 00:22:29,356
+the set of conforming types.
+
+
+808
+00:22:29,916 --> 00:22:32,096
+But you've allowed yourself to
+
+
+809
+00:22:32,306 --> 00:22:33,346
+implement more interesting
+
+
+810
+00:22:33,346 --> 00:22:34,006
+algorithms.
+
+
+811
+00:22:34,246 --> 00:22:35,456
+So, here's the code behind this
+
+
+812
+00:22:35,566 --> 00:22:37,136
+last index where operation.
+
+
+813
+00:22:37,356 --> 00:22:37,976
+It's fairly simple.
+
+
+814
+00:22:37,976 --> 00:22:39,876
+We're just walking backwards
+
+
+815
+00:22:39,876 --> 00:22:41,496
+through the collection, using
+
+
+816
+00:22:41,496 --> 00:22:43,276
+this new requirement from the
+
+
+817
+00:22:43,276 --> 00:22:44,166
+bidirectionalCollection
+
+
+818
+00:22:44,166 --> 00:22:44,576
+protocol.
+
+
+819
+00:22:46,606 --> 00:22:47,996
+Let's look at a more interesting
+
+
+820
+00:22:47,996 --> 00:22:48,516
+algorithm.
+
+
+821
+00:22:48,826 --> 00:22:50,346
+So here's a shuffle operation.
+
+
+822
+00:22:50,516 --> 00:22:51,756
+So, it was introduced for, for
+
+
+823
+00:22:51,756 --> 00:22:53,526
+collections in Swift 4.2.
+
+
+824
+00:22:53,666 --> 00:22:54,506
+You don't have to implement it
+
+
+825
+00:22:54,506 --> 00:22:55,646
+yourself, but we're going to
+
+
+826
+00:22:55,646 --> 00:22:56,816
+look at the algorithm itself to
+
+
+827
+00:22:56,816 --> 00:22:58,306
+see what kinds of requirements
+
+
+828
+00:22:58,306 --> 00:23:00,136
+it introduces to figure out how
+
+
+829
+00:23:00,136 --> 00:23:01,566
+to categorize those into
+
+
+830
+00:23:01,566 --> 00:23:02,656
+protocols meaningfully.
+
+
+831
+00:23:03,396 --> 00:23:04,446
+So the Fisher-Yates shuffle
+
+
+832
+00:23:04,446 --> 00:23:05,276
+algorithm's a pretty old
+
+
+833
+00:23:05,276 --> 00:23:05,706
+algorithm.
+
+
+834
+00:23:06,186 --> 00:23:07,216
+It's also fairly simple.
+
+
+835
+00:23:07,546 --> 00:23:09,256
+You start with an index to the
+
+
+836
+00:23:09,256 --> 00:23:10,666
+first element in the collection.
+
+
+837
+00:23:11,586 --> 00:23:13,836
+And then, you select randomly
+
+
+838
+00:23:14,186 --> 00:23:15,376
+some other element in the
+
+
+839
+00:23:15,376 --> 00:23:17,196
+collection, and swap those two.
+
+
+840
+00:23:18,556 --> 00:23:20,666
+In the next iteration, you move
+
+
+841
+00:23:21,016 --> 00:23:22,596
+the left index forward one.
+
+
+842
+00:23:23,476 --> 00:23:24,716
+Randomly select between there
+
+
+843
+00:23:24,716 --> 00:23:25,996
+and the end, swap those
+
+
+844
+00:23:25,996 --> 00:23:26,556
+elements.
+
+
+845
+00:23:26,916 --> 00:23:28,196
+And so, the algorithm is pretty
+
+
+846
+00:23:28,196 --> 00:23:28,466
+simple.
+
+
+847
+00:23:28,466 --> 00:23:29,886
+It's just this linear march
+
+
+848
+00:23:30,146 --> 00:23:32,446
+through the collection, randomly
+
+
+849
+00:23:32,446 --> 00:23:33,636
+selecting another element to
+
+
+850
+00:23:33,636 --> 00:23:34,196
+swap with.
+
+
+851
+00:23:34,576 --> 00:23:36,206
+And, at the end of this, you end
+
+
+852
+00:23:36,206 --> 00:23:37,516
+up with a nicely shuffled
+
+
+853
+00:23:37,886 --> 00:23:38,406
+collection.
+
+
+854
+00:23:39,326 --> 00:23:40,676
+So, we can actually look at the
+
+
+855
+00:23:40,676 --> 00:23:41,116
+code here.
+
+
+856
+00:23:41,306 --> 00:23:42,446
+It's a little bit involved.
+
+
+857
+00:23:42,446 --> 00:23:43,236
+Don't worry about that.
+
+
+858
+00:23:43,626 --> 00:23:44,996
+And, we're going to implement it
+
+
+859
+00:23:44,996 --> 00:23:46,366
+on some kind of collection.
+
+
+860
+00:23:46,896 --> 00:23:47,646
+So, we'll look at the core
+
+
+861
+00:23:47,646 --> 00:23:48,576
+operations in here.
+
+
+862
+00:23:48,906 --> 00:23:49,966
+So, first we need to be able to
+
+
+863
+00:23:49,966 --> 00:23:51,896
+grab a random number between
+
+
+864
+00:23:51,896 --> 00:23:53,156
+where we are in the collection
+
+
+865
+00:23:53,156 --> 00:23:54,206
+and the end of the collection,
+
+
+866
+00:23:54,396 --> 00:23:55,626
+using this, this random
+
+
+867
+00:23:55,626 --> 00:23:56,086
+facility.
+
+
+868
+00:23:56,446 --> 00:23:57,206
+But, that's an integer.
+
+
+869
+00:23:57,366 --> 00:23:58,586
+And what we need is an index
+
+
+870
+00:23:58,586 --> 00:23:59,316
+into the collection.
+
+
+871
+00:23:59,316 --> 00:24:00,226
+We know those are different.
+
+
+872
+00:24:00,526 --> 00:24:02,066
+So we need some operation.
+
+
+873
+00:24:02,116 --> 00:24:03,706
+Let's call it index offsetBy.
+
+
+874
+00:24:04,506 --> 00:24:06,106
+To jump from the start index
+
+
+875
+00:24:06,516 --> 00:24:07,606
+quickly over to whatever
+
+
+876
+00:24:07,606 --> 00:24:08,816
+position we've selected.
+
+
+877
+00:24:10,106 --> 00:24:11,926
+The other operation we need is
+
+
+878
+00:24:11,926 --> 00:24:13,276
+the ability to swap two
+
+
+879
+00:24:13,276 --> 00:24:13,816
+elements.
+
+
+880
+00:24:14,916 --> 00:24:17,116
+Great. We have two operations
+
+
+881
+00:24:17,116 --> 00:24:18,086
+that we need to add to the
+
+
+882
+00:24:18,086 --> 00:24:19,596
+notion of a collection to be
+
+
+883
+00:24:19,596 --> 00:24:21,026
+able to implement shuffle.
+
+
+884
+00:24:21,336 --> 00:24:22,456
+Therefore, we have a new
+
+
+885
+00:24:22,456 --> 00:24:23,686
+shuffleCollection protocol.
+
+
+886
+00:24:25,976 --> 00:24:27,606
+Please don't do this.
+
+
+887
+00:24:28,096 --> 00:24:29,396
+So this is an anti-pattern that
+
+
+888
+00:24:29,396 --> 00:24:29,836
+we see.
+
+
+889
+00:24:30,466 --> 00:24:32,106
+And the anti-pattern here is we
+
+
+890
+00:24:32,106 --> 00:24:33,096
+had one algorithm.
+
+
+891
+00:24:33,276 --> 00:24:34,956
+We found its requirements, and
+
+
+892
+00:24:34,956 --> 00:24:36,236
+then we packaged it up into a
+
+
+893
+00:24:36,236 --> 00:24:38,366
+protocol that is just that one--
+
+
+894
+00:24:39,316 --> 00:24:40,296
+just describes that one
+
+
+895
+00:24:40,296 --> 00:24:40,856
+algorithm.
+
+
+896
+00:24:41,116 --> 00:24:42,556
+If you do this, you have lots
+
+
+897
+00:24:42,626 --> 00:24:44,236
+and lots and lots of protocols
+
+
+898
+00:24:44,236 --> 00:24:45,756
+around that don't have any
+
+
+899
+00:24:45,756 --> 00:24:46,526
+interesting meaning.
+
+
+900
+00:24:46,526 --> 00:24:47,656
+You're not learning anything
+
+
+901
+00:24:47,656 --> 00:24:48,526
+from those protocols.
+
+
+902
+00:24:49,026 --> 00:24:51,486
+So what you should do is notice
+
+
+903
+00:24:51,486 --> 00:24:52,956
+that we actually have distinct
+
+
+904
+00:24:52,956 --> 00:24:53,956
+capabilities here.
+
+
+905
+00:24:54,436 --> 00:24:55,536
+So shuffle is using random
+
+
+906
+00:24:55,536 --> 00:24:57,496
+access, and it's using mutation.
+
+
+907
+00:24:57,956 --> 00:24:58,806
+But, these are, these are
+
+
+908
+00:24:58,806 --> 00:25:00,076
+separate, and we can categorize
+
+
+909
+00:25:00,076 --> 00:25:01,546
+them in separate protocols.
+
+
+910
+00:25:02,056 --> 00:25:02,946
+So, for example, the
+
+
+911
+00:25:02,946 --> 00:25:04,576
+randomAccessCollection protocol
+
+
+912
+00:25:04,976 --> 00:25:06,686
+is something where it allows us
+
+
+913
+00:25:06,686 --> 00:25:08,516
+to jump around the collection,
+
+
+914
+00:25:08,596 --> 00:25:09,756
+moving indices quickly.
+
+
+915
+00:25:10,466 --> 00:25:11,476
+And there are types like
+
+
+916
+00:25:11,476 --> 00:25:12,886
+unsafeBufferPointer that can
+
+
+917
+00:25:12,886 --> 00:25:13,986
+give you random access.
+
+
+918
+00:25:14,326 --> 00:25:16,616
+But, do not allow any mutation.
+
+
+919
+00:25:16,736 --> 00:25:18,096
+That's a separate capability.
+
+
+920
+00:25:19,036 --> 00:25:19,826
+So, we also have the
+
+
+921
+00:25:19,826 --> 00:25:21,436
+mutableCollection protocol here.
+
+
+922
+00:25:22,366 --> 00:25:23,536
+And, we can think of types here
+
+
+923
+00:25:23,536 --> 00:25:24,976
+that allow mutation, but not
+
+
+924
+00:25:24,976 --> 00:25:25,896
+random access, like the
+
+
+925
+00:25:25,896 --> 00:25:27,186
+singlyLinkedList that we talked
+
+
+926
+00:25:27,186 --> 00:25:27,826
+about earlier.
+
+
+927
+00:25:28,556 --> 00:25:29,446
+Now, you notice that we've
+
+
+928
+00:25:29,446 --> 00:25:30,686
+essentially split the
+
+
+929
+00:25:30,686 --> 00:25:31,946
+inheritance hierarchy here.
+
+
+930
+00:25:33,246 --> 00:25:34,616
+We've got the access side for
+
+
+931
+00:25:34,616 --> 00:25:35,846
+random access, bidirectional,
+
+
+932
+00:25:35,846 --> 00:25:36,356
+and so on.
+
+
+933
+00:25:36,616 --> 00:25:37,446
+And then, we've got this
+
+
+934
+00:25:37,446 --> 00:25:38,266
+mutation side.
+
+
+935
+00:25:38,746 --> 00:25:39,816
+That's perfectly fine, because
+
+
+936
+00:25:39,816 --> 00:25:41,396
+clients themselves can compose
+
+
+937
+00:25:41,396 --> 00:25:43,736
+multiple protocols to implement
+
+
+938
+00:25:43,736 --> 00:25:44,776
+whatever generic algorithm
+
+
+939
+00:25:44,776 --> 00:25:45,246
+they're doing.
+
+
+940
+00:25:45,666 --> 00:25:46,876
+So, we go back to our shuffle
+
+
+941
+00:25:46,876 --> 00:25:47,406
+algorithm.
+
+
+942
+00:25:47,466 --> 00:25:49,466
+And it can be written as an
+
+
+943
+00:25:49,466 --> 00:25:50,396
+extension on
+
+
+944
+00:25:50,396 --> 00:25:52,056
+randomAccessCollection, with a
+
+
+945
+00:25:52,056 --> 00:25:52,666
+self-type.
+
+
+946
+00:25:52,666 --> 00:25:53,756
+So this is the type that
+
+
+947
+00:25:53,756 --> 00:25:54,246
+conforms to
+
+
+948
+00:25:54,246 --> 00:25:56,096
+randomAccessCollection also
+
+
+949
+00:25:56,096 --> 00:25:56,756
+conforms to the
+
+
+950
+00:25:56,756 --> 00:25:58,096
+mutableCollection protocol.
+
+
+951
+00:25:58,536 --> 00:25:59,516
+And now, we've pulled together
+
+
+952
+00:25:59,516 --> 00:26:00,556
+the capabilities of both of
+
+
+953
+00:26:00,556 --> 00:26:00,886
+these.
+
+
+954
+00:26:02,416 --> 00:26:04,556
+Now, when you have a bunch of
+
+
+955
+00:26:04,556 --> 00:26:06,216
+conforming types, and a bunch of
+
+
+956
+00:26:06,216 --> 00:26:07,986
+generic algorithms, you tend to
+
+
+957
+00:26:07,986 --> 00:26:09,806
+get protocol hierarchies
+
+
+958
+00:26:09,806 --> 00:26:10,196
+forming.
+
+
+959
+00:26:10,666 --> 00:26:12,156
+Now, these hierarchies, they
+
+
+960
+00:26:12,156 --> 00:26:13,046
+shouldn't be too big.
+
+
+961
+00:26:13,176 --> 00:26:14,026
+They should not be too
+
+
+962
+00:26:14,026 --> 00:26:14,956
+fine-grained.
+
+
+963
+00:26:15,926 --> 00:26:17,046
+Because you really want a small
+
+
+964
+00:26:17,046 --> 00:26:18,066
+number of protocols that really
+
+
+965
+00:26:18,066 --> 00:26:19,776
+describe the kinds of types that
+
+
+966
+00:26:19,776 --> 00:26:21,426
+show up in the domain, right?
+
+
+967
+00:26:21,876 --> 00:26:23,766
+And now, there's things, things
+
+
+968
+00:26:23,766 --> 00:26:25,016
+that you notice when you do
+
+
+969
+00:26:25,016 --> 00:26:25,846
+build these protocol
+
+
+970
+00:26:25,846 --> 00:26:26,446
+hierarchies.
+
+
+971
+00:26:26,626 --> 00:26:27,826
+So, as you go from the bottom of
+
+
+972
+00:26:27,826 --> 00:26:29,646
+the hierarchy to the top, you're
+
+
+973
+00:26:29,646 --> 00:26:30,956
+going to protocols that have
+
+
+974
+00:26:30,956 --> 00:26:32,176
+fewer requirements.
+
+
+975
+00:26:32,306 --> 00:26:33,576
+And therefore, there are more
+
+
+976
+00:26:33,576 --> 00:26:35,306
+conforming types that can
+
+
+977
+00:26:35,306 --> 00:26:36,626
+implement those requirements.
+
+
+978
+00:26:37,566 --> 00:26:38,336
+Now, on the other hand, as
+
+
+979
+00:26:38,336 --> 00:26:39,416
+you're moving down the
+
+
+980
+00:26:39,466 --> 00:26:41,666
+hierarchy, and combining
+
+
+981
+00:26:41,666 --> 00:26:42,646
+different protocols from the
+
+
+982
+00:26:42,696 --> 00:26:43,176
+hierarchy.
+
+
+983
+00:26:43,626 --> 00:26:44,746
+You get to implement more
+
+
+984
+00:26:44,746 --> 00:26:46,076
+intricate, more specialized
+
+
+985
+00:26:46,076 --> 00:26:47,676
+algorithms that require more
+
+
+986
+00:26:47,676 --> 00:26:48,686
+advanced capabilities.
+
+
+987
+00:26:48,896 --> 00:26:50,006
+But naturally work with fewer
+
+
+988
+00:26:50,006 --> 00:26:50,836
+conforming types.
+
+
+989
+00:26:54,556 --> 00:26:56,306
+Okay. So let's talk about
+
+
+990
+00:26:56,306 --> 00:26:57,246
+conditional conformance.
+
+
+991
+00:26:57,306 --> 00:26:58,376
+This is, of course, a newer
+
+
+992
+00:26:58,376 --> 00:27:00,396
+feature in, in Swift.
+
+
+993
+00:27:00,646 --> 00:27:02,216
+And, let's start by looking at
+
+
+994
+00:27:02,216 --> 00:27:02,946
+slices again.
+
+
+995
+00:27:03,516 --> 00:27:04,796
+So for any collection that you
+
+
+996
+00:27:04,796 --> 00:27:07,276
+have, you can form a slice of
+
+
+997
+00:27:07,276 --> 00:27:09,136
+that collection by subscripting
+
+
+998
+00:27:09,356 --> 00:27:12,236
+with a particular range of
+
+
+999
+00:27:12,236 --> 00:27:12,856
+indices.
+
+
+1000
+00:27:13,326 --> 00:27:14,696
+And, that slice is essentially a
+
+
+1001
+00:27:14,696 --> 00:27:16,256
+view into some part of the
+
+
+1002
+00:27:16,256 --> 00:27:16,796
+collection.
+
+
+1003
+00:27:17,986 --> 00:27:20,366
+Now these are default type that
+
+
+1004
+00:27:20,366 --> 00:27:21,366
+you get from slicing a
+
+
+1005
+00:27:21,366 --> 00:27:23,696
+collection, is called slice.
+
+
+1006
+00:27:24,486 --> 00:27:26,146
+And slice is a generic adaptor
+
+
+1007
+00:27:26,146 --> 00:27:26,376
+type.
+
+
+1008
+00:27:27,366 --> 00:27:30,066
+So it is parameterized on a base
+
+
+1009
+00:27:30,106 --> 00:27:32,016
+collection type, and it is
+
+
+1010
+00:27:32,016 --> 00:27:33,216
+itself a collection.
+
+
+1011
+00:27:33,936 --> 00:27:36,466
+So our expectation on a slice is
+
+
+1012
+00:27:36,466 --> 00:27:37,636
+that you can do anything to a
+
+
+1013
+00:27:37,636 --> 00:27:38,676
+slice that you can do to the
+
+
+1014
+00:27:38,676 --> 00:27:39,826
+underlying collection.
+
+
+1015
+00:27:40,146 --> 00:27:41,266
+It's a reasonable thing to want.
+
+
+1016
+00:27:41,966 --> 00:27:43,636
+And so, certainly we can go and
+
+
+1017
+00:27:43,636 --> 00:27:44,496
+use the forward search
+
+
+1018
+00:27:44,496 --> 00:27:46,376
+operations like indexwhere, to
+
+
+1019
+00:27:46,376 --> 00:27:47,406
+go find something matching a
+
+
+1020
+00:27:47,406 --> 00:27:47,786
+predicate.
+
+
+1021
+00:27:47,786 --> 00:27:49,226
+And that works on the collection
+
+
+1022
+00:27:49,326 --> 00:27:50,226
+and any slice of that
+
+
+1023
+00:27:50,226 --> 00:27:50,696
+collection.
+
+
+1024
+00:27:51,576 --> 00:27:52,676
+So, we'd like to do the same
+
+
+1025
+00:27:52,676 --> 00:27:54,506
+thing with backwards search, but
+
+
+1026
+00:27:54,506 --> 00:27:55,456
+here we're going to run into a
+
+
+1027
+00:27:55,456 --> 00:27:55,886
+problem.
+
+
+1028
+00:27:55,886 --> 00:27:57,096
+So even if the buffer is a
+
+
+1029
+00:27:57,276 --> 00:27:59,756
+bidirectionalCollection, nothing
+
+
+1030
+00:27:59,756 --> 00:28:00,946
+has said that the slice is a
+
+
+1031
+00:28:00,946 --> 00:28:01,976
+bidirectionalCollection.
+
+
+1032
+00:28:02,636 --> 00:28:05,966
+We can fix that.
+
+
+1033
+00:28:05,966 --> 00:28:07,606
+Let's extend slice to make it
+
+
+1034
+00:28:07,606 --> 00:28:08,156
+conform to the
+
+
+1035
+00:28:08,156 --> 00:28:09,156
+bidirectionalCollection
+
+
+1036
+00:28:09,156 --> 00:28:09,596
+protocol.
+
+
+1037
+00:28:10,536 --> 00:28:11,676
+We need to implement this index
+
+
+1038
+00:28:11,676 --> 00:28:13,026
+before operation, which we can
+
+
+1039
+00:28:13,026 --> 00:28:14,486
+implement in terms of the
+
+
+1040
+00:28:14,486 --> 00:28:16,176
+underlying base collection.
+
+
+1041
+00:28:17,146 --> 00:28:18,086
+Except the compiler's going to
+
+
+1042
+00:28:18,086 --> 00:28:18,666
+complain here.
+
+
+1043
+00:28:19,736 --> 00:28:21,016
+The only thing we knew about
+
+
+1044
+00:28:21,016 --> 00:28:22,676
+that base collection is that
+
+
+1045
+00:28:22,676 --> 00:28:23,516
+it's a collection.
+
+
+1046
+00:28:23,666 --> 00:28:25,366
+It doesn't have an index before
+
+
+1047
+00:28:25,366 --> 00:28:26,286
+operation on it.
+
+
+1048
+00:28:27,806 --> 00:28:28,966
+We know how to fix this.
+
+
+1049
+00:28:29,516 --> 00:28:31,176
+All we need to do is introduce a
+
+
+1050
+00:28:31,176 --> 00:28:32,646
+requirement into this extension
+
+
+1051
+00:28:32,646 --> 00:28:33,766
+to say that well, base needs to
+
+
+1052
+00:28:33,766 --> 00:28:35,016
+be a bidirectionalCollection.
+
+
+1053
+00:28:35,786 --> 00:28:37,186
+This is conditional conformance.
+
+
+1054
+00:28:38,146 --> 00:28:40,216
+All it is, is extensions that
+
+
+1055
+00:28:40,216 --> 00:28:41,836
+declare conformance to a
+
+
+1056
+00:28:41,836 --> 00:28:42,366
+protocol.
+
+
+1057
+00:28:42,796 --> 00:28:44,016
+And then the constraints under
+
+
+1058
+00:28:44,016 --> 00:28:45,416
+which that conformance actually
+
+
+1059
+00:28:45,416 --> 00:28:46,136
+makes sense.
+
+
+1060
+00:28:46,966 --> 00:28:48,006
+And the wonderful thing about
+
+
+1061
+00:28:48,006 --> 00:28:49,146
+conditional conformance, is it
+
+
+1062
+00:28:49,146 --> 00:28:50,326
+stacks nicely when you have
+
+
+1063
+00:28:50,326 --> 00:28:51,516
+these protocol hierarchies.
+
+
+1064
+00:28:51,836 --> 00:28:54,146
+So we can also state that slice
+
+
+1065
+00:28:54,146 --> 00:28:55,656
+is a randomAccessCollection.
+
+
+1066
+00:28:56,026 --> 00:28:58,056
+When its underlying base type is
+
+
+1067
+00:28:58,056 --> 00:28:59,286
+a randomAccessCollection.
+
+
+1068
+00:29:00,486 --> 00:29:01,456
+Now, notice that I've written
+
+
+1069
+00:29:01,556 --> 00:29:02,806
+two different extensions here.
+
+
+1070
+00:29:03,806 --> 00:29:05,086
+Now, it's generally good Swift
+
+
+1071
+00:29:05,086 --> 00:29:05,546
+style.
+
+
+1072
+00:29:06,066 --> 00:29:07,026
+Write an extension, have it
+
+
+1073
+00:29:07,026 --> 00:29:08,616
+conform to one protocol, so you
+
+
+1074
+00:29:08,616 --> 00:29:10,066
+know what that extension is for,
+
+
+1075
+00:29:10,066 --> 00:29:10,966
+you know its meaning.
+
+
+1076
+00:29:11,466 --> 00:29:13,546
+It's particularly important with
+
+
+1077
+00:29:13,796 --> 00:29:15,106
+conditional requirements,
+
+
+1078
+00:29:15,456 --> 00:29:17,526
+conformances, because you have
+
+
+1079
+00:29:17,586 --> 00:29:19,006
+different requirements on these
+
+
+1080
+00:29:19,006 --> 00:29:19,796
+extensions.
+
+
+1081
+00:29:20,376 --> 00:29:22,036
+And, this allows for
+
+
+1082
+00:29:22,036 --> 00:29:22,836
+composability.
+
+
+1083
+00:29:22,896 --> 00:29:24,436
+Whatever the underlying base
+
+
+1084
+00:29:24,466 --> 00:29:26,316
+collection can do, the slice
+
+
+1085
+00:29:26,316 --> 00:29:27,326
+type can also do.
+
+
+1086
+00:29:28,796 --> 00:29:31,346
+So let's look at another
+
+
+1087
+00:29:31,346 --> 00:29:32,326
+application of conditional
+
+
+1088
+00:29:32,326 --> 00:29:33,556
+conformance, also in the
+
+
+1089
+00:29:33,556 --> 00:29:34,866
+standard library, and these are
+
+
+1090
+00:29:34,866 --> 00:29:35,366
+ranges.
+
+
+1091
+00:29:35,526 --> 00:29:36,646
+So, ranges have been around
+
+
+1092
+00:29:36,856 --> 00:29:37,666
+forever in Swift.
+
+
+1093
+00:29:37,666 --> 00:29:38,806
+And, you can form a range with,
+
+
+1094
+00:29:38,896 --> 00:29:40,156
+for example, these dot-dot less
+
+
+1095
+00:29:40,156 --> 00:29:40,936
+than operations.
+
+
+1096
+00:29:41,426 --> 00:29:43,106
+And so you can form ranges of
+
+
+1097
+00:29:43,106 --> 00:29:44,506
+doubles, you can form ranges of
+
+
+1098
+00:29:44,506 --> 00:29:45,346
+integers.
+
+
+1099
+00:29:45,946 --> 00:29:47,086
+But some ranges are more
+
+
+1100
+00:29:47,086 --> 00:29:48,156
+powerful than others.
+
+
+1101
+00:29:48,416 --> 00:29:49,786
+So, you can iterate over the
+
+
+1102
+00:29:49,786 --> 00:29:52,316
+elements in a range of integers.
+
+
+1103
+00:29:52,926 --> 00:29:53,876
+Well, why can you do that?
+
+
+1104
+00:29:53,876 --> 00:29:55,066
+It was because an intRange
+
+
+1105
+00:29:55,576 --> 00:29:56,806
+conforms to collection.
+
+
+1106
+00:29:58,266 --> 00:29:59,276
+Now, if you're actually look at
+
+
+1107
+00:29:59,276 --> 00:30:00,606
+the type, it's reduced by that
+
+
+1108
+00:30:00,646 --> 00:30:01,996
+dot-dot less-than operator.
+
+
+1109
+00:30:02,346 --> 00:30:04,306
+It is aptly named the range
+
+
+1110
+00:30:04,306 --> 00:30:04,556
+type.
+
+
+1111
+00:30:05,346 --> 00:30:07,096
+Again, it's generic over the
+
+
+1112
+00:30:07,096 --> 00:30:08,126
+underlying bound type.
+
+
+1113
+00:30:08,126 --> 00:30:09,256
+So in this case, we have a range
+
+
+1114
+00:30:09,256 --> 00:30:11,126
+of doubles, and it merely stores
+
+
+1115
+00:30:11,126 --> 00:30:12,456
+the lower and upper bounds.
+
+
+1116
+00:30:12,646 --> 00:30:13,456
+That's fairly simple.
+
+
+1117
+00:30:14,286 --> 00:30:16,806
+But, prior to Swift 4.2, you
+
+
+1118
+00:30:16,806 --> 00:30:18,816
+would get from an integer range,
+
+
+1119
+00:30:18,876 --> 00:30:20,036
+an actually different type.
+
+
+1120
+00:30:20,466 --> 00:30:22,176
+This is the countableRange type.
+
+
+1121
+00:30:23,126 --> 00:30:24,466
+Now, notice it's structurally
+
+
+1122
+00:30:24,466 --> 00:30:26,056
+the same as the range type.
+
+
+1123
+00:30:26,056 --> 00:30:27,236
+It has one type parameter.
+
+
+1124
+00:30:27,236 --> 00:30:28,696
+It has lower and upperBound.
+
+
+1125
+00:30:29,246 --> 00:30:31,126
+But it adds a couple additional
+
+
+1126
+00:30:31,126 --> 00:30:32,686
+requirements onto that bound
+
+
+1127
+00:30:32,686 --> 00:30:32,886
+type.
+
+
+1128
+00:30:33,286 --> 00:30:34,876
+That the bound be stridable,
+
+
+1129
+00:30:35,286 --> 00:30:35,416
+right?
+
+
+1130
+00:30:35,416 --> 00:30:36,446
+Meaning you can walk through and
+
+
+1131
+00:30:36,446 --> 00:30:37,436
+enumerate all the elements.
+
+
+1132
+00:30:37,866 --> 00:30:39,286
+Now that's the ability you need
+
+
+1133
+00:30:39,446 --> 00:30:40,056
+so that you can make
+
+
+1134
+00:30:40,056 --> 00:30:41,316
+countableRange conform to
+
+
+1135
+00:30:41,316 --> 00:30:42,456
+randomAccessCollection.
+
+
+1136
+00:30:43,676 --> 00:30:45,136
+That enables the forEach, the
+
+
+1137
+00:30:45,136 --> 00:30:46,246
+forEach iteration loop, and
+
+
+1138
+00:30:46,246 --> 00:30:46,826
+other things.
+
+
+1139
+00:30:48,076 --> 00:30:48,706
+But with conditional
+
+
+1140
+00:30:48,706 --> 00:30:49,986
+conformance, of course, we can
+
+
+1141
+00:30:49,986 --> 00:30:50,736
+do better.
+
+
+1142
+00:30:51,516 --> 00:30:53,836
+So let's turn the basic range
+
+
+1143
+00:30:53,836 --> 00:30:57,306
+type into a collection, when the
+
+
+1144
+00:30:57,306 --> 00:30:59,086
+bound type conforms this-- has
+
+
+1145
+00:30:59,086 --> 00:31:00,586
+these extra stridable
+
+
+1146
+00:31:00,586 --> 00:31:01,376
+requirements on it.
+
+
+1147
+00:31:01,736 --> 00:31:02,736
+It's a simple application of
+
+
+1148
+00:31:02,736 --> 00:31:03,706
+conditional conformance.
+
+
+1149
+00:31:04,166 --> 00:31:05,746
+But it makes the range type more
+
+
+1150
+00:31:05,816 --> 00:31:08,186
+powerful when used with better
+
+
+1151
+00:31:08,236 --> 00:31:09,266
+type parameters.
+
+
+1152
+00:31:10,806 --> 00:31:13,206
+Now, notice that I'm just
+
+
+1153
+00:31:13,206 --> 00:31:13,696
+conforming to
+
+
+1154
+00:31:13,696 --> 00:31:14,876
+randomAccessCollection.
+
+
+1155
+00:31:15,496 --> 00:31:17,686
+I have not actually mentioned
+
+
+1156
+00:31:17,746 --> 00:31:18,236
+collection or
+
+
+1157
+00:31:18,236 --> 00:31:19,326
+bidirectionalCollection.
+
+
+1158
+00:31:20,366 --> 00:31:21,876
+With unconditional performances,
+
+
+1159
+00:31:21,876 --> 00:31:22,546
+this is okay.
+
+
+1160
+00:31:23,036 --> 00:31:24,356
+Declaring conformance to
+
+
+1161
+00:31:24,356 --> 00:31:26,446
+randomAccessCollection implies
+
+
+1162
+00:31:26,446 --> 00:31:28,276
+conformances to any protocols
+
+
+1163
+00:31:28,276 --> 00:31:29,526
+that it inherits.
+
+
+1164
+00:31:29,586 --> 00:31:30,286
+In this case,
+
+
+1165
+00:31:30,366 --> 00:31:31,416
+bidirectionalCollection and
+
+
+1166
+00:31:31,416 --> 00:31:31,946
+collection.
+
+
+1167
+00:31:32,626 --> 00:31:34,016
+However, with conditional
+
+
+1168
+00:31:34,016 --> 00:31:35,326
+conformance, this is actually an
+
+
+1169
+00:31:35,326 --> 00:31:35,586
+error.
+
+
+1170
+00:31:36,576 --> 00:31:37,636
+Now, if you think back to the
+
+
+1171
+00:31:37,636 --> 00:31:39,666
+slice example, we needed to have
+
+
+1172
+00:31:39,776 --> 00:31:41,686
+different constraints for those,
+
+
+1173
+00:31:41,926 --> 00:31:43,186
+for those different levels of
+
+
+1174
+00:31:43,186 --> 00:31:44,466
+the hierarchy for collection.
+
+
+1175
+00:31:44,466 --> 00:31:45,746
+Versus bidirectionalCollection
+
+
+1176
+00:31:45,746 --> 00:31:47,176
+versus randomAccessCollection.
+
+
+1177
+00:31:47,756 --> 00:31:49,416
+And so, compiler's enforcing
+
+
+1178
+00:31:49,416 --> 00:31:50,636
+that you've thought about this,
+
+
+1179
+00:31:50,636 --> 00:31:52,096
+and made sure that you have the
+
+
+1180
+00:31:52,146 --> 00:31:53,426
+right set of constraints for
+
+
+1181
+00:31:53,736 --> 00:31:54,776
+conditional conformance.
+
+
+1182
+00:31:55,906 --> 00:31:57,406
+In this case, the constraints
+
+
+1183
+00:31:57,406 --> 00:31:58,596
+across the entire hierarchy are
+
+
+1184
+00:31:58,596 --> 00:31:59,076
+the same.
+
+
+1185
+00:31:59,416 --> 00:32:00,506
+So, we can just write out
+
+
+1186
+00:32:00,506 --> 00:32:01,646
+explicitly collection and
+
+
+1187
+00:32:01,646 --> 00:32:02,756
+bidirectionalCollection.
+
+
+1188
+00:32:03,346 --> 00:32:05,066
+To assert that this is where all
+
+
+1189
+00:32:05,066 --> 00:32:06,056
+these conformances are.
+
+
+1190
+00:32:06,506 --> 00:32:07,936
+Or we can do the stylistically
+
+
+1191
+00:32:07,936 --> 00:32:09,616
+better thing, and split out the
+
+
+1192
+00:32:09,616 --> 00:32:10,556
+different conformances.
+
+
+1193
+00:32:12,486 --> 00:32:13,726
+Now at this point, our range
+
+
+1194
+00:32:13,726 --> 00:32:15,346
+type is pretty powerful.
+
+
+1195
+00:32:15,346 --> 00:32:15,946
+It does everything the
+
+
+1196
+00:32:15,946 --> 00:32:17,016
+countableRange does.
+
+
+1197
+00:32:17,296 --> 00:32:17,976
+So what should we do with
+
+
+1198
+00:32:17,976 --> 00:32:18,686
+countableRange?
+
+
+1199
+00:32:19,536 --> 00:32:20,206
+We could throw it away.
+
+
+1200
+00:32:20,726 --> 00:32:21,496
+In this case we're talking about
+
+
+1201
+00:32:21,496 --> 00:32:23,066
+the standard library, and
+
+
+1202
+00:32:23,066 --> 00:32:23,936
+there's a lot of code that
+
+
+1203
+00:32:23,936 --> 00:32:25,706
+actually uses countableRange.
+
+
+1204
+00:32:25,986 --> 00:32:28,176
+So we can keep it around as a
+
+
+1205
+00:32:28,176 --> 00:32:29,586
+generic type alias.
+
+
+1206
+00:32:30,886 --> 00:32:32,476
+This is a really nice solution.
+
+
+1207
+00:32:32,476 --> 00:32:34,466
+So the generic type alias adds
+
+
+1208
+00:32:34,546 --> 00:32:35,886
+all of those extra requirements
+
+
+1209
+00:32:35,886 --> 00:32:37,306
+you need to make the range
+
+
+1210
+00:32:37,306 --> 00:32:37,806
+countable.
+
+
+1211
+00:32:38,066 --> 00:32:39,276
+The requirements you need to
+
+
+1212
+00:32:39,276 --> 00:32:42,056
+turn it into a collection, but
+
+
+1213
+00:32:42,056 --> 00:32:43,366
+it's just an alternate name for
+
+
+1214
+00:32:43,366 --> 00:32:44,706
+the underlying range type.
+
+
+1215
+00:32:46,826 --> 00:32:47,806
+Again, this is great for source
+
+
+1216
+00:32:47,806 --> 00:32:49,166
+compatibility, because code can
+
+
+1217
+00:32:49,166 --> 00:32:50,846
+still use countableRange.
+
+
+1218
+00:32:51,116 --> 00:32:52,416
+On the other hand, it's also
+
+
+1219
+00:32:52,466 --> 00:32:54,466
+really nice to give a name to
+
+
+1220
+00:32:54,466 --> 00:32:56,046
+those ranges that have
+
+
+1221
+00:32:56,046 --> 00:32:57,856
+additional capabilities of being
+
+
+1222
+00:32:57,856 --> 00:32:59,286
+a randomAccessCollection.
+
+
+1223
+00:32:59,916 --> 00:33:01,276
+In fact, we can use this to
+
+
+1224
+00:33:01,276 --> 00:33:02,206
+clean up other code.
+
+
+1225
+00:33:02,206 --> 00:33:03,466
+To say, well, we know what a
+
+
+1226
+00:33:03,466 --> 00:33:04,476
+countableRange is.
+
+
+1227
+00:33:04,876 --> 00:33:06,876
+It's a range with this extra
+
+
+1228
+00:33:06,876 --> 00:33:09,106
+striding capability, so we can
+
+
+1229
+00:33:09,106 --> 00:33:10,616
+go extend countableRanges.
+
+
+1230
+00:33:10,916 --> 00:33:12,776
+And that is a case in which we
+
+
+1231
+00:33:12,776 --> 00:33:14,466
+have randomAccessCollection
+
+
+1232
+00:33:14,466 --> 00:33:14,996
+conformance.
+
+
+1233
+00:33:16,446 --> 00:33:17,426
+So, we've introduced this in
+
+
+1234
+00:33:17,426 --> 00:33:19,866
+Swift 4.2 to help simplify the
+
+
+1235
+00:33:19,866 --> 00:33:20,906
+set of types that we're dealing
+
+
+1236
+00:33:20,906 --> 00:33:21,136
+with.
+
+
+1237
+00:33:21,136 --> 00:33:22,706
+And make the existing core types
+
+
+1238
+00:33:22,706 --> 00:33:24,656
+like range more composable and
+
+
+1239
+00:33:24,656 --> 00:33:25,346
+more flexible.
+
+
+1240
+00:33:27,756 --> 00:33:28,966
+>> Recursive constraints
+
+
+1241
+00:33:28,966 --> 00:33:30,726
+describe relationships among
+
+
+1242
+00:33:30,726 --> 00:33:32,316
+protocols and their associated
+
+
+1243
+00:33:32,316 --> 00:33:32,756
+types.
+
+
+1244
+00:33:33,336 --> 00:33:34,836
+This is a topic that we didn't
+
+
+1245
+00:33:34,836 --> 00:33:36,616
+cover in the WWDC version of
+
+
+1246
+00:33:36,616 --> 00:33:37,136
+this talk.
+
+
+1247
+00:33:37,416 --> 00:33:38,776
+But it's an important part of
+
+
+1248
+00:33:38,776 --> 00:33:40,436
+the standard library's use of
+
+
+1249
+00:33:40,436 --> 00:33:41,666
+Swift's generic system.
+
+
+1250
+00:33:42,216 --> 00:33:43,006
+Let's jump right in.
+
+
+1251
+00:33:43,936 --> 00:33:45,556
+A recursive constraint is
+
+
+1252
+00:33:45,556 --> 00:33:47,046
+nothing more than a constraint
+
+
+1253
+00:33:47,076 --> 00:33:48,856
+within a protocol that mentions
+
+
+1254
+00:33:48,886 --> 00:33:50,336
+that same protocol.
+
+
+1255
+00:33:51,036 --> 00:33:52,616
+Here, collection has an
+
+
+1256
+00:33:52,616 --> 00:33:53,986
+associated type named
+
+
+1257
+00:33:53,986 --> 00:33:54,886
+subsequence.
+
+
+1258
+00:33:55,196 --> 00:33:57,136
+That is itself a collection.
+
+
+1259
+00:33:57,726 --> 00:33:58,786
+Why would you need this?
+
+
+1260
+00:33:59,316 --> 00:34:00,886
+Well, let's look at a generic
+
+
+1261
+00:34:00,886 --> 00:34:02,566
+algorithm that relies on it.
+
+
+1262
+00:34:03,086 --> 00:34:05,386
+So here, given an already sorted
+
+
+1263
+00:34:05,386 --> 00:34:06,006
+collection.
+
+
+1264
+00:34:06,316 --> 00:34:07,906
+We want to find the index at
+
+
+1265
+00:34:07,906 --> 00:34:09,496
+which we should insert a new
+
+
+1266
+00:34:09,496 --> 00:34:10,065
+value.
+
+
+1267
+00:34:10,335 --> 00:34:12,076
+To maintain that sort order.
+
+
+1268
+00:34:12,456 --> 00:34:13,255
+We're going to compute the
+
+
+1269
+00:34:13,255 --> 00:34:14,656
+sorted insertion point for the
+
+
+1270
+00:34:14,656 --> 00:34:15,585
+value 11.
+
+
+1271
+00:34:16,335 --> 00:34:17,985
+When we go ahead and insert 11
+
+
+1272
+00:34:17,985 --> 00:34:19,936
+at that index, the result is
+
+
+1273
+00:34:19,936 --> 00:34:21,406
+still a sorted array.
+
+
+1274
+00:34:22,036 --> 00:34:23,315
+The sorted insertion point of
+
+
+1275
+00:34:23,315 --> 00:34:25,386
+function is implemented in terms
+
+
+1276
+00:34:25,386 --> 00:34:26,846
+of a binary search.
+
+
+1277
+00:34:27,536 --> 00:34:28,806
+Binary search is a classic
+
+
+1278
+00:34:28,806 --> 00:34:30,716
+divide-and-conquer algorithm.
+
+
+1279
+00:34:31,005 --> 00:34:32,766
+Meaning that at each step, it
+
+
+1280
+00:34:32,766 --> 00:34:34,646
+makes a decision that allows it
+
+
+1281
+00:34:34,646 --> 00:34:35,985
+to significantly reduce the
+
+
+1282
+00:34:35,985 --> 00:34:37,056
+problem size.
+
+
+1283
+00:34:37,196 --> 00:34:38,876
+For the next step to consider.
+
+
+1284
+00:34:38,876 --> 00:34:41,476
+For binary search, we first look
+
+
+1285
+00:34:41,476 --> 00:34:43,216
+at the middle element, 8.
+
+
+1286
+00:34:43,735 --> 00:34:44,966
+And compare it against the value
+
+
+1287
+00:34:44,966 --> 00:34:45,755
+that we want to insert.
+
+
+1288
+00:34:45,976 --> 00:34:46,545
+That's 11.
+
+
+1289
+00:34:47,226 --> 00:34:49,085
+And because 11 is greater than
+
+
+1290
+00:34:49,085 --> 00:34:51,085
+8, we know that 11 needs to be
+
+
+1291
+00:34:51,085 --> 00:34:53,476
+inserted somewhere after the 8.
+
+
+1292
+00:34:53,585 --> 00:34:54,556
+In the latter half of the
+
+
+1293
+00:34:54,556 --> 00:34:55,136
+collection.
+
+
+1294
+00:34:55,626 --> 00:34:57,136
+So we restrict our search space
+
+
+1295
+00:34:57,236 --> 00:34:57,826
+by half.
+
+
+1296
+00:34:59,096 --> 00:35:00,726
+In our next step, we find the
+
+
+1297
+00:35:00,726 --> 00:35:02,956
+new middle, 14, and compare it
+
+
+1298
+00:35:02,956 --> 00:35:03,856
+against the value we want to
+
+
+1299
+00:35:03,856 --> 00:35:04,246
+insert.
+
+
+1300
+00:35:05,196 --> 00:35:07,546
+Eleven is less than 14, so the
+
+
+1301
+00:35:07,546 --> 00:35:09,326
+insertion point has to come
+
+
+1302
+00:35:09,556 --> 00:35:10,776
+before the middle.
+
+
+1303
+00:35:11,246 --> 00:35:12,526
+Divide the remaining collection
+
+
+1304
+00:35:12,526 --> 00:35:13,676
+in half again.
+
+
+1305
+00:35:14,586 --> 00:35:15,876
+Continue dividing collection
+
+
+1306
+00:35:15,876 --> 00:35:16,976
+we're looking at in half.
+
+
+1307
+00:35:17,096 --> 00:35:18,306
+Until we're pointing at the
+
+
+1308
+00:35:18,306 --> 00:35:19,626
+proper insertion point.
+
+
+1309
+00:35:19,966 --> 00:35:20,986
+That's our solution.
+
+
+1310
+00:35:22,546 --> 00:35:23,616
+Divide-and-conquer algorithms
+
+
+1311
+00:35:23,616 --> 00:35:25,216
+like this are fantastic.
+
+
+1312
+00:35:25,556 --> 00:35:27,316
+Because they're extremely fast.
+
+
+1313
+00:35:27,806 --> 00:35:30,056
+Binary search takes logarithmic
+
+
+1314
+00:35:30,056 --> 00:35:30,486
+time.
+
+
+1315
+00:35:30,726 --> 00:35:32,076
+Which means that doubling your
+
+
+1316
+00:35:32,076 --> 00:35:33,616
+input size doesn't make the
+
+
+1317
+00:35:33,616 --> 00:35:35,426
+algorithm run twice as slowly
+
+
+1318
+00:35:35,496 --> 00:35:36,436
+like it would for a linear
+
+
+1319
+00:35:36,436 --> 00:35:36,906
+algorithm.
+
+
+1320
+00:35:37,416 --> 00:35:38,716
+With a logarithmic algorithm
+
+
+1321
+00:35:38,716 --> 00:35:40,646
+like binary search, it only has
+
+
+1322
+00:35:40,646 --> 00:35:42,726
+to perform one additional step
+
+
+1323
+00:35:43,206 --> 00:35:44,906
+to cut the problem size in half
+
+
+1324
+00:35:44,906 --> 00:35:45,336
+again.
+
+
+1325
+00:35:45,876 --> 00:35:47,646
+So let's turn that into code.
+
+
+1326
+00:35:48,226 --> 00:35:50,146
+The first thing we need to do is
+
+
+1327
+00:35:50,146 --> 00:35:51,996
+find the index of the middle
+
+
+1328
+00:35:51,996 --> 00:35:52,506
+element.
+
+
+1329
+00:35:52,706 --> 00:35:53,566
+Which we can do using
+
+
+1330
+00:35:53,566 --> 00:35:55,446
+randomAccessCollections index
+
+
+1331
+00:35:55,446 --> 00:35:56,746
+offset by a function.
+
+
+1332
+00:35:57,616 --> 00:35:59,526
+Next, we check whether our value
+
+
+1333
+00:35:59,526 --> 00:36:01,716
+comes before the middle element.
+
+
+1334
+00:36:01,956 --> 00:36:03,166
+So we know which half of the
+
+
+1335
+00:36:03,166 --> 00:36:04,696
+collection contains our
+
+
+1336
+00:36:04,696 --> 00:36:05,516
+insertion point.
+
+
+1337
+00:36:06,516 --> 00:36:08,396
+Now in our example, the value to
+
+
+1338
+00:36:08,396 --> 00:36:09,626
+insert is greater than the
+
+
+1339
+00:36:09,626 --> 00:36:10,316
+middle element.
+
+
+1340
+00:36:10,656 --> 00:36:11,846
+So we take a slice of the
+
+
+1341
+00:36:11,846 --> 00:36:13,766
+collection from the index after
+
+
+1342
+00:36:13,766 --> 00:36:14,316
+the middle.
+
+
+1343
+00:36:14,576 --> 00:36:16,036
+All the way until the end.
+
+
+1344
+00:36:16,556 --> 00:36:18,106
+And recursively call sort and
+
+
+1345
+00:36:18,106 --> 00:36:19,616
+insertion point of on that
+
+
+1346
+00:36:19,616 --> 00:36:20,266
+slice.
+
+
+1347
+00:36:20,686 --> 00:36:21,466
+This is common of
+
+
+1348
+00:36:21,466 --> 00:36:22,936
+divide-and-conquer algorithms.
+
+
+1349
+00:36:23,126 --> 00:36:24,236
+Where you reduce the problem
+
+
+1350
+00:36:24,236 --> 00:36:26,036
+space and then recurse.
+
+
+1351
+00:36:26,036 --> 00:36:28,706
+Now to make this work, we need
+
+
+1352
+00:36:28,706 --> 00:36:30,116
+that slicing syntax.
+
+
+1353
+00:36:30,116 --> 00:36:31,636
+Provide a suitable slice of a
+
+
+1354
+00:36:31,636 --> 00:36:32,316
+collection.
+
+
+1355
+00:36:33,076 --> 00:36:34,356
+We can do this for all
+
+
+1356
+00:36:34,356 --> 00:36:35,966
+collections by introducing a
+
+
+1357
+00:36:35,966 --> 00:36:37,846
+general operation that takes a
+
+
+1358
+00:36:37,846 --> 00:36:40,496
+range of indices and produces a
+
+
+1359
+00:36:40,496 --> 00:36:40,966
+slice.
+
+
+1360
+00:36:41,296 --> 00:36:41,816
+Like this.
+
+
+1361
+00:36:42,966 --> 00:36:44,386
+Now remember that the slice
+
+
+1362
+00:36:44,386 --> 00:36:46,086
+adapter we discussed earlier
+
+
+1363
+00:36:46,126 --> 00:36:47,896
+works on any collection.
+
+
+1364
+00:36:48,116 --> 00:36:50,066
+Providing a view of the elements
+
+
+1365
+00:36:50,066 --> 00:36:51,576
+of the underlying collection
+
+
+1366
+00:36:51,866 --> 00:36:53,956
+that is itself a collection.
+
+
+1367
+00:36:54,616 --> 00:36:55,166
+This makes our
+
+
+1368
+00:36:55,166 --> 00:36:56,286
+divide-and-conquer algorithm
+
+
+1369
+00:36:56,286 --> 00:36:57,776
+work for any collection.
+
+
+1370
+00:36:58,196 --> 00:36:59,916
+As well as providing slicing
+
+
+1371
+00:36:59,916 --> 00:37:02,186
+syntax to all collections.
+
+
+1372
+00:37:02,766 --> 00:37:03,966
+That's great, but there's just
+
+
+1373
+00:37:03,966 --> 00:37:04,776
+one problem.
+
+
+1374
+00:37:05,536 --> 00:37:07,296
+Some collections don't want this
+
+
+1375
+00:37:07,296 --> 00:37:08,786
+particular slice type.
+
+
+1376
+00:37:09,306 --> 00:37:10,456
+They really want to provide
+
+
+1377
+00:37:10,456 --> 00:37:12,226
+their own slicing operations
+
+
+1378
+00:37:12,466 --> 00:37:14,056
+that produce a different type.
+
+
+1379
+00:37:14,606 --> 00:37:16,086
+String is the most common
+
+
+1380
+00:37:16,086 --> 00:37:16,626
+example.
+
+
+1381
+00:37:17,016 --> 00:37:19,106
+When you slice a string, you get
+
+
+1382
+00:37:19,106 --> 00:37:20,406
+back a substring.
+
+
+1383
+00:37:21,516 --> 00:37:22,466
+And so if you apply our
+
+
+1384
+00:37:22,466 --> 00:37:24,056
+divide-and-conquer algorithms to
+
+
+1385
+00:37:24,236 --> 00:37:25,436
+the string collection.
+
+
+1386
+00:37:25,666 --> 00:37:26,776
+You really want those to be in
+
+
+1387
+00:37:26,776 --> 00:37:27,786
+terms of substring.
+
+
+1388
+00:37:27,966 --> 00:37:29,196
+Rather than some other type like
+
+
+1389
+00:37:29,196 --> 00:37:30,086
+the slice of a string.
+
+
+1390
+00:37:30,836 --> 00:37:32,526
+Range is another interesting
+
+
+1391
+00:37:32,526 --> 00:37:33,176
+example.
+
+
+1392
+00:37:33,406 --> 00:37:35,146
+Because its slicing operation
+
+
+1393
+00:37:35,376 --> 00:37:37,436
+returns an instance of the exact
+
+
+1394
+00:37:37,436 --> 00:37:39,766
+same range type just with the
+
+
+1395
+00:37:39,766 --> 00:37:40,626
+new bounds.
+
+
+1396
+00:37:41,306 --> 00:37:43,126
+So to capture this variation
+
+
+1397
+00:37:43,246 --> 00:37:44,766
+among different types that
+
+
+1398
+00:37:44,766 --> 00:37:46,676
+conform to collection, we can
+
+
+1399
+00:37:46,676 --> 00:37:48,796
+introduce new requirements into
+
+
+1400
+00:37:48,796 --> 00:37:49,896
+the collection protocol.
+
+
+1401
+00:37:50,066 --> 00:37:51,486
+Specifically for slicing.
+
+
+1402
+00:37:52,396 --> 00:37:54,176
+So here we've pulled the slicing
+
+
+1403
+00:37:54,176 --> 00:37:55,606
+subscript into the collection
+
+
+1404
+00:37:55,606 --> 00:37:57,536
+protocol itself as a
+
+
+1405
+00:37:57,536 --> 00:37:58,316
+requirement.
+
+
+1406
+00:37:59,136 --> 00:38:00,686
+Now note that the result type of
+
+
+1407
+00:38:00,686 --> 00:38:02,846
+this subscript is described by a
+
+
+1408
+00:38:02,846 --> 00:38:04,216
+new associated type:
+
+
+1409
+00:38:04,676 --> 00:38:05,426
+subsequence.
+
+
+1410
+00:38:06,886 --> 00:38:09,446
+Now both string and range meet
+
+
+1411
+00:38:09,446 --> 00:38:10,656
+these new requirements of
+
+
+1412
+00:38:10,656 --> 00:38:11,296
+collection.
+
+
+1413
+00:38:11,976 --> 00:38:13,736
+With string, the subsequence
+
+
+1414
+00:38:13,736 --> 00:38:15,256
+type is substring.
+
+
+1415
+00:38:16,506 --> 00:38:18,606
+For range, the subsequence type
+
+
+1416
+00:38:18,606 --> 00:38:20,166
+is going to be the range itself.
+
+
+1417
+00:38:20,166 --> 00:38:22,766
+Now this works well for, for
+
+
+1418
+00:38:22,766 --> 00:38:23,596
+string and range.
+
+
+1419
+00:38:23,736 --> 00:38:25,326
+But for all the other collection
+
+
+1420
+00:38:25,326 --> 00:38:26,856
+types that don't want to
+
+
+1421
+00:38:26,856 --> 00:38:28,646
+customize the actual subsequence
+
+
+1422
+00:38:28,646 --> 00:38:28,926
+type.
+
+
+1423
+00:38:29,346 --> 00:38:30,536
+We can provide default
+
+
+1424
+00:38:30,536 --> 00:38:31,736
+limitations of slicing.
+
+
+1425
+00:38:32,396 --> 00:38:33,326
+So the authors of these
+
+
+1426
+00:38:33,326 --> 00:38:34,646
+collection type don't actually
+
+
+1427
+00:38:34,646 --> 00:38:36,536
+have to do any extra work to
+
+
+1428
+00:38:36,536 --> 00:38:37,666
+conform to collection.
+
+
+1429
+00:38:37,906 --> 00:38:38,996
+They get all the slicing
+
+
+1430
+00:38:38,996 --> 00:38:40,126
+behavior for free.
+
+
+1431
+00:38:41,056 --> 00:38:42,366
+So we're going to start with
+
+
+1432
+00:38:42,366 --> 00:38:43,206
+subsequence.
+
+
+1433
+00:38:44,006 --> 00:38:46,066
+Associated types themselves can
+
+
+1434
+00:38:46,066 --> 00:38:47,706
+have default values.
+
+
+1435
+00:38:48,176 --> 00:38:50,036
+Written after the equals sign.
+
+
+1436
+00:38:50,436 --> 00:38:52,576
+For subsequence, the slice
+
+
+1437
+00:38:52,576 --> 00:38:54,156
+adaptor type is a perfect
+
+
+1438
+00:38:54,156 --> 00:38:56,076
+default because it works for all
+
+
+1439
+00:38:56,076 --> 00:38:56,906
+collections.
+
+
+1440
+00:38:57,026 --> 00:38:58,806
+So this default will be used for
+
+
+1441
+00:38:58,806 --> 00:39:00,736
+any conforming type that doesn't
+
+
+1442
+00:39:00,736 --> 00:39:02,626
+provide its own subsequence
+
+
+1443
+00:39:02,626 --> 00:39:02,946
+type.
+
+
+1444
+00:39:04,106 --> 00:39:05,576
+This pairs well with the
+
+
+1445
+00:39:05,576 --> 00:39:06,896
+implementation of the slicing
+
+
+1446
+00:39:06,896 --> 00:39:08,446
+subscript we started with
+
+
+1447
+00:39:08,446 --> 00:39:09,066
+earlier.
+
+
+1448
+00:39:09,566 --> 00:39:11,246
+Written in extension on the
+
+
+1449
+00:39:11,246 --> 00:39:12,326
+collection protocol.
+
+
+1450
+00:39:12,756 --> 00:39:14,476
+And it can act as a default
+
+
+1451
+00:39:14,476 --> 00:39:16,336
+implementation, providing the
+
+
+1452
+00:39:16,336 --> 00:39:17,896
+slicing subscript operation that
+
+
+1453
+00:39:17,896 --> 00:39:18,946
+returns a slice.
+
+
+1454
+00:39:19,886 --> 00:39:21,736
+We can even go one step further
+
+
+1455
+00:39:21,946 --> 00:39:23,986
+and limit the applicability of
+
+
+1456
+00:39:23,986 --> 00:39:25,426
+our default slicing subscript
+
+
+1457
+00:39:25,426 --> 00:39:27,506
+implementation to those cases
+
+
+1458
+00:39:27,606 --> 00:39:29,046
+where we picked the default
+
+
+1459
+00:39:29,046 --> 00:39:30,306
+subsequence type.
+
+
+1460
+00:39:30,996 --> 00:39:32,706
+So this pattern prevents the
+
+
+1461
+00:39:32,706 --> 00:39:34,546
+default implementation from
+
+
+1462
+00:39:34,546 --> 00:39:36,706
+showing up as an overload on
+
+
+1463
+00:39:36,706 --> 00:39:38,016
+collection types that have
+
+
+1464
+00:39:38,016 --> 00:39:39,486
+customized their subsequence.
+
+
+1465
+00:39:39,486 --> 00:39:41,256
+Like string and range.
+
+
+1466
+00:39:41,806 --> 00:39:42,776
+So this is all great for
+
+
+1467
+00:39:42,776 --> 00:39:43,666
+conforming types.
+
+
+1468
+00:39:43,916 --> 00:39:45,766
+They get slicing for free, or
+
+
+1469
+00:39:45,766 --> 00:39:46,946
+they can customize it if they
+
+
+1470
+00:39:46,946 --> 00:39:47,446
+want to.
+
+
+1471
+00:39:48,606 --> 00:39:49,896
+But remember our goal here.
+
+
+1472
+00:39:50,256 --> 00:39:51,526
+We're trying to write our
+
+
+1473
+00:39:51,526 --> 00:39:52,926
+divide-and-conquer algorithms
+
+
+1474
+00:39:52,926 --> 00:39:54,416
+against the collection protocol.
+
+
+1475
+00:39:55,016 --> 00:39:57,146
+So we have to answer one really
+
+
+1476
+00:39:57,146 --> 00:39:58,116
+important question.
+
+
+1477
+00:39:58,706 --> 00:40:00,596
+What does subsequence do?
+
+
+1478
+00:40:01,266 --> 00:40:02,686
+All we know about subsequence
+
+
+1479
+00:40:02,686 --> 00:40:04,296
+right now is that it's the
+
+
+1480
+00:40:04,296 --> 00:40:05,456
+result type of the slicing
+
+
+1481
+00:40:05,456 --> 00:40:06,656
+subscript operation.
+
+
+1482
+00:40:07,146 --> 00:40:08,666
+But we need more to actually use
+
+
+1483
+00:40:08,666 --> 00:40:08,966
+it.
+
+
+1484
+00:40:09,286 --> 00:40:10,816
+So to answer this question, we
+
+
+1485
+00:40:10,816 --> 00:40:11,896
+have to go back to the
+
+
+1486
+00:40:11,896 --> 00:40:13,856
+algorithms that we want to write
+
+
+1487
+00:40:13,856 --> 00:40:15,196
+in terms of subsequence.
+
+
+1488
+00:40:15,776 --> 00:40:17,666
+Our algorithm is recursive.
+
+
+1489
+00:40:18,186 --> 00:40:20,016
+It forms a slice which is now a
+
+
+1490
+00:40:20,016 --> 00:40:22,186
+value of the subsequence type.
+
+
+1491
+00:40:22,186 --> 00:40:24,796
+And then recursively calls sort
+
+
+1492
+00:40:24,796 --> 00:40:26,856
+insertion point of on that
+
+
+1493
+00:40:26,856 --> 00:40:27,386
+slice.
+
+
+1494
+00:40:27,926 --> 00:40:30,236
+Now this only makes sense if the
+
+
+1495
+00:40:30,236 --> 00:40:32,176
+subsequence type you get back is
+
+
+1496
+00:40:32,176 --> 00:40:33,696
+itself a collection.
+
+
+1497
+00:40:34,436 --> 00:40:35,716
+Now when it performs that call,
+
+
+1498
+00:40:35,916 --> 00:40:37,356
+we're going to pass a value of
+
+
+1499
+00:40:37,356 --> 00:40:39,076
+the collection's element type.
+
+
+1500
+00:40:39,666 --> 00:40:41,226
+But the recursive call itself is
+
+
+1501
+00:40:41,226 --> 00:40:43,216
+going to expect a value of this
+
+
+1502
+00:40:43,216 --> 00:40:45,126
+subsequence's element type.
+
+
+1503
+00:40:45,816 --> 00:40:47,546
+The only way this can possibly
+
+
+1504
+00:40:47,546 --> 00:40:49,716
+make sense is if those element
+
+
+1505
+00:40:49,716 --> 00:40:51,396
+types are identical.
+
+
+1506
+00:40:51,396 --> 00:40:54,416
+Now the same issue comes up when
+
+
+1507
+00:40:54,416 --> 00:40:56,196
+returning an index from the
+
+
+1508
+00:40:56,196 --> 00:40:57,066
+recursive call.
+
+
+1509
+00:40:57,666 --> 00:40:58,766
+Which is going to be computed in
+
+
+1510
+00:40:58,766 --> 00:41:00,216
+terms of the subsequence.
+
+
+1511
+00:41:00,616 --> 00:41:02,206
+But that index that's returned
+
+
+1512
+00:41:02,656 --> 00:41:04,786
+also needs to be a valid index
+
+
+1513
+00:41:04,936 --> 00:41:06,406
+for the current collection.
+
+
+1514
+00:41:06,766 --> 00:41:08,276
+So we can capture all of these
+
+
+1515
+00:41:08,276 --> 00:41:10,246
+requirements in the collection
+
+
+1516
+00:41:10,246 --> 00:41:11,456
+protocol itself.
+
+
+1517
+00:41:11,456 --> 00:41:13,416
+Now the first thing we want to
+
+
+1518
+00:41:13,416 --> 00:41:15,376
+do is say that the subsequence
+
+
+1519
+00:41:15,376 --> 00:41:17,076
+of a collection is itself a
+
+
+1520
+00:41:17,076 --> 00:41:17,696
+collection.
+
+
+1521
+00:41:18,046 --> 00:41:19,606
+This is a so-called recursive
+
+
+1522
+00:41:19,606 --> 00:41:20,256
+constraint.
+
+
+1523
+00:41:20,446 --> 00:41:21,676
+Because the associated type
+
+
+1524
+00:41:21,676 --> 00:41:23,626
+conforms to its own enclosing
+
+
+1525
+00:41:23,626 --> 00:41:24,156
+protocol.
+
+
+1526
+00:41:24,996 --> 00:41:27,176
+We can then use associated type
+
+
+1527
+00:41:27,176 --> 00:41:29,036
+where clauses to further
+
+
+1528
+00:41:29,036 --> 00:41:30,736
+constrain our subsequence.
+
+
+1529
+00:41:31,356 --> 00:41:33,386
+As we talked about earlier, it
+
+
+1530
+00:41:33,386 --> 00:41:34,576
+has an element type.
+
+
+1531
+00:41:34,576 --> 00:41:36,086
+And that element type needs to
+
+
+1532
+00:41:36,086 --> 00:41:38,006
+be the same as that of the
+
+
+1533
+00:41:38,006 --> 00:41:39,136
+original collection.
+
+
+1534
+00:41:39,376 --> 00:41:40,606
+So we can express that here with
+
+
+1535
+00:41:40,606 --> 00:41:41,656
+the same type constraint.
+
+
+1536
+00:41:41,856 --> 00:41:43,416
+Subsequent element is the same
+
+
+1537
+00:41:43,416 --> 00:41:44,136
+as element.
+
+
+1538
+00:41:45,006 --> 00:41:46,436
+We can do exactly the same thing
+
+
+1539
+00:41:46,436 --> 00:41:47,466
+for the index type.
+
+
+1540
+00:41:48,266 --> 00:41:49,776
+Now, these cover all the
+
+
+1541
+00:41:49,776 --> 00:41:51,696
+properties that we discovered by
+
+
+1542
+00:41:51,696 --> 00:41:53,416
+looking at the implementation of
+
+
+1543
+00:41:53,416 --> 00:41:54,926
+the sorted insertion point of
+
+
+1544
+00:41:55,076 --> 00:41:55,776
+algorithm.
+
+
+1545
+00:41:57,076 --> 00:41:58,886
+This leads us to an interesting
+
+
+1546
+00:41:58,886 --> 00:41:59,466
+question.
+
+
+1547
+00:41:59,776 --> 00:42:01,666
+Can you slice a subsequence?
+
+
+1548
+00:42:02,416 --> 00:42:03,936
+Well, every subsequence is a
+
+
+1549
+00:42:03,936 --> 00:42:05,856
+collection and every collection
+
+
+1550
+00:42:05,856 --> 00:42:07,126
+has a slice operation.
+
+
+1551
+00:42:07,396 --> 00:42:08,866
+So of course you can slice a
+
+
+1552
+00:42:08,866 --> 00:42:09,706
+subsequence.
+
+
+1553
+00:42:09,986 --> 00:42:11,796
+And the result is going to be a
+
+
+1554
+00:42:11,796 --> 00:42:14,146
+subsequence of the subsequence.
+
+
+1555
+00:42:15,156 --> 00:42:17,036
+Now you can do this again and
+
+
+1556
+00:42:17,036 --> 00:42:18,166
+get a subsequence of a
+
+
+1557
+00:42:18,166 --> 00:42:19,996
+subsequence of a subsequence.
+
+
+1558
+00:42:20,566 --> 00:42:22,956
+And keep on going on and on and
+
+
+1559
+00:42:22,956 --> 00:42:23,326
+on.
+
+
+1560
+00:42:24,786 --> 00:42:26,466
+Now interestingly, at each point
+
+
+1561
+00:42:26,556 --> 00:42:28,226
+we could have a brand-new type.
+
+
+1562
+00:42:28,226 --> 00:42:29,746
+And so we have this potentially
+
+
+1563
+00:42:29,776 --> 00:42:31,376
+infinite tower of types.
+
+
+1564
+00:42:31,906 --> 00:42:33,156
+That's actually okay.
+
+
+1565
+00:42:33,896 --> 00:42:35,106
+Each recursive step in our
+
+
+1566
+00:42:35,106 --> 00:42:36,546
+generic algorithm could
+
+
+1567
+00:42:36,546 --> 00:42:38,946
+conceivably create a new type.
+
+
+1568
+00:42:39,666 --> 00:42:41,236
+Based on the current collection
+
+
+1569
+00:42:41,236 --> 00:42:41,536
+type.
+
+
+1570
+00:42:42,136 --> 00:42:43,246
+So long as the recursion
+
+
+1571
+00:42:43,246 --> 00:42:44,336
+eventually terminates at
+
+
+1572
+00:42:44,336 --> 00:42:46,166
+runtime, there's no problem with
+
+
+1573
+00:42:46,166 --> 00:42:46,566
+this.
+
+
+1574
+00:42:47,306 --> 00:42:49,116
+However, it's often the case
+
+
+1575
+00:42:49,166 --> 00:42:50,676
+divide-and-conquer algorithms
+
+
+1576
+00:42:50,676 --> 00:42:51,646
+can be implemented more
+
+
+1577
+00:42:51,646 --> 00:42:53,376
+efficiently by making them
+
+
+1578
+00:42:53,376 --> 00:42:54,396
+nonrecursive.
+
+
+1579
+00:42:55,876 --> 00:42:58,146
+So here is the nonrecursive
+
+
+1580
+00:42:58,146 --> 00:42:59,846
+implementation of the sort and
+
+
+1581
+00:42:59,846 --> 00:43:01,496
+insertion point of algorithm.
+
+
+1582
+00:43:02,096 --> 00:43:03,066
+We're going to walk through it.
+
+
+1583
+00:43:03,066 --> 00:43:04,356
+Because the core algorithm is
+
+
+1584
+00:43:04,356 --> 00:43:05,056
+the same.
+
+
+1585
+00:43:05,406 --> 00:43:07,256
+But it's expressed iteratively
+
+
+1586
+00:43:07,256 --> 00:43:09,086
+with this while loop rather than
+
+
+1587
+00:43:09,086 --> 00:43:09,816
+recursively.
+
+
+1588
+00:43:10,536 --> 00:43:11,626
+So the first thing we're going
+
+
+1589
+00:43:11,626 --> 00:43:13,366
+to do is take a slice of the
+
+
+1590
+00:43:13,366 --> 00:43:14,546
+whole collection.
+
+
+1591
+00:43:15,306 --> 00:43:17,446
+This slice variable is going to
+
+
+1592
+00:43:17,446 --> 00:43:18,546
+represent the part of the
+
+
+1593
+00:43:18,546 --> 00:43:19,846
+collection that we're looking at
+
+
+1594
+00:43:19,996 --> 00:43:21,196
+in each iteration.
+
+
+1595
+00:43:21,986 --> 00:43:23,316
+And now we see the familiar
+
+
+1596
+00:43:23,316 --> 00:43:24,726
+divide-and-conquer pattern.
+
+
+1597
+00:43:25,226 --> 00:43:26,766
+Find the middle of the slice.
+
+
+1598
+00:43:27,206 --> 00:43:29,066
+And then compare the value to
+
+
+1599
+00:43:29,066 --> 00:43:30,686
+insert against the middle
+
+
+1600
+00:43:30,686 --> 00:43:31,836
+element in the slice.
+
+
+1601
+00:43:32,616 --> 00:43:34,536
+We then narrow the search base
+
+
+1602
+00:43:34,846 --> 00:43:37,046
+by slicing the slice before we
+
+
+1603
+00:43:37,046 --> 00:43:37,986
+go in loop again.
+
+
+1604
+00:43:39,286 --> 00:43:41,246
+However, here we have a problem.
+
+
+1605
+00:43:41,556 --> 00:43:43,416
+We're performing an assignment
+
+
+1606
+00:43:43,696 --> 00:43:45,146
+to the slice variable.
+
+
+1607
+00:43:45,396 --> 00:43:46,566
+Which is of the subsequence
+
+
+1608
+00:43:46,566 --> 00:43:46,876
+type.
+
+
+1609
+00:43:47,866 --> 00:43:48,576
+On the other hand, the
+
+
+1610
+00:43:48,576 --> 00:43:50,526
+right-hand side is a slice of a
+
+
+1611
+00:43:50,526 --> 00:43:51,126
+slice.
+
+
+1612
+00:43:51,286 --> 00:43:52,646
+And as we talked about before,
+
+
+1613
+00:43:53,006 --> 00:43:54,146
+this is a subsequence of the
+
+
+1614
+00:43:54,146 --> 00:43:55,856
+subsequence and could be a
+
+
+1615
+00:43:55,856 --> 00:43:57,216
+completely different type.
+
+
+1616
+00:43:57,636 --> 00:43:58,556
+So we're going to get a compiler
+
+
+1617
+00:43:58,556 --> 00:43:59,956
+error telling us that these two
+
+
+1618
+00:43:59,956 --> 00:44:01,496
+types are not necessarily the
+
+
+1619
+00:44:01,496 --> 00:44:01,956
+same.
+
+
+1620
+00:44:02,566 --> 00:44:04,296
+That's really inconvenient here
+
+
+1621
+00:44:04,296 --> 00:44:05,356
+because it prevents us from
+
+
+1622
+00:44:05,356 --> 00:44:06,646
+writing this nonrecursive
+
+
+1623
+00:44:06,646 --> 00:44:07,116
+algorithm.
+
+
+1624
+00:44:07,116 --> 00:44:09,326
+And it doesn't really reflect
+
+
+1625
+00:44:09,386 --> 00:44:10,996
+how specific collection types
+
+
+1626
+00:44:10,996 --> 00:44:11,506
+behave.
+
+
+1627
+00:44:11,506 --> 00:44:12,706
+Think about string.
+
+
+1628
+00:44:13,266 --> 00:44:15,376
+If you slice a string, you get a
+
+
+1629
+00:44:15,376 --> 00:44:15,996
+substring.
+
+
+1630
+00:44:16,446 --> 00:44:18,276
+If you slice a substring, you
+
+
+1631
+00:44:18,276 --> 00:44:20,586
+don't get a sub-substring.
+
+
+1632
+00:44:21,256 --> 00:44:23,286
+You just get another instance of
+
+
+1633
+00:44:23,286 --> 00:44:24,296
+the substring type.
+
+
+1634
+00:44:25,206 --> 00:44:27,196
+So let's go back to how this
+
+
+1635
+00:44:27,196 --> 00:44:28,646
+slice adapter works to
+
+
+1636
+00:44:28,646 --> 00:44:29,816
+generalize this notion.
+
+
+1637
+00:44:30,306 --> 00:44:31,426
+We have a collection.
+
+
+1638
+00:44:31,426 --> 00:44:32,426
+We're going to call it Self,
+
+
+1639
+00:44:32,776 --> 00:44:34,606
+that we've sliced from I to J.
+
+
+1640
+00:44:35,536 --> 00:44:36,576
+Now that's going to build
+
+
+1641
+00:44:36,736 --> 00:44:37,996
+something of the type slice of
+
+
+1642
+00:44:37,996 --> 00:44:38,506
+Self.
+
+
+1643
+00:44:38,746 --> 00:44:40,676
+Which is just a view on the
+
+
+1644
+00:44:40,676 --> 00:44:42,146
+underlying Self collection.
+
+
+1645
+00:44:42,686 --> 00:44:45,276
+If we then slice the slice, we
+
+
+1646
+00:44:45,276 --> 00:44:47,676
+get a slice of slice of self.
+
+
+1647
+00:44:47,866 --> 00:44:50,586
+Which is a view of a view on
+
+
+1648
+00:44:50,586 --> 00:44:52,576
+that same underlying Self
+
+
+1649
+00:44:52,576 --> 00:44:53,246
+collection.
+
+
+1650
+00:44:53,906 --> 00:44:55,646
+So this is our infinite tower of
+
+
+1651
+00:44:55,646 --> 00:44:56,876
+types in practice.
+
+
+1652
+00:44:57,346 --> 00:44:58,956
+However, it doesn't have to be
+
+
+1653
+00:44:58,956 --> 00:44:59,446
+this way.
+
+
+1654
+00:45:00,076 --> 00:45:01,736
+Remember that the slice types
+
+
+1655
+00:45:01,966 --> 00:45:04,246
+use the same indices as their
+
+
+1656
+00:45:04,246 --> 00:45:05,576
+underlying collection.
+
+
+1657
+00:45:05,976 --> 00:45:07,546
+And they also know about their
+
+
+1658
+00:45:07,546 --> 00:45:08,846
+underlying basic collection.
+
+
+1659
+00:45:09,356 --> 00:45:11,686
+So when we slice the slice, we
+
+
+1660
+00:45:11,686 --> 00:45:13,436
+can take those new indices, I2
+
+
+1661
+00:45:13,436 --> 00:45:14,286
+and J2.
+
+
+1662
+00:45:14,286 --> 00:45:16,566
+Bring them back to the original
+
+
+1663
+00:45:16,566 --> 00:45:18,766
+base collection and form the new
+
+
+1664
+00:45:18,766 --> 00:45:19,936
+slice from there.
+
+
+1665
+00:45:19,936 --> 00:45:22,486
+And what this does is it means
+
+
+1666
+00:45:22,486 --> 00:45:23,946
+that when you slice a slice, you
+
+
+1667
+00:45:23,946 --> 00:45:25,436
+get something back of the same
+
+
+1668
+00:45:25,436 --> 00:45:26,146
+slice type.
+
+
+1669
+00:45:26,316 --> 00:45:28,746
+Effectively tying off the
+
+
+1670
+00:45:28,746 --> 00:45:29,466
+recursion.
+
+
+1671
+00:45:29,906 --> 00:45:31,206
+This is exactly the same
+
+
+1672
+00:45:31,206 --> 00:45:32,946
+behavior we saw with substring.
+
+
+1673
+00:45:33,246 --> 00:45:34,846
+And it's completely reasonable
+
+
+1674
+00:45:34,846 --> 00:45:36,616
+to expect that all subsequence
+
+
+1675
+00:45:36,616 --> 00:45:38,706
+types behave in this way.
+
+
+1676
+00:45:39,026 --> 00:45:41,246
+So let's model it as an explicit
+
+
+1677
+00:45:41,246 --> 00:45:42,456
+part of the collection's
+
+
+1678
+00:45:42,456 --> 00:45:43,746
+protocol requirements.
+
+
+1679
+00:45:44,416 --> 00:45:46,436
+So here we're saying that the
+
+
+1680
+00:45:46,436 --> 00:45:48,616
+subsequence of a subsequence is
+
+
+1681
+00:45:48,616 --> 00:45:49,976
+the same type as the
+
+
+1682
+00:45:49,976 --> 00:45:50,766
+subsequence.
+
+
+1683
+00:45:51,086 --> 00:45:52,326
+In other words, when you slice a
+
+
+1684
+00:45:52,326 --> 00:45:54,786
+slice, you get back the same
+
+
+1685
+00:45:54,786 --> 00:45:55,356
+slice.
+
+
+1686
+00:45:56,326 --> 00:45:57,976
+This makes our nonrecursive
+
+
+1687
+00:45:57,976 --> 00:45:59,256
+divide-and-conquer algorithm
+
+
+1688
+00:45:59,336 --> 00:45:59,836
+work.
+
+
+1689
+00:46:00,006 --> 00:46:01,286
+And simplifies the use of the
+
+
+1690
+00:46:01,286 --> 00:46:02,276
+collection protocol.
+
+
+1691
+00:46:02,566 --> 00:46:04,316
+There's no more need to reason
+
+
+1692
+00:46:04,356 --> 00:46:06,226
+about infinite tower of types.
+
+
+1693
+00:46:06,226 --> 00:46:08,736
+Now there's one last issue here
+
+
+1694
+00:46:08,736 --> 00:46:10,276
+involving subsequence.
+
+
+1695
+00:46:10,616 --> 00:46:11,906
+We've said it's required to be a
+
+
+1696
+00:46:11,906 --> 00:46:12,656
+collection.
+
+
+1697
+00:46:12,926 --> 00:46:14,546
+But we need the subsequence type
+
+
+1698
+00:46:14,546 --> 00:46:16,426
+to be a random access collection
+
+
+1699
+00:46:16,616 --> 00:46:18,826
+to perform this index offset by
+
+
+1700
+00:46:18,826 --> 00:46:19,676
+operation.
+
+
+1701
+00:46:20,806 --> 00:46:22,556
+To describe this, we can use
+
+
+1702
+00:46:22,766 --> 00:46:24,456
+protocol where clauses.
+
+
+1703
+00:46:24,846 --> 00:46:26,656
+So when bidirectionalCollection
+
+
+1704
+00:46:26,826 --> 00:46:28,116
+inherits from collection.
+
+
+1705
+00:46:28,386 --> 00:46:30,026
+It can add a new constraint on
+
+
+1706
+00:46:30,026 --> 00:46:32,056
+subsequence, requiring it to
+
+
+1707
+00:46:32,056 --> 00:46:33,246
+conform to that
+
+
+1708
+00:46:33,246 --> 00:46:34,346
+bidirectionalCollection
+
+
+1709
+00:46:34,346 --> 00:46:34,936
+protocol.
+
+
+1710
+00:46:35,346 --> 00:46:37,136
+This again is a recursive
+
+
+1711
+00:46:37,136 --> 00:46:38,496
+constraint but now it's
+
+
+1712
+00:46:38,496 --> 00:46:39,156
+expressed on the
+
+
+1713
+00:46:39,156 --> 00:46:40,156
+bidirectionalCollection
+
+
+1714
+00:46:40,156 --> 00:46:40,606
+protocol.
+
+
+1715
+00:46:40,966 --> 00:46:42,806
+We can do the exact same thing
+
+
+1716
+00:46:42,806 --> 00:46:44,736
+for randomAccessCollections.
+
+
+1717
+00:46:44,856 --> 00:46:46,146
+Such as the subsequence of a
+
+
+1718
+00:46:46,146 --> 00:46:47,876
+random access collection, itself
+
+
+1719
+00:46:47,876 --> 00:46:48,716
+conforms to
+
+
+1720
+00:46:48,896 --> 00:46:50,156
+randomAccessCollection.
+
+
+1721
+00:46:50,706 --> 00:46:52,176
+Note how the constraints on
+
+
+1722
+00:46:52,176 --> 00:46:54,566
+subsequence follow the enclosing
+
+
+1723
+00:46:54,566 --> 00:46:55,196
+protocol.
+
+
+1724
+00:46:55,476 --> 00:46:57,106
+This might sound a little bit
+
+
+1725
+00:46:57,106 --> 00:46:57,796
+familiar.
+
+
+1726
+00:46:58,586 --> 00:47:00,436
+Both recursive constraints and
+
+
+1727
+00:47:00,436 --> 00:47:02,076
+conditional conformance tend to
+
+
+1728
+00:47:02,076 --> 00:47:03,726
+track the protocol hierarchy
+
+
+1729
+00:47:03,726 --> 00:47:04,526
+like this.
+
+
+1730
+00:47:04,526 --> 00:47:05,646
+And the features support each
+
+
+1731
+00:47:05,646 --> 00:47:05,976
+other.
+
+
+1732
+00:47:06,236 --> 00:47:07,926
+This is particularly important
+
+
+1733
+00:47:07,926 --> 00:47:09,126
+because we want the default
+
+
+1734
+00:47:09,126 --> 00:47:10,876
+associated type for subsequence,
+
+
+1735
+00:47:11,186 --> 00:47:13,256
+the slice of Self, to work at
+
+
+1736
+00:47:13,256 --> 00:47:14,666
+every level of the collection
+
+
+1737
+00:47:14,666 --> 00:47:15,176
+hierarchy.
+
+
+1738
+00:47:15,676 --> 00:47:17,356
+Slice is always a collection.
+
+
+1739
+00:47:18,116 --> 00:47:19,106
+When we go ahead and create the
+
+
+1740
+00:47:19,106 --> 00:47:20,386
+bidirectionalCollection
+
+
+1741
+00:47:20,386 --> 00:47:20,966
+protocol.
+
+
+1742
+00:47:21,336 --> 00:47:22,676
+It now requires that the
+
+
+1743
+00:47:22,676 --> 00:47:25,016
+subsequence type also conform to
+
+
+1744
+00:47:25,016 --> 00:47:26,136
+bidirectionalCollection.
+
+
+1745
+00:47:26,996 --> 00:47:28,476
+The slice adapter's conditional
+
+
+1746
+00:47:28,476 --> 00:47:29,026
+conformance to
+
+
+1747
+00:47:29,026 --> 00:47:30,746
+bidirectionalCollection which
+
+
+1748
+00:47:30,806 --> 00:47:32,976
+kicks in anytime itself is known
+
+
+1749
+00:47:32,976 --> 00:47:34,296
+to be a bidirectionalCollection.
+
+
+1750
+00:47:34,716 --> 00:47:36,356
+Satisfies that requirement.
+
+
+1751
+00:47:36,986 --> 00:47:38,696
+RandomAccessCollection works the
+
+
+1752
+00:47:38,696 --> 00:47:39,296
+same way.
+
+
+1753
+00:47:39,796 --> 00:47:40,956
+Subsequence gains a
+
+
+1754
+00:47:40,956 --> 00:47:42,116
+randomAccessCollection
+
+
+1755
+00:47:42,116 --> 00:47:42,876
+requirement.
+
+
+1756
+00:47:43,236 --> 00:47:44,446
+And slices conditional
+
+
+1757
+00:47:44,446 --> 00:47:45,036
+conformance to
+
+
+1758
+00:47:45,036 --> 00:47:47,146
+randomAccessCollection satisfies
+
+
+1759
+00:47:47,146 --> 00:47:47,866
+that requirement.
+
+
+1760
+00:47:48,246 --> 00:47:49,916
+Now itself is known to be a
+
+
+1761
+00:47:49,916 --> 00:47:51,186
+randomAccessCollection.
+
+
+1762
+00:47:51,756 --> 00:47:53,236
+This behavior where an
+
+
+1763
+00:47:53,236 --> 00:47:54,836
+associated type default works
+
+
+1764
+00:47:54,946 --> 00:47:56,376
+for every protocol within the
+
+
+1765
+00:47:56,376 --> 00:47:58,726
+hierarchy is a good indicator of
+
+
+1766
+00:47:58,726 --> 00:47:59,906
+a cohesive design.
+
+
+1767
+00:48:00,726 --> 00:48:01,976
+If you find yourself needing
+
+
+1768
+00:48:02,076 --> 00:48:03,256
+different associated type
+
+
+1769
+00:48:03,256 --> 00:48:04,896
+defaults at different points in
+
+
+1770
+00:48:04,896 --> 00:48:05,896
+the collection hierarchy.
+
+
+1771
+00:48:06,216 --> 00:48:07,146
+You might have a problem with
+
+
+1772
+00:48:07,146 --> 00:48:07,686
+your design.
+
+
+1773
+00:48:08,316 --> 00:48:09,396
+Recursive restraints are a
+
+
+1774
+00:48:09,396 --> 00:48:10,426
+powerful tool.
+
+
+1775
+00:48:10,646 --> 00:48:12,286
+Used with associated type and
+
+
+1776
+00:48:12,286 --> 00:48:13,916
+protocol where clauses, they
+
+
+1777
+00:48:13,916 --> 00:48:14,996
+help us write the protocol
+
+
+1778
+00:48:14,996 --> 00:48:17,016
+requirements we need to express
+
+
+1779
+00:48:17,016 --> 00:48:18,336
+divide-and-conquer algorithms
+
+
+1780
+00:48:18,336 --> 00:48:20,116
+naturally in generic code.
+
+
+1781
+00:48:20,596 --> 00:48:22,266
+And now we return to the final
+
+
+1782
+00:48:22,266 --> 00:48:23,606
+portion of the WWDC talk.
+
+
+1783
+00:48:25,026 --> 00:48:26,506
+So, Swift is a multi-paradigm
+
+
+1784
+00:48:26,506 --> 00:48:26,906
+language.
+
+
+1785
+00:48:27,036 --> 00:48:28,426
+We've been talking exclusively
+
+
+1786
+00:48:28,426 --> 00:48:29,636
+about generics right now.
+
+
+1787
+00:48:29,636 --> 00:48:30,876
+But of course, Swift also
+
+
+1788
+00:48:30,876 --> 00:48:32,136
+supports object-oriented
+
+
+1789
+00:48:32,136 --> 00:48:32,716
+programming.
+
+
+1790
+00:48:33,756 --> 00:48:34,866
+And so, I'd like to take a few
+
+
+1791
+00:48:34,866 --> 00:48:35,906
+moments to talk about the
+
+
+1792
+00:48:35,906 --> 00:48:37,686
+interaction between those two
+
+
+1793
+00:48:37,686 --> 00:48:38,276
+features.
+
+
+1794
+00:48:38,376 --> 00:48:39,846
+How they work together in the
+
+
+1795
+00:48:39,846 --> 00:48:40,646
+Swift language.
+
+
+1796
+00:48:41,166 --> 00:48:43,696
+So with class inheritance, we
+
+
+1797
+00:48:43,696 --> 00:48:44,546
+know how class inheritance
+
+
+1798
+00:48:44,576 --> 00:48:44,906
+works.
+
+
+1799
+00:48:45,076 --> 00:48:45,866
+It's fairly simple.
+
+
+1800
+00:48:46,386 --> 00:48:47,716
+You can declare a superclass,
+
+
+1801
+00:48:47,716 --> 00:48:48,386
+like Vehicle.
+
+
+1802
+00:48:48,536 --> 00:48:50,156
+You can declare some subclasses,
+
+
+1803
+00:48:50,156 --> 00:48:51,616
+like Taxi and PoliceCar that
+
+
+1804
+00:48:51,616 --> 00:48:52,786
+both inherit from Vehicle.
+
+
+1805
+00:48:53,606 --> 00:48:55,126
+And, once you do this, you have
+
+
+1806
+00:48:55,126 --> 00:48:56,466
+this object-oriented hierarchy.
+
+
+1807
+00:48:56,956 --> 00:48:58,506
+You have some expectations about
+
+
+1808
+00:48:58,506 --> 00:48:59,636
+where you can use those
+
+
+1809
+00:48:59,636 --> 00:49:00,516
+subclasses.
+
+
+1810
+00:49:00,986 --> 00:49:02,926
+So if I were to extend Vehicle
+
+
+1811
+00:49:02,926 --> 00:49:04,376
+with a new method, to go let it
+
+
+1812
+00:49:04,376 --> 00:49:07,066
+drive, I fully expect that I can
+
+
+1813
+00:49:07,166 --> 00:49:08,736
+call that method on one of my
+
+
+1814
+00:49:08,736 --> 00:49:10,086
+subclasses, Taxi.
+
+
+1815
+00:49:11,016 --> 00:49:13,746
+So, this is a fundamental aspect
+
+
+1816
+00:49:13,816 --> 00:49:15,426
+of object-oriented programming.
+
+
+1817
+00:49:15,756 --> 00:49:17,356
+And, Barbara Liskov, actually
+
+
+1818
+00:49:17,356 --> 00:49:18,836
+described this really well in a
+
+
+1819
+00:49:18,836 --> 00:49:20,106
+lecture back in the '80s.
+
+
+1820
+00:49:20,846 --> 00:49:21,726
+Since then, we've referred to
+
+
+1821
+00:49:21,726 --> 00:49:23,656
+this as the Liskov substitution
+
+
+1822
+00:49:23,656 --> 00:49:24,156
+principle.
+
+
+1823
+00:49:24,516 --> 00:49:25,856
+And, the idea's actually fairly
+
+
+1824
+00:49:25,856 --> 00:49:26,286
+simple.
+
+
+1825
+00:49:26,886 --> 00:49:28,986
+So, if you have someplace in
+
+
+1826
+00:49:28,986 --> 00:49:30,906
+your program that refers to a
+
+
+1827
+00:49:30,906 --> 00:49:34,246
+supertype, or superclass, like
+
+
+1828
+00:49:34,376 --> 00:49:34,796
+Vehicle.
+
+
+1829
+00:49:35,956 --> 00:49:37,316
+You should be able to take an
+
+
+1830
+00:49:37,316 --> 00:49:39,056
+instance of any of its subtypes,
+
+
+1831
+00:49:39,056 --> 00:49:41,896
+or subclasses, like Taxi or
+
+
+1832
+00:49:41,896 --> 00:49:44,346
+PoliceCar, and use that instead.
+
+
+1833
+00:49:44,806 --> 00:49:45,966
+And the program should still
+
+
+1834
+00:49:45,966 --> 00:49:47,436
+continue to type check and run
+
+
+1835
+00:49:47,436 --> 00:49:47,996
+correctly.
+
+
+1836
+00:49:48,746 --> 00:49:50,046
+So, the substitution here is an
+
+
+1837
+00:49:50,046 --> 00:49:51,226
+instance of a subclass should be
+
+
+1838
+00:49:51,226 --> 00:49:52,356
+able to go in anywhere that the
+
+
+1839
+00:49:52,356 --> 00:49:53,756
+superclass was expected and
+
+
+1840
+00:49:53,756 --> 00:49:54,156
+tested.
+
+
+1841
+00:49:54,156 --> 00:49:56,476
+And, this is a really simple
+
+
+1842
+00:49:56,476 --> 00:49:56,896
+principle.
+
+
+1843
+00:49:56,896 --> 00:49:58,396
+We've all internalized it, but
+
+
+1844
+00:49:58,396 --> 00:50:00,026
+it's also really powerful.
+
+
+1845
+00:50:00,586 --> 00:50:01,646
+If you think about it.
+
+
+1846
+00:50:02,026 --> 00:50:03,346
+And at any point in your program
+
+
+1847
+00:50:03,346 --> 00:50:04,546
+think well, what happens if I
+
+
+1848
+00:50:04,546 --> 00:50:05,906
+get a different subclass, maybe
+
+
+1849
+00:50:05,906 --> 00:50:07,086
+a subclass I haven't thought
+
+
+1850
+00:50:07,086 --> 00:50:07,616
+about here.
+
+
+1851
+00:50:09,086 --> 00:50:11,786
+So, getting back to generics,
+
+
+1852
+00:50:12,756 --> 00:50:14,386
+what are our expectations when
+
+
+1853
+00:50:14,386 --> 00:50:15,906
+applying Liskov substitution
+
+
+1854
+00:50:15,906 --> 00:50:18,326
+principle to the generic system?
+
+
+1855
+00:50:18,976 --> 00:50:19,996
+Well, maybe we add a new
+
+
+1856
+00:50:20,066 --> 00:50:21,126
+protocol, Drivable.
+
+
+1857
+00:50:21,426 --> 00:50:24,296
+Whatever. And extend Vehicle to
+
+
+1858
+00:50:24,296 --> 00:50:25,146
+make it Drivable.
+
+
+1859
+00:50:25,496 --> 00:50:26,786
+What do we expect to happen?
+
+
+1860
+00:50:26,786 --> 00:50:29,066
+Well, we expect that you can use
+
+
+1861
+00:50:29,066 --> 00:50:30,286
+that protocol, conformance of
+
+
+1862
+00:50:30,286 --> 00:50:32,436
+Vehicle to Drivable, for some of
+
+
+1863
+00:50:32,436 --> 00:50:33,626
+its subclasses as well.
+
+
+1864
+00:50:34,616 --> 00:50:36,866
+Say, you add a simple generic
+
+
+1865
+00:50:36,866 --> 00:50:38,316
+algorithm to the Drivable
+
+
+1866
+00:50:38,316 --> 00:50:39,176
+protocol to go for a
+
+
+1867
+00:50:39,176 --> 00:50:39,966
+sundayDrive.
+
+
+1868
+00:50:40,386 --> 00:50:41,646
+Well, now you should be able to
+
+
+1869
+00:50:41,646 --> 00:50:44,476
+use that API on a PoliceCar,
+
+
+1870
+00:50:44,956 --> 00:50:46,116
+even if that might not be the
+
+
+1871
+00:50:46,116 --> 00:50:46,716
+best idea.
+
+
+1872
+00:50:48,346 --> 00:50:50,636
+So, the protocol conformance
+
+
+1873
+00:50:50,636 --> 00:50:52,096
+here is effectively being
+
+
+1874
+00:50:52,306 --> 00:50:53,846
+inherited by subclasses.
+
+
+1875
+00:50:54,876 --> 00:50:55,906
+And this puts a constraint on
+
+
+1876
+00:50:55,906 --> 00:50:56,566
+the conformance.
+
+
+1877
+00:50:56,826 --> 00:50:58,206
+The one conformance that you
+
+
+1878
+00:50:58,206 --> 00:50:59,446
+write, the thing that makes
+
+
+1879
+00:50:59,866 --> 00:51:00,976
+Vehicle Drivable.
+
+
+1880
+00:51:01,266 --> 00:51:02,956
+Has to work for all of the
+
+
+1881
+00:51:02,956 --> 00:51:05,146
+subclasses of Vehicle now and
+
+
+1882
+00:51:05,186 --> 00:51:06,416
+anyone that comes up with it
+
+
+1883
+00:51:06,416 --> 00:51:06,766
+later.
+
+
+1884
+00:51:07,886 --> 00:51:09,916
+Most of the time, that just
+
+
+1885
+00:51:09,916 --> 00:51:10,276
+works.
+
+
+1886
+00:51:11,256 --> 00:51:12,586
+However, there are some cases
+
+
+1887
+00:51:12,586 --> 00:51:13,976
+where this actually adds new
+
+
+1888
+00:51:13,976 --> 00:51:16,086
+requirements on the subclasses.
+
+
+1889
+00:51:16,726 --> 00:51:19,096
+The most common one is when
+
+
+1890
+00:51:19,096 --> 00:51:20,266
+dealing with initializer
+
+
+1891
+00:51:20,266 --> 00:51:20,996
+requirements.
+
+
+1892
+00:51:22,216 --> 00:51:22,886
+So, if you've looked at the
+
+
+1893
+00:51:22,886 --> 00:51:25,316
+decodable protocol, it has one
+
+
+1894
+00:51:25,316 --> 00:51:26,286
+interesting requirement.
+
+
+1895
+00:51:26,286 --> 00:51:27,606
+Which is the initializer
+
+
+1896
+00:51:27,606 --> 00:51:29,596
+requirement to create a new
+
+
+1897
+00:51:29,596 --> 00:51:31,036
+instance of the conforming type
+
+
+1898
+00:51:31,616 --> 00:51:32,606
+from a decoder.
+
+
+1899
+00:51:33,236 --> 00:51:35,156
+How do we use this?
+
+
+1900
+00:51:35,506 --> 00:51:36,756
+Well, let's go add a convenience
+
+
+1901
+00:51:36,756 --> 00:51:37,746
+method to the decodable
+
+
+1902
+00:51:37,746 --> 00:51:38,246
+protocol.
+
+
+1903
+00:51:38,716 --> 00:51:40,366
+It's a static method decode that
+
+
+1904
+00:51:40,516 --> 00:51:41,646
+creates a new instance from a
+
+
+1905
+00:51:41,646 --> 00:51:43,086
+decoder, essentially a wrapper
+
+
+1906
+00:51:43,086 --> 00:51:44,166
+for the initializer, making it
+
+
+1907
+00:51:44,166 --> 00:51:44,766
+easier to use.
+
+
+1908
+00:51:45,976 --> 00:51:47,606
+And, there's two interesting
+
+
+1909
+00:51:47,606 --> 00:51:49,376
+things to notice about this
+
+
+1910
+00:51:49,376 --> 00:51:50,516
+particular method.
+
+
+1911
+00:51:50,856 --> 00:51:52,776
+First, is it returns Self with a
+
+
+1912
+00:51:52,776 --> 00:51:53,456
+capital S.
+
+
+1913
+00:51:53,456 --> 00:51:54,736
+Remember this is the conforming
+
+
+1914
+00:51:54,766 --> 00:51:55,036
+type.
+
+
+1915
+00:51:55,436 --> 00:51:56,856
+It's the same type that you're
+
+
+1916
+00:51:56,856 --> 00:51:58,526
+calling the static method on.
+
+
+1917
+00:52:00,136 --> 00:52:01,176
+Now, the second interesting
+
+
+1918
+00:52:01,176 --> 00:52:03,006
+thing is, how are we
+
+
+1919
+00:52:03,006 --> 00:52:03,746
+implementing this?
+
+
+1920
+00:52:03,806 --> 00:52:04,956
+Well, we're calling to that
+
+
+1921
+00:52:04,956 --> 00:52:07,206
+initializer above to create a
+
+
+1922
+00:52:07,206 --> 00:52:10,146
+brand-new instance of whatever
+
+
+1923
+00:52:10,146 --> 00:52:12,516
+decodable type we have, and then
+
+
+1924
+00:52:12,516 --> 00:52:13,746
+return it.
+
+
+1925
+00:52:14,456 --> 00:52:15,326
+Fair enough.
+
+
+1926
+00:52:16,146 --> 00:52:17,256
+We can go ahead and make our
+
+
+1927
+00:52:17,256 --> 00:52:18,466
+Vehicle type Decodable.
+
+
+1928
+00:52:19,426 --> 00:52:21,586
+And then, what we expect, when
+
+
+1929
+00:52:21,586 --> 00:52:22,776
+applying the Liskov substitution
+
+
+1930
+00:52:22,776 --> 00:52:24,586
+principle, is we can use any
+
+
+1931
+00:52:24,586 --> 00:52:26,426
+subclass of Vehicle.
+
+
+1932
+00:52:27,146 --> 00:52:28,346
+With these new API's that we've
+
+
+1933
+00:52:28,346 --> 00:52:29,176
+built through the protocol
+
+
+1934
+00:52:29,176 --> 00:52:29,716
+conformance.
+
+
+1935
+00:52:29,816 --> 00:52:32,246
+So, we can call Decode on a
+
+
+1936
+00:52:32,246 --> 00:52:32,806
+Taxi.
+
+
+1937
+00:52:33,486 --> 00:52:34,726
+And what we get back is not a
+
+
+1938
+00:52:34,726 --> 00:52:35,726
+Vehicle not some arbitrary
+
+
+1939
+00:52:35,726 --> 00:52:37,366
+Vehicle instance, but the Taxi,
+
+
+1940
+00:52:37,456 --> 00:52:39,076
+an instance of Taxi.
+
+
+1941
+00:52:40,476 --> 00:52:41,846
+This is great, but how does it
+
+
+1942
+00:52:41,846 --> 00:52:42,016
+work?
+
+
+1943
+00:52:43,156 --> 00:52:45,496
+So let's take a look at what
+
+
+1944
+00:52:45,496 --> 00:52:46,256
+Taxi might have.
+
+
+1945
+00:52:46,256 --> 00:52:47,296
+Maybe there's an hourly rate
+
+
+1946
+00:52:47,356 --> 00:52:48,636
+here, and when we call
+
+
+1947
+00:52:48,636 --> 00:52:51,496
+Taxi.decode from, we're going
+
+
+1948
+00:52:51,496 --> 00:52:52,506
+through the protocol, going
+
+
+1949
+00:52:52,506 --> 00:52:53,856
+through the protocol initializer
+
+
+1950
+00:52:53,856 --> 00:52:54,366
+requirement.
+
+
+1951
+00:52:55,176 --> 00:52:56,366
+There's only one initializer
+
+
+1952
+00:52:56,366 --> 00:52:58,096
+this can actually call, and
+
+
+1953
+00:52:58,096 --> 00:52:59,806
+that's the initializer that's
+
+
+1954
+00:52:59,836 --> 00:53:02,266
+declared inside the Vehicle
+
+
+1955
+00:53:03,176 --> 00:53:04,956
+class, in the superclass here.
+
+
+1956
+00:53:06,476 --> 00:53:08,306
+So that initializer, it knows
+
+
+1957
+00:53:08,306 --> 00:53:09,746
+how to decode all of the state
+
+
+1958
+00:53:09,866 --> 00:53:10,636
+of a Vehicle.
+
+
+1959
+00:53:11,186 --> 00:53:12,366
+But it knows nothing about the
+
+
+1960
+00:53:12,366 --> 00:53:13,446
+Taxi subclass.
+
+
+1961
+00:53:14,396 --> 00:53:15,636
+And so, if we were to use this
+
+
+1962
+00:53:15,636 --> 00:53:16,786
+initializer directly, we would
+
+
+1963
+00:53:16,786 --> 00:53:18,126
+actually have a problem that the
+
+
+1964
+00:53:18,126 --> 00:53:19,656
+hourly rate would be completely
+
+
+1965
+00:53:19,656 --> 00:53:21,116
+uninitialized, which could lead
+
+
+1966
+00:53:21,116 --> 00:53:22,296
+to some rather unfortunate
+
+
+1967
+00:53:22,296 --> 00:53:23,556
+misunderstandings when you get
+
+
+1968
+00:53:23,556 --> 00:53:24,316
+your bill at the end.
+
+
+1969
+00:53:26,346 --> 00:53:27,476
+So, how do we address this?
+
+
+1970
+00:53:27,626 --> 00:53:28,996
+Well, it turns out Swift doesn't
+
+
+1971
+00:53:28,996 --> 00:53:30,626
+let you get into this problem.
+
+
+1972
+00:53:31,416 --> 00:53:33,006
+It's going to diagnose at the
+
+
+1973
+00:53:33,096 --> 00:53:34,426
+point where you try to make
+
+
+1974
+00:53:34,426 --> 00:53:36,016
+Vehicle conform to the decodable
+
+
+1975
+00:53:36,016 --> 00:53:37,466
+protocol that there's actually a
+
+
+1976
+00:53:37,466 --> 00:53:38,776
+problem with this initializer.
+
+
+1977
+00:53:38,866 --> 00:53:41,006
+It needs to be marked required.
+
+
+1978
+00:53:42,836 --> 00:53:44,966
+Now, a required initializer has
+
+
+1979
+00:53:44,966 --> 00:53:46,306
+to be implemented in all
+
+
+1980
+00:53:46,306 --> 00:53:47,226
+subclasses.
+
+
+1981
+00:53:47,516 --> 00:53:49,306
+Not just the direct subclasses,
+
+
+1982
+00:53:49,556 --> 00:53:52,276
+but any subclasses of those, any
+
+
+1983
+00:53:52,276 --> 00:53:53,916
+future subclasses you don't know
+
+
+1984
+00:53:53,916 --> 00:53:54,426
+about now.
+
+
+1985
+00:53:55,846 --> 00:53:57,196
+Now by adding that requirement,
+
+
+1986
+00:53:57,516 --> 00:53:59,936
+it means that when Taxi inherits
+
+
+1987
+00:53:59,996 --> 00:54:02,186
+from Vehicle, it also needs to
+
+
+1988
+00:54:02,186 --> 00:54:05,086
+introduce an initializer with
+
+
+1989
+00:54:05,086 --> 00:54:05,806
+the same name.
+
+
+1990
+00:54:06,616 --> 00:54:07,966
+Now, this is important because
+
+
+1991
+00:54:07,966 --> 00:54:09,566
+this initializer's responsible
+
+
+1992
+00:54:09,786 --> 00:54:11,556
+for decoding the hourly rate.
+
+
+1993
+00:54:11,556 --> 00:54:12,696
+And then chaining up to the
+
+
+1994
+00:54:12,696 --> 00:54:14,846
+superclass initializer to decode
+
+
+1995
+00:54:15,046 --> 00:54:16,886
+the rest of the Vehicle type.
+
+
+1996
+00:54:18,746 --> 00:54:21,006
+Okay. Now, if you're reading
+
+
+1997
+00:54:21,006 --> 00:54:22,756
+those red boxes really quickly,
+
+
+1998
+00:54:22,916 --> 00:54:23,776
+you may have noticed the
+
+
+1999
+00:54:23,776 --> 00:54:26,006
+subphrase non-final.
+
+
+2000
+00:54:26,836 --> 00:54:28,886
+So, by definition, final classes
+
+
+2001
+00:54:29,056 --> 00:54:30,456
+have no subclasses.
+
+
+2002
+00:54:30,456 --> 00:54:32,106
+So, it essentially exempts them
+
+
+2003
+00:54:32,106 --> 00:54:33,866
+from being substituted later on.
+
+
+2004
+00:54:35,046 --> 00:54:37,486
+That means that there's no sense
+
+
+2005
+00:54:37,486 --> 00:54:39,056
+in having a required initializer
+
+
+2006
+00:54:39,056 --> 00:54:40,136
+because you know there are no
+
+
+2007
+00:54:40,136 --> 00:54:40,886
+subclasses.
+
+
+2008
+00:54:41,046 --> 00:54:42,516
+And so final classes are in a
+
+
+2009
+00:54:42,516 --> 00:54:43,896
+sense a little easier to work
+
+
+2010
+00:54:43,896 --> 00:54:44,776
+with when dealing with things
+
+
+2011
+00:54:44,776 --> 00:54:45,806
+like decodable or other
+
+
+2012
+00:54:45,806 --> 00:54:47,136
+initializer requirements.
+
+
+2013
+00:54:47,486 --> 00:54:48,446
+Because they're exempt from
+
+
+2014
+00:54:48,446 --> 00:54:49,776
+these rules of having required
+
+
+2015
+00:54:49,776 --> 00:54:50,666
+initializers.
+
+
+2016
+00:54:51,406 --> 00:54:53,766
+So when you're using classes,
+
+
+2017
+00:54:53,766 --> 00:54:54,826
+for reference semantics,
+
+
+2018
+00:54:56,026 --> 00:54:57,936
+consider using final when you no
+
+
+2019
+00:54:57,936 --> 00:54:59,316
+longer need to customize your
+
+
+2020
+00:54:59,316 --> 00:55:01,236
+class through the inheritance
+
+
+2021
+00:55:01,236 --> 00:55:01,856
+mechanism.
+
+
+2022
+00:55:02,266 --> 00:55:03,866
+Now, this doesn't mean that you
+
+
+2023
+00:55:04,246 --> 00:55:05,336
+can't customize your class
+
+
+2024
+00:55:05,336 --> 00:55:05,676
+later.
+
+
+2025
+00:55:05,856 --> 00:55:07,046
+You can still write an extension
+
+
+2026
+00:55:07,046 --> 00:55:07,316
+on it.
+
+
+2027
+00:55:07,626 --> 00:55:08,796
+The same way you can extend a
+
+
+2028
+00:55:08,796 --> 00:55:09,776
+struct or an enum.
+
+
+2029
+00:55:10,626 --> 00:55:11,976
+You can also add conformances to
+
+
+2030
+00:55:11,976 --> 00:55:13,066
+it, to get more dynamic
+
+
+2031
+00:55:13,066 --> 00:55:13,626
+dispatch.
+
+
+2032
+00:55:14,996 --> 00:55:16,226
+But final can simplify the
+
+
+2033
+00:55:16,226 --> 00:55:17,156
+interaction with the generic
+
+
+2034
+00:55:17,156 --> 00:55:18,576
+system, and also unlock
+
+
+2035
+00:55:18,576 --> 00:55:19,886
+optimization opportunities for
+
+
+2036
+00:55:19,886 --> 00:55:20,836
+the compiler in runtime.
+
+
+2037
+00:55:24,396 --> 00:55:25,286
+So we've talked a bit about
+
+
+2038
+00:55:25,286 --> 00:55:26,196
+Swift generics today.
+
+
+2039
+00:55:26,486 --> 00:55:27,966
+The idea behind Swift generics
+
+
+2040
+00:55:27,966 --> 00:55:29,706
+is to provide the ability to
+
+
+2041
+00:55:29,706 --> 00:55:31,606
+reuse code while maintaining
+
+
+2042
+00:55:31,606 --> 00:55:32,856
+static type information.
+
+
+2043
+00:55:33,176 --> 00:55:34,256
+To make it easier to write
+
+
+2044
+00:55:34,296 --> 00:55:36,076
+correct programs, and compile
+
+
+2045
+00:55:36,076 --> 00:55:37,006
+those down into efficient,
+
+
+2046
+00:55:37,086 --> 00:55:38,976
+efficiently executing programs.
+
+
+2047
+00:55:39,726 --> 00:55:41,266
+When you're designing protocols,
+
+
+2048
+00:55:41,666 --> 00:55:43,826
+let this push and pull between
+
+
+2049
+00:55:43,826 --> 00:55:45,036
+the generic algorithms you want
+
+
+2050
+00:55:45,036 --> 00:55:46,246
+to write against a protocol.
+
+
+2051
+00:55:46,246 --> 00:55:48,046
+And the conforming types that
+
+
+2052
+00:55:48,046 --> 00:55:49,466
+need to implement that protocol
+
+
+2053
+00:55:49,736 --> 00:55:51,576
+guide your design to meaningful
+
+
+2054
+00:55:51,576 --> 00:55:52,506
+extractions.
+
+
+2055
+00:55:53,636 --> 00:55:55,266
+Introduce protocol inheritance
+
+
+2056
+00:55:55,516 --> 00:55:56,706
+when you need some more
+
+
+2057
+00:55:56,706 --> 00:55:58,256
+specialized capabilities to
+
+
+2058
+00:55:58,256 --> 00:55:59,996
+implement new generic algorithms
+
+
+2059
+00:56:00,216 --> 00:56:01,986
+that are only supportable on a
+
+
+2060
+00:56:01,986 --> 00:56:03,626
+subset of the conforming types.
+
+
+2061
+00:56:04,726 --> 00:56:06,116
+And, conditional conformance
+
+
+2062
+00:56:06,446 --> 00:56:07,716
+when you're writing generic
+
+
+2063
+00:56:07,816 --> 00:56:11,046
+types, so that they can compose
+
+
+2064
+00:56:11,046 --> 00:56:12,576
+nicely, especially when working
+
+
+2065
+00:56:12,576 --> 00:56:13,686
+with protocol hierarchies.
+
+
+2066
+00:56:14,456 --> 00:56:15,276
+And finally, when you're
+
+
+2067
+00:56:15,336 --> 00:56:16,656
+reasoning about the tricky
+
+
+2068
+00:56:16,656 --> 00:56:18,126
+interaction between class
+
+
+2069
+00:56:18,126 --> 00:56:19,506
+inheritance and the generic
+
+
+2070
+00:56:19,506 --> 00:56:19,976
+system.
+
+
+2071
+00:56:20,536 --> 00:56:21,786
+Go back to the Liskov
+
+
+2072
+00:56:21,786 --> 00:56:23,306
+substitution principle, and
+
+
+2073
+00:56:23,306 --> 00:56:26,036
+think about what happens here if
+
+
+2074
+00:56:26,036 --> 00:56:27,866
+I introduce a subclass rather
+
+
+2075
+00:56:27,866 --> 00:56:29,546
+than a superclass at which I
+
+
+2076
+00:56:29,546 --> 00:56:30,406
+wrote the conformance.
+
+
+2077
+00:56:32,576 --> 00:56:34,626
+Well, thank you very much.
+
+
+2078
+00:56:34,866 --> 00:56:35,776
+There's a couple of related
+
+
+2079
+00:56:35,776 --> 00:56:37,536
+sessions on embracing algorithms
+
+
+2080
+00:56:37,536 --> 00:56:38,596
+and understanding how they can
+
+
+2081
+00:56:38,596 --> 00:56:39,706
+help you build better code.
+
+
+2082
+00:56:39,976 --> 00:56:41,276
+As well as using Swift
+
+
+2083
+00:56:41,276 --> 00:56:43,296
+collections effectively in your
+
+
+2084
+00:56:43,296 --> 00:56:44,126
+everyday programming.
+
+
+2085
+00:56:45,026 --> 00:56:45,536
+Thank you.
+
+
+2086
+00:56:46,508 --> 00:56:48,508
+[ Applause ]
+

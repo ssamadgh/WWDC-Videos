@@ -1,0 +1,1616 @@
+1
+00:00:01,101 --> 00:00:03,270
+Hello, my name is Michael Ford
+
+
+2
+00:00:03,270 --> 00:00:05,939
+and I'm an engineer
+on the CloudKit team.
+
+
+3
+00:00:05,939 --> 00:00:09,543
+Today we're going to talk
+about GDPR and CloudKit.
+
+
+4
+00:00:09,543 --> 00:00:13,213
+GDPR stands for General Data
+Protection Regulation.
+
+
+5
+00:00:13,213 --> 00:00:16,483
+It's a European Union regulation
+that went into effect
+
+
+6
+00:00:16,483 --> 00:00:19,086
+on May 25th, 2018.
+
+
+7
+00:00:19,086 --> 00:00:22,890
+The regulation focuses on
+giving users visibility into,
+
+
+8
+00:00:22,890 --> 00:00:25,425
+and control over,
+their personal data
+
+
+9
+00:00:25,425 --> 00:00:27,628
+and how companies use it.
+
+
+10
+00:00:27,628 --> 00:00:30,163
+At Apple, we value user privacy,
+
+
+11
+00:00:30,163 --> 00:00:31,832
+and we want to make sure
+that developers
+
+
+12
+00:00:31,832 --> 00:00:34,968
+have the tools they need
+to build great applications
+
+
+13
+00:00:34,968 --> 00:00:37,804
+while protecting
+their user's privacy.
+
+
+14
+00:00:37,804 --> 00:00:41,808
+During this talk, we'll discuss
+new and existing CloudKit APIs
+
+
+15
+00:00:41,808 --> 00:00:44,678
+that you can use
+to fulfill user requests
+
+
+16
+00:00:44,678 --> 00:00:48,181
+related to GDPR
+or other regulations.
+
+
+17
+00:00:48,181 --> 00:00:51,351
+If you're interested in
+a broader privacy discussion,
+
+
+18
+00:00:51,351 --> 00:00:54,688
+take a look at the "Better Apps
+through Better Privacy" session
+
+
+19
+00:00:54,688 --> 00:00:57,658
+from WWDC 2018.
+
+
+20
+00:00:57,658 --> 00:00:58,859
+Now, you might ask,
+
+
+21
+00:00:58,859 --> 00:01:02,162
+"Why are we only talking
+about CloudKit APIs?"
+
+
+22
+00:01:02,162 --> 00:01:04,998
+Let's talk through some
+of the iCloud syncing services
+
+
+23
+00:01:04,998 --> 00:01:07,401
+that are available
+for developers to use,
+
+
+24
+00:01:07,401 --> 00:01:09,770
+and you will soon see why.
+
+
+25
+00:01:09,770 --> 00:01:12,940
+As a developer, you can save
+user data to iCloud
+
+
+26
+00:01:12,940 --> 00:01:15,842
+using iCloud Backup,
+Key Value Store,
+
+
+27
+00:01:15,842 --> 00:01:18,478
+iCloud Drive, and CloudKit.
+
+
+28
+00:01:18,478 --> 00:01:20,514
+Let's talk through
+their data isolation,
+
+
+29
+00:01:20,514 --> 00:01:24,885
+data interaction,
+and API availabilities.
+
+
+30
+00:01:24,885 --> 00:01:28,188
+For Backup, Key Value,
+and iCloud Drive,
+
+
+31
+00:01:28,188 --> 00:01:31,325
+data is always stored
+for a single user.
+
+
+32
+00:01:31,325 --> 00:01:34,761
+CloudKit offers developers
+a more flexible API,
+
+
+33
+00:01:34,761 --> 00:01:36,964
+where you can share data
+between users,
+
+
+34
+00:01:36,964 --> 00:01:40,033
+or make data available
+to all users.
+
+
+35
+00:01:40,033 --> 00:01:42,869
+When a user initiates
+an iCloud Backup restore,
+
+
+36
+00:01:42,869 --> 00:01:47,274
+application data that was saved
+is automatically restored.
+
+
+37
+00:01:47,274 --> 00:01:51,545
+Application data saved to
+Key Value Store and iCloud Drive
+
+
+38
+00:01:51,545 --> 00:01:54,848
+are automatically synced
+between all of the devices
+
+
+39
+00:01:54,848 --> 00:01:58,018
+where the user is signed in
+to their iCloud account.
+
+
+40
+00:01:58,018 --> 00:02:01,555
+In contrast, data that your
+application saves to CloudKit
+
+
+41
+00:02:01,555 --> 00:02:04,524
+is not automatically mirrored
+to another device.
+
+
+42
+00:02:04,524 --> 00:02:08,328
+You can use the
+Fetch Changes APIs or Query APIs
+
+
+43
+00:02:08,328 --> 00:02:12,866
+to access all or part of
+the data stored in CloudKit.
+
+
+44
+00:02:12,866 --> 00:02:15,469
+Backup, Key Value,
+and Drive APIs
+
+
+45
+00:02:15,469 --> 00:02:17,838
+are only available on device.
+
+
+46
+00:02:17,838 --> 00:02:20,307
+You can use Objective-C
+or Swift versions
+
+
+47
+00:02:20,307 --> 00:02:22,409
+of the CloudKit APIs on device,
+
+
+48
+00:02:22,409 --> 00:02:25,278
+or you can use
+the CloudKit web services
+
+
+49
+00:02:25,278 --> 00:02:28,415
+to access CloudKit data
+from a browser.
+
+
+50
+00:02:28,415 --> 00:02:31,018
+As you can see,
+CloudKit is unique.
+
+
+51
+00:02:31,018 --> 00:02:34,688
+It's more flexible and there are
+more ways to interact with it.
+
+
+52
+00:02:34,688 --> 00:02:38,492
+When fulfilling GDPR requests
+for data saved to iCloud Backup,
+
+
+53
+00:02:38,492 --> 00:02:40,994
+Key Value Store,
+or iCloud Drive,
+
+
+54
+00:02:40,994 --> 00:02:43,163
+you can treat the data
+like other data
+
+
+55
+00:02:43,163 --> 00:02:45,899
+that your application
+has stored locally.
+
+
+56
+00:02:45,899 --> 00:02:48,735
+However, with CloudKit,
+you may need to interact
+
+
+57
+00:02:48,735 --> 00:02:52,372
+with the server to complete
+the GDPR request.
+
+
+58
+00:02:52,372 --> 00:02:54,975
+Now, as we talk
+about GDPR more,
+
+
+59
+00:02:54,975 --> 00:02:58,612
+I want you to remember that
+I am an engineer, not a lawyer.
+
+
+60
+00:02:58,612 --> 00:03:01,415
+If you have questions
+about GDPR compliance,
+
+
+61
+00:03:01,415 --> 00:03:03,116
+you should consult a lawyer.
+
+
+62
+00:03:03,116 --> 00:03:05,585
+That said, let's get into
+some of the user rights
+
+
+63
+00:03:05,585 --> 00:03:08,522
+guaranteed by GDPR.
+
+
+64
+00:03:08,522 --> 00:03:10,857
+GDPR guarantees users
+the right to know
+
+
+65
+00:03:10,857 --> 00:03:14,828
+what data is stored about them
+and how it is being used.
+
+
+66
+00:03:14,828 --> 00:03:18,198
+A user has the right to access
+data stored about them.
+
+
+67
+00:03:18,198 --> 00:03:20,801
+They have the right
+to export data.
+
+
+68
+00:03:20,801 --> 00:03:23,570
+A user can request that
+processing of their data
+
+
+69
+00:03:23,570 --> 00:03:25,372
+be paused.
+
+
+70
+00:03:25,372 --> 00:03:27,941
+They can request that
+their data be deleted.
+
+
+71
+00:03:27,941 --> 00:03:31,144
+This is commonly known as
+the right to be forgotten.
+
+
+72
+00:03:31,144 --> 00:03:33,647
+If the data about
+a user is incorrect,
+
+
+73
+00:03:33,647 --> 00:03:36,216
+the user should be able
+to update it.
+
+
+74
+00:03:36,216 --> 00:03:39,152
+Users can also object
+to how their data is used.
+
+
+75
+00:03:39,152 --> 00:03:42,289
+Examples include
+objecting to direct marketing,
+
+
+76
+00:03:42,289 --> 00:03:44,791
+or objecting to processing
+a user's data
+
+
+77
+00:03:44,791 --> 00:03:46,827
+for scientific research.
+
+
+78
+00:03:46,827 --> 00:03:50,230
+Finally, a user should have
+access to human intervention
+
+
+79
+00:03:50,230 --> 00:03:53,900
+if automated decision making
+may legally or materially
+
+
+80
+00:03:53,900 --> 00:03:55,769
+impact the user.
+
+
+81
+00:03:55,769 --> 00:03:57,904
+Now, that's quite a list.
+
+
+82
+00:03:57,904 --> 00:03:59,873
+Today, we're going to focus
+on those rights
+
+
+83
+00:03:59,873 --> 00:04:03,543
+that are broadly applicable
+to developers using CloudKit.
+
+
+84
+00:04:03,543 --> 00:04:07,380
+This will not be a comprehensive
+talk about GDPR compliance.
+
+
+85
+00:04:07,380 --> 00:04:10,417
+Instead, we'll focus
+on how to use new and existing
+
+
+86
+00:04:10,417 --> 00:04:13,420
+CloudKit APIs
+to fulfill user requests
+
+
+87
+00:04:13,420 --> 00:04:17,057
+related to GDPR
+or other regulations.
+
+
+88
+00:04:17,057 --> 00:04:21,161
+Let's first review some of
+the concepts inside of CloudKit.
+
+
+89
+00:04:21,161 --> 00:04:23,864
+At the highest level
+is a CloudKit container.
+
+
+90
+00:04:23,864 --> 00:04:26,533
+You can have multiple
+applications interact
+
+
+91
+00:04:26,533 --> 00:04:28,935
+with the same
+CloudKit container.
+
+
+92
+00:04:28,935 --> 00:04:30,637
+Inside of a CloudKit container,
+
+
+93
+00:04:30,637 --> 00:04:33,073
+there are three types
+of databases.
+
+
+94
+00:04:33,073 --> 00:04:35,509
+A private database,
+a shared database,
+
+
+95
+00:04:35,509 --> 00:04:38,111
+and a public database.
+
+
+96
+00:04:38,111 --> 00:04:40,947
+There is one public database
+per container.
+
+
+97
+00:04:40,947 --> 00:04:43,817
+By default, all users
+can read and write data
+
+
+98
+00:04:43,817 --> 00:04:46,386
+in the public database.
+
+
+99
+00:04:46,386 --> 00:04:49,589
+Every user has their own private
+and shared database
+
+
+100
+00:04:49,589 --> 00:04:50,924
+in a container.
+
+
+101
+00:04:50,924 --> 00:04:54,995
+Data in the private database
+belongs to that user.
+
+
+102
+00:04:54,995 --> 00:04:57,230
+If your application
+supports sharing,
+
+
+103
+00:04:57,230 --> 00:04:59,900
+when a user accepts
+a sharing invitation,
+
+
+104
+00:04:59,900 --> 00:05:03,570
+data becomes visible
+in their shared database.
+
+
+105
+00:05:03,570 --> 00:05:06,473
+This is a reference back
+to the owner's private database,
+
+
+106
+00:05:06,473 --> 00:05:09,176
+where the actual data resides.
+
+
+107
+00:05:09,176 --> 00:05:12,846
+Inside of a given database,
+you can have multiple zones.
+
+
+108
+00:05:12,846 --> 00:05:15,715
+In a private database
+and a public database,
+
+
+109
+00:05:15,715 --> 00:05:18,185
+there is always
+a default zone.
+
+
+110
+00:05:18,185 --> 00:05:19,653
+And in a private database,
+
+
+111
+00:05:19,653 --> 00:05:22,722
+you can create
+multiple custom zones.
+
+
+112
+00:05:22,722 --> 00:05:23,924
+In the shared database,
+
+
+113
+00:05:23,924 --> 00:05:27,894
+zones show up as you accept
+a sharing invitation.
+
+
+114
+00:05:27,894 --> 00:05:30,096
+Inside of a zone are records.
+
+
+115
+00:05:30,096 --> 00:05:33,066
+This is where you store
+the actual data.
+
+
+116
+00:05:33,066 --> 00:05:36,236
+To summarize the conceptual
+hierarchy of CloudKit,
+
+
+117
+00:05:36,236 --> 00:05:38,438
+you first have a container.
+
+
+118
+00:05:38,438 --> 00:05:41,641
+Then, there are three
+different types of databases.
+
+
+119
+00:05:41,641 --> 00:05:44,444
+In a database, you can have
+one or more zones,
+
+
+120
+00:05:44,444 --> 00:05:46,513
+depending on the type
+of database.
+
+
+121
+00:05:46,513 --> 00:05:50,984
+Finally, records are where
+the data is stored.
+
+
+122
+00:05:50,984 --> 00:05:53,887
+Now that we've reviewed
+those core CloudKit concepts,
+
+
+123
+00:05:53,887 --> 00:05:57,457
+we're ready to focus on
+the individual GDPR rights.
+
+
+124
+00:05:57,457 --> 00:06:00,060
+We'll look at access
+and portability together.
+
+
+125
+00:06:00,060 --> 00:06:01,828
+To fulfill these rights,
+
+
+126
+00:06:01,828 --> 00:06:04,798
+you'll need to fetch data
+from CloudKit.
+
+
+127
+00:06:04,798 --> 00:06:08,702
+For deletion, you'll need
+to delete data from CloudKit.
+
+
+128
+00:06:08,702 --> 00:06:11,805
+And for restriction,
+you will apply a restriction
+
+
+129
+00:06:11,805 --> 00:06:15,208
+to an account in your
+CloudKit contianer.
+
+
+130
+00:06:15,208 --> 00:06:17,477
+For access and portability
+requests,
+
+
+131
+00:06:17,477 --> 00:06:19,879
+you should provide
+visibility into the data
+
+
+132
+00:06:19,879 --> 00:06:23,450
+that is saved inside of CloudKit
+for the user.
+
+
+133
+00:06:23,450 --> 00:06:26,152
+You should also provide
+a way to export the user's data
+
+
+134
+00:06:26,152 --> 00:06:27,988
+in a standard format.
+
+
+135
+00:06:27,988 --> 00:06:29,723
+If you are exporting an image,
+
+
+136
+00:06:29,723 --> 00:06:32,392
+it would make sense to use
+a JPEG file format.
+
+
+137
+00:06:32,392 --> 00:06:36,329
+For general structured data,
+use either JSON or CSV,
+
+
+138
+00:06:36,329 --> 00:06:39,132
+depending on the type
+and amount of data.
+
+
+139
+00:06:39,132 --> 00:06:40,967
+You've just exported data.
+
+
+140
+00:06:40,967 --> 00:06:43,403
+While there's no requirement
+to import data,
+
+
+141
+00:06:43,403 --> 00:06:47,240
+you may gain some users
+if you do.
+
+
+142
+00:06:47,240 --> 00:06:49,976
+If you have already synced
+all of the data locally,
+
+
+143
+00:06:49,976 --> 00:06:53,847
+you can just fulfill the GDPR
+access or portability request
+
+
+144
+00:06:53,847 --> 00:06:56,549
+from the data
+you've saved locally.
+
+
+145
+00:06:56,549 --> 00:06:59,119
+In case you haven't,
+you'll need to fetch the data
+
+
+146
+00:06:59,119 --> 00:07:01,688
+from the CloudKit server.
+
+
+147
+00:07:01,688 --> 00:07:05,025
+So how do you fetch
+all of the data from CloudKit?
+
+
+148
+00:07:05,025 --> 00:07:07,260
+Inside of
+the CloudKit hierarchy,
+
+
+149
+00:07:07,260 --> 00:07:10,330
+for every container,
+for every database,
+
+
+150
+00:07:10,330 --> 00:07:14,701
+you should fetch all zones,
+and then query for all records.
+
+
+151
+00:07:14,701 --> 00:07:18,805
+Let's review some of the code
+for how you would do that.
+
+
+152
+00:07:18,805 --> 00:07:20,640
+First, let's set up
+our container
+
+
+153
+00:07:20,640 --> 00:07:22,442
+and database variables.
+
+
+154
+00:07:22,442 --> 00:07:27,147
+In this case, we'll focus on
+the private database.
+
+
+155
+00:07:27,147 --> 00:07:31,918
+Next, we'll fetch all of the
+zones inside of the database.
+
+
+156
+00:07:31,918 --> 00:07:33,953
+We'll iterate through
+all of those zones
+
+
+157
+00:07:33,953 --> 00:07:36,022
+and set up a query.
+
+
+158
+00:07:36,022 --> 00:07:39,426
+You'll notice that this query is
+only for a single record type,
+
+
+159
+00:07:39,426 --> 00:07:42,462
+so you may need to run
+multiple queries.
+
+
+160
+00:07:42,462 --> 00:07:45,465
+You could loop through all of
+the record types that you have,
+
+
+161
+00:07:45,465 --> 00:07:48,234
+or enumerate them individually.
+
+
+162
+00:07:48,234 --> 00:07:52,172
+We'll pass an NSPredicate to
+the query that is always true,
+
+
+163
+00:07:52,172 --> 00:07:53,640
+so that we get
+all of the records
+
+
+164
+00:07:53,640 --> 00:07:55,542
+of a given record type.
+
+
+165
+00:07:55,542 --> 00:07:59,245
+Then we'll actually perform
+the query in the database.
+
+
+166
+00:07:59,245 --> 00:08:03,283
+Finally, once the query returns,
+you should display the records,
+
+
+167
+00:08:03,283 --> 00:08:06,152
+or save them for export.
+
+
+168
+00:08:06,152 --> 00:08:08,855
+I just showed you code
+to query for all of the records
+
+
+169
+00:08:08,855 --> 00:08:10,757
+in the private database.
+
+
+170
+00:08:10,757 --> 00:08:15,095
+Shared databases and public
+databases are more complex.
+
+
+171
+00:08:15,095 --> 00:08:18,631
+For a participant, a shared
+database is a partial view
+
+
+172
+00:08:18,631 --> 00:08:21,501
+into the owner's
+private database.
+
+
+173
+00:08:21,501 --> 00:08:24,204
+Remember that the data
+belongs to the owner,
+
+
+174
+00:08:24,204 --> 00:08:26,206
+so you should only
+return the data
+
+
+175
+00:08:26,206 --> 00:08:29,542
+if it relates
+to the participant.
+
+
+176
+00:08:29,542 --> 00:08:32,010
+The same is true
+of the public database.
+
+
+177
+00:08:32,010 --> 00:08:34,714
+By default, any user
+can read or write data
+
+
+178
+00:08:34,714 --> 00:08:36,683
+into the public database.
+
+
+179
+00:08:36,683 --> 00:08:40,653
+Again, you should only return
+data that relates to the user
+
+
+180
+00:08:40,653 --> 00:08:43,490
+making the GDPR request.
+
+
+181
+00:08:43,490 --> 00:08:45,125
+Deletion is forever.
+
+
+182
+00:08:45,125 --> 00:08:46,726
+You should make sure
+that the user
+
+
+183
+00:08:46,726 --> 00:08:49,963
+really wants to delete
+their data en masse.
+
+
+184
+00:08:49,963 --> 00:08:53,566
+You may want to offer
+a restriction as an alternative.
+
+
+185
+00:08:53,566 --> 00:08:56,736
+If the user confirms that
+they want to delete their data,
+
+
+186
+00:08:56,736 --> 00:09:00,440
+you'll need to delete all of
+the user's data from CloudKit.
+
+
+187
+00:09:00,440 --> 00:09:03,910
+Let's look at the code
+for that now.
+
+
+188
+00:09:03,910 --> 00:09:05,779
+Once again,
+we'll set up the container
+
+
+189
+00:09:05,779 --> 00:09:07,580
+and database variables.
+
+
+190
+00:09:07,580 --> 00:09:10,617
+We'll focus on
+the private database.
+
+
+191
+00:09:10,617 --> 00:09:14,854
+Again, we'll fetch all of the
+zones inside of the database.
+
+
+192
+00:09:14,854 --> 00:09:17,157
+Now, we're going to pull
+the zoneID
+
+
+193
+00:09:17,157 --> 00:09:19,692
+from the individual zones
+and use them
+
+
+194
+00:09:19,692 --> 00:09:22,629
+to create a deletion operation.
+
+
+195
+00:09:22,629 --> 00:09:26,065
+This deletion operation passes
+in the record zoneIDs
+
+
+196
+00:09:26,065 --> 00:09:28,101
+that you want to delete.
+
+
+197
+00:09:28,101 --> 00:09:33,072
+Finally, we perform the deletion
+operation against the database.
+
+
+198
+00:09:33,072 --> 00:09:35,375
+We just saw code to delete
+all of the zones
+
+
+199
+00:09:35,375 --> 00:09:37,811
+inside of the private database.
+
+
+200
+00:09:37,811 --> 00:09:40,914
+Once again, if your
+application supports sharing,
+
+
+201
+00:09:40,914 --> 00:09:45,118
+be selective, but this time
+be selective in what you delete.
+
+
+202
+00:09:45,118 --> 00:09:47,887
+Deleting records in the shared
+database deletes them
+
+
+203
+00:09:47,887 --> 00:09:51,958
+for the owner and all other
+participants in the share.
+
+
+204
+00:09:51,958 --> 00:09:55,094
+If there is data that should be
+expunged in this way,
+
+
+205
+00:09:55,094 --> 00:09:58,798
+perform the record deletions
+before deleting the zones.
+
+
+206
+00:09:58,798 --> 00:09:59,799
+Once that's complete,
+
+
+207
+00:09:59,799 --> 00:10:03,303
+delete all of the zones in
+the user's shared database.
+
+
+208
+00:10:03,303 --> 00:10:06,272
+In contrast to deleting
+individual records,
+
+
+209
+00:10:06,272 --> 00:10:08,842
+this will not delete the data
+for the owner,
+
+
+210
+00:10:08,842 --> 00:10:11,511
+or the other participants
+in the share.
+
+
+211
+00:10:11,511 --> 00:10:14,814
+In fact, a zone deletion
+in the shared database
+
+
+212
+00:10:14,814 --> 00:10:18,084
+changes the user from being
+a participant in the share
+
+
+213
+00:10:18,084 --> 00:10:21,254
+to being in
+an invited state.
+
+
+214
+00:10:21,254 --> 00:10:23,690
+This means that
+they no longer see the zones
+
+
+215
+00:10:23,690 --> 00:10:25,725
+in the shared database.
+
+
+216
+00:10:25,725 --> 00:10:29,162
+Finally, in the public database,
+you'll need to review the data
+
+
+217
+00:10:29,162 --> 00:10:31,931
+that you're storing
+related to a given user
+
+
+218
+00:10:31,931 --> 00:10:36,069
+and determine which data
+is appropriate to delete.
+
+
+219
+00:10:36,069 --> 00:10:38,538
+Finally, let's talk about
+restriction.
+
+
+220
+00:10:38,538 --> 00:10:42,108
+In effect, this is a way
+to pause or un-pause processing
+
+
+221
+00:10:42,108 --> 00:10:43,910
+on a user's data.
+
+
+222
+00:10:43,910 --> 00:10:46,880
+Under GDPR, you may need
+to pause processing
+
+
+223
+00:10:46,880 --> 00:10:49,382
+when the user invokes
+another right.
+
+
+224
+00:10:49,382 --> 00:10:52,252
+Or in some cases,
+the user may request
+
+
+225
+00:10:52,252 --> 00:10:56,122
+that you restrict their data
+rather than delete it.
+
+
+226
+00:10:56,122 --> 00:10:59,025
+We've exposed two new web
+service APIs that you can use
+
+
+227
+00:10:59,025 --> 00:11:01,961
+to restrict or un-restrict
+an account.
+
+
+228
+00:11:01,961 --> 00:11:06,132
+You can invoke these web service
+APIs from any version of iOS,
+
+
+229
+00:11:06,132 --> 00:11:08,902
+provided you have
+the appropriate credentials.
+
+
+230
+00:11:08,902 --> 00:11:13,172
+Let's talk through the code
+to restrict a user now.
+
+
+231
+00:11:13,172 --> 00:11:15,808
+First, you'll need to generate
+an API token
+
+
+232
+00:11:15,808 --> 00:11:17,677
+in the CloudKit dashboard.
+
+
+233
+00:11:17,677 --> 00:11:19,546
+Once you have the API token,
+
+
+234
+00:11:19,546 --> 00:11:23,550
+you can create
+a fetchAuthorization operation.
+
+
+235
+00:11:23,550 --> 00:11:28,888
+The fetchAuthorization API
+was first released in iOS 9.2.
+
+
+236
+00:11:28,888 --> 00:11:31,891
+With both the apiToken
+and the webToken,
+
+
+237
+00:11:31,891 --> 00:11:33,159
+you have everything you need
+
+
+238
+00:11:33,159 --> 00:11:35,695
+to make
+the web service restrict call.
+
+
+239
+00:11:35,695 --> 00:11:38,431
+We've wrapped that in
+a restrict helper function,
+
+
+240
+00:11:38,431 --> 00:11:41,834
+and we'll take a look
+at that now.
+
+
+241
+00:11:41,834 --> 00:11:45,371
+First, you'll need
+to URL encode the webToken.
+
+
+242
+00:11:45,371 --> 00:11:49,475
+Create the full web service URL
+by combining a baseURL,
+
+
+243
+00:11:49,475 --> 00:11:52,512
+apiPath, and query parameters.
+
+
+244
+00:11:52,512 --> 00:11:53,613
+Once you've done that,
+
+
+245
+00:11:53,613 --> 00:11:55,381
+you should actually
+send the request
+
+
+246
+00:11:55,381 --> 00:11:59,152
+as an HTTP post
+to the CloudKit server.
+
+
+247
+00:11:59,152 --> 00:12:01,054
+We won't go through
+the code for that now,
+
+
+248
+00:12:01,054 --> 00:12:04,857
+but you can find it in our
+linked documentation.
+
+
+249
+00:12:04,857 --> 00:12:06,059
+Once you restrict a user,
+
+
+250
+00:12:06,059 --> 00:12:09,162
+any operation against
+that container will result in
+
+
+251
+00:12:09,162 --> 00:12:11,664
+a managedAccountRestricted
+error.
+
+
+252
+00:12:11,664 --> 00:12:13,866
+You will also see this error
+if the user has
+
+
+253
+00:12:13,866 --> 00:12:16,569
+restricted their iCloud
+account through Apple.
+
+
+254
+00:12:16,569 --> 00:12:18,871
+Apple will stop processing
+the user's data
+
+
+255
+00:12:18,871 --> 00:12:22,542
+and will return this error
+for any CloudKit request,
+
+
+256
+00:12:22,542 --> 00:12:26,212
+so be sure to handle
+this error in your code.
+
+
+257
+00:12:26,212 --> 00:12:29,282
+To review,
+for access and portability,
+
+
+258
+00:12:29,282 --> 00:12:33,119
+return all data inside
+of the user's private database.
+
+
+259
+00:12:33,119 --> 00:12:35,855
+For shared databases
+and the public databases,
+
+
+260
+00:12:35,855 --> 00:12:37,490
+be discerning
+when determining
+
+
+261
+00:12:37,490 --> 00:12:40,293
+which data
+to return to the user.
+
+
+262
+00:12:40,293 --> 00:12:42,895
+To respond to
+a user deletion request,
+
+
+263
+00:12:42,895 --> 00:12:44,530
+you can delete all of the data
+
+
+264
+00:12:44,530 --> 00:12:47,233
+inside of user's
+private database.
+
+
+265
+00:12:47,233 --> 00:12:49,535
+You can also delete
+shared zones,
+
+
+266
+00:12:49,535 --> 00:12:52,639
+which removes the user
+as a participant.
+
+
+267
+00:12:52,639 --> 00:12:54,040
+For the public database,
+
+
+268
+00:12:54,040 --> 00:12:57,910
+be discerning when determing
+which data to delete.
+
+
+269
+00:12:57,910 --> 00:13:00,880
+Finally, we introduced
+new web service APIs
+
+
+270
+00:13:00,880 --> 00:13:03,416
+to restrict
+or un-restrict accounts.
+
+
+271
+00:13:03,416 --> 00:13:06,419
+You will see a
+managedAccountRestricted error
+
+
+272
+00:13:06,419 --> 00:13:08,588
+if you restrict the user,
+
+
+273
+00:13:08,588 --> 00:13:12,258
+or if the user has requested
+that Apple restrict processing
+
+
+274
+00:13:12,258 --> 00:13:14,627
+across their iCloud account.
+
+
+275
+00:13:14,627 --> 00:13:17,730
+With these tools, we know
+that you can build great privacy
+
+
+276
+00:13:17,730 --> 00:13:19,532
+into your apps.
+
+
+277
+00:13:19,532 --> 00:13:23,603
+For more information, please
+visit developer.apple.com,
+
+
+278
+00:13:23,603 --> 00:13:26,339
+and feel free to email
+cloudkit@apple.com
+
+
+279
+00:13:26,339 --> 00:13:29,308
+with any questions
+or feedback you may have.
+

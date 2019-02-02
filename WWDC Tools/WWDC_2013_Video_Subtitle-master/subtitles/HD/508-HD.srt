@@ -1,0 +1,6964 @@
+1
+00:00:00,506 --> 00:00:09,566
+[ Applause ]
+
+
+2
+00:00:10,066 --> 00:00:10,296
+>> Welcome.
+
+
+3
+00:00:13,886 --> 00:00:15,826
+My name is Jim.
+
+
+4
+00:00:16,236 --> 00:00:18,746
+I'm an engineer on the
+OpenCL team at Apple.
+
+
+5
+00:00:19,736 --> 00:00:21,896
+Our purpose with today's
+session is threefold.
+
+
+6
+00:00:22,576 --> 00:00:24,966
+First, I'm going to talk to
+the newbies in the audience,
+
+
+7
+00:00:25,016 --> 00:00:27,386
+those of you who have an
+application, are wondering
+
+
+8
+00:00:27,386 --> 00:00:28,816
+about OpenCL, if
+it's appropriate
+
+
+9
+00:00:28,816 --> 00:00:29,726
+for your application.
+
+
+10
+00:00:30,086 --> 00:00:31,506
+My goal is to give
+you a checklist.
+
+
+11
+00:00:31,786 --> 00:00:33,896
+So if you answer the
+questions on the checklist,
+
+
+12
+00:00:34,056 --> 00:00:35,816
+you'll have a good idea
+of OpenCL is appropriate
+
+
+13
+00:00:35,816 --> 00:00:38,486
+for your application
+and also how to use it.
+
+
+14
+00:00:39,546 --> 00:00:41,736
+Then my colleague, Abe,
+is going to talk to you
+
+
+15
+00:00:41,736 --> 00:00:45,186
+about some best practices
+and some performance tips
+
+
+16
+00:00:45,186 --> 00:00:47,186
+for using OpenCL in Mavericks.
+
+
+17
+00:00:47,286 --> 00:00:50,836
+And then last we have
+Dave McGavran from Adobe,
+
+
+18
+00:00:50,836 --> 00:00:53,776
+and he's going to show you
+how Adobe has used OpenCL
+
+
+19
+00:00:53,776 --> 00:00:57,046
+to accelerate portions of
+the video processing pipeline
+
+
+20
+00:00:57,046 --> 00:00:59,406
+in Adobe Premiere, and he
+has a really cool demo,
+
+
+21
+00:00:59,576 --> 00:01:01,346
+so stick around for that.
+
+
+22
+00:01:03,316 --> 00:01:05,886
+So let's first talk about
+where OpenCL is going to work.
+
+
+23
+00:01:06,476 --> 00:01:10,136
+When we launched CL in Snow
+Leopard, you could use OpenCL
+
+
+24
+00:01:10,136 --> 00:01:13,646
+on the CPU on any Mac, but
+if you wanted to use OpenCL
+
+
+25
+00:01:13,646 --> 00:01:16,826
+on the GPU, you were limited to
+those machines we were shipping
+
+
+26
+00:01:16,826 --> 00:01:20,366
+that had certain discrete
+GPUs, an AMD or NVIDIA GPU.
+
+
+27
+00:01:20,916 --> 00:01:22,206
+So what about Mavericks?
+
+
+28
+00:01:22,206 --> 00:01:23,766
+Well, now we're happy to say
+
+
+29
+00:01:23,766 --> 00:01:28,846
+that you can also use the
+integrated GPUs from Intel,
+
+
+30
+00:01:28,846 --> 00:01:30,176
+starting with HD 4000.
+
+
+31
+00:01:31,196 --> 00:01:35,216
+So what that means for you guys
+is that OpenCL is now supported
+
+
+32
+00:01:35,216 --> 00:01:38,936
+on the CPU and the GPU on all
+shipping Macs, so that's great.
+
+
+33
+00:01:40,296 --> 00:01:42,106
+So let's get to this
+checklist I was talking about.
+
+
+34
+00:01:42,736 --> 00:01:45,346
+Your first question you ask is
+"am I waiting for something?"
+
+
+35
+00:01:46,006 --> 00:01:46,916
+So what do I mean by that?
+
+
+36
+00:01:46,916 --> 00:01:48,486
+I mean you start up
+your application,
+
+
+37
+00:01:48,696 --> 00:01:50,576
+you click the Go button
+to do something cool,
+
+
+38
+00:01:50,576 --> 00:01:52,956
+and there's a progress
+bar, and you wait
+
+
+39
+00:01:53,306 --> 00:01:54,316
+and you wait and you wait.
+
+
+40
+00:01:54,316 --> 00:01:56,706
+Or maybe you have some cool
+video processing program
+
+
+41
+00:01:57,156 --> 00:01:59,426
+and you want to render effects
+on the frames in realtime
+
+
+42
+00:01:59,426 --> 00:02:01,786
+but once you kick on the
+effects everything slows down,
+
+
+43
+00:02:01,786 --> 00:02:02,346
+it's choppy.
+
+
+44
+00:02:02,796 --> 00:02:03,676
+That's what I'm talking about.
+
+
+45
+00:02:04,716 --> 00:02:06,906
+So, like any good
+developer, what do you do?
+
+
+46
+00:02:06,906 --> 00:02:08,686
+You fire up Instruments
+and take a look
+
+
+47
+00:02:08,686 --> 00:02:10,846
+at your application running, you
+look at it with Time Profiler.
+
+
+48
+00:02:10,846 --> 00:02:13,996
+And that's going to let you
+zero in and find the part
+
+
+49
+00:02:13,996 --> 00:02:15,796
+of the program and
+causing you to slow down.
+
+
+50
+00:02:15,796 --> 00:02:18,296
+That's the piece I want you
+to hold in your mind as we go
+
+
+51
+00:02:18,296 --> 00:02:18,976
+through this checklist.
+
+
+52
+00:02:20,346 --> 00:02:23,006
+But maybe the answer
+to this question is no,
+
+
+53
+00:02:23,006 --> 00:02:25,306
+but maybe the reason
+is you've avoided doing
+
+
+54
+00:02:25,386 --> 00:02:26,256
+something intensive.
+
+
+55
+00:02:27,106 --> 00:02:29,496
+So maybe there's this
+really cool new algorithm
+
+
+56
+00:02:29,496 --> 00:02:30,606
+that you really wanted to put
+
+
+57
+00:02:30,606 --> 00:02:32,336
+into your application
+but you were afraid.
+
+
+58
+00:02:32,376 --> 00:02:34,396
+You were afraid that
+if you did that,
+
+
+59
+00:02:34,396 --> 00:02:36,606
+it's going to slow it down,
+your users will hate you,
+
+
+60
+00:02:37,276 --> 00:02:40,566
+so you don't have to be afraid,
+maybe OpenCL is the doorway
+
+
+61
+00:02:40,566 --> 00:02:42,366
+to this new algorithm
+that you want to use.
+
+
+62
+00:02:43,226 --> 00:02:44,916
+So let's say you can
+answer yes to either
+
+
+63
+00:02:44,916 --> 00:02:45,786
+of these two questions.
+
+
+64
+00:02:46,196 --> 00:02:49,196
+So then you want to ask yourself
+about that piece of code,
+
+
+65
+00:02:49,196 --> 00:02:51,956
+about that code pathway, "do
+I have a parallel workload?"
+
+
+66
+00:02:52,206 --> 00:02:54,146
+Now, a lot of you people
+probably know what I mean
+
+
+67
+00:02:54,146 --> 00:02:55,276
+when I say a parallel workload,
+
+
+68
+00:02:56,006 --> 00:02:58,316
+but let's just make sure
+everyone is on the same page
+
+
+69
+00:02:58,316 --> 00:03:00,586
+like we always do with
+a really terrible haiku.
+
+
+70
+00:03:02,036 --> 00:03:08,166
+Pieces of data, all changing in
+the same way, few dependencies.
+
+
+71
+00:03:08,726 --> 00:03:11,296
+So you can count my syllables
+and I'll go through these lines
+
+
+72
+00:03:11,296 --> 00:03:12,096
+and tell you what they mean.
+
+
+73
+00:03:12,336 --> 00:03:13,806
+Pieces of data is
+pretty obvious.
+
+
+74
+00:03:14,256 --> 00:03:16,396
+Anytime you're going to do
+computation you have data
+
+
+75
+00:03:16,396 --> 00:03:17,386
+that you need to process.
+
+
+76
+00:03:17,596 --> 00:03:19,796
+All changing in the same way
+is a little bit more subtle.
+
+
+77
+00:03:20,196 --> 00:03:22,126
+That means that for each
+piece of data, you're going
+
+
+78
+00:03:22,126 --> 00:03:24,616
+to apply the same
+instructions, the same program
+
+
+79
+00:03:24,616 --> 00:03:25,456
+to each piece of data.
+
+
+80
+00:03:25,456 --> 00:03:28,246
+And few dependencies is
+the worst one of all.
+
+
+81
+00:03:28,966 --> 00:03:31,736
+What that means is
+that the results
+
+
+82
+00:03:31,736 --> 00:03:34,056
+of one computation
+is not needed for any
+
+
+83
+00:03:34,056 --> 00:03:36,436
+of the other computations, or
+while I'm doing my computation,
+
+
+84
+00:03:36,436 --> 00:03:37,876
+I don't need to know
+what my neighbor did.
+
+
+85
+00:03:38,096 --> 00:03:38,956
+They're all independent.
+
+
+86
+00:03:39,396 --> 00:03:41,346
+So that's what we mean when
+we say "a parallel workload."
+
+
+87
+00:03:42,666 --> 00:03:45,126
+So let's make this
+concrete, image processing.
+
+
+88
+00:03:45,466 --> 00:03:46,366
+Canonical example.
+
+
+89
+00:03:46,656 --> 00:03:49,546
+You want to sepia tone this big
+cat, so you're going to pluck
+
+
+90
+00:03:49,546 --> 00:03:51,596
+out a pixel, you're going
+to throw it through the math
+
+
+91
+00:03:52,076 --> 00:03:53,656
+that changes it to sepia,
+and then you're going
+
+
+92
+00:03:53,656 --> 00:03:54,996
+to plop it back into
+the right spot.
+
+
+93
+00:03:55,576 --> 00:03:58,056
+Okay, that's a classical
+example of a parallel workload,
+
+
+94
+00:03:58,056 --> 00:04:00,546
+and in fact core image
+in Mavericks is running
+
+
+95
+00:04:00,606 --> 00:04:02,176
+on top of CL on the GPU.
+
+
+96
+00:04:03,346 --> 00:04:05,536
+But we don't want you
+to think that CL is only
+
+
+97
+00:04:05,636 --> 00:04:07,366
+for graphics type stuff.
+
+
+98
+00:04:07,366 --> 00:04:09,496
+So, when we showed CL first
+
+
+99
+00:04:09,496 --> 00:04:12,106
+in 2009 we showed you this
+really cool physics simulation.
+
+
+100
+00:04:12,756 --> 00:04:15,026
+Now, we showed you the
+results using pretty graphics,
+
+
+101
+00:04:15,026 --> 00:04:17,995
+but the guts of what was
+happening, the computation
+
+
+102
+00:04:17,995 --> 00:04:19,935
+that was moving the bodies
+around in space according
+
+
+103
+00:04:19,935 --> 00:04:21,046
+to the physics calculations,
+
+
+104
+00:04:21,366 --> 00:04:23,556
+that's just arbitrary
+computation, and we want you
+
+
+105
+00:04:23,556 --> 00:04:24,976
+to remember that when
+thinking about CL.
+
+
+106
+00:04:24,976 --> 00:04:27,156
+CL is good for arbitrary
+computation like this.
+
+
+107
+00:04:27,686 --> 00:04:29,896
+And in fact, an example
+of a parallel workload
+
+
+108
+00:04:29,896 --> 00:04:32,146
+that you might not even consider
+is grepping a large file.
+
+
+109
+00:04:32,566 --> 00:04:34,076
+Think about what you
+do when you grep.
+
+
+110
+00:04:34,076 --> 00:04:36,526
+You open up this file, you
+look at the file line by line
+
+
+111
+00:04:36,886 --> 00:04:38,656
+and you apply the same
+regular expression
+
+
+112
+00:04:38,656 --> 00:04:39,626
+to each line of the file.
+
+
+113
+00:04:40,016 --> 00:04:41,356
+That's an example of a problem
+
+
+114
+00:04:41,356 --> 00:04:45,436
+that you might be able
+to apply CL to solve.
+
+
+115
+00:04:45,436 --> 00:04:47,096
+So let's say you
+look at your problem
+
+
+116
+00:04:47,236 --> 00:04:48,846
+and it's not exactly parallel.
+
+
+117
+00:04:49,456 --> 00:04:50,436
+So the question then becomes
+
+
+118
+00:04:50,436 --> 00:04:52,036
+"Can you earn a parallel
+workload?",
+
+
+119
+00:04:52,036 --> 00:04:54,756
+and this is usually
+the trickiest piece.
+
+
+120
+00:04:54,906 --> 00:04:56,326
+What I mean by "earn" is,
+
+
+121
+00:04:56,326 --> 00:04:59,196
+can you take your non-parallel
+problem and twist it somehow
+
+
+122
+00:04:59,196 --> 00:05:01,416
+or change it so that
+it becomes parallel?
+
+
+123
+00:05:01,756 --> 00:05:03,786
+So let's look at an example
+of a problem like that.
+
+
+124
+00:05:04,846 --> 00:05:06,796
+Consider computing a
+histogram of an image.
+
+
+125
+00:05:07,546 --> 00:05:10,576
+So for the image you have
+some RGBA image, 8-bit color,
+
+
+126
+00:05:10,576 --> 00:05:12,316
+and you have a histogram
+for each color channel,
+
+
+127
+00:05:12,836 --> 00:05:15,256
+one bucket per possible
+color value.
+
+
+128
+00:05:16,186 --> 00:05:17,976
+And what you do is you look
+at the pixels in the image --
+
+
+129
+00:05:17,976 --> 00:05:19,106
+so let's just look
+at one of them --
+
+
+130
+00:05:19,896 --> 00:05:22,576
+so we look at this guy and we
+see he has a red value of 79,
+
+
+131
+00:05:22,676 --> 00:05:24,816
+green of 148, and blue of 186.
+
+
+132
+00:05:25,266 --> 00:05:28,166
+Fine. So we go to each
+histogram, we find the bin
+
+
+133
+00:05:28,166 --> 00:05:30,216
+that we're supposed to increment
+and we knock it up by 1.
+
+
+134
+00:05:30,266 --> 00:05:33,096
+So for example here we
+would increment the 79 bin
+
+
+135
+00:05:33,096 --> 00:05:34,606
+for red, increment it by 1.
+
+
+136
+00:05:35,456 --> 00:05:37,456
+So, at the end of the day
+you have this nice histogram
+
+
+137
+00:05:37,456 --> 00:05:38,996
+which gives you a
+distribution of the color
+
+
+138
+00:05:38,996 --> 00:05:40,136
+as it's used in the image.
+
+
+139
+00:05:40,536 --> 00:05:42,576
+And you'll have a good idea
+of how colors are being used,
+
+
+140
+00:05:42,576 --> 00:05:45,446
+and more importantly your
+algorithm will have an idea
+
+
+141
+00:05:45,446 --> 00:05:46,676
+of how color is being used.
+
+
+142
+00:05:46,676 --> 00:05:48,436
+Image histogram is
+an intermediate step
+
+
+143
+00:05:48,436 --> 00:05:49,926
+in a lot of cool algorithms.
+
+
+144
+00:05:51,136 --> 00:05:53,406
+So this feels like one of these
+parallel problems I just talked
+
+
+145
+00:05:53,406 --> 00:05:54,646
+about, so what's the problem?
+
+
+146
+00:05:54,796 --> 00:05:56,586
+Why is this not parallel
+to begin with?
+
+
+147
+00:05:56,586 --> 00:05:59,316
+Well, let's look at just
+2 pixels in parallel,
+
+
+148
+00:05:59,476 --> 00:06:00,986
+so let's look at these two.
+
+
+149
+00:06:01,536 --> 00:06:03,706
+Now, these two happen to have
+the same blue channel value.
+
+
+150
+00:06:04,456 --> 00:06:05,716
+So what's going to happen?
+
+
+151
+00:06:06,416 --> 00:06:08,326
+They're both going to go to
+that blue bin they map to,
+
+
+152
+00:06:08,496 --> 00:06:10,846
+let's say the value
+in there is 35 --
+
+
+153
+00:06:10,886 --> 00:06:14,026
+they're both going to read out
+35, increment it by 1 to 36,
+
+
+154
+00:06:14,096 --> 00:06:15,346
+and try to write it back.
+
+
+155
+00:06:15,716 --> 00:06:16,766
+So that's a problem.
+
+
+156
+00:06:16,766 --> 00:06:18,306
+You have a classic collision.
+
+
+157
+00:06:18,306 --> 00:06:20,556
+You're going to have the
+incorrect value in that slot.
+
+
+158
+00:06:20,556 --> 00:06:23,076
+So what do we do when we
+hit a problem like this?
+
+
+159
+00:06:23,706 --> 00:06:26,946
+Well, normally you synchronize
+around that code, you would make
+
+
+160
+00:06:26,946 --> 00:06:28,176
+that an atomic operation.
+
+
+161
+00:06:28,176 --> 00:06:30,746
+You've taken some problem
+that seems very parallel
+
+
+162
+00:06:30,746 --> 00:06:32,426
+but there's this
+serial bit of it
+
+
+163
+00:06:32,566 --> 00:06:34,026
+that just really ruins your day.
+
+
+164
+00:06:34,836 --> 00:06:35,936
+So now we have to get clever.
+
+
+165
+00:06:35,936 --> 00:06:38,716
+So what we can do instead
+is we break the image
+
+
+166
+00:06:38,716 --> 00:06:39,956
+into groups of pixels.
+
+
+167
+00:06:40,296 --> 00:06:41,726
+So let's take a look
+at one group.
+
+
+168
+00:06:42,226 --> 00:06:42,926
+Let's look at that one.
+
+
+169
+00:06:44,086 --> 00:06:46,226
+So what we're going to do in
+this group is the same thing
+
+
+170
+00:06:46,226 --> 00:06:47,726
+that we were going to
+do to the whole image.
+
+
+171
+00:06:47,836 --> 00:06:49,466
+We're still going to
+compute a histogram
+
+
+172
+00:06:49,466 --> 00:06:50,516
+for that group of pixels.
+
+
+173
+00:06:51,156 --> 00:06:52,736
+But instead of a
+global histogram,
+
+
+174
+00:06:52,736 --> 00:06:54,506
+we're going to update
+only a partial histogram.
+
+
+175
+00:06:54,936 --> 00:06:57,326
+So this group's going to
+have its own histogram
+
+
+176
+00:06:57,366 --> 00:06:58,896
+for each color channel,
+and it's only going
+
+
+177
+00:06:58,896 --> 00:07:00,116
+to update that histogram.
+
+
+178
+00:07:00,616 --> 00:07:03,426
+And all the groups, each group
+has its own partial histogram.
+
+
+179
+00:07:04,006 --> 00:07:06,676
+So the thing is, these
+collisions that I talked
+
+
+180
+00:07:06,676 --> 00:07:08,296
+about for the whole
+image, they still exist
+
+
+181
+00:07:08,296 --> 00:07:11,076
+for the partial histograms,
+but only within this group.
+
+
+182
+00:07:11,076 --> 00:07:13,666
+And OpenCL has a lot
+of language facilities
+
+
+183
+00:07:13,846 --> 00:07:16,686
+that expose underlying
+hardware that let you deal
+
+
+184
+00:07:16,686 --> 00:07:19,306
+with these collisions
+within a group very quickly.
+
+
+185
+00:07:20,116 --> 00:07:23,536
+So we also get a win, because
+all these groups can operate
+
+
+186
+00:07:23,536 --> 00:07:26,286
+in parallel, so we've taken this
+and we've made this parallel.
+
+
+187
+00:07:26,816 --> 00:07:27,756
+Okay, so we're done, right.
+
+
+188
+00:07:27,756 --> 00:07:30,786
+Well, not yet, because
+now we kind
+
+
+189
+00:07:30,786 --> 00:07:31,836
+of have what we don't
+really want.
+
+
+190
+00:07:31,836 --> 00:07:34,636
+We have this big pile
+of partial histograms.
+
+
+191
+00:07:34,636 --> 00:07:37,246
+What we wanted was
+one total histogram.
+
+
+192
+00:07:38,076 --> 00:07:41,046
+So now we have a second step,
+a new step to the algorithm.
+
+
+193
+00:07:41,046 --> 00:07:42,476
+This time our data
+is not the image.
+
+
+194
+00:07:42,476 --> 00:07:44,656
+Forget about the image; it's
+this partial histogram set.
+
+
+195
+00:07:45,396 --> 00:07:47,746
+And now each independent
+thread of execution --
+
+
+196
+00:07:47,746 --> 00:07:50,526
+which in OpenCL is called a
+work item -- they have a job.
+
+
+197
+00:07:50,526 --> 00:07:52,916
+This guy's job is
+to sum up bin 79.
+
+
+198
+00:07:53,506 --> 00:07:54,606
+So what will he do?
+
+
+199
+00:07:54,606 --> 00:07:56,776
+He walks down through all
+the partial histograms,
+
+
+200
+00:07:56,856 --> 00:07:59,246
+summing up bin 79, and
+he writes the result
+
+
+201
+00:07:59,246 --> 00:08:00,236
+in that total histogram.
+
+
+202
+00:08:00,686 --> 00:08:03,096
+Now, he's the only one
+writing to that slot,
+
+
+203
+00:08:03,166 --> 00:08:05,346
+so there's no more collisions
+in the total histogram.
+
+
+204
+00:08:06,316 --> 00:08:08,606
+So what we've done here is
+we've taken this problem,
+
+
+205
+00:08:08,606 --> 00:08:10,146
+this image histogram problem,
+
+
+206
+00:08:10,146 --> 00:08:13,026
+we've twisted it just a little
+bit and made it purely parallel.
+
+
+207
+00:08:13,026 --> 00:08:15,146
+And the cool thing is,
+
+
+208
+00:08:15,146 --> 00:08:17,086
+we do this for all the
+partial histograms,
+
+
+209
+00:08:17,606 --> 00:08:19,306
+all threads operating
+all together,
+
+
+210
+00:08:19,306 --> 00:08:20,786
+all these work items
+in parallel.
+
+
+211
+00:08:21,306 --> 00:08:26,846
+So if you can answer
+yes to either
+
+
+212
+00:08:26,846 --> 00:08:28,986
+of these first two
+questions and yes to either
+
+
+213
+00:08:28,986 --> 00:08:31,516
+of the second two questions,
+then you have a problem
+
+
+214
+00:08:31,516 --> 00:08:33,576
+that is probably
+appropriate for OpenCL.
+
+
+215
+00:08:34,395 --> 00:08:34,946
+That's good.
+
+
+216
+00:08:34,946 --> 00:08:37,346
+So now the question is "do I
+run it on the CPU or the GPU?"
+
+
+217
+00:08:37,346 --> 00:08:39,826
+You've probably heard that you
+can run it in either place.
+
+
+218
+00:08:41,535 --> 00:08:43,006
+This breaks down
+to three questions.
+
+
+219
+00:08:43,116 --> 00:08:46,166
+Where is my data now,
+where is my data destined,
+
+
+220
+00:08:46,296 --> 00:08:47,896
+and by that I mean
+destined to be used,
+
+
+221
+00:08:48,456 --> 00:08:51,136
+and how hard am I working
+on each piece of data?
+
+
+222
+00:08:52,386 --> 00:08:54,006
+So let's look at some data.
+
+
+223
+00:08:54,006 --> 00:08:56,116
+Now, this happens to be image
+data, but again, remember,
+
+
+224
+00:08:56,116 --> 00:08:58,356
+arbitrary computations,
+just some data on the host,
+
+
+225
+00:08:58,356 --> 00:09:01,236
+and by host I just mean your
+CPU, in its memory space,
+
+
+226
+00:09:01,236 --> 00:09:03,286
+memory that you get
+through malloc, for example.
+
+
+227
+00:09:04,856 --> 00:09:07,186
+Okay, so when you do
+computation on this data,
+
+
+228
+00:09:07,186 --> 00:09:08,286
+you process it somehow.
+
+
+229
+00:09:08,286 --> 00:09:10,716
+The computation is
+exemplified by this green arrow.
+
+
+230
+00:09:11,206 --> 00:09:13,396
+If you were to measure
+the total time you spent,
+
+
+231
+00:09:13,396 --> 00:09:15,746
+it's going to be the total time
+you spent doing the compute.
+
+
+232
+00:09:16,026 --> 00:09:17,386
+This is a normal situation;
+
+
+233
+00:09:17,386 --> 00:09:19,076
+now let's bring OpenCL
+into the picture.
+
+
+234
+00:09:20,256 --> 00:09:22,316
+When you're doing compute
+with an OpenCL device,
+
+
+235
+00:09:22,316 --> 00:09:24,636
+OpenCL has to be able to see
+that memory you want to work on.
+
+
+236
+00:09:25,316 --> 00:09:27,916
+So normally you have to sort of
+"transfer" it over to OpenCL,
+
+
+237
+00:09:27,916 --> 00:09:29,436
+and we'll define that
+transfer in a second.
+
+
+238
+00:09:30,076 --> 00:09:31,676
+Then you can do your
+compute in OpenCL,
+
+
+239
+00:09:32,366 --> 00:09:34,466
+and then if your host
+wants to use that memory,
+
+
+240
+00:09:34,466 --> 00:09:35,786
+it has to be able
+to see that memory.
+
+
+241
+00:09:36,256 --> 00:09:38,396
+So then you have to give
+that memory back to the host.
+
+
+242
+00:09:39,346 --> 00:09:41,246
+So now when we're talking
+about the total time,
+
+
+243
+00:09:42,026 --> 00:09:44,156
+it's not just your compute
+time, hopefully faster,
+
+
+244
+00:09:44,786 --> 00:09:46,156
+it's also this transfer time.
+
+
+245
+00:09:46,296 --> 00:09:49,366
+So let's talk about that, this
+transfer time, what is that?
+
+
+246
+00:09:49,366 --> 00:09:51,286
+It depends on your device.
+
+
+247
+00:09:51,526 --> 00:09:54,616
+If you're on a discrete GPU,
+that's a function of the amount
+
+
+248
+00:09:54,616 --> 00:09:58,286
+of data you want to send and
+your bus speed, the PCIe bus.
+
+
+249
+00:09:58,996 --> 00:10:01,586
+That makes sense, got to
+get it over to the VRAM,
+
+
+250
+00:10:01,586 --> 00:10:02,566
+get it over to the device.
+
+
+251
+00:10:03,946 --> 00:10:06,106
+But if you're working on the
+CPU as your OpenCL device,
+
+
+252
+00:10:06,196 --> 00:10:08,656
+this transfer time is
+nothing, because the host
+
+
+253
+00:10:08,656 --> 00:10:11,256
+and the OpenCL device share
+the same memory space.
+
+
+254
+00:10:11,586 --> 00:10:14,706
+And if you're on
+the integrated GPU,
+
+
+255
+00:10:14,976 --> 00:10:16,606
+sometimes this is also nothing.
+
+
+256
+00:10:16,756 --> 00:10:18,656
+Now, that's a maybe
+because this is only true
+
+
+257
+00:10:18,656 --> 00:10:20,076
+if you're using OpenCL buffers.
+
+
+258
+00:10:20,536 --> 00:10:23,166
+If you're using images, a
+copy still has to be made,
+
+
+259
+00:10:23,166 --> 00:10:25,696
+because the integrated GPU will
+set up that image data in a way
+
+
+260
+00:10:25,696 --> 00:10:28,846
+that takes advantage of
+texture caches, stuff like that.
+
+
+261
+00:10:29,736 --> 00:10:32,456
+So now you have an idea of
+what that transfer cost is.
+
+
+262
+00:10:32,896 --> 00:10:33,736
+Now, what about the compute --
+
+
+263
+00:10:33,736 --> 00:10:35,706
+now this might go without
+saying, but if you're working
+
+
+264
+00:10:35,706 --> 00:10:36,916
+on a problem like I described,
+
+
+265
+00:10:36,916 --> 00:10:38,276
+one of these data
+parallel problems,
+
+
+266
+00:10:39,016 --> 00:10:41,336
+the OpenCL device is
+going to beat the code
+
+
+267
+00:10:41,336 --> 00:10:42,936
+that you're writing on the host.
+
+
+268
+00:10:42,936 --> 00:10:45,386
+So let's just get that out there
+right now, so for these kind
+
+
+269
+00:10:45,386 --> 00:10:46,906
+of problems, OpenCL
+is going to win.
+
+
+270
+00:10:48,006 --> 00:10:51,156
+So let's look at a problem like
+this, where you're doing a lot
+
+
+271
+00:10:51,156 --> 00:10:53,446
+of computation relative
+to the amount
+
+
+272
+00:10:53,446 --> 00:10:55,786
+of data transfer you're doing.
+
+
+273
+00:10:55,786 --> 00:10:57,556
+Lot of compute versus
+data transfer.
+
+
+274
+00:10:57,746 --> 00:11:02,056
+In this case this is an ideal
+scenario for the discrete GPU.
+
+
+275
+00:11:02,606 --> 00:11:05,336
+This is where you want
+to use the discrete GPU,
+
+
+276
+00:11:05,336 --> 00:11:07,726
+because this transfer
+cost that you incur
+
+
+277
+00:11:07,726 --> 00:11:10,156
+by using the discrete GPU
+is dwarfed by the amount
+
+
+278
+00:11:10,156 --> 00:11:11,496
+of win you get for the compute.
+
+
+279
+00:11:12,556 --> 00:11:14,296
+Now, what about a
+situation like this.
+
+
+280
+00:11:14,296 --> 00:11:15,696
+Here you're doing
+a lot of transfer
+
+
+281
+00:11:15,696 --> 00:11:17,326
+and not so much compute.
+
+
+282
+00:11:17,326 --> 00:11:19,496
+You're spending too much
+time doing transfer.
+
+
+283
+00:11:20,276 --> 00:11:21,196
+In this case you might want
+
+
+284
+00:11:21,196 --> 00:11:24,106
+to consider it using the
+OpenCL CPU device or staying
+
+
+285
+00:11:24,106 --> 00:11:27,516
+on the integrated GPU, and then
+that transfer cost may go away.
+
+
+286
+00:11:29,176 --> 00:11:32,046
+Now, remember, I talked about
+the question of where is my data
+
+
+287
+00:11:32,046 --> 00:11:34,026
+at now and where is
+it destined to be.
+
+
+288
+00:11:34,516 --> 00:11:37,786
+Well, let's imagine that you're
+using an OpenCL device, the GPU,
+
+
+289
+00:11:37,786 --> 00:11:39,906
+that it happens to also
+be the display device.
+
+
+290
+00:11:40,406 --> 00:11:43,536
+You might be sharing data with
+say, OpenGL, like Chris talked
+
+
+291
+00:11:43,536 --> 00:11:47,016
+about in the previous session
+or IOSurface, like this.
+
+
+292
+00:11:47,016 --> 00:11:49,926
+This data is the same and
+it's already on the GPU.
+
+
+293
+00:11:51,056 --> 00:11:53,386
+Likewise, you might be doing
+some computation then using the
+
+
+294
+00:11:53,386 --> 00:11:56,066
+result of that to be displayed
+to the user, for example; again,
+
+
+295
+00:11:56,396 --> 00:11:57,676
+shared through GL or shared
+
+
+296
+00:11:57,676 --> 00:11:59,896
+through IOSurface,
+or you may have both.
+
+
+297
+00:12:00,316 --> 00:12:02,246
+In this case, it's
+kind of obvious:
+
+
+298
+00:12:02,316 --> 00:12:04,206
+stay on the GPU and
+do your compute.
+
+
+299
+00:12:04,206 --> 00:12:05,046
+Your data's already there,
+
+
+300
+00:12:05,046 --> 00:12:06,926
+it's going to be used
+there, just stay there.
+
+
+301
+00:12:06,926 --> 00:12:10,426
+Even in a situation like this,
+where your data is starting
+
+
+302
+00:12:10,426 --> 00:12:14,276
+on the host and then is going
+to be displayed to the user
+
+
+303
+00:12:14,276 --> 00:12:18,426
+on the GPU after processing,
+it makes sense even
+
+
+304
+00:12:18,426 --> 00:12:20,236
+if the transfer cost might
+be a little bit high,
+
+
+305
+00:12:20,656 --> 00:12:21,976
+to go to the CL device --
+
+
+306
+00:12:22,436 --> 00:12:25,596
+that's the same as the display
+device -- do your compute there,
+
+
+307
+00:12:25,656 --> 00:12:28,006
+because that leaves your host
+free to do other computation.
+
+
+308
+00:12:28,536 --> 00:12:32,556
+So let's just talk a bit,
+for those of you who weren't
+
+
+309
+00:12:32,556 --> 00:12:34,576
+in the previous session,
+about the kind of data
+
+
+310
+00:12:34,576 --> 00:12:35,456
+that might be on the device.
+
+
+311
+00:12:35,456 --> 00:12:37,476
+We said we can share
+with GL or IOSurface,
+
+
+312
+00:12:37,476 --> 00:12:38,446
+so let's talk about GL.
+
+
+313
+00:12:38,946 --> 00:12:41,156
+Now, GL has a lot of
+different that it can have.
+
+
+314
+00:12:41,196 --> 00:12:43,616
+As an example, it can have
+vertex buffer objects,
+
+
+315
+00:12:43,616 --> 00:12:45,526
+it can have textures,
+and you use those
+
+
+316
+00:12:45,526 --> 00:12:46,666
+and you render some
+cool picture.
+
+
+317
+00:12:46,996 --> 00:12:49,096
+Now, that picture might
+be a texture attachment
+
+
+318
+00:12:49,096 --> 00:12:51,956
+or a render buffer
+attachment to an FBO.
+
+
+319
+00:12:52,376 --> 00:12:55,026
+Great. And along the way
+you can hit that in OpenGL
+
+
+320
+00:12:55,026 --> 00:12:56,956
+with some cool shaders to
+produce some nice effects.
+
+
+321
+00:12:57,736 --> 00:12:59,196
+So where does CL fit
+into this picture?
+
+
+322
+00:12:59,826 --> 00:13:02,996
+Well, typically you would
+share something like the VBO
+
+
+323
+00:13:03,246 --> 00:13:05,126
+as a CL mem object,
+as a CL buffer.
+
+
+324
+00:13:05,846 --> 00:13:08,476
+And likewise, you
+would share textures
+
+
+325
+00:13:08,476 --> 00:13:10,716
+or render buffer
+attachments with OpenCL
+
+
+326
+00:13:10,716 --> 00:13:12,006
+as an image memory object.
+
+
+327
+00:13:12,006 --> 00:13:15,546
+And where it fits into the
+pipeline is right here.
+
+
+328
+00:13:15,546 --> 00:13:20,646
+You're going to use a CL to
+modify or generate vertex data
+
+
+329
+00:13:20,766 --> 00:13:24,086
+in that VBO, and then you might
+want to do some post processing
+
+
+330
+00:13:24,186 --> 00:13:26,066
+in CL after you're done
+with your other GL pipeline,
+
+
+331
+00:13:26,206 --> 00:13:26,916
+and you might want to do
+
+
+332
+00:13:26,916 --> 00:13:29,356
+that because you can maybe
+express things more cleanly
+
+
+333
+00:13:29,356 --> 00:13:32,366
+in the OpenCL programming
+language than you could in say,
+
+
+334
+00:13:32,366 --> 00:13:36,126
+a GLSL shader, or you might
+want to launch your CL kernel
+
+
+335
+00:13:36,126 --> 00:13:39,256
+over a smaller domain than
+what GLSL will let you do.
+
+
+336
+00:13:40,166 --> 00:13:41,846
+Now I do want to say
+one thing to the people
+
+
+337
+00:13:41,846 --> 00:13:43,656
+who are already using
+CLGL sharing.
+
+
+338
+00:13:44,286 --> 00:13:48,086
+So previously in 2011 we
+told you that the sort
+
+
+339
+00:13:48,086 --> 00:13:50,646
+of paradigm you should follow
+when using shared objects in CL
+
+
+340
+00:13:50,646 --> 00:13:53,636
+from GL is flush, acquire,
+compute, release --
+
+
+341
+00:13:53,916 --> 00:13:56,336
+you're going to finish with your
+GL commands and call glFlush,
+
+
+342
+00:13:56,636 --> 00:13:59,906
+and then you're going to
+clEnqueueAcquireGLPObjects,
+
+
+343
+00:14:00,166 --> 00:14:02,656
+do your compute, wail on it
+with CL, whatever you want,
+
+
+344
+00:14:02,956 --> 00:14:05,026
+and then call
+clEnqueueReleaseGLObjects.
+
+
+345
+00:14:05,366 --> 00:14:08,606
+And within that function call
+we internally will call clFlush
+
+
+346
+00:14:08,606 --> 00:14:10,716
+for you to make sure
+your CL commands made it
+
+
+347
+00:14:10,716 --> 00:14:15,366
+down to the GPU before
+GL would go do more work
+
+
+348
+00:14:15,366 --> 00:14:16,096
+with those objects.
+
+
+349
+00:14:16,836 --> 00:14:17,736
+That has changed.
+
+
+350
+00:14:17,896 --> 00:14:19,966
+In Mavericks we want you
+to follow something else.
+
+
+351
+00:14:20,026 --> 00:14:22,826
+You notice that "acquire" has
+disappeared from the list.
+
+
+352
+00:14:23,236 --> 00:14:25,166
+Flush, compute, flush,
+or maybe "Flush
+
+
+353
+00:14:25,166 --> 00:14:26,856
+when you're done,"
+something like that.
+
+
+354
+00:14:27,056 --> 00:14:29,686
+So first you're going to
+call glFlushRenderAPPLE,
+
+
+355
+00:14:29,796 --> 00:14:32,206
+and then you're going
+to do your compute,
+
+
+356
+00:14:32,316 --> 00:14:33,896
+and then you're going
+to call clFlush.
+
+
+357
+00:14:33,996 --> 00:14:34,656
+Now, you call that.
+
+
+358
+00:14:34,656 --> 00:14:35,676
+Before, we did that for you.
+
+
+359
+00:14:36,236 --> 00:14:39,216
+And notice this is
+glFlushRenderAPPLE, so why that?
+
+
+360
+00:14:39,216 --> 00:14:41,266
+Well, for single-buffered
+contexts,
+
+
+361
+00:14:41,576 --> 00:14:42,906
+this allows you to avoid a blit.
+
+
+362
+00:14:42,906 --> 00:14:45,206
+If you have a double-buffered
+context, this doesn't matter.
+
+
+363
+00:14:45,206 --> 00:14:46,396
+It's the same as glFlush.
+
+
+364
+00:14:46,586 --> 00:14:48,656
+There's no penalty to
+using it so just use it.
+
+
+365
+00:14:49,146 --> 00:14:53,626
+And then I mentioned IOSurface
+is another way you might be
+
+
+366
+00:14:53,626 --> 00:14:54,366
+sharing with CL.
+
+
+367
+00:14:54,756 --> 00:14:58,686
+So if Mac OS X technologies
+are Tolkienian creatures,
+
+
+368
+00:14:59,046 --> 00:15:00,316
+IOSurface would be Gandalf.
+
+
+369
+00:15:01,096 --> 00:15:05,426
+It's a container for 2D image
+data, and it's really magical
+
+
+370
+00:15:05,426 --> 00:15:08,026
+in that you can set up an
+IOSurface in one process
+
+
+371
+00:15:08,476 --> 00:15:10,516
+and then just using the
+IOSurface handle you can use it
+
+
+372
+00:15:10,516 --> 00:15:13,366
+in another process,
+through the IOSurface API,
+
+
+373
+00:15:13,366 --> 00:15:15,496
+and that process might be 64-bit
+
+
+374
+00:15:15,496 --> 00:15:17,126
+where the other process
+is 32-bit.
+
+
+375
+00:15:17,416 --> 00:15:19,956
+And more, that process might
+be sharing the IOSurface
+
+
+376
+00:15:19,956 --> 00:15:23,116
+with OpenGL, which is hammering
+on this data on the GPU.
+
+
+377
+00:15:23,376 --> 00:15:26,256
+And we make sure, under the
+covers, that this data is always
+
+
+378
+00:15:26,256 --> 00:15:27,536
+in the right place
+at the right time
+
+
+379
+00:15:27,536 --> 00:15:29,506
+and you have the consistent,
+correct view of the data.
+
+
+380
+00:15:29,676 --> 00:15:31,436
+So it's really cool,
+especially for those
+
+
+381
+00:15:31,436 --> 00:15:32,596
+of you working on video.
+
+
+382
+00:15:32,936 --> 00:15:36,016
+You can get your video frames
+as IOSurfaces fairly easily
+
+
+383
+00:15:36,016 --> 00:15:39,476
+and then share those with CL
+or GL and do some cool things
+
+
+384
+00:15:39,476 --> 00:15:40,586
+to them, so please do that.
+
+
+385
+00:15:41,746 --> 00:15:45,006
+Now, we talked about IOSurface
+sharing in detail in 2011.
+
+
+386
+00:15:45,006 --> 00:15:47,156
+I talked about that in the
+talk, "What's New in OpenCL,"
+
+
+387
+00:15:47,156 --> 00:15:49,716
+so if you want to learn more
+details, go listen to that talk.
+
+
+388
+00:15:49,716 --> 00:15:51,336
+It's on the developer website.
+
+
+389
+00:15:51,956 --> 00:15:55,316
+And also, Ken Dyke had an
+excellent talk in 2010 called
+
+
+390
+00:15:55,316 --> 00:15:57,326
+"Taking Advantage of
+Multiple GPUs" where he talks
+
+
+391
+00:15:57,326 --> 00:15:58,576
+about IOSurface in some detail.
+
+
+392
+00:15:59,186 --> 00:16:01,956
+So that brings us back
+to this checklist.
+
+
+393
+00:16:02,206 --> 00:16:04,256
+So those of you who walked
+in here and had no idea
+
+
+394
+00:16:04,306 --> 00:16:07,176
+if CL was appropriate for you,
+you should have a better idea,
+
+
+395
+00:16:07,176 --> 00:16:08,666
+but if not, come talk
+to us in the lab.
+
+
+396
+00:16:08,666 --> 00:16:10,716
+It's right after the
+session; we'll be there.
+
+
+397
+00:16:11,796 --> 00:16:12,576
+I do want to say something
+
+
+398
+00:16:12,576 --> 00:16:14,706
+about the OpenCL programming
+model, though, before I go.
+
+
+399
+00:16:15,626 --> 00:16:17,456
+So if you look at
+the OpenCL spec,
+
+
+400
+00:16:17,456 --> 00:16:18,956
+you'll see that it's 400 pages.
+
+
+401
+00:16:19,336 --> 00:16:22,286
+And even the OpenCL Programming
+Guide, which is a good book,
+
+
+402
+00:16:22,286 --> 00:16:25,236
+a gentler introduction, it's
+not exactly a lightweight tome.
+
+
+403
+00:16:25,796 --> 00:16:28,306
+But I'm going to give you an
+easy way to think about OpenCL.
+
+
+404
+00:16:29,226 --> 00:16:30,626
+It breaks down into two pieces.
+
+
+405
+00:16:30,926 --> 00:16:33,526
+It's a C-like programming
+language and a runtime API,
+
+
+406
+00:16:33,766 --> 00:16:35,456
+so let's talk about
+the language first.
+
+
+407
+00:16:36,086 --> 00:16:39,506
+We say "C-like" because it's
+basically C with some new types,
+
+
+408
+00:16:40,036 --> 00:16:41,826
+and has some nice
+built-in functions
+
+
+409
+00:16:41,826 --> 00:16:42,726
+to make your life easier.
+
+
+410
+00:16:43,606 --> 00:16:45,696
+And you describe your work
+
+
+411
+00:16:45,696 --> 00:16:47,186
+from the perspective
+of one piece of data.
+
+
+412
+00:16:47,186 --> 00:16:49,036
+Remember, we talked
+about in the haiku,
+
+
+413
+00:16:49,286 --> 00:16:50,516
+"all changing in the same way."
+
+
+414
+00:16:50,816 --> 00:16:52,766
+That's what you do in
+your OpenCL kernel,
+
+
+415
+00:16:52,766 --> 00:16:54,866
+which what you write with the
+OpenCL programming language.
+
+
+416
+00:16:55,626 --> 00:16:58,386
+You do this all the time,
+every day when you write code.
+
+
+417
+00:16:58,386 --> 00:17:00,266
+You write a loop, and
+in your loop you say
+
+
+418
+00:17:00,336 --> 00:17:02,116
+"For My data, do this thing."
+
+
+419
+00:17:02,206 --> 00:17:03,956
+Well, "this thing,"
+that's your OpenCL kernel.
+
+
+420
+00:17:04,705 --> 00:17:05,636
+Let's look at an example.
+
+
+421
+00:17:06,116 --> 00:17:07,036
+Here's a bunch of C code.
+
+
+422
+00:17:07,356 --> 00:17:09,955
+Let's go through it bit by bit.
+
+
+423
+00:17:09,955 --> 00:17:11,955
+So first, what are we doing?
+
+
+424
+00:17:11,955 --> 00:17:15,386
+We're converting a big
+image from RGB to HSV.
+
+
+425
+00:17:16,415 --> 00:17:17,925
+So first we're going
+to loop over the data.
+
+
+426
+00:17:18,026 --> 00:17:19,886
+That's what we have to
+do, a pixel at a time.
+
+
+427
+00:17:20,516 --> 00:17:22,786
+Once we're inside the
+loop what pixel do I do?
+
+
+428
+00:17:22,876 --> 00:17:24,626
+Oh, I'll use the
+loop indices to find
+
+
+429
+00:17:24,626 --> 00:17:26,326
+out what pixel I
+should modify, great.
+
+
+430
+00:17:26,925 --> 00:17:29,066
+I grab that pixel, I
+shift out the color values
+
+
+431
+00:17:29,066 --> 00:17:32,116
+because it's stored in one
+integer, and then I convert
+
+
+432
+00:17:32,116 --> 00:17:33,546
+that to floating
+point because my RGB
+
+
+433
+00:17:33,606 --> 00:17:36,526
+to HSV conversion function,
+which I'm going to show you
+
+
+434
+00:17:36,526 --> 00:17:38,556
+in a second, expects float.
+
+
+435
+00:17:38,626 --> 00:17:40,536
+Fine. I call that function
+
+
+436
+00:17:40,656 --> 00:17:42,416
+and I write back the
+result to my output image.
+
+
+437
+00:17:43,116 --> 00:17:43,796
+Seems easy.
+
+
+438
+00:17:44,206 --> 00:17:46,396
+And let's take a look at
+this RGB to HSV function.
+
+
+439
+00:17:46,456 --> 00:17:49,206
+You don't have to know what's
+going on here, I just want you
+
+
+440
+00:17:49,206 --> 00:17:50,606
+to notice it's a
+simple function,
+
+
+441
+00:17:51,036 --> 00:17:54,036
+takes in some parameters,
+RGB, and writes out HSV,
+
+
+442
+00:17:54,236 --> 00:17:55,206
+according to the algorithm
+
+
+443
+00:17:55,206 --> 00:17:56,576
+for the algorithm
+for converting this.
+
+
+444
+00:17:57,566 --> 00:17:59,406
+So let's turn this
+into an OpenCL kernel.
+
+
+445
+00:18:00,516 --> 00:18:04,716
+Now, remember, an OpenCL kernel
+is launched over some domain.
+
+
+446
+00:18:04,806 --> 00:18:07,176
+In this case we've
+launched our kernel
+
+
+447
+00:18:07,176 --> 00:18:10,136
+over a 2-dimensional domain
+that corresponds exactly
+
+
+448
+00:18:10,176 --> 00:18:12,046
+to the number of pixels
+in the X and Y dimension.
+
+
+449
+00:18:12,046 --> 00:18:15,446
+So this kernel will run for
+each pixel of the image.
+
+
+450
+00:18:16,576 --> 00:18:18,056
+And you can see here
+that every instance
+
+
+451
+00:18:18,056 --> 00:18:19,696
+of the kernel that's running
+is going to have access
+
+
+452
+00:18:19,696 --> 00:18:21,026
+to that input and output image.
+
+
+453
+00:18:22,406 --> 00:18:24,196
+So how do we find out
+what pixel to work on?
+
+
+454
+00:18:24,196 --> 00:18:26,156
+Well, here we call some
+OpenCL built-in functions,
+
+
+455
+00:18:26,156 --> 00:18:28,566
+getglobalid(0) and
+getglobalid(1).
+
+
+456
+00:18:28,566 --> 00:18:31,556
+That gives us the global ID in
+the first and second dimensions.
+
+
+457
+00:18:31,976 --> 00:18:33,426
+This happens to correspond
+to X and Y.
+
+
+458
+00:18:34,396 --> 00:18:36,476
+So then we use another
+OpenCL built-in, readimagef.
+
+
+459
+00:18:36,476 --> 00:18:40,276
+And that will tap the input
+image at that coordinate
+
+
+460
+00:18:40,276 --> 00:18:42,266
+and give us back 4
+channel float data.
+
+
+461
+00:18:42,566 --> 00:18:44,746
+Now, notice, this
+doesn't know anything
+
+
+462
+00:18:44,746 --> 00:18:46,216
+about the underlying
+image format.
+
+
+463
+00:18:46,406 --> 00:18:48,296
+That's one nice thing about
+using an OpenCL kernel.
+
+
+464
+00:18:48,446 --> 00:18:51,156
+You can swap out image
+formats and OpenCL,
+
+
+465
+00:18:51,156 --> 00:18:52,666
+the kernel will still do
+the right thing for you.
+
+
+466
+00:18:52,806 --> 00:18:55,606
+And then you're going to
+call the conversion function
+
+
+467
+00:18:55,606 --> 00:18:58,106
+like before, and you're going
+to use another built-in,
+
+
+468
+00:18:58,106 --> 00:18:59,266
+writeimagef, to write
+the output.
+
+
+469
+00:18:59,266 --> 00:19:01,036
+So let's dive into
+the kernel version
+
+
+470
+00:19:01,036 --> 00:19:01,966
+of this conversion function.
+
+
+471
+00:19:02,886 --> 00:19:04,126
+So here it is.
+
+
+472
+00:19:04,176 --> 00:19:05,806
+Now you probably don't
+have a photographic memory,
+
+
+473
+00:19:06,106 --> 00:19:08,406
+but it looks a lot like
+the previous version.
+
+
+474
+00:19:08,546 --> 00:19:09,866
+I do want to call out one thing.
+
+
+475
+00:19:10,356 --> 00:19:12,146
+You can see here that we
+only have one parameter.
+
+
+476
+00:19:12,146 --> 00:19:13,446
+We're taking the input pixel
+
+
+477
+00:19:13,446 --> 00:19:15,596
+and then returning a
+float4 output pixel.
+
+
+478
+00:19:16,366 --> 00:19:19,506
+But otherwise, this looks a
+lot like the previous function,
+
+
+479
+00:19:19,506 --> 00:19:21,526
+so let's just bounce back
+and forth between them here.
+
+
+480
+00:19:21,856 --> 00:19:24,796
+So here's the CL version
+and that's the C version.
+
+
+481
+00:19:25,236 --> 00:19:27,506
+So CL, C.
+
+
+482
+00:19:28,316 --> 00:19:29,806
+So you can go back
+afterwards and see
+
+
+483
+00:19:29,806 --> 00:19:32,156
+that they're almost identical,
+so it really is just the guts
+
+
+484
+00:19:32,156 --> 00:19:34,106
+of the loop that
+we've extracted out.
+
+
+485
+00:19:34,106 --> 00:19:37,336
+That's not always that easy, but
+usually this is where you start
+
+
+486
+00:19:37,336 --> 00:19:39,936
+when you're writing
+your CL kernel.
+
+
+487
+00:19:40,056 --> 00:19:41,806
+So let's talk for a second
+about the runtime API.
+
+
+488
+00:19:42,496 --> 00:19:44,676
+Now, if you look at the OpenCL
+API there's a lot of functions
+
+
+489
+00:19:44,676 --> 00:19:47,546
+in there, but really they break
+down into three categories,
+
+
+490
+00:19:47,546 --> 00:19:50,446
+I'd say, discovery,
+setup, and execution.
+
+
+491
+00:19:51,216 --> 00:19:51,936
+Discovery.
+
+
+492
+00:19:52,056 --> 00:19:55,446
+That lets you ask, "hey,
+OpenCL, what devices are there
+
+
+493
+00:19:55,446 --> 00:19:56,836
+on my Mac for doing compute?"
+
+
+494
+00:19:56,836 --> 00:19:57,406
+Straightforward.
+
+
+495
+00:19:57,406 --> 00:20:00,216
+And then more interestingly,
+"hey, given this device,
+
+
+496
+00:20:00,356 --> 00:20:02,066
+what's the best way
+to break up my work?"
+
+
+497
+00:20:02,676 --> 00:20:05,576
+And that's because your
+integrated GPU and your CPU
+
+
+498
+00:20:05,576 --> 00:20:07,696
+and your discrete GPU, they
+all have different parallel
+
+
+499
+00:20:07,696 --> 00:20:11,146
+capabilities, so you would
+use the answers from this part
+
+
+500
+00:20:11,146 --> 00:20:14,326
+of the API to decide how to
+break up your work the best.
+
+
+501
+00:20:14,516 --> 00:20:17,126
+Setup. "Hey OpenCL,
+I have this kernel,
+
+
+502
+00:20:17,126 --> 00:20:19,566
+compile it and let me use it."
+
+
+503
+00:20:19,566 --> 00:20:21,316
+Or "hey, OpenCL, set
+aside this memory.
+
+
+504
+00:20:21,316 --> 00:20:22,546
+I'm going to do some
+compute and I want
+
+
+505
+00:20:22,546 --> 00:20:23,356
+to write the result there."
+
+
+506
+00:20:23,796 --> 00:20:25,666
+That's setup, pretty
+straightforward.
+
+
+507
+00:20:25,666 --> 00:20:27,736
+And then finally, execution.
+
+
+508
+00:20:27,736 --> 00:20:30,466
+Once you have this all set
+up, you want to say, "okay,
+
+
+509
+00:20:30,596 --> 00:20:32,496
+fill up that memory with
+this data that I have here
+
+
+510
+00:20:32,496 --> 00:20:34,816
+on the host, or run this
+kernel and run that one.
+
+
+511
+00:20:35,216 --> 00:20:36,636
+Do my work," basically.
+
+
+512
+00:20:37,676 --> 00:20:40,756
+So, hopefully I've
+given you an idea of how
+
+
+513
+00:20:40,756 --> 00:20:42,156
+to start thinking about OpenCL.
+
+
+514
+00:20:43,196 --> 00:20:44,976
+And like I said, if you have
+more questions, come down
+
+
+515
+00:20:44,976 --> 00:20:45,736
+and see us in the lab.
+
+
+516
+00:20:46,116 --> 00:20:47,526
+And with that I'd like
+to hand it off to Abe,
+
+
+517
+00:20:47,526 --> 00:20:49,626
+who's going to talk to you
+about some practical tasks.
+
+
+518
+00:20:49,626 --> 00:20:49,996
+[ Applause ]
+
+
+519
+00:20:49,996 --> 00:20:54,726
+>> Abe: Good afternoon.
+
+
+520
+00:20:55,026 --> 00:20:58,346
+My name's Abe Stevens, and I'm
+an engineer on the OpenCL team,
+
+
+521
+00:20:58,676 --> 00:21:02,376
+and today I'm going to talk
+about some practical tasks
+
+
+522
+00:21:02,376 --> 00:21:06,756
+that you can do with OpenCL,
+and I'm going to focus
+
+
+523
+00:21:06,756 --> 00:21:11,206
+on a couple features that we've
+added for OpenCL and 10.9.
+
+
+524
+00:21:11,806 --> 00:21:14,596
+I'm going to tell you how
+to take advantage of some
+
+
+525
+00:21:14,596 --> 00:21:16,846
+of the program loading
+and compiler features
+
+
+526
+00:21:16,846 --> 00:21:19,206
+that we've added to
+decrease the startup time
+
+
+527
+00:21:19,206 --> 00:21:22,916
+of your applications, and then
+I'm going to take a step back
+
+
+528
+00:21:22,916 --> 00:21:27,866
+and talk about how to save
+power on laptop configurations
+
+
+529
+00:21:27,866 --> 00:21:32,486
+by using the discrete GPU and
+setting your application up so
+
+
+530
+00:21:32,486 --> 00:21:34,886
+that it can transition
+to the integrated CPU,
+
+
+531
+00:21:35,146 --> 00:21:39,816
+since we now support
+Intel HD graphics on all
+
+
+532
+00:21:39,816 --> 00:21:41,346
+of our shipping configurations.
+
+
+533
+00:21:41,656 --> 00:21:43,336
+And then I'm going to talk
+about a couple features
+
+
+534
+00:21:43,336 --> 00:21:48,486
+that are related in some ways
+to what Jim just told you about.
+
+
+535
+00:21:48,486 --> 00:21:51,956
+Jim was talking about how
+to look at the transfer time
+
+
+536
+00:21:52,246 --> 00:21:55,836
+that your application requires
+to transfer data from the host
+
+
+537
+00:21:55,836 --> 00:21:59,616
+to the GPU, and I'm going
+to show you a couple ways
+
+
+538
+00:21:59,616 --> 00:22:02,076
+of reducing that transfer
+time and reducing the amount
+
+
+539
+00:22:02,076 --> 00:22:04,616
+of copying your application
+has to do.
+
+
+540
+00:22:05,036 --> 00:22:07,476
+So let me start off
+by talking about how
+
+
+541
+00:22:07,786 --> 00:22:11,276
+to address the start-up time,
+or the time it takes for you
+
+
+542
+00:22:11,276 --> 00:22:14,116
+to load OpenCL programs when
+you start your application.
+
+
+543
+00:22:14,606 --> 00:22:17,146
+In OpenCL there are really
+three different functions
+
+
+544
+00:22:17,146 --> 00:22:21,176
+that contribute to a slow
+startup: building a CL program,
+
+
+545
+00:22:21,316 --> 00:22:23,986
+compiling that program
+and linking that program,
+
+
+546
+00:22:24,176 --> 00:22:26,866
+which are three different
+steps that a program has to go
+
+
+547
+00:22:26,926 --> 00:22:30,416
+through before you end up
+with an executable binary
+
+
+548
+00:22:30,416 --> 00:22:34,046
+that you can execute on a GPU.
+
+
+549
+00:22:34,136 --> 00:22:37,606
+Now, in OpenCL you can generate
+these programs using three
+
+
+550
+00:22:37,606 --> 00:22:38,926
+different types of input.
+
+
+551
+00:22:38,926 --> 00:22:41,026
+You can start with a
+piece of CL source code,
+
+
+552
+00:22:41,026 --> 00:22:45,476
+and that can be either a string
+that you produced at runtime
+
+
+553
+00:22:45,476 --> 00:22:47,876
+or maybe a string that
+you loaded from a .cl file
+
+
+554
+00:22:47,876 --> 00:22:49,706
+that you shipped with
+your application.
+
+
+555
+00:22:50,026 --> 00:22:54,086
+It can be an LLVM bitcode file,
+and that can be a bitcode file
+
+
+556
+00:22:54,086 --> 00:22:58,476
+that you generated in Xcode
+using a .cl file at build time
+
+
+557
+00:22:58,476 --> 00:22:59,536
+and that was shipped
+with your app.
+
+
+558
+00:23:00,036 --> 00:23:02,976
+And then the third type
+of input that I'll talk
+
+
+559
+00:23:02,976 --> 00:23:07,906
+about the most today is an
+executable binary specifically
+
+
+560
+00:23:08,026 --> 00:23:10,266
+for the device that's in the
+system that's running the app.
+
+
+561
+00:23:10,716 --> 00:23:12,406
+And this is something
+that you can create
+
+
+562
+00:23:12,406 --> 00:23:15,966
+at runtime the first time your
+app launches and then use it
+
+
+563
+00:23:15,966 --> 00:23:20,606
+on subsequent launches to really
+decrease that startup time.
+
+
+564
+00:23:20,606 --> 00:23:24,336
+So let me show you how much
+faster using executable binaries
+
+
+565
+00:23:24,336 --> 00:23:25,196
+can really be.
+
+
+566
+00:23:25,446 --> 00:23:27,316
+Let's say we have a
+really simple application.
+
+
+567
+00:23:27,316 --> 00:23:31,796
+This is a 30-line CL
+kernel which is going
+
+
+568
+00:23:31,796 --> 00:23:34,666
+to load a couple pixels
+or read pixel values.
+
+
+569
+00:23:34,666 --> 00:23:37,346
+It's actually used as
+a macro here to load,
+
+
+570
+00:23:37,656 --> 00:23:41,266
+pixels and a stencil, and then
+it's going to take these values,
+
+
+571
+00:23:41,266 --> 00:23:44,646
+compute them and use them to
+process a simple video effect.
+
+
+572
+00:23:45,176 --> 00:23:48,216
+Now, if you take this
+application or this kernel
+
+
+573
+00:23:48,216 --> 00:23:50,716
+and you sort of set
+up the system
+
+
+574
+00:23:51,046 --> 00:23:53,666
+in the worst possible
+kind of case,
+
+
+575
+00:23:53,666 --> 00:23:57,426
+where the compiler
+service hasn't started,
+
+
+576
+00:23:57,796 --> 00:24:02,426
+the program hasn't ever run
+before, it might take the system
+
+
+577
+00:24:02,466 --> 00:24:06,076
+about 200 milliseconds
+to compile that CL kernel
+
+
+578
+00:24:06,466 --> 00:24:08,376
+and give you an executable
+program binary.
+
+
+579
+00:24:08,376 --> 00:24:11,716
+Now, if you had started with the
+same system in that cold state
+
+
+580
+00:24:11,716 --> 00:24:14,196
+with a bitcode file that
+you generated in Xcode,
+
+
+581
+00:24:14,196 --> 00:24:16,376
+you could do it in about
+half the amount of time,
+
+
+582
+00:24:16,376 --> 00:24:18,666
+so about 80 milliseconds.
+
+
+583
+00:24:18,816 --> 00:24:20,896
+Now, if you had a warm system
+
+
+584
+00:24:21,226 --> 00:24:23,596
+or maybe you'd launched
+the application recently
+
+
+585
+00:24:23,776 --> 00:24:26,106
+and the compiler service
+was started and some
+
+
+586
+00:24:26,106 --> 00:24:30,376
+of the data was cached it
+actually gets a lot faster.
+
+
+587
+00:24:30,546 --> 00:24:33,466
+That source, compiling from
+source, can go down to about 1
+
+
+588
+00:24:33,466 --> 00:24:36,066
+to 2 milliseconds, same
+thing for the bitcode file
+
+
+589
+00:24:36,066 --> 00:24:37,276
+and here is the kicker.
+
+
+590
+00:24:37,276 --> 00:24:39,526
+Here's the really neat thing.
+
+
+591
+00:24:39,966 --> 00:24:42,086
+If you'd had an executable
+binary already,
+
+
+592
+00:24:42,226 --> 00:24:44,496
+and so you could skip
+all that compiler work,
+
+
+593
+00:24:44,796 --> 00:24:48,346
+you could actually get started
+and start executing the program
+
+
+594
+00:24:48,416 --> 00:24:49,676
+in under 1 millisecond.
+
+
+595
+00:24:49,866 --> 00:24:53,256
+So let me show you how to set
+up your application to do that.
+
+
+596
+00:24:53,486 --> 00:24:56,336
+Well the first step is
+to actually start off
+
+
+597
+00:24:56,336 --> 00:25:01,296
+with either a .cl source
+file or a bitcode file,
+
+
+598
+00:25:02,326 --> 00:25:06,336
+and you would want to
+take this and load it
+
+
+599
+00:25:06,336 --> 00:25:08,426
+into your application,
+and in this case I'm going
+
+
+600
+00:25:08,426 --> 00:25:09,846
+to show you how to
+use a bitcode file.
+
+
+601
+00:25:10,236 --> 00:25:13,166
+Bitcode files are a great
+way of avoiding having
+
+
+602
+00:25:13,166 --> 00:25:15,286
+to ship source code
+in your application.
+
+
+603
+00:25:15,286 --> 00:25:19,906
+You can ship the bitcode
+file in this case for 32 GPUs
+
+
+604
+00:25:20,166 --> 00:25:21,206
+and load it at runtime.
+
+
+605
+00:25:21,206 --> 00:25:23,396
+Here I'm going to load
+this using some Cocoa code
+
+
+606
+00:25:23,756 --> 00:25:27,026
+and then pass it to
+CLCreate program with binary
+
+
+607
+00:25:27,026 --> 00:25:28,136
+and then build the program,
+
+
+608
+00:25:28,136 --> 00:25:31,276
+then I end up with this
+executable device binary.
+
+
+609
+00:25:31,916 --> 00:25:36,716
+I can take that binary
+and save it to a cache,
+
+
+610
+00:25:36,716 --> 00:25:38,956
+and I'll show you how to figure
+out where to put that cache
+
+
+611
+00:25:38,956 --> 00:25:40,546
+in a second, but in order
+
+
+612
+00:25:40,546 --> 00:25:43,256
+to extract the binary I
+just call CLGetProgramInfo
+
+
+613
+00:25:43,696 --> 00:25:48,386
+and pack it into a Coca
+data object and then store
+
+
+614
+00:25:48,386 --> 00:25:49,456
+that out to the file system.
+
+
+615
+00:25:49,846 --> 00:25:52,286
+So I call GetProgramInfo and
+get the size of the binary
+
+
+616
+00:25:52,286 --> 00:25:54,626
+and then the actual binary
+data itself, and then send it
+
+
+617
+00:25:54,626 --> 00:25:56,356
+out to the file system.
+
+
+618
+00:25:56,356 --> 00:25:59,306
+Now, let's say the user has
+stopped using the application
+
+
+619
+00:25:59,306 --> 00:26:05,056
+and they started up again
+later on, and I want to figure
+
+
+620
+00:26:05,056 --> 00:26:07,706
+out if I have a cache
+file that I can load.
+
+
+621
+00:26:07,706 --> 00:26:11,336
+So if I look in my
+caches directory,
+
+
+622
+00:26:11,456 --> 00:26:15,616
+I can compute just using
+some simple Cocoa code here,
+
+
+623
+00:26:16,016 --> 00:26:18,356
+a location that a cache file
+would be located and then try
+
+
+624
+00:26:18,356 --> 00:26:22,206
+to pull it into memory, and
+if that's successful, I can go
+
+
+625
+00:26:22,206 --> 00:26:28,396
+and pass the executable binary
+into CLCreateProgram with binary
+
+
+626
+00:26:28,396 --> 00:26:29,436
+and then CLBUild program.
+
+
+627
+00:26:29,436 --> 00:26:30,906
+So that's what I'm
+going to do here.
+
+
+628
+00:26:31,006 --> 00:26:33,306
+You'll notice there's actually
+some error checking code
+
+
+629
+00:26:33,306 --> 00:26:34,346
+in here, and this is important.
+
+
+630
+00:26:35,236 --> 00:26:38,086
+It's possible that
+the runtime will --
+
+
+631
+00:26:38,246 --> 00:26:40,186
+even if you did have that
+binary, even if we were able
+
+
+632
+00:26:40,186 --> 00:26:42,666
+to load it successfully from
+the file system, it's possible
+
+
+633
+00:26:42,666 --> 00:26:46,146
+that the runtime might refuse
+to load an executable binary
+
+
+634
+00:26:46,336 --> 00:26:48,096
+and it could do that for a
+couple of different reasons.
+
+
+635
+00:26:48,096 --> 00:26:52,796
+It might be that your user took
+their home directory and moved
+
+
+636
+00:26:52,796 --> 00:26:54,796
+on to a different machine
+or they moved that binary
+
+
+637
+00:26:55,176 --> 00:26:58,956
+onto a different computer, maybe
+they installed a software update
+
+
+638
+00:26:58,956 --> 00:27:02,066
+and the software update
+installed new graphics driver
+
+
+639
+00:27:02,066 --> 00:27:05,846
+versions and the graphics driver
+versions ended up not supporting
+
+
+640
+00:27:06,036 --> 00:27:08,516
+that particular executable
+binary version.
+
+
+641
+00:27:09,036 --> 00:27:12,106
+And if that happens, your app
+has to have a fallback path
+
+
+642
+00:27:12,436 --> 00:27:13,156
+that it can go back
+
+
+643
+00:27:13,236 --> 00:27:16,716
+to to regenerate the
+executable device binary.
+
+
+644
+00:27:17,186 --> 00:27:20,156
+And so of course, that
+fallback path could be as simple
+
+
+645
+00:27:20,156 --> 00:27:23,756
+as going back to whatever
+mechanism we used two slides ago
+
+
+646
+00:27:23,756 --> 00:27:25,886
+to produce the binary in the
+first place if you go back
+
+
+647
+00:27:25,886 --> 00:27:28,586
+to source code or
+to a bitcode file.
+
+
+648
+00:27:28,786 --> 00:27:32,466
+So after you pull that binary
+from disk and you pass it to CL,
+
+
+649
+00:27:32,906 --> 00:27:36,106
+CreateProgramwith Binary and
+CL build program, check to see
+
+
+650
+00:27:36,106 --> 00:27:40,046
+if this invalid binary error
+came back, and if it did,
+
+
+651
+00:27:40,046 --> 00:27:43,246
+make sure your app is a fallback
+path and of course you won't
+
+
+652
+00:27:43,246 --> 00:27:46,186
+at the sub millisecond build
+time but you'll be able
+
+
+653
+00:27:46,276 --> 00:27:51,406
+to take advantage of the faster
+device executable binary load
+
+
+654
+00:27:51,406 --> 00:27:54,526
+times on subsequent
+launches of your app.
+
+
+655
+00:27:54,616 --> 00:27:58,656
+So I took the code that we
+just saw, and I applied it
+
+
+656
+00:27:58,766 --> 00:28:02,246
+to a couple different
+programs, the 30-line program
+
+
+657
+00:28:02,246 --> 00:28:04,226
+that I showed you the
+very first part of,
+
+
+658
+00:28:04,826 --> 00:28:08,276
+and then a 1,000-line program
+that was actually from an app
+
+
+659
+00:28:08,276 --> 00:28:09,306
+that we were working on,
+
+
+660
+00:28:09,666 --> 00:28:12,896
+and then I had a much larger
+test case, 4,000 line program.
+
+
+661
+00:28:13,186 --> 00:28:15,896
+And you can see that the
+time to load source code
+
+
+662
+00:28:16,226 --> 00:28:18,766
+in each case kind of went
+up quite a bit for each
+
+
+663
+00:28:18,766 --> 00:28:20,736
+of these different programs.
+
+
+664
+00:28:20,736 --> 00:28:22,586
+I went from 200 milliseconds
+
+
+665
+00:28:22,586 --> 00:28:24,876
+to 3,000 milliseconds
+in the worst case.
+
+
+666
+00:28:24,956 --> 00:28:27,086
+But the best case here to load
+
+
+667
+00:28:27,086 --> 00:28:30,556
+that executable binary was
+always under 1 millisecond.
+
+
+668
+00:28:31,166 --> 00:28:33,206
+And so really, depending on --
+
+
+669
+00:28:33,366 --> 00:28:36,496
+regardless of how big your
+program ends up being,
+
+
+670
+00:28:37,146 --> 00:28:39,696
+taking advantage of that
+executable binary can save you a
+
+
+671
+00:28:40,046 --> 00:28:43,836
+lot of time at startup.
+
+
+672
+00:28:43,836 --> 00:28:46,526
+Now I'd like to talk
+about another topic,
+
+
+673
+00:28:46,526 --> 00:28:51,996
+which is that in 10.9, OpenCL
+is supported on integrated GPUs,
+
+
+674
+00:28:51,996 --> 00:28:55,446
+the Intel HD Graphics,
+and of course,
+
+
+675
+00:28:55,646 --> 00:28:57,846
+it's also supported
+on discrete GPUs.
+
+
+676
+00:28:58,116 --> 00:29:00,326
+And so if you're working
+on a configuration
+
+
+677
+00:29:00,326 --> 00:29:01,756
+like this Macbook Pro Retina,
+
+
+678
+00:29:02,296 --> 00:29:07,446
+you'll see that the
+discrete GPU, the Nvidia 650
+
+
+679
+00:29:07,446 --> 00:29:10,176
+and the integrated
+GPU both support CL,
+
+
+680
+00:29:10,606 --> 00:29:13,736
+and if you can take
+advantage of both of those,
+
+
+681
+00:29:13,866 --> 00:29:16,826
+one thing you can do is
+save power for your users.
+
+
+682
+00:29:17,026 --> 00:29:19,346
+And so OpenGL apps
+have actually been able
+
+
+683
+00:29:19,346 --> 00:29:21,246
+to do this for quite some time.
+
+
+684
+00:29:21,456 --> 00:29:24,336
+Now, an OpenGL app running on
+this GPU has a choice to make;
+
+
+685
+00:29:24,656 --> 00:29:27,946
+it can either run only
+on the discrete device
+
+
+686
+00:29:28,436 --> 00:29:31,186
+or it can support what's called
+automatic graphic switching,
+
+
+687
+00:29:31,646 --> 00:29:34,046
+and when it supports automatic
+graphing switching it's been
+
+
+688
+00:29:34,046 --> 00:29:36,166
+written in a certain way
+and it follows conventions
+
+
+689
+00:29:36,436 --> 00:29:39,196
+that allow it to transition
+from the discrete GPU
+
+
+690
+00:29:39,196 --> 00:29:42,326
+to the integrated GPU if the
+system tells it to do so,
+
+
+691
+00:29:42,326 --> 00:29:44,766
+and if it does that,
+all the applications
+
+
+692
+00:29:44,766 --> 00:29:47,076
+in the system are able
+to make that transition,
+
+
+693
+00:29:47,476 --> 00:29:48,936
+that can save power for the user
+
+
+694
+00:29:49,566 --> 00:29:51,426
+when there aren't any
+applications running
+
+
+695
+00:29:51,426 --> 00:29:53,576
+that require that discrete GPU.
+
+
+696
+00:29:53,576 --> 00:29:57,516
+So let me show you how
+to do this with OpenCL.
+
+
+697
+00:29:59,056 --> 00:30:02,146
+Now if you have an
+OpenGL application,
+
+
+698
+00:30:02,466 --> 00:30:04,416
+you probably have
+an NSOpenGLView.
+
+
+699
+00:30:05,046 --> 00:30:06,306
+If you're working
+on an application
+
+
+700
+00:30:06,306 --> 00:30:08,986
+that doesn't use Cocoa, you can
+actually do the same kind --
+
+
+701
+00:30:09,116 --> 00:30:11,116
+perform the same operations
+in a slightly different way,
+
+
+702
+00:30:11,116 --> 00:30:14,256
+but in your NSOpenGLView
+you probably have some code
+
+
+703
+00:30:14,556 --> 00:30:16,776
+that checks to see what the
+current virtual screen is.
+
+
+704
+00:30:16,776 --> 00:30:20,776
+And here, my NSOpenGL
+View is keeping track
+
+
+705
+00:30:20,856 --> 00:30:24,746
+of the last virtual it used
+to render the previous frame,
+
+
+706
+00:30:25,096 --> 00:30:28,166
+and it's going to compare
+that to the virtual screen
+
+
+707
+00:30:28,166 --> 00:30:30,926
+that the GL context is
+asking you to render
+
+
+708
+00:30:30,926 --> 00:30:33,216
+into for the next frame,
+and it'll check to see
+
+
+709
+00:30:33,216 --> 00:30:34,436
+if these two things
+are different.
+
+
+710
+00:30:34,776 --> 00:30:36,926
+And if the two virtual
+screens are mismatched,
+
+
+711
+00:30:37,286 --> 00:30:40,166
+it's going to execute a couple
+of8 GL commands to check and see
+
+
+712
+00:30:40,166 --> 00:30:42,856
+if the new device, that
+new virtual screen,
+
+
+713
+00:30:43,216 --> 00:30:47,116
+the device associated with that
+is capable of running everything
+
+
+714
+00:30:47,116 --> 00:30:48,676
+that it needs to execute.
+
+
+715
+00:30:48,676 --> 00:30:51,086
+And it might adapt its usage,
+it might use smaller textures
+
+
+716
+00:30:51,086 --> 00:30:53,716
+or avoid using certain
+extensions
+
+
+717
+00:30:53,716 --> 00:30:55,826
+or otherwise adapt its usage.
+
+
+718
+00:30:56,056 --> 00:30:58,376
+Now, we want to do the same
+kind of thing in OpenCL
+
+
+719
+00:30:58,426 --> 00:31:01,586
+when we detect that
+this render has changed.
+
+
+720
+00:31:01,856 --> 00:31:04,246
+And so since OpenCL
+doesn't use virtual screens;
+
+
+721
+00:31:04,246 --> 00:31:06,756
+it uses CL Device IDS, we need
+to call the function that --
+
+
+722
+00:31:07,126 --> 00:31:10,176
+actually, Chris showed you this
+function in the previous talk --
+
+
+723
+00:31:10,606 --> 00:31:13,416
+CGLGetDevices for
+CurrentVirtual Screen Apple.
+
+
+724
+00:31:13,536 --> 00:31:16,106
+What that'll do is it'll map
+whatever our current Virtual
+
+
+725
+00:31:16,106 --> 00:31:21,356
+Screen is from a virtual screen
+to, ID'd back to a CL device ID,
+
+
+726
+00:31:21,866 --> 00:31:24,856
+and then we can start creating
+that CL Device ID and learn more
+
+
+727
+00:31:24,856 --> 00:31:27,516
+about the new device that
+we're supposed to use.
+
+
+728
+00:31:29,016 --> 00:31:32,316
+So CL does actually a
+lot of the conversion
+
+
+729
+00:31:32,316 --> 00:31:34,466
+between two devices
+automatically because a bit part
+
+
+730
+00:31:34,466 --> 00:31:37,726
+of the OpenCL API is the ability
+to work with multiple devices
+
+
+731
+00:31:38,316 --> 00:31:40,496
+and to say run operations
+
+
+732
+00:31:40,496 --> 00:31:43,036
+on two different CPUs,
+or the CPU and GPU.
+
+
+733
+00:31:43,386 --> 00:31:46,546
+So a lot of the CL objects
+are context level objects,
+
+
+734
+00:31:46,846 --> 00:31:50,196
+and they'll handle sort of
+switching from one device
+
+
+735
+00:31:50,196 --> 00:31:51,156
+to another automatically.
+
+
+736
+00:31:51,416 --> 00:31:53,296
+Memory objects, images
+and buffers will do that.
+
+
+737
+00:31:54,046 --> 00:31:56,726
+CL kernel objects will handle
+moving between the two devices
+
+
+738
+00:31:56,726 --> 00:31:59,636
+and of course programs, if
+they're built for both devices,
+
+
+739
+00:31:59,636 --> 00:32:01,506
+will handle the transition
+as well.
+
+
+740
+00:32:01,506 --> 00:32:03,266
+Also if you have
+an event dependency
+
+
+741
+00:32:03,626 --> 00:32:06,016
+or you create an event
+on one command cue,
+
+
+742
+00:32:06,396 --> 00:32:09,816
+that event will sort of work
+and will track a dependency
+
+
+743
+00:32:09,816 --> 00:32:13,046
+if you associate it -- or you
+tell a command that's cued
+
+
+744
+00:32:13,046 --> 00:32:14,776
+on a different command
+cue to wait for the event.
+
+
+745
+00:32:15,476 --> 00:32:16,626
+There are a couple of things
+
+
+746
+00:32:16,626 --> 00:32:17,966
+that you need to
+check in OpenCL.
+
+
+747
+00:32:18,416 --> 00:32:21,376
+And those are that you have
+to make sure your context
+
+
+748
+00:32:21,376 --> 00:32:23,246
+that you're using
+contains both devices
+
+
+749
+00:32:23,246 --> 00:32:26,286
+and so you can create
+command cues for both devices.
+
+
+750
+00:32:26,286 --> 00:32:29,326
+And of course, you have to make
+sure that if you create programs
+
+
+751
+00:32:29,876 --> 00:32:34,186
+for the two devices,
+that you create them
+
+
+752
+00:32:34,186 --> 00:32:39,316
+for either the right executable
+binaries, or if there are PPUs
+
+
+753
+00:32:39,316 --> 00:32:41,466
+in this case, that
+you create them
+
+
+754
+00:32:41,466 --> 00:32:43,626
+with this GPU 32 bitcode file.
+
+
+755
+00:32:44,206 --> 00:32:47,056
+And so there are other things
+
+
+756
+00:32:47,056 --> 00:32:48,076
+that you might have
+to check as well.
+
+
+757
+00:32:48,076 --> 00:32:49,746
+These are less common.
+
+
+758
+00:32:49,746 --> 00:32:52,126
+It's possible that if your
+program is using Double
+
+
+759
+00:32:52,126 --> 00:32:54,526
+Precision and you have
+some highly tuned numerics
+
+
+760
+00:32:54,526 --> 00:32:57,176
+in your program,
+when you compile this
+
+
+761
+00:32:57,576 --> 00:32:59,946
+for the integrated
+device, it'll be --
+
+
+762
+00:33:00,246 --> 00:33:02,496
+instead of running
+with double it'll run
+
+
+763
+00:33:02,496 --> 00:33:04,516
+with single prevision floating
+point, and you have to make sure
+
+
+764
+00:33:04,516 --> 00:33:06,946
+that that's enough precision
+for your application.
+
+
+765
+00:33:07,656 --> 00:33:11,696
+Another thing to check is
+that a lot of the capabilities
+
+
+766
+00:33:11,996 --> 00:33:14,136
+of the devices are a
+little bit different,
+
+
+767
+00:33:14,216 --> 00:33:18,566
+and so the kernel work group
+size of the integrated GPU
+
+
+768
+00:33:18,566 --> 00:33:20,776
+and the discrete GPU
+will be different,
+
+
+769
+00:33:20,776 --> 00:33:24,786
+so when you initialize OpenCL,
+you compile your programs,
+
+
+770
+00:33:25,196 --> 00:33:27,906
+you should check to see what
+your kernel work group size is
+
+
+771
+00:33:27,906 --> 00:33:30,426
+of the discrete GPU, of course,
+and record that and figure
+
+
+772
+00:33:30,426 --> 00:33:33,086
+out how large of
+kernels to launch,
+
+
+773
+00:33:33,326 --> 00:33:35,446
+and then do the same thing
+for the integrated GPU.
+
+
+774
+00:33:35,446 --> 00:33:38,516
+That way when you detect this
+switch, it'll be really easy
+
+
+775
+00:33:38,516 --> 00:33:40,406
+for you to switch
+to in cuing kernels
+
+
+776
+00:33:40,816 --> 00:33:46,446
+that use the appropriate likely
+smaller work group sizes.
+
+
+777
+00:33:47,106 --> 00:33:49,216
+So now I'd like to go over a
+couple of performance features
+
+
+778
+00:33:49,216 --> 00:33:52,936
+that we've added in 10.9,
+and these features have to do
+
+
+779
+00:33:52,936 --> 00:33:58,186
+with reducing the cost of memory
+transfers or reducing the time
+
+
+780
+00:33:58,186 --> 00:33:59,876
+that our application
+will spend waiting
+
+
+781
+00:33:59,876 --> 00:34:01,146
+for transfers to complete.
+
+
+782
+00:34:01,146 --> 00:34:02,736
+And the first thing
+I'd like to talk
+
+
+783
+00:34:02,736 --> 00:34:04,716
+about is buffers and images.
+
+
+784
+00:34:05,126 --> 00:34:10,096
+In OpenCL, buffers are
+really just like pointers
+
+
+785
+00:34:10,096 --> 00:34:11,775
+to memory in your kernel.
+
+
+786
+00:34:11,775 --> 00:34:13,076
+You can read and write them,
+
+
+787
+00:34:13,216 --> 00:34:15,556
+manipulate them as
+global pointers.
+
+
+788
+00:34:15,556 --> 00:34:18,216
+You probably saw those in the
+example Jim showed earlier.
+
+
+789
+00:34:19,335 --> 00:34:24,016
+Buffers support atomic
+operations and on most GPUs,
+
+
+790
+00:34:24,406 --> 00:34:26,496
+the global memory that you use
+
+
+791
+00:34:26,496 --> 00:34:29,476
+to access buffers is
+usually not cached,
+
+
+792
+00:34:29,476 --> 00:34:32,146
+and so sometimes it
+can be higher latency
+
+
+793
+00:34:32,146 --> 00:34:35,516
+to access tasks as
+buffer objects.
+
+
+794
+00:34:35,886 --> 00:34:37,916
+Image objects are kind
+of like GL textures.
+
+
+795
+00:34:38,706 --> 00:34:40,956
+They're either read
+only or write only,
+
+
+796
+00:34:40,956 --> 00:34:43,876
+so you have to decide when
+you're writing a kernel
+
+
+797
+00:34:43,876 --> 00:34:46,235
+if you're going to either
+only read or only write
+
+
+798
+00:34:46,235 --> 00:34:49,446
+for a particular object.
+
+
+799
+00:34:49,976 --> 00:34:51,916
+And they support
+harbor filtering.
+
+
+800
+00:34:52,906 --> 00:34:54,866
+So what if you had an instance
+
+
+801
+00:34:54,866 --> 00:34:56,196
+where you wanted
+to support both?
+
+
+802
+00:34:56,196 --> 00:35:00,826
+Say for example, you
+had this set of kernels
+
+
+803
+00:35:00,826 --> 00:35:06,396
+where you have a histogram
+operation and then you would
+
+
+804
+00:35:06,396 --> 00:35:08,786
+like to output data in
+a floating point array
+
+
+805
+00:35:08,786 --> 00:35:13,226
+but then later on, perform a
+read image operation where you'd
+
+
+806
+00:35:13,226 --> 00:35:14,676
+like some hardware
+texture filtering.
+
+
+807
+00:35:15,076 --> 00:35:18,726
+Well, in 10.9 we
+supported the image 2D
+
+
+808
+00:35:18,726 --> 00:35:21,236
+for buffering extension,
+and this allows us
+
+
+809
+00:35:21,236 --> 00:35:24,786
+to basically take a buffer
+object that we've created here
+
+
+810
+00:35:25,016 --> 00:35:26,556
+and wrap it with
+an image object.
+
+
+811
+00:35:27,116 --> 00:35:30,146
+So here the image
+object has been sized
+
+
+812
+00:35:30,146 --> 00:35:34,376
+so that it contains enough
+pixels to fill the buffer,
+
+
+813
+00:35:34,916 --> 00:35:41,176
+and I'm essentially wrapping the
+allocated buffer with an image,
+
+
+814
+00:35:41,476 --> 00:35:43,976
+and then in my kernel
+I'll be able to --
+
+
+815
+00:35:44,036 --> 00:35:45,916
+or in two different
+kernels, I'll be able
+
+
+816
+00:35:45,916 --> 00:35:49,716
+to access the same underlying
+piece of memory once as a buffer
+
+
+817
+00:35:49,716 --> 00:35:51,116
+and then also as an image.
+
+
+818
+00:35:51,676 --> 00:35:53,596
+So when you're using
+image 2D from buffer,
+
+
+819
+00:35:53,596 --> 00:35:55,656
+you have to be careful of a
+couple of different things.
+
+
+820
+00:35:56,106 --> 00:35:58,526
+One thing is that if you've
+created the buffer using
+
+
+821
+00:35:58,526 --> 00:36:00,956
+UseHostPointer, which
+is a popular technique,
+
+
+822
+00:36:00,956 --> 00:36:03,876
+you have to make sure that
+the UseHostPointer address
+
+
+823
+00:36:03,876 --> 00:36:07,486
+that you pass in matches the
+device's base address alignment.
+
+
+824
+00:36:08,016 --> 00:36:10,196
+You also have to make sure
+that if you specify a row pitch
+
+
+825
+00:36:10,526 --> 00:36:12,556
+that the row pitch
+matches or is a multiple
+
+
+826
+00:36:12,556 --> 00:36:15,236
+of the pitch alignment for
+that particular device.
+
+
+827
+00:36:15,756 --> 00:36:20,686
+Now, in computeApps,
+data movement is --
+
+
+828
+00:36:20,686 --> 00:36:22,926
+there are a lot of different
+patterns for data movement
+
+
+829
+00:36:22,926 --> 00:36:24,316
+and Jim talked about
+a few of these
+
+
+830
+00:36:24,776 --> 00:36:27,846
+in the previous section
+of the talk.
+
+
+831
+00:36:28,536 --> 00:36:32,626
+One common pattern is a pattern
+where you write some data
+
+
+832
+00:36:32,626 --> 00:36:35,836
+to the device, you process
+on it, you execute a couple
+
+
+833
+00:36:35,836 --> 00:36:38,316
+of kernels, and then
+you read back that data.
+
+
+834
+00:36:38,976 --> 00:36:42,216
+And so that would look something
+like this, and this is common
+
+
+835
+00:36:42,386 --> 00:36:44,776
+in say video kind of operation
+
+
+836
+00:36:44,776 --> 00:36:49,506
+where for each frame you're
+writing it to ComputeDevice,
+
+
+837
+00:36:50,066 --> 00:36:52,346
+processing it for a little
+while, and then reading it back
+
+
+838
+00:36:52,516 --> 00:36:53,786
+and maybe encoding it.
+
+
+839
+00:36:54,306 --> 00:36:57,546
+In this kind of a
+system, let's say it takes
+
+
+840
+00:36:57,546 --> 00:37:00,656
+about 2 milliseconds to
+move those pieces of data
+
+
+841
+00:37:00,656 --> 00:37:03,116
+to the device and 6 milliseconds
+to do the processing.
+
+
+842
+00:37:03,116 --> 00:37:07,016
+Well, that would be about 10
+milliseconds per iteration.
+
+
+843
+00:37:07,016 --> 00:37:10,206
+And so if I was going
+to do 100 iterations,
+
+
+844
+00:37:10,206 --> 00:37:12,336
+I'd end up spending
+1,000 milliseconds
+
+
+845
+00:37:12,336 --> 00:37:14,926
+and I'd only really actually
+be doing compute work
+
+
+846
+00:37:15,416 --> 00:37:18,876
+for 60% of that time.
+
+
+847
+00:37:19,446 --> 00:37:23,356
+Well, it turns out in many
+discrete GPUs there's some DMA
+
+
+848
+00:37:23,356 --> 00:37:27,046
+hardware that can allow us to
+overlap the read and write work
+
+
+849
+00:37:27,046 --> 00:37:27,826
+with the compute work.
+
+
+850
+00:37:27,826 --> 00:37:31,636
+And so if we take a look
+at a piece of compute work,
+
+
+851
+00:37:31,676 --> 00:37:35,506
+say integration N here,
+we can try to think
+
+
+852
+00:37:35,506 --> 00:37:37,856
+about what the system
+might schedule using
+
+
+853
+00:37:37,856 --> 00:37:40,956
+in a DMA engine for iteration N.
+
+
+854
+00:37:41,076 --> 00:37:45,786
+So for example, the system
+could schedule the readback
+
+
+855
+00:37:45,956 --> 00:37:46,776
+of the previous frame.
+
+
+856
+00:37:46,776 --> 00:37:48,706
+So we know that the
+system is done,
+
+
+857
+00:37:48,706 --> 00:37:52,946
+the GPU is done processing
+work for NMIs 1
+
+
+858
+00:37:53,416 --> 00:37:56,866
+and so it can do the
+readback for that frame.
+
+
+859
+00:37:56,866 --> 00:37:58,706
+It could also actually,
+since there's no dependency
+
+
+860
+00:37:58,706 --> 00:38:01,086
+between each frame, it
+could also do the --
+
+
+861
+00:38:01,166 --> 00:38:04,716
+it could also write for
+it and write iteration
+
+
+862
+00:38:04,776 --> 00:38:07,256
+and +1s data out to the GPU.
+
+
+863
+00:38:07,256 --> 00:38:08,546
+And so if we repeat
+this pattern,
+
+
+864
+00:38:08,916 --> 00:38:11,796
+we can see that we can
+keep the DMAengine busy
+
+
+865
+00:38:11,936 --> 00:38:13,816
+and also keep the
+computeEngine busy
+
+
+866
+00:38:13,816 --> 00:38:15,686
+for most of these iterations.
+
+
+867
+00:38:15,926 --> 00:38:19,316
+And so if I look across
+all of my 100 iterations,
+
+
+868
+00:38:19,606 --> 00:38:22,456
+I might be able to do this
+in about 40% less time --
+
+
+869
+00:38:22,456 --> 00:38:25,136
+a little more than 40% the time
+
+
+870
+00:38:25,136 --> 00:38:27,416
+by fully subscribing
+both the DMA
+
+
+871
+00:38:27,416 --> 00:38:29,736
+and the compute sides
+of the device.
+
+
+872
+00:38:29,956 --> 00:38:32,486
+To set this up in OpenCL,
+I'd want to write some code
+
+
+873
+00:38:32,486 --> 00:38:33,656
+that looks something like this.
+
+
+874
+00:38:34,026 --> 00:38:36,346
+Here I'm using nonblocking
+read and write commands,
+
+
+875
+00:38:36,576 --> 00:38:38,626
+and of course my
+EnqueueKerneland my
+
+
+876
+00:38:38,626 --> 00:38:41,856
+EnqueueNDRange command is always
+nonblocking, so I'm going to set
+
+
+877
+00:38:41,856 --> 00:38:46,276
+up the first kernel and
+then have a pipeline loop
+
+
+878
+00:38:46,786 --> 00:38:49,436
+that iterates over
+the body of the work,
+
+
+879
+00:38:49,436 --> 00:38:53,036
+and then at the end I clean that
+up by enqueueing the last kernel
+
+
+880
+00:38:53,036 --> 00:38:54,606
+and then reading
+back the last result.
+
+
+881
+00:38:54,886 --> 00:38:57,526
+And this code will work for
+M input and output buffers.
+
+
+882
+00:38:57,526 --> 00:39:01,906
+In a sort of practical system
+I'd probably have a relatively
+
+
+883
+00:39:01,906 --> 00:39:04,176
+much smaller pool of buffers
+that I'd work on, much smaller
+
+
+884
+00:39:04,176 --> 00:39:07,356
+than say 100 buffers, and I
+might have to track dependencies
+
+
+885
+00:39:07,796 --> 00:39:13,166
+and make sure that it's
+safe to reuse a buffer
+
+
+886
+00:39:13,166 --> 00:39:16,676
+after it's been sent
+to the device.
+
+
+887
+00:39:17,566 --> 00:39:22,526
+So before I close, I'd like to
+talk about some programming tips
+
+
+888
+00:39:22,526 --> 00:39:25,296
+for using OpenCL and
+these apply to 10.9
+
+
+889
+00:39:25,296 --> 00:39:28,176
+and to the other implementations
+of OpenCL that we've shipped.
+
+
+890
+00:39:28,526 --> 00:39:31,386
+One tip that we have is
+that when you're able to,
+
+
+891
+00:39:31,386 --> 00:39:35,166
+you should prefer passing page
+line pointers to the system.
+
+
+892
+00:39:35,546 --> 00:39:38,036
+So if you create or an image
+as a used host pointer,
+
+
+893
+00:39:38,036 --> 00:39:41,566
+try to pass in something that
+page lined, you can also pass
+
+
+894
+00:39:41,566 --> 00:39:44,796
+in pageline pointers when you
+have to read or write data
+
+
+895
+00:39:45,316 --> 00:39:47,176
+into the system and
+the driver will try
+
+
+896
+00:39:47,176 --> 00:39:49,226
+to take an optimized
+path when you do that.
+
+
+897
+00:39:49,646 --> 00:39:51,376
+One way of getting
+pageline pointers is
+
+
+898
+00:39:51,376 --> 00:39:54,246
+to call POSIX Memoline
+instead of Malik
+
+
+899
+00:39:54,306 --> 00:39:55,886
+when you're allocating
+a host buffer.
+
+
+900
+00:39:57,116 --> 00:39:59,716
+Another tip that we have
+is to avoid using CLFInish.
+
+
+901
+00:39:59,716 --> 00:40:02,536
+It's great for debugging
+and for isolating a problem
+
+
+902
+00:40:02,536 --> 00:40:07,946
+in your code, but it'll create
+sort of large bottlenecks
+
+
+903
+00:40:07,946 --> 00:40:11,816
+or bubbles in your
+pipeline, and is not something
+
+
+904
+00:40:12,096 --> 00:40:14,966
+that you should use in
+production code in most cases.
+
+
+905
+00:40:15,366 --> 00:40:18,436
+If you do need help debugging,
+you can use CLLog error,
+
+
+906
+00:40:18,786 --> 00:40:20,646
+which is an environment
+variable that you can set
+
+
+907
+00:40:20,646 --> 00:40:22,626
+and it will turn on
+verbose log messages
+
+
+908
+00:40:23,036 --> 00:40:25,266
+in case there's an API
+problem, or if you're trying
+
+
+909
+00:40:25,266 --> 00:40:27,186
+to debug a problem with
+a kernel on the GPU,
+
+
+910
+00:40:27,186 --> 00:40:28,916
+consider using printf.
+
+
+911
+00:40:30,446 --> 00:40:35,136
+So Open CL Mavericks, today
+we talked about a mechanism
+
+
+912
+00:40:35,136 --> 00:40:38,326
+for loading your program faster
+using executable binaries,
+
+
+913
+00:40:38,516 --> 00:40:40,796
+and the important part there
+was to have a fallback mechanism
+
+
+914
+00:40:41,306 --> 00:40:43,096
+so that if there is a binary
+
+
+915
+00:40:43,096 --> 00:40:46,186
+and compatibility your app
+can fall back and load either
+
+
+916
+00:40:46,186 --> 00:40:48,066
+from the code files
+or from source.
+
+
+917
+00:40:48,386 --> 00:40:50,476
+Then we talked about how to
+make sure your app follows the
+
+
+918
+00:40:50,476 --> 00:40:51,646
+conventions that are necessary
+
+
+919
+00:40:51,646 --> 00:40:53,686
+to support automatic
+graphic switching
+
+
+920
+00:40:53,686 --> 00:40:56,556
+so that you can reduce
+battery life if you're able
+
+
+921
+00:40:56,556 --> 00:40:58,416
+to move everything over
+to the integrated GPU.
+
+
+922
+00:40:59,116 --> 00:41:01,476
+And lastly, we talked
+about a couple mechanisms
+
+
+923
+00:41:01,476 --> 00:41:04,636
+that are available to
+decrease the overhead of having
+
+
+924
+00:41:04,636 --> 00:41:06,986
+to copy data from the
+host to the device.
+
+
+925
+00:41:07,396 --> 00:41:12,056
+And so now I'd like to hand
+the talk over to David McGavran
+
+
+926
+00:41:12,056 --> 00:41:16,136
+from Adobe, who's going to tell
+us about how he's used OpenCL
+
+
+927
+00:41:16,266 --> 00:41:20,466
+and Adobe Premiere Pro, and
+I think he has a demo for us.
+
+
+928
+00:41:20,741 --> 00:41:22,741
+[ Applause ]
+
+
+929
+00:41:23,016 --> 00:41:24,686
+>> David McGavran:
+Good afternoon.
+
+
+930
+00:41:24,686 --> 00:41:27,896
+My name's David McGavran, I'm
+the senior engineering manager
+
+
+931
+00:41:27,896 --> 00:41:28,966
+on Adobe Premiere Pro.
+
+
+932
+00:41:29,766 --> 00:41:33,016
+So about a year and a
+half ago, we announced
+
+
+933
+00:41:33,116 --> 00:41:36,156
+that we ported the
+entire GP rendering engine
+
+
+934
+00:41:36,156 --> 00:41:38,306
+in Premiere Pro to OpenCL.
+
+
+935
+00:41:38,306 --> 00:41:39,706
+That was a big announcement
+for us.
+
+
+936
+00:41:39,706 --> 00:41:42,396
+It was a really exciting
+time for us and we were doing
+
+
+937
+00:41:42,396 --> 00:41:45,216
+that specifically to
+target the Macbook Pro
+
+
+938
+00:41:45,216 --> 00:41:46,936
+that shipped at that time.
+
+
+939
+00:41:46,936 --> 00:41:50,226
+So we're very excited about
+that, and we came here
+
+
+940
+00:41:50,226 --> 00:41:52,476
+to WWDC last year and we
+talked to this session
+
+
+941
+00:41:52,866 --> 00:41:55,776
+about the improvements we
+made in Premiere using OpenCL
+
+
+942
+00:41:55,776 --> 00:41:57,036
+and it was really exciting.
+
+
+943
+00:41:57,436 --> 00:42:00,176
+This year I want to talk about
+what we've done since then.
+
+
+944
+00:42:00,316 --> 00:42:01,586
+We obviously didn't
+stop working,
+
+
+945
+00:42:01,586 --> 00:42:05,356
+and OpenCL is a great way
+to really excite our users
+
+
+946
+00:42:05,356 --> 00:42:07,426
+and really make them
+enjoy working in Premiere.
+
+
+947
+00:42:08,126 --> 00:42:10,466
+So I want to talk about the
+differences in Premiere Pro CS6
+
+
+948
+00:42:10,466 --> 00:42:14,376
+to what we're doing in Adobe
+Premiere Pro CC that's shipping
+
+
+949
+00:42:14,376 --> 00:42:15,076
+in four days.
+
+
+950
+00:42:15,866 --> 00:42:19,226
+So last year in Premiere Pro
+CS6, we were very careful
+
+
+951
+00:42:19,226 --> 00:42:20,006
+about what we targeted.
+
+
+952
+00:42:20,006 --> 00:42:23,826
+It was a massive effort to port
+the entire GPU engine to OpenCL,
+
+
+953
+00:42:24,386 --> 00:42:25,566
+and so we were very careful.
+
+
+954
+00:42:25,566 --> 00:42:27,116
+We targeted just 2 GPUs.
+
+
+955
+00:42:27,116 --> 00:42:30,346
+We targeted the GPUs that
+were in the Macbook Pro line
+
+
+956
+00:42:30,346 --> 00:42:33,206
+at the time, so the
+650M and the 670M.
+
+
+957
+00:42:33,206 --> 00:42:35,036
+Well, we've been getting
+much better at OpenCL,
+
+
+958
+00:42:35,036 --> 00:42:36,546
+and we've done a
+lot more testing,
+
+
+959
+00:42:36,856 --> 00:42:38,506
+so the first thing we're
+going to do is we're going
+
+
+960
+00:42:38,506 --> 00:42:39,696
+to really increase the places
+
+
+961
+00:42:39,696 --> 00:42:42,046
+where you can use
+Premiere Pro on OpenCL.
+
+
+962
+00:42:42,046 --> 00:42:44,026
+So you can see here,
+we support just
+
+
+963
+00:42:44,026 --> 00:42:47,436
+about every card that's
+shipping in Macintoshes today.
+
+
+964
+00:42:48,106 --> 00:42:49,426
+The other thing that
+we've done is now
+
+
+965
+00:42:49,426 --> 00:42:52,126
+that we know how well we can
+take advantage of OpenCL,
+
+
+966
+00:42:52,636 --> 00:42:54,766
+sometimes cards come out
+after we ship a version.
+
+
+967
+00:42:54,766 --> 00:42:56,336
+So traditionally we've
+white-listed a card,
+
+
+968
+00:42:56,336 --> 00:42:58,126
+and then that's the
+card that would work.
+
+
+969
+00:42:58,126 --> 00:43:00,536
+If you got a new card,
+it took us a little while
+
+
+970
+00:43:00,536 --> 00:43:01,206
+to catch up with you.
+
+
+971
+00:43:01,946 --> 00:43:04,176
+So now that we're really
+confident in OpenCL,
+
+
+972
+00:43:04,176 --> 00:43:06,566
+we're also allowing it so that
+you can turn on a new card
+
+
+973
+00:43:06,566 --> 00:43:10,636
+as a user, and as long as it has
+a gig of RAM on the video card,
+
+
+974
+00:43:10,636 --> 00:43:13,716
+and passes some basic video
+card tests, you'll be confident
+
+
+975
+00:43:13,716 --> 00:43:15,346
+that it's going to
+run well on your GPU,
+
+
+976
+00:43:15,486 --> 00:43:16,496
+so that's pretty exciting.
+
+
+977
+00:43:17,036 --> 00:43:18,486
+So we've really taken advantage
+
+
+978
+00:43:18,486 --> 00:43:22,206
+of all the different
+computers that are out there.
+
+
+979
+00:43:22,406 --> 00:43:25,036
+Furthermore, we've really
+worked hard on continuing
+
+
+980
+00:43:25,036 --> 00:43:26,066
+to improve the program elements.
+
+
+981
+00:43:26,066 --> 00:43:28,576
+We've showed you some pretty
+amazing demos with CS6
+
+
+982
+00:43:28,726 --> 00:43:30,146
+about what you can
+do with OpenCL,
+
+
+983
+00:43:30,666 --> 00:43:32,026
+but we still want to
+always go further.
+
+
+984
+00:43:32,026 --> 00:43:34,176
+We really want to take
+advantage of every bit
+
+
+985
+00:43:34,176 --> 00:43:35,076
+of power on the machine.
+
+
+986
+00:43:35,396 --> 00:43:36,856
+So we did three things.
+
+
+987
+00:43:37,096 --> 00:43:39,536
+Last year we were saying that
+one of the pitfalls we ran
+
+
+988
+00:43:39,536 --> 00:43:41,746
+into with OpenCL was trying
+to get pin memory to work.
+
+
+989
+00:43:42,166 --> 00:43:44,216
+We struggled with it, we didn't
+quite get it done in time,
+
+
+990
+00:43:44,766 --> 00:43:45,756
+we've gotten that done now,
+
+
+991
+00:43:45,916 --> 00:43:48,276
+so OpenCL with pin memory is
+working really well for us,
+
+
+992
+00:43:48,276 --> 00:43:50,916
+and it really shows some real
+world performance improvements.
+
+
+993
+00:43:51,726 --> 00:43:53,036
+We've also been working
+with some of the stuff
+
+
+994
+00:43:53,036 --> 00:43:55,346
+that you saw earlier in these
+slides to take advantage
+
+
+995
+00:43:55,346 --> 00:43:57,956
+of the image to buffer
+translation.
+
+
+996
+00:43:58,356 --> 00:44:00,506
+That was a pretty
+heavy problem for us.
+
+
+997
+00:44:00,506 --> 00:44:02,516
+We have a lot of kernels that
+run really well on images,
+
+
+998
+00:44:02,516 --> 00:44:04,826
+and a lot of kernels that
+run really well on buffers,
+
+
+999
+00:44:05,126 --> 00:44:08,946
+having to copy between those
+was a pretty expensive piece
+
+
+1000
+00:44:08,946 --> 00:44:09,756
+of problem for us.
+
+
+1001
+00:44:09,756 --> 00:44:11,396
+So we take advantage
+of this new thing,
+
+
+1002
+00:44:11,396 --> 00:44:12,296
+and that's quite exciting.
+
+
+1003
+00:44:13,096 --> 00:44:14,766
+You also saw something
+in the keynote
+
+
+1004
+00:44:14,766 --> 00:44:18,366
+about the new Mac Pro
+shipping with dual GPUs.
+
+
+1005
+00:44:18,366 --> 00:44:21,496
+So in Adobe Premiere Pro CC,
+when you're rendering a sequence
+
+
+1006
+00:44:21,496 --> 00:44:24,636
+down to a file, we fully take
+advantage of multiple GPUs
+
+
+1007
+00:44:24,636 --> 00:44:27,366
+in your system, so that
+obviously gives you a really big
+
+
+1008
+00:44:27,366 --> 00:44:28,496
+performance improvement
+when you're running
+
+
+1009
+00:44:28,496 --> 00:44:29,316
+on a system like that.
+
+
+1010
+00:44:29,366 --> 00:44:31,166
+So we're really excited about
+the Mac Pro announcement
+
+
+1011
+00:44:31,166 --> 00:44:35,976
+and what it's going to do
+for Premiere Pro customers.
+
+
+1012
+00:44:35,976 --> 00:44:37,906
+So last year -- I
+brought up this slide
+
+
+1013
+00:44:37,906 --> 00:44:41,216
+to show all the different things
+that Premiere does on OpenCL.
+
+
+1014
+00:44:41,436 --> 00:44:44,036
+So if you're doing
+basic video processing,
+
+
+1015
+00:44:44,036 --> 00:44:46,286
+you need to do DM releasing,
+you need to do compositing,
+
+
+1016
+00:44:46,286 --> 00:44:49,036
+you need to use blend modes, you
+need to upload all this stuff
+
+
+1017
+00:44:49,036 --> 00:44:50,606
+onto your graphics card
+and you can do effects,
+
+
+1018
+00:44:50,606 --> 00:44:52,156
+you can do transitions,
+you can do color,
+
+
+1019
+00:44:52,156 --> 00:44:53,196
+effects, and all that stuff.
+
+
+1020
+00:44:54,166 --> 00:44:55,516
+So we always want
+to continue to see
+
+
+1021
+00:44:55,516 --> 00:44:57,506
+if the other stuff
+we can do on the GPU.
+
+
+1022
+00:44:57,506 --> 00:45:00,936
+So this year with Premiere Pro
+CC we've added a few effects.
+
+
+1023
+00:45:00,936 --> 00:45:03,706
+Now, this doesn't really
+look like a big list.
+
+
+1024
+00:45:03,706 --> 00:45:06,746
+We have some new blurs, we have
+wipe and slide, some basic stuff
+
+
+1025
+00:45:06,746 --> 00:45:09,236
+that you would expect for us
+to do on the OpenCL kernels.
+
+
+1026
+00:45:09,946 --> 00:45:12,676
+But on the bottom right there
+you'll see the Lumetri deep
+
+
+1027
+00:45:12,676 --> 00:45:13,296
+color engine.
+
+
+1028
+00:45:13,646 --> 00:45:15,756
+I want to talk about
+that for a little bit.
+
+
+1029
+00:45:16,196 --> 00:45:18,766
+The Lumetri deep color engine
+came from an acquisition we made
+
+
+1030
+00:45:18,766 --> 00:45:19,916
+about a year and a half ago.
+
+
+1031
+00:45:19,916 --> 00:45:22,016
+It's a technology from
+a company called Aridos.
+
+
+1032
+00:45:22,636 --> 00:45:25,576
+They have a super high-end color
+grading application called Speed
+
+
+1033
+00:45:25,576 --> 00:45:29,106
+grade, and that was a very,
+very powerful application
+
+
+1034
+00:45:29,106 --> 00:45:30,226
+that they used to do things
+
+
+1035
+00:45:30,226 --> 00:45:33,506
+like grade the entire Blue
+ray release of James Bond --
+
+
+1036
+00:45:33,946 --> 00:45:35,576
+all the entire series.
+
+
+1037
+00:45:36,356 --> 00:45:39,156
+We took that entire GPU
+engine that they had,
+
+
+1038
+00:45:39,396 --> 00:45:40,816
+brought it into Premiere Pro
+
+
+1039
+00:45:40,816 --> 00:45:42,796
+under the Mercury
+Playback engine,
+
+
+1040
+00:45:42,976 --> 00:45:44,576
+and ported it all to OpenCL.
+
+
+1041
+00:45:45,736 --> 00:45:47,166
+So this in itself,
+this omen effect,
+
+
+1042
+00:45:47,586 --> 00:45:50,706
+is built up of 60
+kernels, all doing really,
+
+
+1043
+00:45:50,706 --> 00:45:52,596
+really complicated
+stuff, on the GPU.
+
+
+1044
+00:45:52,596 --> 00:45:55,676
+And this allows the editors
+using Premiere Pro now
+
+
+1045
+00:45:55,676 --> 00:45:59,096
+to actually apply creative
+looks to their movies
+
+
+1046
+00:45:59,396 --> 00:46:00,576
+that I'll show you in
+a demo in a minute,
+
+
+1047
+00:46:00,626 --> 00:46:03,846
+and that just changes the
+way they completely use the
+
+
+1048
+00:46:03,926 --> 00:46:04,586
+Premiere Pro.
+
+
+1049
+00:46:04,586 --> 00:46:06,536
+You cannot do that
+without the GPU.
+
+
+1050
+00:46:06,536 --> 00:46:09,496
+It was a painful experience to
+sit there and use that engine
+
+
+1051
+00:46:09,496 --> 00:46:10,946
+without the GP running
+behind you.
+
+
+1052
+00:46:11,286 --> 00:46:12,656
+So that's how we can
+really take advantage
+
+
+1053
+00:46:12,656 --> 00:46:14,146
+of OpenCL to delight our users.
+
+
+1054
+00:46:15,716 --> 00:46:17,936
+So using these performance
+improvements,
+
+
+1055
+00:46:17,936 --> 00:46:18,646
+what are we seeing?
+
+
+1056
+00:46:19,496 --> 00:46:22,396
+So if we just talk about the pin
+memory, and the image to buffer
+
+
+1057
+00:46:22,496 --> 00:46:25,336
+and just do a simple encode
+without them and with them,
+
+
+1058
+00:46:25,336 --> 00:46:27,776
+we're seeing about a 30%
+performance improvement.
+
+
+1059
+00:46:28,036 --> 00:46:30,876
+That's pretty good, considering
+we got a massive performance
+
+
+1060
+00:46:30,876 --> 00:46:32,976
+improvement just switching
+to OpenCL, so that we can go
+
+
+1061
+00:46:32,976 --> 00:46:35,596
+with another 30%, that's
+pretty good for our users.
+
+
+1062
+00:46:36,486 --> 00:46:38,416
+If we take everything into
+account that we're talking
+
+
+1063
+00:46:38,416 --> 00:46:40,586
+about -- the new blurs,
+the new transitions,
+
+
+1064
+00:46:41,596 --> 00:46:44,586
+and the multiple GPUs, we're
+seeing somewhere upward
+
+
+1065
+00:46:44,586 --> 00:46:46,986
+of 200% performance
+improvements on an encode.
+
+
+1066
+00:46:47,886 --> 00:46:48,826
+This is very exciting.
+
+
+1067
+00:46:48,826 --> 00:46:50,776
+You take Premiere Sequence,
+you render the same sequence
+
+
+1068
+00:46:50,916 --> 00:46:53,456
+with all these optimizations
+and it's 200% faster.
+
+
+1069
+00:46:54,286 --> 00:46:56,306
+This is what OpenCL can
+really do for your users.
+
+
+1070
+00:46:57,816 --> 00:47:00,816
+So last year, after we were
+done with our initial port
+
+
+1071
+00:47:00,816 --> 00:47:03,696
+and all the engineers took
+their breath and calmed
+
+
+1072
+00:47:03,696 --> 00:47:05,686
+down for a little bit, we said
+there were still some things we
+
+
+1073
+00:47:05,686 --> 00:47:07,766
+would like to do with OpenCL
+that we didn't have in CS6.
+
+
+1074
+00:47:07,766 --> 00:47:09,586
+This is a slide we put up.
+
+
+1075
+00:47:10,316 --> 00:47:12,666
+So with Premiere Pro CC --
+again, you can get it in 4 days,
+
+
+1076
+00:47:12,666 --> 00:47:14,636
+we're very excited about that --
+
+
+1077
+00:47:14,636 --> 00:47:17,686
+we've increased the set of
+effects that work in OpenCL.
+
+
+1078
+00:47:19,126 --> 00:47:21,016
+We now support third
+party effects.
+
+
+1079
+00:47:21,016 --> 00:47:23,096
+Now, this is something brand new
+that I didn't talk about yet.
+
+
+1080
+00:47:23,566 --> 00:47:26,266
+Traditionally in Premiere
+Pro CS6 if you went out
+
+
+1081
+00:47:26,266 --> 00:47:29,046
+and bought an effect plug-in
+that works in Premiere,
+
+
+1082
+00:47:29,596 --> 00:47:31,916
+they didn't really get the
+opportunity to use the OpenCL.
+
+
+1083
+00:47:32,116 --> 00:47:33,286
+They could use OpenCL
+but they'd have
+
+
+1084
+00:47:33,286 --> 00:47:37,076
+to take it off the GPU device,
+put it back up on the device
+
+
+1085
+00:47:37,076 --> 00:47:39,536
+in their OpenCL context, do
+the compute, pull it back down
+
+
+1086
+00:47:39,536 --> 00:47:40,806
+and give it back to
+us and we put it back
+
+
+1087
+00:47:40,806 --> 00:47:41,876
+up -- that's not good.
+
+
+1088
+00:47:41,876 --> 00:47:44,256
+So we've now expanded our SDKs
+
+
+1089
+00:47:44,256 --> 00:47:47,216
+so that third party developers
+can actually write their kernel
+
+
+1090
+00:47:47,216 --> 00:47:51,176
+-- their plug-ins and effects
+using OpenCL and stay on the GPU
+
+
+1091
+00:47:51,176 --> 00:47:52,796
+and be as fast as any
+of our native effects.
+
+
+1092
+00:47:52,796 --> 00:47:54,076
+So that's really exciting.
+
+
+1093
+00:47:54,936 --> 00:47:57,826
+We didn't get to GPU
+encoding and decoding,
+
+
+1094
+00:47:57,826 --> 00:47:59,086
+still something we're
+investigating.
+
+
+1095
+00:47:59,086 --> 00:48:01,156
+We're waiting for that to
+make sense for our users,
+
+
+1096
+00:48:01,156 --> 00:48:04,586
+but we did go to do multiple
+GPU support, and that's very,
+
+
+1097
+00:48:04,586 --> 00:48:06,566
+verity exciting, especially
+with the keynote announcements.
+
+
+1098
+00:48:07,566 --> 00:48:09,486
+So another thing that
+we're still interested
+
+
+1099
+00:48:09,486 --> 00:48:11,946
+in doing is taking our scopes
+and putting them on a GPU
+
+
+1100
+00:48:11,946 --> 00:48:12,956
+and we haven't done that yet.
+
+
+1101
+00:48:13,636 --> 00:48:16,456
+We also have some really other
+great ideas that we're not ready
+
+
+1102
+00:48:16,506 --> 00:48:19,716
+to talk about today, because
+OpenCL has really allowed us
+
+
+1103
+00:48:19,786 --> 00:48:20,686
+to do some great stuff.
+
+
+1104
+00:48:21,626 --> 00:48:25,706
+So now I want to
+show you a demo.
+
+
+1105
+00:48:28,226 --> 00:48:32,446
+So here we have Adobe Premiere
+Pro CC, and I'm just going
+
+
+1106
+00:48:32,446 --> 00:48:33,286
+to start playing back here.
+
+
+1107
+00:48:33,286 --> 00:48:36,076
+This is a real project
+done in Premiere Pro.
+
+
+1108
+00:48:36,716 --> 00:48:40,106
+This is the documentary
+about Danny Kaye from Waiting
+
+
+1109
+00:48:40,106 --> 00:48:43,626
+for Lightning, and everything
+you're seeing here is processed
+
+
+1110
+00:48:43,626 --> 00:48:45,636
+on the GPU using OpenCL.
+
+
+1111
+00:48:46,096 --> 00:48:48,316
+You read the files off disk
+on the CPU, you put them
+
+
+1112
+00:48:48,316 --> 00:48:49,926
+up onto the GPU and
+everything that's going
+
+
+1113
+00:48:49,926 --> 00:48:50,956
+on here is on the GPU.
+
+
+1114
+00:48:51,716 --> 00:48:53,236
+I know 4Ks all the rage; some
+
+
+1115
+00:48:53,486 --> 00:48:55,456
+of this footage is
+5K from the Red Epic.
+
+
+1116
+00:48:56,266 --> 00:48:58,246
+There's no proxies, this
+is all full res stuff.
+
+
+1117
+00:48:58,306 --> 00:49:02,106
+We're mixing Canon 5 Vmark 2
+footage, we're mixing DNHXD,
+
+
+1118
+00:49:02,286 --> 00:49:06,586
+pro res, red, red epic, 54K,
+all on this timeline here.
+
+
+1119
+00:49:06,756 --> 00:49:10,026
+All the effects you're seeing
+are being done on OpenCL.
+
+
+1120
+00:49:10,236 --> 00:49:14,106
+So this is really how you can
+change the way you use your
+
+
+1121
+00:49:14,106 --> 00:49:16,316
+applications using OpenCL.
+
+
+1122
+00:49:16,316 --> 00:49:18,016
+So that's pretty exciting.
+
+
+1123
+00:49:18,016 --> 00:49:19,466
+So I want to show you
+one other section here.
+
+
+1124
+00:49:19,466 --> 00:49:21,876
+And so what I'm going
+to do here is I'm going
+
+
+1125
+00:49:22,596 --> 00:49:25,016
+to start playing back this
+section of the timeline
+
+
+1126
+00:49:25,016 --> 00:49:26,026
+and just put it on loop.
+
+
+1127
+00:49:26,456 --> 00:49:31,756
+So here we can now go in and go
+into my timeline here and look
+
+
+1128
+00:49:31,756 --> 00:49:36,896
+for a color corrector in here
+and just add that to this clip.
+
+
+1129
+00:49:36,946 --> 00:49:39,516
+And now you can go over here
+
+
+1130
+00:49:39,616 --> 00:49:44,906
+and you can very easily start
+change the creative look
+
+
+1131
+00:49:44,906 --> 00:49:47,616
+of that effect in Realtime
+while they're playing back.
+
+
+1132
+00:49:48,976 --> 00:49:50,296
+Now, that's pretty
+exciting, right.
+
+
+1133
+00:49:50,296 --> 00:49:52,186
+That changes the way you
+can really edit video.
+
+
+1134
+00:49:52,556 --> 00:49:55,006
+While it's playing back you
+can start adding effects to it.
+
+
+1135
+00:49:55,006 --> 00:49:56,826
+But I did show you
+that last year
+
+
+1136
+00:49:56,826 --> 00:49:58,286
+but this is actually
+something different.
+
+
+1137
+00:49:58,286 --> 00:50:01,056
+This isn't a single
+clip in the timeline.
+
+
+1138
+00:50:01,306 --> 00:50:03,056
+This is a clip composite
+with a bunch of other clips,
+
+
+1139
+00:50:03,056 --> 00:50:06,026
+but that clip itself is a
+nested sequence with a bunch
+
+
+1140
+00:50:06,026 --> 00:50:07,486
+of other video files in it.
+
+
+1141
+00:50:07,836 --> 00:50:11,166
+That's an extremely complex
+set of composites that I'm able
+
+
+1142
+00:50:11,166 --> 00:50:14,646
+to add a color correction to
+and actually edit in real time.
+
+
+1143
+00:50:15,056 --> 00:50:16,126
+So that's pretty exciting.
+
+
+1144
+00:50:16,126 --> 00:50:22,496
+And this is in a Macbook
+Pro retina using 5K footage
+
+
+1145
+00:50:22,786 --> 00:50:25,456
+in real time editing
+without any proxies.
+
+
+1146
+00:50:25,456 --> 00:50:26,616
+So that's pretty exciting right,
+
+
+1147
+00:50:26,616 --> 00:50:28,316
+and that's all possible
+because of OpenCL.
+
+
+1148
+00:50:28,316 --> 00:50:33,376
+So I talked a little bit about
+the Lumetri deep color engine,
+
+
+1149
+00:50:33,896 --> 00:50:35,536
+so here's another movie clip.
+
+
+1150
+00:50:35,536 --> 00:50:37,186
+This is from a movie
+called "Whalen's Song."
+
+
+1151
+00:50:37,876 --> 00:50:41,316
+And here you can see it looks
+like, it's good, it's pretty,
+
+
+1152
+00:50:41,516 --> 00:50:43,146
+but this is sort of how
+it comes off the camera.
+
+
+1153
+00:50:44,066 --> 00:50:45,826
+And that looks nice,
+but let's try
+
+
+1154
+00:50:45,826 --> 00:50:47,986
+to make this look a
+little bit more cinematic.
+
+
+1155
+00:50:48,316 --> 00:50:49,956
+It's what you'd expect
+to see in teh theater.
+
+
+1156
+00:50:50,396 --> 00:50:51,716
+So the first thing I'm going
+to do is I'm going to just put
+
+
+1157
+00:50:51,716 --> 00:50:56,856
+down a mat so you get that sort
+of cinematic wide screen look,
+
+
+1158
+00:50:57,376 --> 00:50:59,786
+and I'm going to go into my
+what we call a looks browser.
+
+
+1159
+00:50:59,786 --> 00:51:02,746
+So looks are very
+complex descriptions
+
+
+1160
+00:51:02,746 --> 00:51:06,266
+of what you can do
+with video grading.
+
+
+1161
+00:51:07,316 --> 00:51:10,186
+So it's not just a
+color correction;
+
+
+1162
+00:51:10,186 --> 00:51:13,856
+it can add vignettes, masks,
+feathering, very complex stuff
+
+
+1163
+00:51:13,856 --> 00:51:16,086
+to creatively change the
+way your video looks.
+
+
+1164
+00:51:16,086 --> 00:51:18,486
+So this is our look
+browser and these are
+
+
+1165
+00:51:18,486 --> 00:51:19,436
+like I said everything in there.
+
+
+1166
+00:51:19,436 --> 00:51:22,336
+I'm just going to apply
+that to an adjustment layer.
+
+
+1167
+00:51:23,066 --> 00:51:25,516
+And all of a sudden,
+you know have a sort
+
+
+1168
+00:51:25,516 --> 00:51:27,596
+of a more cinematic
+look to your video.
+
+
+1169
+00:51:27,596 --> 00:51:30,316
+This is very complex way,
+and this is what you can do
+
+
+1170
+00:51:30,316 --> 00:51:31,636
+when you're shooting with
+some of these new cameras
+
+
+1171
+00:51:31,636 --> 00:51:33,636
+that are shooting
+in logC and you want
+
+
+1172
+00:51:33,636 --> 00:51:36,556
+to give your director
+much more of a look
+
+
+1173
+00:51:36,556 --> 00:51:37,556
+of what your film's
+going to look
+
+
+1174
+00:51:37,556 --> 00:51:38,796
+like when it goes
+to the big screen.
+
+
+1175
+00:51:39,096 --> 00:51:40,586
+You can do this now
+in the process
+
+
+1176
+00:51:40,586 --> 00:51:42,406
+of editing video in real time.
+
+
+1177
+00:51:42,716 --> 00:51:44,936
+This is all happening
+on the GPU using OpenCL.
+
+
+1178
+00:51:45,356 --> 00:51:46,196
+So we're really excited
+
+
+1179
+00:51:46,196 --> 00:51:48,176
+about the way OpenCL's
+allowing our users to do things
+
+
+1180
+00:51:48,176 --> 00:51:50,946
+that they could never actually
+do before in a video editor.
+
+
+1181
+00:51:51,386 --> 00:51:53,086
+So that's Adobe Premiere Pro CC
+
+
+1182
+00:51:53,086 --> 00:51:55,576
+and all the great improvements
+we made with OpenCL.
+
+
+1183
+00:51:56,256 --> 00:52:07,626
+So thank you very much, and I'm
+going to give it back to Abe.
+
+
+1184
+00:52:07,626 --> 00:52:07,693
+[ Applause ]
+
+
+1185
+00:52:07,693 --> 00:52:07,916
+>> Abe: Okay.
+
+
+1186
+00:52:08,426 --> 00:52:11,476
+Well, thanks for coming
+this session and listening
+
+
+1187
+00:52:11,476 --> 00:52:13,676
+to what we had to tell you here
+
+
+1188
+00:52:13,676 --> 00:52:16,116
+about using OpenCL
+and Mavericks.
+
+
+1189
+00:52:16,396 --> 00:52:20,556
+If you have more questions
+about using OpenCL and 10.9
+
+
+1190
+00:52:20,556 --> 00:52:22,716
+or about anything that you
+saw here in this session,
+
+
+1191
+00:52:23,116 --> 00:52:26,876
+you should talk to Alan
+Schaefer who's our Graphics
+
+
+1192
+00:52:26,876 --> 00:52:28,516
+and Games Technology evangelist.
+
+
+1193
+00:52:28,906 --> 00:52:30,856
+Also, there are a couple
+of related sessions
+
+
+1194
+00:52:30,856 --> 00:52:31,976
+that you might want
+to take a look at.
+
+
+1195
+00:52:32,606 --> 00:52:35,936
+Now, the first session here
+actually happened earlier today
+
+
+1196
+00:52:36,326 --> 00:52:38,036
+in this room.
+
+
+1197
+00:52:38,036 --> 00:52:39,556
+It was the OpenGL session.
+
+
+1198
+00:52:39,816 --> 00:52:43,186
+There's also a session on Core
+Image, which is the technology
+
+
+1199
+00:52:43,296 --> 00:52:45,576
+in Mavericks that uses OpenCL
+
+
+1200
+00:52:45,896 --> 00:52:47,656
+and thanks very much
+for your attention.
+
+
+1201
+00:52:48,156 --> 00:53:02,400
+[ Applause ]
+

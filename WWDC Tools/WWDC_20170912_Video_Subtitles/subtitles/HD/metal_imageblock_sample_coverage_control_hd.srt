@@ -1,0 +1,1729 @@
+1
+00:00:01,335 --> 00:00:04,204
+Building upon Imageblocks
+and tile shading,
+
+
+2
+00:00:04,204 --> 00:00:06,573
+Imageblock Sample
+Coverage Control gives you
+
+
+3
+00:00:06,573 --> 00:00:10,744
+new opportunities to optimize
+your multisampled render passes
+
+
+4
+00:00:10,744 --> 00:00:13,814
+and is designed for the enhanced
+multisampling hardware
+
+
+5
+00:00:13,814 --> 00:00:15,983
+in the A11's GPU.
+
+
+6
+00:00:15,983 --> 00:00:17,551
+Imageblock Sample Coverage
+
+
+7
+00:00:17,551 --> 00:00:19,653
+is the third in a series
+of presentations
+
+
+8
+00:00:19,653 --> 00:00:22,789
+focused on new Metal 2
+features on A11.
+
+
+9
+00:00:23,790 --> 00:00:26,393
+Before we dive into the enhanced
+multisampling features
+
+
+10
+00:00:26,393 --> 00:00:27,728
+in Metal 2,
+
+
+11
+00:00:27,728 --> 00:00:31,965
+let's have a quick refresher
+on Multisample Antialiasing.
+
+
+12
+00:00:31,965 --> 00:00:34,868
+Multisample Antialiasing,
+or MSAA,
+
+
+13
+00:00:34,868 --> 00:00:36,703
+is a technique used to improve
+the appearance
+
+
+14
+00:00:36,703 --> 00:00:39,239
+of primitive edges
+by representing each pixel
+
+
+15
+00:00:39,239 --> 00:00:42,376
+with multiple depth
+and color samples.
+
+
+16
+00:00:42,376 --> 00:00:45,178
+First let's take a look
+at how a GPU renders a triangle
+
+
+17
+00:00:45,178 --> 00:00:47,447
+without multisampling.
+
+
+18
+00:00:47,447 --> 00:00:49,449
+Here's a four by four grid
+of pixels
+
+
+19
+00:00:49,449 --> 00:00:51,184
+representing your
+color attachment.
+
+
+20
+00:00:53,086 --> 00:00:56,523
+The GPU's rasterizer
+samples the center of a pixel
+
+
+21
+00:00:56,523 --> 00:00:59,559
+to determine if it is covered
+by a primitive.
+
+
+22
+00:00:59,559 --> 00:01:00,861
+Let's bring in a triangle.
+
+
+23
+00:01:02,296 --> 00:01:04,298
+All the pixel centers
+covered by the primitive
+
+
+24
+00:01:04,298 --> 00:01:06,800
+are colored red.
+
+
+25
+00:01:06,800 --> 00:01:09,703
+If each pixel only has
+a single sample position,
+
+
+26
+00:01:09,703 --> 00:01:12,639
+a pixel is classified
+as covered or not covered
+
+
+27
+00:01:12,639 --> 00:01:14,574
+based only
+on the pixel center.
+
+
+28
+00:01:14,574 --> 00:01:15,976
+You can see
+in the resulting image
+
+
+29
+00:01:15,976 --> 00:01:18,612
+the classic symptom
+of edge aliasing:
+
+
+30
+00:01:18,612 --> 00:01:22,582
+the staircase artifacts
+also known as jaggies.
+
+
+31
+00:01:22,582 --> 00:01:23,984
+Let's see the same triangle
+
+
+32
+00:01:23,984 --> 00:01:26,887
+rendered
+with multisample antialiasing.
+
+
+33
+00:01:26,887 --> 00:01:29,022
+For this example,
+each pixel
+
+
+34
+00:01:29,022 --> 00:01:33,260
+has four evenly distributed
+sampling positions.
+
+
+35
+00:01:33,260 --> 00:01:34,995
+With four samples per pixel,
+
+
+36
+00:01:34,995 --> 00:01:38,298
+the GPU's rasterizer can
+determine finer grained coverage
+
+
+37
+00:01:38,298 --> 00:01:40,300
+for the primitive.
+
+
+38
+00:01:40,300 --> 00:01:42,936
+When a multisampled attachment
+is resolved,
+
+
+39
+00:01:42,936 --> 00:01:46,340
+the GPU will average
+the values of the samples
+
+
+40
+00:01:46,340 --> 00:01:49,209
+to determine the final color
+of each pixel.
+
+
+41
+00:01:49,209 --> 00:01:50,944
+This results in a smoother edge
+
+
+42
+00:01:50,944 --> 00:01:54,181
+and reduces the appearance
+of the staircase effect.
+
+
+43
+00:01:54,181 --> 00:01:56,850
+In traditional
+multisampling implementations,
+
+
+44
+00:01:56,850 --> 00:01:59,386
+the tradeoffs for
+the improved edge appearance
+
+
+45
+00:01:59,386 --> 00:02:02,823
+are the computational overhead
+of blending each sample,
+
+
+46
+00:02:02,823 --> 00:02:04,624
+the larger memory footprint
+
+
+47
+00:02:04,624 --> 00:02:07,127
+of multisampled
+attachments textures,
+
+
+48
+00:02:07,127 --> 00:02:08,862
+and the higher memory bandwidth
+
+
+49
+00:02:08,862 --> 00:02:12,699
+to store and resolve
+multiple samples per pixel.
+
+
+50
+00:02:12,699 --> 00:02:14,768
+Apple's A-Series GPUs
+
+
+51
+00:02:14,768 --> 00:02:18,105
+have a very efficient
+MSAA implementation
+
+
+52
+00:02:18,105 --> 00:02:21,575
+that directly addresses
+these tradeoffs.
+
+
+53
+00:02:21,575 --> 00:02:22,642
+The hardware tracks
+
+
+54
+00:02:22,642 --> 00:02:25,412
+whether each pixel
+contains a primitive edge
+
+
+55
+00:02:25,412 --> 00:02:27,647
+so that your blending
+executes per sample
+
+
+56
+00:02:27,647 --> 00:02:31,151
+only for the pixels that have
+difference sample values.
+
+
+57
+00:02:31,151 --> 00:02:34,087
+With Metal on A-series GPUs,
+you can eliminate
+
+
+58
+00:02:34,087 --> 00:02:36,123
+the extra memory
+storage requirements
+
+
+59
+00:02:36,123 --> 00:02:37,958
+by using memoryless
+render targets
+
+
+60
+00:02:37,958 --> 00:02:40,193
+for the multisampled
+attachments.
+
+
+61
+00:02:40,193 --> 00:02:41,461
+The full sample data
+
+
+62
+00:02:41,461 --> 00:02:44,398
+only exists temporarily
+in tile memory.
+
+
+63
+00:02:45,799 --> 00:02:48,668
+By using Metal's multisample
+resolve store action,
+
+
+64
+00:02:48,668 --> 00:02:50,637
+you avoid incurring
+any additional
+
+
+65
+00:02:50,637 --> 00:02:52,039
+system memory bandwidth
+
+
+66
+00:02:52,039 --> 00:02:54,641
+by directly resolving
+from tile memory
+
+
+67
+00:02:54,641 --> 00:02:57,277
+to the resolve attachment.
+
+
+68
+00:02:57,277 --> 00:03:01,381
+In addition, Metal 2 introduced
+Programmable Sample Positions
+
+
+69
+00:03:01,381 --> 00:03:04,017
+to allow you to choose
+the sample locations
+
+
+70
+00:03:04,017 --> 00:03:06,953
+and control
+your sampling pattern.
+
+
+71
+00:03:06,953 --> 00:03:09,056
+With Metal 2 on A11,
+
+
+72
+00:03:09,056 --> 00:03:12,859
+we made multisampling
+even more efficient at blending.
+
+
+73
+00:03:12,859 --> 00:03:14,661
+While current A-series GPUs
+
+
+74
+00:03:14,661 --> 00:03:17,931
+already track whether edges
+intersect each pixel,
+
+
+75
+00:03:17,931 --> 00:03:20,434
+the A11 GPU
+extends this tracking
+
+
+76
+00:03:20,434 --> 00:03:23,170
+to an even finer granularity
+by tracking
+
+
+77
+00:03:23,170 --> 00:03:26,606
+the number of unique samples
+within each pixel.
+
+
+78
+00:03:26,606 --> 00:03:29,076
+Even without using
+any other Metal 2 features,
+
+
+79
+00:03:29,076 --> 00:03:31,711
+your existing
+multisampled applications
+
+
+80
+00:03:31,711 --> 00:03:33,713
+will blend more efficiently
+
+
+81
+00:03:33,713 --> 00:03:37,250
+with A11's GPU's
+enhanced multisampling hardware.
+
+
+82
+00:03:38,518 --> 00:03:41,154
+Leveraging the flexibility 
+of other Metal 2 features
+
+
+83
+00:03:41,154 --> 00:03:43,390
+such as Imageblocks
+and tile shading,
+
+
+84
+00:03:43,390 --> 00:03:46,126
+Imageblock Sample Coverage
+Control gives you access
+
+
+85
+00:03:46,126 --> 00:03:48,762
+to each pixel's sample
+coverage tracking data
+
+
+86
+00:03:48,762 --> 00:03:50,397
+for even more control
+
+
+87
+00:03:50,397 --> 00:03:53,133
+of your multisampled
+render passes.
+
+
+88
+00:03:53,133 --> 00:03:55,102
+With Imageblock Sample
+Coverage Control,
+
+
+89
+00:03:55,102 --> 00:03:57,704
+your tile pipelines
+can resolve sample data
+
+
+90
+00:03:57,704 --> 00:03:59,439
+at any time in a render pass
+
+
+91
+00:03:59,439 --> 00:04:02,275
+using your own
+custom resolve algorithms.
+
+
+92
+00:04:04,377 --> 00:04:06,179
+To understand
+the additional flexibility
+
+
+93
+00:04:06,179 --> 00:04:08,582
+provided by Imageblock Sample
+Coverage Control,
+
+
+94
+00:04:08,582 --> 00:04:11,351
+you first need to understand
+how edge tracking works
+
+
+95
+00:04:11,351 --> 00:04:14,087
+in the A-Series GPUs.
+
+
+96
+00:04:14,087 --> 00:04:17,891
+Current A-series GPUs
+rasterize your scene in tiles,
+
+
+97
+00:04:17,891 --> 00:04:20,160
+and each tile contains metadata
+
+
+98
+00:04:20,160 --> 00:04:22,863
+that tracks whether a pixel
+contains a primitive edge.
+
+
+99
+00:04:24,564 --> 00:04:27,868
+In this image, the red pixels
+contains primitive edges,
+
+
+100
+00:04:27,868 --> 00:04:30,070
+and the white pixels do not.
+
+
+101
+00:04:30,070 --> 00:04:32,239
+The number of edge-containing
+pixels increases
+
+
+102
+00:04:32,239 --> 00:04:35,408
+relative to the density
+of your scene's geometry.
+
+
+103
+00:04:35,408 --> 00:04:37,611
+When a pixel contains
+a primitive edge,
+
+
+104
+00:04:37,611 --> 00:04:41,148
+that means it has
+multiple unique sample values.
+
+
+105
+00:04:41,148 --> 00:04:44,017
+For this reason, the blend
+equation executes per sample
+
+
+106
+00:04:44,017 --> 00:04:46,086
+for edge-containing pixels.
+
+
+107
+00:04:46,086 --> 00:04:49,256
+Pixels that do not contain
+an edge need to blend only once.
+
+
+108
+00:04:50,490 --> 00:04:54,694
+The A11 GPU tracks edges
+with a finer granularity.
+
+
+109
+00:04:54,694 --> 00:04:55,862
+Pixels that contain edges
+
+
+110
+00:04:55,862 --> 00:04:58,899
+often only have
+a few unique samples.
+
+
+111
+00:04:58,899 --> 00:05:00,834
+The A11 GPU's
+enhanced multisampling
+
+
+112
+00:05:00,834 --> 00:05:04,404
+tracks and blends
+only the unique samples.
+
+
+113
+00:05:04,404 --> 00:05:05,805
+In the Metal Shading Language,
+
+
+114
+00:05:05,805 --> 00:05:08,308
+we give a name
+to these unique samples:
+
+
+115
+00:05:08,308 --> 00:05:09,342
+colors.
+
+
+116
+00:05:10,310 --> 00:05:12,679
+So let's take a look
+at how the A11 GPU
+
+
+117
+00:05:12,679 --> 00:05:15,549
+improves multisampled
+blending performance.
+
+
+118
+00:05:15,549 --> 00:05:17,350
+For pixels that contain
+a primitive edge,
+
+
+119
+00:05:17,350 --> 00:05:18,852
+the A11 GPU will track
+
+
+120
+00:05:18,852 --> 00:05:21,555
+the number of unique colors
+in that pixel.
+
+
+121
+00:05:21,555 --> 00:05:24,591
+As primitives intersect
+or completely cover a pixel,
+
+
+122
+00:05:24,591 --> 00:05:26,359
+the number of colors contained
+in that pixel
+
+
+123
+00:05:26,359 --> 00:05:28,261
+will grow and shrink.
+
+
+124
+00:05:28,261 --> 00:05:32,532
+The A11 GPU tracks these
+transitions automatically.
+
+
+125
+00:05:32,532 --> 00:05:34,434
+In the diagram on the right,
+
+
+126
+00:05:34,434 --> 00:05:38,471
+the pixel contains four samples,
+but only two colors.
+
+
+127
+00:05:38,471 --> 00:05:39,573
+When the A11 GPU
+
+
+128
+00:05:39,573 --> 00:05:42,242
+needs to blend the next
+primitive with this pixel,
+
+
+129
+00:05:42,242 --> 00:05:45,712
+there are only two
+unique samples to blend.
+
+
+130
+00:05:45,712 --> 00:05:47,614
+And for advanced
+rendering algorithms
+
+
+131
+00:05:47,614 --> 00:05:51,618
+that use programmable blending,
+the savings will be significant.
+
+
+132
+00:05:52,786 --> 00:05:53,787
+So let's take a fragment
+
+
+133
+00:05:53,787 --> 00:05:56,690
+through a few of these color
+tracking transitions.
+
+
+134
+00:05:56,690 --> 00:06:00,160
+Initially, each fragment
+contains a single color,
+
+
+135
+00:06:00,160 --> 00:06:02,529
+representing all samples.
+
+
+136
+00:06:02,529 --> 00:06:06,733
+This would be your clear color
+when a render pass begins.
+
+
+137
+00:06:06,733 --> 00:06:09,302
+If a primitive edge
+cuts through a pixel,
+
+
+138
+00:06:09,302 --> 00:06:12,706
+the A11 GPU will create
+a new unique color
+
+
+139
+00:06:12,706 --> 00:06:15,976
+and assign the covered samples
+to the new color.
+
+
+140
+00:06:15,976 --> 00:06:18,245
+The two samples covered
+by this green triangle
+
+
+141
+00:06:18,245 --> 00:06:20,347
+are assigned
+to the new color one.
+
+
+142
+00:06:20,347 --> 00:06:22,048
+The samples that are not covered
+
+
+143
+00:06:22,048 --> 00:06:25,151
+are still assigned
+to the color zero.
+
+
+144
+00:06:25,151 --> 00:06:28,154
+Let's say the next primitive
+that intersects this pixel
+
+
+145
+00:06:28,154 --> 00:06:30,957
+is a red translucent triangle.
+
+
+146
+00:06:30,957 --> 00:06:33,827
+The red triangle
+covers three samples.
+
+
+147
+00:06:33,827 --> 00:06:36,596
+Current A-Series GPUs
+would blend each
+
+
+148
+00:06:36,596 --> 00:06:38,765
+of the three covered samples.
+
+
+149
+00:06:38,765 --> 00:06:41,334
+The A11 GPU, blends only twice
+
+
+150
+00:06:41,334 --> 00:06:42,869
+because two
+of the covered samples
+
+
+151
+00:06:42,869 --> 00:06:45,338
+share the same color index.
+
+
+152
+00:06:45,338 --> 00:06:49,142
+In this case, color one
+is a blend of green and red,
+
+
+153
+00:06:49,142 --> 00:06:52,312
+and the GPU creates
+a new color at index two
+
+
+154
+00:06:52,312 --> 00:06:55,849
+since that is a new,
+unique color.
+
+
+155
+00:06:55,849 --> 00:06:58,118
+The number of unique colors
+in a pixel can grow
+
+
+156
+00:06:58,118 --> 00:07:00,120
+when a primitive
+cuts through a pixel.
+
+
+157
+00:07:00,120 --> 00:07:02,489
+But there are times
+when the hardware will reduce
+
+
+158
+00:07:02,489 --> 00:07:05,058
+the number
+of unique colors.
+
+
+159
+00:07:05,058 --> 00:07:08,061
+Here, an opaque,
+non-blending triangle
+
+
+160
+00:07:08,061 --> 00:07:10,497
+entirely covers the pixel.
+
+
+161
+00:07:10,497 --> 00:07:14,668
+All four samples
+are completely replaced by blue,
+
+
+162
+00:07:14,668 --> 00:07:18,805
+so the A11 GPU will merge
+the three colors back to one,
+
+
+163
+00:07:18,805 --> 00:07:20,240
+since all the blue samples
+
+
+164
+00:07:20,240 --> 00:07:23,877
+can be represented
+by a single color again.
+
+
+165
+00:07:23,877 --> 00:07:27,314
+The enhanced mutlisampling
+hardware in the A11 GPU
+
+
+166
+00:07:27,314 --> 00:07:28,848
+is so powerful
+that we extended
+
+
+167
+00:07:28,848 --> 00:07:30,083
+the Metal shading language
+
+
+168
+00:07:30,083 --> 00:07:32,952
+to give you explicit control
+over sample coverage
+
+
+169
+00:07:32,952 --> 00:07:36,089
+with Imageblock Sample
+Coverage Control.
+
+
+170
+00:07:36,089 --> 00:07:37,390
+With this new feature,
+
+
+171
+00:07:37,390 --> 00:07:39,426
+tile pipelines
+have the capability
+
+
+172
+00:07:39,426 --> 00:07:43,630
+to resolve sample data in place
+in the middle of a render pass
+
+
+173
+00:07:43,630 --> 00:07:46,166
+by changing the color coverage
+of the pixel.
+
+
+174
+00:07:46,166 --> 00:07:49,035
+And since you write the kernel
+in Metal Shading Language,
+
+
+175
+00:07:49,035 --> 00:07:52,739
+that means you can write
+your own custom resolve filters.
+
+
+176
+00:07:52,739 --> 00:07:55,308
+Let's go through
+a simple example.
+
+
+177
+00:07:55,308 --> 00:07:56,776
+First, we have a kernel
+
+
+178
+00:07:56,776 --> 00:08:00,246
+that has
+an imageblock argument.
+
+
+179
+00:08:00,246 --> 00:08:02,682
+Next, we query
+the number of colors
+
+
+180
+00:08:02,682 --> 00:08:05,018
+at a given coordinate
+in the imageblock.
+
+
+181
+00:08:05,018 --> 00:08:07,721
+For a render pass
+with four samples per pixel,
+
+
+182
+00:08:07,721 --> 00:08:11,658
+the value returned can be
+one, two, three, or four,
+
+
+183
+00:08:11,658 --> 00:08:14,894
+depending on how many
+unique colors are at that pixel.
+
+
+184
+00:08:14,894 --> 00:08:17,897
+A multisampled imageblock
+can return an imageblock data
+
+
+185
+00:08:17,897 --> 00:08:20,567
+for each sample or color.
+
+
+186
+00:08:20,567 --> 00:08:25,271
+In this example, we will get
+the imageblock data for color c.
+
+
+187
+00:08:25,271 --> 00:08:27,107
+Since this example
+is looping over
+
+
+188
+00:08:27,107 --> 00:08:28,775
+the number of unique colors,
+
+
+189
+00:08:28,775 --> 00:08:30,844
+we also need to consider
+the number of samples
+
+
+190
+00:08:30,844 --> 00:08:33,145
+that are covered by each color.
+
+
+191
+00:08:33,145 --> 00:08:34,681
+We do this by getting
+the coverage mask
+
+
+192
+00:08:34,681 --> 00:08:36,649
+for this color index
+
+
+193
+00:08:36,649 --> 00:08:38,118
+and calling pop count
+
+
+194
+00:08:38,118 --> 00:08:41,321
+to get the number of set bits
+in the mask.
+
+
+195
+00:08:41,321 --> 00:08:44,124
+Next, we finish resolving
+our color
+
+
+196
+00:08:44,124 --> 00:08:47,060
+by dividing by the number
+of samples per pixel
+
+
+197
+00:08:47,060 --> 00:08:49,929
+and writing the resolved value
+back to the imageblock
+
+
+198
+00:08:49,929 --> 00:08:52,399
+with a full sample mask.
+
+
+199
+00:08:52,399 --> 00:08:55,335
+By writing a single value
+with a full sample mask,
+
+
+200
+00:08:55,335 --> 00:08:58,638
+the A11 GPU will merge
+all the sample data
+
+
+201
+00:08:58,638 --> 00:09:00,607
+back to a single color.
+
+
+202
+00:09:00,607 --> 00:09:03,109
+Now this is an example
+of a basic resolve,
+
+
+203
+00:09:03,109 --> 00:09:05,145
+but since it is a tile pipeline,
+
+
+204
+00:09:05,145 --> 00:09:07,647
+you can write a kernel
+to resolve your sample data
+
+
+205
+00:09:07,647 --> 00:09:11,084
+in a way that best fits
+your application.
+
+
+206
+00:09:11,084 --> 00:09:14,254
+So you just saw an example of
+writing a custom resolve filter.
+
+
+207
+00:09:14,254 --> 00:09:16,523
+Let's discuss another
+reason to use tile shading
+
+
+208
+00:09:16,523 --> 00:09:18,691
+to resolve sample data.
+
+
+209
+00:09:18,691 --> 00:09:21,461
+Now, some applications render
+complex scenes
+
+
+210
+00:09:21,461 --> 00:09:24,831
+with lots of opaque geometry
+and lots of translucent geometry
+
+
+211
+00:09:24,831 --> 00:09:26,499
+like particles.
+
+
+212
+00:09:26,499 --> 00:09:28,668
+While the A11 GPU
+will do its best
+
+
+213
+00:09:28,668 --> 00:09:31,438
+to blend only the unique colors
+for each pixel,
+
+
+214
+00:09:31,438 --> 00:09:34,240
+if you know that your scene
+has a lot of blended geometry,
+
+
+215
+00:09:34,240 --> 00:09:36,142
+with large amount of overdraw,
+
+
+216
+00:09:36,142 --> 00:09:37,944
+you may want to resolve
+your sample data
+
+
+217
+00:09:37,944 --> 00:09:41,748
+with a tile pipeline
+before the heavy blending phase.
+
+
+218
+00:09:41,748 --> 00:09:43,716
+With Imageblock Sample
+Coverage Control,
+
+
+219
+00:09:43,716 --> 00:09:46,386
+you can resolve the
+sample data with a tile pipeline
+
+
+220
+00:09:46,386 --> 00:09:48,388
+after rendering
+your opaque geometry
+
+
+221
+00:09:48,388 --> 00:09:51,157
+to ensure that all pixels
+contain a single unique color
+
+
+222
+00:09:51,157 --> 00:09:53,293
+prior to blending.
+
+
+223
+00:09:53,293 --> 00:09:55,595
+Let's look at a more
+advanced example
+
+
+224
+00:09:55,595 --> 00:09:56,896
+of using a tile pipeline
+
+
+225
+00:09:56,896 --> 00:09:59,933
+to change the coverage
+of the sample data.
+
+
+226
+00:09:59,933 --> 00:10:01,601
+Since the tile pipeline
+can be implemented
+
+
+227
+00:10:01,601 --> 00:10:02,969
+with the compute function,
+
+
+228
+00:10:02,969 --> 00:10:06,439
+you can do much more than
+simply average values together.
+
+
+229
+00:10:06,439 --> 00:10:09,075
+Our Surface Aggregation
+sample app starts
+
+
+230
+00:10:09,075 --> 00:10:12,712
+with a multisampled single-pass
+deferred shading algorithm
+
+
+231
+00:10:12,712 --> 00:10:14,981
+and uses a tile-based
+kernel dispatch
+
+
+232
+00:10:14,981 --> 00:10:17,083
+to reduce the number
+of shaded samples
+
+
+233
+00:10:17,083 --> 00:10:19,085
+in the deferred pass.
+
+
+234
+00:10:19,085 --> 00:10:22,188
+The goal of this algorithm
+is to shade fewer samples
+
+
+235
+00:10:22,188 --> 00:10:24,023
+in the expensive
+deferred pass
+
+
+236
+00:10:24,023 --> 00:10:26,493
+while retaining
+the edge-smoothing benefits
+
+
+237
+00:10:26,493 --> 00:10:29,062
+of multisample antialiasing.
+
+
+238
+00:10:29,062 --> 00:10:31,898
+We won't dive into all
+the details of the algorithm,
+
+
+239
+00:10:31,898 --> 00:10:33,466
+so be sure
+to download and explore
+
+
+240
+00:10:33,466 --> 00:10:36,035
+our Surface Aggregation
+sample app.
+
+
+241
+00:10:36,035 --> 00:10:38,304
+But now let's visualize
+how this technique
+
+
+242
+00:10:38,304 --> 00:10:41,307
+reduces the cost of shading.
+
+
+243
+00:10:41,307 --> 00:10:43,409
+The two images
+visualize the pixels
+
+
+244
+00:10:43,409 --> 00:10:47,180
+containing more than one sample
+per pixel in the g-buffer.
+
+
+245
+00:10:47,180 --> 00:10:49,215
+The image on the left
+shows the g-buffer
+
+
+246
+00:10:49,215 --> 00:10:51,351
+before merging surfaces,
+
+
+247
+00:10:51,351 --> 00:10:52,485
+and the image on the right
+
+
+248
+00:10:52,485 --> 00:10:55,555
+shows the g-buffer
+after merging surfaces.
+
+
+249
+00:10:55,555 --> 00:10:57,957
+The surface aggregation kernel
+is able to reduce
+
+
+250
+00:10:57,957 --> 00:10:59,359
+the number of
+g-buffer samples
+
+
+251
+00:10:59,359 --> 00:11:01,227
+that need to be shaded.
+
+
+252
+00:11:01,227 --> 00:11:02,929
+As you can see
+on the right image,
+
+
+253
+00:11:02,929 --> 00:11:05,899
+the only pixels containing
+multiple unique samples
+
+
+254
+00:11:05,899 --> 00:11:09,769
+are on true creases
+and depth boundaries.
+
+
+255
+00:11:09,769 --> 00:11:12,238
+Before Metal 2
+on the A11 GPU,
+
+
+256
+00:11:12,238 --> 00:11:13,640
+this algorithm would require
+
+
+257
+00:11:13,640 --> 00:11:17,076
+a separate render pass
+for each phase of the algorithm,
+
+
+258
+00:11:17,076 --> 00:11:20,246
+incurring multiple round trips
+to system memory.
+
+
+259
+00:11:20,246 --> 00:11:22,649
+But with Imageblock
+Sample Coverage Control,
+
+
+260
+00:11:22,649 --> 00:11:24,317
+all three phases
+of the algorithm
+
+
+261
+00:11:24,317 --> 00:11:26,452
+can be merged
+into one render pass,
+
+
+262
+00:11:26,452 --> 00:11:29,422
+saving your app
+a ton of memory bandwidth.
+
+
+263
+00:11:29,422 --> 00:11:30,857
+As you can see in the diagram,
+
+
+264
+00:11:30,857 --> 00:11:33,259
+all three phases operate
+on the imageblock
+
+
+265
+00:11:33,259 --> 00:11:36,829
+keeping all the working data
+inside tile memory.
+
+
+266
+00:11:36,829 --> 00:11:38,331
+First, you will
+render the g-buffer
+
+
+267
+00:11:38,331 --> 00:11:40,433
+to the imageblock
+in tile memory.
+
+
+268
+00:11:40,433 --> 00:11:41,935
+And next, you will dispatch
+
+
+269
+00:11:41,935 --> 00:11:43,937
+the surface aggregation
+tile pipeline
+
+
+270
+00:11:43,937 --> 00:11:46,439
+to reduce the number
+of g-buffer samples
+
+
+271
+00:11:46,439 --> 00:11:50,043
+into fewer aggregate
+g-buffer samples.
+
+
+272
+00:11:50,043 --> 00:11:51,911
+Finally, the deferred
+shading pass
+
+
+273
+00:11:51,911 --> 00:11:54,514
+will only shade
+each aggregate sample.
+
+
+274
+00:11:56,516 --> 00:11:58,952
+If you're interested in learning
+more about this technique,
+
+
+275
+00:11:58,952 --> 00:12:01,154
+please visit the link
+at the end of this presentation
+
+
+276
+00:12:01,154 --> 00:12:02,622
+to download the sample app.
+
+
+277
+00:12:04,090 --> 00:12:07,226
+To recap, we first talked
+about the hardware enhancements
+
+
+278
+00:12:07,226 --> 00:12:10,563
+made to multisampling
+in the A11 GPU.
+
+
+279
+00:12:10,563 --> 00:12:13,566
+The A11 GPU tracks
+the number of unique samples
+
+
+280
+00:12:13,566 --> 00:12:17,403
+in every pixel to reduce
+the cost of blending.
+
+
+281
+00:12:17,403 --> 00:12:20,373
+This optimization applies
+to both API blending
+
+
+282
+00:12:20,373 --> 00:12:23,076
+as well as
+programmable blending.
+
+
+283
+00:12:23,076 --> 00:12:24,544
+We then discussed
+the enhancements
+
+
+284
+00:12:24,544 --> 00:12:26,746
+in Metal 2 for the A11 GPU
+
+
+285
+00:12:26,746 --> 00:12:28,815
+that expose this powerful
+hardware feature
+
+
+286
+00:12:28,815 --> 00:12:31,384
+to kernels used in tile shading.
+
+
+287
+00:12:31,384 --> 00:12:33,886
+With Imageblock Sample
+Coverage Control,
+
+
+288
+00:12:33,886 --> 00:12:36,689
+you can write your own
+custom resolve kernels
+
+
+289
+00:12:36,689 --> 00:12:39,525
+and dispatch them at any time
+in a render pass
+
+
+290
+00:12:39,525 --> 00:12:42,595
+to implement
+powerful new optimizations.
+
+
+291
+00:12:42,595 --> 00:12:46,966
+Together, the enhanced
+multisampling in the A11 GPU
+
+
+292
+00:12:46,966 --> 00:12:49,335
+and the new shading language
+features in Metal 2
+
+
+293
+00:12:49,335 --> 00:12:53,973
+enable new techniques to keep
+your data on-chip longer.
+
+
+294
+00:12:53,973 --> 00:12:54,907
+You can use this feature
+
+
+295
+00:12:54,907 --> 00:12:57,577
+to implement algorithms
+like Surface Aggregation
+
+
+296
+00:12:57,577 --> 00:13:00,146
+in a single render pass.
+
+
+297
+00:13:00,146 --> 00:13:02,248
+For more information
+about Metal 2
+
+
+298
+00:13:02,248 --> 00:13:04,183
+and links to the sample code,
+
+
+299
+00:13:04,183 --> 00:13:06,352
+please visit
+the developer website
+
+
+300
+00:13:06,352 --> 00:13:10,990
+at developer.apple.com/metal.
+
+
+301
+00:13:10,990 --> 00:13:12,358
+Thank you for watching.
+

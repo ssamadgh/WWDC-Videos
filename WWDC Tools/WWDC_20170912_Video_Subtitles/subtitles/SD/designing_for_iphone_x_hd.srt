@@ -1,0 +1,1497 @@
+1
+00:00:01,268 --> 00:00:03,003
+iPhone X's super retina display
+
+
+2
+00:00:03,003 --> 00:00:05,005
+gives you more space
+to display content
+
+
+3
+00:00:05,005 --> 00:00:08,108
+and create
+deeply immersive experiences.
+
+
+4
+00:00:08,108 --> 00:00:09,776
+This video will help you
+get started
+
+
+5
+00:00:09,776 --> 00:00:12,679
+designing apps and games
+that look and feel great
+
+
+6
+00:00:12,679 --> 00:00:15,249
+across all iOS devices.
+
+
+7
+00:00:15,249 --> 00:00:17,618
+First, let's review
+some key aspects
+
+
+8
+00:00:17,618 --> 00:00:19,353
+of the new display.
+
+
+9
+00:00:19,353 --> 00:00:23,490
+iPhone X 's display
+has a 3x image scale factor.
+
+
+10
+00:00:23,490 --> 00:00:26,093
+When producing and delivering
+image assets,
+
+
+11
+00:00:26,093 --> 00:00:29,730
+we recommend using PDFs because
+they're resolution-independent
+
+
+12
+00:00:29,730 --> 00:00:33,133
+and may significantly reduce
+the size of your app.
+
+
+13
+00:00:33,133 --> 00:00:35,102
+When rasterized images
+are needed,
+
+
+14
+00:00:35,102 --> 00:00:38,672
+be sure to include
+both 2x and 3x resolutions
+
+
+15
+00:00:38,672 --> 00:00:40,974
+in your app's asset catalog.
+
+
+16
+00:00:40,974 --> 00:00:43,143
+To streamline
+your production process,
+
+
+17
+00:00:43,143 --> 00:00:45,212
+we suggest using
+the templates included
+
+
+18
+00:00:45,212 --> 00:00:48,081
+in the Apple UI Design
+Resources.
+
+
+19
+00:00:48,081 --> 00:00:50,984
+They're available to download
+on the Resources page
+
+
+20
+00:00:50,984 --> 00:00:53,553
+of the Apple Human
+Interface Guidelines.
+
+
+21
+00:00:54,554 --> 00:00:56,823
+The iPhone X's
+display dimensions
+
+
+22
+00:00:56,823 --> 00:01:01,662
+are 375 points wide
+by 812 points tall.
+
+
+23
+00:01:01,662 --> 00:01:09,770
+On a 3x display,
+this equals 1125 by 2436 pixels.
+
+
+24
+00:01:09,770 --> 00:01:15,676
+375 points is the same width
+as the 4.7 inch displays
+
+
+25
+00:01:15,676 --> 00:01:19,680
+of iPhone 6,
+iPhone 7 and iPhone 8.
+
+
+26
+00:01:19,680 --> 00:01:21,281
+So there shouldn't
+be any difference
+
+
+27
+00:01:21,281 --> 00:01:23,383
+in the amount
+of information presented
+
+
+28
+00:01:23,383 --> 00:01:27,521
+along the narrower dimension
+of these devices.
+
+
+29
+00:01:27,521 --> 00:01:31,725
+The 812 point height
+is 145 points taller
+
+
+30
+00:01:31,725 --> 00:01:33,860
+than a 4.7 inch display.
+
+
+31
+00:01:33,860 --> 00:01:34,828
+This additional height
+
+
+32
+00:01:34,828 --> 00:01:38,532
+provides about 20 percent
+more space for content.
+
+
+33
+00:01:38,532 --> 00:01:40,934
+Of course,
+the most notable feature
+
+
+34
+00:01:40,934 --> 00:01:43,704
+of the super retina display
+is its shape.
+
+
+35
+00:01:43,704 --> 00:01:46,206
+The display follows
+the design of the product
+
+
+36
+00:01:46,206 --> 00:01:50,777
+around all four rounded corners
+for a symmetrical look.
+
+
+37
+00:01:50,777 --> 00:01:53,780
+Updating your app to work
+on the new display
+
+
+38
+00:01:53,780 --> 00:01:56,149
+involves extending
+visual elements
+
+
+39
+00:01:56,149 --> 00:01:58,685
+to fill the display's view port,
+
+
+40
+00:01:58,685 --> 00:02:01,688
+while also keeping controls
+and critical information
+
+
+41
+00:02:01,688 --> 00:02:03,657
+from getting clipped
+in the corners
+
+
+42
+00:02:03,657 --> 00:02:06,493
+or covered
+by the sensor housing.
+
+
+43
+00:02:06,493 --> 00:02:07,794
+On iPhone X,
+
+
+44
+00:02:07,794 --> 00:02:11,331
+people access the app switcher
+and the Home screen
+
+
+45
+00:02:11,331 --> 00:02:13,233
+by swiping up anywhere
+
+
+46
+00:02:13,233 --> 00:02:16,003
+along the bottom edge
+of the display.
+
+
+47
+00:02:16,003 --> 00:02:18,005
+An indicator
+at the bottom of the screen
+
+
+48
+00:02:18,005 --> 00:02:20,774
+offers a hint
+about this interaction.
+
+
+49
+00:02:20,774 --> 00:02:24,311
+This indicator is displayed
+over your app's interface.
+
+
+50
+00:02:24,311 --> 00:02:27,514
+You'll need to account for this
+when designing your app.
+
+
+51
+00:02:28,882 --> 00:02:32,686
+If your app uses UIKit controls
+and auto-layout,
+
+
+52
+00:02:32,686 --> 00:02:34,955
+designing and developing
+for iPhone X
+
+
+53
+00:02:34,955 --> 00:02:38,592
+and our other devices
+should be straightforward.
+
+
+54
+00:02:38,592 --> 00:02:39,993
+Standard UIKit elements
+
+
+55
+00:02:39,993 --> 00:02:44,164
+such as navigation bars,
+tables, and collection views,
+
+
+56
+00:02:44,164 --> 00:02:48,335
+automatically adjust
+when viewed on iPhone X.
+
+
+57
+00:02:48,335 --> 00:02:51,071
+Navigation bars,
+tab bars, and toolbars
+
+
+58
+00:02:51,071 --> 00:02:53,473
+are positioned
+and scaled appropriately
+
+
+59
+00:02:53,473 --> 00:02:56,176
+on all iOS devices.
+
+
+60
+00:02:56,176 --> 00:02:58,278
+The navigation bar's
+background material
+
+
+61
+00:02:58,278 --> 00:03:01,548
+is extended
+to the display's top edge,
+
+
+62
+00:03:01,548 --> 00:03:04,785
+and the background material
+of the tab bar and toolbar
+
+
+63
+00:03:04,785 --> 00:03:07,721
+is extended to the bottom,
+
+
+64
+00:03:07,721 --> 00:03:09,423
+while the elements they contain
+
+
+65
+00:03:09,423 --> 00:03:11,825
+are positioned
+to prevent underlapping
+
+
+66
+00:03:11,825 --> 00:03:15,028
+or clipping
+by other elements.
+
+
+67
+00:03:15,028 --> 00:03:16,763
+In landscape orientation,
+
+
+68
+00:03:16,763 --> 00:03:20,567
+table views will span
+the full width of the display,
+
+
+69
+00:03:20,567 --> 00:03:24,905
+while the table cell's
+content view is inset.
+
+
+70
+00:03:24,905 --> 00:03:29,242
+If your app uses auto-layout,
+views can automatically adapt
+
+
+71
+00:03:29,242 --> 00:03:32,312
+to the iPhone X's
+larger display size.
+
+
+72
+00:03:32,312 --> 00:03:36,583
+For iOS 11, a new layout guide
+was added to auto-layout
+
+
+73
+00:03:36,583 --> 00:03:39,352
+called a Safe Area layout
+guide.
+
+
+74
+00:03:39,352 --> 00:03:40,854
+The Safe Area layout guide
+
+
+75
+00:03:40,854 --> 00:03:44,057
+helps avoid
+underlapping system UI elements
+
+
+76
+00:03:44,057 --> 00:03:47,527
+when positioning content
+and controls.
+
+
+77
+00:03:47,527 --> 00:03:48,895
+On iPhone 8,
+
+
+78
+00:03:48,895 --> 00:03:51,965
+the Safe Area
+is the same size as the viewport
+
+
+79
+00:03:51,965 --> 00:03:54,434
+if no bars are visible.
+
+
+80
+00:03:54,434 --> 00:03:56,703
+If a status bar is visible,
+
+
+81
+00:03:56,703 --> 00:03:59,106
+the safe area's top edge
+is lowered
+
+
+82
+00:03:59,106 --> 00:04:01,708
+to account for
+the status bar's height.
+
+
+83
+00:04:01,708 --> 00:04:04,211
+The Safe Area is further inset
+
+
+84
+00:04:04,211 --> 00:04:09,649
+to accommodate a navigation bar
+and toolbar or tab bar.
+
+
+85
+00:04:09,649 --> 00:04:11,184
+On iPhone X,
+
+
+86
+00:04:11,184 --> 00:04:15,689
+the Safe Area layout guide
+provides an additional benefit.
+
+
+87
+00:04:15,689 --> 00:04:18,892
+It's inset from the top
+and bottom of the screen edges
+
+
+88
+00:04:18,892 --> 00:04:20,494
+in portrait orientation,
+
+
+89
+00:04:20,494 --> 00:04:23,897
+even when no bars
+are visible on screen.
+
+
+90
+00:04:23,897 --> 00:04:26,733
+This helps you to prevent
+interface elements
+
+
+91
+00:04:26,733 --> 00:04:28,502
+from&nbsp;getting clipped or covered
+
+
+92
+00:04:28,502 --> 00:04:31,404
+by positioning them away
+from the sensor housing,
+
+
+93
+00:04:31,404 --> 00:04:33,440
+the display's
+rounded corners,
+
+
+94
+00:04:33,440 --> 00:04:35,742
+and the Home indicator.
+
+
+95
+00:04:35,742 --> 00:04:37,244
+In landscape orientation,
+
+
+96
+00:04:37,244 --> 00:04:40,480
+the Safe Area is inset
+from the sides of the screen
+
+
+97
+00:04:40,480 --> 00:04:44,117
+and the Home indicator
+for the same reason.
+
+
+98
+00:04:44,117 --> 00:04:46,052
+So, for example,
+
+
+99
+00:04:46,052 --> 00:04:49,456
+the width of the content view
+in these table row cells
+
+
+100
+00:04:49,456 --> 00:04:51,658
+is constrained by the Safe Area
+
+
+101
+00:04:51,658 --> 00:04:55,162
+to keep them from underlapping
+the sensor housing
+
+
+102
+00:04:55,162 --> 00:04:56,196
+or getting clipped
+
+
+103
+00:04:56,196 --> 00:04:59,299
+by the display's
+rounded corners.
+
+
+104
+00:04:59,299 --> 00:05:02,102
+And the table's top edge
+has been inset
+
+
+105
+00:05:02,102 --> 00:05:04,938
+to avoid underlapping
+the navigation bar.
+
+
+106
+00:05:05,639 --> 00:05:09,209
+On iPhone 8, where occlusion
+and clipping is not an issue,
+
+
+107
+00:05:09,209 --> 00:05:12,379
+the Safe Area width
+matches the display's width
+
+
+108
+00:05:12,379 --> 00:05:15,582
+and the table is allowed to run
+edge-to-edge.
+
+
+109
+00:05:15,582 --> 00:05:17,484
+You'll notice
+that text and controls
+
+
+110
+00:05:17,484 --> 00:05:20,754
+are actually inset
+from the safe area.
+
+
+111
+00:05:20,754 --> 00:05:23,623
+This inset is achieved
+using another layout guide
+
+
+112
+00:05:23,623 --> 00:05:25,659
+called a layout margin.
+
+
+113
+00:05:25,659 --> 00:05:26,860
+Layout margins provide
+
+
+114
+00:05:26,860 --> 00:05:29,596
+consistent content margins
+across apps
+
+
+115
+00:05:29,596 --> 00:05:32,666
+and help you to align content
+to other controls
+
+
+116
+00:05:32,666 --> 00:05:35,669
+like navigation bar buttons.
+
+
+117
+00:05:35,669 --> 00:05:37,771
+Even if you're not using
+auto-layout,
+
+
+118
+00:05:37,771 --> 00:05:41,007
+UIView provides
+the Safe Area insets
+
+
+119
+00:05:41,007 --> 00:05:44,711
+and layout margin values
+as properties.
+
+
+120
+00:05:44,711 --> 00:05:48,148
+Now, one final note
+about auto-layout.
+
+
+121
+00:05:48,148 --> 00:05:51,384
+iPhone 6, 7, 8, and X
+
+
+122
+00:05:51,384 --> 00:05:55,021
+all belong in
+the compact width size class.
+
+
+123
+00:05:55,021 --> 00:05:57,791
+This essentially means
+that your app's layout
+
+
+124
+00:05:57,791 --> 00:06:02,162
+should be consistent
+on all these devices.
+
+
+125
+00:06:02,162 --> 00:06:04,431
+If your app
+has custom controls
+
+
+126
+00:06:04,431 --> 00:06:06,533
+or non-standard layouts,
+
+
+127
+00:06:06,533 --> 00:06:08,635
+you may need to make
+slight alterations
+
+
+128
+00:06:08,635 --> 00:06:12,772
+to your app's interface
+to work well on iPhone X.
+
+
+129
+00:06:12,772 --> 00:06:15,208
+There are two aspects to this.
+
+
+130
+00:06:15,208 --> 00:06:17,143
+First, your app or game
+
+
+131
+00:06:17,143 --> 00:06:20,580
+should always fill the display
+that it runs on.
+
+
+132
+00:06:20,580 --> 00:06:24,284
+Placing black bars at the top
+or bottom of the screen
+
+
+133
+00:06:24,284 --> 00:06:26,453
+makes your app
+feel small, cramped,
+
+
+134
+00:06:26,453 --> 00:06:30,423
+and inconsistent
+with other apps on iPhone X.
+
+
+135
+00:06:30,423 --> 00:06:32,425
+When designing
+background graphics,
+
+
+136
+00:06:32,425 --> 00:06:34,394
+or rendering background scenes,
+
+
+137
+00:06:34,394 --> 00:06:36,896
+keep in mind
+that iPhone X's display
+
+
+138
+00:06:36,896 --> 00:06:41,835
+has a different aspect ratio
+than a 4.7 inch display.
+
+
+139
+00:06:41,835 --> 00:06:46,940
+Background graphics designed
+for iPhone 8's 16:9 aspect ratio
+
+
+140
+00:06:46,940 --> 00:06:51,278
+will be cropped along the left
+and right edges on iPhone X
+
+
+141
+00:06:51,278 --> 00:06:53,313
+if they're scaled to fill,
+
+
+142
+00:06:53,313 --> 00:06:57,284
+or letter-boxed
+if scaled to fit.
+
+
+143
+00:06:57,284 --> 00:07:01,154
+Similarly, background graphics
+designed for iPhone X, 
+
+
+144
+00:07:01,154 --> 00:07:02,289
+will either be cropped
+
+
+145
+00:07:02,289 --> 00:07:05,859
+along the top and bottom edges
+on iPhone 8
+
+
+146
+00:07:05,859 --> 00:07:07,761
+or pillar-boxed.
+
+
+147
+00:07:07,761 --> 00:07:09,296
+It's best compose images
+
+
+148
+00:07:09,296 --> 00:07:12,465
+so that critical visual
+information remains visible
+
+
+149
+00:07:12,465 --> 00:07:16,836
+regardless of the display's
+aspect ratio.
+
+
+150
+00:07:16,836 --> 00:07:20,373
+The second part of updating
+your layout involves insetting,
+
+
+151
+00:07:20,373 --> 00:07:26,046
+or repositioning interactive
+elements and key information.
+
+
+152
+00:07:26,046 --> 00:07:27,480
+Any element that's positioned
+
+
+153
+00:07:27,480 --> 00:07:30,517
+too close to the viewport's
+edges or corners
+
+
+154
+00:07:30,517 --> 00:07:33,486
+may get clipped
+by the display's rounded corners
+
+
+155
+00:07:33,486 --> 00:07:36,423
+or covered
+by the sensor housing.
+
+
+156
+00:07:36,423 --> 00:07:38,158
+So be sure to inset controls
+
+
+157
+00:07:38,158 --> 00:07:40,493
+and other elements
+to avoid this.
+
+
+158
+00:07:41,494 --> 00:07:44,931
+Again, Safe Area layout
+guides and layout margins
+
+
+159
+00:07:44,931 --> 00:07:49,202
+should be used for determining
+proper inset values.
+
+
+160
+00:07:49,202 --> 00:07:50,503
+It's also worth noting
+
+
+161
+00:07:50,503 --> 00:07:53,373
+that controls placed
+along a device's edge
+
+
+162
+00:07:53,373 --> 00:07:55,008
+could be more difficult to reach
+
+
+163
+00:07:55,008 --> 00:07:57,577
+depending on how
+the device is held.
+
+
+164
+00:07:57,577 --> 00:08:00,847
+Insetting controls can make
+interacting with them faster
+
+
+165
+00:08:00,847 --> 00:08:02,849
+and more comfortable.
+
+
+166
+00:08:03,717 --> 00:08:06,286
+Visual elements
+that appear tucked into corners
+
+
+167
+00:08:06,286 --> 00:08:09,723
+or under screen edges
+may need to be revised
+
+
+168
+00:08:09,723 --> 00:08:13,526
+since insetting them
+probably won't look right.
+
+
+169
+00:08:13,526 --> 00:08:14,661
+In some cases,
+
+
+170
+00:08:14,661 --> 00:08:17,397
+a different visual treatment
+may be necessary.
+
+
+171
+00:08:19,366 --> 00:08:22,402
+Please also note
+that status bars are taller
+
+
+172
+00:08:22,402 --> 00:08:24,137
+on iPhone X.
+
+
+173
+00:08:24,137 --> 00:08:25,972
+Content views
+that have been inset
+
+
+174
+00:08:25,972 --> 00:08:27,741
+by a fixed point value
+
+
+175
+00:08:27,741 --> 00:08:31,444
+will have their top edges
+covered by the status bar.
+
+
+176
+00:08:31,444 --> 00:08:35,014
+On iPhone X, the status bar
+no longer changes height
+
+
+177
+00:08:35,014 --> 00:08:36,515
+when background tasks,
+
+
+178
+00:08:36,515 --> 00:08:39,119
+like a phone call
+or location tracking,
+
+
+179
+00:08:39,119 --> 00:08:40,587
+are running.
+
+
+180
+00:08:40,587 --> 00:08:44,124
+This helps create a more
+consistent user experience
+
+
+181
+00:08:44,124 --> 00:08:46,426
+regardless
+of the status bar style.
+
+
+182
+00:08:49,729 --> 00:08:54,067
+On iPhone X, the status bar
+occupies an area of the screen
+
+
+183
+00:08:54,067 --> 00:08:57,837
+that your app
+probably won't fully utilize.
+
+
+184
+00:08:57,837 --> 00:08:59,706
+If you have hidden
+the status bar
+
+
+185
+00:08:59,706 --> 00:09:02,509
+to claim more space
+for your app's interface,
+
+
+186
+00:09:02,509 --> 00:09:06,446
+you may want to reconsider
+if that's still necessary.
+
+
+187
+00:09:06,446 --> 00:09:10,383
+Now, one quick note
+about landscape orientation.
+
+
+188
+00:09:10,383 --> 00:09:12,685
+Most apps look and function best
+
+
+189
+00:09:12,685 --> 00:09:16,790
+when controls and visual
+information are centered.
+
+
+190
+00:09:16,790 --> 00:09:19,058
+Asymmetrical layouts
+that shift around
+
+
+191
+00:09:19,058 --> 00:09:21,294
+based on how
+the device is rotated
+
+
+192
+00:09:21,294 --> 00:09:24,431
+will lead to an inconsistent
+user experience
+
+
+193
+00:09:24,431 --> 00:09:26,399
+and can undermine
+people's ability
+
+
+194
+00:09:26,399 --> 00:09:28,234
+to build muscle memory.
+
+
+195
+00:09:29,702 --> 00:09:32,305
+Finally,
+a few key considerations
+
+
+196
+00:09:32,305 --> 00:09:33,740
+related to the indicator
+
+
+197
+00:09:33,740 --> 00:09:35,842
+that let's people know
+they can swipe up
+
+
+198
+00:09:35,842 --> 00:09:39,479
+to access the app switcher
+and Home Screen.
+
+
+199
+00:09:39,479 --> 00:09:42,248
+Because this interaction
+is core to the experience
+
+
+200
+00:09:42,248 --> 00:09:44,250
+of using an iOS device,
+
+
+201
+00:09:44,250 --> 00:09:47,654
+the indicator should always
+be clearly visible.
+
+
+202
+00:09:47,654 --> 00:09:49,422
+To help accomplish this,
+
+
+203
+00:09:49,422 --> 00:09:52,692
+iOS dynamically adjusts
+the indicator's appearance
+
+
+204
+00:09:52,692 --> 00:09:57,297
+to maintain sufficient contrast
+relative to the background.
+
+
+205
+00:09:57,297 --> 00:10:00,767
+The indicator appears dark
+against lighter backgrounds,
+
+
+206
+00:10:00,767 --> 00:10:03,703
+and light
+against darker backgrounds.
+
+
+207
+00:10:03,703 --> 00:10:05,505
+When designing
+your app's interface
+
+
+208
+00:10:05,505 --> 00:10:07,774
+to work well
+with the Home indicator,
+
+
+209
+00:10:07,774 --> 00:10:10,710
+it's best to avoid
+placing interface elements
+
+
+210
+00:10:10,710 --> 00:10:14,414
+in close proximity
+to the indicator.
+
+
+211
+00:10:14,414 --> 00:10:17,617
+Simply leave some negative
+space around the indicator
+
+
+212
+00:10:17,617 --> 00:10:22,355
+by placing all non-scrollable
+content within the safe area.
+
+
+213
+00:10:22,355 --> 00:10:23,990
+It's also not desirable
+
+
+214
+00:10:23,990 --> 00:10:26,259
+to draw special attention
+to the indicator
+
+
+215
+00:10:26,259 --> 00:10:28,328
+through visual adornments
+
+
+216
+00:10:28,328 --> 00:10:31,865
+such as brackets,
+bezels, or other means.
+
+
+217
+00:10:33,199 --> 00:10:34,901
+As mentioned earlier,
+
+
+218
+00:10:34,901 --> 00:10:37,904
+people will access
+the app switcher and Home screen
+
+
+219
+00:10:37,904 --> 00:10:39,272
+by swiping upward
+
+
+220
+00:10:39,272 --> 00:10:41,841
+from the bottom edge
+of the display.
+
+
+221
+00:10:41,841 --> 00:10:42,942
+In most cases,
+
+
+222
+00:10:42,942 --> 00:10:46,679
+swipe gestures tend to occur
+in the center of the display,
+
+
+223
+00:10:46,679 --> 00:10:49,349
+so this interaction
+is unlikely to conflict
+
+
+224
+00:10:49,349 --> 00:10:52,051
+with interactions in your app.
+
+
+225
+00:10:52,051 --> 00:10:55,255
+However, if your app or game
+encourages people
+
+
+226
+00:10:55,255 --> 00:10:58,391
+to swipe along the very
+bottom of the display,
+
+
+227
+00:10:58,391 --> 00:11:01,261
+you may want
+to turn on edge protection
+
+
+228
+00:11:01,261 --> 00:11:04,063
+for the bottom edge
+of the display.
+
+
+229
+00:11:04,063 --> 00:11:07,166
+This will give the indicator
+a more subtle appearance
+
+
+230
+00:11:07,166 --> 00:11:08,701
+and change it's behavior 
+
+
+231
+00:11:08,701 --> 00:11:12,872
+so that two swipes
+are required to exit your app.
+
+
+232
+00:11:12,872 --> 00:11:14,774
+The first swipe, or drag,
+
+
+233
+00:11:14,774 --> 00:11:18,945
+lifts the indicator
+and enables the control.
+
+
+234
+00:11:18,945 --> 00:11:20,380
+While swiping a second time
+
+
+235
+00:11:20,380 --> 00:11:23,883
+allows people
+to exit your app or game.
+
+
+236
+00:11:23,883 --> 00:11:28,154
+Because edge protection leads to
+an inconsistent user experience,
+
+
+237
+00:11:28,154 --> 00:11:32,358
+it should be used only
+when it's absolutely necessary.
+
+
+238
+00:11:32,358 --> 00:11:33,660
+Unlike swipes,
+
+
+239
+00:11:33,660 --> 00:11:35,828
+tapping the bottom edge
+of the display
+
+
+240
+00:11:35,828 --> 00:11:39,032
+will only affect
+your app or game.
+
+
+241
+00:11:39,032 --> 00:11:41,367
+For example,
+tapping a table row cell
+
+
+242
+00:11:41,367 --> 00:11:42,769
+has the same result
+
+
+243
+00:11:42,769 --> 00:11:45,071
+whether or not
+it's behind the indicator.
+
+
+244
+00:11:46,339 --> 00:11:48,041
+Vertically scrollable views,
+
+
+245
+00:11:48,041 --> 00:11:50,577
+such as tables
+or collection views,
+
+
+246
+00:11:50,577 --> 00:11:53,880
+should extend all the way
+to the bottom of the display
+
+
+247
+00:11:53,880 --> 00:11:57,417
+rather than being constrained
+by the Safe Area.
+
+
+248
+00:11:57,417 --> 00:12:00,987
+Lastly, you can enable
+an auto-hide behavior
+
+
+249
+00:12:00,987 --> 00:12:05,124
+when presenting
+full screen visual content.
+
+
+250
+00:12:05,124 --> 00:12:07,560
+Auto-hide causes
+the indicator to fade out
+
+
+251
+00:12:07,560 --> 00:12:10,797
+if the display hasn't been
+touched for a few seconds
+
+
+252
+00:12:10,797 --> 00:12:14,434
+and fade back in
+when the display is touched.
+
+
+253
+00:12:14,434 --> 00:12:18,538
+Use auto-hide sparingly
+and only for passive experiences
+
+
+254
+00:12:18,538 --> 00:12:23,309
+where people are unlikely
+to touch the display frequently.
+
+
+255
+00:12:23,309 --> 00:12:26,379
+OK, for more iPhone X
+design guidance,
+
+
+256
+00:12:26,379 --> 00:12:29,048
+please visit the
+Apple Human Interface Guidelines
+
+
+257
+00:12:29,048 --> 00:12:33,019
+at developer.apple.com/design.
+
+
+258
+00:12:33,019 --> 00:12:35,655
+And while you're there,
+download the latest version
+
+
+259
+00:12:35,655 --> 00:12:38,992
+of the iOS Apple UI
+Design Resources.
+
+
+260
+00:12:38,992 --> 00:12:41,661
+We've updated the Sketch
+and Photoshop templates
+
+
+261
+00:12:41,661 --> 00:12:43,062
+for iPhone X,
+

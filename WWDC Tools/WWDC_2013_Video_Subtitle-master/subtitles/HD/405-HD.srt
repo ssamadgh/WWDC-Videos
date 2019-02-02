@@ -1,0 +1,6054 @@
+1
+00:00:00,506 --> 00:00:09,656
+[ Silence ]
+
+
+2
+00:00:10,156 --> 00:00:13,896
+>> Good morning and welcome to
+Interface Builder Core Concepts.
+
+
+3
+00:00:14,186 --> 00:00:16,756
+My name is Kelly Keenan and
+I'm going to be stepping you
+
+
+4
+00:00:16,846 --> 00:00:18,856
+through the first
+half of this session.
+
+
+5
+00:00:19,976 --> 00:00:23,226
+Now, what we're going to be
+doing today is talking about how
+
+
+6
+00:00:23,226 --> 00:00:28,706
+to get started creating
+fantastic user interfaces using
+
+
+7
+00:00:28,706 --> 00:00:33,956
+Interface Builder
+inside of Xcode.
+
+
+8
+00:00:35,046 --> 00:00:41,726
+So, the way that we build
+interfaces in Xcode is
+
+
+9
+00:00:41,726 --> 00:00:45,766
+by dragging and dropping
+actual live controls and views,
+
+
+10
+00:00:46,436 --> 00:00:50,626
+and then configuring them
+and making connections
+
+
+11
+00:00:50,626 --> 00:00:53,496
+between those views and
+controls and your code.
+
+
+12
+00:00:55,216 --> 00:00:59,986
+So, it's perfectly
+normal to write code
+
+
+13
+00:00:59,986 --> 00:01:04,876
+to design your user interface,
+and this code does just that.
+
+
+14
+00:01:05,046 --> 00:01:07,466
+For example, it creates
+an image,
+
+
+15
+00:01:07,536 --> 00:01:11,196
+and then it creates a button,
+and then it adds the image
+
+
+16
+00:01:11,226 --> 00:01:14,436
+to the button, it sets the
+buttons target in action
+
+
+17
+00:01:15,076 --> 00:01:16,926
+and it adds the button
+to the window.
+
+
+18
+00:01:17,906 --> 00:01:20,026
+Now these are really simple
+things that you're going
+
+
+19
+00:01:20,026 --> 00:01:21,126
+to do over and over again.
+
+
+20
+00:01:21,126 --> 00:01:25,466
+And in this case, what this
+code actually does is it creates
+
+
+21
+00:01:25,466 --> 00:01:27,396
+that little info button in
+the corner of the window
+
+
+22
+00:01:28,286 --> 00:01:30,066
+and so we want to
+make things like this,
+
+
+23
+00:01:30,246 --> 00:01:31,676
+something that you're
+going to do over
+
+
+24
+00:01:31,676 --> 00:01:33,796
+and over again that's
+easily repeatable.
+
+
+25
+00:01:34,016 --> 00:01:37,266
+We want to make this easy
+for you within Xcode.
+
+
+26
+00:01:39,066 --> 00:01:42,146
+So, let's take a little tour
+of Xcode and what we're going
+
+
+27
+00:01:42,146 --> 00:01:44,856
+to be talking about today just
+that we have the same vocabulary
+
+
+28
+00:01:44,856 --> 00:01:46,916
+when we're speaking
+of these things.
+
+
+29
+00:01:47,286 --> 00:01:49,376
+The first thing is
+going to be our canvas.
+
+
+30
+00:01:49,676 --> 00:01:51,976
+Our canvas is in the center
+and this is where we drag
+
+
+31
+00:01:51,976 --> 00:01:53,276
+and drop our controls and views.
+
+
+32
+00:01:53,926 --> 00:01:55,206
+And we manipulate them
+
+
+33
+00:01:55,206 --> 00:01:58,726
+by resizing them or
+editing the text.
+
+
+34
+00:02:00,256 --> 00:02:02,396
+Next is the document outline.
+
+
+35
+00:02:02,736 --> 00:02:05,516
+Document outline shows you
+all of the views and controls
+
+
+36
+00:02:05,516 --> 00:02:07,386
+that are in your interface.
+
+
+37
+00:02:07,786 --> 00:02:11,116
+Sometimes, you'll notice that
+some of your views are obscured
+
+
+38
+00:02:11,116 --> 00:02:13,076
+by other views and they
+might be hard to just click
+
+
+39
+00:02:13,076 --> 00:02:14,056
+on them in the canvas.
+
+
+40
+00:02:14,366 --> 00:02:17,506
+Use the document outline to
+access these items easily.
+
+
+41
+00:02:18,176 --> 00:02:20,286
+The third part are
+the inspectors,
+
+
+42
+00:02:20,286 --> 00:02:22,696
+and the inspectors
+are where you're going
+
+
+43
+00:02:22,696 --> 00:02:25,506
+to edit the properties of
+your views and controls.
+
+
+44
+00:02:26,686 --> 00:02:29,026
+So, there's a lot of step
+you can do in a canvas
+
+
+45
+00:02:29,066 --> 00:02:32,396
+but this gives you the
+fine-grained access to all
+
+
+46
+00:02:32,396 --> 00:02:34,566
+of the properties
+of those objects.
+
+
+47
+00:02:35,586 --> 00:02:38,416
+And lastly is the
+library, and the library is
+
+
+48
+00:02:38,416 --> 00:02:42,536
+where we give you a bunch of
+pre-made views and controls
+
+
+49
+00:02:42,536 --> 00:02:45,196
+that you can use and just drag
+and drop on to the canvas.
+
+
+50
+00:02:46,296 --> 00:02:48,886
+Now the way we work in Xcode is
+
+
+51
+00:02:49,446 --> 00:02:51,786
+by using the
+Model-View-Controller paradigm.
+
+
+52
+00:02:52,276 --> 00:02:55,226
+You've probably mostly familiar
+with this and what we're going
+
+
+53
+00:02:55,226 --> 00:02:57,896
+to be talking today about
+is mainly the view and how
+
+
+54
+00:02:57,896 --> 00:03:01,896
+to design your view, but also
+the view doesn't do much all
+
+
+55
+00:03:01,896 --> 00:03:02,476
+by itself.
+
+
+56
+00:03:02,476 --> 00:03:04,696
+It looks pretty but
+there's nothing behind it,
+
+
+57
+00:03:04,696 --> 00:03:05,986
+unless you add a controller,
+
+
+58
+00:03:05,986 --> 00:03:08,996
+and that controller is your
+personal code that's going
+
+
+59
+00:03:08,996 --> 00:03:13,466
+to do something when the user
+interacts with your interface,
+
+
+60
+00:03:13,916 --> 00:03:16,346
+and it's going to be used
+to display information back
+
+
+61
+00:03:16,516 --> 00:03:18,046
+to the user in your view.
+
+
+62
+00:03:18,416 --> 00:03:21,346
+So the other part we need to
+talk about is how to connect
+
+
+63
+00:03:21,346 --> 00:03:23,926
+to these two, how to connect
+the view to the controller
+
+
+64
+00:03:23,926 --> 00:03:26,226
+and make your views interactive.
+
+
+65
+00:03:26,746 --> 00:03:31,976
+So in Interface Builder,
+what we use are storyboards,
+
+
+66
+00:03:32,336 --> 00:03:35,686
+and storyboards are a collection
+of these views and controls,
+
+
+67
+00:03:36,466 --> 00:03:39,876
+and I want to remind you,
+these are actual live objects.
+
+
+68
+00:03:39,876 --> 00:03:43,136
+These were not writing code
+behind that's creating these
+
+
+69
+00:03:43,136 --> 00:03:43,926
+objects later.
+
+
+70
+00:03:44,286 --> 00:03:47,446
+When this is saved
+out and compiled,
+
+
+71
+00:03:47,446 --> 00:03:49,066
+they're actual live
+objects so that
+
+
+72
+00:03:49,066 --> 00:03:52,516
+when you load your
+storyboard, you get an instance
+
+
+73
+00:03:52,596 --> 00:03:55,486
+of that object and
+that's important.
+
+
+74
+00:03:55,516 --> 00:03:58,466
+There is no hidden code that
+you're going to want to go find.
+
+
+75
+00:03:58,466 --> 00:04:04,516
+Now, storyboards are made of two
+pieces, the first being scenes.
+
+
+76
+00:04:04,916 --> 00:04:10,116
+Now scenes are like a screen
+of your iPhone or a portion
+
+
+77
+00:04:10,116 --> 00:04:11,336
+of the user interface.
+
+
+78
+00:04:12,456 --> 00:04:15,456
+So, these are two
+examples of scenes.
+
+
+79
+00:04:15,456 --> 00:04:16,625
+We have two scenes here.
+
+
+80
+00:04:17,166 --> 00:04:19,096
+And in order for the scenes
+to talk to each other,
+
+
+81
+00:04:19,096 --> 00:04:21,026
+we have something
+called a segue,
+
+
+82
+00:04:21,166 --> 00:04:25,296
+and a segue represents
+how to move
+
+
+83
+00:04:25,556 --> 00:04:27,366
+from one scene to another scene.
+
+
+84
+00:04:27,906 --> 00:04:33,456
+It also allows you to say, "OK,
+I'm about to move from one scene
+
+
+85
+00:04:33,456 --> 00:04:35,156
+to another scene, and I need
+
+
+86
+00:04:35,156 --> 00:04:36,616
+that other scene
+to get some data.
+
+
+87
+00:04:36,796 --> 00:04:38,856
+So now is the time I'm
+going to push that data
+
+
+88
+00:04:38,946 --> 00:04:40,006
+over to my other scene.
+
+
+89
+00:04:40,406 --> 00:04:43,966
+OK. So, what I'd like
+to do is go through--
+
+
+90
+00:04:43,966 --> 00:04:46,506
+the best thing to do
+is a demo application.
+
+
+91
+00:04:46,946 --> 00:04:50,936
+So, we're going to just
+create a simple user interface
+
+
+92
+00:04:51,086 --> 00:04:52,666
+and we're going to
+change some properties.
+
+
+93
+00:04:52,666 --> 00:04:54,956
+We're going to learn how
+to resize and align objects
+
+
+94
+00:04:54,956 --> 00:04:56,656
+and hopefully give you
+some tips and tricks
+
+
+95
+00:04:56,656 --> 00:04:58,396
+that maybe you didn't
+know about already.
+
+
+96
+00:04:59,166 --> 00:05:03,056
+And we're going to learn how to
+make connections between scenes
+
+
+97
+00:05:03,246 --> 00:05:05,386
+and between the scenes
+and your code.
+
+
+98
+00:05:05,386 --> 00:05:09,296
+And what we're going to make
+is this application here.
+
+
+99
+00:05:09,296 --> 00:05:10,986
+You've seen it in previous
+demos and we're going
+
+
+100
+00:05:10,986 --> 00:05:12,826
+to start from scratch with it.
+
+
+101
+00:05:12,826 --> 00:05:14,306
+And we're going to do
+this welcome screen
+
+
+102
+00:05:14,306 --> 00:05:17,836
+with the two buttons,
+the timer and the routes,
+
+
+103
+00:05:18,806 --> 00:05:20,636
+tomato, it's up to you guys.
+
+
+104
+00:05:21,106 --> 00:05:23,836
+We're going to work on the
+timer button so I don't have
+
+
+105
+00:05:23,866 --> 00:05:24,956
+to pronounce the
+other word again.
+
+
+106
+00:05:25,386 --> 00:05:30,206
+So, then when you press the
+timer button, it's going to go
+
+
+107
+00:05:30,206 --> 00:05:32,386
+to this run scene
+and show you a timer.
+
+
+108
+00:05:32,436 --> 00:05:33,516
+We can hit the pause button.
+
+
+109
+00:05:33,516 --> 00:05:35,886
+It's going to change
+and we're going to make
+
+
+110
+00:05:35,886 --> 00:05:36,876
+that all happen right now.
+
+
+111
+00:05:37,436 --> 00:05:40,566
+So, let's get to our demo.
+
+
+112
+00:05:40,566 --> 00:05:44,056
+So, we're going to start right
+from scratch and we're going
+
+
+113
+00:05:44,056 --> 00:05:45,686
+to create a new Xcode project.
+
+
+114
+00:05:46,836 --> 00:05:51,616
+Now, in our project, Xcode gives
+you some really basic templates
+
+
+115
+00:05:51,616 --> 00:05:54,716
+that you can work
+with and what we try
+
+
+116
+00:05:54,716 --> 00:05:57,286
+to do is give you those
+things that you might want
+
+
+117
+00:05:57,286 --> 00:05:58,826
+to start your application
+of with,
+
+
+118
+00:05:58,826 --> 00:06:00,476
+it's like a Master-Detail
+Application
+
+
+119
+00:06:00,476 --> 00:06:01,556
+or a Tabbed Application.
+
+
+120
+00:06:01,806 --> 00:06:04,756
+But what I want to show you is
+if you start with a single view,
+
+
+121
+00:06:04,926 --> 00:06:07,806
+how you can create and expand
+that into something else.
+
+
+122
+00:06:08,426 --> 00:06:10,756
+So let's start with just
+a single view application.
+
+
+123
+00:06:11,396 --> 00:06:15,036
+And I'm going to just give it
+a product name and we're going
+
+
+124
+00:06:15,036 --> 00:06:19,146
+to call it Jagger and
+this where you're going
+
+
+125
+00:06:19,146 --> 00:06:20,916
+to set your company identifier,
+
+
+126
+00:06:20,916 --> 00:06:22,666
+your organization,
+and the new devices.
+
+
+127
+00:06:22,666 --> 00:06:25,316
+In this case we're just going
+to use an iPhone app for today.
+
+
+128
+00:06:26,246 --> 00:06:31,636
+So, click next and we're just
+going to save it on the desktop.
+
+
+129
+00:06:32,366 --> 00:06:34,376
+So, the first thing that you see
+
+
+130
+00:06:34,486 --> 00:06:36,626
+when you create a new
+project is you're going
+
+
+131
+00:06:36,626 --> 00:06:38,156
+to see the project settings.
+
+
+132
+00:06:38,796 --> 00:06:41,406
+And there are some things in
+these settings that are specific
+
+
+133
+00:06:41,406 --> 00:06:44,436
+to your user interface, and
+I want to point those out.
+
+
+134
+00:06:45,366 --> 00:06:48,326
+So, specifically, within
+the deployment info--
+
+
+135
+00:06:48,326 --> 00:06:51,796
+oops, sorry, within
+the deployment info,
+
+
+136
+00:06:52,736 --> 00:06:55,946
+you can sub the devices but
+the thing I want to point
+
+
+137
+00:06:55,946 --> 00:06:57,216
+out is the main interface.
+
+
+138
+00:06:57,216 --> 00:07:00,486
+Now you might have wondered
+in the past when you start
+
+
+139
+00:07:00,486 --> 00:07:03,826
+up an application on your
+phone, how does it know
+
+
+140
+00:07:04,226 --> 00:07:05,816
+which storyboard to start with?
+
+
+141
+00:07:06,236 --> 00:07:08,186
+That's set here in
+the project settings.
+
+
+142
+00:07:09,006 --> 00:07:11,216
+So if you had multiple
+storyboards, you would be able
+
+
+143
+00:07:11,216 --> 00:07:12,806
+to change this to a
+different storyboard
+
+
+144
+00:07:12,806 --> 00:07:15,126
+if you wanted your
+application to launch
+
+
+145
+00:07:15,176 --> 00:07:17,386
+with the different
+storyboard than the main one
+
+
+146
+00:07:17,526 --> 00:07:18,996
+that was created
+with the template.
+
+
+147
+00:07:19,466 --> 00:07:26,466
+Also, if you might need to load
+your storyboards based on code.
+
+
+148
+00:07:26,886 --> 00:07:29,156
+You might need to say
+is this iOS 6 or 7
+
+
+149
+00:07:29,156 --> 00:07:31,146
+or what storyboard do
+I want to start with.
+
+
+150
+00:07:31,466 --> 00:07:34,716
+And so, if you want to load
+your storyboard from code,
+
+
+151
+00:07:34,716 --> 00:07:37,386
+you're going to delete this
+and just leave it blank.
+
+
+152
+00:07:38,016 --> 00:07:41,386
+OK? Now, you can also set
+your device orientation,
+
+
+153
+00:07:41,386 --> 00:07:44,256
+your status bar style,
+and here are the app icon
+
+
+154
+00:07:44,256 --> 00:07:45,866
+in the launched images
+that are used
+
+
+155
+00:07:45,866 --> 00:07:47,786
+when your application
+is starting up.
+
+
+156
+00:07:48,406 --> 00:07:53,176
+Now speaking of images, we have
+an image or asset catalogue
+
+
+157
+00:07:53,666 --> 00:07:57,336
+and that app icon in the
+launch image are available here
+
+
+158
+00:07:57,466 --> 00:07:58,636
+in the catalogue.
+
+
+159
+00:07:58,916 --> 00:08:03,696
+Now these are empty and what
+I want is my designer actually
+
+
+160
+00:08:03,696 --> 00:08:06,326
+gave me a bunch of images for
+me to work with today on stage.
+
+
+161
+00:08:06,386 --> 00:08:10,346
+So I'm just going to delete
+the empty ones for now and drag
+
+
+162
+00:08:10,536 --> 00:08:12,806
+in the images I was given.
+
+
+163
+00:08:13,296 --> 00:08:15,156
+Drop them in there.
+
+
+164
+00:08:15,156 --> 00:08:18,176
+So now these are images that
+we're going to be able work
+
+
+165
+00:08:18,176 --> 00:08:20,816
+with today during
+our project demo.
+
+
+166
+00:08:21,726 --> 00:08:26,406
+So let's go to the
+storyboard and I'm going
+
+
+167
+00:08:26,476 --> 00:08:31,436
+to bring this full screen and
+hide the project navigator
+
+
+168
+00:08:31,436 --> 00:08:33,256
+for now because we're not
+going to need it for a while.
+
+
+169
+00:08:34,405 --> 00:08:37,635
+So, what I said earlier was
+that these are live objects.
+
+
+170
+00:08:37,635 --> 00:08:39,336
+We can drag them around
+and we can move them.
+
+
+171
+00:08:40,135 --> 00:08:42,756
+This is a view controller,
+this is my first scene.
+
+
+172
+00:08:43,015 --> 00:08:45,686
+And the way I know that this
+is the scene that's going
+
+
+173
+00:08:45,686 --> 00:08:50,356
+to be seen when my app launches
+is this error right here
+
+
+174
+00:08:50,356 --> 00:08:52,366
+that points to the
+RootViewController.
+
+
+175
+00:08:53,386 --> 00:08:55,686
+Now, I showed you
+already that I'm going
+
+
+176
+00:08:55,686 --> 00:08:58,096
+to press the timer button and
+I'm going to go to another scene
+
+
+177
+00:08:58,096 --> 00:09:00,696
+and I want that scene to be able
+to go back to the first scene.
+
+
+178
+00:09:01,036 --> 00:09:03,396
+So I'm going to need something
+called a navigation controller.
+
+
+179
+00:09:04,246 --> 00:09:07,836
+And so, now that I've decided--
+
+
+180
+00:09:08,376 --> 00:09:10,096
+oh, I don't just
+want single stand,
+
+
+181
+00:09:10,096 --> 00:09:11,336
+I want a navigation controller.
+
+
+182
+00:09:11,646 --> 00:09:15,106
+I want to be able to embed this
+into a navigation controller.
+
+
+183
+00:09:15,486 --> 00:09:17,426
+So with my view controller
+selected,
+
+
+184
+00:09:17,426 --> 00:09:18,756
+I can go to the Editor menu.
+
+
+185
+00:09:18,756 --> 00:09:21,946
+Now the Editor menu has all
+of these specific actions
+
+
+186
+00:09:21,946 --> 00:09:24,876
+that are available
+to Interface Builder.
+
+
+187
+00:09:25,506 --> 00:09:27,116
+So these changes depending
+
+
+188
+00:09:27,116 --> 00:09:29,916
+on what editor you have open
+whether it's Interface Builder
+
+
+189
+00:09:29,916 --> 00:09:31,386
+or a source editor.
+
+
+190
+00:09:31,386 --> 00:09:35,866
+And in this case I want to embed
+in a navigation controller.
+
+
+191
+00:09:36,456 --> 00:09:42,906
+So, now the scene that we're
+going to work with is inside
+
+
+192
+00:09:42,906 --> 00:09:44,576
+of this navigation controller
+
+
+193
+00:09:44,576 --> 00:09:46,906
+and they are connected
+by a relationship.
+
+
+194
+00:09:47,746 --> 00:09:50,666
+And if we want to see exactly
+what's going and we can open
+
+
+195
+00:09:50,666 --> 00:09:53,306
+up the document outline with
+the button in the bottom corner,
+
+
+196
+00:09:53,306 --> 00:09:56,346
+we can see exactly
+the objects that are
+
+
+197
+00:09:56,346 --> 00:09:58,716
+in my storyboard at the moment.
+
+
+198
+00:10:00,646 --> 00:10:03,856
+Now, that application had
+a really great background
+
+
+199
+00:10:04,196 --> 00:10:06,416
+and that was one of
+those images I was given.
+
+
+200
+00:10:06,856 --> 00:10:11,886
+So, the first thing I want to do
+is add that image to our scene
+
+
+201
+00:10:12,356 --> 00:10:16,236
+and you can find all of the
+images that we have added
+
+
+202
+00:10:16,236 --> 00:10:18,086
+to the asset catalog
+are available here
+
+
+203
+00:10:18,086 --> 00:10:19,156
+in the media library.
+
+
+204
+00:10:20,766 --> 00:10:23,456
+So, you'll see these are
+all the images that I added.
+
+
+205
+00:10:24,006 --> 00:10:28,776
+So, we can easily just drag
+out the background and drop it
+
+
+206
+00:10:28,776 --> 00:10:32,616
+on to our canvas, move
+it around a little bit,
+
+
+207
+00:10:32,616 --> 00:10:34,216
+and we also want to add a title.
+
+
+208
+00:10:34,996 --> 00:10:36,736
+So I can drag out the
+title and I'm just going
+
+
+209
+00:10:36,736 --> 00:10:37,666
+to place it here for now.
+
+
+210
+00:10:37,666 --> 00:10:39,696
+I'm not going to worry about
+placement for the moment.
+
+
+211
+00:10:39,766 --> 00:10:43,406
+So the next thing we
+needed are two buttons.
+
+
+212
+00:10:44,206 --> 00:10:47,496
+So, I'm going to go to
+the third library here
+
+
+213
+00:10:47,886 --> 00:10:50,466
+which is the object library
+and the object library is
+
+
+214
+00:10:50,466 --> 00:10:52,146
+where you're going to see
+all those controls and views.
+
+
+215
+00:10:52,636 --> 00:10:55,616
+So we can scroll through
+and look for things that way
+
+
+216
+00:10:55,616 --> 00:10:57,386
+or you could just type
+in the filer field.
+
+
+217
+00:10:57,806 --> 00:11:02,756
+So we can type in "button" and
+I see I have my button here.
+
+
+218
+00:11:02,966 --> 00:11:06,436
+Now, I can drag my button out
+and drop it on to my canvas,
+
+
+219
+00:11:07,296 --> 00:11:10,406
+and you'll see I have a
+nice little button here.
+
+
+220
+00:11:10,786 --> 00:11:13,186
+I can double click it if
+I want to edit the title.
+
+
+221
+00:11:13,656 --> 00:11:17,106
+So I could change this
+to timer if I wanted to.
+
+
+222
+00:11:17,306 --> 00:11:19,566
+In this case they don't
+actually want a title.
+
+
+223
+00:11:19,926 --> 00:11:24,806
+And so, I'm going to delete this
+title right now and I want it
+
+
+224
+00:11:24,806 --> 00:11:27,336
+to have that image
+of the little clock.
+
+
+225
+00:11:27,906 --> 00:11:30,176
+So, I can go back to
+media library and drag
+
+
+226
+00:11:30,176 --> 00:11:33,316
+out the timer button
+and drop it in.
+
+
+227
+00:11:33,316 --> 00:11:36,836
+So, at this point, I need
+a second button as well.
+
+
+228
+00:11:37,536 --> 00:11:41,666
+And so, I'm just going to
+duplicate this with command D
+
+
+229
+00:11:41,946 --> 00:11:44,326
+and create a second
+timer button.
+
+
+230
+00:11:44,836 --> 00:11:46,856
+And you'll notice
+as I move it around,
+
+
+231
+00:11:47,236 --> 00:11:48,506
+there are these blue lines.
+
+
+232
+00:11:49,406 --> 00:11:51,606
+Maybe I can zoom in a little
+more so you can see them.
+
+
+233
+00:11:51,756 --> 00:11:56,406
+There are these blue lines
+that show up and my button kind
+
+
+234
+00:11:56,406 --> 00:11:58,136
+of snaps to them as
+I move it around.
+
+
+235
+00:11:58,386 --> 00:12:01,976
+These are called guides and
+they're really useful to be able
+
+
+236
+00:12:01,976 --> 00:12:04,166
+to get your user
+interface elements
+
+
+237
+00:12:04,456 --> 00:12:05,826
+in the correct position.
+
+
+238
+00:12:06,836 --> 00:12:10,086
+So, this way, I now know these
+buttons are properly space.
+
+
+239
+00:12:10,766 --> 00:12:13,716
+If I select both of them at
+the same time, I can move them
+
+
+240
+00:12:13,716 --> 00:12:16,806
+around and now center them.
+
+
+241
+00:12:17,006 --> 00:12:20,876
+And another thing is that my
+designer said he wanted these
+
+
+242
+00:12:20,876 --> 00:12:23,756
+buttons to be 34
+points from the bottom.
+
+
+243
+00:12:25,216 --> 00:12:30,056
+So, how exactly do I get them
+34 points from the bottom?
+
+
+244
+00:12:30,666 --> 00:12:33,726
+Well, there's a little secret,
+I don't know if you guys know
+
+
+245
+00:12:33,726 --> 00:12:35,396
+about this yet but
+hopefully you do,
+
+
+246
+00:12:35,606 --> 00:12:37,906
+if you hold down the option
+key while you have something
+
+
+247
+00:12:37,906 --> 00:12:40,116
+selected and move
+your mouse around,
+
+
+248
+00:12:40,116 --> 00:12:43,776
+it will actually show you
+how far your items are
+
+
+249
+00:12:43,776 --> 00:12:44,766
+from other items.
+
+
+250
+00:12:45,156 --> 00:12:49,046
+So, in this case, we're
+48 and I want to be 34.
+
+
+251
+00:12:49,046 --> 00:12:51,186
+And so I can use the
+arrow keys to just move
+
+
+252
+00:12:51,846 --> 00:12:55,796
+down to 34 points, great.
+
+
+253
+00:12:56,456 --> 00:13:00,076
+And the last thing is I want
+this title to be centered
+
+
+254
+00:13:00,076 --> 00:13:01,826
+and I want it right
+above the buttons.
+
+
+255
+00:13:02,956 --> 00:13:05,966
+So, that's laid out,
+but I haven't changed
+
+
+256
+00:13:05,966 --> 00:13:09,576
+that other timer button, it
+needs to be a routes button.
+
+
+257
+00:13:09,776 --> 00:13:11,986
+So, I can just drag
+the image in,
+
+
+258
+00:13:12,386 --> 00:13:13,916
+drop that in, and
+we're good to go.
+
+
+259
+00:13:14,466 --> 00:13:16,496
+So, this is our welcome screen.
+
+
+260
+00:13:17,446 --> 00:13:19,736
+Looks great, does
+nothing at this point.
+
+
+261
+00:13:20,136 --> 00:13:22,516
+And the first thing we want
+to be able to do is move
+
+
+262
+00:13:22,516 --> 00:13:24,776
+from that timer button
+to our new scene.
+
+
+263
+00:13:25,826 --> 00:13:30,626
+So, in order to do that, we're
+going to need a view controller.
+
+
+264
+00:13:31,096 --> 00:13:34,156
+So, if I go to the objects
+library, I can just type
+
+
+265
+00:13:34,156 --> 00:13:38,016
+in view controller
+and I can drag one
+
+
+266
+00:13:38,016 --> 00:13:39,616
+out onto my canvas here.
+
+
+267
+00:13:40,286 --> 00:13:43,446
+Let's scroll out a little.
+
+
+268
+00:13:44,716 --> 00:13:48,926
+So, now I have this new view
+controller on my canvas,
+
+
+269
+00:13:48,926 --> 00:13:51,636
+that's going to be
+that second scene.
+
+
+270
+00:13:51,746 --> 00:13:55,296
+And in order to connect from
+the timer to this new scene,
+
+
+271
+00:13:55,296 --> 00:13:59,046
+the timer button to this
+new scene, I'm going hold
+
+
+272
+00:13:59,046 --> 00:14:01,026
+down the con-- I'm going
+to select the timer
+
+
+273
+00:14:01,526 --> 00:14:04,836
+and then hold the control
+key while I'm dragging
+
+
+274
+00:14:04,836 --> 00:14:05,656
+to the new scene.
+
+
+275
+00:14:06,726 --> 00:14:10,736
+And when I release, what I'll
+see is I'm given three choices
+
+
+276
+00:14:10,736 --> 00:14:14,096
+for a segue, either a
+push, a modal, or a custom.
+
+
+277
+00:14:14,326 --> 00:14:16,766
+And I'm going to choose
+push and when I do,
+
+
+278
+00:14:17,736 --> 00:14:19,476
+we have our segue created.
+
+
+279
+00:14:19,656 --> 00:14:22,656
+So now, when I hit that
+timer button, there is going
+
+
+280
+00:14:22,656 --> 00:14:25,726
+to be a push segue to
+bring out this new scene.
+
+
+281
+00:14:27,086 --> 00:14:28,796
+So let's design the new scene.
+
+
+282
+00:14:29,516 --> 00:14:33,816
+There is some more images I
+was given, one of them was
+
+
+283
+00:14:33,816 --> 00:14:37,186
+that circle up at the top that
+the label for the timer was in.
+
+
+284
+00:14:37,786 --> 00:14:39,366
+So, I'm just going to
+center that in here
+
+
+285
+00:14:39,366 --> 00:14:41,106
+and you can see I'm
+using the guides.
+
+
+286
+00:14:41,766 --> 00:14:45,916
+I need a button down at the
+bottom, so I'm just going
+
+
+287
+00:14:45,916 --> 00:14:47,516
+to copy and paste the button
+
+
+288
+00:14:47,726 --> 00:14:51,226
+that I have already
+and then change it.
+
+
+289
+00:14:52,536 --> 00:14:53,646
+So, do paste.
+
+
+290
+00:14:54,746 --> 00:14:58,626
+Now, again, I want this
+button instead of 34,
+
+
+291
+00:14:58,856 --> 00:15:01,096
+the designer said
+this one has to be 56.
+
+
+292
+00:15:01,436 --> 00:15:03,056
+So again, I can hold
+the option key down.
+
+
+293
+00:15:03,956 --> 00:15:06,386
+I can-- to make sure
+it's centered first.
+
+
+294
+00:15:06,386 --> 00:15:08,586
+OK, hold the option
+key and I can check,
+
+
+295
+00:15:08,666 --> 00:15:13,706
+and I can move it exactly to
+where I was told that should be.
+
+
+296
+00:15:13,946 --> 00:15:18,396
+And it's not going to be that
+button; this one is going
+
+
+297
+00:15:18,396 --> 00:15:20,656
+to be a pause button, so
+I just drag my image in.
+
+
+298
+00:15:21,196 --> 00:15:26,966
+OK, so the next thing I need is
+to change the background color.
+
+
+299
+00:15:27,716 --> 00:15:32,856
+So, my view, I can't
+change the background just
+
+
+300
+00:15:32,856 --> 00:15:34,656
+by editing it on the canvas.
+
+
+301
+00:15:34,656 --> 00:15:36,966
+So far, everything we've
+done has been on the canvas
+
+
+302
+00:15:36,966 --> 00:15:39,276
+and just dragging and dropping
+and manipulating things.
+
+
+303
+00:15:39,616 --> 00:15:42,556
+But I need to change the
+background color for this view.
+
+
+304
+00:15:43,046 --> 00:15:46,816
+So I'm going to open up the
+Attributes Inspector up here.
+
+
+305
+00:15:47,446 --> 00:15:51,566
+And when I do, you'll see that
+these are all the attributes
+
+
+306
+00:15:51,566 --> 00:15:53,236
+that are specific to view.
+
+
+307
+00:15:53,496 --> 00:15:57,016
+And in this case, we can
+let the tool tip come up.
+
+
+308
+00:15:57,016 --> 00:15:58,896
+This is the background color.
+
+
+309
+00:15:58,896 --> 00:16:01,646
+The tool tips will give you
+some related method information
+
+
+310
+00:16:02,026 --> 00:16:04,486
+which can be useful if you're
+just getting used to this.
+
+
+311
+00:16:05,226 --> 00:16:07,086
+So, I'm going to click
+on the background color.
+
+
+312
+00:16:07,086 --> 00:16:09,746
+Now, I've already set
+one up and I've left it
+
+
+313
+00:16:09,746 --> 00:16:12,956
+in my color swatches,
+so, ready there.
+
+
+314
+00:16:14,026 --> 00:16:17,666
+And the next thing we
+want to do is add a label.
+
+
+315
+00:16:17,956 --> 00:16:19,816
+So I'm going to go back
+to the object library,
+
+
+316
+00:16:21,076 --> 00:16:26,826
+select the Label, and let's
+drag this in a little bit
+
+
+317
+00:16:26,826 --> 00:16:27,666
+so you can see better.
+
+
+318
+00:16:28,466 --> 00:16:31,636
+So, when I drag this out, one of
+the nice things is that as soon
+
+
+319
+00:16:31,636 --> 00:16:34,286
+as I move the label on
+to this dark background,
+
+
+320
+00:16:34,286 --> 00:16:37,786
+it's going to change
+color to light knowing
+
+
+321
+00:16:37,786 --> 00:16:39,766
+that you don't really
+want a dark label on top
+
+
+322
+00:16:39,766 --> 00:16:40,836
+of a black background.
+
+
+323
+00:16:41,736 --> 00:16:43,496
+Now, this label is
+really small so I'm going
+
+
+324
+00:16:43,496 --> 00:16:46,256
+to make it a lot
+bigger right now.
+
+
+325
+00:16:46,666 --> 00:16:49,966
+And I need to change
+the font size so that,
+
+
+326
+00:16:49,966 --> 00:16:51,426
+you know, it's easily seen.
+
+
+327
+00:16:51,426 --> 00:16:53,226
+So, I'm going to
+go to the inspector
+
+
+328
+00:16:53,226 --> 00:16:55,186
+or the Attributes Inspector
+again, and now you'll see
+
+
+329
+00:16:55,186 --> 00:16:57,096
+in addition to View,
+I have Label.
+
+
+330
+00:16:57,416 --> 00:16:59,796
+So, all of the controls in
+the Attributes Inspector,
+
+
+331
+00:17:00,066 --> 00:17:03,236
+all of the properties are
+separated by hierarchy.
+
+
+332
+00:17:03,646 --> 00:17:05,266
+So you're going to see the
+things that are specific
+
+
+333
+00:17:05,266 --> 00:17:08,846
+to UILabel first and then
+its super class UIView will
+
+
+334
+00:17:08,846 --> 00:17:10,205
+come next.
+
+
+335
+00:17:10,965 --> 00:17:13,945
+So, in this case, I want to
+change the font and I can click
+
+
+336
+00:17:13,945 --> 00:17:20,256
+on the font picker, change to
+system bold, and I want 36.
+
+
+337
+00:17:21,616 --> 00:17:22,425
+OK, great.
+
+
+338
+00:17:23,205 --> 00:17:30,106
+Now, I wanted to default
+to looking like this,
+
+
+339
+00:17:30,286 --> 00:17:33,856
+and I want to center
+it inside of my circle.
+
+
+340
+00:17:34,666 --> 00:17:37,376
+Now, you'll notice it's not
+really centering correctly
+
+
+341
+00:17:37,456 --> 00:17:40,386
+and that's because the
+label is much bigger
+
+
+342
+00:17:40,386 --> 00:17:42,476
+than the text that's inside it.
+
+
+343
+00:17:43,006 --> 00:17:48,126
+Now, we could resize by
+moving around and trying
+
+
+344
+00:17:48,126 --> 00:17:49,416
+to get just the right size,
+
+
+345
+00:17:49,416 --> 00:17:51,296
+but I don't really know
+what the right size is.
+
+
+346
+00:17:51,656 --> 00:17:54,496
+Now, it's possible I
+might know how this--
+
+
+347
+00:17:54,646 --> 00:17:57,876
+like I might know the
+pixels for it, so I could go
+
+
+348
+00:17:57,876 --> 00:18:01,456
+to the Size Inspector, and if
+I click there, that's going
+
+
+349
+00:18:01,456 --> 00:18:04,266
+to show me the position of my
+object as well as the width
+
+
+350
+00:18:04,266 --> 00:18:05,956
+and the height, and
+some other information.
+
+
+351
+00:18:08,616 --> 00:18:10,756
+So, I could set it
+specifically here,
+
+
+352
+00:18:11,036 --> 00:18:12,756
+but one of the things I
+really want to tell you
+
+
+353
+00:18:12,756 --> 00:18:14,886
+about right now is
+in the Editor menu
+
+
+354
+00:18:16,576 --> 00:18:19,566
+which is Size to Fit Content.
+
+
+355
+00:18:19,826 --> 00:18:22,056
+And I use this all the
+time, command equals.
+
+
+356
+00:18:23,316 --> 00:18:26,046
+And when I click on that,
+it just resizes the label
+
+
+357
+00:18:26,046 --> 00:18:28,676
+to fit the title
+that's inside of it.
+
+
+358
+00:18:29,116 --> 00:18:30,326
+So, now when I drag it around,
+
+
+359
+00:18:30,326 --> 00:18:33,576
+it'll center properly
+to the actual label.
+
+
+360
+00:18:35,276 --> 00:18:37,606
+Great. So now we
+have all these--
+
+
+361
+00:18:38,476 --> 00:18:42,376
+we have our views laid out,
+
+
+362
+00:18:42,376 --> 00:18:45,696
+I think I have all the buttons I
+need and the label that we need,
+
+
+363
+00:18:46,466 --> 00:18:48,006
+but it's not going
+to do anything.
+
+
+364
+00:18:48,006 --> 00:18:50,256
+The timer is not going to run,
+if I press the Pause button,
+
+
+365
+00:18:50,256 --> 00:18:52,576
+nothing is going to happen
+unless I've put some code
+
+
+366
+00:18:52,576 --> 00:18:53,616
+behind this.
+
+
+367
+00:18:53,946 --> 00:18:57,456
+And so, the next thing we
+need to do is create a class
+
+
+368
+00:18:58,036 --> 00:19:02,836
+to control this view controller,
+so, well, to control this view.
+
+
+369
+00:19:03,356 --> 00:19:06,096
+So right now, if I click
+on the view controller,
+
+
+370
+00:19:06,866 --> 00:19:09,936
+I can go up here to
+the Identity Inspector,
+
+
+371
+00:19:12,236 --> 00:19:16,276
+you'll see that this view
+controller is a UIViewController
+
+
+372
+00:19:16,336 --> 00:19:18,246
+but we really want
+our own subclass
+
+
+373
+00:19:18,246 --> 00:19:20,716
+where we can do our
+custom work inside of it.
+
+
+374
+00:19:21,786 --> 00:19:26,576
+So, back in, I'm going to
+close the document outlines
+
+
+375
+00:19:26,576 --> 00:19:31,276
+so we have a little RIM, and
+back in the project navigator,
+
+
+376
+00:19:31,596 --> 00:19:34,446
+I'm going to go ahead I'm
+going to add a new file,
+
+
+377
+00:19:35,026 --> 00:19:40,166
+and in this case, I want to
+add an Objective-C class,
+
+
+378
+00:19:41,016 --> 00:19:44,776
+we're going to call it
+RunViewController and it's going
+
+
+379
+00:19:44,776 --> 00:19:45,716
+to be a subclass
+
+
+380
+00:19:45,716 --> 00:19:47,796
+of UIViewController
+'cause we just want to add
+
+
+381
+00:19:47,796 --> 00:19:49,276
+on to the UIViewController.
+
+
+382
+00:19:49,786 --> 00:19:56,196
+I click Next, and I want
+to make sure that it ends
+
+
+383
+00:19:56,196 --> 00:19:59,416
+up in the target for my
+project and I can create.
+
+
+384
+00:20:01,156 --> 00:20:06,666
+So now you'll see I have some--
+when I create this new file,
+
+
+385
+00:20:06,666 --> 00:20:08,756
+I've given-- I've been
+given some code to start
+
+
+386
+00:20:08,756 --> 00:20:11,136
+with specifically and
+it wouldn't have name.
+
+
+387
+00:20:11,516 --> 00:20:15,766
+So, when you-- the nib that's
+created when you compile,
+
+
+388
+00:20:16,236 --> 00:20:19,606
+this is where you do any
+custom initialization.
+
+
+389
+00:20:20,066 --> 00:20:23,456
+You can also access viewDidLoad
+and didReceiveMemoryWarning.
+
+
+390
+00:20:23,456 --> 00:20:26,336
+So these are places where if
+you needed, you custom things,
+
+
+391
+00:20:26,336 --> 00:20:27,736
+you can do them right here.
+
+
+392
+00:20:28,016 --> 00:20:30,836
+So I'm going to leave that
+and go back to our storyboard.
+
+
+393
+00:20:32,216 --> 00:20:36,056
+Close the project navigator
+'cause we don't need
+
+
+394
+00:20:36,986 --> 00:20:38,766
+that any longer.
+
+
+395
+00:20:38,766 --> 00:20:43,556
+And-- sorry, this view
+controller, I want to make sure
+
+
+396
+00:20:43,556 --> 00:20:45,766
+that instead of a
+UIViewController,
+
+
+397
+00:20:46,096 --> 00:20:48,026
+I want it to be a
+run view controller.
+
+
+398
+00:20:49,046 --> 00:20:52,216
+So now, when this object is
+archived out when we save it,
+
+
+399
+00:20:52,796 --> 00:20:55,166
+when it's instantiated later
+it's going to come back
+
+
+400
+00:20:55,166 --> 00:20:58,776
+as an actual run view
+controller instance.
+
+
+401
+00:20:58,876 --> 00:21:06,976
+So, I can open up my Assistant
+Editor now and we're going
+
+
+402
+00:21:07,596 --> 00:21:09,136
+to make a little
+RIM for our code
+
+
+403
+00:21:09,136 --> 00:21:11,036
+and then show just our view.
+
+
+404
+00:21:12,476 --> 00:21:15,316
+Now, I want to be able access
+this user interface items
+
+
+405
+00:21:15,316 --> 00:21:17,026
+within my code itself.
+
+
+406
+00:21:17,916 --> 00:21:21,076
+And the first I want to be able
+to access is this time label.
+
+
+407
+00:21:23,026 --> 00:21:26,666
+So, I need something in my
+controller that says, "Hey,
+
+
+408
+00:21:26,666 --> 00:21:28,636
+this is a time label, UILabel."
+
+
+409
+00:21:29,076 --> 00:21:32,826
+So, I'm going to make a
+connection between my view
+
+
+410
+00:21:32,886 --> 00:21:34,456
+to my controller,
+and to do that,
+
+
+411
+00:21:34,456 --> 00:21:36,566
+it's the same way you make
+a connection using the segue
+
+
+412
+00:21:36,976 --> 00:21:38,466
+to create a segue.
+
+
+413
+00:21:38,956 --> 00:21:44,496
+Just hold down the control key
+and drag over to your code.
+
+
+414
+00:21:44,496 --> 00:21:50,006
+And when I drop, what you'll see
+is I'm creating a new outlet,
+
+
+415
+00:21:50,006 --> 00:21:55,386
+I can name it time
+label, and connect it.
+
+
+416
+00:21:55,386 --> 00:21:59,576
+And when I do, what I get is I
+get a property that's a UILabel
+
+
+417
+00:21:59,776 --> 00:22:00,706
+named time label.
+
+
+418
+00:22:01,146 --> 00:22:03,846
+So now in my controller,
+anytime I want to access
+
+
+419
+00:22:03,846 --> 00:22:09,116
+that time label I
+just use time label,
+
+
+420
+00:22:09,696 --> 00:22:11,676
+the time label property
+to access it.
+
+
+421
+00:22:11,856 --> 00:22:15,236
+For the same thing, I want
+to do with the pause button.
+
+
+422
+00:22:15,906 --> 00:22:22,796
+So I'm going to control-drag
+in, call this Pause/Run button,
+
+
+423
+00:22:25,516 --> 00:22:30,596
+and now I have a UIButton
+called Pause/Run button
+
+
+424
+00:22:30,596 --> 00:22:31,426
+that I can access.
+
+
+425
+00:22:31,896 --> 00:22:34,646
+The same thing when I
+click the Pause button,
+
+
+426
+00:22:34,916 --> 00:22:37,576
+I want the Pause button to
+change to a different image.
+
+
+427
+00:22:37,926 --> 00:22:40,456
+I also want the circle to
+change to a different image.
+
+
+428
+00:22:41,626 --> 00:22:44,926
+So I can control-drag
+from that image over here
+
+
+429
+00:22:44,926 --> 00:22:47,676
+and call this Pause/Run image.
+
+
+430
+00:22:49,196 --> 00:22:53,166
+So now I have a connection
+to that UIImageView so that
+
+
+431
+00:22:53,166 --> 00:22:58,936
+when my action happens, I can
+actually change that image.
+
+
+432
+00:23:00,486 --> 00:23:02,666
+Now, there's a couple other
+properties that I need
+
+
+433
+00:23:02,666 --> 00:23:04,206
+that aren't specific to my demo,
+
+
+434
+00:23:05,106 --> 00:23:07,746
+and I've created the
+code for it already.
+
+
+435
+00:23:07,746 --> 00:23:10,396
+And what I've done is
+I've stored it down here
+
+
+436
+00:23:10,396 --> 00:23:12,596
+in the Code Snippet library.
+
+
+437
+00:23:14,296 --> 00:23:19,616
+So down here, we have--
+I have demo properties.
+
+
+438
+00:23:19,616 --> 00:23:21,956
+Now, I've dragged
+and drop to this code
+
+
+439
+00:23:21,956 --> 00:23:25,346
+into the Code Snippet library
+given it some information,
+
+
+440
+00:23:25,346 --> 00:23:28,106
+and then anytime I want this
+code I can just drag it right
+
+
+441
+00:23:28,106 --> 00:23:30,496
+out and drop it into
+my document.
+
+
+442
+00:23:32,256 --> 00:23:39,086
+So, one of the other things I
+want to do is we want to be able
+
+
+443
+00:23:39,086 --> 00:23:42,316
+to deal with the action of
+hitting the pause button.
+
+
+444
+00:23:42,316 --> 00:23:43,546
+So we really need a method.
+
+
+445
+00:23:43,546 --> 00:23:46,846
+We need something where
+we can make things happen
+
+
+446
+00:23:46,846 --> 00:23:50,306
+like change the Pause/Run
+button, stop the timer
+
+
+447
+00:23:50,306 --> 00:23:51,526
+and change that circle.
+
+
+448
+00:23:51,986 --> 00:23:54,316
+So I'm going to make
+a connection again
+
+
+449
+00:23:54,506 --> 00:23:58,786
+from the Pause button
+down here and this time,
+
+
+450
+00:23:59,186 --> 00:24:03,416
+instead of an outlet, I'm going
+to make an action connection
+
+
+451
+00:24:03,416 --> 00:24:06,116
+which will connect to a
+method and I'm going to call
+
+
+452
+00:24:06,116 --> 00:24:12,366
+that method "Pause or Run".
+
+
+453
+00:24:12,506 --> 00:24:16,996
+Now, you'll see I have a
+step for my new method.
+
+
+454
+00:24:16,996 --> 00:24:20,776
+And once again, I have
+a pause or run method.
+
+
+455
+00:24:21,036 --> 00:24:23,126
+I have the code for
+it, all ready to go.
+
+
+456
+00:24:23,126 --> 00:24:26,746
+So I'm just going to drag
+that in and close the library.
+
+
+457
+00:24:29,036 --> 00:24:34,176
+Now, what this method
+is doing is we're going
+
+
+458
+00:24:34,176 --> 00:24:38,126
+to determine whether or not
+we need to set the image
+
+
+459
+00:24:38,126 --> 00:24:40,196
+to the pause button or that--
+
+
+460
+00:24:40,196 --> 00:24:45,146
+and the circle to the
+timer running, or switch it
+
+
+461
+00:24:45,146 --> 00:24:46,856
+to the start button
+and the timer stop.
+
+
+462
+00:24:47,656 --> 00:24:50,086
+Now it also calls a
+method called update time
+
+
+463
+00:24:50,556 --> 00:24:51,846
+and we don't have that yet.
+
+
+464
+00:24:51,846 --> 00:24:53,056
+I'm going to add it in here.
+
+
+465
+00:24:53,506 --> 00:24:54,266
+One of the cool things
+
+
+466
+00:24:54,266 --> 00:24:56,756
+about Code Snippets is you
+can give it a shortcut,
+
+
+467
+00:24:57,236 --> 00:24:58,806
+so I can just type in "Helpers"
+
+
+468
+00:24:59,366 --> 00:25:02,406
+and it'll add my code
+right in there for me.
+
+
+469
+00:25:03,446 --> 00:25:04,956
+It's great for like
+reusable code
+
+
+470
+00:25:04,956 --> 00:25:07,146
+that you write all the
+time and use all the time.
+
+
+471
+00:25:07,866 --> 00:25:11,436
+So, in update time, what we're
+actually doing is setting the
+
+
+472
+00:25:11,436 --> 00:25:14,226
+time label, so that
+property, we're using it
+
+
+473
+00:25:14,276 --> 00:25:18,586
+to update the time, and we're
+getting that from time string
+
+
+474
+00:25:18,586 --> 00:25:21,726
+for interval which is up here
+which really just a setting,
+
+
+475
+00:25:21,726 --> 00:25:24,336
+creating a formatted
+string for us.
+
+
+476
+00:25:25,346 --> 00:25:28,416
+And in view will up here we're
+determining whether we're going
+
+
+477
+00:25:28,416 --> 00:25:32,866
+to show the Pause or the Run
+buttons when we load this view.
+
+
+478
+00:25:34,846 --> 00:25:39,736
+So, with any luck, I believe
+we're done with this part
+
+
+479
+00:25:39,736 --> 00:25:42,096
+of the demo so let's try
+it and see if it works.
+
+
+480
+00:25:42,546 --> 00:25:46,736
+So we're going to
+run, filled in Run
+
+
+481
+00:25:47,006 --> 00:25:52,956
+and we should see those images
+that were pre-populated.
+
+
+482
+00:25:53,106 --> 00:25:57,836
+We'll see that launch
+image that shows up
+
+
+483
+00:25:57,836 --> 00:25:59,596
+and then we should see
+our Welcome screen.
+
+
+484
+00:26:02,146 --> 00:26:04,426
+So launch image or
+welcome screen.
+
+
+485
+00:26:04,956 --> 00:26:06,566
+And now as I click
+on the timer button,
+
+
+486
+00:26:07,166 --> 00:26:08,736
+we'll see that the timer starts.
+
+
+487
+00:26:09,236 --> 00:26:11,526
+We click the Pause button
+and because we have access
+
+
+488
+00:26:11,686 --> 00:26:15,726
+to those elements in our
+user interface from our code,
+
+
+489
+00:26:15,726 --> 00:26:18,766
+we can change the buttons
+based on the action
+
+
+490
+00:26:18,766 --> 00:26:21,596
+that happens from the user, OK?
+
+
+491
+00:26:23,866 --> 00:26:33,206
+So, let's stop this
+and go back to slides.
+
+
+492
+00:26:33,326 --> 00:26:37,336
+One thing that I want
+to be more specific
+
+
+493
+00:26:37,336 --> 00:26:38,726
+about is making outlets.
+
+
+494
+00:26:39,616 --> 00:26:42,866
+Now, I showed you how to
+make an outlet from your view
+
+
+495
+00:26:42,866 --> 00:26:46,586
+to your code and create a
+new property when you did it.
+
+
+496
+00:26:46,816 --> 00:26:49,136
+Now, you might already
+have code that you want
+
+
+497
+00:26:49,206 --> 00:26:51,156
+to connect to your views.
+
+
+498
+00:26:51,986 --> 00:26:55,996
+And in this case, we have a
+special keyword that we use
+
+
+499
+00:26:56,046 --> 00:26:58,616
+because in your user interface
+when you're designing it,
+
+
+500
+00:26:58,616 --> 00:27:00,726
+you don't want all of your
+properties to show up.
+
+
+501
+00:27:00,726 --> 00:27:03,096
+You might have a lot of
+properties in your project
+
+
+502
+00:27:03,336 --> 00:27:04,406
+and you don't need to see all
+
+
+503
+00:27:04,406 --> 00:27:07,106
+of them 'cause they're not
+all relevant to your view.
+
+
+504
+00:27:07,636 --> 00:27:09,856
+So what we use is
+the keyword IBOutlet
+
+
+505
+00:27:10,146 --> 00:27:12,706
+and what this says
+is this is relevant
+
+
+506
+00:27:12,706 --> 00:27:16,006
+to my user interface
+design and I want you
+
+
+507
+00:27:16,006 --> 00:27:18,096
+to show this property
+when I'm designing.
+
+
+508
+00:27:18,416 --> 00:27:20,596
+I want to be able to
+have access to it.
+
+
+509
+00:27:21,096 --> 00:27:23,886
+Now, the same thing is
+happens with actions.
+
+
+510
+00:27:24,256 --> 00:27:26,876
+So with an action, this is
+really just a connection
+
+
+511
+00:27:27,146 --> 00:27:30,306
+from your controls to your
+methods and you'll have a lot
+
+
+512
+00:27:30,306 --> 00:27:32,876
+of methods in your
+projects and not all
+
+
+513
+00:27:32,876 --> 00:27:34,436
+of them are relevant
+to your views.
+
+
+514
+00:27:34,976 --> 00:27:37,986
+So what you're going to use is a
+special keyword called IBAction,
+
+
+515
+00:27:38,856 --> 00:27:44,776
+and those actions are going to--
+that's going to let Xcode know
+
+
+516
+00:27:44,776 --> 00:27:47,956
+that this is relevant
+to your user interface.
+
+
+517
+00:27:48,776 --> 00:27:56,436
+So, with that, I would like
+to invite Alex up to talk more
+
+
+518
+00:27:56,486 --> 00:27:57,976
+about what's next
+with storyboards.
+
+
+519
+00:27:58,016 --> 00:27:59,996
+[applause]
+
+
+520
+00:27:59,996 --> 00:28:00,766
+>> Thank you Kelly.
+
+
+521
+00:28:01,396 --> 00:28:02,156
+Hello everyone.
+
+
+522
+00:28:02,416 --> 00:28:05,246
+So, Kelly gave us a good
+introduction to how to set
+
+
+523
+00:28:05,246 --> 00:28:07,676
+up your project and do some
+of the basic interactions
+
+
+524
+00:28:07,676 --> 00:28:08,606
+with interface builder.
+
+
+525
+00:28:09,006 --> 00:28:10,266
+But what do you need to do next?
+
+
+526
+00:28:10,526 --> 00:28:13,056
+Well, the interface is
+really your first step
+
+
+527
+00:28:13,206 --> 00:28:14,496
+but there's a lot of ways
+
+
+528
+00:28:14,526 --> 00:28:17,006
+that those user interface
+elements may want to interact
+
+
+529
+00:28:17,006 --> 00:28:18,786
+with your application
+and you're going to need
+
+
+530
+00:28:18,786 --> 00:28:20,016
+to write some code to do that.
+
+
+531
+00:28:20,256 --> 00:28:22,246
+So I want to show you
+some of that special code
+
+
+532
+00:28:22,466 --> 00:28:24,856
+that you're going to be writing
+on a fairly regular basis.
+
+
+533
+00:28:25,526 --> 00:28:27,386
+To do that, I'm going
+to add a couple
+
+
+534
+00:28:27,386 --> 00:28:28,826
+of views to our application.
+
+
+535
+00:28:29,116 --> 00:28:31,836
+First, I'm going to add a map
+view and on that map view,
+
+
+536
+00:28:31,836 --> 00:28:34,476
+I'm going to put some route
+information about your runs.
+
+
+537
+00:28:35,146 --> 00:28:37,816
+I'm then going to have a
+segue to a detail view,
+
+
+538
+00:28:38,266 --> 00:28:41,956
+and importantly, I have some
+data inside of my map view
+
+
+539
+00:28:41,956 --> 00:28:45,036
+and I want to pass that
+data through the map view
+
+
+540
+00:28:45,126 --> 00:28:46,226
+and into the detail view.
+
+
+541
+00:28:46,226 --> 00:28:48,466
+And I'm going to show you how
+you can take that little pocket
+
+
+542
+00:28:48,466 --> 00:28:51,486
+of data pass it through and
+have the detail view show up.
+
+
+543
+00:28:52,656 --> 00:28:55,546
+So, what I want to
+do is show you how
+
+
+544
+00:28:55,546 --> 00:28:57,896
+to use gesture recognizers,
+this is how we're going
+
+
+545
+00:28:57,896 --> 00:28:59,246
+to do interactions from the map.
+
+
+546
+00:28:59,246 --> 00:29:02,606
+I want to show you how to
+activate segues from code rather
+
+
+547
+00:29:02,606 --> 00:29:04,426
+than just from user
+interface elements.
+
+
+548
+00:29:04,806 --> 00:29:06,556
+I'm going to talk
+about how to pass data
+
+
+549
+00:29:06,556 --> 00:29:08,916
+from one view controller to
+the next view controller.
+
+
+550
+00:29:08,916 --> 00:29:11,926
+I also want to talk about
+two special connections
+
+
+551
+00:29:11,926 --> 00:29:15,096
+that many views have called
+a delegate and a data source.
+
+
+552
+00:29:15,826 --> 00:29:18,616
+And finally, I want to show you
+how to use reusable table cells
+
+
+553
+00:29:18,836 --> 00:29:21,346
+and how to add custom UI
+elements to your application.
+
+
+554
+00:29:25,356 --> 00:29:27,946
+So, with that, let me
+give you a quick demo.
+
+
+555
+00:29:28,146 --> 00:29:31,766
+So, unlike Kelly who was
+starting off showing you how
+
+
+556
+00:29:31,766 --> 00:29:34,786
+to create an application
+from scratch, I didn't want
+
+
+557
+00:29:34,786 --> 00:29:37,046
+to spend a lot of time up
+here copying and pasting code
+
+
+558
+00:29:37,046 --> 00:29:39,636
+around just to get the
+underlying behavior
+
+
+559
+00:29:39,636 --> 00:29:40,406
+that we desire.
+
+
+560
+00:29:40,636 --> 00:29:42,826
+So, I-- before the
+demo, I wrote a number
+
+
+561
+00:29:42,826 --> 00:29:45,096
+of additional view controller
+classes that we can use.
+
+
+562
+00:29:45,396 --> 00:29:47,536
+Now, I'm not going to show
+you every method in those
+
+
+563
+00:29:47,536 --> 00:29:49,976
+but I'm going to show you some
+of the more important methods
+
+
+564
+00:29:49,976 --> 00:29:50,876
+that you'll need to implement.
+
+
+565
+00:29:52,836 --> 00:29:55,096
+So to start off, let's
+go to our storyboard
+
+
+566
+00:29:55,636 --> 00:29:59,206
+and here you'll see the
+storyboard pretty much
+
+
+567
+00:29:59,236 --> 00:30:00,236
+where Kelly left it.
+
+
+568
+00:30:01,586 --> 00:30:03,906
+And the first thing I'm
+going to do is set up so
+
+
+569
+00:30:03,906 --> 00:30:06,166
+that we can show the map.
+
+
+570
+00:30:06,236 --> 00:30:08,286
+So like Kelly did, I'll
+use the object library,
+
+
+571
+00:30:08,876 --> 00:30:10,356
+filter down to the map view,
+
+
+572
+00:30:10,636 --> 00:30:12,616
+of course I'm getting
+ahead of myself.
+
+
+573
+00:30:12,936 --> 00:30:14,186
+First I need to add
+a view controller
+
+
+574
+00:30:14,186 --> 00:30:15,316
+to put the map view into.
+
+
+575
+00:30:17,116 --> 00:30:20,236
+So I'll drag that
+out here and I'll go
+
+
+576
+00:30:20,236 --> 00:30:23,706
+to the identity inspector
+as Kelly did up here
+
+
+577
+00:30:23,706 --> 00:30:26,946
+and I will set this to be a
+map's route view controller.
+
+
+578
+00:30:28,496 --> 00:30:30,246
+Now, I can down to
+my object library,
+
+
+579
+00:30:30,936 --> 00:30:35,586
+filter down to a
+map, and add that in.
+
+
+580
+00:30:36,516 --> 00:30:39,606
+I also want to be able to
+make a segue so I'm going
+
+
+581
+00:30:39,606 --> 00:30:43,566
+to control drag from my
+routes button and I'm going
+
+
+582
+00:30:43,566 --> 00:30:46,696
+to add a push segue just like
+Kelly did for the timer button.
+
+
+583
+00:30:48,496 --> 00:30:50,276
+Now you'll notice
+when I did that,
+
+
+584
+00:30:50,886 --> 00:30:53,496
+it shrunk down my map
+view, and with iOS 7,
+
+
+585
+00:30:53,496 --> 00:30:55,836
+I really want my map
+view to be hinting
+
+
+586
+00:30:55,836 --> 00:30:57,336
+through the top navigation bar.
+
+
+587
+00:30:57,966 --> 00:31:00,266
+To do that, I'm going to
+select the MyViewController,
+
+
+588
+00:31:00,656 --> 00:31:03,926
+I'm going to go to its
+properties, and over here,
+
+
+589
+00:31:04,216 --> 00:31:06,656
+you'll see that there's a
+section called extend edges.
+
+
+590
+00:31:06,876 --> 00:31:08,586
+And on this case, I want
+to be able to extend
+
+
+591
+00:31:08,586 --> 00:31:10,506
+under the top bars
+and bottom bars.
+
+
+592
+00:31:10,796 --> 00:31:12,636
+And even though I don't
+have bottom bars now,
+
+
+593
+00:31:12,636 --> 00:31:14,826
+if I were to add one, I'd
+want to extend underneath it.
+
+
+594
+00:31:15,736 --> 00:31:18,046
+And you'll see now that my
+map view extends all the way
+
+
+595
+00:31:18,046 --> 00:31:19,436
+up to the top of
+the view controller.
+
+
+596
+00:31:22,306 --> 00:31:25,066
+Now, I need to make a couple
+of connections and you saw
+
+
+597
+00:31:25,066 --> 00:31:26,576
+that I changed my
+view controller
+
+
+598
+00:31:26,576 --> 00:31:29,036
+from a UIViewController to
+our map route view controller.
+
+
+599
+00:31:29,496 --> 00:31:32,066
+So now I can just control
+drag from my little mini doc
+
+
+600
+00:31:32,186 --> 00:31:35,876
+to my map view and I can
+connect to the map view outlet.
+
+
+601
+00:31:37,636 --> 00:31:40,246
+But just as important of
+that connection is I need
+
+
+602
+00:31:40,246 --> 00:31:43,366
+to make a connection from the
+map view and drag down back
+
+
+603
+00:31:43,366 --> 00:31:44,586
+to my view controller.
+
+
+604
+00:31:45,176 --> 00:31:46,836
+In here, you'll see
+that there's an outlet
+
+
+605
+00:31:46,836 --> 00:31:48,296
+on the map view called
+the delegate.
+
+
+606
+00:31:49,586 --> 00:31:51,736
+So, what is a delegate?
+
+
+607
+00:31:52,556 --> 00:31:56,056
+A delegate for a user
+interface item is an object
+
+
+608
+00:31:56,056 --> 00:31:58,106
+that can get special
+notifications
+
+
+609
+00:31:58,106 --> 00:32:01,126
+from that user interface element
+and it can also intervene
+
+
+610
+00:32:01,126 --> 00:32:03,636
+at special times for the
+user interface element
+
+
+611
+00:32:03,756 --> 00:32:06,486
+and make decisions on how
+data should be presented.
+
+
+612
+00:32:06,886 --> 00:32:09,506
+So, for example, a map
+view can send notifications
+
+
+613
+00:32:09,506 --> 00:32:10,896
+when it's starting
+to load map data
+
+
+614
+00:32:10,896 --> 00:32:12,406
+and when it's done
+loading map data.
+
+
+615
+00:32:13,146 --> 00:32:15,836
+In our case, since we're
+going to be adding overlays
+
+
+616
+00:32:15,836 --> 00:32:18,806
+to the map view, we want the map
+view to tell us when it's ready
+
+
+617
+00:32:18,806 --> 00:32:20,126
+to receive those overlays.
+
+
+618
+00:32:20,306 --> 00:32:22,686
+And with that-- and we'll do
+that via the delegate outlet.
+
+
+619
+00:32:23,156 --> 00:32:32,206
+So, at this point, we
+could run the application,
+
+
+620
+00:32:32,206 --> 00:32:34,226
+tap the routes button
+and we could see
+
+
+621
+00:32:34,226 --> 00:32:35,296
+that we'd load a map view.
+
+
+622
+00:32:35,486 --> 00:32:38,066
+But we want to do
+a little bit more.
+
+
+623
+00:32:38,066 --> 00:32:40,626
+We want to be able to interact
+with the map view as well.
+
+
+624
+00:32:40,936 --> 00:32:43,046
+And to do that, I'm going
+
+
+625
+00:32:43,046 --> 00:32:47,416
+to use a object called
+the gesture recognizer.
+
+
+626
+00:32:48,036 --> 00:32:49,266
+A gesture recognizer is a way
+
+
+627
+00:32:49,266 --> 00:32:51,026
+that you can add
+additional interaction
+
+
+628
+00:32:51,026 --> 00:32:52,946
+to controls especially controls
+
+
+629
+00:32:52,946 --> 00:32:54,536
+that don't necessarily
+support the type
+
+
+630
+00:32:54,536 --> 00:32:56,016
+of interaction you
+need to start with.
+
+
+631
+00:32:56,616 --> 00:32:59,356
+So on this case, I'm going to
+drag a tap gesture recognizer
+
+
+632
+00:32:59,596 --> 00:33:00,906
+and drop it on to my map view.
+
+
+633
+00:33:00,906 --> 00:33:04,236
+What this will allow me to
+do is that when the user taps
+
+
+634
+00:33:04,236 --> 00:33:07,946
+into the map view, I'll be able
+to take that tap and send it
+
+
+635
+00:33:07,946 --> 00:33:08,936
+to my view Vontroller.
+
+
+636
+00:33:09,126 --> 00:33:13,136
+And to do that, you'll see that
+it added down here in my doc,
+
+
+637
+00:33:13,136 --> 00:33:16,386
+the tap gesture recognizer, I
+can control drag between that
+
+
+638
+00:33:16,386 --> 00:33:18,576
+and my view controller,
+and you'll see that one
+
+
+639
+00:33:18,576 --> 00:33:21,456
+of my sent actions I can
+do is tap in map view.
+
+
+640
+00:33:23,836 --> 00:33:25,376
+So let's take a quick
+look at some
+
+
+641
+00:33:25,376 --> 00:33:26,606
+of the code that backs this up.
+
+
+642
+00:33:27,516 --> 00:33:32,926
+[ Pause ]
+
+
+643
+00:33:33,426 --> 00:33:36,686
+So, the first method we have
+here is a method you get
+
+
+644
+00:33:36,686 --> 00:33:38,036
+with every view controller.
+
+
+645
+00:33:38,066 --> 00:33:39,256
+Kelly showed at you briefly
+
+
+646
+00:33:39,256 --> 00:33:40,786
+when she created a
+new view controller
+
+
+647
+00:33:41,056 --> 00:33:42,556
+and what is, is the ViewDidLoad.
+
+
+648
+00:33:43,026 --> 00:33:45,236
+ViewDidLoad is called
+immediately
+
+
+649
+00:33:45,236 --> 00:33:47,726
+after the view controller
+loads its interface
+
+
+650
+00:33:47,726 --> 00:33:49,456
+but before it's displayed
+to the user.
+
+
+651
+00:33:49,846 --> 00:33:51,356
+Because of that,
+it's a great place
+
+
+652
+00:33:51,356 --> 00:33:52,476
+where you can do
+some initial set
+
+
+653
+00:33:52,476 --> 00:33:55,656
+up with your view controllers
+before the user sees anything.
+
+
+654
+00:33:56,356 --> 00:33:58,326
+In this case, I'm actually going
+
+
+655
+00:33:58,326 --> 00:34:00,686
+to call the center
+home region method
+
+
+656
+00:34:00,686 --> 00:34:01,816
+that I implemented earlier.
+
+
+657
+00:34:02,156 --> 00:34:04,926
+By default, the map would have
+come up and displayed a map
+
+
+658
+00:34:04,926 --> 00:34:07,996
+of the entire world and
+I'm certainly not that good
+
+
+659
+00:34:07,996 --> 00:34:10,376
+of a runner that I want to
+see things on a global scale.
+
+
+660
+00:34:10,656 --> 00:34:13,456
+So, by calling this method,
+I'll actually center the map
+
+
+661
+00:34:13,456 --> 00:34:14,846
+on the San Francisco Bay Area.
+
+
+662
+00:34:15,926 --> 00:34:17,306
+Likewise, I'm going to go ahead
+
+
+663
+00:34:17,306 --> 00:34:20,106
+and create my track overlays
+here so that they'll be ready
+
+
+664
+00:34:20,106 --> 00:34:23,056
+when the map asks for them.
+
+
+665
+00:34:23,216 --> 00:34:26,085
+Next, you'll see that I
+have my action method,
+
+
+666
+00:34:27,376 --> 00:34:30,005
+right here called
+tap and map view.
+
+
+667
+00:34:30,565 --> 00:34:32,396
+This will be called by
+the gesture recognizer
+
+
+668
+00:34:32,396 --> 00:34:33,985
+when the user touches
+in to the map.
+
+
+669
+00:34:34,396 --> 00:34:36,036
+And you'll see here that
+the first thing I'm going
+
+
+670
+00:34:36,036 --> 00:34:38,376
+to do is ask the
+gesture recognizer
+
+
+671
+00:34:38,376 --> 00:34:40,466
+where in the view
+the user touched.
+
+
+672
+00:34:41,606 --> 00:34:43,246
+I can then call a
+method I wrote earlier
+
+
+673
+00:34:43,246 --> 00:34:45,426
+that will return the
+correct map overlay for me
+
+
+674
+00:34:45,426 --> 00:34:49,036
+for that touch point,
+and in this If block,
+
+
+675
+00:34:49,036 --> 00:34:52,255
+if I actually returned a route,
+I'm going to go ahead and save
+
+
+676
+00:34:52,255 --> 00:34:54,996
+that selected route so I
+can use it in just a moment.
+
+
+677
+00:34:55,126 --> 00:34:56,976
+And then I'm going
+to call this method
+
+
+678
+00:34:56,976 --> 00:35:00,236
+performSegueWithIdentifier
+runs for route.
+
+
+679
+00:35:01,276 --> 00:35:03,176
+Now, I haven't shown you
+the segue yet, I'll show you
+
+
+680
+00:35:03,176 --> 00:35:04,136
+that in just a moment.
+
+
+681
+00:35:04,336 --> 00:35:07,246
+But the important thing
+here is that you don't have
+
+
+682
+00:35:07,286 --> 00:35:11,426
+to initiates segues from just
+other views in your higher
+
+
+683
+00:35:11,426 --> 00:35:13,076
+and your view controller.
+
+
+684
+00:35:13,076 --> 00:35:16,636
+You can in fact initiate a
+segue whenever you need to
+
+
+685
+00:35:16,756 --> 00:35:21,786
+and you can get to that segue
+by giving it an identifier.
+
+
+686
+00:35:22,206 --> 00:35:23,896
+So let's see how to
+give it that identifier.
+
+
+687
+00:35:27,916 --> 00:35:30,816
+So I'm going to ahead and drag
+out my next view controller
+
+
+688
+00:35:31,766 --> 00:35:33,736
+and it's giving me a
+detail of view controller.
+
+
+689
+00:35:33,736 --> 00:35:36,546
+So it's common to have
+detail views that are
+
+
+690
+00:35:36,546 --> 00:35:40,286
+in fact table views,
+and like I did before,
+
+
+691
+00:35:40,286 --> 00:35:42,996
+I'm going to give
+it a special class.
+
+
+692
+00:35:44,466 --> 00:35:45,836
+And now I want to create a segue
+
+
+693
+00:35:46,296 --> 00:35:48,886
+from my first my
+map view controller
+
+
+694
+00:35:48,886 --> 00:35:51,956
+into my detail view
+controller but because I'm going
+
+
+695
+00:35:51,956 --> 00:35:54,966
+to call this segue from my view
+controller, Is'm actually going
+
+
+696
+00:35:54,966 --> 00:35:58,446
+to link from the view
+controller to my next segue
+
+
+697
+00:35:58,446 --> 00:36:02,246
+and do my standard push
+segment-- my push segue.
+
+
+698
+00:36:02,246 --> 00:36:04,936
+But this time, I'm going
+to select the segue,
+
+
+699
+00:36:04,936 --> 00:36:07,406
+I'm going to come up to
+its attribute and I'm going
+
+
+700
+00:36:07,406 --> 00:36:11,076
+to give it an identifier
+runs for route.
+
+
+701
+00:36:12,256 --> 00:36:14,256
+And now this segue
+can be identified
+
+
+702
+00:36:15,176 --> 00:36:17,526
+from my view controller
+as we saw.
+
+
+703
+00:36:19,176 --> 00:36:21,786
+Now, I'm not quite ready
+to show you this running
+
+
+704
+00:36:21,786 --> 00:36:25,346
+because for the detail view
+controller to be useful,
+
+
+705
+00:36:25,406 --> 00:36:27,026
+it needs to have some
+information in it.
+
+
+706
+00:36:28,526 --> 00:36:30,186
+And so there's two things
+we're going to need to do
+
+
+707
+00:36:30,186 --> 00:36:31,526
+to display that information.
+
+
+708
+00:36:31,996 --> 00:36:34,336
+First, we're going to need
+to come to the table view
+
+
+709
+00:36:34,406 --> 00:36:36,546
+and we're going to select
+the table view cell.
+
+
+710
+00:36:37,286 --> 00:36:40,446
+Now, I want to be able to
+reuse the table view cell over
+
+
+711
+00:36:40,446 --> 00:36:41,906
+and over again and to do that,
+
+
+712
+00:36:41,906 --> 00:36:46,806
+I'm going to give it an
+identifier called run summary.
+
+
+713
+00:36:48,456 --> 00:36:50,426
+And now for my code,
+I'm going to be able
+
+
+714
+00:36:50,426 --> 00:36:53,406
+to populate multiple cells
+using that identifier.
+
+
+715
+00:36:53,846 --> 00:36:56,566
+But let's go back first
+for a moment and look
+
+
+716
+00:36:56,566 --> 00:36:58,566
+at the map routes
+view controller.
+
+
+717
+00:36:59,176 --> 00:37:01,856
+You see this one more method
+that's very important.
+
+
+718
+00:37:02,076 --> 00:37:03,756
+This method is called
+prepareForSegue.
+
+
+719
+00:37:03,756 --> 00:37:07,026
+prepareForSegue is a
+method that is implemented
+
+
+720
+00:37:07,026 --> 00:37:10,446
+by every view controller and it
+will be called whenever a view--
+
+
+721
+00:37:10,446 --> 00:37:13,256
+whenever a segue is about
+to initiate an action
+
+
+722
+00:37:13,696 --> 00:37:14,996
+on the current view controller.
+
+
+723
+00:37:15,296 --> 00:37:17,866
+This is a great place
+where you can then interact
+
+
+724
+00:37:17,866 --> 00:37:18,816
+with the segue.
+
+
+725
+00:37:19,496 --> 00:37:21,106
+You'll have both ends
+of the connection.
+
+
+726
+00:37:21,106 --> 00:37:23,086
+The source-- the
+source view controller
+
+
+727
+00:37:23,086 --> 00:37:25,866
+and the destination view
+controller, and because of that,
+
+
+728
+00:37:25,866 --> 00:37:28,536
+I can pass information
+from one view controller
+
+
+729
+00:37:28,536 --> 00:37:29,826
+into the next view controller.
+
+
+730
+00:37:30,286 --> 00:37:33,656
+And so you'll see here with the
+code, I'm doing exactly that.
+
+
+731
+00:37:34,236 --> 00:37:36,296
+I check the segue
+that's been invoked
+
+
+732
+00:37:36,296 --> 00:37:39,426
+and I checked its identifier
+to see if it runs for route.
+
+
+733
+00:37:39,996 --> 00:37:43,506
+Now, in this example, I actually
+only have one segue coming
+
+
+734
+00:37:43,506 --> 00:37:44,476
+out on my view controller.
+
+
+735
+00:37:44,756 --> 00:37:47,826
+So strictly speaking, I don't
+need to check its identifier,
+
+
+736
+00:37:48,176 --> 00:37:49,786
+but it's good practice
+to always do
+
+
+737
+00:37:49,786 --> 00:37:53,386
+so because you'll probably find
+in many scenes, you're going
+
+
+738
+00:37:53,386 --> 00:37:55,376
+to add additional
+segues and you don't what
+
+
+739
+00:37:55,376 --> 00:37:57,276
+to be crossing your
+segues and finding
+
+
+740
+00:37:57,276 --> 00:37:59,346
+that you're performing
+the wrong thing just
+
+
+741
+00:37:59,346 --> 00:38:03,256
+because you didn't check
+the identifier of the segue.
+
+
+742
+00:38:03,366 --> 00:38:05,236
+As I mentioned, the
+segue has access
+
+
+743
+00:38:05,236 --> 00:38:07,706
+to the destination view
+controller, in this case,
+
+
+744
+00:38:07,706 --> 00:38:09,726
+we know because of the segue
+identifier that it's going
+
+
+745
+00:38:09,726 --> 00:38:11,446
+to be a route details
+view controller.
+
+
+746
+00:38:11,446 --> 00:38:13,906
+And so I'm going to go
+ahead and set the title
+
+
+747
+00:38:13,906 --> 00:38:17,006
+for the next view
+controller and where we grab
+
+
+748
+00:38:17,006 --> 00:38:19,306
+that selection earlier when
+these are tapped in the map,
+
+
+749
+00:38:19,476 --> 00:38:21,276
+we're going to go ahead
+and set the route data
+
+
+750
+00:38:21,276 --> 00:38:22,706
+and the detail view controller
+
+
+751
+00:38:22,886 --> 00:38:24,436
+from the route data
+in our selection.
+
+
+752
+00:38:24,826 --> 00:38:28,216
+And one last thing
+I want to touch
+
+
+753
+00:38:28,216 --> 00:38:30,196
+on before we should
+see this running is
+
+
+754
+00:38:31,096 --> 00:38:34,966
+that when I created the
+detail view controller,
+
+
+755
+00:38:34,966 --> 00:38:36,586
+I created a table
+view controller.
+
+
+756
+00:38:37,766 --> 00:38:40,256
+That table view controller
+automatically gets a couple
+
+
+757
+00:38:40,256 --> 00:38:41,316
+of special connections.
+
+
+758
+00:38:41,316 --> 00:38:44,016
+First, it gets a delegate
+connection, and in this case,
+
+
+759
+00:38:44,016 --> 00:38:46,376
+I don't actually need to
+intervene in the table view
+
+
+760
+00:38:46,376 --> 00:38:49,116
+in anyway where I'll need
+the delegate connection,
+
+
+761
+00:38:49,356 --> 00:38:51,416
+but it also gets a
+data source connection.
+
+
+762
+00:38:51,746 --> 00:38:53,816
+The data source connection
+is important to a number
+
+
+763
+00:38:53,816 --> 00:38:56,056
+of views because, you
+know, for example,
+
+
+764
+00:38:56,086 --> 00:38:59,256
+a table view has no idea what
+data you want to display in it.
+
+
+765
+00:38:59,256 --> 00:39:01,776
+So it's going to need
+to ask some other object
+
+
+766
+00:39:01,776 --> 00:39:03,546
+and in this case that would
+be the view controller,
+
+
+767
+00:39:03,726 --> 00:39:05,236
+what data needs to be displayed.
+
+
+768
+00:39:06,256 --> 00:39:08,056
+Because I have a fairly
+simple table view,
+
+
+769
+00:39:08,056 --> 00:39:09,516
+I just need to implement
+two methods.
+
+
+770
+00:39:09,996 --> 00:39:12,306
+The first method is
+number of rows in a section
+
+
+771
+00:39:12,416 --> 00:39:14,986
+and since I only have one
+section, I know I just need
+
+
+772
+00:39:14,986 --> 00:39:17,826
+to return the route
+data runs dot count.
+
+
+773
+00:39:18,276 --> 00:39:23,176
+Next, I need to implement
+a method called tableView:
+
+
+774
+00:39:23,176 --> 00:39:25,156
+cellForRowAtIndexPath.
+
+
+775
+00:39:25,916 --> 00:39:29,546
+This is the actual method that
+will provide table view cells
+
+
+776
+00:39:29,546 --> 00:39:32,656
+to the table view to be
+displayed to the user interface.
+
+
+777
+00:39:33,086 --> 00:39:36,386
+And you'll see the first
+method I call here is tableView
+
+
+778
+00:39:36,386 --> 00:39:38,596
+dequeueReusableCell
+WithIdentifier.
+
+
+779
+00:39:39,226 --> 00:39:41,646
+And I asked for the
+identifier run summary
+
+
+780
+00:39:41,836 --> 00:39:44,506
+and we saw it made that, I
+selected my table view cell
+
+
+781
+00:39:44,506 --> 00:39:46,276
+and I gave it the
+identifier run summary
+
+
+782
+00:39:46,566 --> 00:39:49,546
+and what the Table View is going
+to do is it's going to say,
+
+
+783
+00:39:49,856 --> 00:39:51,936
+"Hey, do I already have a
+cell named run summary?"
+
+
+784
+00:39:51,996 --> 00:39:55,246
+And if I don't, it's going--
+I'll look in it a new one
+
+
+785
+00:39:55,246 --> 00:39:56,316
+and return that to me.
+
+
+786
+00:39:57,036 --> 00:39:59,576
+But it's only going to
+do this for enough cells
+
+
+787
+00:39:59,576 --> 00:40:02,576
+to actually show what needs
+to be displayed on screen.
+
+
+788
+00:40:03,046 --> 00:40:04,656
+You can certainly imagine
+having a Table View
+
+
+789
+00:40:04,656 --> 00:40:05,886
+with 10,000 rows in it.
+
+
+790
+00:40:05,886 --> 00:40:09,336
+I mean, who would want to
+create 10,000 cells upfront,
+
+
+791
+00:40:09,686 --> 00:40:11,616
+be a horrible ways to
+memory for something
+
+
+792
+00:40:11,616 --> 00:40:12,946
+that the user might
+not even see.
+
+
+793
+00:40:13,516 --> 00:40:16,246
+And then, as you scroll
+through the Table View,
+
+
+794
+00:40:16,716 --> 00:40:19,096
+as cells are scrolled
+of the top,
+
+
+795
+00:40:19,096 --> 00:40:21,616
+they're put into the reuse
+queue inside of the Table View
+
+
+796
+00:40:22,136 --> 00:40:23,796
+and those will be recycled
+
+
+797
+00:40:23,796 --> 00:40:25,646
+to show new data coming
+in from the bottom.
+
+
+798
+00:40:26,046 --> 00:40:32,736
+So at this point, we
+should have enough--
+
+
+799
+00:40:33,486 --> 00:40:38,176
+have done enough that we can go
+ahead and run our application.
+
+
+800
+00:40:39,516 --> 00:40:44,146
+[ Pause ]
+
+
+801
+00:40:44,646 --> 00:40:46,916
+It'll launch, I can connect
+the routes buttons now.
+
+
+802
+00:40:47,686 --> 00:40:49,696
+You'll see my map view
+comes up and it's centered
+
+
+803
+00:40:49,696 --> 00:40:53,086
+on the San Francisco Bay Area
+and I have a route highlighted.
+
+
+804
+00:40:54,126 --> 00:40:56,856
+If I go and tap on that
+route, I go to a detail view
+
+
+805
+00:40:57,036 --> 00:41:02,296
+and here you see a detail
+of when I run that route.
+
+
+806
+00:41:02,536 --> 00:41:04,966
+So, what else can we do?
+
+
+807
+00:41:04,966 --> 00:41:07,336
+Well, I told you that I
+was going to show you how
+
+
+808
+00:41:07,336 --> 00:41:09,806
+to do some custom
+content, and to do that,
+
+
+809
+00:41:09,806 --> 00:41:11,916
+I'm going to go ahead and
+add one more view controller.
+
+
+810
+00:41:14,976 --> 00:41:18,846
+This time, I'm going to connect
+a segue from the table view cell
+
+
+811
+00:41:19,306 --> 00:41:22,296
+because table view cells
+can certainly invoke segues,
+
+
+812
+00:41:22,296 --> 00:41:24,306
+and I'm going to
+do a push again.
+
+
+813
+00:41:24,806 --> 00:41:26,776
+Because I'm going to want
+
+
+814
+00:41:26,776 --> 00:41:29,426
+to pass some additional
+information just like I did
+
+
+815
+00:41:29,426 --> 00:41:32,006
+in the map view controller
+to the detai view controller,
+
+
+816
+00:41:32,406 --> 00:41:36,776
+I'm going to give this view
+controller an identifier
+
+
+817
+00:41:36,776 --> 00:41:38,956
+as well called Run Details.
+
+
+818
+00:41:39,266 --> 00:41:42,936
+And just because
+our designer did
+
+
+819
+00:41:42,936 --> 00:41:44,826
+such a great job
+creating images for us,
+
+
+820
+00:41:44,826 --> 00:41:46,306
+I'm going to add an
+image to this view.
+
+
+821
+00:41:48,466 --> 00:41:54,356
+But now, I'm going to come into
+my object library and I'm going
+
+
+822
+00:41:54,356 --> 00:41:56,456
+to add just a UIView object.
+
+
+823
+00:41:57,866 --> 00:42:01,016
+Now, normally, just
+adding a UIView
+
+
+824
+00:42:01,326 --> 00:42:03,876
+to your user interface
+would be kind of boring.
+
+
+825
+00:42:04,296 --> 00:42:06,576
+Now, they are useful
+as a great way
+
+
+826
+00:42:06,576 --> 00:42:09,856
+to collect other views together
+by there's going to be times
+
+
+827
+00:42:09,856 --> 00:42:12,166
+when you're going to want
+to do some custom display.
+
+
+828
+00:42:12,166 --> 00:42:13,716
+You're going to have
+custom controls.
+
+
+829
+00:42:14,066 --> 00:42:16,006
+You're going to have
+custom drawing.
+
+
+830
+00:42:16,006 --> 00:42:18,106
+You're going to show
+special statuses to the user.
+
+
+831
+00:42:18,496 --> 00:42:20,286
+In this case, I want
+to show a graph.
+
+
+832
+00:42:21,286 --> 00:42:23,026
+So just like we do
+with view controllers,
+
+
+833
+00:42:23,026 --> 00:42:26,526
+I can go to the identity
+inspector, expand it down,
+
+
+834
+00:42:26,526 --> 00:42:29,886
+and you'll see here that I have
+an object called GraphView.
+
+
+835
+00:42:29,886 --> 00:42:33,326
+And I'm going to go ahead and
+make this view a GraphView.
+
+
+836
+00:42:33,716 --> 00:42:36,206
+And so, when your
+program is running
+
+
+837
+00:42:36,206 --> 00:42:37,786
+and this view is instantiated,
+
+
+838
+00:42:38,086 --> 00:42:40,696
+rather than instantiating
+just a generic UIView,
+
+
+839
+00:42:40,696 --> 00:42:42,016
+it's going to know
+to go on there
+
+
+840
+00:42:42,246 --> 00:42:44,306
+and instantiate a
+GraphView object for me.
+
+
+841
+00:42:44,306 --> 00:42:47,256
+Now I'm not going to show you
+the draw methods and things
+
+
+842
+00:42:47,256 --> 00:42:51,466
+like that, that's all
+more UIKit information,
+
+
+843
+00:42:51,996 --> 00:42:54,176
+but I've already implemented
+some background information
+
+
+844
+00:42:54,176 --> 00:42:57,326
+for this so we can
+actually display something.
+
+
+845
+00:42:57,586 --> 00:42:58,816
+But of course I'm
+going to want to come
+
+
+846
+00:42:58,816 --> 00:43:01,256
+down to my view controller
+and drag a connection
+
+
+847
+00:43:01,256 --> 00:43:04,466
+up to the GraphView and it's
+good I did that 'cause it shows
+
+
+848
+00:43:04,466 --> 00:43:07,346
+that I forgot to set
+my custom class name
+
+
+849
+00:43:09,056 --> 00:43:12,746
+for my view controller and now
+I can drag up to my GraphView
+
+
+850
+00:43:12,966 --> 00:43:14,686
+and I can make an
+outlet to my GraphView.
+
+
+851
+00:43:15,166 --> 00:43:16,426
+And we'll use that just
+
+
+852
+00:43:16,426 --> 00:43:18,056
+like Kelly was doing
+with her controls.
+
+
+853
+00:43:19,366 --> 00:43:25,136
+So now if I run again, I
+can go to the routes again,
+
+
+854
+00:43:25,656 --> 00:43:28,576
+click through the map quickly,
+and I can click on a detail
+
+
+855
+00:43:29,406 --> 00:43:32,306
+and here you see instead
+of just a generic view,
+
+
+856
+00:43:32,516 --> 00:43:35,266
+I get this nice graph that was
+designed by our designer again.
+
+
+857
+00:43:36,356 --> 00:43:38,806
+So with that, that's all
+I've got to demo for you
+
+
+858
+00:43:39,126 --> 00:43:40,516
+and let's return to the slides.
+
+
+859
+00:43:41,156 --> 00:43:43,976
+So, what are some the important
+methods that we talked about?
+
+
+860
+00:43:44,506 --> 00:43:48,996
+So, with the UIViewController,
+a UIViewController is going
+
+
+861
+00:43:48,996 --> 00:43:51,246
+to be the base of every
+scene in your storyboard.
+
+
+862
+00:43:51,546 --> 00:43:53,176
+So certainly it's a
+very important object.
+
+
+863
+00:43:53,616 --> 00:43:56,896
+And every UIViewController has
+a property called storyboard.
+
+
+864
+00:43:57,476 --> 00:43:59,986
+You can use storyboard
+to access the storyboard
+
+
+865
+00:43:59,986 --> 00:44:01,916
+from which your view
+controller was created.
+
+
+866
+00:44:02,826 --> 00:44:05,496
+This is important because
+you might want to go to--
+
+
+867
+00:44:06,086 --> 00:44:08,866
+you may want to skip a scene and
+you could-- with this method,
+
+
+868
+00:44:08,866 --> 00:44:09,976
+you can ask the storyboard
+
+
+869
+00:44:09,976 --> 00:44:12,696
+for another scene via
+identifier in your storyboard.
+
+
+870
+00:44:13,626 --> 00:44:14,826
+We also saw the importance
+
+
+871
+00:44:14,826 --> 00:44:17,876
+of the
+performSegueWithIdentifier
+
+
+872
+00:44:17,876 --> 00:44:18,266
+method.
+
+
+873
+00:44:18,596 --> 00:44:23,326
+This allows you to pick out
+a segue from your storyboard
+
+
+874
+00:44:23,326 --> 00:44:25,546
+and then have that
+segue invoke its action
+
+
+875
+00:44:25,546 --> 00:44:26,746
+to its next view controller.
+
+
+876
+00:44:27,666 --> 00:44:29,436
+We showed a fairly
+simple case of this
+
+
+877
+00:44:29,436 --> 00:44:32,696
+but you might do something
+like build a generic menu,
+
+
+878
+00:44:32,826 --> 00:44:35,576
+and in that menu, you
+can put segue identifiers
+
+
+879
+00:44:35,576 --> 00:44:37,926
+and then you could have a
+bunch connections coming
+
+
+880
+00:44:37,926 --> 00:44:39,066
+up from your view controller
+
+
+881
+00:44:39,226 --> 00:44:41,226
+and you could invoke the
+correct segue depending
+
+
+882
+00:44:41,226 --> 00:44:43,816
+on which menu button was
+tapped on by the user.
+
+
+883
+00:44:45,136 --> 00:44:46,746
+And finally, we saw
+the importance
+
+
+884
+00:44:46,746 --> 00:44:49,236
+of the prepareForSegue
+command, our method.
+
+
+885
+00:44:49,696 --> 00:44:53,676
+This method allows us to-- or
+is given to us by the segue
+
+
+886
+00:44:53,676 --> 00:44:56,006
+to notify us that it
+is about to transition
+
+
+887
+00:44:56,006 --> 00:44:58,316
+to a new view controller
+and it lets us
+
+
+888
+00:44:58,316 --> 00:45:00,406
+to do some additional
+work such as past data
+
+
+889
+00:45:00,406 --> 00:45:01,536
+between view controllers.
+
+
+890
+00:45:02,486 --> 00:45:05,466
+So, what are some of the other
+problems you might encounter
+
+
+891
+00:45:05,466 --> 00:45:06,216
+on storyboards?
+
+
+892
+00:45:06,476 --> 00:45:09,986
+Well, one, as you
+build your application,
+
+
+893
+00:45:10,316 --> 00:45:11,876
+you'll find out that
+you start off with kind
+
+
+894
+00:45:11,876 --> 00:45:14,606
+of a simple storyboard, and
+as you work, it gets more,
+
+
+895
+00:45:14,816 --> 00:45:16,566
+and more, and more complicated.
+
+
+896
+00:45:16,996 --> 00:45:19,516
+Well, you might for
+organizational purposes want
+
+
+897
+00:45:19,516 --> 00:45:22,776
+to break your storyboard up
+into two or three storyboards.
+
+
+898
+00:45:23,126 --> 00:45:25,996
+In our case here, we
+might actually want to--
+
+
+899
+00:45:26,776 --> 00:45:29,786
+instead of having one storyboard
+doing both the timer path
+
+
+900
+00:45:29,876 --> 00:45:31,466
+and the routes path,
+we could divide
+
+
+901
+00:45:31,466 --> 00:45:32,676
+that into two storyboards.
+
+
+902
+00:45:33,016 --> 00:45:35,396
+Not only does it make it
+a little easier to scroll
+
+
+903
+00:45:35,396 --> 00:45:37,986
+around your storyboard, but
+if you're using something
+
+
+904
+00:45:37,986 --> 00:45:40,346
+like version control, it
+means one developer can work
+
+
+905
+00:45:40,346 --> 00:45:42,756
+on the timer path while
+another developer works
+
+
+906
+00:45:42,756 --> 00:45:46,946
+on the route path, and if
+they do separate check ins,
+
+
+907
+00:45:46,946 --> 00:45:49,626
+they are less likely to cause
+conflicts in the source control.
+
+
+908
+00:45:51,096 --> 00:45:53,026
+There's another important
+time when you might want
+
+
+909
+00:45:53,026 --> 00:45:54,846
+to use additional
+storyboards as well.
+
+
+910
+00:45:55,426 --> 00:45:57,186
+For example, say you're doing--
+
+
+911
+00:45:57,186 --> 00:45:59,386
+we add social media
+to our application.
+
+
+912
+00:45:59,606 --> 00:46:01,366
+And when we do that, we're
+going to want some kind
+
+
+913
+00:46:01,366 --> 00:46:03,546
+of a login panel for the user.
+
+
+914
+00:46:03,996 --> 00:46:05,536
+But in our storyboard,
+we don't want
+
+
+915
+00:46:05,536 --> 00:46:07,976
+to hang a login panel scene off
+
+
+916
+00:46:07,976 --> 00:46:09,806
+of every single scene
+in the storyboard.
+
+
+917
+00:46:10,036 --> 00:46:12,026
+Our storyboard will
+quickly get ridiculous.
+
+
+918
+00:46:12,636 --> 00:46:15,066
+So instead, I can
+create a small storyboard
+
+
+919
+00:46:15,066 --> 00:46:18,886
+that implements a reusable
+piece of logic, in this case,
+
+
+920
+00:46:18,886 --> 00:46:21,266
+a login panel and I can
+call that from anywhere.
+
+
+921
+00:46:22,236 --> 00:46:24,076
+So, how do you create
+a storyboard?
+
+
+922
+00:46:24,476 --> 00:46:26,396
+Well, there's a UIStoryboard
+object
+
+
+923
+00:46:26,846 --> 00:46:28,366
+and it implements a few methods.
+
+
+924
+00:46:28,586 --> 00:46:30,876
+The important-- the first
+important one is storyboard
+
+
+925
+00:46:30,876 --> 00:46:31,466
+with name.
+
+
+926
+00:46:31,916 --> 00:46:34,456
+This allows you to identify
+a storyboard you'll save
+
+
+927
+00:46:34,456 --> 00:46:35,616
+and add it to your project.
+
+
+928
+00:46:36,186 --> 00:46:39,416
+The method-- the second
+argument bundle and almost all
+
+
+929
+00:46:39,416 --> 00:46:41,906
+of your cases will be
+your application bundle,
+
+
+930
+00:46:41,906 --> 00:46:44,006
+so you'll just pass an
+NSBundle mainBundle.
+
+
+931
+00:46:44,546 --> 00:46:48,086
+And as I said, this will create
+and return a storyboard object.
+
+
+932
+00:46:48,426 --> 00:46:49,996
+Once you have a storyboard
+object,
+
+
+933
+00:46:50,266 --> 00:46:51,936
+you have a method
+instantiateInitial
+
+
+934
+00:46:51,936 --> 00:46:52,666
+ViewController.
+
+
+935
+00:46:53,696 --> 00:46:57,626
+The initial view controller in
+a storyboard is that that scene
+
+
+936
+00:46:57,626 --> 00:47:00,316
+that had the large
+arrow pointing to it.
+
+
+937
+00:47:00,316 --> 00:47:02,886
+And so calling this method
+means you'll create one
+
+
+938
+00:47:02,886 --> 00:47:05,986
+of those view controllers, load
+its interface and display it.
+
+
+939
+00:47:07,476 --> 00:47:10,106
+But if you don't want to go
+to the initial view controller
+
+
+940
+00:47:10,106 --> 00:47:12,726
+and in fact want to go to
+a different view controller
+
+
+941
+00:47:12,726 --> 00:47:14,456
+in your storyboard
+or different scene,
+
+
+942
+00:47:14,766 --> 00:47:16,476
+you can do
+instantiateViewController
+
+
+943
+00:47:17,036 --> 00:47:18,216
+WithIdentifier.
+
+
+944
+00:47:18,656 --> 00:47:22,286
+So, a view controller just
+like we did with our segues
+
+
+945
+00:47:22,286 --> 00:47:25,036
+and our table view cell
+can be given an identifier
+
+
+946
+00:47:25,186 --> 00:47:27,516
+and this allows you
+to jump right
+
+
+947
+00:47:27,726 --> 00:47:29,986
+to the view controller
+without identifier.
+
+
+948
+00:47:30,336 --> 00:47:31,856
+For example, you might have--
+
+
+949
+00:47:32,666 --> 00:47:34,446
+and when doing a
+login connection,
+
+
+950
+00:47:34,446 --> 00:47:36,976
+you may have too
+slightly different scenes.
+
+
+951
+00:47:37,246 --> 00:47:39,136
+One might be for
+doing an initial login
+
+
+952
+00:47:39,136 --> 00:47:41,906
+for a new user the first
+time and another one might be
+
+
+953
+00:47:41,906 --> 00:47:45,686
+to just re-login the second time
+you started the application.
+
+
+954
+00:47:46,056 --> 00:47:48,276
+This would allow you to use
+one storyboard but start
+
+
+955
+00:47:48,276 --> 00:47:49,926
+from two different
+points in the storyboard.
+
+
+956
+00:47:51,356 --> 00:47:54,916
+So, up to this point,
+we've always been talking
+
+
+957
+00:47:54,916 --> 00:47:56,606
+about storyboard files.
+
+
+958
+00:47:56,806 --> 00:47:58,436
+And the storyboard
+files are great
+
+
+959
+00:47:58,436 --> 00:48:00,936
+because they let
+you see a large flow
+
+
+960
+00:48:00,936 --> 00:48:02,826
+of your application
+in one place.
+
+
+961
+00:48:02,826 --> 00:48:05,716
+It really helps you visualize
+how the user is going to move
+
+
+962
+00:48:05,716 --> 00:48:07,446
+to your application
+and how data is going
+
+
+963
+00:48:07,446 --> 00:48:08,826
+to flow to the application.
+
+
+964
+00:48:09,446 --> 00:48:12,246
+But Interface Builder also
+lets you edit what's called the
+
+
+965
+00:48:12,246 --> 00:48:12,936
+XIB File.
+
+
+966
+00:48:14,046 --> 00:48:17,916
+Now, in this case, I'm
+showing an application--
+
+
+967
+00:48:17,916 --> 00:48:20,946
+an AppKit application rather
+than an iOS Application
+
+
+968
+00:48:21,236 --> 00:48:23,696
+because if you're going to
+do any AppKit development,
+
+
+969
+00:48:23,896 --> 00:48:26,386
+you're going to be using XIB
+Files and not storyboards.
+
+
+970
+00:48:26,706 --> 00:48:27,806
+And in this case though,
+
+
+971
+00:48:27,806 --> 00:48:30,736
+I showed that you can store
+much the similar objects.
+
+
+972
+00:48:30,776 --> 00:48:33,856
+For example, this shows you the
+main menu of the application
+
+
+973
+00:48:34,256 --> 00:48:36,716
+as well as an app--
+simple application window.
+
+
+974
+00:48:37,206 --> 00:48:39,686
+In XIB Files, you'll still
+use view controllers.
+
+
+975
+00:48:39,686 --> 00:48:42,736
+You'll still make connections
+from view controllers to windows
+
+
+976
+00:48:42,736 --> 00:48:45,746
+and views inside and connections
+from the controls back
+
+
+977
+00:48:45,746 --> 00:48:46,846
+into the view controllers.
+
+
+978
+00:48:47,686 --> 00:48:50,526
+Except that you're going to
+do a-- when you need to move,
+
+
+979
+00:48:50,816 --> 00:48:52,026
+say load a new window,
+
+
+980
+00:48:52,256 --> 00:48:54,376
+you'll actually explicitly
+load a XIB file
+
+
+981
+00:48:54,476 --> 00:48:55,996
+like you would load
+a second storyboard.
+
+
+982
+00:48:59,096 --> 00:49:01,726
+So, there's two last
+objects that I want to talk
+
+
+983
+00:49:01,726 --> 00:49:04,926
+about real quick and these
+objects are called NSNib
+
+
+984
+00:49:05,036 --> 00:49:05,906
+and UINib.
+
+
+985
+00:49:06,426 --> 00:49:08,726
+Now, you're probably going
+to ask, what's nib file?
+
+
+986
+00:49:08,726 --> 00:49:11,426
+Everything we've talked about
+has been a XIB or a storyboard.
+
+
+987
+00:49:11,936 --> 00:49:15,646
+Well, a XIB and storyboard
+are actually just descriptions
+
+
+988
+00:49:15,646 --> 00:49:20,436
+of your interface and well they
+are archive representations
+
+
+989
+00:49:20,436 --> 00:49:23,006
+of the objects, they're not
+objects that are ready to load
+
+
+990
+00:49:23,006 --> 00:49:24,816
+like right in the
+memory and start using.
+
+
+991
+00:49:25,496 --> 00:49:28,316
+Instead, when you
+compile your application,
+
+
+992
+00:49:28,456 --> 00:49:32,676
+we compile the XIB Files and
+storyboards into nib objects.
+
+
+993
+00:49:32,966 --> 00:49:35,076
+And in fact, when we
+compile your storyboard,
+
+
+994
+00:49:35,356 --> 00:49:37,926
+rather than having to
+load the entire storyboard
+
+
+995
+00:49:37,926 --> 00:49:40,316
+at launch time, we
+compile the storyboard
+
+
+996
+00:49:40,316 --> 00:49:43,336
+into smaller nib files and
+then as you've navigate
+
+
+997
+00:49:43,336 --> 00:49:44,656
+through your view controllers,
+
+
+998
+00:49:44,816 --> 00:49:46,856
+we'll instantiate those
+individual nib files.
+
+
+999
+00:49:47,056 --> 00:49:48,406
+That way we don't have
+to have everything
+
+
+1000
+00:49:48,406 --> 00:49:49,616
+in memory again at one time.
+
+
+1001
+00:49:50,546 --> 00:49:54,046
+And so, when is a place
+where you might need to that?
+
+
+1002
+00:49:54,416 --> 00:49:58,746
+Well, storyboards also use nibs
+when you're using table views.
+
+
+1003
+00:49:59,136 --> 00:50:01,226
+And as you do those--
+load those prototypes,
+
+
+1004
+00:50:01,226 --> 00:50:02,726
+it's actually loading
+the nib to load
+
+
+1005
+00:50:02,726 --> 00:50:04,346
+that table view prototype
+in for me.
+
+
+1006
+00:50:05,066 --> 00:50:06,736
+But what if you wanted
+to share table view cells
+
+
+1007
+00:50:06,736 --> 00:50:07,956
+across multiple nibs?
+
+
+1008
+00:50:08,426 --> 00:50:09,786
+Well, you could do that.
+
+
+1009
+00:50:09,916 --> 00:50:12,396
+You can have a simple nib
+and every time you wanted
+
+
+1010
+00:50:12,396 --> 00:50:14,196
+to load those, you
+could ask the nib, "Hey,
+
+
+1011
+00:50:14,196 --> 00:50:15,716
+instantiate your objects
+
+
+1012
+00:50:15,716 --> 00:50:18,436
+and then object return
+would be a table view cell
+
+
+1013
+00:50:18,556 --> 00:50:21,506
+and you could now take that
+table view cell and register it
+
+
+1014
+00:50:21,506 --> 00:50:24,326
+with a table view to be used
+in a reusable fashion just
+
+
+1015
+00:50:24,326 --> 00:50:26,876
+like we saw the storyboard do.
+
+
+1016
+00:50:27,396 --> 00:50:30,776
+So with that, if you have
+any more technical questions
+
+
+1017
+00:50:30,776 --> 00:50:33,126
+about the information
+that was presented here,
+
+
+1018
+00:50:33,356 --> 00:50:35,536
+you can contact our
+evangelist, Dave DeLong.
+
+
+1019
+00:50:35,736 --> 00:50:37,736
+I also appointed you to a couple
+
+
+1020
+00:50:37,736 --> 00:50:39,836
+of useful links here
+in the documentation.
+
+
+1021
+00:50:40,116 --> 00:50:42,436
+The first one is the human
+interface guidelines.
+
+
+1022
+00:50:42,666 --> 00:50:45,496
+If you're going to be developing
+applications, you're going
+
+
+1023
+00:50:45,496 --> 00:50:46,776
+to certainly want
+to reference those,
+
+
+1024
+00:50:47,156 --> 00:50:49,716
+and also to the interface
+builder help documentation.
+
+
+1025
+00:50:50,006 --> 00:50:54,936
+Some related sessions, if you
+missed it, you're going to want
+
+
+1026
+00:50:54,936 --> 00:50:57,076
+to watch the S code
+core concepts video.
+
+
+1027
+00:50:57,676 --> 00:51:00,496
+And very important
+and very much related
+
+
+1028
+00:51:00,496 --> 00:51:02,776
+to how interface builder
+work is auto layout.
+
+
+1029
+00:51:03,086 --> 00:51:05,636
+Now, Kelly and I didn't show
+auto layout because in fact,
+
+
+1030
+00:51:05,636 --> 00:51:08,546
+there's a full hour session on
+how to use auto layout coming
+
+
+1031
+00:51:08,546 --> 00:51:09,726
+up immediately after this.
+
+
+1032
+00:51:10,016 --> 00:51:12,216
+So we'd like to invite you
+to go upstairs to Presidio
+
+
+1033
+00:51:12,476 --> 00:51:13,506
+and attend that session.
+
+
+1034
+00:51:13,716 --> 00:51:16,766
+So, just to quickly
+summarize, we showed you how
+
+
+1035
+00:51:16,766 --> 00:51:19,146
+to create a simple project,
+we showed you how to work
+
+
+1036
+00:51:19,146 --> 00:51:21,866
+with storyboards, we showed
+you how to make connections
+
+
+1037
+00:51:21,866 --> 00:51:24,426
+to outlets and actions, we
+showed you the importance
+
+
+1038
+00:51:24,426 --> 00:51:27,746
+of delegates and data source
+methods, we showed you how
+
+
+1039
+00:51:27,746 --> 00:51:30,296
+to manually invoke segues,
+and finally, we showed you how
+
+
+1040
+00:51:30,296 --> 00:51:31,676
+to load storyboards and code.
+
+
+1041
+00:51:32,176 --> 00:51:33,826
+With that, I'd like to
+thank you for all attending.
+

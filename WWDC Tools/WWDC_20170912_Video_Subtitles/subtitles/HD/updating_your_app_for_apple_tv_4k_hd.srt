@@ -1,0 +1,293 @@
+1
+00:00:00,934 --> 00:00:03,703
+Apple TV 4K takes
+the living room experience
+
+
+2
+00:00:03,703 --> 00:00:05,405
+to a whole new level,
+
+
+3
+00:00:05,405 --> 00:00:12,913
+with support for 4K resolution,
+P3 color, HDR video playback,
+
+
+4
+00:00:12,913 --> 00:00:16,183
+the incredible
+A10X Fusion processor,
+
+
+5
+00:00:16,183 --> 00:00:18,986
+and the updated and improved
+Siri Remote.
+
+
+6
+00:00:19,786 --> 00:00:21,855
+Updating your app to
+support these new features
+
+
+7
+00:00:21,855 --> 00:00:24,191
+is very straightforward.
+
+
+8
+00:00:24,191 --> 00:00:27,427
+The first step is to
+add a 2x launch image.
+
+
+9
+00:00:27,427 --> 00:00:30,264
+Until you do so, tvOS
+is going to run your app
+
+
+10
+00:00:30,264 --> 00:00:32,198
+in compatibility mode.
+
+
+11
+00:00:32,198 --> 00:00:35,869
+While you're at it, you'll also
+want to add 2x app icons
+
+
+12
+00:00:35,869 --> 00:00:37,738
+and top shelf images.
+
+
+13
+00:00:40,073 --> 00:00:42,542
+When attached to
+a 4K television,
+
+
+14
+00:00:42,542 --> 00:00:45,579
+UIKit will now automatically
+select retina assets
+
+
+15
+00:00:45,579 --> 00:00:47,648
+from your asset catalogue.
+
+
+16
+00:00:49,850 --> 00:00:52,786
+You can inspect what screen
+scale the device is running in
+
+
+17
+00:00:52,786 --> 00:00:56,823
+by inspecting the scale property
+of the main UIScreen.
+
+
+18
+00:00:56,823 --> 00:00:59,092
+You can also determine
+the pixel resolution
+
+
+19
+00:00:59,092 --> 00:01:03,030
+of the attached display by using
+the nativeBounds property.
+
+
+20
+00:01:05,832 --> 00:01:08,969
+Just like the latest iOS
+and macOS devices,
+
+
+21
+00:01:08,969 --> 00:01:11,371
+we're really excited
+that Apple TV 4K
+
+
+22
+00:01:11,371 --> 00:01:13,774
+now supports P3 color.
+
+
+23
+00:01:13,774 --> 00:01:15,342
+When providing retina assets,
+
+
+24
+00:01:15,342 --> 00:01:17,277
+you may also want to
+update your assets
+
+
+25
+00:01:17,277 --> 00:01:20,147
+to take advantage of
+this wider color space,
+
+
+26
+00:01:20,147 --> 00:01:22,182
+allowing your graphics
+and images to contain
+
+
+27
+00:01:22,182 --> 00:01:25,686
+even richer and more saturated
+colors than before.
+
+
+28
+00:01:25,686 --> 00:01:27,621
+This isn't just for flat images
+
+
+29
+00:01:27,621 --> 00:01:30,324
+but is supported for
+layered images as well.
+
+
+30
+00:01:32,693 --> 00:01:35,495
+Media apps will also want to
+look at updating their streams
+
+
+31
+00:01:35,495 --> 00:01:37,764
+to include 4K and HDR variants
+
+
+32
+00:01:37,764 --> 00:01:41,435
+for any content that was
+produced in these formats.
+
+
+33
+00:01:41,435 --> 00:01:45,138
+Apple TV 4K supports
+both Dolby Vision and HDR10
+
+
+34
+00:01:45,138 --> 00:01:47,407
+for HDR content,
+
+
+35
+00:01:47,407 --> 00:01:49,643
+and the addition of support
+for HEVC
+
+
+36
+00:01:49,643 --> 00:01:52,779
+enables these higher fidelity
+and resolution streams
+
+
+37
+00:01:52,779 --> 00:01:55,082
+while consuming up to
+40 percent less bandwidth
+
+
+38
+00:01:55,082 --> 00:01:58,452
+than comparable streams
+encoded using H.264.
+
+
+39
+00:01:59,853 --> 00:02:01,989
+The updated and improved
+Siri Remote
+
+
+40
+00:02:01,989 --> 00:02:05,158
+now provides motion data
+for attitude and rotation rate,
+
+
+41
+00:02:05,158 --> 00:02:07,728
+in addition to the values
+for acceleration and gravity
+
+
+42
+00:02:07,728 --> 00:02:10,030
+that the prior version offered.
+
+
+43
+00:02:12,332 --> 00:02:13,967
+To determine if
+the paired remote
+
+
+44
+00:02:13,967 --> 00:02:17,637
+supports these new features,
+you can inspect the new GCMotion
+
+
+45
+00:02:17,637 --> 00:02:20,507
+"hasAttitudeAndRotationRate"
+property.
+
+
+46
+00:02:20,507 --> 00:02:22,709
+The values for attitude
+and rotation rate
+
+
+47
+00:02:22,709 --> 00:02:26,279
+are then provided by the
+respective GCMotion properties.
+
+
+48
+00:02:28,448 --> 00:02:29,950
+And with those few changes,
+
+
+49
+00:02:29,950 --> 00:02:31,818
+you're going to be able to
+take advantage
+
+
+50
+00:02:31,818 --> 00:02:36,490
+of all of the new capabilities
+and performance of Apple TV 4K.
+
+
+51
+00:02:39,026 --> 00:02:42,796
+For more information on updating
+your app for Apple TV 4K,
+

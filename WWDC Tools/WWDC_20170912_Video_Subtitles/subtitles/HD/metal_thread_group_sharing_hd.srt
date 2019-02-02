@@ -1,0 +1,775 @@
+1
+00:00:01,201 --> 00:00:02,735
+In this last presentation
+of the series,
+
+
+2
+00:00:02,735 --> 00:00:04,538
+we will focus
+on threadgroup sharing,
+
+
+3
+00:00:04,538 --> 00:00:06,740
+which allows flexible
+and efficient sharing of data
+
+
+4
+00:00:06,740 --> 00:00:09,643
+between both
+threads and threadgroups.
+
+
+5
+00:00:09,643 --> 00:00:13,380
+The Metal 2 memory model adds
+the following new capabilities.
+
+
+6
+00:00:13,380 --> 00:00:15,182
+Threadgroups can now
+communicate with each other
+
+
+7
+00:00:15,182 --> 00:00:17,150
+through memory,
+which makes it possible
+
+
+8
+00:00:17,150 --> 00:00:18,852
+to build efficient lock-free
+data structures
+
+
+9
+00:00:18,852 --> 00:00:21,021
+for producer-consumer
+style algorithms
+
+
+10
+00:00:21,021 --> 00:00:23,457
+in your compute kernels.
+
+
+11
+00:00:23,457 --> 00:00:25,959
+One or more threadgroups
+could be producing data
+
+
+12
+00:00:25,959 --> 00:00:28,829
+while one or more threadgroups
+could be consuming.
+
+
+13
+00:00:28,829 --> 00:00:31,031
+Threads within a threadgroup
+may now also communicate
+
+
+14
+00:00:31,031 --> 00:00:34,034
+without the need for heavier
+weight execution barriers.
+
+
+15
+00:00:34,034 --> 00:00:35,636
+Previously, the only way
+to share data
+
+
+16
+00:00:35,636 --> 00:00:39,706
+between threads in a threadgroup
+was using an execution barrier.
+
+
+17
+00:00:39,706 --> 00:00:40,974
+The execution barrier ensures
+
+
+18
+00:00:40,974 --> 00:00:43,110
+that all threads in
+a threadgroup reach the barrier
+
+
+19
+00:00:43,110 --> 00:00:46,213
+before any threads
+starts execution again.
+
+
+20
+00:00:46,213 --> 00:00:48,949
+The execution barrier provides
+for memory to be synchronized
+
+
+21
+00:00:48,949 --> 00:00:51,218
+so that after the barrier,
+a thread can read
+
+
+22
+00:00:51,218 --> 00:00:54,755
+what other threads
+wrote to a given data location.
+
+
+23
+00:00:54,755 --> 00:00:57,624
+Forcing all threads to wait
+may not be very efficient
+
+
+24
+00:00:57,624 --> 00:00:58,625
+and may be error-prone
+
+
+25
+00:00:58,625 --> 00:01:01,128
+in the face
+of conditional control flow.
+
+
+26
+00:01:01,128 --> 00:01:03,163
+With Metal 2,
+threads within a threadgroup
+
+
+27
+00:01:03,163 --> 00:01:06,033
+can synchronize without
+requiring an execution barrier,
+
+
+28
+00:01:06,033 --> 00:01:08,235
+making it possible
+for much finer grained sharing
+
+
+29
+00:01:08,235 --> 00:01:09,703
+between threads.
+
+
+30
+00:01:09,703 --> 00:01:11,171
+It also allows sharing of data
+
+
+31
+00:01:11,171 --> 00:01:14,074
+even when threads diverge
+in their control flow.
+
+
+32
+00:01:14,074 --> 00:01:16,043
+This data sharing between
+threads and threadgroups
+
+
+33
+00:01:16,043 --> 00:01:18,078
+is enabled by ordering
+memory operations
+
+
+34
+00:01:18,078 --> 00:01:22,749
+around atomic operations or
+the new memory fence function.
+
+
+35
+00:01:22,749 --> 00:01:24,618
+Let's look at an example
+where we need threadgroups
+
+
+36
+00:01:24,618 --> 00:01:26,486
+to communicate with each other.
+
+
+37
+00:01:26,486 --> 00:01:28,021
+In this example,
+we have a kernel
+
+
+38
+00:01:28,021 --> 00:01:30,090
+that is summing
+an array of floats
+
+
+39
+00:01:30,090 --> 00:01:33,260
+but it could be more complex
+reduction operation.
+
+
+40
+00:01:33,260 --> 00:01:35,562
+We dispatch a kernel
+with N threadgroups
+
+
+41
+00:01:35,562 --> 00:01:37,597
+from the host.
+
+
+42
+00:01:37,597 --> 00:01:39,700
+Each threadgroup reads
+a region of the input array
+
+
+43
+00:01:39,700 --> 00:01:41,601
+and computes
+a per-threadgroup sum,
+
+
+44
+00:01:41,601 --> 00:01:42,936
+which gets written to a buffer
+
+
+45
+00:01:42,936 --> 00:01:45,038
+called the Threadgroup
+Sum Array.
+
+
+46
+00:01:45,038 --> 00:01:46,974
+Previously in Metal,
+you were forced to dispatch
+
+
+47
+00:01:46,974 --> 00:01:49,643
+a final threadgroup
+to compute the final sum.
+
+
+48
+00:01:49,643 --> 00:01:51,478
+Doing so may not have been
+very efficient
+
+
+49
+00:01:51,478 --> 00:01:53,146
+because the kernel
+launch overhead
+
+
+50
+00:01:53,146 --> 00:01:55,349
+may be larger
+than the summing operation,
+
+
+51
+00:01:55,349 --> 00:01:58,752
+and the single threadgroup
+may not fully utilize the GPU.
+
+
+52
+00:01:58,752 --> 00:02:01,488
+With Metal 2,
+we need only a single kernel.
+
+
+53
+00:02:01,488 --> 00:02:02,889
+Once all the threadgroups
+have computed
+
+
+54
+00:02:02,889 --> 00:02:04,424
+their per-threadgroup sums,
+
+
+55
+00:02:04,424 --> 00:02:07,761
+the last executing threadgroup
+computes the final sum.
+
+
+56
+00:02:07,761 --> 00:02:09,997
+The atomic functions
+in Metal 2 shading language
+
+
+57
+00:02:09,997 --> 00:02:11,965
+not only allow mutually
+exclusive access
+
+
+58
+00:02:11,965 --> 00:02:13,400
+to a memory location,
+
+
+59
+00:02:13,400 --> 00:02:15,602
+but also allow you to specify
+how memory is ordered
+
+
+60
+00:02:15,602 --> 00:02:18,538
+between threads
+within or across threadgroups.
+
+
+61
+00:02:18,538 --> 00:02:21,375
+These atomic functions
+now take two new arguments,
+
+
+62
+00:02:21,375 --> 00:02:23,877
+a memory order
+and a memory scope,
+
+
+63
+00:02:23,877 --> 00:02:26,646
+to control behavior
+of ordering operations.
+
+
+64
+00:02:26,646 --> 00:02:29,182
+Metal 2 also adds
+a new thread fence function
+
+
+65
+00:02:29,182 --> 00:02:30,617
+that can be used
+for ordering memory
+
+
+66
+00:02:30,617 --> 00:02:32,753
+without atomic operations.
+
+
+67
+00:02:32,753 --> 00:02:36,323
+The updated atomic functions and
+the new thread fence function
+
+
+68
+00:02:36,323 --> 00:02:39,626
+behave similarly
+to functions available in C++,
+
+
+69
+00:02:39,626 --> 00:02:42,029
+so should be
+quite familiar to you.
+
+
+70
+00:02:42,029 --> 00:02:43,897
+Let's take a closer look
+at the memory orderings
+
+
+71
+00:02:43,897 --> 00:02:47,100
+that can be used with the atomic
+and thread fence functions.
+
+
+72
+00:02:47,100 --> 00:02:49,569
+The new argument specifies
+how memory operations
+
+
+73
+00:02:49,569 --> 00:02:52,739
+are to be ordered around these
+synchronization primitives.
+
+
+74
+00:02:52,739 --> 00:02:55,509
+First, we have
+the relaxed memory order.
+
+
+75
+00:02:55,509 --> 00:02:57,978
+This is the fastest mode,
+and only provides a guarantee
+
+
+76
+00:02:57,978 --> 00:03:01,381
+of mutually exclusive access
+to an atomic operation.
+
+
+77
+00:03:01,381 --> 00:03:03,083
+If you do not need
+to synchronize data
+
+
+78
+00:03:03,083 --> 00:03:04,084
+between threads,
+
+
+79
+00:03:04,084 --> 00:03:06,520
+you should use
+the relaxed memory order.
+
+
+80
+00:03:06,520 --> 00:03:09,756
+It is the only ordering
+previously supported in Metal.
+
+
+81
+00:03:09,756 --> 00:03:12,259
+Next we have the acquire-release
+memory order,
+
+
+82
+00:03:12,259 --> 00:03:15,062
+which can be used
+to share data between threads.
+
+
+83
+00:03:15,062 --> 00:03:18,098
+Writes from one thread become
+visible to consuming threads
+
+
+84
+00:03:18,098 --> 00:03:20,934
+after issuing
+a release operation.
+
+
+85
+00:03:20,934 --> 00:03:23,904
+Likewise, consuming threads
+will see that data
+
+
+86
+00:03:23,904 --> 00:03:27,340
+after performing a corresponding
+acquire operation.
+
+
+87
+00:03:27,340 --> 00:03:29,176
+The memory scope specifies
+whether data
+
+
+88
+00:03:29,176 --> 00:03:32,179
+needs to be synchronized
+between threads in a SIMD group,
+
+
+89
+00:03:32,179 --> 00:03:33,680
+threads in a threadgroup,
+
+
+90
+00:03:33,680 --> 00:03:36,483
+or across threadgroups
+executing on the device.
+
+
+91
+00:03:36,483 --> 00:03:37,584
+The larger the scope,
+
+
+92
+00:03:37,584 --> 00:03:40,087
+the higher
+the synchronization cost.
+
+
+93
+00:03:40,087 --> 00:03:41,688
+Let's return to the example
+where we showed
+
+
+94
+00:03:41,688 --> 00:03:44,357
+the benefit of thread groups
+directly communicating
+
+
+95
+00:03:44,357 --> 00:03:46,026
+and take a look at
+how we can implement this
+
+
+96
+00:03:46,026 --> 00:03:48,361
+using the Metal 2 memory model.
+
+
+97
+00:03:48,361 --> 00:03:49,763
+In this example,
+each threadgroup
+
+
+98
+00:03:49,763 --> 00:03:52,432
+first computes
+its per-threadgroup sum.
+
+
+99
+00:03:52,432 --> 00:03:54,134
+One of the threads
+in the threadgroup
+
+
+100
+00:03:54,134 --> 00:03:57,871
+will write that sum to a buffer
+holding all threadgroup sums.
+
+
+101
+00:03:57,871 --> 00:03:59,739
+We then atomically
+increment a counter
+
+
+102
+00:03:59,739 --> 00:04:03,043
+to indicate that the threadgroup
+has finished execution.
+
+
+103
+00:04:03,043 --> 00:04:04,945
+We use the acquire-release
+memory order
+
+
+104
+00:04:04,945 --> 00:04:06,913
+to atomically increment
+a counter,
+
+
+105
+00:04:06,913 --> 00:04:10,417
+ensuring that all threads
+have the most up-to-date count.
+
+
+106
+00:04:10,417 --> 00:04:11,818
+The atomic add operation
+
+
+107
+00:04:11,818 --> 00:04:14,988
+also returns the previous value
+of the counter,
+
+
+108
+00:04:14,988 --> 00:04:18,125
+which we use to determine
+the last executing threadgroup.
+
+
+109
+00:04:18,125 --> 00:04:19,459
+Barriers are still necessary
+
+
+110
+00:04:19,459 --> 00:04:21,394
+for ensuring all threads
+of a threadgroup
+
+
+111
+00:04:21,394 --> 00:04:24,297
+reach the same point
+in their execution.
+
+
+112
+00:04:24,297 --> 00:04:26,366
+In this case, all threads
+need to barrier
+
+
+113
+00:04:26,366 --> 00:04:28,268
+before the last threadgroup
+is repurposed
+
+
+114
+00:04:28,268 --> 00:04:30,303
+to compute the final sum.
+
+
+115
+00:04:30,303 --> 00:04:32,305
+Once the last threadgroup
+has been determined,
+
+
+116
+00:04:32,305 --> 00:04:35,475
+it can compute the sum
+of per-threadgroup sums.
+
+
+117
+00:04:35,475 --> 00:04:37,944
+The last executing threadgroup
+computes the final sum
+
+
+118
+00:04:37,944 --> 00:04:40,313
+and writes it
+to the appropriate buffer.
+
+
+119
+00:04:40,313 --> 00:04:43,683
+It also resets the counter
+to zero for future operations.
+
+
+120
+00:04:43,683 --> 00:04:45,685
+It does so using
+the relaxed memory order
+
+
+121
+00:04:45,685 --> 00:04:48,522
+because there is no need to
+synchronize with other threads.
+
+
+122
+00:04:50,290 --> 00:04:53,126
+To close, I've shown you
+how the Metal 2 memory model
+
+
+123
+00:04:53,126 --> 00:04:55,695
+allows for flexible
+and fine-grained sharing of data
+
+
+124
+00:04:55,695 --> 00:04:58,331
+between threads
+without execution barriers.
+
+
+125
+00:04:58,331 --> 00:05:00,934
+Threadgroups can now
+communicate with each other,
+
+
+126
+00:05:00,934 --> 00:05:03,637
+making it possible to build
+lock-free data structures
+
+
+127
+00:05:03,637 --> 00:05:05,539
+for producer-consumer style
+algorithms
+
+
+128
+00:05:05,539 --> 00:05:07,607
+in compute kernels.
+
+
+129
+00:05:07,607 --> 00:05:09,676
+For more information
+about Metal 2
+
+
+130
+00:05:09,676 --> 00:05:11,211
+and links to the sample code,
+
+
+131
+00:05:11,211 --> 00:05:13,146
+please visit
+the developer website
+
+
+132
+00:05:13,146 --> 00:05:16,383
+at developer.apple.com/metal.
+
+
+133
+00:05:16,383 --> 00:05:17,751
+Thank you for watching!
+

@@ -1,0 +1,1788 @@
+1
+00:00:21,086 --> 00:00:22,506
+>> From first launch to your
+
+2
+00:00:22,506 --> 00:00:23,866
+tutorial through your user
+
+3
+00:00:23,866 --> 00:00:25,736
+interface, there's a lot that
+
+4
+00:00:25,736 --> 00:00:27,446
+people experience in addition to
+
+5
+00:00:27,446 --> 00:00:28,596
+your games' gameplay.
+
+6
+00:00:28,596 --> 00:00:30,456
+So, in the next few minutes, I'm
+
+7
+00:00:30,456 --> 00:00:32,586
+going to cover 10 design tips to
+
+8
+00:00:32,586 --> 00:00:35,536
+create great experiences as soon
+
+9
+00:00:35,536 --> 00:00:37,186
+as someone taps your app icon,
+
+10
+00:00:38,266 --> 00:00:39,636
+and many of these tips can be
+
+11
+00:00:39,636 --> 00:00:41,206
+applied to apps that are looking
+
+12
+00:00:41,206 --> 00:00:42,526
+to be just as immersive,
+
+13
+00:00:42,756 --> 00:00:44,136
+engaging, and fun.
+
+14
+00:00:44,746 --> 00:00:45,526
+So, let's start.
+
+15
+00:00:45,956 --> 00:00:48,066
+First up is first launch.
+
+16
+00:00:48,976 --> 00:00:50,456
+This is the first experience
+
+17
+00:00:50,486 --> 00:00:52,426
+people have with your game and
+
+18
+00:00:52,426 --> 00:00:53,736
+your first impression matters.
+
+19
+00:00:54,216 --> 00:00:55,476
+So, no matter what you need to
+
+20
+00:00:55,476 --> 00:00:57,216
+say first, whether it is Accept
+
+21
+00:00:57,216 --> 00:00:59,586
+Terms, or Headsets Recommended,
+
+22
+00:01:00,176 --> 00:01:01,666
+design the first screen to fit
+
+23
+00:01:01,666 --> 00:01:03,175
+within the style of your game.
+
+24
+00:01:04,045 --> 00:01:05,166
+That way, they're immersed
+
+25
+00:01:05,166 --> 00:01:05,985
+immediately.
+
+26
+00:01:06,596 --> 00:01:08,056
+This edge to edge illustration
+
+27
+00:01:08,056 --> 00:01:09,806
+from Pokemon Go does a great
+
+28
+00:01:09,806 --> 00:01:11,886
+job, and it communicates just as
+
+29
+00:01:11,886 --> 00:01:13,536
+much as the text on screen.
+
+30
+00:01:14,706 --> 00:01:16,646
+So, take the time to design what
+
+31
+00:01:16,646 --> 00:01:18,126
+people see first as soon as they
+
+32
+00:01:18,126 --> 00:01:18,936
+launch your game.
+
+33
+00:01:19,536 --> 00:01:21,016
+When this is done well, it'll
+
+34
+00:01:21,016 --> 00:01:22,396
+make a lasting impression and
+
+35
+00:01:22,396 --> 00:01:23,636
+set the tone for the rest of
+
+36
+00:01:23,636 --> 00:01:24,146
+your game.
+
+37
+00:01:25,416 --> 00:01:27,466
+Next is loading because
+
+38
+00:01:27,466 --> 00:01:28,906
+sometimes it takes just a few
+
+39
+00:01:28,906 --> 00:01:30,326
+seconds to pull data through
+
+40
+00:01:30,326 --> 00:01:30,926
+space.
+
+41
+00:01:31,136 --> 00:01:32,956
+So, then why not take advantage
+
+42
+00:01:32,956 --> 00:01:34,436
+of what we all know to be true,
+
+43
+00:01:35,296 --> 00:01:36,906
+time flies when you're having
+
+44
+00:01:36,906 --> 00:01:37,316
+fun.
+
+45
+00:01:37,956 --> 00:01:40,146
+So, during loading, make it fun
+
+46
+00:01:40,146 --> 00:01:42,086
+by educating or entertaining;
+
+47
+00:01:42,466 --> 00:01:43,996
+then, loading won't see to take
+
+48
+00:01:43,996 --> 00:01:44,596
+as long.
+
+49
+00:01:45,876 --> 00:01:47,666
+This is Don't Starve Pocket
+
+50
+00:01:47,666 --> 00:01:49,546
+Edition, and in this game
+
+51
+00:01:49,786 --> 00:01:51,146
+loading is masked by this
+
+52
+00:01:51,146 --> 00:01:52,856
+beautifully creepy animation,
+
+53
+00:01:53,356 --> 00:01:54,856
+players are entertained, and
+
+54
+00:01:54,926 --> 00:01:56,366
+time seems to fly by.
+
+55
+00:01:57,776 --> 00:01:59,926
+Loading is also a great time to
+
+56
+00:01:59,926 --> 00:02:00,396
+educate.
+
+57
+00:02:00,956 --> 00:02:02,706
+In Clash Royale, as you prepare
+
+58
+00:02:02,706 --> 00:02:04,846
+for battle, a game play tip is
+
+59
+00:02:04,846 --> 00:02:05,866
+shown on screen.
+
+60
+00:02:06,476 --> 00:02:07,836
+Now, if you choose to do this,
+
+61
+00:02:08,226 --> 00:02:09,416
+make sure that players have
+
+62
+00:02:09,416 --> 00:02:11,756
+enough time to read the tip and
+
+63
+00:02:11,756 --> 00:02:13,306
+also be intelligent about what
+
+64
+00:02:13,306 --> 00:02:14,056
+you show people.
+
+65
+00:02:14,406 --> 00:02:15,776
+If someone's already seen a tip,
+
+66
+00:02:15,906 --> 00:02:17,226
+don't repeat it in the same
+
+67
+00:02:17,226 --> 00:02:17,776
+session.
+
+68
+00:02:18,566 --> 00:02:20,076
+And finally, to show loading
+
+69
+00:02:20,076 --> 00:02:22,206
+progress, always favor progress
+
+70
+00:02:22,256 --> 00:02:24,036
+bars over activity indicators
+
+71
+00:02:24,376 --> 00:02:25,506
+because they do a much better
+
+72
+00:02:25,506 --> 00:02:26,696
+job communicating what's
+
+73
+00:02:26,696 --> 00:02:28,326
+happening and how long it will
+
+74
+00:02:28,326 --> 00:02:28,656
+take.
+
+75
+00:02:29,456 --> 00:02:30,536
+So, no matter when your game
+
+76
+00:02:30,536 --> 00:02:32,876
+needs to load, entertain,
+
+77
+00:02:33,446 --> 00:02:35,326
+educate, and show progress.
+
+78
+00:02:36,786 --> 00:02:37,166
+All right.
+
+79
+00:02:37,566 --> 00:02:39,016
+Next is Quick Start.
+
+80
+00:02:39,636 --> 00:02:41,286
+Being able to start quickly and
+
+81
+00:02:41,286 --> 00:02:43,226
+jump into your game is key to a
+
+82
+00:02:43,226 --> 00:02:44,666
+great game experience.
+
+83
+00:02:45,476 --> 00:02:47,366
+This is INKS, and it's an Apple
+
+84
+00:02:47,366 --> 00:02:48,896
+Design Award winner from last
+
+85
+00:02:48,896 --> 00:02:49,156
+year.
+
+86
+00:02:49,736 --> 00:02:51,106
+It's really fun that you're able
+
+87
+00:02:51,106 --> 00:02:52,526
+to get a feeling for the game
+
+88
+00:02:52,526 --> 00:02:54,486
+right from launch, but also they
+
+89
+00:02:54,486 --> 00:02:56,256
+do a great job making it obvious
+
+90
+00:02:56,256 --> 00:02:57,596
+on how to start the game with
+
+91
+00:02:57,596 --> 00:02:58,946
+this large turquoise Play
+
+92
+00:02:58,946 --> 00:02:59,316
+button.
+
+93
+00:02:59,946 --> 00:03:01,706
+And as soon as you tap it, there
+
+94
+00:03:01,706 --> 00:03:03,306
+are only two screens before
+
+95
+00:03:03,306 --> 00:03:04,846
+you're in and playing the game,
+
+96
+00:03:05,256 --> 00:03:06,146
+which is awesome.
+
+97
+00:03:06,756 --> 00:03:08,076
+So, let people get into your
+
+98
+00:03:08,076 --> 00:03:10,066
+game easily and quickly.
+
+99
+00:03:10,986 --> 00:03:12,396
+Don't ask players to make too
+
+100
+00:03:12,396 --> 00:03:13,526
+many choices before they
+
+101
+00:03:13,526 --> 00:03:15,096
+understand what it means in your
+
+102
+00:03:15,096 --> 00:03:15,505
+game.
+
+103
+00:03:16,536 --> 00:03:18,226
+And for more complex games, I
+
+104
+00:03:18,226 --> 00:03:19,336
+know there are important things
+
+105
+00:03:19,336 --> 00:03:20,146
+that you want to show your
+
+106
+00:03:20,146 --> 00:03:22,656
+players, and game Main Menus
+
+107
+00:03:22,656 --> 00:03:24,296
+have become increasingly busy
+
+108
+00:03:24,296 --> 00:03:27,026
+with news, tournaments, stores,
+
+109
+00:03:27,026 --> 00:03:29,016
+and more, and these can all be
+
+110
+00:03:29,016 --> 00:03:29,796
+on your interface.
+
+111
+00:03:30,306 --> 00:03:31,986
+But make sure that the main call
+
+112
+00:03:31,986 --> 00:03:34,876
+to action to play, start,
+
+113
+00:03:35,376 --> 00:03:37,716
+battle, or begin a new game is
+
+114
+00:03:37,716 --> 00:03:39,266
+the most dominant in your Main
+
+115
+00:03:39,266 --> 00:03:39,816
+Menu UI.
+
+116
+00:03:41,016 --> 00:03:41,986
+All right.
+
+117
+00:03:42,776 --> 00:03:44,526
+Tip 4 is all about our game's
+
+118
+00:03:44,526 --> 00:03:45,976
+interface, and before we jump
+
+119
+00:03:45,976 --> 00:03:47,866
+into this tip, you should know
+
+120
+00:03:47,866 --> 00:03:50,276
+something about me, and that's,
+
+121
+00:03:50,606 --> 00:03:52,246
+I have a soft spot for classic
+
+122
+00:03:52,246 --> 00:03:53,016
+arcade games.
+
+123
+00:03:53,586 --> 00:03:56,136
+So, this fake alien monster game
+
+124
+00:03:56,136 --> 00:03:57,556
+is going to help us with a few
+
+125
+00:03:57,556 --> 00:03:59,326
+user interface best practices,
+
+126
+00:03:59,906 --> 00:04:01,866
+starting with consistency.
+
+127
+00:04:03,456 --> 00:04:05,916
+Consistency improves usability
+
+128
+00:04:06,316 --> 00:04:07,926
+because it helps people mentally
+
+129
+00:04:07,926 --> 00:04:08,866
+map your interface.
+
+130
+00:04:09,366 --> 00:04:11,216
+It's much easier to play and
+
+131
+00:04:11,266 --> 00:04:12,786
+navigate when controls are in
+
+132
+00:04:12,786 --> 00:04:13,926
+predictable locations.
+
+133
+00:04:14,526 --> 00:04:16,146
+So, be consistent in the layout
+
+134
+00:04:16,146 --> 00:04:17,236
+of your game's menu.
+
+135
+00:04:17,786 --> 00:04:19,116
+That way, people can spend their
+
+136
+00:04:19,116 --> 00:04:21,006
+energy playing you game versus
+
+137
+00:04:21,006 --> 00:04:22,896
+trying to recall where was that
+
+138
+00:04:22,896 --> 00:04:23,626
+Settings button.
+
+139
+00:04:24,386 --> 00:04:25,966
+So, let's look at the exact same
+
+140
+00:04:25,966 --> 00:04:27,826
+flow with an inconsistent UI.
+
+141
+00:04:29,496 --> 00:04:31,176
+The Back button is all over the
+
+142
+00:04:31,176 --> 00:04:33,526
+place, and Settings disappears
+
+143
+00:04:33,526 --> 00:04:35,066
+on the Choose Character screen.
+
+144
+00:04:36,326 --> 00:04:38,366
+This inconsistency disrupts a
+
+145
+00:04:38,366 --> 00:04:40,436
+player's experience because it
+
+146
+00:04:40,436 --> 00:04:42,066
+takes more effort to mentally
+
+147
+00:04:42,066 --> 00:04:42,916
+map the interface.
+
+148
+00:04:43,626 --> 00:04:45,016
+So, when you're designing, to
+
+149
+00:04:45,016 --> 00:04:46,726
+accommodate for consistency, lay
+
+150
+00:04:46,726 --> 00:04:48,496
+out all of your screens and
+
+151
+00:04:48,496 --> 00:04:49,096
+check them.
+
+152
+00:04:49,406 --> 00:04:50,816
+That way, you'll be able to tell
+
+153
+00:04:50,816 --> 00:04:52,346
+whether controls are in the same
+
+154
+00:04:52,346 --> 00:04:52,636
+place.
+
+155
+00:04:54,146 --> 00:04:56,486
+Okay. The next UI best practice
+
+156
+00:04:56,486 --> 00:04:57,806
+is all about clarity.
+
+157
+00:04:58,766 --> 00:05:00,126
+It needs to be clear to players
+
+158
+00:05:00,126 --> 00:05:01,436
+what's interactive and what's
+
+159
+00:05:01,476 --> 00:05:01,836
+not.
+
+160
+00:05:02,216 --> 00:05:03,586
+If people have to think too much
+
+161
+00:05:03,586 --> 00:05:05,316
+about what to tap, they're going
+
+162
+00:05:05,316 --> 00:05:06,376
+to be taken out of your game's
+
+163
+00:05:06,376 --> 00:05:07,106
+experience.
+
+164
+00:05:08,126 --> 00:05:09,976
+So, items that are tappable need
+
+165
+00:05:09,976 --> 00:05:10,916
+to look different from items
+
+166
+00:05:10,916 --> 00:05:11,846
+that are not tappable.
+
+167
+00:05:12,606 --> 00:05:13,936
+So, in the top center of this
+
+168
+00:05:13,936 --> 00:05:16,396
+screen, my Lives is actually
+
+169
+00:05:16,396 --> 00:05:17,336
+just Status.
+
+170
+00:05:17,606 --> 00:05:19,026
+But with this visual appearance,
+
+171
+00:05:19,026 --> 00:05:20,106
+it could be confused for
+
+172
+00:05:20,106 --> 00:05:21,476
+something that's interactive.
+
+173
+00:05:22,106 --> 00:05:23,276
+This is common in a lot of
+
+174
+00:05:23,276 --> 00:05:24,836
+games, and there is an easy fix.
+
+175
+00:05:25,676 --> 00:05:27,156
+Make non-interactive elements
+
+176
+00:05:27,156 --> 00:05:28,716
+look different by using color
+
+177
+00:05:28,716 --> 00:05:31,416
+and shape, like this or this.
+
+178
+00:05:32,056 --> 00:05:34,226
+Or you can remove and put status
+
+179
+00:05:34,226 --> 00:05:35,886
+items away from interactive
+
+180
+00:05:35,886 --> 00:05:36,436
+elements.
+
+181
+00:05:37,666 --> 00:05:39,216
+In your interface, for clarity,
+
+182
+00:05:39,216 --> 00:05:41,106
+it's important always to include
+
+183
+00:05:41,106 --> 00:05:43,156
+three visual states for buttons
+
+184
+00:05:43,206 --> 00:05:45,566
+and controls because a lack of
+
+185
+00:05:45,566 --> 00:05:46,906
+visual feedback can confuse
+
+186
+00:05:46,906 --> 00:05:47,356
+players.
+
+187
+00:05:48,346 --> 00:05:50,126
+Be sure to use a normal state to
+
+188
+00:05:50,126 --> 00:05:51,126
+show people that something's
+
+189
+00:05:51,126 --> 00:05:51,656
+tappable.
+
+190
+00:05:52,346 --> 00:05:54,366
+Use a press state when something
+
+191
+00:05:54,366 --> 00:05:55,866
+has been tapped.
+
+192
+00:05:55,866 --> 00:05:57,436
+And finally, use a disabled
+
+193
+00:05:57,436 --> 00:05:58,786
+state for control that's not
+
+194
+00:05:58,786 --> 00:06:00,536
+currently active or enabled.
+
+195
+00:06:02,026 --> 00:06:03,626
+Many developers struggle if they
+
+196
+00:06:03,626 --> 00:06:05,646
+should remove or hide a control
+
+197
+00:06:05,836 --> 00:06:07,886
+if it cannot be activated, but
+
+198
+00:06:07,886 --> 00:06:09,936
+if you do that, when it does pop
+
+199
+00:06:10,256 --> 00:06:11,096
+back it could be really
+
+200
+00:06:11,096 --> 00:06:13,366
+confusing to players, especially
+
+201
+00:06:13,366 --> 00:06:14,746
+if this happens during gameplay.
+
+202
+00:06:15,686 --> 00:06:17,296
+So, for a much better user
+
+203
+00:06:17,296 --> 00:06:18,926
+experience, use a disabled
+
+204
+00:06:18,926 --> 00:06:19,296
+state.
+
+205
+00:06:19,966 --> 00:06:20,966
+This lets people know the
+
+206
+00:06:20,966 --> 00:06:23,086
+controls location and action
+
+207
+00:06:23,086 --> 00:06:24,526
+that will be possible soon when
+
+208
+00:06:24,526 --> 00:06:25,736
+that control is enabled.
+
+209
+00:06:26,676 --> 00:06:28,206
+And finally, make sure that
+
+210
+00:06:28,206 --> 00:06:29,726
+everything that's interactive on
+
+211
+00:06:29,726 --> 00:06:31,106
+your game's interface meets the
+
+212
+00:06:31,106 --> 00:06:33,536
+minimum tap targets on IOS for
+
+213
+00:06:33,536 --> 00:06:35,366
+just 44 by 44 points.
+
+214
+00:06:36,566 --> 00:06:38,436
+Your interface is a tool to make
+
+215
+00:06:38,436 --> 00:06:40,616
+sense of your game's world, so
+
+216
+00:06:40,616 --> 00:06:42,326
+make it consistent and clear.
+
+217
+00:06:42,766 --> 00:06:44,156
+That way, people will be able to
+
+218
+00:06:44,156 --> 00:06:45,776
+stay engaged in your game.
+
+219
+00:06:46,496 --> 00:06:47,316
+All right.
+
+220
+00:06:47,316 --> 00:06:48,696
+I hope you all enjoy that fake
+
+221
+00:06:48,696 --> 00:06:49,586
+alien monster game.
+
+222
+00:06:49,586 --> 00:06:51,036
+It'll come back in a bit to help
+
+223
+00:06:51,036 --> 00:06:54,076
+us with a few other design tips.
+
+224
+00:06:54,246 --> 00:06:56,026
+We're already halfway through at
+
+225
+00:06:56,026 --> 00:06:56,776
+Number 5.
+
+226
+00:06:57,456 --> 00:06:58,956
+This tip and the next few are
+
+227
+00:06:58,956 --> 00:07:00,436
+about game tutorials.
+
+228
+00:07:01,106 --> 00:07:02,656
+Successful tutorials teach
+
+229
+00:07:02,656 --> 00:07:04,376
+gradually and in context through
+
+230
+00:07:04,376 --> 00:07:05,446
+progressive disclosure.
+
+231
+00:07:06,436 --> 00:07:07,746
+Your tutorial should be made up
+
+232
+00:07:07,746 --> 00:07:09,836
+of three basic parts that align
+
+233
+00:07:09,836 --> 00:07:11,476
+to the core loop of your game.
+
+234
+00:07:12,096 --> 00:07:14,206
+For example, it might be that
+
+235
+00:07:14,206 --> 00:07:16,166
+you have to fight monsters to
+
+236
+00:07:16,166 --> 00:07:18,096
+get some gold, and then buy some
+
+237
+00:07:18,096 --> 00:07:20,166
+stuff to fight more challenging
+
+238
+00:07:20,166 --> 00:07:20,696
+monsters.
+
+239
+00:07:21,536 --> 00:07:24,066
+But be sure, in your tutorial,
+
+240
+00:07:24,066 --> 00:07:25,916
+it stays to those three basic
+
+241
+00:07:25,916 --> 00:07:26,426
+parts.
+
+242
+00:07:27,186 --> 00:07:28,946
+If you have to keep, if you have
+
+243
+00:07:28,946 --> 00:07:30,666
+to teach about economy in your
+
+244
+00:07:30,666 --> 00:07:33,405
+game, keep it simple because,
+
+245
+00:07:33,405 --> 00:07:34,716
+remember, you're teaching
+
+246
+00:07:34,716 --> 00:07:36,236
+somebody something brand new.
+
+247
+00:07:37,046 --> 00:07:39,346
+So, avoid overwhelming people
+
+248
+00:07:39,346 --> 00:07:40,636
+and including information in
+
+249
+00:07:40,636 --> 00:07:41,976
+your tutorial that is not
+
+250
+00:07:41,976 --> 00:07:43,086
+essential to gameplay.
+
+251
+00:07:44,056 --> 00:07:46,446
+All of this, such as upgrades,
+
+252
+00:07:46,586 --> 00:07:48,206
+tournaments, messages, and your
+
+253
+00:07:48,206 --> 00:07:50,436
+store, can all be discovered
+
+254
+00:07:50,656 --> 00:07:51,556
+after your tutorial.
+
+255
+00:07:52,746 --> 00:07:54,386
+And also, in your tutorial, it's
+
+256
+00:07:54,386 --> 00:07:55,826
+really important to provide
+
+257
+00:07:55,856 --> 00:07:57,046
+clear direction.
+
+258
+00:07:57,636 --> 00:07:59,316
+If you have characters in your
+
+259
+00:07:59,316 --> 00:08:01,236
+game, it's pretty common to have
+
+260
+00:08:01,236 --> 00:08:02,736
+a character walk you through the
+
+261
+00:08:02,736 --> 00:08:03,346
+tutorial.
+
+262
+00:08:04,236 --> 00:08:05,596
+So, let's say we have this
+
+263
+00:08:05,596 --> 00:08:08,636
+adorable alien monster, keep
+
+264
+00:08:08,636 --> 00:08:10,796
+directions short and simple to
+
+265
+00:08:10,796 --> 00:08:11,466
+be effective.
+
+266
+00:08:12,536 --> 00:08:13,546
+So, whether you teach with a
+
+267
+00:08:13,546 --> 00:08:16,056
+character or through in-game
+
+268
+00:08:16,056 --> 00:08:18,026
+instructional text, a single
+
+269
+00:08:18,026 --> 00:08:19,206
+clear direction is going to be
+
+270
+00:08:19,206 --> 00:08:20,166
+the most effective.
+
+271
+00:08:21,076 --> 00:08:22,776
+And please, don't repeat
+
+272
+00:08:22,776 --> 00:08:23,476
+directions.
+
+273
+00:08:24,146 --> 00:08:26,156
+Respect your players and treat,
+
+274
+00:08:26,156 --> 00:08:27,286
+and don't treat them like
+
+275
+00:08:27,286 --> 00:08:27,836
+children.
+
+276
+00:08:28,596 --> 00:08:29,946
+Even if your players are
+
+277
+00:08:29,946 --> 00:08:31,266
+children, kids are smart.
+
+278
+00:08:31,806 --> 00:08:33,476
+So, repeating directions
+
+279
+00:08:33,476 --> 00:08:35,296
+unnecessarily lengthens your
+
+280
+00:08:35,296 --> 00:08:37,406
+tutorial, and that makes it less
+
+281
+00:08:37,406 --> 00:08:38,856
+effective and less fun.
+
+282
+00:08:39,846 --> 00:08:41,466
+And learning is really fun,
+
+283
+00:08:41,496 --> 00:08:42,806
+especially when the teacher is
+
+284
+00:08:42,806 --> 00:08:45,556
+engaging, creative, and
+
+285
+00:08:45,596 --> 00:08:46,116
+inventive.
+
+286
+00:08:46,696 --> 00:08:48,106
+So, be the cool teacher.
+
+287
+00:08:48,486 --> 00:08:49,946
+Don't just do what you've seen
+
+288
+00:08:49,946 --> 00:08:50,586
+others do.
+
+289
+00:08:51,036 --> 00:08:52,606
+If your game is unique, your
+
+290
+00:08:52,606 --> 00:08:53,796
+tutorial should be too.
+
+291
+00:08:54,896 --> 00:08:56,546
+For example, think about how you
+
+292
+00:08:56,546 --> 00:08:58,126
+can teach before your game
+
+293
+00:08:58,126 --> 00:08:58,656
+begins.
+
+294
+00:08:59,886 --> 00:09:01,886
+This is Splitter Critters, and
+
+295
+00:09:01,886 --> 00:09:03,936
+in this game you split the world
+
+296
+00:09:03,936 --> 00:09:05,546
+with a swipe of your finger and
+
+297
+00:09:05,546 --> 00:09:06,706
+then rearrange it to guide
+
+298
+00:09:06,706 --> 00:09:07,596
+critters back to their
+
+299
+00:09:07,596 --> 00:09:08,166
+spaceship.
+
+300
+00:09:08,706 --> 00:09:10,036
+And from the Start screen,
+
+301
+00:09:10,246 --> 00:09:11,596
+you're taught this key game
+
+302
+00:09:11,596 --> 00:09:12,156
+mechanic.
+
+303
+00:09:13,166 --> 00:09:14,816
+And one of the least effective
+
+304
+00:09:14,816 --> 00:09:16,676
+ways to teach is with a bouncing
+
+305
+00:09:16,676 --> 00:09:17,096
+arrow.
+
+306
+00:09:17,796 --> 00:09:20,636
+It's not effective because
+
+307
+00:09:20,686 --> 00:09:22,136
+people just end up playing tap
+
+308
+00:09:22,136 --> 00:09:23,666
+the pointing arrow game and not
+
+309
+00:09:23,666 --> 00:09:24,136
+learning.
+
+310
+00:09:24,806 --> 00:09:26,326
+And the same goes for the
+
+311
+00:09:26,326 --> 00:09:27,056
+floating hand.
+
+312
+00:09:27,856 --> 00:09:29,556
+Not only do you not learn, but
+
+313
+00:09:29,556 --> 00:09:30,616
+this method is really
+
+314
+00:09:30,616 --> 00:09:32,236
+problematic because it hides you
+
+315
+00:09:32,236 --> 00:09:33,246
+from the interface that you're
+
+316
+00:09:33,246 --> 00:09:34,746
+trying to be learning about.
+
+317
+00:09:35,576 --> 00:09:37,086
+So, there are much better
+
+318
+00:09:37,086 --> 00:09:38,516
+attention-getting devices that
+
+319
+00:09:38,516 --> 00:09:39,836
+are way more natural and
+
+320
+00:09:39,836 --> 00:09:42,096
+immersive, such as animation.
+
+321
+00:09:43,456 --> 00:09:46,066
+This is Reigns, and I was really
+
+322
+00:09:46,066 --> 00:09:47,116
+excited to hear that the
+
+323
+00:09:47,116 --> 00:09:48,886
+developer is soon updating to
+
+324
+00:09:48,886 --> 00:09:50,156
+remove the floating hand.
+
+325
+00:09:51,306 --> 00:09:52,876
+On the right, is the new
+
+326
+00:09:52,876 --> 00:09:54,676
+experience and, as you can see,
+
+327
+00:09:54,676 --> 00:09:56,596
+it's much more immersive; it's
+
+328
+00:09:56,596 --> 00:09:58,466
+just as effective, and it does a
+
+329
+00:09:58,466 --> 00:10:00,096
+great job getting you right into
+
+330
+00:10:00,096 --> 00:10:02,656
+the world of Reigns, and being
+
+331
+00:10:02,656 --> 00:10:04,856
+in the world of your game is the
+
+332
+00:10:04,856 --> 00:10:05,146
+best.
+
+333
+00:10:06,036 --> 00:10:07,836
+So, if you could let people jump
+
+334
+00:10:07,926 --> 00:10:10,166
+right in and learn through play,
+
+335
+00:10:10,506 --> 00:10:11,846
+that is going to be the most
+
+336
+00:10:11,846 --> 00:10:13,686
+effective way to teach them your
+
+337
+00:10:13,686 --> 00:10:14,086
+game.
+
+338
+00:10:14,686 --> 00:10:17,716
+So, this is Mars: Mars on Apple
+
+339
+00:10:17,716 --> 00:10:20,166
+TV, and it's really fun to be
+
+340
+00:10:20,166 --> 00:10:21,286
+able to jump right into the
+
+341
+00:10:21,286 --> 00:10:21,636
+game.
+
+342
+00:10:22,576 --> 00:10:24,236
+So, right now, I'm on Mars, and
+
+343
+00:10:24,236 --> 00:10:25,446
+the controls are intuitive, so
+
+344
+00:10:25,446 --> 00:10:26,266
+I'm going to start clicking
+
+345
+00:10:26,266 --> 00:10:29,846
+around, and after one hilarious
+
+346
+00:10:29,846 --> 00:10:31,976
+death, I quickly realize that
+
+347
+00:10:31,976 --> 00:10:34,096
+the objective is to land safely
+
+348
+00:10:34,096 --> 00:10:34,976
+on the stations.
+
+349
+00:10:35,966 --> 00:10:37,456
+So, for the best experience,
+
+350
+00:10:37,916 --> 00:10:38,976
+teach people through play.
+
+351
+00:10:42,516 --> 00:10:43,276
+All right.
+
+352
+00:10:43,586 --> 00:10:45,866
+We're already at Number 9, which
+
+353
+00:10:45,866 --> 00:10:47,836
+is all about letting people skip
+
+354
+00:10:47,926 --> 00:10:49,476
+and get right into your game.
+
+355
+00:10:50,426 --> 00:10:52,246
+Give the player control, and
+
+356
+00:10:52,246 --> 00:10:54,266
+that way skip can create a much
+
+357
+00:10:54,296 --> 00:10:55,726
+better user experience.
+
+358
+00:10:57,356 --> 00:10:58,676
+Now, I love this opening
+
+359
+00:10:58,676 --> 00:11:00,336
+sequence from Icycle: On Thin
+
+360
+00:11:00,386 --> 00:11:00,866
+Ice.
+
+361
+00:11:01,306 --> 00:11:03,046
+It's clever, has a striking
+
+362
+00:11:03,046 --> 00:11:04,456
+style, and it provides you with
+
+363
+00:11:04,456 --> 00:11:05,686
+the motivation of the main
+
+364
+00:11:05,686 --> 00:11:07,016
+character, Dennis.
+
+365
+00:11:07,746 --> 00:11:09,286
+But when you tap on the screen,
+
+366
+00:11:09,356 --> 00:11:10,896
+a very subtle Skip button
+
+367
+00:11:10,896 --> 00:11:13,916
+appears, and that is great
+
+368
+00:11:13,976 --> 00:11:16,186
+because revealing Skip on tap is
+
+369
+00:11:16,186 --> 00:11:17,236
+a wonderful technique.
+
+370
+00:11:17,956 --> 00:11:19,386
+Players who are ready to jump
+
+371
+00:11:19,386 --> 00:11:21,466
+right into your game can, and
+
+372
+00:11:21,466 --> 00:11:22,646
+people who want to watch the
+
+373
+00:11:22,646 --> 00:11:24,186
+entire sequence can stay
+
+374
+00:11:24,186 --> 00:11:25,316
+immersed with edge to edge
+
+375
+00:11:25,366 --> 00:11:25,686
+playback.
+
+376
+00:11:27,176 --> 00:11:29,316
+Now, letting players skip also
+
+377
+00:11:29,316 --> 00:11:31,026
+applies to tutorials.
+
+378
+00:11:32,066 --> 00:11:34,326
+This is Zombie Gunship, and
+
+379
+00:11:34,326 --> 00:11:35,456
+check out the upper left-hand
+
+380
+00:11:35,456 --> 00:11:35,866
+corner.
+
+381
+00:11:36,256 --> 00:11:37,166
+It's awesome.
+
+382
+00:11:37,166 --> 00:11:38,746
+There is a Skip Tutorial button,
+
+383
+00:11:38,746 --> 00:11:40,416
+and it feels great to be able to
+
+384
+00:11:40,416 --> 00:11:41,776
+jump right into the game.
+
+385
+00:11:43,356 --> 00:11:44,946
+Just be sure if you allow people
+
+386
+00:11:44,946 --> 00:11:46,746
+to skip your tutorial, they're
+
+387
+00:11:46,746 --> 00:11:48,676
+able to relaunch or replay the
+
+388
+00:11:48,676 --> 00:11:50,116
+tutorial in case they need a
+
+389
+00:11:50,116 --> 00:11:51,146
+refresher on the rules.
+
+390
+00:11:51,756 --> 00:11:53,696
+Now, I understand that this may
+
+391
+00:11:53,696 --> 00:11:55,166
+not work for every game.
+
+392
+00:11:55,606 --> 00:11:56,886
+So, if it's critical to your
+
+393
+00:11:56,886 --> 00:11:58,716
+game's progression to include a
+
+394
+00:11:58,716 --> 00:12:00,576
+tutorial level, teach the
+
+395
+00:12:00,576 --> 00:12:03,166
+basics, gradually adding context
+
+396
+00:12:03,166 --> 00:12:04,386
+through progressive disclosure,
+
+397
+00:12:04,786 --> 00:12:06,016
+and then get out of the way.
+
+398
+00:12:07,736 --> 00:12:09,676
+Letting players skip is about
+
+399
+00:12:09,676 --> 00:12:11,296
+putting the player's experience
+
+400
+00:12:11,496 --> 00:12:13,706
+first because you don't know
+
+401
+00:12:13,996 --> 00:12:16,496
+someone's skill level or how
+
+402
+00:12:16,496 --> 00:12:17,956
+much time they have to play your
+
+403
+00:12:17,956 --> 00:12:18,376
+game.
+
+404
+00:12:19,376 --> 00:12:21,796
+And I'm sure we have all button
+
+405
+00:12:21,796 --> 00:12:23,396
+smashed and clicked as quickly
+
+406
+00:12:23,396 --> 00:12:24,596
+as possible to get through a
+
+407
+00:12:24,596 --> 00:12:26,026
+tutorial just to get into the
+
+408
+00:12:26,026 --> 00:12:26,446
+game.
+
+409
+00:12:27,146 --> 00:12:28,546
+So, for a much better user
+
+410
+00:12:28,546 --> 00:12:31,166
+experience, provide a Skip
+
+411
+00:12:31,166 --> 00:12:32,076
+Tutorial button.
+
+412
+00:12:32,766 --> 00:12:36,166
+So, respect the player and that
+
+413
+00:12:36,166 --> 00:12:37,936
+way, they will be able to have a
+
+414
+00:12:37,936 --> 00:12:39,446
+much better user experience.
+
+415
+00:12:40,976 --> 00:12:43,256
+The final design tip today is
+
+416
+00:12:43,256 --> 00:12:44,756
+about being inclusive.
+
+417
+00:12:45,696 --> 00:12:47,626
+There's a lot that you can do to
+
+418
+00:12:47,626 --> 00:12:49,696
+make your game more accessible,
+
+419
+00:12:50,166 --> 00:12:51,676
+such as adding closed captions
+
+420
+00:12:51,896 --> 00:12:53,276
+or supporting dynamic type.
+
+421
+00:12:54,096 --> 00:12:55,956
+You can also, just like in
+
+422
+00:12:55,956 --> 00:12:58,946
+Mushroom 11, support Left and
+
+423
+00:12:58,946 --> 00:13:01,546
+Right-Hand Mode, or you can
+
+424
+00:13:01,546 --> 00:13:03,156
+support Color Blind Mode, like
+
+425
+00:13:03,156 --> 00:13:04,066
+in Kami 2.
+
+426
+00:13:04,676 --> 00:13:05,926
+And one of the coolest
+
+427
+00:13:05,926 --> 00:13:07,246
+accessibility updates that I
+
+428
+00:13:07,246 --> 00:13:09,046
+have seen is from Blackbox,
+
+429
+00:13:09,666 --> 00:13:11,506
+which is a visual puzzler that
+
+430
+00:13:11,506 --> 00:13:13,366
+now includes sonic interfaces to
+
+431
+00:13:13,366 --> 00:13:15,146
+let players with low or no
+
+432
+00:13:15,146 --> 00:13:16,666
+vision play through solving
+
+433
+00:13:16,666 --> 00:13:17,766
+puzzles with sound.
+
+434
+00:13:18,726 --> 00:13:21,256
+With 285 million blind or
+
+435
+00:13:21,256 --> 00:13:22,576
+low-vision people in the world,
+
+436
+00:13:23,026 --> 00:13:24,366
+everybody should be able to play
+
+437
+00:13:24,366 --> 00:13:27,856
+games and have fun.
+
+438
+00:13:28,076 --> 00:13:28,476
+All right.
+
+439
+00:13:28,666 --> 00:13:30,096
+With these 10 design tips,
+
+440
+00:13:30,096 --> 00:13:31,496
+you'll be able to create great
+
+441
+00:13:31,496 --> 00:13:34,386
+experiences from the moment
+
+442
+00:13:34,746 --> 00:13:36,076
+someone taps your icon.
+
+443
+00:13:36,756 --> 00:13:38,796
+But remember, of all things,
+
+444
+00:13:39,306 --> 00:13:41,276
+respect you players, include
+
+445
+00:13:41,276 --> 00:13:42,836
+everyone, and put their
+
+446
+00:13:42,836 --> 00:13:43,746
+experience first.
+
+447
+00:13:43,746 --> 00:13:43,946
+Thank you.
+

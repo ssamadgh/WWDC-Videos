@@ -1,0 +1,1139 @@
+1
+00:00:00,000 --> 00:00:01,835
+Hi, my name is Lauren Strehlow.
+
+
+2
+00:00:01,835 --> 00:00:03,203
+I'm a design evangelist,
+
+
+3
+00:00:03,203 --> 00:00:04,671
+and we're going
+to be talking about
+
+
+4
+00:00:04,671 --> 00:00:07,608
+designing
+for subscription success.
+
+
+5
+00:00:07,608 --> 00:00:09,943
+Subscriptions are the fastest
+growing business model
+
+
+6
+00:00:09,943 --> 00:00:11,578
+on the App Store.
+
+
+7
+00:00:11,578 --> 00:00:13,180
+But why is it almost every time
+
+
+8
+00:00:13,180 --> 00:00:16,450
+you're ready to sign up
+for some awesome new service,
+
+
+9
+00:00:16,450 --> 00:00:20,187
+or subscribe to some new,
+exciting content,
+
+
+10
+00:00:20,187 --> 00:00:22,522
+this is the feeling
+that you get?
+
+
+11
+00:00:22,522 --> 00:00:25,025
+That’s because
+it's all too common
+
+
+12
+00:00:25,025 --> 00:00:29,363
+for subscriptions to feel
+complicated, confusing,
+
+
+13
+00:00:29,363 --> 00:00:32,698
+and just&nbsp;take too long
+to sign up.
+
+
+14
+00:00:32,698 --> 00:00:36,470
+So for a great user experience,
+make your subscription
+
+
+15
+00:00:36,470 --> 00:00:40,274
+effortless, transparent,
+and engaging.
+
+
+16
+00:00:40,274 --> 00:00:43,777
+In other words,
+make it easy to subscribe.
+
+
+17
+00:00:45,545 --> 00:00:47,514
+Let's focus on each
+of these principles
+
+
+18
+00:00:47,514 --> 00:00:50,150
+to improve the user experience
+and design
+
+
+19
+00:00:50,150 --> 00:00:52,819
+for subscription success.
+
+
+20
+00:00:52,819 --> 00:00:56,757
+What does it mean for your
+subscription to be effortless?
+
+
+21
+00:00:56,757 --> 00:00:59,293
+First, it means people
+should know
+
+
+22
+00:00:59,293 --> 00:01:00,994
+that you have
+a subscription.
+
+
+23
+00:01:00,994 --> 00:01:03,263
+They shouldn't have to look
+for how to sign up.
+
+
+24
+00:01:03,263 --> 00:01:07,467
+So be visible, get out there,
+and don’t be shy!
+
+
+25
+00:01:07,467 --> 00:01:09,569
+Let people know that you have
+a subscription
+
+
+26
+00:01:09,569 --> 00:01:12,005
+and ask them to sign up.
+
+
+27
+00:01:12,005 --> 00:01:15,342
+One approach would be to persist
+a subscribe button
+
+
+28
+00:01:15,342 --> 00:01:17,177
+in you app’s interface.
+
+
+29
+00:01:17,177 --> 00:01:20,113
+So here,
+in the New York Times app,
+
+
+30
+00:01:20,113 --> 00:01:22,983
+they persist -- tastefully --
+a subscribe button
+
+
+31
+00:01:22,983 --> 00:01:26,153
+that is visible across
+all of their articles,
+
+
+32
+00:01:26,153 --> 00:01:28,622
+and this is done really well.
+
+
+33
+00:01:28,622 --> 00:01:31,358
+It's not annoying or pushy
+because it families together
+
+
+34
+00:01:31,358 --> 00:01:33,327
+with their interface.
+
+
+35
+00:01:33,327 --> 00:01:34,928
+Don't present your subscription
+
+
+36
+00:01:34,928 --> 00:01:37,431
+like an a pop-up ad
+or notification,
+
+
+37
+00:01:37,431 --> 00:01:41,468
+because ads and notifications
+are intended to be dismissed,
+
+
+38
+00:01:41,468 --> 00:01:45,105
+and you don't want people
+to dismiss your subscription.
+
+
+39
+00:01:45,105 --> 00:01:48,442
+Another way to be visible would
+be to present your subscription
+
+
+40
+00:01:48,442 --> 00:01:53,046
+when a person has shown interest
+in a feature or piece of content
+
+
+41
+00:01:53,046 --> 00:01:56,616
+that you offer
+through your subscription.
+
+
+42
+00:01:56,616 --> 00:01:59,920
+This is the dating&nbsp;app, HER,
+and as a category,
+
+
+43
+00:01:59,920 --> 00:02:02,055
+dating apps have been
+in the subscription business
+
+
+44
+00:02:02,055 --> 00:02:05,525
+for a long time
+and they do it really well.
+
+
+45
+00:02:05,525 --> 00:02:08,562
+So let's just say you are
+swiping through a few profiles
+
+
+46
+00:02:08,562 --> 00:02:11,832
+and accidentally pass on someone
+who is cute,
+
+
+47
+00:02:11,832 --> 00:02:15,502
+so at that moment
+you attempt to rewind.
+
+
+48
+00:02:15,502 --> 00:02:19,539
+Well, the app HER tastefully
+presents an option to subscribe,
+
+
+49
+00:02:19,539 --> 00:02:23,543
+because the rewind feature
+is a part of their subscription.
+
+
+50
+00:02:23,543 --> 00:02:26,313
+It's an appropriate time
+to present this offer
+
+
+51
+00:02:26,313 --> 00:02:28,382
+because you've shown interest.
+
+
+52
+00:02:28,382 --> 00:02:30,417
+And HER does a great job
+
+
+53
+00:02:30,417 --> 00:02:33,020
+presenting the values
+of their subscription offer
+
+
+54
+00:02:33,020 --> 00:02:37,290
+right here with this beautiful,
+light animation.
+
+
+55
+00:02:37,290 --> 00:02:39,960
+So make it easy
+for people to sign up,
+
+
+56
+00:02:39,960 --> 00:02:42,596
+make sure they know you have
+a subscription.
+
+
+57
+00:02:42,596 --> 00:02:46,266
+Be visible, so you can&nbsp;choose
+to present your subscription
+
+
+58
+00:02:46,266 --> 00:02:48,468
+when a person has
+expressed interest
+
+
+59
+00:02:48,468 --> 00:02:52,506
+or tastefully persist
+an option to subscribe.
+
+
+60
+00:02:52,506 --> 00:02:54,474
+But no matter which option
+you choose,
+
+
+61
+00:02:54,474 --> 00:02:56,610
+all subscription apps
+should include a way
+
+
+62
+00:02:56,610 --> 00:02:59,846
+to sign up from Settings
+or Account from within the app,
+
+
+63
+00:02:59,846 --> 00:03:02,649
+because that's an intuitive
+place where people would go
+
+
+64
+00:03:02,649 --> 00:03:05,018
+to look to sign up.
+
+
+65
+00:03:05,018 --> 00:03:07,654
+Also, to make your subscription
+effortless,
+
+
+66
+00:03:07,654 --> 00:03:09,790
+you need to remove friction.
+
+
+67
+00:03:09,790 --> 00:03:12,692
+Friction is asking
+for too much effort
+
+
+68
+00:03:12,692 --> 00:03:14,961
+by asking for
+too much information
+
+
+69
+00:03:14,961 --> 00:03:18,465
+and requiring too many steps
+to sign up.
+
+
+70
+00:03:18,465 --> 00:03:21,868
+But how do you know
+when you've asked for too much?
+
+
+71
+00:03:21,868 --> 00:03:24,438
+Well, this data should help.
+
+
+72
+00:03:24,438 --> 00:03:27,808
+This graph represents a snapshot
+of one month of data
+
+
+73
+00:03:27,808 --> 00:03:32,646
+from the top three entertainment
+video streaming apps in the U.S.
+
+
+74
+00:03:32,646 --> 00:03:34,514
+While their names
+have been removed,
+
+
+75
+00:03:34,514 --> 00:03:39,619
+the important data here is
+the clicks to conversion ratio.
+
+
+76
+00:03:39,619 --> 00:03:41,955
+A subscription flow
+with three clicks
+
+
+77
+00:03:41,955 --> 00:03:45,092
+led to a 61 percent
+conversion rate,
+
+
+78
+00:03:45,092 --> 00:03:47,394
+and a subscription flow
+with four clicks
+
+
+79
+00:03:47,394 --> 00:03:50,297
+led to a 48 percent
+conversion rate.
+
+
+80
+00:03:50,297 --> 00:03:52,265
+However, nine clicks...
+
+
+81
+00:03:52,265 --> 00:03:56,336
+the conversation rate drops
+significantly to seven percent.
+
+
+82
+00:03:56,336 --> 00:03:58,605
+Now, while this is
+just a sample,
+
+
+83
+00:03:58,605 --> 00:04:00,407
+it's clear that you should
+only ask
+
+
+84
+00:04:00,407 --> 00:04:02,709
+for what is absolutely necessary
+
+
+85
+00:04:02,709 --> 00:04:06,613
+because quite literally,
+less is more.
+
+
+86
+00:04:06,613 --> 00:04:09,116
+Less clicks,
+less friction,
+
+
+87
+00:04:09,116 --> 00:04:12,552
+will equal more conversion
+and more subscribers.
+
+
+88
+00:04:12,552 --> 00:04:15,188
+Focus people
+on singing up first.
+
+
+89
+00:04:15,188 --> 00:04:17,656
+Personalization,
+favoriting,
+
+
+90
+00:04:17,656 --> 00:04:19,826
+and requesting additional
+personal details
+
+
+91
+00:04:19,826 --> 00:04:23,597
+can all wait until after someone
+has signed up.
+
+
+92
+00:04:23,597 --> 00:04:25,932
+By being visible
+and removing friction,
+
+
+93
+00:04:25,932 --> 00:04:28,101
+your app’s subscription
+will be effortless
+
+
+94
+00:04:28,101 --> 00:04:32,239
+and easier for people
+to subscribe.
+
+
+95
+00:04:32,239 --> 00:04:34,407
+Next, let's talk about
+your subscription
+
+
+96
+00:04:34,407 --> 00:04:36,209
+being transparent
+
+
+97
+00:04:36,209 --> 00:04:39,179
+because transparency
+is the best policy,
+
+
+98
+00:04:39,179 --> 00:04:40,981
+and you need
+to provide clear terms,
+
+
+99
+00:04:40,981 --> 00:04:44,351
+so people understand
+what they are signing up for.
+
+
+100
+00:04:44,351 --> 00:04:46,086
+Strive to be glanceable;
+
+
+101
+00:04:46,086 --> 00:04:48,855
+in one view
+and in just a few seconds,
+
+
+102
+00:04:48,855 --> 00:04:50,891
+people should be able
+to clearly understand
+
+
+103
+00:04:50,891 --> 00:04:54,561
+what your subscription offer is
+and how to sign up.
+
+
+104
+00:04:54,561 --> 00:04:56,463
+When making
+your subscription offer,
+
+
+105
+00:04:56,463 --> 00:05:01,301
+always include a concise
+value proposition,
+
+
+106
+00:05:01,301 --> 00:05:04,371
+a strong call to action,
+
+
+107
+00:05:04,371 --> 00:05:08,241
+a place to login
+for existing subscribers,
+
+
+108
+00:05:08,241 --> 00:05:10,310
+the ability to restore
+a purchase
+
+
+109
+00:05:10,310 --> 00:05:12,746
+if someone has a new device,
+
+
+110
+00:05:12,746 --> 00:05:15,215
+and a place to sign up
+that includes
+
+
+111
+00:05:15,215 --> 00:05:17,484
+clear terms and pricing,
+
+
+112
+00:05:17,484 --> 00:05:19,419
+and always offer multiple tiers,
+
+
+113
+00:05:19,419 --> 00:05:22,189
+because somebody may want
+to sign up for a day,
+
+
+114
+00:05:22,189 --> 00:05:25,058
+a week, a month, or two years,
+
+
+115
+00:05:25,058 --> 00:05:28,361
+so try offering three or four
+different subscription tiers
+
+
+116
+00:05:28,361 --> 00:05:31,965
+to figure out what works best
+for your audience.
+
+
+117
+00:05:31,965 --> 00:05:34,067
+And be sure to follow
+App Review guidelines
+
+
+118
+00:05:34,067 --> 00:05:36,036
+to ensure that your
+subscription offer
+
+
+119
+00:05:36,036 --> 00:05:37,904
+is within policy.
+
+
+120
+00:05:37,904 --> 00:05:40,473
+People have to have the ability
+to easily see
+
+
+121
+00:05:40,473 --> 00:05:44,044
+terms and conditions
+when they're asked to subscribe.
+
+
+122
+00:05:44,044 --> 00:05:46,947
+The MLB At Bat app does
+a great job
+
+
+123
+00:05:46,947 --> 00:05:50,684
+and offers all of this
+in one easy-to-understand,
+
+
+124
+00:05:50,684 --> 00:05:52,285
+glanceable&nbsp;view.
+
+
+125
+00:05:52,285 --> 00:05:53,720
+And all of this is important
+
+
+126
+00:05:53,720 --> 00:05:57,023
+because most of us
+are signing up on our phones.
+
+
+127
+00:05:57,023 --> 00:05:59,826
+So please,
+keep it simple.
+
+
+128
+00:05:59,826 --> 00:06:02,495
+By providing clear terms,
+people will be able to make
+
+
+129
+00:06:02,495 --> 00:06:05,999
+an informed decision
+to subscribe.
+
+
+130
+00:06:05,999 --> 00:06:08,568
+All right,
+I saved the best for last.
+
+
+131
+00:06:08,568 --> 00:06:11,805
+Your app needs to be engaging
+from the start
+
+
+132
+00:06:11,805 --> 00:06:13,840
+before people subscribe.
+
+
+133
+00:06:13,840 --> 00:06:17,611
+And the best way to engage them
+is through experiencing your app
+
+
+134
+00:06:17,611 --> 00:06:19,813
+and all of its
+wonderful contents.
+
+
+135
+00:06:19,813 --> 00:06:22,949
+Being able to experience
+and try before you buy
+
+
+136
+00:06:22,949 --> 00:06:26,987
+is a part of how we all make
+purchase decisions today.
+
+
+137
+00:06:26,987 --> 00:06:31,057
+From trying on clothes
+to attending an open house
+
+
+138
+00:06:31,057 --> 00:06:35,061
+or even test driving that car
+before you buy or lease it.
+
+
+139
+00:06:35,061 --> 00:06:37,397
+People are able to experience
+
+
+140
+00:06:37,397 --> 00:06:39,699
+before they have to make
+a purchase decision,
+
+
+141
+00:06:39,699 --> 00:06:44,004
+and the same principle
+applies to your app.
+
+
+142
+00:06:44,004 --> 00:06:47,107
+There are three ways to engage
+people through experience
+
+
+143
+00:06:47,107 --> 00:06:50,243
+and that will make it easier
+for them to subscribe.
+
+
+144
+00:06:50,243 --> 00:06:52,045
+First is a free trial,
+
+
+145
+00:06:52,045 --> 00:06:54,848
+where people can try out
+the entire app for free,
+
+
+146
+00:06:54,848 --> 00:06:56,750
+for a limited time.
+
+
+147
+00:06:56,750 --> 00:07:00,320
+Free trials work best
+for established brands,
+
+
+148
+00:07:00,320 --> 00:07:02,789
+when people already have an idea
+of what is included
+
+
+149
+00:07:02,789 --> 00:07:04,357
+with the subscription.
+
+
+150
+00:07:04,357 --> 00:07:06,393
+So if you have
+an established brand,
+
+
+151
+00:07:06,393 --> 00:07:07,927
+a free trial is a great way
+
+
+152
+00:07:07,927 --> 00:07:09,929
+to let people engage
+with your app
+
+
+153
+00:07:09,929 --> 00:07:12,432
+and experience it
+before they subscribe.
+
+
+154
+00:07:12,432 --> 00:07:15,335
+You can also make the majority
+of your app available for free
+
+
+155
+00:07:15,335 --> 00:07:19,372
+and offer a premium feature
+as a subscription.
+
+
+156
+00:07:19,372 --> 00:07:22,208
+For example,
+in the app Sleep Cycle,
+
+
+157
+00:07:22,208 --> 00:07:24,778
+you can use most of the features
+for free,
+
+
+158
+00:07:24,778 --> 00:07:27,113
+but the Trends feature --
+shown here --
+
+
+159
+00:07:27,113 --> 00:07:31,117
+is only available to people
+who have subscribed.
+
+
+160
+00:07:31,117 --> 00:07:33,887
+Sleep Cycle makes it really easy
+for people to sign up
+
+
+161
+00:07:33,887 --> 00:07:35,455
+right from here,
+
+
+162
+00:07:35,455 --> 00:07:37,524
+and this is a great technique
+to offer people
+
+
+163
+00:07:37,524 --> 00:07:40,493
+a peak of the content
+behind this blur,
+
+
+164
+00:07:40,493 --> 00:07:43,530
+as it gives people an idea
+of the kind of data
+
+
+165
+00:07:43,530 --> 00:07:46,599
+they would see as a subscriber.
+
+
+166
+00:07:46,599 --> 00:07:49,469
+Third, sampling content
+is a great way
+
+
+167
+00:07:49,469 --> 00:07:52,272
+to engage people
+through experience.
+
+
+168
+00:07:52,272 --> 00:07:55,375
+Sampling helps people understand
+what type of content
+
+
+169
+00:07:55,375 --> 00:07:57,711
+they would have access to
+as a subscriber,
+
+
+170
+00:07:57,711 --> 00:08:00,947
+and this works well
+for a majority of apps.
+
+
+171
+00:08:00,947 --> 00:08:02,482
+In the New York Times app,
+
+
+172
+00:08:02,482 --> 00:08:05,018
+you're able to read 10 articles
+free per month
+
+
+173
+00:08:05,018 --> 00:08:06,686
+as a non-subscriber.
+
+
+174
+00:08:06,686 --> 00:08:08,888
+This is a great sampling
+experience
+
+
+175
+00:08:08,888 --> 00:08:12,058
+because the New York Times
+lets people have control
+
+
+176
+00:08:12,058 --> 00:08:13,560
+over what they sample,
+
+
+177
+00:08:13,560 --> 00:08:15,428
+and it allows people
+to find the content
+
+
+178
+00:08:15,428 --> 00:08:17,197
+that they're interested in.
+
+
+179
+00:08:17,197 --> 00:08:19,899
+In turn, that helps them
+better understand
+
+
+180
+00:08:19,899 --> 00:08:23,069
+the value
+of the overall subscription.
+
+
+181
+00:08:23,069 --> 00:08:25,939
+The objective here is to let
+people experience
+
+
+182
+00:08:25,939 --> 00:08:28,975
+and become engaged
+with your app's content,
+
+
+183
+00:08:28,975 --> 00:08:31,311
+and that content
+and that experience
+
+
+184
+00:08:31,311 --> 00:08:34,547
+will make it much easier
+for them to subscribe.
+
+
+185
+00:08:34,547 --> 00:08:36,716
+So no matter which option
+you choose,
+
+
+186
+00:08:36,716 --> 00:08:39,785
+make sure it works
+for your audience.
+
+
+187
+00:08:39,785 --> 00:08:41,621
+Think about their current
+user experience
+
+
+188
+00:08:41,621 --> 00:08:43,690
+and the type of content
+that they currently have
+
+
+189
+00:08:43,690 --> 00:08:45,558
+available in your app
+
+
+190
+00:08:45,558 --> 00:08:47,227
+and how adding a subscription
+
+
+191
+00:08:47,227 --> 00:08:50,330
+could impact
+that current experience.
+
+
+192
+00:08:50,330 --> 00:08:52,932
+So design your subscription
+to be effortless
+
+
+193
+00:08:52,932 --> 00:08:55,735
+by being visible and reducing
+friction to sign up,
+
+
+194
+00:08:55,735 --> 00:08:58,505
+be transparent with your terms
+and pricing,
+
+
+195
+00:08:58,505 --> 00:09:01,207
+and engage people
+before they subscribe
+
+
+196
+00:09:01,207 --> 00:09:04,010
+through a rich experience
+of your app.
+
+
+197
+00:09:04,010 --> 00:09:07,046
+Then, it'll be easy to sign up.
+
