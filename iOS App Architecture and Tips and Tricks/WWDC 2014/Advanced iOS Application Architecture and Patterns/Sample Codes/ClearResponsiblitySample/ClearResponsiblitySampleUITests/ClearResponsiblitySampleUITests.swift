@@ -28,7 +28,15 @@ class ClearResponsiblitySampleUITests: XCTestCase {
 
     func testExample() {
         // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+		// Use XCTAssert and related functions to verify your tests produce the correct results.
+		
+		
+//		let app = XCUIApplication()
+//		let usernameTextField = app.textFields["username"]
+//		usernameTextField.tap()
+//		usernameTextField.typeText("samad")
+//		let text = usernameTextField.value
+		
     }
 
 }
