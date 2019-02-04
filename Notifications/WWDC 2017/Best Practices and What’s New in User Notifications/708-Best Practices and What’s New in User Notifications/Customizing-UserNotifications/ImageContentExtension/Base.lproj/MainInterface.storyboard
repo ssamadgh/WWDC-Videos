@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="17A263y" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="ImageContentExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w8P-dE-F7w">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-or-lp8">
+                                <rect key="frame" x="267" y="8" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="cgh-NB-5Fi"/>
+                                    <constraint firstAttribute="height" constant="45" id="jpe-h6-I99"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w8P-dE-F7w" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="6L8-aK-nrR"/>
+                            <constraint firstItem="w8P-dE-F7w" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" id="amY-mQ-xCi"/>
+                            <constraint firstItem="hzN-or-lp8" firstAttribute="top" secondItem="kEI-ag-jtd" secondAttribute="top" constant="8" id="b40-fS-svl"/>
+                            <constraint firstItem="w8P-dE-F7w" firstAttribute="top" secondItem="kEI-ag-jtd" secondAttribute="top" id="daV-hE-W7c"/>
+                            <constraint firstItem="w8P-dE-F7w" firstAttribute="centerX" secondItem="kEI-ag-jtd" secondAttribute="centerX" id="udo-zC-s6F"/>
+                            <constraint firstItem="kEI-ag-jtd" firstAttribute="trailing" secondItem="hzN-or-lp8" secondAttribute="trailing" constant="8" id="ycF-NQ-uEb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kEI-ag-jtd"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="256"/>
+                    <connections>
+                        <outlet property="imageView" destination="w8P-dE-F7w" id="Kea-Ny-TdF"/>
+                        <outlet property="likeLabel" destination="hzN-or-lp8" id="BYb-Rx-GaR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.799999999999997" y="25.637181409295355"/>
+        </scene>
+    </scenes>
+</document>

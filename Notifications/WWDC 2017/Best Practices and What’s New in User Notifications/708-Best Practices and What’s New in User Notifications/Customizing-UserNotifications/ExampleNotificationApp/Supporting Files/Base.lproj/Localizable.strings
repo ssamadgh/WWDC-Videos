@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ExampleNotificationApp
+ 
+  Copyright © 2017 Apple Inc. All rights reserved.
+*/
+
+"INCOMING_PHOTO_TITLE" = "Incoming Photo";
+"INCOMING_PHOTO_BODY" = "Check out this photo!!!";
+
+"FALLBACK_TITLE" = "Go to the app to see your %@!";
