@@ -37,7 +37,7 @@ UIView.animate(withDuration: 5) {
 	view.layer.transform = transform3d
 }
 
-player.play()
+//player.play()
 
 
 func getVideoThumbnail(from asset: AVAsset) -> UIImage? {

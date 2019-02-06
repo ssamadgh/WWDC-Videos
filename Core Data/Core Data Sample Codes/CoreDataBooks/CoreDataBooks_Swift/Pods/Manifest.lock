@@ -1,0 +1,16 @@
+PODS:
+  - AOperation (0.0.9.2)
+
+DEPENDENCIES:
+  - AOperation
+
+SPEC REPOS:
+  https://github.com/ssamadgh/AOperationPod.git:
+    - AOperation
+
+SPEC CHECKSUMS:
+  AOperation: 0c69c3afc819721ab1feb62503575ae009df8bc1
+
+PODFILE CHECKSUM: c361f4bd4beb0d72f7791e8481fd9a417d83ac5c
+
+COCOAPODS: 1.5.3
