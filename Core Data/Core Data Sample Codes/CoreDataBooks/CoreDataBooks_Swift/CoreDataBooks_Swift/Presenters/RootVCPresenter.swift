@@ -13,7 +13,7 @@ import AOperation
 class RootVCPresenter: BasicCollectionViewPresenter<Book>, AddVCPresenterDelegate {
 	
 	func prepare(_ vc: AddViewController) {
-		let addingContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+		let addingContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
 		addingContext.parent = self.resultsController?.managedObjectContext
 		
 		let newBook = Book(context: addingContext)
@@ -36,19 +36,20 @@ class RootVCPresenter: BasicCollectionViewPresenter<Book>, AddVCPresenterDelegat
 				let addingManagedObjectContext = presenter.managedObjectContext
 				
 				addingManagedObjectContext?.perform {
-					
+					do {
+						try addingManagedObjectContext?.save()
+						
+						self.resultsController?.managedObjectContext.performAndWait {
+							try? self.resultsController?.managedObjectContext.save()
+
+						}
+					}
+					catch {
+						
+					}
+
 				}
 				
-				do {
-					try addingManagedObjectContext?.save()
-					
-					DispatchQueue.main.async {
-						try? self.resultsController?.managedObjectContext.save()
-					}
-				}
-				catch {
-					
-				}
 			}
 			
 			self.operationQueue.addOperation(op)

@@ -23,7 +23,7 @@ var CDStack: CoreDataStack! {
 
 class CoreDataStack {
 	
-	static var shared: CoreDataStack!
+	fileprivate static var shared: CoreDataStack!
 	
 	static var modelName: String!
 	static let storeURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last?.appendingPathComponent("CoreDataBooks_Swift.sqlite")
