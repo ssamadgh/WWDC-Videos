@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* SimpleTextInputAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SimpleTextInputAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		28D7ACF80DDB3853001CB0EB /* SimpleTextInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* SimpleTextInputViewController.m */; };
+		2B3252551207898D0000C6B9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B32524E1207898D0000C6B9 /* Icon-72.png */; };
+		2B3252561207898D0000C6B9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B32524F1207898D0000C6B9 /* Icon-Small-50.png */; };
+		2B3252571207898D0000C6B9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3252501207898D0000C6B9 /* Icon-Small.png */; };
+		2B3252581207898D0000C6B9 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3252511207898D0000C6B9 /* Icon-Small@2x.png */; };
+		2B3252591207898D0000C6B9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3252521207898D0000C6B9 /* Icon.png */; };
+		2B32525A1207898D0000C6B9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B3252531207898D0000C6B9 /* Icon@2x.png */; };
+		2B32525B1207898D0000C6B9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 2B3252541207898D0000C6B9 /* iTunesArtwork */; };
+		2B32525E120789BA0000C6B9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B32525C120789BA0000C6B9 /* MainWindow.xib */; };
+		2B325261120789C50000C6B9 /* SimpleTextInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B32525F120789C50000C6B9 /* SimpleTextInputViewController.xib */; };
+		2B70C9CC1250229200401AD5 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2B70C9CB1250229200401AD5 /* ReadMe.txt */; };
+		2B95CE68120CC76200558047 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B95CE67120CC76200558047 /* Default.png */; };
+		A9519B8411727FE700B86FC6 /* SimpleCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9519B8311727FE700B86FC6 /* SimpleCoreTextView.m */; };
+		A9519B8D1172803400B86FC6 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9519B8C1172803400B86FC6 /* CoreText.framework */; };
+		A99E16F81172848B00A2B670 /* EditableCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A99E16F71172848B00A2B670 /* EditableCoreTextView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* SimpleTextInputAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextInputAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* SimpleTextInputAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTextInputAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* SimpleTextInput.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTextInput.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28D7ACF60DDB3853001CB0EB /* SimpleTextInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextInputViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* SimpleTextInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTextInputViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2B32524E1207898D0000C6B9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
+		2B32524F1207898D0000C6B9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		2B3252501207898D0000C6B9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		2B3252511207898D0000C6B9 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		2B3252521207898D0000C6B9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
+		2B3252531207898D0000C6B9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
+		2B3252541207898D0000C6B9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
+		2B32525D120789BA0000C6B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2B325260120789C50000C6B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Resources/en.lproj/SimpleTextInputViewController.xib; sourceTree = "<group>"; };
+		2B70C9CB1250229200401AD5 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		2B95CE67120CC76200558047 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* SimpleTextInput_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTextInput_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* SimpleTextInput-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SimpleTextInput-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A9519B8211727FE700B86FC6 /* SimpleCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleCoreTextView.h; path = ../SimpleCoreTextView.h; sourceTree = "<group>"; };
+		A9519B8311727FE700B86FC6 /* SimpleCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleCoreTextView.m; path = ../SimpleCoreTextView.m; sourceTree = "<group>"; };
+		A9519B8C1172803400B86FC6 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A99E16F61172848B00A2B670 /* EditableCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableCoreTextView.h; sourceTree = "<group>"; };
+		A99E16F71172848B00A2B670 /* EditableCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableCoreTextView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				A9519B8D1172803400B86FC6 /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* SimpleTextInputAppDelegate.h */,
+				1D3623250D0F684500981E51 /* SimpleTextInputAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* SimpleTextInputViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* SimpleTextInputViewController.m */,
+				A9519B8211727FE700B86FC6 /* SimpleCoreTextView.h */,
+				A9519B8311727FE700B86FC6 /* SimpleCoreTextView.m */,
+				A99E16F61172848B00A2B670 /* EditableCoreTextView.h */,
+				A99E16F71172848B00A2B670 /* EditableCoreTextView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* SimpleTextInput.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				2B70C9CB1250229200401AD5 /* ReadMe.txt */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* SimpleTextInput_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B95CE67120CC76200558047 /* Default.png */,
+				2B32525F120789C50000C6B9 /* SimpleTextInputViewController.xib */,
+				2B32525C120789BA0000C6B9 /* MainWindow.xib */,
+				2B325222120788BA0000C6B9 /* Images */,
+				8D1107310486CEB800E47090 /* SimpleTextInput-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9519B8C1172803400B86FC6 /* CoreText.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B325222120788BA0000C6B9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2B32524E1207898D0000C6B9 /* Icon-72.png */,
+				2B32524F1207898D0000C6B9 /* Icon-Small-50.png */,
+				2B3252501207898D0000C6B9 /* Icon-Small.png */,
+				2B3252511207898D0000C6B9 /* Icon-Small@2x.png */,
+				2B3252521207898D0000C6B9 /* Icon.png */,
+				2B3252531207898D0000C6B9 /* Icon@2x.png */,
+				2B3252541207898D0000C6B9 /* iTunesArtwork */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* SimpleTextInput */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimpleTextInput" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTextInput;
+			productName = SimpleTextInput;
+			productReference = 1D6058910D05DD3D006BFB54 /* SimpleTextInput.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleTextInput" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* SimpleTextInput */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B3252551207898D0000C6B9 /* Icon-72.png in Resources */,
+				2B3252561207898D0000C6B9 /* Icon-Small-50.png in Resources */,
+				2B3252571207898D0000C6B9 /* Icon-Small.png in Resources */,
+				2B3252581207898D0000C6B9 /* Icon-Small@2x.png in Resources */,
+				2B3252591207898D0000C6B9 /* Icon.png in Resources */,
+				2B32525A1207898D0000C6B9 /* Icon@2x.png in Resources */,
+				2B32525B1207898D0000C6B9 /* iTunesArtwork in Resources */,
+				2B32525E120789BA0000C6B9 /* MainWindow.xib in Resources */,
+				2B325261120789C50000C6B9 /* SimpleTextInputViewController.xib in Resources */,
+				2B95CE68120CC76200558047 /* Default.png in Resources */,
+				2B70C9CC1250229200401AD5 /* ReadMe.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* SimpleTextInputAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* SimpleTextInputViewController.m in Sources */,
+				A9519B8411727FE700B86FC6 /* SimpleCoreTextView.m in Sources */,
+				A99E16F81172848B00A2B670 /* EditableCoreTextView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2B32525C120789BA0000C6B9 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B32525D120789BA0000C6B9 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		2B32525F120789C50000C6B9 /* SimpleTextInputViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B325260120789C50000C6B9 /* en */,
+			);
+			name = SimpleTextInputViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleTextInput_Prefix.pch;
+				INFOPLIST_FILE = "SimpleTextInput-Info.plist";
+				PRODUCT_NAME = SimpleTextInput;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleTextInput_Prefix.pch;
+				INFOPLIST_FILE = "SimpleTextInput-Info.plist";
+				PRODUCT_NAME = SimpleTextInput;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SimpleTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleTextInput" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

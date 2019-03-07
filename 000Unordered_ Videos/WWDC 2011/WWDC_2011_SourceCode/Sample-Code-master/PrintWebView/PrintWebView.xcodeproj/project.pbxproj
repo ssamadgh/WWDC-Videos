@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35166A5C11C2DEAD00DB6082 /* MyWebViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35166A2F11C2DD7A00DB6082 /* MyWebViewController-iPad.xib */; };
+		35166A5D11C2DECA00DB6082 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531992A30DCBAE7300530CD7 /* MainWindow.xib */; };
+		35166A5E11C2DED200DB6082 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35166A3211C2DD9C00DB6082 /* MainWindow-iPad.xib */; };
+		35166A5F11C2DED600DB6082 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 531992A50DCBAE7300530CD7 /* Localizable.strings */; };
+		35166A6011C2DEE100DB6082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		35166A6111C2DEE100DB6082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CFC03D0D62589300422A0E /* AppDelegate.m */; };
+		35166A6211C2DEEE00DB6082 /* MyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CFC0400D6258A300422A0E /* MyWebViewController.m */; };
+		35379FD611C30AE500FFE0D4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 35379FD511C30AE500FFE0D4 /* Icon.png */; };
+		35505A9612315A0E00CBCBF1 /* MyPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35505A9512315A0E00CBCBF1 /* MyPrintPageRenderer.m */; };
+		35505C26123193BD00CBCBF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35505C25123193BD00CBCBF1 /* CoreGraphics.framework */; };
+		35505CEF123193E100CBCBF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35505CEE123193E100CBCBF1 /* UIKit.framework */; };
+		35A56374123967D0009DB1CB /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A56371123967D0009DB1CB /* Icon-Small@2x.png */; };
+		35A56375123967D0009DB1CB /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A56372123967D0009DB1CB /* Icon-Small.png */; };
+		35A56376123967D0009DB1CB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A56373123967D0009DB1CB /* Icon-Small-50.png */; };
+		72A1049B123964AC004F4AF2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 72A10496123964AC004F4AF2 /* Icon-72.png */; };
+		72A1049F123964AC004F4AF2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72A1049A123964AC004F4AF2 /* Icon@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		351669AE11C2D37800DB6082 /* MyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebViewController.h; sourceTree = "<group>"; };
+		351669DF11C2D40800DB6082 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MyWebViewController.xib; sourceTree = "<group>"; };
+		35166A3011C2DD7A00DB6082 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MyWebViewController-iPad.xib"; sourceTree = "<group>"; };
+		35166A3311C2DD9C00DB6082 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		35166A4A11C2DE3C00DB6082 /* PrintingWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintingWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35379FCB11C309AF00FFE0D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35379FD511C30AE500FFE0D4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		35505A9412315A0E00CBCBF1 /* MyPrintPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPrintPageRenderer.h; sourceTree = "<group>"; };
+		35505A9512315A0E00CBCBF1 /* MyPrintPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPrintPageRenderer.m; sourceTree = "<group>"; };
+		35505C25123193BD00CBCBF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35505CEE123193E100CBCBF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35A56371123967D0009DB1CB /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		35A56372123967D0009DB1CB /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		35A56373123967D0009DB1CB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		531992A40DCBAE7300530CD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		531992A60DCBAE7300530CD7 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		533959C80DB800E8004A17CB /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		53CFC0300D62587800422A0E /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ../Prefix.pch; sourceTree = "<group>"; };
+		53CFC03D0D62589300422A0E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		53CFC03E0D62589300422A0E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		53CFC0400D6258A300422A0E /* MyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebViewController.m; sourceTree = "<group>"; };
+		53CFC04C0D6258A300422A0E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		72A10496123964AC004F4AF2 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		72A1049A123964AC004F4AF2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35166A4811C2DE3C00DB6082 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35505C26123193BD00CBCBF1 /* CoreGraphics.framework in Frameworks */,
+				35505CEF123193E100CBCBF1 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35166A4A11C2DE3C00DB6082 /* PrintingWebView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				533959C80DB800E8004A17CB /* ReadMe.txt */,
+				29B97315FDCFA39411CA2CEA /* Sources */,
+				35A563FA1239A625009DB1CB /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				53CFC04C0D6258A300422A0E /* Constants.h */,
+				53CFC03E0D62589300422A0E /* AppDelegate.h */,
+				53CFC03D0D62589300422A0E /* AppDelegate.m */,
+				351669AE11C2D37800DB6082 /* MyWebViewController.h */,
+				53CFC0400D6258A300422A0E /* MyWebViewController.m */,
+				35505A9412315A0E00CBCBF1 /* MyPrintPageRenderer.h */,
+				35505A9512315A0E00CBCBF1 /* MyPrintPageRenderer.m */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35A563FD1239A654009DB1CB /* en.lproj */,
+				53CFC06A0D62591400422A0E /* images */,
+				35379FCB11C309AF00FFE0D4 /* Info.plist */,
+				531992A50DCBAE7300530CD7 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35505CEE123193E100CBCBF1 /* UIKit.framework */,
+				35505C25123193BD00CBCBF1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35A563FA1239A625009DB1CB /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				53CFC0300D62587800422A0E /* Prefix.pch */,
+			);
+			name = "Other Sources";
+			path = images;
+			sourceTree = "<group>";
+		};
+		35A563FD1239A654009DB1CB /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				531992A30DCBAE7300530CD7 /* MainWindow.xib */,
+				35166A3211C2DD9C00DB6082 /* MainWindow-iPad.xib */,
+				351669DE11C2D40800DB6082 /* MyWebViewController.xib */,
+				35166A2F11C2DD7A00DB6082 /* MyWebViewController-iPad.xib */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		53CFC06A0D62591400422A0E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				35379FD511C30AE500FFE0D4 /* Icon.png */,
+				72A1049A123964AC004F4AF2 /* Icon@2x.png */,
+				72A10496123964AC004F4AF2 /* Icon-72.png */,
+				35A56372123967D0009DB1CB /* Icon-Small.png */,
+				35A56371123967D0009DB1CB /* Icon-Small@2x.png */,
+				35A56373123967D0009DB1CB /* Icon-Small-50.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35166A4911C2DE3C00DB6082 /* PrintingWebView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35166A4F11C2DE3D00DB6082 /* Build configuration list for PBXNativeTarget "PrintingWebView" */;
+			buildPhases = (
+				35166A4611C2DE3C00DB6082 /* Resources */,
+				35166A4711C2DE3C00DB6082 /* Sources */,
+				35166A4811C2DE3C00DB6082 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrintingWebView;
+			productName = PrintingWebView;
+			productReference = 35166A4A11C2DE3C00DB6082 /* PrintingWebView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PrintWebView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Toolbar */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35166A4911C2DE3C00DB6082 /* PrintingWebView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35166A4611C2DE3C00DB6082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35166A5D11C2DECA00DB6082 /* MainWindow.xib in Resources */,
+				35166A5F11C2DED600DB6082 /* Localizable.strings in Resources */,
+				35166A5E11C2DED200DB6082 /* MainWindow-iPad.xib in Resources */,
+				35166A5C11C2DEAD00DB6082 /* MyWebViewController-iPad.xib in Resources */,
+				35379FD611C30AE500FFE0D4 /* Icon.png in Resources */,
+				72A1049B123964AC004F4AF2 /* Icon-72.png in Resources */,
+				72A1049F123964AC004F4AF2 /* Icon@2x.png in Resources */,
+				35A56374123967D0009DB1CB /* Icon-Small@2x.png in Resources */,
+				35A56375123967D0009DB1CB /* Icon-Small.png in Resources */,
+				35A56376123967D0009DB1CB /* Icon-Small-50.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35166A4711C2DE3C00DB6082 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35166A6211C2DEEE00DB6082 /* MyWebViewController.m in Sources */,
+				35166A6011C2DEE100DB6082 /* main.m in Sources */,
+				35166A6111C2DEE100DB6082 /* AppDelegate.m in Sources */,
+				35505A9612315A0E00CBCBF1 /* MyPrintPageRenderer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		351669DE11C2D40800DB6082 /* MyWebViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				351669DF11C2D40800DB6082 /* en */,
+			);
+			name = MyWebViewController.xib;
+			sourceTree = "<group>";
+		};
+		35166A2F11C2DD7A00DB6082 /* MyWebViewController-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35166A3011C2DD7A00DB6082 /* en */,
+			);
+			name = "MyWebViewController-iPad.xib";
+			sourceTree = "<group>";
+		};
+		35166A3211C2DD9C00DB6082 /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35166A3311C2DD9C00DB6082 /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
+		531992A30DCBAE7300530CD7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				531992A40DCBAE7300530CD7 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		531992A50DCBAE7300530CD7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				531992A60DCBAE7300530CD7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35166A4D11C2DE3D00DB6082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PRODUCT_NAME = PrintingWebView;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35166A4E11C2DE3D00DB6082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PRODUCT_NAME = PrintingWebView;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35166A4F11C2DE3D00DB6082 /* Build configuration list for PBXNativeTarget "PrintingWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35166A4D11C2DE3D00DB6082 /* Debug */,
+				35166A4E11C2DE3D00DB6082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PrintWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

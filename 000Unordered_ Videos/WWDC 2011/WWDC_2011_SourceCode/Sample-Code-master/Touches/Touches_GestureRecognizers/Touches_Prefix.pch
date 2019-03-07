@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'Touches' target in the 'Touches' project
+//
+
+#ifdef __OBJC__
+#import <QuartzCore/QuartzCore.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif

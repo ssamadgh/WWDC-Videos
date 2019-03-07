@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* QuickContactsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* QuickContactsAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		EB5F77280FD05CA300F02A31 /* QuickContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5F77270FD05CA300F02A31 /* QuickContactsViewController.m */; };
+		EB5F775E0FD05FD600F02A31 /* Menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB5F775D0FD05FD600F02A31 /* Menu.plist */; };
+		EB8BE5951107AE3500EC952D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8BE5941107AE3500EC952D /* Default.png */; };
+		EBAA0CBB11CD2DFB0000C424 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBAA0CBA11CD2DFB0000C424 /* MainWindow.xib */; };
+		EBAA0CDA11CD2E6D0000C424 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAA0CD511CD2E6D0000C424 /* Icon-Small.png */; };
+		EBAA0CDB11CD2E6D0000C424 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAA0CD611CD2E6D0000C424 /* Icon-Small@2x.png */; };
+		EBAA0CDC11CD2E6D0000C424 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAA0CD711CD2E6D0000C424 /* Icon.png */; };
+		EBAA0CDD11CD2E6D0000C424 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBAA0CD811CD2E6D0000C424 /* Icon@2x.png */; };
+		EBBBBB3611CC1727002F43F5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBBB3511CC1727002F43F5 /* AddressBook.framework */; };
+		EBBBBB3811CC1727002F43F5 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBBB3711CC1727002F43F5 /* AddressBookUI.framework */; };
+		EBBBBB3E11CC172F002F43F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBBB3D11CC172F002F43F5 /* UIKit.framework */; };
+		EBBBBB4211CC1735002F43F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBBB4111CC1735002F43F5 /* Foundation.framework */; };
+		EBBBBB4611CC1742002F43F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBBBB4511CC1742002F43F5 /* CoreGraphics.framework */; };
+		EBCBC1C511D404AC009DD8F3 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = EBCBC1C411D404AC009DD8F3 /* iTunesArtwork */; };
+		EBCBC1C711D404B4009DD8F3 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EBCBC1C611D404B4009DD8F3 /* Icon-Small-50.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D3623240D0F684500981E51 /* QuickContactsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickContactsAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* QuickContactsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickContactsAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* QuickContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* QuickContacts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickContacts_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* QuickContacts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuickContacts-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		EB2B00770FD08E3600DF3E51 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		EB5F77260FD05CA300F02A31 /* QuickContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickContactsViewController.h; sourceTree = "<group>"; };
+		EB5F77270FD05CA300F02A31 /* QuickContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickContactsViewController.m; sourceTree = "<group>"; };
+		EB5F775D0FD05FD600F02A31 /* Menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Menu.plist; sourceTree = "<group>"; };
+		EB8BE5941107AE3500EC952D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		EBAA0CBC11CD2E070000C424 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		EBAA0CD511CD2E6D0000C424 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "images/Icon-Small.png"; sourceTree = "<group>"; };
+		EBAA0CD611CD2E6D0000C424 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "images/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		EBAA0CD711CD2E6D0000C424 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = images/Icon.png; sourceTree = "<group>"; };
+		EBAA0CD811CD2E6D0000C424 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "images/Icon@2x.png"; sourceTree = "<group>"; };
+		EBBBBB3511CC1727002F43F5 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		EBBBBB3711CC1727002F43F5 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		EBBBBB3D11CC172F002F43F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EBBBBB4111CC1735002F43F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EBBBBB4511CC1742002F43F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EBCBC1C411D404AC009DD8F3 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
+		EBCBC1C611D404B4009DD8F3 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "images/Icon-Small-50.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBBBBB3611CC1727002F43F5 /* AddressBook.framework in Frameworks */,
+				EBBBBB3811CC1727002F43F5 /* AddressBookUI.framework in Frameworks */,
+				EBBBBB3E11CC172F002F43F5 /* UIKit.framework in Frameworks */,
+				EBBBBB4211CC1735002F43F5 /* Foundation.framework in Frameworks */,
+				EBBBBB4611CC1742002F43F5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* QuickContactsAppDelegate.h */,
+				1D3623250D0F684500981E51 /* QuickContactsAppDelegate.m */,
+				EB5F77260FD05CA300F02A31 /* QuickContactsViewController.h */,
+				EB5F77270FD05CA300F02A31 /* QuickContactsViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* QuickContacts.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* QuickContacts_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBCBC1C611D404B4009DD8F3 /* Icon-Small-50.png */,
+				EBCBC1C411D404AC009DD8F3 /* iTunesArtwork */,
+				EBAA0CD511CD2E6D0000C424 /* Icon-Small.png */,
+				EBAA0CD611CD2E6D0000C424 /* Icon-Small@2x.png */,
+				EBAA0CD711CD2E6D0000C424 /* Icon.png */,
+				EBAA0CD811CD2E6D0000C424 /* Icon@2x.png */,
+				EBAA0CBA11CD2DFB0000C424 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* QuickContacts-Info.plist */,
+				EB5F775D0FD05FD600F02A31 /* Menu.plist */,
+				EB2B00770FD08E3600DF3E51 /* ReadMe.txt */,
+				EB8BE5941107AE3500EC952D /* Default.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBBBBB3511CC1727002F43F5 /* AddressBook.framework */,
+				EBBBBB3711CC1727002F43F5 /* AddressBookUI.framework */,
+				EBBBBB3D11CC172F002F43F5 /* UIKit.framework */,
+				EBBBBB4111CC1735002F43F5 /* Foundation.framework */,
+				EBBBBB4511CC1742002F43F5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* QuickContacts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "QuickContacts" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickContacts;
+			productName = QuickContacts;
+			productReference = 1D6058910D05DD3D006BFB54 /* QuickContacts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "QuickContacts" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* QuickContacts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBAA0CBB11CD2DFB0000C424 /* MainWindow.xib in Resources */,
+				EB5F775E0FD05FD600F02A31 /* Menu.plist in Resources */,
+				EB8BE5951107AE3500EC952D /* Default.png in Resources */,
+				EBAA0CDA11CD2E6D0000C424 /* Icon-Small.png in Resources */,
+				EBAA0CDB11CD2E6D0000C424 /* Icon-Small@2x.png in Resources */,
+				EBAA0CDC11CD2E6D0000C424 /* Icon.png in Resources */,
+				EBAA0CDD11CD2E6D0000C424 /* Icon@2x.png in Resources */,
+				EBCBC1C511D404AC009DD8F3 /* iTunesArtwork in Resources */,
+				EBCBC1C711D404B4009DD8F3 /* Icon-Small-50.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* QuickContactsAppDelegate.m in Sources */,
+				EB5F77280FD05CA300F02A31 /* QuickContactsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EBAA0CBA11CD2DFB0000C424 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBAA0CBC11CD2E070000C424 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickContacts_Prefix.pch;
+				INFOPLIST_FILE = "QuickContacts-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PRODUCT_NAME = QuickContacts;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = QuickContacts_Prefix.pch;
+				INFOPLIST_FILE = "QuickContacts-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PRODUCT_NAME = QuickContacts;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "QuickContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "QuickContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

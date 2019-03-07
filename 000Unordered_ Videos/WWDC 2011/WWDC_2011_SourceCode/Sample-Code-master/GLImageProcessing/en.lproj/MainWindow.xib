@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <dependencies>
+        <deployment version="2064" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <window clearsContextBeforeDrawing="NO" contentMode="scaleToFill" visibleAtLaunch="YES" resizesToFullScreen="NO" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="17" customClass="EAGLView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="slider" destination="18" id="37"/>
+                        <outlet property="tabBar" destination="24" id="36"/>
+                    </connections>
+                </view>
+                <tabBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="24">
+                    <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <tabBarItem title="Brightness" id="25"/>
+                        <tabBarItem tag="1" title="Contrast" id="28"/>
+                        <tabBarItem tag="2" title="Saturation" id="29"/>
+                        <tabBarItem tag="3" title="Hue" id="26"/>
+                        <tabBarItem tag="4" title="Sharpness" id="30"/>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="11" id="34"/>
+                    </connections>
+                </tabBar>
+                <slider opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" id="18">
+                    <rect key="frame" x="18" y="394" width="284" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="sliderAction:" destination="11" eventType="valueChanged" id="19"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </window>
+        <viewController id="11" customClass="ViewController">
+            <extendedEdge key="edgesForExtendedLayout"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
+            <connections>
+                <outlet property="slider" destination="18" id="40"/>
+                <outlet property="tabBar" destination="24" id="38"/>
+                <outlet property="view" destination="17" id="39"/>
+            </connections>
+        </viewController>
+    </objects>
+</document>

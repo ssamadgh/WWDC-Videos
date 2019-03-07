@@ -1,0 +1,10 @@
+/* Localized Page Count String */
+"Page %d of %d" = "Page %1$d of %2$d";
+
+/* Accessiblity Label for Text Field */
+"URLTextField" = "URLTextField";
+
+/* Title for Web Page Window */
+"WebTitle" = "WebTitle";
+
+
