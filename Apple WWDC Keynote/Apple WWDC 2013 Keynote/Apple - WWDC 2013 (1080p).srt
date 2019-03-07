@@ -1,0 +1,11829 @@
+1
+00:00:00,506 --> 00:00:10,516
+[ Applause ]
+
+
+2
+00:00:11,016 --> 00:01:37,000
+[ Music ]
+
+
+3
+00:01:37,516 --> 00:01:51,226
+[ Applause ]
+
+
+4
+00:01:51,726 --> 00:01:53,946
+>> Thank you.
+
+
+5
+00:01:55,246 --> 00:01:55,866
+Thank you.
+
+
+6
+00:01:55,866 --> 00:01:57,816
+Thank you.
+
+
+7
+00:01:57,816 --> 00:02:01,576
+Thank you.
+
+
+8
+00:02:01,576 --> 00:02:01,836
+Thank you.
+
+
+9
+00:02:02,516 --> 00:02:05,426
+[ Applause ]
+
+
+10
+00:02:05,926 --> 00:02:07,466
+I'm really glad you like that.
+
+
+11
+00:02:08,336 --> 00:02:11,626
+Those words mean a great
+deal to us, and you'll see
+
+
+12
+00:02:11,626 --> 00:02:13,566
+that reflected throughout
+the show today.
+
+
+13
+00:02:14,896 --> 00:02:17,536
+Welcome to the Worldwide
+Developers Conference.
+
+
+14
+00:02:18,256 --> 00:02:19,876
+You're going to have
+incredible week.
+
+
+15
+00:02:21,436 --> 00:02:23,756
+This is our 24th WWDC.
+
+
+16
+00:02:23,876 --> 00:02:26,766
+It's the longest running
+developer conference
+
+
+17
+00:02:26,766 --> 00:02:27,666
+that we're aware of.
+
+
+18
+00:02:28,236 --> 00:02:29,566
+It's truly worldwide.
+
+
+19
+00:02:29,866 --> 00:02:33,036
+We have attendees this
+morning for over 60 countries
+
+
+20
+00:02:33,636 --> 00:02:35,116
+and two-thirds of the people
+
+
+21
+00:02:35,116 --> 00:02:38,126
+in the audience today are
+here for the first time.
+
+
+22
+00:02:39,516 --> 00:02:44,136
+[ Applause ]
+
+
+23
+00:02:44,636 --> 00:02:46,286
+No hazing from the
+upperclassman.
+
+
+24
+00:02:48,066 --> 00:02:51,276
+We've got a great week planned
+for you with over 100 sessions
+
+
+25
+00:02:51,276 --> 00:02:55,446
+and over 120 hands-on labs so
+you can bring in your code,
+
+
+26
+00:02:55,706 --> 00:02:58,216
+get some help tuning
+it or get just
+
+
+27
+00:02:58,216 --> 00:02:59,776
+about any question answered.
+
+
+28
+00:03:00,516 --> 00:03:03,286
+We also have over 1,000
+engineers here this week,
+
+
+29
+00:03:03,626 --> 00:03:06,256
+so grab them, make use of
+them, they're here to help.
+
+
+30
+00:03:06,546 --> 00:03:08,406
+But don't ask them
+about future roadmaps.
+
+
+31
+00:03:09,526 --> 00:03:13,796
+Now, the Developer Program
+is incredibly vibrant.
+
+
+32
+00:03:14,506 --> 00:03:18,686
+We have over six million
+registered developers with one
+
+
+33
+00:03:18,686 --> 00:03:21,766
+and a half million of those
+added in the last year alone.
+
+
+34
+00:03:22,616 --> 00:03:25,546
+Demand for this show
+has never been greater.
+
+
+35
+00:03:26,116 --> 00:03:28,976
+We sold out in just
+over a minute.
+
+
+36
+00:03:29,516 --> 00:03:34,036
+[ Applause ]
+
+
+37
+00:03:34,536 --> 00:03:37,866
+I'm really sorry we couldn't
+accommodate everyone.
+
+
+38
+00:03:37,956 --> 00:03:40,296
+This is the biggest
+venue that we can get.
+
+
+39
+00:03:40,526 --> 00:03:43,816
+But we are posting
+sessions online everyday
+
+
+40
+00:03:44,116 --> 00:03:46,296
+so that developers can
+follow us remotely.
+
+
+41
+00:03:47,166 --> 00:03:48,666
+I'd like to get started
+this morning
+
+
+42
+00:03:48,666 --> 00:03:52,436
+with the few updates
+beginning with Apple retail.
+
+
+43
+00:03:53,446 --> 00:03:56,616
+Of course, our retail stores
+are the best place to discover
+
+
+44
+00:03:56,616 --> 00:03:58,196
+and explore our products,
+
+
+45
+00:03:58,896 --> 00:04:03,306
+and over a million people
+per day did that last year.
+
+
+46
+00:04:03,686 --> 00:04:04,626
+It's phenomenal.
+
+
+47
+00:04:05,086 --> 00:04:08,976
+Our stores are filled with
+our colleagues who work
+
+
+48
+00:04:08,976 --> 00:04:10,856
+at our stores because
+they're passionate
+
+
+49
+00:04:11,146 --> 00:04:14,696
+about how Apple technology
+can enrich people's lives.
+
+
+50
+00:04:15,106 --> 00:04:16,896
+Our stores had become
+integral parts
+
+
+51
+00:04:16,896 --> 00:04:18,586
+of the communities
+that they serve.
+
+
+52
+00:04:19,375 --> 00:04:23,376
+Tens of thousands of school kids
+pick their local Apple Store
+
+
+53
+00:04:23,376 --> 00:04:26,136
+as the destination for
+their annual field trip.
+
+
+54
+00:04:27,256 --> 00:04:30,536
+And millions of customers
+come to our stores
+
+
+55
+00:04:30,536 --> 00:04:33,486
+for personal training so that
+they can learn to get the most
+
+
+56
+00:04:33,486 --> 00:04:34,756
+out of their Apple products.
+
+
+57
+00:04:35,966 --> 00:04:39,086
+We now have 407 stores
+around the world.
+
+
+58
+00:04:39,086 --> 00:04:41,506
+We're operating in 14 countries.
+
+
+59
+00:04:42,286 --> 00:04:46,776
+And we've recently opened this
+beautiful store in Berlin.
+
+
+60
+00:04:47,696 --> 00:04:49,416
+It is really awesome.
+
+
+61
+00:04:50,296 --> 00:04:52,876
+It's in a 100 year old building.
+
+
+62
+00:04:53,346 --> 00:04:57,206
+It was originally one of the
+first theaters in Berlin.
+
+
+63
+00:04:57,966 --> 00:05:01,176
+We've painstakingly honored
+the history of the building
+
+
+64
+00:05:01,706 --> 00:05:05,216
+by restoring the facade
+and the original theater,
+
+
+65
+00:05:05,566 --> 00:05:08,736
+and added some classic
+Apple touches along the way.
+
+
+66
+00:05:09,936 --> 00:05:13,336
+The theater is integral to
+the building but separate
+
+
+67
+00:05:13,426 --> 00:05:16,226
+from the store, and we'll be
+hosting many events throughout
+
+
+68
+00:05:16,226 --> 00:05:20,666
+the year for the communities
+from music to films and more.
+
+
+69
+00:05:21,476 --> 00:05:24,166
+We had our signature
+crowds at the opening.
+
+
+70
+00:05:24,546 --> 00:05:28,036
+And we were so excited about
+this opening, we made a video
+
+
+71
+00:05:28,406 --> 00:05:30,956
+and I'd like to run it
+for you this morning.
+
+
+72
+00:05:34,516 --> 00:06:56,516
+[ Music ]
+
+
+73
+00:06:57,016 --> 00:07:04,000
+[ Applause ]
+
+
+74
+00:07:04,896 --> 00:07:05,666
+That's Berlin.
+
+
+75
+00:07:05,666 --> 00:07:08,936
+It's a fantastic store
+in a great location.
+
+
+76
+00:07:09,516 --> 00:07:11,226
+Only Apple could do this.
+
+
+77
+00:07:11,996 --> 00:07:15,516
+Now we also have some
+pretty great digital stores.
+
+
+78
+00:07:15,666 --> 00:07:17,936
+And I know this is
+incredibly important to those
+
+
+79
+00:07:17,936 --> 00:07:18,986
+of you in the audience.
+
+
+80
+00:07:19,616 --> 00:07:22,896
+The App Store celebrates
+its 5th birthday next month.
+
+
+81
+00:07:23,616 --> 00:07:26,366
+Nothing like the App
+Store existed before
+
+
+82
+00:07:26,366 --> 00:07:29,016
+and it has fundamentally
+changed the world.
+
+
+83
+00:07:29,836 --> 00:07:31,876
+Customers love the
+buying experience
+
+
+84
+00:07:32,286 --> 00:07:34,256
+and they love your
+incredible apps.
+
+
+85
+00:07:34,836 --> 00:07:38,806
+And they've now downloaded
+50 billion apps.
+
+
+86
+00:07:39,476 --> 00:07:40,766
+This is phenomenal.
+
+
+87
+00:07:40,766 --> 00:07:48,246
+That's a lot of zeros and
+a truly staggering number
+
+
+88
+00:07:48,346 --> 00:07:49,756
+for less than five years.
+
+
+89
+00:07:50,446 --> 00:07:54,166
+Thanks to you, we now have
+900,000 apps in the store
+
+
+90
+00:07:54,666 --> 00:07:56,626
+and the catalog is very active,
+
+
+91
+00:07:56,716 --> 00:07:59,426
+90 percent of those are
+downloaded each month.
+
+
+92
+00:08:00,456 --> 00:08:05,276
+We have 375,000 apps that
+have been designed for iPad
+
+
+93
+00:08:06,046 --> 00:08:08,926
+to take advantage of the
+full beautiful canvas
+
+
+94
+00:08:09,516 --> 00:08:11,746
+that still compares
+to just a few hundred
+
+
+95
+00:08:11,746 --> 00:08:12,666
+from those other guys.
+
+
+96
+00:08:13,966 --> 00:08:18,786
+And we have 575 million
+accounts.
+
+
+97
+00:08:19,586 --> 00:08:22,396
+These are-- most of these
+accounts have credit cards
+
+
+98
+00:08:22,396 --> 00:08:24,696
+and one-click buying
+so it's simple
+
+
+99
+00:08:24,696 --> 00:08:26,756
+and elegant to buy your apps.
+
+
+100
+00:08:27,606 --> 00:08:31,636
+We had more accounts with
+credit cards than any store
+
+
+101
+00:08:31,636 --> 00:08:33,275
+on the internet that
+we're aware of.
+
+
+102
+00:08:34,736 --> 00:08:40,066
+Now, we are incredibly proud
+this morning to announce
+
+
+103
+00:08:40,785 --> 00:08:45,706
+that we have now paid
+developers 10 billion dollars.
+
+
+104
+00:08:46,516 --> 00:08:53,636
+[ Applause ]
+
+
+105
+00:08:54,136 --> 00:08:55,816
+And the momentum is incredible.
+
+
+106
+00:08:55,816 --> 00:08:59,286
+We paid out five billion of
+that just in the last year.
+
+
+107
+00:09:00,576 --> 00:09:05,266
+Now to put that in context,
+that's three times more
+
+
+108
+00:09:05,656 --> 00:09:09,566
+than all other platforms
+combined.
+
+
+109
+00:09:10,516 --> 00:09:17,446
+[ Applause ]
+
+
+110
+00:09:17,946 --> 00:09:21,546
+One of the things we love
+about the App Store is
+
+
+111
+00:09:21,546 --> 00:09:23,486
+that it levels the playing field
+
+
+112
+00:09:23,806 --> 00:09:27,336
+between large developers
+and small developers.
+
+
+113
+00:09:28,626 --> 00:09:31,046
+Ron Conway said it very nicely.
+
+
+114
+00:09:32,326 --> 00:09:35,826
+"The App Store and the
+iOS ecosystem give budding
+
+
+115
+00:09:35,826 --> 00:09:40,136
+developers with great ideas
+the best chance for success."
+
+
+116
+00:09:41,466 --> 00:09:44,746
+This morning, I'd like
+to introduce you to Anki.
+
+
+117
+00:09:45,456 --> 00:09:47,776
+Anki is using the iOS platform
+
+
+118
+00:09:47,776 --> 00:09:51,576
+to create an entirely new
+category of experiences.
+
+
+119
+00:09:52,256 --> 00:09:53,696
+They are launching their company
+
+
+120
+00:09:53,796 --> 00:09:56,826
+for the first time
+on stage today.
+
+
+121
+00:09:57,566 --> 00:10:01,266
+They are using iOS devices
+and the iOS platform
+
+
+122
+00:10:01,526 --> 00:10:03,396
+to bring artificial intelligence
+
+
+123
+00:10:03,506 --> 00:10:06,586
+and robotics into
+our daily lives.
+
+
+124
+00:10:07,296 --> 00:10:11,396
+I'd like to introduce Boris
+Hoffman, CEO and co-founder
+
+
+125
+00:10:11,396 --> 00:10:13,806
+of Anki, to tell us
+about his company
+
+
+126
+00:10:14,126 --> 00:10:15,616
+and their very first
+new product.
+
+
+127
+00:10:16,036 --> 00:10:16,366
+Boris.
+
+
+128
+00:10:17,516 --> 00:10:25,216
+[ Applause ]
+
+
+129
+00:10:25,716 --> 00:10:28,696
+>> We stared Anki while
+working on our PhDs in Robotics
+
+
+130
+00:10:28,696 --> 00:10:30,056
+at Carnegie Mellon University.
+
+
+131
+00:10:30,226 --> 00:10:32,336
+We worked on everything
+from machine learning
+
+
+132
+00:10:32,336 --> 00:10:34,896
+to walking robots to
+autonomous vehicles.
+
+
+133
+00:10:35,826 --> 00:10:38,836
+With the help of iOS devices,
+we are bringing these robotics
+
+
+134
+00:10:38,836 --> 00:10:41,556
+and artificial intelligence
+technologies out of the lab
+
+
+135
+00:10:41,556 --> 00:10:43,136
+and into people's lives.
+
+
+136
+00:10:43,726 --> 00:10:44,516
+And we're starting
+
+
+137
+00:10:44,816 --> 00:10:46,326
+by reinventing the
+way people played.
+
+
+138
+00:10:47,226 --> 00:10:50,836
+Today, after over half a
+decade of working on Anki,
+
+
+139
+00:10:51,396 --> 00:10:53,146
+we are so excited
+to give you a peek
+
+
+140
+00:10:53,146 --> 00:10:54,836
+at our first product,
+Anki Drive.
+
+
+141
+00:10:55,516 --> 00:11:03,446
+[ Pause ]
+
+
+142
+00:11:03,946 --> 00:11:05,286
+[Background Music] Assisting me
+today is Brad Newman [inaudible]
+
+
+143
+00:11:05,286 --> 00:11:06,526
+engineer at Anki.
+
+
+144
+00:11:06,746 --> 00:11:10,866
+Now, we're going to
+start by sharing some
+
+
+145
+00:11:10,866 --> 00:11:11,896
+of the technology
+under the hood.
+
+
+146
+00:11:12,536 --> 00:11:14,596
+As we have these cars go
+through a few formations,
+
+
+147
+00:11:15,166 --> 00:11:17,556
+realize that each of them is
+completely driving themselves
+
+
+148
+00:11:17,776 --> 00:11:20,746
+and our app is coordinating
+the entire experience
+
+
+149
+00:11:20,746 --> 00:11:21,846
+over Bluetooth Low Energy.
+
+
+150
+00:11:22,476 --> 00:11:25,036
+The cars can control their speed
+and they steer on the track
+
+
+151
+00:11:25,036 --> 00:11:27,746
+by doing the same computations
+your brain does when you drive.
+
+
+152
+00:11:28,766 --> 00:11:30,376
+They sense where they're
+located and they react
+
+
+153
+00:11:30,376 --> 00:11:32,626
+to their surroundings
+all in real time.
+
+
+154
+00:11:34,926 --> 00:11:37,606
+This red car, he's
+our hero, Aidan.
+
+
+155
+00:11:37,806 --> 00:11:39,546
+We designed him and
+all the other cars
+
+
+156
+00:11:39,546 --> 00:11:40,776
+to be incredibly smart.
+
+
+157
+00:11:41,526 --> 00:11:43,496
+Five hundred times per
+second, they're running logic
+
+
+158
+00:11:43,536 --> 00:11:46,896
+to sense a track, their position
+on it, adjusting their steering
+
+
+159
+00:11:46,896 --> 00:11:48,936
+and speed and communicating
+back and forth
+
+
+160
+00:11:48,936 --> 00:11:50,216
+with our AI engine
+on that iPhone.
+
+
+161
+00:11:51,236 --> 00:11:53,496
+I'll let Aidan join his friends
+and tell him to hit the gas.
+
+
+162
+00:11:54,346 --> 00:11:54,706
+Watch this.
+
+
+163
+00:11:58,206 --> 00:11:58,716
+There we go.
+
+
+164
+00:11:59,326 --> 00:11:59,816
+All right.
+
+
+165
+00:12:01,396 --> 00:12:05,356
+So, as Aiden weaves
+through the pack,
+
+
+166
+00:12:05,636 --> 00:12:08,026
+our app knows everything
+that's happening in real time.
+
+
+167
+00:12:08,226 --> 00:12:09,676
+It's analyzing thousands
+
+
+168
+00:12:09,676 --> 00:12:11,946
+of potential actions
+every single second.
+
+
+169
+00:12:12,436 --> 00:12:14,416
+And not just for Aiden
+but for every single car.
+
+
+170
+00:12:15,086 --> 00:12:17,846
+We are using iOS devices
+not just as remote controls
+
+
+171
+00:12:17,976 --> 00:12:21,386
+but as the brains behind an
+immersive real world experience.
+
+
+172
+00:12:21,906 --> 00:12:24,226
+And that is what lets this
+bring these cars to life.
+
+
+173
+00:12:25,386 --> 00:12:26,646
+Now let's do something
+interesting here.
+
+
+174
+00:12:27,056 --> 00:12:29,196
+Brad. He's going to
+tell these other cars
+
+
+175
+00:12:29,196 --> 00:12:30,296
+to try to block Aiden.
+
+
+176
+00:12:30,776 --> 00:12:32,816
+And just to be clear, none
+of this is choreographed.
+
+
+177
+00:12:33,206 --> 00:12:35,436
+All we're doing is defining
+a new objective for each car
+
+
+178
+00:12:35,716 --> 00:12:36,776
+and they'd figure out the rest.
+
+
+179
+00:12:37,556 --> 00:12:41,016
+Here, Aiden, he's using the
+exact same logic he was using
+
+
+180
+00:12:41,016 --> 00:12:43,616
+before, sensing where he is
+and reacting to the other cars
+
+
+181
+00:12:43,616 --> 00:12:44,606
+as he looks for an opening.
+
+
+182
+00:12:45,216 --> 00:12:46,896
+Expect now, these other guys are
+
+
+183
+00:12:46,896 --> 00:12:50,746
+on a mission to try
+to block him.
+
+
+184
+00:12:50,746 --> 00:12:50,976
+Luckily--
+
+
+185
+00:12:51,516 --> 00:12:56,456
+[ Applause ]
+
+
+186
+00:12:56,956 --> 00:12:59,636
+Luckily, Aiden is equipped
+to handle any situation.
+
+
+187
+00:13:00,556 --> 00:13:01,636
+>> Weapons enabled.
+
+
+188
+00:13:02,516 --> 00:13:08,326
+[ Laughter & Gunfire ]
+
+
+189
+00:13:08,826 --> 00:13:09,976
+>> This is a video--
+
+
+190
+00:13:10,516 --> 00:13:17,276
+[ Applause ]
+
+
+191
+00:13:17,776 --> 00:13:20,436
+This is a video game
+in the real world.
+
+
+192
+00:13:20,436 --> 00:13:22,226
+We can customize
+everything in software
+
+
+193
+00:13:22,226 --> 00:13:23,786
+from the characteristics
+of the vehicles
+
+
+194
+00:13:23,786 --> 00:13:25,006
+to the weapons that
+they can use.
+
+
+195
+00:13:25,456 --> 00:13:28,096
+We are taking all of the things
+that we love about video games
+
+
+196
+00:13:28,456 --> 00:13:29,276
+and programming them
+
+
+197
+00:13:29,276 --> 00:13:32,106
+on to physical characters
+you can actually touch.
+
+
+198
+00:13:32,806 --> 00:13:34,486
+With Anki Drive, we
+use this technology
+
+
+199
+00:13:34,486 --> 00:13:36,136
+to take gaming to
+a whole new level.
+
+
+200
+00:13:36,566 --> 00:13:38,246
+And the real fun starts
+when you take control
+
+
+201
+00:13:38,246 --> 00:13:39,256
+of these cars yourselves.
+
+
+202
+00:13:40,016 --> 00:13:42,206
+With your iPhone or
+iPod Touch, you can play
+
+
+203
+00:13:42,206 --> 00:13:44,606
+against your friends
+or you can challenge--
+
+
+204
+00:13:44,606 --> 00:13:46,656
+take your chances
+against the AI.
+
+
+205
+00:13:47,906 --> 00:13:49,476
+We are brining video
+games to life
+
+
+206
+00:13:49,476 --> 00:13:51,226
+on the floor of your
+living room.
+
+
+207
+00:13:51,906 --> 00:13:54,646
+Keep your eyes out for Anki
+Drive coming to Apple Stores
+
+
+208
+00:13:54,646 --> 00:13:56,106
+and Apple Online this fall.
+
+
+209
+00:13:56,106 --> 00:13:59,066
+And we just pushed the
+Anki Drive app today
+
+
+210
+00:13:59,066 --> 00:14:01,156
+so you can download it
+and get a deeper look.
+
+
+211
+00:14:01,846 --> 00:14:04,206
+We are a robotics and
+artificial intelligence company
+
+
+212
+00:14:04,206 --> 00:14:06,156
+and what you see here
+is only the beginning.
+
+
+213
+00:14:06,666 --> 00:14:07,216
+Thank you very much.
+
+
+214
+00:14:08,516 --> 00:14:10,786
+[ Applause ]
+
+
+215
+00:14:11,286 --> 00:14:12,126
+>> Thanks a lot.
+
+
+216
+00:14:12,496 --> 00:14:12,726
+>> Thank you.
+
+
+217
+00:14:13,516 --> 00:14:17,696
+[ Applause ]
+
+
+218
+00:14:18,196 --> 00:14:19,456
+>> That's incredibly fun.
+
+
+219
+00:14:19,456 --> 00:14:21,636
+I think these guys are going
+to be super successful.
+
+
+220
+00:14:22,326 --> 00:14:27,456
+I think it's a great example
+of the power of the combination
+
+
+221
+00:14:27,456 --> 00:14:32,016
+of your incredible apps and the
+iOS devices in the ecosystem.
+
+
+222
+00:14:32,576 --> 00:14:35,186
+I'd love to show you a lot more
+today but we don't have time.
+
+
+223
+00:14:36,026 --> 00:14:38,086
+But I'd like to thank--
+on behalf of Apple,
+
+
+224
+00:14:38,086 --> 00:14:40,176
+I'd like to thank all
+of the developers here
+
+
+225
+00:14:40,596 --> 00:14:42,896
+for making such incredible apps.
+
+
+226
+00:14:43,046 --> 00:14:43,496
+Thank you.
+
+
+227
+00:14:44,516 --> 00:14:53,396
+[ Applause ]
+
+
+228
+00:14:53,896 --> 00:14:55,866
+Next, I'd like to
+talk about the Mac.
+
+
+229
+00:14:56,646 --> 00:15:00,996
+The Mac install base now is
+incredibly strong at 72 million.
+
+
+230
+00:15:01,346 --> 00:15:04,096
+This is double what it
+was just five years ago.
+
+
+231
+00:15:04,566 --> 00:15:08,476
+We announced the new iMac at
+the end of last year and it went
+
+
+232
+00:15:08,476 --> 00:15:11,166
+on to become the number
+one desktop in the US.
+
+
+233
+00:15:12,136 --> 00:15:16,066
+And the MacBook has
+continued to define the future
+
+
+234
+00:15:16,066 --> 00:15:19,516
+of the notebook and is the
+number one notebook in the US.
+
+
+235
+00:15:20,716 --> 00:15:24,006
+In fact, the Mac business
+has outpaced the PC business
+
+
+236
+00:15:24,056 --> 00:15:25,646
+for several years now.
+
+
+237
+00:15:25,916 --> 00:15:28,106
+And if you look at
+the last five years,
+
+
+238
+00:15:28,556 --> 00:15:32,136
+the average annual growth
+rate isn't even close.
+
+
+239
+00:15:33,126 --> 00:15:35,946
+And if you look at the total
+growth over that period of time,
+
+
+240
+00:15:36,566 --> 00:15:39,116
+the Mac is at a 100 percent
+
+
+241
+00:15:39,556 --> 00:15:43,766
+versus the PC a paltry,
+18 percent.
+
+
+242
+00:15:44,516 --> 00:15:47,556
+[ Applause ]
+
+
+243
+00:15:48,056 --> 00:15:53,486
+Now for us, it's never
+been about making the most.
+
+
+244
+00:15:54,976 --> 00:15:57,536
+We care much more that
+the Mac is number one
+
+
+245
+00:15:57,586 --> 00:15:59,826
+in customer sat and quality.
+
+
+246
+00:15:59,826 --> 00:16:03,076
+And you don't just have
+to take my word for it.
+
+
+247
+00:16:03,426 --> 00:16:05,236
+All of these guys agree.
+
+
+248
+00:16:06,396 --> 00:16:10,956
+Now, we have lots of innovation
+for the Mac last year and one
+
+
+249
+00:16:10,956 --> 00:16:14,196
+of those was announced
+here with Mountain Lion.
+
+
+250
+00:16:14,786 --> 00:16:18,046
+Mountain Lion of course is
+our latest release of OS X.
+
+
+251
+00:16:18,766 --> 00:16:21,316
+We shipped 28 million copies
+
+
+252
+00:16:21,396 --> 00:16:25,226
+since we announced it making
+it the best selling release
+
+
+253
+00:16:25,226 --> 00:16:25,656
+of all time.
+
+
+254
+00:16:26,496 --> 00:16:30,266
+And what's even more
+impressive is that 35 percent
+
+
+255
+00:16:30,296 --> 00:16:34,376
+of our users are using the
+latest version of using--
+
+
+256
+00:16:34,706 --> 00:16:36,056
+are using Mountain Lion.
+
+
+257
+00:16:36,806 --> 00:16:39,746
+Now, that compares to
+Windows 8 which is kind
+
+
+258
+00:16:39,746 --> 00:16:41,866
+of struggling to get to five.
+
+
+259
+00:16:44,476 --> 00:16:47,916
+We're making the best
+Macs we've ever made
+
+
+260
+00:16:48,516 --> 00:16:50,796
+but we're not standing still.
+
+
+261
+00:16:50,796 --> 00:16:54,276
+We've got lots of
+innovation left.
+
+
+262
+00:16:54,396 --> 00:16:56,936
+And today, we want
+to talk to you
+
+
+263
+00:16:56,936 --> 00:16:59,026
+about what we're
+doing with OS X.
+
+
+264
+00:16:59,566 --> 00:17:03,136
+To do that, I'd like to invite
+Craig Federighi up to the stage.
+
+
+265
+00:17:03,566 --> 00:17:03,916
+Craig.
+
+
+266
+00:17:04,516 --> 00:17:09,146
+[ Applause ]
+
+
+267
+00:17:09,646 --> 00:17:10,016
+>> Good morning.
+
+
+268
+00:17:10,016 --> 00:17:14,806
+You guys are too kind.
+
+
+269
+00:17:14,846 --> 00:17:17,336
+Good morning, let's
+talk about OS X.
+
+
+270
+00:17:18,215 --> 00:17:21,336
+Our latest release,
+Mountain Lion, is the ninth
+
+
+271
+00:17:21,776 --> 00:17:25,336
+of our big cat-named releases
+in just over a decade.
+
+
+272
+00:17:26,136 --> 00:17:29,016
+As we turn our attention
+now toward the 10th,
+
+
+273
+00:17:29,836 --> 00:17:30,736
+we've hit a real issue.
+
+
+274
+00:17:31,686 --> 00:17:37,346
+We do not want to be the
+first software in history
+
+
+275
+00:17:37,856 --> 00:17:42,536
+to be delayed due to a
+dwindling supply of cats.
+
+
+276
+00:17:43,876 --> 00:17:47,876
+Now, fortunately, we do have
+a creative group at Apple
+
+
+277
+00:17:48,246 --> 00:17:49,456
+and we can think out of the box.
+
+
+278
+00:17:50,356 --> 00:17:52,926
+And so, we thought, may be
+we could take this lion thing
+
+
+279
+00:17:52,926 --> 00:17:53,936
+in a different direction.
+
+
+280
+00:17:54,766 --> 00:17:57,926
+So, I'm proud to present
+to you today OS X Sea Lion.
+
+
+281
+00:17:57,966 --> 00:18:00,086
+What do you think?
+
+
+282
+00:18:03,516 --> 00:18:08,776
+[ Applause ]
+
+
+283
+00:18:09,276 --> 00:18:10,006
+OK, may be not.
+
+
+284
+00:18:10,006 --> 00:18:11,196
+That could be a bit
+of a dead-end, so.
+
+
+285
+00:18:12,996 --> 00:18:16,106
+In fact, we're really excited
+about the future of the Mac
+
+
+286
+00:18:16,106 --> 00:18:17,856
+and we want a set of names
+that are going to carry us
+
+
+287
+00:18:17,856 --> 00:18:19,966
+for at least the next 10 years.
+
+
+288
+00:18:20,476 --> 00:18:23,506
+And, you know, the answer really
+was really obviously to us.
+
+
+289
+00:18:24,096 --> 00:18:28,876
+It's those places that
+inspire us here in California,
+
+
+290
+00:18:29,396 --> 00:18:32,566
+in the place where OS X
+is designed and built.
+
+
+291
+00:18:33,516 --> 00:18:37,986
+[ Applause ]
+
+
+292
+00:18:38,486 --> 00:18:41,236
+So for our first
+California-themed release,
+
+
+293
+00:18:41,876 --> 00:18:45,586
+it went just outside our
+backyard, just off the coast,
+
+
+294
+00:18:46,216 --> 00:18:48,746
+to a place with some
+of the biggest waves
+
+
+295
+00:18:48,746 --> 00:18:50,726
+and most extreme surfing in all
+
+
+296
+00:18:50,726 --> 00:18:53,666
+of North America,
+OS X Mavericks.
+
+
+297
+00:18:54,516 --> 00:19:03,726
+[ Applause ]
+
+
+298
+00:19:04,226 --> 00:19:07,926
+Now, Mavericks is a release
+with deep technology focused
+
+
+299
+00:19:07,926 --> 00:19:11,326
+on extending battery life
+and providing responsiveness.
+
+
+300
+00:19:11,826 --> 00:19:16,076
+It has great new apps and
+enhancements for every Mac user,
+
+
+301
+00:19:16,606 --> 00:19:18,366
+and some features that
+we think are going
+
+
+302
+00:19:18,366 --> 00:19:20,386
+to really appeal
+to our power users.
+
+
+303
+00:19:20,726 --> 00:19:22,066
+And I want to talk
+about just three
+
+
+304
+00:19:22,066 --> 00:19:25,516
+of them right now
+starting with Finder Tabs.
+
+
+305
+00:19:26,516 --> 00:19:31,036
+[ Applause ]
+
+
+306
+00:19:31,536 --> 00:19:33,126
+Sounds like you guys you know
+how this is going to work.
+
+
+307
+00:19:33,606 --> 00:19:36,696
+So, you of course can
+work in the Finder
+
+
+308
+00:19:36,696 --> 00:19:37,716
+with multiple windows.
+
+
+309
+00:19:37,716 --> 00:19:39,146
+It's a very powerful tool.
+
+
+310
+00:19:39,376 --> 00:19:42,406
+But now you can draw all those
+windows together in tabs.
+
+
+311
+00:19:42,696 --> 00:19:46,616
+And each tab can have its own
+location, its own view mode.
+
+
+312
+00:19:46,616 --> 00:19:47,766
+It's a really powerful tool.
+
+
+313
+00:19:47,766 --> 00:19:50,636
+You can actually drag
+contents and hover across tabs.
+
+
+314
+00:19:51,076 --> 00:19:53,126
+And of course, now that we
+have Tabs in the Finder,
+
+
+315
+00:19:53,356 --> 00:19:56,066
+it's also a great app
+to take full screen.
+
+
+316
+00:19:57,016 --> 00:19:59,386
+Next, Tagging.
+
+
+317
+00:20:00,226 --> 00:20:00,336
+>> Yes.
+
+
+318
+00:20:00,816 --> 00:20:01,426
+>> Yes.
+
+
+319
+00:20:03,706 --> 00:20:07,776
+That guy. We're bringing
+tagging to the Mac.
+
+
+320
+00:20:08,026 --> 00:20:10,346
+So now, when you
+save a document,
+
+
+321
+00:20:10,546 --> 00:20:12,906
+in addition to providing
+its location
+
+
+322
+00:20:12,906 --> 00:20:14,676
+and name, you can tag it.
+
+
+323
+00:20:14,676 --> 00:20:17,786
+And when you do, it will appear
+right in the Finder sidebar.
+
+
+324
+00:20:17,786 --> 00:20:21,486
+And in fact, you can tag
+things wherever they are,
+
+
+325
+00:20:21,486 --> 00:20:23,906
+whether they're in iCloud
+or on a local file share,
+
+
+326
+00:20:23,906 --> 00:20:27,906
+and all those will be brought
+together and appear in Finder.
+
+
+327
+00:20:28,436 --> 00:20:32,936
+And, tags are great for really
+powerful search as well.
+
+
+328
+00:20:33,956 --> 00:20:35,336
+Next-- yeah.
+
+
+329
+00:20:36,006 --> 00:20:37,716
+Next, Multiple Displays.
+
+
+330
+00:20:37,926 --> 00:20:38,206
+Really, all right.
+
+
+331
+00:20:38,206 --> 00:20:48,426
+The Mac-- of course, we're not
+giving you all the free multiple
+
+
+332
+00:20:48,426 --> 00:20:49,036
+display here.
+
+
+333
+00:20:49,106 --> 00:20:50,636
+This is software.
+
+
+334
+00:20:51,096 --> 00:20:54,796
+So, with multiple
+displays in the Mac,
+
+
+335
+00:20:54,796 --> 00:20:57,186
+it's always been a powerful
+way to spread out your work.
+
+
+336
+00:20:57,186 --> 00:21:01,146
+But now, in Mavericks,
+you can get at your menus
+
+
+337
+00:21:01,426 --> 00:21:02,956
+across multiple displays.
+
+
+338
+00:21:03,246 --> 00:21:06,686
+You can summon your DOC
+across multiple displays.
+
+
+339
+00:21:06,916 --> 00:21:09,156
+And when you take a window
+full screen on one display,
+
+
+340
+00:21:09,156 --> 00:21:11,156
+it doesn't mess with your
+desktop on the other display.
+
+
+341
+00:21:12,516 --> 00:21:18,836
+[ Applause ]
+
+
+342
+00:21:19,336 --> 00:21:20,276
+And I really love this.
+
+
+343
+00:21:20,276 --> 00:21:23,246
+When you pan your spaces,
+you can do it independently
+
+
+344
+00:21:23,246 --> 00:21:24,576
+on each of your displays.
+
+
+345
+00:21:25,516 --> 00:21:27,556
+[ Applause ]
+
+
+346
+00:21:28,056 --> 00:21:33,526
+Finally, if you have an
+AirPlay-connected HDTV,
+
+
+347
+00:21:33,896 --> 00:21:37,736
+it acts as a full power
+separate display as well and I'd
+
+
+348
+00:21:37,736 --> 00:21:39,626
+like to show all of
+these to you now.
+
+
+349
+00:21:40,516 --> 00:21:44,776
+[ Applause ]
+
+
+350
+00:21:45,276 --> 00:21:47,996
+All right, let's take our
+first look here at Mavericks
+
+
+351
+00:21:47,996 --> 00:21:50,236
+and we're going to
+start with the Finder.
+
+
+352
+00:21:51,856 --> 00:21:54,626
+So, here's Finder environment,
+I got a lot going on,
+
+
+353
+00:21:54,626 --> 00:21:56,846
+a lot of windows, a lot
+of different locations.
+
+
+354
+00:21:57,116 --> 00:21:58,856
+I'm going to go up
+here to the Window Menu
+
+
+355
+00:21:58,856 --> 00:22:00,316
+and let's merge all my windows.
+
+
+356
+00:22:00,316 --> 00:22:03,966
+Just like that, they
+hop into a set of tabs.
+
+
+357
+00:22:05,316 --> 00:22:07,936
+Now, of course, these tabs
+at different locations,
+
+
+358
+00:22:08,286 --> 00:22:10,686
+different view settings for
+each to those locations.
+
+
+359
+00:22:11,346 --> 00:22:13,466
+Creating a tab is
+just as you'd expect.
+
+
+360
+00:22:13,576 --> 00:22:14,486
+Just click Plus.
+
+
+361
+00:22:14,486 --> 00:22:18,056
+I can select another location
+like AirDrop, may be another
+
+
+362
+00:22:18,056 --> 00:22:20,306
+for this Work File Share.
+
+
+363
+00:22:20,396 --> 00:22:21,426
+I'm going right here.
+
+
+364
+00:22:21,706 --> 00:22:25,446
+And now that I have multiple
+tabs, it's a really great way
+
+
+365
+00:22:25,446 --> 00:22:27,136
+to actually work
+and copy documents.
+
+
+366
+00:22:27,136 --> 00:22:29,346
+If I want to copy this field
+report, I can just hover
+
+
+367
+00:22:29,646 --> 00:22:34,366
+over the AirDrop tab, drop it
+just like that, really nice.
+
+
+368
+00:22:35,006 --> 00:22:40,526
+And, of course, I can now
+take Finder full screen.
+
+
+369
+00:22:41,636 --> 00:22:43,776
+Next, let's take
+a look at tagging.
+
+
+370
+00:22:43,976 --> 00:22:44,906
+This is really cool.
+
+
+371
+00:22:45,036 --> 00:22:46,716
+So as I go to save a document,
+
+
+372
+00:22:47,066 --> 00:22:50,136
+you know as I can give it a name
+like, let's say, Project Plan.
+
+
+373
+00:22:50,836 --> 00:22:52,486
+And in addition to its
+location, in this case,
+
+
+374
+00:22:52,486 --> 00:22:55,036
+I'm going to save it in
+iCloud, I can also give it a tag
+
+
+375
+00:22:55,036 --> 00:22:56,326
+from any of the tags
+I've made up.
+
+
+376
+00:22:56,326 --> 00:22:59,066
+So I'm going to call
+this document Important.
+
+
+377
+00:22:59,136 --> 00:23:00,296
+Looks pretty important to me.
+
+
+378
+00:23:00,706 --> 00:23:04,196
+And we'll go here into
+the Finder and you see
+
+
+379
+00:23:04,196 --> 00:23:06,676
+in the Finder sidebar,
+I have an Important tag
+
+
+380
+00:23:06,676 --> 00:23:08,026
+and I see all these documents.
+
+
+381
+00:23:08,026 --> 00:23:09,216
+They're from different
+locations,
+
+
+382
+00:23:09,216 --> 00:23:12,596
+different applications, all
+drawn together in sidebar.
+
+
+383
+00:23:13,226 --> 00:23:14,046
+We have other tags.
+
+
+384
+00:23:14,046 --> 00:23:16,836
+I've given things for things
+that are draft and in review.
+
+
+385
+00:23:16,936 --> 00:23:18,146
+Now, of course with tags,
+
+
+386
+00:23:18,226 --> 00:23:20,666
+I can assign multiple
+tags to the same document.
+
+
+387
+00:23:20,666 --> 00:23:21,936
+That's part of the
+power of tags.
+
+
+388
+00:23:22,296 --> 00:23:25,256
+So I go here and I'm going to
+say this one is also in review.
+
+
+389
+00:23:25,256 --> 00:23:27,966
+And you notice, as I sign
+that tag, it now appears
+
+
+390
+00:23:27,966 --> 00:23:29,336
+in that location as well.
+
+
+391
+00:23:29,336 --> 00:23:33,046
+And if I want to assign a
+totally new tag, I want to make
+
+
+392
+00:23:33,046 --> 00:23:35,506
+up a tag on the fly, you
+can just type it right here.
+
+
+393
+00:23:35,506 --> 00:23:37,256
+This is a website
+project I'm working on.
+
+
+394
+00:23:37,256 --> 00:23:39,026
+It's says Create
+New Tag Website.
+
+
+395
+00:23:39,026 --> 00:23:42,106
+And just like that,
+I've created a new tag
+
+
+396
+00:23:42,106 --> 00:23:44,846
+and you can see it right
+here in the Finder.
+
+
+397
+00:23:45,456 --> 00:23:47,716
+I can give that tag
+a color of course.
+
+
+398
+00:23:48,466 --> 00:23:51,606
+And now that I have that
+tag, I can also assign tags
+
+
+399
+00:23:51,606 --> 00:23:54,836
+by just dragging things in
+to the Tagger and the Finder.
+
+
+400
+00:23:55,026 --> 00:23:58,526
+So different assets from my
+website, just drag them in
+
+
+401
+00:23:58,526 --> 00:24:00,076
+and they're tagged like that.
+
+
+402
+00:24:00,686 --> 00:24:02,806
+And tags are great
+for searching.
+
+
+403
+00:24:03,286 --> 00:24:05,486
+So if I start typing,
+let's say, Important,
+
+
+404
+00:24:05,486 --> 00:24:08,126
+it can find all documents
+that are important.
+
+
+405
+00:24:08,216 --> 00:24:10,476
+Let's go to All My Files,
+we'll find all documents,
+
+
+406
+00:24:10,476 --> 00:24:14,416
+they're both important
+and that are in review.
+
+
+407
+00:24:15,056 --> 00:24:18,506
+Just like that, I found exactly
+what I'm looking for with tags.
+
+
+408
+00:24:19,516 --> 00:24:24,826
+[ Applause ]
+
+
+409
+00:24:25,326 --> 00:24:27,476
+Next, let's take a look
+at Multiple Displays.
+
+
+410
+00:24:27,476 --> 00:24:29,676
+I'm going to open up some
+other kind of windows
+
+
+411
+00:24:29,676 --> 00:24:31,136
+that I'm often working with.
+
+
+412
+00:24:31,136 --> 00:24:35,086
+We'll open iPhoto here, may
+be a keynote presentation.
+
+
+413
+00:24:35,216 --> 00:24:37,426
+And I actually have a
+second display connected
+
+
+414
+00:24:37,426 --> 00:24:38,446
+to this MacBook Pro.
+
+
+415
+00:24:38,446 --> 00:24:40,726
+Let's show that up
+there on display now.
+
+
+416
+00:24:40,726 --> 00:24:42,576
+Of course with multiple
+displays,
+
+
+417
+00:24:42,576 --> 00:24:46,456
+I can just move windows across
+displays like you'd expect.
+
+
+418
+00:24:47,046 --> 00:24:50,306
+But now, I can get up at my
+Menu bar in the second display.
+
+
+419
+00:24:50,406 --> 00:24:51,646
+If I go down to the bottom,
+
+
+420
+00:24:51,646 --> 00:24:54,136
+I can summon the
+DOC just like that.
+
+
+421
+00:24:54,526 --> 00:24:57,226
+If I want to open an app on the
+second display, I can just open
+
+
+422
+00:24:57,226 --> 00:24:59,826
+that on the DOC here
+and here is iTunes.
+
+
+423
+00:25:00,386 --> 00:25:03,436
+Take this app full
+screen just like that.
+
+
+424
+00:25:03,436 --> 00:25:06,876
+And as I swipe spaces,
+just right back there.
+
+
+425
+00:25:06,876 --> 00:25:09,836
+Just on that display, let's take
+a keynote full screen as well.
+
+
+426
+00:25:09,836 --> 00:25:13,236
+I'm going to go back to
+my first display here.
+
+
+427
+00:25:13,236 --> 00:25:15,956
+Let's even take iPhoto
+full screen.
+
+
+428
+00:25:15,956 --> 00:25:17,546
+So now, I have different
+full screen apps
+
+
+429
+00:25:17,816 --> 00:25:18,696
+on my different displays.
+
+
+430
+00:25:18,696 --> 00:25:20,316
+This is actually really
+fantastic way to work.
+
+
+431
+00:25:20,856 --> 00:25:23,996
+Go in here into Favorite Travels
+and I can now drag assets
+
+
+432
+00:25:23,996 --> 00:25:27,896
+across my full screen apps
+like that, super cool.
+
+
+433
+00:25:28,266 --> 00:25:30,996
+And, Mission Control has
+just been super charged
+
+
+434
+00:25:30,996 --> 00:25:31,916
+for multiple displays.
+
+
+435
+00:25:31,916 --> 00:25:34,586
+So, I'm going to go now
+into Mission Control
+
+
+436
+00:25:35,216 --> 00:25:37,626
+and we see my different
+full screen spaces
+
+
+437
+00:25:37,886 --> 00:25:40,706
+and desktops across
+applications.
+
+
+438
+00:25:40,706 --> 00:25:43,266
+I can drag a window from
+one display to another.
+
+
+439
+00:25:43,266 --> 00:25:47,156
+I can also go and drag
+a full screen app right
+
+
+440
+00:25:47,156 --> 00:25:50,266
+across displays, bring
+Preview open, and now I have
+
+
+441
+00:25:50,266 --> 00:25:52,376
+that full screen on
+this display as well.
+
+
+442
+00:25:53,516 --> 00:25:57,556
+[ Applause ]
+
+
+443
+00:25:58,056 --> 00:26:02,366
+Finally, I actually have
+an Apple TV around here.
+
+
+444
+00:26:02,366 --> 00:26:03,486
+Let's bring that into place.
+
+
+445
+00:26:03,486 --> 00:26:05,196
+So here's my Apple TV.
+
+
+446
+00:26:05,486 --> 00:26:08,046
+Now, this is pretty
+over the top.
+
+
+447
+00:26:08,046 --> 00:26:11,816
+So I can actually go
+here into AirPlay.
+
+
+448
+00:26:11,816 --> 00:26:13,856
+I'm going to connect
+to this Apple TV.
+
+
+449
+00:26:14,846 --> 00:26:18,856
+So now, it's a full
+power display as well.
+
+
+450
+00:26:18,856 --> 00:26:21,616
+You can see I have my
+Menu bar and my DOC.
+
+
+451
+00:26:22,336 --> 00:26:25,096
+I can go over here
+and get my DOC here.
+
+
+452
+00:26:25,716 --> 00:26:28,806
+And, I can go into
+Mission Control, even,
+
+
+453
+00:26:28,946 --> 00:26:33,046
+and I can go get a window
+across that other display.
+
+
+454
+00:26:34,476 --> 00:26:35,886
+We'll just drag Keynote
+over here,
+
+
+455
+00:26:36,656 --> 00:26:40,186
+right on to my Apple
+TV, and open it up.
+
+
+456
+00:26:40,526 --> 00:26:42,916
+There it is, full
+displays in Mavericks.
+
+
+457
+00:26:44,516 --> 00:26:48,746
+[ Applause ]
+
+
+458
+00:26:49,246 --> 00:26:50,826
+Next, I'd like to talk
+
+
+459
+00:26:50,826 --> 00:26:54,406
+about some advanced
+technologies in Mavericks.
+
+
+460
+00:26:55,206 --> 00:26:58,476
+You know, our power users are
+increasingly doing their work
+
+
+461
+00:26:58,476 --> 00:26:59,276
+on the go.
+
+
+462
+00:26:59,326 --> 00:27:00,726
+They want great responsiveness
+
+
+463
+00:27:00,976 --> 00:27:03,226
+but they also want
+great battery life.
+
+
+464
+00:27:03,806 --> 00:27:06,626
+And in Mavericks, we've
+introduced a whole host
+
+
+465
+00:27:06,626 --> 00:27:09,146
+of technologies to
+address that challenge.
+
+
+466
+00:27:09,536 --> 00:27:11,086
+Things like Compressed Memory
+
+
+467
+00:27:11,086 --> 00:27:13,716
+that make sure you have
+memory available very quickly
+
+
+468
+00:27:13,716 --> 00:27:14,816
+when apps demand it.
+
+
+469
+00:27:15,336 --> 00:27:16,766
+Technologies like App Nap
+
+
+470
+00:27:17,186 --> 00:27:19,436
+that actually makes sure
+we're directing power only
+
+
+471
+00:27:19,436 --> 00:27:20,456
+to those applications
+
+
+472
+00:27:20,596 --> 00:27:22,086
+where you're really
+benefiting from it.
+
+
+473
+00:27:22,756 --> 00:27:25,656
+System-wide Core Animation
+Accelerated Scrolling
+
+
+474
+00:27:25,656 --> 00:27:28,936
+and OpenGL 4 for super
+responsive graphics.
+
+
+475
+00:27:29,516 --> 00:27:30,966
+And, a topic I want to go
+
+
+476
+00:27:30,966 --> 00:27:33,966
+into in a bit more detail
+now, Timer Coalescing.
+
+
+477
+00:27:34,616 --> 00:27:38,446
+So you know, when you look at
+battery life on your computer,
+
+
+478
+00:27:39,086 --> 00:27:41,316
+the real factor that software
+has the most influence
+
+
+479
+00:27:41,316 --> 00:27:44,596
+over is CPU activity
+and its draw on power.
+
+
+480
+00:27:44,596 --> 00:27:46,736
+And if you look at what
+your system is doing
+
+
+481
+00:27:46,736 --> 00:27:50,466
+at any given time, what
+you'll see as you look
+
+
+482
+00:27:50,466 --> 00:27:53,876
+under the hood is not a smooth
+line, but actually hundreds
+
+
+483
+00:27:53,876 --> 00:27:56,396
+of interrupts occurring per
+second where the system is going
+
+
+484
+00:27:56,396 --> 00:27:59,366
+from a power-efficient
+sleep state up to a state
+
+
+485
+00:27:59,366 --> 00:28:01,446
+of high power use and back down.
+
+
+486
+00:28:01,446 --> 00:28:05,326
+And all of those transitions
+actually consume a lot of power.
+
+
+487
+00:28:05,856 --> 00:28:09,396
+Well in Mavericks, we
+intelligently align all
+
+
+488
+00:28:09,396 --> 00:28:12,076
+of that work, reducing those
+numbers of transitions.
+
+
+489
+00:28:12,496 --> 00:28:15,506
+This, in combination with
+technologies like App Nap
+
+
+490
+00:28:15,776 --> 00:28:20,476
+and other power optimizations,
+reduce CPU utilization activity
+
+
+491
+00:28:20,476 --> 00:28:23,666
+for these kinds of
+scenarios up to 72 percent.
+
+
+492
+00:28:24,176 --> 00:28:24,976
+It's pretty awesome.
+
+
+493
+00:28:25,516 --> 00:28:31,666
+[ Applause ]
+
+
+494
+00:28:32,166 --> 00:28:34,076
+Next, let's talk about
+Compressed Memory.
+
+
+495
+00:28:34,876 --> 00:28:37,256
+Nothing affects the
+performance of your Mac,
+
+
+496
+00:28:37,336 --> 00:28:39,406
+the responsiveness more of
+a Mac, that's under load
+
+
+497
+00:28:39,676 --> 00:28:42,466
+than its ability to provide
+free memory to an app.
+
+
+498
+00:28:43,086 --> 00:28:45,146
+Now, typically, when you
+look at your app runtime,
+
+
+499
+00:28:45,546 --> 00:28:46,836
+all your memory is inactive.
+
+
+500
+00:28:46,836 --> 00:28:49,726
+In fact, a subset of your
+memory is actively being used
+
+
+501
+00:28:50,116 --> 00:28:52,156
+and others is memory
+we have to keep around
+
+
+502
+00:28:52,326 --> 00:28:53,806
+but isn't being used by the app.
+
+
+503
+00:28:54,206 --> 00:28:57,956
+Well, now if you open a
+document, your system is going
+
+
+504
+00:28:57,956 --> 00:29:00,926
+to need to get free memory
+and it does that in the past
+
+
+505
+00:29:01,126 --> 00:29:03,866
+by writing those inactive
+bits of memory out to disk,
+
+
+506
+00:29:03,866 --> 00:29:05,106
+and that's a slow process.
+
+
+507
+00:29:05,826 --> 00:29:07,956
+Now, with Compressed Memory,
+
+
+508
+00:29:08,076 --> 00:29:11,526
+we're able to rapidly compress
+the inactive memory making free
+
+
+509
+00:29:11,526 --> 00:29:13,786
+space available almost
+instantaneously
+
+
+510
+00:29:13,786 --> 00:29:14,636
+to the application.
+
+
+511
+00:29:15,376 --> 00:29:17,856
+This can have great
+effects on responsiveness
+
+
+512
+00:29:17,856 --> 00:29:18,876
+of systems under load.
+
+
+513
+00:29:19,296 --> 00:29:21,886
+You see, 1.4X kinds
+of improvements,
+
+
+514
+00:29:21,886 --> 00:29:24,596
+even on fast SSD
+systems for activities
+
+
+515
+00:29:24,736 --> 00:29:27,616
+like opening new documents
+or reactivate an application,
+
+
+516
+00:29:27,976 --> 00:29:32,086
+and up to 1.5X improvement for
+waking a system from standby,
+
+
+517
+00:29:32,886 --> 00:29:36,386
+these are just two of
+many improvements to power
+
+
+518
+00:29:36,386 --> 00:29:38,106
+and performance in Mavericks.
+
+
+519
+00:29:38,816 --> 00:29:40,716
+Next, let's talk about Safari.
+
+
+520
+00:29:41,426 --> 00:29:46,816
+In the last decade of life,
+Safari is focused not just
+
+
+521
+00:29:46,906 --> 00:29:48,336
+on providing the easiest to use
+
+
+522
+00:29:48,336 --> 00:29:50,226
+and most elegant
+browsing experience,
+
+
+523
+00:29:50,916 --> 00:29:52,486
+but also the most innovative.
+
+
+524
+00:29:53,896 --> 00:29:55,616
+These are the kinds
+of innovations
+
+
+525
+00:29:55,866 --> 00:29:58,236
+that Safari has brought,
+private browsing,
+
+
+526
+00:29:58,556 --> 00:30:00,896
+blocking of third party
+cookies for privacy,
+
+
+527
+00:30:01,256 --> 00:30:03,656
+making the web easier to read
+with features like Reading List,
+
+
+528
+00:30:03,746 --> 00:30:08,186
+and the HTML5 audio and
+video tag, all Safari-firsts.
+
+
+529
+00:30:08,636 --> 00:30:10,326
+And the engine in
+Safari, WebKit,
+
+
+530
+00:30:10,326 --> 00:30:14,246
+is used by over 1.5
+billion devices.
+
+
+531
+00:30:15,156 --> 00:30:18,456
+Well in Mountain Lion, we're
+making Safari even better.
+
+
+532
+00:30:19,126 --> 00:30:22,236
+We have a great clean new
+homepage with top sites.
+
+
+533
+00:30:22,596 --> 00:30:27,066
+From there, you can get at great
+sidebar where you have access
+
+
+534
+00:30:27,066 --> 00:30:29,916
+to all of your bookmarks
+and you can browse right
+
+
+535
+00:30:29,916 --> 00:30:30,856
+from your bookmarks.
+
+
+536
+00:30:31,486 --> 00:30:34,726
+And in that sidebar, we
+also have Reading List
+
+
+537
+00:30:35,126 --> 00:30:37,216
+where now you can
+continuously scroll
+
+
+538
+00:30:37,216 --> 00:30:39,776
+through your articles moving
+from article to article
+
+
+539
+00:30:39,776 --> 00:30:40,886
+without ever having to click.
+
+
+540
+00:30:41,656 --> 00:30:46,556
+And a great new feature called
+Shared Links where you see all
+
+
+541
+00:30:46,556 --> 00:30:48,566
+of the links shared by
+people you're following
+
+
+542
+00:30:48,566 --> 00:30:49,806
+on Twitter and LinkedIn.
+
+
+543
+00:30:49,946 --> 00:30:51,196
+You can browse them right here.
+
+
+544
+00:30:52,126 --> 00:30:55,966
+Now in addition to these
+end-user improvements,
+
+
+545
+00:30:56,116 --> 00:30:59,776
+there's also a lot going on
+under the hood, big improvements
+
+
+546
+00:30:59,776 --> 00:31:03,286
+to JavaScript, a full
+process-per-tab architecture,
+
+
+547
+00:31:03,286 --> 00:31:05,066
+and memory efficiency
+improvements
+
+
+548
+00:31:05,296 --> 00:31:08,396
+with the shared memory resource
+cache, and a whole bunch
+
+
+549
+00:31:08,426 --> 00:31:10,476
+of big power savings as well.
+
+
+550
+00:31:11,016 --> 00:31:11,846
+When you look at the effects
+
+
+551
+00:31:11,846 --> 00:31:13,466
+of these changes,
+it's pretty profound.
+
+
+552
+00:31:14,066 --> 00:31:16,906
+If you take a synthetic
+benchmark like SunSpider,
+
+
+553
+00:31:17,396 --> 00:31:20,276
+you see how Safari fairs
+against the competition.
+
+
+554
+00:31:20,996 --> 00:31:22,576
+But, you know, researchers
+have started to look
+
+
+555
+00:31:22,576 --> 00:31:26,626
+at more real world JavaScript
+by sampling the JavaScript
+
+
+556
+00:31:26,626 --> 00:31:27,876
+that actually occurs on sites
+
+
+557
+00:31:27,876 --> 00:31:31,226
+like the Google homepage,
+Facebook, Amazon.com.
+
+
+558
+00:31:31,736 --> 00:31:33,996
+And when you look at Safari's
+performance on a benchmark
+
+
+559
+00:31:33,996 --> 00:31:38,196
+like that, JSBench, the
+results are really incredible.
+
+
+560
+00:31:39,516 --> 00:31:45,196
+[ Applause ]
+
+
+561
+00:31:45,696 --> 00:31:49,376
+Safari is also awesome when
+it comes now to memory usage,
+
+
+562
+00:31:49,706 --> 00:31:51,856
+using way less memory
+than the other browsers
+
+
+563
+00:31:51,856 --> 00:31:54,456
+which means more memory for
+you to browse with more tabs
+
+
+564
+00:31:54,456 --> 00:31:55,766
+and do more on your system.
+
+
+565
+00:31:56,266 --> 00:31:59,536
+And when it comes to energy
+use, it's not even closed.
+
+
+566
+00:31:59,826 --> 00:32:03,026
+Safari uses way less
+energy than Chrome.
+
+
+567
+00:32:03,076 --> 00:32:05,986
+And when you compare to
+Firefox, it's just kind of sad.
+
+
+568
+00:32:07,376 --> 00:32:08,296
+So that's Safari.
+
+
+569
+00:32:08,626 --> 00:32:10,546
+I'd love to give
+you a demo of some
+
+
+570
+00:32:10,546 --> 00:32:12,756
+of our advanced technologies
+in Safari right now.
+
+
+571
+00:32:19,246 --> 00:32:21,966
+So, let's start with
+responsiveness
+
+
+572
+00:32:21,966 --> 00:32:24,106
+and I'm going to
+go now into mail.
+
+
+573
+00:32:24,106 --> 00:32:28,466
+And so here, we have a mailbox
+with about 100,000 messages
+
+
+574
+00:32:28,466 --> 00:32:33,306
+in your inbox and I just want
+to show you how you scroll now
+
+
+575
+00:32:33,306 --> 00:32:34,566
+with that accelerated scrolling.
+
+
+576
+00:32:35,026 --> 00:32:37,846
+Perfectly smooth,
+incredibly fast,
+
+
+577
+00:32:38,666 --> 00:32:40,936
+almost 60 frames a
+second whenever you do it,
+
+
+578
+00:32:40,936 --> 00:32:41,986
+it's just epic.
+
+
+579
+00:32:41,986 --> 00:32:44,976
+And when you look
+here at scrolling
+
+
+580
+00:32:44,976 --> 00:32:47,416
+through a conversation,
+this is a conversation
+
+
+581
+00:32:47,416 --> 00:32:48,936
+with 26 messages in it.
+
+
+582
+00:32:49,606 --> 00:32:54,216
+Again, just super glassy
+smooth, super fast,
+
+
+583
+00:32:54,386 --> 00:32:55,696
+it's really, really nice.
+
+
+584
+00:32:56,106 --> 00:32:57,726
+Let's take a look
+at that in Safari.
+
+
+585
+00:32:58,096 --> 00:33:00,466
+In Safari, we've
+improved scrolling
+
+
+586
+00:33:00,506 --> 00:33:04,086
+for more popular websites and
+actually optimized heavily
+
+
+587
+00:33:04,086 --> 00:33:08,946
+for retina displays so now, it's
+just super fast, super smooth.
+
+
+588
+00:33:09,626 --> 00:33:10,956
+Now, let's take a look at power.
+
+
+589
+00:33:11,076 --> 00:33:13,286
+Yeah, there's a fan of
+smooth scrolling right there
+
+
+590
+00:33:13,286 --> 00:33:13,736
+in the front.
+
+
+591
+00:33:16,486 --> 00:33:18,296
+I'm a fan of smooth
+scrolling as well.
+
+
+592
+00:33:18,616 --> 00:33:21,046
+So let's take a look at power
+use, so you have a power meter
+
+
+593
+00:33:21,046 --> 00:33:23,196
+up here that's showing
+CPU activity in Safari
+
+
+594
+00:33:23,196 --> 00:33:25,306
+and you notice right
+now, it's quite low
+
+
+595
+00:33:25,726 --> 00:33:26,726
+because we're not
+doing anything.
+
+
+596
+00:33:26,936 --> 00:33:30,356
+But let's go into a website
+that's going to use a lot
+
+
+597
+00:33:30,356 --> 00:33:32,626
+of power and you notice
+the power meter shoot right
+
+
+598
+00:33:32,626 --> 00:33:35,646
+up because we're doing a lot of
+animation here using all the CPU
+
+
+599
+00:33:35,646 --> 00:33:37,286
+and that's OK, that's
+what the CPUs for,
+
+
+600
+00:33:37,286 --> 00:33:38,846
+it's doing something
+cool for me right here.
+
+
+601
+00:33:38,846 --> 00:33:41,286
+But very often, you'll have
+something like this happening
+
+
+602
+00:33:41,286 --> 00:33:43,996
+in an add off in the corner,
+you've covered this window up
+
+
+603
+00:33:43,996 --> 00:33:46,206
+and yet, it's still
+draining your battery life,
+
+
+604
+00:33:46,386 --> 00:33:47,366
+you don't even realized it.
+
+
+605
+00:33:47,886 --> 00:33:51,586
+Well now, with this technology
+we call AppNap, we keep track
+
+
+606
+00:33:51,586 --> 00:33:54,116
+of what's going on and what
+things you actually to see
+
+
+607
+00:33:54,386 --> 00:33:55,726
+to decide where to direct power.
+
+
+608
+00:33:56,186 --> 00:33:59,886
+So watch what happens when I
+bring up this iTunes window
+
+
+609
+00:34:00,176 --> 00:34:02,326
+over the Safari window,
+the power drops right down
+
+
+610
+00:34:02,916 --> 00:34:10,766
+and that's extending
+your battery life.
+
+
+611
+00:34:11,616 --> 00:34:16,396
+But of course, that
+thing is still running,
+
+
+612
+00:34:16,396 --> 00:34:19,726
+it's still available to me so if
+I pull it aside, there it goes,
+
+
+613
+00:34:19,726 --> 00:34:21,386
+you can see everything
+happening right now.
+
+
+614
+00:34:21,386 --> 00:34:25,196
+The power goes up, cover back
+up, power goes right back down,
+
+
+615
+00:34:25,326 --> 00:34:30,795
+it's really going to
+help your battery life.
+
+
+616
+00:34:31,326 --> 00:34:35,346
+Next, let's take a look at
+the new Safari top sites.
+
+
+617
+00:34:36,295 --> 00:34:37,856
+Really clean, really nice.
+
+
+618
+00:34:37,856 --> 00:34:39,246
+We'll bring out the new sidebar.
+
+
+619
+00:34:39,386 --> 00:34:40,946
+You see I have all
+my bookmarks here.
+
+
+620
+00:34:41,306 --> 00:34:43,456
+I have my bookmark
+folders as well.
+
+
+621
+00:34:43,456 --> 00:34:46,366
+If I want to bring a side
+over for my bookmarks
+
+
+622
+00:34:46,366 --> 00:34:48,576
+in the top sites, I can
+just drag it out like this.
+
+
+623
+00:34:48,795 --> 00:34:49,525
+It's really nice.
+
+
+624
+00:34:49,666 --> 00:34:52,186
+I can open it up, animates in.
+
+
+625
+00:34:52,536 --> 00:34:57,796
+From the side bar, we also have
+access to our shared links.
+
+
+626
+00:34:57,796 --> 00:35:01,216
+You see sites that I'm following
+here on Twitter and LinkedIn
+
+
+627
+00:35:01,476 --> 00:35:03,996
+and click on a site-- a
+link that's been shared.
+
+
+628
+00:35:03,996 --> 00:35:07,686
+It loads it up, I can
+even retweet it right here
+
+
+629
+00:35:07,686 --> 00:35:08,646
+if I-- if I wish.
+
+
+630
+00:35:08,826 --> 00:35:10,626
+And we now have one-click
+bookmarking
+
+
+631
+00:35:10,626 --> 00:35:12,446
+so I'll just click this plus
+and it's going to hop right
+
+
+632
+00:35:12,446 --> 00:35:14,276
+in to my Reading
+List right there.
+
+
+633
+00:35:14,276 --> 00:35:16,186
+Let's go take a look
+at my Reading List.
+
+
+634
+00:35:17,156 --> 00:35:19,826
+See all the articles I've
+added here to my Reading List?
+
+
+635
+00:35:19,966 --> 00:35:22,596
+I want you to watch how
+scrolling works because now,
+
+
+636
+00:35:23,156 --> 00:35:25,166
+when I scroll and I'm
+reading through one article,
+
+
+637
+00:35:25,196 --> 00:35:27,746
+I read this, this is great,
+I'm really enjoying it.
+
+
+638
+00:35:27,916 --> 00:35:30,036
+Get to the bottom,
+there's the next article.
+
+
+639
+00:35:30,036 --> 00:35:32,926
+I can just scroll right
+through to the next article just
+
+
+640
+00:35:32,926 --> 00:35:33,376
+like that.
+
+
+641
+00:35:34,466 --> 00:35:40,106
+Awesome. We also have a
+beautiful new look for Reader.
+
+
+642
+00:35:40,106 --> 00:35:43,476
+Here is Reader and I'm
+going to bring up my--
+
+
+643
+00:35:43,546 --> 00:35:46,526
+I can actually close
+up my sidebar here.
+
+
+644
+00:35:47,056 --> 00:35:49,896
+And now, as I scroll reading
+and I just want to read
+
+
+645
+00:35:49,896 --> 00:35:52,466
+from one article to the
+next, it's just like that.
+
+
+646
+00:35:52,466 --> 00:35:57,166
+Super clean and super nice and
+that's Safari in Mavericks.
+
+
+647
+00:35:57,166 --> 00:35:57,966
+I think you're going to like it.
+
+
+648
+00:35:58,516 --> 00:36:03,826
+[ Applause ]
+
+
+649
+00:36:04,326 --> 00:36:05,916
+So, we have some
+more improvements
+
+
+650
+00:36:05,916 --> 00:36:08,336
+that I think are going to really
+help you with your browsing
+
+
+651
+00:36:08,336 --> 00:36:11,586
+and one of them is
+iCloud Keychain, yeah.
+
+
+652
+00:36:14,516 --> 00:36:17,246
+You know, to really
+be secure these days,
+
+
+653
+00:36:17,246 --> 00:36:20,896
+you want to have a different
+complex password for every site
+
+
+654
+00:36:20,896 --> 00:36:23,396
+where you have a log in
+but this inevitably brings
+
+
+655
+00:36:23,396 --> 00:36:25,716
+up the question,
+"what's my password?"
+
+
+656
+00:36:26,176 --> 00:36:28,516
+and these solutions
+are not recommended.
+
+
+657
+00:36:29,526 --> 00:36:30,676
+There is a better way.
+
+
+658
+00:36:30,946 --> 00:36:34,356
+With iCloud Keychain, we can
+remember your website logins,
+
+
+659
+00:36:34,916 --> 00:36:37,706
+your credit card numbers,
+even your Wi-Fi networks
+
+
+660
+00:36:38,326 --> 00:36:44,126
+and they're always encrypted,
+synced across all of your system
+
+
+661
+00:36:44,126 --> 00:36:45,466
+so they are always
+available to you.
+
+
+662
+00:36:45,886 --> 00:36:48,106
+Now, when you go to
+sign up for a website,
+
+
+663
+00:36:48,976 --> 00:36:51,706
+you can of course enter your own
+password and we'll remember it
+
+
+664
+00:36:51,706 --> 00:36:56,136
+but as well, Safari can auto
+suggest a password for you.
+
+
+665
+00:36:56,946 --> 00:36:59,856
+You don't have to remember that
+but it'll enter it in for you
+
+
+666
+00:37:00,176 --> 00:37:02,156
+and then sync it across
+all of your systems
+
+
+667
+00:37:02,156 --> 00:37:03,616
+and login for you from then on.
+
+
+668
+00:37:04,516 --> 00:37:11,026
+[ Applause ]
+
+
+669
+00:37:11,526 --> 00:37:14,456
+iCloud Keychain is great
+for your shopping as well.
+
+
+670
+00:37:14,456 --> 00:37:18,916
+When you come to a credit card
+field, you can suggest any
+
+
+671
+00:37:18,916 --> 00:37:21,626
+of your remembered
+credit cards, select one
+
+
+672
+00:37:22,386 --> 00:37:24,476
+and it'll just enter it in
+for you just like that along
+
+
+673
+00:37:24,476 --> 00:37:25,526
+with your expiration date.
+
+
+674
+00:37:25,526 --> 00:37:27,766
+But you have to remember
+your own security code,
+
+
+675
+00:37:27,766 --> 00:37:29,446
+that's what makes
+it secure after all
+
+
+676
+00:37:30,636 --> 00:37:31,976
+and that's iCloud Keychain.
+
+
+677
+00:37:32,516 --> 00:37:37,566
+[ Applause ]
+
+
+678
+00:37:38,066 --> 00:37:40,916
+Next, some improvements
+to Notifications.
+
+
+679
+00:37:41,776 --> 00:37:45,636
+So now, with Notifications on
+the Mac, if you're a Californian
+
+
+680
+00:37:45,636 --> 00:37:48,186
+like me, you'll often get
+this kind of notification,
+
+
+681
+00:37:48,636 --> 00:37:50,816
+"Hey want to go surf
+these 30 foot waves?"
+
+
+682
+00:37:50,816 --> 00:37:53,896
+And you response, surely is
+to mouse over the notification
+
+
+683
+00:37:53,896 --> 00:37:56,736
+and immediately right there,
+reply, "Yeah sure I'm going
+
+
+684
+00:37:56,736 --> 00:37:57,796
+to surf that 30 foot wave."
+
+
+685
+00:37:58,016 --> 00:38:01,456
+You can reply right inside the
+Notification and you can do this
+
+
+686
+00:38:01,456 --> 00:38:02,626
+for things like email
+
+
+687
+00:38:02,626 --> 00:38:04,776
+and quickly delete email
+you might not want to deal
+
+
+688
+00:38:04,776 --> 00:38:06,576
+with without even
+having to go to Mail.
+
+
+689
+00:38:07,376 --> 00:38:09,936
+If you get a FaceTime call,
+you can response saying,
+
+
+690
+00:38:09,936 --> 00:38:11,866
+"Hey I'm going to call
+you later," or remind
+
+
+691
+00:38:11,896 --> 00:38:13,336
+without having to
+pick up the call.
+
+
+692
+00:38:13,586 --> 00:38:14,496
+It's really handy.
+
+
+693
+00:38:14,826 --> 00:38:17,616
+We also handle a new
+kind of notification.
+
+
+694
+00:38:18,216 --> 00:38:21,676
+So if you have an app today
+that sends push notifications
+
+
+695
+00:38:21,676 --> 00:38:24,686
+to iOS devices, well
+now, you can sign
+
+
+696
+00:38:24,686 --> 00:38:27,126
+up to receive those push
+notifications on your Mac
+
+
+697
+00:38:27,126 --> 00:38:29,886
+as well whether Safari
+is running or not.
+
+
+698
+00:38:33,316 --> 00:38:36,356
+So, things like your
+Fantasy Football alert,
+
+
+699
+00:38:37,316 --> 00:38:42,926
+maybe Breaking News, news
+about that buy on eBay.
+
+
+700
+00:38:44,616 --> 00:38:48,346
+And now, in Mavericks when
+your machine is sleeping,
+
+
+701
+00:38:49,546 --> 00:38:51,906
+when you wake it up, it
+will tell you everything
+
+
+702
+00:38:51,906 --> 00:38:54,296
+that you missed while you're
+away right on the lock screen.
+
+
+703
+00:38:55,056 --> 00:39:00,316
+And it will now update apps
+for you right in the background
+
+
+704
+00:39:00,316 --> 00:39:01,976
+so you don't have
+to do it yourself.
+
+
+705
+00:39:02,516 --> 00:39:07,126
+[ Applause ]
+
+
+706
+00:39:07,626 --> 00:39:09,556
+So that's Notifications.
+
+
+707
+00:39:11,106 --> 00:39:14,456
+Next up, Calendar,
+let's take a look.
+
+
+708
+00:39:15,516 --> 00:39:21,226
+[ Applause ]
+
+
+709
+00:39:21,726 --> 00:39:25,236
+Absolutely no virtual cows
+were harmed in the making
+
+
+710
+00:39:25,236 --> 00:39:29,746
+of this user interface.
+
+
+711
+00:39:29,746 --> 00:39:30,676
+We're going to be
+adding that one
+
+
+712
+00:39:30,756 --> 00:39:32,786
+to our environmental
+checklist, trust us.
+
+
+713
+00:39:33,286 --> 00:39:37,996
+So, in addition to that, you
+have your Facebook events right
+
+
+714
+00:39:37,996 --> 00:39:39,526
+on your Calendar if you wish
+
+
+715
+00:39:39,526 --> 00:39:42,306
+and we have a great new
+inspector that's even aware
+
+
+716
+00:39:42,576 --> 00:39:46,116
+of things like location,
+travel time and weather.
+
+
+717
+00:39:46,846 --> 00:39:48,556
+And that's the Calendar.
+
+
+718
+00:39:49,516 --> 00:39:53,256
+[ Applause ]
+
+
+719
+00:39:53,756 --> 00:39:54,886
+Next, Maps.
+
+
+720
+00:39:55,516 --> 00:40:00,136
+[ Applause ]
+
+
+721
+00:40:00,636 --> 00:40:03,596
+The Maps team has been making
+great improvements to the data
+
+
+722
+00:40:03,596 --> 00:40:05,656
+and Maps and Mac users
+are going to benefit
+
+
+723
+00:40:05,656 --> 00:40:07,676
+because we have this
+fantastic new Maps app.
+
+
+724
+00:40:07,676 --> 00:40:11,466
+Of course, with your street
+maps, you have your 3D,
+
+
+725
+00:40:12,356 --> 00:40:15,966
+beautiful flyover
+data, search for points
+
+
+726
+00:40:15,966 --> 00:40:18,516
+of interest, great info cards.
+
+
+727
+00:40:19,476 --> 00:40:23,506
+You can get turn by turn
+directions and my favorite part,
+
+
+728
+00:40:23,506 --> 00:40:26,246
+when I have a route that
+I've set up on my Mac
+
+
+729
+00:40:26,596 --> 00:40:30,096
+and now it's time to go, you
+can just click right up here
+
+
+730
+00:40:30,456 --> 00:40:32,436
+and send it right to my iPhone
+
+
+731
+00:40:32,946 --> 00:40:34,456
+where it will appear
+right on my lock screen.
+
+
+732
+00:40:35,516 --> 00:40:40,096
+[ Applause ]
+
+
+733
+00:40:40,596 --> 00:40:43,306
+And when I unlock my
+phone, it takes me straight
+
+
+734
+00:40:43,306 --> 00:40:45,156
+in the navigation, super cool.
+
+
+735
+00:40:46,006 --> 00:40:48,186
+We're also providing
+a developer SDK
+
+
+736
+00:40:48,186 --> 00:40:50,176
+so you can add mapping
+functionality
+
+
+737
+00:40:50,176 --> 00:40:51,526
+to your apps as well.
+
+
+738
+00:40:51,526 --> 00:40:51,906
+So that's Maps.
+
+
+739
+00:40:51,906 --> 00:41:01,496
+Finally, we're bringing
+iBooks to the Mac.
+
+
+740
+00:41:01,666 --> 00:41:10,446
+So now, you have access
+to the full library
+
+
+741
+00:41:10,446 --> 00:41:13,896
+of 1.8 million books
+in the iBook Store.
+
+
+742
+00:41:14,626 --> 00:41:17,886
+Your full library from your
+iOS devices is available
+
+
+743
+00:41:17,886 --> 00:41:18,816
+on your Mac as well.
+
+
+744
+00:41:19,486 --> 00:41:21,486
+It's a great environment
+for reading.
+
+
+745
+00:41:21,676 --> 00:41:23,816
+It's also a great
+environment for taking notes
+
+
+746
+00:41:24,326 --> 00:41:28,546
+and it supports iBooks
+Textbooks, they're beautiful
+
+
+747
+00:41:28,546 --> 00:41:31,216
+and they're interactive,
+I love to give you a demo
+
+
+748
+00:41:31,266 --> 00:41:32,976
+on all of this right now.
+
+
+749
+00:41:33,516 --> 00:41:39,956
+[ Applause ]
+
+
+750
+00:41:40,456 --> 00:41:42,756
+So, let's start in Maps.
+
+
+751
+00:41:44,066 --> 00:41:47,706
+So here we are in
+Paris, you can just zoom
+
+
+752
+00:41:47,706 --> 00:41:48,776
+in a place in Paris there.
+
+
+753
+00:41:49,046 --> 00:41:52,006
+You can zoom right in,
+you see it's just so fast
+
+
+754
+00:41:52,006 --> 00:41:53,986
+and fluid bringing in
+points of location.
+
+
+755
+00:41:54,896 --> 00:41:57,466
+I can pan around the map
+to find a nice location,
+
+
+756
+00:41:58,146 --> 00:42:00,826
+maybe the Eiffel
+Tower right here.
+
+
+757
+00:42:01,486 --> 00:42:04,366
+Let's go in to look
+at that flyover data.
+
+
+758
+00:42:05,756 --> 00:42:12,066
+As we can see the Eiffel Tower,
+we can go in to tilt it over,
+
+
+759
+00:42:12,066 --> 00:42:14,886
+that's the Eiffel
+Tower right there.
+
+
+760
+00:42:15,186 --> 00:42:19,966
+The flyover data is just
+beautiful and of course,
+
+
+761
+00:42:20,076 --> 00:42:25,196
+I can even rotate around Paris.
+
+
+762
+00:42:25,196 --> 00:42:28,916
+Look, you can even see through
+the Eiffel Tower as it rotates
+
+
+763
+00:42:28,916 --> 00:42:30,076
+into the area of the city below.
+
+
+764
+00:42:30,076 --> 00:42:32,926
+The data is just gorgeous,
+the new flyover data.
+
+
+765
+00:42:33,196 --> 00:42:35,396
+It's really amazing on
+your big Mac display.
+
+
+766
+00:42:36,046 --> 00:42:38,646
+Of course, we support great
+search for points of interest
+
+
+767
+00:42:38,646 --> 00:42:40,136
+so if I want to go
+to lunch, maybe at --
+
+
+768
+00:42:40,136 --> 00:42:41,476
+I'm told this is Guy Savoy.
+
+
+769
+00:42:42,456 --> 00:42:46,746
+We'll go to Guy Savoy, they
+have this great info cards
+
+
+770
+00:42:47,676 --> 00:42:50,096
+with reviews, photos.
+
+
+771
+00:42:51,036 --> 00:42:54,166
+I can add a site to my
+Bookmarks just like this
+
+
+772
+00:42:55,296 --> 00:42:57,756
+and it's now synced
+across all my devices
+
+
+773
+00:42:57,756 --> 00:43:00,236
+so this location is available
+to me, of course, on my phone.
+
+
+774
+00:43:00,626 --> 00:43:03,086
+And because this is a
+Mac, I can tear this off
+
+
+775
+00:43:03,086 --> 00:43:04,016
+so if I'm planning a trip,
+
+
+776
+00:43:04,056 --> 00:43:05,896
+I can set aside some
+things of interest.
+
+
+777
+00:43:06,926 --> 00:43:08,146
+I can, of course,
+get directions.
+
+
+778
+00:43:08,316 --> 00:43:10,406
+Let's do that here, directions
+from the Eiffel Tower.
+
+
+779
+00:43:11,256 --> 00:43:15,136
+And when I'm ready to
+go, I can send it right
+
+
+780
+00:43:15,136 --> 00:43:16,456
+to my phone like this.
+
+
+781
+00:43:17,146 --> 00:43:19,166
+And that's Maps.
+
+
+782
+00:43:20,516 --> 00:43:25,426
+[ Applause ]
+
+
+783
+00:43:25,926 --> 00:43:28,196
+Next, let's take a look
+at the new Calendar.
+
+
+784
+00:43:29,506 --> 00:43:32,926
+It has continuous scrolling and
+what's really amazing is even
+
+
+785
+00:43:32,926 --> 00:43:34,036
+without the stitching,
+
+
+786
+00:43:34,206 --> 00:43:37,166
+the Window still sticks
+right there on the screen.
+
+
+787
+00:43:37,166 --> 00:43:38,566
+It doesn't fall off
+without the stitching.
+
+
+788
+00:43:39,826 --> 00:43:41,766
+I don't know how we did it.
+
+
+789
+00:43:41,766 --> 00:43:42,756
+It's engineering.
+
+
+790
+00:43:43,896 --> 00:43:47,736
+It's really great for
+creating events so if I go
+
+
+791
+00:43:47,736 --> 00:43:49,456
+and create an event like
+this, let's say I'm going
+
+
+792
+00:43:49,456 --> 00:43:53,216
+to have lunch and I'm going to
+type in what I want for lunch,
+
+
+793
+00:43:53,216 --> 00:43:54,286
+I'm going to say I want pizza.
+
+
+794
+00:43:55,066 --> 00:43:58,176
+And you notice, it suggests
+all sorts of locations nearby
+
+
+795
+00:43:58,176 --> 00:44:00,446
+so I'm going to select
+Tony's Pizza
+
+
+796
+00:44:01,336 --> 00:44:02,466
+and you notice I get a map.
+
+
+797
+00:44:02,976 --> 00:44:06,346
+I even get projected weather
+for that location so I know
+
+
+798
+00:44:06,346 --> 00:44:07,756
+if I need to bring a jacket.
+
+
+799
+00:44:08,776 --> 00:44:10,676
+Now, I can select here
+and actually ask it
+
+
+800
+00:44:11,096 --> 00:44:13,876
+to tell me what the
+travel time is expected
+
+
+801
+00:44:13,876 --> 00:44:16,786
+from my last location
+so I can decide
+
+
+802
+00:44:16,786 --> 00:44:17,756
+if I want to drive or walk.
+
+
+803
+00:44:17,756 --> 00:44:19,056
+I'm going to say I want to walk
+
+
+804
+00:44:19,056 --> 00:44:21,836
+and it actually adds the travel
+time right to my Calendar
+
+
+805
+00:44:21,836 --> 00:44:23,416
+so I know not to
+schedule anything there.
+
+
+806
+00:44:24,516 --> 00:44:29,546
+[ Applause ]
+
+
+807
+00:44:30,046 --> 00:44:33,476
+And I don't have to remember
+because I can ask to be notified
+
+
+808
+00:44:34,246 --> 00:44:36,046
+when I need to leave and
+I'll get a notification both
+
+
+809
+00:44:36,046 --> 00:44:39,976
+in my Mac and on my phone
+as well so that is Maps.
+
+
+810
+00:44:40,516 --> 00:44:43,556
+[ Applause ]
+
+
+811
+00:44:44,056 --> 00:44:47,206
+Finally, let's take
+a look at iBooks.
+
+
+812
+00:44:47,796 --> 00:44:50,646
+So, I have all my books here,
+of course, I can browse my--
+
+
+813
+00:44:50,646 --> 00:44:52,226
+the collections I've arranged.
+
+
+814
+00:44:53,086 --> 00:44:56,196
+We have access to the Store
+with all of its content.
+
+
+815
+00:44:57,636 --> 00:45:00,816
+Books of course ultimately about
+reading so you can get in here
+
+
+816
+00:45:00,816 --> 00:45:04,316
+and read, move easily
+between the pages.
+
+
+817
+00:45:04,316 --> 00:45:06,446
+You have access to all
+the controls you'd expect.
+
+
+818
+00:45:07,176 --> 00:45:10,246
+Your Bookmark, search,
+can adjust your type
+
+
+819
+00:45:10,246 --> 00:45:11,696
+and font and type size.
+
+
+820
+00:45:12,386 --> 00:45:15,816
+Go into a nice night mode that's
+relaxing for the eyes but,
+
+
+821
+00:45:16,006 --> 00:45:20,686
+of course, I really love these
+interactive iBooks Textbooks.
+
+
+822
+00:45:20,856 --> 00:45:22,116
+Let's open one of those up now.
+
+
+823
+00:45:23,166 --> 00:45:25,096
+So, I can scroll through
+the pages in my book,
+
+
+824
+00:45:26,346 --> 00:45:28,156
+see all of this nice
+interactives and videos.
+
+
+825
+00:45:28,156 --> 00:45:31,106
+I can pinch right into a
+graphical table of contents,
+
+
+826
+00:45:31,826 --> 00:45:34,466
+scroll through the
+pages of this chapter.
+
+
+827
+00:45:34,466 --> 00:45:40,526
+I can select another chapter,
+scroll through just like this
+
+
+828
+00:45:41,116 --> 00:45:44,006
+on these fantastic interactives.
+
+
+829
+00:45:44,696 --> 00:45:47,376
+So, if I want to understand the
+way the cellular structure works
+
+
+830
+00:45:47,376 --> 00:45:50,376
+for instance on this leaf,
+I can just drill right in
+
+
+831
+00:45:51,046 --> 00:45:54,696
+and see all the way
+through this.
+
+
+832
+00:45:54,776 --> 00:45:56,976
+It's just incredible, a
+really great way to learn.
+
+
+833
+00:45:57,516 --> 00:46:02,076
+[ Applause ]
+
+
+834
+00:46:02,576 --> 00:46:05,096
+It's also a great
+environment for taking notes,
+
+
+835
+00:46:05,746 --> 00:46:11,206
+just select some text, add
+a note, ask the teacher
+
+
+836
+00:46:11,206 --> 00:46:16,096
+about this, take
+a note like that.
+
+
+837
+00:46:16,096 --> 00:46:18,996
+Because it's a Mac, of
+course, I can just stretch out
+
+
+838
+00:46:18,996 --> 00:46:21,106
+and get the sidebar where
+I can see all my notes
+
+
+839
+00:46:21,106 --> 00:46:24,466
+in the sidebar just really
+convenient just like this.
+
+
+840
+00:46:24,466 --> 00:46:27,156
+We also have a great
+view with the Sidebar
+
+
+841
+00:46:27,156 --> 00:46:28,076
+to show all your notes.
+
+
+842
+00:46:28,076 --> 00:46:30,076
+You can use them to
+navigate your book.
+
+
+843
+00:46:30,486 --> 00:46:34,106
+When it comes time to study,
+you have this great study cards,
+
+
+844
+00:46:34,106 --> 00:46:37,276
+you can just flip through
+them, use all your notes
+
+
+845
+00:46:37,276 --> 00:46:38,656
+to study, just like that.
+
+
+846
+00:46:40,516 --> 00:46:43,846
+[ Applause ]
+
+
+847
+00:46:44,346 --> 00:46:48,906
+And that is iBooks in Mavericks.
+
+
+848
+00:46:49,026 --> 00:46:56,146
+So, Mavericks continues making
+your digital life follow you
+
+
+849
+00:46:56,146 --> 00:46:58,006
+easily from device to device.
+
+
+850
+00:46:58,006 --> 00:47:01,556
+So now, your books are available
+on whatever device you choose
+
+
+851
+00:47:01,556 --> 00:47:04,636
+to read them on and it remembers
+what page you're reading.
+
+
+852
+00:47:05,036 --> 00:47:07,756
+We now remember your password
+so they're available to you
+
+
+853
+00:47:07,756 --> 00:47:09,936
+across all your devices,
+even now,
+
+
+854
+00:47:10,146 --> 00:47:13,536
+your bookmark location
+and travel routes.
+
+
+855
+00:47:14,096 --> 00:47:16,836
+Mavericks is a fantastic
+release,
+
+
+856
+00:47:17,196 --> 00:47:21,066
+it's full of some great features
+for power users, deep technology
+
+
+857
+00:47:21,066 --> 00:47:24,156
+to extend your battery life and
+improve system responsiveness
+
+
+858
+00:47:24,696 --> 00:47:27,206
+and some great features
+for everyone.
+
+
+859
+00:47:28,276 --> 00:47:29,556
+For those of you developers,
+
+
+860
+00:47:30,126 --> 00:47:32,976
+we have a preview
+available for you today.
+
+
+861
+00:47:33,516 --> 00:47:39,126
+[ Applause ]
+
+
+862
+00:47:39,626 --> 00:47:41,996
+And for everyone else
+from the general public,
+
+
+863
+00:47:41,996 --> 00:47:44,726
+you'll be getting the
+final release this fall.
+
+
+864
+00:47:45,196 --> 00:47:46,876
+So that is Mavericks.
+
+
+865
+00:47:47,196 --> 00:47:49,096
+Next, I'm going to hand
+it over to Phil Schiller
+
+
+866
+00:47:49,096 --> 00:47:50,636
+to tell you a little
+bit more about the Mac.
+
+
+867
+00:47:51,116 --> 00:47:51,506
+Thank you.
+
+
+868
+00:47:52,516 --> 00:48:01,226
+[ Applause ]
+
+
+869
+00:48:01,726 --> 00:48:03,056
+>> Well, good morning everyone.
+
+
+870
+00:48:03,056 --> 00:48:08,796
+I'd like to talk to you
+about the MacBook Air.
+
+
+871
+00:48:09,516 --> 00:48:12,736
+The MacBook Air answer
+the question in this age
+
+
+872
+00:48:12,736 --> 00:48:15,846
+of the iPad, what is the
+future of the notebook?
+
+
+873
+00:48:16,416 --> 00:48:19,096
+The MacBook Air really
+gave us a direction
+
+
+874
+00:48:19,096 --> 00:48:20,816
+of where the notebook can go,
+
+
+875
+00:48:20,816 --> 00:48:23,856
+and it's really become
+everyone's ultimate
+
+
+876
+00:48:24,246 --> 00:48:26,046
+everyday notebook.
+
+
+877
+00:48:26,386 --> 00:48:28,776
+And that's why we're really
+pleased to tell you today
+
+
+878
+00:48:28,776 --> 00:48:32,656
+that we've updated an entirely
+new line of MacBook Air.
+
+
+879
+00:48:32,656 --> 00:48:36,296
+And these new MacBook Airs
+deliver the most important
+
+
+880
+00:48:36,416 --> 00:48:37,736
+feature we always want
+
+
+881
+00:48:38,076 --> 00:48:42,696
+in a portable device,
+all day battery life.
+
+
+882
+00:48:42,696 --> 00:48:42,866
+Yes.
+
+
+883
+00:48:43,516 --> 00:48:47,286
+[ Applause ]
+
+
+884
+00:48:47,786 --> 00:48:49,686
+And the MacBook Air is based
+
+
+885
+00:48:49,686 --> 00:48:52,926
+on a new 4th Generation
+Intel Core Processor,
+
+
+886
+00:48:53,286 --> 00:48:55,486
+otherwise known as Haswell ULT.
+
+
+887
+00:48:55,486 --> 00:48:59,366
+And if you don't know Haswell
+ULT, it's a great processor
+
+
+888
+00:48:59,416 --> 00:49:01,506
+for incredible power savings.
+
+
+889
+00:49:01,736 --> 00:49:03,996
+There's more energy-efficient
+CPUs,
+
+
+890
+00:49:04,056 --> 00:49:06,316
+there's twice the
+graphics execution units
+
+
+891
+00:49:06,656 --> 00:49:08,796
+so we can run them actually
+to slower clock speed
+
+
+892
+00:49:08,796 --> 00:49:12,466
+to save energy and still
+deliver the 40 percent faster
+
+
+893
+00:49:12,466 --> 00:49:13,506
+graphics performance.
+
+
+894
+00:49:14,046 --> 00:49:15,776
+And the Apple engineers
+have worked together
+
+
+895
+00:49:15,776 --> 00:49:19,436
+with the Intel engineers on
+some great low power state
+
+
+896
+00:49:19,436 --> 00:49:21,636
+so we can do things
+like wake in one second
+
+
+897
+00:49:21,886 --> 00:49:24,406
+or standby for up to 30 days.
+
+
+898
+00:49:24,946 --> 00:49:26,896
+But the biggest benefit
+is battery life
+
+
+899
+00:49:27,206 --> 00:49:29,666
+so here is the current
+generation MacBook Air,
+
+
+900
+00:49:29,956 --> 00:49:31,536
+11 inch and 13 inch.
+
+
+901
+00:49:31,876 --> 00:49:35,266
+The 11 inch is now going to go
+from 5 hours of battery life
+
+
+902
+00:49:35,836 --> 00:49:43,866
+up to an incredible 9
+hours of battery life.
+
+
+903
+00:49:43,866 --> 00:49:46,436
+And if you like that,
+the 13 inch goes from 7
+
+
+904
+00:49:46,436 --> 00:49:51,306
+to 12 hours of battery life.
+
+
+905
+00:49:51,306 --> 00:49:54,266
+Yes, true, all day
+battery life and it helps
+
+
+906
+00:49:54,266 --> 00:49:55,676
+across your entire system.
+
+
+907
+00:49:56,016 --> 00:49:58,716
+For example, if you like
+watching movies from iTunes,
+
+
+908
+00:49:58,716 --> 00:50:01,976
+up to 10 hours, you can watch
+almost the entire Trilogy
+
+
+909
+00:50:01,976 --> 00:50:03,966
+of Lord of the Rings,
+it's amazing.
+
+
+910
+00:50:04,116 --> 00:50:07,376
+And of course, MacBook Air
+is based entirely on Flash.
+
+
+911
+00:50:07,636 --> 00:50:10,286
+Flash is faster, up
+to 45 percent faster
+
+
+912
+00:50:10,286 --> 00:50:13,466
+than the previous version
+and Wi-Fi is faster too,
+
+
+913
+00:50:13,466 --> 00:50:16,126
+now 802.11ac Wi-Fi networking.
+
+
+914
+00:50:18,496 --> 00:50:21,536
+Now, ac gets you up to
+three times the performance
+
+
+915
+00:50:21,536 --> 00:50:24,216
+of 802.11n at the same distance.
+
+
+916
+00:50:24,686 --> 00:50:27,186
+But the way to get that of
+course is you want your MacBook
+
+
+917
+00:50:27,186 --> 00:50:31,816
+Air to talk to a Wi-Fi base
+station that supports 802.11ac.
+
+
+918
+00:50:32,036 --> 00:50:33,366
+So, we're really happy to along
+
+
+919
+00:50:33,366 --> 00:50:37,156
+with MacBook Air announce some
+new AirPort Base Stations,
+
+
+920
+00:50:37,486 --> 00:50:41,636
+entirely new designs, they're
+actually a very small base,
+
+
+921
+00:50:41,636 --> 00:50:44,726
+just 4 inches square but
+extruded 6 and a half inches
+
+
+922
+00:50:44,726 --> 00:50:46,906
+to get wider range
+from those antennas.
+
+
+923
+00:50:47,366 --> 00:50:50,556
+So there's a new AirPort
+Extreme that does 802.11ac.
+
+
+924
+00:50:50,676 --> 00:50:52,696
+There's also room in
+there for a hard drive
+
+
+925
+00:50:52,696 --> 00:50:55,076
+so you have a new AirPort
+Time Capsule as well
+
+
+926
+00:50:55,076 --> 00:50:57,116
+and these are great
+base stations.
+
+
+927
+00:50:57,426 --> 00:50:58,746
+They're incredibly powerful,
+
+
+928
+00:50:58,746 --> 00:51:00,266
+they have a lot of
+cool features.
+
+
+929
+00:51:00,266 --> 00:51:01,116
+I'll just point out one,
+
+
+930
+00:51:01,426 --> 00:51:03,576
+beamforming, it even
+sounds cool.
+
+
+931
+00:51:03,826 --> 00:51:08,456
+Beamforming can send more energy
+directly to an 802.11ac device
+
+
+932
+00:51:08,716 --> 00:51:10,536
+to enhance the throughput
+and performance.
+
+
+933
+00:51:10,976 --> 00:51:12,406
+So, these are great
+base stations.
+
+
+934
+00:51:13,516 --> 00:51:16,566
+The MacBook Air comes in
+11 inch and 13 inches sizes
+
+
+935
+00:51:16,776 --> 00:51:19,016
+and the value is even
+greater than before.
+
+
+936
+00:51:19,016 --> 00:51:20,816
+The 11 inch starts at 999
+
+
+937
+00:51:20,816 --> 00:51:23,856
+with 128 gigabytes
+that's twice the storage
+
+
+938
+00:51:24,046 --> 00:51:25,586
+at the same price as before.
+
+
+939
+00:51:25,586 --> 00:51:29,676
+And the 13 inch with
+128 gigs starts at 1099,
+
+
+940
+00:51:29,676 --> 00:51:32,156
+that's 100 dollars less
+expensive than before.
+
+
+941
+00:51:32,156 --> 00:51:35,316
+And these new MacBook
+Airs start shipping today.
+
+
+942
+00:51:36,516 --> 00:51:42,516
+[ Applause ]
+
+
+943
+00:51:43,016 --> 00:51:45,516
+As we have for a while
+now, we're really proud
+
+
+944
+00:51:45,516 --> 00:51:46,696
+that we lead the industry
+
+
+945
+00:51:46,696 --> 00:51:50,666
+in the most environmentally
+friendly products so we're going
+
+
+946
+00:51:50,666 --> 00:51:53,456
+to make sure everyone
+knows how important this is
+
+
+947
+00:51:53,456 --> 00:51:56,566
+to have Energy Star 5.2,
+most products don't.
+
+
+948
+00:51:56,696 --> 00:52:00,286
+EPEAT Gold, most on
+arsenic-free display glass,
+
+
+949
+00:52:00,556 --> 00:52:05,766
+mercury-free displays, BFR-free,
+PVC-free, and highly recyclable.
+
+
+950
+00:52:06,216 --> 00:52:07,976
+We lead at this and we're
+going to continue to.
+
+
+951
+00:52:08,436 --> 00:52:09,966
+So, that's the new MacBook Air.
+
+
+952
+00:52:10,466 --> 00:52:15,576
+They're faster graphics, longer
+battery life, better value,
+
+
+953
+00:52:15,656 --> 00:52:18,376
+faster Wi-Fi, incredible
+notebooks.
+
+
+954
+00:52:18,886 --> 00:52:21,976
+Let me do something different.
+
+
+955
+00:52:22,666 --> 00:52:23,896
+We don't usually do this
+
+
+956
+00:52:23,946 --> 00:52:25,966
+but you're really an
+important audience so we'd
+
+
+957
+00:52:27,016 --> 00:52:29,416
+like to give you a sneak peek
+of something we're working on.
+
+
+958
+00:52:29,416 --> 00:52:30,046
+Would you like that?
+
+
+959
+00:52:30,526 --> 00:52:30,626
+>> Yeah.
+
+
+960
+00:52:31,516 --> 00:52:34,066
+[ Applause ]
+
+
+961
+00:52:34,566 --> 00:52:37,636
+>> Only because you're 6,000
+of my most important friends.
+
+
+962
+00:52:38,516 --> 00:52:45,946
+[ Applause ]
+
+
+963
+00:52:46,446 --> 00:52:50,136
+Video editors, musicians,
+photographers,
+
+
+964
+00:52:50,406 --> 00:52:54,406
+graphic designers count
+on products like Mac Pro
+
+
+965
+00:52:54,406 --> 00:52:58,706
+to get their work done and our
+most advanced users just want
+
+
+966
+00:52:58,706 --> 00:53:00,496
+to get their hands
+on the fastest,
+
+
+967
+00:53:00,496 --> 00:53:01,946
+most expandable Mac we make.
+
+
+968
+00:53:01,946 --> 00:53:05,616
+And the Mac Pro is really
+important to delivering on that.
+
+
+969
+00:53:06,466 --> 00:53:08,746
+We didn't want to just
+make another version
+
+
+970
+00:53:08,746 --> 00:53:11,176
+of the same old desktop
+idea that everyone has had.
+
+
+971
+00:53:11,176 --> 00:53:12,456
+Like with MacBook Air,
+
+
+972
+00:53:12,766 --> 00:53:15,526
+our engineering team has spent
+quite a bit of time thinking
+
+
+973
+00:53:15,526 --> 00:53:19,856
+about the technology available
+today and what could be possible
+
+
+974
+00:53:19,856 --> 00:53:21,936
+for the future of a Pro desktop.
+
+
+975
+00:53:21,936 --> 00:53:24,526
+What would be a new
+formed factor, new design,
+
+
+976
+00:53:24,526 --> 00:53:27,666
+new capabilities for
+another 10 years?
+
+
+977
+00:53:28,856 --> 00:53:30,186
+And the engineering
+team has come
+
+
+978
+00:53:30,186 --> 00:53:34,746
+up with something truly
+revolutionary, truly radical
+
+
+979
+00:53:35,666 --> 00:53:37,316
+and this product is so cool.
+
+
+980
+00:53:37,506 --> 00:53:39,836
+We'll, I'm going to go
+a little over the top
+
+
+981
+00:53:40,386 --> 00:53:43,996
+and give it a grand introduction
+
+
+982
+00:53:44,446 --> 00:53:47,596
+that is unlike any introduction
+we've ever had for a product.
+
+
+983
+00:53:48,056 --> 00:53:52,416
+So, I am really pleased to
+give you our, closest friends,
+
+
+984
+00:53:52,416 --> 00:53:56,356
+the first glimpse of the
+next generation of Mac Pro.
+
+
+985
+00:53:57,516 --> 00:54:17,516
+[ Pause ]
+
+
+986
+00:54:18,016 --> 00:54:49,000
+[ Music ]
+
+
+987
+00:54:49,516 --> 00:55:04,186
+[ Applause ]
+
+
+988
+00:55:04,686 --> 00:55:05,956
+Can't innovate anymore, my ass.
+
+
+989
+00:55:06,516 --> 00:55:14,506
+[ Applause ]
+
+
+990
+00:55:15,006 --> 00:55:15,696
+This is--
+
+
+991
+00:55:16,516 --> 00:55:30,596
+[ Applause ]
+
+
+992
+00:55:31,096 --> 00:55:31,396
+Thank you.
+
+
+993
+00:55:31,436 --> 00:55:33,836
+This is a machine unlike
+anything we've ever made both
+
+
+994
+00:55:33,836 --> 00:55:34,936
+the inside and out.
+
+
+995
+00:55:35,966 --> 00:55:40,666
+The processor, graphics,
+memory storage are all built
+
+
+996
+00:55:40,666 --> 00:55:43,276
+around a new unified
+thermal core.
+
+
+997
+00:55:43,866 --> 00:55:45,126
+That even sounds cool.
+
+
+998
+00:55:46,646 --> 00:55:48,786
+Inside is state-of-the-art
+technology,
+
+
+999
+00:55:48,786 --> 00:55:52,366
+a new generation Intel Xeon
+chip, up to 12 core configs,
+
+
+1000
+00:55:52,366 --> 00:55:56,576
+256-bit-wide floating-point
+PCI Express gen 3.
+
+
+1001
+00:55:56,576 --> 00:55:59,076
+This is double the
+CPU performance
+
+
+1002
+00:55:59,076 --> 00:56:00,246
+of the previous generation.
+
+
+1003
+00:56:00,956 --> 00:56:04,396
+The fastest memory we've ever
+put in our product, ECC memory,
+
+
+1004
+00:56:04,646 --> 00:56:09,376
+1,866 megahertz DDR3 on a
+four-channel controller,
+
+
+1005
+00:56:09,676 --> 00:56:12,036
+60 gigabyte per second
+bandwidth.
+
+
+1006
+00:56:12,716 --> 00:56:15,726
+That's double the performance
+of the previous generation.
+
+
+1007
+00:56:16,606 --> 00:56:19,506
+Internal storage
+is based on flash.
+
+
+1008
+00:56:19,776 --> 00:56:23,606
+Not any old flash,
+new PCIe-based flash.
+
+
+1009
+00:56:23,956 --> 00:56:28,096
+1.25 gigabytes per second reads
+a gigabyte per second writes.
+
+
+1010
+00:56:28,726 --> 00:56:30,916
+That's two and a
+half times faster
+
+
+1011
+00:56:30,916 --> 00:56:32,306
+than any flash we've ever built.
+
+
+1012
+00:56:32,646 --> 00:56:35,566
+It's 10 times faster than
+any hard drive we've put
+
+
+1013
+00:56:35,566 --> 00:56:36,706
+in a Mac Pro before.
+
+
+1014
+00:56:37,606 --> 00:56:41,446
+All expansion is external,
+you can add storage arrays,
+
+
+1015
+00:56:41,446 --> 00:56:43,166
+you can add expansion chassis
+
+
+1016
+00:56:43,586 --> 00:56:48,306
+over the brand new announced
+Thunderbolt 2, it's 20 gigabit
+
+
+1017
+00:56:48,306 --> 00:56:53,036
+for seconds up to six
+Thunderbolt 2 devices per port.
+
+
+1018
+00:56:53,036 --> 00:56:56,346
+It's backwards compatible with
+Thunderbolt 1 and FireWire
+
+
+1019
+00:56:56,346 --> 00:56:59,466
+and it's double the performance
+of the industry's standard
+
+
+1020
+00:56:59,466 --> 00:57:01,516
+and industry of leading
+Thunderbolt 1.
+
+
+1021
+00:57:02,256 --> 00:57:05,736
+But the place where the team has
+probably gone, the most crazy
+
+
+1022
+00:57:05,736 --> 00:57:08,206
+and done something we've never
+done before is in graphics.
+
+
+1023
+00:57:08,546 --> 00:57:11,846
+This is the first Mac
+ever that comes standard
+
+
+1024
+00:57:11,846 --> 00:57:17,226
+with dual workstation GPUs,
+AMD FirePro graphics in it.
+
+
+1025
+00:57:17,596 --> 00:57:21,306
+You can configure it up to
+4,096 screen processors,
+
+
+1026
+00:57:22,016 --> 00:57:24,886
+528 gigabytes per seconds.
+
+
+1027
+00:57:25,156 --> 00:57:28,276
+This is two and a half times
+the graphics performance
+
+
+1028
+00:57:28,276 --> 00:57:29,496
+in the last generation.
+
+
+1029
+00:57:29,726 --> 00:57:31,696
+And for those of
+you who use OpenCL
+
+
+1030
+00:57:31,696 --> 00:57:35,556
+and you all know you should,
+this delivers seven teraflops
+
+
+1031
+00:57:35,826 --> 00:57:37,676
+of compute power to
+your applications.
+
+
+1032
+00:57:38,386 --> 00:57:41,716
+Of course, you want to hook on
+the latest third party displays
+
+
+1033
+00:57:42,146 --> 00:57:44,336
+and this supports 4K displays.
+
+
+1034
+00:57:45,366 --> 00:57:49,996
+Yes, multiple streams
+of 4K displays.
+
+
+1035
+00:57:50,526 --> 00:57:53,356
+You can have up to
+three 4K displays
+
+
+1036
+00:57:53,486 --> 00:57:59,586
+on the built-in dual
+workstation graphics.
+
+
+1037
+00:57:59,586 --> 00:58:01,836
+The Final Cut Pro team is
+hard at work in a version
+
+
+1038
+00:58:01,836 --> 00:58:04,416
+of Final Cut Pro X that will
+support all the performance
+
+
+1039
+00:58:04,566 --> 00:58:05,816
+and graphics capabilities
+
+
+1040
+00:58:05,816 --> 00:58:08,486
+of this Machine,
+you can be this guy.
+
+
+1041
+00:58:12,166 --> 00:58:15,136
+It is a Mac unlike
+any we've ever made.
+
+
+1042
+00:58:15,136 --> 00:58:18,886
+It delivers so much more
+performance, capabilities
+
+
+1043
+00:58:18,886 --> 00:58:20,896
+and expansion than
+anything we've made
+
+
+1044
+00:58:21,506 --> 00:58:23,476
+and here it is alongside
+the previous generation.
+
+
+1045
+00:58:24,516 --> 00:58:29,176
+[ Applause ]
+
+
+1046
+00:58:29,676 --> 00:58:31,126
+The team has packed all
+
+
+1047
+00:58:31,126 --> 00:58:35,086
+of its capability inside
+one eighth the volume
+
+
+1048
+00:58:35,086 --> 00:58:36,156
+of the previous generation.
+
+
+1049
+00:58:36,626 --> 00:58:37,876
+The one thing everyone loved
+
+
+1050
+00:58:37,876 --> 00:58:40,336
+about the old generation Mac
+Pro is those handles on the top
+
+
+1051
+00:58:40,336 --> 00:58:43,576
+so you can move it around
+to get access to the I/O.
+
+
+1052
+00:58:43,806 --> 00:58:47,916
+Well, the entire top of the new
+generation Mac Pro is a handle.
+
+
+1053
+00:58:48,116 --> 00:58:50,616
+Just put your hand in it,
+you can spin it around,
+
+
+1054
+00:58:51,056 --> 00:58:52,546
+get access to the I/O.
+
+
+1055
+00:58:52,796 --> 00:58:55,316
+It's all organized
+beautifully on the back for you.
+
+
+1056
+00:58:55,646 --> 00:59:01,106
+There is audio, four USB 3,
+six FireWire 2 being driven
+
+
+1057
+00:59:01,106 --> 00:59:04,326
+by three FireWire 2
+controllers and you guys
+
+
+1058
+00:59:04,326 --> 00:59:05,976
+who use this stuff know
+what I'm talking about.
+
+
+1059
+00:59:06,456 --> 00:59:10,836
+It's gigabit Ethernet, HDMI
+out and it has a motion sensor
+
+
+1060
+00:59:10,836 --> 00:59:12,966
+so when you turn
+it, it even lights
+
+
+1061
+00:59:12,966 --> 00:59:14,386
+up to show you where the I/O is.
+
+
+1062
+00:59:15,516 --> 00:59:21,066
+[ Applause ]
+
+
+1063
+00:59:21,566 --> 00:59:24,146
+It is a stunning product.
+
+
+1064
+00:59:24,246 --> 00:59:28,496
+This is without doubt the
+future of the Pro desktop.
+
+
+1065
+00:59:29,396 --> 00:59:31,466
+It is coming later this year.
+
+
+1066
+00:59:31,466 --> 00:59:33,106
+I did say this is a sneak peek.
+
+
+1067
+00:59:33,666 --> 00:59:36,456
+It is designed by brilliant
+engineers in California
+
+
+1068
+00:59:36,456 --> 00:59:38,866
+and assembled here in the USA.
+
+
+1069
+00:59:39,516 --> 00:59:45,316
+[ Applause ]
+
+
+1070
+00:59:45,816 --> 00:59:50,076
+And for all of you who are dying
+to see it put towards places
+
+
+1071
+00:59:50,076 --> 00:59:53,086
+and what it can do, we have
+a special session tomorrow,
+
+
+1072
+00:59:53,086 --> 00:59:55,586
+lunch time session for
+all the developers here,
+
+
+1073
+00:59:55,836 --> 00:59:59,106
+for our good friends at
+Pixar along with developers
+
+
+1074
+00:59:59,106 --> 01:00:00,366
+from The Foundry are going
+
+
+1075
+01:00:00,366 --> 01:00:02,536
+to show you some amazing
+character animation
+
+
+1076
+01:00:02,536 --> 01:00:06,036
+in the upcoming movie
+"Monsters U" running
+
+
+1077
+01:00:06,036 --> 01:00:08,736
+on the new generation Mac Pro
+and you want to check it out.
+
+
+1078
+01:00:08,736 --> 01:00:11,896
+And that's the Mac
+Pro, back to you, Tim.
+
+
+1079
+01:00:12,516 --> 01:00:21,226
+[ Applause ]
+
+
+1080
+01:00:21,726 --> 01:00:24,406
+>> You're going to love
+the Mac Pro, it's killer.
+
+
+1081
+01:00:25,346 --> 01:00:27,976
+Next, I'd like to
+talk about iCloud.
+
+
+1082
+01:00:28,556 --> 01:00:34,416
+We've now passed 300 million
+iCloud accounts making iCloud
+
+
+1083
+01:00:34,416 --> 01:00:37,386
+the fastest growing
+Cloud service ever.
+
+
+1084
+01:00:38,646 --> 01:00:43,896
+Now, by comparison, it
+took Facebook five years
+
+
+1085
+01:00:43,896 --> 01:00:45,136
+to reach this many accounts.
+
+
+1086
+01:00:46,126 --> 01:00:50,036
+One of the most popular features
+of iCloud is iTunes in the Cloud
+
+
+1087
+01:00:50,496 --> 01:00:52,946
+which makes all of your
+purchase content available
+
+
+1088
+01:00:52,946 --> 01:00:54,126
+on all of your devices.
+
+
+1089
+01:00:54,796 --> 01:00:58,676
+We now have 300 million users
+of this feature and they read
+
+
+1090
+01:00:58,676 --> 01:01:02,946
+out of their content
+35 billion times.
+
+
+1091
+01:01:04,026 --> 01:01:08,216
+Now, the back-end infrastructure
+of iCloud allows us
+
+
+1092
+01:01:08,216 --> 01:01:11,456
+to provide Cloud services
+across many of our products
+
+
+1093
+01:01:12,326 --> 01:01:15,396
+like Game Center, our
+social gaming network now
+
+
+1094
+01:01:15,396 --> 01:01:18,136
+with over 240 million users.
+
+
+1095
+01:01:19,066 --> 01:01:21,176
+Sixty of the top 100 games
+
+
+1096
+01:01:21,176 --> 01:01:24,496
+on the App Store integrate
+Game Center support right
+
+
+1097
+01:01:24,496 --> 01:01:25,286
+in their game.
+
+
+1098
+01:01:26,556 --> 01:01:30,776
+iCloud is also --
+has incredible scale
+
+
+1099
+01:01:31,586 --> 01:01:35,106
+like sending 800
+billion iMessages,
+
+
+1100
+01:01:36,276 --> 01:01:40,796
+or a mind-boggling 7.4
+trillion push notifications.
+
+
+1101
+01:01:44,516 --> 01:01:48,776
+iCloud allows us to seamlessly
+integrate Cloud services
+
+
+1102
+01:01:48,776 --> 01:01:50,476
+into so many of our products
+
+
+1103
+01:01:50,556 --> 01:01:54,786
+across Apple in both
+OS X and iOS.
+
+
+1104
+01:01:56,316 --> 01:02:01,636
+Today, we want to share with
+you how we're deeply integrating
+
+
+1105
+01:02:01,636 --> 01:02:05,256
+iCloud into the next
+version of iWork.
+
+
+1106
+01:02:05,776 --> 01:02:08,596
+And to do that, I'd like
+to invite Roger Rosner
+
+
+1107
+01:02:08,596 --> 01:02:09,596
+up to the stage.
+
+
+1108
+01:02:10,306 --> 01:02:10,646
+Roger.
+
+
+1109
+01:02:11,516 --> 01:02:17,146
+[ Applause ]
+
+
+1110
+01:02:17,646 --> 01:02:20,516
+>> Hello. Hi, let me tell
+you a little bit about iWork.
+
+
+1111
+01:02:21,216 --> 01:02:23,426
+iWork is pages, numbers,
+and keynote.
+
+
+1112
+01:02:23,896 --> 01:02:26,766
+And we think it's the best way
+to create beautiful documents,
+
+
+1113
+01:02:26,996 --> 01:02:28,416
+spreadsheets and presentations.
+
+
+1114
+01:02:29,446 --> 01:02:32,716
+Of course, iWork was born on
+the Mac and it has full support
+
+
+1115
+01:02:32,716 --> 01:02:36,166
+for the awesome feature set
+of Mac OS X and Mac hardware.
+
+
+1116
+01:02:37,036 --> 01:02:40,416
+We also have amazingly powerful
+and fully multi-touch versions
+
+
+1117
+01:02:40,416 --> 01:02:43,766
+of these apps on the
+iPad and on the iPhone.
+
+
+1118
+01:02:44,556 --> 01:02:46,996
+We think our multi-touch
+apps are the most powerful
+
+
+1119
+01:02:46,996 --> 01:02:49,666
+productivity apps ever
+created for a mobile device.
+
+
+1120
+01:02:50,476 --> 01:02:53,386
+And later this year, we're going
+to have awesome new releases
+
+
+1121
+01:02:53,736 --> 01:02:56,326
+of both our Mac and
+our iOS suites.
+
+
+1122
+01:02:57,236 --> 01:03:00,996
+But today, I want to
+introduce the newest member
+
+
+1123
+01:03:00,996 --> 01:03:06,006
+of the iWork family,
+introducing iWork for iCloud.
+
+
+1124
+01:03:07,086 --> 01:03:10,726
+iWork for iCloud lets you
+create beautiful documents right
+
+
+1125
+01:03:10,726 --> 01:03:13,836
+in a browser on a
+Mac or on a PC.
+
+
+1126
+01:03:13,936 --> 01:03:16,476
+And rather than talk about it,
+
+
+1127
+01:03:16,606 --> 01:03:17,946
+let's just jump right
+into a demo.
+
+
+1128
+01:03:18,516 --> 01:03:24,986
+[ Applause ]
+
+
+1129
+01:03:25,486 --> 01:03:28,746
+All right, I'm going to fire
+up Safari on my Mac here
+
+
+1130
+01:03:29,496 --> 01:03:32,216
+and go straight to
+my iCloud homepage
+
+
+1131
+01:03:32,216 --> 01:03:36,166
+where you see three new app
+icons, and I click on Pages.
+
+
+1132
+01:03:36,786 --> 01:03:41,326
+And here is all the documents
+I've been working on, on my Mac
+
+
+1133
+01:03:41,326 --> 01:03:43,236
+or my iPad and saved in iCloud.
+
+
+1134
+01:03:43,236 --> 01:03:46,596
+I can create a new document by
+clicking Plus and I have a bunch
+
+
+1135
+01:03:46,596 --> 01:03:48,306
+of beautiful Apple-designed
+templates.
+
+
+1136
+01:03:48,306 --> 01:03:51,896
+But let's just open a
+document we were working on.
+
+
+1137
+01:03:55,846 --> 01:03:58,866
+And as you can see, it's a
+beautiful Pages document,
+
+
+1138
+01:04:00,316 --> 01:04:03,946
+great fonts, graphics,
+images, page layouts.
+
+
+1139
+01:04:04,626 --> 01:04:08,886
+This is all happening in
+a web browser of course.
+
+
+1140
+01:04:10,006 --> 01:04:11,586
+So I can just click
+here and type.
+
+
+1141
+01:04:12,346 --> 01:04:17,296
+And over here, I have all
+the formatting controls
+
+
+1142
+01:04:17,296 --> 01:04:19,336
+in our new context-sensitive
+format panel.
+
+
+1143
+01:04:19,336 --> 01:04:23,926
+So I'll just select some
+text, go up to my Styles,
+
+
+1144
+01:04:24,216 --> 01:04:29,666
+choose a text style, select
+some more text, choose another.
+
+
+1145
+01:04:30,426 --> 01:04:33,036
+I can click on some images.
+
+
+1146
+01:04:33,036 --> 01:04:36,296
+And you see, my controls
+now show me Image Controls.
+
+
+1147
+01:04:36,296 --> 01:04:39,836
+I can click on a bunch of
+styles, choose that one.
+
+
+1148
+01:04:39,836 --> 01:04:43,656
+Now, of course, Pages has always
+been great at handling graphics.
+
+
+1149
+01:04:43,786 --> 01:04:45,426
+So, how do I add graphics?
+
+
+1150
+01:04:45,426 --> 01:04:48,346
+Well, I drag one
+in from my desktop,
+
+
+1151
+01:04:49,336 --> 01:04:52,466
+drop it in there
+and drag it around.
+
+
+1152
+01:04:53,516 --> 01:04:59,536
+[ Applause ]
+
+
+1153
+01:05:00,036 --> 01:05:00,516
+All right.
+
+
+1154
+01:05:00,516 --> 01:05:02,266
+Now, we know we live
+in a world full
+
+
+1155
+01:05:02,266 --> 01:05:05,526
+of Microsoft Office documents,
+so how do we work with Office?
+
+
+1156
+01:05:05,526 --> 01:05:09,066
+Well I have a Word document
+here, and I'm just going to drag
+
+
+1157
+01:05:09,066 --> 01:05:10,776
+that in from my desktop and drop
+
+
+1158
+01:05:10,776 --> 01:05:12,696
+that in the Pages
+for iCloud window.
+
+
+1159
+01:05:13,496 --> 01:05:14,246
+It uploads it.
+
+
+1160
+01:05:15,026 --> 01:05:15,936
+I open it up.
+
+
+1161
+01:05:16,516 --> 01:05:20,946
+[ Pause ]
+
+
+1162
+01:05:21,446 --> 01:05:24,356
+And here I am editing a
+Microsoft Word document
+
+
+1163
+01:05:24,726 --> 01:05:26,846
+in Pages for iCloud.
+
+
+1164
+01:05:27,516 --> 01:05:32,806
+[ Applause ]
+
+
+1165
+01:05:33,306 --> 01:05:34,696
+All right, let's take
+a look at numbers.
+
+
+1166
+01:05:35,116 --> 01:05:37,496
+Back to my iCloud homepage,
+click the Numbers icon.
+
+
+1167
+01:05:38,576 --> 01:05:40,046
+Again, a bunch of
+beautiful documents.
+
+
+1168
+01:05:40,816 --> 01:05:45,986
+As you can see, this spreadsheet
+has a bunch of different sheets
+
+
+1169
+01:05:45,986 --> 01:05:49,256
+in it, great charts,
+great tables and graphics.
+
+
+1170
+01:05:50,056 --> 01:05:51,596
+Here on the last
+sheet, we have a table
+
+
+1171
+01:05:51,596 --> 01:05:52,506
+that hasn't been finished.
+
+
+1172
+01:05:52,506 --> 01:05:55,566
+So I'm just going to click
+in a cell, hit Equals.
+
+
+1173
+01:05:56,266 --> 01:05:59,226
+We get help for the over
+250 functions that we have.
+
+
+1174
+01:06:00,016 --> 01:06:03,396
+But I'll just type SUM,
+select this column,
+
+
+1175
+01:06:03,986 --> 01:06:06,676
+and there you go,
+my chart updates.
+
+
+1176
+01:06:07,276 --> 01:06:10,326
+If I want to fill this
+across the rest of the table,
+
+
+1177
+01:06:10,936 --> 01:06:13,636
+I'll just drag it across,
+a real spreadsheet.
+
+
+1178
+01:06:13,636 --> 01:06:15,956
+Again, this is all
+happening in a web browser.
+
+
+1179
+01:06:17,516 --> 01:06:22,926
+[ Applause ]
+
+
+1180
+01:06:23,426 --> 01:06:24,756
+All right, let's try Keynote.
+
+
+1181
+01:06:25,436 --> 01:06:29,026
+I will open this
+presentation here.
+
+
+1182
+01:06:30,066 --> 01:06:34,166
+And it's a real keynote
+presentation,
+
+
+1183
+01:06:35,336 --> 01:06:37,316
+photographs, texts, fonts.
+
+
+1184
+01:06:37,876 --> 01:06:40,486
+I can rearrange the
+slides if I want to.
+
+
+1185
+01:06:41,396 --> 01:06:42,446
+I can add a new slide.
+
+
+1186
+01:06:42,446 --> 01:06:45,676
+I'll click the Plus button
+down here, choose this layout.
+
+
+1187
+01:06:45,676 --> 01:06:47,266
+Let's give it a title.
+
+
+1188
+01:06:47,266 --> 01:06:51,676
+And let's try again imaging.
+
+
+1189
+01:06:51,996 --> 01:06:58,986
+Move it around, get the
+alignment guides we all love
+
+
+1190
+01:06:58,986 --> 01:06:59,646
+from Keynote.
+
+
+1191
+01:07:00,316 --> 01:07:02,326
+Double-click to go
+into masking mode,
+
+
+1192
+01:07:03,236 --> 01:07:06,496
+scale up that mask a
+little, recenter it.
+
+
+1193
+01:07:07,766 --> 01:07:09,746
+Let's give it a photo border,
+
+
+1194
+01:07:09,746 --> 01:07:12,086
+let's make the border
+a little thicker.
+
+
+1195
+01:07:13,216 --> 01:07:15,026
+Let's rotate the image.
+
+
+1196
+01:07:15,836 --> 01:07:18,376
+This is all happening in a
+browser, it's pretty incredible.
+
+
+1197
+01:07:19,516 --> 01:07:24,056
+[ Applause ]
+
+
+1198
+01:07:24,556 --> 01:07:25,726
+How about animations?
+
+
+1199
+01:07:26,036 --> 01:07:30,966
+Let's add a cube animation
+here and click play.
+
+
+1200
+01:07:31,516 --> 01:07:34,086
+[ Pause ]
+
+
+1201
+01:07:34,586 --> 01:07:38,846
+And there, you see our
+beautiful Keynote 3D animations
+
+
+1202
+01:07:39,886 --> 01:07:40,776
+in a browser window.
+
+
+1203
+01:07:41,516 --> 01:07:48,636
+[ Applause ]
+
+
+1204
+01:07:49,136 --> 01:07:49,426
+All right.
+
+
+1205
+01:07:49,426 --> 01:07:51,576
+I'm sure everyone wants to know
+how does this work on Windows.
+
+
+1206
+01:07:52,226 --> 01:07:54,116
+Well, here it is.
+
+
+1207
+01:07:54,116 --> 01:07:58,926
+This is a Windows 8 desktop,
+I have IE and Chrome here,
+
+
+1208
+01:07:58,926 --> 01:08:00,186
+I'm just going to
+fire up Chrome.
+
+
+1209
+01:08:01,516 --> 01:08:06,606
+[ Laughter ]
+
+
+1210
+01:08:07,106 --> 01:08:09,116
+And it's logged in as the
+same user I was logged
+
+
+1211
+01:08:09,116 --> 01:08:09,936
+into on the Mac.
+
+
+1212
+01:08:09,936 --> 01:08:11,666
+So I'm going to open
+that same document.
+
+
+1213
+01:08:12,276 --> 01:08:17,006
+As you can see, it's the same,
+there's the slide we just made.
+
+
+1214
+01:08:18,055 --> 01:08:21,746
+Let's go in there and make
+that mask a little bit tighter
+
+
+1215
+01:08:21,746 --> 01:08:23,086
+and move it around a little.
+
+
+1216
+01:08:23,906 --> 01:08:24,345
+And there we go.
+
+
+1217
+01:08:24,345 --> 01:08:27,305
+I'm editing a Keynote
+document on Windows 8.
+
+
+1218
+01:08:28,515 --> 01:08:38,055
+[ Applause ]
+
+
+1219
+01:08:38,555 --> 01:08:39,145
+All right.
+
+
+1220
+01:08:39,145 --> 01:08:40,496
+That is iWork for iCloud.
+
+
+1221
+01:08:40,496 --> 01:08:42,176
+Now, we know, in a lot of cases,
+
+
+1222
+01:08:42,176 --> 01:08:43,876
+that the best user
+experiences are made
+
+
+1223
+01:08:43,876 --> 01:08:45,156
+with native app technologies.
+
+
+1224
+01:08:45,206 --> 01:08:47,345
+But I think you can
+see with iWork
+
+
+1225
+01:08:47,345 --> 01:08:49,636
+for iCloud you can do some
+pretty great stuff on the web.
+
+
+1226
+01:08:50,546 --> 01:08:52,656
+As I mentioned, we
+support IE or--
+
+
+1227
+01:08:52,656 --> 01:08:54,595
+we support Safari
+best I should say.
+
+
+1228
+01:08:55,036 --> 01:08:57,015
+Like all websites, we
+run best in Safari.
+
+
+1229
+01:08:57,015 --> 01:08:59,216
+We also support IE and Chrome.
+
+
+1230
+01:09:00,586 --> 01:09:02,576
+And now, you have iWork
+on all of your devices.
+
+
+1231
+01:09:02,756 --> 01:09:05,676
+You can create a document
+on your Mac, you can edit
+
+
+1232
+01:09:05,676 --> 01:09:08,656
+on your PC, and you can
+present from your iPhone.
+
+
+1233
+01:09:08,656 --> 01:09:12,015
+We're going to make this
+available starting today
+
+
+1234
+01:09:12,015 --> 01:09:13,156
+as a developer beta.
+
+
+1235
+01:09:13,975 --> 01:09:17,595
+Just go to iCloud and
+we'll expand that beta
+
+
+1236
+01:09:17,595 --> 01:09:20,196
+to include all users of
+iCloud later in the year.
+
+
+1237
+01:09:20,805 --> 01:09:21,446
+Thank you very much.
+
+
+1238
+01:09:21,446 --> 01:09:22,975
+Send us your feedback.
+
+
+1239
+01:09:23,515 --> 01:09:30,236
+[ Applause ]
+
+
+1240
+01:09:30,736 --> 01:09:34,666
+>> OK. Next, we'd like to
+turn our attention to iOS.
+
+
+1241
+01:09:35,515 --> 01:09:39,706
+[ Applause ]
+
+
+1242
+01:09:40,206 --> 01:09:43,286
+iOS is the world's most
+advanced mobile operating system
+
+
+1243
+01:09:43,286 --> 01:09:46,926
+and powers the world's
+best mobile devices.
+
+
+1244
+01:09:47,586 --> 01:09:49,196
+iPad, iPhone, and iPod Touch.
+
+
+1245
+01:09:49,856 --> 01:09:54,726
+We have now sold over
+600 million iOS devices.
+
+
+1246
+01:09:54,726 --> 01:09:56,606
+It's an incredible number.
+
+
+1247
+01:09:57,106 --> 01:09:59,546
+[Applause]
+
+
+1248
+01:10:00,046 --> 01:10:02,176
+But, it's extraordinary
+and we're proud of it,
+
+
+1249
+01:10:02,956 --> 01:10:04,226
+but it's not what drives us.
+
+
+1250
+01:10:05,396 --> 01:10:08,426
+We want to make the best
+products that people use more
+
+
+1251
+01:10:08,456 --> 01:10:10,526
+and love more than
+anyone else's.
+
+
+1252
+01:10:11,816 --> 01:10:13,436
+And I'm really happy
+to tell you,
+
+
+1253
+01:10:13,566 --> 01:10:16,866
+people are using our
+products substantially more
+
+
+1254
+01:10:16,866 --> 01:10:17,726
+than anyone else's.
+
+
+1255
+01:10:18,526 --> 01:10:19,276
+Let me show you.
+
+
+1256
+01:10:20,356 --> 01:10:24,936
+This recent study from Experian
+showed that iPhone users use
+
+
+1257
+01:10:24,936 --> 01:10:30,516
+of iPhone 50 percent more than
+Android users use their phone.
+
+
+1258
+01:10:31,336 --> 01:10:34,486
+Now this is incredible
+but may be not surprising.
+
+
+1259
+01:10:34,486 --> 01:10:43,026
+And if you look at mobile web
+share, it's not even close.
+
+
+1260
+01:10:43,556 --> 01:10:47,716
+iOS is two and a
+half times Android.
+
+
+1261
+01:10:47,716 --> 01:10:52,526
+And if you look at iPads
+compared to all other tablets,
+
+
+1262
+01:10:53,076 --> 01:10:54,456
+it's not even comparable.
+
+
+1263
+01:10:55,326 --> 01:10:57,966
+iPad is over four times more.
+
+
+1264
+01:10:59,466 --> 01:11:01,626
+Now this shows up in
+a variety of ways.
+
+
+1265
+01:11:01,626 --> 01:11:06,556
+As an example, just like
+iOS customers buy more
+
+
+1266
+01:11:06,556 --> 01:11:11,646
+of your incredible apps,
+they evidently also buy a lot
+
+
+1267
+01:11:11,646 --> 01:11:14,426
+of everything else according
+to a recent IBM survey.
+
+
+1268
+01:11:15,536 --> 01:11:19,456
+Both iPhone and iPad
+customers were responsible
+
+
+1269
+01:11:19,526 --> 01:11:22,696
+for materially more
+mobile shopping traffic
+
+
+1270
+01:11:23,126 --> 01:11:26,776
+than all other Android
+devices combined
+
+
+1271
+01:11:26,856 --> 01:11:29,066
+on the most critical day
+of shopping last year.
+
+
+1272
+01:11:30,286 --> 01:11:33,136
+Now, it probably
+doesn't surprise you
+
+
+1273
+01:11:33,316 --> 01:11:37,256
+if people are using them
+more, they love them more.
+
+
+1274
+01:11:38,266 --> 01:11:43,276
+And this is what is
+most important to us.
+
+
+1275
+01:11:43,506 --> 01:11:45,156
+iPhone was named number one
+
+
+1276
+01:11:45,156 --> 01:11:47,786
+in customer satisfaction
+by J.D. Power.
+
+
+1277
+01:11:48,226 --> 01:11:52,296
+Not just once, but
+nine consecutive times.
+
+
+1278
+01:11:52,356 --> 01:11:54,356
+The first time this
+has ever been done.
+
+
+1279
+01:11:55,516 --> 01:12:00,996
+[ Applause ]
+
+
+1280
+01:12:01,496 --> 01:12:04,986
+And iOS satisfaction is
+literally off the charts.
+
+
+1281
+01:12:05,346 --> 01:12:09,356
+Change Wage [phonetic] recently
+measured it at 97 percent.
+
+
+1282
+01:12:09,896 --> 01:12:14,156
+And if you look at those
+people that responded
+
+
+1283
+01:12:14,156 --> 01:12:18,246
+that they're very satisfied
+and really look at the detail
+
+
+1284
+01:12:18,246 --> 01:12:23,966
+which I'm sometimes known to
+do, you would see that iOS blows
+
+
+1285
+01:12:23,966 --> 01:12:27,276
+out everyone else,
+20 points better
+
+
+1286
+01:12:27,576 --> 01:12:29,356
+than our closest competitor
+
+
+1287
+01:12:29,766 --> 01:12:32,426
+and almost 25 points
+better than Android.
+
+
+1288
+01:12:33,516 --> 01:12:38,636
+[ Applause ]
+
+
+1289
+01:12:39,136 --> 01:12:41,246
+One of the reasons for this is
+
+
+1290
+01:12:41,246 --> 01:12:44,316
+that we provide amazing
+software updates
+
+
+1291
+01:12:44,806 --> 01:12:48,146
+that provide users
+incredible new features.
+
+
+1292
+01:12:49,086 --> 01:12:52,216
+And we do this easily
+and make them available
+
+
+1293
+01:12:52,216 --> 01:12:54,326
+to as many users as possible.
+
+
+1294
+01:12:55,436 --> 01:12:56,296
+Let me show you.
+
+
+1295
+01:12:57,386 --> 01:13:03,326
+Over 90 percent of iOS users are
+using the latest version of iOS.
+
+
+1296
+01:13:03,326 --> 01:13:08,256
+Now, that's in stark contrast
+to the world of Android.
+
+
+1297
+01:13:10,106 --> 01:13:14,646
+And by the way, this is the
+most ideal state of Android.
+
+
+1298
+01:13:14,646 --> 01:13:17,686
+It only includes us version
+of Android which talk
+
+
+1299
+01:13:17,686 --> 01:13:19,156
+to the Google Play store.
+
+
+1300
+01:13:19,476 --> 01:13:21,986
+So it doesn't things
+like Kindles and Nooks.
+
+
+1301
+01:13:23,136 --> 01:13:26,486
+But even then, it's
+a pretty bleak story.
+
+
+1302
+01:13:27,536 --> 01:13:31,826
+More than a third of Android
+users are using an operating
+
+
+1303
+01:13:31,936 --> 01:13:36,986
+system that was released
+in 2010.
+
+
+1304
+01:13:37,116 --> 01:13:41,276
+And if you look at the customers
+of each operating system
+
+
+1305
+01:13:41,536 --> 01:13:45,946
+which are using the latest
+version, it's not even close.
+
+
+1306
+01:13:47,206 --> 01:13:49,476
+Now this isn't just
+bad for users,
+
+
+1307
+01:13:49,996 --> 01:13:52,586
+but this version
+fragmentation is terrible
+
+
+1308
+01:13:52,586 --> 01:13:57,426
+for developers as
+many of you know.
+
+
+1309
+01:13:57,836 --> 01:14:00,606
+In fact, if you do the
+math, you would find
+
+
+1310
+01:14:00,606 --> 01:14:05,736
+that iOS 6 is the world's most
+popular mobile operating system
+
+
+1311
+01:14:06,326 --> 01:14:09,216
+and in second place is
+a version of Android
+
+
+1312
+01:14:09,736 --> 01:14:11,886
+which was released in 2010.
+
+
+1313
+01:14:13,626 --> 01:14:18,866
+Now this is why we get so
+excited when we're working
+
+
+1314
+01:14:18,866 --> 01:14:22,726
+on a new version of
+iOS because we know
+
+
+1315
+01:14:22,726 --> 01:14:26,386
+that we can positively
+affect millions of developers
+
+
+1316
+01:14:27,306 --> 01:14:29,796
+and hundreds of millions
+of users.
+
+
+1317
+01:14:31,166 --> 01:14:36,756
+And that is exactly
+what we've been up to.
+
+
+1318
+01:14:36,996 --> 01:14:41,306
+The team at Apple has been
+working incredibly hard
+
+
+1319
+01:14:41,956 --> 01:14:44,336
+on the latest version of iOS.
+
+
+1320
+01:14:45,556 --> 01:14:51,036
+And today, it's of great
+thrill that I announce iOS 7.
+
+
+1321
+01:14:52,516 --> 01:14:59,276
+[ Applause ]
+
+
+1322
+01:14:59,776 --> 01:15:03,346
+iOS 7 is the biggest
+change to iOS
+
+
+1323
+01:15:03,346 --> 01:15:05,286
+since the introduction
+of iPhone.
+
+
+1324
+01:15:05,806 --> 01:15:08,216
+It's packed with
+amazing new features
+
+
+1325
+01:15:09,136 --> 01:15:11,316
+and a stunning new
+user interface.
+
+
+1326
+01:15:12,876 --> 01:15:17,106
+We prepared a video to show you
+our thinking behind the design
+
+
+1327
+01:15:17,456 --> 01:15:22,406
+and I'd like to run
+it for you now.
+
+
+1328
+01:15:22,406 --> 01:15:24,016
+[Applause]
+
+
+1329
+01:15:24,016 --> 01:15:32,000
+[ Music ]
+
+
+1330
+01:15:32,046 --> 01:15:36,946
+>> We have always thought of
+design as being so much more
+
+
+1331
+01:15:36,946 --> 01:15:39,166
+than just the way
+something looks.
+
+
+1332
+01:15:39,166 --> 01:15:39,986
+It's the whole thing.
+
+
+1333
+01:15:39,986 --> 01:15:46,816
+The way something actually works
+on so many different levels.
+
+
+1334
+01:15:46,816 --> 01:15:56,966
+Ultimately, of course,
+design defines
+
+
+1335
+01:15:56,966 --> 01:15:58,976
+so much about experience.
+
+
+1336
+01:15:59,516 --> 01:16:08,546
+[ Music ]
+
+
+1337
+01:16:09,046 --> 01:16:16,876
+I think there is a profound and
+enduring beauty in simplicity,
+
+
+1338
+01:16:16,876 --> 01:16:20,466
+in clarity, in efficiency.
+
+
+1339
+01:16:20,556 --> 01:16:24,146
+True simplicity is
+derived from so much more
+
+
+1340
+01:16:24,226 --> 01:16:29,836
+than just the absence of
+clutter and ornamentation.
+
+
+1341
+01:16:29,836 --> 01:16:32,686
+It's about bringing
+order to complexity.
+
+
+1342
+01:16:33,516 --> 01:16:36,676
+[ Music ]
+
+
+1343
+01:16:37,176 --> 01:16:45,946
+iOS 7 is a clear
+representation of these goals.
+
+
+1344
+01:16:46,376 --> 01:16:51,676
+It has a whole new
+structure that is coherent
+
+
+1345
+01:16:51,676 --> 01:16:54,866
+and it is applied
+across the entire system.
+
+
+1346
+01:16:55,516 --> 01:17:04,846
+[ Music ]
+
+
+1347
+01:17:05,346 --> 01:17:08,606
+We've considered
+the tiniest details,
+
+
+1348
+01:17:08,606 --> 01:17:12,606
+like refining the
+typography, to much larger ones
+
+
+1349
+01:17:12,606 --> 01:17:15,016
+like redesigning all the icons,
+
+
+1350
+01:17:15,016 --> 01:17:18,296
+and developing a grid
+system allowed us
+
+
+1351
+01:17:18,296 --> 01:17:21,496
+to achieve a much more
+harmonious relationship
+
+
+1352
+01:17:21,756 --> 01:17:24,876
+between individual elements.
+
+
+1353
+01:17:24,876 --> 01:17:27,746
+We've also incorporated a
+whole new palette of colors.
+
+
+1354
+01:17:28,516 --> 01:17:31,546
+[ Music ]
+
+
+1355
+01:17:32,046 --> 01:17:37,976
+Distinct, functional layers help
+establish hierarchy and order.
+
+
+1356
+01:17:38,516 --> 01:17:42,556
+[ Music ]
+
+
+1357
+01:17:43,056 --> 01:17:46,646
+And the use of translucency
+gives you a sense
+
+
+1358
+01:17:46,936 --> 01:17:50,226
+of your context.
+
+
+1359
+01:17:50,506 --> 01:17:56,856
+These planes, combined with
+new approaches to animation
+
+
+1360
+01:17:56,856 --> 01:18:00,316
+and motion, create a sense
+of depth and vitality.
+
+
+1361
+01:18:01,516 --> 01:18:08,986
+[ Music & Applause ]
+
+
+1362
+01:18:09,486 --> 01:18:13,486
+The iPhone responding to your
+movements drives the parallax
+
+
+1363
+01:18:14,276 --> 01:18:17,136
+to create a whole new
+experience of depth.
+
+
+1364
+01:18:18,516 --> 01:18:21,546
+[ Music ]
+
+
+1365
+01:18:22,046 --> 01:18:26,786
+In many ways, we tried
+to create an interface
+
+
+1366
+01:18:26,786 --> 01:18:31,366
+that is unobtrusive
+and deferential.
+
+
+1367
+01:18:31,366 --> 01:18:35,756
+One where the design
+recedes and in doing
+
+
+1368
+01:18:35,756 --> 01:18:37,916
+so actually elevates
+your content.
+
+
+1369
+01:18:38,046 --> 01:18:41,236
+Even the simple act of changing
+your wallpaper has a very
+
+
+1370
+01:18:41,236 --> 01:18:47,726
+noticeable effect on the way
+your iPhone looks and feels
+
+
+1371
+01:18:47,916 --> 01:18:49,626
+across the entire system.
+
+
+1372
+01:18:50,516 --> 01:18:53,226
+[ Music ]
+
+
+1373
+01:18:53,726 --> 01:18:59,186
+While iOS 7 is completely
+new, it was important to us
+
+
+1374
+01:18:59,186 --> 01:19:00,736
+to make it instantly familiar.
+
+
+1375
+01:19:01,516 --> 01:19:05,926
+[ Music ]
+
+
+1376
+01:19:06,426 --> 01:19:10,236
+We wanted to take an experience
+to people know very well
+
+
+1377
+01:19:10,236 --> 01:19:13,886
+and actually add to it
+to make it more useful,
+
+
+1378
+01:19:14,326 --> 01:19:17,966
+to make enjoyable.
+
+
+1379
+01:19:18,456 --> 01:19:22,116
+To create it, we brought
+together a broad range
+
+
+1380
+01:19:22,186 --> 01:19:26,896
+of expertise from
+design to engineering.
+
+
+1381
+01:19:27,196 --> 01:19:31,276
+With what we've been able to
+achieve together, we see iOS 7
+
+
+1382
+01:19:31,276 --> 01:19:35,586
+as defining an important
+new direction,
+
+
+1383
+01:19:36,126 --> 01:19:37,916
+and in many ways, a beginning.
+
+
+1384
+01:19:38,516 --> 01:19:40,516
+[ Music ]
+
+
+1385
+01:19:41,016 --> 01:20:14,000
+[ Applause ]
+
+
+1386
+01:20:15,506 --> 01:20:18,556
+>> You are going to
+absolutely love iOS 7.
+
+
+1387
+01:20:18,746 --> 01:20:19,586
+>> We love you!
+
+
+1388
+01:20:19,721 --> 01:20:21,721
+[Laughter]
+
+
+1389
+01:20:21,856 --> 01:20:22,776
+>> This-- thank you.
+
+
+1390
+01:20:22,966 --> 01:20:28,256
+This major effort, this
+major effort is only possible
+
+
+1391
+01:20:29,696 --> 01:20:33,276
+because of the incredible
+collaboration between Johnny
+
+
+1392
+01:20:33,696 --> 01:20:36,776
+and his amazing design
+team and Craig
+
+
+1393
+01:20:36,776 --> 01:20:39,366
+and his incredible
+engineering team.
+
+
+1394
+01:20:40,676 --> 01:20:45,056
+Without further ado, I'd like
+to invite Craig, back up,
+
+
+1395
+01:20:45,056 --> 01:20:50,256
+to take you through iOS
+7, the biggest change
+
+
+1396
+01:20:50,256 --> 01:20:52,806
+to iOS since the iPhone.
+
+
+1397
+01:20:53,086 --> 01:20:53,376
+Craig.
+
+
+1398
+01:20:54,516 --> 01:21:04,016
+[ Applause ]
+
+
+1399
+01:21:04,516 --> 01:21:08,606
+>> Well, on behalf of all of
+the engineers and designers
+
+
+1400
+01:21:08,606 --> 01:21:12,306
+who worked so hard to
+make today a reality,
+
+
+1401
+01:21:12,686 --> 01:21:16,406
+I'm absolutely thrilled at this
+opportunity to show you iOS 7.
+
+
+1402
+01:21:16,926 --> 01:21:17,746
+Let's take a look.
+
+
+1403
+01:21:19,806 --> 01:21:20,786
+It's unbelievable.
+
+
+1404
+01:21:21,216 --> 01:21:22,576
+It's just gorgeous.
+
+
+1405
+01:21:22,876 --> 01:21:27,916
+From the typography on this
+lock screen to the vitality
+
+
+1406
+01:21:27,916 --> 01:21:31,916
+of the background of an
+animation, to the home screen
+
+
+1407
+01:21:32,426 --> 01:21:37,016
+with these icons, it looks so
+great, it just look fantastic.
+
+
+1408
+01:21:37,016 --> 01:21:41,906
+And, you know, a lot of us have
+our own wallpaper, you know,
+
+
+1409
+01:21:41,906 --> 01:21:43,396
+I mean like pictures
+of our family there.
+
+
+1410
+01:21:43,396 --> 01:21:46,886
+And now that liveliness
+actually carries
+
+
+1411
+01:21:46,946 --> 01:21:50,306
+through to the home screen,
+because as you move the device
+
+
+1412
+01:21:50,306 --> 01:21:52,986
+on your hand it actually
+tracks your motion.
+
+
+1413
+01:21:54,406 --> 01:21:57,066
+And as parallax that-- but you
+can see the behind the icons.
+
+
+1414
+01:21:57,326 --> 01:21:59,776
+It's really incredible
+and it carries
+
+
+1415
+01:21:59,776 --> 01:22:02,006
+over across the system,
+this liveliness.
+
+
+1416
+01:22:02,006 --> 01:22:04,366
+I mean just take a look
+at something like weather,
+
+
+1417
+01:22:05,576 --> 01:22:08,246
+with emotion conveys this
+information and where the edge
+
+
+1418
+01:22:08,246 --> 01:22:11,156
+to edge design just takes
+advantage of every pixel
+
+
+1419
+01:22:11,856 --> 01:22:12,976
+on that retina display.
+
+
+1420
+01:22:13,576 --> 01:22:14,406
+It's so nice.
+
+
+1421
+01:22:15,816 --> 01:22:19,176
+It's great for apps you use
+everyday, like messages,
+
+
+1422
+01:22:19,546 --> 01:22:25,876
+your calendar, your
+email is gorgeous.
+
+
+1423
+01:22:27,106 --> 01:22:29,326
+Your friends never
+looked more attractive.
+
+
+1424
+01:22:32,986 --> 01:22:35,236
+And Game Center, we
+just completely ran
+
+
+1425
+01:22:35,236 --> 01:22:36,156
+out of green felt.
+
+
+1426
+01:22:37,516 --> 01:22:44,546
+[ Applause ]
+
+
+1427
+01:22:45,046 --> 01:22:45,996
+And wood as well.
+
+
+1428
+01:22:45,996 --> 01:22:47,666
+This has got to be good
+for the environment.
+
+
+1429
+01:22:49,156 --> 01:22:50,466
+The clocks look great.
+
+
+1430
+01:22:50,926 --> 01:22:53,906
+And even apps like
+Stocks and Compass,
+
+
+1431
+01:22:53,906 --> 01:22:56,906
+but they just have this look of
+precision, a sense of purpose.
+
+
+1432
+01:22:57,396 --> 01:23:00,676
+The best way to appreciate
+iOS 7 is to see it live.
+
+
+1433
+01:23:01,096 --> 01:23:02,746
+I'd like to give you
+a demo right now.
+
+
+1434
+01:23:03,516 --> 01:23:08,646
+[ Applause ]
+
+
+1435
+01:23:09,146 --> 01:23:12,666
+So let's take our first
+live look at iOS 7.
+
+
+1436
+01:23:12,846 --> 01:23:13,476
+Here it is.
+
+
+1437
+01:23:13,476 --> 01:23:16,316
+You can see how the
+device actually response
+
+
+1438
+01:23:16,316 --> 01:23:17,586
+to the motion in my hand.
+
+
+1439
+01:23:18,646 --> 01:23:20,696
+Just slide out the lock screen.
+
+
+1440
+01:23:20,696 --> 01:23:21,316
+You see how it slides in.
+
+
+1441
+01:23:21,316 --> 01:23:22,336
+And I want you now to look away
+
+
+1442
+01:23:22,336 --> 01:23:24,586
+for a moment while I
+type in my password.
+
+
+1443
+01:23:24,626 --> 01:23:25,886
+OK, you can look again.
+
+
+1444
+01:23:26,806 --> 01:23:28,176
+OK, don't tell anyone
+about that.
+
+
+1445
+01:23:28,876 --> 01:23:29,056
+All right.
+
+
+1446
+01:23:29,156 --> 01:23:33,286
+So here we are on the
+gorgeous new home screen.
+
+
+1447
+01:23:33,286 --> 01:23:34,196
+Let's go into Weather.
+
+
+1448
+01:23:35,476 --> 01:23:37,546
+You see in Weather, it's
+a little cloudy today.
+
+
+1449
+01:23:37,546 --> 01:23:41,126
+I can actually tap here, the
+degrees get more information
+
+
+1450
+01:23:41,126 --> 01:23:45,646
+like humidity and rain,
+swipe through some locations,
+
+
+1451
+01:23:47,086 --> 01:23:50,866
+clear in Sydney, kind
+of hot in Phoenix.
+
+
+1452
+01:23:52,766 --> 01:23:56,406
+Here in a big thunder mountain,
+it's looking little rough.
+
+
+1453
+01:23:56,966 --> 01:23:58,886
+We've got some thunder brewing.
+
+
+1454
+01:24:00,116 --> 01:24:06,816
+Oh, yeah. [applause] Some heavy
+snow here on the North Pole
+
+
+1455
+01:24:08,066 --> 01:24:11,926
+and tropical storm here
+in Gilligan's Island,
+
+
+1456
+01:24:11,926 --> 01:24:13,816
+I hope they got off that island.
+
+
+1457
+01:24:14,206 --> 01:24:18,116
+So, and it's no functional
+than ever.
+
+
+1458
+01:24:18,116 --> 01:24:22,336
+If you pinch, you get
+this gorgeous overview
+
+
+1459
+01:24:22,586 --> 01:24:23,416
+of all your cities.
+
+
+1460
+01:24:25,626 --> 01:24:28,346
+Even with the time, so
+it's a world clock as well.
+
+
+1461
+01:24:29,176 --> 01:24:30,416
+Let's take a look
+at the Calendar.
+
+
+1462
+01:24:32,866 --> 01:24:36,406
+So clean, swipe from
+days to day like this,
+
+
+1463
+01:24:37,086 --> 01:24:39,736
+turn it into landscape,
+see your whole week
+
+
+1464
+01:24:39,736 --> 01:24:41,966
+at a glance, got
+a big week ahead.
+
+
+1465
+01:24:43,416 --> 01:24:47,176
+Zoom out. Scroll easily
+through your months,
+
+
+1466
+01:24:47,816 --> 01:24:50,106
+we even go all the
+way out to the year.
+
+
+1467
+01:24:50,106 --> 01:24:52,016
+Let's take a look at Messages.
+
+
+1468
+01:24:52,016 --> 01:24:56,696
+You know, so we scroll,
+we have this great sort
+
+
+1469
+01:24:56,696 --> 01:24:57,646
+of playful motion.
+
+
+1470
+01:24:57,646 --> 01:25:01,626
+The bubbles, spring
+up the keyboard,
+
+
+1471
+01:25:02,046 --> 01:25:03,906
+lets you slide contents
+of the keyboard.
+
+
+1472
+01:25:03,906 --> 01:25:06,636
+You see the layering in
+transparency, it gives you
+
+
+1473
+01:25:06,636 --> 01:25:07,846
+that sense of context.
+
+
+1474
+01:25:08,666 --> 01:25:10,996
+There's this gesture now from
+the left edge of the device,
+
+
+1475
+01:25:10,996 --> 01:25:12,746
+it's great for using
+the device at one hand.
+
+
+1476
+01:25:12,746 --> 01:25:15,376
+If I want to just go back, I
+can just swipe from the edge
+
+
+1477
+01:25:15,376 --> 01:25:19,826
+of the display, pull back
+like that, move in and out.
+
+
+1478
+01:25:20,956 --> 01:25:21,956
+So clean and natural.
+
+
+1479
+01:25:21,956 --> 01:25:24,616
+Let's take a look at folders,
+
+
+1480
+01:25:24,796 --> 01:25:26,326
+and it go here into
+my Games folder.
+
+
+1481
+01:25:26,326 --> 01:25:29,106
+I can have multiple pages,
+
+
+1482
+01:25:29,966 --> 01:25:35,926
+stored under these
+items not folders.
+
+
+1483
+01:25:35,926 --> 01:25:36,176
+It's awesome.
+
+
+1484
+01:25:36,766 --> 01:25:38,316
+Take a look at Game Center.
+
+
+1485
+01:25:39,026 --> 01:25:47,496
+Some of those good
+looking friends.
+
+
+1486
+01:25:47,496 --> 01:25:49,866
+Let's take a look at Mail.
+
+
+1487
+01:25:50,606 --> 01:25:55,506
+And the type is just so clean
+and you drill into a message.
+
+
+1488
+01:25:55,686 --> 01:25:57,666
+Look at how you get
+this full screen edge
+
+
+1489
+01:25:57,666 --> 01:25:59,466
+to edge photos, it's
+really great.
+
+
+1490
+01:25:59,466 --> 01:26:00,886
+And that gesture from moving in
+
+
+1491
+01:26:00,886 --> 01:26:02,136
+and out works here
+too, of course.
+
+
+1492
+01:26:02,586 --> 01:26:05,396
+Just move between
+messages, just like this.
+
+
+1493
+01:26:05,396 --> 01:26:06,126
+It's so great.
+
+
+1494
+01:26:07,036 --> 01:26:09,016
+And if you just slide
+across in any item,
+
+
+1495
+01:26:09,046 --> 01:26:11,886
+you can get at the
+Trash and More Options
+
+
+1496
+01:26:12,196 --> 01:26:13,926
+as well right here in Mail.
+
+
+1497
+01:26:14,996 --> 01:26:17,256
+Finally, let's take a look
+at Notification Center.
+
+
+1498
+01:26:17,706 --> 01:26:19,656
+Same as always, we can
+just swipe out from the top
+
+
+1499
+01:26:19,656 --> 01:26:21,726
+of the device, comes
+down with a nice thud,
+
+
+1500
+01:26:21,726 --> 01:26:24,486
+you can see all notifications,
+just might miss once.
+
+
+1501
+01:26:24,846 --> 01:26:26,296
+And we've just great
+new Today view.
+
+
+1502
+01:26:26,296 --> 01:26:29,666
+So you can see you friends'
+birthdays current look
+
+
+1503
+01:26:29,666 --> 01:26:35,366
+at the weather, your upcoming
+invitations, your calendar,
+
+
+1504
+01:26:35,596 --> 01:26:39,706
+your stocks, and even a
+quickly look at tomorrow.
+
+
+1505
+01:26:40,156 --> 01:26:41,216
+You know, it's really great
+
+
+1506
+01:26:41,216 --> 01:26:45,136
+as for the first time ever
+Notification Center is now
+
+
+1507
+01:26:45,136 --> 01:26:47,586
+available from the
+lock screen as well.
+
+
+1508
+01:26:47,666 --> 01:26:49,316
+You don't even have
+to unlock your device.
+
+
+1509
+01:26:51,846 --> 01:26:55,626
+[applause] So that's
+a quick look at iOS 7.
+
+
+1510
+01:26:56,146 --> 01:27:01,026
+It's a comprehensive end-to-end
+redesign of the user experience.
+
+
+1511
+01:27:01,846 --> 01:27:04,416
+Installing iOS 7
+on your phone is
+
+
+1512
+01:27:04,416 --> 01:27:06,176
+like getting an entirely
+new phone,
+
+
+1513
+01:27:06,176 --> 01:27:08,556
+but when you already
+know how to use,
+
+
+1514
+01:27:09,046 --> 01:27:12,826
+when it's so much more beautiful
+and functional than ever before.
+
+
+1515
+01:27:14,456 --> 01:27:16,966
+But iOS 7 is actually
+more than that.
+
+
+1516
+01:27:17,536 --> 01:27:20,266
+It's also a major
+feature release as well.
+
+
+1517
+01:27:20,266 --> 01:27:23,346
+I have 10 features I want
+to talk to you about today,
+
+
+1518
+01:27:23,766 --> 01:27:26,226
+starting with Control Center.
+
+
+1519
+01:27:27,646 --> 01:27:29,036
+Control Center is
+something that's
+
+
+1520
+01:27:29,356 --> 01:27:31,396
+so simple and yet so essential.
+
+
+1521
+01:27:31,926 --> 01:27:34,036
+You have those switches
+that you just want to get
+
+
+1522
+01:27:34,036 --> 01:27:35,816
+to really quickly
+from wherever you are.
+
+
+1523
+01:27:35,906 --> 01:27:38,966
+Well, now, with Control Center,
+swipe up from that bottom
+
+
+1524
+01:27:38,966 --> 01:27:41,376
+of the device and
+there they are.
+
+
+1525
+01:27:42,516 --> 01:27:46,476
+[ Applause ]
+
+
+1526
+01:27:46,976 --> 01:27:50,646
+Turn on Airplane Mode, adjust
+your brightness, play a song,
+
+
+1527
+01:27:51,476 --> 01:27:57,096
+even get at a flashlight,
+and available from anywhere,
+
+
+1528
+01:27:57,096 --> 01:27:58,306
+including your lock screen.
+
+
+1529
+01:27:58,306 --> 01:28:00,286
+So if you wake up in the middle
+of the night and you need
+
+
+1530
+01:28:00,286 --> 01:28:02,876
+to find something, your
+flashlight's right there.
+
+
+1531
+01:28:03,586 --> 01:28:05,126
+And that's Control Center.
+
+
+1532
+01:28:05,846 --> 01:28:08,636
+Next, let's talk
+about Multitasking.
+
+
+1533
+01:28:09,686 --> 01:28:12,976
+Now, iOS 7 has always been built
+
+
+1534
+01:28:12,976 --> 01:28:16,266
+on the industrial strength
+foundations of OS X.
+
+
+1535
+01:28:17,206 --> 01:28:20,876
+It's had intrinsic powerful
+multitasking capabilities.
+
+
+1536
+01:28:21,096 --> 01:28:23,156
+But we had to be careful
+about how we'd exposed these
+
+
+1537
+01:28:23,156 --> 01:28:26,266
+to applications because we want
+to preserve great battery life.
+
+
+1538
+01:28:27,246 --> 01:28:31,696
+Now on iOS 4 we did add
+support for select kinds
+
+
+1539
+01:28:31,696 --> 01:28:33,536
+of applications to
+do multitasking.
+
+
+1540
+01:28:33,596 --> 01:28:37,216
+Things like plain music in the
+background or receiving a voice
+
+
+1541
+01:28:37,216 --> 01:28:40,246
+over IP call, or your
+app is in the background.
+
+
+1542
+01:28:40,806 --> 01:28:44,026
+Well, now, in iOS 7, I'm pleased
+to announce that we're going
+
+
+1543
+01:28:44,026 --> 01:28:48,976
+to have multitasking for all
+apps with great battery life.
+
+
+1544
+01:28:49,516 --> 01:28:55,076
+[ Applause ]
+
+
+1545
+01:28:55,576 --> 01:28:56,466
+So, how does it work?
+
+
+1546
+01:28:57,386 --> 01:28:58,836
+Well, imagine you have an app
+
+
+1547
+01:28:59,136 --> 01:29:01,436
+that you're using
+constantly throughout the day,
+
+
+1548
+01:29:01,436 --> 01:29:03,986
+a social networking app or
+something and you're checking
+
+
+1549
+01:29:03,986 --> 01:29:07,176
+in all of the time, what iOS
+7 has noticed is that pattern
+
+
+1550
+01:29:07,176 --> 01:29:08,816
+of use and is going
+to provide that app
+
+
+1551
+01:29:08,816 --> 01:29:11,866
+with frequent background
+activity to stay up to date.
+
+
+1552
+01:29:11,866 --> 01:29:15,226
+And there's even other app you
+used, maybe that you just check
+
+
+1553
+01:29:15,226 --> 01:29:17,786
+in on in the morning or
+breakfast, maybe at night
+
+
+1554
+01:29:17,816 --> 01:29:20,356
+after work, well iOS
+7 notices that too.
+
+
+1555
+01:29:20,356 --> 01:29:23,646
+And it's going to give that
+app background cycles just
+
+
+1556
+01:29:23,646 --> 01:29:25,836
+in time to-- it's up to
+date for when you need it.
+
+
+1557
+01:29:26,666 --> 01:29:29,716
+Now, in addition to this
+intelligence scheduling,
+
+
+1558
+01:29:30,176 --> 01:29:32,746
+iOS 7 does opportunistic
+updates.
+
+
+1559
+01:29:33,106 --> 01:29:36,146
+The average user wakes their
+device dozens of time a day
+
+
+1560
+01:29:36,146 --> 01:29:37,696
+and those provide
+great opportunities
+
+
+1561
+01:29:37,896 --> 01:29:39,216
+when the system's
+already powered
+
+
+1562
+01:29:39,216 --> 01:29:41,316
+up to update apps
+on the background.
+
+
+1563
+01:29:42,066 --> 01:29:44,616
+It also adapts intelligently
+the network conditions.
+
+
+1564
+01:29:45,056 --> 01:29:46,856
+So if it's in-- you
+have good coverage,
+
+
+1565
+01:29:47,096 --> 01:29:48,466
+it's a great time to fetch.
+
+
+1566
+01:29:49,286 --> 01:29:52,586
+And it coalesces updates
+across multiple applications.
+
+
+1567
+01:29:52,586 --> 01:29:54,396
+So once you have those
+radios powered up,
+
+
+1568
+01:29:54,396 --> 01:29:57,156
+lets multiple applications
+take advantage of it
+
+
+1569
+01:29:57,156 --> 01:29:58,366
+for their background updates.
+
+
+1570
+01:29:58,806 --> 01:30:03,206
+And, finally, iOS 7 response to
+push notifications as a trigger
+
+
+1571
+01:30:03,206 --> 01:30:05,956
+to give that application
+time in the background.
+
+
+1572
+01:30:06,046 --> 01:30:07,136
+So when you follow
+that notification,
+
+
+1573
+01:30:07,136 --> 01:30:08,516
+the app will already
+be up to date.
+
+
+1574
+01:30:09,516 --> 01:30:14,786
+[ Applause ]
+
+
+1575
+01:30:15,286 --> 01:30:18,536
+Now, iOS 7 also has a great
+new user interface for moving
+
+
+1576
+01:30:18,666 --> 01:30:20,846
+between all the things you
+have going on on your phone.
+
+
+1577
+01:30:21,366 --> 01:30:25,446
+Now, you could double click and
+move into Notifications Center
+
+
+1578
+01:30:25,446 --> 01:30:27,586
+and just swipe between
+your running applications,
+
+
+1579
+01:30:27,706 --> 01:30:32,236
+tap and move right in and
+that is multitasking in iOS 7.
+
+
+1580
+01:30:33,516 --> 01:30:38,226
+[ Applause ]
+
+
+1581
+01:30:38,726 --> 01:30:40,736
+Next, let's talk about Safari.
+
+
+1582
+01:30:41,466 --> 01:30:45,496
+Safari is the most popular
+mobile browser in the world.
+
+
+1583
+01:30:46,166 --> 01:30:48,386
+And in iOS 7 we're
+making it even better.
+
+
+1584
+01:30:49,726 --> 01:30:52,836
+Has a great new full
+screen look,
+
+
+1585
+01:30:53,446 --> 01:30:54,926
+really focused on your content.
+
+
+1586
+01:30:55,586 --> 01:30:57,586
+If you pull down
+or tap at the top,
+
+
+1587
+01:30:57,586 --> 01:30:59,616
+you can now get a
+smart search field.
+
+
+1588
+01:31:00,546 --> 01:31:04,756
+From that search field, you can
+get it one tap access to all
+
+
+1589
+01:31:04,756 --> 01:31:09,026
+of your favorites as well
+as do search and access URLs
+
+
+1590
+01:31:09,436 --> 01:31:12,756
+and there's a great new
+interface for your tabs.
+
+
+1591
+01:31:13,566 --> 01:31:16,496
+In addition to all of this,
+it has parental controls
+
+
+1592
+01:31:16,806 --> 01:31:20,166
+and integration with the same
+iCloud Keychain you saw earlier
+
+
+1593
+01:31:20,746 --> 01:31:21,506
+with Mavericks.
+
+
+1594
+01:31:22,126 --> 01:31:24,896
+I'd like to give you
+a demo of Safari now.
+
+
+1595
+01:31:25,546 --> 01:31:26,916
+Let's take a look.
+
+
+1596
+01:31:27,516 --> 01:31:31,086
+[ Applause ]
+
+
+1597
+01:31:31,586 --> 01:31:37,786
+OK, head on in to Safari.
+
+
+1598
+01:31:39,106 --> 01:31:40,536
+So here we are in Safari.
+
+
+1599
+01:31:40,536 --> 01:31:42,306
+I'm going to just
+zoom in on this page.
+
+
+1600
+01:31:42,306 --> 01:31:47,406
+I want you to watch as I scroll,
+all the controls just recede
+
+
+1601
+01:31:47,406 --> 01:31:49,756
+and now you have that full
+screen for your content.
+
+
+1602
+01:31:50,606 --> 01:31:52,626
+We've really improved the way
+you navigate now in Safari.
+
+
+1603
+01:31:52,626 --> 01:31:56,876
+I'm just going to tap in here
+to link to a detailed story.
+
+
+1604
+01:31:57,006 --> 01:31:59,446
+I mean you can even zoom
+in of course on this page.
+
+
+1605
+01:31:59,446 --> 01:32:02,456
+And that same gesture you saw
+earlier for going back well
+
+
+1606
+01:32:02,456 --> 01:32:04,166
+of course that works
+in Safari as well.
+
+
+1607
+01:32:04,166 --> 01:32:05,956
+So I just swiped in from
+the edge of the display
+
+
+1608
+01:32:05,956 --> 01:32:08,326
+and I can navigate
+back and forth
+
+
+1609
+01:32:08,326 --> 01:32:11,526
+through my browser
+history just like that.
+
+
+1610
+01:32:11,526 --> 01:32:14,126
+It's such a fantastic
+way to browse.
+
+
+1611
+01:32:15,026 --> 01:32:17,136
+Next, let's look at that
+unified search field.
+
+
+1612
+01:32:17,136 --> 01:32:18,636
+I'm just going to tap
+up here at the top.
+
+
+1613
+01:32:19,116 --> 01:32:22,066
+You see I have one tap
+access to all my favorites.
+
+
+1614
+01:32:22,176 --> 01:32:23,786
+It's really convenient
+but I'm going to type
+
+
+1615
+01:32:23,786 --> 01:32:25,846
+in this case so I'll type DIS.
+
+
+1616
+01:32:25,846 --> 01:32:30,146
+And you notice, I have
+a top URL hit as well
+
+
+1617
+01:32:30,146 --> 01:32:33,266
+as Google Search suggestions as
+well available all right here.
+
+
+1618
+01:32:34,336 --> 01:32:36,236
+We've really improved
+bookmarking as well.
+
+
+1619
+01:32:36,236 --> 01:32:38,046
+I use this bookmark
+control down at the bottom.
+
+
+1620
+01:32:38,766 --> 01:32:41,496
+I see my bookmark
+folders, all my bookmarks.
+
+
+1621
+01:32:41,926 --> 01:32:42,866
+We also have shared links.
+
+
+1622
+01:32:42,866 --> 01:32:46,076
+You can see stories posted by
+people you follow on Twitter.
+
+
+1623
+01:32:46,546 --> 01:32:48,046
+And my Reading List.
+
+
+1624
+01:32:48,046 --> 01:32:50,776
+And, now, just like you
+saw on Mavericks on iOS,
+
+
+1625
+01:32:50,776 --> 01:32:53,276
+you can scroll continuously
+from article to article
+
+
+1626
+01:32:53,276 --> 01:32:54,756
+without coming back to the list.
+
+
+1627
+01:32:55,016 --> 01:32:55,876
+It's really awesome.
+
+
+1628
+01:32:57,166 --> 01:32:59,206
+Next, let's take a look at tabs.
+
+
+1629
+01:32:59,626 --> 01:33:05,436
+I'm going to click here at the
+bottom into tabs, unbelievable,
+
+
+1630
+01:33:05,886 --> 01:33:07,566
+and you're no longer
+limited to just eight.
+
+
+1631
+01:33:08,516 --> 01:33:13,866
+[ Applause ]
+
+
+1632
+01:33:14,366 --> 01:33:17,586
+And down at the bottom are
+also all your iCloud tabs.
+
+
+1633
+01:33:17,586 --> 01:33:21,106
+You can see what you left open
+on your other devices as well.
+
+
+1634
+01:33:21,106 --> 01:33:25,576
+And tabs, they're
+really nice to use.
+
+
+1635
+01:33:25,576 --> 01:33:28,556
+You can just tap,
+sweep into a tab,
+
+
+1636
+01:33:28,746 --> 01:33:32,246
+back out, back in, back out.
+
+
+1637
+01:33:32,426 --> 01:33:33,386
+It's just fantastic.
+
+
+1638
+01:33:33,386 --> 01:33:35,856
+If you want to reorder your
+tabs, just tap and hold,
+
+
+1639
+01:33:36,276 --> 01:33:37,556
+just rearrange them like this.
+
+
+1640
+01:33:37,786 --> 01:33:40,556
+And if you're done with
+the tab, just swipe it off
+
+
+1641
+01:33:40,556 --> 01:33:42,406
+to the side and it goes away.
+
+
+1642
+01:33:43,536 --> 01:33:45,186
+And that's the new Safari.
+
+
+1643
+01:33:46,516 --> 01:33:52,096
+[ Applause ]
+
+
+1644
+01:33:52,596 --> 01:33:54,376
+Let's take a look now
+at Control Center.
+
+
+1645
+01:33:55,846 --> 01:33:58,616
+So I'm just going to swipe up
+from the bottom of my display
+
+
+1646
+01:33:59,036 --> 01:34:00,456
+and up comes Control Center.
+
+
+1647
+01:34:00,926 --> 01:34:03,906
+See how these great switches
+at the top can turn on and off.
+
+
+1648
+01:34:03,936 --> 01:34:07,516
+Do Not Disturb, for instance,
+access my brightness,
+
+
+1649
+01:34:07,646 --> 01:34:10,506
+you can even access a
+flashlight, really useful
+
+
+1650
+01:34:10,506 --> 01:34:13,166
+at night, play a song.
+
+
+1651
+01:34:14,706 --> 01:34:17,706
+[background music] And of
+course this is available
+
+
+1652
+01:34:17,706 --> 01:34:20,086
+to me everywhere so if I'm
+in Safari for instance.
+
+
+1653
+01:34:21,226 --> 01:34:22,146
+Let's bring it up here.
+
+
+1654
+01:34:22,616 --> 01:34:24,496
+You can turn off that music.
+
+
+1655
+01:34:24,556 --> 01:34:27,276
+And you notice how its layering
+
+
+1656
+01:34:27,276 --> 01:34:30,096
+and transparency take the
+personality, the environment
+
+
+1657
+01:34:30,716 --> 01:34:31,646
+where you bring it up.
+
+
+1658
+01:34:33,066 --> 01:34:34,306
+That's Control Center.
+
+
+1659
+01:34:35,516 --> 01:34:41,226
+[ Applause ]
+
+
+1660
+01:34:41,726 --> 01:34:43,176
+Next up, Multitasking.
+
+
+1661
+01:34:43,246 --> 01:34:44,286
+It's just a great way to get
+
+
+1662
+01:34:44,286 --> 01:34:45,876
+across all the things
+you're doing on your device
+
+
+1663
+01:34:45,876 --> 01:34:47,616
+so if I just double click
+here on my Home button,
+
+
+1664
+01:34:48,496 --> 01:34:49,756
+jump into Multitasking.
+
+
+1665
+01:34:50,116 --> 01:34:52,516
+I can just swipe across
+everything I have running.
+
+
+1666
+01:34:52,676 --> 01:34:57,186
+I want to move into one,
+Messages, double tap, back out.
+
+
+1667
+01:34:58,346 --> 01:35:03,356
+Move into Mail, back
+out, just like this.
+
+
+1668
+01:35:04,216 --> 01:35:05,176
+It's really, really nice.
+
+
+1669
+01:35:05,306 --> 01:35:07,656
+That's multitasking in iOS 7.
+
+
+1670
+01:35:08,606 --> 01:35:09,076
+Thank you.
+
+
+1671
+01:35:10,516 --> 01:35:13,996
+[ Applause ]
+
+
+1672
+01:35:14,496 --> 01:35:15,656
+So of course there's much,
+
+
+1673
+01:35:15,656 --> 01:35:18,976
+much more to iOS 7,
+including AirDrop.
+
+
+1674
+01:35:19,516 --> 01:35:23,196
+[ Applause ]
+
+
+1675
+01:35:23,696 --> 01:35:27,106
+AirDrop is absolutely
+the easiest way to share
+
+
+1676
+01:35:27,106 --> 01:35:28,706
+with the people that
+are right around you.
+
+
+1677
+01:35:29,206 --> 01:35:33,376
+So now when you're in any app
+that supports a Share Sheet,
+
+
+1678
+01:35:33,556 --> 01:35:36,356
+you bring up the Share Sheet
+and your friends that are all
+
+
+1679
+01:35:36,356 --> 01:35:38,636
+around you just show
+up right there.
+
+
+1680
+01:35:39,646 --> 01:35:44,166
+You tap on one and they're
+going to get a panel right
+
+
+1681
+01:35:44,166 --> 01:35:46,846
+on their display and they
+can accept what it is
+
+
+1682
+01:35:46,846 --> 01:35:47,616
+that you shared.
+
+
+1683
+01:35:48,226 --> 01:35:49,046
+They accept it.
+
+
+1684
+01:35:49,216 --> 01:35:51,726
+They're taken right into the
+app and you know if you want
+
+
+1685
+01:35:51,726 --> 01:35:55,526
+to share with multiple people
+you just tap, tap, tap.
+
+
+1686
+01:35:55,906 --> 01:35:57,636
+No need to wander
+around the room,
+
+
+1687
+01:35:57,996 --> 01:35:59,976
+bumping your phone or whatever.
+
+
+1688
+01:36:00,516 --> 01:36:08,536
+[ Applause ]
+
+
+1689
+01:36:09,036 --> 01:36:11,516
+Now, this is system wide for
+any app that's supports a Share
+
+
+1690
+01:36:11,516 --> 01:36:16,086
+Sheet and of course it uses peer
+to peer Wi-Fi for maximum speed
+
+
+1691
+01:36:16,386 --> 01:36:19,156
+and all your transmissions
+are securely encrypted
+
+
+1692
+01:36:19,556 --> 01:36:22,536
+because it uses the latest
+Wi-Fi hardware, it's supported
+
+
+1693
+01:36:22,536 --> 01:36:25,576
+on the iPhone 5, the
+fourth-generation iPad,
+
+
+1694
+01:36:26,126 --> 01:36:29,326
+iPad mini and the
+fifth-generation iPod Touch
+
+
+1695
+01:36:30,186 --> 01:36:32,166
+and that is AirDrop.
+
+
+1696
+01:36:32,596 --> 01:36:34,146
+Next, let's talk
+about the camera.
+
+
+1697
+01:36:35,216 --> 01:36:38,816
+So, now, your camera in iOS
+7 is four cameras in one.
+
+
+1698
+01:36:39,186 --> 01:36:42,546
+You just swipe from your video
+camera to your photo camera,
+
+
+1699
+01:36:43,596 --> 01:36:46,956
+to your square cropped
+camera, to your pano camera.
+
+
+1700
+01:36:47,566 --> 01:36:50,246
+And when you're taking
+stills, you now have access
+
+
+1701
+01:36:50,736 --> 01:36:54,556
+to live photo filters from
+some gorgeous black and whites,
+
+
+1702
+01:36:54,986 --> 01:36:58,106
+to some classic color
+filters as well.
+
+
+1703
+01:36:58,256 --> 01:36:59,686
+So with your great,
+new camera we want
+
+
+1704
+01:36:59,686 --> 01:37:02,256
+to give you a great new
+way to manage your photos
+
+
+1705
+01:37:02,256 --> 01:37:03,876
+and it's the new Photos app.
+
+
+1706
+01:37:04,706 --> 01:37:08,406
+You know for many users this is
+what their photo organization
+
+
+1707
+01:37:08,566 --> 01:37:10,436
+looks like: an endless,
+
+
+1708
+01:37:10,436 --> 01:37:12,946
+unorganized stream
+of their camera roll.
+
+
+1709
+01:37:12,946 --> 01:37:14,406
+We've all been there
+but, you know,
+
+
+1710
+01:37:14,406 --> 01:37:15,966
+it doesn't have to be this way.
+
+
+1711
+01:37:17,666 --> 01:37:19,926
+There's great information
+in those photos.
+
+
+1712
+01:37:19,926 --> 01:37:22,926
+iOS knows where you took the
+photos and when you took them
+
+
+1713
+01:37:22,926 --> 01:37:26,186
+and that provides inherent
+structure that we can use
+
+
+1714
+01:37:26,186 --> 01:37:27,746
+to organize those photos.
+
+
+1715
+01:37:27,896 --> 01:37:31,036
+And now in photos
+in iOS 7, we do.
+
+
+1716
+01:37:31,406 --> 01:37:33,036
+We organize them into moments.
+
+
+1717
+01:37:33,166 --> 01:37:35,276
+And I'd like to give you
+a demo of that right now.
+
+
+1718
+01:37:36,516 --> 01:37:41,936
+[ Applause ]
+
+
+1719
+01:37:42,436 --> 01:37:44,136
+So let's take a look
+now at the Photos app.
+
+
+1720
+01:37:45,766 --> 01:37:49,916
+So here you see some photos
+that were taken in San Francisco
+
+
+1721
+01:37:49,916 --> 01:37:53,896
+and you see nothing was done to
+organize these photos explicitly
+
+
+1722
+01:37:53,896 --> 01:37:54,816
+and yet they have these labels.
+
+
+1723
+01:37:54,816 --> 01:37:56,416
+It's like the Palace
+of Fine Arts,
+
+
+1724
+01:37:57,426 --> 01:37:59,716
+Baker Beach, Lombard Street.
+
+
+1725
+01:37:59,716 --> 01:38:01,556
+It provides this
+natural organization
+
+
+1726
+01:38:01,556 --> 01:38:02,916
+for appreciating the photos.
+
+
+1727
+01:38:02,916 --> 01:38:05,986
+We can go up that more trips
+at more times in San Francisco,
+
+
+1728
+01:38:05,986 --> 01:38:08,526
+Golden Gate, to San
+Francisco Fisherman's Wharf.
+
+
+1729
+01:38:08,796 --> 01:38:10,496
+But then you see we have home.
+
+
+1730
+01:38:10,576 --> 01:38:12,856
+We have photos taken at
+home and photos taken
+
+
+1731
+01:38:12,856 --> 01:38:15,576
+at the elementary school
+and around that area.
+
+
+1732
+01:38:16,266 --> 01:38:19,246
+And now if you want to
+zoom back out to get a--
+
+
+1733
+01:38:19,246 --> 01:38:21,146
+more of bird's eye view
+of your collection,
+
+
+1734
+01:38:21,556 --> 01:38:23,696
+we draw these moments
+intelligently together
+
+
+1735
+01:38:23,696 --> 01:38:24,466
+into collections.
+
+
+1736
+01:38:25,746 --> 01:38:27,816
+So see here how that
+multiple day trip
+
+
+1737
+01:38:27,816 --> 01:38:30,556
+around San Francisco is
+collected-- sorry about that,
+
+
+1738
+01:38:30,556 --> 01:38:32,466
+I've got a little
+excited there, into--
+
+
+1739
+01:38:32,466 --> 01:38:34,756
+it's a very exciting interface
+
+
+1740
+01:38:34,756 --> 01:38:38,396
+into a multi-day trip
+in San Francisco.
+
+
+1741
+01:38:38,516 --> 01:38:40,936
+And that time at home and
+around the school, well,
+
+
+1742
+01:38:40,936 --> 01:38:44,026
+that's one moment-- that's
+one collection as well.
+
+
+1743
+01:38:44,466 --> 01:38:46,226
+It's a really great way
+to browse your photos.
+
+
+1744
+01:38:46,566 --> 01:38:50,316
+You can even go all the
+way out to the year level.
+
+
+1745
+01:38:51,716 --> 01:38:53,696
+Look across your whole
+photo collection.
+
+
+1746
+01:38:54,516 --> 01:39:00,776
+[ Applause ]
+
+
+1747
+01:39:01,276 --> 01:39:04,196
+And look how we pull out the
+interesting places that you went
+
+
+1748
+01:39:04,196 --> 01:39:08,966
+in that year like 2011 was
+Colorado and Hawaii, 2012,
+
+
+1749
+01:39:09,266 --> 01:39:10,346
+went to South America.
+
+
+1750
+01:39:10,346 --> 01:39:11,666
+You may not remember
+when you did it
+
+
+1751
+01:39:11,666 --> 01:39:13,946
+but iOS does and
+it's right there.
+
+
+1752
+01:39:14,736 --> 01:39:18,456
+And, you know, with this retina
+display you can even can make
+
+
+1753
+01:39:18,456 --> 01:39:20,516
+out patterns of photos in
+one different occasions
+
+
+1754
+01:39:20,516 --> 01:39:22,736
+or in a course we found like
+we had the urge that we wanted
+
+
+1755
+01:39:22,736 --> 01:39:24,206
+to just tap in right from here.
+
+
+1756
+01:39:24,516 --> 01:39:26,576
+And so now in fact you can.
+
+
+1757
+01:39:27,116 --> 01:39:28,776
+You can just tap and scrub
+
+
+1758
+01:39:29,496 --> 01:39:32,356
+and find the photo you're
+looking for just like that.
+
+
+1759
+01:39:32,356 --> 01:39:33,876
+It's really just amazing.
+
+
+1760
+01:39:33,876 --> 01:39:36,866
+So I can just pick a photo
+here whichever one I want.
+
+
+1761
+01:39:37,346 --> 01:39:39,876
+It's kind of cute and
+now we can edit it
+
+
+1762
+01:39:39,876 --> 01:39:41,106
+because we have photo filters.
+
+
+1763
+01:39:41,106 --> 01:39:42,506
+So I can go into
+the filters here,
+
+
+1764
+01:39:42,886 --> 01:39:47,086
+I can try different color
+effects, and if I find one I
+
+
+1765
+01:39:47,086 --> 01:39:49,036
+like maybe a nice
+black and white,
+
+
+1766
+01:39:49,036 --> 01:39:50,496
+you can do it just like that.
+
+
+1767
+01:39:50,726 --> 01:39:52,586
+I'll apply it and
+save that photo away.
+
+
+1768
+01:39:53,266 --> 01:39:54,316
+We also have great new ways
+
+
+1769
+01:39:54,356 --> 01:39:56,486
+to share your photos
+in the Photos apps.
+
+
+1770
+01:39:56,486 --> 01:39:56,976
+Let's bring up sharing.
+
+
+1771
+01:39:58,436 --> 01:40:01,626
+We have AirDrop right here if
+any of you were running iOS 7,
+
+
+1772
+01:40:01,626 --> 01:40:03,076
+I'd see you, it looks
+like it didn't leak,
+
+
+1773
+01:40:03,076 --> 01:40:03,876
+so that's good you're not
+
+
+1774
+01:40:03,876 --> 01:40:06,416
+in there right now,
+but you have AirDrop.
+
+
+1775
+01:40:06,546 --> 01:40:08,776
+You have access to other
+photos, you can share them
+
+
+1776
+01:40:08,776 --> 01:40:10,826
+from right here,
+just really handy.
+
+
+1777
+01:40:11,456 --> 01:40:14,056
+Great photo sharing option
+is iCloud photo sharing,
+
+
+1778
+01:40:14,056 --> 01:40:15,196
+I'm going to tap on that now.
+
+
+1779
+01:40:15,366 --> 01:40:16,676
+It's going to iCloud
+photo sharing.
+
+
+1780
+01:40:17,196 --> 01:40:19,686
+And from here, I can
+select the Photo Streams
+
+
+1781
+01:40:19,686 --> 01:40:20,786
+that I want to share too.
+
+
+1782
+01:40:21,066 --> 01:40:23,376
+So I'm on family photos now,
+but I'm going to drill in
+
+
+1783
+01:40:23,816 --> 01:40:26,506
+and I can see other Photo
+Streams I've set up.
+
+
+1784
+01:40:26,506 --> 01:40:30,536
+And now, other people can share
+into my Photo Stream as well.
+
+
+1785
+01:40:30,536 --> 01:40:31,796
+So these are shared
+Photo Streams.
+
+
+1786
+01:40:32,516 --> 01:40:36,916
+[ Applause ]
+
+
+1787
+01:40:37,416 --> 01:40:42,506
+I'll just select a Photo Stream
+here and type a little message.
+
+
+1788
+01:40:43,796 --> 01:40:44,726
+We'll post that photo.
+
+
+1789
+01:40:44,726 --> 01:40:46,826
+So it made it really
+easy to share
+
+
+1790
+01:40:46,966 --> 01:40:49,016
+and we've also made it a
+really great experience
+
+
+1791
+01:40:49,366 --> 01:40:51,636
+to experience the photos
+you and others have shared
+
+
+1792
+01:40:51,636 --> 01:40:53,146
+with this new shared
+tab at the bottom.
+
+
+1793
+01:40:53,146 --> 01:40:54,246
+So I'm going to go in here.
+
+
+1794
+01:40:54,246 --> 01:40:56,346
+I could see my photo
+with a comment.
+
+
+1795
+01:40:56,646 --> 01:40:58,606
+I can see the comments
+of other people
+
+
+1796
+01:40:58,606 --> 01:41:00,226
+and the photos that
+they've shared.
+
+
+1797
+01:41:00,666 --> 01:41:06,086
+And now, we even support sharing
+video via iCloud photo sharing.
+
+
+1798
+01:41:08,796 --> 01:41:11,836
+And we have a great way to just
+browse those shared photos.
+
+
+1799
+01:41:11,836 --> 01:41:13,606
+I'll just tilt the
+device into landscape.
+
+
+1800
+01:41:14,076 --> 01:41:15,546
+I can scroll through
+it like this.
+
+
+1801
+01:41:16,666 --> 01:41:18,466
+And just look how
+beautiful that is.
+
+
+1802
+01:41:18,846 --> 01:41:20,776
+What a great way to
+experience your photos.
+
+
+1803
+01:41:20,956 --> 01:41:24,136
+So that's the new
+photos App in iOS 7.
+
+
+1804
+01:41:25,516 --> 01:41:32,386
+[ Applause ]
+
+
+1805
+01:41:32,886 --> 01:41:35,826
+So integration with internet
+services is a huge part
+
+
+1806
+01:41:35,826 --> 01:41:40,716
+of the experience of iOS and
+never more so than in iOS 7.
+
+
+1807
+01:41:41,196 --> 01:41:43,246
+So to take you through
+some of those features,
+
+
+1808
+01:41:43,346 --> 01:41:45,216
+I'd like to bring up Eddy Cue.
+
+
+1809
+01:41:45,736 --> 01:41:46,166
+Eddy. [Applause]
+
+
+1810
+01:41:50,076 --> 01:41:50,416
+>> Great job, Craig.
+
+
+1811
+01:41:50,576 --> 01:41:50,876
+>> Thank you.
+
+
+1812
+01:41:52,836 --> 01:41:54,026
+>> Thanks, it's great
+to be here.
+
+
+1813
+01:41:54,746 --> 01:41:56,146
+So let's talk about Siri.
+
+
+1814
+01:41:56,636 --> 01:42:00,706
+The first thing is Siri has
+a gorgeous new interface.
+
+
+1815
+01:42:01,236 --> 01:42:04,706
+Now as I speak, you'll see a
+sound wave across the bottom
+
+
+1816
+01:42:05,816 --> 01:42:08,916
+and you get the result to a
+beautiful, gorgeous, clean way.
+
+
+1817
+01:42:09,986 --> 01:42:13,776
+But Siri is always been a lot
+about your-- the voice of Siri.
+
+
+1818
+01:42:13,776 --> 01:42:15,416
+And we've got an all new voice.
+
+
+1819
+01:42:16,046 --> 01:42:16,306
+>> Hi, Eddy.
+
+
+1820
+01:42:16,936 --> 01:42:17,846
+What can I do for you?
+
+
+1821
+01:42:18,326 --> 01:42:20,556
+>> And you can also
+choose a male voice.
+
+
+1822
+01:42:21,376 --> 01:42:21,856
+>> Hi, Eddy.
+
+
+1823
+01:42:22,166 --> 01:42:23,016
+What can I do for you?
+
+
+1824
+01:42:23,906 --> 01:42:25,986
+>> And we've got high
+quality-- thank you.
+
+
+1825
+01:42:27,246 --> 01:42:29,326
+We've also got high
+quality female
+
+
+1826
+01:42:29,476 --> 01:42:31,806
+and male voices for French.
+
+
+1827
+01:42:32,516 --> 01:42:34,546
+[Foreign Language]
+
+
+1828
+01:42:35,046 --> 01:42:35,826
+As well as German.
+
+
+1829
+01:42:36,296 --> 01:42:38,016
+[Foreign Language]
+And we're going
+
+
+1830
+01:42:38,016 --> 01:42:39,836
+to be adding other
+languages over time.
+
+
+1831
+01:42:40,236 --> 01:42:43,486
+Now Siri is also getting a
+lot smarter and knows how
+
+
+1832
+01:42:43,486 --> 01:42:44,966
+to control more of your device.
+
+
+1833
+01:42:44,966 --> 01:42:50,046
+So you could say, play my last
+voice mail or turn on Bluetooth
+
+
+1834
+01:42:50,766 --> 01:42:52,156
+or increase my brightness.
+
+
+1835
+01:42:53,516 --> 01:42:58,906
+[ Applause ]
+
+
+1836
+01:42:59,406 --> 01:43:01,956
+And it can answer a
+lot more questions
+
+
+1837
+01:43:02,396 --> 01:43:05,816
+because we've integrated some
+new services like Twitter,
+
+
+1838
+01:43:05,816 --> 01:43:08,916
+so you can see what people are
+saying or what's happening.
+
+
+1839
+01:43:09,806 --> 01:43:12,616
+We've integrated the
+world's largest Encyclopedia
+
+
+1840
+01:43:12,706 --> 01:43:13,626
+and Wikipedia.
+
+
+1841
+01:43:14,396 --> 01:43:17,576
+And we've even integrated
+web search results
+
+
+1842
+01:43:17,576 --> 01:43:19,736
+from Bing right inside of Siri.
+
+
+1843
+01:43:20,726 --> 01:43:22,446
+And it's great for photos too.
+
+
+1844
+01:43:24,006 --> 01:43:27,936
+And that is some of the new
+features of Siri in iOS 7.
+
+
+1845
+01:43:29,076 --> 01:43:31,586
+Now Siri is also a big
+part of our next feature.
+
+
+1846
+01:43:31,586 --> 01:43:35,006
+iOS in the car.
+
+
+1847
+01:43:36,516 --> 01:43:40,266
+[ Applause ]
+
+
+1848
+01:43:40,766 --> 01:43:45,746
+Now 95 percent of the cars being
+sold today have integrated music
+
+
+1849
+01:43:45,746 --> 01:43:47,916
+playback and control
+from an iOS device,
+
+
+1850
+01:43:48,006 --> 01:43:50,456
+but we want to take
+this integration
+
+
+1851
+01:43:50,456 --> 01:43:52,156
+to a whole another level.
+
+
+1852
+01:43:53,496 --> 01:43:57,736
+What if you could get iOS
+on the screen that is built
+
+
+1853
+01:43:57,736 --> 01:44:02,086
+into your car so that you can
+make phone calls, play music,
+
+
+1854
+01:44:02,506 --> 01:44:06,856
+go to maps, get your iMessages
+right on the screen in your car
+
+
+1855
+01:44:07,166 --> 01:44:09,346
+or Eyes Free using Siri.
+
+
+1856
+01:44:10,056 --> 01:44:12,326
+So now, when you
+make a phone call,
+
+
+1857
+01:44:12,326 --> 01:44:15,206
+it's going to look something
+like this, call John Appleseed,
+
+
+1858
+01:44:15,746 --> 01:44:26,336
+or play get lucky, or go
+to maps, get directions,
+
+
+1859
+01:44:28,126 --> 01:44:30,676
+or even get your
+iMessages read to you
+
+
+1860
+01:44:30,676 --> 01:44:33,826
+and you can dictate a
+response all Eyes Free.
+
+
+1861
+01:44:34,516 --> 01:44:40,456
+[ Applause ]
+
+
+1862
+01:44:40,956 --> 01:44:44,186
+Now, all of these car
+manufacturers are introducing
+
+
+1863
+01:44:44,386 --> 01:44:48,716
+iOS integration in 2014 and I
+know which one I want to buy.
+
+
+1864
+01:44:51,876 --> 01:44:53,486
+And that's iOS in the car.
+
+
+1865
+01:44:54,136 --> 01:44:55,886
+Next, the App Store.
+
+
+1866
+01:44:57,036 --> 01:44:58,796
+Now the App Store
+looks beautiful.
+
+
+1867
+01:44:59,556 --> 01:45:02,416
+It's way easier to find
+Apps than ever before.
+
+
+1868
+01:45:02,576 --> 01:45:06,166
+We've added a new feature where
+you can look for apps based
+
+
+1869
+01:45:06,166 --> 01:45:08,426
+on your age range,
+kid's categories,
+
+
+1870
+01:45:08,526 --> 01:45:11,286
+parents are going to love this.
+
+
+1871
+01:45:11,286 --> 01:45:15,816
+And apps Near Me, you can find
+the most popular apps based
+
+
+1872
+01:45:15,816 --> 01:45:17,356
+on your current location.
+
+
+1873
+01:45:18,506 --> 01:45:21,566
+So now, let's say I'm at
+AT&T park in San Francisco
+
+
+1874
+01:45:22,136 --> 01:45:23,516
+and here are the
+apps I would see.
+
+
+1875
+01:45:24,886 --> 01:45:28,036
+Or I'm at the Louvre in Paris.
+
+
+1876
+01:45:28,186 --> 01:45:30,016
+Or I'm in Union Square Shopping.
+
+
+1877
+01:45:30,126 --> 01:45:32,536
+It's that easy to
+discover new apps.
+
+
+1878
+01:45:32,536 --> 01:45:33,526
+It's really great.
+
+
+1879
+01:45:34,626 --> 01:45:37,806
+The next feature, I know,
+you're all going to love
+
+
+1880
+01:45:37,806 --> 01:45:40,866
+because everyday, you
+see something like this.
+
+
+1881
+01:45:41,716 --> 01:45:46,026
+Well, no more because the
+App Store updates your
+
+
+1882
+01:45:46,026 --> 01:45:47,316
+apps automatically.
+
+
+1883
+01:45:48,516 --> 01:45:58,056
+[ Applause ]
+
+
+1884
+01:45:58,556 --> 01:46:00,176
+Next, let's talk about music.
+
+
+1885
+01:46:00,746 --> 01:46:03,886
+The music app in iOS
+7 is beyond doubt,
+
+
+1886
+01:46:04,446 --> 01:46:06,726
+the best music player
+we have ever done.
+
+
+1887
+01:46:07,766 --> 01:46:09,636
+The first thing you'll
+notice is we provide you
+
+
+1888
+01:46:09,636 --> 01:46:13,106
+with beautiful artist images
+right in your library.
+
+
+1889
+01:46:13,106 --> 01:46:16,316
+And you just tap an artist
+and you see the songs.
+
+
+1890
+01:46:16,366 --> 01:46:18,246
+But it's not just the
+songs on your device,
+
+
+1891
+01:46:18,736 --> 01:46:20,366
+you see all of your
+purchased music
+
+
+1892
+01:46:20,366 --> 01:46:22,466
+from iCloud right
+in your library.
+
+
+1893
+01:46:23,646 --> 01:46:26,176
+And if you want to hear one
+of the songs, you just tap
+
+
+1894
+01:46:26,176 --> 01:46:28,716
+and you get our beautiful
+Now Playing screen.
+
+
+1895
+01:46:29,376 --> 01:46:32,276
+But it's not just your purchased
+music, in the video apps,
+
+
+1896
+01:46:32,276 --> 01:46:37,746
+you get all of your movies and
+TV shows right from iCloud right
+
+
+1897
+01:46:38,036 --> 01:46:40,356
+into your library, it's
+really, really great.
+
+
+1898
+01:46:41,516 --> 01:46:45,676
+[ Applause ]
+
+
+1899
+01:46:46,176 --> 01:46:50,256
+If you turn the device
+sideways, you see your albums.
+
+
+1900
+01:46:50,596 --> 01:46:52,186
+You could just swipe
+to see more,
+
+
+1901
+01:46:53,066 --> 01:46:57,216
+and once you see one you like,
+you tap and it zooms right in.
+
+
+1902
+01:46:57,816 --> 01:47:01,336
+Now, the music app is the best
+way to listen to your music.
+
+
+1903
+01:47:01,876 --> 01:47:04,606
+But today, we're
+introducing an amazing way
+
+
+1904
+01:47:04,726 --> 01:47:08,826
+to discover new music and
+we call it iTunes Radio.
+
+
+1905
+01:47:09,516 --> 01:47:15,936
+[ Applause ]
+
+
+1906
+01:47:16,436 --> 01:47:17,616
+And here's what it looks like.
+
+
+1907
+01:47:17,696 --> 01:47:19,506
+It's built right
+into the music app.
+
+
+1908
+01:47:19,816 --> 01:47:22,976
+But rather than tell you about
+it, I'd love to show it to you.
+
+
+1909
+01:47:23,516 --> 01:47:29,486
+[ Pause ]
+
+
+1910
+01:47:29,986 --> 01:47:31,806
+And we'll launch the music app.
+
+
+1911
+01:47:32,836 --> 01:47:35,386
+And the first thing you'll
+notice is we've got a set
+
+
+1912
+01:47:35,386 --> 01:47:38,016
+of featured stations that our
+programming team have created.
+
+
+1913
+01:47:38,016 --> 01:47:40,216
+So you can see the
+songs that are trending
+
+
+1914
+01:47:40,216 --> 01:47:42,906
+on Twitter right now,
+or even the songs
+
+
+1915
+01:47:42,906 --> 01:47:45,546
+that you guys are all going
+to hear this week at WWDC.
+
+
+1916
+01:47:45,786 --> 01:47:50,936
+But I feel like summer songs.
+
+
+1917
+01:47:50,936 --> 01:47:52,446
+So you just tap.
+
+
+1918
+01:47:53,516 --> 01:47:58,516
+[ Pause ]
+
+
+1919
+01:47:59,016 --> 01:48:05,000
+[ Music ]
+
+
+1920
+01:48:05,096 --> 01:48:08,096
+[Background Music] And once
+you have a station you love,
+
+
+1921
+01:48:08,176 --> 01:48:11,536
+you could just tap the i and you
+could share it with a friend,
+
+
+1922
+01:48:11,756 --> 01:48:14,846
+or even create a new station
+based on this artist or song.
+
+
+1923
+01:48:15,106 --> 01:48:18,936
+I can easily skip to see
+what's the next song.
+
+
+1924
+01:48:20,516 --> 01:48:29,116
+[ Music ]
+
+
+1925
+01:48:29,616 --> 01:48:31,796
+[Background Music] I'll
+go back to stations.
+
+
+1926
+01:48:31,796 --> 01:48:34,106
+But it's not just the featured
+stations that we provide.
+
+
+1927
+01:48:34,156 --> 01:48:35,506
+You can create your
+own stations.
+
+
+1928
+01:48:35,506 --> 01:48:38,246
+Here are some that I've
+previously created.
+
+
+1929
+01:48:39,656 --> 01:48:41,066
+But I feel like doing
+something new.
+
+
+1930
+01:48:42,586 --> 01:48:45,196
+Now, our music team is
+providing you with hundreds
+
+
+1931
+01:48:45,196 --> 01:48:48,186
+of stations based on
+alternative, country,
+
+
+1932
+01:48:48,616 --> 01:48:50,596
+classic rock, but I feel
+
+
+1933
+01:48:50,596 --> 01:48:51,976
+like doing something a
+little more specific.
+
+
+1934
+01:48:52,516 --> 01:48:57,436
+[ Music ]
+
+
+1935
+01:48:57,936 --> 01:48:59,626
+How about some Led Zeppelin?
+
+
+1936
+01:49:00,516 --> 01:49:18,276
+[ Music ]
+
+
+1937
+01:49:18,776 --> 01:49:18,926
+[Background Music] First,
+
+
+1938
+01:49:19,146 --> 01:49:21,156
+start off with a great
+Led Zeppelin song.
+
+
+1939
+01:49:21,456 --> 01:49:24,756
+Let's go and see what
+else is on this station.
+
+
+1940
+01:49:25,606 --> 01:49:31,046
+And a great thing is I can
+always modify the station,
+
+
+1941
+01:49:31,046 --> 01:49:33,886
+I can just tap the star, and
+I could say play more songs
+
+
+1942
+01:49:33,886 --> 01:49:37,816
+like this, or never play this
+song, or add it to my wish list.
+
+
+1943
+01:49:37,816 --> 01:49:42,476
+Now, I like this so let's play
+some more songs like this.
+
+
+1944
+01:49:42,476 --> 01:49:45,156
+Now, another great feature of
+iTunes Radio is it keeps track
+
+
+1945
+01:49:45,156 --> 01:49:46,946
+of all of the songs
+that you're listening
+
+
+1946
+01:49:46,946 --> 01:49:49,486
+to across all the
+stations, all your devices.
+
+
+1947
+01:49:49,486 --> 01:49:51,636
+And you can get to them
+by just tapping History.
+
+
+1948
+01:49:51,636 --> 01:49:53,726
+You can see them all here.
+
+
+1949
+01:49:53,796 --> 01:49:55,796
+You can Preview, and
+buy right from there.
+
+
+1950
+01:49:56,576 --> 01:49:57,976
+And that's iTunes Radio.
+
+
+1951
+01:49:58,516 --> 01:50:06,576
+[ Applause ]
+
+
+1952
+01:50:07,076 --> 01:50:11,226
+So iTunes Radio is built into
+iOS 7, it works on your iPhone,
+
+
+1953
+01:50:11,226 --> 01:50:13,186
+your iPod touch, and your iPad.
+
+
+1954
+01:50:13,936 --> 01:50:18,276
+It's also built into iTunes
+on your Mac and PC and even
+
+
+1955
+01:50:18,466 --> 01:50:20,976
+in your living room
+built into Apple TV.
+
+
+1956
+01:50:21,516 --> 01:50:26,326
+[ Applause ]
+
+
+1957
+01:50:26,826 --> 01:50:29,216
+iTunes radio is free with ads.
+
+
+1958
+01:50:29,666 --> 01:50:31,996
+And if you are an
+iTunes Match subscriber,
+
+
+1959
+01:50:31,996 --> 01:50:33,416
+it's completely ad-free.
+
+
+1960
+01:50:34,516 --> 01:50:39,636
+[ Applause ]
+
+
+1961
+01:50:40,136 --> 01:50:42,996
+We're starting in the US and
+we'll be adding other countries
+
+
+1962
+01:50:42,996 --> 01:50:47,456
+over time and that's the
+new music app on iOS 7.
+
+
+1963
+01:50:47,506 --> 01:50:50,626
+It is the best music
+player we have ever done.
+
+
+1964
+01:50:50,846 --> 01:50:51,286
+Thank you.
+
+
+1965
+01:50:52,516 --> 01:50:58,166
+[ Applause ]
+
+
+1966
+01:50:58,666 --> 01:51:00,626
+>> Thank you Eddy.
+
+
+1967
+01:51:02,236 --> 01:51:05,126
+So 10 amazing features in iOS 7
+
+
+1968
+01:51:06,176 --> 01:51:09,366
+and a comprehensive
+end to end UI redesign.
+
+
+1969
+01:51:10,766 --> 01:51:14,556
+And of course we're bringing
+it all to iPad as well.
+
+
+1970
+01:51:15,436 --> 01:51:19,516
+Now, there's more to iOS 7
+than we had time to talk to you
+
+
+1971
+01:51:19,516 --> 01:51:20,886
+about in depth here today.
+
+
+1972
+01:51:21,466 --> 01:51:23,626
+Things like FaceTime audio
+
+
+1973
+01:51:23,696 --> 01:51:26,946
+where you now can do audio
+only high quality audio calls
+
+
+1974
+01:51:26,946 --> 01:51:29,746
+over Wi-Fi on any iOS device.
+
+
+1975
+01:51:29,746 --> 01:51:36,386
+Notification syncs so if
+you dismissed a notification
+
+
+1976
+01:51:36,386 --> 01:51:38,326
+on one device, you don't have to
+deal with it over and over again
+
+
+1977
+01:51:38,326 --> 01:51:39,156
+on your other devices.
+
+
+1978
+01:51:39,156 --> 01:51:44,916
+Great feature for our users
+in China with integration
+
+
+1979
+01:51:44,916 --> 01:51:48,246
+to popular microblogging
+website Tencent Weibo.
+
+
+1980
+01:51:48,676 --> 01:51:50,806
+And for those of
+you who have people
+
+
+1981
+01:51:50,806 --> 01:51:53,656
+who just won't let go phone
+FaceTime and message blocking.
+
+
+1982
+01:51:55,546 --> 01:51:59,856
+Also for our enterprise
+fee, customers per App VPN.
+
+
+1983
+01:52:00,686 --> 01:52:03,846
+Now there's yeah, a
+couple of enterprise people
+
+
+1984
+01:52:03,846 --> 01:52:05,206
+in the audience are you?
+
+
+1985
+01:52:05,206 --> 01:52:08,026
+So, in addition to all of these
+is one feature I want to talk
+
+
+1986
+01:52:08,026 --> 01:52:11,196
+about in a little bit more
+detail which is activation lock.
+
+
+1987
+01:52:11,996 --> 01:52:16,636
+So hundreds of millions of
+us use to Find My iPhone
+
+
+1988
+01:52:16,916 --> 01:52:19,886
+to find their phone when
+it's just lost in the couch
+
+
+1989
+01:52:19,886 --> 01:52:23,276
+or maybe left at Starbucks,
+but also when it's been stolen.
+
+
+1990
+01:52:24,556 --> 01:52:27,726
+And now, with activation
+lock, if a thief tries
+
+
+1991
+01:52:27,756 --> 01:52:30,216
+to turn off Find My iPhone
+
+
+1992
+01:52:30,846 --> 01:52:35,166
+or if they even wipe the device
+entirely, they will not be able
+
+
+1993
+01:52:35,256 --> 01:52:38,676
+to reactivate it because they
+don't know your iPod user
+
+
+1994
+01:52:38,736 --> 01:52:39,626
+name activation.
+
+
+1995
+01:52:40,516 --> 01:52:49,006
+[ Applause ]
+
+
+1996
+01:52:49,506 --> 01:52:51,926
+We think this is going to be a
+really powerful theft deterrent.
+
+
+1997
+01:52:52,526 --> 01:52:55,046
+Now of course in addition
+to be in a great release
+
+
+1998
+01:52:55,426 --> 01:52:59,326
+for our users, iOS 7 is also
+a fantastic and major release
+
+
+1999
+01:52:59,676 --> 01:53:00,916
+for developers as well.
+
+
+2000
+01:53:01,286 --> 01:53:04,176
+The SDK includes
+over 1500 new APIs.
+
+
+2001
+01:53:04,176 --> 01:53:07,766
+We can add AirDrop, integrate it
+
+
+2002
+01:53:07,766 --> 01:53:09,596
+with third-party
+game controllers.
+
+
+2003
+01:53:09,766 --> 01:53:12,416
+New APIs for taking
+advantage of multitasking,
+
+
+2004
+01:53:12,986 --> 01:53:16,936
+iBeacons for Bluetooth
+LE micro location,
+
+
+2005
+01:53:17,316 --> 01:53:21,226
+Sprite Kit for super fast
+power-efficient game animations
+
+
+2006
+01:53:21,426 --> 01:53:27,336
+and UI dynamics to bring physics
+to your UIView Animations.
+
+
+2007
+01:53:28,596 --> 01:53:29,796
+So I-- yeah.
+
+
+2008
+01:53:30,516 --> 01:53:35,546
+[ Applause ]
+
+
+2009
+01:53:36,046 --> 01:53:39,326
+So iOS 7 is available
+to you developers
+
+
+2010
+01:53:39,756 --> 01:53:41,786
+in beta on the iPhone today.
+
+
+2011
+01:53:42,516 --> 01:53:49,546
+[ Applause ]
+
+
+2012
+01:53:50,046 --> 01:53:53,156
+We'll have betas for iPad
+coming up in the near--
+
+
+2013
+01:53:53,186 --> 01:53:56,796
+in the coming weeks and for
+everyone else a final release
+
+
+2014
+01:53:57,196 --> 01:53:58,346
+coming this fall.
+
+
+2015
+01:53:59,086 --> 01:54:04,156
+So iOS 7 will be available
+for iPhone 4 and later iPad 2
+
+
+2016
+01:54:04,156 --> 01:54:08,906
+and later the iPad mini and the
+fifth generation iPod touch.
+
+
+2017
+01:54:09,466 --> 01:54:11,366
+That is iOS 7.
+
+
+2018
+01:54:11,516 --> 01:54:12,096
+I hope you'll love it.
+
+
+2019
+01:54:12,356 --> 01:54:12,706
+Thank you.
+
+
+2020
+01:54:13,516 --> 01:54:23,466
+[ Applause ]
+
+
+2021
+01:54:23,966 --> 01:54:27,706
+>> What a morning, it seems
+to be incredible products.
+
+
+2022
+01:54:27,706 --> 01:54:30,646
+OS X Mavericks, our
+latest release
+
+
+2023
+01:54:30,676 --> 01:54:33,846
+of the world's most advanced
+desktop operating system.
+
+
+2024
+01:54:34,076 --> 01:54:35,766
+It's the best OS X yet.
+
+
+2025
+01:54:36,956 --> 01:54:42,076
+With new incredible MacBook Airs
+with unbelievable battery life
+
+
+2026
+01:54:42,496 --> 01:54:45,276
+that continue to define the
+future of the notebooks.
+
+
+2027
+01:54:46,546 --> 01:54:48,676
+The next generation Mac Pro,
+
+
+2028
+01:54:49,056 --> 01:54:52,476
+a revolutionary computer
+designed especially
+
+
+2029
+01:54:52,476 --> 01:54:53,706
+for our power users.
+
+
+2030
+01:54:54,746 --> 01:54:59,866
+I work for iCloud, create
+beautiful documents right
+
+
+2031
+01:54:59,866 --> 01:55:03,146
+in your browser on
+a Mac or a PC.
+
+
+2032
+01:55:03,816 --> 01:55:11,576
+iOS 7, amazing new features and
+a stunning new user interface,
+
+
+2033
+01:55:12,156 --> 01:55:13,986
+it's the biggest change to iOS
+
+
+2034
+01:55:14,256 --> 01:55:16,266
+since the introduction
+of iPhone.
+
+
+2035
+01:55:17,166 --> 01:55:22,206
+And iTunes Radio, the absolute
+best way to discover new music.
+
+
+2036
+01:55:22,836 --> 01:55:27,866
+We are incredibly proud
+of all of these products.
+
+
+2037
+01:55:27,866 --> 01:55:31,916
+They are great examples
+of what Apple does best.
+
+
+2038
+01:55:33,226 --> 01:55:35,836
+I'd like to thank everyone
+at Apple that worked
+
+
+2039
+01:55:35,836 --> 01:55:37,576
+so hard to create them.
+
+
+2040
+01:55:38,306 --> 01:55:42,106
+I get to work with the most
+talented and creative people
+
+
+2041
+01:55:42,106 --> 01:55:44,376
+on earth and it's a
+joy to serve with them.
+
+
+2042
+01:55:44,816 --> 01:55:45,366
+Thank you.
+
+
+2043
+01:55:46,516 --> 01:55:58,326
+[ Applause ]
+
+
+2044
+01:55:58,826 --> 01:56:03,396
+I'd like to close this morning
+with the reminder, that our goal
+
+
+2045
+01:56:03,396 --> 01:56:06,596
+at Apple is to make
+amazing products
+
+
+2046
+01:56:06,876 --> 01:56:10,836
+that our customers love,
+really great products
+
+
+2047
+01:56:11,346 --> 01:56:13,826
+that enrich people's lives.
+
+
+2048
+01:56:14,496 --> 01:56:18,716
+The words you saw at the
+beginning of the show are more
+
+
+2049
+01:56:18,716 --> 01:56:20,096
+than just words to us.
+
+
+2050
+01:56:20,986 --> 01:56:22,816
+They are the values we lived by.
+
+
+2051
+01:56:23,656 --> 01:56:24,706
+They drive us.
+
+
+2052
+01:56:25,726 --> 01:56:30,506
+You see them reflected in our
+products over the years and just
+
+
+2053
+01:56:30,506 --> 01:56:32,276
+as much in the products
+this morning.
+
+
+2054
+01:56:32,276 --> 01:56:35,626
+And you'll just continue
+to see these reflected
+
+
+2055
+01:56:35,966 --> 01:56:40,216
+in the products we
+do in the future.
+
+
+2056
+01:56:41,316 --> 01:56:47,726
+We've created an ad to help us
+express just how deeply we feel
+
+
+2057
+01:56:47,726 --> 01:56:54,976
+about this and I'd like
+to share it with you now.
+
+
+2058
+01:56:55,066 --> 01:56:55,296
+>> [Music] This is it.
+
+
+2059
+01:56:55,296 --> 01:57:02,836
+This is what matters.
+
+
+2060
+01:57:02,836 --> 01:57:08,976
+The experience of a product.
+
+
+2061
+01:57:09,046 --> 01:57:11,106
+How will it make someone feel?
+
+
+2062
+01:57:11,266 --> 01:57:19,236
+Will it make life better?
+
+
+2063
+01:57:19,236 --> 01:57:26,926
+Does it deserve to exist?
+
+
+2064
+01:57:26,926 --> 01:57:30,926
+We spend a lot of time
+on a few great things
+
+
+2065
+01:57:30,926 --> 01:57:41,836
+until every idea we touch
+enhances each life it touches.
+
+
+2066
+01:57:41,836 --> 01:57:48,856
+You may rarely look at it,
+but you'll always feel it.
+
+
+2067
+01:57:48,856 --> 01:57:49,796
+This is our signature.
+
+
+2068
+01:57:49,796 --> 01:57:52,976
+And it means everything.
+
+
+2069
+01:57:53,516 --> 01:58:01,886
+[ Applause ]
+
+
+2070
+01:58:02,386 --> 01:58:02,766
+>> Thank you.
+
+
+2071
+01:58:03,516 --> 01:58:09,316
+[ Applause ]
+
+
+2072
+01:58:09,816 --> 01:58:11,226
+>> I'm really glad
+you liked that.
+
+
+2073
+01:58:11,446 --> 01:58:14,456
+You'll begin to see it on
+TV beginning this evening.
+
+
+2074
+01:58:16,156 --> 01:58:18,936
+Those words have been
+a great deal to us.
+
+
+2075
+01:58:19,746 --> 01:58:22,176
+And I hope they mean
+a lot to you as well.
+
+
+2076
+01:58:22,686 --> 01:58:24,126
+Have a great conference.
+
+
+2077
+01:58:24,126 --> 01:58:24,986
+Enjoy the week.
+
+
+2078
+01:58:24,986 --> 01:58:25,396
+Thank you.
+
+
+2079
+01:58:26,516 --> 01:58:37,410
+[ Applause & Music ]
+
