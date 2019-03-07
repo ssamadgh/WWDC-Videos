@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE1389F9192E473F009705B3 /* libPhotoMemoriesCore-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEC95F9192E034600F1E6F7 /* libPhotoMemoriesCore-iOS.a */; };
+		AE1389FB192E4745009705B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1389FA192E4745009705B3 /* QuartzCore.framework */; };
+		AE1389FD192E474A009705B3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1389FC192E474A009705B3 /* AVFoundation.framework */; };
+		AE1389FF192E47EB009705B3 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1389FE192E47EB009705B3 /* CoreImage.framework */; };
+		AE138A05192E4B84009705B3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE138A04192E4B84009705B3 /* AssetsLibrary.framework */; };
+		AE138A08192E4E9C009705B3 /* AAPLPMiOSPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE138A07192E4E9C009705B3 /* AAPLPMiOSPhotoButton.m */; };
+		AEAB0CF1192DF0E200E87E28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAB0CF0192DF0E200E87E28 /* Cocoa.framework */; };
+		AEAB0D31192DF1C100E87E28 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D2A192DF1C100E87E28 /* Credits.rtf */; };
+		AEAB0D32192DF1C100E87E28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D2C192DF1C100E87E28 /* InfoPlist.strings */; };
+		AEAB0D33192DF1C100E87E28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB0D2E192DF1C100E87E28 /* main.m */; };
+		AEAB0D39192DF1DD00E87E28 /* AAPLPMMacAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB0D36192DF1DD00E87E28 /* AAPLPMMacAppDelegate.m */; };
+		AEAB0D3B192DF23700E87E28 /* AAPLMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D37192DF1DD00E87E28 /* AAPLMainMenu.xib */; };
+		AEAB0D42192DF26800E87E28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAB0D41192DF26800E87E28 /* Foundation.framework */; };
+		AEAB0D44192DF26800E87E28 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAB0D43192DF26800E87E28 /* CoreGraphics.framework */; };
+		AEAB0D46192DF26800E87E28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAB0D45192DF26800E87E28 /* UIKit.framework */; };
+		AEAB0D4C192DF26800E87E28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D4A192DF26800E87E28 /* InfoPlist.strings */; };
+		AEAB0D4E192DF26800E87E28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB0D4D192DF26800E87E28 /* main.m */; };
+		AEAB0D52192DF26800E87E28 /* AAPLPMiOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB0D51192DF26800E87E28 /* AAPLPMiOSAppDelegate.m */; };
+		AEAB0D55192DF26800E87E28 /* AAPLMain_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D53192DF26800E87E28 /* AAPLMain_iPhone.storyboard */; };
+		AEAB0D5B192DF26800E87E28 /* AAPLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB0D5A192DF26800E87E28 /* AAPLViewController.m */; };
+		AEAB0D5D192DF26800E87E28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAB0D5C192DF26800E87E28 /* Images.xcassets */; };
+		AEDBC82519373DAF0049757E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDBC82419373DAF0049757E /* Media.xcassets */; };
+		AEEC960A192E03E400F1E6F7 /* libPhotoMemoriesCore-Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEC95F5192E034600F1E6F7 /* libPhotoMemoriesCore-Mac.a */; };
+		AEEC966D192E0A3C00F1E6F7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEC966C192E0A3C00F1E6F7 /* AVFoundation.framework */; };
+		AEEC966F192E0A4A00F1E6F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEC966E192E0A4A00F1E6F7 /* QuartzCore.framework */; };
+		AEEC9673192E0A8700F1E6F7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEC9672192E0A8700F1E6F7 /* CoreMedia.framework */; };
+		AEEC9691192E15E700F1E6F7 /* AAPLPMMacPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEC9690192E15E700F1E6F7 /* AAPLPMMacPhotoButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE1389F7192E473A009705B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAB0DFC192DF9EF00E87E28;
+			remoteInfo = "PhotoMemoriesCore-iOS";
+		};
+		AEEC95F4192E034600F1E6F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEAB0D7F192DF31E00E87E28;
+			remoteInfo = "PhotoMemoriesCore-Mac";
+		};
+		AEEC95F8192E034600F1E6F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEAB0DFD192DF9EF00E87E28;
+			remoteInfo = "PhotoMemoriesCore-iOS";
+		};
+		AEEC9608192E03DF00F1E6F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AEAB0D7E192DF31E00E87E28;
+			remoteInfo = "PhotoMemoriesCore-Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE1389FA192E4745009705B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		AE1389FC192E474A009705B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		AE1389FE192E47EB009705B3 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
+		AE138A04192E4B84009705B3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		AE138A06192E4E9C009705B3 /* AAPLPMiOSPhotoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPMiOSPhotoButton.h; sourceTree = "<group>"; };
+		AE138A07192E4E9C009705B3 /* AAPLPMiOSPhotoButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPMiOSPhotoButton.m; sourceTree = "<group>"; };
+		AEAB0CED192DF0E200E87E28 /* PhotoMemories-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotoMemories-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAB0CF0192DF0E200E87E28 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AEAB0CF3192DF0E200E87E28 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AEAB0CF4192DF0E200E87E28 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEAB0CF5192DF0E200E87E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEAB0D0F192DF0E200E87E28 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AEAB0D2B192DF1C100E87E28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = "PhotoMemories-Mac/en.lproj/Credits.rtf"; sourceTree = SOURCE_ROOT; };
+		AEAB0D2D192DF1C100E87E28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "PhotoMemories-Mac/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		AEAB0D2E192DF1C100E87E28 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "PhotoMemories-Mac/main.m"; sourceTree = SOURCE_ROOT; };
+		AEAB0D2F192DF1C100E87E28 /* PhotoMemories-Mac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PhotoMemories-Mac-Info.plist"; path = "PhotoMemories-Mac/PhotoMemories-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AEAB0D30192DF1C100E87E28 /* AAPLPhotoMemories-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AAPLPhotoMemories-Mac-Prefix.pch"; path = "PhotoMemories-Mac/AAPLPhotoMemories-Mac-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		AEAB0D35192DF1DD00E87E28 /* AAPLPMMacAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAPLPMMacAppDelegate.h; path = "PhotoMemories-Mac/AAPLPMMacAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		AEAB0D36192DF1DD00E87E28 /* AAPLPMMacAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAPLPMMacAppDelegate.m; path = "PhotoMemories-Mac/AAPLPMMacAppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		AEAB0D38192DF1DD00E87E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "PhotoMemories-Mac/Base.lproj/AAPLMainMenu.xib"; sourceTree = SOURCE_ROOT; };
+		AEAB0D40192DF26800E87E28 /* PhotoMemories-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotoMemories-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAB0D41192DF26800E87E28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEAB0D43192DF26800E87E28 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AEAB0D45192DF26800E87E28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEAB0D49192DF26800E87E28 /* PhotoMemories-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotoMemories-iOS-Info.plist"; sourceTree = "<group>"; };
+		AEAB0D4B192DF26800E87E28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEAB0D4D192DF26800E87E28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEAB0D4F192DF26800E87E28 /* AAPLPhotoMemories-iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AAPLPhotoMemories-iOS-Prefix.pch"; sourceTree = "<group>"; };
+		AEAB0D50192DF26800E87E28 /* AAPLPMiOSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLPMiOSAppDelegate.h; sourceTree = "<group>"; };
+		AEAB0D51192DF26800E87E28 /* AAPLPMiOSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAPLPMiOSAppDelegate.m; sourceTree = "<group>"; };
+		AEAB0D54192DF26800E87E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AAPLMain_iPhone.storyboard; sourceTree = "<group>"; };
+		AEAB0D59192DF26800E87E28 /* AAPLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLViewController.h; sourceTree = "<group>"; };
+		AEAB0D5A192DF26800E87E28 /* AAPLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAPLViewController.m; sourceTree = "<group>"; };
+		AEAB0D5C192DF26800E87E28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AEDBC82419373DAF0049757E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		AEEC95E2192E032100F1E6F7 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Common.xcconfig; path = ../Config/Common.xcconfig; sourceTree = "<group>"; };
+		AEEC95E3192E032100F1E6F7 /* iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = iOS.xcconfig; sourceTree = "<group>"; };
+		AEEC95E4192E032100F1E6F7 /* OSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = OSX.xcconfig; sourceTree = "<group>"; };
+		AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhotoMemoriesCore.xcodeproj; path = ../PhotoMemoriesCore/PhotoMemoriesCore.xcodeproj; sourceTree = "<group>"; };
+		AEEC966C192E0A3C00F1E6F7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AEEC966E192E0A4A00F1E6F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AEEC9670192E0A7A00F1E6F7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AEEC9672192E0A8700F1E6F7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		AEEC968F192E15E700F1E6F7 /* AAPLPMMacPhotoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLPMMacPhotoButton.h; sourceTree = "<group>"; };
+		AEEC9690192E15E700F1E6F7 /* AAPLPMMacPhotoButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLPMMacPhotoButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEAB0CEA192DF0E200E87E28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEC960A192E03E400F1E6F7 /* libPhotoMemoriesCore-Mac.a in Frameworks */,
+				AEEC966F192E0A4A00F1E6F7 /* QuartzCore.framework in Frameworks */,
+				AEEC966D192E0A3C00F1E6F7 /* AVFoundation.framework in Frameworks */,
+				AEAB0CF1192DF0E200E87E28 /* Cocoa.framework in Frameworks */,
+				AEEC9673192E0A8700F1E6F7 /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAB0D3D192DF26800E87E28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE138A05192E4B84009705B3 /* AssetsLibrary.framework in Frameworks */,
+				AE1389FF192E47EB009705B3 /* CoreImage.framework in Frameworks */,
+				AE1389FD192E474A009705B3 /* AVFoundation.framework in Frameworks */,
+				AE1389FB192E4745009705B3 /* QuartzCore.framework in Frameworks */,
+				AE1389F9192E473F009705B3 /* libPhotoMemoriesCore-iOS.a in Frameworks */,
+				AEAB0D44192DF26800E87E28 /* CoreGraphics.framework in Frameworks */,
+				AEAB0D46192DF26800E87E28 /* UIKit.framework in Frameworks */,
+				AEAB0D42192DF26800E87E28 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEAB0CE4192DF0E200E87E28 = {
+			isa = PBXGroup;
+			children = (
+				AEAB0CF6192DF0E200E87E28 /* PhotoMemories Mac */,
+				AEAB0D47192DF26800E87E28 /* PhotoMemories iOS */,
+				AEAB0CEF192DF0E200E87E28 /* Frameworks */,
+				AEAB0CEE192DF0E200E87E28 /* Products */,
+				AEAB0DEC192DF95300E87E28 /* Shared */,
+			);
+			sourceTree = "<group>";
+		};
+		AEAB0CEE192DF0E200E87E28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB0CED192DF0E200E87E28 /* PhotoMemories-Mac.app */,
+				AEAB0D40192DF26800E87E28 /* PhotoMemories-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEAB0CEF192DF0E200E87E28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE138A04192E4B84009705B3 /* AssetsLibrary.framework */,
+				AE1389FE192E47EB009705B3 /* CoreImage.framework */,
+				AE1389FC192E474A009705B3 /* AVFoundation.framework */,
+				AE1389FA192E4745009705B3 /* QuartzCore.framework */,
+				AEEC9672192E0A8700F1E6F7 /* CoreMedia.framework */,
+				AEEC9670192E0A7A00F1E6F7 /* ImageIO.framework */,
+				AEEC966E192E0A4A00F1E6F7 /* QuartzCore.framework */,
+				AEEC966C192E0A3C00F1E6F7 /* AVFoundation.framework */,
+				AEAB0CF0192DF0E200E87E28 /* Cocoa.framework */,
+				AEAB0D0F192DF0E200E87E28 /* XCTest.framework */,
+				AEAB0D41192DF26800E87E28 /* Foundation.framework */,
+				AEAB0D43192DF26800E87E28 /* CoreGraphics.framework */,
+				AEAB0D45192DF26800E87E28 /* UIKit.framework */,
+				AEAB0CF2192DF0E200E87E28 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEAB0CF2192DF0E200E87E28 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB0CF3192DF0E200E87E28 /* AppKit.framework */,
+				AEAB0CF4192DF0E200E87E28 /* CoreData.framework */,
+				AEAB0CF5192DF0E200E87E28 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AEAB0CF6192DF0E200E87E28 /* PhotoMemories Mac */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB0D35192DF1DD00E87E28 /* AAPLPMMacAppDelegate.h */,
+				AEAB0D36192DF1DD00E87E28 /* AAPLPMMacAppDelegate.m */,
+				AEAB0D37192DF1DD00E87E28 /* AAPLMainMenu.xib */,
+				AEAB0CF7192DF0E200E87E28 /* Supporting Files */,
+				AEEC968F192E15E700F1E6F7 /* AAPLPMMacPhotoButton.h */,
+				AEEC9690192E15E700F1E6F7 /* AAPLPMMacPhotoButton.m */,
+			);
+			name = "PhotoMemories Mac";
+			path = "PhotoMemories-Mac";
+			sourceTree = "<group>";
+		};
+		AEAB0CF7192DF0E200E87E28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBC82419373DAF0049757E /* Media.xcassets */,
+				AEAB0D2A192DF1C100E87E28 /* Credits.rtf */,
+				AEAB0D2C192DF1C100E87E28 /* InfoPlist.strings */,
+				AEAB0D2E192DF1C100E87E28 /* main.m */,
+				AEAB0D2F192DF1C100E87E28 /* PhotoMemories-Mac-Info.plist */,
+				AEAB0D30192DF1C100E87E28 /* AAPLPhotoMemories-Mac-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEAB0D47192DF26800E87E28 /* PhotoMemories iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB0D50192DF26800E87E28 /* AAPLPMiOSAppDelegate.h */,
+				AEAB0D51192DF26800E87E28 /* AAPLPMiOSAppDelegate.m */,
+				AEAB0D53192DF26800E87E28 /* AAPLMain_iPhone.storyboard */,
+				AEAB0D59192DF26800E87E28 /* AAPLViewController.h */,
+				AEAB0D5A192DF26800E87E28 /* AAPLViewController.m */,
+				AEAB0D5C192DF26800E87E28 /* Images.xcassets */,
+				AEAB0D48192DF26800E87E28 /* Supporting Files */,
+				AE138A06192E4E9C009705B3 /* AAPLPMiOSPhotoButton.h */,
+				AE138A07192E4E9C009705B3 /* AAPLPMiOSPhotoButton.m */,
+			);
+			name = "PhotoMemories iOS";
+			path = "PhotoMemories-iOS";
+			sourceTree = "<group>";
+		};
+		AEAB0D48192DF26800E87E28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB0D49192DF26800E87E28 /* PhotoMemories-iOS-Info.plist */,
+				AEAB0D4A192DF26800E87E28 /* InfoPlist.strings */,
+				AEAB0D4D192DF26800E87E28 /* main.m */,
+				AEAB0D4F192DF26800E87E28 /* AAPLPhotoMemories-iOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEAB0DEC192DF95300E87E28 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */,
+				AEEC95BB192DFD8200F1E6F7 /* Config */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		AEEC95BB192DFD8200F1E6F7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				AEEC95E2192E032100F1E6F7 /* Common.xcconfig */,
+				AEEC95E3192E032100F1E6F7 /* iOS.xcconfig */,
+				AEEC95E4192E032100F1E6F7 /* OSX.xcconfig */,
+			);
+			name = Config;
+			path = ../Config;
+			sourceTree = "<group>";
+		};
+		AEEC95EE192E034600F1E6F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEEC95F5192E034600F1E6F7 /* libPhotoMemoriesCore-Mac.a */,
+				AEEC95F9192E034600F1E6F7 /* libPhotoMemoriesCore-iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEAB0CEC192DF0E200E87E28 /* PhotoMemories-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAB0D1E192DF0E200E87E28 /* Build configuration list for PBXNativeTarget "PhotoMemories-Mac" */;
+			buildPhases = (
+				AEAB0CE9192DF0E200E87E28 /* Sources */,
+				AEAB0CEA192DF0E200E87E28 /* Frameworks */,
+				AEAB0CEB192DF0E200E87E28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEEC9609192E03DF00F1E6F7 /* PBXTargetDependency */,
+			);
+			name = "PhotoMemories-Mac";
+			productName = PhotoMemories;
+			productReference = AEAB0CED192DF0E200E87E28 /* PhotoMemories-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEAB0D3F192DF26800E87E28 /* PhotoMemories-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEAB0D70192DF26900E87E28 /* Build configuration list for PBXNativeTarget "PhotoMemories-iOS" */;
+			buildPhases = (
+				AEAB0D3C192DF26800E87E28 /* Sources */,
+				AEAB0D3D192DF26800E87E28 /* Frameworks */,
+				AEAB0D3E192DF26800E87E28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE1389F8192E473A009705B3 /* PBXTargetDependency */,
+			);
+			name = "PhotoMemories-iOS";
+			productName = "PhotoMemories-iOS";
+			productReference = AEAB0D40192DF26800E87E28 /* PhotoMemories-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEAB0CE5192DF0E200E87E28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Apple;
+			};
+			buildConfigurationList = AEAB0CE8192DF0E200E87E28 /* Build configuration list for PBXProject "PhotoMemories" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEAB0CE4192DF0E200E87E28;
+			productRefGroup = AEAB0CEE192DF0E200E87E28 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEEC95EE192E034600F1E6F7 /* Products */;
+					ProjectRef = AEEC95EB192E033A00F1E6F7 /* PhotoMemoriesCore.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AEAB0CEC192DF0E200E87E28 /* PhotoMemories-Mac */,
+				AEAB0D3F192DF26800E87E28 /* PhotoMemories-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AEEC95F5192E034600F1E6F7 /* libPhotoMemoriesCore-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPhotoMemoriesCore-Mac.a";
+			remoteRef = AEEC95F4192E034600F1E6F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEEC95F9192E034600F1E6F7 /* libPhotoMemoriesCore-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPhotoMemoriesCore-iOS.a";
+			remoteRef = AEEC95F8192E034600F1E6F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEAB0CEB192DF0E200E87E28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAB0D32192DF1C100E87E28 /* InfoPlist.strings in Resources */,
+				AEAB0D31192DF1C100E87E28 /* Credits.rtf in Resources */,
+				AEDBC82519373DAF0049757E /* Media.xcassets in Resources */,
+				AEAB0D3B192DF23700E87E28 /* AAPLMainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAB0D3E192DF26800E87E28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAB0D5D192DF26800E87E28 /* Images.xcassets in Resources */,
+				AEAB0D55192DF26800E87E28 /* AAPLMain_iPhone.storyboard in Resources */,
+				AEAB0D4C192DF26800E87E28 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEAB0CE9192DF0E200E87E28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEC9691192E15E700F1E6F7 /* AAPLPMMacPhotoButton.m in Sources */,
+				AEAB0D39192DF1DD00E87E28 /* AAPLPMMacAppDelegate.m in Sources */,
+				AEAB0D33192DF1C100E87E28 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEAB0D3C192DF26800E87E28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEAB0D5B192DF26800E87E28 /* AAPLViewController.m in Sources */,
+				AEAB0D52192DF26800E87E28 /* AAPLPMiOSAppDelegate.m in Sources */,
+				AEAB0D4E192DF26800E87E28 /* main.m in Sources */,
+				AE138A08192E4E9C009705B3 /* AAPLPMiOSPhotoButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE1389F8192E473A009705B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhotoMemoriesCore-iOS";
+			targetProxy = AE1389F7192E473A009705B3 /* PBXContainerItemProxy */;
+		};
+		AEEC9609192E03DF00F1E6F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PhotoMemoriesCore-Mac";
+			targetProxy = AEEC9608192E03DF00F1E6F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEAB0D2A192DF1C100E87E28 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAB0D2B192DF1C100E87E28 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AEAB0D2C192DF1C100E87E28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAB0D2D192DF1C100E87E28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AEAB0D37192DF1DD00E87E28 /* AAPLMainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAB0D38192DF1DD00E87E28 /* Base */,
+			);
+			name = AAPLMainMenu.xib;
+			sourceTree = "<group>";
+		};
+		AEAB0D4A192DF26800E87E28 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAB0D4B192DF26800E87E28 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AEAB0D53192DF26800E87E28 /* AAPLMain_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEAB0D54192DF26800E87E28 /* Base */,
+			);
+			name = AAPLMain_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEAB0D1C192DF0E200E87E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AEAB0D1D192DF0E200E87E28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AEAB0D1F192DF0E200E87E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEC95E4192E032100F1E6F7 /* OSX.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoMemories-Mac/AAPLPhotoMemories-Mac-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)",
+				);
+				INFOPLIST_FILE = "PhotoMemories-Mac/PhotoMemories-Mac-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEAB0D20192DF0E200E87E28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEC95E4192E032100F1E6F7 /* OSX.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoMemories-Mac/AAPLPhotoMemories-Mac-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)",
+				);
+				INFOPLIST_FILE = "PhotoMemories-Mac/PhotoMemories-Mac-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AEAB0D71192DF26900E87E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEC95E3192E032100F1E6F7 /* iOS.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apple Inc. - Tangier";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Apple Inc. - Tangier";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoMemories-iOS/AAPLPhotoMemories-iOS-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(CONFIGURATION_BUILD_DIR)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "PhotoMemories-iOS/PhotoMemories-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEAB0D72192DF26900E87E28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEEC95E3192E032100F1E6F7 /* iOS.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Apple Inc. - Tangier";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "3rd Party Mac Developer Application: Apple Inc. - iWork";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhotoMemories-iOS/AAPLPhotoMemories-iOS-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(CONFIGURATION_BUILD_DIR)",
+				);
+				INFOPLIST_FILE = "PhotoMemories-iOS/PhotoMemories-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEAB0CE8192DF0E200E87E28 /* Build configuration list for PBXProject "PhotoMemories" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAB0D1C192DF0E200E87E28 /* Debug */,
+				AEAB0D1D192DF0E200E87E28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAB0D1E192DF0E200E87E28 /* Build configuration list for PBXNativeTarget "PhotoMemories-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAB0D1F192DF0E200E87E28 /* Debug */,
+				AEAB0D20192DF0E200E87E28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEAB0D70192DF26900E87E28 /* Build configuration list for PBXNativeTarget "PhotoMemories-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEAB0D71192DF26900E87E28 /* Debug */,
+				AEAB0D72192DF26900E87E28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEAB0CE5192DF0E200E87E28 /* Project object */;
+}

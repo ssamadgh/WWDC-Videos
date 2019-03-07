@@ -1,0 +1,11 @@
+//
+//  iOS.xcconfig
+//  PhotoMemoriesCore
+//
+//  Copyright (c) 2014 Apple. All rights reserved.
+//
+
+#include "Common.xcconfig"
+
+SDKROOT = iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 7.0

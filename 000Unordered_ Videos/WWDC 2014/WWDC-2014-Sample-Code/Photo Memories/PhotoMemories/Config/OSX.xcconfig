@@ -1,0 +1,14 @@
+//
+//  OSX.xcconfig
+//  PhotoMemoriesCore
+//
+//  Copyright (c) 2014 Apple. All rights reserved.
+//
+
+#include "Common.xcconfig"
+
+SDKROOT = macosx
+SUPPORTED_PLATFORMS = macosx
+MACOSX_DEPLOYMENT_TARGET = 10.9
+ARCHS = $(ARCHS_STANDARD_64_BIT)
+VALID_ARCHS = $(ARCHS_STANDARD_64_BIT

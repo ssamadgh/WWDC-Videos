@@ -1,0 +1,10 @@
+//
+//  OSX_testing.xcconfig
+//  PhotoMemories
+//
+//  Copyright (c) 2014 Apple. All rights reserved.
+//
+
+#include "OSX.xcconfig"
+
+PUBLIC_HEADERS_FOLDER_PATH = $(CONFIGURATION_BUILD_DIR)

@@ -1,0 +1,10 @@
+//
+//  Common.xcconfig
+//  PhotoMemoriesCore
+//
+//  Copyright (c) 2014 Apple. All rights reserved.
+//
+
+WARNING_CFLAGS = $(value) -Wno-error=unused-function
+
+HEADER_SEARCH_PATHS = $(inherited) $(CONFIGURATION_BUILD_DIR)

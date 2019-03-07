@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6119.3" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6123.3"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="AAPLViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eWr-t1-BYS"/>
+                        <viewControllerLayoutGuide type="bottom" id="GAe-nP-AZW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dX4-2V-wpe">
+                                <rect key="frame" x="0.0" y="20" width="320" height="432"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="432" id="0pO-Ri-pCO"/>
+                                    <constraint firstAttribute="width" constant="320" id="aOa-ES-3bd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73n-iL-xdo">
+                                <rect key="frame" x="0.0" y="452" width="320" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5K-0N-hh0" customClass="AAPLPMiOSPhotoButton">
+                                        <rect key="frame" x="138" y="36" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="CDE-eK-cAA"/>
+                                            <constraint firstAttribute="width" constant="44" id="RJo-aH-ahc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Y1i-3O-FsV"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="q53-p2-BCU"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePicture:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qms-bG-Fkj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="b5K-0N-hh0" secondAttribute="centerX" id="IaQ-wN-DYJ"/>
+                                    <constraint firstAttribute="centerY" secondItem="b5K-0N-hh0" secondAttribute="centerY" id="wFt-04-8aI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dX4-2V-wpe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NUv-fn-i3h"/>
+                            <constraint firstItem="GAe-nP-AZW" firstAttribute="top" secondItem="73n-iL-xdo" secondAttribute="bottom" id="S6U-ko-4AI"/>
+                            <constraint firstItem="73n-iL-xdo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="YaH-CF-Jme"/>
+                            <constraint firstItem="dX4-2V-wpe" firstAttribute="top" secondItem="eWr-t1-BYS" secondAttribute="bottom" id="fFY-bv-I0o"/>
+                            <constraint firstItem="73n-iL-xdo" firstAttribute="top" secondItem="dX4-2V-wpe" secondAttribute="bottom" id="kqB-3G-sK6"/>
+                            <constraint firstAttribute="trailing" secondItem="dX4-2V-wpe" secondAttribute="trailing" id="vEN-60-Fwp"/>
+                            <constraint firstAttribute="trailing" secondItem="73n-iL-xdo" secondAttribute="trailing" id="wtE-eG-7GR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="dX4-2V-wpe" id="iJ4-0b-LhK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="166"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
