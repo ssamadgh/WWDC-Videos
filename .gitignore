@@ -69,3 +69,7 @@ fastlane/test_output
 
 # My External files
 ._.DS_Store
+
+# This Video is not needed to upload
+Contracts_Tax_Banking_Apps.mov
+
