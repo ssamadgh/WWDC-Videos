@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Fyg-16-2gs">
+    <dependencies>
+        <deployment version="1280" defaultVersion="1296" identifier="iOS"/>
+        <development version="4300" defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Yf7-vT-xbx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cn2-zH-GWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="Fyg-16-2gs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eig-Oc-SEu">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="f7h-e0-UBh" kind="relationship" relationship="rootViewController" id="Cek-4V-OYR"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-259" y="-237"/>
+        </scene>
+        <!--View Controller - ViewTransitions-->
+        <scene sceneID="QtA-ca-v75">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Afm-bT-xD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="f7h-e0-UBh" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IP7-34-ap7">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ViewTransitions" id="m4J-1L-gNK">
+                        <barButtonItem key="leftBarButtonItem" title="Dissolve" id="ABF-yQ-j2G">
+                            <connections>
+                                <action selector="fadeAction:" destination="f7h-e0-UBh" id="zmJ-21-Ltm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Flip" id="qCg-HU-nLu">
+                            <connections>
+                                <action selector="flipAction:" destination="f7h-e0-UBh" id="uRK-hc-tDO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backView" destination="GSA-Cv-Uf7" id="pvy-rS-TiE"/>
+                        <outlet property="frontView" destination="Bhz-an-qf7" id="q8Y-hi-X1s"/>
+                    </connections>
+                </viewController>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="image1.jpg" id="Bhz-an-qf7" userLabel="FrontView">
+                    <rect key="frame" x="0.0" y="-352" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="image2.jpg" id="GSA-Cv-Uf7" userLabel="BackView">
+                    <rect key="frame" x="0.0" y="-352" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="178" y="-237"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image1.jpg" width="320" height="436"/>
+        <image name="image2.jpg" width="320" height="436"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		535FE83413E0AF9D00BF68C9 /* Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE82C13E0AF9D00BF68C9 /* Beach.png */; };
+		535FE83513E0AF9D00BF68C9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE82D13E0AF9D00BF68C9 /* Icon-72.png */; };
+		535FE83613E0AF9D00BF68C9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE82E13E0AF9D00BF68C9 /* Icon-Small-50.png */; };
+		535FE83713E0AF9D00BF68C9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE82F13E0AF9D00BF68C9 /* Icon-Small.png */; };
+		535FE83813E0AF9D00BF68C9 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE83013E0AF9D00BF68C9 /* Icon-Small@2x.png */; };
+		535FE83913E0AF9D00BF68C9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE83113E0AF9D00BF68C9 /* Icon.png */; };
+		535FE83A13E0AF9D00BF68C9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 535FE83213E0AF9D00BF68C9 /* Icon@2x.png */; };
+		535FE83B13E0AF9D00BF68C9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 535FE83313E0AF9D00BF68C9 /* iTunesArtwork */; };
+		6E983BC8139696D8000AD831 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E983BC7139696D8000AD831 /* UIKit.framework */; };
+		6E983BCA139696D8000AD831 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E983BC9139696D8000AD831 /* Foundation.framework */; };
+		6E983BCC139696D8000AD831 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E983BCB139696D8000AD831 /* CoreGraphics.framework */; };
+		6E983BD2139696D8000AD831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E983BD0139696D8000AD831 /* InfoPlist.strings */; };
+		6E983BD5139696D8000AD831 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983BD4139696D8000AD831 /* main.m */; };
+		6E983BD8139696D8000AD831 /* SimpleStocksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983BD7139696D8000AD831 /* SimpleStocksAppDelegate.m */; };
+		6E983BDF139696D8000AD831 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E983BDD139696D8000AD831 /* MainWindow_iPhone.xib */; };
+		6E983BE6139696D8000AD831 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E983BE4139696D8000AD831 /* MainWindow_iPad.xib */; };
+		6E983BF713969761000AD831 /* DailyTradeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983BEF13969761000AD831 /* DailyTradeInfo.m */; };
+		6E983BF813969761000AD831 /* DailyTradeInfoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983BF113969761000AD831 /* DailyTradeInfoSource.m */; };
+		6E983BFA13969761000AD831 /* SimpleStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983BF513969761000AD831 /* SimpleStockViewController.m */; };
+		6E983C041396A009000AD831 /* SimpleStockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E983C031396A009000AD831 /* SimpleStockView.m */; };
+		F476ADAD13998ECC005A3C97 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F476ADAC13998ECC005A3C97 /* README.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		535FE82C13E0AF9D00BF68C9 /* Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Beach.png; path = images/Beach.png; sourceTree = "<group>"; };
+		535FE82D13E0AF9D00BF68C9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "images/Icon-72.png"; sourceTree = "<group>"; };
+		535FE82E13E0AF9D00BF68C9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "images/Icon-Small-50.png"; sourceTree = "<group>"; };
+		535FE82F13E0AF9D00BF68C9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "images/Icon-Small.png"; sourceTree = "<group>"; };
+		535FE83013E0AF9D00BF68C9 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "images/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		535FE83113E0AF9D00BF68C9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = images/Icon.png; sourceTree = "<group>"; };
+		535FE83213E0AF9D00BF68C9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "images/Icon@2x.png"; sourceTree = "<group>"; };
+		535FE83313E0AF9D00BF68C9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = images/iTunesArtwork; sourceTree = "<group>"; };
+		6E983BC3139696D8000AD831 /* SimpleStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E983BC7139696D8000AD831 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6E983BC9139696D8000AD831 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6E983BCB139696D8000AD831 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6E983BCF139696D8000AD831 /* SimpleStocks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleStocks-Info.plist"; sourceTree = "<group>"; };
+		6E983BD1139696D8000AD831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6E983BD3139696D8000AD831 /* SimpleStocks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleStocks-Prefix.pch"; sourceTree = "<group>"; };
+		6E983BD4139696D8000AD831 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E983BD6139696D8000AD831 /* SimpleStocksAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleStocksAppDelegate.h; sourceTree = "<group>"; };
+		6E983BD7139696D8000AD831 /* SimpleStocksAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleStocksAppDelegate.m; sourceTree = "<group>"; };
+		6E983BDE139696D8000AD831 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		6E983BE5139696D8000AD831 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		6E983BEE13969761000AD831 /* DailyTradeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTradeInfo.h; sourceTree = "<group>"; };
+		6E983BEF13969761000AD831 /* DailyTradeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTradeInfo.m; sourceTree = "<group>"; };
+		6E983BF013969761000AD831 /* DailyTradeInfoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTradeInfoSource.h; sourceTree = "<group>"; };
+		6E983BF113969761000AD831 /* DailyTradeInfoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTradeInfoSource.m; sourceTree = "<group>"; };
+		6E983BF213969761000AD831 /* SimpleStockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleStockView.h; sourceTree = "<group>"; };
+		6E983BF413969761000AD831 /* SimpleStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleStockViewController.h; sourceTree = "<group>"; };
+		6E983BF513969761000AD831 /* SimpleStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleStockViewController.m; sourceTree = "<group>"; };
+		6E983C031396A009000AD831 /* SimpleStockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleStockView.m; sourceTree = "<group>"; };
+		F476ADAC13998ECC005A3C97 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E983BC0139696D8000AD831 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E983BC8139696D8000AD831 /* UIKit.framework in Frameworks */,
+				6E983BCA139696D8000AD831 /* Foundation.framework in Frameworks */,
+				6E983BCC139696D8000AD831 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E983BB8139696D8000AD831 = {
+			isa = PBXGroup;
+			children = (
+				F476ADAC13998ECC005A3C97 /* README.txt */,
+				6E983BCD139696D8000AD831 /* SimpleStocks */,
+				6E983BC6139696D8000AD831 /* Frameworks */,
+				6E983BC4139696D8000AD831 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E983BC4139696D8000AD831 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BC3139696D8000AD831 /* SimpleStocks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E983BC6139696D8000AD831 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BC7139696D8000AD831 /* UIKit.framework */,
+				6E983BC9139696D8000AD831 /* Foundation.framework */,
+				6E983BCB139696D8000AD831 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E983BCD139696D8000AD831 /* SimpleStocks */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BEC139696E1000AD831 /* Shared */,
+				6E983BD6139696D8000AD831 /* SimpleStocksAppDelegate.h */,
+				6E983BD7139696D8000AD831 /* SimpleStocksAppDelegate.m */,
+				6E983BD9139696D8000AD831 /* iPhone */,
+				6E983BE0139696D8000AD831 /* iPad */,
+				6E983BCE139696D8000AD831 /* Supporting Files */,
+			);
+			path = SimpleStocks;
+			sourceTree = "<group>";
+		};
+		6E983BCE139696D8000AD831 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				535FE82C13E0AF9D00BF68C9 /* Beach.png */,
+				535FE82D13E0AF9D00BF68C9 /* Icon-72.png */,
+				535FE82E13E0AF9D00BF68C9 /* Icon-Small-50.png */,
+				535FE82F13E0AF9D00BF68C9 /* Icon-Small.png */,
+				535FE83013E0AF9D00BF68C9 /* Icon-Small@2x.png */,
+				535FE83113E0AF9D00BF68C9 /* Icon.png */,
+				535FE83213E0AF9D00BF68C9 /* Icon@2x.png */,
+				535FE83313E0AF9D00BF68C9 /* iTunesArtwork */,
+				6E983BCF139696D8000AD831 /* SimpleStocks-Info.plist */,
+				6E983BD0139696D8000AD831 /* InfoPlist.strings */,
+				6E983BD3139696D8000AD831 /* SimpleStocks-Prefix.pch */,
+				6E983BD4139696D8000AD831 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E983BD9139696D8000AD831 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BDD139696D8000AD831 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		6E983BE0139696D8000AD831 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BE4139696D8000AD831 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		6E983BEC139696E1000AD831 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6E983BEE13969761000AD831 /* DailyTradeInfo.h */,
+				6E983BEF13969761000AD831 /* DailyTradeInfo.m */,
+				6E983BF013969761000AD831 /* DailyTradeInfoSource.h */,
+				6E983BF113969761000AD831 /* DailyTradeInfoSource.m */,
+				6E983BF213969761000AD831 /* SimpleStockView.h */,
+				6E983C031396A009000AD831 /* SimpleStockView.m */,
+				6E983BF413969761000AD831 /* SimpleStockViewController.h */,
+				6E983BF513969761000AD831 /* SimpleStockViewController.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E983BC2139696D8000AD831 /* SimpleStocks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E983BE9139696D8000AD831 /* Build configuration list for PBXNativeTarget "SimpleStocks" */;
+			buildPhases = (
+				6E983BBF139696D8000AD831 /* Sources */,
+				6E983BC0139696D8000AD831 /* Frameworks */,
+				6E983BC1139696D8000AD831 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleStocks;
+			productName = SimpleStocks;
+			productReference = 6E983BC3139696D8000AD831 /* SimpleStocks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E983BBA139696D8000AD831 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+			};
+			buildConfigurationList = 6E983BBD139696D8000AD831 /* Build configuration list for PBXProject "SimpleStocks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6E983BB8139696D8000AD831;
+			productRefGroup = 6E983BC4139696D8000AD831 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E983BC2139696D8000AD831 /* SimpleStocks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E983BC1139696D8000AD831 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E983BD2139696D8000AD831 /* InfoPlist.strings in Resources */,
+				6E983BDF139696D8000AD831 /* MainWindow_iPhone.xib in Resources */,
+				6E983BE6139696D8000AD831 /* MainWindow_iPad.xib in Resources */,
+				F476ADAD13998ECC005A3C97 /* README.txt in Resources */,
+				535FE83413E0AF9D00BF68C9 /* Beach.png in Resources */,
+				535FE83513E0AF9D00BF68C9 /* Icon-72.png in Resources */,
+				535FE83613E0AF9D00BF68C9 /* Icon-Small-50.png in Resources */,
+				535FE83713E0AF9D00BF68C9 /* Icon-Small.png in Resources */,
+				535FE83813E0AF9D00BF68C9 /* Icon-Small@2x.png in Resources */,
+				535FE83913E0AF9D00BF68C9 /* Icon.png in Resources */,
+				535FE83A13E0AF9D00BF68C9 /* Icon@2x.png in Resources */,
+				535FE83B13E0AF9D00BF68C9 /* iTunesArtwork in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E983BBF139696D8000AD831 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E983BD5139696D8000AD831 /* main.m in Sources */,
+				6E983BD8139696D8000AD831 /* SimpleStocksAppDelegate.m in Sources */,
+				6E983BF713969761000AD831 /* DailyTradeInfo.m in Sources */,
+				6E983BF813969761000AD831 /* DailyTradeInfoSource.m in Sources */,
+				6E983BFA13969761000AD831 /* SimpleStockViewController.m in Sources */,
+				6E983C041396A009000AD831 /* SimpleStockView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6E983BD0139696D8000AD831 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E983BD1139696D8000AD831 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6E983BDD139696D8000AD831 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E983BDE139696D8000AD831 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		6E983BE4139696D8000AD831 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E983BE5139696D8000AD831 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E983BE7139696D8000AD831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6E983BE8139696D8000AD831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6E983BEA139696D8000AD831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleStocks/SimpleStocks-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SimpleStocks/SimpleStocks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6E983BEB139696D8000AD831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleStocks/SimpleStocks-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SimpleStocks/SimpleStocks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.samplecode.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E983BBD139696D8000AD831 /* Build configuration list for PBXProject "SimpleStocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E983BE7139696D8000AD831 /* Debug */,
+				6E983BE8139696D8000AD831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E983BE9139696D8000AD831 /* Build configuration list for PBXNativeTarget "SimpleStocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E983BEA139696D8000AD831 /* Debug */,
+				6E983BEB139696D8000AD831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E983BBA139696D8000AD831 /* Project object */;
+}
