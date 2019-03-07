@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SpriteKit Physics Collisions' target in the 'SpriteKit Physics Collisions' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

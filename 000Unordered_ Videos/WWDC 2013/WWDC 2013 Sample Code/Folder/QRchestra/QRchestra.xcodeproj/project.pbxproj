@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26597A181750107000323801 /* Synth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26597A171750107000323801 /* Synth.m */; };
+		26597A1A1750121C00323801 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26597A191750121C00323801 /* AudioToolbox.framework */; };
+		26597A1B175017B300323801 /* Vibraphone.aupreset in Resources */ = {isa = PBXBuildFile; fileRef = 26597A1517500F8100323801 /* Vibraphone.aupreset */; };
+		267E35E4174C244E0056C10A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 267E35E3174C244E0056C10A /* AVFoundation.framework */; };
+		267E35E7174C26A20056C10A /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E35E6174C26A20056C10A /* SessionManager.m */; };
+		2686E778174AC7210021AF22 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686E777174AC7210021AF22 /* UIKit.framework */; };
+		2686E77A174AC7210021AF22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686E779174AC7210021AF22 /* Foundation.framework */; };
+		2686E77C174AC7210021AF22 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2686E77B174AC7210021AF22 /* CoreGraphics.framework */; };
+		2686E782174AC7210021AF22 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2686E780174AC7210021AF22 /* InfoPlist.strings */; };
+		2686E784174AC7210021AF22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686E783174AC7210021AF22 /* main.m */; };
+		2686E788174AC7210021AF22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686E787174AC7210021AF22 /* AppDelegate.m */; };
+		2686E78A174AC7220021AF22 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2686E789174AC7220021AF22 /* Default.png */; };
+		2686E78C174AC7220021AF22 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2686E78B174AC7220021AF22 /* Default@2x.png */; };
+		2686E78E174AC7230021AF22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2686E78D174AC7230021AF22 /* Default-568h@2x.png */; };
+		2686E799174AC7250021AF22 /* ReceiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686E798174AC7250021AF22 /* ReceiveViewController.m */; };
+		2686E79C174AC7250021AF22 /* SendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686E79B174AC7250021AF22 /* SendViewController.m */; };
+		2686E79F174AC7250021AF22 /* ReceiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2686E79D174AC7250021AF22 /* ReceiveViewController.xib */; };
+		2686E7A5174AC7250021AF22 /* SendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2686E7A3174AC7250021AF22 /* SendViewController.xib */; };
+		26F17E641766B0A600D4D4A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E5E1766B0A600D4D4A1 /* Icon-72.png */; };
+		26F17E651766B0A600D4D4A1 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E5F1766B0A600D4D4A1 /* Icon-Small-50.png */; };
+		26F17E661766B0A600D4D4A1 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E601766B0A600D4D4A1 /* Icon-Small.png */; };
+		26F17E671766B0A600D4D4A1 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E611766B0A600D4D4A1 /* Icon-Small@2x.png */; };
+		26F17E681766B0A600D4D4A1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E621766B0A600D4D4A1 /* Icon.png */; };
+		26F17E691766B0A600D4D4A1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F17E631766B0A600D4D4A1 /* Icon@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26597A1517500F8100323801 /* Vibraphone.aupreset */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Vibraphone.aupreset; sourceTree = "<group>"; };
+		26597A161750107000323801 /* Synth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Synth.h; sourceTree = "<group>"; };
+		26597A171750107000323801 /* Synth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Synth.m; sourceTree = "<group>"; };
+		26597A191750121C00323801 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		267E35E3174C244E0056C10A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		267E35E5174C26A20056C10A /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		267E35E6174C26A20056C10A /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
+		2686E774174AC7210021AF22 /* QRchestra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRchestra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2686E777174AC7210021AF22 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2686E779174AC7210021AF22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2686E77B174AC7210021AF22 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2686E77F174AC7210021AF22 /* QRchestra-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QRchestra-Info.plist"; sourceTree = "<group>"; };
+		2686E781174AC7210021AF22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2686E783174AC7210021AF22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2686E785174AC7210021AF22 /* QRchestra-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QRchestra-Prefix.pch"; sourceTree = "<group>"; };
+		2686E786174AC7210021AF22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2686E787174AC7210021AF22 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2686E789174AC7220021AF22 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2686E78B174AC7220021AF22 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2686E78D174AC7230021AF22 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2686E797174AC7250021AF22 /* ReceiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveViewController.h; sourceTree = "<group>"; };
+		2686E798174AC7250021AF22 /* ReceiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveViewController.m; sourceTree = "<group>"; };
+		2686E79A174AC7250021AF22 /* SendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendViewController.h; sourceTree = "<group>"; };
+		2686E79B174AC7250021AF22 /* SendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendViewController.m; sourceTree = "<group>"; };
+		2686E79E174AC7250021AF22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ReceiveViewController.xib; sourceTree = "<group>"; };
+		2686E7A4174AC7250021AF22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SendViewController.xib; sourceTree = "<group>"; };
+		26F17E5E1766B0A600D4D4A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		26F17E5F1766B0A600D4D4A1 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		26F17E601766B0A600D4D4A1 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		26F17E611766B0A600D4D4A1 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		26F17E621766B0A600D4D4A1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		26F17E631766B0A600D4D4A1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		28FA564B1767FB920069DE25 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2686E771174AC7210021AF22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26597A1A1750121C00323801 /* AudioToolbox.framework in Frameworks */,
+				267E35E4174C244E0056C10A /* AVFoundation.framework in Frameworks */,
+				2686E77C174AC7210021AF22 /* CoreGraphics.framework in Frameworks */,
+				2686E778174AC7210021AF22 /* UIKit.framework in Frameworks */,
+				2686E77A174AC7210021AF22 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2686E76B174AC7210021AF22 = {
+			isa = PBXGroup;
+			children = (
+				28FA564B1767FB920069DE25 /* ReadMe.txt */,
+				2686E77D174AC7210021AF22 /* Classes */,
+				2686E77E174AC7210021AF22 /* Supporting Files */,
+				2686E776174AC7210021AF22 /* Frameworks */,
+				2686E775174AC7210021AF22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2686E775174AC7210021AF22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2686E774174AC7210021AF22 /* QRchestra.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2686E776174AC7210021AF22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26597A191750121C00323801 /* AudioToolbox.framework */,
+				267E35E3174C244E0056C10A /* AVFoundation.framework */,
+				2686E777174AC7210021AF22 /* UIKit.framework */,
+				2686E779174AC7210021AF22 /* Foundation.framework */,
+				2686E77B174AC7210021AF22 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2686E77D174AC7210021AF22 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				26597A161750107000323801 /* Synth.h */,
+				26597A171750107000323801 /* Synth.m */,
+				267E35E5174C26A20056C10A /* SessionManager.h */,
+				267E35E6174C26A20056C10A /* SessionManager.m */,
+				2686E786174AC7210021AF22 /* AppDelegate.h */,
+				2686E787174AC7210021AF22 /* AppDelegate.m */,
+				2686E797174AC7250021AF22 /* ReceiveViewController.h */,
+				2686E798174AC7250021AF22 /* ReceiveViewController.m */,
+				2686E79A174AC7250021AF22 /* SendViewController.h */,
+				2686E79B174AC7250021AF22 /* SendViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2686E77E174AC7210021AF22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26F17E5E1766B0A600D4D4A1 /* Icon-72.png */,
+				26F17E5F1766B0A600D4D4A1 /* Icon-Small-50.png */,
+				26F17E601766B0A600D4D4A1 /* Icon-Small.png */,
+				26F17E611766B0A600D4D4A1 /* Icon-Small@2x.png */,
+				26F17E621766B0A600D4D4A1 /* Icon.png */,
+				26F17E631766B0A600D4D4A1 /* Icon@2x.png */,
+				2686E79D174AC7250021AF22 /* ReceiveViewController.xib */,
+				2686E7A3174AC7250021AF22 /* SendViewController.xib */,
+				26597A1517500F8100323801 /* Vibraphone.aupreset */,
+				2686E77F174AC7210021AF22 /* QRchestra-Info.plist */,
+				2686E780174AC7210021AF22 /* InfoPlist.strings */,
+				2686E783174AC7210021AF22 /* main.m */,
+				2686E785174AC7210021AF22 /* QRchestra-Prefix.pch */,
+				2686E789174AC7220021AF22 /* Default.png */,
+				2686E78B174AC7220021AF22 /* Default@2x.png */,
+				2686E78D174AC7230021AF22 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2686E773174AC7210021AF22 /* QRchestra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2686E7A8174AC7250021AF22 /* Build configuration list for PBXNativeTarget "QRchestra" */;
+			buildPhases = (
+				2686E770174AC7210021AF22 /* Sources */,
+				2686E771174AC7210021AF22 /* Frameworks */,
+				2686E772174AC7210021AF22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRchestra;
+			productName = QRchestra;
+			productReference = 2686E774174AC7210021AF22 /* QRchestra.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2686E76C174AC7210021AF22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Matthew Calhoun";
+			};
+			buildConfigurationList = 2686E76F174AC7210021AF22 /* Build configuration list for PBXProject "QRchestra" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2686E76B174AC7210021AF22;
+			productRefGroup = 2686E775174AC7210021AF22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2686E773174AC7210021AF22 /* QRchestra */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2686E772174AC7210021AF22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F17E681766B0A600D4D4A1 /* Icon.png in Resources */,
+				26F17E691766B0A600D4D4A1 /* Icon@2x.png in Resources */,
+				2686E79F174AC7250021AF22 /* ReceiveViewController.xib in Resources */,
+				2686E78C174AC7220021AF22 /* Default@2x.png in Resources */,
+				26597A1B175017B300323801 /* Vibraphone.aupreset in Resources */,
+				26F17E651766B0A600D4D4A1 /* Icon-Small-50.png in Resources */,
+				2686E78E174AC7230021AF22 /* Default-568h@2x.png in Resources */,
+				2686E782174AC7210021AF22 /* InfoPlist.strings in Resources */,
+				26F17E641766B0A600D4D4A1 /* Icon-72.png in Resources */,
+				2686E7A5174AC7250021AF22 /* SendViewController.xib in Resources */,
+				26F17E661766B0A600D4D4A1 /* Icon-Small.png in Resources */,
+				2686E78A174AC7220021AF22 /* Default.png in Resources */,
+				26F17E671766B0A600D4D4A1 /* Icon-Small@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2686E770174AC7210021AF22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26597A181750107000323801 /* Synth.m in Sources */,
+				2686E788174AC7210021AF22 /* AppDelegate.m in Sources */,
+				2686E799174AC7250021AF22 /* ReceiveViewController.m in Sources */,
+				2686E79C174AC7250021AF22 /* SendViewController.m in Sources */,
+				2686E784174AC7210021AF22 /* main.m in Sources */,
+				267E35E7174C26A20056C10A /* SessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2686E780174AC7210021AF22 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2686E781174AC7210021AF22 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2686E79D174AC7250021AF22 /* ReceiveViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2686E79E174AC7250021AF22 /* en */,
+			);
+			name = ReceiveViewController.xib;
+			sourceTree = "<group>";
+		};
+		2686E7A3174AC7250021AF22 /* SendViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2686E7A4174AC7250021AF22 /* en */,
+			);
+			name = SendViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2686E7A6174AC7250021AF22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2686E7A7174AC7250021AF22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2686E7A9174AC7250021AF22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QRchestra-Prefix.pch";
+				INFOPLIST_FILE = "QRchestra-Info.plist";
+				PRODUCT_NAME = QRchestra;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2686E7AA174AC7250021AF22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QRchestra-Prefix.pch";
+				INFOPLIST_FILE = "QRchestra-Info.plist";
+				PRODUCT_NAME = QRchestra;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2686E76F174AC7210021AF22 /* Build configuration list for PBXProject "QRchestra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2686E7A6174AC7250021AF22 /* Debug */,
+				2686E7A7174AC7250021AF22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2686E7A8174AC7250021AF22 /* Build configuration list for PBXNativeTarget "QRchestra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2686E7A9174AC7250021AF22 /* Debug */,
+				2686E7AA174AC7250021AF22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2686E76C174AC7210021AF22 /* Project object */;
+}

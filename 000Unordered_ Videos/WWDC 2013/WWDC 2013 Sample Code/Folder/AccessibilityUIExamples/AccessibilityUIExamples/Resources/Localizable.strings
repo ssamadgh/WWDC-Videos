@@ -1,0 +1,21 @@
+/*
+ 
+ <codex>
+ 
+ <abstract>Strings that should be localized.</abstract>
+ 
+ </codex>
+ 
+ */
+
+"AUTO" = "auto";
+"OFF" = "off";
+"ON" = "on";
+"SWITCH" = "switch";
+"SWITCH_HINT" = "A three position switch with off, on, and auto options.";
+"Play" = "Play";
+"INCREASE_PRESS_COUNT" = "Increase press count.";
+"PRESS_COUNT_FORMATTER" = "Press count: %@";
+"VOLUME" = "volume";
+"VOLUME_FORMATTER" = "Volume: %@";
+"VOLUME_STEPPER_HINT" = "Adjusts the volume";

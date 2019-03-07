@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>animation2</key>
+	<dict>
+		<key>begin</key>
+		<real>3.666666666666667</real>
+		<key>end</key>
+		<real>6.416666666666667</real>
+	</dict>
+	<key>animation1</key>
+	<dict>
+		<key>begin</key>
+		<integer>0</integer>
+		<key>end</key>
+		<real>1.4</real>
+	</dict>
+	<key>idle</key>
+	<dict>
+		<key>begin</key>
+		<real>6.45833333333333</real>
+		<key>end</key>
+		<real>24.71</real>
+	</dict>
+</dict>
+</plist>

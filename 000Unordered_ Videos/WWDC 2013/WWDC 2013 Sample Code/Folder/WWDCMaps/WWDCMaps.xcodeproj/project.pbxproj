@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		414AE24E174B2E8F00EB0A68 /* WWDCMapsCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 414AE24D174B2E8F00EB0A68 /* WWDCMapsCommon.m */; };
+		415288421737315200503176 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415288411737315200503176 /* UIKit.framework */; };
+		415288441737315200503176 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415288431737315200503176 /* Foundation.framework */; };
+		415288461737315200503176 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415288451737315200503176 /* CoreGraphics.framework */; };
+		4152884C1737315200503176 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4152884A1737315200503176 /* InfoPlist.strings */; };
+		4152884E1737315200503176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4152884D1737315200503176 /* main.m */; };
+		415288521737315200503176 /* WWDCMapsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 415288511737315200503176 /* WWDCMapsAppDelegate.m */; };
+		415288581737315200503176 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 415288571737315200503176 /* Default-Landscape~ipad.png */; };
+		4152885A1737315200503176 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 415288591737315200503176 /* Default-Landscape@2x~ipad.png */; };
+		41542E72173759B80038D17D /* WWDCMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41542E71173759B80038D17D /* WWDCMapsViewController.m */; };
+		41542E78173763360038D17D /* WWDCMapsFloorPlanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41542E77173763360038D17D /* WWDCMapsFloorPlanView.m */; };
+		41542EB4173776FB0038D17D /* WWDCMapsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41542EB3173776FB0038D17D /* WWDCMapsViewController.xib */; };
+		41542EB7173785990038D17D /* WWDCMapsElevatorControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 41542EB6173785990038D17D /* WWDCMapsElevatorControl.m */; };
+		41542EBA173787F40038D17D /* WWDCMapsTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41542EB9173787F40038D17D /* WWDCMapsTitleView.m */; };
+		41C0B6D817581A2F002DE72A /* WWDCMapsCoffeeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 41C0B6D717581A2F002DE72A /* WWDCMapsCoffeeControl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28E6C3A81766916F003805C8 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		414AE24C174B2E8F00EB0A68 /* WWDCMapsCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsCommon.h; sourceTree = "<group>"; };
+		414AE24D174B2E8F00EB0A68 /* WWDCMapsCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsCommon.m; sourceTree = "<group>"; };
+		4152883E1737315200503176 /* WWDC Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WWDC Maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		415288411737315200503176 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		415288431737315200503176 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		415288451737315200503176 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		415288491737315200503176 /* WWDCMaps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WWDCMaps-Info.plist"; sourceTree = "<group>"; };
+		4152884B1737315200503176 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4152884D1737315200503176 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4152884F1737315200503176 /* WWDCMaps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WWDCMaps-Prefix.pch"; sourceTree = "<group>"; };
+		415288501737315200503176 /* WWDCMapsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWDCMapsAppDelegate.h; sourceTree = "<group>"; };
+		415288511737315200503176 /* WWDCMapsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsAppDelegate.m; sourceTree = "<group>"; };
+		415288571737315200503176 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		415288591737315200503176 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		41542E70173759B80038D17D /* WWDCMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsViewController.h; sourceTree = "<group>"; };
+		41542E71173759B80038D17D /* WWDCMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsViewController.m; sourceTree = "<group>"; };
+		41542E76173763360038D17D /* WWDCMapsFloorPlanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsFloorPlanView.h; sourceTree = "<group>"; };
+		41542E77173763360038D17D /* WWDCMapsFloorPlanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsFloorPlanView.m; sourceTree = "<group>"; };
+		41542EB3173776FB0038D17D /* WWDCMapsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WWDCMapsViewController.xib; sourceTree = "<group>"; };
+		41542EB5173785990038D17D /* WWDCMapsElevatorControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsElevatorControl.h; sourceTree = "<group>"; };
+		41542EB6173785990038D17D /* WWDCMapsElevatorControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsElevatorControl.m; sourceTree = "<group>"; };
+		41542EB8173787F40038D17D /* WWDCMapsTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsTitleView.h; sourceTree = "<group>"; };
+		41542EB9173787F40038D17D /* WWDCMapsTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsTitleView.m; sourceTree = "<group>"; };
+		41C0B6D617581A2F002DE72A /* WWDCMapsCoffeeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDCMapsCoffeeControl.h; sourceTree = "<group>"; };
+		41C0B6D717581A2F002DE72A /* WWDCMapsCoffeeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDCMapsCoffeeControl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4152883B1737315200503176 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415288461737315200503176 /* CoreGraphics.framework in Frameworks */,
+				415288441737315200503176 /* Foundation.framework in Frameworks */,
+				415288421737315200503176 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		415288351737315200503176 = {
+			isa = PBXGroup;
+			children = (
+				28E6C3A81766916F003805C8 /* ReadMe.txt */,
+				415288471737315200503176 /* WWDCMaps */,
+				415288401737315200503176 /* Frameworks */,
+				4152883F1737315200503176 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4152883F1737315200503176 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4152883E1737315200503176 /* WWDC Maps.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		415288401737315200503176 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				415288451737315200503176 /* CoreGraphics.framework */,
+				415288431737315200503176 /* Foundation.framework */,
+				415288411737315200503176 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		415288471737315200503176 /* WWDCMaps */ = {
+			isa = PBXGroup;
+			children = (
+				41C0B6D617581A2F002DE72A /* WWDCMapsCoffeeControl.h */,
+				41C0B6D717581A2F002DE72A /* WWDCMapsCoffeeControl.m */,
+				414AE24C174B2E8F00EB0A68 /* WWDCMapsCommon.h */,
+				414AE24D174B2E8F00EB0A68 /* WWDCMapsCommon.m */,
+				41542EB5173785990038D17D /* WWDCMapsElevatorControl.h */,
+				41542EB6173785990038D17D /* WWDCMapsElevatorControl.m */,
+				41542E76173763360038D17D /* WWDCMapsFloorPlanView.h */,
+				41542E77173763360038D17D /* WWDCMapsFloorPlanView.m */,
+				41542EB8173787F40038D17D /* WWDCMapsTitleView.h */,
+				41542EB9173787F40038D17D /* WWDCMapsTitleView.m */,
+				41542E70173759B80038D17D /* WWDCMapsViewController.h */,
+				41542E71173759B80038D17D /* WWDCMapsViewController.m */,
+				415288501737315200503176 /* WWDCMapsAppDelegate.h */,
+				415288511737315200503176 /* WWDCMapsAppDelegate.m */,
+				415288481737315200503176 /* Supporting Files */,
+			);
+			path = WWDCMaps;
+			sourceTree = "<group>";
+		};
+		415288481737315200503176 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				415288591737315200503176 /* Default-Landscape@2x~ipad.png */,
+				415288571737315200503176 /* Default-Landscape~ipad.png */,
+				4152884A1737315200503176 /* InfoPlist.strings */,
+				415288491737315200503176 /* WWDCMaps-Info.plist */,
+				4152884F1737315200503176 /* WWDCMaps-Prefix.pch */,
+				41542EB3173776FB0038D17D /* WWDCMapsViewController.xib */,
+				4152884D1737315200503176 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4152883D1737315200503176 /* WWDCMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4152885D1737315200503176 /* Build configuration list for PBXNativeTarget "WWDCMaps" */;
+			buildPhases = (
+				4152883A1737315200503176 /* Sources */,
+				4152883B1737315200503176 /* Frameworks */,
+				4152883C1737315200503176 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WWDCMaps;
+			productName = WWDCMaps;
+			productReference = 4152883E1737315200503176 /* WWDC Maps.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		415288361737315200503176 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WWDCMaps;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Apple Inc";
+			};
+			buildConfigurationList = 415288391737315200503176 /* Build configuration list for PBXProject "WWDCMaps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 415288351737315200503176;
+			productRefGroup = 4152883F1737315200503176 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4152883D1737315200503176 /* WWDCMaps */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4152883C1737315200503176 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41542EB4173776FB0038D17D /* WWDCMapsViewController.xib in Resources */,
+				4152885A1737315200503176 /* Default-Landscape@2x~ipad.png in Resources */,
+				4152884C1737315200503176 /* InfoPlist.strings in Resources */,
+				415288581737315200503176 /* Default-Landscape~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4152883A1737315200503176 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41542E78173763360038D17D /* WWDCMapsFloorPlanView.m in Sources */,
+				4152884E1737315200503176 /* main.m in Sources */,
+				41C0B6D817581A2F002DE72A /* WWDCMapsCoffeeControl.m in Sources */,
+				414AE24E174B2E8F00EB0A68 /* WWDCMapsCommon.m in Sources */,
+				41542EB7173785990038D17D /* WWDCMapsElevatorControl.m in Sources */,
+				41542EBA173787F40038D17D /* WWDCMapsTitleView.m in Sources */,
+				415288521737315200503176 /* WWDCMapsAppDelegate.m in Sources */,
+				41542E72173759B80038D17D /* WWDCMapsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4152884A1737315200503176 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4152884B1737315200503176 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4152885B1737315200503176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4152885C1737315200503176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4152885E1737315200503176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WWDCMaps/WWDCMaps-Prefix.pch";
+				INFOPLIST_FILE = "WWDCMaps/WWDCMaps-Info.plist";
+				PRODUCT_NAME = "WWDC Maps";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4152885F1737315200503176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WWDCMaps/WWDCMaps-Prefix.pch";
+				INFOPLIST_FILE = "WWDCMaps/WWDCMaps-Info.plist";
+				PRODUCT_NAME = "WWDC Maps";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		415288391737315200503176 /* Build configuration list for PBXProject "WWDCMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4152885B1737315200503176 /* Debug */,
+				4152885C1737315200503176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4152885D1737315200503176 /* Build configuration list for PBXNativeTarget "WWDCMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4152885E1737315200503176 /* Debug */,
+				4152885F1737315200503176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 415288361737315200503176 /* Project object */;
+}

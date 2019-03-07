@@ -1,0 +1,271 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAAE5870176A6BEF00A718BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE586F176A6BEF00A718BE /* Foundation.framework */; };
+		FAAE5873176A6BEF00A718BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE5872176A6BEF00A718BE /* main.m */; };
+		FAAE5881176A6C1500A718BE /* Dehaze.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE587E176A6C1500A718BE /* Dehaze.m */; };
+		FAAE5882176A6C1500A718BE /* MorphologicalMinCL.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE5880176A6C1500A718BE /* MorphologicalMinCL.m */; };
+		FAAE5884176A6C3900A718BE /* _DSC6843.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAAE5883176A6C2100A718BE /* _DSC6843.JPG */; };
+		FAAE5886176A6C4500A718BE /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE5885176A6C4500A718BE /* IOSurface.framework */; };
+		FAAE5888176A6C4A00A718BE /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE5887176A6C4A00A718BE /* OpenCL.framework */; };
+		FAAE588A176A6C5000A718BE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE5889176A6C5000A718BE /* OpenGL.framework */; };
+		FAAE588C176A6C5600A718BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE588B176A6C5600A718BE /* QuartzCore.framework */; };
+		FAAE588E176A6C5B00A718BE /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAE588D176A6C5B00A718BE /* ApplicationServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAAE5869176A6BEF00A718BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = /tmp;
+			dstSubfolderSpec = 0;
+			files = (
+				FAAE5884176A6C3900A718BE /* _DSC6843.JPG in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FAAE586B176A6BEF00A718BE /* Dehaze */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dehaze; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAE586F176A6BEF00A718BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FAAE5872176A6BEF00A718BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAAE5875176A6BEF00A718BE /* Dehaze-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dehaze-Prefix.pch"; sourceTree = "<group>"; };
+		FAAE587D176A6C1500A718BE /* Dehaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dehaze.h; sourceTree = "<group>"; };
+		FAAE587E176A6C1500A718BE /* Dehaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dehaze.m; sourceTree = "<group>"; };
+		FAAE587F176A6C1500A718BE /* MorphologicalMinCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorphologicalMinCL.h; sourceTree = "<group>"; };
+		FAAE5880176A6C1500A718BE /* MorphologicalMinCL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorphologicalMinCL.m; sourceTree = "<group>"; };
+		FAAE5883176A6C2100A718BE /* _DSC6843.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = _DSC6843.JPG; sourceTree = "<group>"; };
+		FAAE5885176A6C4500A718BE /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		FAAE5887176A6C4A00A718BE /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		FAAE5889176A6C5000A718BE /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		FAAE588B176A6C5600A718BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FAAE588D176A6C5B00A718BE /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAAE5868176A6BEF00A718BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE588E176A6C5B00A718BE /* ApplicationServices.framework in Frameworks */,
+				FAAE588C176A6C5600A718BE /* QuartzCore.framework in Frameworks */,
+				FAAE588A176A6C5000A718BE /* OpenGL.framework in Frameworks */,
+				FAAE5888176A6C4A00A718BE /* OpenCL.framework in Frameworks */,
+				FAAE5886176A6C4500A718BE /* IOSurface.framework in Frameworks */,
+				FAAE5870176A6BEF00A718BE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAAE5860176A6BEF00A718BE = {
+			isa = PBXGroup;
+			children = (
+				FAAE5871176A6BEF00A718BE /* Dehaze */,
+				FAAE586E176A6BEF00A718BE /* Frameworks */,
+				FAAE586C176A6BEF00A718BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAAE586C176A6BEF00A718BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE586B176A6BEF00A718BE /* Dehaze */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAAE586E176A6BEF00A718BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE588D176A6C5B00A718BE /* ApplicationServices.framework */,
+				FAAE588B176A6C5600A718BE /* QuartzCore.framework */,
+				FAAE5889176A6C5000A718BE /* OpenGL.framework */,
+				FAAE5887176A6C4A00A718BE /* OpenCL.framework */,
+				FAAE5885176A6C4500A718BE /* IOSurface.framework */,
+				FAAE586F176A6BEF00A718BE /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAAE5871176A6BEF00A718BE /* Dehaze */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE587D176A6C1500A718BE /* Dehaze.h */,
+				FAAE587E176A6C1500A718BE /* Dehaze.m */,
+				FAAE587F176A6C1500A718BE /* MorphologicalMinCL.h */,
+				FAAE5880176A6C1500A718BE /* MorphologicalMinCL.m */,
+				FAAE5872176A6BEF00A718BE /* main.m */,
+				FAAE5874176A6BEF00A718BE /* Supporting Files */,
+			);
+			path = Dehaze;
+			sourceTree = "<group>";
+		};
+		FAAE5874176A6BEF00A718BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE5883176A6C2100A718BE /* _DSC6843.JPG */,
+				FAAE5875176A6BEF00A718BE /* Dehaze-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAAE586A176A6BEF00A718BE /* Dehaze */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAAE587A176A6BEF00A718BE /* Build configuration list for PBXNativeTarget "Dehaze" */;
+			buildPhases = (
+				FAAE5867176A6BEF00A718BE /* Sources */,
+				FAAE5868176A6BEF00A718BE /* Frameworks */,
+				FAAE5869176A6BEF00A718BE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dehaze;
+			productName = Dehaze;
+			productReference = FAAE586B176A6BEF00A718BE /* Dehaze */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAAE5862176A6BEF00A718BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Alexandre Naaman";
+			};
+			buildConfigurationList = FAAE5865176A6BEF00A718BE /* Build configuration list for PBXProject "Dehaze" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FAAE5860176A6BEF00A718BE;
+			productRefGroup = FAAE586C176A6BEF00A718BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAAE586A176A6BEF00A718BE /* Dehaze */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAAE5867176A6BEF00A718BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE5873176A6BEF00A718BE /* main.m in Sources */,
+				FAAE5881176A6C1500A718BE /* Dehaze.m in Sources */,
+				FAAE5882176A6C1500A718BE /* MorphologicalMinCL.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FAAE5878176A6BEF00A718BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FAAE5879176A6BEF00A718BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAAE587B176A6BEF00A718BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dehaze/Dehaze-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		FAAE587C176A6BEF00A718BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Dehaze/Dehaze-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAAE5865176A6BEF00A718BE /* Build configuration list for PBXProject "Dehaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAE5878176A6BEF00A718BE /* Debug */,
+				FAAE5879176A6BEF00A718BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAAE587A176A6BEF00A718BE /* Build configuration list for PBXNativeTarget "Dehaze" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAE587B176A6BEF00A718BE /* Debug */,
+				FAAE587C176A6BEF00A718BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAAE5862176A6BEF00A718BE /* Project object */;
+}

@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		692131BC1767F74A00E0956F /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 692131BB1767F74A00E0956F /* PreviewView.m */; };
+		695830091765479A00E22446 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695830081765479A00E22446 /* Images.xcassets */; };
+		696EF8201730A4E9000A7027 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696EF81F1730A4E9000A7027 /* UIKit.framework */; };
+		696EF8221730A4E9000A7027 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696EF8211730A4E9000A7027 /* Foundation.framework */; };
+		696EF8241730A4E9000A7027 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696EF8231730A4E9000A7027 /* CoreGraphics.framework */; };
+		696EF82A1730A4E9000A7027 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 696EF8281730A4E9000A7027 /* InfoPlist.strings */; };
+		696EF82C1730A4E9000A7027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 696EF82B1730A4E9000A7027 /* main.m */; };
+		696EF8301730A4E9000A7027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 696EF82F1730A4E9000A7027 /* AppDelegate.m */; };
+		696EF8411730A4E9000A7027 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696EF8401730A4E9000A7027 /* ViewController.m */; };
+		696EF8441730A4E9000A7027 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696EF8421730A4E9000A7027 /* ViewController_iPhone.xib */; };
+		696EF8471730A4E9000A7027 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 696EF8451730A4E9000A7027 /* ViewController_iPad.xib */; };
+		696EF84E1730ADB0000A7027 /* Dramatic_Chipmunk.png in Resources */ = {isa = PBXBuildFile; fileRef = 696EF84D1730ADB0000A7027 /* Dramatic_Chipmunk.png */; };
+		696EF8511730B157000A7027 /* Record.png in Resources */ = {isa = PBXBuildFile; fileRef = 696EF84F1730B157000A7027 /* Record.png */; };
+		696EF8521730B157000A7027 /* Recording.png in Resources */ = {isa = PBXBuildFile; fileRef = 696EF8501730B157000A7027 /* Recording.png */; };
+		6971504C173993FE0001F46B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6971504B173993FE0001F46B /* QuartzCore.framework */; };
+		697452631731CCE6004ED6CD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697452621731CCE6004ED6CD /* AVFoundation.framework */; };
+		697606ED174BF441007684DE /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 697606EC174BF2FB007684DE /* FaceView.m */; };
+		6996C2A01765B4EE00DD4E82 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6996C29F1765B4EE00DD4E82 /* CoreMedia.framework */; };
+		69C3D4201761582A004E09FB /* Dramatic2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 69C3D41F1761582A004E09FB /* Dramatic2.m4a */; };
+		69C3D42217628C01004E09FB /* Sosumi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69C3D42117628C01004E09FB /* Sosumi.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		284BE3411767EB12005D4951 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		692131BA1767F74A00E0956F /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		692131BB1767F74A00E0956F /* PreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
+		695830081765479A00E22446 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		696EF81C1730A4E9000A7027 /* SoZoomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoZoomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		696EF81F1730A4E9000A7027 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		696EF8211730A4E9000A7027 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		696EF8231730A4E9000A7027 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		696EF8271730A4E9000A7027 /* SoZoomy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoZoomy-Info.plist"; sourceTree = "<group>"; };
+		696EF8291730A4E9000A7027 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		696EF82B1730A4E9000A7027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		696EF82D1730A4E9000A7027 /* SoZoomy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoZoomy-Prefix.pch"; sourceTree = "<group>"; };
+		696EF82E1730A4E9000A7027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		696EF82F1730A4E9000A7027 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		696EF83F1730A4E9000A7027 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		696EF8401730A4E9000A7027 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		696EF8431730A4E9000A7027 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		696EF8461730A4E9000A7027 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		696EF84D1730ADB0000A7027 /* Dramatic_Chipmunk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dramatic_Chipmunk.png; sourceTree = "<group>"; };
+		696EF84F1730B157000A7027 /* Record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Record.png; sourceTree = "<group>"; };
+		696EF8501730B157000A7027 /* Recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Recording.png; sourceTree = "<group>"; };
+		6971504B173993FE0001F46B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		697452621731CCE6004ED6CD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		697606EB174BF2FB007684DE /* FaceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		697606EC174BF2FB007684DE /* FaceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
+		6996C29F1765B4EE00DD4E82 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		69C3D41F1761582A004E09FB /* Dramatic2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dramatic2.m4a; sourceTree = "<group>"; };
+		69C3D42117628C01004E09FB /* Sosumi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sosumi.wav; sourceTree = "<group>"; };
+		69EC468A1757EFE300D97768 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		696EF8191730A4E9000A7027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6996C2A01765B4EE00DD4E82 /* CoreMedia.framework in Frameworks */,
+				6971504C173993FE0001F46B /* QuartzCore.framework in Frameworks */,
+				697452631731CCE6004ED6CD /* AVFoundation.framework in Frameworks */,
+				696EF8241730A4E9000A7027 /* CoreGraphics.framework in Frameworks */,
+				696EF8201730A4E9000A7027 /* UIKit.framework in Frameworks */,
+				696EF8221730A4E9000A7027 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		696EF8131730A4E9000A7027 = {
+			isa = PBXGroup;
+			children = (
+				284BE3411767EB12005D4951 /* ReadMe.txt */,
+				696EF8251730A4E9000A7027 /* SoZoomy */,
+				696EF81E1730A4E9000A7027 /* Frameworks */,
+				696EF81D1730A4E9000A7027 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		696EF81D1730A4E9000A7027 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				696EF81C1730A4E9000A7027 /* SoZoomy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		696EF81E1730A4E9000A7027 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6996C29F1765B4EE00DD4E82 /* CoreMedia.framework */,
+				69EC468A1757EFE300D97768 /* AudioToolbox.framework */,
+				6971504B173993FE0001F46B /* QuartzCore.framework */,
+				697452621731CCE6004ED6CD /* AVFoundation.framework */,
+				696EF81F1730A4E9000A7027 /* UIKit.framework */,
+				696EF8211730A4E9000A7027 /* Foundation.framework */,
+				696EF8231730A4E9000A7027 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		696EF8251730A4E9000A7027 /* SoZoomy */ = {
+			isa = PBXGroup;
+			children = (
+				696EF83F1730A4E9000A7027 /* ViewController.h */,
+				696EF8401730A4E9000A7027 /* ViewController.m */,
+				697606EB174BF2FB007684DE /* FaceView.h */,
+				697606EC174BF2FB007684DE /* FaceView.m */,
+				692131BA1767F74A00E0956F /* PreviewView.h */,
+				692131BB1767F74A00E0956F /* PreviewView.m */,
+				696EF82E1730A4E9000A7027 /* AppDelegate.h */,
+				696EF82F1730A4E9000A7027 /* AppDelegate.m */,
+				696EF8421730A4E9000A7027 /* ViewController_iPhone.xib */,
+				696EF8451730A4E9000A7027 /* ViewController_iPad.xib */,
+				695830081765479A00E22446 /* Images.xcassets */,
+				696EF8261730A4E9000A7027 /* Supporting Files */,
+			);
+			path = SoZoomy;
+			sourceTree = "<group>";
+		};
+		696EF8261730A4E9000A7027 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				696EF8271730A4E9000A7027 /* SoZoomy-Info.plist */,
+				696EF8281730A4E9000A7027 /* InfoPlist.strings */,
+				696EF82B1730A4E9000A7027 /* main.m */,
+				696EF82D1730A4E9000A7027 /* SoZoomy-Prefix.pch */,
+				696EF84D1730ADB0000A7027 /* Dramatic_Chipmunk.png */,
+				696EF84F1730B157000A7027 /* Record.png */,
+				696EF8501730B157000A7027 /* Recording.png */,
+				69C3D41F1761582A004E09FB /* Dramatic2.m4a */,
+				69C3D42117628C01004E09FB /* Sosumi.wav */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		696EF81B1730A4E9000A7027 /* SoZoomy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 696EF84A1730A4E9000A7027 /* Build configuration list for PBXNativeTarget "SoZoomy" */;
+			buildPhases = (
+				696EF8181730A4E9000A7027 /* Sources */,
+				696EF8191730A4E9000A7027 /* Frameworks */,
+				696EF81A1730A4E9000A7027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoZoomy;
+			productName = SoZoomy;
+			productReference = 696EF81C1730A4E9000A7027 /* SoZoomy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		696EF8141730A4E9000A7027 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Apple;
+			};
+			buildConfigurationList = 696EF8171730A4E9000A7027 /* Build configuration list for PBXProject "SoZoomy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 696EF8131730A4E9000A7027;
+			productRefGroup = 696EF81D1730A4E9000A7027 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				696EF81B1730A4E9000A7027 /* SoZoomy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		696EF81A1730A4E9000A7027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				696EF8521730B157000A7027 /* Recording.png in Resources */,
+				696EF8441730A4E9000A7027 /* ViewController_iPhone.xib in Resources */,
+				696EF8511730B157000A7027 /* Record.png in Resources */,
+				69C3D42217628C01004E09FB /* Sosumi.wav in Resources */,
+				696EF84E1730ADB0000A7027 /* Dramatic_Chipmunk.png in Resources */,
+				695830091765479A00E22446 /* Images.xcassets in Resources */,
+				69C3D4201761582A004E09FB /* Dramatic2.m4a in Resources */,
+				696EF82A1730A4E9000A7027 /* InfoPlist.strings in Resources */,
+				696EF8471730A4E9000A7027 /* ViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		696EF8181730A4E9000A7027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				696EF8411730A4E9000A7027 /* ViewController.m in Sources */,
+				692131BC1767F74A00E0956F /* PreviewView.m in Sources */,
+				696EF8301730A4E9000A7027 /* AppDelegate.m in Sources */,
+				696EF82C1730A4E9000A7027 /* main.m in Sources */,
+				697606ED174BF441007684DE /* FaceView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		696EF8281730A4E9000A7027 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				696EF8291730A4E9000A7027 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		696EF8421730A4E9000A7027 /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				696EF8431730A4E9000A7027 /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		696EF8451730A4E9000A7027 /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				696EF8461730A4E9000A7027 /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		696EF8481730A4E9000A7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		696EF8491730A4E9000A7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		696EF84B1730A4E9000A7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoZoomy/SoZoomy-Prefix.pch";
+				INFOPLIST_FILE = "SoZoomy/SoZoomy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		696EF84C1730A4E9000A7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoZoomy/SoZoomy-Prefix.pch";
+				INFOPLIST_FILE = "SoZoomy/SoZoomy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		696EF8171730A4E9000A7027 /* Build configuration list for PBXProject "SoZoomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				696EF8481730A4E9000A7027 /* Debug */,
+				696EF8491730A4E9000A7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		696EF84A1730A4E9000A7027 /* Build configuration list for PBXNativeTarget "SoZoomy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				696EF84B1730A4E9000A7027 /* Debug */,
+				696EF84C1730A4E9000A7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 696EF8141730A4E9000A7027 /* Project object */;
+}

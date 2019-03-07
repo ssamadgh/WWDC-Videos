@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4411AE991756FFC40014CCB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4411AE981756FFC40014CCB8 /* UIKit.framework */; };
+		4411AE9B1756FFC40014CCB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4411AE9A1756FFC40014CCB8 /* Foundation.framework */; };
+		4411AE9D1756FFC40014CCB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4411AE9C1756FFC40014CCB8 /* CoreGraphics.framework */; };
+		4411AE9F1756FFC40014CCB8 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4411AE9E1756FFC40014CCB8 /* SpriteKit.framework */; };
+		4411AEA51756FFC40014CCB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEA31756FFC40014CCB8 /* InfoPlist.strings */; };
+		4411AEA71756FFC40014CCB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEA61756FFC40014CCB8 /* main.m */; };
+		4411AEAB1756FFC40014CCB8 /* BTTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEAA1756FFC40014CCB8 /* BTTAppDelegate.m */; };
+		4411AEAD1756FFC40014CCB8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEAC1756FFC40014CCB8 /* Default.png */; };
+		4411AEAF1756FFC40014CCB8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEAE1756FFC40014CCB8 /* Default@2x.png */; };
+		4411AEB11756FFC40014CCB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEB01756FFC40014CCB8 /* Default-568h@2x.png */; };
+		4411AEB31756FFC40014CCB8 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEB21756FFC40014CCB8 /* Default-Portrait~ipad.png */; };
+		4411AEB51756FFC40014CCB8 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEB41756FFC40014CCB8 /* Default-Portrait@2x~ipad.png */; };
+		4411AEB71756FFC40014CCB8 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEB61756FFC40014CCB8 /* Default-Landscape~ipad.png */; };
+		4411AEB91756FFC40014CCB8 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4411AEB81756FFC40014CCB8 /* Default-Landscape@2x~ipad.png */; };
+		4411AEBF1756FFC40014CCB8 /* BTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEBE1756FFC40014CCB8 /* BTTViewController.m */; };
+		4411AEE6175700530014CCB8 /* BTTMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEE5175700530014CCB8 /* BTTMainMenu.m */; };
+		4411AEE91757006F0014CCB8 /* BTTMainGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEE81757006F0014CCB8 /* BTTMainGame.m */; };
+		4411AEEC1757008D0014CCB8 /* BTTGameSetupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEEB1757008D0014CCB8 /* BTTGameSetupMenu.m */; };
+		4411AEEF175700AD0014CCB8 /* BTTResultsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEEE175700AD0014CCB8 /* BTTResultsScreen.m */; };
+		4411AEF2175700C60014CCB8 /* BTTStatsScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEF1175700C60014CCB8 /* BTTStatsScreen.m */; };
+		4411AEF5175700FB0014CCB8 /* BTTGameInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEF4175700FB0014CCB8 /* BTTGameInfo.m */; };
+		4411AEF8175701230014CCB8 /* BTTBasicScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4411AEF7175701230014CCB8 /* BTTBasicScene.m */; };
+		44312A1D175EAB2200053517 /* DefaultPlayerPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 44312A1B175EAB2200053517 /* DefaultPlayerPhoto.png */; };
+		44312A1E175EAB2200053517 /* DefaultPlayerPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44312A1C175EAB2200053517 /* DefaultPlayerPhoto@2x.png */; };
+		44312A21175EB16A00053517 /* Podium.png in Resources */ = {isa = PBXBuildFile; fileRef = 44312A1F175EB16A00053517 /* Podium.png */; };
+		44312A22175EB16A00053517 /* Podium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44312A20175EB16A00053517 /* Podium@2x.png */; };
+		44851CD21762666800372D17 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D85C6C176262B900BFC16C /* GameKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2894878B1762B54000F0340F /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		4411AE951756FFC40014CCB8 /* ButtonTapper3000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButtonTapper3000.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4411AE981756FFC40014CCB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4411AE9A1756FFC40014CCB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4411AE9C1756FFC40014CCB8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4411AE9E1756FFC40014CCB8 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		4411AEA21756FFC40014CCB8 /* ButtonTapper3000-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ButtonTapper3000-Info.plist"; sourceTree = "<group>"; };
+		4411AEA41756FFC40014CCB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4411AEA61756FFC40014CCB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4411AEA81756FFC40014CCB8 /* ButtonTapper3000-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButtonTapper3000-Prefix.pch"; sourceTree = "<group>"; };
+		4411AEA91756FFC40014CCB8 /* BTTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTTAppDelegate.h; sourceTree = "<group>"; };
+		4411AEAA1756FFC40014CCB8 /* BTTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTTAppDelegate.m; sourceTree = "<group>"; };
+		4411AEAC1756FFC40014CCB8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4411AEAE1756FFC40014CCB8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4411AEB01756FFC40014CCB8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4411AEB21756FFC40014CCB8 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		4411AEB41756FFC40014CCB8 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		4411AEB61756FFC40014CCB8 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		4411AEB81756FFC40014CCB8 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		4411AEBE1756FFC40014CCB8 /* BTTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTTViewController.m; sourceTree = "<group>"; };
+		4411AEC01756FFC40014CCB8 /* BTTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTTViewController.h; sourceTree = "<group>"; };
+		4411AEE4175700530014CCB8 /* BTTMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTMainMenu.h; sourceTree = "<group>"; };
+		4411AEE5175700530014CCB8 /* BTTMainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTMainMenu.m; sourceTree = "<group>"; };
+		4411AEE71757006F0014CCB8 /* BTTMainGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTMainGame.h; sourceTree = "<group>"; };
+		4411AEE81757006F0014CCB8 /* BTTMainGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTMainGame.m; sourceTree = "<group>"; };
+		4411AEEA1757008D0014CCB8 /* BTTGameSetupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTGameSetupMenu.h; sourceTree = "<group>"; };
+		4411AEEB1757008D0014CCB8 /* BTTGameSetupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTGameSetupMenu.m; sourceTree = "<group>"; };
+		4411AEED175700AD0014CCB8 /* BTTResultsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTResultsScreen.h; sourceTree = "<group>"; };
+		4411AEEE175700AD0014CCB8 /* BTTResultsScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTResultsScreen.m; sourceTree = "<group>"; };
+		4411AEF0175700C60014CCB8 /* BTTStatsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTStatsScreen.h; sourceTree = "<group>"; };
+		4411AEF1175700C60014CCB8 /* BTTStatsScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTStatsScreen.m; sourceTree = "<group>"; };
+		4411AEF3175700FB0014CCB8 /* BTTGameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTGameInfo.h; sourceTree = "<group>"; };
+		4411AEF4175700FB0014CCB8 /* BTTGameInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTGameInfo.m; sourceTree = "<group>"; };
+		4411AEF6175701230014CCB8 /* BTTBasicScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTBasicScene.h; sourceTree = "<group>"; };
+		4411AEF7175701230014CCB8 /* BTTBasicScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTBasicScene.m; sourceTree = "<group>"; };
+		44312A1B175EAB2200053517 /* DefaultPlayerPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultPlayerPhoto.png; sourceTree = "<group>"; };
+		44312A1C175EAB2200053517 /* DefaultPlayerPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DefaultPlayerPhoto@2x.png"; sourceTree = "<group>"; };
+		44312A1F175EB16A00053517 /* Podium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Podium.png; sourceTree = "<group>"; };
+		44312A20175EB16A00053517 /* Podium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Podium@2x.png"; sourceTree = "<group>"; };
+		44D85C6C176262B900BFC16C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4411AE921756FFC40014CCB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44851CD21762666800372D17 /* GameKit.framework in Frameworks */,
+				4411AE9D1756FFC40014CCB8 /* CoreGraphics.framework in Frameworks */,
+				4411AE991756FFC40014CCB8 /* UIKit.framework in Frameworks */,
+				4411AE9F1756FFC40014CCB8 /* SpriteKit.framework in Frameworks */,
+				4411AE9B1756FFC40014CCB8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4411AE8C1756FFC40014CCB8 = {
+			isa = PBXGroup;
+			children = (
+				2894878B1762B54000F0340F /* ReadMe.txt */,
+				4411AEA01756FFC40014CCB8 /* ButtonTapper3000 */,
+				4411AE971756FFC40014CCB8 /* Frameworks */,
+				4411AE961756FFC40014CCB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4411AE961756FFC40014CCB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4411AE951756FFC40014CCB8 /* ButtonTapper3000.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4411AE971756FFC40014CCB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D85C6C176262B900BFC16C /* GameKit.framework */,
+				4411AE981756FFC40014CCB8 /* UIKit.framework */,
+				4411AE9A1756FFC40014CCB8 /* Foundation.framework */,
+				4411AE9C1756FFC40014CCB8 /* CoreGraphics.framework */,
+				4411AE9E1756FFC40014CCB8 /* SpriteKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4411AEA01756FFC40014CCB8 /* ButtonTapper3000 */ = {
+			isa = PBXGroup;
+			children = (
+				4411AEA91756FFC40014CCB8 /* BTTAppDelegate.h */,
+				4411AEAA1756FFC40014CCB8 /* BTTAppDelegate.m */,
+				4411AEC01756FFC40014CCB8 /* BTTViewController.h */,
+				4411AEBE1756FFC40014CCB8 /* BTTViewController.m */,
+				44851CD31762825100372D17 /* Scenes */,
+				44851CD41762828000372D17 /* Model */,
+				44851CD51762828A00372D17 /* Images */,
+				4411AEA11756FFC40014CCB8 /* Supporting Files */,
+			);
+			path = ButtonTapper3000;
+			sourceTree = "<group>";
+		};
+		4411AEA11756FFC40014CCB8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4411AEA21756FFC40014CCB8 /* ButtonTapper3000-Info.plist */,
+				4411AEA31756FFC40014CCB8 /* InfoPlist.strings */,
+				4411AEA61756FFC40014CCB8 /* main.m */,
+				4411AEA81756FFC40014CCB8 /* ButtonTapper3000-Prefix.pch */,
+				4411AEAC1756FFC40014CCB8 /* Default.png */,
+				4411AEAE1756FFC40014CCB8 /* Default@2x.png */,
+				4411AEB01756FFC40014CCB8 /* Default-568h@2x.png */,
+				4411AEB21756FFC40014CCB8 /* Default-Portrait~ipad.png */,
+				4411AEB41756FFC40014CCB8 /* Default-Portrait@2x~ipad.png */,
+				4411AEB61756FFC40014CCB8 /* Default-Landscape~ipad.png */,
+				4411AEB81756FFC40014CCB8 /* Default-Landscape@2x~ipad.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		44851CD31762825100372D17 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4411AEF0175700C60014CCB8 /* BTTStatsScreen.h */,
+				4411AEF1175700C60014CCB8 /* BTTStatsScreen.m */,
+				4411AEEA1757008D0014CCB8 /* BTTGameSetupMenu.h */,
+				4411AEEB1757008D0014CCB8 /* BTTGameSetupMenu.m */,
+				4411AEED175700AD0014CCB8 /* BTTResultsScreen.h */,
+				4411AEEE175700AD0014CCB8 /* BTTResultsScreen.m */,
+				4411AEF6175701230014CCB8 /* BTTBasicScene.h */,
+				4411AEF7175701230014CCB8 /* BTTBasicScene.m */,
+				4411AEE71757006F0014CCB8 /* BTTMainGame.h */,
+				4411AEE81757006F0014CCB8 /* BTTMainGame.m */,
+				4411AEE4175700530014CCB8 /* BTTMainMenu.h */,
+				4411AEE5175700530014CCB8 /* BTTMainMenu.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		44851CD41762828000372D17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4411AEF3175700FB0014CCB8 /* BTTGameInfo.h */,
+				4411AEF4175700FB0014CCB8 /* BTTGameInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		44851CD51762828A00372D17 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				44312A1F175EB16A00053517 /* Podium.png */,
+				44312A20175EB16A00053517 /* Podium@2x.png */,
+				44312A1B175EAB2200053517 /* DefaultPlayerPhoto.png */,
+				44312A1C175EAB2200053517 /* DefaultPlayerPhoto@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4411AE941756FFC40014CCB8 /* ButtonTapper3000 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4411AEDE1756FFC40014CCB8 /* Build configuration list for PBXNativeTarget "ButtonTapper3000" */;
+			buildPhases = (
+				4411AE911756FFC40014CCB8 /* Sources */,
+				4411AE921756FFC40014CCB8 /* Frameworks */,
+				4411AE931756FFC40014CCB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ButtonTapper3000;
+			productName = ButtonTapper3000;
+			productReference = 4411AE951756FFC40014CCB8 /* ButtonTapper3000.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4411AE8D1756FFC40014CCB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BTT;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Apple Inc.";
+			};
+			buildConfigurationList = 4411AE901756FFC40014CCB8 /* Build configuration list for PBXProject "ButtonTapper3000" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4411AE8C1756FFC40014CCB8;
+			productRefGroup = 4411AE961756FFC40014CCB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4411AE941756FFC40014CCB8 /* ButtonTapper3000 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4411AE931756FFC40014CCB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4411AEB71756FFC40014CCB8 /* Default-Landscape~ipad.png in Resources */,
+				4411AEB51756FFC40014CCB8 /* Default-Portrait@2x~ipad.png in Resources */,
+				4411AEAF1756FFC40014CCB8 /* Default@2x.png in Resources */,
+				4411AEB91756FFC40014CCB8 /* Default-Landscape@2x~ipad.png in Resources */,
+				4411AEB11756FFC40014CCB8 /* Default-568h@2x.png in Resources */,
+				4411AEB31756FFC40014CCB8 /* Default-Portrait~ipad.png in Resources */,
+				44312A1E175EAB2200053517 /* DefaultPlayerPhoto@2x.png in Resources */,
+				44312A22175EB16A00053517 /* Podium@2x.png in Resources */,
+				4411AEA51756FFC40014CCB8 /* InfoPlist.strings in Resources */,
+				44312A1D175EAB2200053517 /* DefaultPlayerPhoto.png in Resources */,
+				4411AEAD1756FFC40014CCB8 /* Default.png in Resources */,
+				44312A21175EB16A00053517 /* Podium.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4411AE911756FFC40014CCB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4411AEF5175700FB0014CCB8 /* BTTGameInfo.m in Sources */,
+				4411AEEF175700AD0014CCB8 /* BTTResultsScreen.m in Sources */,
+				4411AEBF1756FFC40014CCB8 /* BTTViewController.m in Sources */,
+				4411AEA71756FFC40014CCB8 /* main.m in Sources */,
+				4411AEE91757006F0014CCB8 /* BTTMainGame.m in Sources */,
+				4411AEE6175700530014CCB8 /* BTTMainMenu.m in Sources */,
+				4411AEEC1757008D0014CCB8 /* BTTGameSetupMenu.m in Sources */,
+				4411AEAB1756FFC40014CCB8 /* BTTAppDelegate.m in Sources */,
+				4411AEF8175701230014CCB8 /* BTTBasicScene.m in Sources */,
+				4411AEF2175700C60014CCB8 /* BTTStatsScreen.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4411AEA31756FFC40014CCB8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4411AEA41756FFC40014CCB8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4411AEDC1756FFC40014CCB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4411AEDD1756FFC40014CCB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4411AEDF1756FFC40014CCB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ButtonTapper3000/ButtonTapper3000-Prefix.pch";
+				INFOPLIST_FILE = "ButtonTapper3000/ButtonTapper3000-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4411AEE01756FFC40014CCB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ButtonTapper3000/ButtonTapper3000-Prefix.pch";
+				INFOPLIST_FILE = "ButtonTapper3000/ButtonTapper3000-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4411AE901756FFC40014CCB8 /* Build configuration list for PBXProject "ButtonTapper3000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4411AEDC1756FFC40014CCB8 /* Debug */,
+				4411AEDD1756FFC40014CCB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4411AEDE1756FFC40014CCB8 /* Build configuration list for PBXNativeTarget "ButtonTapper3000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4411AEDF1756FFC40014CCB8 /* Debug */,
+				4411AEE01756FFC40014CCB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4411AE8D1756FFC40014CCB8 /* Project object */;
+}
