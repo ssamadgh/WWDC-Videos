@@ -1,0 +1,11564 @@
+1
+00:00:27,526 --> 00:00:34,736
+[ Cheering and Applause ]
+
+2
+00:00:34,733 --> 00:00:35,363
+Thank you.
+
+3
+00:00:35,367 --> 00:00:38,007
+Thank you.
+
+4
+00:00:38,003 --> 00:00:39,603
+Thank you.
+
+5
+00:00:39,605 --> 00:00:40,105
+Thank you.
+
+6
+00:00:40,106 --> 00:00:42,706
+Thank you.
+
+7
+00:00:42,708 --> 00:00:43,808
+Thank you.
+
+8
+00:00:43,809 --> 00:00:46,349
+Thank you.
+
+9
+00:00:52,318 --> 00:00:55,058
+Before we start with
+the keynote,
+
+10
+00:00:55,054 --> 00:01:01,024
+we'd like to take a moment
+to talk about the tragedy
+
+11
+00:01:01,026 --> 00:01:04,926
+that occurred yesterday
+in Orlando, Florida.
+
+12
+00:01:04,930 --> 00:01:08,530
+We offer our deepest sympathies
+
+13
+00:01:08,534 --> 00:01:14,304
+to everyone whose lives were
+touched by this violence.
+
+14
+00:01:14,306 --> 00:01:20,816
+It was senseless, unconscionable
+act of terrorism and hate,
+
+15
+00:01:20,813 --> 00:01:25,113
+aimed at dividing
+and destroying.
+
+16
+00:01:25,117 --> 00:01:32,027
+The Apple community is
+made up of people from all
+
+17
+00:01:32,024 --> 00:01:36,294
+around the world, from
+all different backgrounds
+
+18
+00:01:36,295 --> 00:01:39,295
+and all different
+points of view.
+
+19
+00:01:39,298 --> 00:01:43,068
+We celebrate our diversity.
+
+20
+00:01:43,068 --> 00:01:47,238
+We know that it makes
+us stronger
+
+21
+00:01:47,239 --> 00:01:50,139
+and moves everyone forward.
+
+22
+00:01:52,811 --> 00:02:00,081
+Please rise and join us
+in a moment of silence
+
+23
+00:02:00,085 --> 00:02:06,595
+to honor the victims and
+the people who loved them.
+
+24
+00:02:24,577 --> 00:02:25,547
+Thank you.
+
+25
+00:02:25,544 --> 00:02:28,084
+Thank you.
+
+26
+00:02:30,549 --> 00:02:36,219
+Hello and welcome to WWDC 2016.
+
+27
+00:02:36,222 --> 00:02:40,992
+It's great to be here at the
+legendary Bill Graham Auditorium
+
+28
+00:02:40,993 --> 00:02:43,433
+in beautiful San Francisco.
+
+29
+00:02:43,429 --> 00:02:48,199
+We have a really big and
+jam-packed morning planned
+
+30
+00:02:48,200 --> 00:02:50,340
+for you, and we couldn't
+be more excited.
+
+31
+00:02:50,336 --> 00:02:53,776
+Let me give you some details
+on the conference this year.
+
+32
+00:02:53,772 --> 00:02:58,342
+This is our 27th Worldwide
+Developers Conference.
+
+33
+00:02:58,344 --> 00:03:02,114
+The developer community has
+never been more vibrant.
+
+34
+00:03:02,114 --> 00:03:05,784
+We now have 13 million
+registered developers
+
+35
+00:03:05,784 --> 00:03:09,454
+with 2 million added
+in the last year alone.
+
+36
+00:03:09,455 --> 00:03:15,995
+The conference this year
+sold out over 5000 attendees
+
+37
+00:03:15,995 --> 00:03:19,795
+and millions more watching
+on the live stream.
+
+38
+00:03:19,798 --> 00:03:23,198
+This is truly a worldwide
+conference.
+
+39
+00:03:23,202 --> 00:03:28,742
+We have people here
+from over 74 countries.
+
+40
+00:03:29,942 --> 00:03:32,212
+We're excited that
+we're attracting
+
+41
+00:03:32,211 --> 00:03:34,881
+so many new developers.
+
+42
+00:03:34,880 --> 00:03:37,280
+Over 70% of the attendees
+
+43
+00:03:37,283 --> 00:03:40,253
+at the conference this year
+are attending the conference
+
+44
+00:03:40,252 --> 00:03:42,752
+for the very first time.
+
+45
+00:03:42,755 --> 00:03:47,355
+Now, we're investing in the
+next generation of developers.
+
+46
+00:03:47,359 --> 00:03:52,529
+We've awarded 350
+scholarships this year.
+
+47
+00:03:52,531 --> 00:03:58,871
+[ Cheering and Applause ]
+
+48
+00:03:58,871 --> 00:04:00,171
+These guys are incredible.
+
+49
+00:04:00,172 --> 00:04:03,772
+If you see them, make sure
+that you congratulate them.
+
+50
+00:04:03,776 --> 00:04:07,346
+We have over 100 attendees
+at the conference this year
+
+51
+00:04:07,346 --> 00:04:10,916
+that are under 18 years of age.
+
+52
+00:04:12,951 --> 00:04:19,861
+The youngest, the
+youngest is only nine.
+
+53
+00:04:25,431 --> 00:04:27,871
+Wow. I met her yesterday
+and she is going
+
+54
+00:04:27,866 --> 00:04:30,866
+to make one heck of
+a great developer.
+
+55
+00:04:36,108 --> 00:04:38,978
+This week is about
+helping you get the most
+
+56
+00:04:38,977 --> 00:04:40,517
+out of our platforms.
+
+57
+00:04:40,512 --> 00:04:43,352
+So we have over 100
+engineering-led sessions
+
+58
+00:04:43,349 --> 00:04:49,619
+and over 150 hands-on labs
+with over 1000 Apple engineers
+
+59
+00:04:49,621 --> 00:04:52,891
+on site here to help
+you through the week.
+
+60
+00:04:52,891 --> 00:05:00,061
+The App Store started eight
+years ago with only 500 apps.
+
+61
+00:05:00,065 --> 00:05:05,875
+Recently, we passed
+a major milestone.
+
+62
+00:05:05,871 --> 00:05:11,481
+We now have 2 million
+apps on the App Store.
+
+63
+00:05:11,477 --> 00:05:17,517
+[ Applause ]
+
+64
+00:05:17,516 --> 00:05:25,326
+Your 2 million apps had been
+downloaded 130 billion times.
+
+65
+00:05:27,626 --> 00:05:33,236
+And as you know, the App Store
+is the best business opportunity
+
+66
+00:05:33,232 --> 00:05:34,772
+for developers.
+
+67
+00:05:34,767 --> 00:05:40,877
+We're about to pass $50 billion
+paid directly to developers.
+
+68
+00:05:40,873 --> 00:05:43,413
+This is absolutely amazing.
+
+69
+00:05:45,577 --> 00:05:50,347
+And of course, successful
+developers translates
+
+70
+00:05:50,349 --> 00:05:54,019
+to us having the best apps
+on our platform for users
+
+71
+00:05:54,019 --> 00:05:56,359
+and this is what really matters.
+
+72
+00:05:56,355 --> 00:05:59,095
+Now, we have a busy
+morning planned but I'd
+
+73
+00:05:59,091 --> 00:06:01,661
+like to take a moment to talk
+
+74
+00:06:01,660 --> 00:06:04,360
+about why we do what
+we do at Apple.
+
+75
+00:06:04,363 --> 00:06:12,173
+Our north star has always been
+about improving people's lives
+
+76
+00:06:12,171 --> 00:06:16,141
+by creating great products
+that change the world.
+
+77
+00:06:16,141 --> 00:06:19,781
+And we've been doing
+this for a long time.
+
+78
+00:06:19,778 --> 00:06:25,448
+But today, for the very first
+time, we're going to talk to you
+
+79
+00:06:25,451 --> 00:06:29,391
+about four Apple platforms.
+
+80
+00:06:29,388 --> 00:06:34,598
+Each of these platforms
+is category-defining
+
+81
+00:06:34,593 --> 00:06:36,993
+and world-changing.
+
+82
+00:06:36,995 --> 00:06:41,705
+The Macintosh changed
+personal computing.
+
+83
+00:06:41,700 --> 00:06:44,140
+Today, it's the most innovative
+
+84
+00:06:44,136 --> 00:06:47,436
+and loved personal
+computer on the planet.
+
+85
+00:06:47,439 --> 00:06:51,109
+iPhone changed phones forever.
+
+86
+00:06:51,109 --> 00:06:55,219
+It's the best smartphone
+experience and the gold standard
+
+87
+00:06:55,214 --> 00:06:58,184
+by which everything
+else is measured.
+
+88
+00:06:58,183 --> 00:07:03,993
+The iPad magically transforms
+a glass canvas into anything
+
+89
+00:07:03,989 --> 00:07:05,859
+that you want it to be.
+
+90
+00:07:05,858 --> 00:07:08,558
+It's our clearest
+expression of the future
+
+91
+00:07:08,560 --> 00:07:11,130
+of personal computing.
+
+92
+00:07:11,129 --> 00:07:15,099
+Apple Watch, only one year old,
+
+93
+00:07:15,100 --> 00:07:19,640
+it's already the ultimate
+device for a healthy life.
+
+94
+00:07:19,638 --> 00:07:25,148
+And Apple TV just announced
+last fall based on the idea
+
+95
+00:07:25,143 --> 00:07:28,113
+that the future of TV is apps,
+
+96
+00:07:28,113 --> 00:07:32,583
+it's already transforming the
+biggest screen in our homes.
+
+97
+00:07:32,584 --> 00:07:36,824
+Now, we love creating
+great apps,
+
+98
+00:07:36,822 --> 00:07:40,822
+we love creating great
+products that change the world,
+
+99
+00:07:40,826 --> 00:07:44,726
+but we can't do it alone.
+
+100
+00:07:44,730 --> 00:07:49,070
+Developers are a crucial
+part of that journey.
+
+101
+00:07:49,067 --> 00:07:54,607
+You are about-- You are a
+part of everything that we do,
+
+102
+00:07:54,606 --> 00:07:58,046
+and everything that we
+will do going forward.
+
+103
+00:07:58,043 --> 00:08:02,753
+Because it's together that
+we enrich people's lives.
+
+104
+00:08:02,748 --> 00:08:08,018
+Now, we offer you four
+incredible platforms
+
+105
+00:08:08,020 --> 00:08:12,560
+that power these world-changing
+product experiences.
+
+106
+00:08:12,558 --> 00:08:17,358
+watchOS, tvOS, OS X, iOS.
+
+107
+00:08:17,362 --> 00:08:24,672
+We're going to move each of
+these platforms forward today
+
+108
+00:08:24,670 --> 00:08:28,310
+and we'd like to get
+started with watchOS.
+
+109
+00:08:28,307 --> 00:08:32,047
+And to do that, I'd like
+to invite Kevin Lynch up.
+
+110
+00:08:32,044 --> 00:08:33,474
+Kevin.
+
+111
+00:08:33,478 --> 00:08:40,888
+[ Cheering and Applause ]
+
+112
+00:08:40,886 --> 00:08:42,326
+Thank you, Tim.
+
+113
+00:08:42,321 --> 00:08:45,091
+So I am really excited to
+talk with you about watchOS
+
+114
+00:08:45,090 --> 00:08:46,630
+and show you some
+of what's ahead.
+
+115
+00:08:46,625 --> 00:08:50,225
+Now, people who are using Apple
+Watch love it, particularly
+
+116
+00:08:50,228 --> 00:08:53,698
+for quick glances at information
+and quick interactions.
+
+117
+00:08:53,699 --> 00:08:56,839
+And our top focus is performance
+and we've made optimizations
+
+118
+00:08:56,835 --> 00:09:00,205
+across the entire system
+including a serious acceleration
+
+119
+00:09:00,205 --> 00:09:02,045
+in app launch time.
+
+120
+00:09:02,040 --> 00:09:04,440
+Your app should actually
+respond instantly.
+
+121
+00:09:04,443 --> 00:09:08,943
+[ Cheering and Applause ]
+
+122
+00:09:08,947 --> 00:09:10,017
+The information you look
+
+123
+00:09:10,015 --> 00:09:11,785
+at should be updated
+before you go look,
+
+124
+00:09:11,783 --> 00:09:14,283
+so it's ready the instant that
+you are so you're not waiting.
+
+125
+00:09:14,286 --> 00:09:18,786
+In watchOS 3, your favorite
+apps can respond instantly.
+
+126
+00:09:18,790 --> 00:09:20,130
+So let's take a look.
+
+127
+00:09:20,125 --> 00:09:21,565
+So we're going to
+accomplish this
+
+128
+00:09:21,560 --> 00:09:23,200
+by keeping your favorite
+apps in memory.
+
+129
+00:09:23,195 --> 00:09:25,495
+We're going to support
+background updates of data
+
+130
+00:09:25,497 --> 00:09:27,697
+and refresh the information
+so it's ready the instant
+
+131
+00:09:27,699 --> 00:09:30,669
+that you are, and then we
+support quickly launching these
+
+132
+00:09:30,669 --> 00:09:31,939
+apps and interacting with them.
+
+133
+00:09:31,937 --> 00:09:34,607
+This is going to work for
+both the built-in apps
+
+134
+00:09:34,606 --> 00:09:36,776
+and third-party apps.
+
+135
+00:09:36,775 --> 00:09:38,745
+Let's take a look at an example.
+
+136
+00:09:38,744 --> 00:09:41,284
+This is watchOS 2 and
+we're going to look
+
+137
+00:09:41,279 --> 00:09:42,679
+at an app called Onefootball.
+
+138
+00:09:42,681 --> 00:09:44,621
+We're going to launch it from
+the complication the bottom left
+
+139
+00:09:44,616 --> 00:09:47,456
+and we're going to
+see how long it takes.
+
+140
+00:09:47,452 --> 00:09:50,392
+So here we are launching
+the app, takes a few seconds
+
+141
+00:09:50,389 --> 00:09:53,159
+to launch, and then once it
+launches, it loads some data,
+
+142
+00:09:53,158 --> 00:09:55,558
+and it updates, there we go.
+
+143
+00:09:55,560 --> 00:09:59,200
+So that is a pretty typical
+example of watchOS 2.
+
+144
+00:09:59,197 --> 00:10:00,197
+Now, we're going to take a look
+
+145
+00:10:00,198 --> 00:10:03,168
+at Onefootball launching
+in watchOS 3.
+
+146
+00:10:03,168 --> 00:10:05,308
+Are you guys ready?
+
+147
+00:10:05,303 --> 00:10:07,573
+OK, don't blink.
+
+148
+00:10:07,572 --> 00:10:08,512
+That's it.
+
+149
+00:10:08,507 --> 00:10:16,687
+[ Cheering and Applause ]
+
+150
+00:10:16,682 --> 00:10:19,482
+So that example is about seven
+times faster but it feels
+
+151
+00:10:19,484 --> 00:10:22,254
+like a million times faster.
+
+152
+00:10:22,254 --> 00:10:23,324
+So now, we've made
+it really easy
+
+153
+00:10:23,321 --> 00:10:25,361
+to access your favorite apps.
+
+154
+00:10:25,357 --> 00:10:27,627
+You can just press the
+side button below the crown
+
+155
+00:10:27,626 --> 00:10:29,396
+to show what we call the dock.
+
+156
+00:10:29,394 --> 00:10:30,964
+You can choose which
+apps go here
+
+157
+00:10:30,962 --> 00:10:33,532
+and you can quickly
+scroll through them.
+
+158
+00:10:33,532 --> 00:10:37,872
+[ Cheering and Applause ]
+
+159
+00:10:37,869 --> 00:10:40,469
+The apps are now both glanceable
+and interactive rather
+
+160
+00:10:40,472 --> 00:10:42,072
+than separate concepts.
+
+161
+00:10:42,074 --> 00:10:43,204
+This is a dramatic improvement
+
+162
+00:10:43,208 --> 00:10:45,308
+in how it feels to
+use the watch.
+
+163
+00:10:45,310 --> 00:10:47,480
+So this increased performance
+allowed us to have access
+
+164
+00:10:47,479 --> 00:10:48,979
+to our favorite apps quickly.
+
+165
+00:10:48,980 --> 00:10:51,450
+We want to be able to
+access them anywhere.
+
+166
+00:10:51,450 --> 00:10:53,820
+So by using the side button,
+we can get to them easily.
+
+167
+00:10:53,819 --> 00:10:56,089
+Now, another key
+design goal we had was
+
+168
+00:10:56,088 --> 00:10:58,228
+to make the watch
+feel more familiar.
+
+169
+00:10:58,223 --> 00:11:00,523
+And so we've done
+with the watch face,
+
+170
+00:11:00,525 --> 00:11:01,625
+now we've added control center.
+
+171
+00:11:01,626 --> 00:11:02,866
+You just swipe up
+from the bottom,
+
+172
+00:11:02,861 --> 00:11:06,501
+just like on iOS,
+and very familiar.
+
+173
+00:11:06,498 --> 00:11:09,938
+[ Cheering and Applause ]
+
+174
+00:11:09,935 --> 00:11:12,835
+So this is a giant improvement
+at how it feels to use apps
+
+175
+00:11:12,838 --> 00:11:17,278
+and to navigate the watch very
+simply and easily in watchOS 3.
+
+176
+00:11:17,275 --> 00:11:20,045
+Now, we've also made it more
+powerful to reply to messages.
+
+177
+00:11:20,045 --> 00:11:23,445
+So now, when you receive a
+message, you can see the ways
+
+178
+00:11:23,448 --> 00:11:24,318
+to respond right there.
+
+179
+00:11:24,316 --> 00:11:25,446
+We've removed this step.
+
+180
+00:11:25,450 --> 00:11:26,590
+You don't have to
+actually press reply now.
+
+181
+00:11:26,585 --> 00:11:28,015
+You can just pick the
+way you'd like to reply.
+
+182
+00:11:28,019 --> 00:11:29,689
+And if you just scroll down,
+
+183
+00:11:29,688 --> 00:11:31,958
+you'll see your smart replies
+right below the message.
+
+184
+00:11:31,957 --> 00:11:35,657
+So you can just tap reply
+in less than a second.
+
+185
+00:11:35,660 --> 00:11:38,060
+Now sometimes, you don't see
+exactly the response you like
+
+186
+00:11:38,063 --> 00:11:41,263
+and you're not in a situation
+where you can use dictation,
+
+187
+00:11:41,266 --> 00:11:42,466
+so wouldn't it be great
+
+188
+00:11:42,467 --> 00:11:44,207
+if you can just write
+your message on the watch?
+
+189
+00:11:44,202 --> 00:11:46,972
+Well, we're introducing a new
+way to do that with something
+
+190
+00:11:46,972 --> 00:11:49,272
+that we call Scribble.
+
+191
+00:11:49,274 --> 00:11:51,074
+With Scribble, you have
+a new way to respond just
+
+192
+00:11:51,076 --> 00:11:52,646
+by writing what you
+like on the screen,
+
+193
+00:11:52,644 --> 00:11:54,214
+and you can just
+quickly draw the letters
+
+194
+00:11:54,212 --> 00:11:55,682
+for your message right there
+
+195
+00:11:55,680 --> 00:11:57,620
+like writing something
+like Starbucks.
+
+196
+00:11:57,616 --> 00:12:00,486
+You can see the letters go
+right on top of each other.
+
+197
+00:12:00,485 --> 00:12:07,755
+[ Cheering and Applause ]
+
+198
+00:12:07,759 --> 00:12:10,129
+So that's a great new way to
+respond with just the response
+
+199
+00:12:10,128 --> 00:12:11,598
+that you like on your watch.
+
+200
+00:12:11,596 --> 00:12:14,866
+Now, the watch face is
+great for quick looks
+
+201
+00:12:14,866 --> 00:12:16,206
+and it reflects your style
+
+202
+00:12:16,201 --> 00:12:17,671
+and it's also the
+character of the device.
+
+203
+00:12:17,669 --> 00:12:20,969
+Now, we've had Mickey as a fun
+watch face that I like to use
+
+204
+00:12:20,972 --> 00:12:23,872
+on weekends but I know what my
+daughter is going to really love
+
+205
+00:12:23,875 --> 00:12:27,045
+because Minnie is
+coming to the watch now.
+
+206
+00:12:30,415 --> 00:12:32,315
+And of course, you can choose
+from a variety of colors
+
+207
+00:12:32,317 --> 00:12:35,257
+for her outfit that match
+her bands perfectly.
+
+208
+00:12:36,955 --> 00:12:38,795
+Now, one of the most frequent
+things people do is look
+
+209
+00:12:38,790 --> 00:12:39,930
+at their activity rings
+
+210
+00:12:39,925 --> 00:12:41,895
+and we're adding a new
+watch face specifically
+
+211
+00:12:41,893 --> 00:12:44,963
+for that called Activity, so
+it's a great beautiful way
+
+212
+00:12:44,963 --> 00:12:47,303
+to see your rings
+throughout the day.
+
+213
+00:12:50,902 --> 00:12:52,572
+It comes not only in
+the analog version
+
+214
+00:12:52,571 --> 00:12:54,471
+but also a really nice
+chronograph version
+
+215
+00:12:54,472 --> 00:12:57,472
+and a digital version, so a
+super good way for looking
+
+216
+00:12:57,475 --> 00:12:59,445
+at your progress during the day.
+
+217
+00:12:59,444 --> 00:13:02,184
+We've also added a really simple
+new face that we call Numerals,
+
+218
+00:13:02,180 --> 00:13:05,480
+which is very beautiful,
+and the hours actually go
+
+219
+00:13:05,483 --> 00:13:08,523
+around the dial during day, and
+you can choose from a variety
+
+220
+00:13:08,520 --> 00:13:10,290
+of fonts that match your style,
+
+221
+00:13:10,288 --> 00:13:12,788
+so a really simple new
+watch face called Numerals.
+
+222
+00:13:12,791 --> 00:13:15,531
+Now, there's a lot of
+watch faces to choose from
+
+223
+00:13:15,527 --> 00:13:17,527
+and we're finding that
+people are actually switching
+
+224
+00:13:17,529 --> 00:13:20,229
+between faces for different
+occasions, so we're going
+
+225
+00:13:20,232 --> 00:13:22,032
+to make that super easy.
+
+226
+00:13:22,033 --> 00:13:25,433
+You can now just swipe to switch
+the face you'd like to use,
+
+227
+00:13:25,437 --> 00:13:27,037
+and you can choose
+which faces you'd like
+
+228
+00:13:27,038 --> 00:13:30,038
+and how they're configured so
+you can easily get to them.
+
+229
+00:13:30,041 --> 00:13:33,211
+We've also added the ability to
+add more complications to faces
+
+230
+00:13:33,211 --> 00:13:35,351
+like Weather here
+on the photo's face.
+
+231
+00:13:35,347 --> 00:13:37,317
+So now, really simple
+to navigate
+
+232
+00:13:37,315 --> 00:13:39,355
+and use your watch
+faces as well.
+
+233
+00:13:39,351 --> 00:13:40,781
+Let's see all of this
+stuff running live.
+
+234
+00:13:40,785 --> 00:13:43,655
+For a demo, please
+welcome Stacey Lysik.
+
+235
+00:13:43,655 --> 00:13:45,525
+Stacey.
+
+236
+00:13:45,523 --> 00:13:51,363
+[ Cheering and Applause ]
+
+237
+00:13:51,363 --> 00:13:52,663
+Thank you, Kevin.
+
+238
+00:13:52,664 --> 00:13:53,904
+Good morning.
+
+239
+00:13:53,899 --> 00:13:56,039
+I could not be more excited
+to have the opportunity
+
+240
+00:13:56,034 --> 00:13:58,004
+to show you watchOS 3 today.
+
+241
+00:13:58,003 --> 00:14:01,403
+I wake up to my favorite
+new face,
+
+242
+00:14:01,406 --> 00:14:04,606
+just the girl I've
+been looking for.
+
+243
+00:14:04,609 --> 00:14:07,809
+Now, in watchOS 3, you
+have a place to keep all
+
+244
+00:14:07,812 --> 00:14:09,212
+of your favorite apps.
+
+245
+00:14:09,214 --> 00:14:11,584
+You choose which apps go in your
+dock and you choose the order.
+
+246
+00:14:11,583 --> 00:14:14,353
+I can bring up my dock by
+pressing the side button.
+
+247
+00:14:14,352 --> 00:14:17,752
+And I can swipe through my apps
+one at a time or lay my finger
+
+248
+00:14:17,756 --> 00:14:19,996
+down in these dots at the
+bottom of the screen and fly
+
+249
+00:14:19,991 --> 00:14:21,661
+through my dock to
+get to any app.
+
+250
+00:14:21,660 --> 00:14:25,160
+And the apps in my
+dock are live,
+
+251
+00:14:25,163 --> 00:14:27,363
+so I can get a quick
+glance at information
+
+252
+00:14:27,365 --> 00:14:29,465
+without even launching an
+app like how close I am
+
+253
+00:14:29,467 --> 00:14:31,807
+to closing my activity rings.
+
+254
+00:14:31,803 --> 00:14:33,943
+And the apps have been
+redesigned to put me
+
+255
+00:14:33,939 --> 00:14:36,109
+within one tap of the
+thing I most want to do.
+
+256
+00:14:36,107 --> 00:14:38,847
+Let's take a look
+at the Timer app.
+
+257
+00:14:38,843 --> 00:14:42,113
+One tap to launch it and it's
+right there waiting for me.
+
+258
+00:14:42,113 --> 00:14:46,213
+I can still set a custom timer
+if that's what I want to do,
+
+259
+00:14:46,217 --> 00:14:47,357
+but the most common choices
+
+260
+00:14:47,352 --> 00:14:49,522
+for a timer are right
+here on the screen.
+
+261
+00:14:49,521 --> 00:14:52,121
+So with one tap, I can
+set a 10-minute timer
+
+262
+00:14:52,123 --> 00:14:55,463
+and get right back
+to what I was doing.
+
+263
+00:14:55,460 --> 00:14:59,100
+Even my favorite apps from the
+App Store can be in my dock
+
+264
+00:14:59,097 --> 00:15:03,567
+like Sweat with Kayla, and Lyft,
+and they are lightning fast too.
+
+265
+00:15:03,568 --> 00:15:06,208
+Let's take a look.
+
+266
+00:15:06,204 --> 00:15:10,504
+With one tap, I can call a car.
+
+267
+00:15:10,508 --> 00:15:11,708
+Yikes, three minutes.
+
+268
+00:15:11,710 --> 00:15:15,610
+I have so much to show you
+like New Apps, Reminders
+
+269
+00:15:15,613 --> 00:15:19,723
+and Find My Friends that have
+been designed specifically
+
+270
+00:15:19,718 --> 00:15:21,118
+for this kind of
+quick interaction.
+
+271
+00:15:21,119 --> 00:15:22,919
+Let's look at Reminders.
+
+272
+00:15:22,921 --> 00:15:25,521
+Now, I can keep all my lists
+with me throughout the day
+
+273
+00:15:25,523 --> 00:15:28,723
+and just check things
+off as I get them done.
+
+274
+00:15:28,727 --> 00:15:30,867
+Here's my bucket list.
+
+275
+00:15:30,862 --> 00:15:33,062
+You don't get to
+do this very often
+
+276
+00:15:33,064 --> 00:15:35,504
+but today is just
+one of those days.
+
+277
+00:15:35,500 --> 00:15:44,580
+[ Cheering and Applause ]
+
+278
+00:15:46,344 --> 00:15:48,844
+Find My Friends takes
+advantage of background updates
+
+279
+00:15:48,847 --> 00:15:51,817
+to ensure I always have the
+latest and greatest location
+
+280
+00:15:51,816 --> 00:15:53,386
+for my friends and family.
+
+281
+00:15:53,385 --> 00:15:55,185
+Now, I never have to worry
+about whether my kids got
+
+282
+00:15:55,186 --> 00:15:58,156
+to their activities on time.
+
+283
+00:15:58,156 --> 00:16:01,326
+And we wanted to make changing
+your watch face as easy
+
+284
+00:16:01,326 --> 00:16:03,366
+as swiping through
+apps on your dock.
+
+285
+00:16:03,361 --> 00:16:05,801
+And while Minnie is fabulous
+for a casual weekend,
+
+286
+00:16:05,797 --> 00:16:08,537
+sometimes I want to wear
+something simple and elegant.
+
+287
+00:16:08,533 --> 00:16:11,773
+Now, with an edge-to-edge swipe,
+I can get to my Numerals face.
+
+288
+00:16:11,770 --> 00:16:16,010
+And for those of you as obsessed
+with closing your rings as I am,
+
+289
+00:16:16,007 --> 00:16:18,407
+we now have the Activity face.
+
+290
+00:16:18,410 --> 00:16:19,840
+Every time I raise my wrist,
+
+291
+00:16:19,844 --> 00:16:22,084
+I get to see those big
+beautiful rings reminding me
+
+292
+00:16:22,080 --> 00:16:23,620
+to get up and get moving.
+
+293
+00:16:23,615 --> 00:16:27,815
+And I can launch my
+workout right from the face.
+
+294
+00:16:27,819 --> 00:16:30,159
+With the New Quick Start
+feature, I can bypass setting
+
+295
+00:16:30,155 --> 00:16:33,495
+up a goal and just get started.
+
+296
+00:16:33,491 --> 00:16:36,591
+[ Beeping Sound ]
+
+297
+00:16:36,594 --> 00:16:40,334
+I didn't really come dressed for
+a workout today, so I'm going
+
+298
+00:16:40,331 --> 00:16:44,371
+to swipe over and that then
+take us back to our watch face.
+
+299
+00:16:44,369 --> 00:16:46,839
+Notifications are still right
+where you think they'd be,
+
+300
+00:16:46,838 --> 00:16:49,078
+pulled down from the
+top of the screen.
+
+301
+00:16:49,074 --> 00:16:51,914
+This is a message I saved
+from my friend Isabel.
+
+302
+00:16:51,910 --> 00:16:54,680
+She's been teaching me a little
+Mandarin and she wants me
+
+303
+00:16:54,679 --> 00:16:56,879
+to reply about dinner
+tonight in Chinese.
+
+304
+00:16:56,881 --> 00:17:00,581
+I can do that with the
+new Scribble feature.
+
+305
+00:17:00,585 --> 00:17:02,685
+Scribble works in
+English and Chinese
+
+306
+00:17:02,687 --> 00:17:05,327
+and it knows what language
+my keyboard has been set to.
+
+307
+00:17:05,323 --> 00:17:09,463
+So with my finger, I can
+write out a quick message.
+
+308
+00:17:09,461 --> 00:17:18,541
+[ Cheering and Applause ]
+
+309
+00:17:20,305 --> 00:17:23,845
+[Foreign language] or 8 o'clock.
+
+310
+00:17:23,842 --> 00:17:26,342
+Those are just a few of
+the features of watchOS 3
+
+311
+00:17:26,344 --> 00:17:27,514
+but of course there's more.
+
+312
+00:17:27,512 --> 00:17:29,482
+Back to Kevin.
+
+313
+00:17:29,481 --> 00:17:36,621
+[ Cheering and Applause ]
+
+314
+00:17:36,621 --> 00:17:37,551
+That was awesome, Stacey.
+
+315
+00:17:37,555 --> 00:17:38,695
+Thank you.
+
+316
+00:17:38,690 --> 00:17:40,260
+And it's so exciting to
+achieve this new level
+
+317
+00:17:40,258 --> 00:17:41,928
+of performance on the watch.
+
+318
+00:17:41,926 --> 00:17:43,166
+And we're finding that people
+
+319
+00:17:43,161 --> 00:17:45,531
+who are wearing Apple
+Watch wear it all the time.
+
+320
+00:17:45,530 --> 00:17:49,070
+And this opens up some new
+great ways that we can help.
+
+321
+00:17:49,067 --> 00:17:50,437
+And one of these is
+actually getting help
+
+322
+00:17:50,435 --> 00:17:52,035
+in critical situations just
+
+323
+00:17:52,036 --> 00:17:53,636
+by pushing a button
+that's actually on you.
+
+324
+00:17:53,638 --> 00:17:56,938
+So you might be having a
+medical emergency, for example,
+
+325
+00:17:56,941 --> 00:17:59,111
+or a safety situation.
+
+326
+00:17:59,110 --> 00:18:01,210
+And we're going to be able
+to help with that with SOS
+
+327
+00:18:01,212 --> 00:18:04,182
+on the watch and we're going to
+make it easy to call for help.
+
+328
+00:18:04,182 --> 00:18:07,022
+To activate it, you just press
+and hold the side button.
+
+329
+00:18:07,018 --> 00:18:09,718
+It's going to countdown to
+let you know it's calling 911.
+
+330
+00:18:09,721 --> 00:18:11,591
+And then you're going
+to be on a live call
+
+331
+00:18:11,589 --> 00:18:14,029
+with the emergency services
+right on your watch.
+
+332
+00:18:14,025 --> 00:18:17,325
+This works either as a cellular
+call via your iPhone or directly
+
+333
+00:18:17,328 --> 00:18:18,728
+from the watch if
+you're connected to WiFi.
+
+334
+00:18:18,730 --> 00:18:23,330
+Now if you're done talking on
+the phone's emergency services,
+
+335
+00:18:23,334 --> 00:18:26,304
+the watch will automatically
+notify your emergency contacts,
+
+336
+00:18:26,304 --> 00:18:27,704
+they'll send them a message.
+
+337
+00:18:27,705 --> 00:18:30,975
+The message also will include
+a map of your current location
+
+338
+00:18:30,975 --> 00:18:32,145
+so they know where you are
+
+339
+00:18:32,143 --> 00:18:34,243
+and they can coordinate
+with each other.
+
+340
+00:18:34,245 --> 00:18:35,845
+Now, after sending the message,
+
+341
+00:18:35,847 --> 00:18:38,287
+your watch will actually
+now show your medical ID
+
+342
+00:18:38,283 --> 00:18:40,883
+which is also a new
+feature in watchOS.
+
+343
+00:18:40,885 --> 00:18:43,555
+It has things like for
+example your age and allergies
+
+344
+00:18:43,555 --> 00:18:45,725
+and other information
+you'd like to put there.
+
+345
+00:18:45,723 --> 00:18:48,563
+And SOS works not
+only just in the US
+
+346
+00:18:48,560 --> 00:18:50,200
+but it works internationally.
+
+347
+00:18:50,195 --> 00:18:52,565
+So for example you might
+be traveling to some place
+
+348
+00:18:52,564 --> 00:18:55,664
+like Hong Kong and you might not
+know what the emergency number
+
+349
+00:18:55,667 --> 00:18:58,507
+is to call but your
+Apple Watch does.
+
+350
+00:18:58,503 --> 00:19:05,743
+[ Applause ]
+
+351
+00:19:05,743 --> 00:19:08,983
+So in this case, it calls
+999 rather than 911.
+
+352
+00:19:08,980 --> 00:19:11,250
+So this is an emergency
+feature that isn't one
+
+353
+00:19:11,249 --> 00:19:13,149
+that you'll use often
+but when you need it,
+
+354
+00:19:13,151 --> 00:19:14,991
+it's going to be
+there and that's SOS.
+
+355
+00:19:14,986 --> 00:19:19,756
+Now, one of the primary reasons
+people are wearing the watch
+
+356
+00:19:19,757 --> 00:19:20,957
+today is for fitness and health.
+
+357
+00:19:20,959 --> 00:19:23,459
+And we're enhancing the
+activity and workout apps
+
+358
+00:19:23,461 --> 00:19:26,361
+and we're adding a new app that
+we think you're going to love.
+
+359
+00:19:26,364 --> 00:19:29,464
+Take a look at this,
+please welcome Jay Blahnik.
+
+360
+00:19:29,467 --> 00:19:32,267
+[ Cheering and Applause ]
+
+361
+00:19:32,270 --> 00:19:32,840
+Thanks, Kevin.
+
+362
+00:19:32,837 --> 00:19:34,277
+Thank you.
+
+363
+00:19:37,475 --> 00:19:39,815
+So we know that one
+of the most popular apps
+
+364
+00:19:39,811 --> 00:19:41,981
+in the Apple Watch
+is the Activity app.
+
+365
+00:19:41,980 --> 00:19:43,820
+And as Kevin and
+Stacey have mentioned,
+
+366
+00:19:43,815 --> 00:19:46,585
+many people have told us that
+they actually become more active
+
+367
+00:19:46,584 --> 00:19:49,984
+because they become addicted
+to closing the activity rings.
+
+368
+00:19:49,988 --> 00:19:51,188
+And we love hearing that.
+
+369
+00:19:51,189 --> 00:19:54,189
+But we also know that
+many people are motivated
+
+370
+00:19:54,192 --> 00:19:55,632
+by other things.
+
+371
+00:19:55,627 --> 00:19:57,567
+Some people are motivated
+by getting support
+
+372
+00:19:57,562 --> 00:19:59,132
+from their family and friends.
+
+373
+00:19:59,130 --> 00:20:01,200
+And if you're like
+me, you're motivated
+
+374
+00:20:01,199 --> 00:20:03,999
+by good old fashion competition
+and we wanted to make
+
+375
+00:20:04,002 --> 00:20:06,042
+that possible as well.
+
+376
+00:20:06,037 --> 00:20:10,237
+So with watchOS, we're
+introducing activity sharing.
+
+377
+00:20:10,241 --> 00:20:11,741
+And it couldn't be simpler.
+
+378
+00:20:11,743 --> 00:20:13,643
+All you have to do
+is swipe to the right
+
+379
+00:20:13,645 --> 00:20:15,485
+of your own activity rings
+
+380
+00:20:15,480 --> 00:20:17,380
+and there you'll see
+your selected family
+
+381
+00:20:17,382 --> 00:20:18,752
+and friend's rings as well.
+
+382
+00:20:18,750 --> 00:20:22,890
+Now you can sort by whatever
+metric is most important to you.
+
+383
+00:20:22,887 --> 00:20:25,987
+So you can sort by steps,
+you can sort by workouts,
+
+384
+00:20:25,990 --> 00:20:28,060
+you can even sort
+by exercise minutes.
+
+385
+00:20:28,059 --> 00:20:31,329
+Here you'll see that I've sorted
+by the move ring and I'm right
+
+386
+00:20:31,329 --> 00:20:32,729
+where you'd expect me to be.
+
+387
+00:20:32,730 --> 00:20:37,070
+I'm getting by butt kicked by
+Stacey but I'm annihilating Jeff
+
+388
+00:20:37,068 --> 00:20:40,208
+which makes me very happy.
+
+389
+00:20:40,204 --> 00:20:43,344
+If you want to see more details,
+all you do is tap on anyone
+
+390
+00:20:43,341 --> 00:20:46,081
+on your activity list and
+you'll get an up close look
+
+391
+00:20:46,077 --> 00:20:49,177
+at their activity rings,
+but you can also see things
+
+392
+00:20:49,180 --> 00:20:50,720
+like their daily step count
+
+393
+00:20:50,715 --> 00:20:54,485
+and their workouts even
+from third parties.
+
+394
+00:20:54,485 --> 00:20:56,885
+But one of my favorite
+features is
+
+395
+00:20:56,888 --> 00:20:58,958
+that you can communicate
+directly with the people
+
+396
+00:20:58,956 --> 00:21:00,756
+that you're sharing
+activity with right
+
+397
+00:21:00,758 --> 00:21:03,698
+in the Activity app
+through messages.
+
+398
+00:21:03,695 --> 00:21:06,735
+And when you do, you'll get
+smart replies that are geared
+
+399
+00:21:06,731 --> 00:21:08,971
+around fitness and activity.
+
+400
+00:21:08,966 --> 00:21:13,336
+Some are supportive, some
+are a little more competitive
+
+401
+00:21:13,338 --> 00:21:15,038
+but you can also
+do some fun things.
+
+402
+00:21:15,039 --> 00:21:16,639
+For example, at the
+end of a workout,
+
+403
+00:21:16,641 --> 00:21:18,211
+you could send your
+raising heart rate to one
+
+404
+00:21:18,209 --> 00:21:19,579
+of your activity friends.
+
+405
+00:21:19,577 --> 00:21:25,947
+Or your raising heart rate to
+one of your activity friends
+
+406
+00:21:25,950 --> 00:21:30,050
+or you can also send smack
+talk in your own voice right
+
+407
+00:21:30,054 --> 00:21:31,824
+through audio messages.
+
+408
+00:21:31,823 --> 00:21:33,623
+So we think this is going
+to be a great way for you
+
+409
+00:21:33,624 --> 00:21:35,494
+and your friends
+to stay motivated
+
+410
+00:21:35,493 --> 00:21:40,163
+to keep each other active and
+we can't wait for you to try it.
+
+411
+00:21:40,164 --> 00:21:43,264
+Now, our team has been
+working hard to enable features
+
+412
+00:21:43,267 --> 00:21:44,637
+that would allow more people
+
+413
+00:21:44,635 --> 00:21:47,205
+to use the Activity
+and Workout apps.
+
+414
+00:21:47,205 --> 00:21:48,675
+And one group we've
+been thinking a lot
+
+415
+00:21:48,673 --> 00:21:51,613
+about is wheelchair users.
+
+416
+00:21:51,609 --> 00:21:54,609
+Now, many wheelchair users
+already have an Apple Watch.
+
+417
+00:21:54,612 --> 00:21:57,112
+And they've witnessed and
+told us that they love it
+
+418
+00:21:57,115 --> 00:21:59,215
+because it gives them
+instant access to messages
+
+419
+00:21:59,217 --> 00:22:00,887
+and notifications
+right from their wrist.
+
+420
+00:22:00,885 --> 00:22:02,955
+And this is particularly
+important
+
+421
+00:22:02,954 --> 00:22:04,694
+because many wheelchair
+users have
+
+422
+00:22:04,689 --> 00:22:08,229
+to tuck away their iPhone
+securely throughout the day.
+
+423
+00:22:08,226 --> 00:22:11,066
+But to do a great activity
+and workout experience,
+
+424
+00:22:11,062 --> 00:22:13,532
+we also recognize that we
+couldn't just use the same
+
+425
+00:22:13,531 --> 00:22:15,931
+algorithms that we've used
+for non-wheelchair users
+
+426
+00:22:15,933 --> 00:22:19,303
+because the biomechanics
+are completely different.
+
+427
+00:22:19,303 --> 00:22:22,243
+For example, many wheelchair
+users use a semicircular
+
+428
+00:22:22,240 --> 00:22:24,210
+technique when they're pushing
+their wheelchair throughout
+
+429
+00:22:24,208 --> 00:22:25,548
+the day.
+
+430
+00:22:25,543 --> 00:22:28,683
+But as the terrain changes
+and the speed changes,
+
+431
+00:22:28,679 --> 00:22:30,619
+they may switch to
+an arc technique
+
+432
+00:22:30,615 --> 00:22:32,685
+or a single-loop over technique.
+
+433
+00:22:32,683 --> 00:22:34,283
+And this is what
+makes it complicated.
+
+434
+00:22:34,285 --> 00:22:37,325
+These are only a few of the
+techniques that they may use.
+
+435
+00:22:37,321 --> 00:22:40,561
+We knew that to do this right,
+we not only have to do a lot
+
+436
+00:22:40,558 --> 00:22:42,758
+of studies but we
+would also need
+
+437
+00:22:42,760 --> 00:22:45,030
+to enlist the help of experts.
+
+438
+00:22:45,029 --> 00:22:47,529
+So, we worked with the
+Challenged Athletes Foundation
+
+439
+00:22:47,532 --> 00:22:49,172
+and the Lakeshore Foundation.
+
+440
+00:22:49,167 --> 00:22:51,807
+These are two of the
+world's largest organizations
+
+441
+00:22:51,803 --> 00:22:54,043
+that are dedicated to
+promoting physical fitness
+
+442
+00:22:54,038 --> 00:22:56,138
+for people in wheelchairs.
+
+443
+00:22:56,140 --> 00:22:59,040
+With their help, we were
+able to conduct the studies.
+
+444
+00:22:59,043 --> 00:23:00,883
+And we were able to do
+it on a wide variety
+
+445
+00:23:00,878 --> 00:23:03,918
+of wheelchair users
+including some veterans.
+
+446
+00:23:03,915 --> 00:23:07,285
+And now, wheelchair users
+will have a setting.
+
+447
+00:23:07,285 --> 00:23:11,485
+The time to stand notifications
+will be changed to time to roll.
+
+448
+00:23:11,489 --> 00:23:17,829
+[ Applause ]
+
+449
+00:23:17,829 --> 00:23:19,229
+There will be two workouts
+
+450
+00:23:19,230 --> 00:23:22,070
+in the workout apps specifically
+dedicated to wheelchair users
+
+451
+00:23:22,066 --> 00:23:24,836
+and of course the activity
+rings will be optimized
+
+452
+00:23:24,836 --> 00:23:26,706
+for wheelchair pushes.
+
+453
+00:23:26,704 --> 00:23:29,304
+We could not be more
+excited about this feature
+
+454
+00:23:29,307 --> 00:23:31,147
+and we're incredibly
+thankful to our partners
+
+455
+00:23:31,142 --> 00:23:33,512
+for helping make it possible.
+
+456
+00:23:33,511 --> 00:23:39,551
+[ Applause ]
+
+457
+00:23:39,550 --> 00:23:41,550
+Now, one of the things that
+we've learned about health
+
+458
+00:23:41,552 --> 00:23:43,392
+in Apple Watch is
+that simple things
+
+459
+00:23:43,387 --> 00:23:45,887
+like the activity rings
+can be very powerful
+
+460
+00:23:45,890 --> 00:23:48,160
+at helping people
+change behavior.
+
+461
+00:23:48,159 --> 00:23:49,999
+But we also know that
+there's a lot more
+
+462
+00:23:49,994 --> 00:23:52,064
+to health than just fitness.
+
+463
+00:23:52,063 --> 00:23:54,733
+And we've been thinking
+way beyond that.
+
+464
+00:23:54,732 --> 00:23:57,872
+So with watchOS, we're
+launching a brand new app
+
+465
+00:23:57,869 --> 00:24:00,669
+for health, it's called Breathe.
+
+466
+00:24:00,671 --> 00:24:02,371
+And it's designed to guide you
+
+467
+00:24:02,373 --> 00:24:04,643
+through simple deep
+breathing sessions
+
+468
+00:24:04,642 --> 00:24:08,012
+that can help you quiet
+your mind, relax your body
+
+469
+00:24:08,012 --> 00:24:11,882
+and just better deal
+with everyday stress.
+
+470
+00:24:11,883 --> 00:24:14,953
+Now, yoga practitioners have
+been using deep breathing
+
+471
+00:24:14,952 --> 00:24:17,452
+exercises for thousands
+of years as a way
+
+472
+00:24:17,455 --> 00:24:19,955
+to positively impact
+the body and mind.
+
+473
+00:24:19,957 --> 00:24:22,957
+But the medical community has
+also embraced deep breathing
+
+474
+00:24:22,960 --> 00:24:25,430
+as a great way to
+improve daily health.
+
+475
+00:24:25,429 --> 00:24:28,669
+Dr. Deepak Chopra, one
+of the early advocates
+
+476
+00:24:28,666 --> 00:24:32,036
+of body-mind medicine has said,
+"Taking a moment every day
+
+477
+00:24:32,036 --> 00:24:34,676
+to do some deep breathing
+can reduce stress,
+
+478
+00:24:34,672 --> 00:24:36,342
+calm the body-mind as well
+
+479
+00:24:36,340 --> 00:24:38,580
+as have a long term
+health benefits."
+
+480
+00:24:38,576 --> 00:24:41,916
+Now to get to the
+app, it's easy.
+
+481
+00:24:41,913 --> 00:24:44,283
+You can launch it from your
+watch face, you can launch it
+
+482
+00:24:44,282 --> 00:24:48,452
+from the dock or like
+the stand reminders,
+
+483
+00:24:48,452 --> 00:24:51,552
+you can actually set smart
+notifications to remind you
+
+484
+00:24:51,556 --> 00:24:55,896
+and start building this as
+a habit every single day.
+
+485
+00:24:55,893 --> 00:24:58,893
+When you open the app, you
+can easily change the amount
+
+486
+00:24:58,896 --> 00:25:00,296
+of time you want
+to do your session,
+
+487
+00:25:00,298 --> 00:25:04,768
+from one to five minutes just
+by turning the digital crown.
+
+488
+00:25:04,769 --> 00:25:07,839
+And when you're in the app
+experience, you'll be guided
+
+489
+00:25:07,838 --> 00:25:11,208
+by beautiful visuals that make
+it really easy to follow along.
+
+490
+00:25:11,208 --> 00:25:14,048
+And if you prefer to do
+this with your eyes closed,
+
+491
+00:25:14,045 --> 00:25:16,045
+you can turn on the
+haptic feedback
+
+492
+00:25:16,047 --> 00:25:18,717
+and gentle taps will guide you
+
+493
+00:25:18,716 --> 00:25:21,116
+and you can do without
+even looking.
+
+494
+00:25:21,118 --> 00:25:23,818
+When the session is over,
+you'll get a summary.
+
+495
+00:25:23,821 --> 00:25:26,121
+And you'll also get your heart
+rate from the last few seconds
+
+496
+00:25:26,123 --> 00:25:28,223
+of the session you just did.
+
+497
+00:25:28,225 --> 00:25:30,425
+Now if you already
+do deep breathing,
+
+498
+00:25:30,428 --> 00:25:32,268
+we think this is going to be
+a great way for you to fit it
+
+499
+00:25:32,263 --> 00:25:33,963
+into your day more often.
+
+500
+00:25:33,965 --> 00:25:35,905
+But for those of you that
+don't, we think this is going
+
+501
+00:25:35,900 --> 00:25:38,970
+to be a great way to get started
+and just one more simple way
+
+502
+00:25:38,970 --> 00:25:41,370
+that it can help you
+live a better day.
+
+503
+00:25:41,372 --> 00:25:43,912
+These are just a few of the
+exciting updates we have planned
+
+504
+00:25:43,908 --> 00:25:45,508
+for fitness and health
+in watchOS.
+
+505
+00:25:45,509 --> 00:25:48,509
+Now I'm going to give
+it back to Kevin.
+
+506
+00:25:48,512 --> 00:25:55,322
+[ Applause ]
+
+507
+00:25:55,319 --> 00:25:56,089
+Thank you, Jay.
+
+508
+00:25:56,087 --> 00:25:57,217
+That was really terrific.
+
+509
+00:25:57,221 --> 00:25:59,261
+I was actually using the
+Breathe app back stage.
+
+510
+00:25:59,256 --> 00:26:00,756
+It helped me a bit.
+
+511
+00:26:00,758 --> 00:26:07,428
+So, watchOS 3 is a giant step
+forward for you as developers.
+
+512
+00:26:07,431 --> 00:26:10,071
+When someone adds your apps
+to dock or to the watch face,
+
+513
+00:26:10,067 --> 00:26:12,367
+it benefits from all the
+instant launch experience
+
+514
+00:26:12,370 --> 00:26:14,410
+that we're showing and
+you get background time
+
+515
+00:26:14,405 --> 00:26:16,975
+to update your information
+before someone goes and looks.
+
+516
+00:26:16,974 --> 00:26:19,214
+And that will enable
+really quick interactions
+
+517
+00:26:19,210 --> 00:26:20,980
+with your app on the watch.
+
+518
+00:26:20,978 --> 00:26:23,218
+Now you can already build
+apps that are native to watch
+
+519
+00:26:23,214 --> 00:26:24,914
+that you can run
+independent of iPhone,
+
+520
+00:26:24,915 --> 00:26:26,515
+but we're also adding a number
+
+521
+00:26:26,517 --> 00:26:28,117
+of new APIs you can
+take advantage
+
+522
+00:26:28,119 --> 00:26:30,719
+of when you're building
+apps for the watch.
+
+523
+00:26:30,721 --> 00:26:33,591
+One of those is support now
+for Apple Pay within your app
+
+524
+00:26:33,591 --> 00:26:36,831
+on the watch, so you can
+do purchases right there.
+
+525
+00:26:36,827 --> 00:26:38,067
+Fitness apps will now be able
+
+526
+00:26:38,062 --> 00:26:40,662
+to run the background during
+workouts enabling access
+
+527
+00:26:40,665 --> 00:26:43,335
+to real-time heart rate
+information and motion data.
+
+528
+00:26:43,334 --> 00:26:45,634
+This is going to enable
+a whole new category
+
+529
+00:26:45,636 --> 00:26:48,306
+of fitness apps on the watch.
+
+530
+00:26:48,305 --> 00:26:51,505
+Also we're enabling a much
+richer and expressive apps
+
+531
+00:26:51,509 --> 00:26:54,579
+in watchOS including support
+for SpriteKit and SceneKit,
+
+532
+00:26:54,578 --> 00:26:59,218
+native event support from the
+crown and for touch gestures.
+
+533
+00:26:59,216 --> 00:27:00,456
+You can clap, it's good.
+
+534
+00:27:00,451 --> 00:27:04,091
+[ Applause ]
+
+535
+00:27:04,088 --> 00:27:06,858
+Audio and video can be embedded
+right inside your app UI
+
+536
+00:27:06,857 --> 00:27:08,297
+and you can connect
+across devices
+
+537
+00:27:08,292 --> 00:27:09,932
+with Game Center and CloudKit.
+
+538
+00:27:09,927 --> 00:27:13,067
+So we're really excited about
+what new apps now can be created
+
+539
+00:27:13,064 --> 00:27:15,434
+on the watch and they're
+going to be amazing.
+
+540
+00:27:15,433 --> 00:27:17,803
+This is a great new
+opportunity for all of you.
+
+541
+00:27:17,802 --> 00:27:21,602
+And the preview release
+for you is available today,
+
+542
+00:27:21,605 --> 00:27:23,475
+so you can get going.
+
+543
+00:27:23,474 --> 00:27:27,844
+[ Applause ]
+
+544
+00:27:27,845 --> 00:27:31,085
+And the free upgrade is coming
+to all watch users this fall
+
+545
+00:27:31,082 --> 00:27:33,882
+and it's going to feel
+like a whole new watch.
+
+546
+00:27:33,884 --> 00:27:35,054
+And that's just some
+of what's coming
+
+547
+00:27:35,052 --> 00:27:37,492
+in watchOS, thank you very much.
+
+548
+00:27:37,488 --> 00:27:45,728
+[ Cheering and Applause ]
+
+549
+00:27:45,730 --> 00:27:47,830
+So, now to give you
+a look at tvOS,
+
+550
+00:27:47,832 --> 00:27:51,502
+please welcome the
+one and only Eddy Cue.
+
+551
+00:27:51,502 --> 00:27:57,312
+[ Cheering and Applause ]
+
+552
+00:27:57,308 --> 00:28:02,008
+So let's talk about
+tvOS and Apple TV.
+
+553
+00:28:02,012 --> 00:28:05,312
+Last fall, we introduced the
+next generation of Apple TV
+
+554
+00:28:05,316 --> 00:28:08,786
+and for the first time,
+developers had a modern platform
+
+555
+00:28:08,786 --> 00:28:12,186
+like iOS to develop
+for in the living room.
+
+556
+00:28:12,189 --> 00:28:15,759
+And we said the future
+of TV is apps.
+
+557
+00:28:15,760 --> 00:28:19,330
+And the response to Apple
+TV has been incredible.
+
+558
+00:28:19,330 --> 00:28:23,100
+Here is what Chris Albrecht
+the CEO of Starz had to say.
+
+559
+00:28:23,100 --> 00:28:26,200
+tvOS has allowed Starz
+to create an experience
+
+560
+00:28:26,203 --> 00:28:29,003
+on Apple TV unlike
+anything we've done before
+
+561
+00:28:29,006 --> 00:28:31,906
+and our subscribers
+are loving it.
+
+562
+00:28:31,909 --> 00:28:33,379
+Here is what the CEO of BoomBit,
+
+563
+00:28:33,377 --> 00:28:36,347
+a very popular iOS game
+developer had to say.
+
+564
+00:28:36,347 --> 00:28:39,517
+We easily extended our iOS game
+experience to the living room,
+
+565
+00:28:39,517 --> 00:28:41,617
+something that is
+incredibly difficult to do
+
+566
+00:28:41,619 --> 00:28:43,859
+on traditional consoles.
+
+567
+00:28:43,854 --> 00:28:47,654
+Our last generation Apple TV
+had 80 video channels and thanks
+
+568
+00:28:47,658 --> 00:28:52,498
+to many of you, we now have
+over 1300 video channels.
+
+569
+00:28:52,496 --> 00:28:57,436
+[ Applause ]
+
+570
+00:28:57,434 --> 00:29:01,644
+And we have over 6000 native
+apps in just seven months.
+
+571
+00:29:01,639 --> 00:29:04,079
+And I've got some new
+apps to tell you about.
+
+572
+00:29:04,074 --> 00:29:06,844
+First, Sling which
+offers a great selection
+
+573
+00:29:06,844 --> 00:29:09,984
+of live cable channels is
+coming to Apple TV today.
+
+574
+00:29:12,983 --> 00:29:17,993
+Fox Sports Go, I'm a huge
+sports fan, four sports game all
+
+575
+00:29:17,988 --> 00:29:22,198
+at the same time on one screen
+coming this summer to Apple TV.
+
+576
+00:29:25,329 --> 00:29:28,629
+Molotov, a revolutionary
+new TV service in France
+
+577
+00:29:28,632 --> 00:29:32,802
+with over 100 live channels
+video on demand exclusively
+
+578
+00:29:32,803 --> 00:29:37,213
+on iOS and Apple TV
+coming next month.
+
+579
+00:29:40,444 --> 00:29:44,114
+Great sports games like
+NBA 2K, adventure games
+
+580
+00:29:44,114 --> 00:29:47,784
+like Minecraft story
+mode and SketchParty.
+
+581
+00:29:47,785 --> 00:29:50,555
+Use your iPhone or iPad
+to draw and then you sit
+
+582
+00:29:50,554 --> 00:29:52,194
+around the TV to guess.
+
+583
+00:29:52,189 --> 00:29:55,929
+It's a lot of fun to do this
+with your group of friends.
+
+584
+00:29:55,926 --> 00:29:58,666
+Now we've got great updates
+to tell you about for tvOS
+
+585
+00:29:58,662 --> 00:30:02,462
+and let me start with
+the Apple TV remote app.
+
+586
+00:30:02,466 --> 00:30:05,606
+Now Apple TV comes with
+the incredible Siri remote.
+
+587
+00:30:05,603 --> 00:30:08,773
+It uses touch for navigation,
+Siri to tell it what you want
+
+588
+00:30:08,772 --> 00:30:11,772
+to watch, and motion
+to play games.
+
+589
+00:30:11,775 --> 00:30:13,345
+But a lot of our
+customers have told us
+
+590
+00:30:13,344 --> 00:30:15,444
+that they would love
+an app on their iPhone
+
+591
+00:30:15,446 --> 00:30:17,646
+that had all those
+same capabilities,
+
+592
+00:30:17,648 --> 00:30:20,388
+and so we're making a new
+version of the remote app.
+
+593
+00:30:20,384 --> 00:30:21,454
+This is what it looks like.
+
+594
+00:30:21,452 --> 00:30:22,992
+It's got a beautiful
+mount playing screen
+
+595
+00:30:22,987 --> 00:30:25,187
+with playback controls,
+but most importantly,
+
+596
+00:30:25,189 --> 00:30:27,789
+all the features
+of the Siri remote.
+
+597
+00:30:27,791 --> 00:30:31,161
+You have touch for navigation,
+Siri to give it commands,
+
+598
+00:30:31,161 --> 00:30:35,531
+and it uses the accelerometer
+and gyroscope to play games.
+
+599
+00:30:35,532 --> 00:30:40,542
+[ Applause ]
+
+600
+00:30:40,537 --> 00:30:44,437
+And of course, you can enter
+text with the keyboard.
+
+601
+00:30:44,441 --> 00:30:48,911
+Next let's talk about Siri.
+
+602
+00:30:48,913 --> 00:30:51,653
+Siri changed the way we
+interact with our television
+
+603
+00:30:51,649 --> 00:30:54,649
+because now we just tell
+it what we want to watch.
+
+604
+00:30:54,652 --> 00:30:56,352
+And we're making it even better
+
+605
+00:30:56,353 --> 00:30:59,593
+because now you can
+search movies by topics.
+
+606
+00:30:59,590 --> 00:31:02,130
+Now my daughter is actually
+going to high school this fall
+
+607
+00:31:02,126 --> 00:31:04,226
+and I remember back when
+I went to high school,
+
+608
+00:31:04,228 --> 00:31:06,328
+it's been a while, there
+are some great movies
+
+609
+00:31:06,330 --> 00:31:08,300
+that I'd love to watch with her.
+
+610
+00:31:08,299 --> 00:31:11,999
+And now Siri makes this really
+easy because I can just say,
+
+611
+00:31:12,002 --> 00:31:13,942
+find high school
+comedies from the 80s.
+
+612
+00:31:13,938 --> 00:31:14,638
+I'm sorry.
+
+613
+00:31:14,638 --> 00:31:15,638
+We'll do that one again.
+
+614
+00:31:15,639 --> 00:31:17,979
+Find high school
+comedies from the 80s.
+
+615
+00:31:17,975 --> 00:31:21,975
+And there are some
+of my favorites.
+
+616
+00:31:21,979 --> 00:31:23,349
+I actually have watched
+them all.
+
+617
+00:31:23,347 --> 00:31:25,047
+Let's take a look at
+"Ferris Bueller's Day Off"
+
+618
+00:31:25,049 --> 00:31:29,019
+and with just one tap,
+we can start watching.
+
+619
+00:31:33,023 --> 00:31:38,163
+Now Siri actually searches over
+650,000 movies and TV shows now,
+
+620
+00:31:38,162 --> 00:31:40,962
+but what about YouTube?
+
+621
+00:31:40,965 --> 00:31:44,265
+Well, that's easy too
+because now you just ask Siri.
+
+622
+00:31:44,268 --> 00:31:49,608
+Search YouTube for Steph
+Curry three pointers.
+
+623
+00:31:51,842 --> 00:31:55,242
+Siri launches YouTube and
+shows you the results.
+
+624
+00:31:55,245 --> 00:31:58,385
+But a big part of your TV
+experience is live channels.
+
+625
+00:31:58,382 --> 00:32:02,082
+And we've got some great
+channels on Apple TV like ABC,
+
+626
+00:32:02,086 --> 00:32:05,386
+CBS, FX and a lot more that
+give you live channels.
+
+627
+00:32:05,389 --> 00:32:08,429
+But to start watching,
+you got to find the app,
+
+628
+00:32:08,425 --> 00:32:10,465
+you got to launch it and then
+you got to find the channel.
+
+629
+00:32:10,461 --> 00:32:13,731
+Well, we've got a great new
+feature called Live Tune-In.
+
+630
+00:32:13,731 --> 00:32:18,471
+And all you have to
+do-- watch ESPN 2.
+
+631
+00:32:18,469 --> 00:32:21,709
+Take them straight
+to the action.
+
+632
+00:32:21,705 --> 00:32:23,505
+Goal.
+
+633
+00:32:23,507 --> 00:32:27,107
+[ Inaudible Remark ]
+
+634
+00:32:27,111 --> 00:32:31,211
+And this is already working
+with a lot of great channels
+
+635
+00:32:31,215 --> 00:32:34,115
+and we're making Live
+Tune-In available
+
+636
+00:32:34,118 --> 00:32:38,388
+on both your iPad
+and Apple TV as well.
+
+637
+00:32:38,389 --> 00:32:42,359
+And one problem with this is,
+let's be honest, when you go in
+
+638
+00:32:42,359 --> 00:32:44,729
+and you launch a video
+channel app for the first time,
+
+639
+00:32:44,728 --> 00:32:47,598
+you get something like this.
+
+640
+00:32:47,598 --> 00:32:49,868
+And you got to go find
+a browser, authenticate
+
+641
+00:32:49,867 --> 00:32:52,907
+with a code and then
+authenticate
+
+642
+00:32:52,903 --> 00:32:54,203
+to your TV provider.
+
+643
+00:32:54,204 --> 00:32:57,174
+Well, we're going to make
+this change a little bit.
+
+644
+00:32:57,174 --> 00:33:00,274
+But it's worst because you got
+to do it for each in every app.
+
+645
+00:33:00,277 --> 00:33:02,677
+And now, we're going
+to make it all go away
+
+646
+00:33:02,679 --> 00:33:05,479
+with the feature we
+call single sign-on.
+
+647
+00:33:05,482 --> 00:33:12,192
+[ Cheering and Applause ]
+
+648
+00:33:12,189 --> 00:33:15,129
+You sign in once on your
+Apple TV and you get access
+
+649
+00:33:15,125 --> 00:33:17,095
+to all of your network apps.
+
+650
+00:33:17,094 --> 00:33:19,864
+And we make it even better,
+we-- A page on the after,
+
+651
+00:33:19,863 --> 00:33:22,903
+we'll show you all of the apps
+that you now have access to.
+
+652
+00:33:22,900 --> 00:33:25,140
+And of course, we're
+bringing this to iOS as well.
+
+653
+00:33:25,135 --> 00:33:27,135
+Now in addition to
+single sign-on,
+
+654
+00:33:27,137 --> 00:33:28,907
+we've got some other
+great updates.
+
+655
+00:33:28,906 --> 00:33:31,346
+Now Apple TV looks
+beautiful but there are times
+
+656
+00:33:31,341 --> 00:33:33,511
+where you wish it was darker
+because you're in a home theater
+
+657
+00:33:33,510 --> 00:33:36,450
+or a dark room and
+now that's really easy
+
+658
+00:33:36,447 --> 00:33:39,517
+because you can just
+switch to dark mode.
+
+659
+00:33:43,220 --> 00:33:45,160
+And we want to make
+it even easier
+
+660
+00:33:45,155 --> 00:33:47,495
+for customers to get your apps.
+
+661
+00:33:47,491 --> 00:33:50,131
+And so just like when you
+download an app on your iPhone,
+
+662
+00:33:50,127 --> 00:33:52,727
+it automatically
+downloads to your Apple TV,
+
+663
+00:33:52,729 --> 00:33:57,399
+it now automatically
+downloads to your Apple TV
+
+664
+00:33:57,401 --> 00:34:00,901
+and this is really great
+and I'm going to show you.
+
+665
+00:34:00,904 --> 00:34:04,174
+So I get the major league
+baseball app on my iPhone,
+
+666
+00:34:04,174 --> 00:34:08,314
+you do nothing and there it
+is right on your Apple TV.
+
+667
+00:34:12,149 --> 00:34:14,119
+Now there's never been a
+better time for all of you
+
+668
+00:34:14,118 --> 00:34:15,718
+to build apps for the big screen
+
+669
+00:34:15,719 --> 00:34:18,689
+and we've got some great new
+features for you as well.
+
+670
+00:34:18,689 --> 00:34:19,789
+First of all, ReplayKit
+
+671
+00:34:19,790 --> 00:34:22,630
+where you can live
+broadcast your gameplay
+
+672
+00:34:22,626 --> 00:34:26,126
+or save the video
+to share it later.
+
+673
+00:34:26,130 --> 00:34:27,970
+We've got PhotoKit,
+it gives you access
+
+674
+00:34:27,965 --> 00:34:30,305
+to your complete
+iCloud photo library,
+
+675
+00:34:30,300 --> 00:34:32,470
+all the videos, all the photos.
+
+676
+00:34:32,469 --> 00:34:35,009
+And of course HomeKit
+where you can create apps
+
+677
+00:34:35,005 --> 00:34:37,905
+to control all the devices
+in your-- on-- at home.
+
+678
+00:34:37,908 --> 00:34:41,148
+And that's just some of the
+many features we've got.
+
+679
+00:34:41,145 --> 00:34:43,145
+Things like support for
+four game controllers,
+
+680
+00:34:43,147 --> 00:34:46,387
+multiplayer game
+sessions and a lot more.
+
+681
+00:34:46,383 --> 00:34:49,183
+And that is a quick
+update to the tvOS.
+
+682
+00:34:49,186 --> 00:34:53,156
+A new Apple TV remote app,
+great Siri enhancements,
+
+683
+00:34:53,157 --> 00:34:57,027
+with topic search,
+YouTube and Live Tune-In.
+
+684
+00:34:57,027 --> 00:34:59,327
+Obviously single sign-on,
+so now you get access
+
+685
+00:34:59,329 --> 00:35:03,499
+to all your network apps and
+great tools for developers.
+
+686
+00:35:03,500 --> 00:35:06,170
+And all of you will get a
+developer preview today.
+
+687
+00:35:06,170 --> 00:35:08,610
+I can't wait to see all of the
+apps that you start building
+
+688
+00:35:08,605 --> 00:35:13,475
+and our customers will get it
+this fall and that is tvOS.
+
+689
+00:35:13,477 --> 00:35:20,087
+[ Cheering and Applause ]
+
+690
+00:35:20,083 --> 00:35:24,493
+Now, to talk to you about OS
+X, here is Craig Federighi.
+
+691
+00:35:24,488 --> 00:35:27,828
+[ Cheering and Applause ]
+
+692
+00:35:27,824 --> 00:35:29,194
+Good morning.
+
+693
+00:35:31,728 --> 00:35:34,028
+And good morning, it's
+great to be back at WWDC
+
+694
+00:35:34,031 --> 00:35:37,101
+to talk to you about OS X.
+
+695
+00:35:37,100 --> 00:35:41,270
+And of course, no
+presentation at WWDC
+
+696
+00:35:41,271 --> 00:35:44,371
+about OS X would be
+complete without some kind
+
+697
+00:35:44,374 --> 00:35:46,714
+of naming controversy.
+
+698
+00:35:46,710 --> 00:35:51,520
+Now, I'm not talking about
+some allegedly baked members
+
+699
+00:35:51,515 --> 00:35:53,985
+of marketing team going on
+some kind of vision quest
+
+700
+00:35:53,984 --> 00:35:57,424
+around California looking
+for a special name.
+
+701
+00:35:57,421 --> 00:36:01,221
+I'm actually talking about
+the name OS X itself.
+
+702
+00:36:01,225 --> 00:36:06,395
+You know, OS X has been with
+us as a name for over 15 years.
+
+703
+00:36:06,396 --> 00:36:07,836
+And it served us so well.
+
+704
+00:36:07,831 --> 00:36:13,001
+But as we look at it
+alongside its younger brethren,
+
+705
+00:36:13,003 --> 00:36:14,903
+something sticks out.
+
+706
+00:36:14,905 --> 00:36:18,445
+We realized that there's a name
+that would be so much clearer
+
+707
+00:36:18,442 --> 00:36:20,112
+and so much more elegant.
+
+708
+00:36:20,110 --> 00:36:23,150
+And so we're making it so.
+
+709
+00:36:23,146 --> 00:36:26,716
+The name of the world's most
+advanced desktop operating
+
+710
+00:36:26,717 --> 00:36:29,487
+system is now Mac OS.
+
+711
+00:36:29,486 --> 00:36:38,566
+[ Cheering and Applause ]
+
+712
+00:36:39,963 --> 00:36:42,303
+Now of course each version of
+Mac OS does have a special name
+
+713
+00:36:42,299 --> 00:36:44,569
+after a place that's
+especially important
+
+714
+00:36:44,568 --> 00:36:47,508
+to us here in California.
+
+715
+00:36:47,504 --> 00:36:50,704
+And this year's Mac
+OS is no different.
+
+716
+00:36:50,707 --> 00:36:53,977
+But the choice this
+time was obvious.
+
+717
+00:36:53,977 --> 00:36:59,517
+Our latest newest OS
+X is macOS Sierra.
+
+718
+00:36:59,516 --> 00:37:05,226
+[ Applause ]
+
+719
+00:37:05,222 --> 00:37:08,492
+Now Sierra is a fantastic
+new release.
+
+720
+00:37:08,492 --> 00:37:13,502
+With a big focus on continuity,
+the iCloud and the fundamentals
+
+721
+00:37:13,497 --> 00:37:15,067
+of the Mac experience.
+
+722
+00:37:15,065 --> 00:37:17,235
+I want to start with continuity.
+
+723
+00:37:17,234 --> 00:37:20,204
+Because continuity is like
+magic, your devices are able
+
+724
+00:37:20,203 --> 00:37:22,503
+to sense themselves around you
+
+725
+00:37:22,506 --> 00:37:26,276
+and use secure peer-to-peer
+wireless protocols to enable you
+
+726
+00:37:26,276 --> 00:37:28,116
+to move from one task to another
+
+727
+00:37:28,111 --> 00:37:31,381
+across your devices
+just seamlessly.
+
+728
+00:37:31,381 --> 00:37:33,751
+What we wanted to
+take on this year,
+
+729
+00:37:33,750 --> 00:37:37,920
+one task that we all do many
+times a day every time we start
+
+730
+00:37:37,921 --> 00:37:42,291
+using our Macs and that
+feature is called auto unlock.
+
+731
+00:37:42,292 --> 00:37:43,492
+So--
+
+732
+00:37:43,493 --> 00:37:48,033
+[ Applause ]
+
+733
+00:37:48,031 --> 00:37:49,971
+Today, when you first
+approach your Mac to use it,
+
+734
+00:37:49,966 --> 00:37:51,966
+the experience is
+something like this.
+
+735
+00:37:51,968 --> 00:37:55,308
+You open it up, you confront
+with a password field,
+
+736
+00:37:55,305 --> 00:37:56,775
+then you type, and
+then maybe mistyped,
+
+737
+00:37:56,773 --> 00:37:59,813
+and then retype your
+password, and then you're
+
+738
+00:37:59,810 --> 00:38:01,210
+in and using your Mac.
+
+739
+00:38:01,211 --> 00:38:02,351
+But you know for many of us,
+
+740
+00:38:02,346 --> 00:38:04,516
+we already have a device
+securely authenticated
+
+741
+00:38:04,514 --> 00:38:07,284
+to our wrists that
+already knows who we are
+
+742
+00:38:07,284 --> 00:38:09,424
+and could tell our Mac.
+
+743
+00:38:09,419 --> 00:38:11,259
+And so then, when
+we open our Mac,
+
+744
+00:38:11,254 --> 00:38:14,194
+it could be a little
+bit more like this.
+
+745
+00:38:14,191 --> 00:38:16,331
+And we're in.
+
+746
+00:38:16,326 --> 00:38:18,466
+It's that simple.
+
+747
+00:38:18,462 --> 00:38:22,832
+[ Applause ]
+
+748
+00:38:22,833 --> 00:38:25,933
+And we made this really secure
+using time of flight networking
+
+749
+00:38:25,936 --> 00:38:29,036
+to make sure it's you who's
+that close to the machine
+
+750
+00:38:29,039 --> 00:38:31,239
+who is unlocking it,
+so it's really great.
+
+751
+00:38:31,241 --> 00:38:33,681
+Now, the next continuity feature
+
+752
+00:38:33,677 --> 00:38:38,817
+in macOS Sierra is
+universal clipboard.
+
+753
+00:38:38,815 --> 00:38:41,955
+Now-- Wow, gasp.
+
+754
+00:38:41,952 --> 00:38:47,462
+So-- but I know copy and paste
+is so fundamental to the way
+
+755
+00:38:47,457 --> 00:38:50,957
+that we use our Macs
+for so many years now.
+
+756
+00:38:50,961 --> 00:38:53,601
+But what if when you
+are on even your iPhone
+
+757
+00:38:53,597 --> 00:38:56,667
+and you found some new text,
+and you just want to copy it,
+
+758
+00:38:56,666 --> 00:38:59,166
+that when you then
+went to your Mac,
+
+759
+00:38:59,169 --> 00:39:02,309
+well you could just
+paste it right in.
+
+760
+00:39:02,305 --> 00:39:05,175
+And now you can with
+images, video,
+
+761
+00:39:05,175 --> 00:39:08,245
+everything completely automatic.
+
+762
+00:39:11,081 --> 00:39:12,721
+Now I'd like to move
+on to iCloud
+
+763
+00:39:12,716 --> 00:39:15,086
+and specifically iCloud Drive.
+
+764
+00:39:15,085 --> 00:39:18,525
+Now today with iCloud
+Drive, you can put documents
+
+765
+00:39:18,522 --> 00:39:20,622
+into your iCloud Drive
+that you explicitly want
+
+766
+00:39:20,624 --> 00:39:23,394
+to make available to you
+across your other systems
+
+767
+00:39:23,393 --> 00:39:25,493
+as well as your iOS devices.
+
+768
+00:39:25,495 --> 00:39:27,295
+And customers have been
+quite a bit of this.
+
+769
+00:39:27,297 --> 00:39:30,297
+There are actually 10
+billion customer documents
+
+770
+00:39:30,300 --> 00:39:31,540
+in iCloud drive today.
+
+771
+00:39:31,535 --> 00:39:34,235
+But we want to take
+this a step further.
+
+772
+00:39:34,237 --> 00:39:36,477
+We want all of your documents
+
+773
+00:39:36,473 --> 00:39:39,373
+and your desktop
+accessible to you everywhere.
+
+774
+00:39:39,376 --> 00:39:41,716
+So that when you're on one Mac,
+maybe you're putting things
+
+775
+00:39:41,711 --> 00:39:43,411
+in your normal documents
+folder, well,
+
+776
+00:39:43,413 --> 00:39:44,713
+of course those should
+be available
+
+777
+00:39:44,714 --> 00:39:46,514
+to you on your other Macs.
+
+778
+00:39:46,516 --> 00:39:49,756
+But you know for 30 years now,
+we all learn to do the work,
+
+779
+00:39:49,753 --> 00:39:51,453
+the things that we're
+working on right now, well,
+
+780
+00:39:51,455 --> 00:39:52,885
+where do we put those?
+
+781
+00:39:52,889 --> 00:39:55,059
+So often it's on our desktop.
+
+782
+00:39:55,058 --> 00:39:58,128
+So let's make our desktop
+available on our other Macs
+
+783
+00:39:58,128 --> 00:40:01,568
+as well and have those
+files be available to us
+
+784
+00:40:01,565 --> 00:40:03,835
+on the go on our iPhones.
+
+785
+00:40:03,834 --> 00:40:05,504
+Now you can.
+
+786
+00:40:05,502 --> 00:40:11,212
+[ Applause ]
+
+787
+00:40:11,208 --> 00:40:13,578
+Next up, optimized storage.
+
+788
+00:40:13,577 --> 00:40:15,447
+You know, we love using our Macs
+
+789
+00:40:15,445 --> 00:40:16,945
+and we fill them
+with so much stuff.
+
+790
+00:40:16,947 --> 00:40:19,087
+But you're going to end up
+with a situation like this.
+
+791
+00:40:19,082 --> 00:40:22,382
+And, we know, what
+do you do about it?
+
+792
+00:40:22,385 --> 00:40:24,625
+Well, it turns out we're
+going to give you a solution.
+
+793
+00:40:24,621 --> 00:40:26,561
+And it works in two ways.
+
+794
+00:40:26,556 --> 00:40:30,156
+First, it helps you make
+room for the files that--
+
+795
+00:40:30,160 --> 00:40:33,830
+your new files by keeping your
+older ones up in the Cloud.
+
+796
+00:40:33,830 --> 00:40:36,430
+So, whether it's your
+full resolution photos,
+
+797
+00:40:36,433 --> 00:40:38,733
+when your others are in
+iCloud Drive or movies
+
+798
+00:40:38,735 --> 00:40:41,175
+that you've already
+watched in iTunes
+
+799
+00:40:41,171 --> 00:40:44,471
+or even those old mail
+attachments, we can clear off
+
+800
+00:40:44,474 --> 00:40:46,444
+that space locally and
+make those things available
+
+801
+00:40:46,443 --> 00:40:47,643
+to you on demand.
+
+802
+00:40:47,644 --> 00:40:49,844
+But we also want to make
+it easy for you to get rid
+
+803
+00:40:49,846 --> 00:40:52,946
+of files you'll never
+use again automatically.
+
+804
+00:40:52,949 --> 00:40:56,049
+Things like your Safari web
+cache and maybe the trash
+
+805
+00:40:56,052 --> 00:40:57,552
+that you keep forgetting
+to empty
+
+806
+00:40:57,554 --> 00:41:00,054
+and redundant data that's stored
+by mail, well, we can get rid
+
+807
+00:41:00,056 --> 00:41:01,656
+of all of that as well.
+
+808
+00:41:01,658 --> 00:41:04,298
+And we provide a really
+simple user interface
+
+809
+00:41:04,294 --> 00:41:05,934
+to help you do it.
+
+810
+00:41:05,929 --> 00:41:09,199
+Now, as a task, we took a
+system that was nearly full,
+
+811
+00:41:09,199 --> 00:41:11,469
+had about let's say
+20 gigs free,
+
+812
+00:41:11,468 --> 00:41:13,238
+and we put it through the paces.
+
+813
+00:41:13,236 --> 00:41:16,706
+Now, it had a lot of photos
+and a lot of documents.
+
+814
+00:41:16,706 --> 00:41:19,346
+It had movies that were
+already watched, mail with lots
+
+815
+00:41:19,342 --> 00:41:22,242
+of attachment, apps,
+system files and so forth.
+
+816
+00:41:22,245 --> 00:41:24,845
+And we turned on all the
+switches for optimized storage.
+
+817
+00:41:24,848 --> 00:41:29,688
+And we went from 20 gigs
+free to 150 gigs free.
+
+818
+00:41:29,686 --> 00:41:30,656
+So, we think that's going
+
+819
+00:41:30,654 --> 00:41:32,524
+to make a difference
+for all of you.
+
+820
+00:41:32,522 --> 00:41:36,692
+[ Applause ]
+
+821
+00:41:36,693 --> 00:41:40,063
+Next, Apple Pay.
+
+822
+00:41:40,063 --> 00:41:45,233
+So, we all love using Apple Pay
+in stores to pay with our phones
+
+823
+00:41:45,235 --> 00:41:48,075
+and our Apple Watch
+at the cash register
+
+824
+00:41:48,071 --> 00:41:51,671
+and to shop inside apps
+on our iOS devices.
+
+825
+00:41:51,675 --> 00:41:52,645
+So, of course, we wanted
+
+826
+00:41:52,642 --> 00:41:55,682
+to bring this experience
+to the Mac.
+
+827
+00:41:55,679 --> 00:41:59,119
+We thought long and hard about
+exactly the right way to do it.
+
+828
+00:41:59,115 --> 00:42:01,385
+And I think we'd nailed it.
+
+829
+00:42:02,485 --> 00:42:08,995
+[ Laughter and Applause ]
+
+830
+00:42:08,992 --> 00:42:10,992
+I think we might have
+an accessory business
+
+831
+00:42:10,994 --> 00:42:13,134
+for some carrying straps,
+can be very helpful.
+
+832
+00:42:13,129 --> 00:42:15,199
+No, this is not how people
+are going to shop on our Macs.
+
+833
+00:42:15,198 --> 00:42:17,798
+We shop online, on
+the web, in Safari.
+
+834
+00:42:17,801 --> 00:42:19,801
+And so, what are we doing?
+
+835
+00:42:19,803 --> 00:42:22,503
+We're bringing Apple
+Pay to the web.
+
+836
+00:42:22,505 --> 00:42:28,215
+[ Applause ]
+
+837
+00:42:28,211 --> 00:42:31,581
+So now, when you're shopping
+online, you'll have a Pay
+
+838
+00:42:31,581 --> 00:42:33,951
+with Apple Pay button
+available to you.
+
+839
+00:42:33,950 --> 00:42:37,190
+When you click it, a sheet comes
+down that actually prompts you
+
+840
+00:42:37,187 --> 00:42:41,227
+to securely authenticate your
+purchase using continuity right
+
+841
+00:42:41,224 --> 00:42:43,524
+on your iPhone with Touch ID.
+
+842
+00:42:43,526 --> 00:42:49,566
+[ Applause ]
+
+843
+00:42:49,566 --> 00:42:53,006
+And of course, this works
+with your Apple Watch as well.
+
+844
+00:42:53,003 --> 00:42:56,073
+So, you can authenticate with
+just a tap on your wrist.
+
+845
+00:42:56,072 --> 00:42:58,172
+And already, many, many
+merchants are signed
+
+846
+00:42:58,174 --> 00:43:00,714
+up to bring their
+web storefronts
+
+847
+00:43:00,710 --> 00:43:02,250
+to support Apple Pay on the web.
+
+848
+00:43:02,245 --> 00:43:05,545
+And Apple Pay is expanding
+hugely geographically.
+
+849
+00:43:05,548 --> 00:43:09,658
+It's now available in the
+United States, the UK, Canada,
+
+850
+00:43:09,653 --> 00:43:12,323
+Australia, China and Singapore.
+
+851
+00:43:12,322 --> 00:43:13,722
+And in the next few months,
+
+852
+00:43:13,723 --> 00:43:17,663
+it's coming to Switzerland,
+France and Hong Kong.
+
+853
+00:43:17,661 --> 00:43:19,231
+Now, next, I want
+to move to part
+
+854
+00:43:19,229 --> 00:43:22,299
+of the Mac experience,
+and that's tabs.
+
+855
+00:43:22,298 --> 00:43:26,538
+You know, many of us love using
+tabs to take a mess of windows
+
+856
+00:43:26,536 --> 00:43:29,306
+that we have in Safari and
+get them neatly organized
+
+857
+00:43:29,305 --> 00:43:30,675
+in tab set.
+
+858
+00:43:30,674 --> 00:43:33,314
+Well, now, we want
+to bring that to all
+
+859
+00:43:33,309 --> 00:43:34,849
+of your multi-windowed apps.
+
+860
+00:43:34,844 --> 00:43:37,444
+So, maybe you have multiple
+windows open in maps, well,
+
+861
+00:43:37,447 --> 00:43:39,447
+you could organize
+those in tabs.
+
+862
+00:43:39,449 --> 00:43:41,719
+But because it's built into
+the system, you could do
+
+863
+00:43:41,718 --> 00:43:43,718
+that for third apps as well.
+
+864
+00:43:43,720 --> 00:43:45,690
+In fact, we've implemented
+it in a way
+
+865
+00:43:45,689 --> 00:43:48,429
+that the apps you already have
+installed can support this
+
+866
+00:43:48,425 --> 00:43:51,425
+out of the box without
+any modification,
+
+867
+00:43:51,428 --> 00:43:53,528
+so tabs everywhere.
+
+868
+00:43:53,530 --> 00:43:59,440
+[ Applause ]
+
+869
+00:43:59,436 --> 00:44:03,206
+So next, picture-in-picture.
+
+870
+00:44:03,206 --> 00:44:04,976
+We love watching
+video on the web.
+
+871
+00:44:04,974 --> 00:44:06,144
+But sometimes, we
+like to keep track
+
+872
+00:44:06,142 --> 00:44:08,112
+of a video while we're
+doing other work.
+
+873
+00:44:08,111 --> 00:44:09,181
+Well now, you can.
+
+874
+00:44:09,179 --> 00:44:10,349
+You can push the
+picture-in-picture button.
+
+875
+00:44:10,346 --> 00:44:12,416
+Your video goes under
+a nice little PIP.
+
+876
+00:44:12,415 --> 00:44:15,755
+You can move it around the
+screen and it works great
+
+877
+00:44:15,752 --> 00:44:18,492
+in full screen as well.
+
+878
+00:44:18,488 --> 00:44:26,128
+[ Applause ]
+
+879
+00:44:26,129 --> 00:44:30,099
+So, these are seven great
+features in macOS Sierra.
+
+880
+00:44:30,100 --> 00:44:33,240
+But there is one more.
+
+881
+00:44:33,236 --> 00:44:35,736
+And this year, I'd
+like to unusual step
+
+882
+00:44:35,739 --> 00:44:38,939
+of letting this feature
+introduce itself.
+
+883
+00:44:38,942 --> 00:44:41,782
+Hi, it's me.
+
+884
+00:44:41,778 --> 00:44:43,948
+It's sure is great
+to be on the Mac.
+
+885
+00:44:43,947 --> 00:44:44,977
+How about a demo?
+
+886
+00:44:44,981 --> 00:44:45,751
+That's right.
+
+887
+00:44:45,749 --> 00:44:48,519
+Siri is coming to the Mac.
+
+888
+00:44:48,518 --> 00:44:52,988
+[ Applause ]
+
+889
+00:44:52,989 --> 00:44:56,489
+And it looks like Siri
+would like to a give a demo.
+
+890
+00:44:56,493 --> 00:44:57,693
+So, let's get to it.
+
+891
+00:44:57,694 --> 00:45:02,264
+So, we have macOS
+Sierra right here.
+
+892
+00:45:02,265 --> 00:45:04,205
+And the first thing
+you'll notice is right here
+
+893
+00:45:04,200 --> 00:45:07,800
+on the dock, we have
+access to Siri.
+
+894
+00:45:07,804 --> 00:45:09,304
+So, I can ask Siri a question.
+
+895
+00:45:09,305 --> 00:45:13,545
+Let's say, how do you
+like being on a Mac?
+
+896
+00:45:13,543 --> 00:45:16,983
+Pretty awesome, lots of
+space, aluminum unibody walls
+
+897
+00:45:16,980 --> 00:45:20,120
+and no complaints about
+the lack of Windows.
+
+898
+00:45:20,116 --> 00:45:21,486
+So--
+
+899
+00:45:21,484 --> 00:45:24,784
+[ Applause ]
+
+900
+00:45:24,788 --> 00:45:27,388
+So, it's the same Siri
+that we know and love.
+
+901
+00:45:27,390 --> 00:45:29,760
+But now on a Mac, it
+can do so much more.
+
+902
+00:45:29,759 --> 00:45:32,959
+Things like sophisticated
+queries for files
+
+903
+00:45:32,962 --> 00:45:38,002
+like show the files I worked
+on last week about the offsite.
+
+904
+00:45:38,001 --> 00:45:42,571
+Have I ever told you
+your file is so styling.
+
+905
+00:45:42,572 --> 00:45:44,612
+So, we have my
+search results.
+
+906
+00:45:44,607 --> 00:45:46,407
+But what's really
+incredible is I can refine
+
+907
+00:45:46,409 --> 00:45:49,309
+that sophisticated query
+with a follow on like,
+
+908
+00:45:49,312 --> 00:45:53,582
+just the ones Ken sent me
+that I tagged with draft.
+
+909
+00:45:53,583 --> 00:45:56,553
+For your filling pleasure.
+
+910
+00:45:56,553 --> 00:45:58,623
+So you see I have just
+the files I'm looking
+
+911
+00:45:58,621 --> 00:46:00,021
+for right there.
+
+912
+00:46:00,023 --> 00:46:02,393
+But what's great is this is a
+useful result that I may want
+
+913
+00:46:02,392 --> 00:46:04,032
+to throughout the day as I work.
+
+914
+00:46:04,027 --> 00:46:06,067
+So, I can actually click
+on this plus button
+
+915
+00:46:06,062 --> 00:46:10,302
+and pin it right here into
+my notification center.
+
+916
+00:46:10,300 --> 00:46:12,000
+And it is-- yeah,
+it's really great.
+
+917
+00:46:12,001 --> 00:46:16,101
+And this works for lots
+of your Siri results.
+
+918
+00:46:16,105 --> 00:46:19,675
+So, I'm going to actually open
+this team offsite presentation,
+
+919
+00:46:19,676 --> 00:46:21,416
+just working on a
+little project here.
+
+920
+00:46:21,411 --> 00:46:23,211
+I'll take this one full screen.
+
+921
+00:46:23,213 --> 00:46:24,613
+We see we're planning
+an offsite.
+
+922
+00:46:24,614 --> 00:46:25,984
+There are a bunch of activities.
+
+923
+00:46:25,982 --> 00:46:28,282
+But while I'm working in full
+screen, Siri is there for me
+
+924
+00:46:28,284 --> 00:46:29,624
+and helps me multitask.
+
+925
+00:46:29,619 --> 00:46:34,159
+So, I can do things like, play
+my power ballads playlist.
+
+926
+00:46:34,157 --> 00:46:36,597
+[Background music] Oh yeah.
+
+927
+00:46:38,027 --> 00:46:42,067
+So, Siri to the rescue
+with some awesome tunes.
+
+928
+00:46:42,065 --> 00:46:44,235
+I can let this play all day.
+
+929
+00:46:44,234 --> 00:46:46,504
+But I think we'll
+get on with the demo.
+
+930
+00:46:46,502 --> 00:46:49,142
+So, I can actually use
+my Siri results here
+
+931
+00:46:49,138 --> 00:46:51,038
+to help me complete
+this presentation.
+
+932
+00:46:51,040 --> 00:46:53,410
+So, I have an image result
+here for slacklining.
+
+933
+00:46:53,409 --> 00:46:55,949
+Let me just click
+in my Siri result.
+
+934
+00:46:55,945 --> 00:46:58,145
+Drag it right into
+my presentation.
+
+935
+00:46:58,147 --> 00:47:00,117
+And I can also have Siri
+search the web for me.
+
+936
+00:47:00,116 --> 00:47:04,986
+So, let's do, search the web
+for pictures of falconry.
+
+937
+00:47:04,988 --> 00:47:08,058
+Here are some images of
+falconry I found on the web.
+
+938
+00:47:08,057 --> 00:47:09,557
+OK. That looks
+like some good fun.
+
+939
+00:47:09,559 --> 00:47:13,299
+So, I can actually take the
+results right out of Siri
+
+940
+00:47:13,296 --> 00:47:15,366
+and drag them into my document.
+
+941
+00:47:15,365 --> 00:47:17,465
+It's pretty epic.
+
+942
+00:47:17,467 --> 00:47:21,637
+[ Applause ]
+
+943
+00:47:21,638 --> 00:47:25,638
+But, you know, I'd like to
+actually replace this map
+
+944
+00:47:25,642 --> 00:47:28,842
+with one that I've been
+working on here on my iPad.
+
+945
+00:47:28,845 --> 00:47:31,785
+So, my iPad is so great because
+I can actually use my Apple
+
+946
+00:47:31,781 --> 00:47:33,551
+Pencil to do some drawings.
+
+947
+00:47:33,549 --> 00:47:35,349
+So, let's say, I'm going to
+take my Apple Pencil here
+
+948
+00:47:35,351 --> 00:47:37,421
+and I'm going to draw a path.
+
+949
+00:47:37,420 --> 00:47:39,190
+Maybe we'll take
+a hike like this,
+
+950
+00:47:39,188 --> 00:47:41,258
+maybe out over here,
+just like that.
+
+951
+00:47:41,257 --> 00:47:43,327
+OK, that looks like
+just the drawing I want.
+
+952
+00:47:43,326 --> 00:47:45,826
+But of course, I'd like
+to now get it on my Mac.
+
+953
+00:47:45,828 --> 00:47:47,428
+So, how do I do that?
+
+954
+00:47:47,430 --> 00:47:49,430
+Well, why don't I just copy it--
+
+955
+00:47:49,432 --> 00:47:52,432
+but I'm not just copying it to
+my iPad because when I return
+
+956
+00:47:52,435 --> 00:47:56,835
+to my Mac, I can paste it just
+like I would anything else,
+
+957
+00:47:56,839 --> 00:48:01,449
+actually wirelessly transfers it
+automatically into my document.
+
+958
+00:48:01,444 --> 00:48:07,914
+[ Applause ]
+
+959
+00:48:07,917 --> 00:48:09,257
+So, now that I looked
+at this trip,
+
+960
+00:48:09,252 --> 00:48:10,952
+I realized that it's
+a horrible idea.
+
+961
+00:48:10,954 --> 00:48:15,024
+So, I can actually use
+Siri to message my friend.
+
+962
+00:48:15,024 --> 00:48:19,694
+Tell Ken, maybe we
+should just see a movie.
+
+963
+00:48:19,696 --> 00:48:22,466
+Here's your message
+ready to send it.
+
+964
+00:48:22,465 --> 00:48:23,965
+You bet.
+
+965
+00:48:23,967 --> 00:48:24,837
+Sent.
+
+966
+00:48:24,834 --> 00:48:25,864
+So, I can use
+Siri, of course,
+
+967
+00:48:25,868 --> 00:48:27,268
+to do messaging at any time.
+
+968
+00:48:27,270 --> 00:48:30,340
+And it can also help
+me find that movie.
+
+969
+00:48:30,340 --> 00:48:32,410
+What new movies are
+playing this Friday?
+
+970
+00:48:32,408 --> 00:48:37,018
+I found eight movies
+playing on Friday.
+
+971
+00:48:37,013 --> 00:48:37,843
+All right.
+
+972
+00:48:37,847 --> 00:48:38,847
+So, Siri has given some results.
+
+973
+00:48:38,848 --> 00:48:40,448
+And "Finding Dory"
+looks pretty good.
+
+974
+00:48:40,450 --> 00:48:42,090
+So, let's open that up.
+
+975
+00:48:42,085 --> 00:48:45,025
+Now, I can go play the trailer.
+
+976
+00:48:45,021 --> 00:48:46,921
+[Background music] But I
+could also drop it right here
+
+977
+00:48:46,923 --> 00:48:48,593
+into picture-in-picture.
+
+978
+00:48:48,591 --> 00:48:50,631
+And you see in
+picture-in-picture,
+
+979
+00:48:50,626 --> 00:48:54,096
+I can actually resize if I want.
+
+980
+00:48:54,097 --> 00:48:57,867
+I can reposition the PIP
+window to any corner.
+
+981
+00:48:57,867 --> 00:49:01,237
+And, of course, it works
+great in full screen,
+
+982
+00:49:01,237 --> 00:49:03,777
+right on top of my
+other content.
+
+983
+00:49:03,773 --> 00:49:06,143
+So, this movie looks
+pretty good.
+
+984
+00:49:06,142 --> 00:49:09,242
+So, I think I'll go
+back into the browser.
+
+985
+00:49:09,245 --> 00:49:10,785
+And let's actually
+buy some tickets.
+
+986
+00:49:10,780 --> 00:49:14,220
+So, I see there's a showing
+here at 7:15, I'll select that.
+
+987
+00:49:14,217 --> 00:49:15,147
+Select the amount.
+
+988
+00:49:15,151 --> 00:49:17,251
+Let's go with 10 of us.
+
+989
+00:49:17,253 --> 00:49:20,053
+And here you see, buy
+with Apple Pay button.
+
+990
+00:49:20,056 --> 00:49:22,496
+So, watch what happens
+when I click buy Apple Pay,
+
+991
+00:49:22,492 --> 00:49:25,032
+I'm prompted to confirm
+here on my iPhone.
+
+992
+00:49:25,028 --> 00:49:28,768
+I just used Touch ID
+with my fingerprint.
+
+993
+00:49:28,765 --> 00:49:33,805
+And I can securely authenticate
+my transaction just like that.
+
+994
+00:49:33,803 --> 00:49:38,773
+And that is a quick
+look in macOS Sierra.
+
+995
+00:49:40,676 --> 00:49:44,786
+So, Sierra, some great features
+for continuity, the Cloud,
+
+996
+00:49:44,781 --> 00:49:49,181
+Apple Pay, user experience
+and, of course, Siri.
+
+997
+00:49:49,185 --> 00:49:50,555
+And there's much more
+
+998
+00:49:50,553 --> 00:49:53,353
+that you'll be hearing
+about later today.
+
+999
+00:49:53,356 --> 00:49:55,826
+Now, Sierra is available
+to you developers
+
+1000
+00:49:55,825 --> 00:49:58,225
+in developer preview form today
+
+1001
+00:49:58,227 --> 00:50:00,467
+and we're doing a
+public beta in July.
+
+1002
+00:50:00,463 --> 00:50:02,963
+You can sign up now
+at beta.apple.com.
+
+1003
+00:50:02,965 --> 00:50:06,505
+And they'll be available to
+everyone else in the fall
+
+1004
+00:50:06,502 --> 00:50:08,842
+across all of these systems.
+
+1005
+00:50:08,838 --> 00:50:12,508
+That is your update on macOS.
+
+1006
+00:50:12,508 --> 00:50:20,948
+[ Applause ]
+
+1007
+00:50:20,950 --> 00:50:23,450
+Next, let's turn to iOS.
+
+1008
+00:50:23,453 --> 00:50:25,993
+So, iOS, we're hitting
+a big milestone
+
+1009
+00:50:25,988 --> 00:50:31,528
+because now I'm pleased
+to introduce iOS 10.
+
+1010
+00:50:31,527 --> 00:50:35,837
+[ Applause ]
+
+1011
+00:50:35,832 --> 00:50:39,772
+Now, iOS 10 is a huge
+release for the developers.
+
+1012
+00:50:39,769 --> 00:50:44,579
+And it is the biggest iOS
+release ever for our users.
+
+1013
+00:50:44,574 --> 00:50:47,974
+Now, there are 10 big features
+I want to talk about today.
+
+1014
+00:50:47,977 --> 00:50:52,887
+And let's start off with number
+one, that's user experience.
+
+1015
+00:50:52,882 --> 00:50:56,352
+Now, in iOS 10, we've
+redesigned the experience
+
+1016
+00:50:56,352 --> 00:50:57,692
+of the lock screen.
+
+1017
+00:50:57,687 --> 00:51:00,657
+With rich notifications, they
+give you quick interaction
+
+1018
+00:51:00,656 --> 00:51:04,326
+with apps through the
+expanded use of 3D Touch.
+
+1019
+00:51:04,327 --> 00:51:05,897
+But rather than just
+talk about it,
+
+1020
+00:51:05,895 --> 00:51:07,995
+how about I just show
+it to you right now?
+
+1021
+00:51:07,997 --> 00:51:09,497
+Let's do a demo.
+
+1022
+00:51:09,499 --> 00:51:14,169
+[ Applause ]
+
+1023
+00:51:14,170 --> 00:51:16,310
+Now, one thing a lot
+of us have noticed now
+
+1024
+00:51:16,305 --> 00:51:18,045
+that we have our iPhone 6ses
+
+1025
+00:51:18,040 --> 00:51:20,880
+with the incredibly
+fast Touch ID sensor is
+
+1026
+00:51:20,877 --> 00:51:23,617
+that we can just blow
+past our notifications
+
+1027
+00:51:23,613 --> 00:51:25,043
+on our lock screen.
+
+1028
+00:51:25,047 --> 00:51:26,487
+We never even get to see them.
+
+1029
+00:51:26,482 --> 00:51:30,622
+And so, in iOS 10, we
+have a great solution.
+
+1030
+00:51:30,620 --> 00:51:32,160
+It's called raise to wake.
+
+1031
+00:51:32,155 --> 00:51:35,055
+And it lets you see
+what's on your lock screen
+
+1032
+00:51:35,057 --> 00:51:36,827
+without ever touching a button.
+
+1033
+00:51:36,826 --> 00:51:38,566
+Let me show it to you now.
+
+1034
+00:51:38,561 --> 00:51:43,531
+I just raised my wrist and
+phone wakes up just like that.
+
+1035
+00:51:43,533 --> 00:51:49,173
+[ Applause ]
+
+1036
+00:51:49,172 --> 00:51:51,672
+Now, the first thing you'll
+notice is these beautiful
+
+1037
+00:51:51,674 --> 00:51:54,314
+notifications are
+no longer causing us
+
+1038
+00:51:54,310 --> 00:51:56,650
+to darken the-- your wallpapers.
+
+1039
+00:51:56,646 --> 00:51:57,946
+So, you get to look at that.
+
+1040
+00:51:57,947 --> 00:51:59,987
+But what's more important is
+they're really interactive
+
+1041
+00:51:59,982 --> 00:52:01,252
+through 3D Touch.
+
+1042
+00:52:01,250 --> 00:52:03,850
+So, for instance with this
+calendar notification,
+
+1043
+00:52:03,853 --> 00:52:05,753
+I can just 3D Touch on it.
+
+1044
+00:52:05,755 --> 00:52:08,825
+And I can jump right in and
+get all this rich detail
+
+1045
+00:52:08,824 --> 00:52:10,424
+about this invitation.
+
+1046
+00:52:10,426 --> 00:52:11,426
+I can see my calendar.
+
+1047
+00:52:11,427 --> 00:52:14,167
+And I can accept right here.
+
+1048
+00:52:14,163 --> 00:52:16,933
+Now, this is especially
+great with messages.
+
+1049
+00:52:16,933 --> 00:52:19,003
+Let's 3D Touch into that one.
+
+1050
+00:52:19,001 --> 00:52:21,871
+And here, you see, I see the
+message that was sent to me.
+
+1051
+00:52:21,871 --> 00:52:24,541
+I can respond right
+here, the keyboard.
+
+1052
+00:52:24,540 --> 00:52:27,610
+But what's great is I can
+stay in the conversation,
+
+1053
+00:52:27,610 --> 00:52:28,910
+right here on the lock screen.
+
+1054
+00:52:28,911 --> 00:52:31,851
+And even get rich responses
+like images right inline.
+
+1055
+00:52:31,847 --> 00:52:34,987
+And this works really well
+with third-party apps as well.
+
+1056
+00:52:34,984 --> 00:52:37,554
+So, for instance if I get
+a notification from Uber,
+
+1057
+00:52:37,553 --> 00:52:42,093
+I can just press in and I get
+this completely interactive
+
+1058
+00:52:42,091 --> 00:52:48,131
+and animated live status update
+on my car as it comes in.
+
+1059
+00:52:48,130 --> 00:52:49,800
+It's really great.
+
+1060
+00:52:51,467 --> 00:52:52,637
+Now, of course as always,
+
+1061
+00:52:52,635 --> 00:52:54,835
+you can get your
+notifications right here
+
+1062
+00:52:54,837 --> 00:52:56,377
+from the top of the screen.
+
+1063
+00:52:56,372 --> 00:53:00,072
+But now, with 3D Touch,
+if you want to clear them,
+
+1064
+00:53:00,076 --> 00:53:03,146
+you can just press in and
+clear them all with a tap.
+
+1065
+00:53:03,145 --> 00:53:04,485
+It's really great.
+
+1066
+00:53:04,480 --> 00:53:08,050
+[ Applause ]
+
+1067
+00:53:08,050 --> 00:53:10,090
+Now, control center is
+available from the bottom
+
+1068
+00:53:10,086 --> 00:53:11,116
+of the screen as well.
+
+1069
+00:53:11,120 --> 00:53:13,090
+We can just swipe
+up from the bottom.
+
+1070
+00:53:13,089 --> 00:53:14,629
+See, it's beautifully
+redesigned,
+
+1071
+00:53:14,624 --> 00:53:16,364
+gives me great access
+to all my controls.
+
+1072
+00:53:16,359 --> 00:53:19,559
+But if I swipe over, you
+see, we have a special area
+
+1073
+00:53:19,562 --> 00:53:21,702
+for our music with
+nice big controls
+
+1074
+00:53:21,697 --> 00:53:24,697
+and beautiful album
+art right there.
+
+1075
+00:53:26,636 --> 00:53:29,076
+Now, we'd made it
+easier than ever to get
+
+1076
+00:53:29,071 --> 00:53:31,041
+at your camera from
+the lock screen.
+
+1077
+00:53:31,040 --> 00:53:33,040
+So, I can just slide
+over from the right,
+
+1078
+00:53:33,042 --> 00:53:34,712
+and there's my camera.
+
+1079
+00:53:34,710 --> 00:53:39,650
+And it's easy to take a picture
+of my demo notes, right there.
+
+1080
+00:53:39,649 --> 00:53:41,349
+That's good.
+
+1081
+00:53:41,350 --> 00:53:43,450
+And we've made it easier than
+ever to get at your widgets.
+
+1082
+00:53:43,452 --> 00:53:45,452
+Just slide over the other way.
+
+1083
+00:53:45,454 --> 00:53:47,224
+You can see I have my weather.
+
+1084
+00:53:47,223 --> 00:53:48,393
+I have my calendar.
+
+1085
+00:53:48,391 --> 00:53:50,591
+I get my news top stories.
+
+1086
+00:53:50,593 --> 00:53:52,663
+And you notice these widgets
+have the ability for me
+
+1087
+00:53:52,662 --> 00:53:53,862
+to get more information.
+
+1088
+00:53:53,863 --> 00:53:57,603
+So, I can do show more and
+see the rest of my day.
+
+1089
+00:53:57,600 --> 00:54:00,200
+You'd like to think.
+
+1090
+00:54:00,202 --> 00:54:04,042
+And I can even get more
+information right here
+
+1091
+00:54:04,040 --> 00:54:06,280
+from apps on my home screen.
+
+1092
+00:54:06,275 --> 00:54:08,045
+So, for instance, it looks
+like I have decent number
+
+1093
+00:54:08,044 --> 00:54:09,414
+of unread e-mail messages.
+
+1094
+00:54:09,412 --> 00:54:11,312
+And now, if I 3D Touch there,
+
+1095
+00:54:11,314 --> 00:54:14,654
+I can see who it is I've been
+ignoring this whole time,
+
+1096
+00:54:14,650 --> 00:54:16,750
+my VIPs.
+
+1097
+00:54:16,752 --> 00:54:20,152
+Now, if I swipe over here, I
+can also get great information
+
+1098
+00:54:20,156 --> 00:54:22,256
+on the activity without
+even launching the app.
+
+1099
+00:54:22,258 --> 00:54:25,228
+I just 3D Touch in and
+get a look at my rings.
+
+1100
+00:54:25,227 --> 00:54:28,967
+And this can work really well
+with third-party apps as well.
+
+1101
+00:54:28,964 --> 00:54:30,464
+So, I'm going to jump into ESPN.
+
+1102
+00:54:30,466 --> 00:54:33,106
+I can see information
+about my latest team.
+
+1103
+00:54:33,102 --> 00:54:35,742
+And if I want that widget
+available to me at all times
+
+1104
+00:54:35,738 --> 00:54:38,978
+on My Today view, I can just
+add that widget like that.
+
+1105
+00:54:38,974 --> 00:54:41,714
+And I go over to My Today
+view, and there it is.
+
+1106
+00:54:41,711 --> 00:54:43,951
+And I can get that
+show more information.
+
+1107
+00:54:43,946 --> 00:54:45,816
+And you see, I get
+a graphical update
+
+1108
+00:54:45,815 --> 00:54:47,585
+on the highlights
+from the last game.
+
+1109
+00:54:47,583 --> 00:54:51,283
+And if I tap in, live action.
+
+1110
+00:54:51,287 --> 00:54:52,957
+Curry to Igoudala.
+
+1111
+00:54:52,955 --> 00:54:54,225
+Shot clock at seven.
+
+1112
+00:54:54,223 --> 00:54:56,763
+Curry fakes, puts up a three.
+
+1113
+00:54:56,759 --> 00:54:57,529
+Bang.
+
+1114
+00:54:57,526 --> 00:54:58,366
+Bang.
+
+1115
+00:54:58,361 --> 00:54:59,061
+Stephen Curry from downtown.
+
+1116
+00:54:59,061 --> 00:55:01,261
+It's a 10-point game.
+
+1117
+00:55:01,263 --> 00:55:02,403
+Oh yeah.
+
+1118
+00:55:02,398 --> 00:55:05,738
+So, that is a quick look
+at the new lock screen
+
+1119
+00:55:05,735 --> 00:55:08,905
+and home screen experience
+in iOS 10.
+
+1120
+00:55:08,904 --> 00:55:10,944
+You have a beautiful
+new control center,
+
+1121
+00:55:10,940 --> 00:55:14,910
+interactive notifications and
+great ways to use your widgets.
+
+1122
+00:55:14,910 --> 00:55:18,710
+It's great on the iPhone
+and the iPad as well.
+
+1123
+00:55:18,714 --> 00:55:22,384
+Next, number two, Siri,
+
+1124
+00:55:22,385 --> 00:55:26,085
+huge part of the user
+experience in iOS.
+
+1125
+00:55:26,088 --> 00:55:30,528
+Now, Siri services over
+two billion requests a week
+
+1126
+00:55:30,526 --> 00:55:31,726
+from customers.
+
+1127
+00:55:31,727 --> 00:55:34,497
+And there's so many things
+that you can ask Siri.
+
+1128
+00:55:34,497 --> 00:55:39,607
+But now in iOS 10, Siri is going
+to be able to do so much more
+
+1129
+00:55:39,602 --> 00:55:43,502
+because we're opening
+up Siri to developers.
+
+1130
+00:55:43,506 --> 00:55:52,586
+[ Applause ]
+
+1131
+00:55:53,916 --> 00:55:57,886
+Now, you'll be able to ask
+Siri, things like, send a WeChat
+
+1132
+00:55:57,887 --> 00:56:00,587
+to Nancy saying, I'll
+be five minutes late.
+
+1133
+00:56:00,589 --> 00:56:03,959
+And Siri can summon up
+the WeChat UI right inside
+
+1134
+00:56:03,959 --> 00:56:06,029
+of the Siri environment.
+
+1135
+00:56:06,028 --> 00:56:09,798
+Now, of course, Siri, because
+it understands the domains
+
+1136
+00:56:09,799 --> 00:56:12,139
+of things like messaging,
+it allows you to say things
+
+1137
+00:56:12,134 --> 00:56:13,534
+in so many different ways.
+
+1138
+00:56:13,536 --> 00:56:16,176
+I could've said, WeChat Nancy
+that I'll be five minutes late
+
+1139
+00:56:16,172 --> 00:56:17,502
+or I need to send a message
+
+1140
+00:56:17,506 --> 00:56:20,046
+to Nancy via WeChat saying
+I'll be five minutes late.
+
+1141
+00:56:20,042 --> 00:56:22,642
+And I could do that in all
+sorts of different languages.
+
+1142
+00:56:22,645 --> 00:56:25,415
+But because now in iOS 10,
+we have an intense API,
+
+1143
+00:56:25,414 --> 00:56:29,314
+it allows Siri to take
+on that part of the work
+
+1144
+00:56:29,318 --> 00:56:32,958
+and lets the extension do what
+it does best, like messaging.
+
+1145
+00:56:32,955 --> 00:56:36,555
+And so, now, we support
+messaging with apps like,
+
+1146
+00:56:36,559 --> 00:56:40,129
+Slack and WhatsApp
+and, of course, WeChat.
+
+1147
+00:56:40,129 --> 00:56:43,129
+It could do things like ride
+booking in Siri with services
+
+1148
+00:56:43,132 --> 00:56:48,672
+like Uber, Lyft and Didi in
+China, photo search for--
+
+1149
+00:56:48,671 --> 00:56:52,971
+in apps like IM,
+Shutterfly and Pinterest.
+
+1150
+00:56:52,975 --> 00:56:57,485
+And you could start, pause
+and stop your workouts in apps
+
+1151
+00:56:57,480 --> 00:57:00,920
+like MapMyRun, Runtastic
+and Runkeeper.
+
+1152
+00:57:00,916 --> 00:57:04,216
+And even do payments to
+send money to friends,
+
+1153
+00:57:04,220 --> 00:57:08,920
+with things like Number 26,
+Square Cash and Alipay in China.
+
+1154
+00:57:08,924 --> 00:57:11,764
+And do VoIP calling through apps
+
+1155
+00:57:11,760 --> 00:57:14,700
+like Cisco Spark,
+Vonage and Skype.
+
+1156
+00:57:14,697 --> 00:57:17,037
+And it works great
+in the car as well.
+
+1157
+00:57:17,032 --> 00:57:21,942
+Because with CarPlay, you can
+now safely send your messages
+
+1158
+00:57:21,937 --> 00:57:26,077
+as well as make VoIP calls all
+inside the CarPlay environment
+
+1159
+00:57:26,075 --> 00:57:27,175
+with your favorite apps.
+
+1160
+00:57:27,176 --> 00:57:31,476
+And that's a quick
+update on Siri.
+
+1161
+00:57:31,480 --> 00:57:38,120
+[ Applause ]
+
+1162
+00:57:38,120 --> 00:57:40,690
+Number three, QuickType.
+
+1163
+00:57:40,689 --> 00:57:44,629
+And the big news this year is
+we're bringing Siri intelligence
+
+1164
+00:57:44,627 --> 00:57:46,367
+to the keyboard.
+
+1165
+00:57:46,362 --> 00:57:50,602
+So, today, QuickType is
+able to use a context
+
+1166
+00:57:50,599 --> 00:57:53,939
+to help predict what
+words you might type next.
+
+1167
+00:57:53,936 --> 00:57:56,006
+Well, now, we're
+using deep learning
+
+1168
+00:57:56,005 --> 00:57:58,645
+and a technique specifically
+called LSTMs
+
+1169
+00:57:58,641 --> 00:58:02,441
+to enable much more
+intelligence in longer context.
+
+1170
+00:58:02,444 --> 00:58:04,744
+So, we can tell the difference
+between, the Orioles are playing
+
+1171
+00:58:04,747 --> 00:58:07,387
+in the playoffs and the
+children are playing
+
+1172
+00:58:07,383 --> 00:58:09,353
+in the park automatically.
+
+1173
+00:58:09,351 --> 00:58:12,821
+And Siri can help you do
+responses more intelligently
+
+1174
+00:58:12,821 --> 00:58:13,891
+than ever.
+
+1175
+00:58:13,889 --> 00:58:15,989
+So, you might get
+asked, where are you?
+
+1176
+00:58:15,991 --> 00:58:18,591
+Well, Siri can suggest right
+there on the suggestion bar
+
+1177
+00:58:18,594 --> 00:58:20,894
+that you supply your
+current location.
+
+1178
+00:58:20,896 --> 00:58:22,666
+Tap it and you can
+get your location
+
+1179
+00:58:22,665 --> 00:58:25,805
+with the map right
+into your transcript.
+
+1180
+00:58:25,801 --> 00:58:28,241
+And people might ask you
+about contact information
+
+1181
+00:58:28,237 --> 00:58:31,107
+for a friend, well, Siri
+can automatically offer
+
+1182
+00:58:31,106 --> 00:58:34,276
+up the most relevant contacts.
+
+1183
+00:58:34,276 --> 00:58:37,716
+Now, right locally on your
+device, Siri has information
+
+1184
+00:58:37,713 --> 00:58:39,653
+about what you've been doing.
+
+1185
+00:58:39,648 --> 00:58:42,318
+And so, it can extract
+information from a message
+
+1186
+00:58:42,318 --> 00:58:43,588
+that maybe says,
+oh, you're talking
+
+1187
+00:58:43,586 --> 00:58:46,056
+about dim sum at
+11 a.m. on Sunday?
+
+1188
+00:58:46,055 --> 00:58:47,055
+Well, when you go
+
+1189
+00:58:47,056 --> 00:58:49,226
+to automatically
+create a calendar event,
+
+1190
+00:58:49,224 --> 00:58:51,694
+Siri can prefill it for
+you with things like,
+
+1191
+00:58:51,694 --> 00:58:53,294
+oh, that must be brunch.
+
+1192
+00:58:53,295 --> 00:58:54,635
+Fill out the location.
+
+1193
+00:58:54,630 --> 00:58:55,830
+Pick the time.
+
+1194
+00:58:55,831 --> 00:58:57,701
+It's really smart.
+
+1195
+00:58:57,700 --> 00:59:00,000
+And Siri does so much more.
+
+1196
+00:59:00,002 --> 00:59:01,902
+It can check your
+calendar availability
+
+1197
+00:59:01,904 --> 00:59:03,234
+for you automatically.
+
+1198
+00:59:03,238 --> 00:59:06,278
+Help you paste a recent
+address automatically.
+
+1199
+00:59:06,275 --> 00:59:10,415
+Fill it in based on addresses
+you were browsing in other apps.
+
+1200
+00:59:10,412 --> 00:59:12,582
+It can help you look
+up terms it recognizes,
+
+1201
+00:59:12,581 --> 00:59:14,651
+things like movies
+and restaurants.
+
+1202
+00:59:14,650 --> 00:59:16,850
+With one tap, you can
+get more information.
+
+1203
+00:59:16,852 --> 00:59:20,092
+And Siri now-- the
+QuickType keyboard supports
+
+1204
+00:59:20,089 --> 00:59:22,089
+multilingual typing.
+
+1205
+00:59:22,091 --> 00:59:24,091
+So, if you like typing
+alternating maybe
+
+1206
+00:59:24,093 --> 00:59:27,163
+between English and
+Spanish or Italian,
+
+1207
+00:59:27,162 --> 00:59:29,302
+you don't have to
+switch keyboards.
+
+1208
+00:59:29,298 --> 00:59:31,468
+QuickType can follow
+you automatically.
+
+1209
+00:59:31,467 --> 00:59:34,107
+[ Applause ]
+
+1210
+00:59:34,103 --> 00:59:35,503
+So, that's QuickType.
+
+1211
+00:59:35,504 --> 00:59:39,074
+Next, number four is photos.
+
+1212
+00:59:39,074 --> 00:59:42,674
+Now, we love capturing
+so much of our lives
+
+1213
+00:59:42,678 --> 00:59:45,748
+on our cameras with--
+on our iPhones.
+
+1214
+00:59:45,748 --> 00:59:47,118
+They're so great.
+
+1215
+00:59:47,116 --> 00:59:49,886
+And with iCloud Photo Library,
+we have those photos with us
+
+1216
+00:59:49,885 --> 00:59:52,185
+across all of our devices.
+
+1217
+00:59:52,187 --> 00:59:55,427
+Well, we wanted to give you
+easier ways, of course, to find
+
+1218
+00:59:55,424 --> 00:59:57,624
+and experience the
+photos that you've taken.
+
+1219
+00:59:57,626 --> 01:00:00,166
+And one of those is with places.
+
+1220
+01:00:00,162 --> 01:00:03,562
+So now, we let you see all
+of your photos on a map.
+
+1221
+01:00:03,565 --> 01:00:06,305
+It's a great way to
+relive a trip for instance.
+
+1222
+01:00:06,301 --> 01:00:09,541
+But the big news in photos
+this year is advanced
+
+1223
+01:00:09,538 --> 01:00:10,878
+computer vision.
+
+1224
+01:00:10,873 --> 01:00:13,443
+We're applying advanced
+deep learning techniques
+
+1225
+01:00:13,442 --> 01:00:17,242
+to bring facial recognition
+to the iPhone
+
+1226
+01:00:17,246 --> 01:00:20,246
+and it's all done locally
+on device taking advantage
+
+1227
+01:00:20,249 --> 01:00:22,449
+of the power of the
+advanced silicon
+
+1228
+01:00:22,451 --> 01:00:24,421
+in all of our iOS devices.
+
+1229
+01:00:24,420 --> 01:00:27,760
+You can get all of your most
+important people automatically
+
+1230
+01:00:27,756 --> 01:00:32,626
+built in the people albums for
+you automatically and all done
+
+1231
+01:00:32,628 --> 01:00:34,298
+with your privacy protected.
+
+1232
+01:00:34,296 --> 01:00:36,596
+Now, we're applying the
+same kind of technology
+
+1233
+01:00:36,598 --> 01:00:40,908
+with deep learning to object
+and scene recognition as well.
+
+1234
+01:00:40,903 --> 01:00:45,373
+In fact, we do 11 billion
+computations per photo
+
+1235
+01:00:45,374 --> 01:00:47,674
+to be able to detect
+things like there's a horse,
+
+1236
+01:00:47,676 --> 01:00:49,376
+there's water, there's
+a mountain.
+
+1237
+01:00:49,378 --> 01:00:52,718
+And with this, you can do
+really powerful searching
+
+1238
+01:00:52,715 --> 01:00:55,155
+on your device.
+
+1239
+01:00:55,150 --> 01:00:57,790
+But, you know, sometimes,
+the magic in experiencing
+
+1240
+01:00:57,786 --> 01:01:00,286
+in your photos isn't just
+about finding the photo
+
+1241
+01:01:00,289 --> 01:01:01,789
+that you know you're
+looking for,
+
+1242
+01:01:01,790 --> 01:01:04,760
+it's about being reminded
+serendipitously of a memory
+
+1243
+01:01:04,760 --> 01:01:06,030
+that would be so special.
+
+1244
+01:01:06,028 --> 01:01:09,498
+And so now, we're using
+advanced artificial intelligence
+
+1245
+01:01:09,498 --> 01:01:13,438
+to analyze across your entire
+photo library, all done locally
+
+1246
+01:01:13,435 --> 01:01:17,435
+on device, to cluster together
+photos and relate them based
+
+1247
+01:01:17,439 --> 01:01:21,109
+on location, the people
+involved, the scenes.
+
+1248
+01:01:21,110 --> 01:01:22,780
+And out of this, be
+able to surface memories
+
+1249
+01:01:22,778 --> 01:01:25,618
+that would be most relevant
+to you at any given moment.
+
+1250
+01:01:25,614 --> 01:01:28,384
+We can bring forward
+things like trips.
+
+1251
+01:01:28,383 --> 01:01:31,023
+We can spot trips that
+might be important to you.
+
+1252
+01:01:31,019 --> 01:01:33,519
+We can figure out that you
+might want to see photos
+
+1253
+01:01:33,522 --> 01:01:36,692
+of a highlight reel of the
+last weekend or the last year
+
+1254
+01:01:36,692 --> 01:01:39,462
+and offer those to you
+at just the right time.
+
+1255
+01:01:39,461 --> 01:01:42,961
+We can bring forward memories
+of people that are special
+
+1256
+01:01:42,965 --> 01:01:45,065
+to you or groups of people.
+
+1257
+01:01:45,067 --> 01:01:48,407
+And topics, special photos
+you took, for instance,
+
+1258
+01:01:48,403 --> 01:01:51,073
+when you're on the water, at
+the beach, at the mountains,
+
+1259
+01:01:51,073 --> 01:01:54,513
+these can make wonderful
+memories to survey over time.
+
+1260
+01:01:54,510 --> 01:01:57,410
+But most important,
+we pull these together
+
+1261
+01:01:57,412 --> 01:02:02,482
+into an intuitive user interface
+that makes these so engaging.
+
+1262
+01:02:02,484 --> 01:02:06,484
+And I'd like to show
+you that experience now.
+
+1263
+01:02:06,488 --> 01:02:12,058
+[ Applause ]
+
+1264
+01:02:12,060 --> 01:02:14,000
+So let's take a look at photos.
+
+1265
+01:02:13,996 --> 01:02:17,296
+So we see there's a photo
+album here of a family.
+
+1266
+01:02:17,299 --> 01:02:18,429
+But what you'll notice
+
+1267
+01:02:18,433 --> 01:02:21,073
+at the bottom is this
+new tab called Memories.
+
+1268
+01:02:21,069 --> 01:02:22,269
+Let's take a look.
+
+1269
+01:02:22,271 --> 01:02:24,911
+So we can see here, there
+are number of memories
+
+1270
+01:02:24,907 --> 01:02:27,447
+that have been offered up
+into this memory speed.
+
+1271
+01:02:27,442 --> 01:02:28,942
+And at the top, there's
+a vacation
+
+1272
+01:02:28,944 --> 01:02:30,074
+that the system has spotted
+
+1273
+01:02:30,078 --> 01:02:32,648
+where the family took
+a trip to Tahoe City.
+
+1274
+01:02:32,648 --> 01:02:35,548
+Let's dive in and take
+a look at a memory.
+
+1275
+01:02:35,551 --> 01:02:38,021
+Now you see there's actually
+a movie up at the top,
+
+1276
+01:02:38,020 --> 01:02:39,290
+we'll talk more about
+that later.
+
+1277
+01:02:39,288 --> 01:02:42,158
+And down below, there's
+this beautiful layout
+
+1278
+01:02:42,157 --> 01:02:43,757
+of highlights of the photos.
+
+1279
+01:02:43,759 --> 01:02:46,929
+Now, I can tap Show All
+and actually see a grid
+
+1280
+01:02:46,929 --> 01:02:48,329
+of every photo that was taken.
+
+1281
+01:02:48,330 --> 01:02:50,870
+But you can see how the
+summary intelligently draws
+
+1282
+01:02:50,866 --> 01:02:54,066
+out the most special
+photos into these highlights
+
+1283
+01:02:54,069 --> 01:02:55,539
+that are really great to browse.
+
+1284
+01:02:55,537 --> 01:02:58,837
+Now, if we go further down, we
+see that it's actually pulled
+
+1285
+01:02:58,841 --> 01:03:02,311
+up a set of people that are in
+the photo, the family, grandma
+
+1286
+01:03:02,311 --> 01:03:03,711
+and grandpa and the uncle.
+
+1287
+01:03:03,712 --> 01:03:07,212
+And a map of the location where
+all of those photos were taken.
+
+1288
+01:03:07,216 --> 01:03:09,116
+And down here at the bottom,
+
+1289
+01:03:09,117 --> 01:03:11,217
+we have related other
+memories I might want
+
+1290
+01:03:11,220 --> 01:03:12,220
+to see related to this one.
+
+1291
+01:03:12,221 --> 01:03:13,591
+And it's really smart.
+
+1292
+01:03:13,589 --> 01:03:18,189
+So you see that the Santa Cruz
+and Fourth of July memories,
+
+1293
+01:03:18,193 --> 01:03:20,163
+where grandma and grandpa
+were both on the trip
+
+1294
+01:03:20,162 --> 01:03:21,362
+into Tahoe City and in these.
+
+1295
+01:03:21,363 --> 01:03:23,063
+So those are offered
+up as related.
+
+1296
+01:03:23,065 --> 01:03:25,065
+And this Tahoe City trip
+was an outdoor vacation,
+
+1297
+01:03:25,067 --> 01:03:27,367
+so it would offered up
+another one like Alaska.
+
+1298
+01:03:27,369 --> 01:03:30,109
+And you can see, there's
+another time the family was also
+
+1299
+01:03:30,105 --> 01:03:32,105
+at Tahoe City, but this
+time in the winter.
+
+1300
+01:03:32,107 --> 01:03:34,707
+And I'm going to jump in
+to that related memory.
+
+1301
+01:03:34,710 --> 01:03:38,380
+And you see once again, we have
+photos and videos at the bottom.
+
+1302
+01:03:38,380 --> 01:03:41,820
+But I want to highlight the
+movie up here at the top.
+
+1303
+01:03:41,817 --> 01:03:44,817
+You know, we all take so
+many pictures and movies
+
+1304
+01:03:44,820 --> 01:03:47,060
+and we never go back to
+actually assemble them
+
+1305
+01:03:47,055 --> 01:03:49,095
+into something we'd
+want to watch.
+
+1306
+01:03:49,091 --> 01:03:52,331
+But, now our iPhone can do
+that for us automatically.
+
+1307
+01:03:52,327 --> 01:03:56,527
+Let's see what the iPhone
+has created for this memory.
+
+1308
+01:03:56,531 --> 01:04:05,541
+[ Music ]
+
+1309
+01:04:27,462 --> 01:04:29,502
+So, isn't that great?
+
+1310
+01:04:29,498 --> 01:04:34,268
+[ Applause ]
+
+1311
+01:04:34,269 --> 01:04:36,609
+The advanced computer vision
+
+1312
+01:04:36,605 --> 01:04:39,875
+of the Photos App is now doing
+analysis of just the right parts
+
+1313
+01:04:39,875 --> 01:04:42,375
+of the video to include
+the right photos
+
+1314
+01:04:42,377 --> 01:04:45,047
+and it's editing them
+together with the right mood
+
+1315
+01:04:45,047 --> 01:04:46,417
+and with the right music.
+
+1316
+01:04:46,415 --> 01:04:48,615
+Now, when you have
+a memory like this,
+
+1317
+01:04:48,617 --> 01:04:50,017
+you often want to share it.
+
+1318
+01:04:50,018 --> 01:04:51,688
+And sometimes, you might want
+to make it a little shorter say
+
+1319
+01:04:51,687 --> 01:04:54,557
+for sharing, so I can just
+use this slider at the bottom
+
+1320
+01:04:54,556 --> 01:04:56,526
+and say, I'd like
+it to be shorter.
+
+1321
+01:04:56,525 --> 01:04:58,395
+And maybe I want to change
+the mood a little it.
+
+1322
+01:04:58,393 --> 01:05:00,593
+You notice there's a mood
+slider just up above there
+
+1323
+01:05:00,595 --> 01:05:02,335
+and that was a pretty
+great snowball fight.
+
+1324
+01:05:02,331 --> 01:05:03,361
+So I'll pick epic.
+
+1325
+01:05:03,365 --> 01:05:05,405
+And based on these changes,
+
+1326
+01:05:05,400 --> 01:05:09,340
+it's going to completely
+re-edit the movie to new music.
+
+1327
+01:05:09,338 --> 01:05:11,478
+Let's take a look.
+
+1328
+01:05:11,473 --> 01:05:20,553
+[ Music ]
+
+1329
+01:05:26,321 --> 01:05:28,491
+That's pretty epic.
+
+1330
+01:05:28,490 --> 01:05:33,100
+[ Applause ]
+
+1331
+01:05:33,095 --> 01:05:36,665
+And that's a quick look
+at memories in iOS 10.
+
+1332
+01:05:36,665 --> 01:05:39,105
+It's really fantastic
+on your iPhone
+
+1333
+01:05:39,101 --> 01:05:41,841
+and it's great on
+your iPad as well.
+
+1334
+01:05:41,837 --> 01:05:45,137
+And Mac gets many of these
+new features as well.
+
+1335
+01:05:45,140 --> 01:05:47,910
+The great new face
+recognition engine,
+
+1336
+01:05:47,909 --> 01:05:51,149
+scene and object recognition
+search and the ability
+
+1337
+01:05:51,146 --> 01:05:55,046
+to browse photo and video
+galleries of your memories
+
+1338
+01:05:55,050 --> 01:05:57,290
+and the Apple TV is
+just such a great way
+
+1339
+01:05:57,285 --> 01:05:59,525
+to experience those
+memory movies
+
+1340
+01:05:59,521 --> 01:06:01,621
+on the biggest screen
+in your house.
+
+1341
+01:06:01,623 --> 01:06:03,893
+So that is Photos.
+
+1342
+01:06:03,892 --> 01:06:07,862
+Now next, I want to talk
+about the big news in all
+
+1343
+01:06:07,863 --> 01:06:09,603
+of our biggest services
+here at Apple.
+
+1344
+01:06:09,598 --> 01:06:11,998
+And to do that, I'm going
+to bring up for number five,
+
+1345
+01:06:12,000 --> 01:06:14,700
+six and seven, Eddy
+Cue, back to the stage.
+
+1346
+01:06:14,703 --> 01:06:15,433
+Eddy.
+
+1347
+01:06:15,437 --> 01:06:17,907
+[ Applause ]
+
+1348
+01:06:17,906 --> 01:06:20,176
+Thank you, Craig.
+
+1349
+01:06:21,209 --> 01:06:22,379
+I love the new Photos.
+
+1350
+01:06:22,377 --> 01:06:24,477
+Can't wait to do it.
+
+1351
+01:06:24,479 --> 01:06:26,719
+So, let's talk-- Let's
+get started with Maps.
+
+1352
+01:06:26,715 --> 01:06:29,015
+Now last year, we
+introduced Nearby,
+
+1353
+01:06:29,017 --> 01:06:31,687
+a great way to find
+places and transit
+
+1354
+01:06:31,686 --> 01:06:33,286
+with an incredible amount
+
+1355
+01:06:33,288 --> 01:06:35,058
+of detail including
+all the entrances
+
+1356
+01:06:35,057 --> 01:06:37,357
+and exits from every station.
+
+1357
+01:06:37,359 --> 01:06:41,199
+But for iOS 10, we've got
+an all new design for Maps.
+
+1358
+01:06:41,196 --> 01:06:43,596
+It starts with making it
+easy to access controls
+
+1359
+01:06:43,598 --> 01:06:45,838
+and details on locations.
+
+1360
+01:06:45,834 --> 01:06:48,674
+And we're making Maps do
+more for you in advance.
+
+1361
+01:06:48,670 --> 01:06:50,370
+It's more proactive.
+
+1362
+01:06:50,372 --> 01:06:53,872
+So you slide up from the
+bottom and you can suggestions.
+
+1363
+01:06:53,875 --> 01:06:57,845
+Maps knows that usually, at
+this time, I usually go to work,
+
+1364
+01:06:57,846 --> 01:07:02,186
+or it can look at a calendar
+event and find the location.
+
+1365
+01:07:02,184 --> 01:07:04,784
+It also gives you
+convenient ways to filter
+
+1366
+01:07:04,786 --> 01:07:07,056
+down in the places
+you might want to go.
+
+1367
+01:07:07,055 --> 01:07:09,155
+For example, let's take a
+look at restaurants nearby.
+
+1368
+01:07:09,157 --> 01:07:12,597
+But we're in San Francisco,
+I feel like seafood.
+
+1369
+01:07:12,594 --> 01:07:15,464
+So I can slide across
+the bottom, and now,
+
+1370
+01:07:15,464 --> 01:07:17,204
+I can see all the
+seafood restaurants right
+
+1371
+01:07:17,199 --> 01:07:19,469
+in San Francisco.
+
+1372
+01:07:19,468 --> 01:07:23,268
+[ Applause ]
+
+1373
+01:07:23,271 --> 01:07:26,241
+Now, were applying all of
+these new designs to Navigation
+
+1374
+01:07:26,241 --> 01:07:29,741
+as well so you get more
+information, it makes it easier
+
+1375
+01:07:29,744 --> 01:07:34,614
+to follow and control and we
+even include traffic on route.
+
+1376
+01:07:34,616 --> 01:07:38,916
+Now, when you're driving, it
+will automatically zoom in
+
+1377
+01:07:38,920 --> 01:07:40,490
+and as you get to
+along straight away,
+
+1378
+01:07:40,489 --> 01:07:42,289
+it willl automatically
+zoom back out.
+
+1379
+01:07:42,290 --> 01:07:45,830
+And you can even pan and
+zoom way further ahead
+
+1380
+01:07:45,827 --> 01:07:48,497
+to see what the traffic
+conditions are.
+
+1381
+01:07:48,497 --> 01:07:52,637
+[ Cheering and Applause ]
+
+1382
+01:07:52,634 --> 01:07:56,074
+Now we give you quick controls
+to let you see route details.
+
+1383
+01:07:56,071 --> 01:07:59,411
+So now, you can even look and
+see on your route where food
+
+1384
+01:07:59,407 --> 01:08:02,647
+or gas stations are and Maps
+will tell you how much longer it
+
+1385
+01:08:02,644 --> 01:08:05,444
+will take if you go
+to any one of those.
+
+1386
+01:08:05,447 --> 01:08:09,387
+[ Applause ]
+
+1387
+01:08:09,384 --> 01:08:11,654
+And of course, we're making
+this available on CarPlay.
+
+1388
+01:08:11,653 --> 01:08:13,593
+And if there's a lot
+of traffic ahead,
+
+1389
+01:08:13,588 --> 01:08:16,188
+Maps will proactively
+give you alternate routes
+
+1390
+01:08:16,191 --> 01:08:19,031
+and tell you how
+much time it'll save.
+
+1391
+01:08:19,027 --> 01:08:20,597
+And we're making it safer
+
+1392
+01:08:20,595 --> 01:08:23,335
+to follow directions while
+keeping your eyes on the road,
+
+1393
+01:08:23,331 --> 01:08:26,201
+because now, you can
+get turn by turn right
+
+1394
+01:08:26,201 --> 01:08:28,471
+in the instrument
+cluster of your car.
+
+1395
+01:08:28,470 --> 01:08:31,840
+[ Applause ]
+
+1396
+01:08:31,840 --> 01:08:34,080
+Now, we think you're going
+to love these updates,
+
+1397
+01:08:34,075 --> 01:08:38,485
+but there's more because we are
+opening Maps up to Developers.
+
+1398
+01:08:38,480 --> 01:08:42,380
+[ Cheering and Applause ]
+
+1399
+01:08:42,384 --> 01:08:43,754
+Now, with map extensions,
+
+1400
+01:08:43,752 --> 01:08:46,552
+you can enable all new
+capabilities in Maps.
+
+1401
+01:08:46,555 --> 01:08:50,125
+For example, you can make a
+reservation using a popular app
+
+1402
+01:08:50,125 --> 01:08:51,525
+like OpenTable.
+
+1403
+01:08:51,526 --> 01:08:55,566
+You pick the number of people,
+the time right inside of Maps.
+
+1404
+01:08:55,564 --> 01:08:57,804
+And because these are
+extensions, they're open
+
+1405
+01:08:57,799 --> 01:09:03,409
+to all developers around
+the world like Ding and Ping
+
+1406
+01:09:03,405 --> 01:09:09,015
+in China and Zomato around many
+countries around the world.
+
+1407
+01:09:09,010 --> 01:09:12,780
+And when you're ready to leave,
+you tap on directions and now,
+
+1408
+01:09:12,781 --> 01:09:14,881
+you're offered the new
+option to book a ride.
+
+1409
+01:09:14,883 --> 01:09:19,183
+And with app extensions like
+Uber, you can pick any kind
+
+1410
+01:09:19,187 --> 01:09:23,827
+of car, pay for it with
+Apple Pay and see the status.
+
+1411
+01:09:23,825 --> 01:09:25,765
+So again, I can find
+a restaurant,
+
+1412
+01:09:25,760 --> 01:09:31,600
+I can book a reservation, I can
+request a car, I can pay for it
+
+1413
+01:09:31,600 --> 01:09:35,470
+and I can see when it's going to
+arrive all without leaving maps.
+
+1414
+01:09:35,470 --> 01:09:41,880
+[ Applause ]
+
+1415
+01:09:41,876 --> 01:09:44,876
+And these extensions are
+open to all developers,
+
+1416
+01:09:44,879 --> 01:09:49,489
+here's the Chinese ride service
+app, Didi and that is Maps.
+
+1417
+01:09:49,484 --> 01:09:53,554
+[ Applause ]
+
+1418
+01:09:53,555 --> 01:09:56,255
+Number six, Music.
+
+1419
+01:09:56,258 --> 01:09:59,028
+So Apple Music lets you
+play from millions of songs,
+
+1420
+01:09:59,027 --> 01:10:02,297
+thousands of playlist
+curated by our team of experts
+
+1421
+01:10:02,297 --> 01:10:04,597
+and it's been an
+incredible year.
+
+1422
+01:10:04,599 --> 01:10:07,439
+We now have over 50
+million paid subscribers.
+
+1423
+01:10:07,435 --> 01:10:11,945
+This is the fastest music
+service ever in its first year.
+
+1424
+01:10:11,940 --> 01:10:13,980
+And, we've learned
+a lot along the way.
+
+1425
+01:10:13,975 --> 01:10:18,015
+And so today, we've got an
+all new Apple Music redesigned
+
+1426
+01:10:18,013 --> 01:10:19,513
+from the ground up.
+
+1427
+01:10:19,514 --> 01:10:23,354
+[ Applause ]
+
+1428
+01:10:23,351 --> 01:10:26,691
+We want to give greater clarity
+and simplicity to every aspect
+
+1429
+01:10:26,688 --> 01:10:29,188
+of Apple Music and here
+is what it looks like.
+
+1430
+01:10:29,190 --> 01:10:34,530
+It has a beautiful-- It has a
+beautiful new design language
+
+1431
+01:10:34,529 --> 01:10:36,969
+that allows the music
+to be the hero.
+
+1432
+01:10:36,965 --> 01:10:40,035
+Nothing shows this
+more than Now Playing.
+
+1433
+01:10:40,035 --> 01:10:44,335
+Now the new structure makes
+it clear where you are
+
+1434
+01:10:44,339 --> 01:10:48,279
+and also emphasizes the features
+that you use every day and all
+
+1435
+01:10:48,276 --> 01:10:50,016
+of these changes come together
+
+1436
+01:10:50,011 --> 01:10:52,981
+to create a new music app
+that's both more intuitive
+
+1437
+01:10:52,981 --> 01:10:54,521
+and familiar.
+
+1438
+01:10:54,516 --> 01:10:56,586
+And now, to give
+you a demo of it,
+
+1439
+01:10:56,584 --> 01:10:59,554
+I'd like to invite
+up Bozoma Saint John.
+
+1440
+01:10:59,554 --> 01:11:06,794
+[ Applause and Cheering ]
+
+1441
+01:11:06,795 --> 01:11:08,795
+Thank you, Eddy.
+
+1442
+01:11:08,797 --> 01:11:10,297
+All right.
+
+1443
+01:11:10,298 --> 01:11:12,038
+Ladies and gents, I'm so excited
+
+1444
+01:11:12,033 --> 01:11:14,703
+to show you the all
+new Apple Music.
+
+1445
+01:11:14,703 --> 01:11:18,943
+Now lots of people listen to
+their music from their Library.
+
+1446
+01:11:18,940 --> 01:11:21,410
+So now when we open
+up the music app,
+
+1447
+01:11:21,409 --> 01:11:24,349
+you'll see that the
+first tab is the Library.
+
+1448
+01:11:24,346 --> 01:11:26,816
+People also have
+huge music libraries.
+
+1449
+01:11:26,815 --> 01:11:29,715
+So now it's easier to
+navigate with simple sections
+
+1450
+01:11:29,718 --> 01:11:33,858
+like Playlist, Artist,
+Albums, Songs,
+
+1451
+01:11:33,855 --> 01:11:36,855
+and now a new section
+called Downloaded Music.
+
+1452
+01:11:36,858 --> 01:11:40,158
+When I tap on to Downloaded
+Music, you'll see that this is
+
+1453
+01:11:40,161 --> 01:11:43,601
+where all of the music
+which is on my iPhone 6.
+
+1454
+01:11:43,598 --> 01:11:47,038
+Now, I call myself
+a super execumommy
+
+1455
+01:11:47,035 --> 01:11:48,975
+because I'm flying
+all over the place
+
+1456
+01:11:48,970 --> 01:11:50,710
+and now it really
+makes it easy for me
+
+1457
+01:11:50,705 --> 01:11:53,975
+to see all the music
+that's on my iPhone.
+
+1458
+01:11:53,975 --> 01:11:56,945
+There's also the
+recently added section
+
+1459
+01:11:56,945 --> 01:12:00,485
+and this includes the
+Albums, Songs, and Playlist
+
+1460
+01:12:00,482 --> 01:12:02,682
+that I've recently
+added to my Library.
+
+1461
+01:12:02,684 --> 01:12:05,724
+You'll see that there's
+tons of awesome music here
+
+1462
+01:12:05,720 --> 01:12:09,120
+like this classic, the
+Sugar Hill Gang and it kind
+
+1463
+01:12:09,124 --> 01:12:11,724
+of feels appropriate to get this
+party started with a little bit
+
+1464
+01:12:11,726 --> 01:12:12,896
+of Rapper's Delight, right?
+
+1465
+01:12:12,894 --> 01:12:14,964
+Come on, let's listen
+to something.
+
+1466
+01:12:14,963 --> 01:12:15,533
+[Background Music]
+
+1467
+01:12:15,530 --> 01:12:16,530
+Come on ya'll.
+
+1468
+01:12:16,531 --> 01:12:18,701
+Now you recognize
+this beat, right?
+
+1469
+01:12:18,700 --> 01:12:21,470
+Come on, we're going to make
+this whole auditorium rock.
+
+1470
+01:12:21,469 --> 01:12:23,709
+Come on. On one,
+two, three, let's go.
+
+1471
+01:12:23,705 --> 01:12:25,145
+One, two, three, rock.
+
+1472
+01:12:25,140 --> 01:12:27,110
+Yes, there you go.
+
+1473
+01:12:27,108 --> 01:12:28,038
+All right.
+
+1474
+01:12:28,042 --> 01:12:31,182
+Now we're going to
+multi-tab, OK?
+
+1475
+01:12:31,179 --> 01:12:33,019
+Look at the bottom
+of the screen.
+
+1476
+01:12:33,014 --> 01:12:35,584
+You see the artwork, the title,
+
+1477
+01:12:35,583 --> 01:12:37,883
+and controls so that
+you can skip.
+
+1478
+01:12:37,886 --> 01:12:41,856
+And when we open it, you'll see
+that there is beautiful detail
+
+1479
+01:12:41,856 --> 01:12:46,326
+on the artwork, the controls,
+and now, there are lyrics.
+
+1480
+01:12:46,327 --> 01:12:48,767
+So come on, we're going to rap.
+
+1481
+01:12:48,763 --> 01:12:49,333
+Let's go.
+
+1482
+01:12:49,330 --> 01:12:51,630
+[ Music ]
+
+1483
+01:12:51,633 --> 01:12:54,533
+Come on, ya'll.
+
+1484
+01:12:54,536 --> 01:13:01,046
+[ Music ]
+
+1485
+01:13:01,042 --> 01:13:02,912
+OK, you know what, no.
+
+1486
+01:13:02,911 --> 01:13:04,811
+We're going to pause this, OK?
+
+1487
+01:13:04,813 --> 01:13:09,383
+Because some of guys are
+not rapping to the beat, OK?
+
+1488
+01:13:09,384 --> 01:13:11,724
+But you'll have plenty
+of time on your own
+
+1489
+01:13:11,719 --> 01:13:13,459
+to study the lyrics, OK?
+
+1490
+01:13:13,455 --> 01:13:14,425
+All right.
+
+1491
+01:13:14,422 --> 01:13:17,122
+Let's go to the next
+tab, For You.
+
+1492
+01:13:17,125 --> 01:13:18,095
+I love For You.
+
+1493
+01:13:18,092 --> 01:13:19,462
+It's my favorite
+part of Apple Music.
+
+1494
+01:13:19,461 --> 01:13:20,861
+And you know why?
+
+1495
+01:13:20,862 --> 01:13:22,162
+Because it's all about me.
+
+1496
+01:13:22,163 --> 01:13:23,563
+Yes, that's correct.
+
+1497
+01:13:23,565 --> 01:13:25,605
+So now, you'll see that
+at the top For You,
+
+1498
+01:13:25,600 --> 01:13:27,070
+there's a Discovery Mix.
+
+1499
+01:13:27,068 --> 01:13:30,438
+Now this contains the songs that
+have been picked just for me,
+
+1500
+01:13:30,438 --> 01:13:33,438
+so I can discover new
+artists and new music.
+
+1501
+01:13:33,441 --> 01:13:36,011
+There's also the Recently
+Played like we just listened
+
+1502
+01:13:36,010 --> 01:13:37,550
+to the Sugar Hill Gang,
+so it's right there,
+
+1503
+01:13:37,545 --> 01:13:39,885
+I can navigate easily to it.
+
+1504
+01:13:39,881 --> 01:13:42,181
+And daily curated playlist.
+
+1505
+01:13:42,183 --> 01:13:43,753
+Now it's Monday.
+
+1506
+01:13:43,751 --> 01:13:46,621
+I usually like to strut into
+the office on a Monday and look
+
+1507
+01:13:46,621 --> 01:13:47,621
+at the playlist today.
+
+1508
+01:13:47,622 --> 01:13:49,892
+It's called the fashion
+runway strut.
+
+1509
+01:13:49,891 --> 01:13:51,161
+That's all about me.
+
+1510
+01:13:51,159 --> 01:13:53,229
+It's right here, OK?
+
+1511
+01:13:53,228 --> 01:13:56,298
+Now this is not a typical
+Monday, but I still want
+
+1512
+01:13:56,297 --> 01:13:59,367
+to know what I be strutting
+to, so let's listen.
+
+1513
+01:13:59,367 --> 01:14:01,467
+What do we got?
+
+1514
+01:14:01,469 --> 01:14:05,169
+[ Music ]
+
+1515
+01:14:05,173 --> 01:14:07,143
+Yeah, that's right.
+
+1516
+01:14:07,141 --> 01:14:08,341
+Just say, get it girl.
+
+1517
+01:14:08,343 --> 01:14:11,513
+OK? Now listen, I could
+be getting it, all right?
+
+1518
+01:14:11,513 --> 01:14:14,513
+I could get my strut on
+up and down the stage.
+
+1519
+01:14:14,516 --> 01:14:15,586
+This is too early for that.
+
+1520
+01:14:15,583 --> 01:14:17,723
+I don't want to hurt
+you guys, OK?
+
+1521
+01:14:17,719 --> 01:14:20,619
+So we're going to
+pause this, OK?
+
+1522
+01:14:20,622 --> 01:14:21,492
+All right.
+
+1523
+01:14:21,489 --> 01:14:27,129
+[ Applause and Cheering ]
+
+1524
+01:14:27,128 --> 01:14:29,428
+All right, but we are
+going to get back to this.
+
+1525
+01:14:29,430 --> 01:14:33,800
+OK. So, the rest of For You as
+you'll see has awesome music
+
+1526
+01:14:33,801 --> 01:14:39,541
+that again is, for my taste,
+I've got Playlist here, Albums,
+
+1527
+01:14:39,541 --> 01:14:41,311
+and there's even Connect.
+
+1528
+01:14:41,309 --> 01:14:45,009
+Now the artist that I'm
+following has posted art
+
+1529
+01:14:45,013 --> 01:14:48,283
+and music and videos
+and all kinds
+
+1530
+01:14:48,283 --> 01:14:51,453
+of awesome stuff for
+me to connect to.
+
+1531
+01:14:51,452 --> 01:14:55,222
+Browse, this tab is
+for all of us, OK?
+
+1532
+01:14:55,223 --> 01:14:58,163
+The Apple Music editors
+have taken so much time,
+
+1533
+01:14:58,159 --> 01:15:01,429
+listened to tons of music to
+tell us what is the most recent
+
+1534
+01:15:01,429 --> 01:15:05,229
+and most important like you'll
+see right now, the hot album,
+
+1535
+01:15:05,233 --> 01:15:06,933
+Nick Jonas, all right?
+
+1536
+01:15:06,935 --> 01:15:08,335
+You all pay attention.
+
+1537
+01:15:08,336 --> 01:15:11,936
+Now we've also got this
+easy navigation down here
+
+1538
+01:15:11,940 --> 01:15:15,540
+with New Music, Curated
+Playlist and even Top Charts.
+
+1539
+01:15:15,543 --> 01:15:19,113
+So we tap on Top Charts,
+we can see who's--
+
+1540
+01:15:19,113 --> 01:15:20,513
+look at that, it's Drake.
+
+1541
+01:15:20,515 --> 01:15:22,785
+I mean Drake has been at the top
+of chart for a little bit, OK?
+
+1542
+01:15:22,784 --> 01:15:26,184
+But you can see who
+else is on there.
+
+1543
+01:15:26,187 --> 01:15:28,027
+Now, let's go to Radio.
+
+1544
+01:15:28,022 --> 01:15:31,462
+Radio is live in almost
+a hundred countries.
+
+1545
+01:15:31,459 --> 01:15:32,259
+You guys know that?
+
+1546
+01:15:32,260 --> 01:15:33,460
+You don't believe it's live?
+
+1547
+01:15:33,461 --> 01:15:37,131
+All right and Beats 1 is
+becoming the largest radio
+
+1548
+01:15:37,131 --> 01:15:39,301
+station in the entire world.
+
+1549
+01:15:39,300 --> 01:15:41,100
+Now we can explore Beats 1
+
+1550
+01:15:41,102 --> 01:15:44,002
+and see what's live
+and listen right now.
+
+1551
+01:15:44,005 --> 01:15:46,245
+We can also see the
+upcoming shows
+
+1552
+01:15:46,240 --> 01:15:49,780
+and we can even see featured
+shows by legendary artist
+
+1553
+01:15:49,777 --> 01:15:52,677
+like Dr. Dre, Pharrell
+Williams, Mary J.
+
+1554
+01:15:52,680 --> 01:15:54,750
+Blige, Sir Elton John.
+
+1555
+01:15:54,749 --> 01:15:57,849
+Have guys listened to his show,
+it's called the Rocket Hour, OK?
+
+1556
+01:15:57,852 --> 01:15:59,222
+It's amazing.
+
+1557
+01:15:59,220 --> 01:16:00,860
+And if you haven't listened
+to it, you can tap right here
+
+1558
+01:16:00,855 --> 01:16:04,225
+and listen on demand
+at your leisure.
+
+1559
+01:16:04,225 --> 01:16:05,765
+So that's awesome.
+
+1560
+01:16:05,760 --> 01:16:08,500
+Now when I want to
+listen to nonstop music,
+
+1561
+01:16:08,496 --> 01:16:11,636
+I can go to view all
+stations and listen
+
+1562
+01:16:11,633 --> 01:16:14,303
+to genre-based stations
+like Pure Pop because I
+
+1563
+01:16:14,302 --> 01:16:17,072
+like to listen to pop music
+all day long, why not?
+
+1564
+01:16:17,071 --> 01:16:19,941
+But I think since we're
+coming to the end here,
+
+1565
+01:16:19,941 --> 01:16:22,081
+I would like to do something
+a little bit different
+
+1566
+01:16:22,076 --> 01:16:24,476
+and play something
+for the world, right?
+
+1567
+01:16:24,479 --> 01:16:25,509
+So let's play some real hits.
+
+1568
+01:16:25,513 --> 01:16:27,213
+Let's see what we've got.
+
+1569
+01:16:27,215 --> 01:16:31,155
+[Background Music] Now that
+sounds like the beginning
+
+1570
+01:16:31,152 --> 01:16:34,192
+of some good Ghanaian
+highlife music.
+
+1571
+01:16:34,188 --> 01:16:35,188
+All right guys.
+
+1572
+01:16:35,189 --> 01:16:36,729
+Basically, it's all
+new Apply Music.
+
+1573
+01:16:36,724 --> 01:16:38,194
+I hope you enjoyed it.
+
+1574
+01:16:38,192 --> 01:16:39,492
+Thank you.
+
+1575
+01:16:39,494 --> 01:16:47,874
+[ Applause and Music ]
+
+1576
+01:16:47,869 --> 01:16:49,139
+Wow, wow, wow.
+
+1577
+01:16:49,137 --> 01:16:51,037
+Thank you Boz.
+
+1578
+01:16:51,039 --> 01:16:52,509
+That's the all new Apple Music.
+
+1579
+01:16:52,507 --> 01:16:56,577
+It is incredible on your
+iPhone, iPad, your Mac and PC.
+
+1580
+01:16:56,577 --> 01:17:01,787
+Your Apple TV and Android
+too and that is Music.
+
+1581
+01:17:01,783 --> 01:17:04,553
+Number seven, let's
+talk about news.
+
+1582
+01:17:04,552 --> 01:17:06,722
+And last fall, we
+introduced Apple News
+
+1583
+01:17:06,721 --> 01:17:08,191
+to bring you the best stories
+
+1584
+01:17:08,189 --> 01:17:11,989
+from the best publishers
+all personalized for you.
+
+1585
+01:17:11,993 --> 01:17:14,433
+And we introduce it with a
+great set of publications,
+
+1586
+01:17:14,429 --> 01:17:16,469
+but we've got a lot more.
+
+1587
+01:17:16,464 --> 01:17:20,304
+We now have over 2,000
+publications in Apple News
+
+1588
+01:17:20,301 --> 01:17:22,541
+and our readers are loving it.
+
+1589
+01:17:22,537 --> 01:17:27,277
+In fact, we have over 60 million
+monthly users reading in news
+
+1590
+01:17:27,275 --> 01:17:30,615
+and with iOS 10, we've
+got some big changes.
+
+1591
+01:17:30,611 --> 01:17:33,251
+It starts with an
+all new design.
+
+1592
+01:17:33,247 --> 01:17:35,317
+Here's what it looks like.
+
+1593
+01:17:35,316 --> 01:17:38,456
+We've taken all of the stories
+in For You and broken them
+
+1594
+01:17:38,453 --> 01:17:42,593
+up into clear sections which
+make them easier to follow.
+
+1595
+01:17:42,590 --> 01:17:44,960
+Here's Top Stories.
+
+1596
+01:17:44,959 --> 01:17:47,199
+Here's Trending where you can
+see the most popular stories
+
+1597
+01:17:47,195 --> 01:17:49,065
+right now.
+
+1598
+01:17:49,063 --> 01:17:52,203
+All of the topics you
+follow like sports
+
+1599
+01:17:52,200 --> 01:17:54,700
+and news is even smart
+enough to create new topics
+
+1600
+01:17:54,702 --> 01:17:56,772
+for you based on what you read.
+
+1601
+01:17:56,771 --> 01:17:59,911
+Here's one for me
+on Formula 1 racing.
+
+1602
+01:17:59,907 --> 01:18:02,207
+And you're going to love
+our Featured Stories
+
+1603
+01:18:02,210 --> 01:18:04,750
+where our editors
+handpick the best stories.
+
+1604
+01:18:04,746 --> 01:18:08,686
+But we wanted the news to be
+the place where you read all
+
+1605
+01:18:08,683 --> 01:18:11,183
+of the stories from your
+favorite publications
+
+1606
+01:18:11,185 --> 01:18:13,455
+and that's why we're
+introducing Subscriptions.
+
+1607
+01:18:13,454 --> 01:18:16,624
+[ Applause ]
+
+1608
+01:18:16,624 --> 01:18:19,864
+So now, you can read every
+article from magazines
+
+1609
+01:18:19,861 --> 01:18:21,461
+like National Geographic,
+newspaper--
+
+1610
+01:18:21,462 --> 01:18:26,902
+newspapers like the Wall Street
+Journal right inside of news.
+
+1611
+01:18:26,901 --> 01:18:28,471
+And in addition to
+subscriptions,
+
+1612
+01:18:28,469 --> 01:18:31,209
+we're bringing breaking
+news notifications.
+
+1613
+01:18:31,205 --> 01:18:33,545
+And so now, you get the most
+important stories delivered
+
+1614
+01:18:33,541 --> 01:18:36,041
+right to your lock screen.
+
+1615
+01:18:36,043 --> 01:18:37,813
+That is our big update for News,
+
+1616
+01:18:37,812 --> 01:18:39,712
+an all-new designed
+subscriptions
+
+1617
+01:18:39,714 --> 01:18:43,484
+and breaking news
+notifications and that is news.
+
+1618
+01:18:43,484 --> 01:18:47,324
+[ Applause ]
+
+1619
+01:18:47,321 --> 01:18:49,491
+I'd like to turn it
+back to Craig now.
+
+1620
+01:18:49,490 --> 01:18:52,630
+[ Applause ]
+
+1621
+01:18:52,627 --> 01:18:53,597
+Thank you, Eddy.
+
+1622
+01:18:53,594 --> 01:18:56,964
+It's just some fantastic
+new designs.
+
+1623
+01:18:56,964 --> 01:19:00,634
+Now, on to number
+eight and it's HomeKit.
+
+1624
+01:19:00,635 --> 01:19:03,235
+You know, before we announce
+HomeKit two years ago,
+
+1625
+01:19:03,237 --> 01:19:06,807
+the home accessory space
+was a mess of incompatible
+
+1626
+01:19:06,808 --> 01:19:10,408
+and insecure protocols and
+accessories that required you
+
+1627
+01:19:10,411 --> 01:19:13,451
+to download a separate app
+that you needed to learn just
+
+1628
+01:19:13,447 --> 01:19:16,247
+to control each individual
+accessory.
+
+1629
+01:19:16,250 --> 01:19:19,450
+But with HomeKit, we've
+been changing all that.
+
+1630
+01:19:19,453 --> 01:19:22,293
+We're making sure that your
+home automation products work
+
+1631
+01:19:22,290 --> 01:19:25,460
+together easily and securely.
+
+1632
+01:19:25,459 --> 01:19:27,659
+And this year, we've
+rounded out the set
+
+1633
+01:19:27,662 --> 01:19:29,862
+of accessory types
+supported by HomeKit
+
+1634
+01:19:29,864 --> 01:19:32,264
+to include important
+new categories
+
+1635
+01:19:32,266 --> 01:19:34,866
+like cameras and door locks.
+
+1636
+01:19:34,869 --> 01:19:38,369
+And in fact, essentially
+every major maker
+
+1637
+01:19:38,372 --> 01:19:40,712
+of home accessories has shipping
+
+1638
+01:19:40,708 --> 01:19:42,948
+or has announced
+support for HomeKit.
+
+1639
+01:19:42,944 --> 01:19:46,184
+And home builders are
+getting on board as well.
+
+1640
+01:19:46,180 --> 01:19:49,680
+Some of the biggest builders
+of homes here in United States
+
+1641
+01:19:49,684 --> 01:19:51,954
+and in China are now
+building new homes
+
+1642
+01:19:51,953 --> 01:19:53,423
+with HomeKit built right in.
+
+1643
+01:19:53,421 --> 01:19:55,861
+So you can move in and just
+start controlling your home.
+
+1644
+01:19:55,857 --> 01:20:02,027
+But you know, this year,
+we're taking the next big step
+
+1645
+01:20:02,029 --> 01:20:05,329
+for HomeKit and iOS in the home.
+
+1646
+01:20:05,333 --> 01:20:09,103
+We're building on
+the HomeKit framework
+
+1647
+01:20:09,103 --> 01:20:12,343
+with a great new app
+what we call Home.
+
+1648
+01:20:12,340 --> 01:20:14,510
+It's right on your
+iOS home screen.
+
+1649
+01:20:14,508 --> 01:20:17,878
+[ Applause ]
+
+1650
+01:20:17,879 --> 01:20:20,449
+Now when you launch
+the Home app,
+
+1651
+01:20:20,448 --> 01:20:23,418
+you get to see your own
+personalized wallpaper
+
+1652
+01:20:23,417 --> 01:20:25,517
+and all of your accessories.
+
+1653
+01:20:25,519 --> 01:20:26,959
+No matter who are
+they're made by
+
+1654
+01:20:26,954 --> 01:20:28,424
+and you can control
+them so easily.
+
+1655
+01:20:28,422 --> 01:20:30,422
+If you want to turn on the
+light, of course, just tap it.
+
+1656
+01:20:30,424 --> 01:20:34,024
+If you want to adjust the
+dimmer, we'll just press
+
+1657
+01:20:34,028 --> 01:20:35,928
+in a little harder and slide
+
+1658
+01:20:35,930 --> 01:20:38,430
+and you can adjust the
+dimmer just like that.
+
+1659
+01:20:38,432 --> 01:20:41,132
+So you can tap, tap, tap
+across all the accessories
+
+1660
+01:20:41,135 --> 01:20:42,875
+in your home, but sometimes,
+
+1661
+01:20:42,870 --> 01:20:44,940
+you'd like to trigger a
+change to all of them.
+
+1662
+01:20:44,939 --> 01:20:47,109
+And for that, we have
+something we call Scenes.
+
+1663
+01:20:47,108 --> 01:20:49,978
+So for instance, if you
+want to get ready for bed,
+
+1664
+01:20:49,977 --> 01:20:52,947
+you can tap Good Night.
+
+1665
+01:20:52,947 --> 01:20:54,947
+You'll see they'll close
+the living room shades,
+
+1666
+01:20:54,949 --> 01:20:59,089
+lock the front door, adjust the
+thermostat, all in one step.
+
+1667
+01:20:59,086 --> 01:21:01,526
+Now Siri knows how to
+interact with Scenes as well.
+
+1668
+01:21:01,522 --> 01:21:04,892
+So in the morning, you
+say good morning to Siri.
+
+1669
+01:21:04,892 --> 01:21:08,692
+Well Siri can automatically
+get your home all ready for you
+
+1670
+01:21:08,696 --> 01:21:12,096
+for the day and you can also
+control your accessories
+
+1671
+01:21:12,099 --> 01:21:13,539
+without launching an app at all
+
+1672
+01:21:13,534 --> 01:21:15,904
+because HomeKit is
+actually built right
+
+1673
+01:21:15,903 --> 01:21:17,203
+in to control center.
+
+1674
+01:21:17,204 --> 01:21:19,504
+Swipe up control
+center, you can swipe
+
+1675
+01:21:19,507 --> 01:21:22,677
+over to see your home
+controls and which is to tap,
+
+1676
+01:21:22,677 --> 01:21:26,147
+for instance, open
+up your garage door.
+
+1677
+01:21:26,147 --> 01:21:28,047
+Now, HomeKit takes advantage
+
+1678
+01:21:28,049 --> 01:21:30,049
+of our interactive
+notifications as well.
+
+1679
+01:21:30,051 --> 01:21:33,021
+So if someone rings the doorbell
+for instance, you can tap in
+
+1680
+01:21:33,020 --> 01:21:36,520
+and actually get a live feed
+of your front door camera,
+
+1681
+01:21:36,524 --> 01:21:38,224
+talk to them on the
+Intercom if you want
+
+1682
+01:21:38,225 --> 01:21:39,825
+and even unlock the door,
+
+1683
+01:21:39,827 --> 01:21:43,367
+all right from the lock
+screen of your iPhone.
+
+1684
+01:21:43,364 --> 01:21:45,534
+Now, yeah.
+
+1685
+01:21:45,533 --> 01:21:50,503
+[ Applause ]
+
+1686
+01:21:50,504 --> 01:21:53,204
+Now since your Apple TV is
+always on, always plugged in,
+
+1687
+01:21:53,207 --> 01:21:55,677
+and always on the network
+in your home, it can serve
+
+1688
+01:21:55,676 --> 01:21:57,746
+as a secure point
+for remote access
+
+1689
+01:21:57,745 --> 01:22:00,085
+and automation within your home.
+
+1690
+01:22:00,081 --> 01:22:02,851
+So when you're on the go,
+you can actually access all
+
+1691
+01:22:02,850 --> 01:22:05,750
+of your accessories,
+securely end to end encrypted
+
+1692
+01:22:05,753 --> 01:22:09,223
+and you can setup automation
+like Geofences so that
+
+1693
+01:22:09,223 --> 01:22:11,593
+when you roll into your
+driveway, you can make sure
+
+1694
+01:22:11,592 --> 01:22:14,432
+that the garage door will
+open, the lights will turn on
+
+1695
+01:22:14,428 --> 01:22:16,398
+and maybe even the hot tub
+will start up in the back
+
+1696
+01:22:16,397 --> 01:22:18,497
+for you, all automatically.
+
+1697
+01:22:18,499 --> 01:22:22,099
+[ Applause ]
+
+1698
+01:22:22,103 --> 01:22:24,343
+Now, the Home app is
+great on the iPhone.
+
+1699
+01:22:24,338 --> 01:22:26,538
+It's also fantastic
+on the iPad as well.
+
+1700
+01:22:26,540 --> 01:22:27,910
+So many people like
+using the iPad
+
+1701
+01:22:27,908 --> 01:22:30,648
+as the ultimate home control
+device whether they're mounted
+
+1702
+01:22:30,644 --> 01:22:32,614
+on the wall or on
+the coffee table.
+
+1703
+01:22:32,613 --> 01:22:35,783
+And of course, there's
+nothing beating the remote
+
+1704
+01:22:35,783 --> 01:22:37,883
+that you always have with
+you right on your wrist,
+
+1705
+01:22:37,885 --> 01:22:39,155
+the Apple Watch, it comes
+
+1706
+01:22:39,153 --> 01:22:42,353
+with built-in home
+control support as well.
+
+1707
+01:22:42,356 --> 01:22:45,226
+So that's a quick
+update on Home.
+
+1708
+01:22:45,226 --> 01:22:47,526
+Next, yes, thank you.
+
+1709
+01:22:47,528 --> 01:22:52,468
+[ Applause ]
+
+1710
+01:22:52,466 --> 01:22:54,506
+Number nine, phone.
+
+1711
+01:22:54,502 --> 01:22:56,572
+You know, we all
+receive a lot of calls,
+
+1712
+01:22:56,570 --> 01:22:58,770
+but we want to make sure that
+when you miss their calls,
+
+1713
+01:22:58,773 --> 01:23:00,973
+you have the best
+experience possible.
+
+1714
+01:23:00,975 --> 01:23:05,245
+So now, you can actually
+get voice mail transcription
+
+1715
+01:23:05,246 --> 01:23:07,846
+of your incoming calls to
+get to see what was it's
+
+1716
+01:23:07,848 --> 01:23:09,488
+about without having the listen.
+
+1717
+01:23:09,483 --> 01:23:13,153
+[ Applause ]
+
+1718
+01:23:13,154 --> 01:23:15,224
+Of course, sometimes we are
+there and we receive a call
+
+1719
+01:23:15,222 --> 01:23:17,262
+like this and we wonder
+what the heck it's about.
+
+1720
+01:23:17,258 --> 01:23:19,958
+And unfortunately, in China,
+this can be a real problem
+
+1721
+01:23:19,960 --> 01:23:22,530
+where there's a lot
+of voice mail spam.
+
+1722
+01:23:22,530 --> 01:23:24,970
+So now, we're supporting
+an extension API
+
+1723
+01:23:24,965 --> 01:23:28,635
+where third parties like
+Tencent can provide information
+
+1724
+01:23:28,636 --> 01:23:31,836
+automatically to tell you
+a possible phone spam.
+
+1725
+01:23:31,839 --> 01:23:33,579
+This is going to be
+super useful for a lot
+
+1726
+01:23:33,574 --> 01:23:35,514
+of people around the world.
+
+1727
+01:23:35,509 --> 01:23:40,419
+[ Applause ]
+
+1728
+01:23:40,414 --> 01:23:43,054
+Now, of course, people love
+doing calling for many,
+
+1729
+01:23:43,050 --> 01:23:44,750
+many different sorts of apps.
+
+1730
+01:23:44,752 --> 01:23:47,392
+And today, the experience
+is something like this
+
+1731
+01:23:47,388 --> 01:23:48,658
+when you receive a call,
+
+1732
+01:23:48,656 --> 01:23:50,756
+a notification on
+your lock screen.
+
+1733
+01:23:50,758 --> 01:23:54,298
+Well now in iOS 10, we
+have a great new VoIP API,
+
+1734
+01:23:54,295 --> 01:23:55,765
+that means you're experience
+
+1735
+01:23:55,763 --> 01:23:59,533
+for incoming calls
+instead can be like this.
+
+1736
+01:23:59,533 --> 01:24:06,273
+[ Applause ]
+
+1737
+01:24:06,273 --> 01:24:08,813
+VoIP apps can now integrate
+into the lock screen.
+
+1738
+01:24:08,809 --> 01:24:10,579
+They're integrated in
+your phone Recents.
+
+1739
+01:24:10,578 --> 01:24:12,178
+They're in your phone Favorites.
+
+1740
+01:24:12,179 --> 01:24:14,649
+And your contact card
+has been enhanced,
+
+1741
+01:24:14,648 --> 01:24:17,018
+so it remembers how you
+like to call each person
+
+1742
+01:24:17,017 --> 01:24:21,087
+and you can access them
+that way with just a tap.
+
+1743
+01:24:21,088 --> 01:24:24,288
+So we've been working
+with our partner Cisco
+
+1744
+01:24:24,291 --> 01:24:27,861
+on elevating mobility
+in the enterprise.
+
+1745
+01:24:27,862 --> 01:24:30,832
+And now using our
+VoiP API combined
+
+1746
+01:24:30,831 --> 01:24:34,101
+with their Cisco Spark
+app, it's never been easier
+
+1747
+01:24:34,101 --> 01:24:36,701
+to use your iPhone with
+work because in addition
+
+1748
+01:24:36,704 --> 01:24:40,504
+to receiving calls made to
+your personal cell number,
+
+1749
+01:24:40,508 --> 01:24:43,378
+you also can receive calls
+made to your work number right
+
+1750
+01:24:43,377 --> 01:24:46,677
+from your iPhone whether you're
+at your desk or on the go.
+
+1751
+01:24:46,680 --> 01:24:49,820
+It's really handy
+and that's Phone.
+
+1752
+01:24:49,817 --> 01:24:51,517
+Next-- OK, thanks.
+
+1753
+01:24:51,519 --> 01:24:56,019
+[ Applause ]
+
+1754
+01:24:56,023 --> 01:25:01,563
+So next, number 10 and this
+one is a doozy, it's Messages.
+
+1755
+01:25:01,562 --> 01:25:05,262
+Now Messages is the most
+frequently used app on iOS
+
+1756
+01:25:05,266 --> 01:25:07,136
+and people love sharing things
+
+1757
+01:25:07,134 --> 01:25:09,674
+with Messages whether
+it's photos or links
+
+1758
+01:25:09,670 --> 01:25:12,310
+to their favorite websites,
+but they look like this
+
+1759
+01:25:12,306 --> 01:25:15,246
+but not any longer because
+now we have rich links.
+
+1760
+01:25:15,242 --> 01:25:18,912
+So when you share links, you
+get artwork from the website,
+
+1761
+01:25:18,913 --> 01:25:21,213
+extracted titles,
+it's really great.
+
+1762
+01:25:21,215 --> 01:25:23,785
+And it's especially awesome when
+you get to share with things
+
+1763
+01:25:23,784 --> 01:25:25,624
+like video because
+they can play right
+
+1764
+01:25:25,619 --> 01:25:29,489
+in line inside the transcript.
+
+1765
+01:25:29,490 --> 01:25:32,030
+Look at that guy go.
+
+1766
+01:25:32,026 --> 01:25:35,796
+Now, of course, we love
+using our camera to share
+
+1767
+01:25:35,796 --> 01:25:39,666
+and we've made the camera
+better than ever in Messages.
+
+1768
+01:25:39,667 --> 01:25:41,137
+Now when you bring
+up the camera,
+
+1769
+01:25:41,135 --> 01:25:43,405
+you immediately see what's
+right in front of your camera.
+
+1770
+01:25:43,404 --> 01:25:45,274
+Like someone in marketing
+thought, that's what someone
+
+1771
+01:25:45,272 --> 01:25:47,312
+who sees when they bring
+up with their camera.
+
+1772
+01:25:47,308 --> 01:25:49,608
+[ Laughter ]
+
+1773
+01:25:49,610 --> 01:25:54,010
+And you can also slide
+over and see your family.
+
+1774
+01:25:54,014 --> 01:25:57,884
+It's such an incongruous
+set of images.
+
+1775
+01:25:57,885 --> 01:26:03,595
+So, you can tap those and insert
+them right into your transcript.
+
+1776
+01:26:03,591 --> 01:26:04,421
+It's really convenient.
+
+1777
+01:26:04,425 --> 01:26:06,895
+Now people really love Emoji
+
+1778
+01:26:06,894 --> 01:26:10,664
+and now we made them
+three times bigger
+
+1779
+01:26:10,664 --> 01:26:13,464
+in the transcript
+which is fantastic.
+
+1780
+01:26:13,467 --> 01:26:18,177
+[ Applause ]
+
+1781
+01:26:18,172 --> 01:26:20,242
+And to help you always
+reach for the right emoji,
+
+1782
+01:26:20,241 --> 01:26:22,681
+we're providing emoji
+predictions
+
+1783
+01:26:22,676 --> 01:26:26,716
+as you type, super handy.
+
+1784
+01:26:26,714 --> 01:26:28,784
+But, you know, sometimes
+you've typed the whole message
+
+1785
+01:26:28,782 --> 01:26:30,022
+and you realize at the end,
+
+1786
+01:26:30,017 --> 01:26:32,387
+you're totally lacking
+an emojification.
+
+1787
+01:26:32,386 --> 01:26:34,386
+And so we've provided
+the solution.
+
+1788
+01:26:34,388 --> 01:26:36,228
+When you tap on the
+emoji button,
+
+1789
+01:26:36,223 --> 01:26:39,123
+we'll highlight all the
+emojifiable words here
+
+1790
+01:26:39,126 --> 01:26:43,496
+and you just tap, tap,
+tap, tap and emojify.
+
+1791
+01:26:43,497 --> 01:26:52,507
+[ Applause and Cheering ]
+
+1792
+01:26:52,506 --> 01:26:54,576
+Children of tomorrow will
+have no understanding
+
+1793
+01:26:54,575 --> 01:26:55,905
+of the English language.
+
+1794
+01:26:55,909 --> 01:27:02,419
+So, these are some great
+new features in Messages.
+
+1795
+01:27:02,416 --> 01:27:04,786
+But you know, we wanted to
+do something more fundamental
+
+1796
+01:27:04,785 --> 01:27:08,925
+with messaging because today
+no matter what you say,
+
+1797
+01:27:08,922 --> 01:27:10,522
+it's always the same bubble.
+
+1798
+01:27:10,524 --> 01:27:15,394
+It always-- this comes across
+the same way, but no longer
+
+1799
+01:27:15,396 --> 01:27:18,096
+because now we have
+Bubble effects.
+
+1800
+01:27:18,098 --> 01:27:22,738
+So if you want to say it
+loud, you can say it loud.
+
+1801
+01:27:22,736 --> 01:27:25,106
+And if you want to
+say it more gently,
+
+1802
+01:27:25,105 --> 01:27:29,245
+well now you can
+do that as well.
+
+1803
+01:27:30,744 --> 01:27:33,284
+And, you know, sometimes
+you want to get
+
+1804
+01:27:33,280 --> 01:27:35,080
+across something personal.
+
+1805
+01:27:35,082 --> 01:27:38,152
+An Invisible ink gives
+you the way to do that.
+
+1806
+01:27:38,152 --> 01:27:40,252
+So you can just slide your
+finger across the bubble
+
+1807
+01:27:40,254 --> 01:27:44,824
+and clear away the message like
+that and it's a really great way
+
+1808
+01:27:44,825 --> 01:27:47,295
+to share a surprise,
+a little scared
+
+1809
+01:27:47,294 --> 01:27:48,634
+to see what's behind that.
+
+1810
+01:27:48,629 --> 01:27:52,799
+You can just slide across.
+
+1811
+01:27:53,767 --> 01:27:57,507
+OK. Now--
+
+1812
+01:27:57,504 --> 01:28:02,974
+[ Applause ]
+
+1813
+01:28:02,976 --> 01:28:05,116
+So sometimes, you just like
+to send a quick affirmation,
+
+1814
+01:28:05,112 --> 01:28:07,282
+a quick tap back
+and now you can.
+
+1815
+01:28:07,281 --> 01:28:09,151
+Just tap and your thumbs
+
+1816
+01:28:09,149 --> 01:28:11,889
+up can go right there
+in the transcript.
+
+1817
+01:28:11,885 --> 01:28:13,555
+But, you know, there's
+nothing more personal
+
+1818
+01:28:13,554 --> 01:28:15,794
+than your own handwriting.
+
+1819
+01:28:15,789 --> 01:28:18,989
+And so now we support
+Handwritten messages,
+
+1820
+01:28:18,992 --> 01:28:20,362
+like handwriting bubbles.
+
+1821
+01:28:20,361 --> 01:28:22,061
+And you see when
+it comes across,
+
+1822
+01:28:22,062 --> 01:28:25,562
+the care there is the ink just
+settles in to the transcript.
+
+1823
+01:28:25,566 --> 01:28:26,766
+It's really beautiful.
+
+1824
+01:28:26,767 --> 01:28:29,307
+And, of course, we support
+digital touch as well.
+
+1825
+01:28:29,303 --> 01:28:31,643
+So you can send these
+very lively sketches,
+
+1826
+01:28:31,638 --> 01:28:37,008
+but also with video, photos,
+even things like your heartbeat.
+
+1827
+01:28:37,010 --> 01:28:40,380
+And sometimes, what you say
+really deserves using the
+
+1828
+01:28:40,381 --> 01:28:41,511
+whole screen.
+
+1829
+01:28:41,515 --> 01:28:45,485
+So now messages can
+do that as well.
+
+1830
+01:28:45,486 --> 01:28:52,556
+[ Applause ]
+
+1831
+01:28:52,559 --> 01:28:54,199
+You know, making
+all of this possible
+
+1832
+01:28:54,194 --> 01:28:56,834
+in Messages has been
+a huge effort,
+
+1833
+01:28:56,830 --> 01:28:59,530
+cross functional
+effort across Apple.
+
+1834
+01:28:59,533 --> 01:29:03,573
+And so for our demo today, I
+wanted to bring up some leads
+
+1835
+01:29:03,570 --> 01:29:05,470
+from both our engineering team
+
+1836
+01:29:05,472 --> 01:29:09,242
+and our human interface
+design team to give a demo.
+
+1837
+01:29:09,243 --> 01:29:12,143
+So let's give a warm
+welcome to Bethany and Emron.
+
+1838
+01:29:12,146 --> 01:29:13,446
+Come on up.
+
+1839
+01:29:13,447 --> 01:29:16,187
+[ Applause ]
+
+1840
+01:29:16,183 --> 01:29:17,723
+Thanks Craig.
+
+1841
+01:29:20,687 --> 01:29:23,527
+We are so thrilled
+to finally be able
+
+1842
+01:29:23,524 --> 01:29:25,564
+to show you what
+we've working on.
+
+1843
+01:29:25,559 --> 01:29:28,099
+Now Emron and I are going to
+show you the different ways
+
+1844
+01:29:28,095 --> 01:29:31,065
+that we use messages, but
+I'm going to kick things off
+
+1845
+01:29:31,064 --> 01:29:34,034
+by jumping first into a
+thread with my sister Lori
+
+1846
+01:29:34,034 --> 01:29:35,774
+who just got to a graduation.
+
+1847
+01:29:35,769 --> 01:29:40,709
+So let's write her back
+and say give her my love
+
+1848
+01:29:40,707 --> 01:29:46,417
+and tell her I said
+happy graduation day.
+
+1849
+01:29:46,413 --> 01:29:48,153
+OK. Now typically, I would hunt
+
+1850
+01:29:48,148 --> 01:29:50,588
+for the perfect emoji
+to tack on the end.
+
+1851
+01:29:50,584 --> 01:29:53,554
+But now, when I tap on
+the emoji button to switch
+
+1852
+01:29:53,554 --> 01:29:56,824
+to the emoji keyboard,
+words throughout my message
+
+1853
+01:29:56,824 --> 01:29:59,364
+that can be swap for emoji
+or automatically highlighted
+
+1854
+01:29:59,359 --> 01:30:01,099
+and all I have to do
+is tap to replace them.
+
+1855
+01:30:01,094 --> 01:30:04,234
+So I'm going to tap to
+replace love and I'm going
+
+1856
+01:30:04,231 --> 01:30:06,471
+to choose the type of
+hearts I want to send.
+
+1857
+01:30:06,467 --> 01:30:08,537
+I'm going to do bedazzled
+I think.
+
+1858
+01:30:08,535 --> 01:30:10,705
+And I can tap on happy
+and I choose how happy
+
+1859
+01:30:10,704 --> 01:30:12,504
+and I choose how
+happy I want to be.
+
+1860
+01:30:12,506 --> 01:30:13,606
+What do you think?
+
+1861
+01:30:13,607 --> 01:30:16,077
+Why don't you go with
+the upside down one.
+
+1862
+01:30:16,076 --> 01:30:16,646
+Well, no.
+
+1863
+01:30:16,643 --> 01:30:18,583
+I'm going to--
+
+1864
+01:30:18,579 --> 01:30:19,879
+OK.
+
+1865
+01:30:19,880 --> 01:30:20,910
+-- yeah.
+
+1866
+01:30:20,914 --> 01:30:22,384
+Hey, you be you
+Bethany, you be you.
+
+1867
+01:30:22,382 --> 01:30:25,482
+I'm going to do eyes
+closed kind of happy and I tap
+
+1868
+01:30:25,486 --> 01:30:27,686
+on graduation and then
+switches to the cap
+
+1869
+01:30:27,688 --> 01:30:30,288
+which there is no chance,
+I would have found that.
+
+1870
+01:30:30,290 --> 01:30:32,360
+None, we would have
+been here for days.
+
+1871
+01:30:32,359 --> 01:30:33,729
+True story.
+
+1872
+01:30:33,727 --> 01:30:38,267
+So I'm going to go
+ahead and send that off.
+
+1873
+01:30:38,265 --> 01:30:41,805
+So Lori just send through a
+digital touch video and what's
+
+1874
+01:30:41,802 --> 01:30:43,202
+so awesome about this is
+
+1875
+01:30:43,203 --> 01:30:46,973
+that she created this entire
+thing using digital touch right
+
+1876
+01:30:46,974 --> 01:30:48,104
+from within Messages.
+
+1877
+01:30:48,108 --> 01:30:49,808
+And it's so much fun
+to make, aren't they?
+
+1878
+01:30:49,810 --> 01:30:52,410
+Yeah, and really, really
+fun to watch and I'm going
+
+1879
+01:30:52,412 --> 01:30:55,512
+to let her know how I feel
+about it, using tap X,
+
+1880
+01:30:55,516 --> 01:30:57,686
+which is as easy
+as double tapping
+
+1881
+01:30:57,684 --> 01:30:59,384
+and sending back a heart.
+
+1882
+01:30:59,386 --> 01:31:01,756
+It's that quick and
+that fun and honestly,
+
+1883
+01:31:01,755 --> 01:31:05,025
+it is my favorite way
+to communicate now.
+
+1884
+01:31:05,025 --> 01:31:07,495
+So Lori says she can't
+wait to see me this summer
+
+1885
+01:31:07,494 --> 01:31:08,864
+and I feel the same way.
+
+1886
+01:31:08,862 --> 01:31:11,902
+So I'm going to let her know,
+I'm going to say, "Me too."
+
+1887
+01:31:11,899 --> 01:31:14,539
+And I'm going to send this
+using a bubble effect.
+
+1888
+01:31:14,535 --> 01:31:17,035
+So I just press and
+hold on the send button.
+
+1889
+01:31:17,037 --> 01:31:20,107
+And I think gentle will really
+let her know how I'm feeling.
+
+1890
+01:31:20,107 --> 01:31:25,377
+So I'm going to choose that one.
+
+1891
+01:31:25,379 --> 01:31:27,319
+So great Bethany.
+
+1892
+01:31:27,314 --> 01:31:28,444
+All right, so.
+
+1893
+01:31:28,448 --> 01:31:32,048
+That sounded a
+little sarcastic I think.
+
+1894
+01:31:32,052 --> 01:31:34,522
+Well, I think Lori
+felt it, that's for sure.
+
+1895
+01:31:34,521 --> 01:31:37,521
+So, now that both
+of us are going
+
+1896
+01:31:37,524 --> 01:31:39,594
+to show you just how
+fun things have become
+
+1897
+01:31:39,593 --> 01:31:40,993
+with a group of friends.
+
+1898
+01:31:40,994 --> 01:31:43,434
+I'm going to in and
+revive a chat here
+
+1899
+01:31:43,430 --> 01:31:44,970
+by sending a digital
+touch photo.
+
+1900
+01:31:44,965 --> 01:31:48,535
+Now, Bethany just want to showed
+us how fantastic those digital
+
+1901
+01:31:48,535 --> 01:31:49,905
+touch videos look.
+
+1902
+01:31:49,903 --> 01:31:52,003
+Let's take a look at how
+easy it is to make one.
+
+1903
+01:31:52,005 --> 01:31:54,505
+I'm just going to
+launch the camera here.
+
+1904
+01:31:54,508 --> 01:31:55,908
+You want some space up here?
+
+1905
+01:31:55,909 --> 01:31:56,679
+Yeah, just a bit.
+
+1906
+01:31:56,677 --> 01:31:58,047
+It is a process, you know?
+
+1907
+01:31:58,045 --> 01:31:58,615
+Yeah.
+
+1908
+01:31:58,612 --> 01:31:59,912
+All right.
+
+1909
+01:32:02,015 --> 01:32:03,415
+All right.
+
+1910
+01:32:03,417 --> 01:32:04,617
+I pick a color.
+
+1911
+01:32:04,618 --> 01:32:06,558
+What would you say, what
+do you think, what color?
+
+1912
+01:32:06,553 --> 01:32:07,353
+Yellow.
+
+1913
+01:32:07,354 --> 01:32:08,994
+Yellow.
+
+1914
+01:32:08,989 --> 01:32:13,289
+All right, and I add my
+usual shout out and send.
+
+1915
+01:32:13,293 --> 01:32:15,333
+It is that easy.
+
+1916
+01:32:15,329 --> 01:32:16,759
+Looks good on the big screen.
+
+1917
+01:32:16,763 --> 01:32:19,533
+Hey, it's look like
+Freddy is here and as usual,
+
+1918
+01:32:19,533 --> 01:32:22,303
+loud and always ready to talk
+about some music and he sent
+
+1919
+01:32:22,302 --> 01:32:24,142
+of that an Apple Music link.
+
+1920
+01:32:24,137 --> 01:32:26,977
+And what great about this is I
+can display them right in line
+
+1921
+01:32:26,974 --> 01:32:29,374
+without ever having to
+leave my conversation.
+
+1922
+01:32:29,376 --> 01:32:32,246
+It's simply the best
+way to share music.
+
+1923
+01:32:32,245 --> 01:32:35,515
+Let's give and listen.
+
+1924
+01:32:35,515 --> 01:32:44,595
+[ Music ]
+
+1925
+01:32:55,869 --> 01:32:58,839
+Oh LCD sound system
+always sounding so good,
+
+1926
+01:32:58,839 --> 01:33:00,339
+especially at Bill Graham.
+
+1927
+01:33:00,340 --> 01:33:04,280
+Anne seems to agree, she said
+so using a handwritten message
+
+1928
+01:33:04,277 --> 01:33:07,677
+and these things are always
+so personal, always so fresh.
+
+1929
+01:33:07,681 --> 01:33:12,181
+Let's write back and
+say, they smashed it.
+
+1930
+01:33:12,185 --> 01:33:14,825
+And I'm going to do so,
+sending a bubble effect.
+
+1931
+01:33:14,821 --> 01:33:18,021
+I'm going to choose my
+favorite which is slam,
+
+1932
+01:33:19,359 --> 01:33:20,999
+bam always gets my point across.
+
+1933
+01:33:20,994 --> 01:33:22,964
+[ Laughter ]
+
+1934
+01:33:22,963 --> 01:33:24,663
+I think you overuse
+that one a little bit,
+
+1935
+01:33:24,665 --> 01:33:25,695
+I'm just going to say it.
+
+1936
+01:33:25,699 --> 01:33:26,769
+You know what,
+it never get so old.
+
+1937
+01:33:26,767 --> 01:33:27,267
+Yeah.
+
+1938
+01:33:27,267 --> 01:33:29,037
+Right?
+
+1939
+01:33:29,036 --> 01:33:30,436
+It's fantastic, that one.
+
+1940
+01:33:30,437 --> 01:33:36,007
+Boy, it looks like I may have
+smashed the demo for a moment.
+
+1941
+01:33:36,009 --> 01:33:38,079
+[ Laughter ]
+
+1942
+01:33:41,848 --> 01:33:44,418
+All right, let's try
+different one here.
+
+1943
+01:33:44,418 --> 01:33:44,848
+Yeah.
+
+1944
+01:33:44,851 --> 01:33:45,721
+Yeah.
+
+1945
+01:33:51,124 --> 01:33:56,064
+Oh, looks like we
+might need back up.
+
+1946
+01:33:56,063 --> 01:33:59,733
+Let's see it here,
+they smashed it.
+
+1947
+01:33:59,733 --> 01:34:00,363
+There you go.
+
+1948
+01:34:00,367 --> 01:34:01,197
+One more time.
+
+1949
+01:34:01,201 --> 01:34:02,101
+That works, one more time.
+
+1950
+01:34:02,102 --> 01:34:03,002
+What do you say?
+
+1951
+01:34:03,003 --> 01:34:03,773
+Yeah.
+
+1952
+01:34:03,770 --> 01:34:06,040
+Bam, always looks good.
+
+1953
+01:34:06,039 --> 01:34:08,109
+[ Laughter ]
+
+1954
+01:34:08,108 --> 01:34:09,878
+I really do use at
+all the time, don't I?
+
+1955
+01:34:09,876 --> 01:34:11,016
+Yeah.
+
+1956
+01:34:15,716 --> 01:34:17,146
+OK, so there we go.
+
+1957
+01:34:17,150 --> 01:34:19,420
+You know what, our
+friends are always late
+
+1958
+01:34:19,419 --> 01:34:20,319
+to the game, they really are.
+
+1959
+01:34:20,320 --> 01:34:21,050
+Yeah, that's true.
+
+1960
+01:34:21,054 --> 01:34:22,424
+It's true.
+
+1961
+01:34:22,422 --> 01:34:24,862
+OK, looks like they're
+playing in San Francisco
+
+1962
+01:34:24,858 --> 01:34:28,398
+and as you might expect with
+a band like that, sold out.
+
+1963
+01:34:28,395 --> 01:34:31,395
+Now Bethany sent over an
+affect with invisible ink,
+
+1964
+01:34:31,398 --> 01:34:33,268
+this is fantastic
+for when you want
+
+1965
+01:34:33,266 --> 01:34:34,336
+to keep something a surprise
+
+1966
+01:34:34,334 --> 01:34:36,734
+which it looks like
+you may have.
+
+1967
+01:34:36,737 --> 01:34:38,477
+So now, to reveal
+all the contents,
+
+1968
+01:34:38,472 --> 01:34:40,042
+all I have to do
+is use my finger
+
+1969
+01:34:40,040 --> 01:34:42,010
+to swipe away the particles.
+
+1970
+01:34:42,008 --> 01:34:44,278
+Let's have a look.
+
+1971
+01:34:44,277 --> 01:34:46,047
+Oh, Bethany, you got us tickets.
+
+1972
+01:34:46,046 --> 01:34:47,586
+You know.
+
+1973
+01:34:47,581 --> 01:34:48,911
+Always coming through.
+
+1974
+01:34:48,915 --> 01:34:51,385
+Always coming through, it seems
+like everyone else agrees,
+
+1975
+01:34:51,384 --> 01:34:53,324
+I'm going to show
+my appreciation
+
+1976
+01:34:53,320 --> 01:34:57,490
+by sending some big emoji here,
+make sure I put myself in there.
+
+1977
+01:34:57,491 --> 01:34:59,931
+[ Laughter ]
+
+1978
+01:34:59,926 --> 01:35:02,526
+And to close things
+off, let's do this
+
+1979
+01:35:02,529 --> 01:35:04,529
+with a full screen effect.
+
+1980
+01:35:04,531 --> 01:35:08,101
+We got some lovely ones
+here like lovely balloons.
+
+1981
+01:35:08,101 --> 01:35:11,971
+Let's swipe over to confetti.
+
+1982
+01:35:11,972 --> 01:35:15,472
+Then I'm going to
+go with this one.
+
+1983
+01:35:15,475 --> 01:35:21,115
+[ Music and Applause ]
+
+1984
+01:35:21,114 --> 01:35:24,484
+Nothing beats a
+full screen moment.
+
+1985
+01:35:24,484 --> 01:35:26,254
+That's iOS 10
+messages, everyone.
+
+1986
+01:35:26,253 --> 01:35:27,753
+We cannot wait for
+you to try it.
+
+1987
+01:35:27,754 --> 01:35:29,494
+Thank you.
+
+1988
+01:35:29,489 --> 01:35:35,159
+[ Cheering and Applause ]
+
+1989
+01:35:35,162 --> 01:35:37,002
+Thank you, Bethany and Emron.
+
+1990
+01:35:36,997 --> 01:35:39,097
+It's just incredible work.
+
+1991
+01:35:39,099 --> 01:35:43,069
+Well, so those are some
+highlights from Messages,
+
+1992
+01:35:43,069 --> 01:35:45,339
+but you know, we thought when
+it comes to expressing yourself
+
+1993
+01:35:45,338 --> 01:35:48,608
+that there was so much more
+we could do if we could tap
+
+1994
+01:35:48,608 --> 01:35:52,848
+in to all of the creativity
+of all of you developers,
+
+1995
+01:35:52,846 --> 01:35:55,316
+and so we're opening up
+Messages to developers
+
+1996
+01:35:55,315 --> 01:35:57,985
+as well with iMessage apps.
+
+1997
+01:35:59,519 --> 01:36:02,959
+[ Applause ]
+
+1998
+01:36:02,956 --> 01:36:06,956
+With the iMessage apps, iMessage
+has an app drawer with all
+
+1999
+01:36:06,960 --> 01:36:09,930
+of your iMessage apps, you
+can tap the plus and get
+
+2000
+01:36:09,930 --> 01:36:12,370
+to the App Store
+and find other apps.
+
+2001
+01:36:12,365 --> 01:36:13,635
+You download them, of course.
+
+2002
+01:36:13,633 --> 01:36:15,033
+They're here in your drawer.
+
+2003
+01:36:15,035 --> 01:36:17,605
+And there's so many different
+kinds of apps you can create.
+
+2004
+01:36:17,604 --> 01:36:21,144
+From things like stickers,
+an artist can create stickers
+
+2005
+01:36:21,141 --> 01:36:23,411
+as well without even
+writing any code.
+
+2006
+01:36:23,410 --> 01:36:26,110
+But for developers who do want
+to write code, they have access
+
+2007
+01:36:26,112 --> 01:36:30,482
+to the full iOS SDK including
+access to the camera,
+
+2008
+01:36:30,483 --> 01:36:34,553
+so you can incredible animated
+effects with apps like JibJab.
+
+2009
+01:36:34,554 --> 01:36:37,754
+You can accomplish more
+sophisticated tasks as well
+
+2010
+01:36:37,757 --> 01:36:39,727
+like payment with
+Square Cash, allowing you
+
+2011
+01:36:39,726 --> 01:36:42,426
+to pay someone right
+through the messages thread.
+
+2012
+01:36:42,429 --> 01:36:44,499
+They can receive
+it and redeem it
+
+2013
+01:36:44,497 --> 01:36:47,837
+on the receiving end
+right inside of Messages.
+
+2014
+01:36:47,834 --> 01:36:50,734
+There's so much you can
+do with iMessage apps.
+
+2015
+01:36:50,737 --> 01:36:52,307
+I'd like to show you a couple
+
+2016
+01:36:52,305 --> 01:36:54,705
+of the possibilities
+in a demo right now.
+
+2017
+01:36:54,708 --> 01:36:56,508
+Let's take a look.
+
+2018
+01:36:56,509 --> 01:37:00,949
+[ Applause ]
+
+2019
+01:37:00,947 --> 01:37:03,947
+So let's dive here
+into a conversation.
+
+2020
+01:37:03,950 --> 01:37:06,320
+See here is a thread
+with the family.
+
+2021
+01:37:06,319 --> 01:37:09,019
+Now I can respond
+with text of course,
+
+2022
+01:37:09,022 --> 01:37:12,322
+but now with iMessage apps, I
+can just bring up my app drawer
+
+2023
+01:37:12,325 --> 01:37:14,165
+and I can get to all
+
+2024
+01:37:14,160 --> 01:37:17,360
+of my different iMessage apps
+including some great stickers.
+
+2025
+01:37:17,364 --> 01:37:19,604
+So let me dive into
+these Mickey stickers.
+
+2026
+01:37:19,599 --> 01:37:21,599
+We can see that they're
+all animated.
+
+2027
+01:37:21,601 --> 01:37:24,141
+I can actually look
+through them like this.
+
+2028
+01:37:24,137 --> 01:37:29,507
+I can swipe between my stickers,
+so maybe some from "Inside Out".
+
+2029
+01:37:29,509 --> 01:37:30,909
+Here some from "Finding Dory".
+
+2030
+01:37:30,911 --> 01:37:35,851
+If I want to send one, just tap,
+drop it right in just like that.
+
+2031
+01:37:35,849 --> 01:37:38,489
+It's really easy and
+they're really fun.
+
+2032
+01:37:38,485 --> 01:37:40,685
+And now, here I received another
+photo and the great thing
+
+2033
+01:37:40,687 --> 01:37:43,957
+about stickers is you can
+actually peel them off
+
+2034
+01:37:43,957 --> 01:37:45,627
+and attach them to bubbles.
+
+2035
+01:37:45,625 --> 01:37:46,925
+So, you know, this one will cool
+
+2036
+01:37:46,927 --> 01:37:49,127
+if I could just take
+the sun over here.
+
+2037
+01:37:49,129 --> 01:37:51,369
+Maybe put that up
+there on the corner
+
+2038
+01:37:51,364 --> 01:37:56,734
+and then maybe a little
+seal off here on the side.
+
+2039
+01:37:56,736 --> 01:37:58,106
+Just like that.
+
+2040
+01:37:58,104 --> 01:37:59,904
+It's really pretty cool what
+you can do with these messages.
+
+2041
+01:37:59,906 --> 01:38:02,076
+Well, look, I got a
+message from Brian here.
+
+2042
+01:38:02,075 --> 01:38:03,475
+Let's take a look at this.
+
+2043
+01:38:03,476 --> 01:38:05,676
+He says, "We're placing an order
+for lunch after the keynote."
+
+2044
+01:38:05,679 --> 01:38:09,019
+And we can see he's doing that
+actually with an iMessage app.
+
+2045
+01:38:09,015 --> 01:38:12,055
+So he's used DoorDash
+and he's placing an order
+
+2046
+01:38:12,052 --> 01:38:13,152
+at Curry Up Now.
+
+2047
+01:38:13,153 --> 01:38:15,823
+So I can just tap in
+and see what's going on.
+
+2048
+01:38:15,822 --> 01:38:18,192
+Now, there's a group cart
+that we're all collaborating
+
+2049
+01:38:18,191 --> 01:38:19,961
+on through the iMessage apps.
+
+2050
+01:38:19,960 --> 01:38:21,630
+I'm going to look at that.
+
+2051
+01:38:21,628 --> 01:38:24,928
+Looks like Phil has
+ordered the Naughty Naan
+
+2052
+01:38:24,931 --> 01:38:26,571
+and Jaws [assumed
+spelling] has ordered,
+
+2053
+01:38:26,566 --> 01:38:27,336
+Brian's ordered as well.
+
+2054
+01:38:27,334 --> 01:38:28,534
+So I can put in my order.
+
+2055
+01:38:28,535 --> 01:38:31,375
+And I'm going to go for
+this Deconstructed Samosa.
+
+2056
+01:38:31,371 --> 01:38:32,911
+That looks pretty good.
+
+2057
+01:38:32,906 --> 01:38:35,746
+And I'm sure Tim would
+like one as well.
+
+2058
+01:38:35,742 --> 01:38:37,942
+And, well, it would be rude
+if, you know, we ate in front
+
+2059
+01:38:37,944 --> 01:38:39,444
+of you guys without
+getting you some.
+
+2060
+01:38:39,446 --> 01:38:42,986
+So we'll just up this
+up a little bit here
+
+2061
+01:38:42,983 --> 01:38:46,753
+and we can just add that to
+our, to our cart like this
+
+2062
+01:38:46,753 --> 01:38:51,563
+and then drop it,
+write in the messages.
+
+2063
+01:38:51,558 --> 01:38:55,498
+And it's fortunate Brian
+will be paying for this.
+
+2064
+01:38:55,495 --> 01:38:59,565
+[ Applause ]
+
+2065
+01:38:59,566 --> 01:39:01,136
+So, a final thing
+I'd like to show you
+
+2066
+01:39:01,134 --> 01:39:05,804
+with iMessage apps are these
+really fun interactive kinds
+
+2067
+01:39:05,805 --> 01:39:06,575
+of apps.
+
+2068
+01:39:06,573 --> 01:39:08,243
+And one example is JibJab.
+
+2069
+01:39:08,241 --> 01:39:10,641
+So let's jump right
+into JibJab here.
+
+2070
+01:39:10,643 --> 01:39:12,813
+We see there are a whole
+bunch of fun things.
+
+2071
+01:39:12,812 --> 01:39:15,282
+You can scroll through and
+see the options I can also
+
+2072
+01:39:15,281 --> 01:39:18,381
+of course select from
+a gallery of faces.
+
+2073
+01:39:18,385 --> 01:39:22,625
+Let's pick Eddy maybe and,
+you know, I can just drop him
+
+2074
+01:39:22,622 --> 01:39:26,992
+in to the transcript
+just like that.
+
+2075
+01:39:26,993 --> 01:39:29,093
+And I think this gives
+you the sense of the power
+
+2076
+01:39:29,095 --> 01:39:32,465
+of iMessage apps and iOS 10.
+
+2077
+01:39:32,465 --> 01:39:39,905
+[ Applause ]
+
+2078
+01:39:39,906 --> 01:39:41,746
+So this is the new Messages.
+
+2079
+01:39:41,741 --> 01:39:43,641
+It's of course fantastic
+on your iPhone.
+
+2080
+01:39:43,643 --> 01:39:46,983
+All of this is available to
+you on your iPad as well.
+
+2081
+01:39:46,980 --> 01:39:49,920
+And your Mac and your
+Apple Watch can receive all
+
+2082
+01:39:49,916 --> 01:39:52,716
+of these interactive
+content as well.
+
+2083
+01:39:52,719 --> 01:39:57,429
+So that's Messages, part of
+10 huge features in iOS 10.
+
+2084
+01:39:57,424 --> 01:39:59,924
+But of course there is so
+much more that we can't have--
+
+2085
+01:39:59,926 --> 01:40:02,266
+talk about right now
+but I can't help myself
+
+2086
+01:40:02,262 --> 01:40:05,762
+but mention just a couple more
+things like Notes collaboration.
+
+2087
+01:40:05,765 --> 01:40:06,965
+You now can work live
+
+2088
+01:40:06,966 --> 01:40:09,666
+with multiple people
+in the same note.
+
+2089
+01:40:09,669 --> 01:40:13,209
+Conversation view in mails,
+so you can scroll from message
+
+2090
+01:40:13,206 --> 01:40:16,846
+to message in a single thread
+on your iPhone and iPad.
+
+2091
+01:40:16,843 --> 01:40:18,283
+Live photos are better
+than ever.
+
+2092
+01:40:18,278 --> 01:40:21,378
+They have-- We have digital
+video image stabilization.
+
+2093
+01:40:21,381 --> 01:40:25,351
+So they're buttery smooth and
+they're editable now as well.
+
+2094
+01:40:25,351 --> 01:40:29,021
+And finally, split
+view in Safari on iPad.
+
+2095
+01:40:29,022 --> 01:40:34,532
+So you can fit two websites side
+by side in Safari on your iPad.
+
+2096
+01:40:34,527 --> 01:40:38,197
+[ Applause ]
+
+2097
+01:40:38,198 --> 01:40:42,368
+Now, iOS 10 is a fantastic
+release for our users.
+
+2098
+01:40:42,368 --> 01:40:45,268
+It's also a gigantic
+release for our developers.
+
+2099
+01:40:45,271 --> 01:40:46,541
+When you think about it,
+
+2100
+01:40:46,539 --> 01:40:49,479
+experiences like the lock
+screen with notifications.
+
+2101
+01:40:49,476 --> 01:40:55,316
+The phone, maps, messages,
+every major area of iOS now open
+
+2102
+01:40:55,315 --> 01:40:58,555
+to developers and so
+many other options.
+
+2103
+01:40:58,551 --> 01:41:01,121
+But, you know, all
+of this great work
+
+2104
+01:41:01,121 --> 01:41:04,561
+in iOS 10 would be
+meaningless to us if it came
+
+2105
+01:41:04,557 --> 01:41:07,927
+at the expense of your privacy.
+
+2106
+01:41:07,927 --> 01:41:13,037
+And so, in every feature that
+we do, we carefully consider how
+
+2107
+01:41:13,032 --> 01:41:14,902
+to protect your privacy.
+
+2108
+01:41:14,901 --> 01:41:18,301
+With apps like FaceTime
+and Messages and HomeKit,
+
+2109
+01:41:18,304 --> 01:41:23,274
+we make sure to use end to end
+encryption by default and always
+
+2110
+01:41:23,276 --> 01:41:24,616
+to protect your communication.
+
+2111
+01:41:24,611 --> 01:41:29,151
+And when it comes to performing
+advanced deep learning
+
+2112
+01:41:29,149 --> 01:41:32,619
+and artificial intelligence
+analysis of your data,
+
+2113
+01:41:32,619 --> 01:41:35,189
+we're doing it on device
+using the incredible power
+
+2114
+01:41:35,188 --> 01:41:38,058
+of the silicon on your
+iPhone and your Mac,
+
+2115
+01:41:38,057 --> 01:41:41,597
+keeping your personal
+data under your control.
+
+2116
+01:41:41,594 --> 01:41:44,634
+And when you do do searches on
+the internet maybe for a route
+
+2117
+01:41:44,631 --> 01:41:48,701
+and maps or a search for
+information in Spotlight,
+
+2118
+01:41:48,701 --> 01:41:51,841
+we don't build any
+user profiles.
+
+2119
+01:41:51,838 --> 01:41:54,678
+Now, of course one of
+the important tools
+
+2120
+01:41:54,674 --> 01:41:58,174
+in making software more
+intelligent is to spot patterns
+
+2121
+01:41:58,178 --> 01:42:01,048
+on how multiple users
+are using their devices.
+
+2122
+01:42:01,047 --> 01:42:03,717
+For instance, you might want to
+know what new words are trending
+
+2123
+01:42:03,716 --> 01:42:08,526
+so you could offer them up more
+readily in a QuickType keyboard.
+
+2124
+01:42:08,521 --> 01:42:12,161
+Well, differential privacy is
+a research topic in the area
+
+2125
+01:42:12,158 --> 01:42:16,998
+of statistics and data analytics
+that uses hashing, subsampling
+
+2126
+01:42:16,996 --> 01:42:19,096
+and noise injection
+to enable this kind
+
+2127
+01:42:19,098 --> 01:42:22,598
+of crowd-sourced learning
+while keeping the information
+
+2128
+01:42:22,602 --> 01:42:25,102
+of each individual user
+completely private.
+
+2129
+01:42:25,104 --> 01:42:28,044
+Now, Apple has been doing
+some super important work
+
+2130
+01:42:28,041 --> 01:42:31,881
+in this area to enable
+differential privacy
+
+2131
+01:42:31,878 --> 01:42:36,248
+to be deployed at a scale and
+we brought in the professor
+
+2132
+01:42:36,249 --> 01:42:38,849
+and researcher who
+literally co-wrote the book
+
+2133
+01:42:38,851 --> 01:42:42,421
+on differential privacy for a
+quick peek at what we were doing
+
+2134
+01:42:42,422 --> 01:42:45,762
+and he described the
+work as groundbreaking.
+
+2135
+01:42:45,758 --> 01:42:46,928
+He went on to say
+
+2136
+01:42:46,926 --> 01:42:49,326
+that incorporating
+differential privacy broadly
+
+2137
+01:42:49,329 --> 01:42:53,299
+into Apple's technology is
+visionary and positions Apple
+
+2138
+01:42:53,299 --> 01:42:56,299
+as the clear privacy
+leader among technology
+
+2139
+01:42:56,302 --> 01:42:58,542
+companies today.
+
+2140
+01:42:58,538 --> 01:43:07,448
+[ Cheering and Applause ]
+
+2141
+01:43:07,447 --> 01:43:11,887
+We believe you should have great
+features and great privacy.
+
+2142
+01:43:11,884 --> 01:43:16,554
+You demand it and we are
+dedicated to providing it.
+
+2143
+01:43:16,556 --> 01:43:21,396
+So that, well, actually
+is one more thing.
+
+2144
+01:43:21,394 --> 01:43:23,634
+You know, we are so excited
+
+2145
+01:43:23,630 --> 01:43:27,630
+about everything you've
+just seen with iOS 10.
+
+2146
+01:43:27,634 --> 01:43:29,234
+We couldn't help ourselves.
+
+2147
+01:43:29,235 --> 01:43:30,675
+We made a video.
+
+2148
+01:43:30,670 --> 01:43:32,070
+I'd love to show it to you now.
+
+2149
+01:43:32,071 --> 01:43:33,811
+Let's do it.
+
+2150
+01:43:37,510 --> 01:43:46,590
+[ Music ]
+
+2151
+01:44:23,022 --> 01:44:26,492
+And that is iOS 10.
+
+2152
+01:44:26,492 --> 01:44:34,932
+[ Cheering and Applause ]
+
+2153
+01:44:34,934 --> 01:44:38,774
+All of you developers get
+the developer preview today.
+
+2154
+01:44:38,771 --> 01:44:41,641
+And again, we're doing
+a public beta this July.
+
+2155
+01:44:41,641 --> 01:44:44,541
+Sign up now at beta.apple.com
+and we'll let you know
+
+2156
+01:44:44,544 --> 01:44:46,414
+when you can download it.
+
+2157
+01:44:46,412 --> 01:44:50,552
+And iOS 10 will be available
+to all of our users this fall
+
+2158
+01:44:50,550 --> 01:44:55,120
+as a free upgrade across
+all of these devices.
+
+2159
+01:44:55,121 --> 01:44:57,491
+That is iOS.
+
+2160
+01:44:57,490 --> 01:44:59,260
+Now, I'd like to
+hand it back to Tim.
+
+2161
+01:44:59,258 --> 01:45:00,458
+Thank you very much.
+
+2162
+01:45:00,460 --> 01:45:07,800
+[ Cheering and Applause ]
+
+2163
+01:45:07,800 --> 01:45:09,000
+Thanks, Craig.
+
+2164
+01:45:09,001 --> 01:45:13,241
+iOS 10 is fantastic and
+it's an enormous release.
+
+2165
+01:45:13,239 --> 01:45:16,279
+I couldn't be more
+proud and more excited
+
+2166
+01:45:16,275 --> 01:45:17,715
+about the incredible
+advancements
+
+2167
+01:45:17,710 --> 01:45:20,150
+across all of our platforms.
+
+2168
+01:45:20,146 --> 01:45:23,586
+Now, as we said earlier,
+an important part
+
+2169
+01:45:23,583 --> 01:45:28,593
+of making this platform so
+capable is our developers.
+
+2170
+01:45:28,588 --> 01:45:32,428
+We believe it's crucial that
+we provide the best tools
+
+2171
+01:45:32,425 --> 01:45:34,965
+so you can create the best apps.
+
+2172
+01:45:34,961 --> 01:45:37,401
+That's why we created Swift.
+
+2173
+01:45:37,397 --> 01:45:40,597
+Swift is a powerful and
+intuitive programming language
+
+2174
+01:45:40,600 --> 01:45:45,470
+for iOS, Mac OS,
+watchOS, and tvOS.
+
+2175
+01:45:45,471 --> 01:45:50,281
+And writing Swift code is fun
+and interactive and apps written
+
+2176
+01:45:50,276 --> 01:45:53,546
+in it are lighting fast.
+
+2177
+01:45:53,546 --> 01:45:57,786
+Since we released Swift
+less than two years ago,
+
+2178
+01:45:57,784 --> 01:46:01,584
+we've seen an amazing response
+from the developer community.
+
+2179
+01:46:01,587 --> 01:46:04,157
+There's already more
+than 100,000 apps
+
+2180
+01:46:04,157 --> 01:46:08,657
+that have adopted the use of
+Swift code including great apps
+
+2181
+01:46:08,661 --> 01:46:12,231
+like Twitter and
+Strava and Lyft.
+
+2182
+01:46:12,231 --> 01:46:16,541
+Now, we wanted everyone to
+use Swift so we released it
+
+2183
+01:46:16,536 --> 01:46:19,136
+as open source in
+December and since then,
+
+2184
+01:46:19,138 --> 01:46:21,738
+the adoption has been amazing.
+
+2185
+01:46:21,741 --> 01:46:26,611
+It's already the number one
+language project on GitHub.
+
+2186
+01:46:26,612 --> 01:46:31,252
+Swift is powerful but it's also
+simple and it's approachable.
+
+2187
+01:46:31,250 --> 01:46:35,190
+So it can be your very
+first programming language.
+
+2188
+01:46:35,188 --> 01:46:39,528
+This is a very important
+point for us.
+
+2189
+01:46:39,525 --> 01:46:44,565
+Because Swift is so easy to
+learn, it has the potential
+
+2190
+01:46:44,564 --> 01:46:47,764
+to bring many more
+people into coding.
+
+2191
+01:46:47,767 --> 01:46:51,737
+And this is an idea we would
+like to take even further.
+
+2192
+01:46:51,737 --> 01:46:58,047
+So today, we're introducing
+a new app for iPad.
+
+2193
+01:46:58,044 --> 01:47:01,444
+We call it Swift Playgrounds.
+
+2194
+01:47:01,447 --> 01:47:09,987
+[ Cheering and Applause ]
+
+2195
+01:47:09,989 --> 01:47:14,389
+Swift Playgrounds will
+revolutionize the way people
+
+2196
+01:47:14,393 --> 01:47:17,433
+learn to code and they'll
+be able to do it right
+
+2197
+01:47:17,430 --> 01:47:22,340
+on their iPad which instantly
+makes it accessible for hundreds
+
+2198
+01:47:22,335 --> 01:47:25,075
+of millions of people
+around the world.
+
+2199
+01:47:25,071 --> 01:47:27,371
+There's never been
+anything like this.
+
+2200
+01:47:27,373 --> 01:47:30,873
+We believe it's the absolute
+best way to teach everyone
+
+2201
+01:47:30,877 --> 01:47:35,447
+to code, combining the powerful
+Swift programming language
+
+2202
+01:47:35,448 --> 01:47:39,588
+and the powerful
+capabilities of iPad.
+
+2203
+01:47:39,585 --> 01:47:44,125
+To show it to you, I'd like
+to invite Cheryl Thomas up.
+
+2204
+01:47:44,123 --> 01:47:45,493
+Cheryl?
+
+2205
+01:47:45,491 --> 01:47:50,901
+[ Cheering and Applause ]
+
+2206
+01:47:50,897 --> 01:47:52,227
+Thank you, Tim.
+
+2207
+01:47:52,231 --> 01:47:54,131
+I am thrilled to show
+you Swift Playgrounds,
+
+2208
+01:47:54,133 --> 01:47:55,933
+an incredible new app
+
+2209
+01:47:55,935 --> 01:47:58,235
+that transforms how
+kids learn to code.
+
+2210
+01:47:58,237 --> 01:48:01,277
+I'll launch it right now.
+
+2211
+01:48:02,375 --> 01:48:05,045
+We land on this gorgeous
+screen full
+
+2212
+01:48:05,044 --> 01:48:06,944
+of custom content from Apple.
+
+2213
+01:48:06,946 --> 01:48:11,916
+Up at the top are lessons and
+down below we have challenges.
+
+2214
+01:48:11,918 --> 01:48:14,488
+I'm going to start with
+the very first lesson
+
+2215
+01:48:14,487 --> 01:48:17,787
+in the Fundamentals of Swift.
+
+2216
+01:48:17,790 --> 01:48:20,490
+We see a preview of the
+content with graphics
+
+2217
+01:48:20,493 --> 01:48:24,133
+and a description
+and I'll open it.
+
+2218
+01:48:24,130 --> 01:48:26,130
+It starts with an introduction
+
+2219
+01:48:26,132 --> 01:48:29,432
+to the coding concept I'll
+be learning and when I'm good
+
+2220
+01:48:29,435 --> 01:48:32,975
+and ready, I can just tap in the
+lower corner to start coding.
+
+2221
+01:48:32,972 --> 01:48:37,912
+Over on the right, you can see
+we have an interactive world
+
+2222
+01:48:37,910 --> 01:48:41,310
+that I can explore using touch.
+
+2223
+01:48:41,314 --> 01:48:45,084
+I'll swipe it, looks
+good, and pinch to zoom.
+
+2224
+01:48:45,084 --> 01:48:46,954
+This is Byte.
+
+2225
+01:48:46,953 --> 01:48:49,323
+He is my character.
+
+2226
+01:48:49,322 --> 01:48:51,362
+I think he's irresistible.
+
+2227
+01:48:51,357 --> 01:48:55,027
+And I'll be controlling
+him with code.
+
+2228
+01:48:55,027 --> 01:48:58,467
+Over on the left are
+instructions that explain
+
+2229
+01:48:58,464 --> 01:49:01,904
+and help guide me through
+the problem I'll be solving
+
+2230
+01:49:01,901 --> 01:49:03,941
+and down below is
+where I enter my code.
+
+2231
+01:49:03,936 --> 01:49:08,776
+Byte has been waiting patiently
+so I'll tap to enter Swift code.
+
+2232
+01:49:08,774 --> 01:49:12,914
+You can see commands have
+appeared at the bottom.
+
+2233
+01:49:12,912 --> 01:49:17,452
+These are just like QuickType
+suggestions but for code,
+
+2234
+01:49:17,450 --> 01:49:20,250
+my objective in this lesson
+is to get him to the end
+
+2235
+01:49:20,252 --> 01:49:22,252
+of that path and
+collect the gem.
+
+2236
+01:49:22,254 --> 01:49:27,794
+So I'll tap move forward three
+times and then collect gem.
+
+2237
+01:49:27,793 --> 01:49:31,133
+Watch the world on the
+right as I run my code.
+
+2238
+01:49:31,130 --> 01:49:32,470
+Byte moves forward.
+
+2239
+01:49:32,465 --> 01:49:35,935
+He follows the commands in
+the exact order I've entered,
+
+2240
+01:49:35,935 --> 01:49:40,475
+gets the gem and I've
+completed my very first lesson.
+
+2241
+01:49:40,473 --> 01:49:46,243
+[ Applause ]
+
+2242
+01:49:46,245 --> 01:49:48,145
+Kids are going to love them.
+
+2243
+01:49:48,147 --> 01:49:51,187
+Now, I can continue to the
+next lesson in the series
+
+2244
+01:49:51,183 --> 01:49:54,223
+or I can jump around
+to wherever I'd like.
+
+2245
+01:49:54,220 --> 01:49:57,090
+To do that, I tap in the
+top left to open the table
+
+2246
+01:49:57,089 --> 01:50:00,729
+of contents and you can
+see we include a ton
+
+2247
+01:50:00,726 --> 01:50:05,466
+of great content here to
+engage and motivate learners.
+
+2248
+01:50:05,464 --> 01:50:08,464
+This one on loops,
+looping all the sides,
+
+2249
+01:50:08,467 --> 01:50:09,607
+looks a little interesting.
+
+2250
+01:50:09,602 --> 01:50:11,772
+I'm going to check it out.
+
+2251
+01:50:11,771 --> 01:50:15,141
+Now we have a few lines
+of code already filled in.
+
+2252
+01:50:15,141 --> 01:50:19,341
+I'll go ahead and run
+it and see what happens.
+
+2253
+01:50:19,345 --> 01:50:20,745
+Byte moves forward.
+
+2254
+01:50:20,746 --> 01:50:26,186
+He gets the gem but
+then he just stops.
+
+2255
+01:50:26,185 --> 01:50:27,785
+Poor little guy.
+
+2256
+01:50:27,787 --> 01:50:29,987
+He's going to need some help.
+
+2257
+01:50:29,989 --> 01:50:32,859
+The solution here, and I
+know you've all got this,
+
+2258
+01:50:32,858 --> 01:50:35,998
+is that I need to repeat
+that block of code four times
+
+2259
+01:50:35,995 --> 01:50:39,095
+to get Byte around all
+four sides of the world.
+
+2260
+01:50:39,098 --> 01:50:41,798
+To do that, I'm going
+to need a for loop.
+
+2261
+01:50:41,801 --> 01:50:46,101
+I'll tap the plus up top to open
+my code library and all I have
+
+2262
+01:50:46,105 --> 01:50:51,315
+to do is just drag a for
+loop right into my code.
+
+2263
+01:50:51,310 --> 01:50:52,340
+Now watch this.
+
+2264
+01:50:52,344 --> 01:50:55,214
+I can tap that loop,
+grab the end of it
+
+2265
+01:50:55,214 --> 01:50:58,554
+and just drag it
+all around my code.
+
+2266
+01:50:58,551 --> 01:51:04,861
+[ Applause ]
+
+2267
+01:51:04,857 --> 01:51:07,197
+All right, I'll tap
+the number placeholder,
+
+2268
+01:51:07,193 --> 01:51:09,233
+set this loop to
+repeat four times.
+
+2269
+01:51:09,228 --> 01:51:10,358
+Looks good.
+
+2270
+01:51:10,362 --> 01:51:14,032
+OK. Keep your eyes on
+Byte as I run my code.
+
+2271
+01:51:14,033 --> 01:51:17,803
+He moves forward, gets the gem,
+makes a turn, and this time
+
+2272
+01:51:17,803 --> 01:51:20,843
+with the added for loop,
+he just keeps ongoing.
+
+2273
+01:51:20,840 --> 01:51:24,080
+I finished another
+lesson and I'm well
+
+2274
+01:51:24,076 --> 01:51:26,346
+on my way to mastering loops.
+
+2275
+01:51:26,345 --> 01:51:31,485
+Wouldn't this had been cool when
+we were all learning to code.
+
+2276
+01:51:31,484 --> 01:51:34,754
+I mean come on, you
+students, let me hear it.
+
+2277
+01:51:34,754 --> 01:51:35,524
+Come on.
+
+2278
+01:51:35,521 --> 01:51:43,291
+[ Cheering and Applause ]
+
+2279
+01:51:43,295 --> 01:51:47,635
+Swift Playgrounds is a fantastic
+app to master the basics,
+
+2280
+01:51:47,633 --> 01:51:49,533
+but it doesn't stop there.
+
+2281
+01:51:49,535 --> 01:51:50,805
+Let me show you.
+
+2282
+01:51:50,803 --> 01:51:52,573
+I'll tap in the top
+left corner to go
+
+2283
+01:51:52,571 --> 01:51:54,471
+to my library at Playgrounds.
+
+2284
+01:51:54,473 --> 01:51:58,143
+I can also explore advanced
+coding and use the power
+
+2285
+01:51:58,144 --> 01:52:01,844
+of the iOS SDK to do
+almost anything I'd like.
+
+2286
+01:52:01,847 --> 01:52:05,747
+I happen to have something
+I've been working on.
+
+2287
+01:52:05,751 --> 01:52:08,091
+It combines my two
+favorite things, physics
+
+2288
+01:52:08,087 --> 01:52:10,727
+and emoji, interestingly.
+
+2289
+01:52:10,723 --> 01:52:15,023
+OK. You can see that this
+is a lot more sophisticated
+
+2290
+01:52:15,027 --> 01:52:16,797
+than what we've been doing.
+
+2291
+01:52:16,796 --> 01:52:19,366
+I have some emoji on the
+right, thank goodness.
+
+2292
+01:52:19,365 --> 01:52:20,695
+I can tap to add more.
+
+2293
+01:52:20,699 --> 01:52:23,139
+And that's a big bee.
+
+2294
+01:52:23,135 --> 01:52:26,205
+OK. Now, I can also
+fling them around.
+
+2295
+01:52:26,205 --> 01:52:27,675
+And because this
+is physics emoji,
+
+2296
+01:52:27,673 --> 01:52:30,143
+they create a nice
+little reaction.
+
+2297
+01:52:30,142 --> 01:52:32,712
+But you also notice they're all
+just falling down to the bottom.
+
+2298
+01:52:32,711 --> 01:52:36,481
+And that's because right
+not gravity is fixed.
+
+2299
+01:52:36,482 --> 01:52:37,952
+So I'm going to go
+ahead and play
+
+2300
+01:52:37,950 --> 01:52:39,850
+around with gravity a little bit
+
+2301
+01:52:39,852 --> 01:52:41,892
+because who doesn't
+like to do that.
+
+2302
+01:52:41,887 --> 01:52:45,787
+I'm going to double tap
+to bring up the keyboard.
+
+2303
+01:52:45,791 --> 01:52:48,461
+We've built a completely
+new coding keyboard
+
+2304
+01:52:48,460 --> 01:52:50,230
+and it is awesome.
+
+2305
+01:52:50,229 --> 01:52:52,529
+The key-- mm-hmm.
+
+2306
+01:52:52,531 --> 01:52:59,871
+[ Cheering and Applause ]
+
+2307
+01:52:59,872 --> 01:53:01,812
+The keyboard has the
+numbers and symbols.
+
+2308
+01:53:01,807 --> 01:53:03,047
+We're using Swift programming
+
+2309
+01:53:03,042 --> 01:53:04,782
+and they're right
+at my fingertips.
+
+2310
+01:53:04,777 --> 01:53:10,387
+I'm going to quickly set the
+world's angle, world.angle equal
+
+2311
+01:53:10,382 --> 01:53:12,082
+to the gyroscope's angle.
+
+2312
+01:53:12,084 --> 01:53:13,654
+Looks good.
+
+2313
+01:53:13,652 --> 01:53:15,252
+OK. Now, look at the
+bottom of the keyboard.
+
+2314
+01:53:15,254 --> 01:53:16,084
+There's a V key.
+
+2315
+01:53:16,088 --> 01:53:18,388
+It also has an asterisk on it.
+
+2316
+01:53:18,390 --> 01:53:20,790
+Watch what happens when
+I press and drag down.
+
+2317
+01:53:20,793 --> 01:53:23,493
+I get an asterisk
+for multiplication.
+
+2318
+01:53:23,495 --> 01:53:28,935
+[ Applause ]
+
+2319
+01:53:28,934 --> 01:53:30,074
+You're going to get
+to see that again.
+
+2320
+01:53:30,069 --> 01:53:31,239
+I bet you knew that
+though, right?
+
+2321
+01:53:31,237 --> 01:53:32,607
+Look at the W key.
+
+2322
+01:53:32,605 --> 01:53:36,045
+I'm going to press and
+drag down for a number two.
+
+2323
+01:53:36,041 --> 01:53:38,611
+OK. Let's see what kind
+of impact this had.
+
+2324
+01:53:38,611 --> 01:53:41,211
+Let's take this full
+screen and run my code.
+
+2325
+01:53:41,213 --> 01:53:44,153
+Of course, because my
+playground now has access
+
+2326
+01:53:44,149 --> 01:53:47,489
+to the iPad hardware,
+as I pick up the iPad
+
+2327
+01:53:47,486 --> 01:53:53,526
+and I tilt it, all
+my emoji react.
+
+2328
+01:53:53,525 --> 01:54:00,495
+[ Applause ]
+
+2329
+01:54:00,499 --> 01:54:01,699
+And that's how they like it.
+
+2330
+01:54:01,700 --> 01:54:03,470
+I have to tell you.
+
+2331
+01:54:03,469 --> 01:54:07,169
+OK. So I've shown you just a
+taste of what you can create
+
+2332
+01:54:07,172 --> 01:54:11,742
+on your own and a small
+sample of amazing lessons.
+
+2333
+01:54:11,744 --> 01:54:15,914
+That is Swift Playgrounds,
+a fun and powerful new way
+
+2334
+01:54:15,915 --> 01:54:17,045
+for kids to learn to code.
+
+2335
+01:54:17,049 --> 01:54:19,489
+Back to you, Tim.
+
+2336
+01:54:19,485 --> 01:54:24,995
+[ Cheering and Applause ]
+
+2337
+01:54:24,990 --> 01:54:25,860
+Thank you, Cheryl.
+
+2338
+01:54:25,858 --> 01:54:30,198
+It looks absolutely incredible.
+
+2339
+01:54:30,195 --> 01:54:34,365
+And because we're
+combining basic coding skills
+
+2340
+01:54:34,366 --> 01:54:37,266
+with real life code,
+
+2341
+01:54:37,269 --> 01:54:40,739
+Swift Playgrounds can profoundly
+impact the way kids learn
+
+2342
+01:54:40,739 --> 01:54:42,109
+to code.
+
+2343
+01:54:42,107 --> 01:54:45,147
+So we're releasing it with
+the developer preview today.
+
+2344
+01:54:45,144 --> 01:54:48,844
+It will be in the
+public beta next month.
+
+2345
+01:54:48,847 --> 01:54:55,187
+And it will be in the App Store
+when iOS 10 ships in the fall.
+
+2346
+01:54:55,187 --> 01:55:00,127
+Now, we believe coding
+should be a required language
+
+2347
+01:55:00,125 --> 01:55:02,625
+in all schools.
+
+2348
+01:55:02,628 --> 01:55:04,798
+So to help make this the case,
+
+2349
+01:55:04,797 --> 01:55:08,467
+we're going to make
+Swift Playgrounds free.
+
+2350
+01:55:08,467 --> 01:55:12,937
+[ Cheering and Applause ]
+
+2351
+01:55:12,938 --> 01:55:16,008
+And we hope that this
+gift to kids and schools
+
+2352
+01:55:16,008 --> 01:55:20,748
+around the world will help make
+coding a part of school day.
+
+2353
+01:55:20,746 --> 01:55:23,486
+That is Swift Playgrounds.
+
+2354
+01:55:23,482 --> 01:55:26,022
+[ Applause ]
+
+2355
+01:55:26,018 --> 01:55:31,728
+Now, powerful tools like
+these enable developers
+
+2356
+01:55:31,724 --> 01:55:33,394
+to create great apps.
+
+2357
+01:55:33,392 --> 01:55:36,062
+They also help the
+next generation
+
+2358
+01:55:36,061 --> 01:55:37,501
+of developers you seek
+
+2359
+01:55:37,496 --> 01:55:39,966
+out on their journey
+to change the world.
+
+2360
+01:55:39,965 --> 01:55:44,005
+And to motivate this new
+generation of developers,
+
+2361
+01:55:44,003 --> 01:55:48,503
+we created a video about what
+first inspired some great Apple
+
+2362
+01:55:48,507 --> 01:55:52,677
+developers to start coding and
+I'd love to show it to you now.
+
+2363
+01:55:58,150 --> 01:55:59,520
+Hello world.
+
+2364
+01:55:59,518 --> 01:56:04,658
+[ Music ]
+
+2365
+01:56:04,656 --> 01:56:08,226
+So, this is the first
+computer that I coded on.
+
+2366
+01:56:08,227 --> 01:56:11,727
+In the beginning, my biggest
+challenge was not having access
+
+2367
+01:56:11,730 --> 01:56:13,070
+to a computer.
+
+2368
+01:56:13,065 --> 01:56:16,105
+The first line of code
+I wrote was bouncing ball.
+
+2369
+01:56:16,101 --> 01:56:18,201
+It would bounce around
+the screen, hit the edges
+
+2370
+01:56:18,203 --> 01:56:19,503
+and then come back again.
+
+2371
+01:56:19,505 --> 01:56:21,005
+I think the first one was
+
+2372
+01:56:21,006 --> 01:56:24,006
+like a to-do list,
+it was a to-do list.
+
+2373
+01:56:24,009 --> 01:56:26,879
+I remember the first
+time I did it when it worked
+
+2374
+01:56:26,879 --> 01:56:28,649
+and it was like magical.
+
+2375
+01:56:28,647 --> 01:56:31,017
+I realized that I can
+do anything with code.
+
+2376
+01:56:31,016 --> 01:56:34,016
+Anything I can think
+about, I can do it.
+
+2377
+01:56:35,154 --> 01:56:37,694
+In Beirut we experience
+power outages every day.
+
+2378
+01:56:40,526 --> 01:56:44,396
+So let me see if I can
+just do a simple algorithm
+
+2379
+01:56:44,396 --> 01:56:47,036
+that can provide the
+electricity cutoff time.
+
+2380
+01:56:49,201 --> 01:56:52,041
+It shouldn't cost
+life to give life.
+
+2381
+01:56:52,037 --> 01:56:56,407
+What if we compress all
+these health guidelines
+
+2382
+01:56:56,408 --> 01:56:58,708
+into small movies?
+
+2383
+01:57:00,079 --> 01:57:05,889
+I'm one person that saw a
+problem and created a solution
+
+2384
+01:57:05,884 --> 01:57:09,984
+to stop or assist a woman
+in domestic violence.
+
+2385
+01:57:09,988 --> 01:57:13,958
+What we wanted, what
+we needed didn't exist.
+
+2386
+01:57:15,694 --> 01:57:21,004
+So, at some point you just say,
+OK, well, let's do it ourselves.
+
+2387
+01:57:23,001 --> 01:57:25,701
+Let's make an app.
+
+2388
+01:57:25,704 --> 01:57:29,144
+Well, when I first start
+an app, I have to have a plan.
+
+2389
+01:57:29,141 --> 01:57:30,711
+We start with
+that little glimmer,
+
+2390
+01:57:30,709 --> 01:57:33,679
+that seed of a new fresh idea.
+
+2391
+01:57:33,679 --> 01:57:37,119
+There is this fear of
+code, like it's so hard
+
+2392
+01:57:37,116 --> 01:57:39,686
+or it's inaccessible
+but actually it's not.
+
+2393
+01:57:39,685 --> 01:57:41,625
+Someone who doesn't
+even know code at all,
+
+2394
+01:57:41,620 --> 01:57:44,220
+if they really studied
+some simple Swift code,
+
+2395
+01:57:44,223 --> 01:57:47,023
+they would probably be
+able to understand it.
+
+2396
+01:57:47,025 --> 01:57:51,535
+Anything is possible and it
+all comes from that first step.
+
+2397
+01:57:51,530 --> 01:57:55,030
+Launching the app was
+a big moment actually.
+
+2398
+01:57:55,033 --> 01:57:58,173
+I told everyone about
+it, like download my app,
+
+2399
+01:57:58,170 --> 01:57:59,270
+it's on the App Store.
+
+2400
+01:57:59,271 --> 01:58:00,711
+I was dancing.
+
+2401
+01:58:00,706 --> 01:58:03,146
+I called all my girlfriends
+that I cried to.
+
+2402
+01:58:03,142 --> 01:58:05,782
+It's such a crazy feeling
+because it's so many emotions,
+
+2403
+01:58:05,777 --> 01:58:09,047
+so many wishes, so many dreams.
+
+2404
+01:58:09,047 --> 01:58:10,987
+I always tell my students,
+do you have Beirut Electricity?
+
+2405
+01:58:10,983 --> 01:58:12,483
+My son made it.
+
+2406
+01:58:12,484 --> 01:58:13,984
+He built it.
+
+2407
+01:58:13,986 --> 01:58:16,986
+And the girls, is he single?
+
+2408
+01:58:16,989 --> 01:58:23,399
+By the end of 2016, 1 million
+women will have a safe birth due
+
+2409
+01:58:23,395 --> 01:58:24,465
+to the Safe Delivery App.
+
+2410
+01:58:24,463 --> 01:58:29,003
+[ Baby Crying ]
+
+2411
+01:58:29,001 --> 01:58:31,401
+People come together
+in public spaces.
+
+2412
+01:58:31,403 --> 01:58:33,003
+It creates a kind of happiness.
+
+2413
+01:58:33,005 --> 01:58:36,045
+It creates a kind of like
+healing effect for the soul.
+
+2414
+01:58:36,041 --> 01:58:38,211
+Don't touch my code.
+
+2415
+01:58:38,210 --> 01:58:41,050
+Dear Keira, young people like
+you are tomorrow's leaders.
+
+2416
+01:58:41,046 --> 01:58:45,586
+You inspire me and give me
+tremendous hope for the future.
+
+2417
+01:58:45,584 --> 01:58:47,354
+Michelle and I wish
+you all the best.
+
+2418
+01:58:47,352 --> 01:58:49,022
+Sincerely, Barack Obama.
+
+2419
+01:58:50,255 --> 01:58:53,755
+These tools are something
+that we desperately need
+
+2420
+01:58:53,759 --> 01:58:55,699
+when trying to change the world.
+
+2421
+01:58:55,694 --> 01:58:58,064
+I think the more people
+that can learn to code,
+
+2422
+01:58:58,063 --> 01:59:00,963
+learn to build apps, the
+more problems can be solved.
+
+2423
+01:59:00,966 --> 01:59:02,406
+I feel like I'm
+creating stuff
+
+2424
+01:59:02,401 --> 01:59:05,901
+that can actually change
+the way people live,
+
+2425
+01:59:05,904 --> 01:59:07,474
+which is super awesome.
+
+2426
+01:59:09,274 --> 01:59:13,474
+I want to be this
+amazing coder,
+
+2427
+01:59:13,478 --> 01:59:17,378
+this off the chain senior
+developer where everybody comes
+
+2428
+01:59:17,382 --> 01:59:19,352
+to me and it's like,
+can you fix this?
+
+2429
+01:59:19,351 --> 01:59:21,951
+And I'm like, yeah, like
+I'm going, you know,
+
+2430
+01:59:21,954 --> 01:59:25,094
+just type up the code
+and papaw, dadadam.
+
+2431
+01:59:25,090 --> 01:59:27,760
+And like, wow, you can do this.
+
+2432
+01:59:27,759 --> 01:59:29,459
+Yay.
+
+2433
+01:59:29,461 --> 01:59:38,541
+[ Cheering and Applause ]
+
+2434
+01:59:40,973 --> 01:59:43,713
+It's really incredible
+to see the inspirations
+
+2435
+01:59:43,709 --> 01:59:45,749
+of so many amazing developers.
+
+2436
+01:59:45,744 --> 01:59:49,184
+I can't wait to see what
+this next generation
+
+2437
+01:59:49,181 --> 01:59:50,351
+of developers are
+going to create
+
+2438
+01:59:50,349 --> 01:59:51,779
+to make the world
+a better place.
+
+2439
+01:59:51,783 --> 01:59:56,253
+So I told you it was
+going to be jam packed.
+
+2440
+01:59:56,255 --> 01:59:59,895
+What a great morning.
+
+2441
+01:59:59,891 --> 02:00:03,791
+Great updates from --
+to all of the platforms,
+
+2442
+02:00:03,795 --> 02:00:09,105
+starting with watchOS, faster
+performance, better navigation,
+
+2443
+02:00:09,101 --> 02:00:10,971
+all new fitness and
+health features
+
+2444
+02:00:10,969 --> 02:00:13,539
+to help you live a better life.
+
+2445
+02:00:13,538 --> 02:00:17,748
+tvOS, the future of TV is apps,
+
+2446
+02:00:17,743 --> 02:00:19,283
+and now it just got
+a whole lot better
+
+2447
+02:00:19,278 --> 02:00:22,878
+with expanded series
+search and single sign on.
+
+2448
+02:00:22,881 --> 02:00:28,891
+macOS Sierra, bringing Siri
+and Apple Pay to the Mac along
+
+2449
+02:00:28,887 --> 02:00:32,457
+with some other incredibly
+powerful features.
+
+2450
+02:00:32,457 --> 02:00:37,927
+And a gigantic release of iOS,
+the mother of all releases,
+
+2451
+02:00:37,929 --> 02:00:41,369
+incredible new features for
+Messages, all new designs
+
+2452
+02:00:41,366 --> 02:00:44,266
+for Photos, Apple
+News and Apple Music,
+
+2453
+02:00:44,269 --> 02:00:48,209
+and incredible new
+opportunities for developers
+
+2454
+02:00:48,206 --> 02:00:53,346
+to integrate their apps with
+Siri, Maps and Messages.
+
+2455
+02:00:53,345 --> 02:01:02,225
+At Apple, we believe that
+technology should lift humanity,
+
+2456
+02:01:02,220 --> 02:01:05,260
+should enrich people's lives
+in all the ways they want
+
+2457
+02:01:05,257 --> 02:01:10,827
+to experience it, whether
+it's on their wrist,
+
+2458
+02:01:10,829 --> 02:01:17,869
+in their living room, on their
+desk, in the palm of their hand,
+
+2459
+02:01:17,869 --> 02:01:23,239
+in the car, or even
+automating their home,
+
+2460
+02:01:23,241 --> 02:01:30,251
+this is a huge moment for
+us, four great platforms
+
+2461
+02:01:30,248 --> 02:01:36,418
+that become even more capable
+with working with all of you.
+
+2462
+02:01:36,421 --> 02:01:39,221
+I'd like to thank all of the
+developers here today and all
+
+2463
+02:01:39,224 --> 02:01:43,564
+of those watching us that have
+partnered with us in our quest
+
+2464
+02:01:43,562 --> 02:01:46,362
+to change the world
+for the better.
+
+2465
+02:01:46,365 --> 02:01:52,135
+And of course, I'd like to thank
+everyone at Apple, all the teams
+
+2466
+02:01:52,137 --> 02:01:56,137
+that worked so hard to
+make this day happen.
+
+2467
+02:01:56,141 --> 02:01:59,541
+Thank you very much and
+have a fantastic week.
+
+2468
+02:01:59,544 --> 02:02:03,544
+[ Cheering and Applause ]
+

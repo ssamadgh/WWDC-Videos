@@ -1,0 +1,5825 @@
+1
+00:00:45,210 --> 00:00:48,140
+I'm walking
+
+2
+00:00:50,890 --> 00:00:54,809
+oh thank you
+
+3
+00:00:57,949 --> 00:01:00,730
+hmm
+
+4
+00:01:00,879 --> 00:01:03,570
+hmm
+
+5
+00:01:06,520 --> 00:01:09,630
+thank you very much
+
+6
+00:01:11,290 --> 00:01:23,750
+it always thank you it always helps and
+I appreciate it very much so we've got
+
+7
+00:01:23,750 --> 00:01:31,970
+an awesome morning together this morning
+and thank you for coming so much we we
+
+8
+00:01:31,970 --> 00:01:38,600
+have over 5,200 attendees here today we
+sold out within two hours I'm sorry this
+
+9
+00:01:38,600 --> 00:01:43,160
+is the biggest place we can get to have
+this so I'm sorry for all those people
+
+10
+00:01:43,160 --> 00:01:50,060
+that couldn't make it and we wish we
+could sell more tickets but we don't
+
+11
+00:01:50,060 --> 00:01:58,430
+know where to have it if we do so 5200
+attendees over 120 sessions over a
+
+12
+00:01:58,430 --> 00:02:04,520
+hundred hands-on labs where you can take
+your code in and get to help tuning it
+and porting it to some of our newer
+
+13
+00:02:06,619 --> 00:02:11,570
+devices and there are over a hundred
+Apple engineers here this week a
+
+14
+00:02:11,570 --> 00:02:17,510
+thousand sorry Apple engineers here this
+week to help you so there's a lot of app
+
+15
+00:02:17,510 --> 00:02:22,670
+of folks floating around grab them make
+use of them and we hope you have a great
+
+16
+00:02:22,670 --> 00:02:29,239
+week here at WWDC now we're going to
+talk about three things today you know
+
+17
+00:02:29,239 --> 00:02:37,610
+if the if the hardware is the the brain
+and sinew of our products the software
+
+18
+00:02:37,610 --> 00:02:45,019
+in them is their sole and today we are
+going to talk about software we've got
+
+19
+00:02:45,019 --> 00:02:54,140
+some great stuff to talk about
+OS 10 lion iOS 5 and some kind of
+interesting new cloud stuff so let's
+
+20
+00:02:58,160 --> 00:03:03,530
+start with Lion tell us all about Lion
+I'm going to ask to my colleagues Phil
+
+21
+00:03:03,530 --> 00:03:11,590
+Schiller and Craig federighi to take us
+through line and give us some demos pill
+
+22
+00:03:14,930 --> 00:03:18,110
+okay proceed
+
+23
+00:03:22,230 --> 00:03:30,299
+oh good morning everyone how you doing
+yeah come on energy in the room this is
+
+24
+00:03:30,299 --> 00:03:37,950
+the Developer Conference that's what I
+liked it I am really honored to be the
+first to present to you the first of our
+
+25
+00:03:40,080 --> 00:03:44,430
+new products today in this product is
+all about the Mac and the Mac is doing
+
+26
+00:03:44,430 --> 00:03:49,819
+incredibly well our customer base
+continues to grow at a tremendous pace
+we now have over 54 million active Mac
+
+27
+00:03:54,299 --> 00:03:59,700
+users around the world and growing the
+customers love the products and press
+and analysts have really incredible
+
+28
+00:04:01,650 --> 00:04:05,940
+things to say about it things like this
+from All Things D there's really no
+
+29
+00:04:05,940 --> 00:04:15,599
+other way to say this the Mac is kicking
+ass now that's really nice but what did
+
+30
+00:04:15,599 --> 00:04:21,150
+John mean well this is what he means the
+last quarter the PC market actually
+
+31
+00:04:21,149 --> 00:04:28,039
+shrank year-over-year one percent while
+the math grew 28%
+
+32
+00:04:30,500 --> 00:04:35,570
+in my book that's an ass-kicking now ass
+do you think this is an aberration the
+
+33
+00:04:35,570 --> 00:04:40,640
+Mac has outgrown the industry every
+quarter for the past five years it is
+
+34
+00:04:40,640 --> 00:04:44,570
+going so strong and it's because the
+products are incredible products like
+
+35
+00:04:44,570 --> 00:04:49,490
+the new MacBook Air it's beautiful its
+thin its light its fast the whole PC
+
+36
+00:04:49,490 --> 00:04:53,660
+industry wants to copy it but as you
+know we've been leading in notebooks for
+
+37
+00:04:53,660 --> 00:04:58,160
+a while we're the first to really drive
+the majority of our PC business to a
+
+38
+00:04:58,160 --> 00:05:01,220
+notebook business and it's almost
+three-quarters of the Mac's we've
+
+39
+00:05:01,220 --> 00:05:06,920
+shipped today but whether you want a
+great new notebook or a killer desktop
+
+40
+00:05:06,920 --> 00:05:10,550
+with the new iMac these Macs are the
+best that we have ever made in the
+
+41
+00:05:10,550 --> 00:05:14,060
+history of Apple and they're great not
+just because of the hardware they run
+
+42
+00:05:14,060 --> 00:05:21,350
+but because of the software Mac os10 is
+the heart of the Mac and if you're
+
+43
+00:05:21,350 --> 00:05:26,120
+keeping track you know we launched Mac
+OS 10 ten years ago we built it on a
+
+44
+00:05:26,120 --> 00:05:31,460
+solid UNIX foundation we added to it the
+ease-of-use and simplicity that we know
+
+45
+00:05:31,460 --> 00:05:36,440
+Apple is renowned for and we built into
+it amazing technologies for all of our
+
+46
+00:05:36,440 --> 00:05:41,360
+great developers to make the world's
+best applications to run on it and for
+
+47
+00:05:41,360 --> 00:05:46,070
+those of you who are around and remember
+this this is what Mac OS 10 looked like
+
+48
+00:05:46,070 --> 00:05:49,630
+ten years ago when we launched it
+
+49
+00:05:52,750 --> 00:05:58,550
+it was a revolution in its day and over
+the last 10 years it's evolved to become
+
+50
+00:05:58,550 --> 00:06:03,290
+more refined more powerful more
+beautiful than ever before the Mac os10
+
+51
+00:06:03,290 --> 00:06:09,500
+is looking incredibly strong so where do
+we take it next well next up in OS 10 is
+
+52
+00:06:09,500 --> 00:06:16,220
+lying a major release with over 250 new
+features and if you'd like me to go
+
+53
+00:06:16,220 --> 00:06:21,530
+through every one of them today yes
+while I'd love to I'm told I don't have
+enough time to tell you about 10 key new
+
+54
+00:06:23,510 --> 00:06:28,490
+features so we'll really get into 10
+awesome features first up right into it
+
+55
+00:06:28,490 --> 00:06:34,370
+number one multi-touch gestures one of
+the great things about the mat in the
+
+56
+00:06:34,370 --> 00:06:38,210
+beginning was that it uh sure Dan era of
+a graphic unit user interface with a
+
+57
+00:06:38,210 --> 00:06:42,530
+mouse and cooking and dragging but so
+much has changed over the last 10 years
+
+58
+00:06:42,530 --> 00:06:47,150
+we now build multi-touch trackpads into
+all of our notebooks and we offer them
+
+59
+00:06:47,150 --> 00:06:50,180
+on our desktops we've learned a lot from
+iOS as well
+
+60
+00:06:50,180 --> 00:06:54,800
+so now lion can count on multi-touch
+from the beginning you can have
+
+61
+00:06:54,800 --> 00:06:59,930
+beautiful fluid momentum based scrolling
+you can have incredible multi-touch taps
+
+62
+00:06:59,930 --> 00:07:04,610
+to zoom in on stories or pictures you
+can dynamically zoom with beautiful
+
+63
+00:07:04,610 --> 00:07:09,260
+fluid pinch motions you can swipe
+through your photographs your slides
+
+64
+00:07:09,260 --> 00:07:13,400
+your web pages all with an incredible
+physical realism that's never been
+
+65
+00:07:13,400 --> 00:07:17,900
+possible the PC operating system before
+and this has implications across the
+
+66
+00:07:17,900 --> 00:07:22,580
+system and a lot of little important
+areas here's a simple example the scroll
+
+67
+00:07:22,580 --> 00:07:25,970
+bar why do we have scroll bar scroll
+bars were there so it could click with
+
+68
+00:07:25,970 --> 00:07:29,900
+the mouse and drag and scroll but now if
+you're pushing your window with
+multi-touch you don't need them they can
+
+69
+00:07:31,820 --> 00:07:35,120
+disappear and if a much more beautiful
+reading environment but when you go to
+
+70
+00:07:35,120 --> 00:07:39,920
+scroll they magically appear give you a
+sense of place and proportional size and
+
+71
+00:07:39,920 --> 00:07:44,210
+then disappear when you don't need them
+so multi-touch is now built throughout
+the system in a very powerful way number
+
+72
+00:07:47,810 --> 00:07:53,030
+two full screen applications we've had
+some full screen applications before and
+these are really important for notebooks
+
+73
+00:07:54,100 --> 00:07:58,670
+11 inch and 13 inch where you want to
+get take advantage of every pixel on the
+
+74
+00:07:58,670 --> 00:08:02,860
+display but developers have had to work
+hard to make their applications
+
+75
+00:08:02,860 --> 00:08:07,850
+hand-coded to do full screen
+including apps like like iPhoto well now
+
+76
+00:08:07,850 --> 00:08:11,000
+with lying we've built in a standard
+method for developers to create full
+
+77
+00:08:11,000 --> 00:08:15,530
+screen applications and it has a simple
+system control in the top right so all
+
+78
+00:08:15,530 --> 00:08:20,000
+users know where to tap and then bring
+their applications full screen but this
+
+79
+00:08:20,000 --> 00:08:23,570
+isn't full screen like it was before
+because now you can keep your
+
+80
+00:08:23,570 --> 00:08:28,010
+application running full screen with a
+simple swipe gesture get back to your
+
+81
+00:08:28,010 --> 00:08:32,240
+desktop get something you need go back
+to application never having left full
+
+82
+00:08:32,240 --> 00:08:35,690
+screen in fact you can have more than
+one full screen application running at
+
+83
+00:08:35,690 --> 00:08:40,219
+the same time so we've worked on a
+number of our applications to bring them
+
+84
+00:08:40,219 --> 00:08:45,730
+into the new full-screen mode of Lion
+system applications like Safari mail
+
+85
+00:08:45,730 --> 00:08:52,550
+iCal iLife applications iPhoto iMovie
+GarageBand I work with keynote numbers
+and pages and all these applications
+
+86
+00:08:54,650 --> 00:08:58,550
+going fullscreen to have a great
+experience right out of the box here's
+
+87
+00:08:58,550 --> 00:09:03,620
+an example of how it looks this is now
+running fullscreen in Safari you can
+
+88
+00:09:03,620 --> 00:09:06,830
+have a beautiful place for viewing your
+documents and now there's a new feature
+
+89
+00:09:06,830 --> 00:09:09,500
+since we've got all this extra room on
+the left-hand side called the reading
+
+90
+00:09:09,500 --> 00:09:11,890
+list keep track of things want to get to
+later
+
+91
+00:09:11,890 --> 00:09:17,360
+here's iCal running fullscreen here's
+preview showing you PDF documents
+
+92
+00:09:17,360 --> 00:09:21,110
+running fullscreen so you just have a
+beautiful experience like we've never
+
+93
+00:09:21,110 --> 00:09:26,750
+had on a computer before with full
+screen applications next feature for
+
+94
+00:09:26,750 --> 00:09:32,450
+many users this will be the best feature
+of Lion it's called Mission Control now
+
+95
+00:09:32,450 --> 00:09:36,560
+we all like to run a lot of software the
+Apple we've created many features to
+help customers find just what they need
+
+96
+00:09:38,560 --> 00:09:44,089
+expose for finding a document dashboard
+for getting at a quick widget spaces for
+
+97
+00:09:44,089 --> 00:09:48,250
+organizing your work environment but did
+it all work together in one unified way
+
+98
+00:09:48,250 --> 00:09:52,940
+well now with line we've unified that
+with a simple gesture to get into
+
+99
+00:09:52,940 --> 00:09:56,810
+Mission Control and this is a bird's-eye
+view of everything going on in your
+system on the main window well that's
+
+100
+00:09:58,850 --> 00:10:03,050
+the current desktop you're working on
+with all the documents now organized by
+what application is running on them and
+
+101
+00:10:04,430 --> 00:10:08,900
+you can tap on any document and bring it
+to the front that's right there Center
+
+102
+00:10:08,900 --> 00:10:13,940
+for you to work on up above are all your
+spaces so you can have multiple desktops
+
+103
+00:10:13,940 --> 00:10:18,500
+you can have multiple full screen apps
+running get to anyone with a single tab
+
+104
+00:10:18,500 --> 00:10:22,250
+and on the left of those spaces is a new
+special one just for your dashboard
+
+105
+00:10:22,250 --> 00:10:25,720
+widgets you can get to again with a
+single tab
+
+106
+00:10:25,720 --> 00:10:31,430
+so that's Mission Control and what I
+like to do now is before we move on have
+Craig federighi come up and give you a
+
+107
+00:10:32,870 --> 00:10:35,300
+demo of these three new features all
+working together
+
+108
+00:10:35,300 --> 00:10:45,730
+Craig hello good morning so
+let's take a look at lion in action
+
+109
+00:10:45,730 --> 00:10:50,680
+we're going to start with gestures great
+played it place to experience gestures
+is here in Safari the first thing you'll
+
+110
+00:10:53,230 --> 00:11:00,009
+notice is apparently something funny is
+that how simple this UI looks because
+
+111
+00:11:00,009 --> 00:11:04,449
+there are no scroll bars it's a really
+clean look we don't need scroll bars
+anymore because we can simply push the
+
+112
+00:11:06,850 --> 00:11:11,019
+content with our fingers we can flick
+and get momentum get a nice little
+
+113
+00:11:11,019 --> 00:11:17,410
+bounce the page feels really alive
+beneath your fingers you can also expand
+
+114
+00:11:17,410 --> 00:11:23,949
+your fingers and fluidly zoom just like
+that zoom out and you get a nice little
+
+115
+00:11:23,949 --> 00:11:30,339
+bounce page goes right back into place
+if I want to smart zoom I just double
+
+116
+00:11:30,339 --> 00:11:36,069
+tap with two fingers it's smart zooms in
+double tap again smart zooms out now I
+want to show you something really cool
+
+117
+00:11:37,959 --> 00:11:41,110
+with gestures and that's how it can
+navigate in Safari I'm going to drill
+
+118
+00:11:41,110 --> 00:11:44,889
+into a story and then after I've read it
+I want to actually get back to the
+
+119
+00:11:44,889 --> 00:11:49,779
+previous page well now I can just take
+two fingers and swipe the page right off
+
+120
+00:11:49,779 --> 00:11:53,620
+to the side and return back to my
+previous page I want to get back and
+
+121
+00:11:53,620 --> 00:12:00,370
+swipe right back really fantastic in
+fact I can swipe through my entire
+
+122
+00:12:00,370 --> 00:12:10,089
+Safari browsing history just like that
+really smooth next up I'd like to show
+
+123
+00:12:10,089 --> 00:12:13,899
+you full screen apps let me launch
+iPhoto here and you can see that I
+
+124
+00:12:13,899 --> 00:12:18,220
+photos adopted Lions and standard new
+full screen control so I'll just take
+
+125
+00:12:18,220 --> 00:12:22,839
+lion or take iPhoto fullscreen it's a
+great way to look at my photo album if I
+
+126
+00:12:22,839 --> 00:12:26,949
+want to get back to my desktop take
+three fingers and I can just swipe the
+desktop swipe iPhoto away and back to my
+
+127
+00:12:28,809 --> 00:12:32,769
+desktop but I didn't have to leave
+iPhoto take it out of full screen it's
+
+128
+00:12:32,769 --> 00:12:38,079
+actually right there take a peek at it
+go back just like that we loved this so
+
+129
+00:12:38,079 --> 00:12:42,670
+much that we made gestures accessible in
+exactly the same way swipe over to the
+
+130
+00:12:42,670 --> 00:12:48,040
+left and I have access to my dashboard
+you can see Safari supports full screen
+
+131
+00:12:48,040 --> 00:12:52,509
+as well let's go take our Safari window
+full screen so now we have our dashboard
+
+132
+00:12:52,509 --> 00:12:56,500
+over our desktop over here to the left
+we have Safari and of course I photos
+
+133
+00:12:56,500 --> 00:12:59,079
+still the
+full screen as well you'll notice how
+
+134
+00:12:59,079 --> 00:13:02,800
+Safari is making great use of all the
+available space on the screen for my
+
+135
+00:13:02,800 --> 00:13:07,779
+content if I want to get at my bookmarks
+bar my menu just go to the top you see
+
+136
+00:13:07,779 --> 00:13:12,880
+they slide right out like that really
+nicely and when I want to exit full
+
+137
+00:13:12,880 --> 00:13:17,130
+screen I have a control right there in
+the upper right animates right back out
+
+138
+00:13:17,130 --> 00:13:22,269
+let's take a look now at photobooth this
+is an app absolutely
+
+139
+00:13:22,269 --> 00:13:27,579
+born to run in full screen you can see
+I'm surrounded by the curtains of the
+
+140
+00:13:27,579 --> 00:13:32,199
+the photobooth and in here I can
+experience some fantastic new face
+
+141
+00:13:32,199 --> 00:13:40,529
+detection at fast so notice as I move
+the birds actually track
+
+142
+00:13:44,949 --> 00:13:49,449
+it's right it's the most important
+feature in line and we can also use this
+
+143
+00:13:49,449 --> 00:13:54,459
+base tracking technology to perform some
+targeted facial enhancements for
+
+144
+00:13:54,459 --> 00:13:59,170
+instance I can finally have those big
+eyes that I've always hoped for so let's
+
+145
+00:13:59,170 --> 00:14:06,189
+make a picture of that so that's that's
+pretty cool so playing around yeah
+
+146
+00:14:06,189 --> 00:14:11,829
+that's great stuff so you know you can
+spend hours at this so fullscreen is
+
+147
+00:14:11,829 --> 00:14:16,179
+fantastic but of course Mac users love
+to get do a lot of things at once and
+
+148
+00:14:16,179 --> 00:14:20,079
+that often means that they have a lot of
+windows in fact my desktop often looks a
+
+149
+00:14:20,079 --> 00:14:24,669
+little bit more like this right I've got
+a lot going on so how do I get across
+
+150
+00:14:24,669 --> 00:14:28,809
+all of those different activities well I
+just take three fingers swipe up on the
+
+151
+00:14:28,809 --> 00:14:33,819
+trackpad and I'm in Mission Control from
+here I can get at any window I want so
+
+152
+00:14:33,819 --> 00:14:37,839
+if I want to get it I Cal here I click
+it comes forward sweet back into Mission
+
+153
+00:14:37,839 --> 00:14:42,309
+Control over to dictionary same thing
+and across the top you see I have my
+dashboard my desktop my full screen apps
+
+154
+00:14:45,009 --> 00:14:50,079
+so I want to get to iPhoto just click
+comes forward from anywhere three
+fingers up and I'm back in Mission
+
+155
+00:14:52,209 --> 00:14:57,100
+Control I can also quick look my windows
+if I just hit spacebar here get a better
+
+156
+00:14:57,100 --> 00:15:01,299
+look at my calendar or take this pile of
+preview windows and spread them apart
+
+157
+00:15:01,299 --> 00:15:05,589
+with a little gesture up but you know
+what's really awesome is the way that
+
+158
+00:15:05,589 --> 00:15:09,220
+multiple desktop spaces are now
+integrated right into Mission Control
+
+159
+00:15:09,220 --> 00:15:13,089
+just take my mouse up to the corner of
+the screen and the little space pops up
+
+160
+00:15:13,089 --> 00:15:18,669
+I click I've just created a new space
+and I can populate it by just dragging
+the windows I want to work within that
+
+161
+00:15:20,139 --> 00:15:27,089
+space just like this I've set up a new
+desk
+
+162
+00:15:28,050 --> 00:15:33,029
+really useful I can swipe through the
+spaces of course here in admission
+
+163
+00:15:33,029 --> 00:15:38,399
+control go over to my desktop and if I
+want to then take even an entire app and
+
+164
+00:15:38,399 --> 00:15:41,550
+all of its windows and create a new
+space for that I can click on the
+
+165
+00:15:41,550 --> 00:15:45,990
+preview icon drag the whole pile to the
+corner I've just created another space
+
+166
+00:15:45,990 --> 00:15:51,360
+and the spaces are just as easy to clean
+up as they were to create I just click
+
+167
+00:15:51,360 --> 00:15:55,740
+they delete and they float windows fly
+right back to my original desktop space
+
+168
+00:15:55,740 --> 00:16:01,040
+so that is Mission Control thank you
+very much
+
+169
+00:16:06,140 --> 00:16:11,060
+Thank You Craig to see how these new
+features now work seamlessly together to
+
+170
+00:16:11,060 --> 00:16:15,050
+create an incredible experience in OS 10
+unlike anything we've had on a personal
+
+171
+00:16:15,050 --> 00:16:19,850
+computer before
+next up the Mac App Store we launched
+
+172
+00:16:19,850 --> 00:16:25,040
+the Mac App Store this past January and
+users have found out that it is the best
+place to purchase and discover new
+
+173
+00:16:27,649 --> 00:16:32,570
+software applications now for years
+there have been many software channels
+
+174
+00:16:32,570 --> 00:16:36,829
+to buy PC software and they all work
+kind of the same way you hop in your car
+you drive downtown you buy a DVD if they
+
+175
+00:16:39,709 --> 00:16:43,160
+happen to have it you drive back home
+you load it up or you wait for it to
+
+176
+00:16:43,160 --> 00:16:46,820
+come mail-order will no more well now
+with the Mac App Store you can get your
+
+177
+00:16:46,820 --> 00:16:50,540
+software right from the comfort of your
+own home on your Mac and in the last six
+months something incredible has happened
+
+178
+00:16:52,459 --> 00:16:56,750
+the last six months the Mac App Store
+has now become the number one PC
+
+179
+00:16:56,750 --> 00:17:05,360
+software channel for buying software
+that's incredible passing Best Buy and
+
+180
+00:17:05,359 --> 00:17:09,349
+Walmart and Office Depot and the
+developers that have gotten on board
+
+181
+00:17:09,349 --> 00:17:14,359
+with the Mac App Store seen some great
+success - for example Autodesk they
+
+182
+00:17:14,359 --> 00:17:17,688
+brought their SketchBook Pro application
+to it and since they've put it on the
+
+183
+00:17:17,689 --> 00:17:22,520
+Mac App Store they've seen a million new
+users on the Mac feral interactive has
+
+184
+00:17:22,520 --> 00:17:27,429
+brought a host of games including Mini
+Ninjas hopefully you've all played it
+
+185
+00:17:27,429 --> 00:17:32,179
+doubling of overall revenue since they
+brought into the Mac App Store and small
+
+186
+00:17:32,179 --> 00:17:36,470
+great developers like Pixelmator has
+brought their amazing new image editing
+
+187
+00:17:36,470 --> 00:17:40,429
+application to the Mac App Store they've
+seen a quadrupling of the revenue in
+
+188
+00:17:40,429 --> 00:17:45,440
+fact they made a million dollars in the
+first 20 days so the Mac App Store has
+
+189
+00:17:45,440 --> 00:17:49,700
+been a big hit for large and small
+developers so what's new in lying well
+
+190
+00:17:49,700 --> 00:17:53,000
+first its built right in you don't have
+to go and download it and get it and
+
+191
+00:17:53,000 --> 00:17:56,690
+decide to use it it's built in for every
+Mac user and there's a lot of great
+
+192
+00:17:56,690 --> 00:17:59,929
+features for you developers to take
+advantage of some of them you're used to
+
+193
+00:17:59,929 --> 00:18:05,360
+from the iOS App Store like in-app
+purchases you can now build those in
+push notifications if you want to alert
+
+194
+00:18:07,799 --> 00:18:11,700
+users about important information you
+can make your applications more secure
+
+195
+00:18:11,700 --> 00:18:15,809
+there's a built-in sandboxing method now
+in the Mac App Store and for users
+
+196
+00:18:15,809 --> 00:18:19,679
+downloads will be even faster because
+you can get these updates as Delta
+
+197
+00:18:19,679 --> 00:18:26,970
+updates so that's the Mac app so it's a
+really important part of the whole
+
+198
+00:18:26,970 --> 00:18:31,799
+experience of line is you'll hear more
+about number 5 a simple but powerful
+
+199
+00:18:31,799 --> 00:18:35,490
+idea
+Launchpad would it be great if no matter
+
+200
+00:18:35,490 --> 00:18:38,730
+where you are in your system if you want
+to get in an application and quickly
+
+201
+00:18:38,730 --> 00:18:43,409
+launch it you can with a simple gesture
+well now you can with Launchpad you
+
+202
+00:18:43,409 --> 00:18:47,580
+simply make a simple gesture a pinch
+motion and all your applications fly
+onto your screen no matter where they
+
+203
+00:18:48,870 --> 00:18:52,020
+are in your system
+Launchpad knows where they are you can
+
+204
+00:18:52,020 --> 00:18:57,210
+have multiple pages of applications that
+you can organize any way you want when
+
+205
+00:18:57,210 --> 00:19:00,600
+you go and buy a new application on the
+Mac App Store and downloads installs
+right into your Launchpad and you can
+
+206
+00:19:03,419 --> 00:19:06,600
+make it look however you'd like you can
+rearrange your icons you can create
+folders just as we're used to from iOS
+
+207
+00:19:08,399 --> 00:19:18,169
+and now you can do that on your Mac as
+well so that's Launchpad next resume
+
+208
+00:19:18,169 --> 00:19:22,350
+here's a simple idea from the beginning
+with the computer you've had to run
+applications sometimes you quit them you
+
+209
+00:19:24,029 --> 00:19:28,440
+go back and you're back at the starting
+point you get you have no more windows
+
+210
+00:19:28,440 --> 00:19:31,890
+open your documents aren't open you
+usually have to pick a template why
+
+211
+00:19:31,890 --> 00:19:36,809
+can't applications get you back to work
+quickly well that's what resume does now
+when you launch an application and lyan
+
+212
+00:19:38,460 --> 00:19:43,020
+it brings you right back to where you
+were when you quit it remembers what
+
+213
+00:19:43,020 --> 00:19:46,260
+documents you were opened remembers the
+text that was selected in the document
+
+214
+00:19:46,260 --> 00:19:49,679
+remembers where the palettes were in the
+windows and everything just how you like
+
+215
+00:19:49,679 --> 00:19:51,960
+it
+and resume doesn't work just on an
+
+216
+00:19:51,960 --> 00:19:56,429
+application it works system-wide so the
+next time you have to shutdown and
+
+217
+00:19:56,429 --> 00:19:59,700
+restart your your math for a reason
+maybe you've installed some new software
+
+218
+00:19:59,700 --> 00:20:03,840
+and it asks you to reboot get you like
+everything just the way it is well don't
+worry you get the new login window you
+
+219
+00:20:06,419 --> 00:20:10,380
+log in and line will bring you back to
+the work environment as you left it when
+
+220
+00:20:10,380 --> 00:20:14,520
+you restarted all your applications
+running all those spaces you set up all
+just the way you like it
+
+221
+00:20:19,270 --> 00:20:27,559
+so that's resumed number seven autosave
+from the beginning of using computers
+
+222
+00:20:27,559 --> 00:20:31,910
+we've all had to remember one really
+important fact save save save all your
+
+223
+00:20:31,910 --> 00:20:35,540
+work as you're going whether it's file
+save or command S on the Mac you better
+keep saving it's the one time you might
+
+224
+00:20:37,490 --> 00:20:40,549
+forget to save what you're doing
+something goes wrong and what are you
+
+225
+00:20:40,549 --> 00:20:45,290
+going to hear you should have saved what
+you're doing why should you why can't
+
+226
+00:20:45,290 --> 00:20:49,610
+the computer help you well that's what
+Lyon does as you're creating a document
+
+227
+00:20:49,610 --> 00:20:53,120
+Lyon can automatically save it in the
+background without you having to do
+
+228
+00:20:53,120 --> 00:20:56,630
+anything but I was happy to see anything
+your work is just being saved for you
+
+229
+00:20:56,630 --> 00:21:00,770
+this is a really powerful but simple
+thing but but as we got into we found
+there's more things we can do for you
+
+230
+00:21:01,970 --> 00:21:07,160
+since we're Auto saving so if you zoom
+in on the title bar of your documents
+
+231
+00:21:07,160 --> 00:21:10,190
+you'll see the name of your document is
+actually a menu now that you can tap on
+
+232
+00:21:10,190 --> 00:21:13,700
+and take advantage of the power of
+autosave but for example let's say
+
+233
+00:21:13,700 --> 00:21:16,880
+you're doing work and you don't like the
+work you did and you're worried it got
+
+234
+00:21:16,880 --> 00:21:20,240
+auto saved over what you liked that
+you've done previously well now I can
+
+235
+00:21:20,240 --> 00:21:24,100
+just select revert to last open and get
+back to where you were when you started
+
+236
+00:21:24,100 --> 00:21:28,490
+maybe you love the changes you've made
+and they're exactly what you want you
+
+237
+00:21:28,490 --> 00:21:31,220
+don't want it to ever get auto saved
+over it again because it's perfect the
+
+238
+00:21:31,220 --> 00:21:34,970
+way it is you can just select lock and
+now your documents locked it's like a
+
+239
+00:21:34,970 --> 00:21:39,049
+template and nothing can ever change it
+you can even right from within the
+
+240
+00:21:39,049 --> 00:21:44,030
+application select duplicate and create
+a second document just like the first
+
+241
+00:21:44,030 --> 00:21:47,120
+one that you can start working on
+another version so you have the power of
+
+242
+00:21:47,120 --> 00:21:52,700
+all of this right from the title bar of
+your window so that's auto save now auto
+
+243
+00:21:52,700 --> 00:21:57,470
+save gave us a great idea to go even
+further with the next feature and that's
+
+244
+00:21:57,470 --> 00:22:02,900
+called versions so you're working on a
+document you're entering the text you're
+
+245
+00:22:02,900 --> 00:22:08,120
+formatting you're adding copy you're
+adding graphics and all along autosave
+is saving your document in fact it's
+
+246
+00:22:10,520 --> 00:22:15,860
+saving all these versions of your
+document as you're working so we call
+
+247
+00:22:15,860 --> 00:22:19,610
+that versions it's automatic you don't
+have to do anything we'll do it for you
+
+248
+00:22:19,610 --> 00:22:23,299
+with Lyon if you love something at a
+split second you can of course take a
+
+249
+00:22:23,299 --> 00:22:27,500
+manual snapshot if you want and it's
+very efficient we only store the
+
+250
+00:22:27,500 --> 00:22:29,740
+difference between the versions there
+are
+
+251
+00:22:29,740 --> 00:22:33,790
+new documents and you don't have to
+worry if you ever share your work with
+
+252
+00:22:33,790 --> 00:22:36,760
+someone else that they're going to get
+all that back work that you won't don't
+
+253
+00:22:36,760 --> 00:22:40,840
+want them to get when you copy it off or
+you send it an email we only send the
+
+254
+00:22:40,840 --> 00:22:45,520
+current version so how do you get it
+take advantage of this power of autosave
+
+255
+00:22:45,520 --> 00:22:48,160
+inversions
+well again go back to that menu on the
+
+256
+00:22:48,160 --> 00:22:51,760
+top and there's another choice there
+that you may have noticed browse all
+
+257
+00:22:51,760 --> 00:22:56,320
+versions you tap on it and you get this
+beautiful new interface it looks a lot
+
+258
+00:22:56,320 --> 00:23:00,640
+like time machine but rather than being
+about your whole system it's about that
+
+259
+00:23:00,640 --> 00:23:04,870
+one document you're working on on the
+left is the current version on the right
+all the past versions and you have a
+
+260
+00:23:07,120 --> 00:23:10,540
+time scale on the right just like time
+machine you can scroll back through them
+
+261
+00:23:10,540 --> 00:23:13,990
+and they're all live you can switch you
+make any one the current one you can
+
+262
+00:23:13,990 --> 00:23:18,460
+even cut and paste between them so
+that's versions what I like to do is ask
+
+263
+00:23:18,460 --> 00:23:21,550
+Craig to come back up and give another
+demo so how this all works together
+
+264
+00:23:21,550 --> 00:23:25,080
+Craig again
+
+265
+00:23:27,060 --> 00:23:31,320
+alright well let's let's start with
+Launchpad you see it's an icon right
+
+266
+00:23:31,320 --> 00:23:36,570
+here on my dock I click I get an instant
+view of all of the applications on my
+
+267
+00:23:36,570 --> 00:23:39,810
+system no matter where they're installed
+I can page through them really nicely
+
+268
+00:23:39,810 --> 00:23:44,340
+with gestures and when I want to launch
+let's say like address book it's just a
+
+269
+00:23:44,340 --> 00:23:49,470
+single click to bring it up can also
+gesture with a forefinger pinch to get
+
+270
+00:23:49,470 --> 00:23:56,040
+in as well so of course when I want to
+add things to my Launchpad the best way
+
+271
+00:23:56,040 --> 00:24:00,000
+to do that is with the Mac App Store I'm
+going to launch it right here you can
+
+272
+00:24:00,000 --> 00:24:04,590
+see on the Mac App Store we have great
+featured applications top paid and free
+
+273
+00:24:04,590 --> 00:24:10,440
+apps categories we have also all of your
+purchase tabs so then if you buy another
+
+274
+00:24:10,440 --> 00:24:13,260
+Mac or you buy on one Mac you want to
+get the app on the other one you can
+
+275
+00:24:13,260 --> 00:24:15,540
+download them here at no additional
+charge
+
+276
+00:24:15,540 --> 00:24:19,920
+and of course updates with just a click
+you can bring all the apps you have
+
+277
+00:24:19,920 --> 00:24:22,680
+installed on your system from the App
+Store up to date
+
+278
+00:24:22,680 --> 00:24:27,660
+well now let's try adding Twitter to our
+Mac we're going to click here go to the
+
+279
+00:24:27,660 --> 00:24:32,430
+Twitter product page and with a click
+you can buy the app actually lifts up
+
+280
+00:24:32,430 --> 00:24:37,080
+out of the App Store and flies right
+into my Launchpad downloads and is ready
+to use
+
+281
+00:24:37,500 --> 00:24:42,750
+from here I can just click and position
+it wherever I want I can move it maybe
+
+282
+00:24:42,750 --> 00:24:46,950
+to the first page and as you see we have
+folders like this productivity folder
+
+283
+00:24:46,950 --> 00:24:51,600
+works great I want to create my own
+folder just pick something up drop it
+and I've created a folder just like that
+
+284
+00:24:54,000 --> 00:25:00,810
+in Launchpad next I'd like to show you
+just how fantastic the Mac is now with
+
+285
+00:25:00,810 --> 00:25:05,640
+Lion working with documents I'm going to
+open the document that I've been working
+
+286
+00:25:05,640 --> 00:25:09,450
+on here on the history of guitars when I
+start editing a document often I'll
+
+287
+00:25:09,450 --> 00:25:14,160
+position my windows just the way I like
+them like this maybe open up some
+
+288
+00:25:14,160 --> 00:25:18,420
+inspectors position them the way I want
+them and then I'll set down to editing
+
+289
+00:25:18,420 --> 00:25:22,650
+now this guitar this looks maybe a
+little bit too metal for my target
+
+290
+00:25:22,650 --> 00:25:28,470
+audience so I'll delete that take take
+this move it aside maybe change the font
+
+291
+00:25:28,470 --> 00:25:33,120
+here on this on this document so I'm
+done with my edits for now and I'm going
+to quit I want you to watch what happens
+
+292
+00:25:35,180 --> 00:25:38,540
+when I quit
+
+293
+00:25:38,890 --> 00:25:44,120
+absolutely nothing I wasn't prompted to
+say I didn't need to be because Lyon was
+actually saving for me all along but it
+
+294
+00:25:46,850 --> 00:25:51,170
+wasn't just saving my document it was
+saving exactly the state of how I was
+
+295
+00:25:51,170 --> 00:25:56,240
+working so now when I go back and launch
+pages again you see it brings back all
+
+296
+00:25:56,240 --> 00:26:00,020
+my inspectors just the way they were
+brings back my window position where it
+
+297
+00:26:00,020 --> 00:26:03,920
+was and even has my text selection
+highlighted just as I left it
+
+298
+00:26:03,920 --> 00:26:09,200
+perfect restore but we're not just
+storing the latest version of the
+
+299
+00:26:09,200 --> 00:26:13,850
+document we're keeping a history of the
+document as it's edited so if I want to
+go back maybe I regret these edits I
+
+300
+00:26:15,680 --> 00:26:20,000
+want to get back to the previous version
+I go right here and browse all versions
+
+301
+00:26:20,000 --> 00:26:25,160
+and I'm taken right into the star field
+where I get a view of my current version
+
+302
+00:26:25,160 --> 00:26:29,780
+on the left and the history on the right
+if I want this previous version to
+
+303
+00:26:29,780 --> 00:26:35,390
+become current I click restore it picks
+up flies on top and becomes the current
+
+304
+00:26:35,390 --> 00:26:39,260
+version of my document and I'm restored
+but you saw that was actually more
+
+305
+00:26:39,260 --> 00:26:43,280
+history than that I'll go back into the
+star field here you can see I actually
+
+306
+00:26:43,280 --> 00:26:47,960
+have a full timeline here on the right I
+can go back to the very beginning of
+
+307
+00:26:47,960 --> 00:26:51,740
+this document when it was just a few
+paragraphs or step forward as I was
+
+308
+00:26:51,740 --> 00:26:57,530
+adding pages and so forth but when I
+restore a document you know very often
+
+309
+00:26:57,530 --> 00:27:00,500
+I don't want really the whole old
+version I like mostly what my new
+
+310
+00:27:00,500 --> 00:27:04,070
+document has become but often I want to
+harvest maybe just an image or perhaps a
+
+311
+00:27:04,070 --> 00:27:09,050
+particular slide and bring it into the
+current version with versions I can
+
+312
+00:27:09,050 --> 00:27:13,970
+because these two windows are actually
+live here so if I have on my current
+
+313
+00:27:13,970 --> 00:27:17,840
+version maybe a page that could really
+use an image to punch it up a little bit
+
+314
+00:27:17,840 --> 00:27:21,440
+I go back to this past version I see oh
+look there's there's a guitar that would
+
+315
+00:27:21,440 --> 00:27:26,510
+be just perfect well I can just select
+the guitar in the old version copy it
+
+316
+00:27:26,510 --> 00:27:32,210
+and then paste it right into the latest
+version and like that I've created just
+
+317
+00:27:32,210 --> 00:27:39,950
+the document I was
+looking for and that's version thanks
+
+318
+00:27:41,360 --> 00:27:49,590
+Thank You Craig next number nine well as
+long as we've had computers we wanted to
+
+319
+00:27:49,590 --> 00:27:53,010
+share documents we have a new feature to
+help you do that and make it easier than
+
+320
+00:27:53,010 --> 00:27:57,270
+ever it's called airdrop you've got your
+computer your friends got their computer
+
+321
+00:27:57,270 --> 00:28:01,440
+and trying to get documents between them
+has always been such a pain in fact the
+
+322
+00:28:01,440 --> 00:28:06,000
+easiest way to do this that no one's
+done better than is good old sneakernet
+
+323
+00:28:06,000 --> 00:28:09,650
+copy it off of one walk over your
+friend's computer copy it back on
+
+324
+00:28:09,650 --> 00:28:13,860
+Millian solves that with a new
+technology airdrop that's a peer-to-peer
+Wi-Fi based network so how does it work
+
+325
+00:28:16,950 --> 00:28:21,570
+when you go into the finder in line
+you'll see on the sources on the left a
+
+326
+00:28:21,570 --> 00:28:27,480
+new choice called airdrop you tap it you
+get a new display inside the finder what
+
+327
+00:28:27,480 --> 00:28:32,460
+you see is yourself Center bottom right
+there and the people around you who are
+
+328
+00:28:32,460 --> 00:28:37,230
+also running airdrop at the same time
+you see their pictures I'm going to drag
+
+329
+00:28:37,230 --> 00:28:42,059
+a document over to Shawna's computer I
+just drag the document on top of her
+
+330
+00:28:42,059 --> 00:28:46,080
+picture and it asked me are you sure you
+want to send this and I confirm I do now
+
+331
+00:28:46,080 --> 00:28:50,340
+in Shauna's computer because she's also
+now running airdrop she sees pops up
+
+332
+00:28:50,340 --> 00:28:54,059
+over my picture I'm trying to send her a
+document she confirms she wants to
+
+333
+00:28:54,059 --> 00:28:58,290
+receive it and it downloads right into a
+Downloads folder and that's it that's
+
+334
+00:28:58,290 --> 00:29:02,670
+what it takes to now wirelessly share
+files between line computers so it's a
+
+335
+00:29:02,670 --> 00:29:06,450
+peer-to-peer Wi-Fi based network there's
+nothing to set up it's Auto discovery
+
+336
+00:29:06,450 --> 00:29:13,200
+Auto setup we have confirmation on both
+ends just to be safe and your data is
+
+337
+00:29:13,200 --> 00:29:16,890
+protected over the air because it's
+fully encrypted as it's transferred so
+
+338
+00:29:16,890 --> 00:29:20,030
+that's airdrop that brings us to number
+10
+[Applause]
+
+339
+00:29:23,390 --> 00:29:28,590
+number ten is mail a completely new
+version of mail in Lyon it's beautiful
+the layout on it is incredible it works
+
+340
+00:29:31,020 --> 00:29:35,190
+in a window it takes advantage of full
+screen you can work in a two-column or
+
+341
+00:29:35,190 --> 00:29:38,490
+if you want to have access to your mail
+sources a three column view right there
+
+342
+00:29:38,490 --> 00:29:42,900
+on the left and you see that the design
+of it's really optimized around reading
+
+343
+00:29:42,900 --> 00:29:46,980
+your mail have a beautiful full height
+message window on the left and the
+
+344
+00:29:46,980 --> 00:29:50,960
+message list you see snippets like we
+used to from iOS now built into mail
+
+345
+00:29:50,960 --> 00:29:55,410
+across the top you have a favorites bar
+sort of like a browser does now in mail
+
+346
+00:29:55,410 --> 00:29:57,900
+that can be favorite folders where you
+like to keep things you want to get at
+
+347
+00:29:57,900 --> 00:30:03,330
+quickly probably the most one of the
+most powerful features is searching with
+searching now we have new search
+
+348
+00:30:04,950 --> 00:30:09,720
+suggestions so you start to type what
+you're looking for and mail recognizes
+
+349
+00:30:09,720 --> 00:30:12,990
+whether that's a person or a subject and
+prompts you with the choices you have
+
+350
+00:30:12,990 --> 00:30:17,550
+across your entire mail database what
+you can find quickly when you select one
+
+351
+00:30:17,550 --> 00:30:21,570
+it becomes what we call a search token
+that's an interactive search token where
+
+352
+00:30:21,570 --> 00:30:24,570
+you can set some parameters on it and
+you can have more than one create
+
+353
+00:30:24,570 --> 00:30:28,290
+boolean searches if you want but
+probably the best feature of the new
+
+354
+00:30:28,290 --> 00:30:34,400
+mail is something we call yes you can
+love to add it's okay boolean search is
+
+355
+00:30:35,690 --> 00:30:41,070
+probably the best feature something we
+call conversation view in mail today as
+you've got a conversation going you've
+
+356
+00:30:43,260 --> 00:30:47,580
+got some messages we responded to or
+replied and forwards you see the mail
+
+357
+00:30:47,580 --> 00:30:51,510
+gets longer and longer and they're
+indented and color coded things stripped
+
+358
+00:30:51,510 --> 00:30:55,140
+out it gets more and more difficult to
+follow the flow of this and appreciate
+
+359
+00:30:55,140 --> 00:31:00,300
+the messages that were sent well now in
+line is a brand-new conversation view
+that shows your messages just as they
+
+360
+00:31:02,730 --> 00:31:05,180
+were sent
+
+361
+00:31:05,450 --> 00:31:09,690
+you see the messages you see the people
+who send them you see the attachments
+
+362
+00:31:09,690 --> 00:31:14,160
+still in line all there for you to view
+it's completely compatible with doing
+
+363
+00:31:14,160 --> 00:31:17,429
+email with other people who don't have
+line and can't get the same beautiful
+
+364
+00:31:17,429 --> 00:31:20,190
+view
+so that's male and lion I'd like to
+
+365
+00:31:20,190 --> 00:31:29,490
+bring Craig up for one last demo to show
+off male okay well I absolutely love the
+
+366
+00:31:29,490 --> 00:31:34,200
+new male in Lion let's let's take a look
+so it's got this great full height
+
+367
+00:31:34,200 --> 00:31:39,780
+message list perfect for laptops just
+like this I've got my message list on
+
+368
+00:31:39,780 --> 00:31:44,210
+the side with snippets makes it really
+easy to find the message I'm looking for
+
+369
+00:31:44,210 --> 00:31:50,250
+with this new favorites bar across the
+top so I can click through my mailboxes
+
+370
+00:31:50,250 --> 00:31:54,780
+really easily but if I want to get back
+to my full list they're available right
+
+371
+00:31:54,780 --> 00:32:00,480
+here as well I really find the new
+search to be just awesome because when I
+
+372
+00:32:00,480 --> 00:32:04,350
+search I'm often searching for a person
+let's say like Bill I start typing pH
+
+373
+00:32:04,350 --> 00:32:09,240
+see it prompts me for people in my mail
+right now that match so I go Phil
+
+374
+00:32:09,240 --> 00:32:14,490
+Schiller found messages from Phil just
+like that I can use it can retarget the
+
+375
+00:32:14,490 --> 00:32:19,500
+search to specific inboxes or search all
+and of course as Phil showed you I can
+
+376
+00:32:19,500 --> 00:32:22,230
+pick whether I'm searching for from two
+or the entire message
+
+377
+00:32:22,230 --> 00:32:26,789
+well suggestions don't just apply to
+searching for people they also work for
+
+378
+00:32:26,789 --> 00:32:30,570
+other things as well like let's say a
+subject I'll search for trip you see
+
+379
+00:32:30,570 --> 00:32:33,600
+that it's actually prompting me do you
+want to search for messages the contain
+
+380
+00:32:33,600 --> 00:32:37,370
+trip or where trip just appears in the
+subject line or even suggest specific
+
+381
+00:32:37,370 --> 00:32:42,750
+subject lines that match so I can select
+this and I've done a subject search on
+
+382
+00:32:42,750 --> 00:32:47,039
+trip what about dates I'm going to type
+March start typing March
+
+383
+00:32:47,039 --> 00:32:50,940
+there you see it prompts me March 2011
+like that I've searched for all my
+
+384
+00:32:50,940 --> 00:32:54,690
+messages in March but what's really
+awesome is the way you can combine these
+
+385
+00:32:54,690 --> 00:32:58,770
+really quickly to pinpoint just the
+search you're looking for so let's say
+
+386
+00:32:58,770 --> 00:33:02,820
+looking for a message about that Phil
+sent me it's the subject was something
+
+387
+00:33:02,820 --> 00:33:08,820
+about reservation it was from Phil
+Schiller and it was last month like that
+
+388
+00:33:08,820 --> 00:33:12,740
+drills down to exactly the message
+
+389
+00:33:14,339 --> 00:33:22,089
+it's really nice as awesome as that is
+my favorite feature is conversations so
+
+390
+00:33:22,089 --> 00:33:27,549
+this beautiful view all the messages
+that were sent in the conversation just
+
+391
+00:33:27,549 --> 00:33:31,269
+as they were sent with all the images
+and so forth and you'll notice that all
+
+392
+00:33:31,269 --> 00:33:35,739
+of that extra forwarded reply text
+that's redundant in the conversation is
+
+393
+00:33:35,739 --> 00:33:40,239
+stripped right out it's gone but if I
+want to show it I want to see mail the
+
+394
+00:33:40,239 --> 00:33:44,499
+way it kind of looks in lessor mail
+programs I can click like this it folds
+
+395
+00:33:44,499 --> 00:33:49,710
+right out yeah this is awesome
+
+396
+00:33:50,309 --> 00:33:55,929
+if I want to reply to a particular
+message in a conversation I can hover we
+
+397
+00:33:55,929 --> 00:34:01,299
+get a reply control and watch this
+animation loop so message hops right out
+
+398
+00:34:01,299 --> 00:34:05,379
+so that's great and finally when you
+want to file a whole conversation away
+
+399
+00:34:05,379 --> 00:34:10,359
+you can just drag it all at once drag
+all the messages put it your folder and
+
+400
+00:34:10,359 --> 00:34:15,750
+you're done
+that's mail in Lion thank you
+
+401
+00:34:21,119 --> 00:34:26,500
+so those are the top ten features of
+mail and there's some excuse me of Lyon
+
+402
+00:34:26,500 --> 00:34:30,750
+and there is so much more for you to
+learn about and discover and Lyon
+
+403
+00:34:30,750 --> 00:34:35,950
+amazing features just to bring up a few
+and don't windows users who want to
+
+404
+00:34:35,949 --> 00:34:39,908
+upgrade to a Mac deserve a migration
+feature just like we Mac users have well
+
+405
+00:34:39,909 --> 00:34:43,359
+now there is in line when you upgrade
+from Windows we can help you migrate and
+
+406
+00:34:43,359 --> 00:34:47,950
+get to a better computing experience
+there's File Vault ooh yeah so for all
+
+407
+00:34:47,949 --> 00:34:51,249
+of you who want more security and
+encryption in your hard drive you have
+
+408
+00:34:51,250 --> 00:34:56,830
+that facetimes built-in even servers all
+new with Lion server isn't another
+
+409
+00:34:56,830 --> 00:34:59,920
+operating system it's just a bunch of
+applications you can purchase to run on
+
+410
+00:34:59,920 --> 00:35:04,900
+top of Lion so amazing depth of features
+for you and for all the developers out
+
+411
+00:35:04,900 --> 00:35:09,900
+here we have over 3,000 new API for you
+to take advantage of the power of Lion
+
+412
+00:35:09,900 --> 00:35:13,930
+amazing stuff you can do all the things
+we showed here you can have full screen
+applications you can create versions you
+
+413
+00:35:15,849 --> 00:35:19,599
+can take advantage of autosave all of
+that can easily be done with all these
+
+414
+00:35:19,599 --> 00:35:24,400
+new api's so line is an incredible new
+new release so how are we going to get
+
+415
+00:35:24,400 --> 00:35:29,170
+it well in the past one thing every
+version of Mac OS 10 is shared in common
+
+416
+00:35:29,170 --> 00:35:36,250
+is it came on an optical disk no more
+now line.we available only in the Mac
+
+417
+00:35:36,250 --> 00:35:41,920
+App Store
+[Applause]
+
+418
+00:35:42,290 --> 00:35:47,450
+and that allows us to make it the
+easiest upgrade you have ever seen when
+
+419
+00:35:47,450 --> 00:35:50,870
+it's ready you'll go into the Mac App
+Store and you'll see a page there where
+
+420
+00:35:50,870 --> 00:35:54,770
+you can read about it see screenshots
+read reviews when you're ready click buy
+
+421
+00:35:54,770 --> 00:36:00,010
+and it downloads right onto your Mac and
+starts the upgrade process right there
+
+422
+00:36:00,010 --> 00:36:04,580
+so it's on the Mac App Store will be
+about four gigabytes in size about the
+same size as a single HD movie that you
+
+423
+00:36:06,620 --> 00:36:10,550
+might download it installs right in
+place no more rebooting from an optical
+
+424
+00:36:10,550 --> 00:36:15,140
+disk and because it's part of the Mac
+apps from the Mac App Store rules it
+follows the same rules when you purchase
+
+425
+00:36:16,910 --> 00:36:20,060
+it you can use it on all of your
+personal authorized max you have to buy
+
+426
+00:36:20,060 --> 00:36:29,000
+multiple copies that's where I am I know
+what you're thinking what should we
+
+427
+00:36:29,000 --> 00:36:34,100
+charge for this but what would you
+charge on the past most major leases of
+
+428
+00:36:34,100 --> 00:36:37,910
+Mac OS 10 have been one hundred and
+twenty nine dollars and I think there's
+
+429
+00:36:37,910 --> 00:36:42,140
+a lot here for $129 but we love it so
+much that we want to make it available
+
+430
+00:36:42,140 --> 00:36:48,400
+to even more people so we're going to
+price it at just $29.99
+
+431
+00:36:59,840 --> 00:37:05,060
+I was hoping you're going to like that
+so when do you all get your hands on it
+
+432
+00:37:05,060 --> 00:37:08,060
+here at the conference we're going to
+have a Developer Preview the latest
+
+433
+00:37:08,060 --> 00:37:11,570
+developer preview available today for
+you to download and take advantage of
+
+434
+00:37:11,570 --> 00:37:17,810
+everything you've seen up here and for
+customers one will be available in July
+
+435
+00:37:17,810 --> 00:37:25,910
+so very very soon coming in July so that
+is Lian that's the first four new
+
+436
+00:37:25,910 --> 00:37:27,800
+products we wanted to tell you about
+today
+
+437
+00:37:27,800 --> 00:37:33,470
+the next product we're going to talk
+about is iOS 5 and to do that I'd like
+to invite up Scott Forstall
+
+438
+00:37:45,640 --> 00:37:51,759
+welcome so I'm here to tell you about
+iOS five before I get into the cool
+
+439
+00:37:51,759 --> 00:37:58,059
+stuff let me give you a quick update on
+iOS as you know iOS powers the iPhone
+
+440
+00:37:58,059 --> 00:38:07,569
+the iPad and the iPod Touch and to date
+we have sold wait for it over two
+hundred million iOS devices and that
+
+441
+00:38:16,299 --> 00:38:23,650
+makes iOS the number one mobile
+operating system with more than forty
+
+442
+00:38:23,650 --> 00:38:33,279
+four percent at forty four percent of
+the market now the latest addition to
+
+443
+00:38:33,279 --> 00:38:38,920
+the iOS family is the iPad 2 which is an
+incredible product even thinner and
+
+444
+00:38:38,920 --> 00:38:43,180
+lighter than the original it comes in
+black and white it has cameras on the
+front and back it is an amazing product
+
+445
+00:38:45,970 --> 00:38:51,099
+and our customers just couldn't wait to
+get their hands on it or else they'd
+
+446
+00:38:51,099 --> 00:38:57,009
+actually did have to wait to get their
+hands on it in the first fourteen months
+
+447
+00:38:57,009 --> 00:39:04,499
+we have already sold more than
+twenty-five million iPads
+
+448
+00:39:08,000 --> 00:39:13,440
+we created a whole new category of
+device with the iPad and have sold more
+
+449
+00:39:13,440 --> 00:39:20,100
+than 25 million with the iPad to joins
+the iPhone and the iPod Touch for an
+
+450
+00:39:20,100 --> 00:39:24,660
+incredible lineup of iOS devices and
+we've got some great stores to go along
+
+451
+00:39:24,660 --> 00:39:31,220
+with these as well like the iTunes music
+store we've already sold more than 15
+
+452
+00:39:31,220 --> 00:39:41,370
+billion songs from the iTunes music
+store this course makes it the number
+
+453
+00:39:41,370 --> 00:39:46,350
+one retailer of music in the world
+next is the iBook store you know we
+
+454
+00:39:46,350 --> 00:39:51,150
+launched the iBook store just a little
+more than a year ago already all six
+
+455
+00:39:51,150 --> 00:39:55,040
+major publishers have signed up and are
+providing books to the bookstore our
+
+456
+00:39:55,040 --> 00:40:02,090
+customers love it our customers have
+downloaded more than 130 million books
+
+457
+00:40:02,090 --> 00:40:13,680
+great and of course there's the App
+Store now the size and momentum of the
+App Store is really hard to fathom there
+
+458
+00:40:16,380 --> 00:40:24,330
+are currently more than 425 thousand
+apps on the App Store and more than 90
+
+459
+00:40:24,330 --> 00:40:30,150
+thousand of these were made specifically
+for the iPad they take full advantage of
+
+460
+00:40:30,150 --> 00:40:34,800
+the large touchscreen display and they
+make the iPad a better product so we'd
+
+461
+00:40:34,800 --> 00:40:38,780
+like to thank our developers for these
+great apps
+
+462
+00:40:42,990 --> 00:40:49,450
+now our customers love it our customers
+have downloaded more than 14 billion
+
+463
+00:40:49,450 --> 00:40:58,090
+apps from the App Store and that's in
+less than three years it's amazing now
+
+464
+00:40:58,090 --> 00:41:03,910
+our developers are being well rewarded
+for this Apple so far has paid out more
+than two and a half billion dollars to
+
+465
+00:41:06,820 --> 00:41:11,610
+developers building apps for the App
+Store thank you
+
+466
+00:41:14,970 --> 00:41:20,700
+now these apps as you know cover every
+genre imaginable there's great travel
+
+467
+00:41:20,700 --> 00:41:26,910
+apps like this walking tour from Lonely
+Planet they're incredibly addictive
+
+468
+00:41:26,910 --> 00:41:34,530
+games I'd say even mind controlling the
+addictive games like tiny wings great
+
+469
+00:41:34,530 --> 00:41:39,359
+entertainment titles like HBO GO which
+lets you take HBO wherever you are and
+you can watch it right on your iPad
+
+470
+00:41:41,690 --> 00:41:47,940
+they're deep apps like mobile mem which
+allow physicians to look at CT scans and
+
+471
+00:41:47,940 --> 00:41:54,420
+PET scans right on their iPad and this
+has been fda-approved this next one from
+
+472
+00:41:54,420 --> 00:42:00,200
+Jepsen's been FAA approved and it allows
+pilots to look at the charts and the
+maps for airports around the world right
+
+473
+00:42:03,869 --> 00:42:09,660
+on their iPad and there's great business
+apps out there like WebEx which allows
+you to have a multi-party video
+
+474
+00:42:11,190 --> 00:42:17,940
+conference and really hold a virtual
+meeting so some great apps out there for
+
+475
+00:42:17,940 --> 00:42:24,270
+our stores we have more than 225 million
+accounts all with credit cards and
+
+476
+00:42:24,270 --> 00:42:28,349
+one-click purchasing to make it really
+easy for our customers to find what they
+
+477
+00:42:28,349 --> 00:42:32,130
+want purchase it and download it
+directly to their device
+
+478
+00:42:32,130 --> 00:42:38,550
+these stores go with an incredible
+lineup of iOS devices let's talk about
+
+479
+00:42:38,550 --> 00:42:42,500
+the future of iOS and that is iOS 5
+
+480
+00:42:46,530 --> 00:42:53,160
+iOS 5 is a major release this is
+incredible for our developers and for
+our customers
+
+481
+00:42:54,000 --> 00:43:00,390
+for developers there are more than 1500
+new api's and some great enhancements to
+
+482
+00:43:00,390 --> 00:43:07,350
+our tools for our for our users there
+are more than 200 new features let me go
+
+483
+00:43:07,350 --> 00:43:16,190
+ahead and walk you through ten now
+number one notifications
+
+484
+00:43:22,880 --> 00:43:28,849
+I'm sure you're all familiar with
+notifications you look something like
+
+485
+00:43:28,849 --> 00:43:34,220
+this it looks best when giants are on
+top so you get scoring alerts you have
+alerts to pop up they game to audio
+
+486
+00:43:36,170 --> 00:43:42,140
+they can also badge the home screen
+icons well these have been massively
+
+487
+00:43:42,140 --> 00:43:48,559
+popular in fact we have already pushed
+more than a hundred billion push
+
+488
+00:43:48,559 --> 00:43:54,769
+notifications is scaled beautifully
+we've heard from our customers they're
+receiving so money they'd like a better
+
+489
+00:43:56,420 --> 00:44:01,519
+UI to get them and we agree and so we
+have built something that solves some of
+the problems in the current one
+
+490
+00:44:02,480 --> 00:44:08,180
+currently when you get a notification it
+interrupts you if you're playing a game
+
+491
+00:44:08,180 --> 00:44:11,990
+you get a modal alert you have to deal
+with that mode alert before you can go
+
+492
+00:44:11,990 --> 00:44:16,430
+on also in the lock screen you get this
+nice list of things that have happened
+
+493
+00:44:16,430 --> 00:44:19,880
+while your phone's been locked but when
+you unlock it
+
+494
+00:44:19,880 --> 00:44:23,690
+that list isn't persistent there's no
+way to get back to that list and go
+
+495
+00:44:23,690 --> 00:44:28,609
+through those notifications well we have
+designed the solution that solves those
+
+496
+00:44:28,609 --> 00:44:34,819
+issues and goes far beyond it and we
+call it notification center Notification
+
+497
+00:44:34,819 --> 00:44:42,619
+Center is a single place which combines
+together all of your notifications you
+
+498
+00:44:42,619 --> 00:44:47,660
+can get to it at any time from anywhere
+on your iPhone or iPad or iPod touch
+just by swiping your finger down from
+
+499
+00:44:49,430 --> 00:44:53,950
+the top to reveal the Notification
+Center
+
+500
+00:44:59,229 --> 00:45:05,059
+so we think it is beautiful it has your
+missed calls and voicemails text
+
+501
+00:45:05,059 --> 00:45:10,400
+messages mail messages scoring alerts
+Facebook updates any push notifications
+
+502
+00:45:10,400 --> 00:45:14,660
+that come from the App Store all end up
+right here in Notification Center and
+we've even added stocks and weather
+
+503
+00:45:17,630 --> 00:45:23,539
+right up top now we didn't stop there
+notifications are no longer interrupting
+
+504
+00:45:23,539 --> 00:45:28,430
+so now if you're playing a game and
+someone sends you say a text message get
+a nice animation from the top it's right
+
+505
+00:45:31,039 --> 00:45:39,109
+there you can keep on playing your game
+and it'll automatically dismiss itself
+if you have just tapped on it it would
+
+506
+00:45:40,339 --> 00:45:43,700
+take you to that app but doesn't matter
+because you can always get back to at
+
+507
+00:45:43,700 --> 00:45:47,989
+any time just by swiping your finger
+down from the top we've also improved
+
+508
+00:45:47,989 --> 00:45:54,160
+the lock screen you can see more
+information for notifications here
+
+509
+00:45:56,590 --> 00:46:01,960
+and one of my favorite features is for
+any one of the notifications in the lock
+
+510
+00:46:01,960 --> 00:46:06,580
+screen you can just slide your finger
+across it and it takes you directly to
+
+511
+00:46:06,580 --> 00:46:16,180
+the app that sent the notification let
+me go ahead just show this to you now so
+
+512
+00:46:16,180 --> 00:46:22,000
+I've got a phone here running iOS 5 you
+see more information there now I'm just
+
+513
+00:46:22,000 --> 00:46:27,730
+going to swipe my finger right across
+that text message and it takes me
+
+514
+00:46:27,730 --> 00:46:31,420
+directly to the messages app and right
+into the conversation it's really
+
+515
+00:46:31,420 --> 00:46:35,560
+convenient now to get to the
+Notification Center just swipe my finger
+
+516
+00:46:35,560 --> 00:46:41,110
+down from the top and there it is
+dismiss it by swiping up really nice
+
+517
+00:46:41,110 --> 00:46:47,920
+animation you can see that we're still
+in winter here in San Francisco I get
+
+518
+00:46:47,920 --> 00:46:53,620
+all of my messages here so text messages
+and scoring alerts down at the bottom
+
+519
+00:46:53,620 --> 00:46:59,500
+here I have some alerts from mlb.com at
+bat if I tap on that X button I can just
+
+520
+00:46:59,500 --> 00:47:03,580
+go ahead and clear that out if I see
+another notification like the Facebook
+
+521
+00:47:03,580 --> 00:47:08,920
+one I tap on it takes me directly to the
+Facebook app so it's really convenient
+
+522
+00:47:08,920 --> 00:47:12,880
+and at anytime again
+swipe down from the top and you get back
+
+523
+00:47:12,880 --> 00:47:18,540
+to Notification Center and that is
+Notification Center
+
+524
+00:47:25,540 --> 00:47:36,380
+number two is newsstand you know I love
+reading newspapers and magazines right
+
+525
+00:47:36,380 --> 00:47:42,830
+on my iphone my iPad and recently we
+added subscriptions this makes it easier
+
+526
+00:47:42,830 --> 00:47:47,359
+for you get all the new issues without
+missing anything already
+
+527
+00:47:47,359 --> 00:47:52,070
+most of the major publishers of
+magazines and many of newspapers have
+
+528
+00:47:52,070 --> 00:47:58,300
+signed up to support subscriptions now
+these are incredible titles things like
+
+529
+00:47:58,300 --> 00:48:05,630
+National Geographic and spin to great
+music magazines and of course when you
+
+530
+00:48:05,630 --> 00:48:09,619
+read these on your iPad you get audio
+and video in addition to all the
+
+531
+00:48:09,619 --> 00:48:16,640
+articles Vanity Fair science magazines
+like Popular Mechanics and popular
+science Esquire GQ fashion magazines
+
+532
+00:48:23,030 --> 00:48:29,240
+like Elle The Oprah Magazine tech
+magazines like Wired and automobile
+magazines and sports magazines The New
+
+533
+00:48:32,030 --> 00:48:39,380
+Yorker and newspapers new ones like the
+daily but also the New York Times the
+
+534
+00:48:39,380 --> 00:48:46,490
+San Francisco Chronicle Daily Telegraph
+and other international papers and we've
+now created a single place right in the
+
+535
+00:48:49,520 --> 00:48:54,830
+app store that combines all of these
+newspaper and magazines so you can find
+
+536
+00:48:54,830 --> 00:49:00,380
+them all in one place when you purchase
+them they're automatically downloaded
+
+537
+00:49:00,380 --> 00:49:05,930
+and placed in the newsstand it's a new
+place right on the home screen looks
+like it's beautiful news rack in
+
+538
+00:49:07,580 --> 00:49:13,359
+addition to this we do background
+downloads
+
+539
+00:49:17,680 --> 00:49:23,799
+so if a new issue comes out say of a
+newspaper while you're sleeping when you
+
+540
+00:49:23,799 --> 00:49:29,020
+wake up and pick up your iPad that new
+newspaper is already there ready for you
+
+541
+00:49:29,020 --> 00:49:32,700
+to read it and you can read it offline
+
+542
+00:49:33,660 --> 00:49:40,470
+on top of this we set the cover to be
+the front page of the new newspaper and
+
+543
+00:49:40,470 --> 00:49:44,730
+we'll set it to be the cover of the new
+magazine for magazines
+
+544
+00:49:44,730 --> 00:50:00,700
+so that is newsstand next is Twitter now
+as I'm sure everyone's familiar Twitter
+
+545
+00:50:00,700 --> 00:50:05,920
+is an incredibly popular service people
+send more than a billion tweets per week
+
+546
+00:50:05,920 --> 00:50:11,020
+and we hear from a lot of our customers
+on iPhone and iPad and iPod touch that
+
+547
+00:50:11,020 --> 00:50:16,029
+they love Twitter and so we want to make
+it even easier for all of our customers
+
+548
+00:50:16,029 --> 00:50:21,069
+to use Twitter on iOS products we're
+doing a number of things for this first
+
+549
+00:50:21,069 --> 00:50:27,130
+we're adding single sign-on so now when
+you go to the Settings app its built in
+
+550
+00:50:27,130 --> 00:50:32,049
+on the iPhone or iPad you can enter your
+username and password and now you're
+
+551
+00:50:32,049 --> 00:50:36,099
+configured for Twitter for any app you
+download off the App Store it'll just
+
+552
+00:50:36,099 --> 00:50:39,730
+say can I use your credentials when you
+say yes you're logged in you don't need
+
+553
+00:50:39,730 --> 00:50:45,059
+to real aughh in every single time so
+single sign-on
+
+554
+00:50:46,940 --> 00:50:52,950
+next we've integrated Twitter in with
+many of our apps like camera and photos
+so now if you're at a concert you take a
+
+555
+00:50:54,930 --> 00:50:59,670
+photo you want to tweet that photo just
+tap on the action button it's a new
+
+556
+00:50:59,670 --> 00:51:06,119
+option tweet and it brings up this
+beautiful tweet sheet gives you a nice
+
+557
+00:51:06,119 --> 00:51:10,049
+thumbnail of the photo give you a
+countdown of how many characters you
+
+558
+00:51:10,049 --> 00:51:15,839
+have left to type and you can even
+optionally add your location tap on that
+
+559
+00:51:15,839 --> 00:51:20,599
+and now you've tweeted the photo it's
+that simple
+
+560
+00:51:24,319 --> 00:51:30,960
+in addition to tweeting from photos and
+camera you can tweet articles from
+
+561
+00:51:30,960 --> 00:51:35,670
+Safari websites you can tweet videos
+from YouTube and you can tweet about
+
+562
+00:51:35,670 --> 00:51:41,279
+businesses or locations for maps beyond
+all of this we added integration with
+
+563
+00:51:41,279 --> 00:51:45,869
+contacts now you might have a lot of
+contacts that don't have photos but
+
+564
+00:51:45,869 --> 00:51:49,619
+Twitter may have photos for those people
+and so you can use Twitter to
+
+565
+00:51:49,619 --> 00:51:55,710
+automatically update the photos in your
+contact list and even the at user name
+
+566
+00:51:55,710 --> 00:52:01,759
+for your friends that's Twitter
+integration throughout the OS
+
+567
+00:52:07,160 --> 00:52:13,620
+next is Safari
+you know Safari is the best mobile web
+
+568
+00:52:13,620 --> 00:52:19,380
+browser out there it's also the most
+popular in fact nearly two-thirds of all
+
+569
+00:52:19,380 --> 00:52:26,490
+mobile web browsing is done on Safari
+beyond this we took apples Safari engine
+and open sourced it and it's the basis
+
+570
+00:52:29,550 --> 00:52:36,540
+of all web browsing on Android so Safari
+engine is the basis of more than 90% of
+
+571
+00:52:36,540 --> 00:52:42,870
+all web browsing on mobile devices well
+iOS 5 we're making Safari even better
+
+572
+00:52:42,870 --> 00:52:49,110
+we've got some great features the first
+is reader Safari reader becomes
+
+573
+00:52:49,110 --> 00:52:54,270
+available up here as a new button when
+you're reading a story on a website if
+
+574
+00:52:54,270 --> 00:53:00,390
+you just tap on that button we take the
+story you're reading and make it front
+
+575
+00:53:00,390 --> 00:53:04,320
+and center we get rid of all the
+distractions set the font size rights
+
+576
+00:53:04,320 --> 00:53:09,630
+and even if it's a multi-page story so
+you'd have to tap through multiple web
+
+577
+00:53:09,630 --> 00:53:14,700
+pages normally to get to it we put in a
+single scrolling story it's really
+convenient
+
+578
+00:53:22,290 --> 00:53:28,000
+on top of that you can now email the
+contents of the story before you could
+
+579
+00:53:28,000 --> 00:53:33,310
+just email the link but now when you
+email you get the link plus the contents
+
+580
+00:53:33,310 --> 00:53:41,890
+in your compose window and all and all
+of this works really well on the iPad it
+
+581
+00:53:41,890 --> 00:53:46,390
+works great on the iPhone as well it's a
+perfect size for it sets the font size
+
+582
+00:53:46,390 --> 00:53:51,849
+right it's really nice to read stories
+so that's the for a reader the second
+
+583
+00:53:51,849 --> 00:53:58,869
+one is reading lists reading lists is a
+simple and convenient way for you to
+
+584
+00:53:58,869 --> 00:54:04,660
+quickly save a story to read it later
+just put it in the reading list and when
+you add an item to reading list it gets
+
+585
+00:54:06,849 --> 00:54:11,290
+added to the reading list on all of your
+iOS devices and even the reading list on
+
+586
+00:54:11,290 --> 00:54:15,810
+Safari on Mac and Safari on Windows
+
+587
+00:54:19,540 --> 00:54:23,830
+so if you don't have time to finish it
+here on the iPad you can finish reading
+
+588
+00:54:23,830 --> 00:54:30,340
+it later on your iPhone and the next
+feature is tabbed browsing we have added
+
+589
+00:54:30,340 --> 00:54:35,760
+full tab browsing and Safari on the iPad
+
+590
+00:54:37,440 --> 00:54:41,400
+and you know let me just show it to you
+
+591
+00:54:41,700 --> 00:54:51,070
+alright so here I have my iPad running
+iOS 5 I'll launch Safari here and the
+
+592
+00:54:51,070 --> 00:54:54,790
+first thing you'll see with tabbed
+browsing is it is lightning fast to
+
+593
+00:54:54,790 --> 00:54:58,390
+switch between Windows now just tap on
+it and you're there
+
+594
+00:54:58,390 --> 00:55:05,440
+great now I'm on the DP review site
+which is a fantastic review site for
+
+595
+00:55:05,440 --> 00:55:10,660
+cameras and they have really extensive
+reviews in fact you don't have to tap
+
+596
+00:55:10,660 --> 00:55:14,440
+through many many pages to read the
+whole review if I look at this one here
+
+597
+00:55:14,440 --> 00:55:21,910
+it's a 20 pages long if I tap the reader
+button here it loads the entire story up
+
+598
+00:55:21,910 --> 00:55:26,680
+and reader now I can just scroll through
+it gets rid of all the distractions lets
+
+599
+00:55:26,680 --> 00:55:32,040
+me concentrate just in the content that
+is reader
+
+600
+00:55:36,690 --> 00:55:41,490
+you even see that when it goes between
+pages here where you would have had to
+you know tap to say next page it
+
+601
+00:55:43,680 --> 00:55:46,349
+automatically gives you a little page
+break so you know when it's going
+
+602
+00:55:46,349 --> 00:55:50,010
+through those pages now let's say if I
+don't have time to finish the story
+
+603
+00:55:50,010 --> 00:55:57,119
+right now I can just tap the bookmarks
+bar item and here I have reading list I
+
+604
+00:55:57,119 --> 00:56:01,770
+tap plus and now it's added this to my
+reading list and again I can go finish
+
+605
+00:56:01,770 --> 00:56:08,339
+this on Mac on you know on Safari on my
+Mac or any of my other iOS devices it's
+
+606
+00:56:08,339 --> 00:56:11,700
+great and if I really like this and I
+want to tweet about it let me show you
+
+607
+00:56:11,700 --> 00:56:17,099
+the Twitter integration while we're here
+by tap tweet brings up the tweet sheet
+
+608
+00:56:17,099 --> 00:56:22,430
+we do completions of a hit I have a
+friend Gary done so I hit at G
+automatically fills in the name tap that
+
+609
+00:56:25,410 --> 00:56:35,490
+and say you know I like this one and I
+can optionally add my location tap send
+
+610
+00:56:35,490 --> 00:56:40,740
+and it's tweeted it's that easy so some
+really great Safari enhancements and
+
+611
+00:56:40,740 --> 00:56:43,970
+Twitter integration throughout
+
+612
+00:56:49,490 --> 00:56:59,360
+all right next up these reminders you
+know all of us are constantly creating
+
+613
+00:56:59,360 --> 00:57:04,380
+lists of things list of things to do
+list of things to buy like a grocery
+
+614
+00:57:04,380 --> 00:57:09,690
+list some of them have a place
+associated like don't forget to walk the
+
+615
+00:57:09,690 --> 00:57:13,680
+dog when I get home and some have a time
+associated say buy concert tickets
+
+616
+00:57:13,680 --> 00:57:19,530
+Monday at 10:00 a.m. so that's when they
+go on sale wouldn't be great if you get
+
+617
+00:57:19,530 --> 00:57:24,240
+rid of all these scraps of paper and
+store all this on your phone but beyond
+that if your phone actually reminded you
+
+618
+00:57:26,490 --> 00:57:31,320
+to do things as opposed to just
+statically keeping a list of things well
+
+619
+00:57:31,320 --> 00:57:35,610
+that's exactly what the reminders app
+does on the reminders app you can store
+
+620
+00:57:35,610 --> 00:57:39,810
+lists of things multiple lists of things
+for a trip to San Francisco or birthday
+
+621
+00:57:39,810 --> 00:57:46,170
+party or a grocery list you can store
+dates associated with these reminders so
+
+622
+00:57:46,170 --> 00:57:52,470
+you'll be reminded on that date you can
+also sign location this is really cool I
+could set up a reminder to say remind me
+
+623
+00:57:55,740 --> 00:58:01,110
+to call my wife when I leave the
+convention today and it'll set a
+
+624
+00:58:01,110 --> 00:58:03,540
+geofence
+up around Moscone Center and so when I
+
+625
+00:58:03,540 --> 00:58:07,940
+get in my car to leave it will pop up
+and say call
+
+626
+00:58:13,410 --> 00:58:20,880
+it solves the problem of unliving right
+now I promise call in the car you can of
+
+627
+00:58:20,880 --> 00:58:25,620
+course search through all your reminders
+and reminders will sync with iCal on the
+
+628
+00:58:25,620 --> 00:58:31,560
+Mac using CalDAV and even without look
+on Windows using exchange and that is
+
+629
+00:58:31,560 --> 00:58:34,100
+reminders
+
+630
+00:58:39,300 --> 00:58:48,430
+next this camera you know the iPhone 4
+is widely regarded as having one of the
+best cameras on a mobile phone it's also
+
+631
+00:58:51,930 --> 00:58:57,280
+one of the most popular in fact if you
+look at cameras used to take photos and
+
+632
+00:58:57,280 --> 00:59:04,840
+then post them to Flickr now this is all
+cameras not just cameras on phones you
+
+633
+00:59:04,840 --> 00:59:13,120
+see where the iPhone 4 is it is already
+by far the most popular camera on a
+phone to take photos and it very soon
+
+634
+00:59:16,090 --> 00:59:20,500
+will be the most popular camera overall
+but we want to make using the camera
+
+635
+00:59:20,500 --> 00:59:24,700
+even better and that's what we're doing
+the first thing we're doing is making it
+
+636
+00:59:24,700 --> 00:59:29,010
+way faster just get in and take a photo
+
+637
+00:59:35,230 --> 00:59:38,619
+so now it's there's some moment
+happening your kids doing something
+
+638
+00:59:38,619 --> 00:59:42,160
+really cute you want to capture it you
+double-click that home button you get a
+new camera icon when you tap on that
+
+639
+00:59:44,500 --> 00:59:48,490
+camera icon you're brought directly and
+immediately to the camera and you're
+
+640
+00:59:48,490 --> 00:59:51,690
+ready to take a photo now
+
+641
+00:59:54,450 --> 00:59:59,710
+what's really cool about this is even if
+you have a passcode set will take you
+
+642
+00:59:59,710 --> 01:00:03,609
+right into take a new photo will protect
+it and you can't see any previous photos
+
+643
+01:00:03,609 --> 01:00:06,339
+you've taken or anything else in the
+phone without typing your passcode
+
+644
+01:00:06,339 --> 01:00:11,109
+you can start taking a passcode a
+picture immediately and you can even use
+
+645
+01:00:11,109 --> 01:00:14,970
+the volume up button now to click
+
+646
+01:00:25,470 --> 01:00:28,750
+and that sound I think people say use
+the shutter button to turn your volume
+
+647
+01:00:28,750 --> 01:00:38,710
+up so in addition to this we've added
+optional gridlines so you can use the
+
+648
+01:00:38,710 --> 01:00:43,780
+rule of thirds to compose your photo or
+line it up you can now pinch to zoom
+
+649
+01:00:43,780 --> 01:00:51,000
+right within the camera and if you hold
+your finger over part of the scene now
+
+650
+01:00:51,000 --> 01:00:56,020
+we'll set the auto exposure and auto
+focus lock you can even move it around
+
+651
+01:00:56,020 --> 01:00:59,130
+you know stick to that
+
+652
+01:01:03,630 --> 01:01:07,860
+now this is a really advanced feature
+when we brought it to the iPhone and
+
+653
+01:01:07,860 --> 01:01:10,740
+we've made it really easy for everyone
+to use
+now next once you've taken your great
+
+654
+01:01:13,200 --> 01:01:20,460
+photos you can now edit them right on
+your iPhone and your iPad you do things
+
+655
+01:01:20,460 --> 01:01:27,390
+like crop and rotate redeye reduction so
+if you've taken the photo at left where
+
+656
+01:01:27,390 --> 01:01:31,080
+the flash has caused a redeye you can
+automatically remove that redeye
+
+657
+01:01:31,080 --> 01:01:36,960
+right on your iPhone or iPad and we even
+brought over the one-click enhance that
+
+658
+01:01:36,960 --> 01:01:43,080
+we pioneered in iPhoto on the Mac and it
+brought that to iOS so you can see when
+
+659
+01:01:43,080 --> 01:01:47,160
+you applied one tap enhance to the right
+how the color tones look so much nicer
+
+660
+01:01:47,160 --> 01:01:52,740
+how it pulls detail out of shadow it's
+really nice so some great photo editing
+
+661
+01:01:52,740 --> 01:01:57,740
+features and really nice camera
+enhancements
+
+662
+01:02:03,870 --> 01:02:11,470
+next is male now male is one of the most
+used applications on both the iPhone
+
+663
+01:02:11,470 --> 01:02:18,600
+iPod and iPod Touch iPad and iPod Touch
+and we're making it even better in iOS 5
+
+664
+01:02:18,600 --> 01:02:23,410
+we're adding rich text formatting so you
+can set things as bold italic and
+
+665
+01:02:23,410 --> 01:02:27,880
+underline you can control the
+indentation so you're forwarding
+
+666
+01:02:27,880 --> 01:02:33,400
+something you can uh ninten it's or
+further indent it you can now drag the
+
+667
+01:02:33,400 --> 01:02:41,230
+addresses between two CC and BCC don't
+have to retype them again we've added
+
+668
+01:02:41,230 --> 01:02:47,500
+support for flagging so you can flag and
+unplug this next one has been a
+
+669
+01:02:47,500 --> 01:02:52,810
+incredibly popular request in addition
+to searching from two and subject you
+
+670
+01:02:52,810 --> 01:02:57,430
+can search the entire contents of all
+your messages both the messages on your
+
+671
+01:02:57,430 --> 01:03:01,950
+phone and all the messages back on the
+mail server so search the entire
+
+672
+01:03:01,950 --> 01:03:07,240
+contents of your messages for the iPad
+we added a really nice swipe to inbox
+
+673
+01:03:07,240 --> 01:03:11,800
+gesture so it makes it really nice to
+use this in portrait so you swipe it on
+
+674
+01:03:11,800 --> 01:03:18,610
+tap on something swipe it off and with
+every release of iowa's fought or is we
+
+675
+01:03:18,610 --> 01:03:23,140
+continue to add more support for our
+enterprise customers and one example of
+that in iOS 5 is we added support for
+
+676
+01:03:25,600 --> 01:03:32,740
+s/mime so now I think we've done a
+really nice job of this so now if you
+
+677
+01:03:32,740 --> 01:03:36,940
+have the certificate of someone else you
+automatically get this lock icon right
+
+678
+01:03:36,940 --> 01:03:40,450
+in the addressing field just to show you
+this will be encrypted
+when sent to the other person let me
+
+679
+01:03:42,640 --> 01:03:51,760
+just go ahead and give you a demo a few
+of these features now alright so first I
+
+680
+01:03:51,760 --> 01:03:57,790
+can show a simple gesture I just pull on
+the inbox right from there so anywhere
+you are when your portrait just pull it
+
+681
+01:03:59,110 --> 01:04:02,560
+on you have to go hunt up and find the
+right button for it you can see we're
+
+682
+01:04:02,560 --> 01:04:06,640
+flagging here so I can tap on that
+flagged message a one other feature
+
+683
+01:04:06,640 --> 01:04:12,160
+we've added is a built in dictionary
+throughout the OS as a service now so
+
+684
+01:04:12,160 --> 01:04:16,940
+before we had a dictionary in the iBooks
+app but we now brought that
+
+685
+01:04:16,940 --> 01:04:22,130
+to the entire OS so all apps from the
+App Store can use it so here if I press
+
+686
+01:04:22,130 --> 01:04:25,819
+down let's say an lychees I don't know
+what that is let's say I get a defined
+
+687
+01:04:25,819 --> 01:04:37,339
+addition to copy tap define there it is
+built-in dictionary it's great if I say
+
+688
+01:04:37,339 --> 01:04:42,680
+respond to this message again I can grab
+one of these addresses now just drag it
+
+689
+01:04:42,680 --> 01:04:48,980
+to BCC dragged it to and rearrange it
+it's really nice and easy as one more
+
+690
+01:04:48,980 --> 01:04:52,010
+feature I want to show you and it's
+actually a system-wide feature having do
+
+691
+01:04:52,010 --> 01:04:56,450
+with a keyboard when we released the
+original iPhone we revolutionized the
+way people would type on multi-touch
+
+692
+01:04:58,940 --> 01:05:03,560
+displays and we keep on challenging
+ourselves to make that even better we
+
+693
+01:05:03,560 --> 01:05:08,060
+have a new variant of the keyboard in
+iOS 5 for the iPad which we think people
+
+694
+01:05:08,060 --> 01:05:12,470
+who like to type with their thumbs while
+holding it are really going to like in
+
+695
+01:05:12,470 --> 01:05:16,040
+the bottom right you see the keyboard
+button and now it has some grab handles
+
+696
+01:05:16,040 --> 01:05:26,960
+if I just take those and drag it up it
+splits it into two so what it does this
+
+697
+01:05:26,960 --> 01:05:31,460
+moves the keys closer to your thumbs on
+the side so you can you can put it
+
+698
+01:05:31,460 --> 01:05:36,079
+wherever you want it's really nice and
+it's persistent for every app in the
+
+699
+01:05:36,079 --> 01:05:39,560
+system it just stays where you put it we
+want to put it back down just press and
+hold the dock and merge it goes back
+
+700
+01:05:41,780 --> 01:06:00,010
+down to the bottom so even a split
+keyboard that's nail number 8 PC free
+
+701
+01:06:18,349 --> 01:06:27,079
+so we felt these incredible devices the
+iPhone the iPad and people get them home
+
+702
+01:06:27,079 --> 01:06:38,539
+they open up their box and I see this I
+said what now we're living in a post PC
+
+703
+01:06:38,539 --> 01:06:43,640
+world in fact especially with the iPad
+we're offering in the post PC world we
+have a lot of customers coming to us and
+
+704
+01:06:45,289 --> 01:06:51,259
+saying I want to buy an iPad is my only
+device I don't own a computer I want to
+
+705
+01:06:51,259 --> 01:06:57,199
+buy an iPhone is my only device my only
+actually internet access for I live will
+
+706
+01:06:57,199 --> 01:07:02,059
+be my iPhone we know we're selling into
+a lot of places where the households
+
+707
+01:07:02,059 --> 01:07:06,979
+just don't have computers and they want
+to buy and iOS devices their only device
+and that's exactly what we're going to
+
+708
+01:07:08,479 --> 01:07:14,959
+support an iOS 5 now you take your
+iPhone out of the box instead of seeing
+
+709
+01:07:14,959 --> 01:07:19,059
+this you're going to see this
+
+710
+01:07:25,560 --> 01:07:30,330
+you can now set up and activate your
+device right on the device and you are
+
+711
+01:07:30,330 --> 01:07:34,710
+ready to go it's that easy
+of course there's some other things we
+
+712
+01:07:34,710 --> 01:07:40,880
+had to do to make this possible software
+updates are now over-the-air
+
+713
+01:07:47,280 --> 01:07:51,390
+so you no longer need to go and plug
+into a computer just to update your
+software and of course they're now Delta
+
+714
+01:07:55,020 --> 01:08:04,440
+updates so instead of downloading the
+entire OS you just download what's
+
+715
+01:08:04,440 --> 01:08:09,390
+changed now the next thing we did is we
+we looked at all of the apps in the
+
+716
+01:08:09,390 --> 01:08:14,100
+iPhone iPad iPod Touch and asked
+ourselves what are the reasons that
+
+717
+01:08:14,100 --> 01:08:18,540
+people go back to a computer today and
+let's add that functionality right to
+
+718
+01:08:18,540 --> 01:08:23,609
+iOS so for instance you have to go back
+to a computer to create calendars or
+
+719
+01:08:23,609 --> 01:08:28,710
+delete calendars you can now create and
+delete calendars right from iOS you saw
+
+720
+01:08:28,710 --> 01:08:32,819
+four photos we've added really
+significant editing functionality in
+
+721
+01:08:32,819 --> 01:08:37,890
+there so you can crop rotate one tap
+enhance redeye reduction right from
+
+722
+01:08:37,890 --> 01:08:42,690
+within your iOS device even in mail now
+you can create mailboxes and delete
+mailboxes right from iOS so we looked at
+
+723
+01:08:45,720 --> 01:08:52,109
+all of the apps in the I phone and the
+iPad added that functionality so now if
+
+724
+01:08:52,109 --> 01:08:55,819
+you want to cut the cord you can
+
+725
+01:09:02,439 --> 01:09:11,379
+next is gamecenter iOS is the most
+popular gaming platform on the planet
+
+726
+01:09:11,380 --> 01:09:15,770
+there are more than a hundred thousand
+game and entertainment titles in the App
+
+727
+01:09:15,770 --> 01:09:21,049
+Store and so about nine months ago we
+launched Game Center and we did it to
+make it even easier for people to find
+
+728
+01:09:22,880 --> 01:09:27,740
+players to play games against and also
+to make it easy for you to compare how
+
+729
+01:09:27,740 --> 01:09:35,330
+you're doing against your friends well
+in just nine months we have 50 million
+
+730
+01:09:35,330 --> 01:09:43,609
+Game Center users now to put that into
+perspective Xbox Live has been around
+
+731
+01:09:43,609 --> 01:09:52,190
+for about eight years and they have
+around 30 million users so Game Center
+is very popular and we're making it even
+
+732
+01:09:55,040 --> 01:10:00,080
+better in iOS 5 to make it more fun and
+social we're adding photos so you can
+
+733
+01:10:00,080 --> 01:10:04,520
+see photos of your friends change your
+photos you can now compare yourself
+
+734
+01:10:04,520 --> 01:10:09,140
+against your friends using achievement
+points per game you can see friends of
+
+735
+01:10:09,140 --> 01:10:17,150
+friends as well you also will get
+recommended friends that might be great
+people to play some of the games that
+
+736
+01:10:18,530 --> 01:10:23,480
+you like we've also added game
+recommendations so there might be some
+
+737
+01:10:23,480 --> 01:10:27,080
+really great games out there maybe
+they're new that you don't know about
+
+738
+01:10:27,080 --> 01:10:32,270
+and will help you discover those once
+you've discovered a game you like you
+
+739
+01:10:32,270 --> 01:10:36,950
+can purchase and download it directly
+from Game Center now this is great both
+for our customers and for our developers
+
+740
+01:10:39,850 --> 01:10:43,490
+another thing we've done for our
+developers is we've added support for
+turn-based games right in to the OS
+
+741
+01:10:50,630 --> 01:10:54,810
+there are some great turn-based games
+out there like Scrabble but the
+
+742
+01:10:54,810 --> 01:10:58,980
+developer had to do all the work for
+that and now that's supported right out
+of the box in iOS 5 so some really nice
+
+743
+01:11:01,620 --> 01:11:16,860
+enhancements to Game Center next is
+iMessage now I believe we have the best
+
+744
+01:11:16,860 --> 01:11:22,920
+messaging client out there on the iPhone
+it works tremendously well to send text
+
+745
+01:11:22,920 --> 01:11:30,860
+messages and photos and videos and our
+customers love it our iPhone customers
+
+746
+01:11:30,860 --> 01:11:37,110
+but what about our iPad customers and
+our iPod Touch customers they've been
+
+747
+01:11:37,110 --> 01:11:42,449
+asking us for a messaging solution and
+so in iOS 5 we're launching a new
+
+748
+01:11:42,449 --> 01:11:47,600
+messaging service between all iOS 5
+customers
+
+749
+01:11:52,979 --> 01:12:01,349
+and we call it iMessage so I message
+supports the iPhone the iPad and the
+
+750
+01:12:01,349 --> 01:12:05,780
+iPod touch it does everything you've
+come to expect from our messaging app on
+
+751
+01:12:05,780 --> 01:12:13,320
+the iPhone so you can send text messages
+photos videos send contacts do group
+
+752
+01:12:13,320 --> 01:12:18,119
+messaging everything you come to expect
+and we've added some really nice new
+
+753
+01:12:18,119 --> 01:12:22,499
+features things like delivery receipts
+so you can see if it's been delivered to
+
+754
+01:12:22,499 --> 01:12:27,059
+the other person's device optional read
+receipts so you can see if it's been
+
+755
+01:12:27,059 --> 01:12:32,610
+read this is why I favor a typing
+indication so you can tell now if
+someone starts typing and they're
+
+756
+01:12:33,690 --> 01:12:38,789
+responding to you you know you're about
+to get that message I messages are
+
+757
+01:12:38,789 --> 01:12:44,130
+pushed to all your devices so if you
+start a conversation on your iPad and
+
+758
+01:12:44,130 --> 01:12:49,050
+later pick up your iPhone you can pick
+up right where you left off with all the
+
+759
+01:12:49,050 --> 01:12:59,900
+context of that conversation to date is
+supported over both 3G and Wi-Fi and
+everything is sent encrypted over the
+
+760
+01:13:02,789 --> 01:13:08,729
+where over the over the air and I like
+to just give you a demo of iMessage now
+
+761
+01:13:08,729 --> 01:13:13,199
+to do so I also like to invite up jaws
+vice president of product marketing to
+help me hey da Scott thanks for having
+
+762
+01:13:17,909 --> 01:13:20,219
+me
+absolutely we don't mind on the play
+
+763
+01:13:20,219 --> 01:13:24,780
+game though playing the game okay try
+not the bottom right here frolic
+
+764
+01:13:24,780 --> 01:13:32,039
+marketing so he's on the iPhone on the
+Left I'm on my iPad on the right hand
+
+765
+01:13:32,039 --> 01:13:37,320
+side I go ahead and launch messages here
+so here I have a conversation go with
+
+766
+01:13:37,320 --> 01:13:39,590
+jaws normally we don't stand next to
+each other we have these conversations
+
+767
+01:13:39,590 --> 01:13:45,539
+so most I've talked to you all week
+let's grab lunch after the show no okay
+
+768
+01:13:45,539 --> 01:13:50,999
+so when I send this to them you'll
+notice as he plays the game it comes in
+
+769
+01:13:50,999 --> 01:13:55,199
+right at the top and you can keep on
+playing the game so it's not
+
+770
+01:13:55,199 --> 01:14:02,179
+interrupting him does his lovely job
+playing I'm on a roll don't bother man
+
+771
+01:14:03,020 --> 01:14:09,990
+but at anytime he can get right back to
+that message Oh at any time I think this
+might be good time so it just by pulling
+
+772
+01:14:16,470 --> 01:14:22,920
+down town that takes him right to this
+now as he starts typing see on my side
+
+773
+01:14:22,920 --> 01:14:25,920
+where there's the three dots of the
+balloon that lets me know he's currently
+
+774
+01:14:25,920 --> 01:14:32,910
+responding well check maybe some other
+messages while he's doing so so then
+
+775
+01:14:32,910 --> 01:14:36,630
+when he sends the message you see where
+it says he gets a little delivered it
+
+776
+01:14:36,630 --> 01:14:41,490
+already knows it's been delivered right
+to my device and when I tap on his
+
+777
+01:14:41,490 --> 01:14:47,190
+message it sends a read receipt saying
+rad 11:15 a.m. he knows I've read it so
+
+778
+01:14:47,190 --> 01:14:50,300
+read restates three
+
+779
+01:14:54,740 --> 01:15:00,360
+we can also send high-quality photos and
+videos let me go ahead and choose a
+
+780
+01:15:00,360 --> 01:15:06,220
+photo here alright maybe we have a
+picnic by the bridge that's so sweet
+
+781
+01:15:06,220 --> 01:15:09,510
+[Music]
+send it a little picture again you can
+
+782
+01:15:09,510 --> 01:15:15,570
+tell from the dots and his side that I'm
+composing it right now send it off and
+again we go over Wi-Fi as well as 3G
+
+783
+01:15:18,830 --> 01:15:24,840
+sends it over again he gets it nice high
+quality and the entire transmission is
+
+784
+01:15:24,840 --> 01:15:30,990
+encrypted over-the-air and again I'm on
+my iPad so it supports iPad iPod Touch
+
+785
+01:15:30,990 --> 01:15:35,990
+and iPhone thanks jealous can't wait for
+lunch
+
+786
+01:15:41,730 --> 01:15:46,800
+so I message and we're actually building
+this on the push notification system
+
+787
+01:15:46,800 --> 01:15:54,090
+we've built so we know how to scale this
+we have incredible features here in iOS
+
+788
+01:15:54,090 --> 01:16:00,150
+5 notification system which is just
+really nice newsstand makes it even
+better to read your newspapers and
+
+789
+01:16:01,860 --> 01:16:07,050
+magazines right on your iPad or iPhone
+great Twitter integration a new
+
+790
+01:16:07,050 --> 01:16:13,800
+reminders app you can be PC free if you
+want and the new iMessage application
+
+791
+01:16:13,800 --> 01:16:20,100
+and these are just ten of the more than
+200 new user features there's really
+
+792
+01:16:20,100 --> 01:16:25,800
+something for everyone in iOS 5 there's
+other things like airplay mirroring you
+
+793
+01:16:25,800 --> 01:16:32,760
+can now mirror your entire iPad to write
+to your television wirelessly using
+
+794
+01:16:32,760 --> 01:16:35,360
+Apple TV
+
+795
+01:16:38,720 --> 01:16:43,990
+Wi-Fi sync to iTunes before you had
+
+796
+01:16:47,880 --> 01:16:53,130
+exactly before before you had to go back
+and plug into your computer to sync and
+
+797
+01:16:53,130 --> 01:16:58,200
+now when you are charging at night let's
+say your iOS device will automatically
+
+798
+01:16:58,200 --> 01:17:03,150
+find iTunes over Wi-Fi and sync with it
+and before it sinks it'll back itself up
+
+799
+01:17:03,150 --> 01:17:12,150
+so you automatically get backed up every
+single day there's also some really nice
+
+800
+01:17:12,150 --> 01:17:16,560
+new multitasking gestures so you can
+just flick right between your apps it's
+
+801
+01:17:16,560 --> 01:17:20,010
+really nice we're not only is there's
+something for every one of our customers
+
+802
+01:17:20,010 --> 01:17:25,380
+there's something for every one of our
+developers some great new development
+
+803
+01:17:25,380 --> 01:17:30,650
+tools including significant enhancements
+to xcode instruments in the simulator
+even core image we brought over the
+
+804
+01:17:33,720 --> 01:17:40,980
+powerful core image framework from Mac
+OS 10 to iOS this allows developers to
+do complex image operations like redeye
+
+805
+01:17:43,770 --> 01:17:48,330
+reduction face detection right from
+within their apps so you're asking
+yourself when are you getting it and the
+
+806
+01:17:52,260 --> 01:17:57,500
+answer is we are giving a developer seed
+to you today
+
+807
+01:18:05,120 --> 01:18:08,480
+this is going to be great for the
+conference as you learn about all the
+
+808
+01:18:08,480 --> 01:18:12,380
+new api's than all the sessions this
+week you can go and use those api's
+
+809
+01:18:12,380 --> 01:18:19,190
+immediately using your seed and iOS five
+will ship to all of our customers this
+fall
+
+810
+01:18:20,650 --> 01:18:25,370
+iOS 5 will support the same devices that
+we supported with our last software
+
+811
+01:18:25,370 --> 01:18:31,310
+update so that's the iPhone 3GS and
+iPhone 4 all the iPads iPad and iPad 2
+
+812
+01:18:31,310 --> 01:18:40,660
+and the third and fourth generation iPod
+Touch and that is iOS 5
+
+813
+01:18:51,719 --> 01:18:55,420
+and that is the second of the software
+products we want to tell you about today
+
+814
+01:18:55,420 --> 01:19:00,030
+to tell you about the third I like to
+turn it back over to Steve
+
+815
+01:19:06,699 --> 01:19:19,570
+so you like everything so far well I'll
+try not to blow it so I get to talk
+
+816
+01:19:19,570 --> 01:19:24,340
+about iCloud we've been working on this
+for some time now and we're really
+
+817
+01:19:24,340 --> 01:19:31,810
+excited about it about ten years ago we
+had one of our most important insights
+
+818
+01:19:31,810 --> 01:19:39,760
+and that was that the PC was going to
+become the digital hub for your digital
+
+819
+01:19:39,760 --> 01:19:44,800
+life what does that mean well it meant
+that that's where you were going to put
+
+820
+01:19:44,800 --> 01:19:49,780
+your digital photos where else were you
+going to put them your digital video off
+
+821
+01:19:49,780 --> 01:19:54,790
+your digital camcorder and of course
+your music right you were going to
+
+822
+01:19:54,790 --> 01:20:00,760
+acquire it in the device or potentially
+on your Mac and you were going to
+
+823
+01:20:00,760 --> 01:20:06,070
+basically sync it to the Mac and
+everything was going to work fine and it
+did for the better part of 10 years but
+
+824
+01:20:09,850 --> 01:20:18,160
+it's broken down in the last few years
+why well because the devices have
+changed they now all have music they now
+
+825
+01:20:22,360 --> 01:20:29,980
+all have photos they now all have video
+and so if I acquire a song I buy it
+
+826
+01:20:29,980 --> 01:20:36,219
+right on my iPhone I want to get that to
+my other devices right I pick up my iPad
+
+827
+01:20:36,219 --> 01:20:41,949
+it doesn't have that song on it so I
+have to sync my iphone to my Mac then I
+
+828
+01:20:41,949 --> 01:20:45,640
+have to sync my other devices to the Mac
+to get that song but then they've
+
+829
+01:20:45,640 --> 01:20:49,810
+deposited some photos on the Mac so I
+have to sync the iPhone again with the
+
+830
+01:20:49,810 --> 01:20:54,760
+Mac to get those photos and keeping
+these devices in sync is driving us
+
+831
+01:20:54,760 --> 01:20:56,850
+crazy
+
+832
+01:20:58,950 --> 01:21:05,110
+so we got a great solution for this
+problem
+
+833
+01:21:05,110 --> 01:21:10,270
+and we think this solution is our next
+big insight which is we're going to
+
+834
+01:21:10,270 --> 01:21:18,100
+demote the PC in the Mac to just be a
+device just like an iPhone an iPad or
+
+835
+01:21:18,100 --> 01:21:23,530
+iPod touch and we're going to move the
+digital hub the center of your digital
+life into the cloud because all these
+
+836
+01:21:27,850 --> 01:21:32,170
+new devices have communications built
+into them they can all talk to the cloud
+
+837
+01:21:32,170 --> 01:21:40,600
+whenever they want and so now if I get
+something on my iPhone it sent up to the
+
+838
+01:21:40,600 --> 01:21:43,510
+cloud immediately let's say I take some
+pictures with it
+
+839
+01:21:43,510 --> 01:21:49,200
+those pictures are in the cloud and they
+are now pushed down to my devices
+
+840
+01:21:49,200 --> 01:21:54,910
+completely automatically and now
+everything is in sync with me not even
+
+841
+01:21:54,910 --> 01:21:58,900
+having to think about it I don't even
+have to take the devices out of my
+
+842
+01:21:58,900 --> 01:22:07,030
+pocket I don't have to be near my Mac or
+PC now some people think the cloud is
+
+843
+01:22:07,030 --> 01:22:14,080
+just a hard disk in the sky right and
+you take a bunch of stuff and you put it
+
+844
+01:22:14,080 --> 01:22:18,610
+in your Dropbox or your I disk or
+whatever and it transfers it up to the
+
+845
+01:22:18,610 --> 01:22:22,060
+cloud and stores and then you drag
+whatever you want back out on your other
+
+846
+01:22:22,060 --> 01:22:30,490
+devices we think it's way more than that
+and we call it iCloud now iCloud stores
+your content in the cloud and wirelessly
+
+847
+01:22:35,470 --> 01:22:40,990
+pushes it to all your devices so it
+automatically uploads it stores it and
+automatically pushes it to all your
+
+848
+01:22:43,060 --> 01:22:50,020
+other devices but also it's completely
+integrated with your apps and so
+
+849
+01:22:50,020 --> 01:22:58,440
+everything happens automatically and
+there's nothing new to learn it just all
+works it just works
+
+850
+01:23:06,820 --> 01:23:13,130
+now you might ask why should I believe
+them they're the ones that brought me
+
+851
+01:23:13,130 --> 01:23:27,700
+MobileMe it wasn't our finest hour let
+me just say that but we learned a lot
+
+852
+01:23:27,700 --> 01:23:35,390
+now the three core apps in MobileMe were
+contacts calendar and mail three things
+
+853
+01:23:35,390 --> 01:23:42,260
+we'd obviously like kept up to date
+we've thrown them away we've reacted and
+
+854
+01:23:42,260 --> 01:23:48,260
+rewritten them from the ground up to be
+iCloud apps and we've put them on all of
+
+855
+01:23:48,260 --> 01:23:56,810
+our devices so as an example in contacts
+when I make a new contact on my iPhone
+
+856
+01:23:56,810 --> 01:24:00,610
+it's automatically brought up to the
+cloud where it's stored on the cloud
+right the truth is on the cloud and then
+
+857
+01:24:03,920 --> 01:24:08,090
+it's automatically pushed down to my
+other devices so they're all in sync
+
+858
+01:24:08,090 --> 01:24:13,100
+it's that easy
+I just update a contact on my iPhone and
+
+859
+01:24:13,100 --> 01:24:17,600
+don't even think about it and that
+contact is updated on all my other
+
+860
+01:24:17,600 --> 01:24:23,300
+devices and if I change it on any device
+it's updated on all devices wirelessly
+
+861
+01:24:23,300 --> 01:24:29,440
+automatically without me doing a thing
+so that's contacts here's calendars
+works much the same way I make a new
+
+862
+01:24:33,050 --> 01:24:38,450
+calendar event for my iPhone it's stored
+in the cloud and it's pushed to my other
+
+863
+01:24:38,450 --> 01:24:45,590
+devices pretty cool
+we've also added calendar sharing so as
+
+864
+01:24:45,590 --> 01:24:51,080
+an example if I'm sharing a few
+calendars with my wife school and soccer
+
+865
+01:24:51,080 --> 01:24:57,710
+calendars let's say right and I add a
+new calendar for a teacher parent
+
+866
+01:24:57,710 --> 01:25:06,250
+conference on my phone it's again
+automatically pushed up to the cloud and
+
+867
+01:25:06,340 --> 01:25:11,449
+automatically push to my wife's iPhone
+if she adds
+the key adds an appointment for a soccer
+
+868
+01:25:15,500 --> 01:25:21,860
+game again goes up to the cloud and back
+to my iPhone it's that simple
+
+869
+01:25:21,860 --> 01:25:29,570
+and so calendars has it stores your
+calendars in the cloud changes on any
+
+870
+01:25:29,570 --> 01:25:34,460
+device or push to all your devices and
+we have shared calendars we think you're
+
+871
+01:25:34,460 --> 01:25:41,929
+going to love the new calendars it just
+works and then we have mail mail was in
+
+872
+01:25:41,929 --> 01:25:47,060
+the best shape of all but it's even
+better now we give you a mail account it
+
+873
+01:25:47,060 --> 01:25:53,150
+at me calm your new messages again are
+pushed to all your devices and like we
+use through your inbox and folders are
+
+874
+01:25:55,040 --> 01:26:03,400
+all kept up to date on all devices
+so that's mail and no ads
+
+875
+01:26:10,110 --> 01:26:14,500
+we build products that we want for
+ourselves too and we just don't want to
+
+876
+01:26:14,500 --> 01:26:20,980
+ads so we can't get there so these are
+the three apps that form the core of
+
+877
+01:26:20,980 --> 01:26:28,420
+mobile me we used to sell them for a
+subscription price of $99 annually as of
+
+878
+01:26:28,420 --> 01:26:36,720
+today this product ceases to exist and
+those three apps are out of the food
+
+879
+01:26:47,520 --> 01:26:55,660
+but we didn't stop there we've got three
+more apps that we've brought into the
+iCloud universe the first is of course
+
+880
+01:27:01,480 --> 01:27:09,580
+the App Store the App Store you've
+bought a lot of apps so far and you can
+
+881
+01:27:09,580 --> 01:27:12,060
+buy them of course directly on your
+devices
+
+882
+01:27:12,060 --> 01:27:17,260
+maybe the app you want isn't on the
+device you've got with you so for all
+
+883
+01:27:17,260 --> 01:27:23,350
+your purchase history now you can see it
+on all your devices even if the apps not
+
+884
+01:27:23,350 --> 01:27:32,260
+there and we've added this button here
+which is download from the cloud and if
+
+885
+01:27:32,260 --> 01:27:36,250
+you want that app on that device you
+just push that button and that app is
+
+886
+01:27:36,250 --> 01:27:41,220
+automatically sent to that device right
+and there's no extra charge
+
+887
+01:27:41,220 --> 01:27:47,290
+no extra charge now we've done that for
+your purchase history what about four
+
+888
+01:27:47,290 --> 01:27:51,640
+devices you buy in the future well four
+devices when you buy them in the future
+
+889
+01:27:51,640 --> 01:27:58,960
+you want to buy Yelp let's say the cloud
+downloads it to all your devices again
+
+890
+01:27:58,960 --> 01:28:03,450
+at no extra charge all automatically
+
+891
+01:28:05,080 --> 01:28:12,890
+so that's what we're doing with the App
+Store iBooks same thing you've got your
+
+892
+01:28:12,890 --> 01:28:17,090
+purchase history of all the books you've
+bought on any device you want to get it
+
+893
+01:28:17,090 --> 01:28:22,460
+on your iPhone se just push the button
+it downloads to that device when you buy
+
+894
+01:28:22,460 --> 01:28:29,270
+a new iBook let's say you want to buy
+this book here the wave it downloads it
+
+895
+01:28:29,270 --> 01:28:36,500
+to all your devices now and if you're
+reading it on one device let's say
+
+896
+01:28:36,500 --> 01:28:42,320
+you're reading it on your iPad and
+you've just got to run you get to a page
+
+897
+01:28:42,320 --> 01:28:46,250
+you bookmark that page that bookmark is
+sent up to the cloud and stored and
+
+898
+01:28:46,250 --> 01:28:50,930
+again push to all your other devices so
+maybe you can read another the rest of
+
+899
+01:28:50,930 --> 01:28:57,130
+the chapter as an example on the train
+to work it all just works
+
+900
+01:29:01,530 --> 01:29:07,920
+and now back up we talked about being PC
+free Scott talked about how you can
+
+901
+01:29:07,920 --> 01:29:15,840
+wirelessly backup your devices daily to
+your PC or your Mac but let's do it to
+
+902
+01:29:15,840 --> 01:29:20,370
+the cloud as well for those people that
+want to be completely PC free so we've
+
+903
+01:29:20,370 --> 01:29:29,430
+added wireless backup to the cloud and
+basically once daily we're going to
+
+904
+01:29:29,430 --> 01:29:34,950
+backup a lot of your important contents
+to the cloud if you ever get a new phone
+and have to replace a phone you
+
+905
+01:29:37,050 --> 01:29:40,950
+literally type in your Apple ID and
+password and everything will be loaded
+
+906
+01:29:40,950 --> 01:29:44,840
+onto that phone automatically in wires
+
+907
+01:29:50,160 --> 01:29:57,300
+so we automatically do daily backups to
+iCloud over Wi-Fi
+
+908
+01:29:57,300 --> 01:30:04,300
+we backup your purchased music apps and
+books we backup your camera roll with
+
+909
+01:30:04,300 --> 01:30:10,270
+your photos and videos we backup your
+device settings and we backup your app
+
+910
+01:30:10,270 --> 01:30:24,070
+data all to the cloud so that is backup
+and those are three other apps that come
+with iCloud but we couldn't stop there
+
+911
+01:30:27,850 --> 01:30:35,530
+and so we have a final three apps that
+are amazing
+the most inventive part of iCloud I
+
+912
+01:30:38,530 --> 01:30:52,530
+think and I'd love to tell you about the
+first one is documents in the cloud so
+
+913
+01:30:53,790 --> 01:31:02,590
+if I'm on my iPad and I create a Pages
+document right I create a Pages document
+
+914
+01:31:02,590 --> 01:31:09,850
+and it automatically uploads it and
+stores it in the cloud when I close that
+
+915
+01:31:09,850 --> 01:31:15,310
+document completely automatically and it
+then pushes it to all the devices that I
+
+916
+01:31:15,310 --> 01:31:25,840
+have pages on so I can get the document
+between my devices and we have put that
+
+917
+01:31:25,840 --> 01:31:32,710
+into Pages Numbers and Keynote as a
+matter of fact the versions we just
+
+918
+01:31:32,710 --> 01:31:40,060
+released last week have this in there
+and to demonstrate what this is like
+
+919
+01:31:40,060 --> 01:31:45,730
+with I work I'd love to invite Roger
+Rosner who's our VP of I work up to give
+us a quick demo
+
+920
+01:31:49,229 --> 01:31:57,539
+thank you Steve alright let's take a
+look at how I work and iCloud will work
+together let's say you're working on a
+
+921
+01:31:59,849 --> 01:32:04,530
+keynote presentation on your iPad making
+a beautiful presentation with all those
+
+922
+01:32:04,530 --> 01:32:09,599
+awesome keynote graphic effects and
+animations but you're away from home you
+
+923
+01:32:09,599 --> 01:32:14,219
+didn't bring your iPad with you and you
+run into somebody who wants to see your
+
+924
+01:32:14,219 --> 01:32:19,679
+presentation well the good news is last
+week we shipped I work for iPhone and
+
+925
+01:32:19,679 --> 01:32:24,690
+even better for anybody who bought and
+iWork app for your iPad you can download
+that app for your iPhone at no
+
+926
+01:32:26,579 --> 01:32:31,380
+additional charge so let's fire up
+keynote on this phone this is the first
+
+927
+01:32:31,380 --> 01:32:35,849
+time we've run it here so it's going to
+say hi then it's going to say do you
+
+928
+01:32:35,849 --> 01:32:41,369
+want to use iCloud we say yes and
+immediately it sees all your keynote
+presentations that you've been working
+
+929
+01:32:42,599 --> 01:32:47,519
+on in the cloud and starts to download
+them in the background to your iPhone so
+
+930
+01:32:47,519 --> 01:32:51,989
+I'll open this one we were just looking
+at and as you can see it's all there and
+even remembered what slide we were
+
+931
+01:32:53,820 --> 01:32:59,929
+looking at and if I want to I can just
+hit play play it right on my iPhone and
+
+932
+01:32:59,929 --> 01:33:07,550
+I put exactly zero effort into getting
+that file over here pretty neat
+
+933
+01:33:13,190 --> 01:33:19,460
+of course all the iWork apps use iCloud
+so let's take a look at pages and you
+
+934
+01:33:19,460 --> 01:33:22,550
+know imagine you're out and you you're
+inspired to make some changes to a
+
+935
+01:33:22,550 --> 01:33:28,300
+document you've been working on so I'm
+going to move this graphic over here
+
+936
+01:33:28,300 --> 01:33:32,210
+maybe I just took a photograph that I
+think would be great to spruce up my
+
+937
+01:33:32,210 --> 01:33:38,000
+cover page so I'll go to my camera roll
+I'd serve my graphic use alignment
+
+938
+01:33:38,000 --> 01:33:43,340
+guides to place it and I'm done and I
+stick the phone in my pocket and I
+
+939
+01:33:43,340 --> 01:33:48,500
+forget about it and in the background
+iCloud is grabbing all those changes and
+
+940
+01:33:48,500 --> 01:33:54,110
+then immediately pushing them back down
+to my iPad so when I get home pick up
+
+941
+01:33:54,110 --> 01:33:58,340
+the iPad fire up pages you can see in
+the upper left my document thumbnails
+
+942
+01:33:58,340 --> 01:34:01,030
+already been updated
+
+943
+01:34:06,579 --> 01:34:13,280
+and there are all my edits absolutely no
+effort on my part and that is how I work
+
+944
+01:34:13,280 --> 01:34:15,739
+works with iCloud I think you're going
+to like it
+
+945
+01:34:15,739 --> 01:34:31,909
+thank you thanks Roger
+and documents in the cloud really
+
+946
+01:34:31,909 --> 01:34:40,400
+completes our iOS document storage story
+- in other words a lot of us have been
+
+947
+01:34:40,400 --> 01:34:47,150
+working for 10 years to get rid of the
+file system so the user didn't have to
+
+948
+01:34:47,150 --> 01:34:52,429
+worry about it when you try to teach
+teach somebody how to use a Mac the
+
+949
+01:34:52,429 --> 01:34:56,690
+easiest of all computers to use
+everything's going along fine until you
+hit the file system and then difficulty
+
+950
+01:34:58,780 --> 01:35:05,659
+is staggering for most people so we've
+made it on the iOS devices to where you
+
+951
+01:35:05,659 --> 01:35:09,860
+don't ever have to think about it the
+app manages the presentation of its own
+
+952
+01:35:09,860 --> 01:35:15,679
+documents just like mail manages the
+presentation of its own messages but the
+
+953
+01:35:15,679 --> 01:35:21,380
+piece that we weren't finished with was
+how do we move those documents around to
+
+954
+01:35:21,380 --> 01:35:28,579
+different devices and documents in the
+cloud solves that problem for us apps
+
+955
+01:35:28,579 --> 01:35:34,639
+can store documents in iCloud iCloud
+pushes those documents to a user's
+
+956
+01:35:34,639 --> 01:35:39,409
+devices automatically
+the documents update on all devices when
+changed on any device and we are
+
+957
+01:35:44,389 --> 01:35:49,450
+releasing
+[Applause]
+
+958
+01:35:54,750 --> 01:36:03,070
+it's really easy to tie your apps into
+iCloud's storage system and again you
+
+959
+01:36:03,070 --> 01:36:07,900
+can have complex documents apps like
+pages or we've got another storage
+
+960
+01:36:07,900 --> 01:36:13,630
+facility for key value data so as an
+example if you've got an app that just
+
+961
+01:36:13,630 --> 01:36:18,190
+track stocks you can just update the key
+value pairs and we'll store that in the
+cloud as well so documents and key value
+
+962
+01:36:23,110 --> 01:36:30,750
+data works across all iOS devices and
+Macs and PCs to
+
+963
+01:36:37,280 --> 01:36:44,080
+so we think this is going to be pretty
+big and that is documents in the cloud
+
+964
+01:36:44,200 --> 01:36:55,430
+this next one is maybe my favorite one
+and it's called Photo Stream and it's
+
+965
+01:36:55,430 --> 01:37:02,240
+going to bring the cloud to photos how
+many times have we taken photos on our
+iPhone maybe of our kids in the
+
+966
+01:37:04,190 --> 01:37:10,490
+afternoon and wanted when we got home to
+share them on an iPad and have to go
+
+967
+01:37:10,490 --> 01:37:14,690
+through the process of moving them over
+wouldn't it be great if by the time I
+
+968
+01:37:14,690 --> 01:37:19,670
+got home they were already there on the
+iPad well that's what Photo Stream is
+
+969
+01:37:19,670 --> 01:37:25,460
+going to do for us across all of our
+devices so again I take photos on any
+
+970
+01:37:25,460 --> 01:37:32,240
+device puts it in the camera roll and
+that will be automatically uploaded to
+
+971
+01:37:32,240 --> 01:37:38,120
+the cloud where it's stored and
+automatically downloaded to all my other
+
+972
+01:37:38,120 --> 01:37:46,220
+devices including in this case a Mac and
+so I've got my photos on my iPad just
+
+973
+01:37:46,220 --> 01:37:54,320
+waiting for me when I get home now in
+addition I can import photos right into
+iPhoto as an example on the Mac it'll
+
+974
+01:37:57,710 --> 01:38:02,030
+upload those to the cloud and do exactly
+the same thing with them by pushing them
+
+975
+01:38:02,030 --> 01:38:05,810
+down to all my other devices so it's
+apps that I its photos that I take or
+
+976
+01:38:05,810 --> 01:38:13,070
+photos that I import and we built this
+right into the apps I hope you've seen
+that as we've gone through this we've
+
+977
+01:38:15,080 --> 01:38:17,840
+built this right into the app so there's
+nothing new to learn
+
+978
+01:38:17,840 --> 01:38:23,330
+so photo stream on the iPads photo app
+we've built it right in right next to
+
+979
+01:38:23,330 --> 01:38:27,680
+albums we have a button called Photo
+Stream you push it and you're looking at
+
+980
+01:38:27,680 --> 01:38:32,240
+the photo stream it's that simple
+there's not a separate app that you have
+to go learn it's right there in your
+
+981
+01:38:34,370 --> 01:38:39,500
+Photos app it's right there in your
+Photos app on your iPhone it's just
+
+982
+01:38:39,500 --> 01:38:43,130
+right there with all your other albums
+there you go
+
+983
+01:38:43,130 --> 01:38:45,790
+Photo Stream
+
+984
+01:38:49,100 --> 01:38:55,350
+on the map on the map we built it right
+into iPhoto and so it's right there on
+
+985
+01:38:55,350 --> 01:39:03,440
+the side your photo stream and on a PC
+they don't have a Photos app so we use
+the pictures folder right in addition to
+
+986
+01:39:09,270 --> 01:39:21,870
+that we even built it in to Apple TV so
+Apple TV Apple TV talks directly over
+the internet directly to the photo
+
+987
+01:39:24,210 --> 01:39:29,700
+stream servers doesn't even go through
+your PC talks directly the photo stream
+
+988
+01:39:29,700 --> 01:39:39,990
+servers so you can watch the photos
+right on your Apple TV so one of the
+
+989
+01:39:39,990 --> 01:39:44,910
+problems we faced was it will photos are
+large and will use up all the memory on
+
+990
+01:39:44,910 --> 01:39:50,310
+your devices there are also large
+they'll consume vast amounts of storage
+
+991
+01:39:50,310 --> 01:39:55,740
+in our server farms so we've came up
+with a great scheme we're going to store
+photos on your devices we're going to
+
+992
+01:39:58,740 --> 01:40:04,680
+store the last thousand photos right
+let's store the last thousand and any
+
+993
+01:40:04,680 --> 01:40:08,550
+photos you want to keep permanently just
+move them into an album and they'll stay
+
+994
+01:40:08,550 --> 01:40:15,030
+forever but they'll be parading by you
+the last thousand photographs on your
+
+995
+01:40:15,030 --> 01:40:19,560
+Mac or PC because we have more storage
+will store all of them you can get rid
+
+996
+01:40:19,560 --> 01:40:24,510
+of them by just deleting them but we'll
+store all of them and on the server will
+
+997
+01:40:24,510 --> 01:40:28,170
+store them for 30 days which is more
+than enough time for all your devices to
+
+998
+01:40:28,170 --> 01:40:33,930
+connect and automatically download those
+photos so we think we've got a great
+
+999
+01:40:33,930 --> 01:40:38,730
+system here that's going to move our
+photos around among all of our devices
+even Apple TV so that when I take a
+
+1000
+01:40:41,730 --> 01:40:47,730
+photo anywhere I can view it on all my
+other devices we think this is going to
+
+1001
+01:40:47,730 --> 01:40:52,170
+be really exciting to demonstrate this
+I've asked Eddy Cue or VP of Internet
+
+1002
+01:40:52,170 --> 01:40:56,750
+services to come out and give us a demo
+of photo stream
+
+1003
+01:40:56,920 --> 01:41:00,550
+thank you yep
+
+1004
+01:41:00,670 --> 01:41:04,810
+so I want to take some photos to start
+with now I love cars and I happen to
+
+1005
+01:41:04,810 --> 01:41:09,990
+have brought one of my favorite ones
+with me here today and here it is and
+we're going to go to our my iPhone and
+
+1006
+01:41:13,350 --> 01:41:21,400
+launch the camera app Lightning McQueen
+is looking good
+I love the headlights and now these
+
+1007
+01:41:30,820 --> 01:41:40,870
+photos are on my iPhone but let's go
+look at my iPad now we've built Photo
+
+1008
+01:41:40,870 --> 01:41:45,040
+Stream right into the Photos app so
+right next to albums this photo stream
+
+1009
+01:41:45,040 --> 01:41:49,740
+and there is the pictures I just
+
+1010
+01:41:55,619 --> 01:41:59,729
+I didn't have to learn anything new at
+all and if I want to save them
+
+1011
+01:41:59,729 --> 01:42:05,820
+permanently on my iPad I can just select
+them and move them to an existing album
+or even create a new album that's it
+
+1012
+01:42:11,899 --> 01:42:17,309
+now these photos aren't just on my iPad
+they're on all of my devices let's move
+
+1013
+01:42:17,309 --> 01:42:22,379
+over to the Mac where I've got iPhoto
+running and we've built again Photo
+
+1014
+01:42:22,379 --> 01:42:37,979
+Stream right in and there are the photos
+I just took so now when I take a photo
+
+1015
+01:42:37,979 --> 01:42:42,929
+on one of my devices they automatically
+appear on all of my devices without
+
+1016
+01:42:42,929 --> 01:42:45,689
+having to do anything at all it's that
+simple
+
+1017
+01:42:45,689 --> 01:42:48,949
+and that's Photo Stream
+
+1018
+01:42:53,570 --> 01:43:01,810
+okay okay not awesome
+
+1019
+01:43:03,099 --> 01:43:12,230
+so photos you tape or import upload to
+iCloud iCloud pushes them to all your
+devices works over Wi-Fi its iCloud
+
+1020
+01:43:18,829 --> 01:43:23,000
+stores each photo for 30 days which is
+plenty enough time for all the devices
+
+1021
+01:43:23,000 --> 01:43:28,520
+to be connected devices store the last
+thousand photos and again you can just
+
+1022
+01:43:28,520 --> 01:43:35,630
+drag them to an album they stay forever
+and Macs and PCs store all photos so
+
+1023
+01:43:35,630 --> 01:43:39,920
+we're really really pleased with Photo
+Stream we think you're going to like it
+
+1024
+01:43:39,920 --> 01:43:50,320
+a lot last but not least is iTunes in
+the cloud
+
+1025
+01:43:55,099 --> 01:44:06,239
+you know it's the same old story right
+about I buy something on my iPhone right
+wolf and and it's not on my other
+
+1026
+01:44:08,130 --> 01:44:11,250
+devices
+I grab my ipod and I go to listen to
+
+1027
+01:44:11,250 --> 01:44:15,810
+that song I bought yesterday my iPhone
+it ain't there well the first thing
+
+1028
+01:44:15,810 --> 01:44:21,420
+we've done again is for the songs you've
+already bought we've added a purchase
+
+1029
+01:44:21,420 --> 01:44:28,050
+button that shows you your entire
+purchase history of all the iTunes songs
+
+1030
+01:44:28,050 --> 01:44:33,690
+you bought on any device you can look at
+it by all songs or recent songs or you
+can look at it by artist so I'm going to
+
+1031
+01:44:35,760 --> 01:44:40,710
+pick Bob Dylan here and I can download
+any of these albums that I've bought on
+
+1032
+01:44:40,710 --> 01:44:46,920
+iTunes to this device just by pushing
+that cloud download button or I could go
+
+1033
+01:44:46,920 --> 01:44:53,460
+in to one of them and just download
+whatever songs I want to this device so
+
+1034
+01:44:53,460 --> 01:44:58,710
+anything I bought I can now download to
+any of my devices at no additional
+
+1035
+01:44:58,710 --> 01:45:03,110
+charge which is
+
+1036
+01:45:06,410 --> 01:45:12,590
+this is the first time we've seen this
+in the music industry no charge for
+
+1037
+01:45:12,590 --> 01:45:19,280
+multiple downloads two different devices
+and for the future I flick one switch to
+
+1038
+01:45:19,280 --> 01:45:28,580
+on and now any song I buy on any device
+again will automatically be downloaded
+
+1039
+01:45:28,580 --> 01:45:34,790
+to all my devices so when I want to buy
+a song in this case in a Dell song it
+
+1040
+01:45:34,790 --> 01:45:41,660
+will push it to all of my devices so to
+give us a demo of that again I'd like to
+
+1041
+01:45:41,660 --> 01:45:56,000
+invite idiot thank you thanks Steve so
+I'm on my iphone and I want to listen to
+
+1042
+01:45:56,000 --> 01:45:59,510
+a song I'd previously purchased on
+iTunes but it's not in the music library
+
+1043
+01:45:59,510 --> 01:46:03,580
+on this device well now I can easily
+just go to the iTunes Music Store
+
+1044
+01:46:03,580 --> 01:46:08,900
+there's a new purchase tab right on the
+bottom and now I'm seeing all of the
+
+1045
+01:46:08,900 --> 01:46:16,310
+purchases I've ever done on iTunes I can
+even look at them the songs that I had
+
+1046
+01:46:16,310 --> 01:46:19,550
+that are not on this device that I
+previously purchased by just tapping
+
+1047
+01:46:19,550 --> 01:46:23,420
+that button now I'm going to look for a
+Foo Fighters song I think it's called
+
+1048
+01:46:23,420 --> 01:46:25,720
+the walk
+
+1049
+01:46:33,480 --> 01:46:39,300
+and there it is and what just tapping
+the iCloud button it downloads to my
+
+1050
+01:46:39,300 --> 01:46:43,350
+iPhone again because I'd previously
+purchased this song it's downloading at
+
+1051
+01:46:43,350 --> 01:46:48,140
+no additional cost let's go ahead and
+play it
+
+1052
+01:46:53,750 --> 01:46:57,620
+just finishing downloading
+
+1053
+01:47:07,030 --> 01:47:10,999
+now that's great but I think's in the
+cloud is even better let's see what
+
+1054
+01:47:10,999 --> 01:47:15,380
+happens when I purchase a new song and
+if we can bring up my iPad I'm going to
+
+1055
+01:47:15,380 --> 01:47:20,869
+go ahead and launch our new music player
+in iOS 5 and on my iPhone I'm going to
+
+1056
+01:47:20,869 --> 01:47:26,510
+go back to the iTunes store I want to
+buy a new song and I want to look at the
+
+1057
+01:47:26,510 --> 01:47:30,260
+Bruno Mars's new album I know he has a
+hit song I think it's called the lazy
+
+1058
+01:47:30,260 --> 01:47:42,499
+lazy song that's it
+we can preview it that's definitely it
+
+1059
+01:47:42,499 --> 01:47:46,969
+now I'm going to buy it but before I do
+notice on my iPad I don't have any Bruno
+
+1060
+01:47:46,969 --> 01:47:54,949
+Mars songs at all so we're going to go
+and buy and it's now downloading to my
+
+1061
+01:47:54,949 --> 01:48:00,159
+iPhone and in addition there's the Bruno
+Mars song
+
+1062
+01:48:06,449 --> 01:48:17,820
+and of course what so now when I buy a
+song on one of my devices it
+
+1063
+01:48:17,820 --> 01:48:22,050
+automatically downloads to all of my
+devices without having to sync or do any
+
+1064
+01:48:22,050 --> 01:48:26,120
+work at all and that's iTunes in the
+cloud
+
+1065
+01:48:33,070 --> 01:48:41,749
+thank you very much is this awesome
+so music purchase from iTunes high
+
+1066
+01:48:41,749 --> 01:48:48,440
+quality 256 kilobits AAC and you can
+have up to 10 devices downloading your
+
+1067
+01:48:48,440 --> 01:48:55,400
+music to all of them every time you buy
+it on any device iTunes in the cloud so
+
+1068
+01:48:55,400 --> 01:49:12,349
+these 9 apps constitute iCloud and they
+are all free we want we want every user
+
+1069
+01:49:12,349 --> 01:49:16,789
+to take advantage of these and we know
+if we make them free that they'll they
+
+1070
+01:49:16,789 --> 01:49:22,550
+will and we want people to see what
+these devices can really do and what the
+
+1071
+01:49:22,550 --> 01:49:27,729
+software can really do so we're making
+it free and we're very excited about it
+
+1072
+01:49:27,729 --> 01:49:34,999
+so that's iCloud it stores your content
+and wirelessly pushes it to all your
+devices and it's integrated with your
+
+1073
+01:49:38,179 --> 01:49:45,079
+apps so everything happens automatically
+so a competitor that doesn't own the
+
+1074
+01:49:45,079 --> 01:49:50,869
+apps or doesn't have great developers to
+integrate with their apps they can never
+
+1075
+01:49:50,869 --> 01:49:56,840
+do this they can never make it so it
+just works and that's what we've done
+
+1076
+01:49:56,840 --> 01:50:03,710
+here so how do you get it well when you
+upgrade your phone or buy a new phone
+
+1077
+01:50:03,710 --> 01:50:08,749
+with iOS 5 on it all you have to do is
+type in your Apple ID and password and
+
+1078
+01:50:08,749 --> 01:50:15,170
+that's it and you'll go to switch that's
+iCloud you can turn it off if you'd like
+
+1079
+01:50:15,170 --> 01:50:20,989
+it would be turned on by default and
+you're up and running we're also going
+to give everybody five gigabytes of free
+
+1080
+01:50:23,300 --> 01:50:29,960
+storage for mail documents and backup
+and that's even more than it sounds like
+
+1081
+01:50:29,960 --> 01:50:35,510
+because we're not counting purchase
+music apps or books towards that five
+
+1082
+01:50:35,510 --> 01:50:37,960
+gigabytes
+
+1083
+01:50:41,039 --> 01:50:50,980
+nor are we counting photostream
+towards that five gigabytes so when can
+
+1084
+01:50:50,980 --> 01:51:03,519
+you get your hands on this today we're
+going to get you all a developer beta
+
+1085
+01:51:03,519 --> 01:51:09,579
+today and also today we're going to make
+something available to end-users which
+is the iTunes in the cloud portion and
+
+1086
+01:51:12,690 --> 01:51:18,909
+it runs on iOS 4.3 it will run on all
+the supported platforms when we ship it
+
+1087
+01:51:18,909 --> 01:51:23,590
+this fall but today we're going to put
+it out for 4.3 as a beta and everyone
+
+1088
+01:51:23,590 --> 01:51:29,199
+can get their hands on it and run it on
+their existing existing iPhone 4s so we
+think this is going to be really
+
+1089
+01:51:30,760 --> 01:51:38,880
+exciting and of course we ship iCloud
+concurrent with shipping iOS 5 this fall
+
+1090
+01:51:38,880 --> 01:51:43,530
+so that is iCloud
+
+1091
+01:51:53,850 --> 01:52:05,370
+now there's one more thing small thing
+it pertains to iTunes in the cloud as
+you recall iTunes in the cloud is just
+
+1092
+01:52:08,610 --> 01:52:13,740
+for the music that you've purchased from
+the iTunes Store now at 14 billion songs
+
+1093
+01:52:13,740 --> 01:52:17,520
+15 billion excuse me that's a lot of
+songs out there
+
+1094
+01:52:17,520 --> 01:52:23,490
+they've been purchased from iTunes Music
+Store but you may have some that you
+ripped yourself and there's 3 ways you
+
+1095
+01:52:27,450 --> 01:52:33,000
+can deal with that one
+you can sync your new devices over Wi-Fi
+
+1096
+01:52:33,000 --> 01:52:38,340
+or cable cable and you only have to sync
+them once just to get that music on them
+
+1097
+01:52:38,340 --> 01:52:43,380
+and then you can rely on iCloud to take
+care of getting all your new purchases
+
+1098
+01:52:43,380 --> 01:52:50,790
+off iTunes onto that device or if it's
+just a few songs you love you don't
+
+1099
+01:52:50,790 --> 01:52:56,460
+leave behind you can buy those songs
+that you'll miss on iTunes we're going
+
+1100
+01:52:56,460 --> 01:53:03,840
+to offer a third way which is called
+iTunes Match what is iTunes Match well
+
+1101
+01:53:03,840 --> 01:53:11,550
+iTunes Match uses the fact that we've
+got 18 million songs now in the iTunes
+
+1102
+01:53:11,550 --> 01:53:16,920
+music store and the chances are awfully
+good that we've got the songs in our
+
+1103
+01:53:16,920 --> 01:53:25,170
+store that you've ripped and so we wrote
+software to scan those CDs the rip scene
+
+1104
+01:53:25,170 --> 01:53:33,360
+on iTunes music and match it up with
+those songs we have in the store right
+
+1105
+01:53:33,360 --> 01:53:38,520
+and so we can give that music the same
+benefits as music purchase from iTunes
+
+1106
+01:53:38,520 --> 01:53:44,130
+and it takes just minutes not weeks if
+you have to upload your whole library
+
+1107
+01:53:44,130 --> 01:53:50,270
+into some Lockland the sky that
+literally takes weeks this takes minutes
+
+1108
+01:53:50,270 --> 01:53:55,850
+because we're scanning and matching your
+library so we don't need to upload that
+
+1109
+01:53:55,850 --> 01:54:00,420
+that large part of your library and the
+few songs that remain well we'll upload
+
+1110
+01:54:00,420 --> 01:54:07,700
+them but with 18 million songs are most
+likely to have what's your back
+
+1111
+01:54:12,670 --> 01:54:20,080
+in addition iTunes Match will upgrade
+those songs that match the 256 kilobits
+
+1112
+01:54:20,080 --> 01:54:22,619
+AAC
+
+1113
+01:54:25,370 --> 01:54:27,370
+I
+
+1114
+01:54:28,220 --> 01:54:37,710
+and iTunes Match cost just $24.99 a year
+so if you've got a bunch of music if
+
+1115
+01:54:37,710 --> 01:54:41,010
+you've got a bunch of music that you
+didn't buy from iTunes you can get all
+
+1116
+01:54:41,010 --> 01:54:44,880
+the benefits of the cloud service and
+more in terms of upgrading your music
+
+1117
+01:54:44,880 --> 01:54:49,950
+for $24.99 a year now if you look and
+compare that to some competitors let's
+
+1118
+01:54:49,950 --> 01:54:55,950
+just look at Apple and Amazon and Google
+your kind of get surprised because again
+
+1119
+01:54:55,950 --> 01:55:00,120
+the library in the cloud we scan and
+match the other guys you've got to
+
+1120
+01:55:00,120 --> 01:55:07,980
+upload your whole music library again
+it's going to take weeks music apps on
+
+1121
+01:55:07,980 --> 01:55:16,320
+your Mac and PC well you're stuck with a
+web app instead of iTunes upgrade to 256
+
+1122
+01:55:16,320 --> 01:55:21,990
+kilobits per second the other guys
+aren't upgrading you at all the annual
+
+1123
+01:55:21,990 --> 01:55:27,870
+price for 5,000 songs we're $24.99
+Amazon charges you $50 for the storage
+
+1124
+01:55:27,870 --> 01:55:32,880
+and google hasn't announced their
+pricing yet even at 20,000 songs we
+
+1125
+01:55:32,880 --> 01:55:38,610
+charge one flat price Amazon is up to
+$200 for the storage and Google has an
+
+1126
+01:55:38,610 --> 01:55:41,450
+announcer present
+
+1127
+01:55:49,520 --> 01:55:53,450
+most of our customers won't need this
+because they bought a lot of their music
+on iTunes but for those that do
+
+1128
+01:55:55,070 --> 01:56:00,100
+it's an industry-leading offering let's
+put it that way
+
+1129
+01:56:00,100 --> 01:56:06,020
+so that's iTunes Match and it goes along
+with free iTunes in the cloud
+
+1130
+01:56:06,020 --> 01:56:20,540
+and that's what it is
+now if you don't think we're serious
+about this you're wrong this is our
+
+1131
+01:56:26,540 --> 01:56:35,870
+third data center that we just completed
+it's in Maidan North Carolina this is
+
+1132
+01:56:35,870 --> 01:56:40,210
+what it looks like it's rather large
+[Music]
+
+1133
+01:56:40,210 --> 01:56:46,480
+it's as eco-friendly as you can make a
+data center with modern technology and
+we're pretty proud of it just to give
+
+1134
+01:56:49,910 --> 01:56:54,500
+you a feel for its size see those two
+little dots on the roof those are two
+
+1135
+01:56:54,500 --> 01:57:02,660
+people right there so it's a pretty
+large place and and it's a full of stuff
+
+1136
+01:57:02,660 --> 01:57:14,150
+a little expensive stuff and we are
+ready we think for for our customers to
+
+1137
+01:57:14,150 --> 01:57:21,560
+start using iCloud and we can't wait to
+get it in their hands so I cloud is the
+
+1138
+01:57:21,560 --> 01:57:26,540
+third thing we want to talk about today
+I hope you like all the three things
+
+1139
+01:57:26,540 --> 01:57:31,610
+that we've unveiled this morning and
+again we've got a great week plan for
+
+1140
+01:57:31,610 --> 01:57:42,710
+you with 5200 attendees over 120
+sessions over 100 hands-on labs and over
+
+1141
+01:57:42,710 --> 01:57:48,590
+a thousand Apple engineers here all week
+so please ask us for any help you need
+
+1142
+01:57:48,590 --> 01:57:55,790
+that's why we're here so go at it have a
+great week and thank you very much for
+
+1143
+01:57:55,790 --> 01:58:00,350
+coming
+[Applause]
+
+1144
+01:58:05,179 --> 01:58:07,239
+you
