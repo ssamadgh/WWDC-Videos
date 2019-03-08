@@ -115,7 +115,7 @@
         }
         
         assetsDataInaccessibleViewController.explanation = errorMessage;
-        [self presentModalViewController:assetsDataInaccessibleViewController animated:NO];
+		[self presentViewController:assetsDataInaccessibleViewController animated:NO completion:nil];
         [assetsDataInaccessibleViewController release];
     };
     

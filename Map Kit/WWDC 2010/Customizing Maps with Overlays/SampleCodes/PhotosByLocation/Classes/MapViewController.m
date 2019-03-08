@@ -119,7 +119,7 @@ static UIEdgeInsets pinPadding = { 64.f, 64.f, 64.f, 64.f };
         }
         
         assetsDataInaccessibleViewController.explanation = errorMessage;
-        [self presentModalViewController:assetsDataInaccessibleViewController animated:NO];
+		[self presentViewController:assetsDataInaccessibleViewController animated:NO completion:nil];
         [assetsDataInaccessibleViewController release];
     };
 

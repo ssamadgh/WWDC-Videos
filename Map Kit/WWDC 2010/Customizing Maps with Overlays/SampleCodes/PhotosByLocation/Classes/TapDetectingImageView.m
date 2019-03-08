@@ -109,9 +109,10 @@ CGPoint midpointBetweenPoints(CGPoint a, CGPoint b);
         // case 1: this is the end of both touches at once 
         if ([touches count] == 2 && allTouchesEnded) {
             int i = 0; 
-            int tapCounts[2]; CGPoint tapLocations[2];
+            NSUInteger tapCounts[2]; CGPoint tapLocations[2];
             for (UITouch *touch in touches) {
-                tapCounts[i]    = [touch tapCount];
+
+				tapCounts[i]    = [touch tapCount];
                 tapLocations[i] = [touch locationInView:self];
                 i++;
             }

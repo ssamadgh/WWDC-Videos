@@ -58,6 +58,8 @@
 
 @implementation CrumbPathView
 
+
+
 - (void)drawMapRect:(MKMapRect)mapRect
           zoomScale:(MKZoomScale)zoomScale
           inContext:(CGContextRef)context

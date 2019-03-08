@@ -170,7 +170,10 @@
         CGImageRef imageRef = CGImageSourceCreateThumbnailAtIndex(sourceRef, 0, (CFDictionaryRef)options);
         
         if (imageRef) {
-            result = [UIImage imageWithCGImage:imageRef scale:[assetRepresentation scale] orientation:[assetRepresentation orientation]];
+#warning Set the true orientation later
+//            result = [UIImage imageWithCGImage:imageRef scale:[assetRepresentation scale] orientation:[assetRepresentation orientation]];
+			result = [UIImage imageWithCGImage:imageRef scale:[assetRepresentation scale] orientation:UIImageOrientationLeft];
+			
             CGImageRelease(imageRef);
         }
         
@@ -220,14 +223,13 @@
     metadataViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     metadataViewController.delegate = self;
     metadataViewController.asset = asset;
-    
-    [self presentModalViewController:metadataViewController animated:YES];
+	[self presentViewController:metadataViewController animated:YES completion:nil];
 }
 
 - (void)dismissMetadataViewController {
     
     metadataViewController.delegate = nil;
-    [[self navigationController] dismissModalViewControllerAnimated:YES];
+	[[self navigationController] dismissViewControllerAnimated:YES completion:nil];
     [metadataViewController release];
 }
 
@@ -241,13 +243,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
     self.asset = nil;

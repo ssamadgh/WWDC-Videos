@@ -126,25 +126,28 @@ See LICENSE.txt for this sample’s licensing information
 // For this example, we are going to use horizontal accuracy as the deciding factor.
 // In other cases, you may wish to use vertical accuracy, or both together.
 //
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    // test that the horizontal accuracy does not indicate an invalid measurement
-    if (newLocation.horizontalAccuracy < 0) {
-        return;
-    }
-    
-    // test the age of the location measurement to determine if the measurement is cached
-    // in most cases you will not want to rely on cached measurements
-    //
-    NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
-    if (locationAge > 5.0) {
-        return;
-    }
-    
-    // store all of the measurements, just so we can see what kind of data we might receive
-    [self.locationMeasurements addObject:newLocation];
-    
-    // update the display with the new location data
-    [self.tableView reloadData];    
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+		// test that the horizontal accuracy does not indicate an invalid measurement
+	CLLocation *newLocation = locations.lastObject;
+	if (newLocation.horizontalAccuracy < 0) {
+		return;
+	}
+	
+		// test the age of the location measurement to determine if the measurement is cached
+		// in most cases you will not want to rely on cached measurements
+		//
+	NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
+	if (locationAge > 5.0) {
+		return;
+	}
+	
+		// store all of the measurements, just so we can see what kind of data we might receive
+	[self.locationMeasurements addObject:newLocation];
+	
+		// update the display with the new location data
+	[self.tableView reloadData];
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
