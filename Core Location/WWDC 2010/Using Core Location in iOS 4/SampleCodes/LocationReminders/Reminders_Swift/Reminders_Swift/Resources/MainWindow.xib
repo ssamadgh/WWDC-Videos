@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication">
+            <connections>
+                <outlet property="delegate" destination="ziQ-Fd-Cxl" id="hFT-iO-iGJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <customObject id="ziQ-Fd-Cxl" userLabel="Reminders App Delegate" customClass="RemindersAppDelegate" customModule="Reminders_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="viewController" destination="Q6d-US-PGe" id="UZd-bE-5GQ"/>
+                <outlet property="window" destination="1HY-qW-kn5" id="fRv-2G-4ci"/>
+            </connections>
+        </customObject>
+        <viewController nibName="RemindersViewController" id="Q6d-US-PGe" customClass="RemindersViewController" customModule="Reminders_Swift" customModuleProvider="target">
+            <point key="canvasLocation" x="409" y="112"/>
+        </viewController>
+        <window contentMode="scaleToFill" id="1HY-qW-kn5">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <viewLayoutGuide key="safeArea" id="wVN-di-g7d"/>
+            <point key="canvasLocation" x="-167" y="838"/>
+        </window>
+    </objects>
+</document>

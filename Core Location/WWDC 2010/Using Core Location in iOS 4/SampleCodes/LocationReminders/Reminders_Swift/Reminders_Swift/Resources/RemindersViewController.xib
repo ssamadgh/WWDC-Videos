@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemindersViewController" customModule="Reminders_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="addRegionButton" destination="WSE-eL-IK5" id="58F-Hb-gdz"/>
+                <outlet property="locateUserButton" destination="53B-di-lVj" id="TQh-zM-71T"/>
+                <outlet property="mapView" destination="wSZ-xj-BhS" id="6hh-0Z-PhC"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WR1-Nb-c35"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-xj-BhS">
+                    <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="pNv-zC-Q7e"/>
+                    </connections>
+                </mapView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kt0-PF-qNM">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="icE-st-Qm0"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" image="TrackingLocation" id="53B-di-lVj">
+                            <connections>
+                                <action selector="locateUser:" destination="-1" id="Ajg-BR-F4n"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="X0g-1r-2ET"/>
+                        <barButtonItem systemItem="add" id="WSE-eL-IK5">
+                            <connections>
+                                <action selector="addRegion:" destination="-1" id="2kM-Bt-msc"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wSZ-xj-BhS" secondAttribute="trailing" id="2Sz-7x-fpL"/>
+                <constraint firstItem="kt0-PF-qNM" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="805-gu-QhE"/>
+                <constraint firstItem="kt0-PF-qNM" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ECJ-TO-k2m"/>
+                <constraint firstItem="kt0-PF-qNM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SVA-xs-9PY"/>
+                <constraint firstItem="wSZ-xj-BhS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YAz-no-3VA"/>
+                <constraint firstItem="wSZ-xj-BhS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ffl-aS-b8I"/>
+                <constraint firstItem="kt0-PF-qNM" firstAttribute="top" secondItem="wSZ-xj-BhS" secondAttribute="bottom" id="v6R-QQ-QOD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="TrackingLocation" width="19" height="16"/>
+    </resources>
+</document>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="SongMap_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="lye-Ox-dmj" id="DYE-n2-Gq3"/>
+                <outlet property="view" destination="iN0-l3-epB" id="eMy-RL-UAh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lye-Ox-dmj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="MVW-bF-M9U"/>
+                    </connections>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVc-fe-Qeb">
+                    <rect key="frame" x="333" y="625" width="22" height="22"/>
+                    <connections>
+                        <action selector="showInfo:" destination="-1" eventType="touchUpInside" id="Emq-v7-9zW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lye-Ox-dmj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AGN-PH-wFb"/>
+                <constraint firstItem="lye-Ox-dmj" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="E6N-d1-jLL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wVc-fe-Qeb" secondAttribute="bottom" constant="20" id="Kih-Z7-sae"/>
+                <constraint firstItem="lye-Ox-dmj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gmL-pW-Zjf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wVc-fe-Qeb" secondAttribute="trailing" constant="20" id="lcO-Ol-Sog"/>
+                <constraint firstItem="lye-Ox-dmj" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tXE-Pm-jWS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-73" y="58"/>
+        </view>
+    </objects>
+</document>

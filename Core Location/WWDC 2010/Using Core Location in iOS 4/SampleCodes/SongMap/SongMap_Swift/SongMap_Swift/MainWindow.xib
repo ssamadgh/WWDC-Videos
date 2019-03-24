@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication">
+            <connections>
+                <outlet property="delegate" destination="pkB-hW-qd7" id="Fbn-mh-veD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <window contentMode="scaleToFill" id="Bag-T1-7kc">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <viewLayoutGuide key="safeArea" id="g9X-NA-ftf"/>
+            <point key="canvasLocation" x="792.79999999999995" y="-440.32983508245883"/>
+        </window>
+        <customObject id="pkB-hW-qd7" userLabel="Delegate" customClass="SongMapAppDelegate" customModule="SongMap_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="mainViewController" destination="Muy-w0-eMU" id="O4A-R9-wSU"/>
+                <outlet property="window" destination="Bag-T1-7kc" id="DW9-0e-gqK"/>
+            </connections>
+        </customObject>
+        <viewController nibName="MainView" id="Muy-w0-eMU" customClass="MainViewController" customModule="SongMap_Swift" customModuleProvider="target">
+            <extendedEdge key="edgesForExtendedLayout"/>
+            <point key="canvasLocation" x="-12" y="49"/>
+        </viewController>
+    </objects>
+</document>
