@@ -32,6 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 		self.configureAnnotation()
 		self.view.addSubview(self.mapView)
 
+		
 	}
 	
 	func configureMapView() {
@@ -156,7 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 	}
 	
 	func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
-		print(view.annotation?.coordinate)
+		print(view.annotation!.coordinate)
 	}
 }
 

@@ -18,6 +18,7 @@
 		E44A725F224251A200E8A5A0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44A725E224251A200E8A5A0 /* MainWindow.xib */; };
 		E44A72612242531E00E8A5A0 /* RemindersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44A72602242531E00E8A5A0 /* RemindersViewController.xib */; };
 		E44A72632242540E00E8A5A0 /* ReminderAnnotationDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44A72622242540E00E8A5A0 /* ReminderAnnotationDetail.xib */; };
+		E493C32B224C9C0400517BA1 /* GpsiesTrack.gpx in Resources */ = {isa = PBXBuildFile; fileRef = E493C32A224C9C0300517BA1 /* GpsiesTrack.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		E44A725E224251A200E8A5A0 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		E44A72602242531E00E8A5A0 /* RemindersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindersViewController.xib; sourceTree = "<group>"; };
 		E44A72622242540E00E8A5A0 /* ReminderAnnotationDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderAnnotationDetail.xib; sourceTree = "<group>"; };
+		E493C329224C927F00517BA1 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		E493C32A224C9C0300517BA1 /* GpsiesTrack.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GpsiesTrack.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				E44A725822408D3A00E8A5A0 /* RegionManager.swift */,
 				E44A7244223F9A9700E8A5A0 /* RemindersViewController.swift */,
 				E44A725A2240BF8D00E8A5A0 /* ReminderAnnotationDetail.swift */,
+				E493C32A224C9C0300517BA1 /* GpsiesTrack.gpx */,
+				E493C329224C927F00517BA1 /* Location.gpx */,
 				E44A725D2242519600E8A5A0 /* Resources */,
 				E44A7249223F9A9900E8A5A0 /* Assets.xcassets */,
 				E44A724B223F9A9900E8A5A0 /* LaunchScreen.storyboard */,
@@ -155,6 +160,7 @@
 			files = (
 				E44A72612242531E00E8A5A0 /* RemindersViewController.xib in Resources */,
 				E44A724D223F9A9900E8A5A0 /* LaunchScreen.storyboard in Resources */,
+				E493C32B224C9C0400517BA1 /* GpsiesTrack.gpx in Resources */,
 				E44A724A223F9A9900E8A5A0 /* Assets.xcassets in Resources */,
 				E44A725F224251A200E8A5A0 /* MainWindow.xib in Resources */,
 				E44A72632242540E00E8A5A0 /* ReminderAnnotationDetail.xib in Resources */,
